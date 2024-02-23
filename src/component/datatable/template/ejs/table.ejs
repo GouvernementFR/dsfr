@@ -1,0 +1,14 @@
+<% eval(include('../../../../core/index.ejs'));
+
+let table = locals.table || {};
+let classes = table.classes || [];
+const attributes = table.attributes || {};
+attributes.id = table.id || uniqueId('datatable-table');
+
+classes.push(prefix + '-datatable-table');
+%>
+
+<table <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+    <%- include('./thead.ejs', {thead: table}); %>
+    <%- include('./tbody.ejs', {tbody: table}); %>
+</table>

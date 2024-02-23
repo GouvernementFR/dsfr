@@ -6,3 +6,14 @@ sample:
   default: Tableau complexe par défaut
   scrollable: Tableau complexe scrollable
   expandable: Tableau complexe repliable
+
+data:
+  caption: Caption du tableau complexe (accessibilité)
+  cell:
+    action: Action
+    label: Label
+    number: 30,00 €
+    select: Selectionner
+    selectAll: Tout selectionner
+    text: Texte par défaut
+    title: Titre par défaut

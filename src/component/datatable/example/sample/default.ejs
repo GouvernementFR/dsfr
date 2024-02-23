@@ -1,0 +1,225 @@
+<%
+const actionCell = `<span class="${prefix}-sr-only">${getText('data.cell.action', 'datatable')}</span>`;
+const textCell = `<div class="${prefix}-datatable-cell__desc">${getText('data.cell.text', 'datatable')}</div>`;
+const titleCell = `<span class="${prefix}-datatable-cell__title">${getText('data.cell.title', 'datatable')}</span>`;
+%>
+
+<div class="<%= prefix %>-datatable">
+    <div class="<%= prefix %>-datatable-container">
+        <div class="<%= prefix %>-datatable-content">
+            <table class="<%= prefix %>-datatable-table">
+                <thead class="<%= prefix %>-datatable-thead">
+                    <tr>
+                        <th class="<%= prefix %>-datatable-cell" scope="col">
+                            <div
+                                class="fr-checkbox-group fr-checkbox-group--sm"
+                            >
+                                <input
+                                    name="default-checkboxes-small--0"
+                                    id="default-checkboxes-small--0"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="fr-label"
+                                    for="default-checkboxes-small--0"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <th class="<%= prefix %>-datatable-cell" scope="col">
+                            Name
+                        </th>
+                        <th class="<%= prefix %>-datatable-cell" scope="col">
+                            Age
+                        </th>
+                        <th
+                            class="<%= prefix %>-datatable-cell"
+                            scope="colgroup"
+                            colspan="2"
+                        >
+                            Exemple de 2 cellules fusionnées dans le Header
+                        </th>
+                        <th class="<%= prefix %>-datatable-cell" scope="col">
+                            Address
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="<%= prefix %>-datatable-tbody">
+                    <tr
+                        class="<%= prefix %>-datatable-row <%= prefix %>-datatable-row--selected"
+                        data-row-key="1"
+                    >
+                        <th class="<%= prefix %>-datatable-cell" scope="row">
+                            <div
+                                class="fr-checkbox-group fr-checkbox-group--sm"
+                            >
+                                <input
+                                    checked
+                                    name="default-checkboxes-small--1"
+                                    id="default-checkboxes-small--1"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="fr-label"
+                                    for="default-checkboxes-small--1"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <td class="<%= prefix %>-datatable-cell">
+                            <a href="#">John Brown</a>
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">32</td>
+                        <td class="<%= prefix %>-datatable-cell">
+                            0571-22098909
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">
+                            18889898989
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">
+                            New York No. 1 Lake Park
+                        </td>
+                    </tr>
+                    <tr class="<%= prefix %>-datatable-row" data-row-key="2">
+                        <th class="<%= prefix %>-datatable-cell" scope="row">
+                            <div
+                                class="fr-checkbox-group fr-checkbox-group--sm"
+                            >
+                                <input
+                                    name="default-checkboxes-small--2"
+                                    id="default-checkboxes-small--2"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="fr-label"
+                                    for="default-checkboxes-small--2"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <td colspan="5" class="<%= prefix %>-datatable-cell">
+                            Exemple de colspan sur toute la ligne<br />
+                            Repellat natus illo omnis nulla nostrum ut
+                            doloremque ipsam voluptas officiis cumque porro
+                            nobis, at error ad eos, id, iste odit quae.
+                        </td>
+                    </tr>
+                    <tr class="<%= prefix %>-datatable-row" data-row-key="3">
+                        <th class="<%= prefix %>-datatable-cell" scope="row">
+                            <div
+                                class="fr-checkbox-group fr-checkbox-group--sm"
+                            >
+                                <input
+                                    name="default-checkboxes-small--3"
+                                    id="default-checkboxes-small--3"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="fr-label"
+                                    for="default-checkboxes-small--3"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <td class="<%= prefix %>-datatable-cell">
+                            <a href="#">Joe Black</a>
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">32</td>
+                        <td colspan="2" class="<%= prefix %>-datatable-cell">
+                            <b
+                                >Exemple de 2 cellules fusionnées sur une
+                                ligne</b
+                            >
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">
+                            Sydney No. 1 Lake Park
+                        </td>
+                    </tr>
+                    <tr class="<%= prefix %>-datatable-row" data-row-key="4">
+                        <th class="<%= prefix %>-datatable-cell" scope="row">
+                            <div
+                                class="fr-checkbox-group fr-checkbox-group--sm"
+                            >
+                                <input
+                                    name="default-checkboxes-small--4"
+                                    id="default-checkboxes-small--4"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="fr-label"
+                                    for="default-checkboxes-small--4"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <td class="<%= prefix %>-datatable-cell">
+                            <a href="#">Jim Red</a>
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">18</td>
+                        <td rowspan="2" class="<%= prefix %>-datatable-cell">
+                            <svg
+                                aria-hidden="true"
+                                class="<%= prefix %>-artwork"
+                                viewBox="0 0 80 80"
+                                width="80px"
+                                height="80px"
+                            >
+                                <use
+                                    class="<%= prefix %>-artwork-decorative"
+                                    href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-decorative"
+                                ></use>
+                                <use
+                                    class="<%= prefix %>-artwork-minor"
+                                    href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-minor"
+                                ></use>
+                                <use
+                                    class="<%= prefix %>-artwork-major"
+                                    href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-major"
+                                ></use>
+                            </svg>
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">
+                            18900010002
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">
+                            London No. 2 Lake Park
+                        </td>
+                    </tr>
+                    <tr class="<%= prefix %>-datatable-row" data-row-key="5">
+                        <th class="<%= prefix %>-datatable-cell" scope="row">
+                            <div
+                                class="fr-checkbox-group fr-checkbox-group--sm"
+                            >
+                                <input
+                                    name="default-checkboxes-small--5"
+                                    id="default-checkboxes-small--5"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="fr-label"
+                                    for="default-checkboxes-small--5"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <td class="<%= prefix %>-datatable-cell">
+                            <a href="#">Jake White</a>
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">18</td>
+                        <td class="<%= prefix %>-datatable-cell">
+                            Repellat natus illo omnis nulla nostrum ut
+                            doloremque ipsam voluptas officiis cumque porro
+                            nobis, at error ad eos, id, iste odit quae. Repellat
+                            natus illo omnis nulla nostrum ut doloremque ipsam
+                            voluptas officiis cumque porro nobis, at error ad
+                            eos, id, iste odit quae.
+                        </td>
+                        <td class="<%= prefix %>-datatable-cell">
+                            Dublin No. 2 Lake Park
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

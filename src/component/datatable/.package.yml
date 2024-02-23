@@ -2,9 +2,12 @@ id: datatable
 title: Tableau complexe <table>
 description:
 doc:
-wrapper: col-8
+wrapper: container
 style:
   - core
-  - toggle
-  - checkbox
   - alert
+  - badge
+  - button
+  - checkbox
+  - toggle
+  - tooltip

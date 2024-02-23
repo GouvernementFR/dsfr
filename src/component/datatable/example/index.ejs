@@ -1,6 +1,8 @@
 <% const sample = getSample(include); %>
 
-<%- sample(getText('sample.default', 'datatable'), './sample/datatable-default', {}, true); %>
+<%- sample(getText('sample.default', 'datatable'), './sample/datatable-default', {datatable: {caption: getText('data.caption', 'datatable'), rows: [{selected: true}, {expandable: 'openned'}, {expanded: true}, {}, {expandable: 'closed'}, {}, {}, {}]} }, true); %>
+
+<%- sample(getText('sample.default', 'datatable'), './sample/default', {}, true); %>
 
 <%- sample(getText('sample.scrollable', 'datatable'), './sample/datatable-scrollable', {}, true); %>
 
