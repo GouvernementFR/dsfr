@@ -11,6 +11,9 @@ data:
   caption: Caption du tableau complexe (accessibilité)
   cell:
     action: Action
+    download:
+      detail: JPG – 61,88 Ko
+      label: Téléchargement
     label: Label
     number: 30,00 €
     select: Selectionner

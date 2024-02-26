@@ -110,6 +110,10 @@
             font-weight: 400;
         }
 
+        &__schedulable {
+            display: flex;
+        }
+
         & #{ns(checkbox-group)} {
             display: inline-block;
 

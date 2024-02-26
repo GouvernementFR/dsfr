@@ -9,5 +9,7 @@ style:
   - badge
   - button
   - checkbox
+  - link
+  - tag
   - toggle
   - tooltip
