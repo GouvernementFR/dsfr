@@ -1,16 +1,7 @@
 import inspector from '../inspect/inspector.js';
 import { startAtDomContentLoaded, startAuto } from './starters.js';
 import config from '../../../config';
-
-export const Modes = {
-  AUTO: 'auto',
-  MANUAL: 'manual',
-  RUNTIME: 'runtime',
-  LOADED: 'loaded',
-  VUE: 'vue',
-  ANGULAR: 'angular',
-  REACT: 'react'
-};
+import { Modes } from './modes';
 
 class Options {
   constructor () {
