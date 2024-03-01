@@ -1,18 +1,44 @@
 ## Installation
 
+#### Au sein du DSFR
+
 Pour installer le système d’analytics, il suffit d’importer le fichier javascript :
 `/dist/analytics/analytics.module.js` **après** `dsfr.module.js`
 
-Le script d’Eulerian est automatiquement chargé au sein du package, attention à ne pas l’insérer dans la page afin
-d'éviter les doublons.
+Fonctionnalités disponibles :
+- Intégration CMP
+- Optout
+- Collecte de pages
+- Actions dans les composants
+- Actions hors composants
 
-⚠️ Pour les versions du dsfr inférieures à dsfr-1.9.0 (minimum 1.3.0), il est nécessaire d’ajouter le fichier : `/dist/patch/patch.module.js` **avant** `dsfr.module.js`
+Le script d’Eulerian est automatiquement chargé au sein du package, attention à ne pas l’insérer dans la page afin d'éviter les doublons.
 
-Il est préférable d'effectuer une montée de version en 1.9.3 pour profiter des optimisations optimales.
+> **⚠️ Important :** 
+> Pour les versions du dsfr inférieures à dsfr-1.9.0 (minimum 1.3.0), il est nécessaire d’ajouter le fichier : `/dist/patch/patch.module.js` **avant** `dsfr.module.js`
 
-Analytics est un package à part, il n’est pas compris dans le fichier js global du dsfr.
-Le package dispose tout de même d’une dépendance au DSFR, notamment au core.
-Une version standalone des analytics permet d’utiliser ce package en dehors de toutes dépendances au DSFR.
+Il est préférable d'utiliser l'api dans ses dernières versions pour profiter des optimisations et correctifs
+
+Analytics est un package à part, il n’est pas compris dans le fichier js global du DSFR. Il n'est cependant pas totalement autonome et est dépendant du core du DSFR (compris dans le fichier global du DSFR)
+
+#### Version standalone
+
+Pour installer la version standalone du système d’analytics, il suffit d’importer le fichier javascript :
+`/standalone/analytics/analytics.module.standalone.js`
+
+Fonctionnalités disponibles :
+- Intégration CMP
+- Optout
+- Collecte de pages
+- ~~Actions dans les composants~~
+- ~~Actions hors composants~~
+
+Cette version permet d’effectuer la mesure d'audience sans dépendance au DSFR et peut fonctionner de manière autonome.
+
+> **⚠️ Important :**
+> La mesure des actions n'est pas disponible dans cette version
+
+#### Pour aller plus loin
 
 Pour le fonctionnement du package Analytics, une configuration particulière du dsfr est nécessaire :
 [Configuration](installation/configuration.md)
