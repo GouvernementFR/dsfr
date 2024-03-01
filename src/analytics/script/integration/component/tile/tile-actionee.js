@@ -16,7 +16,7 @@ class TileActionee extends ComponentActionee {
     if (link) {
       this.link = link;
       this.detectInteractionType(link);
-      this.listenClick(link);
+      this.listenActionClick(link);
     }
   }
 

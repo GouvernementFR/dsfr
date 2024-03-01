@@ -19,12 +19,12 @@ class TagActionee extends ComponentActionee {
 
       case this.isInteractive && this.node.classList.contains(TagSelector.DISMISSIBLE):
         this.setDismissType();
-        this.listenClick();
+        this.listenActionClick();
         break;
 
       case this.isInteractive:
         this.detectInteractionType();
-        this.listenClick();
+        this.listenActionClick();
         break;
     }
   }

@@ -12,7 +12,7 @@ class SummaryLinkActionee extends ComponentActionee {
 
   init () {
     this.detectInteractionType();
-    this.listenClick();
+    this.listenActionClick();
   }
 
   get label () {

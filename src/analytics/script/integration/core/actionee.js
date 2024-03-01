@@ -138,10 +138,10 @@ class Actionee extends api.core.Instance {
     this._type = Type.CLICK;
   }
 
-  listenClick (target) {
+  listenActionClick (target) {
     if (target) {
       this._clickTarget = target;
-      this._clickTarget.addEventListener('click', this.handlingClick, { capture: true });
+      this._clickTarget.addEventListener('click', this._handlingClick, { capture: true });
     } else this.listenClick({ capture: true });
   }
 
@@ -258,7 +258,7 @@ class Actionee extends api.core.Instance {
 
   dispose () {
     if (this._clickTarget) {
-      this._clickTarget.removeEventListener('click', this.handlingClick);
+      this._clickTarget.removeEventListener('click', this._handlingClick);
     }
     super.dispose();
   }

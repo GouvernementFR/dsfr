@@ -11,7 +11,7 @@ class AActionee extends Actionee {
 
   init () {
     this.detectInteractionType();
-    this.listenClick();
+    this.listenActionClick();
   }
 
   get label () {
