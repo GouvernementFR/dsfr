@@ -12,6 +12,52 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.11
 
+### [v1.11.2](https://github.com/GouvernementFR/dsfr/compare/v1.11.1...v1.11.2) - 1er Mars 2024
+
+#### 🐛 fix(analytics): documentation et correctif version standalone [(#895)](https://github.com/GouvernementFR/dsfr/pull/895)
+- Apporte des éléments correctifs à l'issue #880
+  - correctifs dans la version standalone :
+    - configuration appliquée au logging (verbose, production)
+    - retrait de dépendances non requises
+  - ajout de documentation sur la version standalone
+    - installation
+    - fonctionnalités disponibles
+  - Extraction de Modes du fichier de la class Options pour réduire les dépendances
+
+
+#### ⬆️ chore(dependencies): met a jour les dépendances Node [(#894)](https://github.com/GouvernementFR/dsfr/pull/894)
+- passage à postcss 8.4.32
+
+
+#### 🐛 fix(header): correctif erreur itérable null [(#893)](https://github.com/GouvernementFR/dsfr/pull/893)
+- corrige l'issue #890, la valeur null renvoyée par la fonction match est remplacée par un array vide pour permettre son itération
+
+
+#### 🐛 fix(range): correctif dispose input [(#891)](https://github.com/GouvernementFR/dsfr/pull/891)
+- corrige un bug js sur l'écouteur d'événement
+
+
+#### ✨ feat(doc): ajout d'infos sur la configuration dans la doc analytics [(#888)](https://github.com/GouvernementFR/dsfr/pull/888)
+- ajoute dans la doc de configuration des analytics, la possibilité de surcharger la configuration du mode production via le paramètre dans l'url : ?production=false
+
+
+#### 🐛 fix(tag): corrige le hover des tags cliquables [(#887)](https://github.com/GouvernementFR/dsfr/pull/887)
+- le hover des tags cliquables avait disparu
+
+
+#### ✨ feat(core): ajout d'un retour à la ligne des mots trop long [(#886)](https://github.com/GouvernementFR/dsfr/pull/886)
+- ajout de la propriété `overflow-wrap: world-break` sur body permettant le passage à la ligne des mots plus grands que leur conteneur.
+
+
+#### 🐛 fix(analytics): correctif héritage listenClick [(#885)](https://github.com/GouvernementFR/dsfr/pull/885)
+- corrige un bug js au niveau de l'héritage du listenClick. Renommage de la fonction listenClick en listenActionClick car la fonction existe déja sur la classe héritée "Instance"
+
+
+#### 🐛 fix(header): correction overflow hidden cache le focus [(#881)](https://github.com/GouvernementFR/dsfr/pull/881)
+- correction du focus caché par un overflow hidden, sur le lien du logo du header
+
+
+
 ### [v1.11.1](https://github.com/GouvernementFR/dsfr/compare/v1.11.0...v1.11.1) - 31 Janvier 2024
 
 #### ⬆️ chore(dependencies): met a jour les dépendances Node [(#877)](https://github.com/GouvernementFR/dsfr/pull/877)
