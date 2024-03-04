@@ -25,5 +25,5 @@ La configuration doit être placée **avant** les fichiers `patch.module.js`, `d
 </script>
 ```
 
-Utiliser le DSFR mode verbose permet d’afficher dans la console le résultat de la fonction collect(), montrant les
-informations envoyées à Eulerian.
+Les résultats de la fonction collect(), montrant les informations envoyées à Eulerian, sont affichés dans la console.
+En mode production, les logs n'apparaissent pas dans la console. Il est alors possible de surcharger la configuration via le paramètre dans l'url : `?production=false`

@@ -48,7 +48,7 @@ _Boolean_
 
 Défini si la mesure d'audience des actions est activée ou non.
 
-* Par défaut, la mesure d'audience des actions est activée.
+* Par défaut, la mesure d'audience des actions est désactivée (`false`)
 
 * * *
 

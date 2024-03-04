@@ -1,9 +1,9 @@
 {
   "name": "@gouvfr/dsfr",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
-  "author": "Service d'Information du Gouvernement <jean-charles.hourdeaux@pm.gouv.fr>",
+  "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
   "license": "SEE LICENSE IN LICENSE.md",
   "config": {
     "prefix": "fr",
@@ -59,7 +59,7 @@
     "pa11y": "^6.2.3",
     "parse-github-url": "^1.0.2",
     "path": "^0.12.7",
-    "postcss": "^8.4.21",
+    "postcss": "8.4.32",
     "postcss-banner": "^4.0.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-discard-duplicates": "^5.1.0",

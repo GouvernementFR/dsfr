@@ -1,5 +1,6 @@
 import state from './state.js';
-import options, { Modes } from './options/options.js';
+import options from './options/options.js';
+import { Modes } from './options/modes.js';
 import config from '../../config.js';
 import engine from './engine.js';
 import inspector from './inspect/inspector.js';
