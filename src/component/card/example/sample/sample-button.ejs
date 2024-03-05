@@ -1,0 +1,11 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte avec bouton, taille par défaut', './card-default', { card : { img: true, title: 'Intitulé de la carte (sur lequel se trouve le bouton)', content: { actionMarkup: 'button', description: false }}}, true, './card-layout', {col: {md:6, lg:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Carte avec bouton taille sm', './card-default', { card: { img: true, size: 'sm', title: 'Intitulé de la carte (sur lequel se trouve le bouton)', content: { actionMarkup: 'button', description: false }}}, true, './card-layout', {col: {md:4, lg:3}, desc: 'dans une grille sur 3 à 4 colonnes en version desktop'}); %>
+
+<%- sample('Carte avec bouton taille lg', './card-default', { card: { img: true, size: 'lg', title: 'Intitulé de la carte (sur lequel se trouve le bouton)', content: { actionMarkup: 'button', description: false }}}, true, './card-layout', {col: {md:8, lg:6}, desc: 'dans une grille sur 6 à 12 colonnes en version desktop'}); %>
+
+<%- sample('Carte avec bouton verticale variation accentuée en contrast grey', './card-default', { card : { img: true, title: 'Intitulé de la carte (sur lequel se trouve le bouton)', variations: ['grey'], content: { actionMarkup: 'button' }}}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte avec bouton sans icône', './card-default', { card : { img: true, title: 'Intitulé de la carte (sur lequel se trouve le bouton)', icon: false, content: { actionMarkup: 'button', description: false }}}, true, './card-layout', {col: {md:4}}); %>

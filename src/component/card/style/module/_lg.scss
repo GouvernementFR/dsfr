@@ -11,7 +11,8 @@
   &--lg &__title {
     @include title-style(h4);
 
-    a {
+    a,
+    button {
       @include icon-size(md, after);
     }
   }
@@ -50,7 +51,8 @@
   }
 
   &--lg#{ns(enlarge-link)}:not(&--no-icon) &__title {
-    a {
+    a,
+    button {
       @include icon-size(lg, after) {
         @include right(10v);
         @include bottom(10v);

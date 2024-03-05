@@ -17,10 +17,19 @@
     @include font-weight(bold);
     @include margin-bottom(0);
 
-    a {
+    a,
+    button {
       @include icon(arrow-right-line, sm, after) {
         @include margin-left(2v);
       }
+    }
+
+    button {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      text-align: inherit;
+      @include padding(0);
     }
 
     @include target-blank {

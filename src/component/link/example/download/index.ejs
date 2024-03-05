@@ -2,6 +2,8 @@
 
 <%- sample('Lien de téléchargement', './sample/download-default', {}, true); %>
 
+<%- sample('Lien de téléchargement avec bouton', './sample/download-default', {link: {markup: 'button'}}, true); %>
+
 <%- sample('Groupe de lien de téléchargement', './sample/download-group', {}, true); %>
 
 <%- sample({title: 'Fichier en langue étrangère', subtitle: 'Indiquer le code langue (ISO 639‑1) du fichier dans l\'attribut "hreflang" et la langue en toute lettre dans le détail'}, './sample/download-default', {link: {href: 'exemple.pdf', detail: 'PDF – 1,81 Mo - Anglais', hreflang: 'en' } }, true); %>

@@ -18,7 +18,8 @@
   &--sm &__title {
     @include title-style(h6);
 
-    a {
+    a,
+    button {
       @include icon-size(sm, after);
     }
   }
@@ -54,7 +55,8 @@
   }
 
   &--sm#{ns(enlarge-link)}:not(&--no-icon) &__title {
-    a {
+    a,
+    button {
       @include icon-size(sm, after) {
         @include right(6v);
         @include bottom(6v);

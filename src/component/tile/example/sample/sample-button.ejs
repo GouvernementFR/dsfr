@@ -1,0 +1,7 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile avec bouton, taille par défaut', './tile-default', { tile : { pictogram: true, content: {details: true, description: true, actionMarkup: 'button'} }}, true, './tile-layout', {col: {start: 9, md:4, lg:3}, desc: 'dans une grille sur 3 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Tuile avec bouton verticale variation accentuée en contrast grey', './tile-default', { tile : { pictogram: true, variations: ['grey'], content: { actionMarkup: 'button', badge: true, description: true } }}, true, './tile-layout', {col: {md:4, lg:3}}); %>
+
+<%- sample('Tuile avec bouton sans icone', './tile-default', { tile : { pictogram: true, icon: false, content: { actionMarkup: 'button' }}}, true, './tile-layout', {col: {md:4, lg:3}}); %>

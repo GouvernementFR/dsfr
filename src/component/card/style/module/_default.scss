@@ -9,7 +9,8 @@
 
   &#{ns(enlarge-link)} {
     #{ns(card)}__title {
-      a {
+      a,
+      button {
         @include icon-size(md, after) {
           @include absolute(null, 8v, 8v);
         }
@@ -26,8 +27,9 @@
 
   &--no-icon,
   &:not(#{ns(enlarge-link)}):not(#{ns(card--download)}) {
-    #{ns(card__title a)} {
-      &:not([target="_blank"]) {
+    #{ns(card__title)} {
+      a:not([target="_blank"]),
+      button {
         @include after(none);
       }
     }
