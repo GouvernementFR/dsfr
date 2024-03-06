@@ -14,7 +14,6 @@
     &__container {
         width: 100%;
         overflow: auto;
-        @include padding-bottom(1px);
     }
 
     &__content {
