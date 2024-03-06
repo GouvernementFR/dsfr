@@ -5,5 +5,14 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/table
 wrapper: container
 style:
   - core
+  - alert
+  - badge
+  - button
+  - checkbox
+  - link
+  - tag
+  - toggle
+  - tooltip
 script:
   - core
+  - tooltip

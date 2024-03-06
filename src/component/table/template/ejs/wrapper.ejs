@@ -1,0 +1,33 @@
+<% eval(include('../../../../core/index.ejs'));
+
+let wrapper = locals.table || {};
+let classes = wrapper.classes || [];
+
+const attributes = wrapper.attributes || {};
+const wrapperId = wrapper.id || uniqueId('table');
+let tableCaptionId;
+attributes.id = wrapperId;
+
+const table = wrapper.table || [[]];
+table.id = `${wrapperId}-table`;
+
+if (table.caption !== undefined) {
+    tableCaptionId = `${wrapperId}-caption`;
+    table.attributes = {
+        'aria-labeledby': tableCaptionId,
+    };
+}
+
+classes.push(prefix + '-table');
+%>
+
+<div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+    <% if (table.caption !== undefined) { %>
+        <div id="<%= tableCaptionId %>"><%= table.caption %></div>
+    <% } %>
+    <div class="<%= prefix %>-table__container">
+        <div class="<%= prefix %>-table__content">
+            <%- include('./table.ejs', {table: table}); %>
+        </div>
+    </div>
+</div>

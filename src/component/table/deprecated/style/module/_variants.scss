@@ -23,21 +23,23 @@
   @include margin-bottom(0);
   @include margin-top(4v);
 
-  table {
+  & > table {
     @include margin-bottom(calc(var(--table-offset) + 11v));
-  }
 
-  &#{ns-attr(js-table, true)} {
     caption {
-      @include absolute(100%, 0, 0, 0);
       @include margin-top(4v);
+      @include height(min-content);
+      caption-side: bottom;
     }
   }
 
-  caption {
-    @include margin-top(4v);
-    @include height(min-content);
-    caption-side: bottom;
+  &#{ns-attr(js-table, true)} {
+    & > table {
+      caption {
+        @include absolute(100%, 0, 0, 0);
+        @include margin-top(4v);
+      }
+    }
   }
 }
 
@@ -47,12 +49,12 @@
 #{ns(table--no-scroll)} {
   @include min-width(auto);
 
-  table {
+  & > table {
     overflow-x: hidden;
-  }
 
-  caption {
-    @include max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
+    caption {
+      @include max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
+    }
   }
 }
 
@@ -60,7 +62,7 @@
 * Fixe la taille des colonnes du tableau
 */
 #{ns(table--layout-fixed)} {
-  table {
+  & > table {
     display: table;
     table-layout: fixed;
   }
@@ -68,11 +70,13 @@
 
 /* Style bordered, ajoute des bordures entre chaque ligne */
 #{ns(table--bordered)} {
-  tbody {
-    tr {
-      background-size: 100% 1px;
-      background-position: bottom;
-      background-repeat: no-repeat;
+  & > table {
+    tbody {
+      tr {
+        background-size: 100% 1px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+      }
     }
   }
 }

@@ -1,0 +1,195 @@
+<div class="<%= prefix %>-table">
+    <div class="<%= prefix %>-table__container">
+        <div class="<%= prefix %>-table__content">
+            <table>
+                <caption data-fr-js-table-caption="true">Caption du tableau (accessibilité)</caption>
+                <thead>
+                    <tr>
+                        <th class="<%= prefix %>-cell__fixed" scope="col">
+                            <div
+                                class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
+                            >
+                                <input
+                                    name="expandable-checkboxes-small--0"
+                                    id="expandable-checkboxes-small--0"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="<%= prefix %>-label"
+                                    for="expandable-checkboxes-small--0"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <th scope="col"></th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Num</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-row-key="1">
+                        <th class="<%= prefix %>-cell__fixed" scope="row">
+                            <div
+                                class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
+                            >
+                                <input
+                                    name="expandable-checkboxes-small--1"
+                                    id="expandable-checkboxes-small--1"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="<%= prefix %>-label"
+                                    for="expandable-checkboxes-small--1"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <th class="<%= prefix %>-cell__actionable" scope="col">
+                            <button
+                                class="<%= prefix %>-btn <%= prefix %>-icon-arrow-up-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
+                                title="Déplier"
+                            >
+                                Déplier
+                            </button>
+                        </th>
+                        <td>
+                            <a href="#">John Brown</a>
+                        </td>
+                        <td>32</td>
+                        <td>0571-22098909</td>
+                        <td>18889898989</td>
+                        <td>New York No. 1 Lake Park</td>
+                    </tr>
+                    <tr class="<%= prefix %>-row__expanded" data-row-key="3">
+                        <th class="<%= prefix %>-cell__fixed" scope="row">
+                            <div
+                                class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
+                            >
+                                <input
+                                    name="expandable-checkboxes-small--3"
+                                    id="expandable-checkboxes-small--3"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="<%= prefix %>-label"
+                                    for="expandable-checkboxes-small--3"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <th class="<%= prefix %>-cell__actionable" scope="col">
+                            <button
+                                class="<%= prefix %>-btn <%= prefix %>-icon-arrow-down-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
+                                title="Déplier"
+                            >
+                                Déplier
+                            </button>
+                        </th>
+                        <td>
+                            <a href="#">Joe Black</a>
+                        </td>
+                        <td>32</td>
+                        <td>0575-22098909</td>
+                        <td>18900010002</td>
+                        <td>Sydney No. 1 Lake Park</td>
+                    </tr>
+
+                    <tr class="<%= prefix %>-row__expanded" data-row-key="2">
+                        <th class="<%= prefix %>-cell__fixed" scope="row"></th>
+                        <th class="<%= prefix %>-cell__actionable" scope="col">
+                            <div
+                                class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
+                            >
+                                <input
+                                    name="expandable-checkboxes-small-expanded--2"
+                                    id="expandable-checkboxes-small-expanded--2"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="<%= prefix %>-label"
+                                    for="expandable-checkboxes-small-expanded--2"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <td>Exemple de ligne dépliée</td>
+                        <td>14</td>
+                        <td>0575-22098909</td>
+                        <td>Repellat natus illo omnis</td>
+                        <td>
+                            <div class="<%= prefix %>-toggle">
+                                <input
+                                    type="checkbox"
+                                    class="<%= prefix %>-toggle__input"
+                                    id="toggle-4402"
+                                />
+                                <label
+                                    class="<%= prefix %>-toggle__label"
+                                    for="toggle-4402"
+                                ></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-row-key="2">
+                        <th class="<%= prefix %>-cell__fixed" scope="row"></th>
+                        <th scope="col"></th>
+                        <td colspan="5">
+                            <div
+                                id="alert-1198"
+                                class="<%= prefix %>-alert <%= prefix %>-alert--info <%= prefix %>-alert--sm <%= prefix %>-mb-2v"
+                            >
+                                <p>
+                                    Exemple de ligne dépliée fusionnée sur toute
+                                    la longueur
+                                </p>
+                            </div>
+                            Repellat natus illo omnis nulla nostrum ut
+                            doloremque ipsam voluptas officiis cumque porro
+                            nobis, at error ad eos, id, iste odit quae.
+                        </td>
+                    </tr>
+                    <tr data-row-key="5">
+                        <th class="<%= prefix %>-cell__fixed" scope="row">
+                            <div
+                                class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
+                            >
+                                <input
+                                    name="expandable-checkboxes-small--5"
+                                    id="expandable-checkboxes-small--5"
+                                    type="checkbox"
+                                />
+                                <label
+                                    class="<%= prefix %>-label"
+                                    for="expandable-checkboxes-small--5"
+                                >
+                                </label>
+                            </div>
+                        </th>
+                        <th class="<%= prefix %>-cell__actionable" scope="col">
+                            <button
+                                class="<%= prefix %>-btn <%= prefix %>-icon-arrow-up-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
+                                title="Déplier"
+                            >
+                                Déplier
+                            </button>
+                        </th>
+                        <td>
+                            <a href="#">Jake White</a>
+                        </td>
+                        <td>18</td>
+                        <td>0575-22098909</td>
+                        <td>
+                            Repellat natus illo omnis nulla nostrum ut
+                            doloremque ipsam voluptas officiis cumque porro
+                            nobis, at error ad eos, id, iste odit quae.
+                        </td>
+                        <td>Dublin No. 2 Lake Park</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<%
+const sample = getSample(include);
+let data = { caption: 'Caption du tableau (accessibilité)', col: 6, row: 3};
+let dataBordered = { caption: 'Caption du tableau (accessibilité)', bordered: true, col: 6, row: 3};
+let dataNoScroll = { caption: 'Caption tableau non scrollable', noScroll: true, col: 6};
+let dataLayoutFixed = { caption: 'Caption tableau fixé', layout: "fixed", col: 3};
+let dataNoCaption = { caption: 'Caption cachée', noCaption: true, col: 6};
+let dataCaptionBottom = { caption: 'Caption en bas', captionBottom: true, col: 6};
+
+// @TODO: revoir les grilles avec layout
+%>
+
+<%- sample('Tableau par défaut', './sample/table-default', {table:data}, true) %>
+
+<%- sample('Tableau avec bordure', './sample/table-default', {table:dataBordered}, true) %>
+
+<%- sample('Tableau non scrollable', './sample/table-default', {table:dataNoScroll}, true) %>
+
+<%- sample('Tableau colonnes fixées (layout-fixed)', './sample/table-default', {table:dataLayoutFixed}, true) %>
+
+<%- sample('Tableau caption invisible', './sample/table-default', {table:dataNoCaption}, true) %>
+
+<%- sample('Tableau caption Bottom', './sample/table-default', {table:dataCaptionBottom}, true) %>
+
+<%- sample('Tableau accentué', './sample/table-default', {table: {...data, accent:'green-emeraude'}}, true) %>
+
+<%- sample('Tableau accentué avec bordure', './sample/table-default', {table:{...dataBordered, accent:'green-emeraude'}}, true) %>

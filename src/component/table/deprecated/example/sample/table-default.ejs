@@ -1,0 +1,25 @@
+<%
+const table = locals.table || {};
+const col = table.col || 2;
+const row = table.row || 2;
+let data = {
+  caption: table.caption || undefined,
+  bordered: table.bordered || false,
+  noScroll: table.noScroll || false,
+  noCaption: table.noCaption || false,
+  captionBottom: table.captionBottom || false,
+  accent: table.accent || undefined,
+  layout: table.layout
+}
+
+data.data = new Array(row);
+for(let r = 0; r < row; r++) {
+  data.data[r] = new Array(col);
+  for(let c = 0; c < col; c++) {
+    if(r === 0) data.data[0][c] =  'th' + c;
+    else data.data[r][c] = lorem(null , 25);
+  }
+}
+%>
+
+<%- include('../../template/ejs/table', {table: data}); %>

@@ -1,0 +1,25 @@
+title: Tableaux
+description: Les tableaux sont utilisés pour organiser et afficher les informations d'un jeu de données.
+
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée
+
+sample:
+  default: Tableau complexe par défaut
+  scrollable: Tableau complexe scrollable
+  expandable: Tableau complexe repliable
+
+data:
+  caption: Caption du tableau complexe (accessibilité)
+  cell:
+    action: Action
+    download:
+      detail: JPG – 61,88 Ko
+      label: Téléchargement
+    label: Label
+    number: 30,00 €
+    select: Selectionner
+    selectAll: Tout selectionner
+    text: Texte par défaut
+    title: Titre par défaut
