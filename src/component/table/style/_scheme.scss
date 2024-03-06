@@ -7,69 +7,71 @@
 
 @mixin _table-scheme($legacy: false) {
     #{ns(table)} {
-        thead {
-            th {
-                @include color.background(alt grey, (legacy: $legacy));
-                @include before {
-                    @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-in);
-                }
-
-                &:first-child {
+        &__content {
+            thead {
+                th {
+                    @include color.background(alt grey, (legacy: $legacy));
                     @include before {
-                        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-in left-1-in);
+                        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-in);
                     }
-                }
 
-                &:last-child {
-                    @include before {
-                        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-in right-1-in);
-                    }
-                }
-            }
-        }
-
-        tbody {
-            th,
-            td {
-                @include color.background(default grey, (legacy: $legacy));
-                @include color.text(title grey, (legacy: $legacy));
-
-                &:first-child {
-                    @include before {
-                        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in left-1-in);
-                    }
-                }
-
-                &:last-child {
-                    @include before {
-                        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in right-1-in);
-                    }
-                }
-
-                @include before {
-                    @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
-                }
-            }
-
-            #{ns(row)} {
-                &__selected {
-                    th,
-                    td {
-                        @include color.background(action-low blue-france, (legacy: $legacy));
-
+                    &:first-child {
                         @include before {
-                            @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-1-in);
+                            @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-in left-1-in);
                         }
+                    }
 
-                        &:first-child {
+                    &:last-child {
+                        @include before {
+                            @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-in right-1-in);
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                th,
+                td {
+                    @include color.background(default grey, (legacy: $legacy));
+                    @include color.text(title grey, (legacy: $legacy));
+
+                    &:first-child {
+                        @include before {
+                            @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in left-1-in);
+                        }
+                    }
+
+                    &:last-child {
+                        @include before {
+                            @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in right-1-in);
+                        }
+                    }
+
+                    @include before {
+                        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+                    }
+                }
+
+                #{ns(row)} {
+                    &__selected {
+                        th,
+                        td {
+                            @include color.background(action-low blue-france, (legacy: $legacy));
+
                             @include before {
-                                @include color.box-shadow((default grey) (action-high blue-france), (legacy:$legacy), left-1-in bottom-1-in);
+                                @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-1-in);
                             }
-                        }
 
-                        &:last-child {
-                            @include before {
-                                @include color.box-shadow((default grey) (action-high blue-france), (legacy:$legacy), right-1-in bottom-1-in);
+                            &:first-child {
+                                @include before {
+                                    @include color.box-shadow((default grey) (action-high blue-france), (legacy:$legacy), left-1-in bottom-1-in);
+                                }
+                            }
+
+                            &:last-child {
+                                @include before {
+                                    @include color.box-shadow((default grey) (action-high blue-france), (legacy:$legacy), right-1-in bottom-1-in);
+                                }
                             }
                         }
                     }
