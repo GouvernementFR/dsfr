@@ -25,9 +25,11 @@ classes.push(prefix + '-table');
     <% if (table.caption !== undefined) { %>
         <div id="<%= tableCaptionId %>"><%= table.caption %></div>
     <% } %>
-    <div class="<%= prefix %>-table__container">
-        <div class="<%= prefix %>-table__content">
-            <%- include('./table.ejs', {table: table}); %>
+    <div class="<%= prefix %>-table__wrapper">
+        <div class="<%= prefix %>-table__container">
+            <div class="<%= prefix %>-table__content">
+                <%- include('./table.ejs', {table: table}); %>
+            </div>
         </div>
     </div>
 </div>

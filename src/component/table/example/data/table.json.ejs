@@ -3,10 +3,9 @@ const table = locals.table || {};
 const col = table.col || 14;
 const rows = table.rows || new Array(6);
 
-const actionCellEmpty = `<span class="${prefix}-sr-only">${getText('data.cell.action', 'table')}</span>`;
-const actionCell = `<span class="${prefix}-sr-only">${getText('data.cell.action', 'table')}</span>`;
+const actionCellEmpty = `<span class="${prefix}-sr-only">${getText('data.cell.action.empty', 'table')}</span>`;
 const textCell = `<div class="${prefix}-cell__desc">${getText('data.cell.text', 'table')}</div>`;
-const titleCell = `<span class="${prefix}-cell__title">${getText('data.cell.title', 'table')}</span>`;
+const titleCell = `<div class="${prefix}-cell__title">${getText('data.cell.title', 'table')}</div>`;
 
 const data = {
   id: uniqueId('table'),
@@ -21,7 +20,7 @@ const checkboxCell = (checkbox) => include('../../../checkbox/template/ejs/check
 const checkboxDefault = {
   id: uniqueId('table-select-checkbox'),
   attributes: {
-      'aria-label': getText('data.cell.select', 'table'),
+      'aria-label': getText('data.cell.action.select', 'table'),
   },
   size: 'sm',
   includeEmptyMessagesGroup: false,
@@ -30,7 +29,7 @@ const checkboxSelectCol = {
   ...checkboxDefault,
   id: `${uniqueId('table-selectall-checkbox')}`,
   attributes: {
-    'aria-label': getText('data.cell.selectAll', 'table'),
+    'aria-label': getText('data.cell.action.selectAll', 'table'),
   },
 }
 const checkboxTitle = {
@@ -50,22 +49,24 @@ const tooltipCell = (id) => include('../../../button/template/ejs/button.ejs', {
 }});
 const iconCell = (name) => include('../../../../core/template/ejs/icon/icon.ejs', {icon: {name, size: 'sm'}});
 const pictogramCell = (name) => include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram: {name}});
-const toggleCell = (id) => include('../../../toggle/template/ejs/toggle.ejs', {toggle: {id, label: '', inputAttr: {'aria-label': getText('data.cell.select', 'table')}}});
-const badgeCell = include('../../../badge/template/ejs/badge.ejs', {badge: {type: 'warning', label: getText('data.cell.label', 'table')}});
-const tagCell = include('../../../tag/template/ejs/tag.ejs', {tag:{type: 'clickable', accent: 'green-emeraude', href: '#', label: getText('data.cell.label', 'table')}});
-const downloadLinkCell = include('../../../link/template/ejs/link.ejs', {link:{download: true, href: '/example/img/image.jpg', label: getText('data.cell.download.label', 'table'), detail: getText('data.cell.download.detail', 'table')}});
+const toggleCell = (id) => include('../../../toggle/template/ejs/toggle.ejs', {toggle: {id, label: '', inputAttr: {'aria-label': getText('data.cell.action.select', 'table')}}});
+const badgeCell = include('../../../badge/template/ejs/badge.ejs', {badge: {type: 'warning', label: getText('data.cell.lable', 'table'), classes: [`${prefix}-mr-1v`]}});
+const tagCell = include('../../../tag/template/ejs/tag.ejs', {tag:{type: 'clickable', accent: 'green-emeraude', href: '#', label: getText('data.cell.lable', 'table')}});
+const downloadLinkCell = include('../../../link/template/ejs/link.ejs', {link:{download: true, href: '/example/img/image.jpg', label: getText('data.cell.download.lable', 'table'), detail: getText('data.cell.download.detail', 'table')}});
 
 data.table.thead = [
   {
     attributes: {
       role: 'columnheader'
     },
+    classes: [`${prefix}-cell__fixed`, `${prefix}-cell__actionable`],
     content: checkboxCell(checkboxSelectCol)
   },
   {
     attributes: {
       role: 'columnheader'
     },
+    classes: [`${prefix}-cell__actionable`],
     content: actionCellEmpty
   },
   {
@@ -81,27 +82,30 @@ data.table.thead = [
     content: titleCell
   },
   {
-    content: `${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox')})} ${textCell}`
+    content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox')})} ${textCell}</div>`
   },
   {
     classes: [`${prefix}-cell__centered`],
-    content: buttonCell({id: uniqueId('table-thead-dropdown'), icon: 'menu-fill', kind: 4, size: 'sm', iconPlace: 'only'})
+    content: buttonCell({id: uniqueId('table-thead-dropdown'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'arrow-up-down-fill', kind: 4, size: 'sm', iconPlace: 'only'})
   },
   {
-    content: getText('data.cell.text', 'table') + tooltipCell(uniqueId('table-thead-tooltip'))
+    content: `<div class="${prefix}-cell__inline">${textCell} ${tooltipCell(uniqueId('table-thead-tooltip'))}</div>`
   },
   {
     classes: [`${prefix}-cell__centered`],
-    content: iconCell('arrow-right-line')
+    content: `${buttonCell({id: uniqueId('table-thead-button-number-sortable'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'sort-number-asc-fill', kind: 4, size: 'sm', iconPlace: 'only'})}</div>`
   },
   {
     content: toggleCell(uniqueId('table-thead-toggle'))
   },
   {
+    content: textCell
+  },
+  {
     content: getText('data.cell.text', 'table')
   },
   {
-    content: `<div class="${prefix}-cell__schedulable">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox-schedulable')})} ${textCell} ${buttonCell({id: uniqueId('table-thead-schedulable'), icon: 'menu-fill', kind: 4, size: 'sm', iconPlace: 'only', classes: [`${prefix}-ml-4v`]})}</div>`
+    content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox-sortable')})} ${buttonCell({id: uniqueId('table-thead-button-sortable'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'sort-alphabet-desc-fill', kind: 4, size: 'sm', iconPlace: 'only', classes: [`${prefix}-ml-4v`]})}</div>`
   },
   {
     content: iconCell('arrow-right-s-line')
@@ -114,19 +118,18 @@ for(let r = 0; r < rows.length; r++) {
 
   data.table.tbody[r] = [
     {
-      tag: 'th',
-      attributes: {
-        scope: 'row'
-      },
+      classes: [`${prefix}-cell__fixed`, `${prefix}-cell__actionable`],
       content: rows[r].expanded ? actionCellEmpty : checkboxCell({...checkboxDefault, id: `${uniqueId('table-select-checkbox')}--${r}`})
     },
     {
-      content: rows[r].expandable ? buttonCell({id: uniqueId('table-action-button'), icon: expandableIcon, kind: 4, size: 'sm', iconPlace: 'only'}) : rows[r].expanded ? checkboxCell({...checkboxDefault, id: `${uniqueId('table-expanded-select-checkbox')}--${r}`}) : actionCellEmpty
+      classes: [`${prefix}-cell__actionable`],
+      content: rows[r].expandable ? buttonCell({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expand', 'table')}`, icon: expandableIcon, kind: 4, size: 'sm', iconPlace: 'only'}) : rows[r].expanded ? checkboxCell({...checkboxDefault, id: `${uniqueId('table-expanded-select-checkbox')}--${r}`}) : actionCellEmpty
     },
     {
       content: getText('data.cell.text', 'table')
     },
     {
+      classes: [`${prefix}-cell__nowrap`],
       content: badgeCell + getText('data.cell.text', 'table')
     },
     {
@@ -151,9 +154,13 @@ for(let r = 0; r < rows.length; r++) {
       content: badgeCell
     },
     {
+      content: buttonCell({id: uniqueId('table-body-button'), label: getText('data.cell.action.button', 'table'), size: 'sm'})
+    },
+    {
       content: tagCell
     },
     {
+      classes: [`${prefix}-cell__nowrap`],
       content: downloadLinkCell
     },
     {

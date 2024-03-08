@@ -1,193 +1,195 @@
 <div class="<%= prefix %>-table">
-    <div class="<%= prefix %>-table__container">
-        <div class="<%= prefix %>-table__content">
-            <table>
-                <caption data-fr-js-table-caption="true">Caption du tableau (accessibilité)</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <div
-                                class="fr-checkbox-group fr-checkbox-group--sm"
-                            >
-                                <input
-                                    name="default-checkboxes-small--0"
-                                    id="default-checkboxes-small--0"
-                                    type="checkbox"
-                                />
-                                <label
-                                    class="fr-label"
-                                    for="default-checkboxes-small--0"
+    <div class="<%= prefix %>-table__wrapper">
+        <div class="<%= prefix %>-table__container">
+            <div class="<%= prefix %>-table__content">
+                <table>
+                    <caption data-fr-js-table-caption="true">Caption du tableau (accessibilité)</caption>
+                    <thead>
+                        <tr>
+                            <th class="<%= prefix %>-cell__actionable" scope="col">
+                                <div
+                                    class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
-                                </label>
-                            </div>
-                        </th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Age</th>
-                        <th scope="colgroup" colspan="2">
-                            Exemple de 2 cellules fusionnées dans le Header
-                        </th>
-                        <th scope="col">Address</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="<%= prefix %>-row__selected" data-row-key="1">
-                        <th scope="row">
-                            <div
-                                class="fr-checkbox-group fr-checkbox-group--sm"
-                            >
-                                <input
-                                    checked
-                                    name="default-checkboxes-small--1"
-                                    id="default-checkboxes-small--1"
-                                    type="checkbox"
-                                />
-                                <label
-                                    class="fr-label"
-                                    for="default-checkboxes-small--1"
+                                    <input
+                                        name="default-checkboxes-small--0"
+                                        id="default-checkboxes-small--0"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="fr-label"
+                                        for="default-checkboxes-small--0"
+                                    >
+                                    </label>
+                                </div>
+                            </th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="colgroup" colspan="2">
+                                Exemple de 2 cellules fusionnées dans le Header
+                            </th>
+                            <th scope="col">Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-row-key="1">
+                            <th class="<%= prefix %>-cell__actionable">
+                                <div
+                                    class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
-                                </label>
-                            </div>
-                        </th>
-                        <td>
-                            <a href="#">John Brown</a>
-                        </td>
-                        <td>32</td>
-                        <td>0571-22098909</td>
-                        <td>18889898989</td>
-                        <td>New York No. 1 Lake Park</td>
-                    </tr>
-                    <tr data-row-key="2">
-                        <th scope="row">
-                            <div
-                                class="fr-checkbox-group fr-checkbox-group--sm"
-                            >
-                                <input
-                                    name="default-checkboxes-small--2"
-                                    id="default-checkboxes-small--2"
-                                    type="checkbox"
-                                />
-                                <label
-                                    class="fr-label"
-                                    for="default-checkboxes-small--2"
+                                    <input
+                                        checked
+                                        name="default-checkboxes-small--1"
+                                        id="default-checkboxes-small--1"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="fr-label"
+                                        for="default-checkboxes-small--1"
+                                    >
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <a href="#">John Brown</a>
+                            </td>
+                            <td>32</td>
+                            <td>0571-22098909</td>
+                            <td>18889898989</td>
+                            <td>New York No. 1 Lake Park</td>
+                        </tr>
+                        <tr class="<%= prefix %>-row__selected" data-row-key="2">
+                            <th class="<%= prefix %>-cell__actionable">
+                                <div
+                                    class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
-                                </label>
-                            </div>
-                        </th>
-                        <td colspan="5">
-                            Exemple de colspan sur toute la ligne<br />
-                            Repellat natus illo omnis nulla nostrum ut
-                            doloremque ipsam voluptas officiis cumque porro
-                            nobis, at error ad eos, id, iste odit quae.
-                        </td>
-                    </tr>
-                    <tr data-row-key="4">
-                        <th scope="row">
-                            <div
-                                class="fr-checkbox-group fr-checkbox-group--sm"
-                            >
-                                <input
-                                    name="default-checkboxes-small--4"
-                                    id="default-checkboxes-small--4"
-                                    type="checkbox"
-                                />
-                                <label
-                                    class="fr-label"
-                                    for="default-checkboxes-small--4"
+                                    <input
+                                        name="default-checkboxes-small--2"
+                                        id="default-checkboxes-small--2"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="fr-label"
+                                        for="default-checkboxes-small--2"
+                                    >
+                                    </label>
+                                </div>
+                            </th>
+                            <td colspan="5">
+                                Exemple de colspan sur toute la ligne<br />
+                                Repellat natus illo omnis nulla nostrum ut
+                                doloremque ipsam voluptas officiis cumque porro
+                                nobis, at error ad eos, id, iste odit quae.
+                            </td>
+                        </tr>
+                        <tr data-row-key="4">
+                            <th class="<%= prefix %>-cell__actionable">
+                                <div
+                                    class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
-                                </label>
-                            </div>
-                        </th>
-                        <td>
-                            <a href="#">Jim Red</a>
-                        </td>
-                        <td>18</td>
-                        <td rowspan="2">
-                            <svg
-                                aria-hidden="true"
-                                class="<%= prefix %>-artwork"
-                                viewBox="0 0 80 80"
-                                width="80px"
-                                height="80px"
-                            >
-                                <use
-                                    class="<%= prefix %>-artwork-decorative"
-                                    href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-decorative"
-                                ></use>
-                                <use
-                                    class="<%= prefix %>-artwork-minor"
-                                    href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-minor"
-                                ></use>
-                                <use
-                                    class="<%= prefix %>-artwork-major"
-                                    href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-major"
-                                ></use>
-                            </svg>
-                        </td>
-                        <td>18900010002</td>
-                        <td>London No. 2 Lake Park</td>
-                    </tr>
-                    <tr data-row-key="5">
-                        <th scope="row">
-                            <div
-                                class="fr-checkbox-group fr-checkbox-group--sm"
-                            >
-                                <input
-                                    name="default-checkboxes-small--5"
-                                    id="default-checkboxes-small--5"
-                                    type="checkbox"
-                                />
-                                <label
-                                    class="fr-label"
-                                    for="default-checkboxes-small--5"
+                                    <input
+                                        name="default-checkboxes-small--4"
+                                        id="default-checkboxes-small--4"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="fr-label"
+                                        for="default-checkboxes-small--4"
+                                    >
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <a href="#">Jim Red</a>
+                            </td>
+                            <td>18</td>
+                            <td rowspan="2">
+                                <svg
+                                    aria-hidden="true"
+                                    class="<%= prefix %>-artwork"
+                                    viewBox="0 0 80 80"
+                                    width="80px"
+                                    height="80px"
                                 >
-                                </label>
-                            </div>
-                        </th>
-                        <td>
-                            <a href="#">Jake White</a>
-                        </td>
-                        <td>18</td>
-                        <td>
-                            Repellat natus illo omnis nulla nostrum ut
-                            doloremque ipsam voluptas officiis cumque porro
-                            nobis, at error ad eos, id, iste odit quae. Repellat
-                            natus illo omnis nulla nostrum ut doloremque ipsam
-                            voluptas officiis cumque porro nobis, at error ad
-                            eos, id, iste odit quae.
-                        </td>
-                        <td>Dublin No. 2 Lake Park</td>
-                    </tr>
-                    <tr data-row-key="3">
-                        <th scope="row">
-                            <div
-                                class="fr-checkbox-group fr-checkbox-group--sm"
-                            >
-                                <input
-                                    name="default-checkboxes-small--3"
-                                    id="default-checkboxes-small--3"
-                                    type="checkbox"
-                                />
-                                <label
-                                    class="fr-label"
-                                    for="default-checkboxes-small--3"
+                                    <use
+                                        class="<%= prefix %>-artwork-decorative"
+                                        href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-decorative"
+                                    ></use>
+                                    <use
+                                        class="<%= prefix %>-artwork-minor"
+                                        href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-minor"
+                                    ></use>
+                                    <use
+                                        class="<%= prefix %>-artwork-major"
+                                        href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-major"
+                                    ></use>
+                                </svg>
+                            </td>
+                            <td>18900010002</td>
+                            <td>London No. 2 Lake Park</td>
+                        </tr>
+                        <tr data-row-key="5">
+                            <th class="<%= prefix %>-cell__actionable">
+                                <div
+                                    class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
-                                </label>
-                            </div>
-                        </th>
-                        <td>
-                            <a href="#">Joe Black</a>
-                        </td>
-                        <td>32</td>
-                        <td colspan="2">
-                            <b
-                                >Exemple de 2 cellules fusionnées sur une
-                                ligne</b
-                            >
-                        </td>
-                        <td>Sydney No. 1 Lake Park</td>
-                    </tr>
-                </tbody>
-            </table>
+                                    <input
+                                        name="default-checkboxes-small--5"
+                                        id="default-checkboxes-small--5"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="fr-label"
+                                        for="default-checkboxes-small--5"
+                                    >
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <a href="#">Jake White</a>
+                            </td>
+                            <td>18</td>
+                            <td>
+                                Repellat natus illo omnis nulla nostrum ut
+                                doloremque ipsam voluptas officiis cumque porro
+                                nobis, at error ad eos, id, iste odit quae. Repellat
+                                natus illo omnis nulla nostrum ut doloremque ipsam
+                                voluptas officiis cumque porro nobis, at error ad
+                                eos, id, iste odit quae.
+                            </td>
+                            <td>Dublin No. 2 Lake Park</td>
+                        </tr>
+                        <tr data-row-key="3">
+                            <th class="<%= prefix %>-cell__actionable">
+                                <div
+                                    class="fr-checkbox-group fr-checkbox-group--sm"
+                                >
+                                    <input
+                                        name="default-checkboxes-small--3"
+                                        id="default-checkboxes-small--3"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="fr-label"
+                                        for="default-checkboxes-small--3"
+                                    >
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <a href="#">Joe Black</a>
+                            </td>
+                            <td>32</td>
+                            <td colspan="2">
+                                <b
+                                    >Exemple de 2 cellules fusionnées sur une
+                                    ligne</b
+                                >
+                            </td>
+                            <td>Sydney No. 1 Lake Park</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

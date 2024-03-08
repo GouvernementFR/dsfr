@@ -7,19 +7,23 @@ subdir:
 
 sample:
   default: Tableau complexe par défaut
-  scrollable: Tableau complexe scrollable
+  scrollable: Tableau complexe scrollable verticalement
   expandable: Tableau complexe repliable
 
 data:
   caption: Caption du tableau complexe (accessibilité)
   cell:
-    action: Action
+    action:
+      button: Label bouton
+      empty: Action
+      expand: Deplier
+      sort: Trier
+      select: Selectionner
+      selectAll: Tout selectionner
     download:
       detail: JPG – 61,88 Ko
-      label: Téléchargement
-    label: Label
-    number: 30,00 €
-    select: Selectionner
-    selectAll: Tout selectionner
+      lable: Téléchargement
+    lable: Label
+    number: 30,00&nbsp;€
     text: Texte par défaut
     title: Titre par défaut

@@ -26,8 +26,10 @@
           @include color.background(contrast grey, (legacy: $legacy));
         }
       }
+    }
 
-      @include color.accentuate {
+    @include color.accentuate {
+      & > table {
         thead {
           @include color.background-image(border plain accent, (legacy: $legacy));
           @include color.background(contrast accent, (legacy: $legacy));
@@ -40,9 +42,11 @@
             @include color.background(contrast accent, (legacy: $legacy));
           }
         }
+      }
 
-        /* Style bordered, ajoute des bordures entre chaque ligne */
-        &#{ns(table--bordered)} {
+      /* Style bordered, ajoute des bordures entre chaque ligne */
+      &#{ns(table--bordered)} {
+        & > table {
           tbody {
             tr {
               @include color.background-image(border default accent, (legacy: $legacy));

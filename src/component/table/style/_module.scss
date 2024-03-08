@@ -11,6 +11,16 @@
     @include relative;
     @include margin-bottom(10v);
 
+    &__wrapper {
+        width: 100%;
+        @include padding(1px);
+        @include margin(-1px);
+
+        background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-position: 0 100%, 0 0, 100% 0, 100% 0;
+    }
+
     &__container {
         width: 100%;
         overflow: auto;
@@ -25,52 +35,19 @@
             border-spacing: 0;
         }
 
-        caption {
-            position: initial;
-            @include title-style(h4, true);
-            @include font-weight(bold);
-            text-align: left;
-        }
-
         thead {
             th {
                 font-weight: font-weight(bold);
-                background-size: 100% 1px, 100% 1px;
-                background-repeat: no-repeat, no-repeat;
-                background-position: 0 0, 100% 100%;
-
-                &:first-child,
-                &:last-child {
-                    background-size: 100% 1px, 100% 1px, 1px 100%;
-                    background-repeat: no-repeat, no-repeat, no-repeat;
-                }
-
-                &:first-child {
-                    background-position: 0 0, 100% 100%, 0 0;
-                }
-
-                &:last-child {
-                    background-position: 0 0, 100% 100%, 100% 0;
-                }
             }
         }
 
-        tr {
-            &#{ns(row)} {
-                &__expanded {
-                    &:not(:last-child) {
-                        th,
-                        td {
-                            background-image: none;
-                        }
+        tbody {
+            tr {
+                &:last-child {
+                    th,
+                    td {
+                        background-image: none;
                     }
-                }
-            }
-
-            &:last-child {
-                th,
-                td {
-                    background-image: none;
                 }
             }
         }
@@ -84,14 +61,34 @@
             text-align: left;
             vertical-align: middle;
 
-            border: 0;
-            @include before('', block) {
-                @include absolute(0, 0, 0 , 0, 100%, 100%);
-                pointer-events: none;
-            }
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
 
+            #{ns(checkbox-group)} {
+                display: inline-block;
+
+                & #{ns(label)} {
+                    min-height: 1.2rem;
+                    font-size: 0.875rem;
+                }
+            }
+        }
+
+        #{ns(cell)} {
             &__actionable {
                 text-align: center;
+                min-width: 4rem;
+
+                #{ns(checkbox-group)} {
+                    margin-right: -.5rem;
+                }
+            }
+
+            &__fixed {
+                position: sticky;
+                left: 0;
+                z-index: 1;
             }
 
             &__centered {
@@ -106,16 +103,17 @@
                 font-weight: 400;
             }
 
-            &__schedulable {
-                display: flex;
+            &__nowrap {
+                text-wrap: nowrap;
             }
 
-            & #{ns(checkbox-group)} {
-                display: inline-block;
+            &__inline {
+                display: flex;
+                align-items: center;
+                @include margin(0 -2v);
 
-                & #{ns(label)} {
-                    min-height: 1.2rem;
-                    font-size: 0.875rem;
+                > * {
+                    @include margin(0 2v);
                 }
             }
         }
@@ -127,7 +125,6 @@
 
             &__container {
                 max-height: 20rem;
-                max-width: 30rem;
             }
 
             &__content {
@@ -136,16 +133,15 @@
                     top: 0;
                     z-index: 2;
                 }
-
-                #{ns(cell)} {
-                    &__fixed {
-                        position: sticky;
-                        left: 0;
-                        z-index: 1;
-                    }
-                }
             }
         }
+    }
+
+    caption {
+        position: initial;
+        @include title-style(h4, true);
+        @include font-weight(bold);
+        text-align: left;
     }
 
     &#{ns-attr(js-table, true)} {
