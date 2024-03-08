@@ -60,6 +60,7 @@
             @include text-style(sm);
             text-align: left;
             vertical-align: middle;
+            @include min-width(50v);
 
             background-size: 100% 1px;
             background-repeat: no-repeat;
@@ -76,6 +77,16 @@
         }
 
         #{ns(cell)} {
+            &__sm {
+                @include min-width(20v);
+            }
+            &__md {
+                @include min-width(50v);
+            }
+            &__lg {
+                @include min-width(100v);
+            }
+
             &__actionable {
                 text-align: center;
                 min-width: 4rem;
@@ -101,10 +112,6 @@
 
             &__desc {
                 font-weight: 400;
-            }
-
-            &__nowrap {
-                text-wrap: nowrap;
             }
 
             &__inline {
