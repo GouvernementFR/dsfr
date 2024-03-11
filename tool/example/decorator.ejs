@@ -268,7 +268,7 @@ const targetBlankData = () => {
   const attr = {};
   attr.target = '_blank';
   attr.rel = 'noopener external';
-  attr.title = `${contentPlaceholder('Intitulé')} - ${getText('blank')}`;
+  attr['aria-label'] = `${contentPlaceholder('Intitulé')} - ${getText('blank')}`;
   return attr;
 }
 

@@ -21,7 +21,7 @@ let brand = locals.brand || {};
   <%
   const linkInfos = brand.link || brandData('header', header.logo !== undefined, brand.service !== undefined && brand.service.title !== undefined, brand.operator !== undefined);
 
-  const link = `<a href="${linkInfos.href}" title="${linkInfos.title}" >`;
+  const link = `<a href="${linkInfos.href}" aria-label="${linkInfos.title}" >`;
   %>
 
   <div class="<%= prefix %>-header__brand-top" >
