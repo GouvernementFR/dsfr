@@ -9,6 +9,7 @@ sample:
   default: Tableau complexe par défaut
   scrollable: Tableau complexe scrollable verticalement
   expandable: Tableau complexe repliable
+  small-width: Tableau complexe petite largeur
 
 data:
   caption: Caption du tableau complexe (accessibilité)

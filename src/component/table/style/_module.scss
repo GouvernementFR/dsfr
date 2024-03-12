@@ -89,7 +89,8 @@
 
             &__actionable {
                 text-align: center;
-                min-width: 4rem;
+                @include min-width(16v);
+                @include width(16v);
 
                 #{ns(checkbox-group)} {
                     margin-right: -.5rem;
@@ -104,6 +105,10 @@
 
             &__centered {
                 text-align: center;
+            }
+
+            &__top {
+                vertical-align: top;
             }
 
             &__title {
