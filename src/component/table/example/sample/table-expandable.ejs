@@ -6,7 +6,7 @@
                     <caption data-fr-js-table-caption="true">Caption du tableau (accessibilité)</caption>
                     <thead>
                         <tr>
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable" scope="col">
+                            <th scope="col" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -22,7 +22,7 @@
                                     </label>
                                 </div>
                             </th>
-                            <th class="<%= prefix %>-cell__actionable" scope="col"></th>
+                            <th scope="col" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></th>
                             <th scope="col">Name</th>
                             <th scope="col">Age</th>
                             <th scope="col">Num</th>
@@ -32,7 +32,7 @@
                     </thead>
                     <tbody>
                         <tr data-row-key="1">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -47,15 +47,15 @@
                                     >
                                     </label>
                                 </div>
-                            </th>
-                            <th class="<%= prefix %>-cell__actionable" scope="col">
+                            </td>
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-icon-arrow-up-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
                                     title="Déplier"
                                 >
                                     Déplier
                                 </button>
-                            </th>
+                            </td>
                             <td>
                                 <a href="#">John Brown</a>
                             </td>
@@ -65,7 +65,7 @@
                             <td>New York No. 1 Lake Park</td>
                         </tr>
                         <tr class="<%= prefix %>-row__expanded" data-row-key="3">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -80,15 +80,15 @@
                                     >
                                     </label>
                                 </div>
-                            </th>
-                            <th class="<%= prefix %>-cell__actionable" scope="col">
+                            </td>
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-icon-arrow-down-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
                                     title="Déplier"
                                 >
                                     Déplier
                                 </button>
-                            </th>
+                            </td>
                             <td>
                                 <a href="#">Joe Black</a>
                             </td>
@@ -99,8 +99,8 @@
                         </tr>
 
                         <tr class="<%= prefix %>-row__expanded" data-row-key="2">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></th>
-                            <th class="<%= prefix %>-cell__actionable" scope="col">
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -115,7 +115,7 @@
                                     >
                                     </label>
                                 </div>
-                            </th>
+                            </td>
                             <td>Exemple de ligne dépliée</td>
                             <td>14</td>
                             <td>0575-22098909</td>
@@ -135,8 +135,8 @@
                             </td>
                         </tr>
                         <tr data-row-key="2">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></th>
-                            <th class="<%= prefix %>-cell__actionable" scope="col"></th>
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
                             <td colspan="5">
                                 <div
                                     id="alert-1198"
@@ -153,7 +153,7 @@
                             </td>
                         </tr>
                         <tr data-row-key="5">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -168,15 +168,15 @@
                                     >
                                     </label>
                                 </div>
-                            </th>
-                            <th class="<%= prefix %>-cell__actionable" scope="col">
+                            </td>
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-icon-arrow-up-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
                                     title="Déplier"
                                 >
                                     Déplier
                                 </button>
-                            </th>
+                            </td>
                             <td>
                                 <a href="#">Jake White</a>
                             </td>

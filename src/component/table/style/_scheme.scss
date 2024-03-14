@@ -21,7 +21,10 @@
             }
 
             tbody {
-                th,
+                th[scope="col"] {
+                    @include color.background(alt grey, (legacy: $legacy));
+                }
+
                 td {
                     @include color.text(title grey, (legacy: $legacy));
                     @include color.background(default grey, (legacy: $legacy));
@@ -32,8 +35,10 @@
                     &__selected {
                         th,
                         td {
-                            @include color.background(action-low blue-france, (legacy: $legacy));
-                            @include color.background-image((border action-high blue-france), (legacy: $legacy));
+                            &:not([scope="col"]) {
+                                @include color.background(action-low blue-france, (legacy: $legacy));
+                                @include color.background-image((border action-high blue-france), (legacy: $legacy));
+                            }
                         }
                     }
                 }
