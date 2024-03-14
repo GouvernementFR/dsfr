@@ -37,7 +37,7 @@ let brand = locals.brand || {};
       title += contentPlaceholder(logoPlaceholder);
   }
 
-  const link = `<a href="/" title="${title}" >`;
+  const link = `<a href="/" aria-label="${title}" >`;
   %>
 
   <div class="<%= prefix %>-header__brand-top" >
