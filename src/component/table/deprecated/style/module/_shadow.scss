@@ -41,9 +41,11 @@
       /**
       * Modifier combinaison ombre à gauche et ombre à droite
       **/
-      &--left#{&}--right {
-        @include before('', block) {
-          @include _table-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
+      &--left {
+        &#{ns(table__shadow--right)} {
+          @include before('', block) {
+            @include _table-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
+          }
         }
       }
     }

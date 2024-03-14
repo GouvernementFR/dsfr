@@ -19,12 +19,25 @@
       transition: box-shadow 0.3s;
     }
 
+    #{ns(cell__fixed--last__right)} {
+      @include before('', block) {
+        @include absolute(0, -100% , 0, 100%);
+        @include z-index(over);
+        @include _table-scroll-shadow(false, false);
+        opacity: 0.32;
+        pointer-events: none;
+        transition: box-shadow 0.3s;
+      }
+    }
+
     /**
     * Modifier ombre à gauche
     **/
     &--left {
-      @include before {
-        @include _table-scroll-shadow(true, false); // @TODO: à implementer dans la mixin shadow
+      #{ns(cell__fixed--last__right)} {
+        @include before {
+          @include _table-scroll-shadow(true, false); // @TODO: à implementer dans la mixin shadow
+        }
       }
     }
 
@@ -40,11 +53,14 @@
     /**
     * Modifier combinaison ombre à gauche et ombre à droite
     **/
-    &--left#{&}--right {
-      @include before('', block) {
-        @include _table-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
-      }
-    }
+    // &--left#{&}--right { Ne fonctionne pas
+    // &--left {
+    //   &#{ns(table__shadow--right)} {
+    //     @include before('', block) {
+    //       @include _table-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
+    //     }
+    //   }
+    // }
   }
 }
 
