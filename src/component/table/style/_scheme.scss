@@ -23,6 +23,7 @@
             tbody {
                 th[scope="col"] {
                     @include color.background(alt grey, (legacy: $legacy));
+                    @include color.background-image((border default grey), (legacy: $legacy));
                 }
 
                 td {
