@@ -87,14 +87,14 @@ data.table.thead = [
   },
   {
     classes: [`${prefix}-cell__centered`],
-    content: buttonCell({id: uniqueId('table-thead-dropdown'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'arrow-up-down-fill', kind: 4, size: 'sm', iconPlace: 'only'})
+    content: buttonCell({id: uniqueId('table-thead-dropdown'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'arrow-up-down-fill', kind: 3, size: 'sm', iconPlace: 'only'})
   },
   {
     content: `<div class="${prefix}-cell__inline">${textCell} ${tooltipCell(uniqueId('table-thead-tooltip'))}</div>`
   },
   {
     classes: [`${prefix}-cell__sm`, `${prefix}-cell__centered`],
-    content: `${buttonCell({id: uniqueId('table-thead-button-number-sortable'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'sort-number-asc-fill', kind: 4, size: 'sm', iconPlace: 'only'})}</div>`
+    content: `${buttonCell({id: uniqueId('table-thead-button-number-sortable'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'arrow-up-down-fill', kind: 3, size: 'sm', iconPlace: 'only'})}</div>`
   },
   {
     classes: [`${prefix}-cell__sm`],
@@ -107,7 +107,7 @@ data.table.thead = [
     content: getText('data.cell.text', 'table')
   },
   {
-    content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox-sortable')})} ${buttonCell({id: uniqueId('table-thead-button-sortable'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'sort-alphabet-desc-fill', kind: 4, size: 'sm', iconPlace: 'only', classes: [`${prefix}-ml-4v`]})}</div>`
+    content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox-sortable')})} ${buttonCell({id: uniqueId('table-thead-button-sortable'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'sort-alphabet-desc-fill', kind: 3, size: 'sm', iconPlace: 'only', classes: [`${prefix}-ml-4v`]})}</div>`
   },
   {
     classes: [`${prefix}-cell__sm`],

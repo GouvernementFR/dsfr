@@ -8,6 +8,8 @@
 @mixin _deprecated-table-scheme($legacy: false) {
   #{ns(table)} {
     & > table {
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+
       caption {
         @include color.text(title grey, (legacy: $legacy));
       }
@@ -15,21 +17,23 @@
       thead {
         @include color.background-image(border plain grey, (legacy: $legacy));
 
-        @include color.background(contrast grey, (legacy: $legacy));
+        @include color.background(alt grey, (legacy: $legacy));
         @include color.text(title grey, (legacy: $legacy));
       }
 
       tbody {
-        @include color.background(alt grey, (legacy: $legacy));
+        @include color.background(default grey, (legacy: $legacy));
 
         tr:nth-child(even) {
-          @include color.background(contrast grey, (legacy: $legacy));
+          @include color.background(alt grey, (legacy: $legacy));
         }
       }
     }
 
     @include color.accentuate {
       & > table {
+        @include color.background-image((border default accent) (border default accent) (border default accent) (border default accent), (legacy: $legacy));
+
         thead {
           @include color.background-image(border plain accent, (legacy: $legacy));
           @include color.background(contrast accent, (legacy: $legacy));

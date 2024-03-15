@@ -20,6 +20,13 @@
     overflow: auto;
     border-spacing: 0;
 
+    @include padding(1px);
+    @include margin(-1px);
+
+    background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 0 100%, 0 0, 100% 0, 100% 0;
+
     td,
     th {
       text-align: left;
@@ -36,7 +43,7 @@
     }
 
     thead {
-      background-size: 100% 2px;
+      background-size: 100% 1px;
       background-position: bottom;
       background-repeat: no-repeat;
 

@@ -3,10 +3,13 @@
         <div class="<%= prefix %>-table__container">
             <div class="<%= prefix %>-table__content">
                 <table>
-                    <caption data-fr-js-table-caption="true">Caption du tableau (accessibilité)</caption>
+                    <caption data-fr-js-table-caption="true">
+                        Caption du tableau (accessibilité)<br />
+                        <i>Exemple de modifieur multi-ligne sur les lignes ou cellules</i>
+                    </caption>
                     <thead>
                         <tr>
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="col"></th>
+                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row"></th>
                             <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable" scope="col">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
@@ -33,7 +36,7 @@
                     </thead>
                     <tbody>
                         <tr data-row-key="1">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="col">8h</th>
+                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">8h</th>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
@@ -59,7 +62,7 @@
                             <td>New York No. 1 Lake Park</td>
                         </tr>
                         <tr class="<%= prefix %>-row__selected" data-row-key="2">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="col">9h</th>
+                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">9h</th>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
@@ -77,15 +80,16 @@
                                     </label>
                                 </div>
                             </td>
-                            <td colspan="5">
-                                Exemple de colspan sur toute la ligne<br />
+                            <td class="<%= prefix %>-cell__multiline" colspan="5">
+                                <i>Exemple de colspan sur toute la ligne<br />
+                                + modifieur de multi-ligne sur la cellule</i><br />
                                 Repellat natus illo omnis nulla nostrum ut
                                 doloremque ipsam voluptas officiis cumque porro
                                 nobis, at error ad eos, id, iste odit quae.
                             </td>
                         </tr>
                         <tr data-row-key="4">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="col">10h</th>
+                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">10h</th>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
@@ -131,8 +135,8 @@
                             <td>18900010002</td>
                             <td>London No. 2 Lake Park</td>
                         </tr>
-                        <tr data-row-key="5">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="col">11h</th>
+                        <tr class="<%= prefix %>-cell__multiline" data-row-key="5">
+                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">11h</th>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
@@ -154,6 +158,7 @@
                             </td>
                             <td class="<%= prefix %>-cell__top">18</td>
                             <td>
+                                <i>Exemple de modifieur de multi-ligne sur toute la ligne</i><br />
                                 Repellat natus illo omnis nulla nostrum ut
                                 doloremque ipsam voluptas officiis cumque porro
                                 nobis, at error ad eos, id, iste odit quae. Repellat
@@ -164,7 +169,7 @@
                             <td class="<%= prefix %>-cell__top">Dublin No. 2 Lake Park</td>
                         </tr>
                         <tr data-row-key="3">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="col">12h</th>
+                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">12h</th>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"

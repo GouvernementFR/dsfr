@@ -6,13 +6,14 @@ subdir:
   deprecated: version dépréciée
 
 sample:
-  default: Tableau complexe par défaut
-  scrollable: Tableau complexe scrollable verticalement
-  expandable: Tableau complexe repliable
-  small-width: Tableau complexe petite largeur
+  default: Tableau complexe
+  double-header: Tableau à double entrée
+  scrollable: Tableau scrollable verticalement
+  expandable: Tableau repliable
+  simple: Tableau simple
 
 data:
-  caption: Caption du tableau complexe (accessibilité)
+  caption: Caption du tableau (accessibilité)
   cell:
     action:
       button: Label bouton

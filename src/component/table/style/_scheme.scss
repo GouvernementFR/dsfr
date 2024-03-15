@@ -15,20 +15,41 @@
         &__content {
             thead {
                 th {
-                    @include color.background(alt grey, (legacy: $legacy));
-                    @include color.background-image((border default grey), (legacy: $legacy));
+                    @include color.background(alt grey, (legacy: $legacy, hover: true));
+
+                    &[scope="col"] {
+                        @include color.background-image((border plain grey), (legacy: $legacy));
+                    }
+
+                    &:not([scope="col"]) {
+                        @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+                    }
+
+                    &:hover {
+                        background-color: var(--hover);
+                    }
                 }
             }
 
             tbody {
-                th[scope="col"] {
-                    @include color.background(alt grey, (legacy: $legacy));
-                    @include color.background-image((border default grey), (legacy: $legacy));
+                tr {
+                    &:hover {
+                        th,
+                        td {
+                            background-color: var(--hover);
+                        }
+                    }
                 }
 
+                th[scope="row"] {
+                    @include color.background(alt grey, (legacy: $legacy));
+                    @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
+                }
+
+                th,
                 td {
                     @include color.text(title grey, (legacy: $legacy));
-                    @include color.background(default grey, (legacy: $legacy));
+                    @include color.background(default grey, (legacy: $legacy, hover: true));
                     @include color.background-image((border default grey), (legacy: $legacy));
                 }
 
@@ -36,10 +57,8 @@
                     &__selected {
                         th,
                         td {
-                            &:not([scope="col"]) {
-                                @include color.background(action-low blue-france, (legacy: $legacy));
-                                @include color.background-image((border action-high blue-france), (legacy: $legacy));
-                            }
+                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+                            @include color.background-image((border action-high blue-france), (legacy: $legacy));
                         }
                     }
                 }

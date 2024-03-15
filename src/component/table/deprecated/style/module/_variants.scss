@@ -76,6 +76,10 @@
         background-size: 100% 1px;
         background-position: bottom;
         background-repeat: no-repeat;
+
+        &:last-child {
+          background-image: none;
+        }
       }
     }
   }

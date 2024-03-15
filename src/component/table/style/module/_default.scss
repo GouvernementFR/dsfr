@@ -17,7 +17,7 @@
         @include margin(-1px);
 
         background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
-        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: 0 100%, 0 0, 100% 0, 100% 0;
     }
 
@@ -52,6 +52,12 @@
             }
         }
 
+        th[scope="row"] {
+            background-size: 1px 100%, 100% 1px;
+            background-repeat: no-repeat, no-repeat;
+            background-position:  100% 0, 0 100%;
+        }
+
         th,
         td {
             position: relative;
@@ -60,7 +66,7 @@
             @include text-style(sm);
             text-align: left;
             vertical-align: middle;
-            @include min-width(50v);
+            white-space: nowrap;
 
             background-size: 100% 1px;
             background-repeat: no-repeat;
@@ -133,6 +139,13 @@
 
                 > * {
                     @include margin(0 2v);
+                }
+            }
+
+            &__multiline {
+                &,
+                & * {
+                    white-space: normal;
                 }
             }
         }
