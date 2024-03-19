@@ -6,70 +6,34 @@
 @use 'module/selector';
 
 /*
-* Ombres ajoutées en Js si le contenu est plus grand que le conteneur
+* Bordure ajoutée à gauche en Js si le contenu est plus grand que le conteneur
 */
 #{ns(table)} {
-  #{ns(table__shadow)} {
-    @include before('', block) {
-      @include absolute(var(--table-offset), 0, 0, 0);
-      @include z-index(over);
-      @include _table-scroll-shadow(false, false);
-      opacity: 0.32;
-      pointer-events: none;
-      transition: box-shadow 0.3s;
-    }
-
-    #{ns(cell__fixed--last__right)} {
-      @include before('', block) {
-        @include absolute(0, -100% , 0, 100%);
-        @include z-index(over);
-        @include _table-scroll-shadow(false, false);
-        opacity: 0.32;
-        pointer-events: none;
-        transition: box-shadow 0.3s;
-      }
-    }
-
-    /**
-    * Modifier ombre à gauche
-    **/
-    &--left {
-      #{ns(cell__fixed--last__right)} {
-        @include before {
-          @include _table-scroll-shadow(true, false); // @TODO: à implementer dans la mixin shadow
-        }
-      }
-    }
-
-    /**
-    * Modifier ombre à droite
-    **/
-    &--right {
-      @include before {
-        @include _table-scroll-shadow(false, true);// @TODO: à implementer dans la mixin shadow
-      }
-    }
-
-    /**
-    * Modifier combinaison ombre à gauche et ombre à droite
-    **/
-    // &--left#{&}--right { Ne fonctionne pas
-    // &--left {
-    //   &#{ns(table__shadow--right)} {
-    //     @include before('', block) {
-    //       @include _table-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
-    //     }
-    //   }
-    // }
-  }
-}
-
-@include selector.theme(dark) {
-  #{ns(table)} {
     #{ns(table__shadow)} {
-      @include before {
-        opacity: 1;
-      }
+        @include before('', block) {
+            @include absolute(var(--table-offset), 0, 0, 0);
+            @include z-index(over);
+            @include _table-scroll-shadow(false, false);
+            opacity: 0.32;
+            pointer-events: none;
+            transition: box-shadow 0.3s;
+        }
+
+        /**
+        * Modifier Bordure à gauche
+        **/
+        &--left {
+            #{ns(cell__fixed--last__right)} {
+                background-size: 100% 1px, 1px 100%;
+                background-repeat: no-repeat, no-repeat;
+                background-position: 100% 100%, 100% 0;
+
+                &[scope='col'] {
+                    background-size: 1px 100%, 100% 1px;
+                    background-repeat: no-repeat, no-repeat;
+                    background-position: 100% 0, 0 100%;
+                }
+            }
+        }
     }
-  }
 }

@@ -39,6 +39,15 @@
                             background-color: var(--hover);
                         }
                     }
+
+                    &:last-child {
+                        th,
+                        td {
+                            &[scope='row'] {
+                                @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
+                            }
+                        }
+                    }
                 }
 
                 th[scope="row"] {
@@ -58,8 +67,19 @@
                         th,
                         td {
                             @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                            @include color.background-image((border action-high blue-france), (legacy: $legacy));
                         }
+                    }
+                }
+            }
+        }
+
+        &__shadow {
+            &--left {
+                #{ns(cell__fixed--last__right)} {
+                    @include color.background-image((border default grey) (border default grey), (legacy: $legacy));
+
+                    &[scope='col'] {
+                        @include color.background-image((border default grey) (border plain grey), (legacy: $legacy));
                     }
                 }
             }

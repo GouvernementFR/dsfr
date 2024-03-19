@@ -8,7 +8,6 @@ subdir:
 sample:
   default: Tableau complexe
   double-header: Tableau à double entrée
-  scrollable: Tableau scrollable verticalement
   expandable: Tableau repliable
   simple: Tableau simple
 

@@ -13,12 +13,12 @@
 
     &__wrapper {
         width: 100%;
-        @include padding(1px);
-        @include margin(-1px);
+        @include padding(1px 1px 0);
+        @include margin(-1px 0);
 
-        background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+        background-size: 1px 100%, 1px 100%, 100% 1px;
         background-repeat: no-repeat, no-repeat, no-repeat;
-        background-position: 0 100%, 0 0, 100% 0, 100% 0;
+        background-position: 0 0, 100% 0, 100% 0;
     }
 
     &__container {
@@ -46,16 +46,20 @@
                 &:last-child {
                     th,
                     td {
-                        background-image: none;
+                        &[scope='row'] {
+                            background-size: 1px 100%, 100% 1px;
+                            background-repeat: no-repeat, no-repeat;
+                            background-position: 100% 0, 0 100%;
+                        }
                     }
                 }
             }
         }
 
-        th[scope="row"] {
+        th[scope='row'] {
             background-size: 1px 100%, 100% 1px;
             background-repeat: no-repeat, no-repeat;
-            background-position:  100% 0, 0 100%;
+            background-position: 100% 0, 0 100%;
         }
 
         th,
@@ -84,15 +88,19 @@
 
         #{ns(cell)} {
             &__xs {
+                white-space: normal;
                 @include min-width(16v);
             }
             &__sm {
+                white-space: normal;
                 @include min-width(20v);
             }
             &__md {
+                white-space: normal;
                 @include min-width(50v);
             }
             &__lg {
+                white-space: normal;
                 @include min-width(100v);
             }
 
@@ -102,7 +110,7 @@
                 @include width(16v);
 
                 #{ns(checkbox-group)} {
-                    margin-right: -.5rem;
+                    margin-right: -0.5rem;
                 }
             }
 
@@ -153,11 +161,6 @@
 
     &__scrollable {
         & #{ns(table)} {
-
-            &__container {
-                max-height: 20rem;
-            }
-
             &__content {
                 thead {
                     position: sticky;
