@@ -59,7 +59,26 @@
             }
 
             @if $max-width != null {
-              @include max-size($max-width + $last-gutter * 4);
+              @each $layout, $mw in $max-width {
+                @if $layout == default {
+                  @if $mw == none {
+                    @include max-size(none);
+                  }
+                  @else {
+                    @include max-size($mw + $last-gutter * 4);
+                  }
+                }
+                @else {
+                  @at-root #{ns-attr(container, $layout)} & {
+                    @if $mw == none {
+                      @include max-size(none);
+                    }
+                    @else {
+                      @include max-size($mw + $last-gutter * 4);
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -72,7 +91,26 @@
           }
 
           @if $last-max-width != null {
-            @include max-size($last-max-width + $last-gutter * 4);
+            @each $layout, $mw in $last-max-width {
+              @if $layout == default {
+                @if $mw == none {
+                  @include max-size(none);
+                }
+                @else {
+                  @include max-size($mw + $last-gutter * 4);
+                }
+              }
+              @else {
+                @at-root #{ns-attr(container, $layout)} & {
+                  @if $mw == none {
+                    @include max-size(none);
+                  }
+                  @else {
+                    @include max-size($mw + $last-gutter * 4);
+                  }
+                }
+              }
+            }
           }
         }
 

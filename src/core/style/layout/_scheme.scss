@@ -1,0 +1,21 @@
+////
+/// layout Scheme
+/// @group core
+////
+
+@use 'module/color';
+@use 'module/selector';
+
+@mixin _core-layout-scheme($legacy: false) {
+  #{selector.ns(layout--contrast)} {
+    #{selector.ns(layout__content)} {
+      @include color.background(contrast grey, (legacy:$legacy));
+    }
+  }
+
+  #{selector.ns(layout--alt)} {
+    #{selector.ns(layout__content)} {
+      @include color.background(alt grey, (legacy:$legacy));
+    }
+  }
+}

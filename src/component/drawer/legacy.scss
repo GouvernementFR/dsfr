@@ -1,6 +1,6 @@
 ////
-/// Modal Legacy
-/// @group modal
+/// layout Legacy
+/// @group layout
 ////
 
 @use 'module/path';
@@ -12,4 +12,4 @@
 @import 'index';
 @import 'style/scheme';
 
-@include _modal-scheme(true);
+@include _drawer-scheme(true);

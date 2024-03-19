@@ -2,6 +2,7 @@ import { Disclosure } from '../disclosure/disclosure.js';
 import { CollapseSelector } from './collapse-selector.js';
 import { DisclosureType } from '../disclosure/disclosure-type.js';
 import { CollapseButton } from './collapse-button.js';
+import { CollapseMethod } from './collapse-method.js';
 
 /**
  * Tab coorespond au panel d'un élement Tabs (tab panel)
@@ -20,19 +21,39 @@ class Collapse extends Disclosure {
   init () {
     super.init();
     this.listen('transitionend', this.transitionend.bind(this));
+    this.method = this.getAttribute(CollapseSelector.COLLAPSE_METHOD);
   }
 
   transitionend (e) {
     this.removeClass(CollapseSelector.COLLAPSING);
-    if (!this.isDisclosed) {
-      if (this.isLegacy) this.style.maxHeight = '';
-      else this.style.removeProperty('--collapse-max-height');
+    switch (this._method) {
+      case CollapseMethod.HEIGHT:
+        break;
+
+      case CollapseMethod.WIDTH:
+        break;
+
+      default:
+        if (!this.isDisclosed) {
+          if (this.isLegacy) this.style.maxHeight = '';
+          else this.style.removeProperty('--collapse-max-height');
+        }
     }
   }
 
   unbound () {
-    if (this.isLegacy) this.style.maxHeight = 'none';
-    else this.style.setProperty('--collapse-max-height', 'none');
+    this.removeClass(CollapseSelector.COLLAPSING);
+    switch (this._method) {
+      case CollapseMethod.HEIGHT:
+        break;
+
+      case CollapseMethod.WIDTH:
+        break;
+
+      default:
+        if (this.isLegacy) this.style.maxHeight = 'none';
+        else this.style.setProperty('--collapse-max-height', 'none');
+    }
   }
 
   disclose (withhold) {
@@ -58,11 +79,57 @@ class Collapse extends Disclosure {
     });
   }
 
-  adjust () {
+  adjustMargin () {
     this.setProperty('--collapser', 'none');
     const height = this.node.offsetHeight;
     this.setProperty('--collapse', -height + 'px');
     this.setProperty('--collapser', '');
+  }
+
+  adjustWidth () {
+    this.node.style.width = 'auto';
+    const width = this.node.offsetWidth;
+    this.node.style.width = '';
+    this.setProperty('--collapse-width', `${width}px`);
+  }
+
+  adjustHeight () {
+    this.node.style.height = 'auto';
+    const height = this.node.offsetHeight;
+    this.node.style.height = '';
+    this.setProperty('--collapse-height', `${height}px`);
+  }
+
+  get method () {
+    return this._method;
+  }
+
+  set method (value) {
+    this.removeProperty('--collapse');
+    this.removeProperty('--collapser');
+    this.removeProperty('--collapse-max-height');
+    this.removeProperty('--collapse-width');
+    this.removeProperty('--collapse-height');
+    switch (value) {
+      case CollapseMethod.WIDTH:
+        this.adjust = this.adjustWidth.bind(this);
+        break;
+
+      case CollapseMethod.HEIGHT:
+        this.adjust = this.adjustHeight.bind(this);
+        break;
+
+      default:
+        this.adjust = this.adjustMargin.bind(this);
+        break;
+    }
+    this.adjust();
+  }
+
+  mutate (attributesNames) {
+    if (attributesNames.includes(CollapseSelector.METHOD)) {
+      this.method = this.getAttribute(CollapseSelector.METHOD);
+    }
   }
 
   reset () {

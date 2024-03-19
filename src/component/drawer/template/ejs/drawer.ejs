@@ -1,0 +1,96 @@
+<%#
+# paramètres du tiroir
+
+* drawer.id (string, required) : id du tiroir
+
+* drawer.title (string, required) : titre du tiroir
+
+* drawer.titleMarkup (string, optional) : balise du titre du tiroir (default : h2)
+
+* drawer.closeLabel (string, required) : label du bouton de fermeture du tiroir
+
+* drawer.position (string, required) : position du tiroir
+  valeurs:
+  * top : tiroir en haut
+  * left : tiroir à gauche
+  * right : tiroir à droite
+  * bottom : tiroir en bas
+
+* drawer.sticky (boolean, optional) : si true, le tiroir est sticky
+
+* drawer.collapse (object, optional) : paramètres du collapse du tiroir
+  * drawer.collapse.id (string, required) : id du collapse du tiroir
+  * drawer.collapse.opened (boolean, optional) : si true, le collapse est ouvert
+
+* drawer.content (string, required) : contenu du tiroir
+
+* drawer.attributes (object, optional) : attributs spécifiques à rajouter sur le tiroir
+
+-----------
+Structure du panneau
+
+<div class="fr-drawer fr-drawer--right fr-drawer--sticky">
+  <div class="fr-collapse" id="drawer-1">
+    <div class="fr-drawer__body">
+      <div class="fr-drawer__header fr-container">
+        <div class="fr-drawer__title">
+          <h2>Titre du panneau</h2>
+        </div>
+        <div class="fr-drawer__close">
+          <button class="fr-btn fr-btn--close" aria-controls="drawer-1" aria-expanded="false" id="drawer-1-btn">
+            <span class="sr-only">Fermer le panneau</span>
+          </button>
+        </div>
+      </div>
+      <div class="fr-drawer__content">
+        <p>Contenu du panneau</p>
+      </div>
+    </div>
+  </div>
+</div>
+-----------
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+  const drawer = locals.drawer || {};
+  const drawerClasses = [`${prefix}-drawer`];
+  const drawerAttrs = drawer.attributes || {};
+  drawerAttrs.id = drawer.id;
+
+  if (drawer.position) drawerClasses.push(`${prefix}-drawer--${drawer.position}`);
+  if (drawer.sticky) drawerClasses.push(`${prefix}-drawer--sticky`);
+
+  const titleMarkup = drawer.titleMarkup || 'h2';
+  const collapse = drawer.collapse || {};
+  const collapseAttrs = collapse.attributes || {};
+  collapseAttrs.id = collapse.id;
+  const closeBtnAttr = {};
+  closeBtnAttr['aria-controls'] = collapse.id;
+  closeBtnAttr['aria-expanded'] = collapse.opened;
+  const closeTitle = drawer.closeTitle;
+  const closeLabel = drawer.closeLabel;
+%>
+
+<div <%- includeClasses(drawerClasses) %> <%- includeAttrs(drawerAttrs); %>>
+  <% if (drawer.collapse) { %>
+  <div class="<%=prefix%>-collapse" <%- includeAttrs(collapseAttrs) %>>
+  <% } %>
+    <div class="<%=prefix%>-drawer__body">
+      <div class="<%=prefix%>-drawer__header <%=prefix%>-container">
+        <<%=titleMarkup%> class="<%=prefix%>-drawer__title">
+          <%=drawer.title%>
+        </<%=titleMarkup%>>
+        <% if (drawer.collapse) { %>
+        <%- include ('../../../button/template/ejs/button-close.ejs', {button: {attributes: closeBtnAttr, label: closeLabel, title: closeTitle}}); %>
+        <% } %>
+      </div>
+      <div class="<%=prefix%>-drawer__content">
+        <%-drawer.content%>
+      </div>
+    </div>
+  <% if (drawer.collapse) { %>
+  </div>
+  <% } %>
+</div>

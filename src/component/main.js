@@ -13,6 +13,7 @@ import './navigation/main.js';
 import './tab/main.js';
 import './table/main.js';
 import './tag/main.js';
+import './drawer/main.js';
 import './transcription/main.js';
 import './tile/main.js';
 import './range/main.js';

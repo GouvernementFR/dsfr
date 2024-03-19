@@ -3,7 +3,18 @@
 /// @group core
 ////
 
-#{ns(container)} {
+@use 'module/selector';
+@use 'module/media-query';
+
+#{selector.ns(container)} {
   @include size(100%);
   @include margin-x(auto);
+}
+
+@include media-query.respond-from(xl) {
+  :root #{ns(container)} {
+    &#{&}--editorial {
+      @include max-width(300v);
+    }
+  }
 }

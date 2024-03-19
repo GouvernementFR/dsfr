@@ -1,0 +1,20 @@
+////
+/// drawer Scheme
+/// @group drawer
+////
+
+@use 'module/color';
+@use 'module/elevation';
+
+@mixin _drawer-scheme($legacy: false) {
+  #{ns(drawer)} {
+    @include color.background(default grey, (legacy:$legacy));
+    @include color.background-image(border default grey, (legacy:$legacy));
+
+    &__header {
+      #{ns(btn--close)} {
+        @include btn-kind-scheme(3, $legacy);
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<%#
+# paramètres de la mise en page
+
+
+-----------
+Structure du panneau
+<div class="fr-layout">
+  // elements avant le contenu
+  <div class="fr-layout__content">
+    // contenu
+  </div>
+  // elements après le contenu
+</div>
+-----------
+%>
+<% eval(include('../../../index.ejs')); %>
+
+<%
+const layout = locals.layout || {};
+const layoutClasses = layout.classes || [];
+layoutClasses.push(`${prefix}-layout`);
+switch (layout.background) {
+  case 'contrast':
+    layoutClasses.push(`${prefix}-layout--contrast`);
+  break;
+
+  case 'alt':
+    layoutClasses.push(`${prefix}-layout--alt`);
+  break;
+}
+const layoutAttrs = layout.attributes || {};
+const content = layout.content || {};
+const contentClasses = content.classes || [];
+contentClasses.push(`${prefix}-layout__content`);
+const contentAttrs = content.attributes || {};
+const elementsBefore = layout.elements.filter(element => !element.isAfterContent);
+const elementsAfter = layout.elements.filter(drawer => drawer.isAfterContent);
+%>
+
+<div <%- includeClasses(layoutClasses) %> <%- includeAttrs(layoutAttrs); %>>
+  <% for (element of elementsBefore) { %>
+    <%- include(element.path, element.data); %>
+  <% } %>
+
+  <div <%- includeClasses(contentClasses) %> <%- includeAttrs(contentAttrs) %>><%- content.data %></div>
+
+  <% for (element of elementsAfter) { %>
+    <%- include(element.path, element.data); %>
+  <% } %>
+</div>

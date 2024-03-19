@@ -1,0 +1,13 @@
+////
+/// layout Print
+/// @group layout
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _drawer-scheme('print');
+
+  @import 'style/print';
+}

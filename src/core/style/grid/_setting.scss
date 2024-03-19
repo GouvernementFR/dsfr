@@ -13,7 +13,10 @@ $grid-settings: (
       gutter: 3v
     ),
     xl: (
-      max-width: 300v
+      max-width: (
+        default: 300v,
+        full: none
+      )
     )
   )
 );

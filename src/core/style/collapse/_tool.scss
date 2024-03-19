@@ -3,17 +3,26 @@
 /// @group core
 ////
 
-@mixin collapse($className: collapse) {
+@use 'module/selector';
+
+@mixin collapse () {
+  overflow: hidden;
+
+  @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
+    visibility: hidden;
+  }
+}
+
+@mixin collapse-margin-top() {
   --collapse-max-height: 0;
   --collapse: -99999px;
   --collapser: '';
 
-  overflow: hidden;
   transition: visibility 0.3s;
   max-height: 0;
   max-height: var(--collapse-max-height);
 
-  &::before {
+  @at-root #{&}::before {
     display: block;
     content: '';
     content: var(--collapser);
@@ -21,12 +30,36 @@
     margin-top: 0;
   }
 
-  #{&}:not(&--expanded) {
-    visibility: hidden;
-
+  @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
     @include before {
       margin-top: -99999px;
       margin-top: var(--collapse);
     }
+  }
+}
+
+@mixin collapse-width() {
+  --collapse-width: auto;
+  transition: visibility 0.3s, width 0.3s;
+
+  @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
+    width: 0;
+  }
+
+  @at-root #{&}#{selector.ns(collapse--expanded)} {
+    width: var(--collapse-width);
+  }
+}
+
+@mixin collapse-height() {
+  --collapse-height: auto;
+  transition: visibility 0.3s, height 0.3s;
+
+  @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
+    height: 0;
+  }
+
+  @at-root #{&}#{selector.ns(collapse--expanded)} {
+    height: var(--collapse-height);
   }
 }

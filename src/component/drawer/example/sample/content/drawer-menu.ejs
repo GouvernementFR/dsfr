@@ -1,0 +1,16 @@
+<nav class="<%=prefix%>-nav">
+  <ul class="<%=prefix%>-menu__list <%=prefix%>-px-0" style="width: 100%; background-color: transparent;">
+    <%
+    for (let i = 0; i < 8; i++) {
+      const attrs = {
+        href:'#',
+        id: uniqueId('menu-drawer')
+      };
+      if (i === 5) attrs['aria-current'] = true;
+    %>
+      <li class="fr-nav__item">
+        <a class="<%= prefix %>-nav__link" <%- includeAttrs(attrs); %> >Intitulé lien</a>
+      </li>
+    <% } %>
+  </ul>
+</nav>

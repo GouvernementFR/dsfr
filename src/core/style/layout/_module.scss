@@ -1,0 +1,25 @@
+////
+/// Core Module : Layout
+/// @group core
+////
+
+@use 'module/selector';
+@use 'module/media-query';
+
+#{selector.ns(layout)} {
+  @include display-flex(row, stretch, flex-start, wrap);
+
+  &__content {
+    flex: 1;
+    @include width(100%);
+    @include padding-y(4v);
+    @include padding-y(6v, lg);
+    order: 4;
+  }
+
+  #{selector.ns(container)} {
+    @include media-query.respond-from(lg) {
+      @include max-width(none);
+    }
+  }
+}
