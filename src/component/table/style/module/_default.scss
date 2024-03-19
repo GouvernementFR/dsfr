@@ -53,6 +53,20 @@
                         }
                     }
                 }
+
+                &.fr-collapse {
+                    &.fr-collapse--expanded {
+                        display: table-row;
+
+                        &::before {
+                           content: none;
+                        }
+                    }
+
+                    &:not(.fr-collapse--expanded) {
+                        display: none;
+                    }
+                }
             }
         }
 
@@ -156,6 +170,10 @@
                     white-space: normal;
                 }
             }
+
+            &__expanded {
+                @include padding(0);
+            }
         }
     }
 
@@ -181,6 +199,14 @@
     &#{ns-attr(js-table, true)} {
         caption {
             @include absolute(0);
+        }
+    }
+
+    #{ns-attr(collapse)} {
+        display: inherit;
+
+        &:not(#{ns-attr(collapse--expanded)}) {
+            display: none;
         }
     }
 }
