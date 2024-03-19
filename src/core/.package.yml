@@ -34,7 +34,6 @@ doc:
     url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/medias
   - title: Grille
     url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/grille-et-points-de-rupture
-wrapper: container
 script:
   - legacy
 example:

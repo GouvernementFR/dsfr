@@ -3,6 +3,14 @@
  const containerClasses = [`${prefix}-container${grid.fluid ? '--fluid' : '' }`];
  %>
 
+<% if (grid.fullWidth) { %>
+<div data-<%=prefix%>-container="full">
+<% } %>
+
 <div <%- includeClasses(containerClasses); %>>
     <%- include('./grid', {grid: grid}); %>
 </div>
+
+<% if (grid.fullWidth) { %>
+</div>
+<% } %>
