@@ -1,6 +1,0 @@
-<%
-const datatable = locals.datatable || {};
-const data = JSON.parse(include('../data/datatable.json.ejs', { datatable: datatable }));
-%>
-
-<%- include('../../template/ejs/datatable', {datatable: data}); %>

@@ -126,16 +126,16 @@
                 #{ns(checkbox-group)} {
                     margin-right: -0.5rem;
                 }
+
+                &:nth-child(2) {
+                    left: 4rem;
+                }
             }
 
             &__fixed {
                 position: sticky;
                 left: 0;
                 z-index: 1;
-
-                &:nth-child(2) {
-                    left: 4rem;
-                }
             }
 
             &__centered {

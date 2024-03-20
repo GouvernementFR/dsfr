@@ -1,9 +1,0 @@
-title: Tableau complexe
-description:
-doc:
-
-sample:
-  default: Tableau complexe par défaut
-  scrollable: Tableau complexe hauteur max
-  fixed-width: Tableau complexe largeur SM
-  expandable: Tableau complexe repliable

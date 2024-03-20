@@ -3,7 +3,7 @@
 
 <%- sample(getText('sample.simple', 'table'), './sample/table-simple', {}, true); %>
 
-<%- sample(getText('sample.default', 'table'), './sample/table-default', {table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expandable: 'openned'}, {expanded: true}, {expandable: 'closed'}]} }, true); %>
+<%- sample(getText('sample.default', 'table'), './sample/table-default', {table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expanded: 'true'}, {expandable: true}, {}, {expanded: 'false'}, {expandable: true}]} }, true); %>
 
 <%- sample(getText('sample.double-header', 'table'), './sample/table-double-header', {}, true); %>
 

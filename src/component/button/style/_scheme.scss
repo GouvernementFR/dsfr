@@ -31,6 +31,7 @@
     &--fullscreen,
     &--tooltip,
     &--briefcase,
+    &--expand,
     &--team {
       @include btn-kind-scheme(4, $legacy);
     }

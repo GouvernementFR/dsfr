@@ -2,8 +2,17 @@
     <div class="<%= prefix %>-table__wrapper">
         <div class="<%= prefix %>-table__container">
             <div class="<%= prefix %>-table__content">
-                <table>
+                <table class="fr-cell__multiline">
                     <caption>Caption du tableau (accessibilité)</caption>
+                    <colgroup>
+                        <col class="<%= prefix %>-cell__xs" />
+                        <col class="<%= prefix %>-cell__xs" />
+                        <col class="<%= prefix %>-cell__md" />
+                        <col class="<%= prefix %>-cell__sm" />
+                        <col class="<%= prefix %>-cell__md" />
+                        <col class="<%= prefix %>-cell__lg" />
+                        <col class="<%= prefix %>-cell__md" />
+                    </colgroup>
                     <thead>
                         <tr>
                             <th scope="col" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
@@ -50,7 +59,7 @@
                             </td>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <button
-                                    class="<%= prefix %>-btn <%= prefix %>-icon-arrow-down-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
+                                    class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     aria-controls="row-key-2"
                                     aria-expanded="false"
                                     title="Déplier"
@@ -103,7 +112,7 @@
                             </td>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <button
-                                    class="<%= prefix %>-btn <%= prefix %>-icon-arrow-up-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
+                                    class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     title="Déplier"
                                     aria-controls="row-key-4"
                                     aria-expanded="true"
@@ -174,7 +183,7 @@
                             </td>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <button
-                                    class="<%= prefix %>-btn <%= prefix %>-icon-arrow-down-s-line <%= prefix %>-btn--tertiary-no-outline <%= prefix %>-btn--sm"
+                                    class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     title="Déplier"
                                     aria-controls="row-key-6"
                                     aria-expanded="false"
@@ -195,8 +204,17 @@
                             <td>Dublin No. 2 Lake Park</td>
                         </tr>
                         <tr id="row-key-6" class="<%= prefix %>-collapse" data-row-key=6">
-                            <td class="<%= prefix %>-cell__expanded" rowspan="7">
+                            <td class="<%= prefix %>-cell__expanded" colspan="7">
                                 <table>
+                                    <colgroup>
+                                        <col class="<%= prefix %>-cell__xs" />
+                                        <col class="<%= prefix %>-cell__xs" />
+                                        <col class="<%= prefix %>-cell__md" />
+                                        <col class="<%= prefix %>-cell__sm" />
+                                        <col class="<%= prefix %>-cell__md" />
+                                        <col class="<%= prefix %>-cell__lg" />
+                                        <col class="<%= prefix %>-cell__md" />
+                                    </colgroup>
                                     <tr data-row-key=6-1">
                                         <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
                                         <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
@@ -215,23 +233,17 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td>Exemple de ligne dépliée</td>
-                                        <td>14</td>
-                                        <td>0575-22098909</td>
-                                        <td>Repellat natus illo omnis</td>
                                         <td>
-                                            <div class="<%= prefix %>-toggle">
-                                                <input
-                                                    type="checkbox"
-                                                    class="<%= prefix %>-toggle__input"
-                                                    id="toggle-4403"
-                                                />
-                                                <label
-                                                    class="<%= prefix %>-toggle__label"
-                                                    for="toggle-4403"
-                                                ></label>
-                                            </div>
+                                            <a href="#">Joe Black</a>
                                         </td>
+                                        <td>32</td>
+                                        <td>0575-22098909</td>
+                                        <td>
+                                            Repellat natus illo omnis nulla nostrum ut
+                                            doloremque ipsam voluptas officiis cumque porro
+                                            nobis, at error ad eos, id, iste odit quae.
+                                        </td>
+                                        <td>Sydney No. 1 Lake Park</td>
                                     </tr>
                                     <tr data-row-key=6-2">
                                         <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
@@ -251,23 +263,13 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td>Exemple de ligne dépliée</td>
-                                        <td>14</td>
-                                        <td>0575-22098909</td>
-                                        <td>Repellat natus illo omnis</td>
                                         <td>
-                                            <div class="<%= prefix %>-toggle">
-                                                <input
-                                                    type="checkbox"
-                                                    class="<%= prefix %>-toggle__input"
-                                                    id="toggle-4403-2"
-                                                />
-                                                <label
-                                                    class="<%= prefix %>-toggle__label"
-                                                    for="toggle-4403-2"
-                                                ></label>
-                                            </div>
+                                            <a href="#">Joe Black</a>
                                         </td>
+                                        <td>32</td>
+                                        <td>0575-22098909</td>
+                                        <td>18900010002</td>
+                                        <td>Sydney No. 1 Lake Park</td>
                                     </tr>
                                 </table>
                             </td>

@@ -1,9 +1,0 @@
-id: datagrid
-title: Tableau complexe <div>
-description:
-doc:
-wrapper: col-8
-style:
-  - core
-  - toggle
-  - checkbox

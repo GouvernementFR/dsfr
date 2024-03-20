@@ -117,16 +117,15 @@ data.table.thead = [
 
 data.table.tbody = new Array(rows.length);
 for(let r = 0; r < rows.length; r++) {
-  const expandableIcon = rows[r].expandable && rows[r].expandable === 'openned' ? 'arrow-up-s-line' : 'arrow-down-s-line';
 
   data.table.tbody[r] = [
     {
       classes: [`${prefix}-cell__fixed`, `${prefix}-cell__actionable`],
-      content: rows[r].expanded ? actionCellEmpty : checkboxCell({...checkboxDefault, id: `${uniqueId('table-select-checkbox')}--${r}`})
+      content: rows[r].expandable ? actionCellEmpty : checkboxCell({...checkboxDefault, id: `${uniqueId('table-select-checkbox')}--${r}`})
     },
     {
       classes: [`${prefix}-cell__fixed`, `${prefix}-cell__fixed--last__right`, `${prefix}-cell__actionable`],
-      content: rows[r].expandable ? buttonCell({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expand', 'table')}`, icon: expandableIcon, kind: 4, size: 'sm', iconPlace: 'only'}) : rows[r].expanded ? checkboxCell({...checkboxDefault, id: `${uniqueId('table-expanded-select-checkbox')}--${r}`}) : actionCellEmpty
+      content: rows[r].expandable ? checkboxCell({...checkboxDefault, id: `${uniqueId('table-expanded-select-checkbox')}--${r}`}) : rows[r].expanded ? buttonCell({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expand', 'table')}`, classes:[`${prefix}-btn--expand`], attributes: {'aria-controls': `row-key-${r + 2}`, 'aria-expanded': `${rows[r].expanded}`}}) : actionCellEmpty
     },
     {
       content: getText('data.cell.text', 'table')
