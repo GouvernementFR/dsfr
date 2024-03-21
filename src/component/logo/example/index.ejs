@@ -1,10 +1,10 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Logo MD (par défaut)', './sample/logo.ejs', {logo: {title: 'Intitulé<br>officiel'}}, true); %>
+<%- sample('Logo MD (par défaut)', './sample/logo.ejs', {logo: {title: 'Intitulé<br role="presentation">officiel'}}, true); %>
 
-<%- sample('Logo SM', './sample/logo.ejs', {logo: {size: 'sm', title: 'Intitulé<br>officiel'}, }, true); %>
+<%- sample('Logo SM', './sample/logo.ejs', {logo: {size: 'sm', title: 'Intitulé<br role="presentation">officiel'}, }, true); %>
 
-<%- sample('Logo LG', './sample/logo.ejs', {logo: {size: 'lg', title: 'Intitulé<br>officiel'}}, true); %>
+<%- sample('Logo LG', './sample/logo.ejs', {logo: {size: 'lg', title: 'Intitulé<br role="presentation">officiel'}}, true); %>
 
 <%- sample('Exemple logo long', './sample/logo-ecology.ejs', {}, true); %>
 
