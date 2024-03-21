@@ -38,42 +38,49 @@
         thead {
             th {
                 font-weight: font-weight(bold);
+
+                background-size: 100% 1px;
+                background-repeat: no-repeat;
+                background-position: 100% 100%;
             }
         }
 
-        tbody {
-            tr {
-                &:last-child {
-                    th,
-                    td {
-                        &[scope='row'] {
-                            background-size: 1px 100%, 100% 1px;
-                            background-repeat: no-repeat, no-repeat;
-                            background-position: 100% 0, 0 100%;
+        tr {
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+
+            &:last-child {
+                th,
+                td {
+                    &[scope='row'] {
+                        background-size: 1px 100%, 100% 1px;
+                        background-repeat: no-repeat, no-repeat;
+                        background-position: 100% 0, 0 100%;
+                    }
+                }
+            }
+
+            &.fr-collapse {
+                &.fr-collapse--expanded {
+                    display: table-row;
+
+                    &::before {
+                        content: none;
+                    }
+
+                    & > .fr-cell__fixed {
+                        &:first-child {
+                            transform: translateX(4rem);
+                            z-index: 2;
                         }
                     }
                 }
 
-                &.fr-collapse {
-                    &.fr-collapse--expanded {
-                        display: table-row;
-
-                        &::before {
-                           content: none;
-                        }
-                    }
-
-                    &:not(.fr-collapse--expanded) {
-                        display: none;
-                    }
+                &:not(.fr-collapse--expanded) {
+                    display: none;
                 }
             }
-        }
-
-        th[scope='row'] {
-            background-size: 1px 100%, 100% 1px;
-            background-repeat: no-repeat, no-repeat;
-            background-position: 100% 0, 0 100%;
         }
 
         th,
@@ -90,6 +97,16 @@
             background-repeat: no-repeat;
             background-position: 100% 100%;
 
+            // &::before {
+            //     position: absolute;
+            //     content: '';
+            //     width: calc(100% - 1px);
+            //     height: calc(100% - 1px);
+            //     z-index: -1;
+            //     top: 0;
+            //     left: 0;
+            // }
+
             #{ns(checkbox-group)} {
                 display: inline-block;
 
@@ -98,6 +115,12 @@
                     font-size: 0.875rem;
                 }
             }
+        }
+
+        th[scope='row'] {
+            background-size: 1px 100%, 100% 1px;
+            background-repeat: no-repeat, no-repeat;
+            background-position: 100% 0, 0 100%;
         }
 
         #{ns(cell)} {
@@ -136,6 +159,10 @@
                 position: sticky;
                 left: 0;
                 z-index: 1;
+
+                background-size: 100% 1px;
+                background-repeat: no-repeat;
+                background-position: 100% 100%;
             }
 
             &__centered {

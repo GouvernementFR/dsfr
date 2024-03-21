@@ -11,9 +11,7 @@ attributes.id = table.id || uniqueId('table-tbody');
         <%
             const rowClasses = [];
             if (table.rows[row].selected) rowClasses.push(prefix + '-row__selected');
-            if (table.rows[row].expandable) rowClasses.push(prefix + '-collapse');
-            // if (table.rows[row].expandable) rowClasses.push(prefix + '-row__expandable');
-            // if (table.rows[row].expanded) rowClasses.push(prefix + '-row__expanded');
+            if (table.rows[row].collapse) rowClasses.push(prefix + '-collapse');
             const rowAttributes = {};
             rowAttributes.id = `row-key-${row + 1}`;
             rowAttributes['data-row-key'] = row + 1;

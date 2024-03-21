@@ -60,7 +60,7 @@
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
-                                    aria-controls="row-key-2"
+                                    aria-controls="expandable-row-key-2"
                                     aria-expanded="false"
                                     title="Déplier"
                                 >
@@ -75,9 +75,9 @@
                             <td>18889898989</td>
                             <td>New York No. 1 Lake Park</td>
                         </tr>
-                        <tr id="row-key-2" class="<%= prefix %>-collapse" data-row-key="2">
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable"></td>
+                        <tr id="expandable-row-key-2" class="<%= prefix %>-collapse" data-row-key="2">
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right"></td>
+                            <td class="<%= prefix %>-cell__fixed"></td>
                             <td colspan="5">
                                 <div
                                     id="alert-1198"
@@ -114,7 +114,7 @@
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     title="Déplier"
-                                    aria-controls="row-key-4"
+                                    aria-controls="expandable-row-key-4"
                                     aria-expanded="true"
                                 >
                                     Déplier
@@ -128,9 +128,8 @@
                             <td>18900010002</td>
                             <td>Sydney No. 1 Lake Park</td>
                         </tr>
-                        <tr id="row-key-4" class="<%= prefix %>-collapse" data-row-key="4">
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                        <tr id="expandable-row-key-4" class="<%= prefix %>-collapse" data-row-key="4">
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -146,6 +145,7 @@
                                     </label>
                                 </div>
                             </td>
+                            <td class="<%= prefix %>-cell__fixed"></td>
                             <td>Exemple de ligne dépliée</td>
                             <td>14</td>
                             <td>0575-22098909</td>
@@ -185,7 +185,7 @@
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     title="Déplier"
-                                    aria-controls="row-key-6"
+                                    aria-controls="expandable-row-key-6"
                                     aria-expanded="false"
                                 >
                                     Déplier
@@ -203,7 +203,7 @@
                             </td>
                             <td>Dublin No. 2 Lake Park</td>
                         </tr>
-                        <tr id="row-key-6" class="<%= prefix %>-collapse" data-row-key=6">
+                        <tr id="expandable-row-key-6" class="<%= prefix %>-collapse" data-row-key=6">
                             <td class="<%= prefix %>-cell__expanded" colspan="7">
                                 <table>
                                     <colgroup>
@@ -216,8 +216,7 @@
                                         <col class="<%= prefix %>-cell__md" />
                                     </colgroup>
                                     <tr data-row-key=6-1">
-                                        <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
-                                        <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                                        <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right">
                                             <div
                                                 class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                             >
@@ -233,6 +232,7 @@
                                                 </label>
                                             </div>
                                         </td>
+                                        <td class="<%= prefix %>-cell__fixed"></td>
                                         <td>
                                             <a href="#">Joe Black</a>
                                         </td>
@@ -246,8 +246,7 @@
                                         <td>Sydney No. 1 Lake Park</td>
                                     </tr>
                                     <tr data-row-key=6-2">
-                                        <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable"></td>
-                                        <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                                        <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right">
                                             <div
                                                 class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                             >
@@ -263,6 +262,7 @@
                                                 </label>
                                             </div>
                                         </td>
+                                        <td class="<%= prefix %>-cell__fixed"></td>
                                         <td>
                                             <a href="#">Joe Black</a>
                                         </td>
@@ -273,6 +273,36 @@
                                     </tr>
                                 </table>
                             </td>
+                        </tr>
+                        <tr data-row-key="7">
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                                <div
+                                    class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
+                                >
+                                    <input
+                                        name="expandable-checkboxes-small--7"
+                                        id="expandable-checkboxes-small--7"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="<%= prefix %>-label"
+                                        for="expandable-checkboxes-small--7"
+                                    >
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right"></td>
+                            <td>
+                                <a href="#">Jake White</a>
+                            </td>
+                            <td>18</td>
+                            <td>0575-22098909</td>
+                            <td>
+                                Repellat natus illo omnis nulla nostrum ut
+                                doloremque ipsam voluptas officiis cumque porro
+                                nobis, at error ad eos, id, iste odit quae.
+                            </td>
+                            <td>Dublin No. 2 Lake Park</td>
                         </tr>
                     </tbody>
                 </table>

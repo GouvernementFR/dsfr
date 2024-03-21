@@ -14,31 +14,37 @@
 
         &__content {
             thead {
-                th {
-                    @include color.background(alt grey, (legacy: $legacy, hover: true));
+                tr {
+                    @include color.background-image((border plain grey), (legacy: $legacy));
+                }
 
+                th {
                     &[scope="col"] {
+                        @include color.background(alt grey, (legacy: $legacy, hover: true));
                         @include color.background-image((border plain grey), (legacy: $legacy));
                     }
 
                     &:not([scope="col"]) {
+                        @include color.background(alt grey, (legacy: $legacy, hover: true));
                         @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
                     }
 
-                    &:hover {
-                        background-color: var(--hover);
-                    }
+                    // &:hover {
+                    //     background-color: var(--hover);
+                    // }
                 }
             }
 
             tbody {
                 tr {
-                    &:hover {
-                        th,
-                        td {
-                            background-color: var(--hover);
-                        }
-                    }
+                    @include color.background-image((border default grey), (legacy: $legacy));
+
+                    // &:hover {
+                    //     th,
+                    //     td {
+                    //         background-color: var(--hover);
+                    //     }
+                    // }
 
                     &:last-child {
                         th,
@@ -57,9 +63,15 @@
 
                 th,
                 td {
+                    position: relative;
                     @include color.text(title grey, (legacy: $legacy));
-                    @include color.background(default grey, (legacy: $legacy, hover: true));
+
                     @include color.background-image((border default grey), (legacy: $legacy));
+                    @include color.background(default grey, (legacy: $legacy, hover: true));
+
+                    // &::before {
+                    //     @include color.background(default grey, (legacy: $legacy, hover: true));
+                    // }
                 }
 
                 #{ns(row)} {
@@ -69,6 +81,13 @@
                             @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                         }
                     }
+                }
+            }
+
+            #{ns(cell)} {
+                &__fixed {
+                    @include color.background-image((border default grey), (legacy: $legacy));
+                    @include color.background(default grey, (legacy: $legacy, hover: true));
                 }
             }
         }
