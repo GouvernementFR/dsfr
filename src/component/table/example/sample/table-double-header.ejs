@@ -1,11 +1,11 @@
-<div class="<%= prefix %>-table">
+<div id="double-header-table" class="<%= prefix %>-table">
     <div class="<%= prefix %>-table__wrapper">
         <div class="<%= prefix %>-table__container">
             <div class="<%= prefix %>-table__content">
                 <table>
                     <caption>
                         Exemple de tableau à double entrée<br />
-                        <i>+ modifieur multi-ligne sur les lignes ou cellules</i>
+                        <i>+ modifieur multi-ligne sur une ligne ou une cellule</i>
                     </caption>
                     <thead>
                         <tr>
@@ -28,9 +28,8 @@
                             </th>
                             <th scope="col">Name</th>
                             <th scope="col">Age</th>
-                            <th scope="colgroup" colspan="2">
-                                Exemple de 2 cellules fusionnées dans le Header
-                            </th>
+                            <th scope="col">Num</th>
+                            <th scope="col">ID</th>
                             <th scope="col">Address</th>
                         </tr>
                     </thead>
@@ -62,13 +61,12 @@
                             <td>New York No. 1 Lake Park</td>
                         </tr>
                         <tr class="<%= prefix %>-row__selected" data-row-key="2">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">9h</th>
+                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">12h</th>
                             <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
                                     <input
-                                        checked
                                         name="double-header-checkboxes-small--2"
                                         id="double-header-checkboxes-small--2"
                                         type="checkbox"
@@ -80,13 +78,13 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="<%= prefix %>-cell__multiline" colspan="5">
-                                <i>Exemple de colspan sur toute la ligne<br />
-                                + modifieur de multi-ligne sur la cellule</i><br />
-                                Repellat natus illo omnis nulla nostrum ut
-                                doloremque ipsam voluptas officiis cumque porro
-                                nobis, at error ad eos, id, iste odit quae.
+                            <td>
+                                <a href="#">Joe Black</a>
                             </td>
+                            <td>32</td>
+                            <td>0575-22098909</td>
+                            <td>18900010002</td>
+                            <td>Sydney No. 1 Lake Park</td>
                         </tr>
                         <tr data-row-key="3">
                             <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">10h</th>
@@ -107,33 +105,17 @@
                                 </div>
                             </td>
                             <td>
-                                <a href="#">Jim Red</a>
+                                <a href="#">John Brown</a>
                             </td>
-                            <td>18</td>
-                            <td rowspan="2">
-                                <svg
-                                    aria-hidden="true"
-                                    class="<%= prefix %>-artwork"
-                                    viewBox="0 0 80 80"
-                                    width="80px"
-                                    height="80px"
-                                >
-                                    <use
-                                        class="<%= prefix %>-artwork-decorative"
-                                        href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-decorative"
-                                    ></use>
-                                    <use
-                                        class="<%= prefix %>-artwork-minor"
-                                        href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-minor"
-                                    ></use>
-                                    <use
-                                        class="<%= prefix %>-artwork-major"
-                                        href="../../../../dist/artwork/pictograms/environment/environment.svg#artwork-major"
-                                    ></use>
-                                </svg>
+                            <td>32</td>
+                            <td>0571-22098909</td>
+                            <td>18889898989</td>
+                            <td class="<%= prefix %>-cell__multiline">
+                                <i>Modifieur de multi-ligne sur une cellule</i><br>
+                                Repellat natus illo omnis nulla nostrum ut
+                                doloremque ipsam voluptas officiis cumque porro
+                                nobis, at error ad eos, id, iste odit quae.
                             </td>
-                            <td>18900010002</td>
-                            <td>London No. 2 Lake Park</td>
                         </tr>
                         <tr class="<%= prefix %>-cell__multiline" data-row-key="4">
                             <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">11h</th>
@@ -153,20 +135,18 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="<%= prefix %>-cell__top">
-                                <a href="#">Jake White</a>
-                            </td>
-                            <td class="<%= prefix %>-cell__top">18</td>
                             <td>
-                                <i>Exemple de modifieur de multi-ligne sur toute la ligne</i><br />
+                                <a href="#">Jake White or Black or Yellow</a>
+                            </td>
+                            <td>18</td>
+                            <td>0575-22098909-22098909</td>
+                            <td>
+                                <i>Modifieur de multi-ligne sur toute la ligne</i><br>
                                 Repellat natus illo omnis nulla nostrum ut
                                 doloremque ipsam voluptas officiis cumque porro
-                                nobis, at error ad eos, id, iste odit quae. Repellat
-                                natus illo omnis nulla nostrum ut doloremque ipsam
-                                voluptas officiis cumque porro nobis, at error ad
-                                eos, id, iste odit quae.
+                                nobis, at error ad eos, id, iste odit quae.
                             </td>
-                            <td class="<%= prefix %>-cell__top">Dublin No. 2 Lake Park</td>
+                            <td>Dublin No. 2 Lake Park, le reste d'une adresse très longue qui doit passer à la ligne automatiquement</td>
                         </tr>
                         <tr data-row-key="5">
                             <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">12h</th>
@@ -190,12 +170,8 @@
                                 <a href="#">Joe Black</a>
                             </td>
                             <td>32</td>
-                            <td colspan="2">
-                                <i
-                                    >Exemple de 2 cellules fusionnées sur une
-                                    ligne</i
-                                >
-                            </td>
+                            <td>0575-22098909</td>
+                            <td>18900010002</td>
                             <td>Sydney No. 1 Lake Park</td>
                         </tr>
                     </tbody>
