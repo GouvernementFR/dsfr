@@ -69,7 +69,8 @@
                         content: none;
                     }
 
-                    & > .fr-cell__fixed {
+                    & > .fr-cell__fixed,
+                    & .fr-cell__expanded tr > .fr-cell__fixed {
                         &:first-child {
                             transform: translateX(4rem);
                             z-index: 2;

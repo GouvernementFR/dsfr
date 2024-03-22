@@ -6,6 +6,7 @@ subdir:
   deprecated: version dépréciée
 
 sample:
+  cell-collapsed: Tableau cellules fusionnées
   default: Tableau complexe
   double-header: Tableau à double entrée
   expandable: Tableau repliable

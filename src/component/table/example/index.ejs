@@ -1,13 +1,25 @@
 
 <% const sample = getSample(include); %>
 
-<%- sample(getText('sample.simple', 'table'), './sample/table-simple', {}, true); %>
+<%-
+    sample(getText('sample.simple', 'table'), './sample/table-simple', {}, true);
+%>
 
-<%- sample(getText('sample.default', 'table'), './sample/table-default', {table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expanded: 'true'}, {collapse: true}, {}, {expanded: 'false'}, {collapse: true}]} }, true); %>
+<%-
+    sample(getText('sample.default', 'table'), './sample/table-default', {table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expanded: 'true'}, {collapse: true}, {}, {expanded: 'false'}, {collapse: true}]} }, true);
+%>
 
-<%- sample(getText('sample.expandable', 'table'), './sample/table-expandable', {}, true); %>
+<%-
+    sample(getText('sample.expandable', 'table'), './sample/table-expandable', {}, true);
+%>
 
-<%- sample(getText('sample.double-header', 'table'), './sample/table-double-header', {}, true); %>
+<%-
+    sample(getText('sample.cell-collapsed', 'table'), './sample/table-cell-collapsed', {}, true);
+%>
+
+<%-
+    sample(getText('sample.double-header', 'table'), './sample/table-double-header', {}, true);
+%>
 
 <%-
     // sample(getText('sample.scrollable', 'table'), './sample/table-scrollable', {}, true);
