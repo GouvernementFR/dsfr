@@ -44,10 +44,9 @@
           // @include z-index(auto);
 
           @include selector.current {
-            @include before {
-              @include absolute(auto, null, 0, 0, 100%, 2px);
-              @include margin-top(0);
-            }
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            background-size: #{spacing.space(100% 0.5v)};
           }
         }
       }
@@ -71,6 +70,14 @@
       @include min-height(auto, lg);
     }
 
+    #{ns(nav__btn)} {
+      @include icon(arrow-down-s-line, sm, after) {
+        @include margin-left(2v);
+        @include margin-right(0);
+        transition: transform 0.3s;
+      }
+    }
+
     @include respond-from(lg) {
       position: initial;
       @include before(none);
@@ -84,6 +91,7 @@
 
   &__link,
   &__btn {
+    @include nest-btn(sm, left, null, null, false);
     @include size(100%);
     @include padding(3v 4v);
     @include text-style(md);
@@ -97,10 +105,9 @@
 
     @include selector.current {
       position: relative;
-      @include before('', block) {
-        @include absolute(50%, null, null, 0, 2px, 6v);
-        @include margin-top(-3v);
-      }
+      background-repeat: no-repeat;
+      background-position: #{spacing.space(0 3v)};
+      background-size: #{spacing.space(2px calc(100% - 6v))};
     }
   }
 
@@ -119,12 +126,6 @@
     @include display-flex(null, center, space-between);
     flex-direction: row;
     @include padding(4v 3v 4v 4v, lg);
-
-    @include icon(arrow-down-s-line, sm, after) {
-      @include margin-left(2v);
-      @include margin-right(0);
-      transition: transform 0.3s;
-    }
 
     @include respond-from(lg) {
       justify-content: flex-start;
