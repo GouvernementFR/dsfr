@@ -50,15 +50,9 @@
           // @include z-index(auto);
 
           @include selector.current {
-            @include before {
-              @include absolute(auto, null, 0, 0, 100%, 2px);
-              @include margin-top(0);
-
-              @include preference.forced-colors {
-                background-color: highlight;
-                @include height(1v);
-              }
-            }
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            background-size: #{spacing.space(100% 0.5v)};
           }
         }
       }
@@ -108,15 +102,9 @@
 
     @include selector.current {
       position: relative;
-      @include before('', block) {
-        @include absolute(50%, null, null, 0, 2px, 6v);
-        @include margin-top(-3v);
-
-        @include preference.forced-colors {
-          background-color: highlight;
-          @include width(1v);
-        }
-      }
+      background-repeat: no-repeat;
+      background-position: #{spacing.space(0 3v)};
+      background-size: #{spacing.space(2px calc(100% - 6v))};
     }
   }
 
