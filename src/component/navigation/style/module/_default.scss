@@ -76,6 +76,14 @@
       @include min-height(auto, lg);
     }
 
+    #{ns(nav__btn)} {
+      @include icon(arrow-down-s-line, sm, after) {
+        @include margin-left(2v);
+        @include margin-right(0);
+        transition: transform 0.3s;
+      }
+    }
+
     @include respond-from(lg) {
       position: initial;
       @include before(none);
@@ -89,6 +97,7 @@
 
   &__link,
   &__btn {
+    @include nest-btn(sm, left, null, null, false);
     @include size(100%);
     @include padding(3v 4v);
     @include text-style(md);
@@ -123,17 +132,6 @@
     @include display-flex(null, center, space-between);
     flex-direction: row;
     @include padding(4v 3v 4v 4v, lg);
-
-    @include icon(arrow-down-s-line, sm, after) {
-      @include margin-left(2v);
-      @include margin-right(0);
-      transition: transform 0.3s;
-
-      @include preference.reduce-motion {
-        transition: none;
-      }
-    }
-    @include icon-forced-color(buttontext, true, after);
 
     @include respond-from(lg) {
       justify-content: flex-start;
