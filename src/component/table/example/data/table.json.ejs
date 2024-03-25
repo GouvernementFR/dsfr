@@ -51,7 +51,7 @@ const iconCell = (name) => include('../../../../core/template/ejs/icon/icon.ejs'
 const pictogramCell = (name) => include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram: {name}});
 const toggleCell = (id) => include('../../../toggle/template/ejs/toggle.ejs', {toggle: {id, label: '', inputAttr: {'aria-label': getText('data.cell.action.select', 'table')}}});
 const badgeCell = include('../../../badge/template/ejs/badge.ejs', {badge: {type: 'warning', label: getText('data.cell.lable', 'table'), classes: [`${prefix}-mr-1v`]}});
-const tagCell = include('../../../tag/template/ejs/tag.ejs', {tag:{type: 'clickable', accent: 'green-emeraude', href: '#', label: getText('data.cell.lable', 'table')}});
+const tagCell = include('../../../tag/template/ejs/tag.ejs', {tag:{type: 'clickable', href: '#', label: getText('data.cell.lable', 'table')}});
 const downloadLinkCell = include('../../../link/template/ejs/link.ejs', {link:{download: true, href: '/example/img/image.jpg', label: getText('data.cell.download.lable', 'table'), detail: getText('data.cell.download.detail', 'table')}});
 
 data.table.thead = [
@@ -59,14 +59,14 @@ data.table.thead = [
     attributes: {
       role: 'columnheader'
     },
-    classes: [`${prefix}-cell__fixed`, `${prefix}-cell__actionable`],
+    classes: [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--select`],
     content: checkboxCell(checkboxSelectCol)
   },
   {
     attributes: {
       role: 'columnheader'
     },
-    classes: [`${prefix}-cell__fixed`, `${prefix}-cell__fixed--last__right`,  `${prefix}-cell__actionable`],
+    classes: [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--last__right`,  `${prefix}-cell__actionable--collapse`],
     content: actionCellEmpty
   },
   {
@@ -117,9 +117,10 @@ data.table.thead = [
 
 data.table.tbody = new Array(rows.length);
 for(let r = 0; r < rows.length; r++) {
-  const fixedCellClasses = [`${prefix}-cell__fixed`, `${prefix}-cell__actionable`];
-  const firstActionCellClasses = rows[r].collapse ? [...fixedCellClasses, `${prefix}-cell__fixed--last__right`] : fixedCellClasses;
-  const secondActionCellClasses = rows[r].expanded ? [...fixedCellClasses, `${prefix}-cell__fixed--last__right`] : rows[r].collapse ? [`${prefix}-cell__fixed`] : [...fixedCellClasses, `${prefix}-cell__fixed--last__right`];
+  const actionableCellClasses = [`${prefix}-cell__actionable`];
+  const selectCellClasses = [...actionableCellClasses, `${prefix}-cell__actionable--select`];
+  const firstActionCellClasses = rows[r].collapse ? [...selectCellClasses, `${prefix}-cell__actionable--last__right`] : selectCellClasses;
+  const secondActionCellClasses = rows[r].collapse ? actionableCellClasses : [...actionableCellClasses, `${prefix}-cell__actionable--collapse`, `${prefix}-cell__actionable--last__right`];
 
   data.table.tbody[r] = [
     {

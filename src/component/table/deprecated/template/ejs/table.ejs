@@ -54,15 +54,15 @@ if (!table.col) table.col = data[0].length;
     <% } %>
     <thead>
       <tr>
-        <% for(let col = 0; col < table.col; col++) { %>
+        <% for (let col = 0; col < table.col; col++) { %>
           <th scope="col"><%- table.data[0][col] %> </th>
         <% } %>
       </tr>
     </thead>
     <tbody>
-      <% for(let row = 1; row < table.row; row++) { %>
+      <% for (let row = 1; row < table.row; row++) { %>
       <tr>
-        <% for(let col = 0; col < table.col; col++) { %>
+        <% for (let col = 0; col < table.col; col++) { %>
           <td><%- table.data[row][col] %></td>
         <% } %>
       </tr>

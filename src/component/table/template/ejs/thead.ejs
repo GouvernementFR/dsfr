@@ -8,15 +8,17 @@ attributes.id = table.id || uniqueId('table-thead');
 
 <thead <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
     <tr>
-        <% for(let col = 0; col < table.thead.length; col++) { %>
-            <%
-                let colClasses = table.thead[col].classes || [];
-                const colAttributes = table.thead[col].attributes || {};
-                colAttributes.scope = colAttributes.scope || 'col';
-            %>
-            <th <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
-                <%- table.thead[col].content %>
-            </th>
+        <% if (table.thead) { %>
+            <% for (let col = 0; col < table.thead.length; col++) { %>
+                <%
+                    let colClasses = table.thead[col].classes || [];
+                    const colAttributes = table.thead[col].attributes || {};
+                    colAttributes.scope = colAttributes.scope || 'col';
+                %>
+                <th <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
+                    <%- table.thead[col].content %>
+                </th>
+            <% } %>
         <% } %>
     </tr>
 </thead>

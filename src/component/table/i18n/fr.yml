@@ -8,7 +8,7 @@ subdir:
 sample:
   cell-collapsed: Tableau cellules fusionnées
   default: Tableau complexe
-  double-header: Tableau à double entrée
+  double-entry: Tableau à double entrée
   expandable: Tableau repliable
   simple: Tableau simple
 

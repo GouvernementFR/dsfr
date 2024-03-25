@@ -2,7 +2,7 @@
     <div class="<%= prefix %>-table__wrapper">
         <div class="<%= prefix %>-table__container">
             <div class="<%= prefix %>-table__content">
-                <table class="fr-cell__multiline">
+                <table class="<%= prefix %>-cell__multiline">
                     <caption>Exemple de tableau comportant des lignes dépliables</caption>
                     <colgroup>
                         <col class="<%= prefix %>-cell__xs" />
@@ -15,7 +15,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id="expandable-col-id0" scope="col" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                            <th id="expandable-col-id0" scope="col" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -31,7 +31,7 @@
                                     </label>
                                 </div>
                             </th>
-                            <th id="expandable-col-id1" scope="col" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable"></th>
+                            <th id="expandable-col-id1" scope="col" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right"></th>
                             <th id="expandable-col-id2" scope="col">Name</th>
                             <th id="expandable-col-id3" scope="col">Age</th>
                             <th id="expandable-col-id4" scope="col">Num</th>
@@ -41,7 +41,7 @@
                     </thead>
                     <tbody>
                         <tr data-row-key="1">
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -57,7 +57,7 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     aria-controls="expandable-row-key-2"
@@ -76,8 +76,8 @@
                             <td>New York No. 1 Lake Park</td>
                         </tr>
                         <tr id="expandable-row-key-2" class="<%= prefix %>-collapse" data-row-key="2">
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right"></td>
-                            <td class="<%= prefix %>-cell__fixed"></td>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select <%= prefix %>-cell__actionable--last__right"></td>
+                            <td class="<%= prefix %>-cell__actionable"></td>
                             <td header="expandable-col-id2 expandable-col-id3 expandable-col-id4 expandable-col-id5 expandable-col-id6" colspan="5">
                                 <div
                                     id="alert-1198"
@@ -94,7 +94,7 @@
                             </td>
                         </tr>
                         <tr class="<%= prefix %>-row__expanded" data-row-key="3">
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -110,7 +110,7 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     title="Déplier"
@@ -129,7 +129,7 @@
                             <td>Sydney No. 1 Lake Park</td>
                         </tr>
                         <tr id="expandable-row-key-4" class="<%= prefix %>-collapse" data-row-key="4">
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right">
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select <%= prefix %>-cell__actionable--last__right">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -145,7 +145,7 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="<%= prefix %>-cell__fixed"></td>
+                            <td class="<%= prefix %>-cell__actionable"></td>
                             <td>Exemple de ligne dépliée</td>
                             <td>14</td>
                             <td>0575-22098909</td>
@@ -165,7 +165,7 @@
                             </td>
                         </tr>
                         <tr data-row-key="5">
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -181,7 +181,7 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     title="Déplier"
@@ -216,7 +216,7 @@
                                         <col class="<%= prefix %>-cell__md" />
                                     </colgroup>
                                     <tr data-row-key=6-1">
-                                        <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right">
+                                        <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select <%= prefix %>-cell__actionable--last__right">
                                             <div
                                                 class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                             >
@@ -232,7 +232,7 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td class="<%= prefix %>-cell__fixed"></td>
+                                        <td class="<%= prefix %>-cell__actionable"></td>
                                         <td>
                                             <a href="#">Joe Black</a>
                                         </td>
@@ -246,7 +246,7 @@
                                         <td>Sydney No. 1 Lake Park</td>
                                     </tr>
                                     <tr data-row-key=6-2">
-                                        <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right">
+                                        <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select <%= prefix %>-cell__actionable--last__right">
                                             <div
                                                 class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                             >
@@ -262,7 +262,7 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td class="<%= prefix %>-cell__fixed"></td>
+                                        <td class="<%= prefix %>-cell__actionable"></td>
                                         <td>
                                             <a href="#">Joe Black</a>
                                         </td>
@@ -275,7 +275,7 @@
                             </td>
                         </tr>
                         <tr data-row-key="7">
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable">
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="<%= prefix %>-checkbox-group <%= prefix %>-checkbox-group--sm"
                                 >
@@ -291,7 +291,7 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__actionable <%= prefix %>-cell__fixed--last__right"></td>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right"></td>
                             <td>
                                 <a href="#">Jake White</a>
                             </td>

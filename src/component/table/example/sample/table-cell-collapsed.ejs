@@ -2,13 +2,13 @@
     <div class="<%= prefix %>-table__wrapper">
         <div class="<%= prefix %>-table__container">
             <div class="<%= prefix %>-table__content">
-                <table class="<%= prefix %>-cell__multiline">
+                <table class="<%= prefix %>-table__double-entry <%= prefix %>-cell__multiline">
                     <caption>
                         Exemple de tableau comportant des cellules fusionnées<br />
                     </caption>
                     <thead>
                         <tr>
-                            <th id="cell-collapsed-col-id0" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row"></th>
+                            <th id="cell-collapsed-col-id0" scope="row"></th>
                             <th id="cell-collapsed-col-id1" scope="col">Name</th>
                             <th id="cell-collapsed-col-id2" scope="col">Age</th>
                             <th id="cell-collapsed-col-id3" scope="colgroup" colspan="2">
@@ -19,7 +19,7 @@
                     </thead>
                     <tbody>
                         <tr data-row-key="1">
-                            <th id="cell-collapsed-row-id1" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">8h</th>
+                            <th id="cell-collapsed-row-id1" scope="row">8h</th>
                             <td>
                                 <a href="#">John Brown</a>
                             </td>
@@ -29,7 +29,7 @@
                             <td>New York No. 1 Lake Park</td>
                         </tr>
                         <tr data-row-key="2">
-                            <th id="cell-collapsed-row-id2" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">9h</th>
+                            <th id="cell-collapsed-row-id2" scope="row">9h</th>
                             <td headers="cell-collapsed-col-id1 cell-collapsed-col-id2 cell-collapsed-col-id3 cell-collapsed-col-id4 cell-collapsed-row-id2" colspan="5">
                                 <i>Exemple de colspan sur toute la ligne</i><br />
                                 Repellat natus illo omnis nulla nostrum ut
@@ -38,7 +38,7 @@
                             </td>
                         </tr>
                         <tr data-row-key="3">
-                            <th id="cell-collapsed-row-id3" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">10h</th>
+                            <th id="cell-collapsed-row-id3" scope="row">10h</th>
                             <td>
                                 <a href="#">Jim Red</a>
                             </td>
@@ -70,7 +70,7 @@
                             <td>London No. 2 Lake Park</td>
                         </tr>
                         <tr data-row-key="4">
-                            <th id="cell-collapsed-row-id4" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">11h</th>
+                            <th id="cell-collapsed-row-id4" scope="row">11h</th>
                             <td class="<%= prefix %>-cell__top">
                                 <a href="#">Jake White</a>
                             </td>
@@ -86,7 +86,7 @@
                             <td class="<%= prefix %>-cell__top">Dublin No. 2 Lake Park</td>
                         </tr>
                         <tr data-row-key="5">
-                            <th id="cell-collapsed-row-id5" class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">12h</th>
+                            <th id="cell-collapsed-row-id5" scope="row">12h</th>
                             <td>
                                 <a href="#">Joe Black</a>
                             </td>

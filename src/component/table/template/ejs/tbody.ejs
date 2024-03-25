@@ -7,7 +7,7 @@ attributes.id = table.id || uniqueId('table-tbody');
 %>
 
 <tbody <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
-    <% for(let row = 0; row < table.rows.length; row++) { %>
+    <% for (let row = 0; row < table.rows.length; row++) { %>
         <%
             const rowClasses = [];
             if (table.rows[row].selected) rowClasses.push(prefix + '-row__selected');
@@ -17,7 +17,7 @@ attributes.id = table.id || uniqueId('table-tbody');
             rowAttributes['data-row-key'] = row + 1;
         %>
         <tr <%- includeClasses(rowClasses) %> <%- includeAttrs(rowAttributes) %>>
-            <% for(let col = 0; col < table.tbody[row].length; col++) { %>
+            <% for (let col = 0; col < table.tbody[row].length; col++) { %>
                 <%
                     const colTag = table.tbody[row][col].tag || 'td';
                     const colClasses = table.tbody[row][col].classes || [];

@@ -83,7 +83,7 @@
             }
 
             #{ns(cell)} {
-                &__fixed {
+                &__actionable {
                     @include color.background-image((border default grey), (legacy: $legacy));
                     @include color.background(default grey, (legacy: $legacy, hover: true));
                 }
@@ -92,7 +92,7 @@
 
         &__shadow {
             &--left {
-                #{ns(cell__fixed--last__right)} {
+                #{ns(cell__actionable--last__right)} {
                     @include color.background-image((border default grey) (border default grey), (legacy: $legacy));
 
                     &[scope='col'] {

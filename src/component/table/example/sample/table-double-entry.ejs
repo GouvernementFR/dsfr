@@ -1,31 +1,32 @@
-<div id="double-header-table" class="<%= prefix %>-table">
+<div id="double-entry-table" class="<%= prefix %>-table">
     <div class="<%= prefix %>-table__wrapper">
         <div class="<%= prefix %>-table__container">
             <div class="<%= prefix %>-table__content">
-                <table>
+                <table class="<%= prefix %>-table__double-entry">
                     <caption>
                         Exemple de tableau à double entrée<br />
                         <i>+ modifieur multi-ligne sur une ligne ou une cellule</i>
                     </caption>
                     <thead>
                         <tr>
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row"></th>
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable" scope="col">
+                            <th scope="row"></th>
+                            <th class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select" scope="col">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
                                     <input
-                                        name="double-header-checkboxes-small--0"
-                                        id="double-header-checkboxes-small--0"
+                                        name="double-entry-checkboxes-small--0"
+                                        id="double-entry-checkboxes-small--0"
                                         type="checkbox"
                                     />
                                     <label
                                         class="fr-label"
-                                        for="double-header-checkboxes-small--0"
+                                        for="double-entry-checkboxes-small--0"
                                     >
                                     </label>
                                 </div>
                             </th>
+                            <th scope="col" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right"></th>
                             <th scope="col">Name</th>
                             <th scope="col">Age</th>
                             <th scope="col">Num</th>
@@ -35,22 +36,32 @@
                     </thead>
                     <tbody>
                         <tr data-row-key="1">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">8h</th>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                            <th scope="row">8h</th>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
                                     <input
-                                        name="double-header-checkboxes-small--1"
-                                        id="double-header-checkboxes-small--1"
+                                        name="double-entry-checkboxes-small--1"
+                                        id="double-entry-checkboxes-small--1"
                                         type="checkbox"
                                     />
                                     <label
                                         class="fr-label"
-                                        for="double-header-checkboxes-small--1"
+                                        for="double-entry-checkboxes-small--1"
                                     >
                                     </label>
                                 </div>
+                            </td>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right">
+                                <button
+                                    class="<%= prefix %>-btn <%= prefix %>-btn--expand"
+                                    aria-controls="double-entry-row-key-1-1"
+                                    aria-expanded="false"
+                                    title="Déplier"
+                                >
+                                    Déplier
+                                </button>
                             </td>
                             <td>
                                 <a href="#">John Brown</a>
@@ -60,25 +71,53 @@
                             <td>18889898989</td>
                             <td>New York No. 1 Lake Park</td>
                         </tr>
+                        <tr id="double-entry-row-key-1-1" class="<%= prefix %>-collapse" data-row-key="1-1">
+                            <th scope="row"></th>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select <%= prefix %>-cell__actionable--last__right">
+                                <div
+                                    class="fr-checkbox-group fr-checkbox-group--sm"
+                                >
+                                    <input
+                                        name="double-entry-checkboxes-small--1-1"
+                                        id="double-entry-checkboxes-small--1-1"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="fr-label"
+                                        for="double-entry-checkboxes-small--1-1"
+                                    >
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="<%= prefix %>-cell__actionable"></td>
+                            <td>
+                                <a href="#">John Brown</a>
+                            </td>
+                            <td>32</td>
+                            <td>0571-22098909</td>
+                            <td>18889898989</td>
+                            <td>New York No. 1 Lake Park</td>
+                        </tr>
                         <tr class="<%= prefix %>-row__selected" data-row-key="2">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">12h</th>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                            <th scope="row">9h</th>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
                                     <input
                                         checked
-                                        name="double-header-checkboxes-small--2"
-                                        id="double-header-checkboxes-small--2"
+                                        name="double-entry-checkboxes-small--2"
+                                        id="double-entry-checkboxes-small--2"
                                         type="checkbox"
                                     />
                                     <label
                                         class="fr-label"
-                                        for="double-header-checkboxes-small--2"
+                                        for="double-entry-checkboxes-small--2"
                                     >
                                     </label>
                                 </div>
                             </td>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right"></td>
                             <td>
                                 <a href="#">Joe Black</a>
                             </td>
@@ -88,23 +127,24 @@
                             <td>Sydney No. 1 Lake Park</td>
                         </tr>
                         <tr data-row-key="3">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">10h</th>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                            <th scope="row">10h</th>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
                                     <input
-                                        name="double-header-checkboxes-small--3"
-                                        id="double-header-checkboxes-small--3"
+                                        name="double-entry-checkboxes-small--3"
+                                        id="double-entry-checkboxes-small--3"
                                         type="checkbox"
                                     />
                                     <label
                                         class="fr-label"
-                                        for="double-header-checkboxes-small--3"
+                                        for="double-entry-checkboxes-small--3"
                                     >
                                     </label>
                                 </div>
                             </td>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right"></td>
                             <td>
                                 <a href="#">John Brown</a>
                             </td>
@@ -119,23 +159,24 @@
                             </td>
                         </tr>
                         <tr class="<%= prefix %>-cell__multiline" data-row-key="4">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">11h</th>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                            <th scope="row">11h</th>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
                                     <input
-                                        name="double-header-checkboxes-small--4"
-                                        id="double-header-checkboxes-small--4"
+                                        name="double-entry-checkboxes-small--4"
+                                        id="double-entry-checkboxes-small--4"
                                         type="checkbox"
                                     />
                                     <label
                                         class="fr-label"
-                                        for="double-header-checkboxes-small--4"
+                                        for="double-entry-checkboxes-small--4"
                                     >
                                     </label>
                                 </div>
                             </td>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right"></td>
                             <td>
                                 <a href="#">Jake White or Black or Yellow</a>
                             </td>
@@ -150,23 +191,24 @@
                             <td>Dublin No. 2 Lake Park, le reste d'une adresse très longue qui doit passer à la ligne automatiquement</td>
                         </tr>
                         <tr data-row-key="5">
-                            <th class="<%= prefix %>-cell__fixed <%= prefix %>-cell__xs" scope="row">12h</th>
-                            <td class="<%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last__right <%= prefix %>-cell__actionable">
+                            <th scope="row">12h</th>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--select">
                                 <div
                                     class="fr-checkbox-group fr-checkbox-group--sm"
                                 >
                                     <input
-                                        name="double-header-checkboxes-small--5"
-                                        id="double-header-checkboxes-small--5"
+                                        name="double-entry-checkboxes-small--5"
+                                        id="double-entry-checkboxes-small--5"
                                         type="checkbox"
                                     />
                                     <label
                                         class="fr-label"
-                                        for="double-header-checkboxes-small--5"
+                                        for="double-entry-checkboxes-small--5"
                                     >
                                     </label>
                                 </div>
                             </td>
+                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__actionable--last__right"></td>
                             <td>
                                 <a href="#">Joe Black</a>
                             </td>

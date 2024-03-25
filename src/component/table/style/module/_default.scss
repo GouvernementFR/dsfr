@@ -5,6 +5,9 @@
 
 #{ns(table)} {
     --table-offset: #{space(4v)};
+    --row-th-width: #{space(35v)};
+
+
     @include set-text-margin(0);
     @include set-title-margin(0);
     @include padding-top(var(--table-offset));
@@ -69,8 +72,8 @@
                         content: none;
                     }
 
-                    & > .fr-cell__fixed,
-                    & .fr-cell__expanded tr > .fr-cell__fixed {
+                    & > .fr-cell__actionable,
+                    & .fr-cell__expanded tr > .fr-cell__actionable {
                         &:first-child {
                             transform: translateX(4rem);
                             z-index: 2;
@@ -122,85 +125,92 @@
             background-size: 1px 100%, 100% 1px;
             background-repeat: no-repeat, no-repeat;
             background-position: 100% 0, 0 100%;
+            min-width: var(--row-th-width);
+            max-width: var(--row-th-width);
+            white-space: inherit;
         }
 
-        #{ns(cell)} {
-            &__xs {
-                white-space: normal;
-                @include min-width(16v);
-            }
-            &__sm {
-                white-space: normal;
-                @include min-width(20v);
-            }
-            &__md {
-                white-space: normal;
-                @include min-width(50v);
-            }
-            &__lg {
-                white-space: normal;
-                @include min-width(100v);
-            }
-
-            &__actionable {
-                text-align: center;
-                @include min-width(16v);
-                @include width(16v);
-
-                #{ns(checkbox-group)} {
-                    margin-right: -0.5rem;
-                }
-
-                &:nth-child(2) {
-                    left: 4rem;
-                }
-            }
-
-            &__fixed {
-                position: sticky;
-                left: 0;
-                z-index: 1;
-
-                background-size: 100% 1px;
-                background-repeat: no-repeat;
-                background-position: 100% 100%;
-            }
-
-            &__centered {
-                text-align: center;
-            }
-
-            &__top {
-                vertical-align: top;
-            }
-
-            &__title {
-                font-weight: 700;
-            }
-
-            &__desc {
-                font-weight: 400;
-            }
-
-            &__inline {
-                display: flex;
-                align-items: center;
-                @include margin(0 -2v);
-
-                > * {
-                    @include margin(0 2v);
-                }
-            }
-
-            &__multiline {
-                &,
-                & * {
+        tr {
+            #{ns(cell)} {
+                &__xs {
                     white-space: normal;
+                    @include min-width(16v);
                 }
-            }
+                &__sm {
+                    white-space: normal;
+                    @include min-width(20v);
+                }
+                &__md {
+                    white-space: normal;
+                    @include min-width(50v);
+                }
+                &__lg {
+                    white-space: normal;
+                    @include min-width(100v);
+                }
 
-            &__expanded {
-                @include padding(0);
+                &__actionable {
+                    text-align: center;
+                    @include min-width(16v);
+                    @include width(16v);
+
+                    position: sticky;
+                    left: 0;
+                    z-index: 1;
+
+                    background-size: 100% 1px;
+                    background-repeat: no-repeat;
+                    background-position: 100% 100%;
+
+                    #{ns(checkbox-group)} {
+                        margin-right: -0.5rem;
+                    }
+
+                    &--collapse {
+                        left: #{space(16v)};
+                    }
+
+                    &--last__right {
+                        z-index: 2;
+                    }
+                }
+
+                &__centered {
+                    text-align: center;
+                }
+
+                &__top {
+                    vertical-align: top;
+                }
+
+                &__title {
+                    font-weight: 700;
+                }
+
+                &__desc {
+                    font-weight: 400;
+                }
+
+                &__inline {
+                    display: flex;
+                    align-items: center;
+                    @include margin(0 -2v);
+
+                    > * {
+                        @include margin(0 2v);
+                    }
+                }
+
+                &__multiline {
+                    &,
+                    & * {
+                        white-space: normal;
+                    }
+                }
+
+                &__expanded {
+                    @include padding(0);
+                }
             }
         }
     }
@@ -212,6 +222,30 @@
                     position: sticky;
                     top: 0;
                     z-index: 2;
+                }
+            }
+        }
+    }
+
+    &__double-entry {
+
+        th[scope='row'] {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
+        tr {
+            th,
+            td {
+                &#{ns(cell__actionable)} {
+                    left: var(--row-th-width);
+                }
+
+                &#{ns(cell__actionable)} {
+                    &--last__right {
+                        left: calc(var(--row-th-width) + 4rem);
+                    }
                 }
             }
         }
