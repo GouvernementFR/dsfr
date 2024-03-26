@@ -72,11 +72,18 @@
                         content: none;
                     }
 
+                    .fr-cell__actionable--last__right {
+                        left: 4rem;
+                    }
+
                     & > .fr-cell__actionable,
                     & .fr-cell__expanded tr > .fr-cell__actionable {
-                        &:first-child {
-                            transform: translateX(4rem);
+                        &.fr-cell__actionable--select {
                             z-index: 2;
+
+                            .fr-checkbox-group {
+                                transform: translateX(4rem);
+                            }
                         }
                     }
                 }
@@ -169,18 +176,22 @@
                     &--collapse {
                         left: #{space(16v)};
                     }
-
-                    &--last__right {
-                        z-index: 2;
-                    }
                 }
 
-                &__centered {
+                &__center {
                     text-align: center;
+                }
+
+                &__right {
+                    text-align: right;
                 }
 
                 &__top {
                     vertical-align: top;
+                }
+
+                &__bottom {
+                    vertical-align: bottom;
                 }
 
                 &__title {

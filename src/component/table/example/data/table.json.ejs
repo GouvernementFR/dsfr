@@ -86,14 +86,14 @@ data.table.thead = [
     content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox')})} ${textCell}</div>`
   },
   {
-    classes: [`${prefix}-cell__centered`],
+    classes: [`${prefix}-cell__center`],
     content: buttonCell({id: uniqueId('table-thead-dropdown'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'arrow-up-down-fill', kind: 3, size: 'sm', iconPlace: 'only'})
   },
   {
     content: `<div class="${prefix}-cell__inline">${textCell} ${tooltipCell(uniqueId('table-thead-tooltip'))}</div>`
   },
   {
-    classes: [`${prefix}-cell__sm`, `${prefix}-cell__centered`],
+    classes: [`${prefix}-cell__sm`, `${prefix}-cell__center`],
     content: `${buttonCell({id: uniqueId('table-thead-button-number-sortable'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'arrow-up-down-fill', kind: 3, size: 'sm', iconPlace: 'only'})}</div>`
   },
   {
@@ -119,16 +119,15 @@ data.table.tbody = new Array(rows.length);
 for(let r = 0; r < rows.length; r++) {
   const actionableCellClasses = [`${prefix}-cell__actionable`];
   const selectCellClasses = [...actionableCellClasses, `${prefix}-cell__actionable--select`];
-  const firstActionCellClasses = rows[r].collapse ? [...selectCellClasses, `${prefix}-cell__actionable--last__right`] : selectCellClasses;
-  const secondActionCellClasses = rows[r].collapse ? actionableCellClasses : [...actionableCellClasses, `${prefix}-cell__actionable--collapse`, `${prefix}-cell__actionable--last__right`];
+  const collapseActionCellClasses = rows[r].collapse ? [...actionableCellClasses, `${prefix}-cell__actionable--last__right`] : [...actionableCellClasses, `${prefix}-cell__actionable--collapse`, `${prefix}-cell__actionable--last__right`];
 
   data.table.tbody[r] = [
     {
-      classes: firstActionCellClasses,
+      classes: selectCellClasses,
       content:  checkboxCell({...checkboxDefault, id: `${uniqueId('table-select-checkbox')}--${r}`, attributes: {checked: rows[r].selected}})
     },
     {
-      classes: secondActionCellClasses,
+      classes: collapseActionCellClasses,
       content: rows[r].expanded ? buttonCell({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expand', 'table')}`, classes:[`${prefix}-btn--expand`], attributes: {'aria-controls': `row-key-${r + 2}`, 'aria-expanded': `${rows[r].expanded}`}}) : actionCellEmpty
     },
     {
