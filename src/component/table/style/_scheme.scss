@@ -36,15 +36,6 @@
             }
 
             tbody {
-                #{ns(row)} {
-                    &__selected {
-                        th,
-                        td {
-                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                        }
-                    }
-                }
-
                 tr {
                     @include color.background-image((border default grey), (legacy: $legacy));
 
@@ -61,6 +52,12 @@
                             &[scope='row'] {
                                 @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
                             }
+                        }
+                    }
+
+                    &[aria-selected="true"] {
+                        td {
+                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                         }
                     }
                 }

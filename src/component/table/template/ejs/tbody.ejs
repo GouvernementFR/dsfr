@@ -10,11 +10,12 @@ attributes.id = table.id || uniqueId('table-tbody');
     <% for (let row = 0; row < table.rows.length; row++) { %>
         <%
             const rowClasses = [];
-            if (table.rows[row].selected) rowClasses.push(prefix + '-row__selected');
             if (table.rows[row].collapse) rowClasses.push(prefix + '-collapse');
+
             const rowAttributes = {};
             rowAttributes.id = `row-key-${row + 1}`;
             rowAttributes['data-row-key'] = row + 1;
+            if (table.rows[row].selected) rowAttributes['aria-selected'] = true;
         %>
         <tr <%- includeClasses(rowClasses) %> <%- includeAttrs(rowAttributes) %>>
             <% for (let col = 0; col < table.tbody[row].length; col++) { %>
