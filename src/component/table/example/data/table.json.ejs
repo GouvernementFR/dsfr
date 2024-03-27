@@ -59,7 +59,7 @@ data.table.thead = [
     attributes: {
       role: 'columnheader'
     },
-    classes: [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--select`],
+    classes: [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--select`, `${prefix}-col__actionable--select`],
     content: checkboxCell(checkboxSelectCol)
   },
   {
@@ -73,7 +73,7 @@ data.table.thead = [
     content: textCell
   },
   {
-    classes: [`${prefix}-cell__lg`],
+    classes: [`${prefix}-cell__lg`, `${prefix}-col__actionable--select`],
     content: checkboxCell(checkboxTitle)
   },
   {
@@ -83,6 +83,7 @@ data.table.thead = [
     content: titleCell
   },
   {
+    classes: [`${prefix}-col__actionable--select`],
     content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox')})} ${textCell}</div>`
   },
   {
@@ -107,6 +108,7 @@ data.table.thead = [
     content: getText('data.cell.text', 'table')
   },
   {
+    classes: [`${prefix}-col__actionable--select`],
     content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox-sortable')})} ${buttonCell({id: uniqueId('table-thead-button-sortable'), label: `${getText('data.cell.action.sort', 'table')}`, icon: 'sort-alphabet-desc-fill', kind: 3, size: 'sm', iconPlace: 'only', classes: [`${prefix}-ml-4v`]})}</div>`
   },
   {

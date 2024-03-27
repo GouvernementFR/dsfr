@@ -7,7 +7,13 @@ class TableRow extends api.core.Instance {
   }
 
   init () {
+    this.addDescent(TableEmission.ROW_SELECT, this.rowSelect.bind(this));
     this.addDescent(TableEmission.COL_SELECT, this.colSelect.bind(this));
+  }
+
+  rowSelect (row) {
+    if (this.node.parentNode.tagName !== 'TBODY') return;
+    this.node.parentNode.children[row.index].setAttribute('aria-selected', row.value);
   }
 
   colSelect (col) {

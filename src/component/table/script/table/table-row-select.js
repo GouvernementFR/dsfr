@@ -7,10 +7,9 @@ class TableRowSelect extends api.core.Instance {
   }
 
   init () {
-    // this.listenClick();
     this.node.addEventListener('change', this.handleChange.bind(this));
     this._isChecked = this.isChecked;
-    if (this._isChecked) this.toggleRowSelection(this._isChecked);
+    if (this._isChecked) this.toggleRowSelection();
   }
 
   get isChecked () {
@@ -19,17 +18,21 @@ class TableRowSelect extends api.core.Instance {
 
   set isChecked (value) {
     this._isChecked = value;
-    this.toggleRowSelection(value);
   }
 
-  handleChange (event) {
+  handleChange () {
     this.isChecked = !this._isChecked;
+    this.toggleRowSelection();
   }
 
-  toggleRowSelection (value) {
+  toggleRowSelection () {
     if (!this.node.closest('td')) return;
     const closestRow = this.node.closest(TableSelector.ROW);
-    closestRow.setAttribute('aria-selected', value);
+    if (this.isChecked) {
+      closestRow.setAttribute('aria-selected', this.isChecked);
+    } else {
+      closestRow.removeAttribute('aria-selected');
+    };
   }
 }
 
