@@ -1,0 +1,17 @@
+/// Mixin de contraste
+/// @param {string} $contrast - more ou less
+/// @example scss -
+/// pour un contraste plus élevé :
+/// @include contrast() {
+///   // your styles
+/// }
+/// ou pour un contraste moins élevé :
+/// @include contrast(less) {
+///   // your styles
+///  }
+
+@mixin contrast($contrast: more) {
+  @media (prefers-contrast: $contrast) {
+    @content;
+  }
+}

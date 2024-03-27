@@ -1,0 +1,13 @@
+///  Mixin de contraste pour le windows high contrast mode
+///  @param {string} $active - active ou none
+/// @example scss -
+/// pour un contraste plus élevé
+/// @include forced-colors() {
+///   // your styles
+/// }
+
+@mixin forced-colors($active: active) {
+  @media (-ms-high-contrast: $active), (forced-colors: $active) {
+    @content;
+  }
+}

@@ -1,0 +1,11 @@
+/// Mixin pour reduire les animations
+/// @example scss -
+/// @include reduce-motion() {
+///   // your styles
+/// }
+
+@mixin reduce-motion() {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}

@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(input)} {
   display: block;
@@ -41,6 +42,12 @@
         opacity: 0;
       }
     }
+  }
+
+  @include preference.forced-colors() {
+    border: 2px solid canvas;
+    background-color: canvas;
+    color: canvas-text;
   }
 }
 
