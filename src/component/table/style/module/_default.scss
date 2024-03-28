@@ -172,10 +172,8 @@
                         margin-right: -0.5rem;
                     }
 
-                    &--select {
-                        & + #{ns(cell__actionable--last__right)} {
-                            left: #{space(16v)};
-                        }
+                    & + #{ns(cell__actionable--last__right)} {
+                        left: #{space(16v)};
                     }
                 }
 
@@ -252,9 +250,7 @@
             td {
                 &#{ns(cell__actionable)} {
                     left: var(--row-th-width);
-                }
 
-                &#{ns(cell__actionable--select)} {
                     & + #{ns(cell__actionable--last__right)} {
                         left: calc(var(--row-th-width) + 4rem);
                     }

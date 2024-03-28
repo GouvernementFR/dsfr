@@ -13,13 +13,14 @@ class TableRow extends api.core.Instance {
 
   rowSelect (selectCheckbox) {
     if (this.node.parentNode.tagName !== 'TBODY') return;
+
     const rowIndex = [...selectCheckbox.node.closest('tbody').children].indexOf(selectCheckbox.node.closest('tr'));
     if (this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand')) {
-      // debugger;
-      this.node.parentNode.querySelector(`#${this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand').getAttribute('aria-controls')}`).querySelector('.fr-checkbox-group input[type="checkbox"]').checked = !selectCheckbox.isChecked;
-      this.node.parentNode.querySelector(`#${this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand').getAttribute('aria-controls')}`).querySelector('.fr-checkbox-group input[type="checkbox"]').click();
+      this.node.parentNode.querySelector(`#${this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand').getAttribute('aria-controls')}`).querySelectorAll('.fr-checkbox-group input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = !selectCheckbox.isChecked;
+        checkbox.click();
+      });
     }
-    // this.node.parentNode.children[rowIndex].setAttribute('aria-selected', selectCheckbox.isChecked);
   }
 
   colSelect (col) {

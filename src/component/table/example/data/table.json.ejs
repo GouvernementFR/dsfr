@@ -59,7 +59,7 @@ data.table.thead = [
     attributes: {
       role: 'columnheader'
     },
-    classes: [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--select`, `${prefix}-col__actionable--select`],
+    classes: [`${prefix}-cell__actionable`, `${prefix}-col__actionable--select`],
     content: checkboxCell(checkboxSelectCol)
   },
   {
@@ -84,7 +84,7 @@ data.table.thead = [
   },
   {
     classes: [`${prefix}-col__actionable--select`],
-    content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox')})} ${textCell}</div>`
+    content: `<div class="${prefix}-cell__inline">${checkboxCell({...checkboxTitle, id: uniqueId('table-thead-checkbox'), checked: true})} ${textCell}</div>`
   },
   {
     classes: [`${prefix}-cell__center`],
