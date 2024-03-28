@@ -18,8 +18,8 @@ class Table extends api.core.Instance {
     this.setProperty('--table-offset', `calc(${value}px + ${PADDING})`);
   }
 
-  rowSelect (value) {
-    this.descend(TableEmission.ROW_SELECT, value);
+  rowSelect (row) {
+    this.descend(TableEmission.ROW_SELECT, row);
   }
 
   colSelect (col) {

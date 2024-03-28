@@ -11,18 +11,22 @@ class TableRow extends api.core.Instance {
     this.addDescent(TableEmission.COL_SELECT, this.colSelect.bind(this));
   }
 
-  rowSelect (row) {
+  rowSelect (selectCheckbox) {
     if (this.node.parentNode.tagName !== 'TBODY') return;
-    this.node.parentNode.children[row.index].setAttribute('aria-selected', row.value);
+    const rowIndex = [...selectCheckbox.node.closest('tbody').children].indexOf(selectCheckbox.node.closest('tr'));
+    if (this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand')) {
+      // debugger;
+      this.node.parentNode.querySelector(`#${this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand').getAttribute('aria-controls')}`).querySelector('.fr-checkbox-group input[type="checkbox"]').checked = !selectCheckbox.isChecked;
+      this.node.parentNode.querySelector(`#${this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand').getAttribute('aria-controls')}`).querySelector('.fr-checkbox-group input[type="checkbox"]').click();
+    }
+    // this.node.parentNode.children[rowIndex].setAttribute('aria-selected', selectCheckbox.isChecked);
   }
 
   colSelect (col) {
     const cellCol = this.node.children[col.index];
-    if (cellCol.tagName === 'TH') return;
-
-    if (cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]')) {
+    if (cellCol.classList.contains('fr-cell__actionable--select') && cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]')) {
+      cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').checked = !col.value;
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').click();
-      cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').checked = col.value;
     } else {
       cellCol.classList.remove('fr-cell__selected');
       if (col.value) cellCol.classList.add('fr-cell__selected');

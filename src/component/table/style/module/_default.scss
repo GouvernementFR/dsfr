@@ -72,10 +72,6 @@
                         content: none;
                     }
 
-                    .fr-cell__actionable--last__right {
-                        left: 4rem;
-                    }
-
                     & > .fr-cell__actionable,
                     & .fr-cell__expanded tr > .fr-cell__actionable {
                         &.fr-cell__actionable--select {
@@ -91,6 +87,25 @@
                 &:not(.fr-collapse--expanded) {
                     display: none;
                 }
+            }
+        }
+
+        #{ns(col)} {
+            &__xs {
+                white-space: normal;
+                @include min-width(16v);
+            }
+            &__sm {
+                white-space: normal;
+                @include min-width(20v);
+            }
+            &__md {
+                white-space: normal;
+                @include min-width(50v);
+            }
+            &__lg {
+                white-space: normal;
+                @include min-width(100v);
             }
         }
 
@@ -132,6 +147,7 @@
             background-size: 1px 100%, 100% 1px;
             background-repeat: no-repeat, no-repeat;
             background-position: 100% 0, 0 100%;
+            width: var(--row-th-width);
             min-width: var(--row-th-width);
             max-width: var(--row-th-width);
             white-space: inherit;
@@ -139,23 +155,6 @@
 
         tr {
             #{ns(cell)} {
-                &__xs {
-                    white-space: normal;
-                    @include min-width(16v);
-                }
-                &__sm {
-                    white-space: normal;
-                    @include min-width(20v);
-                }
-                &__md {
-                    white-space: normal;
-                    @include min-width(50v);
-                }
-                &__lg {
-                    white-space: normal;
-                    @include min-width(100v);
-                }
-
                 &__actionable {
                     text-align: center;
                     @include min-width(16v);
@@ -173,8 +172,10 @@
                         margin-right: -0.5rem;
                     }
 
-                    &--collapse {
-                        left: #{space(16v)};
+                    &--select {
+                        & + #{ns(cell__actionable--last__right)} {
+                            left: #{space(16v)};
+                        }
                     }
                 }
 
@@ -253,8 +254,8 @@
                     left: var(--row-th-width);
                 }
 
-                &#{ns(cell__actionable)} {
-                    &--last__right {
+                &#{ns(cell__actionable--select)} {
+                    & + #{ns(cell__actionable--last__right)} {
                         left: calc(var(--row-th-width) + 4rem);
                     }
                 }

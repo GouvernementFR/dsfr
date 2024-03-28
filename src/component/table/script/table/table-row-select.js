@@ -1,5 +1,6 @@
 import api from '../../api.js';
 import { TableSelector } from './table-selector.js';
+import { TableEmission } from './table-emission.js';
 
 class TableRowSelect extends api.core.Instance {
   static get instanceClassName () {
@@ -27,6 +28,8 @@ class TableRowSelect extends api.core.Instance {
 
   toggleRowSelection () {
     if (!this.node.closest('td')) return;
+    this.ascend(TableEmission.ROW_SELECT, this);
+
     const closestRow = this.node.closest(TableSelector.ROW);
     if (this.isChecked) {
       closestRow.setAttribute('aria-selected', this.isChecked);

@@ -6,7 +6,19 @@
 %>
 
 <%-
+    sample(getText('sample.sm', 'table'), './sample/table-sm', {}, true);
+%>
+
+<%-
+    sample(getText('sample.lg', 'table'), './sample/table-lg', {}, true);
+%>
+
+<%-
     sample(getText('sample.default', 'table'), './sample/table-default', {table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expanded: 'true'}, {collapse: true}, {}, {expanded: 'false'}, {collapse: true}]} }, true);
+%>
+
+<%-
+    sample(getText('sample.selectable', 'table'), './sample/table-selectable', {}, true);
 %>
 
 <%-

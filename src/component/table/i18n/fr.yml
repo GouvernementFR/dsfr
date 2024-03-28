@@ -10,7 +10,10 @@ sample:
   default: Tableau complexe
   double-entry: Tableau à double entrée
   expandable: Tableau repliable
+  selectable: Tableau sélectionnable
   simple: Tableau simple
+  sm: Tableau SM
+  lg: Tableau LG
 
 data:
   caption: Caption du tableau (accessibilité)

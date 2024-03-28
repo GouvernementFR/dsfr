@@ -1,0 +1,17 @@
+////
+/// Table Module - sm
+/// @group Table
+////
+
+#{ns(table)} {
+    &--sm {
+        --row-th-width: #{space(34.5v)};
+    }
+
+    &--sm &__content {
+        th,
+        td {
+            @include padding(1v 3v);
+        }
+    }
+}

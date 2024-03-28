@@ -22,6 +22,10 @@
                     &[scope="col"] {
                         @include color.background(alt grey, (legacy: $legacy, hover: true));
                         @include color.background-image((border plain grey), (legacy: $legacy));
+
+                        &#{ns(cell__selected)} {
+                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+                        }
                     }
 
                     &:not([scope="col"]) {
