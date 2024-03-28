@@ -1,0 +1,16 @@
+////
+/// Button Module - Expand
+/// @group button
+////
+
+#{ns(btn--sort)} {
+  @include nest-btn(sm, only, sort-asc-desc-line, null, false);
+
+  &[aria-sorting='asc'] {
+    @include nest-btn(sm, only, sort-asc-line, null, false);
+  }
+
+  &[aria-sorting='desc'] {
+    @include nest-btn(sm, only, sort-desc-line, null, false);
+  }
+}

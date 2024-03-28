@@ -16,10 +16,16 @@ class TableRow extends api.core.Instance {
 
     const rowIndex = [...selectCheckbox.node.closest('tbody').children].indexOf(selectCheckbox.node.closest('tr'));
     if (this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand')) {
-      this.node.parentNode.querySelector(`#${this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand').getAttribute('aria-controls')}`).querySelectorAll('.fr-checkbox-group input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = !selectCheckbox.isChecked;
-        checkbox.click();
-      });
+      const subline = this.node.parentNode.querySelector(`#${this.node.parentNode.children[rowIndex].querySelector('.fr-btn--expand').getAttribute('aria-controls')}`);
+      if (subline) {
+        const sublinesCheckboxes = subline.querySelectorAll('.fr-checkbox-group input[type="checkbox"]');
+        if (sublinesCheckboxes.length) {
+          sublinesCheckboxes.forEach(checkbox => {
+            checkbox.checked = !selectCheckbox.isChecked;
+            checkbox.click();
+          });
+        }
+      }
     }
   }
 
