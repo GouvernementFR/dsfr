@@ -1,0 +1,12 @@
+////
+/// Button Module - Expand
+/// @group button
+////
+
+#{ns(btn--expand)} {
+  @include nest-btn(sm, only, arrow-down-s-line, null, false);
+
+  &[aria-expanded='true'] {
+    @include nest-btn(sm, only, arrow-up-s-line, null, false);
+  }
+}

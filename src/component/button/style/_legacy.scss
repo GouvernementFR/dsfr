@@ -68,6 +68,10 @@
     @include icon-legacy(team-line, sm);
   }
 
+  #{ns(btn--expand)} {
+    @include icon-legacy(arrow-down-s-line, sm);
+  }
+
   #{ns-group(btns)} {
     @include disable-list-style-legacy(true);
 

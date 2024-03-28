@@ -1,0 +1,34 @@
+title: Tableaux
+description: Les tableaux sont utilisés pour organiser et afficher les informations d'un jeu de données.
+
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée
+
+sample:
+  cell-collapsed: Tableau cellules fusionnées
+  default: Tableau complexe
+  double-entry: Tableau à double entrée
+  expandable: Tableau repliable
+  selectable: Tableau sélectionnable
+  simple: Tableau simple
+  sm: Tableau SM
+  lg: Tableau LG
+
+data:
+  caption: Caption du tableau (accessibilité)
+  cell:
+    action:
+      button: Label bouton
+      empty: Action
+      expand: Deplier
+      sort: Trier
+      select: Selectionner
+      selectAll: Tout selectionner
+    download:
+      detail: JPG – 61,88 Ko
+      lable: Téléchargement
+    lable: Label
+    number: 30,00&nbsp;€
+    text: Texte par défaut
+    title: Titre par défaut

@@ -18,3 +18,9 @@
 @import 'style/scheme';
 
 @include _table-scheme;
+
+// deprecated
+@import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
+
+@include _deprecated-table-scheme;

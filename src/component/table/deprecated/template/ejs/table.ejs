@@ -1,0 +1,72 @@
+<%#
+# paramètres Table
+
+* table.data (array(array), required): tableau de données à deux dimension [row][col] (la première ligne (row = 0) est reservée aux <th>)
+
+* table.caption (string, required) : titre du tableau
+
+* table.noScroll (boolean, optional) : {default: false} désactive le scroll
+
+* table.noCaption (boolean, optional) : {default: false} cache le texte de la caption
+
+* table.captionBottom (boolean, optional) : {default: false} positionne la caption en bas
+
+* table.bordered (boolean, optional) : {default: false} si true, ajoute des séparateurs entre chaque ligne et enleve l'effet even/odd
+
+* table.layout (string, optional) : si non undefined, fix la taille des colonnes à 100%/col
+
+* table.col (integer, optional) : nombre de colones à afficher (si différent du nombre de colones de data)
+
+* table.row (integer, optional) : nombre de lignes à afficher (si différent du nombre de lignes de data)
+
+* table.accent (string, optional): couleur d'accenturation du composant
+
+* table.id (string) : id de l'élément
+
+* table.classes (array, optional): classes supplémentaires du composant
+
+* table.attributes (array, optional): attributs supplémentaires du composant
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+
+<%
+let table = locals.table || {};
+let classes = table.classes || [];
+const attributes = table.attributes || {};
+attributes.id = table.id || uniqueId('table');
+const data = table.data || [[]];
+
+classes.push(prefix + '-table');
+if (table.accent !== undefined) classes.push(prefix + '-table--' + table.accent);
+if (table.bordered) classes.push(prefix + '-table--bordered');
+if (table.noScroll) classes.push(prefix + '-table--no-scroll');
+if (table.noCaption) classes.push(prefix + '-table--no-caption');
+if (table.captionBottom) classes.push(prefix + '-table--caption-bottom');
+if (table.layout) classes.push(prefix + '-table--layout-fixed');
+if (!table.row) table.row = data.length;
+if (!table.col) table.col = data[0].length;
+%>
+
+<div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+  <table>
+    <% if (table.caption !== undefined) { %>
+    <caption><%= table.caption %></caption>
+    <% } %>
+    <thead>
+      <tr>
+        <% for (let col = 0; col < table.col; col++) { %>
+          <th scope="col"><%- table.data[0][col] %> </th>
+        <% } %>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let row = 1; row < table.row; row++) { %>
+      <tr>
+        <% for (let col = 0; col < table.col; col++) { %>
+          <td><%- table.data[row][col] %></td>
+        <% } %>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

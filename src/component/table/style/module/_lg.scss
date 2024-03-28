@@ -1,0 +1,17 @@
+////
+/// Table Module - lg
+/// @group Table
+////
+
+#{ns(table)} {
+    &--lg {
+        --row-th-width: #{space(40.5v)};
+    }
+
+    &--lg &__content {
+        th,
+        td {
+            @include padding(3v 6v);
+        }
+    }
+}
