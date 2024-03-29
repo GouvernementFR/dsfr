@@ -14,23 +14,18 @@
 
         &__content {
             thead {
-                tr {
-                    @include color.background-image((border plain grey), (legacy: $legacy));
-                }
-
                 th {
-                    &[scope="col"] {
-                        @include color.background(alt grey, (legacy: $legacy, hover: true));
-                        @include color.background-image((border plain grey), (legacy: $legacy));
+                    @include color.background(alt grey, (legacy: $legacy, hover: true));
+                    @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
 
-                        &#{ns(cell__selected)} {
-                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                        }
+
+                    &#{ns(cell__selected)} {
+                        @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                     }
 
-                    &:not([scope="col"]) {
+                    &:last-child {
                         @include color.background(alt grey, (legacy: $legacy, hover: true));
-                        @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+                        @include color.background-image((border plain grey), (legacy: $legacy));
                     }
 
                     // &:hover {
@@ -41,14 +36,11 @@
 
             tbody {
                 tr {
-                    @include color.background-image((border default grey), (legacy: $legacy));
-
-                    // &:hover {
-                    //     th,
-                    //     td {
-                    //         background-color: var(--hover);
-                    //     }
-                    // }
+                    &:hover {
+                        &::after {
+                            @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
+                        }
+                    }
 
                     &:last-child {
                         th,
@@ -80,23 +72,25 @@
                     @include color.background(default grey, (legacy: $legacy, hover: true));
                 }
 
+                #{ns(cell)} {
+                    &__actionable {
+                        @include color.background-image((border default grey), (legacy: $legacy));
+                        @include color.background(default grey, (legacy: $legacy, hover: true));
+                    }
+                }
+
 
             }
 
             #{ns(cell)} {
-                &__actionable {
-                    @include color.background-image((border default grey), (legacy: $legacy));
-                    @include color.background(default grey, (legacy: $legacy, hover: true));
-                }
-
                 &__selected {
                     @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                 }
             }
         }
 
-        &__shadow {
-            &--left {
+        &__shadow--left {
+            #{ns(table__content)} {
                 #{ns(cell__actionable--last__right)} {
                     @include color.background-image((border default grey) (border default grey), (legacy: $legacy));
 

@@ -72,6 +72,18 @@
     @include icon-legacy(arrow-down-s-line, sm);
   }
 
+  #{ns(btn--sort)} {
+    @include icon-legacy(sort-asc-desc-line, sm);
+
+    &[aria-sorting='asc'] {
+      @include icon-legacy(sort-asc-line, sm);
+    }
+
+    &[aria-sorting='desc'] {
+      @include icon-legacy(sort-desc-line, sm);
+    }
+  }
+
   #{ns-group(btns)} {
     @include disable-list-style-legacy(true);
 
