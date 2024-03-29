@@ -12,6 +12,8 @@ class Table extends api.core.Instance {
     this.addAscent(TableEmission.CAPTION_HEIGHT, this.setCaptionHeight.bind(this));
     this.addAscent(TableEmission.ROW_SELECT, this.rowSelect.bind(this));
     this.addAscent(TableEmission.COL_SELECT, this.colSelect.bind(this));
+    this.addAscent(TableEmission.COL_HOVER, this.colHover.bind(this));
+    this.addAscent(TableEmission.COL_OUT, this.colOut.bind(this));
   }
 
   setCaptionHeight (value) {
@@ -24,6 +26,14 @@ class Table extends api.core.Instance {
 
   colSelect (col) {
     this.descend(TableEmission.COL_SELECT, col);
+  }
+
+  colHover (col) {
+    this.descend(TableEmission.COL_HOVER, col);
+  }
+
+  colOut (col) {
+    this.descend(TableEmission.COL_OUT, col);
   }
 }
 

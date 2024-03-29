@@ -7,11 +7,17 @@ class TableCol extends api.core.Instance {
   }
 
   init () {
-    this.addDescent(TableEmission.COL_SELECT, this.colSelect.bind(this));
+    this.listen('mouseover', this.handlingHover.bind(this));
+    this.listen('mouseleave', this.handlingLeave.bind(this));
+    this._colIndex = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
   }
 
-  colSelect (value) {
-    this.setAttribute('aria-selected', value);
+  handlingHover () {
+    this.ascend(TableEmission.COL_HOVER, { index: this._colIndex });
+  }
+
+  handlingLeave () {
+    this.ascend(TableEmission.COL_OUT, { index: this._colIndex });
   }
 }
 

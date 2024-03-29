@@ -9,84 +9,107 @@
     #{ns(table)} {
 
         &__wrapper {
-            @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+            @include color.background-image((border default grey) (border default grey) (border default grey), (legacy: $legacy));
         }
 
         &__content {
-            thead {
-                th {
-                    @include color.background(alt grey, (legacy: $legacy, hover: true));
-                    @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
-
-
-                    &#{ns(cell__selected)} {
-                        @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                    }
-
-                    &:last-child {
-                        @include color.background(alt grey, (legacy: $legacy, hover: true));
-                        @include color.background-image((border plain grey), (legacy: $legacy));
-                    }
-
-                    // &:hover {
-                    //     background-color: var(--hover);
-                    // }
-                }
-            }
-
-            tbody {
-                tr {
-                    &:hover {
-                        &::after {
-                            @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
-                        }
-                    }
-
-                    &:last-child {
-                        th,
-                        td {
-                            &[scope='row'] {
-                                @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
-                            }
-                        }
-                    }
-
-                    &[aria-selected="true"] {
-                        td {
-                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                        }
-                    }
-                }
-
-                th[scope="row"] {
-                    @include color.background(alt grey, (legacy: $legacy));
-                    @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
-                }
-
-                th,
-                td {
-                    position: relative;
-                    @include color.text(title grey, (legacy: $legacy));
-
-                    @include color.background-image((border default grey), (legacy: $legacy));
-                    @include color.background(default grey, (legacy: $legacy, hover: true));
-                }
-
-                #{ns(cell)} {
-                    &__actionable {
-                        @include color.background-image((border default grey), (legacy: $legacy));
-                        @include color.background(default grey, (legacy: $legacy, hover: true));
-                    }
-                }
-
-
-            }
-
             #{ns(cell)} {
                 &__selected {
                     @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                 }
+
+                &__hover {
+                    &::after {
+                        @include color.background-image((border default blue-france) (border default blue-france), (legacy: $legacy));
+                    }
+                }
             }
+
+            table {
+                thead {
+                    tr {
+                        &:first-child {
+                            #{ns(cell__hover)} {
+                                &::after {
+                                    @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
+                                }
+                            }
+                        }
+                    }
+
+                    th {
+                        @include color.background(alt grey, (legacy: $legacy, hover: true));
+                        @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+
+
+                        &#{ns(cell__selected)} {
+                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+                        }
+
+                        &:last-child {
+                            @include color.background(alt grey, (legacy: $legacy, hover: true));
+                            @include color.background-image((border plain grey), (legacy: $legacy));
+                        }
+
+                        // &:hover {
+                        //     background-color: var(--hover);
+                        // }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        &:hover {
+                            &::after {
+                                @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
+                            }
+                        }
+
+                        &:last-child {
+                            th,
+                            td {
+                                &[scope='row'] {
+                                    @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
+                                }
+                            }
+
+                            #{ns(cell__hover)} {
+                                &::after {
+                                    @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
+                                }
+                            }
+                        }
+
+                        &[aria-selected="true"] {
+                            td {
+                                @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+                            }
+                        }
+                    }
+
+                    th[scope="row"] {
+                        @include color.background(alt grey, (legacy: $legacy));
+                        @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
+                    }
+
+                    th,
+                    td {
+                        position: relative;
+                        @include color.text(title grey, (legacy: $legacy));
+
+                        @include color.background-image((border default grey), (legacy: $legacy));
+                        @include color.background(default grey, (legacy: $legacy, hover: true));
+                    }
+
+                    #{ns(cell)} {
+                        &__actionable {
+                            @include color.background-image((border default grey), (legacy: $legacy));
+                            @include color.background(default grey, (legacy: $legacy, hover: true));
+                        }
+                    }
+                }
+            }
+
         }
 
         &__shadow--left {
