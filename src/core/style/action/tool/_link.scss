@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/preference';
+
 $underline-thickness: 0.0625em;
 
 @mixin a-reset ($minimal: false) {
@@ -63,6 +65,7 @@ $underline-thickness: 0.0625em;
   @include icon-style(after);
   @include icon-size(sm, after);
   @include icon-image(external-link-line, after);
+  @include icon-forced-color(LinkText, true, after);
   @include after(var(--external-link-content)) {
     @include margin-left(1v);
   }

@@ -1,4 +1,6 @@
-@use '../../../../../module/spacing';
+@use 'module/spacing';
+@use 'module/preference';
+@use 'module/disabled';
 
 #{ns(fieldset)} {
   @include relative;
@@ -22,6 +24,28 @@
     #{ns(hint-text)} {
       @include margin-top(2v);
       @include font-weight(regular);
+    }
+  }
+
+  @include disabled.selector {
+    #{ns(label)},
+    #{ns(hint-text)},
+    #{ns(fieldset__legend)} {
+      @include preference.forced-colors {
+        color: GrayText;
+      }
+    }
+  }
+
+  input {
+    @include disabled.selector {
+      + label,
+      + label #{ns(hint-text)},
+      + label + #{ns(hint-text)} {
+        @include preference.forced-colors {
+          color: GrayText;
+        }
+      }
     }
   }
 

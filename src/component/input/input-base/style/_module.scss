@@ -43,12 +43,6 @@
       }
     }
   }
-
-  @include preference.forced-colors() {
-    border: 2px solid canvas;
-    background-color: canvas;
-    color: canvas-text;
-  }
 }
 
 #{ns(input-wrap)} {

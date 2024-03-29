@@ -18,6 +18,7 @@
     @include width(100%);
     @include width(auto, lg);
     @include animate.caret();
+    @include icon-forced-color(ButtonText, true);
 
     @include icon(arrow-down-s-line, sm, after) {
       @include margin-left(auto);

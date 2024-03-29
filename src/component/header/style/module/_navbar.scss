@@ -28,11 +28,13 @@
       white-space: nowrap;
 
       &--menu {
-        @include icon(menu-fill);
+        @include icon(menu-fill, null, before);
+        @include icon-forced-color(ButtonText, true, before);
       }
 
       &--search {
-        @include icon(search-line);
+        @include icon(search-line, null, before);
+        @include icon-forced-color(ButtonText, true, before);
       }
     }
   }

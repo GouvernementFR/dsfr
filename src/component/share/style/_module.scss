@@ -3,6 +3,8 @@
 /// @group share
 ////
 
+@use 'module/disabled';
+
 #{ns(share)} {
   @include display-flex(column);
   @include set-text-margin(0 0 4v);
@@ -33,6 +35,15 @@
         @include has-not-icon {
           @include nest-btn(md, only, null, null, false);
           @include icon(null, md, before);
+          @include icon-forced-color(ButtonText, true, before);
+        }
+      }
+
+      #{ns(btn)} {
+        @include disabled.selector((can-be-link: true)) {
+          @include has-not-icon {
+            @include icon-forced-color(GrayText, true, before);
+          }
         }
       }
     }

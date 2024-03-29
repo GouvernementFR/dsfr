@@ -13,6 +13,7 @@
   background-size: 100% 1px, 1px 100%, 100% 1px, spacing.space(10v) 100%;
   background-position: 0 0, 100% 0, 0 100%, 0 0, 100% 100%;
   background-repeat: no-repeat, no-repeat no-repeat, no-repeat;
+  forced-color-adjust: none;
   @include icon-size(md, before);
   @include icon-style(before) {
     @include absolute(0, null, null, 0);
@@ -24,6 +25,7 @@
   }
 
   #{ns(btn--close)} {
+    forced-color-adjust: auto;
     @include absolute(1v,1v);
     @include nest-btn(sm, only, close-line, null, false);
   }

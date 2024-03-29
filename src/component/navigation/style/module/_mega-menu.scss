@@ -3,11 +3,16 @@
 /// @group navigation
 ////
 
+@use 'module/preference';
+
 #{ns(mega-menu)} {
   @include respond-from(lg) {
     @include absolute(100%, 0, null, 0);
     @include margin(0);
     @include padding(0);
+    @include preference.forced-colors {
+      outline: 1px solid;
+    }
 
     @include after('', block) {
       @include padding-bottom(6v);

@@ -14,4 +14,11 @@
       }
     }
   }
+
+  &__menu {
+    @include preference.forced-colors {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+    }
+  }
 }

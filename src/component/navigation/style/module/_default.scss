@@ -124,7 +124,12 @@
       @include margin-left(2v);
       @include margin-right(0);
       transition: transform 0.3s;
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
     }
+    @include icon-forced-color(ButtonText, true, after);
 
     @include respond-from(lg) {
       justify-content: flex-start;

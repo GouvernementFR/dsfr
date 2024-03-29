@@ -6,6 +6,7 @@
 @use 'module/path';
 @use 'module/spacing';
 @use 'module/specificity';
+@use 'module/preference';
 
 /// Return icon size from map
 /// @param {String} $size ['md'] - Icon size from `$icon-size-map` (Default to 'md' = 16px)
@@ -94,6 +95,17 @@
   @if $is-before != null {
     @include icon-content($is-before, $override) {
       @content;
+    }
+  }
+}
+
+@mixin icon-forced-color($color: CanvasText, $adjust: false, $restrain: before after) {
+  @include _pseudo($restrain) {
+    @include preference.forced-colors {
+      @if $adjust == true {
+        forced-color-adjust: none;
+      }
+      background-color: $color;
     }
   }
 }

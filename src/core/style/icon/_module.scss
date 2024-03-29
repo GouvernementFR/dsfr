@@ -3,10 +3,36 @@
 /// @group core
 ////
 
+@use 'module/preference';
+
 @include has-icon {
   @include icon-style;
   @include icon-size;
   @include icon-content;
+}
+
+@include preference.forced-colors {
+  @include has-icon {
+    @include icon-forced-color(CanvasText, true);
+  }
+
+  button:not([disabled]) {
+    @include has-icon {
+      @include icon-forced-color(ButtonText);
+    }
+  }
+
+  a[href] {
+    @include has-icon {
+      @include icon-forced-color(LinkText);
+    }
+  }
+
+  @include disabled-selector {
+    @include has-icon {
+      @include icon-forced-color(GrayText);
+    }
+  }
 }
 
 #{ns(icon)} {

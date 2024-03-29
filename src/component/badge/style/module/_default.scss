@@ -4,16 +4,22 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 @include build-badge();
 
 #{ns(badge)} {
   @include nest-badge(md, left, null, null, false);
-  @include icon-style(before);
+  @include icon-style(before){
+    @include preference.forced-colors {
+      background-color: currentColor;
+    }
+  };
   @include font-weight(bold);
   @include max-width(100%);
   text-transform: uppercase;
   border-radius: spacing.space(1v);
+  forced-color-adjust: none;
 
   &--sm {
     @include nest-badge(sm, left, null, null, false);

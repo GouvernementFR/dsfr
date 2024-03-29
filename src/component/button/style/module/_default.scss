@@ -3,6 +3,14 @@
 /// @group button
 ////
 
+@use 'module/preference';
+
 @include build-btn() {
   @include font-weight(medium);
+}
+
+button#{ns(btn)} {
+  @include preference.forced-colors {
+    border: 1px solid ButtonText;
+  }
 }

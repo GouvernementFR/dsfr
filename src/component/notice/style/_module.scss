@@ -3,11 +3,16 @@
 /// @group notice
 ////
 
+@use 'module/preference';
+
 #{ns(notice)} {
   @include relative();
   @include set-title-margin(0);
   @include set-text-margin(0);
   @include padding-y(4v);
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
 
   &__body {
     @include relative;

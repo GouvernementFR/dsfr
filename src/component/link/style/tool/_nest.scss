@@ -10,6 +10,7 @@
   $border-radius: map-get($settings, border-radius);
   $places: map-get($links-settings, places);
   $append: map-get($settings, append);
+  $forced-color: map_get($settings, forced-color);
 
   @if $insert {
     $selector: ns(map-get($settings, selector));
@@ -33,6 +34,7 @@
         @include icon-style($restrain);
         @include icon-image($icon, $restrain);
         @include icon-content($is-before, $override-icon and not $is-before);
+        @include icon-forced-color($forced-color, true, $restrain);
       }
       @else {
         @if $place != null {
