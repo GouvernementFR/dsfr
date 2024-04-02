@@ -1,0 +1,21 @@
+////
+/// Table Module - footer
+/// @group Table
+////
+
+@use '../../../../../module/media-query';
+
+#{ns(table)} {
+    &__header {
+        @include display-flex(row, center, space-between, wrap);
+
+        &--end {
+            @include display-flex(row, center, flex-start, wrap);
+
+            #{ns(segmented)} {
+                @include margin-left(4v);
+                @include margin-bottom(4v);
+            }
+        }
+    }
+}

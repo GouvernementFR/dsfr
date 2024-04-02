@@ -32,3 +32,21 @@ data:
     number: 30,00&nbsp;€
     text: Texte par défaut
     title: Titre par défaut
+  navigation:
+    buttons:
+      label: Action tableau
+    detail: 215 lignes
+    select:
+      label: Nombre de lignes du tableau
+      placeholder: Sélectionner une option
+      options:
+        option1: 4 lignes par page
+        option2: 10 lignes par page
+        option3: 20 lignes par page
+  action_bar:
+    buttons:
+      label: Action groupée
+    detail: 1 ligne sélectionnée
+    segmented:
+      list: Liste
+      table: Tableau

@@ -303,4 +303,9 @@
             display: none;
         }
     }
+
+    &__detail {
+        @include text-style(sm);
+        @include margin-bottom(4v);
+    }
 }

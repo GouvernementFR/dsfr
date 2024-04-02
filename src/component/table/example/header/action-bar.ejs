@@ -1,0 +1,59 @@
+<% eval(include('../../../../core/index.ejs'));
+
+const buttonsGroupData = {
+  groupCount: 2,
+  inline: true,
+  align:'right',
+  iconPlace:'left',
+  buttons: [
+        {
+            label: getText('data.action_bar.buttons.label', 'table'),
+            id: uniqueId('table-header-button-primary'),
+            icon: 'settings-5-line',
+            iconPlace:'left',
+            kind: 2
+        },
+        {
+            label: getText('data.action_bar.buttons.label', 'table'),
+            id: uniqueId('table-header-button-secondary'),
+            icon: 'settings-5-line',
+            iconPlace:'left',
+            kind: 2
+        }
+    ]
+};
+const buttons = include('../../../button/template/ejs/buttons-group', {buttonsGroup: buttonsGroupData});
+
+const segmentedData = {
+    id: uniqueId('table-header-segmented'),
+    elements: [
+        {
+            id: uniqueId('table-header-segmented-table'),
+            label: getText('data.action_bar.segmented.table', 'table'),
+            name: 'table-header-segmented-table',
+            value: 1,
+            icon: 'table-line',
+            checked: true
+        },
+        {
+            id: uniqueId('table-header-segmented-list'),
+            label: getText('data.action_bar.segmented.list', 'table'),
+            name: 'table-header-segmented-table',
+            value: 2,
+            icon: 'list-unordered',
+            checked: false
+        }
+    ]
+};
+const segmented = include('../../../segmented/template/ejs/segmented', {segmented: segmentedData});
+
+%>
+
+<div class="<%= prefix %>-table__header--start">
+    <p class="<%= prefix %>-table__detail"><%- getText('data.action_bar.detail', 'table') %></p>
+</div>
+
+<div class="<%= prefix %>-table__header--end">
+    <%- buttons %>
+    <%- segmented %>
+</div>

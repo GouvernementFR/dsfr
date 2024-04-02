@@ -10,6 +10,9 @@ style:
   - button
   - checkbox
   - link
+  - pagination
+  - select
+  - segmented
   - tag
   - toggle
   - tooltip

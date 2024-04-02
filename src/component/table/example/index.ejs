@@ -14,7 +14,7 @@
 %>
 
 <%-
-    sample(getText('sample.default', 'table'), './sample/table-default', {table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expanded: 'true'}, {collapse: true}, {}, {expanded: 'false'}, {collapse: true}]} }, true);
+    sample(getText('sample.default', 'table'), './sample/table-default', {table: {header: true, footer: true, table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expanded: 'true'}, {collapse: true}, {}, {expanded: 'false'}, {collapse: true}]}}}, true);
 %>
 
 <%-

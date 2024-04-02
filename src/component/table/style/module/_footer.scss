@@ -1,0 +1,39 @@
+////
+/// Table Module - footer
+/// @group Table
+////
+
+@use '../../../../../module/media-query';
+
+#{ns(table)} {
+    &__footer {
+        @include display-flex(row, center, center, wrap);
+
+        @include media-query.respond-from(lg) {
+            @include display-flex(row, center, space-between, wrap);
+        }
+
+        &--start {
+            @include margin(6v 3v 0 0);
+            @include display-flex(row, center, center, wrap);
+
+            @include media-query.respond-from(md) {
+                @include display-flex(row, center, flex-start, wrap);
+            }
+
+            #{ns(select-group)} {
+                @include size(64v);
+                @include margin-bottom(4v);
+
+                #{ns(select)} {
+                    @include margin-top(0);
+                }
+            }
+        }
+
+        #{ns(pagination)},
+        #{ns(btns-group)} {
+            @include margin-top(6v);
+        }
+    }
+}

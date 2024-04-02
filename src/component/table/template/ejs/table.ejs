@@ -7,6 +7,9 @@ attributes.id = table.id || uniqueId('-table');
 %>
 
 <table <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+    <% if (table.caption !== undefined) { %>
+        <caption><%= table.caption %></caption>
+    <% } %>
     <%- include('./thead.ejs', {thead: table}); %>
     <%- include('./tbody.ejs', {tbody: table}); %>
 </table>

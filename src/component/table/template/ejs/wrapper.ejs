@@ -4,26 +4,18 @@ let wrapper = locals.table || {};
 let classes = wrapper.classes || [];
 
 const attributes = wrapper.attributes || {};
-const wrapperId = wrapper.id || uniqueId('table');
-let tableCaptionId;
+const wrapperId = wrapper.id || uniqueId('table-wrapper');
 attributes.id = wrapperId;
 
 const table = wrapper.table || [[]];
 table.id = `${wrapperId}-table`;
 
-if (table.caption !== undefined) {
-    tableCaptionId = `${wrapperId}-caption`;
-    table.attributes = {
-        'aria-labeledby': tableCaptionId,
-    };
-}
-
 classes.push(prefix + '-table');
 %>
 
 <div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
-    <% if (table.caption !== undefined) { %>
-        <div id="<%= tableCaptionId %>"><%= table.caption %></div>
+    <% if (wrapper.header !== undefined) { %>
+        <div class="<%= prefix %>-table__header"><%- wrapper.header %></div>
     <% } %>
     <div class="<%= prefix %>-table__wrapper">
         <div class="<%= prefix %>-table__container">
@@ -32,4 +24,7 @@ classes.push(prefix + '-table');
             </div>
         </div>
     </div>
+    <% if (wrapper.footer !== undefined) { %>
+        <div class="<%= prefix %>-table__footer"><%- wrapper.footer %></div>
+    <% } %>
 </div>

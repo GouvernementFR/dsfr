@@ -8,9 +8,8 @@ const textCell = `<div class="${prefix}-cell__desc">${getText('data.cell.text', 
 const titleCell = `<div class="${prefix}-cell__title">${getText('data.cell.title', 'table')}</div>`;
 
 const data = {
-  id: uniqueId('table'),
-  caption: table.caption || undefined,
   table: {
+    caption: table.caption || undefined,
     col,
     rows,
   }

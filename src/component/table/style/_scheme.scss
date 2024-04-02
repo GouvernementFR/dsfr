@@ -123,5 +123,9 @@
                 }
             }
         }
+
+        &__detail {
+            @include color.text(mention grey, (legacy:$legacy));
+        }
     }
 }
