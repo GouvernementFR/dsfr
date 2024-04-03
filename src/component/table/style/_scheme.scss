@@ -50,10 +50,6 @@
                             @include color.background(alt grey, (legacy: $legacy, hover: true));
                             @include color.background-image((border plain grey), (legacy: $legacy));
                         }
-
-                        // &:hover {
-                        //     background-color: var(--hover);
-                        // }
                     }
                 }
 

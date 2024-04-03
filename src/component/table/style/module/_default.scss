@@ -40,7 +40,7 @@
 
                 position: sticky;
                 left: 0;
-                z-index: 1;
+                z-index: 2;
 
                 #{ns(checkbox-group)} {
                     margin-right: -0.5rem;
@@ -106,7 +106,7 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    z-index: 4;
+                    z-index: 1;
                     background-size: 2px 100%, 2px 100%;
                     background-repeat: no-repeat, no-repeat;
                     background-position: 0 0, 100% 0;

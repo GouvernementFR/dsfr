@@ -14,7 +14,7 @@
         }
 
         &--start {
-            @include margin(6v 3v 0 0);
+            @include margin-top(6v);
             @include display-flex(row, center, center, wrap);
 
             @include media-query.respond-from(md) {
@@ -22,11 +22,11 @@
             }
 
             #{ns(select-group)} {
-                @include size(64v);
                 @include margin-bottom(4v);
 
                 #{ns(select)} {
-                    @include margin-top(0);
+                    @include size(64v);
+                    @include margin(0 3v);
                 }
             }
         }
