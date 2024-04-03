@@ -9,7 +9,7 @@
     #{ns(table)} {
 
         &__wrapper {
-            @include color.background-image((border default grey) (border default grey) (border default grey), (legacy: $legacy));
+            @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey), (legacy: $legacy));
         }
 
         &__content {
@@ -64,10 +64,8 @@
                         &:last-child {
                             th,
                             td {
-                                @include color.background-image((border default grey), (legacy: $legacy));
-
                                 &[scope='row'] {
-                                    @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
+                                    @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
                                 }
                             }
 
@@ -113,10 +111,10 @@
         &__shadow--left {
             #{ns(table__content)} {
                 #{ns(cell__actionable--last__right)} {
-                    @include color.background-image((border default grey) (border contrast grey), (legacy: $legacy));
+                    @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
 
                     &[scope='col'] {
-                        @include color.background-image((border default grey) (border plain grey), (legacy: $legacy));
+                        @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
                     }
                 }
             }

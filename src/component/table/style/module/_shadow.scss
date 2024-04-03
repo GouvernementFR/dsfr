@@ -27,12 +27,6 @@
                 background-size: 100% 1px, 1px 100%;
                 background-repeat: no-repeat, no-repeat;
                 background-position: 100% 100%, 100% 0;
-
-                &[scope='col'] {
-                    background-size: 1px 100%, 100% 1px;
-                    background-repeat: no-repeat, no-repeat;
-                    background-position: 100% 0, 0 100%;
-                }
             }
         }
     }

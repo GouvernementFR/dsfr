@@ -207,31 +207,6 @@
                         }
                     }
 
-                    th[scope='row'] {
-                        position: sticky;
-                        left: 0;
-                        z-index: 1;
-
-                        background-size: 1px 100%, 100% 1px;
-                        background-repeat: no-repeat, no-repeat;
-                        background-position: 100% 0, 0 100%;
-                        width: var(--th-row-width);
-                        min-width: var(--th-row-width);
-                        max-width: var(--th-row-width);
-                        white-space: inherit;
-
-                        + th,
-                        + td {
-                            &#{ns(cell__actionable)} {
-                                left: var(--th-row-width);
-
-                                & + #{ns(cell__actionable--last__right)} {
-                                    left: calc(var(--th-row-width) + 4rem);
-                                }
-                            }
-                        }
-                    }
-
                     &.fr-collapse {
                         &.fr-collapse--expanded {
                             display: table-row;
@@ -255,6 +230,31 @@
                         &:not(.fr-collapse--expanded) {
                             display: none;
                         }
+                    }
+                }
+            }
+        }
+
+        th[scope='row'] {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+
+            background-size: 1px 100%, 100% 1px;
+            background-repeat: no-repeat, no-repeat;
+            background-position: 100% 0, 0 100%;
+            width: var(--th-row-width);
+            min-width: var(--th-row-width);
+            max-width: var(--th-row-width);
+            white-space: inherit;
+
+            + th,
+            + td {
+                &#{ns(cell__actionable)} {
+                    left: var(--th-row-width);
+
+                    & + #{ns(cell__actionable--last__right)} {
+                        left: calc(var(--th-row-width) + 4rem);
                     }
                 }
             }
