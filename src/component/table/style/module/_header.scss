@@ -7,14 +7,27 @@
 
 #{ns(table)} {
     &__header {
-        @include display-flex(row, center, space-between, wrap);
+        @include media-query.respond-from(md) {
+            @include display-flex(row, center, space-between);
+        }
 
         &--end {
-            @include display-flex(row, center, flex-start, wrap);
+            @include media-query.respond-from(md) {
+                @include display-flex(row, center, flex-start);
+            }
+
+            #{ns(btns-group)} {
+                @include media-query.respond-from(md) {
+                    @include padding-right(2v);
+                }
+            }
 
             #{ns(segmented)} {
-                @include margin-left(4v);
                 @include margin-bottom(4v);
+
+                @include media-query.respond-from(md) {
+                    @include padding-left(2v);
+                }
             }
         }
     }

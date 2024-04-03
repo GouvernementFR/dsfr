@@ -7,33 +7,58 @@
 
 #{ns(table)} {
     &__footer {
-        @include display-flex(row, center, center, wrap);
-
-        @include media-query.respond-from(lg) {
-            @include display-flex(row, center, space-between, wrap);
+        @include media-query.respond-from(md) {
+            @include display-flex(row, center, space-between, nowrap);
         }
 
         &--start {
-            @include margin-top(6v);
-            @include display-flex(row, center, center, wrap);
-
-            @include media-query.respond-from(md) {
-                @include display-flex(row, center, flex-start, wrap);
-            }
+            @include margin-top(4v);
+            @include display-flex(row, center, flex-start);
 
             #{ns(select-group)} {
-                @include margin-bottom(4v);
+                @include media-query.respond-from(md) {
+                    @include padding-left(2v);
+                    @include padding-right(2v);
+                }
 
                 #{ns(select)} {
-                    @include size(64v);
-                    @include margin(0 3v);
+                    @include margin-top(0);
+
+                    @include media-query.respond-from(md) {
+                        @include size(64v);
+                    }
                 }
             }
         }
 
-        #{ns(pagination)},
-        #{ns(btns-group)} {
+        &--middle {
+            @include margin-top(4v);
+
+            @include display-flex(row, center, center);
+
+            @include media-query.respond-from(md) {
+                display: block;
+                @include padding-left(2v);
+                @include padding-right(2v);
+            }
+
+            #{ns(pagination)} {
+                @include margin-top(3v);
+
+                &__list {
+                    @include media-query.respond-from(md) {
+                        flex-wrap: nowrap;
+                    }
+                }
+            }
+        }
+
+        &--end {
             @include margin-top(6v);
+
+            @include media-query.respond-from(md) {
+                @include padding-left(2v);
+            }
         }
     }
 }

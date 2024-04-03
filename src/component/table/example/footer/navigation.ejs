@@ -48,8 +48,7 @@ const paginationData = {
 const pagination = include('../../../pagination/template/ejs/pagination', {pagination: paginationData});
 
 const buttonsGroupData = {
-  groupCount: 2,
-  inline: 'sm',
+  inline: 'md',
   align:'right',
   reverse: true,
   buttons: [
@@ -72,5 +71,9 @@ const buttons = include('../../../button/template/ejs/buttons-group', {buttonsGr
   <p class="<%= prefix %>-table__detail"><%- getText('data.navigation.detail', 'table') %></p>
   <%- select %>
 </div>
-<%- pagination %>
-<%- buttons %>
+<div class="<%= prefix %>-table__footer--middle">
+  <%- pagination %>
+</div>
+<div class="<%= prefix %>-table__footer--end">
+  <%- buttons %>
+</div>

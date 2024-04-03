@@ -3,6 +3,8 @@
 /// @group Table
 ////
 
+@use '../../../../../module/media-query';
+
 #{ns(table)} {
     --table-offset: #{space(4v)};
     --th-row-width: #{space(36.5v)};
@@ -306,6 +308,5 @@
 
     &__detail {
         @include text-style(sm);
-        @include margin-bottom(4v);
     }
 }

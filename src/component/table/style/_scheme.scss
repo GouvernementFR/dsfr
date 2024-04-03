@@ -64,6 +64,8 @@
                         &:last-child {
                             th,
                             td {
+                                @include color.background-image((border default grey), (legacy: $legacy));
+
                                 &[scope='row'] {
                                     @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
                                 }
@@ -85,7 +87,7 @@
 
                     th[scope="row"] {
                         @include color.background(alt grey, (legacy: $legacy));
-                        @include color.background-image((border plain grey) (border default grey), (legacy: $legacy));
+                        @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
                     }
 
                     th,
@@ -93,13 +95,13 @@
                         position: relative;
                         @include color.text(title grey, (legacy: $legacy));
 
-                        @include color.background-image((border default grey), (legacy: $legacy));
+                        @include color.background-image((border contrast grey), (legacy: $legacy));
                         @include color.background(default grey, (legacy: $legacy, hover: true));
                     }
 
                     #{ns(cell)} {
                         &__actionable {
-                            @include color.background-image((border default grey), (legacy: $legacy));
+                            @include color.background-image((border contrast grey), (legacy: $legacy));
                             @include color.background(default grey, (legacy: $legacy, hover: true));
                         }
                     }
@@ -111,7 +113,7 @@
         &__shadow--left {
             #{ns(table__content)} {
                 #{ns(cell__actionable--last__right)} {
-                    @include color.background-image((border default grey) (border default grey), (legacy: $legacy));
+                    @include color.background-image((border default grey) (border contrast grey), (legacy: $legacy));
 
                     &[scope='col'] {
                         @include color.background-image((border default grey) (border plain grey), (legacy: $legacy));
