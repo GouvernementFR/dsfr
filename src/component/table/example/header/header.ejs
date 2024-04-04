@@ -48,11 +48,6 @@ const segmented = include('../../../segmented/template/ejs/segmented', {segmente
 
 %>
 
-<div class="<%= prefix %>-table__header--start">
-    <p class="<%= prefix %>-table__detail"><%- getText('data.action_bar.detail', 'table') %></p>
-</div>
-
-<div class="<%= prefix %>-table__header--end">
-    <%- buttons %>
-    <%- segmented %>
-</div>
+<%- segmented %>
+<p class="<%= prefix %>-table__detail"><%- getText('data.action_bar.detail', 'table') %></p>
+<%- buttons %>

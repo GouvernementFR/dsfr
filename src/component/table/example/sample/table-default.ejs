@@ -3,11 +3,11 @@ const table = locals.table || {};
 const data = JSON.parse(include('../data/table.json.ejs', { table: table.table }));
 
 if (table.header) {
-    data.header = include('../header/action-bar.ejs');
+    data.header = include('../header/header.ejs');
 }
 
 if (table.footer) {
-    data.footer = include('../footer/navigation.ejs');
+    data.footer = include('../footer/footer.ejs');
 }
 %>
 

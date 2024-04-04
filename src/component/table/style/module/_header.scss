@@ -9,26 +9,38 @@
     &__header {
         @include media-query.respond-from(md) {
             @include display-flex(row, center, space-between);
-        }
 
-        &--end {
-            @include media-query.respond-from(md) {
-                @include display-flex(row, center, flex-start);
+            #{ns(table__detail)} {
+                order: 1;
+                flex: 1;
+                @include padding-right(2v);
             }
 
             #{ns(btns-group)} {
-                @include media-query.respond-from(md) {
-                    @include padding-right(2v);
-                }
+                order: 2;
+                @include padding-left(2v);
+                @include padding-right(2v);
             }
 
             #{ns(segmented)} {
-                @include margin-bottom(4v);
-
-                @include media-query.respond-from(md) {
-                    @include padding-left(2v);
-                }
+                order: 3;
+                flex: 0;
+                @include padding-left(2v);
             }
+        }
+
+        #{ns(btns-group)} {
+            @include media-query.respond-from(md) {
+                @include padding-right(2v);
+            }
+        }
+
+        #{ns(table__detail)} {
+            @include margin-bottom(4v);
+        }
+
+        #{ns(segmented)} {
+            @include margin-bottom(4v);
         }
     }
 }
