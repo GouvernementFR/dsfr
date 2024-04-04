@@ -71,9 +71,11 @@
 
                 tbody {
                     tr {
-                        &:hover {
-                            &::after {
-                                @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
+                        &:not(:has(table)) {
+                            &:hover {
+                                &::after {
+                                    @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
+                                }
                             }
                         }
 
