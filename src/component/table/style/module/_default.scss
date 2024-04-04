@@ -158,17 +158,17 @@
             position: relative;
 
             thead {
-                tr {
-                    &:first-child {
-                        #{ns(cell__hover)} {
-                            &::after {
-                                background-size: 2px 100%, 2px 100%, 100% 2px;
-                                background-repeat: no-repeat, no-repeat, no-repeat;
-                                background-position: 0 0, 100% 0, 0 0;
-                            }
-                        }
-                    }
-                }
+                // tr {
+                //     &:first-child {
+                //         #{ns(cell__hover)} {
+                //             &::after {
+                //                 background-size: 2px 100%, 2px 100%, 100% 2px;
+                //                 background-repeat: no-repeat, no-repeat, no-repeat;
+                //                 background-position: 0 0, 100% 0, 0 0;
+                //             }
+                //         }
+                //     }
+                // }
 
                 th {
                     font-weight: font-weight(bold);
@@ -176,6 +176,15 @@
                     background-size: 1px 100%, 100% 1px;
                     background-repeat: no-repeat, no-repeat;
                     background-position: 100% 0, 0 100%;
+
+                    &:first-child {
+                        &:hover {
+                            &::after {
+                                left: var(--head-col-position-left);
+                                width: var(--head-col-width);
+                            }
+                        }
+                    }
 
                     &:last-child {
                         background-size: 100% 1px;
@@ -231,13 +240,13 @@
                             }
                         }
 
-                        #{ns(cell__hover)} {
-                            &::after {
-                                background-size: 100% 2px, 2px 100%, 2px 100%;
-                                background-repeat: no-repeat, no-repeat, no-repeat;
-                                background-position: 100% 100%, 0 0, 100% 0;
-                            }
-                        }
+                        // #{ns(cell__hover)} {
+                        //     &::after {
+                        //         background-size: 100% 2px, 2px 100%, 2px 100%;
+                        //         background-repeat: no-repeat, no-repeat, no-repeat;
+                        //         background-position: 100% 100%, 0 0, 100% 0;
+                        //     }
+                        // }
                     }
 
                     &.fr-collapse {

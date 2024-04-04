@@ -28,24 +28,24 @@
                     @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                 }
 
-                &__hover {
-                    &::after {
-                        @include color.background-image((border default blue-france) (border default blue-france), (legacy: $legacy));
-                    }
-                }
+                // &__hover {
+                //     &::after {
+                //         @include color.background-image((border default blue-france) (border default blue-france), (legacy: $legacy));
+                //     }
+                // }
             }
 
             table {
                 thead {
-                    tr {
-                        &:first-child {
-                            #{ns(cell__hover)} {
-                                &::after {
-                                    @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
-                                }
-                            }
-                        }
-                    }
+                    // tr {
+                    //     &:first-child {
+                    //         #{ns(cell__hover)} {
+                    //             &::after {
+                    //                 @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
+                    //             }
+                    //         }
+                    //     }
+                    // }
 
                     th {
                         @include color.background(alt grey, (legacy: $legacy, hover: true));
@@ -85,11 +85,11 @@
                                 }
                             }
 
-                            #{ns(cell__hover)} {
-                                &::after {
-                                    @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
-                                }
-                            }
+                            // #{ns(cell__hover)} {
+                            //     &::after {
+                            //         @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
+                            //     }
+                            // }
                         }
 
                         &[aria-selected="true"] {
