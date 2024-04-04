@@ -23,10 +23,14 @@
         * Modifier Bordure à gauche
         **/
         &--left {
-            #{ns(cell__actionable--last__right)} {
-                background-size: 100% 1px, 1px 100%;
-                background-repeat: no-repeat, no-repeat;
-                background-position: 100% 100%, 100% 0;
+            #{ns(cell__actionable)} {
+                z-index: 2;
+
+                &--last__right {
+                    background-size: 100% 1px, 1px 100%;
+                    background-repeat: no-repeat, no-repeat;
+                    background-position: 100% 100%, 100% 0;
+                }
             }
         }
     }
