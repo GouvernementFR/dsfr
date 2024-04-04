@@ -355,7 +355,8 @@
 
         &:has(#{ns(table__container)}) {
             caption {
-                @include absolute(calc(var(--table-offset) * -1),inherit, inherit, var(--scroll-offset-left), var(--table-offset-width));
+                @include absolute(calc(var(--table-offset) * -1),inherit, inherit, var(--scroll-offset-left));
+                // @include absolute(calc(var(--table-offset) * -1),inherit, inherit, var(--scroll-offset-left), var(--table-offset-width));
             }
         }
     }
