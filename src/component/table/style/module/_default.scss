@@ -267,7 +267,7 @@
                             & > .fr-cell__actionable,
                             & .fr-cell__expanded tr > .fr-cell__actionable {
                                 &.fr-cell__actionable--select {
-                                    z-index: 2;
+                                    z-index: 3;
 
                                     .fr-checkbox-group {
                                         transform: translateX(4rem);
