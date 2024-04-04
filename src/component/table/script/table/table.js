@@ -10,6 +10,7 @@ class Table extends api.core.Instance {
 
   init () {
     this.addAscent(TableEmission.CAPTION_HEIGHT, this.setCaptionHeight.bind(this));
+    this.addAscent(TableEmission.CAPTION_WIDTH, this.setCaptionWidth.bind(this));
     this.addAscent(TableEmission.ROW_SELECT, this.rowSelect.bind(this));
     this.addAscent(TableEmission.COL_SELECT, this.colSelect.bind(this));
     this.addAscent(TableEmission.COL_HOVER, this.colHover.bind(this));
@@ -18,6 +19,10 @@ class Table extends api.core.Instance {
 
   setCaptionHeight (value) {
     this.setProperty('--table-offset', `calc(${value}px + ${PADDING})`);
+  }
+
+  setCaptionWidth (value) {
+    this.setProperty('--table-offset-width', `${value}px`);
   }
 
   rowSelect (row) {

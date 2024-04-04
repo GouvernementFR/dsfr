@@ -7,15 +7,21 @@
 
 #{ns(table)} {
     --table-offset: #{space(4v)};
+    --table-offset-width: 0;
+    --scroll-offset-left: 0;
     --th-row-width: #{space(36.5v)};
     --head-col-width: 0;
     --head-col-position-left: 0;
 
     @include set-text-margin(0);
     @include set-title-margin(0);
-    @include padding-top(var(--table-offset));
+    // @include padding-top(var(--table-offset));
     @include relative;
     @include margin-bottom(10v);
+
+    &:not(:has(#{ns(table__container)})) {
+        @include padding-top(var(--table-offset));
+    }
 
     &__wrapper {
         width: 100%;
@@ -28,7 +34,7 @@
 
         position: relative;
         @include before('', block) {
-            @include absolute(0, 0, 0 , 0, 100%, 100%);
+            @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
             pointer-events: none;
         }
     }
@@ -36,6 +42,7 @@
     &__container {
         width: 100%;
         overflow: auto;
+        @include padding-top(var(--table-offset));
 
         // @include padding(1px 1px 0);
         // @include margin(-1px 0);
@@ -335,9 +342,21 @@
         text-align: left;
     }
 
+    &__detail {
+        @include text-style(sm);
+    }
+
     &#{ns-attr(js-table, true)} {
-        caption {
-            @include absolute(0);
+        &:not(:has(#{ns(table__container)})) {
+            caption {
+                @include absolute(0);
+            }
+        }
+
+        &:has(#{ns(table__container)}) {
+            caption {
+                @include absolute(calc(var(--table-offset) * -1),inherit, inherit, var(--scroll-offset-left), var(--table-offset-width));
+            }
         }
     }
 
@@ -347,9 +366,5 @@
         &:not(#{ns-attr(collapse--expanded)}) {
             display: none;
         }
-    }
-
-    &__detail {
-        @include text-style(sm);
     }
 }

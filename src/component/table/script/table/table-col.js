@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { TableEmission } from './table-emission.js';
+// import { TableEmission } from './table-emission.js';
 
 class TableCol extends api.core.Instance {
   static get instanceClassName () {
