@@ -23,8 +23,12 @@
         * Modifier Bordure à gauche
         **/
         &--left {
+            th[scope='row'] {
+                z-index: 3;
+            }
+
             #{ns(cell__actionable)} {
-                z-index: 2;
+                z-index: 3;
 
                 &--last__right {
                     background-size: 100% 1px, 1px 100%;

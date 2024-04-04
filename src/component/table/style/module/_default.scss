@@ -207,7 +207,7 @@
                             left: calc(var(--head-col-position-left) - 2px);
                             width: calc(var(--head-col-width) + 2px);
                             height: calc(100% + 1px);
-                            z-index: 1;
+                            z-index: 2;
                             background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
                             background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
                             background-position: 100% 100%, 0 0, 100% 0, 100% 0;

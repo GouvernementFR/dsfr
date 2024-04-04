@@ -8,7 +8,7 @@ export const TableSelector = {
   ELEMENT: [`${api.internals.ns.selector('table')}:not(${api.internals.ns.selector('table--no-scroll')}) table`, `${api.internals.ns.selector('table')} ${api.internals.ns.selector('table__container')}`],
   CAPTION: `${api.internals.ns.selector('table')} table caption`,
   ROW: `${api.internals.ns.selector('table')} tr`,
-  COL: `${api.internals.ns.selector('table')} thead th:not(${api.internals.ns.selector('cell__actionable')})`,
+  COL: `${api.internals.ns.selector('table')} thead th:not([scope='row']):not(${api.internals.ns.selector('cell__actionable')})`,
   ROW_SELECT: `${api.internals.ns.selector('cell__actionable--select')} ${api.internals.ns.selector('checkbox-group')} input[type="checkbox"]`,
   COL_SELECT: `${api.internals.ns.selector('col__actionable--select')} ${api.internals.ns.selector('checkbox-group')} input[type="checkbox"]`
 };
