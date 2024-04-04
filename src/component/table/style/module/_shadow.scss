@@ -10,7 +10,7 @@
 */
 #{ns(table)} {
     #{ns(table__shadow)} {
-        @include before('', block) {
+        @include after('', block) {
             @include absolute(var(--table-offset), 0, 0, 0);
             @include z-index(over);
             @include _table-scroll-shadow(false, false);

@@ -8,16 +8,18 @@ class TableCol extends api.core.Instance {
 
   init () {
     this.listen('mouseover', this.handlingHover.bind(this));
-    this.listen('mouseleave', this.handlingLeave.bind(this));
-    this._colIndex = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
+    // this.listen('mouseleave', this.handlingLeave.bind(this));
+    // this._colIndex = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
   }
 
   handlingHover () {
-    this.ascend(TableEmission.COL_HOVER, { index: this._colIndex });
+    this.style.setProperty('--head-col-width', (this.node.offsetWidth) + 'px');
+    this.style.setProperty('--head-col-position-left', (this.node.offsetLeft) + 'px');
+    // this.ascend(TableEmission.COL_HOVER, { index: this._colIndex });
   }
 
   handlingLeave () {
-    this.ascend(TableEmission.COL_OUT, { index: this._colIndex });
+    // this.ascend(TableEmission.COL_OUT, { index: this._colIndex });
   }
 }
 
