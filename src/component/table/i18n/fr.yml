@@ -6,6 +6,7 @@ subdir:
   deprecated: version dépréciée
 
 sample:
+  bordered: Tableau avec bordures verticales
   cell-collapsed: Tableau cellules fusionnées
   default: Tableau complexe
   double-entry: Tableau à double entrée

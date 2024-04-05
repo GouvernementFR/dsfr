@@ -2,7 +2,7 @@ import api from '../../api.js';
 import { TableSelector } from './table-selector.js';
 // import { TableEmission } from './table-emission.js';
 
-const SCROLL_OFFSET = 2; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
+const SCROLL_OFFSET = 0; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
 
 class TableElement extends api.core.Instance {
   static get instanceClassName () {

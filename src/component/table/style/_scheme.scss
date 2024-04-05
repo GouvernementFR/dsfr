@@ -49,7 +49,7 @@
 
                     th {
                         @include color.background(alt grey, (legacy: $legacy, hover: true));
-                        @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+                        @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
 
 
                         &#{ns(cell__selected)} {
@@ -79,20 +79,20 @@
                             }
                         }
 
-                        &:last-child {
-                            th,
-                            td {
-                                &[scope='row'] {
-                                    @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
-                                }
-                            }
+                        // &:last-child {
+                        //     th,
+                        //     td {
+                        //         &[scope='row'] {
+                        //             @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
+                        //         }
+                        //     }
 
                             // #{ns(cell__hover)} {
                             //     &::after {
                             //         @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
                             //     }
                             // }
-                        }
+                        // }
 
                         &[aria-selected="true"] {
                             td {
@@ -101,23 +101,26 @@
                         }
                     }
 
-                    th[scope="row"] {
+                    th[scope='row'] {
                         @include color.background(alt grey, (legacy: $legacy));
-                        @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
+                        @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
                     }
 
                     th,
                     td {
-                        position: relative;
                         @include color.text(title grey, (legacy: $legacy));
 
-                        @include color.background-image((border contrast grey), (legacy: $legacy));
+                        @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
                         @include color.background(default grey, (legacy: $legacy, hover: true));
+
+                        &:last-child {
+                            @include color.background-image((border contrast grey), (legacy: $legacy));
+                        }
                     }
 
                     #{ns(cell)} {
                         &__actionable {
-                            @include color.background-image((border contrast grey), (legacy: $legacy));
+                            // @include color.background-image((border contrast grey), (legacy: $legacy));
                             @include color.background(default grey, (legacy: $legacy, hover: true));
                         }
                     }
