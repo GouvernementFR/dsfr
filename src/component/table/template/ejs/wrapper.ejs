@@ -17,13 +17,15 @@ classes.push(prefix + '-table');
     <% if (wrapper.header !== undefined) { %>
         <div class="<%= prefix %>-table__header"><%- wrapper.header %></div>
     <% } %>
-    <div class="<%= prefix %>-table__wrapper">
-        <div class="<%= prefix %>-table__container">
-            <div class="<%= prefix %>-table__content">
-                <%- include('./table.ejs', {table: table}); %>
+    <% if (table) { %>
+        <div class="<%= prefix %>-table__wrapper">
+            <div class="<%= prefix %>-table__container">
+                <div class="<%= prefix %>-table__content">
+                    <%- include('./table.ejs', {table: table}); %>
+                </div>
             </div>
         </div>
-    </div>
+    <% } %>
     <% if (wrapper.footer !== undefined) { %>
         <div class="<%= prefix %>-table__footer"><%- wrapper.footer %></div>
     <% } %>

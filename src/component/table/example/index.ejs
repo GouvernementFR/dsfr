@@ -1,24 +1,25 @@
 
-<% const sample = getSample(include); %>
+<%
+const sample = getSample(include);
 
-<%-
-    sample(getText('sample.simple', 'table'), './sample/table-simple', {}, true);
+const dataSimple = JSON.parse(include('./data/data-simple.json.ejs'));
+
 %>
 
 <%-
-    sample(getText('sample.bordered', 'table'), './sample/table-bordered', {}, true);
+    sample(getText('sample.simple', 'table'), './sample/table-default', {table: {table: {caption: getText('data.caption', 'table'), ...dataSimple}}}, true);
 %>
 
 <%-
-    sample(getText('sample.sm', 'table'), './sample/table-sm', {}, true);
+    sample(getText('sample.sm', 'table'), './sample/table-default', {table: {classes: [`${prefix}-table--sm`], table: {caption: getText('data.caption', 'table'), ...dataSimple}}}, true);
 %>
 
 <%-
-    sample(getText('sample.lg', 'table'), './sample/table-lg', {}, true);
+    sample(getText('sample.lg', 'table'), './sample/table-default', {table: {classes: [`${prefix}-table--lg`], table: {caption: getText('data.caption', 'table'), ...dataSimple}}}, true);
 %>
 
 <%-
-    sample(getText('sample.default', 'table'), './sample/table-default', {table: {header: true, footer: true, table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expanded: 'true'}, {collapse: true}, {}, {expanded: 'false'}, {collapse: true}]}}}, true);
+    sample(getText('sample.default', 'table'), './sample/table-complex', {table: {header: true, footer: true, table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expandable: 'true'}, {collapse: true}, {}, {expandable: 'false'}, {collapse: true}]}}}, true);
 %>
 
 <%-
@@ -35,6 +36,10 @@
 
 <%-
     sample(getText('sample.double-entry', 'table'), './sample/table-double-entry', {}, true);
+%>
+
+<%-
+    sample(getText('sample.bordered', 'table'), './sample/table-bordered', {}, true);
 %>
 
 <%-

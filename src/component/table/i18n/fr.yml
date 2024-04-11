@@ -21,15 +21,16 @@ data:
   cell:
     action:
       button: Label bouton
-      empty: Action
-      expand: Deplier
+      empty: Colonne d'action
+      expandRow: Déplier la ligne suivante
       sort: Trier
       select: Selectionner
       selectAll: Tout selectionner
+      selectRow: Selectionner toute la ligne
     download:
       detail: JPG – 61,88 Ko
       lable: Téléchargement
-    lable: Label
+    label: Label par défaut
     number: 30,00&nbsp;€
     text: Texte par défaut
     title: Titre par défaut

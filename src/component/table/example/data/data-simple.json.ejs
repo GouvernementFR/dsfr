@@ -1,0 +1,41 @@
+<%
+const data = {
+    thead: [
+        {
+            content: 'Name'
+        },
+        {
+            content: 'Age'
+        },
+        {
+            content: 'Num'
+        }
+    ],
+    tbody: [
+        [
+            {
+                content: '<a href="#">John Brown</a>'
+            },
+            {
+                content: '32'
+            },
+            {
+                content: '0571-22098909'
+            }
+        ],
+        [
+            {
+                content: '<a href="#">Joe Black</a>'
+            },
+            {
+                content: '34'
+            },
+            {
+                content: '0575-22098909'
+            }
+        ]
+    ]
+};
+%>
+
+<%- JSON.stringify(data); %>

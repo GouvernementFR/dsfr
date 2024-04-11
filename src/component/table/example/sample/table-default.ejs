@@ -1,14 +1,13 @@
 <%
 const table = locals.table || {};
-const data = JSON.parse(include('../data/table.json.ejs', { table: table.table }));
 
 if (table.header) {
-    data.header = include('../header/header.ejs');
+    table.header = include('../header/header.ejs');
 }
 
 if (table.footer) {
-    data.footer = include('../footer/footer.ejs');
+    table.footer = include('../footer/footer.ejs');
 }
 %>
 
-<%- include('../../template/ejs/wrapper', {table: data}); %>
+<%- include('../../template/ejs/wrapper', {table}); %>

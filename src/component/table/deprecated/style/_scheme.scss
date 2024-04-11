@@ -54,6 +54,10 @@
           tbody {
             tr {
               @include color.background-image(border default accent, (legacy: $legacy));
+
+              &:last-child {
+                background-image: none;
+              }
             }
           }
         }

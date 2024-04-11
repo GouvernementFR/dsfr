@@ -7,26 +7,28 @@ attributes.id = table.id || uniqueId('table-tbody');
 %>
 
 <tbody <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
-    <% if (table.rows) { %>
-        <% for (let row = 0; row < table.rows.length; row++) { %>
+    <% if (table.tbody) { %>
+        <% for (let row = 0; row < table.tbody.length; row++) { %>
             <%
                 const rowClasses = [];
-                if (table.rows[row].collapse) rowClasses.push(prefix + '-collapse');
+                if (table.rows && table.rows[row].collapse) rowClasses.push(prefix + '-collapse');
 
                 const rowAttributes = {};
                 rowAttributes.id = `row-key-${row + 1}`;
                 rowAttributes['data-row-key'] = row + 1;
             %>
             <tr <%- includeClasses(rowClasses) %> <%- includeAttrs(rowAttributes) %>>
-                <% for (let col = 0; col < table.tbody[row].length; col++) { %>
-                    <%
-                        const colTag = table.tbody[row][col].tag || 'td';
-                        const colClasses = table.tbody[row][col].classes || [];
-                        const colAttributes = table.tbody[row][col].attributes || {};
-                    %>
-                    <<%- colTag %> <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
-                        <%- table.tbody[row][col].content %>
-                    </<%- colTag %>>
+                <% if (table.tbody && table.tbody.length) { %>
+                    <% for (let col = 0; col < table.tbody[row].length; col++) { %>
+                        <%
+                            const colTag = table.tbody[row][col].tag || 'td';
+                            const colClasses = table.tbody[row][col].classes || [];
+                            const colAttributes = table.tbody[row][col].attributes || {};
+                        %>
+                        <<%- colTag %> <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
+                            <%- table.tbody[row][col].content %>
+                        </<%- colTag %>>
+                    <% } %>
                 <% } %>
             </tr>
         <% } %>

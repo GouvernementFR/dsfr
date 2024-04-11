@@ -8,7 +8,7 @@ attributes.id = table.id || uniqueId('table-thead');
 
 <thead <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
     <tr>
-        <% if (table.thead) { %>
+        <% if (table.thead && table.thead.length) { %>
             <% for (let col = 0; col < table.thead.length; col++) { %>
                 <%
                     let colClasses = table.thead[col].classes || [];
