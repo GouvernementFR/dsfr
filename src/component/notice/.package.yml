@@ -5,3 +5,4 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bande
 style:
   - core
   - button
+  - link

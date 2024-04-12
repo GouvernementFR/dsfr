@@ -1,0 +1,13 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section('Bandeaux d\'alertes', 'Il existe 4 bandeaux d\'alertes utilisables en fonction du type d\'alerte. L\'icône ne peut pas être modifiée et les intitulés officiels doivent être utilisés', 0, true); %>
+
+<%- sample('Bandeau d\'appel à témoins', './notice-dismissable', {notice: {type: "witness", title: 'Appel à témoins', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true}}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'alerte enlèvement (non modifiable)', './notice-dismissable', {notice: {type: "kidnapping", title: 'Alerte enlèvement', desc: 'Une alerte enlèvement est en cours actuellement.', link: {label: 'Cliquez ici pour en savoir plus', href: '#', blank: true}}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau vigipirate', './notice-dismissable', {notice: {type: "vigipirate", title: 'Vigipirate', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true}}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau de cyberattack', './notice-dismissable', {notice: {type: "cyberattack", title: 'Cyber-attaque', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true}}}, true, '../layout.ejs'); %>

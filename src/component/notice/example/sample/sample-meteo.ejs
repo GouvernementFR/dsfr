@@ -1,0 +1,11 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section('Bandeaux météo', 'Il existe 3 bandeaux météo utilisables en fonction du niveau d\'alerte météo. L\'icône peut être modifiée et seul le titre est obligatoire', 0, true); %>
+
+<%- sample('Bandeau d\'information', './notice-dismissable', {notice: {type: "weather-orange", title: 'Libellé de l’alerte orange', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true}}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'avertissement', './notice-dismissable', {notice: {type: "weather-red", title: 'Libellé de l’alerte rouge', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true}}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'alerte', './notice-dismissable', {notice: {type: "weather-purple", title: 'Libellé de l’alerte violette', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true}}}, true, '../layout.ejs'); %>

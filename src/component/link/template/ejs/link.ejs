@@ -26,9 +26,17 @@
   * left : icone à gauche du label
   * right : icone à droite du label
 
+* link.id (string, optional) : id du lien
+
 * link.attributes (object, optional) : attributs spécifiques à rajouter sur le composant
 
 * link.classes (array, optional) : classes spécifiques à rajouter sur le composant
+
+* link.assess (bool, optional) : si true, ajoute l'attribut permettant le remplissage automatique des informations du fichier à télécharger. Si string, ajoute l'attribut avec la valeur de la string (ex: "bytes" pour les poids en bytes)
+
+* link.hreflang (string, optional) : code langue du fichier à télécharger
+
+* link.isFrLink (bool, optional) : si false, n'ajoute pas la classe de base "fr-link"
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -36,7 +44,7 @@
 const link = locals.link || {};
 let linkClasses = link.classes || [];
 let linkAttrs = link.attributes || {};
-
+let isFrLink = link.isFrLink !== false;
 let label = link.label || 'lorem ipsum';
 
 const markup = link.markup || 'a';
@@ -53,7 +61,7 @@ if (link.download === true) {
   linkClasses.push(prefix + '-link--download');
 }
 
-linkClasses.push(prefix + '-link');
+if (isFrLink) linkClasses.push(prefix + '-link');
 
 linkAttrs.id = link.id || uniqueId('link');
 

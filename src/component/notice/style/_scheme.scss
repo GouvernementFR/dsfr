@@ -14,5 +14,65 @@
       @include color.background(contrast info, (legacy:$legacy));
       @include color.text(default info, (legacy:$legacy));
     }
+
+    &--warning,
+    &--weather-orange {
+      @include color.background(contrast warning, (legacy:$legacy));
+      @include color.text(default warning, (legacy:$legacy));
+    }
+
+    &--alert {
+      @include color.background(contrast error, (legacy:$legacy));
+      @include color.text(default error, (legacy:$legacy));
+    }
+
+    &--weather-red {
+      @include color.background(flat error, (legacy:$legacy));
+      @include color.text(inverted grey, (legacy:$legacy));
+
+      #{ns(btn--close)} {
+        @include color.background(action-high error, (legacy:$legacy));
+      }
+    }
+
+    &--weather-purple {
+      @include color.background(flat purple-glycine, (legacy:$legacy));
+      @include color.text(inverted grey, (legacy:$legacy));
+
+      #{ns(btn--close)} {
+        @include color.background(action-high purple-glycine, (legacy:$legacy));
+      }
+    }
+
+    &--witness {
+      @include color.background(flat grey, (legacy:$legacy));
+      @include color.text(inverted grey, (legacy:$legacy));
+      @include color.box-shadow(plain error, (legacy:$legacy), top-6-in);
+
+      #{ns(btn--close)} {
+        @include color.background(action-high grey, (legacy:$legacy));
+      }
+    }
+
+    &--kidnapping,
+    &--vigipirate {
+      @include color.background(flat error, (legacy:$legacy));
+      @include color.text(inverted grey, (legacy:$legacy));
+      @include color.box-shadow(plain grey, (legacy:$legacy), top-6-in);
+
+      #{ns(btn--close)} {
+        @include color.background(action-high error, (legacy:$legacy));
+      }
+    }
+
+    &--cyberattack {
+      @include color.background(flat grey, (legacy:$legacy));
+      @include color.text(inverted grey, (legacy:$legacy));
+      @include color.box-shadow(plain info, (legacy:$legacy), top-6-in);
+
+      #{ns(btn--close)} {
+        @include color.background(action-high grey, (legacy:$legacy));
+      }
+    }
   }
 }
