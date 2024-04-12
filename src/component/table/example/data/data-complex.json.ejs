@@ -1,7 +1,7 @@
 <%
 const table = locals.table || {};
-const col = table.col || 14;
-const rows = table.rows || new Array(6);
+const col = table.col;
+const rows = table.rows;
 
 const actionCellEmpty = `<span class="${prefix}-sr-only">${getText('data.cell.action.empty', 'table')}</span>`;
 const getTextCell = (tag = 'span') => `<${tag} class="${prefix}-cell__desc">${getText('data.cell.text', 'table')}</${tag}>`;
