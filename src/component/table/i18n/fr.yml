@@ -8,7 +8,7 @@ subdir:
 sample:
   bordered: Tableau avec bordures verticales
   cell-collapsed: Tableau cellules fusionnées
-  default: Tableau complexe
+  complex: Tableau complexe
   double-entry: Tableau à double entrée
   expandable: Tableau repliable
   selectable: Tableau sélectionnable

@@ -19,7 +19,7 @@ const dataSimple = JSON.parse(include('./data/data-simple.json.ejs'));
 %>
 
 <%-
-    sample(getText('sample.default', 'table'), './sample/table-complex', {table: {header: true, footer: true, table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expandable: 'true'}, {collapse: true}, {}, {expandable: 'false'}, {collapse: true}]}}}, true);
+    sample(getText('sample.complex', 'table'), './sample/table-complex', {table: {header: true, footer: true, table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expandable: 'true'}, {collapse: true}, {}, {expandable: 'false'}, {collapse: true}]}}}, true);
 %>
 
 <%-
