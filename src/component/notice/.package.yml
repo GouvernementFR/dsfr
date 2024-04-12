@@ -6,3 +6,10 @@ style:
   - core
   - button
   - link
+example:
+  style:
+    - header
+    - navigation
+    - breadcrumb
+    - search
+    - skiplink
