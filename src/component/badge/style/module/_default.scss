@@ -10,16 +10,14 @@
 
 #{ns(badge)} {
   @include nest-badge(md, left, null, null, false);
-  @include icon-style(before){
-    @include preference.forced-colors {
-      background-color: currentColor;
-    }
-  };
+  @include icon-style(before);
   @include font-weight(bold);
   @include max-width(100%);
   text-transform: uppercase;
   border-radius: spacing.space(1v);
-  forced-color-adjust: none;
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
 
   &--sm {
     @include nest-badge(sm, left, null, null, false);

@@ -4,6 +4,7 @@
 ////
 
 @use 'module/animate';
+@use 'module/preference';
 
 #{ns(accordion)} {
   position: relative;
@@ -34,6 +35,7 @@
     text-align: left;
     @include margin(0);
     @include animate.caret();
+    @include icon-forced-color(ButtonText, false, after);
 
     @include after {
       @include margin-right(0);
@@ -51,6 +53,17 @@
     &--expanded {
       @include padding-top(4v);
       @include padding-bottom(6v);
+    }
+  }
+
+  @include preference.forced-colors {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+
+  & + #{ns(accordion)} {
+    @include preference.forced-colors {
+      border-top: none;
     }
   }
 }

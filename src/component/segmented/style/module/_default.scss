@@ -5,6 +5,8 @@
 
 @use 'module/spacing';
 @use 'module/selector';
+@use 'module/preference';
+@use 'module/disabled';
 
 #{selector.ns(segmented)} {
   @include relative;
@@ -63,12 +65,41 @@
       white-space: nowrap;
     }
 
+    &:checked {
+      + label {
+        @include preference.forced-colors {
+          border: 1px solid;
+          color: highlight;
+        }
+      }
+
+      @include disabled.selector {
+        + label {
+          @include preference.forced-colors {
+            color: grayText;
+          }
+        }
+      }
+    }
+
+    @include disabled.selector {
+      + label {
+        @include preference.forced-colors {
+          color: grayText;
+        }
+      }
+    }
+
     &:not([disabled]):not(:checked) {
       + label {
         @include mask-image((linear-gradient(0deg, #fff 0, #fff 100%), linear-gradient(0deg, #fff 0, #fff 100%), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}")));
         @include mask-image-size((#{spacing.space('calc(100% - 2v) calc(100% - 3v)')}, #{spacing.space('calc(100% - 3v) calc(100% - 2v)')}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}));
         @include mask-image-position((#{spacing.space(1v 1.5v)}, #{spacing.space(1.5v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(calc(100% - 1v) 1v)}, #{spacing.space(1v calc(100% - 1v))}, #{spacing.space(calc(100% - 1v) calc(100% - 1v))}));
         @include mask-image-repeat(no-repeat);
+
+        @include preference.forced-colors {
+          color: buttonText;
+        }
 
         &:hover {
           background-color: var(--hover);

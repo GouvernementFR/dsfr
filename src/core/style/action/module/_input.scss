@@ -20,9 +20,6 @@ textarea {
 
   @include preference.forced-colors {
     border: 1px solid;
-    &:focus {
-      outline: 2px solid;
-    }
   }
 }
 

@@ -30,7 +30,9 @@
       }
 
       ~ #{selector.ns(radio-rich__pictogram)} {
-        outline: 1px solid GrayText;
+        @include preference.forced-colors {
+          outline: 1px solid GrayText;
+        }
       }
     }
 
