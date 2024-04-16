@@ -1,7 +1,6 @@
 <%
 const table = locals.table || {};
-const col = table.col;
-const rows = table.rows;
+table.id = uniqueId('table');
 
 const actionCellEmpty = `<span class="${prefix}-sr-only">${getText('data.cell.action.empty', 'table')}</span>`;
 const getTextCell = (tag = 'span') => `<${tag} class="${prefix}-cell__desc">${getText('data.cell.text', 'table')}</${tag}>`;
@@ -9,9 +8,7 @@ const getTitleCell = (tag = 'span') => `<${tag} class="${prefix}-cell__title">${
 
 const data = {
   table: {
-    caption: table.caption,
-    col,
-    rows,
+    ...table,
   }
 };
 
@@ -29,13 +26,14 @@ data.table.thead = [
     attributes: {
       role: 'columnheader'
     },
-    classes: [`${prefix}-cell__actionable`, `${prefix}-col__actionable--select`],
-    content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}})},
+    classes: [`${prefix}-cell__actionable`, `${prefix}-col__actionable--select`, `${prefix}-cell__fixed`],
+    content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}})
+  },
   {
     attributes: {
       role: 'columnheader'
     },
-    classes: [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--last__right`,  `${prefix}-cell__actionable--collapse`],
+    classes: [`${prefix}-cell__actionable`, `${prefix}-cell__fixed`, `${prefix}-cell__fixed--last`,  `${prefix}-cell__actionable--collapse`],
     content: actionCellEmpty
   },
   {
@@ -86,20 +84,18 @@ data.table.thead = [
   }
 ];
 
-data.table.tbody = new Array(rows.length);
-for(let r = 0; r < rows.length; r++) {
-  const actionableCellClasses = [`${prefix}-cell__actionable`];
-  const selectCellClasses = [...actionableCellClasses, `${prefix}-cell__actionable--select`];
-  const collapseActionCellClasses = rows[r].collapse ? [...actionableCellClasses, `${prefix}-cell__actionable--last__right`] : [...actionableCellClasses, `${prefix}-cell__actionable--collapse`, `${prefix}-cell__actionable--last__right`];
+data.table.tbody = new Array(table.rows.length);
+for(let r = 0; r < table.rows.length; r++) {
+  const collapseActionCellClasses = table.rows[r].collapse ? [`${prefix}-cell__actionable`, `${prefix}-cell__fixed`, `${prefix}-cell__fixed--last`] : [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--collapse`, `${prefix}-cell__fixed`, `${prefix}-cell__fixed--last`];
 
   data.table.tbody[r] = [
     {
-      classes: selectCellClasses,
-      content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${r}`, attributes: {checked: rows[r].selected, 'aria-label': getText('data.cell.action.selectRow', 'table')}})
+      classes: [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--select`, `${prefix}-cell__fixed`],
+      content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${r}`, attributes: {checked: table.rows[r].selected, 'aria-label': getText('data.cell.action.selectRow', 'table')}})
     },
     {
       classes: collapseActionCellClasses,
-      content: rows[r].expandable ? getButton({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expandRow', 'table')}`, classes:[`${prefix}-btn--expand`], attributes: {'aria-controls': `row-key-${r + 2}`, 'aria-expanded': `${rows[r].expandable}`}}) : actionCellEmpty
+      content: table.rows[r].expandable ? getButton({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expandRow', 'table')}`, classes:[`${prefix}-btn--expand`], attributes: {'aria-controls': `${table.id}-row-key-${r + 2}`, 'aria-expanded': `${table.rows[r].expandable}`}}) : actionCellEmpty
     },
     {
       content: getText('data.cell.text', 'table')

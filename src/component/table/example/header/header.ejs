@@ -6,14 +6,14 @@ const buttonsGroupData = {
   iconPlace:'left',
   buttons: [
         {
-            label: getText('data.action_bar.buttons.label', 'table'),
+            label: getText('data.actionBar.buttons.label', 'table'),
             id: uniqueId('table-header-button-primary'),
             icon: 'settings-5-line',
             iconPlace:'left',
             kind: 2
         },
         {
-            label: getText('data.action_bar.buttons.label', 'table'),
+            label: getText('data.actionBar.buttons.label', 'table'),
             id: uniqueId('table-header-button-secondary'),
             icon: 'settings-5-line',
             iconPlace:'left',
@@ -28,7 +28,7 @@ const segmentedData = {
     elements: [
         {
             id: uniqueId('table-header-segmented-table'),
-            label: getText('data.action_bar.segmented.table', 'table'),
+            label: getText('data.actionBar.segmented.table', 'table'),
             name: 'table-header-segmented-table',
             value: 1,
             icon: 'table-line',
@@ -36,7 +36,7 @@ const segmentedData = {
         },
         {
             id: uniqueId('table-header-segmented-list'),
-            label: getText('data.action_bar.segmented.list', 'table'),
+            label: getText('data.actionBar.segmented.list', 'table'),
             name: 'table-header-segmented-table',
             value: 2,
             icon: 'list-unordered',
@@ -49,5 +49,5 @@ const segmented = include('../../../segmented/template/ejs/segmented', {segmente
 %>
 
 <%- segmented %>
-<p class="<%= prefix %>-table__detail"><%- getText('data.action_bar.detail', 'table') %></p>
+<p class="<%= prefix %>-table__detail"><%- getText('data.actionBar.detail', 'table') %></p>
 <%- buttons %>

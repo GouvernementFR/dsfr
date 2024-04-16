@@ -66,13 +66,12 @@
 
                 position: sticky;
                 left: 0;
-                // z-index: 2;
 
                 #{ns(checkbox-group)} {
                     margin-right: -0.5rem;
                 }
 
-                & + #{ns(cell__actionable--last__right)} {
+                & + #{ns(cell__fixed--last)} {
                     left: #{space(16v)};
                 }
             }
@@ -285,7 +284,8 @@
             }
         }
 
-        th[scope='row'] {
+        // th[scope='row']
+        #{ns(cell__row--header)} {
             position: sticky;
             left: 0;
             z-index: 1;
@@ -304,7 +304,7 @@
                 &#{ns(cell__actionable)} {
                     left: var(--th-row-width);
 
-                    & + #{ns(cell__actionable--last__right)} {
+                    & + #{ns(cell__fixed--last)} {
                         left: calc(var(--th-row-width) + 4rem);
                     }
                 }

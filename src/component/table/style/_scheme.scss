@@ -101,7 +101,8 @@
                         }
                     }
 
-                    th[scope='row'] {
+                    #{ns(cell__row--header)} {
+                    // th[scope='row'] {
                         @include color.background(alt grey, (legacy: $legacy));
                         @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
                     }
@@ -131,11 +132,20 @@
 
         &__shadow--left {
             #{ns(table__content)} {
-                #{ns(cell__actionable--last__right)} {
+                #{ns(cell__fixed--last)} {
                     @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
 
                     &[scope='col'] {
                         @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+                    }
+                }
+
+                thead {
+                    #{ns(cell__fixed--last)} {
+                        &#{ns(cell__row--header)} {
+                        // &[scope='row'] {
+                            @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+                        }
                     }
                 }
             }

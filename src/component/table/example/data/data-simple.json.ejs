@@ -1,41 +1,159 @@
 <%
-const data = {
-    thead: [
+const table = locals.table || {};
+table.id = uniqueId('table');
+
+const rows = table.rows || {};
+
+const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkbox});
+const getButton = (button) => include('../partials/getButton.ejs', {button});
+const setLastCellFixed = (array) => {
+    const lastCellFixed = array.findLast(cell => cell.classes && cell.classes.includes(`${prefix}-cell__fixed`));
+    if (lastCellFixed) lastCellFixed.classes.push(`${prefix}-cell__fixed--last`);
+};
+
+
+const getEmptyCell = (content) => `<span class="${prefix}-sr-only">${content}</span>`;
+
+const thead = [
+    {
+        content: 'Name'
+    },
+    {
+        classes: table.selectable ? [`${prefix}-col__actionable--select`] : null,
+        attributes: table.selectable ? {role: 'columnheader'} : null,
+        content: table.selectable ? getCheckbox({label: getText('data.cell.label', 'table')}) : 'Age'
+    },
+    {
+        content: 'Num'
+    },
+    {
+        content: 'ID'
+    },
+    {
+        content: 'Address'
+    }
+];
+
+const tbody = [
+    [
         {
-            content: 'Name'
+            content: '<a href="#">John Brown</a>'
         },
         {
-            content: 'Age'
+            content: '32'
         },
         {
-            content: 'Num'
+            content: '0571-22098909'
+        },
+        {
+            content: '18889898989'
+        },
+        {
+            content: 'New York No. 1 Lake Park'
         }
     ],
-    tbody: [
-        [
-            {
-                content: '<a href="#">John Brown</a>'
-            },
-            {
-                content: '32'
-            },
-            {
-                content: '0571-22098909'
-            }
-        ],
-        [
-            {
-                content: '<a href="#">Joe Black</a>'
-            },
-            {
-                content: '34'
-            },
-            {
-                content: '0575-22098909'
-            }
-        ]
+    [
+        {
+            content: '<a href="#">Joe Black</a>'
+        },
+        {
+            content: '34'
+        },
+        {
+            content: '0575-22098909'
+        },
+        {
+            content: '18900010002'
+        },
+        {
+            content: 'Sydney No. 1 Lake Park'
+        }
+    ],
+    [
+        {
+            content: '<a href="#">Jake White</a>'
+        },
+        {
+            content: '18'
+        },
+        {
+            content: '0575-22098909123'
+        },
+        {
+            content: '1890001013576'
+        },
+        {
+            content: 'Dublin No. 2 Lake Park'
+        }
     ]
+];
+
+if (table.expandable) {
+    thead.unshift({
+        attributes: {
+            role: 'columnheader'
+        },
+        classes: [`${prefix}-cell__actionable`, `${prefix}-cell__fixed`, `${prefix}-cell__actionable--collapse`],
+        content: getEmptyCell(getText('data.cell.action.empty', 'table'))
+    });
+
+    tbody.forEach((row, index) => {
+        row.unshift({
+            classes: rows[index].collapse ? [`${prefix}-cell__actionable`, `${prefix}-cell__fixed`] : [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--collapse`, `${prefix}-cell__fixed`, `${prefix}-cell__fixed--last`],
+            content: rows[index].expandable ? getButton({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expandRow', 'table')}`, classes:[`${prefix}-btn--expand`], attributes: {'aria-controls': `${table.id}-row-key-${index + 2}`, 'aria-expanded': `${rows[index].expandable}`}}) : getEmptyCell(getText('data.cell.action.empty', 'table'))
+        });
+    });
+}
+
+if (table.selectable) {
+    thead.unshift({
+        attributes: {
+            role: 'columnheader'
+        },
+        classes: [`${prefix}-cell__actionable`, `${prefix}-cell__fixed`, `${prefix}-col__actionable--select`],
+        content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}})
+    });
+
+    tbody.forEach((row, index) => {
+        row.unshift({
+            classes: [`${prefix}-cell__actionable`, `${prefix}-cell__fixed`, `${prefix}-cell__actionable--select`],
+            content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, attributes: {'aria-label': getText('data.cell.action.selectRow', 'table')}})
+        });
+    });
+}
+
+if (table.doubleEntry) {
+    thead.unshift({
+        attributes: {
+            scope: 'row'
+        },
+        classes: [`${prefix}-cell__row--header`, `${prefix}-cell__fixed`],
+        content: getEmptyCell(getText('data.cell.doubleEntry', 'table'))
+    });
+
+    tbody.forEach((row, index) => {
+        row.unshift({
+            tag: 'th',
+            attributes: {scope: 'row'},
+            classes: [`${prefix}-cell__row--header`, `${prefix}-cell__fixed`],
+            content: `${8 + index}h`
+        });
+    });
+}
+
+setLastCellFixed(thead);
+tbody.forEach((row) => {
+    setLastCellFixed(row);
+});
+
+const data = {
+  table: {
+    ...table,
+    thead,
+    tbody
+  }
 };
+
 %>
 
 <%- JSON.stringify(data); %>

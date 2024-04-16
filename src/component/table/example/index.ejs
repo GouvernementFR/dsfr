@@ -1,21 +1,18 @@
 
 <%
 const sample = getSample(include);
-
-const dataSimple = JSON.parse(include('./data/data-simple.json.ejs'));
-
 %>
 
 <%-
-    sample(getText('sample.simple', 'table'), './sample/table-default', {table: {table: {caption: getText('data.caption', 'table'), ...dataSimple}}}, true);
+    sample(getText('sample.simple', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table')}}}, true);
 %>
 
 <%-
-    sample(getText('sample.sm', 'table'), './sample/table-default', {table: {classes: [`${prefix}-table--sm`], table: {caption: getText('data.caption', 'table'), ...dataSimple}}}, true);
+    sample(getText('sample.sm', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--sm`], table: {caption: getText('data.caption', 'table')}}}, true);
 %>
 
 <%-
-    sample(getText('sample.lg', 'table'), './sample/table-default', {table: {classes: [`${prefix}-table--lg`], table: {caption: getText('data.caption', 'table'), ...dataSimple}}}, true);
+    sample(getText('sample.lg', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--lg`], table: {caption: getText('data.caption', 'table')}}}, true);
 %>
 
 <%-
@@ -23,7 +20,7 @@ const dataSimple = JSON.parse(include('./data/data-simple.json.ejs'));
 %>
 
 <%-
-    sample(getText('sample.selectable', 'table'), './sample/table-selectable', {}, true);
+    sample(getText('sample.selectable', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table'), selectable: true}}}, true);
 %>
 
 <%-
@@ -31,15 +28,19 @@ const dataSimple = JSON.parse(include('./data/data-simple.json.ejs'));
 %>
 
 <%-
-    sample(getText('sample.cell-collapsed', 'table'), './sample/table-cell-collapsed', {}, true);
+    // sample(getText('sample.expandable', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table'), expandable: true, rows: [{expandable: 'false'}, {collapse: true}, {}]}}}, true);
 %>
 
 <%-
-    sample(getText('sample.double-entry', 'table'), './sample/table-double-entry', {}, true);
+    sample(getText('sample.cellCollapsed', 'table'), './sample/table-cell-collapsed', {}, true);
 %>
 
 <%-
-    sample(getText('sample.bordered', 'table'), './sample/table-bordered', {}, true);
+    sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table'), doubleEntry: true}}}, true);
+%>
+
+<%-
+    sample(getText('sample.bordered', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--bordered`], table: {caption: getText('data.caption', 'table'), doubleEntry: true, selectable: true, expandable: true, rows: [{expandable: 'false'}, {collapse: true}, {}]}}}, true);
 %>
 
 <%-

@@ -7,9 +7,9 @@ subdir:
 
 sample:
   bordered: Tableau avec bordures verticales
-  cell-collapsed: Tableau cellules fusionnées
+  cellCollapsed: Tableau cellules fusionnées
   complex: Tableau complexe
-  double-entry: Tableau à double entrée
+  doubleEntry: Tableau à double entrée
   expandable: Tableau repliable
   selectable: Tableau sélectionnable
   simple: Tableau simple
@@ -21,12 +21,13 @@ data:
   cell:
     action:
       button: Label bouton
-      empty: Colonne d'action
+      empty: Action
       expandRow: Déplier la ligne suivante
       sort: Trier
       select: Selectionner
       selectAll: Tout selectionner
       selectRow: Selectionner toute la ligne
+    doubleEntry: heure
     download:
       detail: JPG – 61,88 Ko
       lable: Téléchargement
@@ -45,7 +46,7 @@ data:
         option1: 4 lignes par page
         option2: 10 lignes par page
         option3: 20 lignes par page
-  action_bar:
+  actionBar:
     buttons:
       label: Action groupée
     detail: 1 ligne sélectionnée
