@@ -16,7 +16,7 @@ const sample = getSample(include);
 %>
 
 <%-
-    sample(getText('sample.complex', 'table'), './sample/table-complex', {table: {header: true, footer: true, table: {caption: getText('data.caption', 'table'), rows: [{selected: true}, {expandable: 'true'}, {collapse: true}, {}, {expandable: 'false'}, {collapse: true}]}}}, true);
+    sample(getText('sample.complex', 'table'), './sample/table-complex', {table: {header: true, footer: true, table: {caption: getText('data.captionLarge', 'table'), rows: [{selected: true}, {expandable: 'true'}, {collapse: true}, {}, {expandable: 'false'}, {collapse: true}]}}}, true);
 %>
 
 <%-
@@ -28,6 +28,7 @@ const sample = getSample(include);
 %>
 
 <%-
+    // Expandable data
     // sample(getText('sample.expandable', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table'), expandable: true, rows: [{expandable: 'false'}, {collapse: true}, {}]}}}, true);
 %>
 

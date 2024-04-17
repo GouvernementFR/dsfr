@@ -16,37 +16,15 @@
             }
         }
 
-        // &__container {
-            // @include before {
-            //     @include color.box-shadow(contrast grey, (legacy:$legacy), top-1-in left-1-in right-1-in);
-            // }
-        // }
-
         &__content {
             #{ns(cell)} {
                 &__selected {
                     @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                 }
-
-                // &__hover {
-                //     &::after {
-                //         @include color.background-image((border default blue-france) (border default blue-france), (legacy: $legacy));
-                //     }
-                // }
             }
 
             table {
                 thead {
-                    // tr {
-                    //     &:first-child {
-                    //         #{ns(cell__hover)} {
-                    //             &::after {
-                    //                 @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
-                    //             }
-                    //         }
-                    //     }
-                    // }
-
                     th {
                         @include color.background(alt grey, (legacy: $legacy, hover: true));
                         @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
@@ -79,21 +57,6 @@
                             }
                         }
 
-                        // &:last-child {
-                        //     th,
-                        //     td {
-                        //         &[scope='row'] {
-                        //             @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
-                        //         }
-                        //     }
-
-                            // #{ns(cell__hover)} {
-                            //     &::after {
-                            //         @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
-                            //     }
-                            // }
-                        // }
-
                         &[aria-selected="true"] {
                             td {
                                 @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
@@ -102,7 +65,6 @@
                     }
 
                     #{ns(cell__row--header)} {
-                    // th[scope='row'] {
                         @include color.background(alt grey, (legacy: $legacy));
                         @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
                     }
@@ -121,7 +83,6 @@
 
                     #{ns(cell)} {
                         &__actionable {
-                            // @include color.background-image((border contrast grey), (legacy: $legacy));
                             @include color.background(default grey, (legacy: $legacy, hover: true));
                         }
                     }
@@ -143,7 +104,6 @@
                 thead {
                     #{ns(cell__fixed--last)} {
                         &#{ns(cell__row--header)} {
-                        // &[scope='row'] {
                             @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
                         }
                     }

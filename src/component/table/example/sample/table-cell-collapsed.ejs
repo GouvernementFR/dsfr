@@ -9,38 +9,46 @@
                     </caption>
                     <thead>
                         <tr>
-                            <th id="cell-collapsed-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed--last" >
+                            <th id="cell-collapsed-row-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" rowspan="2">
                                 <span class="<%= prefix %>-sr-only">Heures</span>
                             </th>
-                            <th id="cell-collapsed-col-id1">Lundi</th>
-                            <th id="cell-collapsed-col-id2">Mardi</th>
-                            <th id="cell-collapsed-col-id3" colspan="2">
-                                Mercredi & Jeudi - Exemple de 2 cellules fusionnées dans le Header
+                            <th id="cell-collapsed-row-01-col-id1">Lundi</th>
+                            <th id="cell-collapsed-row-01-col-id2">Mardi</th>
+                            <th id="cell-collapsed-row-01-col-id3" colspan="2">
+                                Mercredi & Jeudi<br />
+                                <i>Exemple de 2 cellules fusionnées dans le Header</i>
                             </th>
-                            <th id="cell-collapsed-col-id4">Vendredi</th>
+                            <th id="cell-collapsed-row-01-col-id4">Vendredi</th>
+                        </tr>
+                        <tr>
+                            <th id="cell-collapsed-row-02-col-id1">Groupes 1 & 2</th>
+                            <th id="cell-collapsed-row-02-col-id2">Groupes 1 & 2</th>
+                            <th id="cell-collapsed-row-02-col-id3">Groupe 1</th>
+                            <th id="cell-collapsed-row-02-col-id4">Groupe 2</th>
+                            <th id="cell-collapsed-row-02-col-id5">Groupes 1 & 2</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr data-row-key="1">
-                            <th id="cell-collapsed-row-id1" headers="cell-collapsed-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed--last" >8h</th>
-                            <td headers="cell-collapsed-col-id1 cell-collapsed-row-id1">Français</td>
-                            <td headers="cell-collapsed-col-id2 cell-collapsed-row-id1">Mathématiques</td>
-                            <td headers="cell-collapsed-col-id3 cell-collapsed-row-id1">LV1</td>
-                            <td headers="cell-collapsed-col-id3 cell-collapsed-row-id1">Histoire - Geographie</td>
-                            <td headers="cell-collapsed-col-id4 cell-collapsed-row-id1">EPS</td>
+                            <th id="cell-collapsed-row-id1" headers="cell-collapsed-row-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >8h</th>
+                            <td headers="cell-collapsed-row-01-col-id1 cell-collapsed-row-id1">Français</td>
+                            <td headers="cell-collapsed-row-01-col-id2 cell-collapsed-row-id1">Mathématiques</td>
+                            <td headers="cell-collapsed-row-01-col-id3 cell-collapsed-row-id1">LV1</td>
+                            <td headers="cell-collapsed-row-01-col-id3 cell-collapsed-row-id1">Histoire - Geographie</td>
+                            <td headers="cell-collapsed-row-01-col-id4 cell-collapsed-row-id1">EPS</td>
                         </tr>
                         <tr data-row-key="2">
-                            <th id="cell-collapsed-row-id2" headers="cell-collapsed-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed--last" >9h</th>
-                            <td headers="cell-collapsed-col-id1 cell-collapsed-col-id2 cell-collapsed-col-id3 cell-collapsed-col-id4 cell-collapsed-row-id2" colspan="5">
-                                <i>Exemple de colspan sur toute la ligne</i><br />
-                                Etude dirigé
+                            <th id="cell-collapsed-row-id2" headers="cell-collapsed-row-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >9h</th>
+                            <td headers="cell-collapsed-row-01-col-id1 cell-collapsed-row-01-col-id2 cell-collapsed-row-01-col-id3 cell-collapsed-row-01-col-id4 cell-collapsed-row-id2" colspan="5">
+                                Etude dirigé<br />
+                                <i>Exemple de colspan sur toute la ligne</i>
                             </td>
                         </tr>
                         <tr data-row-key="3">
-                            <th id="cell-collapsed-row-id3" headers="cell-collapsed-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed--last" >10h</th>
+                            <th id="cell-collapsed-row-id3" headers="cell-collapsed-row-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >10h</th>
                             <td headers="cell-collapsed-row-id1 cell-collapsed-row-id3">Mathématiques</td>
                             <td headers="cell-collapsed-row-id2 cell-collapsed-row-id3">Histoire - Geographie</td>
-                            <td headers="cell-collapsed-col-id3 cell-collapsed-row-id3 cell-collapsed-row-id4" rowspan="2">
+                            <td headers="cell-collapsed-row-01-col-id3 cell-collapsed-row-id3 cell-collapsed-row-id4" rowspan="2">
                                 Arts appliqués<br />
                                 <svg
                                     aria-hidden="true"
@@ -63,32 +71,25 @@
                                     ></use>
                                 </svg>
                             </td>
-                            <td headers="cell-collapsed-col-id3 cell-collapsed-row-id3">LV2</td>
+                            <td headers="cell-collapsed-row-01-col-id3 cell-collapsed-row-id3">LV2</td>
                             <td headers="cell-collapsed-row-id4 cell-collapsed-row-id3">Sciences</td>
                         </tr>
                         <tr data-row-key="4">
-                            <th id="cell-collapsed-row-id4" headers="cell-collapsed-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed--last" >11h</th>
-                            <td headers="cell-collapsed-col-id1 cell-collapsed-row-id4">Français</td>
-                            <td headers="cell-collapsed-col-id2 cell-collapsed-row-id4">EPS</td>
-                            <td headers="cell-collapsed-col-id3 cell-collapsed-row-id4">
-                                Repellat natus illo omnis nulla nostrum ut
-                                doloremque ipsam voluptas officiis cumque porro
-                                nobis, at error ad eos, id, iste odit quae. Repellat
-                                natus illo omnis nulla nostrum ut doloremque ipsam
-                                voluptas officiis cumque porro nobis, at error ad
-                                eos, id, iste odit quae.
-                            </td>
-                            <td headers="cell-collapsed-col-id4 cell-collapsed-row-id4">Physique - Chimie</td>
+                            <th id="cell-collapsed-row-id4" headers="cell-collapsed-row-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >11h</th>
+                            <td headers="cell-collapsed-row-01-col-id1 cell-collapsed-row-id4">Français</td>
+                            <td headers="cell-collapsed-row-01-col-id2 cell-collapsed-row-id4">EPS</td>
+                            <td headers="cell-collapsed-row-01-col-id3 cell-collapsed-row-id4">Histoire - Geographie</td>
+                            <td headers="cell-collapsed-row-01-col-id4 cell-collapsed-row-id4">Physique - Chimie</td>
                         </tr>
                         <tr data-row-key="5">
-                            <th id="cell-collapsed-row-id5" headers="cell-collapsed-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed--last" >12h</th>
-                            <td headers="cell-collapsed-col-id1 cell-collapsed-row-id5">Sciences</td>
-                            <td headers="cell-collapsed-col-id2 cell-collapsed-row-id5">LV1</td>
-                            <td headers="cell-collapsed-col-id3 cell-collapsed-row-id5">LV2</td>
-                            <td headers="cell-collapsed-col-id3 cell-collapsed-col-id4 cell-collapsed-row-id5" colspan="2">
-                                <i>Exemple de colspan sur 2 cellules</i><br />
-                                EPS
+                            <th id="cell-collapsed-row-id5" headers="cell-collapsed-row-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >12h</th>
+                            <td headers="cell-collapsed-row-01-col-id1 cell-collapsed-row-id5">Sciences</td>
+                            <td headers="cell-collapsed-row-01-col-id2 cell-collapsed-row-id5">LV1</td>
+                            <td headers="cell-collapsed-row-01-col-id3 cell-collapsed-row-id5" colspan="2">
+                                EPS<br />
+                                <i>Exemple de colspan sur 2 cellules</i>
                             </td>
+                            <td headers="cell-collapsed-row-01-col-id4 cell-collapsed-row-id5">LV2</td>
                         </tr>
                     </tbody>
                 </table>

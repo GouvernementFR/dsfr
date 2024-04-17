@@ -7,15 +7,13 @@
 
 #{ns(table)} {
     --table-offset: #{space(4v)};
+    --table-offset-height: 0;
     --table-offset-width: 0;
-    --scroll-offset-left: 0;
-    --th-row-width: #{space(36.5v)};
-    --head-col-width: 0;
-    --head-col-position-left: 0;
+    --row-header-cell-width: #{space(36.5v)};
+    --cell-actionable-width: #{space(16v)};
 
     @include set-text-margin(0);
     @include set-title-margin(0);
-    // @include padding-top(var(--table-offset));
     @include relative;
     @include margin-bottom(10v);
 
@@ -28,10 +26,6 @@
         @include padding(1px 1px 0);
         @include margin(-1px 0);
 
-        // background-size: 1px 100%, 1px 100%, 100% 1px;
-        // background-repeat: no-repeat, no-repeat, no-repeat;
-        // background-position: 0 0, 100% 0, 100% 0;
-
         position: relative;
         @include before('', block) {
             @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
@@ -40,18 +34,9 @@
     }
 
     &__container {
-        // position: relative;
         width: 100%;
         overflow: auto;
         @include padding-top(var(--table-offset));
-
-        // @include padding(1px 1px 0);
-        // @include margin(-1px 0);
-        // position: relative;
-        // @include before('', block) {
-        //     @include absolute(0, 0, 0 , 0, 100%, 100%);
-        //     pointer-events: none;
-        // }
     }
 
     &__content {
@@ -59,20 +44,22 @@
         min-width: 40rem;
 
         #{ns(cell)} {
+            &__fixed {
+                position: sticky;
+                left: 0;
+
+                & + #{ns(cell__fixed--last)} {
+                    left: var(--cell-actionable-width);
+                }
+            }
+
             &__actionable {
                 text-align: center;
                 @include min-width(16v);
                 @include width(16v);
 
-                position: sticky;
-                left: 0;
-
                 #{ns(checkbox-group)} {
                     margin-right: -0.5rem;
-                }
-
-                & + #{ns(cell__fixed--last)} {
-                    left: #{space(16v)};
                 }
             }
 
@@ -120,24 +107,6 @@
             &__expanded {
                 @include padding(0);
             }
-
-            // &__hover {
-            //     position: relative;
-
-            //     &::after {
-            //         position: absolute;
-            //         content: '';
-            //         top: 0;
-            //         left: 0;
-            //         width: 100%;
-            //         height: 100%;
-            //         z-index: 1;
-            //         background-size: 2px 100%, 2px 100%;
-            //         background-repeat: no-repeat, no-repeat;
-            //         background-position: 0 0, 100% 0;
-            //         pointer-events: none;
-            //     }
-            // }
         }
 
         #{ns(col)} {
@@ -162,56 +131,34 @@
         table {
             @include size(100%);
             border-spacing: 0;
-            position: relative;
 
             thead {
-                // tr {
-                //     &:first-child {
-                //         #{ns(cell__hover)} {
-                //             &::after {
-                //                 background-size: 2px 100%, 2px 100%, 100% 2px;
-                //                 background-repeat: no-repeat, no-repeat, no-repeat;
-                //                 background-position: 0 0, 100% 0, 0 0;
-                //             }
-                //         }
-                //     }
-                // }
-
                 th {
                     font-weight: font-weight(bold);
+                }
 
-                    // background-size: 1px 100%, 100% 1px;
-                    // background-repeat: no-repeat, no-repeat;
-                    // background-position: 100% 0, 0 100%;
-
+                tr {
                     &:first-child {
-                        &:hover {
-                            &::after {
-                                left: var(--head-col-position-left);
-                                width: var(--head-col-width);
+                        th {
+                            &:not(#{ns(cell__fixed)}) {
+                                @include relative;
+
+                                &:hover {
+                                    &::after {
+                                        position: absolute;
+                                        content: '';
+                                        top: -1px;
+                                        left: -1px;
+                                        height: var(--table-offset-height);
+                                        width: calc(100% + 1px);
+                                        z-index: 2;
+                                        background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
+                                        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                                        background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+                                        pointer-events: none;
+                                    }
+                                }
                             }
-                        }
-                    }
-
-                    // &:last-child {
-                    //     background-size: 100% 1px;
-                    //     background-repeat: no-repeat;
-                    //     background-position: 100% 100%;
-                    // }
-
-                    &:hover {
-                        &::after {
-                            position: absolute;
-                            content: '';
-                            top: -1px;
-                            left: calc(var(--head-col-position-left) - 2px);
-                            height: calc(100% + 1px);
-                            width: calc(var(--head-col-width) + 2px);
-                            z-index: 2;
-                            background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
-                            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-                            background-position: 100% 100%, 0 0, 100% 0, 100% 0;
-                            pointer-events: none;
                         }
                     }
                 }
@@ -236,76 +183,24 @@
                             pointer-events: none;
                         }
                     }
-
-                    // &:last-child {
-                        // th,
-                        // td {
-                        //     &[scope='row'] {
-                        //         background-size: 1px 100%, 100% 1px;
-                        //         background-repeat: no-repeat, no-repeat;
-                        //         background-position: 100% 0, 0 100%;
-                        //     }
-                        // }
-
-                        // #{ns(cell__hover)} {
-                        //     &::after {
-                        //         background-size: 100% 2px, 2px 100%, 2px 100%;
-                        //         background-repeat: no-repeat, no-repeat, no-repeat;
-                        //         background-position: 100% 100%, 0 0, 100% 0;
-                        //     }
-                        // }
-                    // }
-
-                    &.fr-collapse {
-                        &.fr-collapse--expanded {
-                            display: table-row;
-
-                            &::before {
-                                content: none;
-                            }
-
-                            & > .fr-cell__actionable,
-                            & .fr-cell__expanded tr > .fr-cell__actionable {
-                                &.fr-cell__actionable--select {
-                                    z-index: 4;
-
-                                    .fr-checkbox-group {
-                                        transform: translateX(4rem);
-                                    }
-                                }
-                            }
-                        }
-
-                        &:not(.fr-collapse--expanded) {
-                            display: none;
-                        }
-                    }
                 }
             }
         }
 
-        // th[scope='row']
         #{ns(cell__row--header)} {
-            position: sticky;
-            left: 0;
             z-index: 1;
-
-            // background-size: 100% 1px, 1px 100%;
-            // background-repeat: no-repeat, no-repeat;
-            // background-position: 0 100%, 100% 0;
-
-            width: var(--th-row-width);
-            min-width: var(--th-row-width);
-            max-width: var(--th-row-width);
+            width: var(--row-header-cell-width);
+            min-width: var(--row-header-cell-width);
+            max-width: var(--row-header-cell-width);
             white-space: inherit;
 
             + th,
             + td {
-                &#{ns(cell__actionable)} {
-                    left: var(--th-row-width);
+                &#{ns(cell__fixed)} {
+                    left: var(--row-header-cell-width);
 
                     & + #{ns(cell__fixed--last)} {
-                        left: calc(var(--th-row-width) + 4rem);
+                        left: calc(var(--row-header-cell-width) + var(--cell-actionable-width));
                     }
                 }
             }
@@ -313,15 +208,12 @@
 
         th,
         td {
-            // position: relative;
             display: table-cell;
             @include padding(2v 4v);
             @include text-style(sm);
-
             text-align: left;
             vertical-align: middle;
             white-space: nowrap;
-
             background-size: 100% 1px;
             background-repeat: no-repeat;
             background-position: 100% 100%;
@@ -349,25 +241,30 @@
     }
 
     &#{ns-attr(js-table, true)} {
-        &:not(:has(#{ns(table__container)})) {
-            caption {
-                @include absolute(0);
-            }
-        }
-
-        &:has(#{ns(table__container)}) {
-            caption {
-                @include absolute(calc(var(--table-offset) * -1),inherit, inherit, var(--scroll-offset-left));
-                // @include absolute(calc(var(--table-offset) * -1),inherit, inherit, var(--scroll-offset-left), var(--table-offset-width));
-            }
+        caption {
+            @include absolute(0);
         }
     }
 
-    #{ns-attr(collapse)} {
-        display: inherit;
-
-        &:not(#{ns-attr(collapse--expanded)}) {
+    #{ns(collapse)} {
+        #{&}:not(&--expanded) {
             display: none;
+        }
+
+        &--expanded {
+            &::before {
+                content: none;
+            }
+
+            & > #{ns(cell__fixed)} {
+                &#{ns(cell__actionable--select)} {
+                    z-index: 4;
+
+                    #{ns(checkbox-group)} {
+                        transform: translateX(var(--cell-actionable-width));
+                    }
+                }
+            }
         }
     }
 }

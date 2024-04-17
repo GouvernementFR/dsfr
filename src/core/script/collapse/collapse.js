@@ -19,10 +19,12 @@ class Collapse extends Disclosure {
 
   init () {
     super.init();
-    this.listen('transitionend', this.transitionend.bind(this));
+    this.listen('transitionend', this.endCollapsing.bind(this));
   }
 
-  transitionend (e) {
+  endCollapsing (e) {
+    if (!this._isCollpasing) return;
+    this._isCollpasing = false;
     this.removeClass(CollapseSelector.COLLAPSING);
     if (!this.isDisclosed) {
       if (this.isLegacy) this.style.maxHeight = '';
@@ -39,23 +41,23 @@ class Collapse extends Disclosure {
     if (this.isDisclosed === true || !this.isEnabled) return false;
     this.unbound();
     this.request(() => {
-      this.addClass(CollapseSelector.COLLAPSING);
-      this.adjust();
-      this.request(() => {
-        super.disclose(withhold);
-      });
+      this.collapsing(() => super.disclose(withhold));
     });
   }
 
   conceal (withhold, preventFocus) {
     if (this.isDisclosed === false) return false;
     this.request(() => {
-      this.addClass(CollapseSelector.COLLAPSING);
-      this.adjust();
-      this.request(() => {
-        super.conceal(withhold, preventFocus);
-      });
+      this.collapsing(() => super.conceal(withhold, preventFocus));
     });
+  }
+
+  collapsing (request) {
+    this._isCollpasing = true;
+    setInterval(this.endCollapsing.bind(this), 500);
+    this.addClass(CollapseSelector.COLLAPSING);
+    this.adjust();
+    this.request(request);
   }
 
   adjust () {

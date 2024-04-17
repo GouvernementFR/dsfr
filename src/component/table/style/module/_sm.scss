@@ -5,7 +5,7 @@
 
 #{ns(table)} {
     &--sm {
-        --th-row-width: #{space(34.5v)};
+        --row-header-cell-width: #{space(34.5v)};
     }
 
     &--sm &__content {

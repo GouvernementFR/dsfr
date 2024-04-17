@@ -18,6 +18,7 @@ sample:
 
 data:
   caption: Caption du tableau (accessibilité)
+  captionLarge: Caption long du tableau (accessibilité) Repellat natus illo omnis nulla nostrum ut doloremque ipsam voluptas officiis cumque porro.
   cell:
     action:
       button: Label bouton

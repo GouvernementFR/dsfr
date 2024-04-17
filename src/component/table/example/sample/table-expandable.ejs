@@ -2,16 +2,8 @@
     <div class="<%= prefix %>-table__wrapper">
         <div class="<%= prefix %>-table__container">
             <div class="<%= prefix %>-table__content">
-                <table class="<%= prefix %>-cell__multiline">
+                <table>
                     <caption>Exemple de tableau comportant des lignes dépliables</caption>
-                    <!-- <colgroup>
-                        <col class="<%= prefix %>-col__xs" />
-                        <col class="<%= prefix %>-col__md" />
-                        <col class="<%= prefix %>-col__sm" />
-                        <col class="<%= prefix %>-col__md" />
-                        <col class="<%= prefix %>-col__lg" />
-                        <col class="<%= prefix %>-col__md" />
-                    </colgroup> -->
                     <thead>
                         <tr>
                             <th scope="col" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
@@ -57,7 +49,7 @@
                                 </div>
                                 Repellat natus illo omnis nulla nostrum ut
                                 doloremque ipsam voluptas officiis cumque porro
-                                nobis, at error ad eos, id, iste odit quae.
+                                nobis, at error ad eos.
                             </td>
                         </tr>
                         <tr class="<%= prefix %>-row__expanded" data-row-key="3">
@@ -80,10 +72,10 @@
                         </tr>
                         <tr id="expandable-row-key-4" class="<%= prefix %>-collapse" data-row-key="4">
                             <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
-                            <td>Exemple de ligne dépliée</td>
+                            <td>Ligne dépliée</td>
                             <td>14</td>
                             <td>0575-22098909</td>
-                            <td>Repellat natus illo omnis</td>
+                            <td>18889898989</td>
                             <td>
                                 <div class="<%= prefix %>-toggle">
                                     <input
@@ -102,7 +94,7 @@
                             <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
-                                    aria-controls="expandable-row-key-6-1"
+                                    aria-controls="expandable-tbody"
                                     aria-expanded="false"
                                 >
                                     Déplier Jake White
@@ -113,64 +105,22 @@
                             </td>
                             <td>18</td>
                             <td>0575-22098909</td>
-                            <td>
-                                Repellat natus illo omnis nulla nostrum ut
-                                doloremque ipsam voluptas officiis cumque porro
-                                nobis, at error ad eos, id, iste odit quae.
-                            </td>
+                            <td>188898983554</td>
                             <td>Dublin No. 2 Lake Park</td>
                         </tr>
-                        <tr id="expandable-row-key-6-1" class="<%= prefix %>-collapse" data-row-key=6-1">
+                    </tbody>
+                    <tbody id="expandable-tbody" class="<%= prefix %>-collapse">
+                        <tr data-row-key="6">
                             <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
                             <td>
                                 <a href="#">Joe Black</a>
                             </td>
                             <td>32</td>
                             <td>0575-22098909</td>
-                            <td>
-                                Repellat natus illo omnis nulla nostrum ut
-                                doloremque ipsam voluptas officiis cumque porro
-                                nobis, at error ad eos, id, iste odit quae.
-                            </td>
+                            <td>188898983345</td>
                             <td>Sydney No. 1 Lake Park</td>
-                            <!-- <td class="<%= prefix %>-cell__expanded" colspan="6">
-                                <table>
-                                    <colgroup>
-                                        <col class="<%= prefix %>-col__xs" />
-                                        <col class="<%= prefix %>-col__md" />
-                                        <col class="<%= prefix %>-col__sm" />
-                                        <col class="<%= prefix %>-col__md" />
-                                        <col class="<%= prefix %>-col__lg" />
-                                        <col class="<%= prefix %>-col__md" />
-                                    </colgroup>
-                                    <tr data-row-key=6-1">
-                                        <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
-                                        <td>
-                                            <a href="#">Joe Black</a>
-                                        </td>
-                                        <td>32</td>
-                                        <td>0575-22098909</td>
-                                        <td>
-                                            Repellat natus illo omnis nulla nostrum ut
-                                            doloremque ipsam voluptas officiis cumque porro
-                                            nobis, at error ad eos, id, iste odit quae.
-                                        </td>
-                                        <td>Sydney No. 1 Lake Park</td>
-                                    </tr>
-                                    <tr data-row-key=6-2">
-                                        <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
-                                        <td>
-                                            <a href="#">Joe Black</a>
-                                        </td>
-                                        <td>32</td>
-                                        <td>0575-22098909</td>
-                                        <td>18900010002</td>
-                                        <td>Sydney No. 1 Lake Park</td>
-                                    </tr>
-                                </table>
-                            </td> -->
                         </tr>
-                        <tr id="expandable-row-key-6-2" class="<%= prefix %>-collapse" data-row-key=6-2">
+                        <tr data-row-key=7">
                             <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
                             <td>
                                 <a href="#">Joe Black</a>
@@ -180,18 +130,16 @@
                             <td>18900010002</td>
                             <td>Sydney No. 1 Lake Park</td>
                         </tr>
-                        <tr data-row-key="7">
+                    </tbody>
+                    <tbody>
+                        <tr data-row-key="8">
                             <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
                             <td>
                                 <a href="#">Jake White</a>
                             </td>
                             <td>18</td>
                             <td>0575-22098909</td>
-                            <td>
-                                Repellat natus illo omnis nulla nostrum ut
-                                doloremque ipsam voluptas officiis cumque porro
-                                nobis, at error ad eos, id, iste odit quae.
-                            </td>
+                            <td>188898983123</td>
                             <td>Dublin No. 2 Lake Park</td>
                         </tr>
                     </tbody>
