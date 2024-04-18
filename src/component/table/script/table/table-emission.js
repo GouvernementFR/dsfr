@@ -8,6 +8,5 @@ export const TableEmission = {
   CAPTION_WIDTH: api.internals.ns.emission('table', 'captionwidth'),
   ROW_SELECT: api.internals.ns.emission('table', 'rowselect'),
   COL_SELECT: api.internals.ns.emission('table', 'colselect'),
-  COL_HOVER: api.internals.ns.emission('table', 'colhover'),
-  COL_OUT: api.internals.ns.emission('table', 'colout')
+  COL_HOVER: api.internals.ns.emission('table', 'colhover')
 };

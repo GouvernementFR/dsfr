@@ -103,10 +103,6 @@
                     white-space: normal;
                 }
             }
-
-            &__expanded {
-                @include padding(0);
-            }
         }
 
         #{ns(col)} {

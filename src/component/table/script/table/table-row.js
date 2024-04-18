@@ -9,8 +9,6 @@ class TableRow extends api.core.Instance {
   init () {
     this.addDescent(TableEmission.ROW_SELECT, this.rowSelect.bind(this));
     this.addDescent(TableEmission.COL_SELECT, this.colSelect.bind(this));
-    this.addDescent(TableEmission.COL_HOVER, this.colHover.bind(this));
-    this.addDescent(TableEmission.COL_OUT, this.colOut.bind(this));
   }
 
   rowSelect (selectCheckbox) {
@@ -40,16 +38,6 @@ class TableRow extends api.core.Instance {
       cellCol.classList.remove('fr-cell__selected');
       if (col.value) cellCol.classList.add('fr-cell__selected');
     }
-  }
-
-  colHover (col) {
-    const cellCol = this.node.children[col.index];
-    if (cellCol) cellCol.classList.add('fr-cell__hover');
-  }
-
-  colOut (col) {
-    const cellCol = this.node.children[col.index];
-    if (cellCol) cellCol.classList.remove('fr-cell__hover');
   }
 }
 

@@ -17,22 +17,15 @@
         }
 
         &__content {
-            #{ns(cell)} {
-                &__selected {
-                    @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                }
-            }
-
             table {
+                tbody {
+
+                }
+
                 thead {
                     th {
                         @include color.background(alt grey, (legacy: $legacy, hover: true));
                         @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
-
-
-                        &#{ns(cell__selected)} {
-                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                        }
 
                         &:last-child {
                             @include color.background(alt grey, (legacy: $legacy, hover: true));
@@ -48,6 +41,21 @@
                 }
 
                 tbody {
+                    #{ns(cell)} {
+                        &__selected {
+                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+                        }
+
+                        &__row--header {
+                            @include color.background(alt grey, (legacy: $legacy));
+                            @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
+                        }
+
+                        &__actionable {
+                            @include color.background(default grey, (legacy: $legacy, hover: true));
+                        }
+                    }
+
                     tr {
                         &:not(:has(table)) {
                             &:hover {
@@ -64,11 +72,6 @@
                         }
                     }
 
-                    #{ns(cell__row--header)} {
-                        @include color.background(alt grey, (legacy: $legacy));
-                        @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
-                    }
-
                     th,
                     td {
                         @include color.text(title grey, (legacy: $legacy));
@@ -80,15 +83,8 @@
                             @include color.background-image((border contrast grey), (legacy: $legacy));
                         }
                     }
-
-                    #{ns(cell)} {
-                        &__actionable {
-                            @include color.background(default grey, (legacy: $legacy, hover: true));
-                        }
-                    }
                 }
             }
-
         }
 
         &__shadow--left {

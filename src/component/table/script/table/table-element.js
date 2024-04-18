@@ -10,9 +10,9 @@ class TableElement extends api.core.Instance {
   }
 
   init () {
+    this.addDescent(TableEmission.COL_HOVER, this.colHover.bind(this));
     this.listen('scroll', this.scroll.bind(this));
     this.content = this.querySelector('tbody');
-    // this.width = 0;
     this.tableOffsetHeight = 0;
     this.isResizing = true;
   }
@@ -59,13 +59,13 @@ class TableElement extends api.core.Instance {
 
   resize () {
     this.isScrolling = this.content.offsetWidth > this.node.offsetWidth;
+  }
 
-    // const width = this.getRect().width;
-    // if (this.width === width) return;
-    // this.width = width;
-    // this.ascend(TableEmission.CAPTION_WIDTH, width);
+  dispose () {
+    this.isScrolling = false;
+  }
 
-    // debugger;
+  colHover () {
     const table = this.node.querySelector('table');
     if (table) {
       const tableOffsetHeight = table.offsetHeight;
@@ -73,10 +73,6 @@ class TableElement extends api.core.Instance {
       this.tableOffsetHeight = tableOffsetHeight;
       this.ascend(TableEmission.TABLE_HEIGHT, tableOffsetHeight);
     }
-  }
-
-  dispose () {
-    this.isScrolling = false;
   }
 }
 

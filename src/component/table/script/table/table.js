@@ -15,7 +15,6 @@ class Table extends api.core.Instance {
     this.addAscent(TableEmission.ROW_SELECT, this.rowSelect.bind(this));
     this.addAscent(TableEmission.COL_SELECT, this.colSelect.bind(this));
     this.addAscent(TableEmission.COL_HOVER, this.colHover.bind(this));
-    this.addAscent(TableEmission.COL_OUT, this.colOut.bind(this));
   }
 
   setTableHeight (value) {
@@ -40,10 +39,6 @@ class Table extends api.core.Instance {
 
   colHover (col) {
     this.descend(TableEmission.COL_HOVER, col);
-  }
-
-  colOut (col) {
-    this.descend(TableEmission.COL_OUT, col);
   }
 }
 
