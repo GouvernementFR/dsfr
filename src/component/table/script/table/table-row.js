@@ -31,6 +31,7 @@ class TableRow extends api.core.Instance {
 
   colSelect (col) {
     const cellCol = this.node.children[col.index];
+    if (!cellCol || !cellCol.classList) return;
     if (cellCol.classList.contains('fr-cell__actionable--select') && cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]')) {
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').checked = !col.value;
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').click();

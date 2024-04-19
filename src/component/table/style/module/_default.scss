@@ -134,7 +134,7 @@
                 }
 
                 tr {
-                    &:first-child {
+                    // &:first-child {
                         th {
                             &:not(#{ns(cell__fixed)}) {
                                 @include relative;
@@ -156,7 +156,7 @@
                                 }
                             }
                         }
-                    }
+                    // }
                 }
             }
 

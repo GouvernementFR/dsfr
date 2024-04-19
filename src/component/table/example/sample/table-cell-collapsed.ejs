@@ -1,11 +1,22 @@
-<div id="cell-collapsed-table" class="<%= prefix %>-table">
+<%
+const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkbox});
+%>
+
+<div id="cell-collapsed-table" class="<%= prefix %>-table <%= prefix %>-table--bordered">
     <div class="<%= prefix %>-table__wrapper">
         <div class="<%= prefix %>-table__container">
             <div class="<%= prefix %>-table__content">
                 <table class="<%= prefix %>-table__double-entry <%= prefix %>-cell__multiline">
                     <caption>
                         Exemple de tableau comportant des cellules fusionnées<br />
-                        <span class="<%= prefix %>-sr-only">Emploi du temps complexe</span>
+                        <span class="<%= prefix %>-sr-only">
+                            Emploi du temps horaire des Groupes 1 et 2, le matin des jours de la semaine ouvrée (Lundi au Vendredi) :
+                            - la première colonne représente le planning de la journée de Lundi pour les groupes 1 et 2,
+                            - la deuxième colonne représente le planning de la journée de Mardi pour les groupes 1 et 2,
+                            - la troisième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 1,
+                            - la quatrième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 2,
+                            - la cinquième colonne représente le planning de la journée de Vendredi pour les groupes 1 et 2.
+                        </span>
                     </caption>
                     <thead>
                         <tr>

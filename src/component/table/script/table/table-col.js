@@ -11,7 +11,7 @@ class TableCol extends api.core.Instance {
   }
 
   handlingHover () {
-    this.ascend(TableEmission.COL_HOVER);
+    this.ascend(TableEmission.COL_HOVER, this);
   }
 }
 

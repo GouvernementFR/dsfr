@@ -65,10 +65,14 @@ class TableElement extends api.core.Instance {
     this.isScrolling = false;
   }
 
-  colHover () {
+  colHover (col) {
     const table = this.node.querySelector('table');
-    if (table) {
-      const tableOffsetHeight = table.offsetHeight;
+    if (table && col) {
+      const colPosition = col.node.getBoundingClientRect();
+      const tablePosition = table.getBoundingClientRect();
+      const colOffset = colPosition.y - tablePosition.y;
+      const tableOffsetHeight = table.offsetHeight - colOffset;
+
       if (this.tableOffsetHeight === tableOffsetHeight) return;
       this.tableOffsetHeight = tableOffsetHeight;
       this.ascend(TableEmission.TABLE_HEIGHT, tableOffsetHeight);
