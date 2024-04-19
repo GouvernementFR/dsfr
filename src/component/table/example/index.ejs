@@ -37,7 +37,7 @@ const sample = getSample(include);
 %>
 
 <%-
-    sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table'), doubleEntry: true}}}, true);
+    sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--lg`], table: {caption: getText('data.caption', 'table'), doubleEntry: true}}}, true);
 %>
 
 <%-

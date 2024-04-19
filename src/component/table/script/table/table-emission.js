@@ -6,6 +6,7 @@ export const TableEmission = {
   TABLE_HEIGHT: api.internals.ns.emission('table', 'tableheight'),
   CAPTION_HEIGHT: api.internals.ns.emission('table', 'captionheight'),
   CAPTION_WIDTH: api.internals.ns.emission('table', 'captionwidth'),
+  ROW_HEADER_WIDTH: api.internals.ns.emission('table', 'rowheaderwidth'),
   ROW_SELECT: api.internals.ns.emission('table', 'rowselect'),
   COL_SELECT: api.internals.ns.emission('table', 'colselect'),
   COL_HOVER: api.internals.ns.emission('table', 'colhover')

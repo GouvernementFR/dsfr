@@ -9,7 +9,7 @@
     --table-offset: #{space(4v)};
     --table-offset-height: 0;
     --table-offset-width: 0;
-    --row-header-cell-width: #{space(36.5v)};
+    --row-header-cell-width: auto;
     --cell-actionable-width: #{space(16v)};
 
     @include set-text-margin(0);
