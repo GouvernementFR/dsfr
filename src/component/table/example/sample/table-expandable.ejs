@@ -6,19 +6,19 @@
                     <caption>Exemple de tableau comportant des lignes dépliables</caption>
                     <thead>
                         <tr>
-                            <th scope="col" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
+                            <th id="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
                                 <span class="<%= prefix %>-sr-only">Action</span>
                             </th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Num</th>
-                            <th scope="col">ID</th>
-                            <th scope="col">Address</th>
+                            <th id="expandable-thead-01-col-id1">Name</th>
+                            <th id="expandable-thead-01-col-id2">Age</th>
+                            <th id="expandable-thead-01-col-id3">Num</th>
+                            <th id="expandable-thead-01-col-id4">ID</th>
+                            <th id="expandable-thead-01-col-id5">Address</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr data-row-key="1">
-                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
+                            <td header="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     aria-controls="expandable-row-key-2"
@@ -27,17 +27,17 @@
                                     Déplier John Brown
                                 </button>
                             </td>
-                            <td id="expandable-cel-john-brown">
+                            <td header="expandable-thead-01-col-id1" id="expandable-cell-row-01">
                                 <a href="#">John Brown</a>
                             </td>
-                            <td>32</td>
-                            <td>0571-22098909</td>
-                            <td>18889898989</td>
-                            <td>New York No. 1 Lake Park</td>
+                            <td header="expandable-thead-01-col-id2">32</td>
+                            <td header="expandable-thead-01-col-id3">0571-22098909</td>
+                            <td header="expandable-thead-01-col-id4">18889898989</td>
+                            <td header="expandable-thead-01-col-id5">New York No. 1 Lake Park</td>
                         </tr>
                         <tr id="expandable-row-key-2" class="<%= prefix %>-collapse" data-row-key="2">
-                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
-                            <td header="expandable-cel-john-brown" colspan="5">
+                            <td header="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
+                            <td header="expandable-cell-row-01" colspan="5">
                                 <div
                                     id="alert-1198"
                                     class="<%= prefix %>-alert <%= prefix %>-alert--info <%= prefix %>-alert--sm <%= prefix %>-mb-2v"
@@ -53,7 +53,7 @@
                             </td>
                         </tr>
                         <tr data-row-key="3">
-                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
+                            <td header="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     aria-controls="expandable-row-key-4"
@@ -62,21 +62,21 @@
                                     Déplier Joe Black
                                 </button>
                             </td>
-                            <td>
+                            <td header="expandable-thead-01-col-id1" id="expandable-cell-row-03">
                                 <a href="#">Joe Black</a>
                             </td>
-                            <td>32</td>
-                            <td>0575-22098909</td>
-                            <td>18900010002</td>
-                            <td>Sydney No. 1 Lake Park</td>
+                            <td header="expandable-thead-01-col-id2">32</td>
+                            <td header="expandable-thead-01-col-id3">0575-22098909</td>
+                            <td header="expandable-thead-01-col-id4">18900010002</td>
+                            <td header="expandable-thead-01-col-id5">Sydney No. 1 Lake Park</td>
                         </tr>
                         <tr id="expandable-row-key-4" class="<%= prefix %>-collapse" data-row-key="4">
-                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
-                            <td>Ligne dépliée</td>
-                            <td>14</td>
-                            <td>0575-22098909</td>
-                            <td>18889898989</td>
-                            <td>
+                            <td header="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
+                            <td header="expandable-thead-01-col-id1 expandable-cell-row-03">Ligne dépliée</td>
+                            <td header="expandable-thead-01-col-id2 expandable-cell-row-03">14</td>
+                            <td header="expandable-thead-01-col-id3 expandable-cell-row-03">0575-22098909</td>
+                            <td header="expandable-thead-01-col-id4 expandable-cell-row-03">18889898989</td>
+                            <td header="expandable-thead-01-col-id5 expandable-cell-row-03">
                                 <div class="<%= prefix %>-toggle">
                                     <input
                                         type="checkbox"
@@ -91,7 +91,7 @@
                             </td>
                         </tr>
                         <tr data-row-key="5">
-                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
+                            <td header="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last">
                                 <button
                                     class="<%= prefix %>-btn <%= prefix %>-btn--expand"
                                     aria-controls="expandable-tbody"
@@ -100,47 +100,47 @@
                                     Déplier Jake White
                                 </button>
                             </td>
-                            <td>
+                            <td header="expandable-thead-01-col-id1" id="expandable-cell-row-05">
                                 <a href="#">Jake White</a>
                             </td>
-                            <td>18</td>
-                            <td>0575-22098909</td>
-                            <td>188898983554</td>
-                            <td>Dublin No. 2 Lake Park</td>
+                            <td header="expandable-thead-01-col-id2">18</td>
+                            <td header="expandable-thead-01-col-id3">0575-22098909</td>
+                            <td header="expandable-thead-01-col-id4">188898983554</td>
+                            <td header="expandable-thead-01-col-id5">Dublin No. 2 Lake Park</td>
                         </tr>
                     </tbody>
                     <tbody id="expandable-tbody" class="<%= prefix %>-collapse">
                         <tr data-row-key="6">
-                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
-                            <td>
+                            <td header="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
+                            <td header="expandable-thead-01-col-id1 expandable-cell-row-05" id="expandable-cell-row-06">
                                 <a href="#">Joe Black</a>
                             </td>
-                            <td>32</td>
-                            <td>0575-22098909</td>
-                            <td>188898983345</td>
-                            <td>Sydney No. 1 Lake Park</td>
+                            <td header="expandable-thead-01-col-id2 expandable-cell-row-05">32</td>
+                            <td header="expandable-thead-01-col-id3 expandable-cell-row-05">0575-22098909</td>
+                            <td header="expandable-thead-01-col-id4 expandable-cell-row-05">188898983345</td>
+                            <td header="expandable-thead-01-col-id5 expandable-cell-row-05">Sydney No. 1 Lake Park</td>
                         </tr>
                         <tr data-row-key=7">
-                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
-                            <td>
+                            <td header="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
+                            <td header="expandable-thead-01-col-id1 expandable-cell-row-05" id="expandable-cell-row-07">
                                 <a href="#">Joe Black</a>
                             </td>
-                            <td>32</td>
-                            <td>0575-22098909</td>
-                            <td>18900010002</td>
-                            <td>Sydney No. 1 Lake Park</td>
+                            <td header="expandable-thead-01-col-id2 expandable-cell-row-05">32</td>
+                            <td header="expandable-thead-01-col-id3 expandable-cell-row-05">0575-22098909</td>
+                            <td header="expandable-thead-01-col-id4 expandable-cell-row-05">18900010002</td>
+                            <td header="expandable-thead-01-col-id5 expandable-cell-row-05">Sydney No. 1 Lake Park</td>
                         </tr>
                     </tbody>
                     <tbody>
                         <tr data-row-key="8">
-                            <td class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
-                            <td>
+                            <td header="expandable-thead-01-col-id0" class="<%= prefix %>-cell__actionable <%= prefix %>-cell__actionable--collapse <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last"></td>
+                            <td header="expandable-thead-01-col-id1" id="expandable-cell-row-08">
                                 <a href="#">Jake White</a>
                             </td>
-                            <td>18</td>
-                            <td>0575-22098909</td>
-                            <td>188898983123</td>
-                            <td>Dublin No. 2 Lake Park</td>
+                            <td header="expandable-thead-01-col-id2">18</td>
+                            <td header="expandable-thead-01-col-id3">0575-22098909</td>
+                            <td header="expandable-thead-01-col-id4">188898983123</td>
+                            <td header="expandable-thead-01-col-id5">Dublin No. 2 Lake Park</td>
                         </tr>
                     </tbody>
                 </table>
