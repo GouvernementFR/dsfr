@@ -1,0 +1,31 @@
+////
+/// Core Module : Artwork
+/// @group core
+////
+
+@use 'module/selector';
+
+#{selector.ns(artwork)} {
+  &-decorative,
+  &-minor,
+  &-major {
+    fill: none;
+    stroke-width: 1.75;
+  }
+
+  &--sm {
+    #{selector.ns(artwork)}-decorative,
+    #{selector.ns(artwork)}-minor,
+    #{selector.ns(artwork)}-major {
+      stroke-width: 1.5;
+    }
+  }
+
+  &--lg {
+    #{selector.ns(artwork)}-decorative,
+    #{selector.ns(artwork)}-minor,
+    #{selector.ns(artwork)}-major {
+      stroke-width: 2;
+    }
+  }
+}

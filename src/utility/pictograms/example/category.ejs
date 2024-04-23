@@ -3,9 +3,15 @@
 
  const pictograms = JSON.parse(include('../../../../.config/pictogram.json'));
  const selected = pictograms.filter(pictogram => pictogram.category === locals.category);
-
+ const sizes = ['sm', 'md', 'lg']
  for (const pictogram of selected) {
  %>
-<%- sample(pictogram.name, '../../../core/template/ejs/artwork/pictogram', { pictogram: pictogram }, true); %>
 
+  <%
+  for (const size of sizes) {
+  %>
+
+  <%- sample(pictogram.name + ` ${size}`, '../../../core/template/ejs/artwork/pictogram', { pictogram: {...pictogram, size: size} }, true); %>
+
+  <% } %>
 <% } %>

@@ -189,6 +189,16 @@ $COLOR: constant.$value;
   @include element(fill, background , $tokens, $options);
 }
 
+/// Ajout d'une couleur de stroke sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+@mixin stroke($tokens, $options) {
+  @include element(stroke, background , $tokens, $options);
+}
+
 /// Ajout d'une couleur de border sur un élément
 /// @access public
 /// @param {list} $tokens - liste des tokens de décision

@@ -1,5 +1,5 @@
 ////
-/// Core Module : Artwork
+/// Core Scheme : Artwork
 /// @group core
 ////
 
@@ -9,15 +9,15 @@
 @mixin _core-artwork-scheme($legacy: false) {
   #{selector.ns(artwork)} {
     &-decorative {
-      @include color.fill(artwork decorative blue-france, (legacy: $legacy));
+      @include color.stroke(artwork decorative blue-france, (legacy: $legacy));
     }
 
     &-minor {
-      @include color.fill(artwork minor red-marianne, (legacy: $legacy));
+      @include color.stroke(artwork minor red-marianne, (legacy: $legacy));
     }
 
     &-major {
-      @include color.fill(artwork major blue-france, (legacy: $legacy));
+      @include color.stroke(artwork major blue-france, (legacy: $legacy));
     }
 
     &-background {
@@ -30,14 +30,14 @@
 
     @include color.accentuate {
       #{selector.ns(artwork-minor)} {
-        @include color.fill(artwork minor accent, (legacy: $legacy));
+        @include color.stroke(artwork minor accent, (legacy: $legacy));
       }
     }
   }
 
   [disabled] {
     #{selector.ns(artwork)} * {
-      @include color.fill(text disabled grey, (legacy: $legacy));
+      @include color.stroke(text disabled grey, (legacy: $legacy));
     }
   }
 }
