@@ -37,6 +37,9 @@
   &__elements {
     @include display-flex;
     border-radius: #{spacing.space(1v)};
+    @include preference.forced-colors {
+      outline: 1px solid;
+    }
   }
 
   &__element {
@@ -66,9 +69,16 @@
     }
 
     &:checked {
+      &:focus + label {
+        @include preference.forced-colors {
+          outline: 3px solid;
+          outline-offset: 0px;
+        }
+      }
+
       + label {
         @include preference.forced-colors {
-          border: 1px solid;
+          outline: 1px solid;
           color: highlight;
         }
       }

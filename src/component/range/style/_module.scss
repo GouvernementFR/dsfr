@@ -7,6 +7,7 @@
 @use 'module/spacing';
 @use 'module/selector';
 @use 'module/disabled';
+@use 'module/preference';
 
 #{selector.ns-group(range)} {
   @include relative;
@@ -69,6 +70,14 @@
       @include size(100%, var(--thumb-size));
       @include z-index(over);
 
+      &:focus {
+        @include selector.range-thumb {
+          @include preference.forced-colors {
+            outline-color: highlight;
+          }
+        }
+      }
+
       &:not(:only-of-type) {
         pointer-events: none;
       }
@@ -79,6 +88,10 @@
         border-radius: 50%;
         border: none;
         pointer-events: auto;
+
+        @include preference.forced-colors {
+          background: buttonText;
+        }
 
         &:active {
           @include z-index(above);
@@ -136,12 +149,20 @@
 
         &:nth-of-type(1) {
           @include margin-right(var(--thumb-size));
+
+          @include preference.forced-colors {
+            border-right: none;
+          }
         }
 
         &:nth-of-type(2) {
           @include absolute;
           @include right(0);
           @include top(5v);
+
+          @include preference.forced-colors {
+            border-left: none;
+          }
         }
       }
     }

@@ -50,6 +50,10 @@
 
     transition: visibility 0.3s, padding 0.3s;
 
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
     &--expanded {
       @include padding-top(4v);
       @include padding-bottom(6v);

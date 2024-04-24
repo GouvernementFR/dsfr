@@ -4,6 +4,7 @@
 ////
 
 @use 'module/disabled';
+@use 'module/preference';
 
 #{ns(share)} {
   @include display-flex(column);
@@ -28,6 +29,10 @@
 
     #{ns(btn)} {
       justify-content: flex-start;
+
+      @include preference.forced-colors {
+        border: none;
+      }
     }
 
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
@@ -36,6 +41,12 @@
           @include nest-btn(md, only, null, null, false);
           @include icon(null, md, before);
           @include icon-forced-color(ButtonText, true, before);
+        }
+      }
+
+      a[href]#{ns(btn)} {
+        @include has-not-icon {
+          @include icon-forced-color(LinkText, true, before);
         }
       }
 

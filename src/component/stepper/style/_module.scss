@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(stepper)} {
   @include set-title-margin(0);
@@ -47,5 +48,10 @@
     background-size: calc((100% + var(--stepper-size)) * var(--current-step) / var(--steps) - var(--stepper-size)) 100%, 100% 100%;
     background-position: 0 0, 0 0;
     @include stepper-build();
+
+    @include preference.forced-colors {
+      forced-color-adjust: none;
+      background-image: repeating-linear-gradient(to right, highlight 0, highlight var(--active-inner), transparent var(--active-inner), transparent var(--active-outer)), repeating-linear-gradient(to right, canvasText 0, canvasText var(--default-inner), transparent var(--default-inner), transparent var(--default-outer));
+    }
   }
 }

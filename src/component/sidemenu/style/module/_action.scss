@@ -4,6 +4,7 @@
 ////
 
 @use 'module/selector';
+@use 'module/preference';
 
 /**
  * Styles du bouton et du lien d'accès direct du sidemnu
@@ -24,6 +25,11 @@
   @include selector.current {
     @include before('') {
       @include absolute(3v, null, 3v, 0, 2px);
+
+      @include preference.forced-colors {
+        background-color: highlight;
+        forced-color-adjust: none;
+      }
     }
   }
 

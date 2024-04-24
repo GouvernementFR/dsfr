@@ -3,8 +3,16 @@
 /// @group share
 ////
 
+@use 'module/selector';
+
 @mixin build-share-link($name, $icon) {
   #{ns(share__link)}--#{$name} {
     @include nest-btn(md, only, $icon, null, false);
+    @at-root a[href]#{&} {
+      @include icon-forced-color(LinkText, true, before);
+    }
+    @at-root a:not([href])#{&} {
+      @include icon-forced-color(GrayText, true, before);
+    }
   }
 }
