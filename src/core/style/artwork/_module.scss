@@ -6,26 +6,17 @@
 @use 'module/selector';
 
 #{selector.ns(artwork)} {
-  &-decorative,
-  &-minor,
-  &-major {
-    fill: none;
-    stroke-width: 1.75;
-  }
+  fill: none;
+  stroke-width: 2;
+  transition: stroke-dashoffset 1.5s;
+  stroke-dasharray: 80;
+  stroke-dashoffset: 0;
 
   &--sm {
-    #{selector.ns(artwork)}-decorative,
-    #{selector.ns(artwork)}-minor,
-    #{selector.ns(artwork)}-major {
-      stroke-width: 1.5;
-    }
+    stroke-width: 2.25;
   }
 
   &--lg {
-    #{selector.ns(artwork)}-decorative,
-    #{selector.ns(artwork)}-minor,
-    #{selector.ns(artwork)}-major {
-      stroke-width: 2;
-    }
+    stroke-width: 1.5;
   }
 }
