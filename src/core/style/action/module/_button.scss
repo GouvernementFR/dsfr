@@ -3,6 +3,18 @@
 /// @group core
 ////
 
+@use 'module/preference';
+
 button {
   @include btn-reset;
+
+  @include preference.forced-colors {
+    color: ButtonText;
+  }
+}
+
+button:disabled {
+  @include preference.forced-colors {
+    color: GrayText;
+  }
 }

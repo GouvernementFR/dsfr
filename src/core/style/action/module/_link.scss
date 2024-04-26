@@ -3,8 +3,16 @@
 /// @group core
 ////
 
+@use 'module/preference';
+
 a {
   @include a-reset;
+
+  &:not([href]) {
+    @include preference.forced-colors {
+      color: GrayText;
+    }
+  }
 }
 
 :root {
@@ -18,6 +26,12 @@ a {
 // TODO: à checker avec <area href="" >
 [href] {
   @include link-underline;
+
+  @include preference.forced-colors {
+    &, &:visited {
+      color: LinkText;
+    }
+  }
 }
 
 @include target-blank {

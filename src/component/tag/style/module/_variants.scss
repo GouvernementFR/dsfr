@@ -3,6 +3,8 @@
 /// @group tag
 ////
 
+@use 'module/preference';
+
 @include clickable-selector {
   &#{ns(tag)} {
     // tag pressable
@@ -13,15 +15,29 @@
       background-size: 100%;
       background-repeat: no-repeat;
 
+      @include preference.forced-colors {
+        &:not(:disabled) {
+          background-color: highlight;
+          color: highlightText;
+          @include icon-forced-color(highlightText);
+        }
+      }
+
       @include icon(checkbox-circle-line, sm, after) {
         @include absolute(4px, 0);
         @include margin(-2v);
+        @include preference.forced-colors {
+          display: none
+        }
       }
 
       &#{ns(tag)}--sm {
         @include icon(null, xs, after, false) {
           @include absolute(3px, 0);
           @include margin(-1.5v);
+          @include preference.forced-colors {
+            display: none
+          }
         }
       }
     }

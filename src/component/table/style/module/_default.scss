@@ -3,6 +3,8 @@
 /// @group Table
 ////
 
+@use 'module/preference';
+
 #{ns(table)} {
   --table-offset: #{space(4v)};
   @include set-text-margin(0);
@@ -27,6 +29,7 @@
     display: block;
     overflow: auto;
     border-spacing: 0;
+    border-collapse: collapse;
   }
 
   &#{ns-attr(js-table, true)} {
@@ -51,6 +54,10 @@
     @include padding(3v);
     @include padding(4v, md);
     @include text-style(sm);
+
+    @include preference.forced-colors {
+      border: 1px solid;
+    }
   }
 
   th {
