@@ -86,6 +86,12 @@
     @include preference.reduce-motion {
       transition: none;
     }
+
+    #{ns(modal__body)} {
+      @include preference.forced-colors {
+        border: 1px solid;
+      }
+    }
   }
 
   @include body {
@@ -94,10 +100,6 @@
     overflow-y: auto;
     flex: 1 1 auto;
     max-height: var(--modal-max-height);
-
-    @include preference.forced-colors {
-      border: 1px solid;
-    }
 
     @include respond-from(md) {
       max-height: 80vh !important;

@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(tile)} {
   @include relative;
@@ -21,6 +22,10 @@
   }
 
   @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__pictogram);
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
 
   &__header {
     order: 1;
