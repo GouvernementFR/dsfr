@@ -1,14 +1,17 @@
 <% eval(include('../../../../core/index.ejs'));
 
-let table = locals.table || {};
-let classes = table.classes || [];
+const table = tbody.table || {};
+const index = tbody.index || 0;
+
+const classes = table.classes || [];
+if (table.bodies && table.bodies[index].collapse) classes.push(`${prefix}-collapse`)
 const attributes = table.attributes || {};
-attributes.id = table.id || uniqueId('table-tbody');
+attributes.id = table.id + '-tbody-' + index;
 %>
 
 <tbody <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
-    <% if (table.tbody) { %>
-        <% for (let row = 0; row < table.tbody.length; row++) { %>
+    <% if (table.tbodies && table.tbodies[index]) { %>
+        <% for (let row = 0; row < table.tbodies[index].length; row++) { %>
             <%
                 const rowClasses = [];
                 if (table.rows && table.rows[row] && table.rows[row].collapse) rowClasses.push(prefix + '-collapse');
@@ -18,15 +21,15 @@ attributes.id = table.id || uniqueId('table-tbody');
                 rowAttributes['data-row-key'] = row + 1;
             %>
             <tr <%- includeClasses(rowClasses) %> <%- includeAttrs(rowAttributes) %>>
-                <% if (table.tbody && table.tbody.length) { %>
-                    <% for (let col = 0; col < table.tbody[row].length; col++) { %>
+                <% if (table.tbodies[index].length) { %>
+                    <% for (let col = 0; col < table.tbodies[index][row].length; col++) { %>
                         <%
-                            const colTag = table.tbody[row][col].tag || 'td';
-                            const colClasses = table.tbody[row][col].classes || [];
-                            const colAttributes = table.tbody[row][col].attributes || {};
+                            const colTag = table.tbodies[index][row][col].tag || 'td';
+                            const colClasses = table.tbodies[index][row][col].classes || [];
+                            const colAttributes = table.tbodies[index][row][col].attributes || {};
                         %>
                         <<%- colTag %> <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
-                            <%- table.tbody[row][col].content %>
+                            <%- table.tbodies[index][row][col].content %>
                         </<%- colTag %>>
                     <% } %>
                 <% } %>

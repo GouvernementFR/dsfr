@@ -6,41 +6,29 @@ const actionCellEmpty = `<span class="${prefix}-sr-only">${getText('data.cell.ac
 const getTextCell = (tag = 'span') => `<${tag} class="${prefix}-cell__desc">${getText('data.cell.text', 'table')}</${tag}>`;
 const getTitleCell = (tag = 'span') => `<${tag} class="${prefix}-cell__title">${getText('data.cell.title', 'table')}</${tag}>`;
 
-const data = {
-  table: {
-    ...table,
-  }
-};
-
-const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkbox});
-const getButton = (button) => include('../partials/getButton.ejs', {button});
-const getIcon = (icon) => include('../../../../core/template/ejs/icon/icon.ejs', {icon});
-const getPictogram = (pictogram) => include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram});
-const getToggle = (toggle) => include('../../../toggle/template/ejs/toggle.ejs', {toggle});
 const getBadge = (badge) => include('../../../badge/template/ejs/badge.ejs', {badge});
-const getTag = (tag) => include('../../../tag/template/ejs/tag.ejs', {tag});
+const getButton = (button) => include('../partials/getButton.ejs', {button});
+const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkbox});
+const getIcon = (icon) => include('../../../../core/template/ejs/icon/icon.ejs', {icon});
+const getInput = (input) => include('../../../input/input-base/template/ejs/input-group.ejs', {input});
 const getLink = (link) => include('../../../link/template/ejs/link.ejs', {link});
+const getPictogram = (pictogram) => include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram});
+const getTag = (tag) => include('../../../tag/template/ejs/tag.ejs', {tag});
+const getToggle = (toggle) => include('../../../toggle/template/ejs/toggle.ejs', {toggle});
 
-data.table.thead = [
+const thead = [
   {
     attributes: {
       role: 'columnheader'
     },
-    classes: [`${prefix}-cell__actionable`, `${prefix}-col__actionable--select`, `${prefix}-cell__fixed`],
-    content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}})
-  },
-  {
-    attributes: {
-      role: 'columnheader'
-    },
-    classes: [`${prefix}-cell__actionable`, `${prefix}-cell__fixed`, `${prefix}-cell__fixed--last`,  `${prefix}-cell__actionable--collapse`],
-    content: actionCellEmpty
+    classes: [`${prefix}-cell__fixed`, `${prefix}-cell__col--select`],
+    content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}}) + getText('data.cell.title', 'table')
   },
   {
     content: getTextCell()
   },
   {
-    classes: [`${prefix}-col__lg`, `${prefix}-col__actionable--select`],
+    classes: [`${prefix}-col__lg`, `${prefix}-cell__col--select`],
     content: getCheckbox({label: getText('data.cell.label', 'table')})
   },
   {
@@ -50,7 +38,7 @@ data.table.thead = [
     content: getTitleCell()
   },
   {
-    classes: [`${prefix}-col__actionable--select`],
+    classes: [`${prefix}-cell__col--select`],
     content: `<div class="${prefix}-cell__inline">${getCheckbox({label: getText('data.cell.label', 'table'), checked: true})} ${getTextCell()}</div>`
   },
   {
@@ -75,7 +63,7 @@ data.table.thead = [
     content: getText('data.cell.text', 'table')
   },
   {
-    classes: [`${prefix}-col__actionable--select`],
+    classes: [`${prefix}-cell__col--select`],
     content: getCheckbox({label: getText('data.cell.label', 'table')}) + getButton({id: uniqueId('table-thead-sort-desc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`, `${prefix}-ml-4v`], attributes: {'aria-sorting': 'desc'}})
   },
   {
@@ -84,18 +72,14 @@ data.table.thead = [
   }
 ];
 
-data.table.tbody = new Array(table.rows.length);
+const tbody = new Array(table.rows.length);
 for(let r = 0; r < table.rows.length; r++) {
-  const collapseActionCellClasses = table.rows[r].collapse ? [`${prefix}-cell__actionable`, `${prefix}-cell__fixed`, `${prefix}-cell__fixed--last`] : [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--collapse`, `${prefix}-cell__fixed`, `${prefix}-cell__fixed--last`];
-
-  data.table.tbody[r] = [
+  tbody[r] = [
     {
-      classes: [`${prefix}-cell__actionable`, `${prefix}-cell__actionable--select`, `${prefix}-cell__fixed`],
-      content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${r}`, attributes: {checked: table.rows[r].selected, 'aria-label': getText('data.cell.action.selectRow', 'table')}})
-    },
-    {
-      classes: collapseActionCellClasses,
-      content: table.rows[r].expandable ? getButton({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expandRow', 'table')}`, classes:[`${prefix}-btn--expand`], attributes: {'aria-controls': `${table.id}-row-key-${r + 2}`, 'aria-expanded': `${table.rows[r].expandable}`}}) : actionCellEmpty
+      tag: 'th',
+      attributes: {scope: 'row'},
+      classes: [`${prefix}-cell__fixed`, `${prefix}-cell__row--select`],
+      content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}-${r}`, attributes: {checked: table.rows[r].selected, 'aria-label': getText('data.cell.action.selectRow', 'table')}}) + getText('data.cell.title', 'table')
     },
     {
       content: getText('data.cell.text', 'table')
@@ -116,7 +100,7 @@ for(let r = 0; r < table.rows.length; r++) {
       content: getText('data.cell.text', 'table')
     },
     {
-      content: getTitleCell()
+      content: getInput({id: `text-input-text-${r}`})
     },
     {
       classes: [`${prefix}-cell__sm`],
@@ -141,6 +125,14 @@ for(let r = 0; r < table.rows.length; r++) {
     }
   ];
 }
+
+const data = {
+  table: {
+    ...table,
+    thead,
+    tbodies: [tbody]
+  }
+};
 %>
 
 <%- JSON.stringify(data); %>

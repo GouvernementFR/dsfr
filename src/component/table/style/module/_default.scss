@@ -10,7 +10,6 @@
     --table-offset-height: 0;
     --table-offset-width: 0;
     --row-header-cell-width: auto;
-    --cell-actionable-width: #{space(16v)};
 
     @include set-text-margin(0);
     @include set-title-margin(0);
@@ -48,18 +47,10 @@
                 position: sticky;
                 left: 0;
 
-                & + #{ns(cell__fixed--last)} {
-                    left: var(--cell-actionable-width);
-                }
-            }
-
-            &__actionable {
-                text-align: center;
-                @include min-width(16v);
-                @include width(16v);
-
                 #{ns(checkbox-group)} {
-                    margin-right: -0.5rem;
+                    & #{ns(label)} {
+                        top: #{space(.5v)};
+                    }
                 }
             }
 
@@ -134,29 +125,27 @@
                 }
 
                 tr {
-                    // &:first-child {
-                        th {
-                            &:not(#{ns(cell__fixed)}) {
-                                @include relative;
+                    th {
+                        &:not(#{ns(cell__fixed)}) {
+                            @include relative;
 
-                                &:hover {
-                                    &::after {
-                                        position: absolute;
-                                        content: '';
-                                        top: -1px;
-                                        left: -1px;
-                                        height: var(--table-offset-height);
-                                        width: calc(100% + 1px);
-                                        z-index: 2;
-                                        background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
-                                        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-                                        background-position: 100% 100%, 0 0, 100% 0, 100% 0;
-                                        pointer-events: none;
-                                    }
+                            &:hover {
+                                &::after {
+                                    position: absolute;
+                                    content: '';
+                                    top: -1px;
+                                    left: -1px;
+                                    height: var(--table-offset-height);
+                                    width: calc(100% + 1px);
+                                    z-index: 2;
+                                    background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
+                                    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                                    background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+                                    pointer-events: none;
                                 }
                             }
                         }
-                    // }
+                    }
                 }
             }
 
@@ -180,24 +169,9 @@
                         }
                     }
                 }
-            }
-        }
 
-        #{ns(cell__row--header)} {
-            z-index: 1;
-            width: var(--row-header-cell-width);
-            min-width: var(--row-header-cell-width);
-            max-width: var(--row-header-cell-width);
-            white-space: inherit;
-
-            + th,
-            + td {
-                &#{ns(cell__fixed)} {
-                    left: var(--row-header-cell-width);
-
-                    & + #{ns(cell__fixed--last)} {
-                        left: calc(var(--row-header-cell-width) + var(--cell-actionable-width));
-                    }
+                #{ns(btn--expand)} {
+                    @include margin-right(4v);
                 }
             }
         }
@@ -230,6 +204,12 @@
         @include title-style(h4, true);
         @include font-weight(bold);
         text-align: left;
+
+        #{ns(table__caption__desc)} {
+            @include margin-top(4v);
+            @include text-style(md);
+            @include font-weight(regular);
+        }
     }
 
     &__detail {
@@ -243,23 +223,13 @@
     }
 
     #{ns(collapse)} {
-        #{&}:not(&--expanded) {
+        &:not(&--expanded) {
             display: none;
         }
 
         &--expanded {
             &::before {
                 content: none;
-            }
-
-            & > #{ns(cell__fixed)} {
-                &#{ns(cell__actionable--select)} {
-                    z-index: 4;
-
-                    #{ns(checkbox-group)} {
-                        transform: translateX(var(--cell-actionable-width));
-                    }
-                }
             }
         }
     }

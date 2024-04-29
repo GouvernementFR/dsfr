@@ -3,7 +3,7 @@
 let table = locals.table || {};
 let classes = table.classes || [];
 const attributes = table.attributes || {};
-attributes.id = table.id || uniqueId('table-thead');
+attributes.id = table.id + '-thead';
 %>
 
 <thead <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
@@ -13,7 +13,6 @@ attributes.id = table.id || uniqueId('table-thead');
                 <%
                     let colClasses = table.thead[col].classes || [];
                     const colAttributes = table.thead[col].attributes || {};
-                    colAttributes.scope = colAttributes.scope || 'col';
                 %>
                 <th <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
                     <%- table.thead[col].content %>

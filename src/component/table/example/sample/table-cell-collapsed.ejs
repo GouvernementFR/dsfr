@@ -8,19 +8,21 @@ const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkb
             <div class="<%= prefix %>-table__content">
                 <table class="<%= prefix %>-table__double-entry <%= prefix %>-cell__multiline">
                     <caption>
-                        Exemple de tableau comportant des cellules fusionnées<br />
-                        <span class="<%= prefix %>-sr-only">
+                        Caption du tableau (accessibilité)
+                        <div class="<%= prefix %>-table__caption__desc">
                             Emploi du temps horaire des Groupes 1 et 2, le matin des jours de la semaine ouvrée (Lundi au Vendredi) :
-                            - la première colonne représente le planning de la journée de Lundi pour les groupes 1 et 2,
-                            - la deuxième colonne représente le planning de la journée de Mardi pour les groupes 1 et 2,
-                            - la troisième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 1,
-                            - la quatrième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 2,
-                            - la cinquième colonne représente le planning de la journée de Vendredi pour les groupes 1 et 2.
-                        </span>
+                            <ul>
+                                <li>la première colonne représente le planning de la journée de Lundi pour les groupes 1 et 2,</li>
+                                <li>la deuxième colonne représente le planning de la journée de Mardi pour les groupes 1 et 2,</li>
+                                <li>la troisième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 1,</li>
+                                <li>la quatrième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 2,</li>
+                                <li>la cinquième colonne représente le planning de la journée de Vendredi pour les groupes 1 et 2.</li>
+                            </ul>
+                        </div>
                     </caption>
                     <thead>
                         <tr>
-                            <th id="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" rowspan="2">
+                            <th id="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__fixed" rowspan="2">
                                 <span class="<%= prefix %>-sr-only">Heures</span>
                             </th>
                             <th id="cell-collapsed-thead-01-col-id1">Lundi</th>
@@ -32,16 +34,16 @@ const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkb
                             <th id="cell-collapsed-thead-01-col-id4">Vendredi</th>
                         </tr>
                         <tr>
-                            <th id="cell-collapsed-thead-02-col-id1">Groupes 1 & 2</th>
-                            <th id="cell-collapsed-thead-02-col-id2">Groupes 1 & 2</th>
-                            <th id="cell-collapsed-thead-02-col-id3">Groupe 1</th>
-                            <th id="cell-collapsed-thead-02-col-id4">Groupe 2</th>
-                            <th id="cell-collapsed-thead-02-col-id5">Groupes 1 & 2</th>
+                            <th id="cell-collapsed-thead-02-col-id1" headers="cell-collapsed-thead-01-col-id1">Groupes 1 & 2</th>
+                            <th id="cell-collapsed-thead-02-col-id2" headers="cell-collapsed-thead-01-col-id2">Groupes 1 & 2</th>
+                            <th id="cell-collapsed-thead-02-col-id3" headers="cell-collapsed-thead-01-col-id3">Groupe 1</th>
+                            <th id="cell-collapsed-thead-02-col-id4" headers="cell-collapsed-thead-01-col-id3">Groupe 2</th>
+                            <th id="cell-collapsed-thead-02-col-id5" headers="cell-collapsed-thead-01-col-id4">Groupes 1 & 2</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr data-row-key="1">
-                            <th id="cell-collapsed-row-id1" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >8h</th>
+                            <th id="cell-collapsed-row-id1" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__fixed" >8h</th>
                             <td headers="cell-collapsed-thead-01-col-id1 cell-collapsed-thead-02-col-id1 cell-collapsed-row-id1">Français</td>
                             <td headers="cell-collapsed-thead-01-col-id2 cell-collapsed-thead-02-col-id2 cell-collapsed-row-id1">Mathématiques</td>
                             <td headers="cell-collapsed-thead-01-col-id3 cell-collapsed-thead-02-col-id3 cell-collapsed-row-id1">LV1</td>
@@ -49,14 +51,14 @@ const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkb
                             <td headers="cell-collapsed-thead-01-col-id4 cell-collapsed-thead-02-col-id5 cell-collapsed-row-id1">EPS</td>
                         </tr>
                         <tr data-row-key="2">
-                            <th id="cell-collapsed-row-id2" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >9h</th>
+                            <th id="cell-collapsed-row-id2" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__fixed" >9h</th>
                             <td headers="cell-collapsed-thead-01-col-id1 cell-collapsed-thead-01-col-id2 cell-collapsed-thead-01-col-id3 cell-collapsed-thead-01-col-id4 cell-collapsed-thead-02-col-id1 cell-collapsed-thead-02-col-id2 cell-collapsed-thead-02-col-id3 cell-collapsed-thead-02-col-id4 cell-collapsed-thead-02-col-id5 cell-collapsed-row-id2" colspan="5">
                                 Etude dirigé<br />
                                 <i>Exemple de colspan sur toute la ligne</i>
                             </td>
                         </tr>
                         <tr data-row-key="3">
-                            <th id="cell-collapsed-row-id3" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >10h</th>
+                            <th id="cell-collapsed-row-id3" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__fixed" >10h</th>
                             <td headers="cell-collapsed-thead-01-col-id1 cell-collapsed-thead-02-col-id1 cell-collapsed-row-id3">Mathématiques</td>
                             <td headers="cell-collapsed-thead-01-col-id2 cell-collapsed-thead-02-col-id2 cell-collapsed-row-id3">Histoire - Geographie</td>
                             <td headers="cell-collapsed-thead-01-col-id3 cell-collapsed-thead-02-col-id3 cell-collapsed-row-id3" class="<%= prefix %>-cell__center" rowspan="2">
@@ -86,14 +88,14 @@ const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkb
                             <td headers="cell-collapsed-thead-01-col-id4 cell-collapsed-thead-02-col-id5 cell-collapsed-row-id3">Sciences</td>
                         </tr>
                         <tr data-row-key="4">
-                            <th id="cell-collapsed-row-id4" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >11h</th>
+                            <th id="cell-collapsed-row-id4" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__fixed" >11h</th>
                             <td headers="cell-collapsed-thead-01-col-id1 cell-collapsed-thead-02-col-id1 cell-collapsed-row-id4">Français</td>
                             <td headers="cell-collapsed-thead-01-col-id2 cell-collapsed-thead-02-col-id2 cell-collapsed-row-id4">EPS</td>
                             <td headers="cell-collapsed-thead-01-col-id3 cell-collapsed-thead-02-col-id4 cell-collapsed-row-id4">Histoire - Geographie</td>
                             <td headers="cell-collapsed-thead-01-col-id4 cell-collapsed-thead-02-col-id5 cell-collapsed-row-id4">Physique - Chimie</td>
                         </tr>
                         <tr data-row-key="5">
-                            <th id="cell-collapsed-row-id5" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__row--header <%= prefix %>-cell__fixed <%= prefix %>-cell__fixed--last" >12h</th>
+                            <th id="cell-collapsed-row-id5" headers="cell-collapsed-thead-01-col-id0" class="<%= prefix %>-cell__fixed" >12h</th>
                             <td headers="cell-collapsed-thead-01-col-id1 cell-collapsed-thead-02-col-id1 cell-collapsed-row-id5">Sciences</td>
                             <td headers="cell-collapsed-thead-01-col-id2 cell-collapsed-thead-02-col-id2 cell-collapsed-row-id5">LV1</td>
                             <td headers="cell-collapsed-thead-01-col-id3 cell-collapsed-thead-02-col-id3 cell-collapsed-thead-02-col-id4 cell-collapsed-row-id5" colspan="2">

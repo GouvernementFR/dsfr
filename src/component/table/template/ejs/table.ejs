@@ -11,5 +11,9 @@ attributes.id = table.id || uniqueId('-table');
         <caption><%= table.caption %></caption>
     <% } %>
     <%- include('./thead.ejs', {thead: table}); %>
-    <%- include('./tbody.ejs', {tbody: table}); %>
+    <% if (table.tbodies) { %>
+        <% for (let index = 0; index < table.tbodies.length; index++) { %>
+            <%- include('./tbody.ejs', {tbody: {table, index, collapse: index === 1}}); %>
+        <% } %>
+    <% } %>
 </table>

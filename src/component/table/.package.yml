@@ -9,6 +9,7 @@ style:
   - badge
   - button
   - checkbox
+  - input
   - link
   - pagination
   - select

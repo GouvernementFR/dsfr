@@ -1,0 +1,28 @@
+<%
+const table = locals.table || {};
+const thead = JSON.parse(include('./data-complex-thead.json.ejs', { table: table }));
+const tbodies = JSON.parse(include('./data-complex-tbodies.json.ejs', { table: table }));
+const rows = table.rows || {};
+
+const getButton = (button) => include('../partials/getButton.ejs', {button});
+const getSrOnlyCell = (content) => `<span class="${prefix}-sr-only">${content}</span>`;
+
+thead.unshift({
+    attributes: {
+        role: 'columnheader'
+    },
+    classes: [`${prefix}-cell__fixed`],
+    content: getSrOnlyCell(getText('data.cell.action.empty', 'table'))
+});
+
+const data = {
+  table: {
+    ...table,
+    thead,
+    tbodies
+  }
+};
+
+%>
+
+<%- JSON.stringify(data); %>

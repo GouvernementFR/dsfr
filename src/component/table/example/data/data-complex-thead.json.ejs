@@ -1,0 +1,15 @@
+<%
+const table = locals.table || {};
+const theadList = JSON.parse(include('./data-thead-list.json.ejs'));
+const thead = [];
+
+theadList.forEach((th, index) => {
+    const id = table.id + '-thead-' + index
+    thead.push({
+        attributes: {id},
+        content: th
+    })
+});
+%>
+
+<%- JSON.stringify(thead); %>

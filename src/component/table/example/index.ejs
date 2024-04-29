@@ -4,32 +4,39 @@ const sample = getSample(include);
 %>
 
 <%-
-    sample(getText('sample.simple', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table')}}}, true);
+    sample(getText('sample.default', 'table'), './sample/table-simple', {table: {table: {id: 'table-default', caption: getText('data.caption', 'table')}}}, true);
 %>
 
 <%-
-    sample(getText('sample.sm', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--sm`], table: {caption: getText('data.caption', 'table')}}}, true);
+    sample(getText('sample.sm', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--sm`], table: {id: 'table-sm', caption: getText('data.caption', 'table')}}}, true);
 %>
 
 <%-
-    sample(getText('sample.lg', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--lg`], table: {caption: getText('data.caption', 'table')}}}, true);
+    sample(getText('sample.lg', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--lg`], table: {id: 'table-lg', caption: getText('data.caption', 'table')}}}, true);
 %>
 
 <%-
-    sample(getText('sample.complex', 'table'), './sample/table-complex', {table: {header: true, footer: true, table: {caption: getText('data.captionLarge', 'table'), rows: [{selected: true}, {expandable: 'true'}, {collapse: true}, {}, {expandable: 'false'}, {collapse: true}]}}}, true);
+    sample(getText('sample.selectable', 'table'), './sample/table-simple', {table: {table: {id: 'table-selectable', caption: getText('data.caption', 'table'), selectable: true}}}, true);
 %>
 
 <%-
-    sample(getText('sample.selectable', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table'), selectable: true}}}, true);
+    // sample(getText('sample.expandable', 'table'), './sample/table-simple', {table: {table: {id: 'table-expandable', caption: getText('data.caption', 'table'), expandable: true, rows: [{expandable: 'false'}, {collapse: true}, {}]}}}, true);
 %>
 
 <%-
-    sample(getText('sample.expandable', 'table'), './sample/table-expandable', {}, true);
+    // sample(getText('sample.expandableComplex', 'table'), './sample/table-expandable', {}, true);
 %>
 
 <%-
-    // Expandable data
-    // sample(getText('sample.expandable', 'table'), './sample/table-simple', {table: {table: {caption: getText('data.caption', 'table'), expandable: true, rows: [{expandable: 'false'}, {collapse: true}, {}]}}}, true);
+    // sample(getText('sample.expandableComplex', 'table'), './sample/table-complex-expandable', {table: {table: {id: 'table-expandable-complex', caption: getText('data.caption', 'table'), bodies: [{}, {collapse: true}],  rows: [{expandable: true}, {expandable: false}, {expandable: true}]}}}, true);
+%>
+
+<%-
+    sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--lg`], table: {id: 'table-double-entry', caption: getText('data.caption', 'table'), doubleEntry: true}}}, true);
+%>
+
+<%-
+    sample(getText('sample.bordered', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--bordered`], table: {id: 'table-bordered', caption: getText('data.caption', 'table')}}}, true);
 %>
 
 <%-
@@ -37,11 +44,7 @@ const sample = getSample(include);
 %>
 
 <%-
-    sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--lg`], table: {caption: getText('data.caption', 'table'), doubleEntry: true}}}, true);
-%>
-
-<%-
-    sample(getText('sample.bordered', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--bordered`], table: {caption: getText('data.caption', 'table'), doubleEntry: true, selectable: true, expandable: true, rows: [{expandable: 'false'}, {collapse: true}, {}]}}}, true);
+    sample(getText('sample.miscellaneous', 'table'), './sample/table-miscellaneous', {table: {header: true, footer: true, table: {id: 'table-miscellaneous', caption: getText('data.captionLarge', 'table'), rows: [{selected: true}, {expandable: 'true'}, {collapse: true}, {}, {expandable: 'false'}, {collapse: true}]}}}, true);
 %>
 
 <%-

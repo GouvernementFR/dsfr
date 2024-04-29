@@ -4,11 +4,9 @@ let wrapper = locals.table || {};
 let classes = wrapper.classes || [];
 
 const attributes = wrapper.attributes || {};
-const wrapperId = wrapper.id || uniqueId('table-wrapper');
-attributes.id = wrapperId;
 
 const table = wrapper.table || [[]];
-// table.id = `${wrapperId}-table`;
+attributes.id = table.id + '-component';
 
 classes.push(prefix + '-table');
 %>

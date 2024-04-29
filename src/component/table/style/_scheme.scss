@@ -17,11 +17,13 @@
         }
 
         &__content {
-            table {
-                tbody {
-
+            #{ns(cell)} {
+                &__selected {
+                    @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                 }
+            }
 
+            table {
                 thead {
                     th {
                         @include color.background(alt grey, (legacy: $legacy, hover: true));
@@ -41,21 +43,6 @@
                 }
 
                 tbody {
-                    #{ns(cell)} {
-                        &__selected {
-                            @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                        }
-
-                        &__row--header {
-                            @include color.background(alt grey, (legacy: $legacy));
-                            @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
-                        }
-
-                        &__actionable {
-                            @include color.background(default grey, (legacy: $legacy, hover: true));
-                        }
-                    }
-
                     tr {
                         &:not(:has(table)) {
                             &:hover {
@@ -66,6 +53,7 @@
                         }
 
                         &[aria-selected="true"] {
+                            th,
                             td {
                                 @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
                             }
@@ -83,13 +71,18 @@
                             @include color.background-image((border contrast grey), (legacy: $legacy));
                         }
                     }
+
+                    th {
+                        @include color.background(alt grey, (legacy: $legacy));
+                        @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
+                    }
                 }
             }
         }
 
         &__shadow--left {
             #{ns(table__content)} {
-                #{ns(cell__fixed--last)} {
+                #{ns(cell__fixed)} {
                     @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
 
                     &[scope='col'] {
@@ -98,10 +91,8 @@
                 }
 
                 thead {
-                    #{ns(cell__fixed--last)} {
-                        &#{ns(cell__row--header)} {
-                            @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
-                        }
+                    #{ns(cell__fixed)} {
+                        @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
                     }
                 }
             }

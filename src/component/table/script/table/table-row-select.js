@@ -26,8 +26,7 @@ class TableRowSelect extends api.core.Instance {
     this.isChecked = !this._isChecked;
   }
 
-  toggleRowSelection (value) {
-    if (!this.node.closest('td')) return;
+  toggleRowSelection () {
     this.ascend(TableEmission.ROW_SELECT, this);
     this.node.closest(TableSelector.ROW).setAttribute('aria-selected', this.isChecked);
   }

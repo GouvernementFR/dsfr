@@ -7,12 +7,13 @@ subdir:
 
 sample:
   bordered: Tableau avec bordures verticales
-  cellCollapsed: Tableau cellules fusionnées
-  complex: Tableau complexe
+  cellCollapsed: Tableau comportant des cellules fusionnées (complexe)
+  miscellaneous: Tableau comportant différents types de contenus
   doubleEntry: Tableau à double entrée
-  expandable: Tableau repliable
+  expandable: Tableau repliable Simple
+  expandableComplex: Tableau repliable Complexe
   selectable: Tableau sélectionnable
-  simple: Tableau simple
+  default: Tableau par défaut
   sm: Tableau SM
   lg: Tableau LG
 
@@ -28,6 +29,7 @@ data:
       select: Selectionner
       selectAll: Tout selectionner
       selectRow: Selectionner toute la ligne
+    collapsed: Exemple de cellule fusionnée
     doubleEntry: heure
     download:
       detail: JPG – 61,88 Ko

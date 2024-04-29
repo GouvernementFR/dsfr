@@ -1,0 +1,18 @@
+<%
+const table = locals.table || {};
+
+const tbodyList = JSON.parse(include('./data-tbody-list.json.ejs'));
+const tbody = [];
+
+tbodyList.forEach((row, index) => {
+    const tr = [];
+    row.forEach((td) => {
+        tr.push({
+            content: td
+        });
+    });
+    tbody.push(tr);
+});
+%>
+
+<%- JSON.stringify(tbody); %>

@@ -7,6 +7,7 @@ class TableColSelect extends api.core.Instance {
   }
 
   init () {
+    this.addDescent(TableEmission.ROW_SELECT, this.toggleRowSelection.bind(this));
     this.listenClick();
     this._isChecked = this.isChecked;
     if (this._isChecked) this.toggleColSelection(this._isChecked);
@@ -27,7 +28,20 @@ class TableColSelect extends api.core.Instance {
 
   toggleColSelection (value) {
     const index = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
+    const colHeaderCell = this.node.closest('th');
+    if (colHeaderCell) {
+      colHeaderCell.classList.remove('fr-cell__selected');
+      if (this.isChecked) colHeaderCell.classList.add('fr-cell__selected');
+    }
     this.ascend(TableEmission.COL_SELECT, { index, value });
+  }
+
+  toggleRowSelection (row) {
+    const colIndex = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
+    if (colIndex === 0 && this.node.checked && !row.isChecked) {
+      this._isChecked = false;
+      this.node.checked = false;
+    }
   }
 }
 

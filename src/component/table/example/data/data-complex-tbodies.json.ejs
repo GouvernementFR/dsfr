@@ -1,0 +1,53 @@
+<%
+const table = locals.table || {};
+const rows = table.rows || {};
+const tbodyList = JSON.parse(include('./data-tbody-list.json.ejs'));
+const tbody = [];
+
+const getButton = (button) => include('../partials/getButton.ejs', {button});
+const getSrOnlyCell = (content) => `<span class="${prefix}-sr-only">${content}</span>`;
+const getTbody = (tbodyList) => {
+    const tbody = [];
+    tbodyList.forEach((row, index) => {
+        const tr = [];
+        row.forEach((td) => {
+            tr.push({
+                content: td
+            });
+        });
+        tbody.push(tr);
+    });
+    return tbody;
+};
+
+const firstTbody = getTbody(tbodyList);
+firstTbody.forEach((row, index) => {
+    row.unshift({
+        classes: [`${prefix}-cell__fixed`],
+        content: getButton({id: uniqueId('table-action-button'), label: `${getText('data.cell.action.expandRow', 'table')}`, classes:[`${prefix}-btn--expand`], attributes: {'aria-controls': index === 2 ? `${table.id}-tbody-1` : `${table.id}-row-key-${index + 2}`, 'aria-expanded': `${rows[index].expandable}`}})
+    });
+});
+const collapsedRow = [
+    {
+        classes: [`${prefix}-cell__fixed`],
+        content: getSrOnlyCell(getText('data.cell.action.empty', 'table'))
+    },
+    {
+        attributes: {colspan: 5},
+        content: getText('data.cell.collapsed', 'table')
+    }
+]
+firstTbody.splice(1, 0, collapsedRow);
+
+const secondTbody = getTbody(tbodyList);
+secondTbody.forEach((row, index) => {
+    row.unshift({
+        classes: [`${prefix}-cell__fixed`],
+        content: getSrOnlyCell(getText('data.cell.action.empty', 'table'))
+    });
+});
+
+const tbodies = [firstTbody, secondTbody];
+%>
+
+<%- JSON.stringify(tbodies); %>
