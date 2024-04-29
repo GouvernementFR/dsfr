@@ -39,8 +39,10 @@ class TableColSelect extends api.core.Instance {
   toggleRowSelection (row) {
     const colIndex = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
     if (colIndex === 0 && this.node.checked && !row.isChecked) {
+      const colHeaderCell = this.node.closest('th');
       this._isChecked = false;
       this.node.checked = false;
+      if (colHeaderCell) colHeaderCell.classList.remove('fr-cell__selected');
     }
   }
 }
