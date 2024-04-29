@@ -9,10 +9,15 @@
 #{selector.ns(artwork)} {
 
   &-background,
-  &-motif,
-  &-decorative {
+  &-motif {
     @include preference.forced-colors {
       fill: grayText;
+    }
+  }
+
+  &-decorative {
+    @include preference.forced-colors {
+      fill: none;
     }
   }
 

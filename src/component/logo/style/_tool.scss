@@ -5,6 +5,7 @@
 
 @use "sass:math";
 @use 'module/spacing';
+@use 'module/preference';
 
 @mixin logo-size($size) {
   $font-size: spacing.space(map-get($logo-sizes, $size));
@@ -29,6 +30,22 @@
 
     @at-root #{ns-attr(theme, 'dark')} #{&} {
       background-position: #{-2.625 * $font-size} 100%;
+    }
+
+    @media (prefers-color-scheme: dark) and (forced-colors: active) {
+      background-position: #{-2.625 * $font-size} 100%;
+
+      @at-root #{ns-attr(theme, 'dark')} #{&} {
+        background-position: #{-2.625 * $font-size} 100%;
+      }
+    }
+
+    @media (prefers-color-scheme: light) and (forced-colors: active) {
+      background-position: 0 calc(100% + #{1.875 * $font-size});
+
+      @at-root #{ns-attr(theme, 'dark')} #{&} {
+        background-position: 0 calc(100% + #{1.875 * $font-size});
+      }
     }
   }
 }
