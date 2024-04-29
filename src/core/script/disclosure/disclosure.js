@@ -100,6 +100,7 @@ class Disclosure extends Instance {
 
   disclose (withhold) {
     if (this.isDisclosed === true || !this.isEnabled) return false;
+    this._latestActiveElement = document.activeElement;
     this._isPristine = false;
     this.isDisclosed = true;
     if (!withhold && this.group) this.group.current = this;
@@ -166,6 +167,7 @@ class Disclosure extends Instance {
 
   focus () {
     if (this._primaryButtons.length > 0) this._primaryButtons[0].focus();
+    else if (this._latestActiveElement) this._latestActiveElement.focus();
   }
 
   get primaryButtons () {
@@ -182,7 +184,8 @@ class Disclosure extends Instance {
     this._isRetrievingPrimaries = false;
     this._primaryButtons = this._electPrimaries(this.buttons);
 
-    if (this._hasRetrieved || this._primaryButtons.length === 0) return;
+    if (this._hasRetrieved) return;
+    if (this._primaryButtons.length === 0 && this.type.requirePrimaryButton) return;
     this.retrieved();
     this._hasRetrieved = true;
 
@@ -218,7 +221,7 @@ class Disclosure extends Instance {
   }
 
   applyAbility (withhold = false) {
-    const isEnabled = !this._primaryButtons.every(button => button.isDisabled);
+    const isEnabled = !this.type.requirePrimaryButton || (!this._primaryButtons.every(button => button.isDisabled));
 
     if (this.isEnabled === isEnabled) return;
 
