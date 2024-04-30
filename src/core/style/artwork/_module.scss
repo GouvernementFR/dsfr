@@ -1,0 +1,22 @@
+////
+/// Core Module : Artwork
+/// @group core
+////
+
+@use 'module/selector';
+
+#{selector.ns(artwork)} {
+  fill: none;
+  stroke-width: 2;
+  transition: stroke-dashoffset 1.5s;
+  stroke-dasharray: 80;
+  stroke-dashoffset: 0;
+
+  &--sm {
+    stroke-width: 2.25;
+  }
+
+  &--lg {
+    stroke-width: 1.5;
+  }
+}
