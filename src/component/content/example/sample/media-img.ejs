@@ -6,7 +6,7 @@ const imgSrc = content.img  && content.img.src || 'img/placeholder.16x9.png';
 let data = {
   img: imgData(imgSrc, 'unknown', ratio ? ratio : '16x9'),
   caption: content.img && content.img.caption || 'Description / Source',
-  link: content.img && content.img.link || 'Label lien',
+  link: content.img && content.img.link || 'Libellé lien',
   id: content.id || uniqueId('media'),
   ...content
 };
