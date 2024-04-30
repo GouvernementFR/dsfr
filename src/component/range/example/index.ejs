@@ -22,4 +22,8 @@
 
 <%- sample(getText('sample.disabled', 'range'), './sample/range.ejs', { range: {disabled: true, min: 0, max: 100, value: 50}}, true); %>
 
+<%- sample(getText('sample.step-disabled', 'range'), './sample/range-step.ejs', { range: {disabled: true, min: 0, step: 10, max: 100, value: 50}}, true); %>
+
+<%- sample(getText('sample.double-disabled', 'range'), './sample/range-double.ejs', { range: {disabled: true, min: 0, max: 100, value: 20, value2: 80}}, true); %>
+
 <%- sample(getText('sample.error', 'range'), './sample/range.ejs', { range: {error: true, min: 0, max: 100, value: 50}}, true); %>
