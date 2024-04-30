@@ -7,19 +7,22 @@ subdir:
 
 sample:
   bordered: Tableau avec bordures verticales
+  captionBottom: Tableau caption Bottom
   cellCollapsed: Tableau comportant des cellules fusionnées (complexe)
-  miscellaneous: Tableau comportant différents types de contenus
+  default: Tableau par défaut
   doubleEntry: Tableau à double entrée
   expandable: Tableau repliable Simple
-  expandableComplex: Tableau repliable Complexe
-  selectable: Tableau sélectionnable
-  default: Tableau par défaut
-  sm: Tableau SM
   lg: Tableau LG
+  miscellaneous: Tableau comportant différents types de contenus
+  noCaption: Tableau caption invisible
+  selectable: Tableau sélectionnable
+  sm: Tableau SM
 
 data:
-  caption: Caption du tableau (accessibilité)
-  captionLarge: Caption long du tableau (accessibilité) Repellat natus illo omnis nulla nostrum ut doloremque ipsam voluptas officiis cumque porro.
+  caption:
+    detail: 'Emploi du temps horaire des Groupes 1 et 2, le matin des jours de la semaine ouvrée (Lundi au Vendredi) : <ul> <li>la première colonne représente le planning de la journée de Lundi pour les groupes 1 et 2,</li> <li>la deuxième colonne représente le planning de la journée de Mardi pour les groupes 1 et 2,</li> <li>la troisième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 1,</li> <li>la quatrième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 2,</li> <li>la cinquième colonne représente le planning de la journée de Vendredi pour les groupes 1 et 2.</li> </ul>'
+    default: Caption du tableau (accessibilité)
+    large: Caption long du tableau (accessibilité) Repellat natus illo omnis nulla nostrum ut doloremque ipsam voluptas officiis cumque porro.
   cell:
     action:
       button: Label bouton
@@ -30,10 +33,10 @@ data:
       selectAll: Tout selectionner
       selectRow: Selectionner toute la ligne
     collapsed: Exemple de cellule fusionnée
-    doubleEntry: heure
     download:
       detail: JPG – 61,88 Ko
       lable: Téléchargement
+    hours: Horaire
     label: Label par défaut
     number: 30,00&nbsp;€
     text: Texte par défaut

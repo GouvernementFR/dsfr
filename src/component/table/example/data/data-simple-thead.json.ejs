@@ -1,15 +1,7 @@
 <%
-const table = locals.table || {};
-const theadList = JSON.parse(include('./data-thead-list.json.ejs'));
-const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkbox});
-const thead = [];
-
-theadList.forEach((th, index) => {
-    thead.push({
-        attributes: {scope: 'col'},
-        content: th
-    });
-});
+const thead = [
+    [{content: 'Name'}, {content: 'Age'}, {content: 'Num'}, {content: 'ID'}, {content: 'Address'}]
+];
 %>
 
 <%- JSON.stringify(thead); %>

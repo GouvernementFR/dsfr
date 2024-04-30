@@ -1,0 +1,35 @@
+<%
+const thead = JSON.parse(include('./data-collapsed-thead-list.json.ejs'));
+const tbodies = [JSON.parse(include('./data-collapsed-tbody-list.json.ejs'))];
+
+thead.forEach((row, rowIndex) => {
+    row.forEach((th, thIndex) => {
+        th.attributes = {
+            ...th.attributes,
+            id: `collapsed-thead-${rowIndex}-col-${thIndex}`
+        };
+    });
+});
+
+tbodies.forEach((tbody) => {
+    tbody.forEach((row, index) => {
+        row.unshift({
+            tag: 'th',
+            attributes: {
+                id: `collapsed-row-${index}`,
+                headers: 'collapsed-thead-0-col-0'
+            },
+            classes: [`${prefix}-cell__fixed`],
+            content:  `${8 + index}h`
+        });
+    });
+});
+
+const table = {
+    thead,
+    tbodies
+};
+
+%>
+
+<%- JSON.stringify(table); %>

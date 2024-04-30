@@ -1,23 +1,35 @@
+<%#
+# paramètres Thead
+
+* thead.table (object, required): tableau de données du tableau
+    ** thead.table.thead (array, required): tableau de données du tbody à deux dimensions [row][col]
+        *** thead.table.thead[row][col].content (string, required): contenu de la cellule
+        *** thead.table.thead[row][col].classes (array, optional): classes supplémentaires de la cellule
+        *** thead.table.thead[row][col].attributes (array, optional): attributs supplémentaires de la cellule
+    ** thead.table.attributes (object, optional): attributs supplémentaires du thead
+%>
+
 <% eval(include('../../../../core/index.ejs'));
 
 let table = locals.table || {};
-let classes = table.classes || [];
 const attributes = table.attributes || {};
 attributes.id = table.id + '-thead';
 %>
 
-<thead <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
-    <tr>
-        <% if (table.thead && table.thead.length) { %>
-            <% for (let col = 0; col < table.thead.length; col++) { %>
-                <%
-                    let colClasses = table.thead[col].classes || [];
-                    const colAttributes = table.thead[col].attributes || {};
-                %>
-                <th <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
-                    <%- table.thead[col].content %>
-                </th>
+<thead <%- includeAttrs(attributes) %>>
+    <% for (let row = 0; row < table.thead.length; row++) { %>
+        <tr>
+            <% if (table.thead[row] && table.thead[row].length) { %>
+                <% for (let col = 0; col < table.thead[row].length; col++) { %>
+                    <%
+                        let colClasses = table.thead[row][col].classes || [];
+                        const colAttributes = table.thead[row][col].attributes || {};
+                    %>
+                    <th <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
+                        <%- table.thead[row][col].content %>
+                    </th>
+                <% } %>
             <% } %>
-        <% } %>
-    </tr>
+        </tr>
+    <% } %>
 </thead>

@@ -1,3 +1,19 @@
+<%#
+# paramètres Table
+
+* table.table (object, required): tableau de données du tableau
+
+* table.caption (string, required) : titre du tableau
+
+* table.captionDetail (string, optional) : description précise du tableau
+
+* table.id (string) : id du tableau
+
+* table.classes (array, optional): classes supplémentaires du tableau
+
+* table.attributes (object, optional): attributs supplémentaires du tableau
+%>
+
 <% eval(include('../../../../core/index.ejs'));
 
 let table = locals.table || {};
@@ -8,7 +24,12 @@ attributes.id = table.id || uniqueId('-table');
 
 <table <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
     <% if (table.caption !== undefined) { %>
-        <caption><%= table.caption %></caption>
+        <caption>
+            <%= table.caption %>
+        <% if (table.captionDetail !== undefined) { %>
+            <div class="<%= prefix %>-table__caption__desc"><%- table.captionDetail %></div>
+        <% } %>
+        </caption>
     <% } %>
     <%- include('./thead.ejs', {thead: table}); %>
     <% if (table.tbodies) { %>
