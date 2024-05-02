@@ -3,6 +3,8 @@
 /// @group card
 ////
 
+@use 'module/preference';
+
 #{ns(card)} {
   &__content {
     order: 1;
@@ -23,6 +25,11 @@
       }
       @include icon-forced-color(LinkText, true, after);
 
+      @include preference.forced-colors {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+
       &:not([href]) {
         @include icon-forced-color(grayText, null, after);
       }
@@ -30,6 +37,7 @@
 
     @include target-blank {
       @include icon(external-link-line, sm, after);
+      @include icon-forced-color(LinkText, null, after);
     }
   }
 
@@ -83,5 +91,11 @@
 
   &#{ns(enlarge-link)}:not(&--no-icon) &__content {
     @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 2v (padding end) + 4v (marge texte icon)
+  }
+
+  &#{ns(enlarge-link)} &__title a {
+    @include preference.forced-colors {
+      text-decoration: none;
+    }
   }
 }

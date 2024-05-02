@@ -89,6 +89,13 @@
     }
 
     a {
+      @include preference.forced-colors {
+        @include preference.forced-colors {
+          text-decoration: underline;
+          text-underline-offset: 5px;
+        }
+      }
+
       @include before {
         background-position: 0 100%;
         background-size: 100% spacing.space(1v);
@@ -108,6 +115,7 @@
 
     @include target-blank {
       @include icon(external-link-line, sm, after);
+      @include icon-forced-color(LinkText, null, after);
     }
   }
 
@@ -143,5 +151,11 @@
 
   &#{ns(enlarge-link)}:not(&--no-icon) &__content {
     @include padding-bottom(10v);
+  }
+
+  &#{ns(enlarge-link)} &__title a {
+    @include preference.forced-colors {
+      text-decoration: none;
+    }
   }
 }

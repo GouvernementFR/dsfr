@@ -17,18 +17,20 @@
 
       @include preference.forced-colors {
         &:not(:disabled) {
-          background-color: highlight;
-          color: highlightText;
-          @include icon-forced-color(highlightText);
+          color: highlight;
+          border: 1px solid highlight;
+          border-top: 4px solid highlight;
+          @include icon-forced-color(highlight);
+          
+          @include after {
+            display: none
+          }
         }
       }
 
       @include icon(checkbox-circle-line, sm, after) {
         @include absolute(4px, 0);
         @include margin(-2v);
-        @include preference.forced-colors {
-          display: none
-        }
       }
 
       &#{ns(tag)}--sm {
@@ -56,6 +58,10 @@
 
     @include icon-forced-color(ButtonText, true, after);
 
+    &:disabled {
+      @include icon-forced-color(grayText, null, after);
+    }
+
     &#{ns(tag)}--sm {
       @include icon(null, xs, after) {
         @include margin-right(-0.75v);
@@ -63,6 +69,10 @@
       }
 
       @include icon-forced-color(ButtonText, null, after);
+
+      &:disabled {
+        @include icon-forced-color(grayText, null, after);
+      }
     }
   }
 }
