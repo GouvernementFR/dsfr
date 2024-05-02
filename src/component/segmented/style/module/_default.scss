@@ -66,20 +66,22 @@
       align-items: center;
       border-radius: #{spacing.space(1v)};
       white-space: nowrap;
+      @include icon-forced-color(buttonText, null, before);
     }
 
     &:checked {
       &:focus + label {
         @include preference.forced-colors {
-          outline: 3px solid;
+          outline: 4px solid;
           outline-offset: 0px;
         }
       }
 
       + label {
         @include preference.forced-colors {
-          outline: 1px solid;
+          outline: 2px solid;
           color: highlight;
+          @include icon-forced-color(highlight, null, before);
         }
       }
 
@@ -87,6 +89,7 @@
         + label {
           @include preference.forced-colors {
             color: grayText;
+            @include icon-forced-color(grayText, null, before);
           }
         }
       }

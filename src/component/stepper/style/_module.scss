@@ -51,7 +51,7 @@
 
     @include preference.forced-colors {
       forced-color-adjust: none;
-      background-image: repeating-linear-gradient(to right, highlight 0, highlight var(--active-inner), transparent var(--active-inner), transparent var(--active-outer)), repeating-linear-gradient(to right, canvasText 0, canvasText var(--default-inner), transparent var(--default-inner), transparent var(--default-outer));
+      background-image: repeating-linear-gradient(to right, highlight 0, highlight var(--active-inner), transparent var(--active-inner), transparent var(--active-outer)), repeating-linear-gradient(to right, grayText 0, grayText var(--default-inner), transparent var(--default-inner), transparent var(--default-outer));
     }
   }
 }

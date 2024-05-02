@@ -61,6 +61,7 @@
 
       @include margin-right(-6v, md);
     }
+    @include icon-forced-color(ButtonText, true, after);
   }
 
   &[aria-expanded="true"] {

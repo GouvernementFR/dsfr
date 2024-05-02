@@ -42,6 +42,11 @@
 
   #{ns(card__title a)} {
     @include icon(download-line, null, after);
+    @include icon-forced-color(LinkText, null, after);
+
+    &:not([href]) {
+      @include icon-forced-color(grayText, null, after);
+    }
   }
 
   &#{ns(enlarge-link)} {

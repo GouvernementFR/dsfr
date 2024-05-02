@@ -54,11 +54,15 @@
       @include margin-right(-1v);
     }
 
+    @include icon-forced-color(ButtonText, true, after);
+
     &#{ns(tag)}--sm {
       @include icon(null, xs, after) {
         @include margin-right(-0.75v);
         @include margin-left(0.5v);
       }
+
+      @include icon-forced-color(ButtonText, null, after);
     }
   }
 }

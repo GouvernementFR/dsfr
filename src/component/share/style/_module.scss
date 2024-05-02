@@ -46,14 +46,14 @@
 
       a[href]#{ns(btn)} {
         @include has-not-icon {
-          @include icon-forced-color(LinkText, true, before);
+          @include icon-forced-color(LinkText, null, before);
         }
       }
 
       #{ns(btn)} {
         @include disabled.selector((can-be-link: true)) {
           @include has-not-icon {
-            @include icon-forced-color(GrayText, true, before);
+            @include icon-forced-color(GrayText, null, before);
           }
         }
       }

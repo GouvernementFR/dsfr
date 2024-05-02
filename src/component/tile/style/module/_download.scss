@@ -6,5 +6,10 @@
 #{ns(tile)}#{ns(tile--download)} {
   #{ns(tile__title a)} {
     @include icon(download-line, null, after);
+    @include icon-forced-color(LinkText, null, after);
+    
+    &:not([href]) {
+      @include icon-forced-color(grayText, null, after);
+    }
   }
 }

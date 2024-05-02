@@ -98,6 +98,12 @@
       @include icon(arrow-right-line, sm, after) {
         @include margin-left(2v);
       }
+
+      @include icon-forced-color(LinkText, true, after);
+
+      &:not([href]) {
+        @include icon-forced-color(grayText, null, after);
+      }
     }
 
     @include target-blank {
