@@ -1,0 +1,19 @@
+<%
+const table = locals.table || {};
+const dataSimple = JSON.parse(include('../data/data-simple.json.ejs', { table: table.table }));
+
+const simpleThead = dataSimple.table.thead;
+simpleThead.forEach(thead => {
+    thead.forEach((row, index) => {
+        const sizes = ['sm', 'xs', 'lg', 'md'];
+        row.classes = sizes[index] ? [`${prefix}-col__${sizes[index]}`] : [];
+    });
+});
+
+const data = {
+    ...table,
+    ...dataSimple
+}
+%>
+
+<%- include('./table-default', {table: data}); %>

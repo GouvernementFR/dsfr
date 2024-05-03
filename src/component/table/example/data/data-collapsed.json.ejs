@@ -1,6 +1,6 @@
 <%
-const thead = JSON.parse(include('./data-collapsed-thead-list.json.ejs'));
-const tbodies = [JSON.parse(include('./data-collapsed-tbody-list.json.ejs'))];
+const thead = JSON.parse(include('./data-collapsed-thead.json.ejs'));
+const tbodies = [JSON.parse(include('./data-collapsed-tbody.json.ejs'))];
 
 thead.forEach((row, rowIndex) => {
     row.forEach((th, thIndex) => {

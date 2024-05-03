@@ -7,7 +7,7 @@
 
 #{ns(table)} {
     &__footer {
-        @include media-query.respond-from(md) {
+        @include media-query.respond-from(lg) {
             @include display-flex(row, center, space-between, nowrap);
 
             #{ns(select-group)} {
@@ -44,7 +44,7 @@
 
             @include display-flex(row, center, center);
 
-            @include media-query.respond-from(md) {
+            @include media-query.respond-from(lg) {
                 display: block;
                 @include padding-left(2v);
                 @include padding-right(2v);
@@ -54,7 +54,7 @@
                 @include margin-top(3v);
 
                 &__list {
-                    @include media-query.respond-from(md) {
+                    @include media-query.respond-from(lg) {
                         flex-wrap: nowrap;
                     }
                 }

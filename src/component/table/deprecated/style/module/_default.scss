@@ -8,6 +8,10 @@
     @include size(100%, 0);
   }
 
+  &:not(:has(#{ns(table__container)})) {
+    @include padding-top(var(--table-offset));
+  }
+
   &:not(#{ns(table--no-scroll)}) {
     & > table {
       width: 100%;

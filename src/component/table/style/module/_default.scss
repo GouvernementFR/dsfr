@@ -16,16 +16,11 @@
     @include relative;
     @include margin-bottom(10v);
 
-    &:not(:has(#{ns(table__container)})) {
-        @include padding-top(var(--table-offset));
-    }
-
     &__wrapper {
-        width: 100%;
+        position: relative;
         @include padding(1px 1px 0);
         @include margin(-1px 0);
 
-        position: relative;
         @include before('', block) {
             @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
             pointer-events: none;
@@ -33,7 +28,6 @@
     }
 
     &__container {
-        width: 100%;
         overflow: auto;
         @include padding-top(var(--table-offset));
     }
@@ -120,6 +114,15 @@
             border-spacing: 0;
 
             thead {
+                position: relative;
+
+                @include before('', block) {
+                    @include absolute(inherit, 0, 0 , 0, 100%, 1px);
+                    pointer-events: none;
+                    // background-color: red;
+                    z-index: 1;
+                }
+
                 th {
                     font-weight: font-weight(bold);
                 }
@@ -219,6 +222,9 @@
     &#{ns-attr(js-table, true)} {
         caption {
             @include absolute(0);
+        }
+
+        #{ns(table__wrapper)} {
         }
     }
 

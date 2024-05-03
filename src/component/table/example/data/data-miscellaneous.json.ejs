@@ -3,8 +3,8 @@ const table = locals.table || {};
 table.id = uniqueId('table');
 
 const actionCellEmpty = `<span class="${prefix}-sr-only">${getText('data.cell.action.empty', 'table')}</span>`;
-const getTextCell = (tag = 'span') => `<${tag} class="${prefix}-cell__desc">${getText('data.cell.text', 'table')}</${tag}>`;
-const getTitleCell = (tag = 'span') => `<${tag} class="${prefix}-cell__title">${getText('data.cell.title', 'table')}</${tag}>`;
+const getTextCell = (tag = 'span', classes = `${prefix}-cell__desc`) => `<${tag} class="${classes}">${getText('data.cell.text', 'table')}</${tag}>`;
+const getTitleCell = (tag = 'span', classes = `${prefix}-cell__title`) => `<${tag} class="${classes}">${getText('data.cell.title', 'table')}</${tag}>`;
 
 const getBadge = (badge) => include('../../../badge/template/ejs/badge.ejs', {badge});
 const getButton = (button) => include('../partials/getButton.ejs', {button});
@@ -47,7 +47,7 @@ const thead = [
       content: getButton({id: uniqueId('table-thead-sort-asc-desc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})
     },
     {
-      content: `<div class="${prefix}-cell__inline">${getTextCell()} ${getButton({label: getText('data.cell.text', 'table'), classes: [`${prefix}-btn--tooltip`], tooltip: {id: uniqueId('table-thead-tooltip'), content: lorem()}})}</div>`
+      content: `${getTextCell()} ${getButton({label: getText('data.cell.text', 'table'), classes: [`${prefix}-ml-2v`, `${prefix}-btn--tooltip`], tooltip: {id: uniqueId('table-thead-tooltip'), content: lorem()}})}`
     },
     {
       classes: [`${prefix}-cell__sm`, `${prefix}-cell__center`],
@@ -69,7 +69,7 @@ const thead = [
     },
     {
       classes: [`${prefix}-cell__sm`],
-      content: getIcon({name: 'arrow-right-s-line', size: 'sm', classes: [`${prefix}-mr-1v`]}) + getText('data.cell.text', 'table')
+      content: getIcon({name: 'arrow-right-s-line', size: 'sm', classes: [`${prefix}-mr-2v`]}) + getText('data.cell.text', 'table')
     }
   ]
 ];
@@ -87,16 +87,16 @@ for(let r = 0; r < table.rows.length; r++) {
       content: getText('data.cell.text', 'table')
     },
     {
-      content: getBadge({type: 'success', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mr-1v`], size: 'sm'}) + getText('data.cell.text', 'table')
+      content: getBadge({type: 'success', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mr-2v`], size: 'sm'}) + getText('data.cell.text', 'table')
     },
     {
-      content: getBadge({type: 'info', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mr-1v`], size: 'sm'}) + getTitleCell('div') + getTextCell('div')
+      content: getBadge({type: 'info', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mb-2v`], size: 'sm'}) + getTitleCell('div', `${prefix}-cell__title ${prefix}-mb-2v`) + getTextCell('div')
     },
     {
       content: getText('data.cell.text', 'table')
     },
     {
-      content: getBadge({type: 'error', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mr-1v`], size: 'sm'}) + getTitleCell('div') + getTextCell('div')
+      content: getBadge({type: 'error', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mb-2v`], size: 'sm'}) + getTitleCell('div', `${prefix}-cell__title ${prefix}-mb-2v`) + getTextCell('div')
     },
     {
       content: getText('data.cell.text', 'table')

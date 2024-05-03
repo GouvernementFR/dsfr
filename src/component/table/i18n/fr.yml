@@ -8,12 +8,18 @@ subdir:
 sample:
   bordered: Tableau avec bordures verticales
   captionBottom: Tableau caption Bottom
+  columnSizes:
+    subtitle: En ajoutant les classes <code>fr-col__sm, fr-col__xs, fr-col__lg ou fr-col__md</code> sur les cellules d'en-tête du tableau
+    title: Tableau comportant des colonnes de tailles minimales fixées
   cellCollapsed: Tableau comportant des cellules fusionnées (complexe)
   default: Tableau par défaut
   doubleEntry: Tableau à double entrée
   expandable: Tableau repliable Simple
   lg: Tableau LG
   miscellaneous: Tableau comportant différents types de contenus
+  multiline:
+    subtitle: En ajoutant la classe <code>fr-cell__multiline</code> sur l'element <code>table</code>, une ligne ou une cellule du tableau
+    title: Tableau avec retours à la ligne automatiques
   noCaption: Tableau caption invisible
   selectable: Tableau sélectionnable
   sm: Tableau SM
@@ -55,7 +61,7 @@ data:
   actionBar:
     buttons:
       label: Action groupée
-    detail: 1 ligne sélectionnée
+    detail: 1 ligne sélectionnée et 1 colonne selectionnée
     segmented:
       list: Liste
       table: Tableau
