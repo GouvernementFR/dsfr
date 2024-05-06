@@ -68,14 +68,12 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       &:not(:first-child) {
         @include icon(arrow-right-s-line, sm, before) {
           @include margin-x(1v);
-          vertical-align: -0.0625em;
         }
       }
     }
   }
 
   &__link {
-    vertical-align: top;
     position: relative;
     @include link-underline;
     @include disable-tint;
