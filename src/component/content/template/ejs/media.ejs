@@ -94,6 +94,7 @@ switch(type) {
         <% } %>
     </figcaption>
 <% } %>
+</figure>
 
 <%
 if (content.transcription != undefined) {
@@ -101,5 +102,3 @@ if (content.transcription != undefined) {
 %>
     <%- include('../../../transcription/template/ejs/transcription', {transcription: data}); %>
 <% } %>
-
-</figure>
