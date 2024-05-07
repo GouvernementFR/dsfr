@@ -35,6 +35,8 @@
                 left: 0;
 
                 #{ns(checkbox-group)} {
+                    @include margin-right(2v);
+
                     & #{ns(label)} {
                         top: #{space(.5v)};
                     }

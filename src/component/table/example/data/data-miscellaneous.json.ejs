@@ -23,7 +23,7 @@ const thead = [
         role: 'columnheader'
       },
       classes: [`${prefix}-cell__fixed`, `${prefix}-cell__col--select`],
-      content: getTitleCell()
+      content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}}) + getText('data.cell.title', 'table')
     },
     {
       content: getTextCell()
