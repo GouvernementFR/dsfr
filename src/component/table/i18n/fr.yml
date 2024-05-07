@@ -41,7 +41,7 @@ data:
     collapsed: Exemple de cellule fusionnée
     download:
       detail: JPG – 61,88 Ko
-      lable: Téléchargement
+      label: Lien de Téléchargement
     hours: Horaire
     label: Libellé par défaut
     number: 30,00&nbsp;€

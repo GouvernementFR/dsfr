@@ -81,6 +81,16 @@
                     white-space: normal;
                 }
             }
+
+            &--sort {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                #{ns(btn--sort)} {
+                    @include margin-left(4v);
+                }
+            }
         }
 
         #{ns(col)} {

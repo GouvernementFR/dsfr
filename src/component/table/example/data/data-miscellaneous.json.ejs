@@ -23,14 +23,14 @@ const thead = [
         role: 'columnheader'
       },
       classes: [`${prefix}-cell__fixed`, `${prefix}-cell__col--select`],
-      content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}}) + getText('data.cell.title', 'table')
+      content: getTitleCell()
     },
     {
       content: getTextCell()
     },
     {
-      classes: [`${prefix}-col__lg`, `${prefix}-cell__col--select`],
-      content: getCheckbox({label: getText('data.cell.label', 'table')})
+      classes: [`${prefix}-col__lg`],
+      content: getTitleCell() + getTextCell('span', `${prefix}-cell__desc ${prefix}-ml-2v`)
     },
     {
       content: getTitleCell('div') + getTextCell('div')
@@ -39,8 +39,7 @@ const thead = [
       content: getTitleCell()
     },
     {
-      classes: [`${prefix}-cell__col--select`],
-      content: `<div class="${prefix}-cell__inline">${getCheckbox({label: getText('data.cell.label', 'table'), checked: true})} ${getTextCell()}</div>`
+      content: getTitleCell()
     },
     {
       classes: [`${prefix}-cell__center`],
@@ -64,8 +63,7 @@ const thead = [
       content: getText('data.cell.text', 'table')
     },
     {
-      classes: [`${prefix}-cell__col--select`],
-      content: getCheckbox({label: getText('data.cell.label', 'table')}) + getButton({id: uniqueId('table-thead-sort-desc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`, `${prefix}-ml-4v`], attributes: {'aria-sorting': 'desc'}})
+      content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: uniqueId('table-thead-sort-desc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sorting': 'desc'}})}</div>`
     },
     {
       classes: [`${prefix}-cell__sm`],
@@ -119,7 +117,7 @@ for(let r = 0; r < table.rows.length; r++) {
       content: getTag({type: 'clickable', href: '#', label: getText('data.cell.label', 'table')})
     },
     {
-      content: getLink({download: true, href: '/example/img/image.jpg', label: getText('data.cell.download.lable', 'table'), detail: getText('data.cell.download.detail', 'table')})
+      content: getLink({download: true, href: '/example/img/image.jpg', label: getText('data.cell.download.label', 'table'), detail: getText('data.cell.download.detail', 'table')})
     },
     {
       classes: [`${prefix}-cell__sm`],
