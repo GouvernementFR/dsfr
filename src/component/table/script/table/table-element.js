@@ -1,6 +1,5 @@
 import api from '../../api.js';
 import { TableSelector } from './table-selector.js';
-import { TableEmission } from './table-emission.js';
 
 const SCROLL_OFFSET = 0; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
 
@@ -10,7 +9,6 @@ class TableElement extends api.core.Instance {
   }
 
   init () {
-    this.addDescent(TableEmission.COL_HOVER, this.colHover.bind(this));
     this.listen('scroll', this.scroll.bind(this));
     this.content = this.querySelector('tbody');
     this.tableOffsetHeight = 0;
@@ -63,20 +61,6 @@ class TableElement extends api.core.Instance {
 
   dispose () {
     this.isScrolling = false;
-  }
-
-  colHover (col) {
-    const table = this.node.querySelector('table');
-    if (table && col) {
-      const colPosition = col.node.getBoundingClientRect();
-      const tablePosition = table.getBoundingClientRect();
-      const colOffset = colPosition.y - tablePosition.y;
-      const tableOffsetHeight = table.offsetHeight - colOffset;
-
-      if (this.tableOffsetHeight === tableOffsetHeight) return;
-      this.tableOffsetHeight = tableOffsetHeight;
-      this.ascend(TableEmission.TABLE_HEIGHT, tableOffsetHeight);
-    }
   }
 }
 

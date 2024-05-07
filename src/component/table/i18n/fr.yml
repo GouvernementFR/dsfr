@@ -31,7 +31,7 @@ data:
     large: Caption long du tableau (accessibilité) Repellat natus illo omnis nulla nostrum ut doloremque ipsam voluptas officiis cumque porro.
   cell:
     action:
-      button: Label bouton
+      button: Libellé bouton
       empty: Action
       expandRow: Déplier la ligne suivante
       sort: Trier
@@ -43,7 +43,7 @@ data:
       detail: JPG – 61,88 Ko
       lable: Téléchargement
     hours: Horaire
-    label: Label par défaut
+    label: Libellé par défaut
     number: 30,00&nbsp;€
     text: Texte par défaut
     title: Titre par défaut

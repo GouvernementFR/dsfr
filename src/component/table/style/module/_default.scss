@@ -7,7 +7,6 @@
 
 #{ns(table)} {
     --table-offset: #{space(4v)};
-    --table-offset-height: 0;
     --table-offset-width: 0;
     --row-header-cell-width: auto;
 
@@ -119,36 +118,11 @@
                 @include before('', block) {
                     @include absolute(inherit, 0, 0 , 0, 100%, 1px);
                     pointer-events: none;
-                    // background-color: red;
                     z-index: 1;
                 }
 
                 th {
                     font-weight: font-weight(bold);
-                }
-
-                tr {
-                    th {
-                        &:not(#{ns(cell__fixed)}) {
-                            @include relative;
-
-                            &:hover {
-                                &::after {
-                                    position: absolute;
-                                    content: '';
-                                    top: -1px;
-                                    left: -1px;
-                                    height: var(--table-offset-height);
-                                    width: calc(100% + 1px);
-                                    z-index: 2;
-                                    background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
-                                    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-                                    background-position: 100% 100%, 0 0, 100% 0, 100% 0;
-                                    pointer-events: none;
-                                }
-                            }
-                        }
-                    }
                 }
             }
 
