@@ -27,29 +27,14 @@
                             @include color.background(alt grey, (legacy: $legacy, hover: true));
                             @include color.background-image((border plain grey), (legacy: $legacy));
                         }
-
-                        &:hover {
-                            &::after {
-                                @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
-                            }
-                        }
                     }
                 }
 
                 tbody {
                     tr {
-                        &:not(:has(table)) {
-                            &:hover {
-                                &::after {
-                                    @include color.background-image((border default blue-france) (border default blue-france) (border default blue-france) (border default blue-france), (legacy: $legacy));
-                                }
-                            }
-                        }
-
                         &[aria-selected="true"] {
-                            th,
-                            td {
-                                @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+                            &::after {
+                                @include color.background-image((border action-high blue-france) (border action-high blue-france) (border action-high blue-france) (border action-high blue-france), (legacy: $legacy));
                             }
                         }
                     }

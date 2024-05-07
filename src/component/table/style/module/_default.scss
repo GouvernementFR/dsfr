@@ -16,14 +16,8 @@
     @include margin-bottom(10v);
 
     &__wrapper {
-        position: relative;
         @include padding(1px 1px 0);
         @include margin(-1px 0);
-
-        @include before('', block) {
-            @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
-            pointer-events: none;
-        }
     }
 
     &__container {
@@ -128,16 +122,16 @@
 
             tbody {
                 tr {
-                    &:hover {
+                    &[aria-selected="true"] {
                         position: relative;
 
                         &::after {
                             position: absolute;
                             content: '';
-                            top: -1px;
-                            left: -1px;
-                            width: calc(100% + 1px);
-                            height: calc(100% + 1px);
+                            top: -2px;
+                            left: 0;
+                            width: 100%;
+                            height: calc(100% + 2px);
                             z-index: 4;
                             background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
                             background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
@@ -199,6 +193,12 @@
         }
 
         #{ns(table__wrapper)} {
+            position: relative;
+
+            @include before('', block) {
+                @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
+                pointer-events: none;
+            }
         }
     }
 
