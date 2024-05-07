@@ -28,21 +28,14 @@ class TableColSelect extends api.core.Instance {
 
   toggleColSelection (value) {
     const index = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
-    const colHeaderCell = this.node.closest('th');
-    if (colHeaderCell) {
-      colHeaderCell.classList.remove('fr-cell__selected');
-      if (this.isChecked) colHeaderCell.classList.add('fr-cell__selected');
-    }
     this.ascend(TableEmission.COL_SELECT, { index, value });
   }
 
   toggleRowSelection (row) {
     const colIndex = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
     if (colIndex === 0 && this.node.checked && !row.isChecked) {
-      const colHeaderCell = this.node.closest('th');
       this._isChecked = false;
       this.node.checked = false;
-      if (colHeaderCell) colHeaderCell.classList.remove('fr-cell__selected');
     }
   }
 }

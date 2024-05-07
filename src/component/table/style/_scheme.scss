@@ -17,12 +17,6 @@
         }
 
         &__content {
-            #{ns(cell)} {
-                &__selected {
-                    @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
-                }
-            }
-
             table {
                 thead {
                     th {

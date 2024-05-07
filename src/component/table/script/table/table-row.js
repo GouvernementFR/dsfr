@@ -16,9 +16,6 @@ class TableRow extends api.core.Instance {
     if (cellCol.classList.contains('fr-cell__fixed') && cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]')) {
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').checked = !col.value;
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').click();
-    } else {
-      cellCol.classList.remove('fr-cell__selected');
-      if (col.value) cellCol.classList.add('fr-cell__selected');
     }
   }
 }
