@@ -4,6 +4,7 @@
 ////
 
 @use '../../../../../module/media-query';
+@use 'module/color';
 
 #{ns(table)} {
     --table-offset: #{space(4v)};
@@ -33,14 +34,6 @@
             &__fixed {
                 position: sticky;
                 left: 0;
-
-                #{ns(checkbox-group)} {
-                    @include margin-right(2v);
-
-                    & #{ns(label)} {
-                        top: #{space(.5v)};
-                    }
-                }
             }
 
             &__center {
@@ -133,6 +126,46 @@
             }
 
             tbody {
+                tr:first-child[aria-selected=true]:has( + tr:not([aria-selected=true])),
+                tr:not([aria-selected=true]) + tr:last-child[aria-selected=true],
+                tr:not([aria-selected=true]) + tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
+                    &::after {
+                        // left-right + top-bottom
+                        background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
+                        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                        background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+                    }
+                }
+
+                tr[aria-selected=true] + tr[aria-selected=true] {
+                    &::after {
+                        // left-right
+                        background-size: 2px 100%, 2px 100%;
+                        background-repeat: no-repeat, no-repeat;
+                        background-position: 0 0, 100% 0;
+                    }
+                }
+
+                tr:first-child[aria-selected=true]:has( + tr[aria-selected=true]),
+                tr:not([aria-selected=true]) + tr[aria-selected=true] {
+                    &::after {
+                        // left-right + top
+                        background-size: 2px 100%, 2px 100%, 100% 2px;
+                        background-repeat: no-repeat, no-repeat, no-repeat;
+                        background-position: 0 0, 100% 0, 100% 0;
+                    }
+                }
+
+                tr[aria-selected=true] + tr:last-child[aria-selected=true],
+                tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
+                    &::after {
+                        // left-right + bottom
+                        background-size: 100% 2px, 2px 100%, 2px 100%;
+                        background-repeat: no-repeat, no-repeat, no-repeat;
+                        background-position: 100% 100%, 0 0, 100% 0;
+                    }
+                }
+
                 tr {
                     &[aria-selected="true"] {
                         position: relative;
@@ -145,10 +178,17 @@
                             width: 100%;
                             height: calc(100% + 2px);
                             z-index: 4;
-                            background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
-                            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-                            background-position: 100% 100%, 0 0, 100% 0, 100% 0;
                             pointer-events: none;
+
+                            // left-right
+                            background-size: 2px 100%, 2px 100%;
+                            background-repeat: no-repeat, no-repeat;
+                            background-position: 0 0, 100% 0;
+
+                            // left-right + top-bottom
+                            // background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
+                            // background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                            // background-position: 100% 100%, 0 0, 100% 0, 100% 0;
                         }
                     }
                 }
@@ -177,6 +217,23 @@
                 & #{ns(label)} {
                     min-height: 1.2rem;
                     font-size: 0.875rem;
+
+                    &::before {
+                        left: #{space(-5v)};
+                    }
+                }
+            }
+        }
+
+        th {
+            #{ns(checkbox-group)} {
+
+                &:has(+ *) {
+                    @include margin-right(2v);
+                }
+
+                & #{ns(label)} {
+                    top: #{space(.5v)};
                 }
             }
         }

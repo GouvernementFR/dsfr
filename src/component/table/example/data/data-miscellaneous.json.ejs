@@ -23,27 +23,21 @@ const thead = [
         role: 'columnheader'
       },
       classes: [`${prefix}-cell__fixed`, `${prefix}-cell__col--select`],
-      content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}}) + getText('data.cell.title', 'table')
+      content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}}) + getTitleCell('span')
     },
     {
-      content: getTextCell()
-    },
-    {
-      classes: [`${prefix}-col__lg`],
-      content: getTitleCell() + getTextCell('span', `${prefix}-cell__desc ${prefix}-ml-2v`)
+      content: getTitleCell()
     },
     {
       content: getTitleCell('div') + getTextCell('div')
     },
     {
-      content: getTitleCell()
-    },
-    {
-      content: getTitleCell()
+      classes: [`${prefix}-col__lg`],
+      content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: uniqueId('table-thead-sort-desc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})}</div>`
     },
     {
       classes: [`${prefix}-cell__center`],
-      content: getButton({id: uniqueId('table-thead-sort-asc-desc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})
+      content: getButton({id: uniqueId('table-thead-sort-asc-desc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sorting': 'desc'}})
     },
     {
       content: `${getTextCell()} ${getButton({label: getText('data.cell.text', 'table'), classes: [`${prefix}-ml-2v`, `${prefix}-btn--tooltip`], tooltip: {id: uniqueId('table-thead-tooltip'), content: lorem()}})}`
@@ -60,10 +54,10 @@ const thead = [
       content: getTextCell()
     },
     {
-      content: getText('data.cell.text', 'table')
+      content: getTitleCell()
     },
     {
-      content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: uniqueId('table-thead-sort-desc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sorting': 'desc'}})}</div>`
+      content: getTitleCell() + getTextCell('span', `${prefix}-cell__desc ${prefix}-ml-2v`)
     },
     {
       classes: [`${prefix}-cell__sm`],
@@ -72,29 +66,25 @@ const thead = [
   ]
 ];
 
-const tbody = new Array(table.rows.length);
-for(let r = 0; r < table.rows.length; r++) {
+const rowsLength = 6;
+const selectedLines = [0, 3, 4];
+const tbody = new Array(rowsLength);
+for(let r = 0; r < rowsLength; r++) {
   tbody[r] = [
     {
       tag: 'th',
       attributes: {scope: 'row'},
       classes: [`${prefix}-cell__fixed`, `${prefix}-cell__row--select`],
-      content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}-${r}`, attributes: {checked: table.rows[r].selected, 'aria-label': `${getText('data.cell.action.selectRow', 'table')} ${getText('data.cell.title', 'table')}`}}) + getText('data.cell.title', 'table')
+      content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}-${r}`, attributes: {checked: selectedLines.includes(r) || undefined, 'aria-label': `${getText('data.cell.action.selectRow', 'table')} ${getText('data.cell.title', 'table')}`}}) + getTitleCell('span')
     },
     {
       content: getText('data.cell.text', 'table')
-    },
-    {
-      content: getBadge({type: 'success', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mr-2v`], size: 'sm'}) + getText('data.cell.text', 'table')
     },
     {
       content: getBadge({type: 'info', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mb-2v`], size: 'sm'}) + getTitleCell('div', `${prefix}-cell__title ${prefix}-mb-2v`) + getTextCell('div')
     },
     {
-      content: getText('data.cell.text', 'table')
-    },
-    {
-      content: getBadge({type: 'error', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mb-2v`], size: 'sm'}) + getTitleCell('div', `${prefix}-cell__title ${prefix}-mb-2v`) + getTextCell('div')
+      content: getBadge({type: 'success', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mr-2v`], size: 'sm'}) + getText('data.cell.text', 'table')
     },
     {
       content: getText('data.cell.text', 'table')

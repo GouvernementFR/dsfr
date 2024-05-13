@@ -61,7 +61,7 @@ data:
   actionBar:
     buttons:
       label: Action groupée
-    detail: 1 ligne sélectionnée et 1 colonne selectionnée
+    detail: 1 ligne sélectionnée
     segmented:
       list: Liste
       table: Tableau

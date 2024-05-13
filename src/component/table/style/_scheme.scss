@@ -32,7 +32,7 @@
 
                 tbody {
                     tr {
-                        &[aria-selected="true"] {
+                        &[aria-selected=true] {
                             &::after {
                                 @include color.background-image((border action-high blue-france) (border action-high blue-france) (border action-high blue-france) (border action-high blue-france), (legacy: $legacy));
                             }
@@ -41,8 +41,6 @@
 
                     th,
                     td {
-                        @include color.text(title grey, (legacy: $legacy));
-
                         @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
                         @include color.background(default grey, (legacy: $legacy, hover: true));
 
