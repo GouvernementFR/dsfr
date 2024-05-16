@@ -2,6 +2,8 @@ import api from '../../../api.js';
 import { Type } from '../../analytics/action/type';
 import { ActionElement } from '../../analytics/action/action-element';
 import { ActioneeEmission } from './actionee-emission';
+import { ActionRegulation } from '../../analytics/action/action-regulation';
+import normalize from '../../analytics/utils/normalize';
 
 const ActionAttributes = {
   RATING: api.internals.ns.attr('analytics-rating'),
@@ -9,7 +11,7 @@ const ActionAttributes = {
 };
 
 class Actionee extends api.core.Instance {
-  constructor (priority = -1, category = '', title = null, isForced = false) {
+  constructor (priority = -1, category = '', title = null, regulation = ActionRegulation.NONE) {
     super();
     this._type = null;
     this._priority = priority;
@@ -18,7 +20,7 @@ class Actionee extends api.core.Instance {
     this._parameters = {};
     this._data = {};
     this._isMuted = false;
-    this._isForced = isForced;
+    this._regulation = regulation;
   }
 
   static get instanceClassName () {
@@ -66,7 +68,12 @@ class Actionee extends api.core.Instance {
       return;
     }
 
-    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this.getAttribute(ActionAttributes.ACTION) || this._title, this._parameters, this.hasAttribute(ActionAttributes.RATING), this.hasAttribute(ActionAttributes.ACTION) || this._isForced);
+    const actionAttribute = this.getAttribute(ActionAttributes.ACTION);
+    const regulation = typeof actionAttribute === 'string' ? (actionAttribute.toLowerCase() === 'false' ? ActionRegulation.PREVENT : ActionRegulation.ENFORCE) : this._regulation === ActionRegulation.PREVENT || this._regulation === ActionRegulation.ENFORCE ? this._regulation : ActionRegulation.NONE;
+    const title = typeof actionAttribute === 'string' && actionAttribute.toLowerCase() !== 'false' ? normalize(actionAttribute) : this._title;
+    const isRating = this.hasAttribute(ActionAttributes.RATING);
+
+    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, title, this._parameters, isRating, regulation);
     if (this._isMuted) this._actionElement.isMuted = true;
 
     this.addDescent(ActioneeEmission.REWIND, this.rewind.bind(this));
