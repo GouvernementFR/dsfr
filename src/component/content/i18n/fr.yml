@@ -3,6 +3,8 @@ description: Les médias désignent vos contenus photos et vidéos. Lorsqu’ils
 doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/contenu-medias
 
 sample:
+  video:
+    title: 'Vidéo de présentation du Service National Universel - voir transcription ci-dessous'
   img:
     caption: © DILA 2020
     link: 'vie-publique.fr'
