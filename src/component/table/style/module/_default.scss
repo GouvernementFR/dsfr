@@ -124,7 +124,7 @@
         }
 
         th {
-          font-weight: font-weight(bold);
+          @include font-weight(bold);
         }
       }
 
