@@ -31,10 +31,10 @@ attributes.id = table.id || uniqueId('-table');
         <% } %>
         </caption>
     <% } %>
-    <%- include('./thead.ejs', {thead: table}); %>
+    <%- include('./thead.ejs', {thead: table.thead}); %>
     <% if (table.tbodies) { %>
         <% for (let index = 0; index < table.tbodies.length; index++) { %>
-            <%- include('./tbody.ejs', {tbody: {table, index, collapse: index === 1}}); %>
+            <%- include('./tbody.ejs', {tbody: {table, index}}); %>
         <% } %>
     <% } %>
 </table>
