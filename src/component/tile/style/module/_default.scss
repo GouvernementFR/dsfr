@@ -109,7 +109,7 @@
       @include icon-forced-color(LinkText, true, after);
 
       &:not([href]) {
-        @include icon-forced-color(grayText, null, after);
+        @include icon-forced-color(GrayText, null, after);
       }
     }
 

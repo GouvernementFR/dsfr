@@ -4,7 +4,6 @@
 ////
 
 @use 'module/spacing';
-@use 'module/preference';
 
 @mixin _build-link-icon($size-settings, $place, $size:md, $override-icon: true) {
 

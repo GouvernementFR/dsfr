@@ -55,7 +55,7 @@
               @include margin-top(0);
 
               @include preference.forced-colors {
-                background-color: highlight;
+                background-color: Highlight;
                 @include height(1v);
               }
             }
@@ -113,7 +113,7 @@
         @include margin-top(-3v);
 
         @include preference.forced-colors {
-          background-color: highlight;
+          background-color: Highlight;
           @include width(1v);
         }
       }

@@ -91,7 +91,7 @@
         
           &:not([href]) {
             @include has-not-icon {
-              @include icon-forced-color(grayText, null, before);
+              @include icon-forced-color(GrayText, null, before);
             }
           }
         }
@@ -113,7 +113,7 @@
 
           &:not([href]) {
             @include has-not-icon {
-              @include icon-forced-color(grayText, null, before);
+              @include icon-forced-color(GrayText, null, before);
             }
           }
         }

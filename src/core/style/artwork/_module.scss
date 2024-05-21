@@ -11,7 +11,7 @@
   &-background,
   &-motif {
     @include preference.forced-colors {
-      fill: grayText;
+      fill: GrayText;
     }
   }
 
@@ -24,7 +24,7 @@
   &-minor,
   &-major {
     @include preference.forced-colors {
-      fill: canvasText;
+      fill: CanvasText;
     }
   }
 }

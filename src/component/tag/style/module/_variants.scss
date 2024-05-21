@@ -17,10 +17,10 @@
 
       @include preference.forced-colors {
         &:not(:disabled) {
-          color: highlight;
-          border: 1px solid highlight;
-          border-top: 4px solid highlight;
-          @include icon-forced-color(highlight);
+          color: Highlight;
+          border: 1px solid Highlight;
+          border-top: 4px solid Highlight;
+          @include icon-forced-color(Highlight);
           
           @include after {
             display: none
@@ -59,7 +59,7 @@
     @include icon-forced-color(ButtonText, true, after);
 
     &:disabled {
-      @include icon-forced-color(grayText, null, after);
+      @include icon-forced-color(GrayText, null, after);
     }
 
     &#{ns(tag)}--sm {
@@ -71,7 +71,7 @@
       @include icon-forced-color(ButtonText, null, after);
 
       &:disabled {
-        @include icon-forced-color(grayText, null, after);
+        @include icon-forced-color(GrayText, null, after);
       }
     }
   }

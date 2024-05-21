@@ -27,7 +27,7 @@
       @include absolute(3v, null, 3v, 0, 2px);
 
       @include preference.forced-colors {
-        background-color: highlight;
+        background-color: Highlight;
         forced-color-adjust: none;
       }
     }

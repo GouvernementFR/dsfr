@@ -44,7 +44,7 @@
     order: 2;
 
     @include preference.forced-colors {
-      border: 1px solid canvasText;
+      border: 1px solid CanvasText;
     }
   }
 
@@ -90,13 +90,13 @@
 
       &:not(:disabled) {
         @include preference.forced-colors {
-          border: 1px solid highlight;
-          border-top: 4px solid highlight;
+          border: 1px solid Highlight;
+          border-top: 4px solid Highlight;
           border-bottom: 1px solid canvas;
-          color: highlight;
+          color: Highlight;
 
           @include has-icon {
-            @include icon-forced-color(highlight);
+            @include icon-forced-color(Highlight);
           }
         }
       }
