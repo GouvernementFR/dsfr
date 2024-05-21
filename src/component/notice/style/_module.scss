@@ -4,8 +4,10 @@
 ////
 
 @use 'module/media-query';
+@use 'module/selector';
+@use 'module/spacing';
 
-#{ns(notice)} {
+#{selector.ns(notice)} {
   @include relative();
   @include set-title-margin(0);
   @include set-text-margin(0);
@@ -49,21 +51,21 @@
   }
 
   &--no-icon {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include before {
         display: none;
       }
     }
   }
 
-  #{ns(btn--close)} {
+  #{selector.ns(btn--close)} {
     @include nest-btn(sm, only, close-line, null, false);
     @include absolute(-1v, 0);
     color: inherit;
   }
 
   &--info {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(info-fill, before);
         @include icon-content;
@@ -73,7 +75,7 @@
 
   &--warning,
   &--alert {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(warning-fill, before);
         @include icon-content;
@@ -82,7 +84,7 @@
   }
 
   &--weather-orange {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(heavy-showers-fill, before);
         @include icon-content;
@@ -91,7 +93,7 @@
   }
 
   &--weather-red {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(tornado-fill, before);
         @include icon-content;
@@ -100,7 +102,7 @@
   }
 
   &--weather-purple {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(typhoon-fill, before);
         @include icon-content;
@@ -113,29 +115,32 @@
   &--vigipirate,
   &--cyberattack {
     @include padding-top(5.5v);
+    background-position: 0 0;
+    background-size: spacing.space(100% 1.5v);
+    background-repeat: no-repeat;
 
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       text-transform: uppercase;
     }
   }
 
   &--witness,
   &--cyberattack {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include icon-image(warning-fill, before);
       @include icon-content;
     }
   }
 
   &--kidnapping {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include icon-image(alert-warning-fill, before);
       @include icon-content;
     }
   }
 
   &--vigipirate {
-    #{ns(notice)}__title {
+    #{selector.ns(notice)}__title {
       @include icon-image(alert-warning-2-fill, before);
       @include icon-content;
     }

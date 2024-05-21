@@ -47,7 +47,7 @@
     &--witness {
       @include color.background(flat grey, (legacy:$legacy));
       @include color.text(inverted grey, (legacy:$legacy));
-      @include color.box-shadow(plain error, (legacy:$legacy), top-6-in);
+      @include color.background-image(border plain error, (legacy:$legacy));
 
       #{ns(btn--close)} {
         @include color.background(action-high grey, (legacy:$legacy));
@@ -58,7 +58,7 @@
     &--vigipirate {
       @include color.background(flat error, (legacy:$legacy));
       @include color.text(inverted grey, (legacy:$legacy));
-      @include color.box-shadow(plain grey, (legacy:$legacy), top-6-in);
+      @include color.background-image(border plain grey, (legacy:$legacy));
 
       #{ns(btn--close)} {
         @include color.background(action-high error, (legacy:$legacy));
@@ -68,7 +68,7 @@
     &--cyberattack {
       @include color.background(flat grey, (legacy:$legacy));
       @include color.text(inverted grey, (legacy:$legacy));
-      @include color.box-shadow(plain info, (legacy:$legacy), top-6-in);
+      @include color.background-image(border plain info, (legacy:$legacy));
 
       #{ns(btn--close)} {
         @include color.background(action-high grey, (legacy:$legacy));
