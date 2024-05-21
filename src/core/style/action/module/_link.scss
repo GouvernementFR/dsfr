@@ -28,7 +28,8 @@ a {
   @include link-underline;
 
   @include preference.forced-colors {
-    &, &:visited {
+    &,
+    &:visited {
       color: linktext;
     }
   }

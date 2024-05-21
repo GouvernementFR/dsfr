@@ -7,7 +7,6 @@
 @use 'module/preference';
 
 #{selector.ns(artwork)} {
-
   &-background,
   &-motif {
     @include preference.forced-colors {

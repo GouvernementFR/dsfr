@@ -61,6 +61,10 @@
         @include icon-size(md) {
           @include absolute(null, 8v, 9v);
         }
+
+        @include preference.forced-colors {
+          text-decoration: none;
+        }
       }
     }
   }
@@ -151,11 +155,5 @@
 
   &#{ns(enlarge-link)}:not(&--no-icon) &__content {
     @include padding-bottom(10v);
-  }
-
-  &#{ns(enlarge-link)} &__title a {
-    @include preference.forced-colors {
-      text-decoration: none;
-    }
   }
 }

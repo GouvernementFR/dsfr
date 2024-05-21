@@ -73,7 +73,7 @@
       &:focus + label {
         @include preference.forced-colors {
           outline: 4px solid;
-          outline-offset: 0px;
+          outline-offset: 0;
         }
       }
 

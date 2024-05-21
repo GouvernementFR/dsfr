@@ -50,7 +50,7 @@
 
     &:focus {
       ~ #{ns(toggle__label)} {
-        @include before{
+        @include before {
           @include preference.forced-colors {
             outline-color: graytext;
           }

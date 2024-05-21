@@ -42,19 +42,17 @@
           @include icon(null, md, before);
           @include icon-forced-color(buttontext, true, before);
         }
+
+        @include disabled.selector((can-be-link: true)) {
+          @include has-not-icon {
+            @include icon-forced-color(graytext, null, before);
+          }
+        }
       }
 
       a[href]#{ns(btn)} {
         @include has-not-icon {
           @include icon-forced-color(linktext, null, before);
-        }
-      }
-
-      #{ns(btn)} {
-        @include disabled.selector((can-be-link: true)) {
-          @include has-not-icon {
-            @include icon-forced-color(graytext, null, before);
-          }
         }
       }
     }

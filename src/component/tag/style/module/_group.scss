@@ -41,7 +41,7 @@
             @include margin(-1.5v);
 
             @include preference.forced-colors {
-              display: none
+              display: none;
             }
           }
         }

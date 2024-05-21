@@ -23,7 +23,7 @@
           @include icon-forced-color(highlight);
 
           @include after {
-            display: none
+            display: none;
           }
         }
       }
@@ -38,7 +38,7 @@
           @include absolute(3px, 0);
           @include margin(-1.5v);
           @include preference.forced-colors {
-            display: none
+            display: none;
           }
         }
       }
