@@ -7,279 +7,281 @@
 @use 'module/color';
 
 #{ns(table)} {
-    --table-offset: #{space(4v)};
-    --table-offset-width: 0;
-    --row-header-cell-width: auto;
+  --table-offset: #{space(4v)};
+  --table-offset-width: 0;
+  --row-header-cell-width: auto;
 
-    @include set-text-margin(0);
-    @include set-title-margin(0);
-    @include relative;
-    @include margin-bottom(10v);
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+  @include relative;
+  @include margin-bottom(10v);
 
-    &__wrapper {
-        @include padding(1px 1px 0);
-        @include margin(-1px 0);
+  &__wrapper {
+    @include padding(1px 1px 0);
+    @include margin(-1px 0);
+  }
+
+  &__container {
+    overflow: auto;
+    @include padding-top(var(--table-offset));
+  }
+
+  &__content {
+    width: 100%;
+    min-width: 40rem;
+
+    #{ns(cell)} {
+      &__fixed {
+        position: sticky;
+        left: 0;
+      }
+
+      &__center {
+        text-align: center;
+      }
+
+      &__right {
+        text-align: right;
+      }
+
+      &__top {
+        vertical-align: top;
+      }
+
+      &__bottom {
+        vertical-align: bottom;
+      }
+
+      &__title {
+        font-weight: 700;
+      }
+
+      &__desc {
+        font-weight: 400;
+      }
+
+      &__inline {
+        display: flex;
+        align-items: center;
+        @include margin(0 -2v);
+
+        > * {
+          @include margin(0 2v);
+        }
+      }
+
+      &__multiline {
+        &,
+        & * {
+          white-space: normal;
+        }
+      }
+
+      &--sort {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        #{ns(btn--sort)} {
+          @include margin-left(4v);
+        }
+      }
     }
 
-    &__container {
-        overflow: auto;
-        @include padding-top(var(--table-offset));
+    #{ns(col)} {
+      &__xs {
+        white-space: normal;
+        @include min-width(16v);
+      }
+
+      &__sm {
+        white-space: normal;
+        @include min-width(20v);
+      }
+
+      &__md {
+        white-space: normal;
+        @include min-width(50v);
+      }
+
+      &__lg {
+        white-space: normal;
+        @include min-width(100v);
+      }
     }
 
-    &__content {
-        width: 100%;
-        min-width: 40rem;
+    table {
+      @include size(100%);
+      border-spacing: 0;
 
-        #{ns(cell)} {
-            &__fixed {
-                position: sticky;
-                left: 0;
-            }
+      thead {
+        position: relative;
 
-            &__center {
-                text-align: center;
-            }
-
-            &__right {
-                text-align: right;
-            }
-
-            &__top {
-                vertical-align: top;
-            }
-
-            &__bottom {
-                vertical-align: bottom;
-            }
-
-            &__title {
-                font-weight: 700;
-            }
-
-            &__desc {
-                font-weight: 400;
-            }
-
-            &__inline {
-                display: flex;
-                align-items: center;
-                @include margin(0 -2v);
-
-                > * {
-                    @include margin(0 2v);
-                }
-            }
-
-            &__multiline {
-                &,
-                & * {
-                    white-space: normal;
-                }
-            }
-
-            &--sort {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                #{ns(btn--sort)} {
-                    @include margin-left(4v);
-                }
-            }
-        }
-
-        #{ns(col)} {
-            &__xs {
-                white-space: normal;
-                @include min-width(16v);
-            }
-            &__sm {
-                white-space: normal;
-                @include min-width(20v);
-            }
-            &__md {
-                white-space: normal;
-                @include min-width(50v);
-            }
-            &__lg {
-                white-space: normal;
-                @include min-width(100v);
-            }
-        }
-
-        table {
-            @include size(100%);
-            border-spacing: 0;
-
-            thead {
-                position: relative;
-
-                @include before('', block) {
-                    @include absolute(inherit, 0, 0 , 0, 100%, 1px);
-                    pointer-events: none;
-                    z-index: 1;
-                }
-
-                th {
-                    font-weight: font-weight(bold);
-                }
-            }
-
-            tbody {
-                tr:first-child[aria-selected=true]:has( + tr:not([aria-selected=true])),
-                tr:not([aria-selected=true]) + tr:last-child[aria-selected=true],
-                tr:not([aria-selected=true]) + tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
-                    &::after {
-                        // left-right + top-bottom
-                        background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
-                        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-                        background-position: 100% 100%, 0 0, 100% 0, 100% 0;
-                    }
-                }
-
-                tr[aria-selected=true] + tr[aria-selected=true] {
-                    &::after {
-                        // left-right
-                        background-size: 2px 100%, 2px 100%;
-                        background-repeat: no-repeat, no-repeat;
-                        background-position: 0 0, 100% 0;
-                    }
-                }
-
-                tr:first-child[aria-selected=true]:has( + tr[aria-selected=true]),
-                tr:not([aria-selected=true]) + tr[aria-selected=true] {
-                    &::after {
-                        // left-right + top
-                        background-size: 2px 100%, 2px 100%, 100% 2px;
-                        background-repeat: no-repeat, no-repeat, no-repeat;
-                        background-position: 0 0, 100% 0, 100% 0;
-                    }
-                }
-
-                tr[aria-selected=true] + tr:last-child[aria-selected=true],
-                tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
-                    &::after {
-                        // left-right + bottom
-                        background-size: 100% 2px, 2px 100%, 2px 100%;
-                        background-repeat: no-repeat, no-repeat, no-repeat;
-                        background-position: 100% 100%, 0 0, 100% 0;
-                    }
-                }
-
-                tr {
-                    &[aria-selected="true"] {
-                        position: relative;
-
-                        &::after {
-                            position: absolute;
-                            content: '';
-                            top: -2px;
-                            left: 0;
-                            width: 100%;
-                            height: calc(100% + 2px);
-                            z-index: 4;
-                            pointer-events: none;
-
-                            // left-right
-                            background-size: 2px 100%, 2px 100%;
-                            background-repeat: no-repeat, no-repeat;
-                            background-position: 0 0, 100% 0;
-
-                            // left-right + top-bottom
-                            // background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
-                            // background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-                            // background-position: 100% 100%, 0 0, 100% 0, 100% 0;
-                        }
-                    }
-                }
-
-                #{ns(btn--expand)} {
-                    @include margin-right(4v);
-                }
-            }
-        }
-
-        th,
-        td {
-            display: table-cell;
-            @include padding(2v 4v);
-            @include text-style(sm);
-            text-align: left;
-            vertical-align: middle;
-            white-space: nowrap;
-            background-size: 100% 1px;
-            background-repeat: no-repeat;
-            background-position: 100% 100%;
-
-            #{ns(checkbox-group)} {
-                display: inline-block;
-
-                & #{ns(label)} {
-                    min-height: 1.2rem;
-                    font-size: 0.875rem;
-
-                    &::before {
-                        left: #{space(-5v)};
-                    }
-                }
-            }
+        @include before('', block) {
+          @include absolute(inherit, 0, 0 , 0, 100%, 1px);
+          pointer-events: none;
+          z-index: 1;
         }
 
         th {
-            #{ns(checkbox-group)} {
-
-                &:has(+ *) {
-                    @include margin-right(2v);
-                }
-
-                & #{ns(label)} {
-                    top: #{space(.5v)};
-                }
-            }
+          font-weight: font-weight(bold);
         }
-    }
+      }
 
-    caption {
-        position: initial;
-        @include title-style(h4, true);
-        @include font-weight(bold);
-        text-align: left;
-
-        #{ns(table__caption__desc)} {
-            @include margin-top(4v);
-            @include text-style(md);
-            @include font-weight(regular);
-        }
-    }
-
-    &__detail {
-        @include text-style(sm);
-    }
-
-    &#{ns-attr(js-table, true)} {
-        caption {
-            @include absolute(0);
+      tbody {
+        tr:first-child[aria-selected=true]:has(+ tr:not([aria-selected=true])),
+        tr:not([aria-selected=true]) + tr:last-child[aria-selected=true],
+        tr:not([aria-selected=true]) + tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
+          &::after {
+            // left-right + top-bottom
+            background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+          }
         }
 
-        #{ns(table__wrapper)} {
+        tr[aria-selected=true] + tr[aria-selected=true] {
+          &::after {
+            // left-right
+            background-size: 2px 100%, 2px 100%;
+            background-repeat: no-repeat, no-repeat;
+            background-position: 0 0, 100% 0;
+          }
+        }
+
+        tr:first-child[aria-selected=true]:has(+ tr[aria-selected=true]),
+        tr:not([aria-selected=true]) + tr[aria-selected=true] {
+          &::after {
+            // left-right + top
+            background-size: 2px 100%, 2px 100%, 100% 2px;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-position: 0 0, 100% 0, 100% 0;
+          }
+        }
+
+        tr[aria-selected=true] + tr:last-child[aria-selected=true],
+        tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
+          &::after {
+            // left-right + bottom
+            background-size: 100% 2px, 2px 100%, 2px 100%;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-position: 100% 100%, 0 0, 100% 0;
+          }
+        }
+
+        tr {
+          &[aria-selected="true"] {
             position: relative;
 
-            @include before('', block) {
-                @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
-                pointer-events: none;
+            &::after {
+              position: absolute;
+              content: '';
+              top: -2px;
+              left: 0;
+              width: 100%;
+              height: calc(100% + 2px);
+              z-index: 4;
+              pointer-events: none;
+
+              // left-right
+              background-size: 2px 100%, 2px 100%;
+              background-repeat: no-repeat, no-repeat;
+              background-position: 0 0, 100% 0;
+
+              // left-right + top-bottom
+              // background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
+              // background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+              // background-position: 100% 100%, 0 0, 100% 0, 100% 0;
             }
+          }
         }
+
+        #{ns(btn--expand)} {
+          @include margin-right(4v);
+        }
+      }
     }
 
-    #{ns(collapse)} {
-        &:not(&--expanded) {
-            display: none;
+    th,
+    td {
+      display: table-cell;
+      @include padding(2v 4v);
+      @include text-style(sm);
+      text-align: left;
+      vertical-align: middle;
+      white-space: nowrap;
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+
+      #{ns(checkbox-group)} {
+        display: inline-block;
+
+        & #{ns(label)} {
+          min-height: 1.2rem;
+          font-size: 0.875rem;
+
+          &::before {
+            left: #{space(-5v)};
+          }
+        }
+      }
+    }
+
+    th {
+      #{ns(checkbox-group)} {
+        &:has(+ *) {
+          @include margin-right(2v);
         }
 
-        &--expanded {
-            &::before {
-                content: none;
-            }
+        & #{ns(label)} {
+          top: #{space(0.5v)};
         }
+      }
     }
+  }
+
+  caption {
+    position: initial;
+    @include title-style(h4, true);
+    @include font-weight(bold);
+    text-align: left;
+
+    #{ns(table__caption__desc)} {
+      @include margin-top(4v);
+      @include text-style(md);
+      @include font-weight(regular);
+    }
+  }
+
+  &__detail {
+    @include text-style(sm);
+  }
+
+  &#{ns-attr(js-table, true)} {
+    caption {
+      @include absolute(0);
+    }
+
+    #{ns(table__wrapper)} {
+      position: relative;
+
+      @include before('', block) {
+        @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
+        pointer-events: none;
+      }
+    }
+  }
+
+  #{ns(collapse)} {
+    &:not(&--expanded) {
+      display: none;
+    }
+
+    &--expanded {
+      &::before {
+        content: none;
+      }
+    }
+  }
 }

@@ -3,11 +3,10 @@
 /// @group Table
 ////
 
-
 #{ns(table)} {
-    /*
-    * Cache la caption
-    */
+  /*
+	* Cache la caption
+	*/
   &#{ns(table--no-caption)} {
     #{ns(table__wrapper)} {
       &::before {
@@ -60,18 +59,18 @@
   /* Style bordered, ajoute des bordures verticales entre chaque cellule */
   &#{ns(table--bordered)} {
     #{ns(table__content)} {
-        th,
-        td {
-            background-size: 100% 1px, 1px 100%;
-            background-repeat: no-repeat, no-repeat;
-            background-position: 0 100%, 100% 0;
+      th,
+      td {
+        background-size: 100% 1px, 1px 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0 100%, 100% 0;
 
-            &:last-child {
-                background-size: 100% 1px;
-                background-repeat: no-repeat;
-                background-position: 100% 100%;
-            }
+        &:last-child {
+          background-size: 100% 1px;
+          background-repeat: no-repeat;
+          background-position: 100% 100%;
         }
+      }
     }
   }
 }

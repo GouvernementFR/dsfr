@@ -6,77 +6,76 @@
 @use 'module/color';
 
 @mixin _table-scheme($legacy: false) {
-    #{ns(table)} {
+  #{ns(table)} {
+    &__wrapper {
+      // @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey), (legacy: $legacy));
 
-        &__wrapper {
-            // @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey), (legacy: $legacy));
-
-            @include before {
-                @include color.box-shadow(contrast grey, (legacy:$legacy), top-1-in left-1-in bottom-1-in right-1-in);
-            }
-        }
-
-        &__content {
-            table {
-                thead {
-                    th {
-                        @include color.background(alt grey, (legacy: $legacy, hover: true));
-                        @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
-
-                        &:last-child {
-                            @include color.background(alt grey, (legacy: $legacy, hover: true));
-                            @include color.background-image((border plain grey), (legacy: $legacy));
-                        }
-                    }
-                }
-
-                tbody {
-                    tr {
-                        &[aria-selected=true] {
-                            &::after {
-                                @include color.background-image((border action-high blue-france) (border action-high blue-france) (border action-high blue-france) (border action-high blue-france), (legacy: $legacy));
-                            }
-                        }
-                    }
-
-                    th,
-                    td {
-                        @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
-                        @include color.background(default grey, (legacy: $legacy, hover: true));
-
-                        &:last-child {
-                            @include color.background-image((border contrast grey), (legacy: $legacy));
-                        }
-                    }
-
-                    th {
-                        @include color.background(alt grey, (legacy: $legacy));
-                        @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
-                    }
-                }
-            }
-        }
-
-        &__shadow--left {
-            #{ns(table__content)} {
-                #{ns(cell__fixed)} {
-                    @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
-
-                    &[scope='col'] {
-                        @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
-                    }
-                }
-
-                thead {
-                    #{ns(cell__fixed)} {
-                        @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
-                    }
-                }
-            }
-        }
-
-        &__detail {
-            @include color.text(mention grey, (legacy:$legacy));
-        }
+      @include before {
+        @include color.box-shadow(contrast grey, (legacy:$legacy), top-1-in left-1-in bottom-1-in right-1-in);
+      }
     }
+
+    &__content {
+      table {
+        thead {
+          th {
+            @include color.background(alt grey, (legacy: $legacy, hover: true));
+            @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
+
+            &:last-child {
+              @include color.background(alt grey, (legacy: $legacy, hover: true));
+              @include color.background-image((border plain grey), (legacy: $legacy));
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            &[aria-selected=true] {
+              &::after {
+                @include color.background-image((border action-high blue-france) (border action-high blue-france) (border action-high blue-france) (border action-high blue-france), (legacy: $legacy));
+              }
+            }
+          }
+
+          th,
+          td {
+            @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
+            @include color.background(default grey, (legacy: $legacy, hover: true));
+
+            &:last-child {
+              @include color.background-image((border contrast grey), (legacy: $legacy));
+            }
+          }
+
+          th {
+            @include color.background(alt grey, (legacy: $legacy));
+            @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
+          }
+        }
+      }
+    }
+
+    &__shadow--left {
+      #{ns(table__content)} {
+        #{ns(cell__fixed)} {
+          @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
+
+          &[scope='col'] {
+            @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+          }
+        }
+
+        thead {
+          #{ns(cell__fixed)} {
+            @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+          }
+        }
+      }
+    }
+
+    &__detail {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+  }
 }

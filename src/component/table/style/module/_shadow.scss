@@ -9,30 +9,30 @@
 * Bordure ajoutée à gauche en Js si le contenu est plus grand que le conteneur
 */
 #{ns(table)} {
-    #{ns(table__shadow)} {
-        @include after('', block) {
-            @include absolute(var(--table-offset), 0, 0, 0);
-            @include z-index(over);
-            @include _table-scroll-shadow(false, false);
-            opacity: 0.32;
-            pointer-events: none;
-            transition: box-shadow 0.3s;
-        }
-
-        /**
-        * Modifier Bordure à gauche
-        **/
-        &--left {
-            th[scope='row'] {
-                z-index: 3;
-            }
-
-            #{ns(cell__fixed)} {
-                z-index: 3;
-                background-size: 100% 1px, 1px 100%;
-                background-repeat: no-repeat, no-repeat;
-                background-position: 0 100%, 100% 0;
-            }
-        }
+  #{ns(table__shadow)} {
+    @include after('', block) {
+      @include absolute(var(--table-offset), 0, 0, 0);
+      @include z-index(over);
+      @include _table-scroll-shadow(false, false);
+      opacity: 0.32;
+      pointer-events: none;
+      transition: box-shadow 0.3s;
     }
+
+    /**
+    * Modifier Bordure à gauche
+    **/
+    &--left {
+      th[scope='row'] {
+        z-index: 3;
+      }
+
+      #{ns(cell__fixed)} {
+        z-index: 3;
+        background-size: 100% 1px, 1px 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0 100%, 100% 0;
+      }
+    }
+  }
 }

@@ -27,6 +27,15 @@
         @include before {
           @include _table-scroll-shadow(true, false); // @TODO: à implementer dans la mixin shadow
         }
+
+        /**
+        * Modifier combinaison ombre à gauche et ombre à droite
+        **/
+        &#{ns(table__shadow--right)} {
+          @include before('', block) {
+            @include _table-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
+          }
+        }
       }
 
       /**
@@ -35,17 +44,6 @@
       &--right {
         @include before {
           @include _table-scroll-shadow(false, true);// @TODO: à implementer dans la mixin shadow
-        }
-      }
-
-      /**
-      * Modifier combinaison ombre à gauche et ombre à droite
-      **/
-      &--left {
-        &#{ns(table__shadow--right)} {
-          @include before('', block) {
-            @include _table-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
-          }
         }
       }
     }
@@ -65,7 +63,6 @@
   }
 }
 
-
 /*
 * Positionnement ombres sur le tableau avec caption en bas
 */
@@ -78,7 +75,6 @@
     }
   }
 }
-
 
 @include selector.theme(dark) {
   #{ns(table)} {
