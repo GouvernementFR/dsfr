@@ -13,24 +13,24 @@
 
 @include preference.forced-colors {
   @include has-icon {
-    @include icon-forced-color(CanvasText, true);
+    @include icon-forced-color(graytext, true);
   }
 
   button:not([disabled]) {
     @include has-icon {
-      @include icon-forced-color(ButtonText);
+      @include icon-forced-color(buttontext);
     }
   }
 
   a[href] {
     @include has-icon {
-      @include icon-forced-color(LinkText);
+      @include icon-forced-color(linktext);
     }
   }
 
   @include disabled-selector {
     @include has-icon {
-      @include icon-forced-color(GrayText);
+      @include icon-forced-color(graytext);
     }
   }
 }

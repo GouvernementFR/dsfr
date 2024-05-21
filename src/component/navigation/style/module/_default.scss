@@ -55,7 +55,7 @@
               @include margin-top(0);
 
               @include preference.forced-colors {
-                background-color: Highlight;
+                background-color: highlight;
                 @include height(1v);
               }
             }
@@ -113,7 +113,7 @@
         @include margin-top(-3v);
 
         @include preference.forced-colors {
-          background-color: Highlight;
+          background-color: highlight;
           @include width(1v);
         }
       }
@@ -145,7 +145,7 @@
         transition: none;
       }
     }
-    @include icon-forced-color(ButtonText, true, after);
+    @include icon-forced-color(buttontext, true, after);
 
     @include respond-from(lg) {
       justify-content: flex-start;

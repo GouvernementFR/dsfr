@@ -73,7 +73,7 @@
       &:focus {
         @include selector.range-thumb {
           @include preference.forced-colors {
-            outline-color: Highlight;
+            outline-color: highlight;
           }
         }
       }
@@ -90,7 +90,7 @@
         pointer-events: auto;
 
         @include preference.forced-colors {
-          background: ButtonText;
+          background: buttontext;
         }
 
         &:active {

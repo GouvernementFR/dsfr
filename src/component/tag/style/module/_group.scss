@@ -32,7 +32,7 @@
             @include margin-right(-0.75v);
           }
 
-          @include icon-forced-color(ButtonText, null, after);
+          @include icon-forced-color(buttontext, null, after);
         }
 
         @include pressed-selector(true) {

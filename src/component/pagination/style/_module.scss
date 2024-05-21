@@ -47,7 +47,7 @@
       @include disabled.selector((can-be-link: true)) {
         &:not([aria-current]) {
           @include preference.forced-colors {
-            color: GrayText;
+            color: graytext;
           }
         }
       }

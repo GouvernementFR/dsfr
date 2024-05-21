@@ -99,7 +99,7 @@
   }
 }
 
-@mixin icon-forced-color($color: CanvasText, $adjust: false, $restrain: before after) {
+@mixin icon-forced-color($color: graytext, $adjust: false, $restrain: before after) {
   @include _pseudo($restrain) {
     @include preference.forced-colors {
       @if $adjust == true {

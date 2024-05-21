@@ -27,7 +27,7 @@
       @include absolute(3v, null, 3v, 0, 2px);
 
       @include preference.forced-colors {
-        background-color: Highlight;
+        background-color: highlight;
         forced-color-adjust: none;
       }
     }
@@ -61,7 +61,7 @@
 
       @include margin-right(-6v, md);
     }
-    @include icon-forced-color(ButtonText, true, after);
+    @include icon-forced-color(buttontext, true, after);
   }
 
   &[aria-expanded="true"] {

@@ -27,11 +27,11 @@
 
         @include _pseudo {
           @include preference.forced-colors {
-            border: 2px solid Highlight;
+            border: 2px solid highlight;
             background-color: transparent;
             background-image: none;
             forced-color-adjust: none;
-            color: CanvasText;
+            color: graytext;
           }
         }
 
@@ -41,8 +41,8 @@
 
           @include preference.forced-colors {
             background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='highlightText' d='M10 15.17l9.2-9.2 1.4 1.42L10 18l-6.36-6.36 1.4-1.42z'/></svg>");
-            border: 2px solid Highlight;
-            background-color: Highlight;
+            border: 2px solid highlight;
+            background-color: highlight;
           }
         }
       }
@@ -52,7 +52,7 @@
       ~ #{ns(toggle__label)} {
         @include before{
           @include preference.forced-colors {
-            outline-color: CanvasText;
+            outline-color: graytext;
           }
         };
       }
@@ -96,10 +96,10 @@
 
       @include preference.forced-colors {
         background-image: none;
-        border: 2px solid ButtonText;
+        border: 2px solid buttontext;
         background-color: transparent;
         forced-color-adjust: none;
-        color: CanvasText;
+        color: graytext;
         @include padding-top(5v);
       }
     }
@@ -114,7 +114,7 @@
 
       @include preference.forced-colors {
         box-shadow: none;
-        border: 2px solid ButtonText;
+        border: 2px solid buttontext;
         forced-color-adjust: none;
         background-color: transparent;
       }

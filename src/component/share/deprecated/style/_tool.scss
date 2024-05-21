@@ -9,10 +9,10 @@
   #{ns(share__link)}--#{$name} {
     @include nest-btn(md, only, $icon, null, false);
     @at-root a[href]#{&} {
-      @include icon-forced-color(LinkText, true, before);
+      @include icon-forced-color(linktext, true, before);
     }
     @at-root a:not([href])#{&} {
-      @include icon-forced-color(GrayText, true, before);
+      @include icon-forced-color(graytext, true, before);
     }
   }
 }

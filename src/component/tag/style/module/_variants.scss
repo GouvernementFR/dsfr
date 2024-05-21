@@ -17,11 +17,11 @@
 
       @include preference.forced-colors {
         &:not(:disabled) {
-          color: Highlight;
-          border: 1px solid Highlight;
-          border-top: 4px solid Highlight;
-          @include icon-forced-color(Highlight);
-          
+          color: highlight;
+          border: 1px solid highlight;
+          border-top: 4px solid highlight;
+          @include icon-forced-color(highlight);
+
           @include after {
             display: none
           }
@@ -56,10 +56,10 @@
       @include margin-right(-1v);
     }
 
-    @include icon-forced-color(ButtonText, true, after);
+    @include icon-forced-color(buttontext, true, after);
 
     &:disabled {
-      @include icon-forced-color(GrayText, null, after);
+      @include icon-forced-color(graytext, null, after);
     }
 
     &#{ns(tag)}--sm {
@@ -68,10 +68,10 @@
         @include margin-left(0.5v);
       }
 
-      @include icon-forced-color(ButtonText, null, after);
+      @include icon-forced-color(buttontext, null, after);
 
       &:disabled {
-        @include icon-forced-color(GrayText, null, after);
+        @include icon-forced-color(graytext, null, after);
       }
     }
   }

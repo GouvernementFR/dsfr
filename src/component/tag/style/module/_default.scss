@@ -13,7 +13,7 @@
     border: 1px solid;
 
     @include disabled.selector((can-be-link: true)) {
-      color: GrayText;
+      color: graytext;
     }
   }
 }

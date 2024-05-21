@@ -35,7 +35,7 @@
     text-align: left;
     @include margin(0);
     @include animate.caret();
-    @include icon-forced-color(ButtonText, false, after);
+    @include icon-forced-color(buttontext, false, after);
 
     @include after {
       @include margin-right(0);

@@ -66,7 +66,7 @@
       align-items: center;
       border-radius: #{spacing.space(1v)};
       white-space: nowrap;
-      @include icon-forced-color(ButtonText, null, before);
+      @include icon-forced-color(buttontext, null, before);
     }
 
     &:checked {
@@ -80,16 +80,16 @@
       + label {
         @include preference.forced-colors {
           outline: 2px solid;
-          color: Highlight;
-          @include icon-forced-color(Highlight, null, before);
+          color: highlight;
+          @include icon-forced-color(highlight, null, before);
         }
       }
 
       @include disabled.selector {
         + label {
           @include preference.forced-colors {
-            color: GrayText;
-            @include icon-forced-color(GrayText, null, before);
+            color: graytext;
+            @include icon-forced-color(graytext, null, before);
           }
         }
       }
@@ -98,7 +98,7 @@
     @include disabled.selector {
       + label {
         @include preference.forced-colors {
-          color: GrayText;
+          color: graytext;
         }
       }
     }
@@ -111,7 +111,7 @@
         @include mask-image-repeat(no-repeat);
 
         @include preference.forced-colors {
-          color: ButtonText;
+          color: buttontext;
         }
 
         &:hover {

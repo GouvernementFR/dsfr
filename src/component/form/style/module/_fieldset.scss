@@ -32,7 +32,7 @@
     #{ns(hint-text)},
     #{ns(fieldset__legend)} {
       @include preference.forced-colors {
-        color: GrayText;
+        color: graytext;
       }
     }
   }
@@ -43,7 +43,7 @@
       + label #{ns(hint-text)},
       + label + #{ns(hint-text)} {
         @include preference.forced-colors {
-          color: GrayText;
+          color: graytext;
         }
       }
     }

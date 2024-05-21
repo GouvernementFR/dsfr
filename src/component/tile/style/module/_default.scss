@@ -106,16 +106,16 @@
         @include margin-left(2v);
       }
 
-      @include icon-forced-color(LinkText, true, after);
+      @include icon-forced-color(linktext, true, after);
 
       &:not([href]) {
-        @include icon-forced-color(GrayText, null, after);
+        @include icon-forced-color(graytext, null, after);
       }
     }
 
     @include target-blank {
       @include icon(external-link-line, sm, after);
-      @include icon-forced-color(LinkText, null, after);
+      @include icon-forced-color(linktext, null, after);
     }
   }
 

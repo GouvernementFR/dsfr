@@ -10,7 +10,7 @@ a {
 
   &:not([href]) {
     @include preference.forced-colors {
-      color: GrayText;
+      color: graytext;
     }
   }
 }
@@ -29,7 +29,7 @@ a {
 
   @include preference.forced-colors {
     &, &:visited {
-      color: LinkText;
+      color: linktext;
     }
   }
 }

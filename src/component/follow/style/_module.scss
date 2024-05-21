@@ -81,17 +81,17 @@
           @include has-not-icon {
             @include nest-btn(md, only, null, null, false);
             @include icon(null, md, before);
-            @include icon-forced-color(ButtonText, true, before);
+            @include icon-forced-color(buttontext, true, before);
           }
         }
         a#{ns(btn)} {
           @include has-not-icon {
-            @include icon-forced-color(LinkText, null, before);
+            @include icon-forced-color(linktext, null, before);
           }
-        
+
           &:not([href]) {
             @include has-not-icon {
-              @include icon-forced-color(GrayText, null, before);
+              @include icon-forced-color(graytext, null, before);
             }
           }
         }
@@ -102,18 +102,18 @@
           @include has-not-icon {
             @include nest-btn(lg, only, null, null, false);
             @include icon(null, lg, before);
-            @include icon-forced-color(ButtonText, true, before);
+            @include icon-forced-color(buttontext, true, before);
           }
         }
 
         a#{ns(btn)} {
           @include has-not-icon {
-            @include icon-forced-color(LinkText, null, before);
+            @include icon-forced-color(linktext, null, before);
           }
 
           &:not([href]) {
             @include has-not-icon {
-              @include icon-forced-color(GrayText, null, before);
+              @include icon-forced-color(graytext, null, before);
             }
           }
         }

@@ -7,19 +7,19 @@
 
 @include build-btn() {
   @include font-weight(medium);
-  @include icon-forced-color(ButtonText);
+  @include icon-forced-color(buttontext);
 }
 
 button#{ns(btn)} {
   @include preference.forced-colors {
-    border: 1px solid ButtonText;
+    border: 1px solid buttontext;
   }
 }
 
 a[href]#{ns(btn)} {
-  @include icon-forced-color(LinkText);
+  @include icon-forced-color(linktext);
 }
 
 a:not([href])#{ns(btn)} {
-  @include icon-forced-color(GrayText);
+  @include icon-forced-color(graytext);
 }

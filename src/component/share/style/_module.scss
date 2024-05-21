@@ -40,20 +40,20 @@
         @include has-not-icon {
           @include nest-btn(md, only, null, null, false);
           @include icon(null, md, before);
-          @include icon-forced-color(ButtonText, true, before);
+          @include icon-forced-color(buttontext, true, before);
         }
       }
 
       a[href]#{ns(btn)} {
         @include has-not-icon {
-          @include icon-forced-color(LinkText, null, before);
+          @include icon-forced-color(linktext, null, before);
         }
       }
 
       #{ns(btn)} {
         @include disabled.selector((can-be-link: true)) {
           @include has-not-icon {
-            @include icon-forced-color(GrayText, null, before);
+            @include icon-forced-color(graytext, null, before);
           }
         }
       }
