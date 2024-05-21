@@ -4,7 +4,6 @@
 ////
 
 @use 'module/reset';
-@use 'module/preference';
 
 @mixin btn-reset ($minimal: false) {
   @include reset.appearance(none);

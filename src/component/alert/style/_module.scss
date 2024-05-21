@@ -33,7 +33,6 @@
   }
 
   #{ns(btn--close)} {
-    forced-color-adjust: auto;
     @include absolute(1v,1v);
     @include nest-btn(sm, only, close-line, null, false);
   }

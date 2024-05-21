@@ -3,8 +3,6 @@
 /// @group core
 ////
 
-@use 'module/preference';
-
 $underline-thickness: 0.0625em;
 
 @mixin a-reset ($minimal: false) {
