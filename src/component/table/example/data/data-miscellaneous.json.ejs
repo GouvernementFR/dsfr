@@ -3,8 +3,8 @@ const table = locals.table || {};
 table.id = uniqueId('table');
 
 const actionCellEmpty = `<span class="${prefix}-sr-only">${getText('data.cell.action.empty', 'table')}</span>`;
-const getTextCell = (tag = 'span', classes = `${prefix}-cell__desc`) => `<${tag} class="${classes}">${getText('data.cell.text', 'table')}</${tag}>`;
-const getTitleCell = (tag = 'span', classes = `${prefix}-cell__title`) => `<${tag} class="${classes}">${getText('data.cell.title', 'table')}</${tag}>`;
+const getTextCell = (markup = 'span', classes = `${prefix}-cell__desc`) => `<${markup} class="${classes}">${getText('data.cell.text', 'table')}</${markup}>`;
+const getTitleCell = (markup = 'span', classes = `${prefix}-cell__title`) => `<${markup} class="${classes}">${getText('data.cell.title', 'table')}</${markup}>`;
 
 const getBadge = (badge) => include('../../../badge/template/ejs/badge.ejs', {badge});
 const getButton = (button) => include('../partials/getButton.ejs', {button});
@@ -72,7 +72,7 @@ const tbody = new Array(rowsLength);
 for(let r = 0; r < rowsLength; r++) {
   tbody[r] = [
     {
-      tag: 'th',
+      markup: 'th',
       attributes: {scope: 'row'},
       classes: [`${prefix}-cell__fixed`, `${prefix}-cell__row--select`],
       content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}-${r}`, attributes: {checked: selectedLines.includes(r) || undefined, 'aria-label': `${getText('data.cell.action.selectRow', 'table')} ${getText('data.cell.title', 'table')}`}}) + getTitleCell('span')

@@ -50,7 +50,7 @@ if (table.doubleEntry) {
     tbodies.forEach((tbody) => {
         tbody.forEach((row, index) => {
             row.unshift({
-                tag: 'th',
+                markup: 'th',
                 attributes: {scope: 'row'},
                 classes: [`${prefix}-cell__fixed`],
                 content: `${8 + index}h`

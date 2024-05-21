@@ -14,7 +14,7 @@ thead.forEach((row, rowIndex) => {
 tbodies.forEach((tbody) => {
     tbody.forEach((row, index) => {
         row.unshift({
-            tag: 'th',
+            markup: 'th',
             attributes: {
                 id: `collapsed-row-${index}`,
                 headers: 'collapsed-thead-0-col-0'

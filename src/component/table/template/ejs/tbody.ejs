@@ -4,22 +4,18 @@
 * tbody.table (object, required): tableau de données du tableau
     ** tbody.table.tbodies (array, required): tableau de données du tbody à trois dimensions [body][row][col]
         *** tbody.table.tbodies[body][row][col].content (string, required): contenu de la cellule
-        *** tbody.table.tbodies[body][row][col].tag (string, optional): balise de la cellule (th, td)
+        *** tbody.table.tbodies[body][row][col].markup (string, optional): balise de la cellule (th, td)
         *** tbody.table.tbodies[body][row][col].classes (array, optional): classes supplémentaires de la cellule
         *** tbody.table.tbodies[body][row][col].attributes (array, optional): attributs supplémentaires de la cellule
-    ** tbody.table.attributes (object, optional): attributs supplémentaires du tbody
 %>
 
 <% eval(include('../../../../core/index.ejs'));
 
 const table = tbody.table || {};
 const index = tbody.index || 0;
-
-const classes = table.classes || [];
-const attributes = table.attributes || {};
 %>
 
-<tbody <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+<tbody>
     <% if (table.tbodies && table.tbodies[index]) { %>
         <% for (let row = 0; row < table.tbodies[index].length; row++) { %>
             <%
@@ -31,13 +27,13 @@ const attributes = table.attributes || {};
                 <% if (table.tbodies[index].length) { %>
                     <% for (let col = 0; col < table.tbodies[index][row].length; col++) { %>
                         <%
-                            const colTag = table.tbodies[index][row][col].tag || 'td';
+                            const colMarkup = table.tbodies[index][row][col].markup || 'td';
                             const colClasses = table.tbodies[index][row][col].classes || [];
                             const colAttributes = table.tbodies[index][row][col].attributes || {};
                         %>
-                        <<%- colTag %> <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
+                        <<%- colMarkup %> <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
                             <%- table.tbodies[index][row][col].content %>
-                        </<%- colTag %>>
+                        </<%- colMarkup %>>
                     <% } %>
                 <% } %>
             </tr>
