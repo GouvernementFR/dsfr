@@ -12,6 +12,10 @@
 * wrapper.classes (array, optional): classes supplémentaires du composant
 
 * wrapper.attributes (object, optional): attributs supplémentaires du composant
+
+* wrapper.header (boolean, optional): {default: false} affiche l'en-tête du composant
+
+* wrapper.footer (boolean, optional): {default: false} affiche le pied de page du composant
 %>
 
 <% eval(include('../../../../core/index.ejs'));
@@ -32,19 +36,19 @@ if (wrapper.bordered) classes.push(prefix + '-table--bordered');
 %>
 
 <div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
-    <% if (wrapper.header !== undefined) { %>
-        <div class="<%= prefix %>-table__header"><%- wrapper.header %></div>
-    <% } %>
-    <% if (table) { %>
-        <div class="<%= prefix %>-table__wrapper">
-            <div class="<%= prefix %>-table__container">
-                <div class="<%= prefix %>-table__content">
-                    <%- include('./table.ejs', {table: table}); %>
-                </div>
-            </div>
+  <% if (wrapper.header !== undefined) { %>
+    <div class="<%= prefix %>-table__header"><%- wrapper.header %></div>
+  <% } %>
+  <% if (table) { %>
+    <div class="<%= prefix %>-table__wrapper">
+      <div class="<%= prefix %>-table__container">
+        <div class="<%= prefix %>-table__content">
+          <%- include('./table.ejs', {table: table}); %>
         </div>
-    <% } %>
-    <% if (wrapper.footer !== undefined) { %>
-        <div class="<%= prefix %>-table__footer"><%- wrapper.footer %></div>
-    <% } %>
+      </div>
+    </div>
+  <% } %>
+  <% if (wrapper.footer !== undefined) { %>
+    <div class="<%= prefix %>-table__footer"><%- wrapper.footer %></div>
+  <% } %>
 </div>

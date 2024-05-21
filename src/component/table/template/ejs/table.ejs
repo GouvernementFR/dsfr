@@ -1,7 +1,9 @@
 <%#
 # paramètres Table
 
-* table.table (object, required): tableau de données du tableau
+* table.thead (array, required): tableau de données de l'en-tête du tableau
+
+* table.tbodies (array, required): tableau de données du corps du tableau
 
 * table.caption (string, required) : titre du tableau
 
@@ -23,18 +25,20 @@ attributes.id = table.id || uniqueId('-table');
 %>
 
 <table <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
-    <% if (table.caption !== undefined) { %>
-        <caption>
-            <%= table.caption %>
-        <% if (table.captionDetail !== undefined) { %>
-            <div class="<%= prefix %>-table__caption__desc"><%- table.captionDetail %></div>
-        <% } %>
-        </caption>
-    <% } %>
+  <% if (table.caption !== undefined) { %>
+    <caption>
+      <%= table.caption %>
+      <% if (table.captionDetail !== undefined) { %>
+        <div class="<%= prefix %>-table__caption__desc"><%- table.captionDetail %></div>
+      <% } %>
+    </caption>
+  <% } %>
+  <% if (table.thead) { %>
     <%- include('./thead.ejs', {thead: table.thead}); %>
-    <% if (table.tbodies) { %>
-        <% for (let index = 0; index < table.tbodies.length; index++) { %>
-            <%- include('./tbody.ejs', {tbody: {table, index}}); %>
-        <% } %>
+  <% } %>
+  <% if (table.tbodies) { %>
+    <% for (let index = 0; index < table.tbodies.length; index++) { %>
+      <%- include('./tbody.ejs', {tbody: {table, index}}); %>
     <% } %>
+  <% } %>
 </table>

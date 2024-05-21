@@ -3,31 +3,31 @@ const thead = JSON.parse(include('./data-collapsed-thead.json.ejs'));
 const tbodies = [JSON.parse(include('./data-collapsed-tbody.json.ejs'))];
 
 thead.forEach((row, rowIndex) => {
-    row.forEach((th, thIndex) => {
-        th.attributes = {
-            ...th.attributes,
-            id: `collapsed-thead-${rowIndex}-col-${thIndex}`
-        };
-    });
+  row.forEach((th, thIndex) => {
+    th.attributes = {
+      ...th.attributes,
+      id: `collapsed-thead-${rowIndex}-col-${thIndex}`
+    };
+  });
 });
 
 tbodies.forEach((tbody) => {
-    tbody.forEach((row, index) => {
-        row.unshift({
-            markup: 'th',
-            attributes: {
-                id: `collapsed-row-${index}`,
-                headers: 'collapsed-thead-0-col-0'
-            },
-            classes: [`${prefix}-cell__fixed`],
-            content:  `${8 + index}h`
-        });
+  tbody.forEach((row, index) => {
+    row.unshift({
+      markup: 'th',
+      attributes: {
+        id: `collapsed-row-${index}`,
+        headers: 'collapsed-thead-0-col-0'
+      },
+      classes: [`${prefix}-cell__fixed`],
+      content:  `${8 + index}h`
     });
+  });
 });
 
 const table = {
-    thead,
-    tbodies
+  thead,
+  tbodies
 };
 
 %>
