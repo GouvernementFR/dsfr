@@ -23,7 +23,7 @@
   @include preference.forced-colors {
     outline: 1px solid;
     @include before {
-      background-color: canvastext;
+      background-color: CanvasText;
       left: 8px;
     }
   }
