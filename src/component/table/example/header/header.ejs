@@ -25,6 +25,8 @@ const buttons = include('../../../button/template/ejs/buttons-group', {buttonsGr
 
 const segmentedData = {
   id: uniqueId('table-header-segmented'),
+  noLegend: true,
+  legend: getText('data.actionBar.segmented.legend', 'table'),
   elements: [
     {
       id: uniqueId('table-header-segmented-table'),

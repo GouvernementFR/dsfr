@@ -79,6 +79,7 @@ for(let r = 0; r < rowsLength; r++) {
     },
     {
       content: getText('data.cell.text', 'table')
+      // content: getCheckbox({id: `${uniqueId('table-test-checkbox')}-${r}`, label: 'test'})
     },
     {
       content: getBadge({type: 'info', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mb-2v`], size: 'sm'}) + getTitleCell('div', `${prefix}-cell__title ${prefix}-mb-2v`) + getTextCell('div')

@@ -5,9 +5,10 @@
 
 @use 'module/media-query';
 @use 'module/color';
+@use 'module/spacing';
 
 #{ns(table)} {
-  --table-offset: #{space(4v)};
+  --table-offset: spacing.space(4v);
   --table-offset-width: 0;
   --row-header-cell-width: auto;
 
@@ -174,24 +175,15 @@
             position: relative;
 
             &::after {
-              position: absolute;
+              @include absolute(-0.5v, null, null, 0, 100%, calc(100% + 0.5v));
+              @include z-index(above);
               content: '';
-              top: -2px;
-              left: 0;
-              width: 100%;
-              height: calc(100% + 2px);
-              z-index: 4;
               pointer-events: none;
 
               // left-right
               background-size: 2px 100%, 2px 100%;
               background-repeat: no-repeat, no-repeat;
               background-position: 0 0, 100% 0;
-
-              // left-right + top-bottom
-              // background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
-              // background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-              // background-position: 100% 100%, 0 0, 100% 0, 100% 0;
             }
           }
         }
@@ -219,10 +211,10 @@
 
         & #{ns(label)} {
           min-height: 1.2rem;
-          font-size: 0.875rem;
+          @include text-style(sm);
 
           &::before {
-            left: #{space(-5v)};
+            left: spacing.space(-5v);
           }
         }
       }
@@ -230,12 +222,13 @@
 
     th {
       #{ns(checkbox-group)} {
-        &:has(+ *) {
-          @include margin-right(2v);
+
+        & + * {
+          @include margin-left(2v);
         }
 
         & #{ns(label)} {
-          top: #{space(0.5v)};
+          top: spacing.space(0.5v);
         }
       }
     }

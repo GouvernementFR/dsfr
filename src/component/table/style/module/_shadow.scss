@@ -24,11 +24,11 @@
     **/
     &--left {
       th[scope='row'] {
-        z-index: 3;
+        @include z-index(over);
       }
 
       #{ns(cell__fixed)} {
-        z-index: 3;
+        @include z-index(over);
         background-size: 100% 1px, 1px 100%;
         background-repeat: no-repeat, no-repeat;
         background-position: 0 100%, 100% 0;

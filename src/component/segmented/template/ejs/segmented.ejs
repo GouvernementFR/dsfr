@@ -36,14 +36,12 @@ switch (segmented.size) {
 %>
 
 <fieldset <%- includeClasses(groupClasses); %>>
-  <% if (segmented.legend !== undefined && !!segmented.legend && segmented.legend.length) { %>
-    <legend <%- includeClasses(legendClasses); %>>
-      <%= segmented.legend %>
-      <% if (segmented.hint) { %>
-        <span class="<%= prefix %>-hint-text"><%= segmented.hint %></span>
-      <% } %>
-    </legend>
-  <% } %>
+  <legend <%- includeClasses(legendClasses); %>>
+    <%= segmented.legend %>
+    <% if (segmented.hint) { %>
+      <span class="<%= prefix %>-hint-text"><%= segmented.hint %></span>
+    <% } %>
+  </legend>
   <div class="<%= prefix %>-segmented__elements">
     <% for (const element of segmented.elements) { %>
       <%- include('./segmented-element', {element: element}); %>

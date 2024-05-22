@@ -63,5 +63,6 @@ data:
       label: Action groupée
     detail: 1 ligne sélectionnée
     segmented:
+      legend: Type d'affichage
       list: Liste
       table: Tableau
