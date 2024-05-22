@@ -120,7 +120,7 @@
         @include before('', block) {
           @include absolute(inherit, 0, 0 , 0, 100%, 1px);
           pointer-events: none;
-          z-index: 1;
+          @include z-index(over);
         }
 
         th {
