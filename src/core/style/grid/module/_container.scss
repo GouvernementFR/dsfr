@@ -6,7 +6,7 @@
 $containers: ns('container');
 @each $breakpoint, $limit in $breakpoints {
   @if $breakpoint != 'xs' {
-    $selector: append($containers, ns('container-#{$breakpoint}'), 'comma');
+    $containers: append($containers, ns('container-#{$breakpoint}'), 'comma');
   }
 }
 
