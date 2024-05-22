@@ -58,6 +58,15 @@ class ActionElement {
     if (this._action) this._action.isMuted = value;
   }
 
+  get regulation () {
+    return this._regulation;
+  }
+
+  set regulation (value) {
+    this._regulation = value;
+    if (this._action) this._action.regulation = value;
+  }
+
   get action () {
     return this._action;
   }

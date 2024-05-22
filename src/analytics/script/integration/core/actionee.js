@@ -68,17 +68,41 @@ class Actionee extends api.core.Instance {
       return;
     }
 
+    const regulation = this.getRegulation();
+    this._regulation = regulation !== ActionRegulation.NONE ? regulation : this._regulation;
     const actionAttribute = this.getAttribute(ActionAttributes.ACTION);
-    const regulation = typeof actionAttribute === 'string' ? (actionAttribute.toLowerCase() === 'false' ? ActionRegulation.PREVENT : ActionRegulation.ENFORCE) : this._regulation === ActionRegulation.PREVENT || this._regulation === ActionRegulation.ENFORCE ? this._regulation : ActionRegulation.NONE;
-    const title = typeof actionAttribute === 'string' && actionAttribute.toLowerCase() !== 'false' ? normalize(actionAttribute) : this._title;
-    const isRating = this.hasAttribute(ActionAttributes.RATING);
+    const title = typeof actionAttribute === 'string' && actionAttribute.toLowerCase() !== 'false' && actionAttribute.toLowerCase() !== 'true' ? normalize(actionAttribute) : this._title;
+    this._isRating = this.hasAttribute(ActionAttributes.RATING);
 
-    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, title, this._parameters, isRating, regulation);
+    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, title, this._parameters, this._isRating, this._regulation);
     if (this._isMuted) this._actionElement.isMuted = true;
 
     this.addDescent(ActioneeEmission.REWIND, this.rewind.bind(this));
 
     this._sort(element);
+  }
+
+  getRegulation () {
+    const actionAttribute = this.getAttribute(ActionAttributes.ACTION);
+    switch (true) {
+      case typeof actionAttribute === 'string' && actionAttribute.toLowerCase() === 'false':
+        return ActionRegulation.PREVENT;
+      case actionAttribute !== null:
+        return ActionRegulation.ENFORCE;
+      default:
+        return ActionRegulation.NONE;
+    }
+  }
+
+  mutate (attributeNames) {
+    if (attributeNames.includes(ActionAttributes.ACTION)) {
+      const regulation = this.getRegulation();
+      if (this._regulation !== regulation) {
+        this._regulation = regulation;
+        if (this._actionElement) this._actionElement.regulation = regulation;
+      }
+    }
+    super.mutate(attributeNames);
   }
 
   _sort (element) {
