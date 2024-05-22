@@ -133,7 +133,7 @@
         tr:not([aria-selected=true]) + tr:last-child[aria-selected=true],
         tr:not([aria-selected=true]) + tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
           &::after {
-            // left-right + top-bottom
+            // selected borders left-right + top-bottom
             background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
             background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
             background-position: 100% 100%, 0 0, 100% 0, 100% 0;
@@ -142,7 +142,7 @@
 
         tr[aria-selected=true] + tr[aria-selected=true] {
           &::after {
-            // left-right
+            // selected borders left-right
             background-size: 2px 100%, 2px 100%;
             background-repeat: no-repeat, no-repeat;
             background-position: 0 0, 100% 0;
@@ -152,7 +152,7 @@
         tr:first-child[aria-selected=true]:has(+ tr[aria-selected=true]),
         tr:not([aria-selected=true]) + tr[aria-selected=true] {
           &::after {
-            // left-right + top
+            // selected borders left-right + top
             background-size: 2px 100%, 2px 100%, 100% 2px;
             background-repeat: no-repeat, no-repeat, no-repeat;
             background-position: 0 0, 100% 0, 100% 0;
@@ -162,7 +162,7 @@
         tr[aria-selected=true] + tr:last-child[aria-selected=true],
         tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
           &::after {
-            // left-right + bottom
+            // selected borders left-right + bottom
             background-size: 100% 2px, 2px 100%, 2px 100%;
             background-repeat: no-repeat, no-repeat, no-repeat;
             background-position: 100% 100%, 0 0, 100% 0;

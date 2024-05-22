@@ -5,13 +5,13 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/table
 wrapper: container
 style:
   - core
-  - button
 script:
   - core
 example:
   style:
     - alert
     - badge
+    - button
     - checkbox
     - input
     - link

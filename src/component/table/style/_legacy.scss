@@ -10,9 +10,81 @@
   * Correctif placement caption
   */
   #{ns(table)} {
+
+    &__header {
+      #{ns(segmented)} {
+        flex: 1;
+      }
+
+      #{ns(table__detail)} {
+        flex: 2;
+      }
+    }
+
+    &__wrapper {
+      @include before(none);
+    }
+
+    &__content {
+      #{ns(cell__fixed)} {
+        @include relative;
+      }
+
+      table {
+        border-top: 1px solid;
+        border-left: 1px solid;
+        border-right: 1px solid;
+
+        #{ns(checkbox-group)} {
+          & #{ns(label)} {
+            &::before {
+              top: auto;
+              left: #{space(-6v)};
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            &[aria-selected=true] {
+              @include after(none);
+
+              th,
+              td {
+                border-top: 2px solid;
+                border-bottom: 2px solid;
+
+                &:first-child {
+                  border-left: 2px solid;
+                }
+
+                &:last-child {
+                  border-right: 2px solid;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
     &#{ns-attr(js-table, true)} {
+      &#{ns(table--no-caption)},
+      &#{ns(table--caption-bottom)} {
+        #{ns(table__wrapper)} {
+          @include before(none);
+        }
+
+        caption {
+          @include relative;
+        }
+      }
+
       caption {
         @include relative;
+        @include margin-bottom(4v);
       }
     }
   }

@@ -44,7 +44,7 @@ const thead = [
     },
     {
       classes: [`${prefix}-cell__sm`, `${prefix}-cell__center`],
-      content: `${getButton({id: uniqueId('table-thead-sort-asc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sorting': 'asc'}})}</div>`
+      content: getButton({id: uniqueId('table-thead-sort-asc'), label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sorting': 'asc'}})
     },
     {
       classes: [`${prefix}-cell__sm`],

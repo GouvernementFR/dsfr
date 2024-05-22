@@ -27,13 +27,14 @@ class TableColSelect extends api.core.Instance {
   }
 
   toggleColSelection (value) {
-    const index = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
+    // const index = [...this.node.closest('tr').childNodes].indexOf(this.node.closest('th'));
+    // Trick for IE11 for accessing the Array.prototype
+    const index = [].slice.call(this.node.closest('tr').childNodes).indexOf(this.node.closest('th'));
     this.ascend(TableEmission.COL_SELECT, { index, value });
   }
 
   toggleRowSelection (row) {
-    const colIndex = [...this.node.closest('tr').children].indexOf(this.node.closest('th'));
-    if (colIndex === 0 && this.node.checked && !row.isChecked) {
+    if (this.node.checked && !row.isChecked) {
       this._isChecked = false;
       this.node.checked = false;
     }

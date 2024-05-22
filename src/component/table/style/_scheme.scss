@@ -8,8 +8,6 @@
 @mixin _table-scheme($legacy: false) {
   #{ns(table)} {
     &__wrapper {
-      // @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey), (legacy: $legacy));
-
       @include before {
         @include color.box-shadow(contrast grey, (legacy:$legacy), top-1-in left-1-in bottom-1-in right-1-in);
       }
@@ -19,11 +17,11 @@
       table {
         thead {
           th {
-            @include color.background(alt grey, (legacy: $legacy, hover: true));
+            @include color.background(alt grey, (legacy: $legacy));
             @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
 
             &:last-child {
-              @include color.background(alt grey, (legacy: $legacy, hover: true));
+              @include color.background(alt grey, (legacy: $legacy));
               @include color.background-image((border plain grey), (legacy: $legacy));
             }
           }
@@ -41,7 +39,7 @@
           th,
           td {
             @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
-            @include color.background(default grey, (legacy: $legacy, hover: true));
+            @include color.background(default grey, (legacy: $legacy));
 
             &:last-child {
               @include color.background-image((border contrast grey), (legacy: $legacy));
