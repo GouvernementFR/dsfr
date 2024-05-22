@@ -9,7 +9,7 @@
 	*/
   &#{ns(table--no-caption)} {
     #{ns(table__wrapper)} {
-      &::before {
+      @include before {
         height: 100%;
       }
 
