@@ -40,7 +40,7 @@ data:
       sort: Trier
       select: Selectionner
       selectAll: Selectionner toutes les lignes
-      selectRow: Selectionner toute la ligne
+      selectRow: Selectionner la ligne
     collapsed: Exemple de cellule fusionnée
     download:
       detail: JPG – 61,88 Ko
