@@ -224,7 +224,7 @@
 
         #{ns(label)} {
           color: transparent;
-          width: 0;
+          @include size(0);
           pointer-events: none;
 
           &::before {
