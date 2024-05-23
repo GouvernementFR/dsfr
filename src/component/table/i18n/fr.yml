@@ -10,7 +10,7 @@ sample:
   captionBottom: Tableau caption Bottom
   columnSizes:
     subtitle: En ajoutant les classes <code>fr-col__sm, fr-col__xs, fr-col__lg ou fr-col__md</code> sur les cellules d'en-tête du tableau
-    title: Tableau comportant des colonnes de tailles minimales fixées
+    title: Exemple des colonnes de tailles minimales fixées
   cellCollapsed: Tableau comportant des cellules fusionnées (complexe)
   default: Tableau par défaut
   doubleEntry: Tableau à double entrée
@@ -23,6 +23,9 @@ sample:
   noCaption: Tableau caption invisible
   selectable: Tableau sélectionnable
   sm: Tableau SM
+  utilityClasses:
+    subtitle: Par défaut le contenu des cellules est centré verticalement et aligné à gauche mais peut être modifié à l'aide des classe utilitaires <code>fr-cell__top, fr-cell__bottom</code> pour l'alignement vertical et <code>fr-cell__center, fr-cell__right</code> pour l'alignement horizontal
+    title: Exemples des classes utilitaires d'alignement
 
 data:
   caption:

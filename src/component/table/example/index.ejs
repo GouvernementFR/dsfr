@@ -18,7 +18,15 @@ const dataCellCollapsed = JSON.parse(include('./data/data-collapsed.json.ejs'));
 %>
 
 <%-
+  sample(getText('sample.bordered', 'table'), './sample/table-simple', {table: {bordered: true, table: {id: 'table-bordered', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
   sample({title: getText('sample.columnSizes.title', 'table'), subtitle: getText('sample.columnSizes.subtitle', 'table')}, './sample/table-column-sizes', {table: {table: {id: 'table-column-sizes', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample({title: getText('sample.utilityClasses.title', 'table'), subtitle: getText('sample.utilityClasses.subtitle', 'table')}, './sample/table-utility-classes', {table: {bordered: true, table: {id: 'table-default', caption: getText('data.caption.default', 'table')}}}, true);
 %>
 
 <%-
@@ -42,15 +50,11 @@ const dataCellCollapsed = JSON.parse(include('./data/data-collapsed.json.ejs'));
 %>
 
 <%-
-  sample(getText('sample.bordered', 'table'), './sample/table-simple', {table: {bordered: true, table: {id: 'table-bordered', caption: getText('data.caption.default', 'table')}}}, true);
+  // sample(getText('sample.cellCollapsed', 'table'), './sample/table-default', {table: {bordered: true, table: {id: 'table-collapsed', caption: getText('data.caption.default', 'table'), captionDetail: getText('data.caption.detail', 'table'), ...dataCellCollapsed}}}, true);
 %>
 
 <%-
-  sample(getText('sample.cellCollapsed', 'table'), './sample/table-default', {table: {bordered: true, table: {id: 'table-collapsed', caption: getText('data.caption.default', 'table'), captionDetail: getText('data.caption.detail', 'table'), ...dataCellCollapsed}}}, true);
-%>
-
-<%-
-  sample(getText('sample.miscellaneous', 'table'), './sample/table-miscellaneous', {table: {header: true, footer: true, table: {id: 'table-miscellaneous', caption: getText('data.caption.large', 'table')}}}, true);
+  // sample(getText('sample.miscellaneous', 'table'), './sample/table-miscellaneous', {table: {header: true, footer: true, table: {id: 'table-miscellaneous', caption: getText('data.caption.large', 'table')}}}, true);
 %>
 
 <%-

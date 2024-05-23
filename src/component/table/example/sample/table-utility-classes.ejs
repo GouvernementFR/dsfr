@@ -1,0 +1,25 @@
+<%
+const table = locals.table || {};
+const dataSimple = JSON.parse(include('../data/data-simple.json.ejs', { table: table.table }));
+
+const utilities = ['top', 'bottom', 'center', 'right'];
+
+const simpleBodies = dataSimple.table.tbodies;
+simpleBodies.forEach(tbodies => {
+  tbodies.forEach(tbody => {
+    tbody.forEach((row, index) => {
+      row.classes = utilities[index] ? [`${prefix}-cell__${utilities[index]}`] : [];
+      if (index === tbody.length - 1) {
+        row.content = 'New York<br>No.1 Lake Park<br>USA'
+      }
+    });
+  });
+});
+
+const data = {
+  ...table,
+  ...dataSimple
+}
+%>
+
+<%- include('./table-default', {table: data}); %>
