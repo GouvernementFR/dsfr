@@ -4,6 +4,7 @@
 ////
 
 @use 'module/legacy';
+@use 'module/spacing';
 
 @include legacy.is(ie11) {
   /**
@@ -35,11 +36,14 @@
         border-left: 1px solid;
         border-right: 1px solid;
 
-        #{ns(checkbox-group)} {
-          & #{ns(label)} {
-            &::before {
-              top: auto;
-              left: #{space(-6v)};
+        #{ns(cell__fixed)} {
+          #{ns(checkbox-group)} {
+            #{ns(label)} {
+              @include before(none);
+            }
+
+            input[type="checkbox"] {
+              top: spacing.space(2v);
             }
           }
         }

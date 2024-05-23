@@ -209,26 +209,31 @@
       #{ns(checkbox-group)} {
         display: inline-block;
 
-        & #{ns(label)} {
-          min-height: 1.2rem;
+        #{ns(label)} {
           @include text-style(sm);
+        }
+      }
+    }
+
+
+    #{ns(cell__fixed)} {
+      #{ns(checkbox-group)} {
+        & + * {
+          @include margin-left(2v);
+        }
+
+        #{ns(label)} {
+          color: transparent;
+          width: 0;
+          pointer-events: none;
 
           &::before {
             left: spacing.space(-5v);
           }
         }
-      }
-    }
 
-    th {
-      #{ns(checkbox-group)} {
-
-        & + * {
-          @include margin-left(2v);
-        }
-
-        & #{ns(label)} {
-          top: spacing.space(0.5v);
+        input[type="checkbox"] {
+          left: spacing.space(1v);
         }
       }
     }

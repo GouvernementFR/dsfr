@@ -23,14 +23,14 @@ if (table.selectable) {
         role: 'columnheader'
       },
       classes: [`${prefix}-cell__fixed`, `${prefix}-cell__col--select`],
-      content: getCheckbox({attributes: {'aria-label': getText('data.cell.action.selectAll', 'table')}})
+      content: getCheckbox({label: getText('data.cell.action.selectAll', 'table')})
     });
   });
   tbodies.forEach((tbody) => {
     tbody.forEach((row, index) => {
       row.unshift({
         classes: [`${prefix}-cell__fixed`, `${prefix}-cell__row--select`],
-        content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, attributes: {'aria-label': `${getText('data.cell.action.selectRow', 'table')} ${index + 1}`}})
+        content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, label: `${getText('data.cell.action.selectRow', 'table')} ${index + 1}`})
       });
     });
   });

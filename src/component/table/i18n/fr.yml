@@ -36,7 +36,7 @@ data:
       expandRow: Déplier la ligne suivante
       sort: Trier
       select: Selectionner
-      selectAll: Tout selectionner
+      selectAll: Selectionner toutes les lignes
       selectRow: Selectionner toute la ligne
     collapsed: Exemple de cellule fusionnée
     download:
