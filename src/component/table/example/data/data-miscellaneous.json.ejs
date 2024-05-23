@@ -21,7 +21,7 @@ const thead = [
       attributes: {
         role: 'columnheader'
       },
-      classes: [`${prefix}-cell__fixed`, `${prefix}-cell__col--select`],
+      classes: [`${prefix}-cell--fixed`, `${prefix}-cell__col--select`],
       content: getCheckbox({id: `${table.id}-selectall-rows-checkbox`, label: getText('data.cell.action.selectAll', 'table')}) + getTitleCell('span')
     },
     {
@@ -31,7 +31,6 @@ const thead = [
       content: getTitleCell('div') + getTextCell('div')
     },
     {
-      classes: [`${prefix}-col__lg`],
       content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: `${table.id}-thead-sort-desc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})}</div>`
     },
     {
@@ -69,7 +68,7 @@ for(let r = 0; r < rowsLength; r++) {
     {
       markup: 'th',
       attributes: {scope: 'row'},
-      classes: [`${prefix}-cell__fixed`, `${prefix}-cell__row--select`],
+      classes: [`${prefix}-cell--fixed`, `${prefix}-cell__row--select`],
       content:  getCheckbox({id: `${table.id}-select-row-checkbox-${r + 1}`, label: `${getText('data.cell.action.selectRow', 'table')} ${r + 1} : ${getText('data.cell.title', 'table')}`, attributes: {checked: selectedLines.includes(r) || undefined}}) + getTitleCell('span')
     },
     {

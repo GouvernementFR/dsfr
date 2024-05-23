@@ -15,7 +15,7 @@ const simpleBodies = dataSimple.table.tbodies;
 simpleBodies.forEach(tbodies => {
   tbodies.forEach(tbody => {
     tbody.forEach((row, index) => {
-      row.classes = utilities[index] ? [`${prefix}-cell__${utilities[index]}`] : [];
+      row.classes = utilities[index] ? [`${prefix}-cell--${utilities[index]}`] : [];
       if (index === tbody.length - 1) {
         row.content = 'New York<br>No.1 Lake Park<br>USA'
       }

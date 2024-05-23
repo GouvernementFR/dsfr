@@ -27,16 +27,15 @@
     }
 
     &__content {
-      #{ns(cell__fixed)} {
-        @include relative;
-      }
 
       table {
         border-top: 1px solid;
         border-left: 1px solid;
         border-right: 1px solid;
 
-        #{ns(cell__fixed)} {
+        #{ns(cell--fixed)} {
+          @include relative;
+
           #{ns(checkbox-group)} {
             #{ns(label)} {
               @include before(none);

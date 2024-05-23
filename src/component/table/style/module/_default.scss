@@ -32,24 +32,24 @@
     min-width: 40rem;
 
     #{ns(cell)} {
-      &__fixed {
+      &--fixed {
         position: sticky;
         left: 0;
       }
 
-      &__center {
+      &--center {
         text-align: center;
       }
 
-      &__right {
+      &--right {
         text-align: right;
       }
 
-      &__top {
+      &--top {
         vertical-align: top;
       }
 
-      &__bottom {
+      &--bottom {
         vertical-align: bottom;
       }
 
@@ -61,7 +61,7 @@
         font-weight: 400;
       }
 
-      &__inline {
+      &--inline {
         display: flex;
         align-items: center;
         @include margin(0 -2v);
@@ -71,7 +71,7 @@
         }
       }
 
-      &__multiline {
+      &--multiline {
         &,
         & * {
           white-space: normal;
@@ -90,22 +90,22 @@
     }
 
     #{ns(col)} {
-      &__xs {
+      &--xs {
         white-space: normal;
         @include min-width(16v);
       }
 
-      &__sm {
+      &--sm {
         white-space: normal;
         @include min-width(20v);
       }
 
-      &__md {
+      &--md {
         white-space: normal;
         @include min-width(50v);
       }
 
-      &__lg {
+      &--lg {
         white-space: normal;
         @include min-width(100v);
       }
@@ -216,7 +216,7 @@
     }
 
 
-    #{ns(cell__fixed)} {
+    #{ns(cell--fixed)} {
       #{ns(checkbox-group)} {
         & + * {
           @include margin-left(2v);

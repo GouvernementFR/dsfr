@@ -13,7 +13,7 @@ class TableRow extends api.core.Instance {
   rowSelect (col) {
     const cellCol = this.node.childNodes[col.index];
     if (!cellCol || !cellCol.classList) return;
-    if (cellCol.classList.contains('fr-cell__fixed') && cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]')) {
+    if (cellCol.classList.contains('fr-cell--fixed') && cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]')) {
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').checked = !col.value;
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').click();
     }

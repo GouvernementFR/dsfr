@@ -6,7 +6,7 @@ const simpleThead = dataSimple.table.thead;
 simpleThead.forEach(thead => {
   thead.forEach((row, index) => {
     const sizes = ['sm', 'xs', 'lg', 'md'];
-    row.classes = sizes[index] ? [`${prefix}-col__${sizes[index]}`] : [];
+    row.classes = sizes[index] ? [`${prefix}-col--${sizes[index]}`] : [];
   });
 });
 

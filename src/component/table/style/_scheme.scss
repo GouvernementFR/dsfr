@@ -56,7 +56,7 @@
 
     &__shadow--left {
       #{ns(table__content)} {
-        #{ns(cell__fixed)} {
+        #{ns(cell--fixed)} {
           @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
 
           &[scope='col'] {
@@ -65,7 +65,7 @@
         }
 
         thead {
-          #{ns(cell__fixed)} {
+          #{ns(cell--fixed)} {
             @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
           }
         }

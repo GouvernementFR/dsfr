@@ -30,7 +30,7 @@ const dataCellCollapsed = JSON.parse(include('./data/data-collapsed.json.ejs'));
 %>
 
 <%-
-  sample({title: getText('sample.multiline.title', 'table'), subtitle: getText('sample.multiline.subtitle', 'table')}, './sample/table-simple', {table: {table: {id: 'table-multiline', classes: [`${prefix}-cell__multiline`], caption: getText('data.caption.default', 'table')}}}, true);
+  sample({title: getText('sample.multiline.title', 'table'), subtitle: getText('sample.multiline.subtitle', 'table')}, './sample/table-simple', {table: {table: {id: 'table-multiline', classes: [`${prefix}-cell--multiline`], caption: getText('data.caption.default', 'table')}}}, true);
 %>
 
 <%-
