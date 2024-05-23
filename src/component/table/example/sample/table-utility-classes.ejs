@@ -4,6 +4,13 @@ const dataSimple = JSON.parse(include('../data/data-simple.json.ejs', { table: t
 
 const utilities = ['top', 'bottom', 'center', 'right'];
 
+const simpleThead = dataSimple.table.thead;
+simpleThead.forEach(thead => {
+  thead.forEach((row, index) => {
+    row.content = utilities[index] || 'default';
+  });
+});
+
 const simpleBodies = dataSimple.table.tbodies;
 simpleBodies.forEach(tbodies => {
   tbodies.forEach(tbody => {
