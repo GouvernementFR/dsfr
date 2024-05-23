@@ -25,7 +25,7 @@ sample:
   sm: Tableau SM
   utilityClasses:
     subtitle: Par défaut le contenu des cellules est centré verticalement et aligné à gauche mais peut être modifié à l'aide des classe utilitaires <code>fr-cell__top, fr-cell__bottom</code> pour l'alignement vertical et <code>fr-cell__center, fr-cell__right</code> pour l'alignement horizontal
-    title: Exemples des classes utilitaires d'alignement
+    title: Exemple des classes utilitaires d'alignement
 
 data:
   caption:
