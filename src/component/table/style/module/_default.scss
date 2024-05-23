@@ -181,7 +181,7 @@
               pointer-events: none;
 
               // left-right
-              background-size: 2px 100%, 2px 100%;
+              background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%);
               background-repeat: no-repeat, no-repeat;
               background-position: 0 0, 100% 0;
             }
