@@ -23,19 +23,22 @@
 
     &--start {
       @include margin-top(4v);
-      @include display-flex(row, center, flex-start);
+
+      @include media-query.respond-from(md) {
+        @include display-flex(row, center, flex-start);
+
+        #{ns(select-group)} {
+          @include padding-left(2v);
+          @include padding-right(2v);
+
+          #{ns(select)} {
+            @include margin-top(0);
+          }
+        }
+      }
 
       #{ns(table__detail)} {
         @include padding-right(2v);
-      }
-
-      #{ns(select-group)} {
-        @include padding-left(2v);
-        @include padding-right(2v);
-
-        #{ns(select)} {
-          @include margin-top(0);
-        }
       }
     }
 

@@ -40,10 +40,6 @@
           td {
             @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
             @include color.background(default grey, (legacy: $legacy));
-
-            &:last-child {
-              @include color.background-image((border contrast grey), (legacy: $legacy));
-            }
           }
 
           th {
