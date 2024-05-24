@@ -7,8 +7,8 @@
 
 #{ns(table)} {
   &__footer {
-    @include media-query.respond-from(lg) {
-      @include display-flex(row, center, space-between, nowrap);
+    @include media-query.respond-from(md) {
+      @include display-flex(row, center, space-between, wrap);
 
       #{ns(select-group)} {
         #{ns(select)} {
@@ -65,7 +65,12 @@
     }
 
     &--end {
+      @include media-query.respond-from(lg) {
+        flex: 1 0 0;
+      }
+
       @include margin-top(6v);
+      flex: 1 0 100%;
     }
   }
 }
