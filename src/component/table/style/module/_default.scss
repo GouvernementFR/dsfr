@@ -187,10 +187,6 @@
             }
           }
         }
-
-        #{ns(btn--expand)} {
-          @include margin-right(4v);
-        }
       }
     }
 
@@ -267,18 +263,6 @@
       @include before('', block) {
         @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
         pointer-events: none;
-      }
-    }
-  }
-
-  #{ns(collapse)} {
-    &:not(&--expanded) {
-      display: none;
-    }
-
-    &--expanded {
-      &::before {
-        content: none;
       }
     }
   }

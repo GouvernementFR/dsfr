@@ -14,7 +14,6 @@ sample:
   cellCollapsed: Tableau comportant des cellules fusionnées (complexe)
   default: Tableau par défaut
   doubleEntry: Tableau à double entrée
-  expandable: Tableau repliable Simple
   lg: Tableau LG
   miscellaneous: Tableau comportant différents types de contenus
   multiline:
@@ -36,7 +35,6 @@ data:
     action:
       button: Libellé bouton
       empty: Action
-      expandRow: Déplier la ligne suivante
       sort: Trier
       select: Selectionner
       selectAll: Selectionner toutes les lignes

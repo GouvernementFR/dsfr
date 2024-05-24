@@ -56,11 +56,3 @@ const dataCellCollapsed = JSON.parse(include('./data/data-collapsed.json.ejs'));
 <%-
   sample(getText('sample.miscellaneous', 'table'), './sample/table-miscellaneous', {table: {header: true, footer: true, table: {id: 'table-miscellaneous', caption: getText('data.caption.large', 'table')}}}, true);
 %>
-
-<%-
-  // sample(getText('sample.expandable', 'table'), './sample/table-simple', {table: {table: {id: 'table-expandable', caption: getText('data.caption.default', 'table'), expandable: true, rows: [{expandable: 'false'}, {collapse: true}, {}]}}}, true);
-%>
-
-<%-
-  // sample(getText('sample.expandableComplex', 'table'), './sample/table-expandable', {}, true);
-%>

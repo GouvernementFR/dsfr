@@ -68,14 +68,6 @@
     @include icon-legacy(team-line, sm);
   }
 
-  #{ns(btn--expand)} {
-    @include icon-legacy(arrow-down-s-line, sm);
-
-    &[aria-expanded='true'] {
-      @include icon-legacy(arrow-up-s-line, sm);
-    }
-  }
-
   #{ns(btn--sort)} {
     @include icon-legacy(sort-asc-desc-line, sm);
 
