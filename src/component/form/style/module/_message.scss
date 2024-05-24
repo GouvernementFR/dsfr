@@ -22,6 +22,8 @@
       @include margin-right(1v);
       @include margin-top(0.5v);
     }
+
+    @include icon-forced-color(canvasText, true);
   }
 
   &--error {

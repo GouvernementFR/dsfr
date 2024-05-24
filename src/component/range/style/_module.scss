@@ -22,6 +22,35 @@
       background-size: spacing.space(0.5v 100%);
     }
   }
+
+  &--disabled {
+    #{selector.ns(range)} {
+      &__output,
+      &__min,
+      &__max {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+      }
+
+      &#{selector.ns-attr(js-range)} {
+        @include _pseudo (before after) {
+          @include preference.forced-colors {
+            border: 1px solid graytext;
+          }
+        }
+      }
+    }
+
+    #{selector.ns(label)} {
+      &,
+      #{selector.ns(hint-text)} {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+      }
+    }
+  }
 }
 
 #{selector.ns(range)} {
@@ -54,6 +83,9 @@
       @include absolute(6.5v, 0, null, 0);
       @include size(100%, 3v);
       border-radius: spacing.space(1.5v);
+      @include preference.forced-colors {
+        border: 1px solid buttontext;
+      }
     }
 
     @include before {
@@ -69,6 +101,10 @@
       background-color: transparent;
       @include size(100%, var(--thumb-size));
       @include z-index(over);
+
+      @include preference.forced-colors {
+        border: none;
+      }
 
       &:focus {
         @include selector.range-thumb {
@@ -91,10 +127,21 @@
 
         @include preference.forced-colors {
           background: buttontext;
+          box-shadow: none;
         }
 
         &:active {
           @include z-index(above);
+        }
+      }
+
+      @include disabled.selector {
+        border-color: graytext;
+
+        @include selector.range-thumb {
+          @include preference.forced-colors {
+            background: graytext;
+          }
         }
       }
     }

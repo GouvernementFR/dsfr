@@ -5,6 +5,7 @@
 
 @use 'module/spacing';
 @use 'module/preference';
+@use 'module/disabled';
 
 #{ns(toggle)} {
   display: flex;
@@ -20,18 +21,18 @@
     opacity: 0;
 
     &:checked {
-      ~ #{ns(toggle__label)} {
+      ~#{ns(toggle__label)} {
         &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
           @include before(attr(#{ns-attr(checked-label, null, true)}));
         }
 
-        @include _pseudo {
+        @include before {
           @include preference.forced-colors {
             border: 2px solid highlight;
             background-color: transparent;
             background-image: none;
             forced-color-adjust: none;
-            color: graytext;
+            color: canvastext;
           }
         }
 
@@ -40,7 +41,7 @@
           @include z-index(higher);
 
           @include preference.forced-colors {
-            background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='highlightText' d='M10 15.17l9.2-9.2 1.4 1.42L10 18l-6.36-6.36 1.4-1.42z'/></svg>");
+            background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M10 15.17l9.2-9.2 1.4 1.42L10 18l-6.36-6.36 1.4-1.42z'/></svg>");
             border: 2px solid highlight;
             background-color: highlight;
           }
@@ -49,12 +50,50 @@
     }
 
     &:focus {
-      ~ #{ns(toggle__label)} {
+      ~#{ns(toggle__label)} {
         @include before {
           @include preference.forced-colors {
             outline-color: graytext;
           }
-        };
+        }
+
+        ;
+      }
+    }
+
+    @include disabled.selector {
+      ~#{ns(toggle__label)} {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+
+        @include _pseudo(before after) {
+          @include preference.forced-colors {
+            background-image: none;
+            border: 2px solid graytext;
+            box-shadow: none;
+            color: graytext;
+          }
+        }
+      }
+
+      &:checked {
+        ~#{ns(toggle__label)} {
+          @include _pseudo(before after) {
+            @include preference.forced-colors {
+              background-image: none;
+              border: 2px solid graytext;
+              box-shadow: none;
+            }
+          }
+
+          @include after {
+            @include preference.forced-colors {
+              background-color: graytext;
+              background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M10 15.17l9.2-9.2 1.4 1.42L10 18l-6.36-6.36 1.4-1.42z'/></svg>");
+            }
+          }
+        }
       }
     }
   }
@@ -75,10 +114,13 @@
 
         @include preference.forced-colors {
           background-image: none;
+          color: canvasText;
         }
-      };
+      }
 
-      + #{ns(hint-text)} {
+      ;
+
+      +#{ns(hint-text)} {
         @include margin-top(2v);
       }
     }
@@ -95,17 +137,17 @@
       background-repeat: no-repeat;
 
       @include preference.forced-colors {
+        @include height(6v);
         background-image: none;
         border: 2px solid buttontext;
         background-color: transparent;
         forced-color-adjust: none;
-        color: graytext;
         @include padding-top(5v);
       }
     }
 
     @include after('') {
-      @include display-flex(null,center,center);
+      @include display-flex(null, center, center);
       @include absolute(4v, null, null, 0, 6v, 6v);
       border-radius: 50%;
       background-repeat: no-repeat;

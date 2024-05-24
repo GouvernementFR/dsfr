@@ -13,4 +13,8 @@ a#{selector.ns(link)} {
     text-decoration: underline;
     text-underline-offset: 5px;
   }
+
+  &:not([href]) {
+    @include icon-forced-color(graytext);
+  }
 }
