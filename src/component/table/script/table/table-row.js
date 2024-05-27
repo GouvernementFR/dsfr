@@ -7,6 +7,7 @@ class TableRow extends api.core.Instance {
   }
 
   init () {
+    this.isResizing = true;
     this.addDescent(TableEmission.COL_SELECT, this.rowSelect.bind(this));
   }
 
@@ -17,6 +18,11 @@ class TableRow extends api.core.Instance {
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').checked = !col.value;
       cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').click();
     }
+  }
+
+  resize () {
+    const height = this.getRect().height;
+    this.setProperty('--row-height', `${height}px`);
   }
 }
 

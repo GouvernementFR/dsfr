@@ -9,8 +9,7 @@
 
 #{ns(table)} {
   --table-offset: spacing.space(4v);
-  --table-offset-width: 0;
-  --row-header-cell-width: auto;
+  --row-height: 0;
 
   @include set-text-margin(0);
   @include set-title-margin(0);
@@ -172,15 +171,13 @@
 
         tr {
           &[aria-selected="true"] {
-            position: relative;
-
             &::after {
-              @include absolute(-0.5v, null, null, 0, 100%, calc(100% + 0.5v));
+              @include absolute(null, null, null, 0, 100%, var(--row-height));
               @include z-index(above);
               content: '';
               pointer-events: none;
 
-              // left-right
+              // selected borders left-right
               background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%);
               background-repeat: no-repeat, no-repeat;
               background-position: 0 0, 100% 0;
