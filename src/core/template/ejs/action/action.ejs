@@ -7,6 +7,8 @@ valeurs :
   ** input : input
   ** link : lien
 
+* action.id (string, optional) : id de l'élément d'action
+
 * action.label (string, required) : libellé de l'élément d'action
 
 * action.href (string, optional) : adresse url du lien si action.kind = link
@@ -37,6 +39,7 @@ const actionDisabled = action.disabled === true;
 let markup;
 
 if (action.type) actionAttrs.type = action.type;
+if (action.id) actionAttrs.id = action.id;
 
 switch (actionKind) {
   case 'input':
