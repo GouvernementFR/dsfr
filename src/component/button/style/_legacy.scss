@@ -4,6 +4,7 @@
 ////
 
 @use 'module/legacy';
+@use 'module/animate';
 
 @include legacy.is(ie11) {
   #{ns(btn)} {
@@ -70,13 +71,11 @@
 
   #{ns(btn--sort)} {
     @include icon-legacy(sort-asc-desc-line, sm);
+    @include animate.rotate('&[aria-sorting='desc']');
 
-    &[aria-sorting='asc'] {
-      @include icon-legacy(sort-asc-line, sm);
-    }
-
+    &[aria-sorting='asc'],
     &[aria-sorting='desc'] {
-      @include icon-legacy(sort-desc-line, sm);
+      @include icon-legacy(sort-asc-line, sm);
     }
   }
 

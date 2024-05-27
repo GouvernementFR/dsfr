@@ -3,14 +3,14 @@
 /// @group button
 ////
 
+@use 'module/animate';
+
 #{ns(btn--sort)} {
   @include nest-btn(sm, only, sort-asc-desc-line, null, false);
+  @include animate.rotate('&[aria-sorting='desc']');
 
-  &[aria-sorting='asc'] {
-    @include nest-btn(sm, only, sort-asc-line, null, false);
-  }
-
+  &[aria-sorting='asc'],
   &[aria-sorting='desc'] {
-    @include nest-btn(sm, only, sort-desc-line, null, false);
+    @include nest-btn(sm, only, sort-asc-line, null, false);
   }
 }
