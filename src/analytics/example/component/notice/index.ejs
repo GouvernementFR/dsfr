@@ -8,4 +8,4 @@ let link = {label: 'En savoir plus', href: 'https://www.meteofrance.fr/', blank:
 
 <%- sample('Bandeau vigilance météo rouge', '../../../../component/notice/example/sample/notice-default', {notice: {type: "weather-red", title: 'Vigilance météo rouge', desc:desc, link: link}}); %>
 
-<%- sample('Bandeau vigilance météo rouge', '../../../../component/notice/example/sample/notice-default', {notice: {type: "attack", title: 'Attentat en cours', desc:desc, link: {...link, href: 'https://interieur.gouv.fr'}}}); %>
+<%- sample('Attentat en cours', '../../../../component/notice/example/sample/notice-default', {notice: {type: "attack", title: 'Attentat en cours', desc:desc, link: {...link, href: 'https://interieur.gouv.fr'}}}); %>
