@@ -11,6 +11,15 @@ class NoticeActionee extends ComponentActionee {
     return 'NoticeActionee';
   }
 
+  init () {
+    const link = this.node.querySelector(NoticeSelector.LINK);
+    if (link) {
+      this.link = link;
+      this.detectInteractionType(link);
+      this.listenActionClick(link);
+    }
+  }
+
   get label () {
     const noticeTitle = this.node.querySelector(NoticeSelector.TITLE);
     if (noticeTitle) {
