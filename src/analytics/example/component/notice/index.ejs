@@ -6,6 +6,6 @@ let desc = 'lorem ispum dolor sit amet, consectetur adipiscing elit. Nullam nec 
 let link = {label: 'En savoir plus', blank: true};
 %>
 
-<%- sample('Bandeau vigilance météo rouge', '../../../../component/notice/example/sample/notice-default', {notice: {type: "weather-red", title: 'Vigilance météo rouge', desc:desc, link: {...link, href: 'https://www.meteofrance.fr/', id: uniqueId('link')}}}); %>
+<%- sample('Vigilance météo orange', '../../../../component/notice/example/sample/notice-default', {notice: {type: "weather-orange", title: 'Vigilance météo orange', desc:desc, link: {...link, href: 'https://www.meteofrance.fr/', id: uniqueId('link')}}}); %>
 
-<%- sample('Attentat en cours', '../../../../component/notice/example/sample/notice-default', {notice: {type: "attack", title: 'Attentat en cours', desc:desc, link: {...link, href: 'https://interieur.gouv.fr', id: uniqueId('link')}}}); %>
+<%- sample('Alerte attentat', '../../../../component/notice/example/sample/notice-default', {notice: {type: "attack", title: 'Attentat en cours', desc:desc, link: {...link, href: 'https://interieur.gouv.fr', id: uniqueId('link')}}}); %>
