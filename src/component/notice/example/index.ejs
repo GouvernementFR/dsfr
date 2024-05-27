@@ -26,17 +26,8 @@
 
   const accordions = [];
 
-  for (let element of elements) {
-    accordions.push({
-      label: element.title,
-      id: uniqueId('notice'),
-      content: include(`./sample/${element.path}`)
-    });
-  }
-
-  const data = {
-    accordions: accordions
-  }
- %>
-
-<%- include('../../accordion/template/ejs/accordions-group', {accordionsGroup: data }); %>
+  for (let element of elements) { %>
+    <%- include(`./sample/${element.path}`); %>
+    <br><br><br><br>
+  <%  }
+%>

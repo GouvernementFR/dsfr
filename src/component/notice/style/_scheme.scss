@@ -55,7 +55,7 @@
     }
 
     &--kidnapping,
-    &--vigipirate {
+    &--attack {
       @include color.background(flat error, (legacy:$legacy));
       @include color.text(inverted grey, (legacy:$legacy));
       @include color.background-image(border plain grey, (legacy:$legacy));

@@ -1,7 +1,7 @@
 import { ComponentActionee } from '../component-actionee';
 import ID from './id';
 
-class NavigationLinkActionee extends ComponentActionee {
+class NoticeLinkActionee extends ComponentActionee {
   constructor () {
     super(2);
   }
@@ -27,4 +27,4 @@ class NavigationLinkActionee extends ComponentActionee {
   }
 }
 
-export { NavigationLinkActionee };
+export { NoticeLinkActionee };

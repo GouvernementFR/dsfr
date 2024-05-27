@@ -112,7 +112,7 @@
 
   &--witness,
   &--kidnapping,
-  &--vigipirate,
+  &--attack,
   &--cyberattack {
     @include padding-top(5.5v);
     background-position: 0 0;
@@ -139,7 +139,7 @@
     }
   }
 
-  &--vigipirate {
+  &--attack {
     #{selector.ns(notice)}__title {
       @include icon-image(alert-warning-2-fill, before);
       @include icon-content;
