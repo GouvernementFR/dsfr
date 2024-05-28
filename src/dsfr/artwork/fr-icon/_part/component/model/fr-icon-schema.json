@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GouvernementFR/dsfr/src/dsfr/core/icon/_part/component/model/fr-icon-schema.json",
+  "$ref": "https://github.com/GouvernementFR/dsfr-kit/src/model/component-schema.json",
+  "title": "DSFR/core/FrIcon",
+  "type": "object",
+  "props": {
+    "name": {
+      "type": "string",
+      "description": "Nom de l’icône, correspondant au nom du fichier SVG",
+      "description@en-US": "Icon name, corresponding to the filename"
+    },
+    "size": {
+      "type": "string",
+      "description": "Taille de l'icône, par défaut md. Les valeurs possibles sont [sm, md, lg]",
+      "description@en-US": "Icon size, md by default. Available values [sm, md, lg]",
+      "default": "md",
+      "enum": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "element": {
+    "attributes": ["aria-hidden"]
+  }
+}
