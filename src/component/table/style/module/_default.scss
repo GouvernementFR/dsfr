@@ -176,6 +176,7 @@
               @include z-index(above);
               content: '';
               pointer-events: none;
+              transform: translateY(spacing.space(-0.5v));
 
               // selected borders left-right
               background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%);

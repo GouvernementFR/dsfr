@@ -1,7 +1,7 @@
 <%
 const table = locals.table || {};
 
-const actionCellEmpty = `<span class="${prefix}-sr-only">${getText('data.cell.action.empty', 'table')}</span>`;
+const getSrOnlyCell = (content) => `<span class="${prefix}-sr-only">${content}</span>`;
 const getTextCell = (markup = 'span', classes = `${prefix}-cell__desc`) => `<${markup} class="${classes}">${getText('data.cell.text', 'table')}</${markup}>`;
 const getTitleCell = (markup = 'span', classes = `${prefix}-cell__title`) => `<${markup} class="${classes}">${getText('data.cell.title', 'table')}</${markup}>`;
 
@@ -22,7 +22,7 @@ const thead = [
         role: 'columnheader'
       },
       classes: [`${prefix}-cell--fixed`, `${prefix}-cell__col--select`],
-      content: getCheckbox({id: `${table.id}-selectall-rows-checkbox`, label: getText('data.cell.action.selectAll', 'table')}) + getTitleCell('span')
+      content: getSrOnlyCell(getText('data.cell.action.select', 'table'))
     },
     {
       content: getTitleCell()
@@ -69,11 +69,10 @@ for(let r = 0; r < rowsLength; r++) {
       markup: 'th',
       attributes: {scope: 'row'},
       classes: [`${prefix}-cell--fixed`, `${prefix}-cell__row--select`],
-      content:  getCheckbox({id: `${table.id}-select-row-checkbox-${r + 1}`, label: `${getText('data.cell.action.selectRow', 'table')} ${r + 1} : ${getText('data.cell.title', 'table')}`, attributes: {checked: selectedLines.includes(r) || undefined}}) + getTitleCell('span')
+      content:  getCheckbox({id: `${table.id}-select-row-checkbox-${r + 1}`, label: `${getText('data.cell.action.selectRow', 'table')} ${r + 1} : ${getText('data.cell.title', 'table')}`, attributes: {name: 'row-select', checked: selectedLines.includes(r) || undefined}}) + getTitleCell('span')
     },
     {
       content: getText('data.cell.text', 'table')
-      // content: getCheckbox({id: `${table.id}-cell-checkbox-${r}`, label: 'test'})
     },
     {
       content: getBadge({type: 'info', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mb-2v`], size: 'sm'}) + getTitleCell('div', `${prefix}-cell__title ${prefix}-mb-2v`) + getTextCell('div')

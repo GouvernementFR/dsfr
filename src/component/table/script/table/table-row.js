@@ -1,5 +1,4 @@
 import api from '../../api.js';
-import { TableEmission } from './table-emission.js';
 
 class TableRow extends api.core.Instance {
   static get instanceClassName () {
@@ -8,21 +7,32 @@ class TableRow extends api.core.Instance {
 
   init () {
     this.isResizing = true;
-    this.addDescent(TableEmission.COL_SELECT, this.rowSelect.bind(this));
+    this.listenCheckbox();
+    this._initRowSelection();
   }
 
-  rowSelect (col) {
-    const cellCol = this.node.childNodes[col.index];
-    if (!cellCol || !cellCol.classList) return;
-    if (cellCol.classList.contains('fr-cell--fixed') && cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]')) {
-      cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').checked = !col.value;
-      cellCol.querySelector('.fr-checkbox-group input[type="checkbox"]').click();
+  listenCheckbox () {
+    this.listen(api.checkbox.CheckboxEvent.CHANGE, this._handleCheckboxChange.bind(this), { capture: true });
+  }
+
+  _handleCheckboxChange (event) {
+    if (event.target.name === 'row-select') {
+      this.setAriaSelected(event.target.checked);
     }
   }
 
+  _initRowSelection () {
+    const rowSelect = this.node.querySelector(api.checkbox.CheckboxSelector.INPUT);
+    if (rowSelect) this.setAriaSelected(rowSelect.checked);
+  }
+
   resize () {
-    const height = this.getRect().height;
+    const height = this.getRect().height + 2;
     this.setProperty('--row-height', `${height}px`);
+  }
+
+  setAriaSelected (value) {
+    this.setAttribute('aria-selected', value);
   }
 }
 
