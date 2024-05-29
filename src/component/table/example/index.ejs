@@ -46,7 +46,7 @@ const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
-  sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--lg`], table: {id: 'table-double-entry', caption: getText('data.caption.default', 'table'), doubleEntry: true}}}, true);
+  sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {table: {id: 'table-double-entry', caption: getText('data.caption.default', 'table'), doubleEntry: true}}}, true);
 %>
 
 <%-
