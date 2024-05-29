@@ -1,0 +1,104 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "FrIconComponent",
+            "id": "component-FrIconComponent-243bbd539a9f4b5d2570d76a5be93c70c28ac1fc59e879122e38c53799d4fc49c9f596294e218a6af273641cc367766939aba783cb42b6251cb8e7b19b13d832",
+            "file": "src/dsfr/artwork/fr-icon/_part/component/ng/fr-icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "fr-icon",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string | undefined",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { FrIconModel } from '../model/fr-icon-model';\nimport { Props } from '@gouvfr/dsfr-kit';\nimport { ngGetProps, ngGetBoundAttributes } from '@gouvfr/dsfr-kit/ng';\n\n@Component({\n  selector: 'fr-icon',\n  standalone: true,\n  imports: [CommonModule],\n  template: `<span ${ngGetBoundAttributes(FrIconModel.schema)} ></span>`,\n})\n\nclass FrIconComponent {\n  @Input() id: string | undefined;\n  @Input() name: string | undefined;\n  @Input() size: string | undefined;\n\n  public get props(): Props {\n    return ngGetProps(this, FrIconModel);\n  }\n}\n\nexport { FrIconComponent  };\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "props": {
+                    "name": "props",
+                    "getSignature": {
+                        "name": "props",
+                        "type": "",
+                        "returnType": "Props",
+                        "line": 19
+                    }
+                }
+            }
+        }
+    ],
+    "modules": [],
+    "miscellaneous": [],
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/dsfr/artwork/fr-icon/_part/component/ng/fr-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FrIconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            }
+        ]
+    }
+}

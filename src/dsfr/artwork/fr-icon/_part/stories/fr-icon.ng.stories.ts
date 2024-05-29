@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { FrIconComponent } from '../component/angular/fr-icon.component';
+import { FrIconComponent } from '../component/ng/fr-icon.component';
 import { FrIconModel } from '../component/model/fr-icon-model';
 import { schemaToArgs, schemaToArgTypes } from '@gouvfr/dsfr-kit';
 

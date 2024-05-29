@@ -1,1 +1,0 @@
-export const spanElement = () => `<span [attr.id]="props.attributes['id']" [class]="props.attributes['class']" [attr.aria-hidden]="props.attributes['aria-hidden']" [attr.aria-label]="props.attributes['aria-label']"></span>`;
