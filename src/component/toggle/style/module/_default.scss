@@ -45,6 +45,7 @@
       @include before(attr(#{ns-attr(unchecked-label, null, true)})) {
         @include margin-right(calc(var(--toggle-status-width) - #{spacing.space(2v)}));
         @include margin-bottom(4v);
+        word-wrap: normal;
       };
 
       + #{ns(hint-text)} {
