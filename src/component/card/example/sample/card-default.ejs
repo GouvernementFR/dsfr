@@ -43,7 +43,7 @@ if (card.img || card.vid) {
 
 
   if (card.header && card.header.badges) {
-    data.header.badgesGroup = { badges: [{ label: 'label badge'}]};
+    data.header.badgesGroup = { badges: [{ label: 'Libellé badge'}]};
   }
 }
 
@@ -57,11 +57,11 @@ if (card.content) {
   if (card.content.description !== false) data.content.description = card.content.description || lorem('', 160);
 
   if (card.content.badges) {
-    data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'label badge', accent: 'purple-glycine'}})};
+    data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'Libellé badge', accent: 'purple-glycine'}})};
   }
 
   if (card.content.tags) {
-    data.content.tagsGroup = { tags: [...Array(2)].map(() => { return { label: 'label tag'}})};
+    data.content.tagsGroup = { tags: [...Array(2)].map(() => { return { label: 'Libellé tag'}})};
   }
 
 
@@ -100,7 +100,7 @@ if (card.footer) {
     data.footer.buttonsGroup = { buttons: [{label: label, kind: 2}, {label: label, kind: 1}], reverse: true, inline:'lg' }
   }
   if (card.footer.links) {
-    data.footer.linksGroup = { inline: true, links: [...Array(2)].map(() => { return { label: 'label', inline: true, href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
+    data.footer.linksGroup = { inline: true, links: [...Array(2)].map(() => { return { label: 'Libellé', inline: true, href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
   }
 }
 
