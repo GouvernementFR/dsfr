@@ -13,7 +13,6 @@ const getInput = (input) => include('../../../input/input-base/template/ejs/inpu
 const getLink = (link) => include('../../../link/template/ejs/link.ejs', {link});
 const getPictogram = (pictogram) => include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram});
 const getTag = (tag) => include('../../../tag/template/ejs/tag.ejs', {tag});
-const getToggle = (toggle) => include('../../../toggle/template/ejs/toggle.ejs', {toggle});
 
 const thead = [
   [
@@ -43,7 +42,7 @@ const thead = [
       content: getButton({id: `${table.id}-thead-sort-asc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sorting': 'asc'}})
     },
     {
-      content: getToggle({id: `${table.id}-thead-toggle`, label: '', inputAttr: {'aria-label': getText('data.cell.action.select', 'table')}})
+      content: getBadge({id: `${table.id}-thead-badge`, type: 'info', label: getText('data.cell.label', 'table')})
     },
     {
       content: getTextCell()
@@ -90,7 +89,7 @@ for(let r = 0; r < rowsLength; r++) {
       content: getText('data.cell.number', 'table')
     },
     {
-      content: getBadge({label: getText('data.cell.label', 'table')})
+      content: getBadge({type: 'info', label: getText('data.cell.label', 'table')})
     },
     {
       content: getButton({kind: 2})
