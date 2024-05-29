@@ -19,7 +19,7 @@ sample:
   lg: Tableau LG
   miscellaneous: Tableau avec filtre et navigation comportant différents types de données
   multiline:
-    subtitle: En ajoutant la classe <code>fr-cell--multiline</code> sur l'element <code>table</code>, une ligne ou une cellule du tableau
+    subtitle: Il est possible de réactiver le retour à la ligne des éléments inline en ajoutant la classe <code>fr-cell--multiline</code> sur l'element <code>table</code>, une ligne ou une cellule du tableau
     title: Exemple de cellules avec retour à la ligne automatique
   noCaption: Tableau avec titre invisible
   selectable: Tableau avec lignes sélectionnables
