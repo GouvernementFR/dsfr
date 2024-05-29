@@ -35,7 +35,8 @@ if (card.img || card.vid) {
 
   switch (true) {
     case card.img !== undefined:
-      data.header.img = { ...imgData('img/placeholder.16x9.png', 'unknown'), ...card.img};
+      const imgRatio = card.img && card.img.ratio || '16x9';
+      data.header.img = { ...imgData(`img/placeholder.${imgRatio}.png`, 'unknown'), ...card.img};
       break;
 
     case card.vid !== undefined:
@@ -88,10 +89,10 @@ if (card.download) {
   data.download = true;
   if (!data.content.details) {
     data.content.details = [];
-    data.content.details.push({ label: 'PNG - 1,1 ko', position: 'end'});
+    data.content.details.push({ label: 'PDF - 48 ko', position: 'end'});
   } else {
     const hasEnd = data.content.details.find(detail => detail.position === 'end');
-    if (!hasEnd) data.content.details.push({ label: 'PNG - 1,1 ko', position: 'end'});
+    if (!hasEnd) data.content.details.push({ label: 'PDF - 48 ko', position: 'end'});
   }
 }
 
