@@ -1,10 +1,12 @@
 <%
 const card = locals.card || {};
+const content = card.content || {};
 const href = card.href || '#';
 const data = {
   content: {
     title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
     href: href,
+    actionMarkup: content.actionMarkup || undefined
   },
   id: card.id || uniqueId('card'),
   size: card.size,

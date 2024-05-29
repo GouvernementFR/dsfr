@@ -1,3 +1,5 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Carte avec lien désactivé (a sans href)', './card-default', { card : { img: true, content: {disabled:true} }}, true, './card-layout', {col: {md:4}}); %>
+<%- sample('Carte avec lien désactivé (a sans href)', './card-default', { card : { img: true, content: { disabled: true }}}, true, './card-layout', {col: {md:4}}); %>
+
+<%- // sample('Carte avec bouton désactivé (disabled)', './card-default', { card : { img: true, title: 'Intitulé de la carte (sur lequel se trouve le bouton)', content: { disabled: true, actionMarkup: 'button' } }}, true, './card-layout', {col: {md:4}}); %>
