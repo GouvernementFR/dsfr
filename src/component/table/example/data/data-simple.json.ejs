@@ -1,8 +1,9 @@
 <%
 const table = locals.table || {};
-const thead = JSON.parse(include('./data-simple-thead.json.ejs', { table: table }));
-const tbodies = [JSON.parse(include('./data-simple-tbody.json.ejs', { table: table }))];
-const rows = table.rows || {};
+const dataLorem = JSON.parse(include('../data/data-lorem.json.ejs', { table: table.table }));
+
+const thead = dataLorem.thead;
+const tbodies = dataLorem.tbodies;
 
 const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkbox});
 const getSrOnlyCell = (content) => `<span class="${prefix}-sr-only">${content}</span>`;
@@ -22,14 +23,14 @@ if (table.selectable) {
       attributes: {
         role: 'columnheader'
       },
-      classes: [`${prefix}-cell--fixed`, `${prefix}-cell__col--select`],
+      classes: [`${prefix}-cell--fixed`],
       content: getSrOnlyCell(getText('data.cell.action.select', 'table'))
     });
   });
   tbodies.forEach((tbody) => {
     tbody.forEach((row, index) => {
       row.unshift({
-        classes: [`${prefix}-cell--fixed`, `${prefix}-cell__row--select`],
+        classes: [`${prefix}-cell--fixed`],
         content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, label: `${getText('data.cell.action.selectRow', 'table')} ${index + 1}`, attributes: {name: 'row-select'}})
       });
     });
@@ -43,7 +44,7 @@ if (table.doubleEntry) {
         scope: 'row'
       },
       classes: [`${prefix}-cell--fixed`],
-      content: getSrOnlyCell(getText('data.cell.hours', 'table'))
+      content: getSrOnlyCell(getText('data.cell.doubleEntry', 'table'))
     });
   });
 
@@ -53,7 +54,7 @@ if (table.doubleEntry) {
         markup: 'th',
         attributes: {scope: 'row'},
         classes: [`${prefix}-cell--fixed`],
-        content: `${8 + index}h`
+        content: `th${index}`
       });
     });
   });

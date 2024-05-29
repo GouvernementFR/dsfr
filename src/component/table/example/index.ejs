@@ -1,12 +1,12 @@
 
 <%
 const sample = getSample(include);
-
-const dataCellCollapsed = JSON.parse(include('./data/data-collapsed.json.ejs'));
+let loremData = JSON.parse(include('./data/data-lorem.json.ejs'));
+const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
-  sample(getText('sample.default', 'table'), './sample/table-simple', {table: {table: {id: 'table-default', caption: getText('data.caption.default', 'table')}}}, true);
+  sample(getText('sample.default', 'table'), './sample/table-simple', {table: {table: {id: 'table-md', caption: getText('data.caption.default', 'table')}}}, true);
 %>
 
 <%-
@@ -50,7 +50,7 @@ const dataCellCollapsed = JSON.parse(include('./data/data-collapsed.json.ejs'));
 %>
 
 <%-
-  sample(getText('sample.cellCollapsed', 'table'), './sample/table-default', {table: {bordered: true, table: {id: 'table-collapsed', caption: getText('data.caption.default', 'table'), captionDetail: getText('data.caption.detail', 'table'), ...dataCellCollapsed}}}, true);
+  sample({title: getText('sample.complex.title', 'table'), subtitle: getText('sample.complex.subtitle', 'table')}, './sample/table-default', {table: {bordered: true, table: {id: 'table-complex', caption: getText('data.caption.default', 'table'), captionDetail: getText('data.caption.detail', 'table'), ...complexData}}}, true);
 %>
 
 <%-

@@ -1,23 +1,23 @@
 <%
 const table = locals.table || {};
-const dataSimple = JSON.parse(include('../data/data-simple.json.ejs', { table: table.table }));
+const dataLorem = JSON.parse(include('../data/data-lorem.json.ejs', { table: table.table }));
 
 const utilities = ['top', 'bottom', 'center', 'right'];
 
-const simpleThead = dataSimple.table.thead;
-simpleThead.forEach(thead => {
+const loremThead = dataLorem.thead;
+loremThead.forEach(thead => {
   thead.forEach((row, index) => {
     row.content = utilities[index] || 'default';
   });
 });
 
-const simpleBodies = dataSimple.table.tbodies;
-simpleBodies.forEach(tbodies => {
+const loremBodies = dataLorem.tbodies;
+loremBodies.forEach(tbodies => {
   tbodies.forEach(tbody => {
     tbody.forEach((row, index) => {
       row.classes = utilities[index] ? [`${prefix}-cell--${utilities[index]}`] : [];
       if (index === tbody.length - 1) {
-        row.content = 'New York<br>No.1 Lake Park<br>USA'
+        row.content = `${lorem(null , 5)}<br>${lorem(null , 10)}<br>${lorem(null , 25)}`
       }
     });
   });
@@ -25,7 +25,7 @@ simpleBodies.forEach(tbodies => {
 
 const data = {
   ...table,
-  ...dataSimple
+  table: dataLorem
 }
 %>
 

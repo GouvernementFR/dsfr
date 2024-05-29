@@ -1,12 +1,12 @@
 <%
-const thead = JSON.parse(include('./data-collapsed-thead.json.ejs'));
-const tbodies = [JSON.parse(include('./data-collapsed-tbody.json.ejs'))];
+const thead = JSON.parse(include('./data-complex-thead.json.ejs'));
+const tbodies = [JSON.parse(include('./data-complex-tbody.json.ejs'))];
 
 thead.forEach((row, rowIndex) => {
   row.forEach((th, thIndex) => {
     th.attributes = {
       ...th.attributes,
-      id: `collapsed-thead-${rowIndex}-col-${thIndex}`
+      id: `complex-thead-${rowIndex}-col-${thIndex}`
     };
   });
 });
@@ -16,8 +16,8 @@ tbodies.forEach((tbody) => {
     row.unshift({
       markup: 'th',
       attributes: {
-        id: `collapsed-row-${index}`,
-        headers: 'collapsed-thead-0-col-0'
+        id: `complex-row-${index}`,
+        headers: 'complex-thead-0-col-0'
       },
       classes: [`${prefix}-cell--fixed`],
       content:  `${8 + index}h`
