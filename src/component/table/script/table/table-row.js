@@ -7,8 +7,10 @@ class TableRow extends api.core.Instance {
 
   init () {
     this.isResizing = true;
-    this.listenCheckbox();
-    this._initRowSelection();
+    if (api.checkbox) {
+      this.listenCheckbox();
+      this._initRowSelection();
+    }
   }
 
   listenCheckbox () {

@@ -7,11 +7,7 @@
 @use 'module/spacing';
 
 @include legacy.is(ie11) {
-  /**
-  * Correctif placement caption
-  */
   #{ns(table)} {
-
     &__header {
       #{ns(segmented)} {
         flex: 1;
@@ -27,7 +23,6 @@
     }
 
     &__content {
-
       table {
         border-top: 1px solid;
         border-left: 1px solid;
@@ -70,8 +65,6 @@
         }
       }
     }
-
-
 
     &#{ns-attr(js-table, true)} {
       &#{ns(table--no-caption)},

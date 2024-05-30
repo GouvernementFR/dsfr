@@ -16,3 +16,6 @@
 
 @include _table-scheme(true);
 @include _deprecated-table-scheme(true);
+
+// deprecated
+@import 'deprecated/style/legacy';

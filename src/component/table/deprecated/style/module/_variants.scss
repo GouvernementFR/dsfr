@@ -4,84 +4,84 @@
 ////
 
 #{ns(table)} {
-  &:not(:has(#{ns(table__container)})) {
-    /*
-    * Cache la caption
-    */
-    &#{ns(table--no-caption)} {
-      @include padding-top(0);
+  /*
+  * Cache la caption
+  */
+  &--no-caption {
+    @include padding-top(0);
 
+    & > table {
       caption {
         @include sr-only();
         @include height(0);
       }
     }
+  }
 
-    /*
-    * Fixe le caption en bas du tableau
-    */
-    &#{ns(table--caption-bottom)} {
-      @include padding-top(0);
-      @include margin-bottom(0);
-      @include margin-top(4v);
+  /*
+  * Fixe le caption en bas du tableau
+  */
+  &--caption-bottom {
+    @include padding-top(0);
+    @include margin-bottom(0);
+    @include margin-top(4v);
 
+    & > table {
+      @include margin-bottom(calc(var(--table-offset) + 11v));
+
+      caption {
+        @include margin-top(4v);
+        @include height(min-content);
+        caption-side: bottom;
+      }
+    }
+
+    &#{ns-attr(js-table, true)} {
       & > table {
-        @include margin-bottom(calc(var(--table-offset) + 11v));
-
         caption {
+          @include absolute(100%, 0, 0, 0);
           @include margin-top(4v);
-          @include height(min-content);
-          caption-side: bottom;
-        }
-      }
-
-      &#{ns-attr(js-table, true)} {
-        & > table {
-          caption {
-            @include absolute(100%, 0, 0, 0);
-            @include margin-top(4v);
-          }
         }
       }
     }
+  }
 
-    /*
-    * pas de scroll ni de shadow
-    */
-    &#{ns(table--no-scroll)} {
-      @include min-width(auto);
+  /*
+  * pas de scroll ni de shadow
+  */
+  &--no-scroll {
+    @include min-width(auto);
 
-      & > table {
-        overflow-x: hidden;
+    & > table {
+      overflow-x: hidden;
 
-        caption {
-          @include max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
-        }
+      caption {
+        @include max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
       }
     }
+  }
 
-    /*
-    * Fixe la taille des colonnes du tableau
-    */
-    &#{ns(table--layout-fixed)} {
-      & > table {
-        display: table;
-        table-layout: fixed;
-      }
+  /*
+  * Fixe la taille des colonnes du tableau
+  */
+  &--layout-fixed {
+    & > table {
+      display: table;
+      table-layout: fixed;
     }
+  }
 
-    /* Style bordered, ajoute des bordures entre chaque ligne */
-    &#{ns(table--bordered)} {
-      & > table {
-        tbody {
-          tr {
-            background-size: 100% 1px;
-            background-position: bottom;
-            background-repeat: no-repeat;
+  /* Style bordered, ajoute des bordures entre chaque ligne */
+  &--bordered {
+    & > table {
+      tbody {
+        tr {
+          background-size: 100% 1px;
+          background-position: bottom;
+          background-repeat: no-repeat;
 
-            &:last-child {
-              background-image: none;
-            }
+          &:last-child {
+            background-image: none;
           }
         }
       }
