@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { FrIconModel } from '../model/fr-icon-model.js';
-import { rxSchemaToDefaultProps, rxSchemaToPropTypes } from '@gouvfr/dsfr-kit/react';
+import { rxSchemaToPropTypes } from '@gouvfr/dsfr-kit/react';
 import { ModelContext } from '@gouvfr/dsfr-kit';
 
 export const FrIcon = (props) => {
@@ -11,4 +11,3 @@ export const FrIcon = (props) => {
 };
 
 FrIcon.propTypes = rxSchemaToPropTypes(FrIconModel.schema);
-FrIcon.defaultProps = rxSchemaToDefaultProps(FrIconModel.schema);

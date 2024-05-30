@@ -8,7 +8,8 @@
     "name": {
       "type": "string",
       "description": "Nom de l’icône, correspondant au nom du fichier SVG",
-      "description@en-US": "Icon name, corresponding to the filename"
+      "description@en-US": "Icon name, corresponding to the filename",
+      "example": "warning-fill"
     },
     "size": {
       "type": "string",
