@@ -61,7 +61,9 @@ if (table.doubleEntry) {
 }
 
 if (table.accentuate) {
-  tbodies[0][1][2].classes = [`${prefix}-background-alt--green-archipel`];
+  const accentuateClass = [`${prefix}-cell--green-archipel`];
+  thead[0][1].classes = accentuateClass;
+  tbodies[0][1][2].classes = accentuateClass;
 }
 
 const data = {

@@ -8,7 +8,7 @@ subdir:
 sample:
   accentuate:
     title: Tableau avec cellule accentuée
-    subtitle: "En ajoutant les classes utilitaires d'accentuation de type fr-background-alt--[couleur d'accentuation] (ex : <code>fr-background-alt--green-archipel</code>) sur les cellules du tableau"
+    subtitle: "En ajoutant les classes utilitaires d'accentuation de type fr-cell--[couleur d'accentuation] (ex : <code>fr-cell--green-archipel</code>) sur les cellules du tableau"
   bordered: Tableau avec bordures verticales
   captionBottom: Tableau avec titre en bas
   columnSizes:
