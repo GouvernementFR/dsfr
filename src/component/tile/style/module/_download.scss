@@ -3,13 +3,18 @@
 /// @group tile
 ////
 
-#{ns(tile)}#{ns(tile--download)} {
-  #{ns(tile__title a)} {
-    @include icon(download-line, null, after);
-    @include icon-forced-color(linktext, null, after);
+@use 'module/disabled';
 
-    &:not([href]) {
-      @include icon-forced-color(graytext, null, after);
+#{ns(tile)}#{ns(tile--download)} {
+  #{ns(tile__title)} {
+    a,
+    button {
+      @include icon(download-line, null, after);
+      @include icon-forced-color(linktext, null, after);
+
+      @include disabled.selector((can-be-link: true)) {
+        @include icon-forced-color(graytext, null, after);
+      }
     }
   }
 }
