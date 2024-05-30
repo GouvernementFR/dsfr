@@ -91,6 +91,7 @@
 
     img {
       @include size(100%, 100%);
+      object-fit: cover;
     }
 
     @include respond-from(md) {

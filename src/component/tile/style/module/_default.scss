@@ -5,6 +5,7 @@
 
 @use 'module/spacing';
 @use 'module/preference';
+@use 'module/disabled';
 
 #{ns(tile)} {
   @include relative;
@@ -57,7 +58,8 @@
 
   &#{ns(enlarge-link)} {
     #{ns(tile)}__title {
-      a {
+      a,
+      button {
         @include icon-size(md) {
           @include absolute(null, 8v, 9v);
         }
@@ -66,13 +68,22 @@
           text-decoration: none;
         }
       }
+
+      button {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        text-align: inherit;
+        @include padding(0);
+      }
     }
   }
 
   &--no-icon,
   &:not(#{ns(enlarge-link)}):not(#{ns(tile--download)}) {
-    #{ns(tile__title a)} {
-      &:not([target="_blank"]) {
+    #{ns(tile__title)} {
+      a:not([target="_blank"]),
+      button {
         @include after(none);
       }
     }
@@ -92,12 +103,11 @@
       background-repeat: no-repeat;
     }
 
-    a {
+    a,
+    button {
       @include preference.forced-colors {
-        @include preference.forced-colors {
-          text-decoration: underline;
-          text-underline-offset: 5px;
-        }
+        text-decoration: underline;
+        text-underline-offset: 5px;
       }
 
       @include before {
@@ -112,7 +122,7 @@
 
       @include icon-forced-color(linktext, true, after);
 
-      &:not([href]) {
+      @include disabled.selector((can-be-link: true)) {
         @include icon-forced-color(graytext, null, after);
       }
     }

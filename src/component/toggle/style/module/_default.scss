@@ -111,14 +111,13 @@
       @include before(attr(#{ns-attr(unchecked-label, null, true)})) {
         @include margin-right(calc(var(--toggle-status-width) - #{spacing.space(2v)}));
         @include margin-bottom(4v);
+        word-wrap: normal;
 
         @include preference.forced-colors {
           background-image: none;
           color: canvasText;
         }
       }
-
-      ;
 
       +#{ns(hint-text)} {
         @include margin-top(2v);

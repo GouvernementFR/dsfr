@@ -75,7 +75,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   }
 
   &__link {
-    vertical-align: top;
+    vertical-align: spacing.space(1v);
     position: relative;
     @include link-underline;
     @include disable-tint;

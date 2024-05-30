@@ -13,7 +13,8 @@
       @include text-style(md);
       @include margin-bottom(1v);
 
-      a {
+      a,
+      button {
         @include icon-size(sm, after);
       }
     }
@@ -44,9 +45,12 @@
   }
 
   &#{ns(enlarge-link)}:not(#{ns(tile--no-icon)}) {
-    #{ns(tile__title)} a {
-      @include icon-size(sm, after) {
-        @include absolute(null, 6v, 7v);
+    #{ns(tile__title)} {
+      a,
+      button {
+        @include icon-size(sm, after) {
+          @include absolute(null, 6v, 7v);
+        }
       }
     }
 

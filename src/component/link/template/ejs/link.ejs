@@ -3,7 +3,7 @@
 
 * link.label (string, required) : contenu texte
 
-* link.markup (string, optional) : si non défini, a
+* link.markup (string, optional) : balise de l'actionneur du composant (a, button)
 
 * link.href (string, required) : adresse url du lien
 
@@ -21,10 +21,10 @@
 * link.download (boolean, optional): Si true, lien de téléchargement
 
 * link.iconPlace (string, optional) : emplacement de l'icone
-  si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
+  si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans libellé
   valeurs :
-  * left : icone à gauche du label
-  * right : icone à droite du label
+  * left : icone à gauche du libellé
+  * right : icone à droite du libellé
 
 * link.attributes (object, optional) : attributs spécifiques à rajouter sur le composant
 
@@ -49,7 +49,6 @@ if (link.assess === true) {
 if (link.hreflang) linkAttrs.hreflang = link.hreflang;
 
 if (link.download === true) {
-  linkAttrs.download = '';
   linkClasses.push(prefix + '-link--download');
 }
 
@@ -100,7 +99,7 @@ if (link.disabled === true) {
             linkAttrs.href = link.href || '[url - à modifier]';
             switch (true) {
                 case link.download:
-                    linkAttrs.download = 'true';
+                    linkAttrs.download = '';
                     break;
 
                 case link.blank:
