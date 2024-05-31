@@ -45,6 +45,7 @@ exemple d’actionName : `(click)_titre_niveau_2_›_titre_niveau_3_›_label_de
 
 Par défaut, l'envoi des actions est désactivé. Le paramètre de configuration `isActionEnabled` permet de l'activer. (voir [isActionEnabled dans Analytics](collector/analytics.md#isActionEnabled)). 
 Il est possible de d'activer l'envoi sporadiquement sur un élément particulier en utilisant l'attribut `data-fr-analytics-action`, qui permet également de donner une valeur spécifique au title de l'[ActionName](#ActionName).
+À l'inverse, il est possible de désactiver l'envoi d'actions sur un élément particulier en utilisant l'attribut `data-fr-analytics-action="false"` lorsque l'envoi d'actions est activé au global.
 
 #### Taux d'interaction
 

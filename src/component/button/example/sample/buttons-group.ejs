@@ -7,14 +7,14 @@
 
 * buttonsGroup.label (string, optional): Si buttons n'est pas définie, label est définie pour tout les boutons
 
-* buttonsGroup.vary (boolean, optional): Si buttons n'est pas définie, génère des labels plus ou moins long
+* buttonsGroup.vary (boolean, optional): Si buttons n'est pas définie, génère des libellés plus ou moins long
 
 #%>
 <%
 const buttonsGroup = locals.buttonsGroup || {}
 const buttons = buttonsGroup.buttons || [];
 
-const label = 'Label bouton';
+const label = 'Libellé bouton';
 
 if (!buttons.length && buttonsGroup.groupCount !== undefined) {
 

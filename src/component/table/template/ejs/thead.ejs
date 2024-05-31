@@ -1,0 +1,31 @@
+<%#
+# paramètres Thead
+
+* thead (array, required): tableau de données de l'en-tête à deux dimensions [row][col]
+  ** thead[row][col].content (string, required): contenu de la cellule
+  ** thead[row][col].classes (array, optional): classes supplémentaires de la cellule
+  ** thead[row][col].attributes (array, optional): attributs supplémentaires de la cellule
+%>
+
+<% eval(include('../../../../core/index.ejs'));
+
+let thead = locals.thead || {};
+%>
+
+<thead>
+  <% for (let row = 0; row < thead.length; row++) { %>
+    <tr>
+      <% if (thead[row] && thead[row].length) { %>
+        <% for (let col = 0; col < thead[row].length; col++) { %>
+          <%
+            let colClasses = thead[row][col].classes || [];
+            const colAttributes = thead[row][col].attributes || {};
+          %>
+          <th <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
+            <%- thead[row][col].content %>
+          </th>
+        <% } %>
+      <% } %>
+    </tr>
+  <% } %>
+</thead>

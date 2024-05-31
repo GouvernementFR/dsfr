@@ -140,6 +140,7 @@ class RangeModelStep extends RangeModel {
     super._update();
     const steps = this._rangeWidth / this._step;
     this._stepWidth = this._innerWidth / steps;
+    if (this._stepWidth < 1 || !isFinite(this._stepWidth)) this._stepWidth = 4;
     while (this._stepWidth < 4) this._stepWidth *= 2;
   }
 }

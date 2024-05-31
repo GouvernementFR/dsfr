@@ -2,10 +2,10 @@
 const button = locals.button || {}
 const data = {
   ...locals.button,
-  label: button.label || 'Label bouton'
+  label: button.label || 'Libellé bouton'
 }
 
-if (button.iconPlace == 'only') data.title = locals.contentPlaceholder('Label bouton');
+if (button.iconPlace == 'only') data.title = locals.contentPlaceholder('Libellé bouton');
 
 %>
 <%- include('../../template/ejs/button.ejs', {button: data}) %>

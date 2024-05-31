@@ -3,7 +3,7 @@ let radio = locals.radio || {}
 let jsonData = JSON.parse(include('../../../../form/deprecated/example/sample/data', {form:radio}));
 let data = {...radio, ...jsonData};
 
-data.label = radio.label || 'Label radio';
+data.label = radio.label || 'Libellé radio';
 data.image = radio.image !== false ? radio.image || {type: 'pictogram', name: 'city-hall'} : radio.image;
 data.rich = true;
 %>

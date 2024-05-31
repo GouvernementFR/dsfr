@@ -120,11 +120,12 @@ _Boolean_
 
 `window.dsfr.analytics.isActionEnabled`
 
-Permet d’activer / désactiver la mesure d'audience des actions.
+Permet d’activer / désactiver la mesure d'audience des actions au niveau global.
 
 * Par défaut, la mesure d'audience des actions est désactivée.
 
 Défini dans la configuration (voir propriété `isActionEnabled` de la [configuration](../installation/configuration.md))
+Voir [Activer les actions](../actions.md#Activer les actions) pour plus d'informations sur l'activation ou la désactivation des actions au cas par cas.
 
 * * *
 

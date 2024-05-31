@@ -26,11 +26,14 @@
 * content.noLink (boolean, optional) : Présence du lien
 
 * content.attributes (object, optional) : Attributs à ajouter au lien
+
+* content.actionMarkup (string, optional) : balise de l'actionneur du composant (a, button)
 %>
 <%
 let start = {};
 
 const markup = content.markup || 'h3';
+const actionMarkup = content.actionMarkup || 'a';
 const href = content.href || '#';
 let attributes = content.attributes || {};
 const hasLink = !content.noLink;
@@ -39,11 +42,15 @@ if (content.assess === true) {
 } else if (typeof(content.assess) === 'string') {
     attributes[`data-${prefix}-assess-file`] = content.assess;
 }
-if (content.disabled !== true) {
-  attributes.href = href;
+if (actionMarkup === 'a') {
+  if (content.disabled !== true) {
+    attributes.href = href;
+  } else {
+    attributes.role = 'link';
+    attributes['aria-disabled'] = true;
+  }
 } else {
-  attributes.role = 'link';
-  attributes['aria-disabled'] = true;
+    attributes.disabled = content.disabled ? null : undefined;
 }
 if (content.lang) attributes.hreflang = content.lang;
 if (content.downloadable === true) attributes.download = '';
@@ -59,7 +66,13 @@ if (content.badge) start.badge = content.badge;
 
 <div class="<%= prefix %>-tile__content">
   <<%= markup %> class="<%= prefix %>-tile__title">
-      <% if (hasLink) { %><a <%- includeAttrs(attributes) %>><% } %><%- content.title %><% if (hasLink) { %></a><% } %>
+      <% if (hasLink) { %>
+        <<%= actionMarkup %> <%- includeAttrs(attributes) %>>
+      <% } %>
+      <%- content.title %>
+      <% if (hasLink) { %>
+        </<%= actionMarkup %>>
+      <% } %>
   </<%= markup %>>
 
   <% if (content.description !== undefined) { %>

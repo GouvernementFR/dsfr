@@ -7,3 +7,19 @@ style:
   - core
 script:
   - core
+  - checkbox
+  - tooltip
+example:
+  style:
+    - alert
+    - badge
+    - button
+    - checkbox
+    - input
+    - link
+    - pagination
+    - select
+    - segmented
+    - tag
+    - toggle
+    - tooltip

@@ -2,9 +2,10 @@ import api from '../../../api';
 import actions from './actions';
 import { Hierarchy } from '../utils/hierarchy/hierarchy';
 import queue from '../engine/queue';
+import { ActionRegulation } from './action-regulation';
 
 class ActionElement {
-  constructor (node, type, id, category = '', title = null, parameters = {}, isRating = false, isForced = false) {
+  constructor (node, type, id, category = '', title = null, parameters = {}, isRating = false, regulation = ActionRegulation.NONE) {
     this._node = node;
     this._type = type;
     this._id = id || this._node.id;
@@ -13,7 +14,7 @@ class ActionElement {
     this._category = category;
     this._parameters = parameters;
     this._isRating = isRating;
-    this._isForced = isForced;
+    this._regulation = regulation;
     this._hasBegun = false;
 
     // this._init();
@@ -34,7 +35,7 @@ class ActionElement {
     if (this._type.isSingular) this._action.singularize();
     Object.keys(this._parameters).forEach(key => this._action.addParameter(key, this._parameters[key]));
     this._action.isMuted = this._isMuted;
-    this._action.isForced = this._isForced;
+    this._action.regulation = this._regulation;
 
     this._action.labels[0] = this._type.id;
     this._action.labels[1] = this._hierarchy.globalComponent;
@@ -55,6 +56,15 @@ class ActionElement {
   set isMuted (value) {
     this._isMuted = value;
     if (this._action) this._action.isMuted = value;
+  }
+
+  get regulation () {
+    return this._regulation;
+  }
+
+  set regulation (value) {
+    this._regulation = value;
+    if (this._action) this._action.regulation = value;
   }
 
   get action () {

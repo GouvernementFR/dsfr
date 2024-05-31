@@ -1,0 +1,17 @@
+<%
+const button = locals.button || {};
+const defaultButton = {
+  id: uniqueId('table-default-button'),
+  label: getText('data.cell.action.button', 'table'),
+  size: 'sm'
+};
+
+const option = {
+  ...defaultButton,
+  ...button
+};
+
+const getButton = include('../../../button/template/ejs/button.ejs', {button: option});
+%>
+
+<%- getButton %>
