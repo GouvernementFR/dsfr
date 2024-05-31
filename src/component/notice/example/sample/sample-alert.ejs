@@ -2,7 +2,7 @@
 const sample = getSample(include);
 %>
 
-<%- section('Bandeaux d\'alertes', 'Il existe 4 bandeaux d\'alertes utilisables en fonction du type d\'alerte. L\'icône ne peut pas être modifiée et les intitulés officiels doivent être utilisés', 0, true); %>
+<%- section('Bandeaux d\'alertes', 'Il existe 3 bandeaux d\'alertes utilisables en fonction du type d\'alerte. L\'icône ne peut pas être modifiée et les intitulés officiels doivent être utilisés', 0, true); %>
 
 <%- sample({title: 'Alerte attentat', subtitle: 'Ce bandeau ne peut être utilisé qu’en cas de danger imminent, et non pas pour informer sur un état d’alerte vigipirate qui aurait été relevé par exemple.'}, './notice-dismissable', {notice: {type: "attack", title: 'Attentat en cours', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true}}}, true, '../layout.ejs'); %>
 
