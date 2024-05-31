@@ -1,21 +1,28 @@
 import api from '../../api.js';
-import { CheckboxEvent } from './checkbox-event.js';
+import { CheckboxEmission } from './checkbox-emission.js';
 
 class CheckboxInput extends api.core.Instance {
   static get instanceClassName () {
     return 'CheckboxInput';
   }
 
+  constructor () {
+    super();
+    this._handlingChange = this.handleChange.bind(this);
+  }
+
   init () {
-    this.node.addEventListener('change', this.changing.bind(this));
+    this.node.addEventListener('change', this._handlingChange);
+    this.addDescent(CheckboxEmission.RETRIEVE, this._handlingChange);
+    this.handleChange();
   }
 
   get isChecked () {
     return this.node.checked;
   }
 
-  changing () {
-    this.dispatch(CheckboxEvent.CHANGE, this.isChecked);
+  handleChange () {
+    this.ascend(CheckboxEmission.CHANGE, this.node);
   }
 }
 

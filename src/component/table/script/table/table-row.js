@@ -1,4 +1,5 @@
 import api from '../../api.js';
+import { CheckboxEmission } from '../../../checkbox/script/checkbox/checkbox-emission.js';
 
 class TableRow extends api.core.Instance {
   static get instanceClassName () {
@@ -6,34 +7,33 @@ class TableRow extends api.core.Instance {
   }
 
   init () {
-    this.isResizing = true;
     if (api.checkbox) {
-      this.listenCheckbox();
-      this._initRowSelection();
+      this.addAscent(CheckboxEmission.CHANGE, this._handleCheckboxChange.bind(this));
+      this.descend(CheckboxEmission.RETRIEVE);
     }
   }
 
-  listenCheckbox () {
-    this.listen(api.checkbox.CheckboxEvent.CHANGE, this._handleCheckboxChange.bind(this), { capture: true });
-  }
-
-  _handleCheckboxChange (event) {
-    if (event.target.name === 'row-select') {
-      this.setAriaSelected(event.target.checked);
+  _handleCheckboxChange (node) {
+    if (node.name === 'row-select') {
+      this.isSelected = node.checked === true;
     }
   }
 
-  _initRowSelection () {
-    const rowSelect = this.node.querySelector(api.checkbox.CheckboxSelector.INPUT);
-    if (rowSelect) this.setAriaSelected(rowSelect.checked);
-  }
-
-  resize () {
+  render () {
     const height = this.getRect().height + 2;
-    this.setProperty('--row-height', `${height}px`);
+    if (this._height === height) return;
+    this._height = height;
+    this.setProperty('--row-height', `${this._height}px`);
   }
 
-  setAriaSelected (value) {
+  get isSelected () {
+    return this._isSelected;
+  }
+
+  set isSelected (value) {
+    if (this._isSelected === value) return;
+    this.isRendering = value;
+    this._isSelected = value;
     this.setAttribute('aria-selected', value);
   }
 }

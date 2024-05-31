@@ -1,11 +1,11 @@
 import api from './api.js';
 import { CheckboxSelector } from './script/checkbox/checkbox-selector';
-import { CheckboxEvent } from './script/checkbox/checkbox-event.js';
+import { CheckboxEmission } from './script/checkbox/checkbox-emission.js';
 import { CheckboxInput } from './script/checkbox/checkbox-input.js';
 
 api.checkbox = {
   CheckboxSelector: CheckboxSelector,
-  CheckboxEvent: CheckboxEvent,
+  CheckboxEmission: CheckboxEmission,
   CheckboxInput: CheckboxInput
 };
 
