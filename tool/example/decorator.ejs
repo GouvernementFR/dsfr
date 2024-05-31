@@ -80,12 +80,15 @@ const lorem = (insert, length) => {
 
 locals.lorem = lorem;
 
-locals.contentPlaceholder = (text) => {
+
+const contentPlaceholder = (text) => {
   if (text === 'alt') text = 'texte alternatif de l’image';
   return `[À MODIFIER - ${text}]`;
 };
 
-locals.lengthen = (length, label) => {
+locals.contentPlaceholder = contentPlaceholder;
+
+const lengthen = (length, label) => {
   switch (length) {
     case 1:
       return label + ' long';
@@ -101,7 +104,10 @@ locals.lengthen = (length, label) => {
   }
 }
 
-locals.imgAltText = 'texte alternatif de l’image';
+locals.lengthen = lengthen;
+
+const imgAltText = 'texte alternatif de l’image';
+locals.imgAltText = imgAltText;
 
 const brandData = (component = 'header', logo = true, service = false, operator = false, beta = false, href = '/') => {
   const data = {};
@@ -219,7 +225,7 @@ const hintData = (hint) => {
       return hint;
 
     case 'boolean':
-      if (hint) return getText('hint', 'form');
+      if (hint) return locals.getText('hint', 'form');
 
     default:
       return undefined;
@@ -237,7 +243,7 @@ const validData = (valid) => {
       return valid;
 
     case 'boolean':
-      if (valid) return getText('message.valid', 'form');
+      if (valid) return locals.getText('message.valid', 'form');
 
     default:
       return undefined;
@@ -255,7 +261,7 @@ const errorData = (error) => {
       return error;
 
     case 'boolean':
-      if (error) return getText('message.error', 'form');
+      if (error) return locals.getText('message.error', 'form');
 
     default:
       return undefined;
@@ -268,7 +274,7 @@ const targetBlankData = (title = contentPlaceholder('Intitulé')) => {
   const attr = {};
   attr.target = '_blank';
   attr.rel = 'noopener external';
-  attr.title = `${title} - ${getText('blank')}`;
+  attr.title = `${contentPlaceholder('Intitulé')} - ${locals.getText('blank')}`;
   return attr;
 }
 

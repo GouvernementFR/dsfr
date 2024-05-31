@@ -104,5 +104,5 @@ if (button.tooltip && button.tooltip.id) btnAttrs['aria-describedby'] = button.t
 
 
 <% if (button.tooltip) { %>
-  <%- include('../../../tooltip/template/ejs/tooltip', {tooltip: button.tooltip}); %>
+  <%- include('../../../tooltip/template/ejs/tooltip.ejs', {tooltip: button.tooltip}); %>
 <% } %>
