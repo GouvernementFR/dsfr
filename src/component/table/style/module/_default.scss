@@ -3,35 +3,232 @@
 /// @group Table
 ////
 
+@use 'module/media-query';
+@use 'module/color';
+@use 'module/spacing';
+
 #{ns(table)} {
-  --table-offset: #{space(4v)};
+  --table-offset: spacing.space(4v);
+  --row-height: 0;
+
   @include set-text-margin(0);
   @include set-title-margin(0);
-
   @include relative;
   @include margin-bottom(10v);
-  @include padding-top(var(--table-offset));
 
-  @include before('', block) {
-    @include size(100%, 0);
+  &__wrapper {
+    @include padding(1px 1px 0);
+    @include margin(-1px 0);
   }
 
-  &:not(#{ns(table--no-scroll)}) {
-    table {
-      width: 100%;
-    }
-  }
-
-  table {
-    @include size(100%);
-    display: block;
+  &__container {
     overflow: auto;
-    border-spacing: 0;
+    @include padding-top(var(--table-offset));
   }
 
-  &#{ns-attr(js-table, true)} {
-    caption {
-      @include absolute(0);
+  &__content {
+    width: 100%;
+    min-width: 40rem;
+
+    #{ns(cell)} {
+      &--fixed {
+        position: sticky;
+        left: 0;
+      }
+
+      &--center {
+        text-align: center;
+      }
+
+      &--right {
+        text-align: right;
+      }
+
+      &--top {
+        vertical-align: top;
+      }
+
+      &--bottom {
+        vertical-align: bottom;
+      }
+
+      &__title {
+        font-weight: 700;
+      }
+
+      &__desc {
+        font-weight: 400;
+      }
+
+      &--inline {
+        display: flex;
+        align-items: center;
+        @include margin(0 -2v);
+
+        > * {
+          @include margin(0 2v);
+        }
+      }
+
+      &--multiline {
+        &,
+        & * {
+          white-space: normal;
+        }
+      }
+
+      &--sort {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        #{ns(btn--sort)} {
+          @include margin-left(4v);
+        }
+      }
+    }
+
+    #{ns(col)} {
+      &--xs {
+        white-space: normal;
+        @include min-width(16v);
+      }
+
+      &--sm {
+        white-space: normal;
+        @include min-width(20v);
+      }
+
+      &--md {
+        white-space: normal;
+        @include min-width(50v);
+      }
+
+      &--lg {
+        white-space: normal;
+        @include min-width(100v);
+      }
+    }
+
+    table {
+      @include size(100%);
+      border-spacing: 0;
+
+      thead {
+        position: relative;
+
+        @include before('', block) {
+          @include absolute(inherit, 0, 0 , 0, 100%, 1px);
+          pointer-events: none;
+          @include z-index(over);
+        }
+
+        th {
+          @include font-weight(bold);
+        }
+      }
+
+      tbody {
+        tr:first-child[aria-selected=true]:has(+ tr:not([aria-selected=true])),
+        tr:not([aria-selected=true]) + tr:last-child[aria-selected=true],
+        tr:not([aria-selected=true]) + tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
+          &::after {
+            // selected borders left-right + top-bottom
+            background-size: 100% 2px, 2px 100%, 2px 100%, 100% 2px;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+          }
+        }
+
+        tr[aria-selected=true] + tr[aria-selected=true] {
+          &::after {
+            // selected borders left-right
+            background-size: 2px 100%, 2px 100%;
+            background-repeat: no-repeat, no-repeat;
+            background-position: 0 0, 100% 0;
+          }
+        }
+
+        tr:first-child[aria-selected=true]:has(+ tr[aria-selected=true]),
+        tr:not([aria-selected=true]) + tr[aria-selected=true] {
+          &::after {
+            // selected borders left-right + top
+            background-size: 2px 100%, 2px 100%, 100% 2px;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-position: 0 0, 100% 0, 100% 0;
+          }
+        }
+
+        tr[aria-selected=true] + tr:last-child[aria-selected=true],
+        tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
+          &::after {
+            // selected borders left-right + bottom
+            background-size: 100% 2px, 2px 100%, 2px 100%;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-position: 100% 100%, 0 0, 100% 0;
+          }
+        }
+
+        tr {
+          &[aria-selected="true"] {
+            &::after {
+              @include absolute(null, null, null, 0, 100%, var(--row-height));
+              @include z-index(above);
+              content: '';
+              pointer-events: none;
+              transform: translateY(spacing.space(-0.5v));
+
+              // selected borders left-right
+              background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%);
+              background-repeat: no-repeat, no-repeat;
+              background-position: 0 0, 100% 0;
+            }
+          }
+        }
+      }
+    }
+
+    th,
+    td {
+      display: table-cell;
+      @include padding(2v 4v);
+      @include text-style(sm);
+      text-align: left;
+      vertical-align: middle;
+      white-space: nowrap;
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+
+      #{ns(checkbox-group)} {
+        display: inline-block;
+
+        #{ns(label)} {
+          @include text-style(sm);
+        }
+      }
+    }
+
+    #{ns(cell--fixed)} {
+      #{ns(checkbox-group)} {
+        & + * {
+          @include margin-left(2v);
+        }
+
+        #{ns(label)} {
+          color: transparent;
+          @include size(0);
+          pointer-events: none;
+
+          &::before {
+            left: spacing.space(-5v);
+          }
+        }
+
+        input[type="checkbox"] {
+          left: spacing.space(1v);
+        }
+      }
     }
   }
 
@@ -40,33 +237,30 @@
     @include title-style(h4, true);
     @include font-weight(bold);
     text-align: left;
+
+    #{ns(table__caption__desc)} {
+      @include margin-top(4v);
+      @include text-style(md);
+      @include font-weight(regular);
+    }
   }
 
-  td,
-  th {
-    text-align: left;
-    vertical-align: middle;
-    display: table-cell;
-    border: 0;
-    @include padding(3v);
-    @include padding(4v, md);
+  &__detail {
     @include text-style(sm);
   }
 
-  th {
-    font-weight: font-weight(bold);
-  }
+  &#{ns-attr(js-table, true)} {
+    caption {
+      @include absolute(0);
+    }
 
-  thead {
-    background-size: 100% 2px;
-    background-position: bottom;
-    background-repeat: no-repeat;
+    #{ns(table__wrapper)} {
+      position: relative;
 
-    td,
-    th {
-      font-weight: font-weight(bold);
-      @include padding-bottom(3.5v); // 0.5v for the box shadow
-      @include padding-bottom(4.5v, md);
+      @include before('', block) {
+        @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
+        pointer-events: none;
+      }
     }
   }
 }
