@@ -30,10 +30,10 @@ const thead = [
       content: getTitleCell('div') + getTextCell('div')
     },
     {
-      content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: `${table.id}-thead-sort-desc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})}</div>`
+      content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: `${table.id}-thead-sort-asc-desc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})}</div>`
     },
     {
-      content: getButton({id: `${table.id}-thead-sort-asc-desc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sorting': 'desc'}})
+      content: getButton({id: `${table.id}-thead-sort-desc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sorting': 'desc'}})
     },
     {
       content: `${getTextCell()} ${getButton({label: getText('data.cell.text', 'table'), classes: [`${prefix}-ml-2v`, `${prefix}-btn--tooltip`], tooltip: {id: `${table.id}-thead-tooltip`, content: lorem()}})}`

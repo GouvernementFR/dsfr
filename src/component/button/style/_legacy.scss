@@ -70,12 +70,12 @@
   }
 
   #{ns(btn--sort)} {
-    @include icon-legacy(sort-asc-desc-line, sm);
+    @include icon-legacy(arrow-up-down-line, sm);
     @include animate.rotate('&[aria-sorting='desc']');
 
     &[aria-sorting='asc'],
     &[aria-sorting='desc'] {
-      @include icon-legacy(sort-asc-line, sm);
+      @include icon-legacy(arrow-up-line, sm);
     }
   }
 
