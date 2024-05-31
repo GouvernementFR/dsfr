@@ -1,0 +1,79 @@
+<% eval(include('../../../../core/index.ejs'));
+
+const selectData = {
+  id: uniqueId('table-footer-select'),
+  label: getText('data.navigation.select.label', 'table'),
+  labeClasses: [`${prefix}-sr-only`],
+  placeholder: getText('data.navigation.select.placeholder', 'table'),
+  options :[
+    {value:'4', label:getText('data.navigation.select.options.option1', 'table')},
+    {value:'10', label:getText('data.navigation.select.options.option2', 'table')},
+    {value:'20', label:getText('data.navigation.select.options.option3', 'table')},
+  ]
+}
+const select = include('../../../select/template/ejs/select-group.ejs', {select: selectData});
+
+
+const getData = (label, displayedLg = false, hasLgLabel = false, title = null) => {
+  return {
+    id: uniqueId('table-footer-pagination'),
+    label: label,
+    title: title,
+    href: '#',
+    displayedLg: displayedLg === true,
+    hasLgLabel: hasLgLabel === true
+  };
+};
+
+const getPageData = (pageNumber, displayedLg) => {
+  return getData(pageNumber, displayedLg === true, false, `Page ${pageNumber}`);
+}
+
+const getNavData = (label, hasLgLabel) => {
+  return getData(label, false, hasLgLabel === true, label);
+}
+
+const pages = [];
+let i;
+for (i = 1; i < 4; i++) pages.push(getPageData(i, i > 2));
+pages[0].active = true;
+
+const paginationData = {
+  first: getNavData('Première page'),
+  prev: getNavData('Précédente', true),
+  next: getNavData('Suivante', true),
+  last: getNavData('Dernière page'),
+  pages : pages
+}
+const pagination = include('../../../pagination/template/ejs/pagination', {pagination: paginationData});
+
+const buttonsGroupData = {
+  inline: 'md',
+  align:'right',
+  reverse: true,
+  buttons: [
+    {
+      label: getText('data.navigation.buttons.label', 'table'),
+      id: uniqueId('table-footer-button-primary'),
+      kind: 1
+    },
+    {
+      label: getText('data.navigation.buttons.label', 'table'),
+      id: uniqueId('table-footer-button-secondary'),
+      kind: 2
+    }
+  ]
+};
+const buttons = include('../../../button/template/ejs/buttons-group', {buttonsGroup: buttonsGroupData});
+%>
+
+<div class="<%= prefix %>-table__footer--start">
+  <p class="<%= prefix %>-table__detail"><%- getText('data.navigation.detail', 'table') %></p>
+  <%- select %>
+</div>
+<div class="<%= prefix %>-table__footer--middle">
+  <%- pagination %>
+</div>
+<div class="<%= prefix %>-table__footer--end">
+  <%- buttons %>
+</div>

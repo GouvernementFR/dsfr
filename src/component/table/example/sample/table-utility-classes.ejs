@@ -1,0 +1,32 @@
+<%
+const table = locals.table || {};
+const dataLorem = JSON.parse(include('../data/data-lorem.json.ejs', { table: table.table }));
+
+const utilities = ['top', 'bottom', 'center', 'right'];
+
+const loremThead = dataLorem.thead;
+loremThead.forEach(thead => {
+  thead.forEach((row, index) => {
+    row.content = utilities[index] || 'default';
+  });
+});
+
+const loremBodies = dataLorem.tbodies;
+loremBodies.forEach(tbodies => {
+  tbodies.forEach(tbody => {
+    tbody.forEach((row, index) => {
+      row.classes = utilities[index] ? [`${prefix}-cell--${utilities[index]}`] : [];
+      if (index === tbody.length - 1) {
+        row.content = `${lorem(null , 5)}<br>${lorem(null , 10)}<br>${lorem(null , 25)}`
+      }
+    });
+  });
+});
+
+const data = {
+  ...table,
+  table: dataLorem
+}
+%>
+
+<%- include('./table-default', {table: data}); %>

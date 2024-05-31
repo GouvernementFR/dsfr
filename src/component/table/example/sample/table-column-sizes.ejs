@@ -1,0 +1,29 @@
+<%
+const table = locals.table || {};
+const dataLorem = JSON.parse(include('../data/data-lorem.json.ejs', { table: table.table }));
+
+const loremThead = dataLorem.thead;
+loremThead.forEach(thead => {
+  thead.forEach((row, index) => {
+    const sizes = ['xs','sm', 'md', 'lg'];
+    row.content = sizes[index] || 'default';
+    row.classes = sizes[index] ? [`${prefix}-col--${sizes[index]}`] : [];
+  });
+});
+
+const loremBodies = dataLorem.tbodies;
+loremBodies.forEach(tbodies => {
+  tbodies.forEach(tbody => {
+    tbody.forEach((row, index) => {
+      row.content = lorem(null , 5 * (index + 1));
+    });
+  });
+});
+
+const data = {
+  ...table,
+  table: dataLorem
+}
+%>
+
+<%- include('./table-default', {table: data}); %>

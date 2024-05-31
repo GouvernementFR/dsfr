@@ -6,3 +6,5 @@ wrapper: col-8
 style:
   - core
   - form
+script:
+  - core

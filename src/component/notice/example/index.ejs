@@ -1,13 +1,33 @@
+<% const sample = getSample(include); %>
+
 <%
-const sample = getSample(include);
+  const elements = [
+    {
+      title: 'Contenu',
+      path: 'sample-content'
+    },
+    {
+      title: 'Bandeaux génériques',
+      path: 'sample-generic'
+    },
+    {
+      title: 'Bandeaux météo',
+      path: 'sample-meteo'
+    },
+    {
+      title: 'Bandeaux d\'alertes',
+      path: 'sample-alert'
+    },
+    {
+      title: 'Mise en situation',
+      path: 'sample-header'
+    },
+  ];
+
+  const accordions = [];
+
+  for (let element of elements) { %>
+    <%- include(`./sample/${element.path}`); %>
+    <br><br><br><br>
+  <%  }
 %>
-
-<%- section('Bandeau d\'information importante', 'Seul le bandeau de type information est disponible pour le moment. <br> Le titre est défini par la classe "fr-notice__title", la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte.<br>Le bandeau doit être placé au début du contenu de la page, pour être le premier élément au clique sur le lien d\'évitement "aller au contenu".', 0, true); %>
-
-<%- sample('Bandeau d\'information importante simple', './sample/notice-default', {notice: {type: "info", title: "Titre du bandeau d'information"}}, true, './layout.ejs'); %>
-
-<%- sample('Bandeau d\'information importante avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau"}}, true, './layout.ejs'); %>
-
-<%- sample('Bandeau d\'information importante avec lien', './sample/notice-dismissable', {notice: {type: "info", title: `Titre du bandeau, <a href='#' ${includeAttrs(targetBlankData())}>lien au fil du texte</a>`}}, true, './layout.ejs'); %>
-
-<%- sample('Bandeau d\'information importante avec titre long', './sample/notice-dismissable', {notice: {type: "info", title: `Titre de bandeau très long, pour tester le comportement du composant avec un texte très long, et un <a href='#' ${includeAttrs(targetBlankData())}>lien au fil du texte</a> lorem ipsum dolor sit lorem ipsum dolor sit.`}}, true, './layout.ejs'); %>

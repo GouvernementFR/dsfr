@@ -1,0 +1,11 @@
+@mixin rotate($activeSelector, $deg: -180, $pseudo: before, $duration: 0.3) {
+  &::#{$pseudo} {
+    transition: transform #{$duration}s;
+  }
+
+  #{$activeSelector} {
+    &::#{$pseudo} {
+      transform: rotate(#{$deg}deg);
+    }
+  }
+}

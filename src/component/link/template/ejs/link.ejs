@@ -26,99 +26,81 @@
   * left : icone à gauche du libellé
   * right : icone à droite du libellé
 
+* link.id (string, optional) : id du lien
+
 * link.attributes (object, optional) : attributs spécifiques à rajouter sur le composant
 
 * link.classes (array, optional) : classes spécifiques à rajouter sur le composant
+
+* link.assess (bool | string, optional) : si true, ajoute l'attribut permettant le remplissage automatique des informations du fichier à télécharger. Si string, ajoute l'attribut avec la valeur de la string (ex: "bytes" pour les poids en bytes)
+
+* link.hreflang (string, optional) : code langue du fichier à télécharger
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <%
 const link = locals.link || {};
-let linkClasses = link.classes || [];
-let linkAttrs = link.attributes || {};
-
+const linkClasses = link.classes || [];
+const linkAttrs = link.attributes || {};
 let label = link.label || 'lorem ipsum';
-
-const markup = link.markup || 'a';
-
-if (link.assess === true) {
-    linkAttrs[`data-${prefix}-assess-file`] = ''
-} else if (typeof(link.assess) === 'string') {
-    linkAttrs[`data-${prefix}-assess-file`] = link.assess
-}
-if (link.hreflang) linkAttrs.hreflang = link.hreflang;
-
-if (link.download === true) {
-  linkClasses.push(prefix + '-link--download');
-}
-
-linkClasses.push(prefix + '-link');
-
+const disabled = link.disabled === true;
 linkAttrs.id = link.id || uniqueId('link');
+linkClasses.push(prefix + '-link');
+let action;
+const markup = link.markup || 'a';
+switch (markup) {
+  case 'a':
+    action = 'link';
+    break;
+  default:
+    action = markup;
+    break;
+}
+
+switch (action) {
+  case 'link':
+    if (link.rel) linkAttrs.rel = link.rel;
+    if (link.hreflang) linkAttrs.hreflang = link.hreflang;
+    if (link.download) {
+      linkAttrs.download = link.download;
+      linkClasses.push(prefix + '-link--download');
+    }
+    if (link.assess === true) {
+        linkAttrs[`data-${prefix}-assess-file`] = ''
+    } else if (typeof(link.assess) === 'string') {
+        linkAttrs[`data-${prefix}-assess-file`] = link.assess
+    }
+    break;
+}
 
 switch (link.size) {
-    case 'sm':
-        linkClasses.push(prefix + '-link--sm');
-        break;
+  case 'sm':
+    linkClasses.push(prefix + '-link--sm');
+    break;
 
-    case 'lg':
-        linkClasses.push(prefix + '-link--lg');
-        break;
+  case 'lg':
+    linkClasses.push(prefix + '-link--lg');
+    break;
 }
 
 if (link.icon !== undefined) linkClasses.push(`${prefix}-icon-${link.icon}`);
 
 if (link.iconPlace !== undefined) {
-    switch (link.iconPlace) {
-        case 'left':
-            linkClasses.push(`${prefix}-link--icon-left`);
-            break;
+  switch (link.iconPlace) {
+    case 'left':
+      linkClasses.push(`${prefix}-link--icon-left`);
+      break;
 
-        case 'right':
-            linkClasses.push(`${prefix}-link--icon-right`);
-            break;
-    }
-}
-
-if (link.disabled === true) {
-    switch (markup) {
-        case 'input':
-        case 'button':
-            linkAttrs['disabled'] = '';
-            break;
-
-        case 'a':
-            linkAttrs['aria-disabled'] = 'true';
-            linkAttrs.role = 'link';
-            linkAttrs.href = undefined;
-            break;
-    }
-} else {
-    switch (markup) {
-        case 'a':
-            linkAttrs.href = link.href || '[url - à modifier]';
-            switch (true) {
-                case link.download:
-                    linkAttrs.download = '';
-                    break;
-
-                case link.blank:
-                    linkAttrs = {...targetBlankData(), ...linkAttrs};
-                    break;
-
-                case link.self:
-                    linkAttrs.target = '_self';
-                    break;
-            }
-            if (link.rel) linkAttrs.rel = link.rel;
-            break;
-    }
+    case 'right':
+      linkClasses.push(`${prefix}-link--icon-right`);
+      break;
+  }
 }
 
 if (link.detail) {
-    label += ` <span class="${prefix}-link__detail">${link.detail}</span>`;
+  label += ` <span class="${prefix}-link__detail">${link.detail}</span>`;
 }
 
 %>
 
-<<%= markup %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> ><%- label %></<%= markup %>>
+<%- include('../../../../core/template/ejs/action/action', {action: {...link, classes: linkClasses, attributes: linkAttrs, kind: action, label: label, disabled: disabled}}) %>
