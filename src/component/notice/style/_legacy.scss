@@ -6,19 +6,74 @@
 @use 'module/legacy';
 
 @include legacy.is(ie11) {
-  /**
-  * reset des marges dans le bandeau
-  */
   #{ns(notice)} {
     &__title,
     p {
       @include margin(0);
     }
 
+    &__title {
+      @include before {
+        vertical-align: -6px;
+        color: transparent;
+      }
+    }
+
     &--info {
-      #{ns(notice)}__body {
-        @include icon-legacy(info-fill, md, before, false) {
-          color: transparent;
+      #{ns(notice)}__title {
+        @include has-not-icon {
+          @include icon-legacy(info-fill, md, before, false);
+        }
+      }
+    }
+
+    &--warning,
+    &--alert,
+    &--witness,
+    &--cyberattack {
+      #{ns(notice)}__title {
+        @include has-not-icon {
+          @include icon-legacy(warning-fill, md, before, false);
+        }
+      }
+    }
+
+    &--weather-orange {
+      #{ns(notice)}__title {
+        @include has-not-icon {
+          @include icon-legacy(heavy-showers-fill, md, before, false);
+        }
+      }
+    }
+
+    &--weather-red {
+      #{ns(notice)}__title {
+        @include has-not-icon {
+          @include icon-legacy(tornado-fill, md, before, false);
+        }
+      }
+    }
+
+    &--weather-purple {
+      #{ns(notice)}__title {
+        @include has-not-icon {
+          @include icon-legacy(typhoon-fill, md, before, false);
+        }
+      }
+    }
+
+    &--kidnapping {
+      #{ns(notice)}__title {
+        @include has-not-icon {
+          @include icon-legacy(alert-warning-fill, md, before, false);
+        }
+      }
+    }
+
+    &--vigipirate {
+      #{ns(notice)}__title {
+        @include has-not-icon {
+          @include icon-legacy(alert-warning-2-fill, md, before, false);
         }
       }
     }
