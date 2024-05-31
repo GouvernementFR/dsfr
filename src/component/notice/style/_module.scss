@@ -31,6 +31,7 @@
     @include icon-style(before) {
       @include margin-right(2v);
     }
+    @include icon-forced-color(canvastext, true, before);
   }
 
   &__desc {
@@ -114,6 +115,17 @@
     }
   }
 
+  &--weather-red,
+  &--weather-purple {
+    @include preference.forced-colors {
+      color: highlight;
+    }
+
+    #{selector.ns(notice)}__title {
+      @include icon-forced-color(highlight, true, before);
+    }
+  }
+
   &--witness,
   &--kidnapping,
   &--attack,
@@ -125,6 +137,11 @@
 
     #{selector.ns(notice)}__title {
       text-transform: uppercase;
+      @include icon-forced-color(highlight, true, before);
+    }
+
+    @include preference.forced-colors {
+      color: highlight;
     }
   }
 

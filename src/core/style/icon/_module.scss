@@ -13,7 +13,7 @@
 
 @include preference.forced-colors {
   @include has-icon {
-    @include icon-forced-color(graytext, true);
+    @include icon-forced-color(canvastext, true);
   }
 
   button:not([disabled]) {
