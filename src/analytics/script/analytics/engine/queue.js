@@ -3,6 +3,7 @@ import PushType from '../facade/push-type.js';
 import push from '../facade/push.js';
 import renderer from './renderer';
 import api from '../../../api';
+import { ActionRegulation } from '../action/action-regulation';
 
 const SLICE = 80;
 
@@ -42,23 +43,31 @@ class Queue {
     this._request();
   }
 
-  appendStartingAction (action, data) {
-    if (!this._collector.isActionEnabled && !action.isForced) return;
-    if (!action || this._startingActions.some(queued => queued.test(action))) {
-      api.inspector.log('appendStartingAction exists or null', action);
-      return;
+  regulate (action, queue) {
+    if (!action) return false;
+    if (queue.some(queued => queued.test(action))) {
+      api.inspector.log('action exists in queue', action);
+      return false;
     }
+    switch (action.regulation) {
+      case ActionRegulation.PREVENT:
+        return false;
+      case ActionRegulation.ENFORCE:
+        return true;
+      default:
+        return this._collector.isActionEnabled;
+    }
+  }
+
+  appendStartingAction (action, data) {
+    if (!this.regulate(action, this._startingActions)) return;
     const queued = new QueuedAction(action, data);
     this._startingActions.push(queued);
     this._request();
   }
 
   appendEndingAction (action, data) {
-    if (!this._collector.isActionEnabled && !action.isForced) return;
-    if (!action || this._endingActions.some(queued => queued.test(action))) {
-      api.inspector.log('appendEndingAction exists or null', action);
-      return;
-    }
+    if (!this.regulate(action, this._endingActions)) return;
     const queued = new QueuedAction(action, data);
     this._endingActions.push(queued);
     this._request();

@@ -3,6 +3,7 @@ description:
 doc:
 subdir:
   title: Pages
+  action: Activation des actions
   attribute: Attributs
   component: Composants
   agnostic: sans framework
@@ -76,4 +77,3 @@ subdir:
   translate: Sélecteur de langue (translate)
   upload: Ajout de fichier (upload)
   vue: Vue (vue)
-
