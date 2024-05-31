@@ -1,4 +1,4 @@
-import { EJSRenderer } from '../../../../core/template/storybook/ejs-renderer';
+import { EJSRenderer } from '../../../../core/template/stories/ejs-renderer';
 import tooltip from '../ejs/tooltip.ejs?raw';
 
 const ejsRenderer = new EJSRenderer();

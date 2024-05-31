@@ -1,28 +1,30 @@
 import { fn } from '@storybook/test';
 import { renderButton } from './button';
-import buttonArgTypes from './button-arg-types'
+import { buttonArgs, buttonArgTypes } from './button-arg-types'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
-  title: 'DSFR/Button',
+  title: 'DSFR/Component/Button',
   tags: ['autodocs'],
   render: (args) => {
     const button = {
       label: args.label,
       kind: args.kind,
       size: args.size,
-      id: args.id,
-      title: args.title,
+      id: args.id || undefined,
+      title: args.title || undefined,
       disabled: args.disabled,
-      icon: args.icon,
-      iconPlace: args.iconPlace,
       markup: args.markup,
       type: args.type,
-      href: args.href,
-      target: args.target,
+      href: args.href || undefined,
       blank: args.target === 'blank',
       self: args.target === 'self'
     };
+
+    if (args.hasIcon) {
+      button.icon = args.icon;
+      button.iconPlace = args.iconPlace;
+    }
 
     if (args.hasTooltip) {
       button.tooltip = {
@@ -34,15 +36,7 @@ export default {
     return renderButton({ button: button });
   },
   argTypes: buttonArgTypes,
-  args: {
-    label: 'libellé du bouton',
-    markup: 'button',
-    kind: 1,
-    size: 'md',
-    iconPlace: 'only',
-    disabled: false,
-    hasTooltip: false
-  }
+  args: buttonArgs
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args

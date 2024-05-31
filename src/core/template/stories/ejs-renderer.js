@@ -57,10 +57,10 @@ class EJSRenderer {
     const template = this._templates.find(tpl => tpl.retrieve(path));
     if (!template) return '';
     data.include = (path, data) => this.render(path, data);
-    data.uniqueId = this.uniqueId.bind(this);
+    data.uniqueId = () => undefined;
     data.getI18nText = (key, id = 'global') => this.getI18nText(key, id);
     data.locale = 'fr';
-    return template.render(data);
+    return template.render(data).trim();
   }
 
   getI18nText (key, id = 'global') {
