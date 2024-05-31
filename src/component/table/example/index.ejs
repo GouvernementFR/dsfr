@@ -50,10 +50,6 @@ const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
-  sample({title: getText('sample.accentuate.title', 'table'), subtitle: getText('sample.accentuate.subtitle', 'table')}, './sample/table-simple', {table: {table: {id: 'table-accentuate', caption: getText('data.caption.default', 'table'), accentuate: true}}}, true);
-%>
-
-<%-
   sample({title: getText('sample.complex.title', 'table'), subtitle: getText('sample.complex.subtitle', 'table')}, './sample/table-default', {table: {bordered: true, table: {id: 'table-complex', caption: getText('data.caption.default', 'table'), captionDetail: getText('data.caption.detail', 'table'), ...complexData}}}, true);
 %>
 

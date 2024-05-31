@@ -50,7 +50,6 @@
 
         &:last-child {
           @include color.border(contrast grey, (legacy: true, important: false, side: 'right'));
-
         }
       }
     }
@@ -89,14 +88,5 @@
         }
       }
     }
-
-    // &--no-caption {
-    //   @include padding-top(0);
-
-    //   caption {
-    //     @include sr-only();
-    //     @include height(0);
-    //   }
-    // }
   }
 }

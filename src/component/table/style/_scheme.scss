@@ -15,35 +15,7 @@
 
     &__content {
       table {
-        #{ns(cell)} {
-          &--info {
-            @include color.background(contrast info, (legacy: $legacy));
-          }
-
-          &--error {
-            @include color.background(contrast error, (legacy: $legacy));
-          }
-
-          &--success {
-            @include color.background(contrast success, (legacy: $legacy));
-          }
-
-          &--warning {
-            @include color.background(contrast warning, (legacy: $legacy));
-          }
-
-          &--new {
-            @include color.background(contrast yellow-moutarde, (legacy: $legacy));
-          }
-        }
-
         thead {
-          #{ns(cell)} {
-            @include color.accentuate {
-              @include color.background(contrast accent, (legacy: $legacy));
-            }
-          }
-
           th {
             @include color.background(alt grey, (legacy: $legacy));
             @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
@@ -56,12 +28,6 @@
         }
 
         tbody {
-          #{ns(cell)} {
-            @include color.accentuate {
-              @include color.background(alt accent, (legacy: $legacy));
-            }
-          }
-
           tr {
             &[aria-selected=true] {
               &::after {
