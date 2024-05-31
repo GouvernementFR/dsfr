@@ -1,14 +1,16 @@
 
 const iconArgTypes = {
+  hasIcon: {
+    control: 'boolean',
+    table: { category: 'icon' }
+  },
   icon: {
+    if: { arg: 'hasIcon', eq: true },
     control: 'text',
     table: { category: 'icon' }
   },
   iconPlace: {
-    if: {
-      arg: 'icon',
-      exists: true
-    },
+    if: { arg: 'hasIcon', eq: true },
     control: { type: 'select' },
     options: ['only', 'left', 'right'],
     table: { category: 'icon' }
@@ -81,7 +83,7 @@ const tooltipArgTypes = {
 };
 
 
-export default {
+const buttonArgTypes = {
   label: {
     control: 'text',
     type: {
@@ -112,3 +114,22 @@ export default {
   ...markupArgTypes,
   ...tooltipArgTypes
 };
+
+const buttonArgs = {
+  label: 'libellé du bouton',
+  kind: 1,
+  size: 'md',
+  disabled: false,
+  id: '',
+  title: '',
+  hasIcon: false,
+  icon: 'checkbox-line',
+  iconPlace: 'left',
+  markup: 'button',
+  type: 'button',
+  hasTooltip: false,
+  tooltipId: '',
+  tooltipContent: ''
+};
+
+export { buttonArgTypes, buttonArgs };

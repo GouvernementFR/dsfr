@@ -3,6 +3,7 @@
 import '../dist/dsfr.css';
 import '../dist/utility/utility.css';
 import '../dist/dsfr.module.js';
+import { renderToHTML } from './render.html.js'
 
 const preview = {
   parameters: {
@@ -11,6 +12,9 @@ const preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    docs: {
+      transformSource: (src, storyContext) => renderToHTML(src),
     },
   },
 };
