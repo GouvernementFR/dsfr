@@ -61,6 +61,11 @@ switch (action) {
   case 'link':
     if (link.rel) linkAttrs.rel = link.rel;
     if (link.hreflang) linkAttrs.hreflang = link.hreflang;
+    if (link.assess === true) {
+      linkAttrs[`data-${prefix}-assess-file`] = ''
+    } else if (typeof(link.assess) === 'string') {
+      linkAttrs[`data-${prefix}-assess-file`] = link.assess
+    }
     break;
 }
 
@@ -77,12 +82,6 @@ switch (link.size) {
 if (link.download) {
   linkAttrs.download = link.download;
   linkClasses.push(prefix + '-link--download');
-}
-
-if (link.assess === true) {
-  linkAttrs[`data-${prefix}-assess-file`] = ''
-} else if (typeof(link.assess) === 'string') {
-  linkAttrs[`data-${prefix}-assess-file`] = link.assess
 }
 
 if (link.icon !== undefined) linkClasses.push(`${prefix}-icon-${link.icon}`);
