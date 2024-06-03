@@ -137,7 +137,7 @@ const buttonsGroupArgs = {
   hasIcon: buttonArgs.hasIcon,
   iconPlace: buttonArgs.iconPlace,
   groupMarkup: 'ul',
-  inline: 'false',
+  inline: false,
   equisized: false,
   align: 'left',
   reverse: false,
