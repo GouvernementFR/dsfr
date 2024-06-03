@@ -8,7 +8,7 @@ const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
-const { generateNewPictogram } = require('./generate/pictogram');
+const { cmd } = require('./classes/changelog/utils');
 
 /**
  * Build
@@ -158,6 +158,15 @@ const deployHandler = async (argv) => {
     legacy: true,
     locale: argv.locale
   });
+  await standalone({
+    styles: true,
+    scripts: true,
+    examples: true,
+    clean: true,
+    legacy: true,
+    locale: argv.locale
+  });
+  await cmd('storybook build --output-dir public/storybook');
   await buildRouting();
   deployFavicons();
   deployFiles();

@@ -2,16 +2,28 @@
 const iconArgTypes = {
   hasIcon: {
     control: 'boolean',
+    description: 'Le bouton a une icône',
     table: { category: 'icon' }
   },
   icon: {
     if: { arg: 'hasIcon', eq: true },
     control: 'text',
-    table: { category: 'icon' }
+    description: 'Nom de l\'iôone dans le bouton',
+    table: {
+      category: 'icon'
+    }
   },
   iconPlace: {
     if: { arg: 'hasIcon', eq: true },
-    control: { type: 'select' },
+    description: 'Emplacement de l\'icône<br>Si non défini alors que le paramètre icon est défini, bouton avec icône seule, sans label<br>valeurs :<br>- left : icône à gauche du label<br>- right : icône à droite du label',
+    control: {
+      type: 'select',
+      labels: {
+        only: 'Icône seule',
+        left: 'Icône à gauche',
+        right: 'Icône à droite'
+      }
+    },
     options: ['only', 'left', 'right'],
     table: { category: 'icon' }
   }
@@ -20,6 +32,7 @@ const iconArgTypes = {
 const markupArgTypes = {
   markup: {
     control: { type: 'select' },
+    description: 'Type de balise HTML',
     options: ['button', 'a', 'input'],
     table: {
       category: 'markup'
@@ -31,6 +44,7 @@ const markupArgTypes = {
       neq: 'a'
     },
     control: { type: 'select' },
+    description: 'Type de bouton',
     options: ['button', 'submit', 'reset'],
     table: {
       category: 'markup'
@@ -42,6 +56,7 @@ const markupArgTypes = {
       eq: 'a'
     },
     control: { type: 'text' },
+    description: 'Lien de destination',
     table: {
       category: 'markup'
     }
@@ -52,6 +67,7 @@ const markupArgTypes = {
       eq: 'a'
     },
     control: { type: 'select' },
+    description: 'Cible du lien',
     options: ['self', 'blank'],
     table: {
       category: 'markup'
@@ -62,6 +78,7 @@ const markupArgTypes = {
 const tooltipArgTypes = {
   hasTooltip: {
     control: 'boolean',
+    description: 'Le bouton a une infobulle',
     table: { category: 'tooltip' }
   },
   tooltipId: {
@@ -70,6 +87,7 @@ const tooltipArgTypes = {
       eq: true
     },
     control: 'text',
+    description: 'Identifiant de l\'infobulle',
     table: { category: 'tooltip' }
   },
   tooltipContent: {
@@ -78,14 +96,15 @@ const tooltipArgTypes = {
       eq: true
     },
     control: 'text',
+    description: 'Contenu texte de l\'infobulle',
     table: { category: 'tooltip' }
   }
 };
 
-
 const buttonArgTypes = {
   label: {
     control: 'text',
+    description: 'Libellé du bouton',
     type: {
       value: 'string',
       required: true
@@ -95,21 +114,32 @@ const buttonArgTypes = {
     control: {
       type: 'select',
       labels: {
-        1: 'Primary',
-        2: 'Secondary',
-        3: 'Tertiary',
-        4: 'Tertiary no outline'
+        1: 'Primaire',
+        2: 'Secondaire',
+        3: 'Tertiaire',
+        4: 'Tertiaire sans bordure'
       }
     },
+    description: 'Type du bouton<br>Valeurs :<br>- Primaire : bouton d\'action principal, unique dans la page<br>- Secondaire : bouton d\'action moins prioritaire<br>- Tertiaire : bouton d\'action contextuelle ou alternative<br>Tertiaire sans bordure : version alternative',
     options: [1, 2, 3, 4]
   },
   size: {
     control: { type: 'select' },
+    description: 'Taille du bouton',
     options: ['sm', 'md', 'lg']
   },
-  id: { control: 'text' },
-  title: { control: 'text' },
-  disabled: { control: 'boolean' },
+  id: {
+    control: 'text',
+    description: 'Attribut \'id\' du bouton'
+  },
+  title: {
+    control: 'text',
+    description: 'Attribut \'title\' du bouton'
+  },
+  disabled: {
+    control: 'boolean',
+    description: 'Le bouton est désactivé'
+  },
   ...iconArgTypes,
   ...markupArgTypes,
   ...tooltipArgTypes
@@ -129,7 +159,9 @@ const buttonArgs = {
   type: 'button',
   hasTooltip: false,
   tooltipId: '',
-  tooltipContent: ''
+  tooltipContent: '',
+  href: '',
+  target: 'self'
 };
 
 export { buttonArgTypes, buttonArgs };
