@@ -1,13 +1,12 @@
 ////
-/// Core Module : Action enlarge link
+/// Core Module : Action enlarge
 /// @group core
 ////
 
-#{ns(enlarge-link)} {
+@mixin enlarge($markup) {
   position: relative;
 
-  a,
-  button {
+  #{$markup} {
     background-image: none;
     outline-width: 0;
     @include before('', block) {
@@ -21,8 +20,7 @@
   }
 
   @include hover-media-query {
-    a,
-    button {
+    #{$markup} {
       &:hover,
       &:active {
         background: none;
@@ -37,4 +35,12 @@
       background-color: var(--active);
     }
   }
+}
+
+#{ns(enlarge-link)} {
+  @include enlarge('a');
+}
+
+#{ns(enlarge-button)} {
+  @include enlarge('button');
 }
