@@ -7,14 +7,13 @@
 
 #{ns(header)} {
   &__navbar {
-    @include display-flex(row,flex-end);
+    @include display-flex(row, flex-start, flex-end);
     @include padding(1v);
-    @include margin-left(auto);
     @include margin-right(-2v);
     @include margin-top(1v);
     order: 3;
-    flex: 0 0 auto;
-    align-self: flex-start;
+    flex: 1;
+    align-self: stretch;
     @include elevation.z-index(overlap);
 
     @include respond-from(lg) {

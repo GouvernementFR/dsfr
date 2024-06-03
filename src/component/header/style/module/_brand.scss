@@ -4,6 +4,7 @@
 ////
 
 @use 'module/media-query';
+@use 'module/spacing';
 
 #{ns(header)} {
   &__brand {
@@ -11,6 +12,13 @@
     @include margin-y(-4v, lg);
     @include size(100%);
     @include padding-x(1v);
+
+    @include after('', block) {
+      @include relative;
+      @include z-index(over);
+      flex: 1;
+      align-self: stretch;
+    }
 
     @include media-query.respond-from(lg) {
       flex-wrap: nowrap;
@@ -70,12 +78,15 @@
     @include padding-y(3v);
     @include margin-x(3v);
     @include margin-x(0, lg);
-    @include size(100%);
-
     @include disable-external();
 
-    @include media-query.respond-from(lg) {
-      width: auto;
+    @include before("", block) {
+      @include size(calc(100% - 8v), 1px);
+      @include absolute;
+      transform: translateY(spacing.space(-3v));
+      @include media-query.respond-from(lg) {
+        content: none;
+      }
     }
 
     &-title {
