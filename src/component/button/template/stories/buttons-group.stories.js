@@ -31,7 +31,12 @@ export default {
       size: args.size,
       id: args.id || undefined,
       title: args.title || undefined,
-      buttons: buttons
+      buttons: buttons,
+      groupMarkup: args.groupMarkup,
+      inline: args.inline,
+      align: args.align,
+      equisized: args.equisized,
+      reverse: args.reverse
     };
 
     if (args.hasIcon) {
