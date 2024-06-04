@@ -71,4 +71,24 @@
       }
     }
   }
+
+  /* Désactive le scroll horizontal */
+  &#{ns(table--no-scroll)} {
+    overflow: hidden;
+
+    #{ns(table__wrapper)} {
+      width: fit-content;
+
+      #{ns(table__content)} {
+        table {
+          width: auto;
+
+          th,
+          td {
+            white-space: normal;
+          }
+        }
+      }
+    }
+  }
 }

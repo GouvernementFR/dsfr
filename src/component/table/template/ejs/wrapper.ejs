@@ -5,6 +5,8 @@
 
 * wrapper.noCaption (boolean, optional) : {default: false} cache le texte de la caption
 
+* wrapper.noScroll (boolean, optional) : {default: false} désactive le scroll horizontal
+
 * wrapper.captionBottom (boolean, optional) : {default: false} positionne la caption en bas
 
 * wrapper.bordered (boolean, optional) : {default: false} si true, ajoute des séparateurs entre chaque ligne et enleve l'effet even/odd
@@ -33,6 +35,7 @@ classes.push(prefix + '-table');
 if (wrapper.noCaption) classes.push(prefix + '-table--no-caption');
 if (wrapper.captionBottom) classes.push(prefix + '-table--caption-bottom');
 if (wrapper.bordered) classes.push(prefix + '-table--bordered');
+if (wrapper.noScroll) classes.push(prefix + '-table--no-scroll');
 %>
 
 <div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
