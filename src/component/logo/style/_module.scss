@@ -22,6 +22,7 @@
     background-repeat: no-repeat, no-repeat, no-repeat;
     $marianne: svg-encode($svg-marianne, true);
     background-image: url($marianne), linear-gradient(90deg, color.$blue-france 0%, color.$blue-france 50%, color.$red-marianne 50%, color.$red-marianne 100%), linear-gradient(90deg, color.$absolute-black 0%, color.$absolute-black 100%);
+    forced-color-adjust: none;
   }
 
   @include after('', block) {

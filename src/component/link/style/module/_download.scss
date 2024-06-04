@@ -3,6 +3,8 @@
 /// @group link
 ////
 
+@use 'module/preference';
+
 #{ns-group(links)}--download #{ns(link)},
 #{ns(link--download)} {
   @include relative;
@@ -21,8 +23,20 @@
     pointer-events: none;
     cursor: text;
 
+    @include preference.forced-colors {
+      color: canvastext;
+    }
+
     abbr {
       text-decoration: none;
+    }
+  }
+
+  &:not([href]) {
+    #{ns(link__detail)} {
+      @include preference.forced-colors {
+        color: graytext;
+      }
     }
   }
 }

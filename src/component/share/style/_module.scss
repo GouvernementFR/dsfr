@@ -3,6 +3,9 @@
 /// @group share
 ////
 
+@use 'module/disabled';
+@use 'module/preference';
+
 #{ns(share)} {
   @include display-flex(column);
   @include set-text-margin(0 0 4v);
@@ -26,6 +29,10 @@
 
     #{ns(btn)} {
       justify-content: flex-start;
+
+      @include preference.forced-colors {
+        border: none;
+      }
     }
 
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
@@ -33,6 +40,19 @@
         @include has-not-icon {
           @include nest-btn(md, only, null, null, false);
           @include icon(null, md, before);
+          @include icon-forced-color(buttontext, true, before);
+        }
+
+        @include disabled.selector((can-be-link: true)) {
+          @include has-not-icon {
+            @include icon-forced-color(graytext, null, before);
+          }
+        }
+      }
+
+      a[href]#{ns(btn)} {
+        @include has-not-icon {
+          @include icon-forced-color(linktext, null, before);
         }
       }
     }

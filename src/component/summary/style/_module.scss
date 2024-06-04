@@ -3,6 +3,8 @@
 /// @group summary
 ////
 
+@use 'module/preference';
+
 //TODO: rapprocher de la liste ordonnée et vérifier les sous-niveaux.
 
 #{ns(summary)} {
@@ -11,6 +13,10 @@
   @include padding(6v);
   @include padding(8v, md);
   @include text-style(xs);
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
 
   ol {
     list-style-type: none;

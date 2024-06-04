@@ -1,4 +1,10 @@
-@use '../../../../../module/media-query';
+////
+/// Card Module - download
+/// @group card
+////
+
+@use 'module/media-query';
+@use 'module/disabled';
 
 #{ns(card--download)} {
   @include media-query.respond-from(md) {
@@ -40,8 +46,16 @@
     }
   }
 
-  #{ns(card__title a)} {
-    @include icon(download-line, null, after);
+  #{ns(card__title)} {
+    a,
+    button {
+      @include icon(download-line, null, after);
+      @include icon-forced-color(linktext, null, after);
+
+      @include disabled.selector((can-be-link: true)) {
+        @include icon-forced-color(graytext, null, after);
+      }
+    }
   }
 
   &#{ns(enlarge-link)},

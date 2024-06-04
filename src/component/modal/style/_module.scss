@@ -6,6 +6,7 @@
 @use 'module/spacing';
 @use 'module/elevation';
 @use 'module/color';
+@use 'module/preference';
 
 #{ns(modal)} {
   // reset dialog @TODO à déplacer dans reset ?
@@ -24,6 +25,10 @@
   @include padding-right(var(--scrollbar-width), md);
   // transition in/out
   transition: opacity 0.3s, visibility 0.3s;
+
+  @include preference.reduce-motion {
+    transition: none;
+  }
 
   & > #{ns(container)} {
     pointer-events: none;
@@ -77,6 +82,16 @@
     opacity: 1;
     @include size(100%, 100%);
     transition: opacity 0.3s, visibility 0.3s;
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
+    #{ns(modal__body)} {
+      @include preference.forced-colors {
+        border: 1px solid;
+      }
+    }
   }
 
   @include body {

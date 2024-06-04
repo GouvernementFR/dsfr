@@ -6,19 +6,25 @@
 @use 'module/media-query';
 @use 'module/color';
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(table)} {
-  --table-offset: spacing.space(4v);
+  --table-offset: calc(0px);
   --row-height: 0;
 
   @include set-text-margin(0);
   @include set-title-margin(0);
   @include relative;
   @include margin-bottom(10v);
+  @include margin-top(4v);
 
   &__wrapper {
-    @include padding(1px 1px 0);
-    @include margin(-1px 0);
+    @include after {
+      background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+      background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      @include z-index(over);
+    }
   }
 
   &__container {
@@ -113,6 +119,7 @@
     table {
       @include size(100%);
       border-spacing: 0;
+      border-collapse: collapse;
 
       thead {
         position: relative;
@@ -182,6 +189,10 @@
               background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%);
               background-repeat: no-repeat, no-repeat;
               background-position: 0 0, 100% 0;
+
+              @include preference.forced-colors {
+                border: 2px solid highlight;
+              }
             }
           }
         }
@@ -199,6 +210,10 @@
       background-size: 100% 1px;
       background-repeat: no-repeat;
       background-position: 100% 100%;
+
+      @include preference.forced-colors {
+        border: 1px solid;
+      }
 
       #{ns(checkbox-group)} {
         display: inline-block;
@@ -220,6 +235,10 @@
           @include size(0);
           pointer-events: none;
 
+          @include preference.forced-colors{
+            opacity: 0;
+          }
+
           &::before {
             left: spacing.space(-5v);
           }
@@ -228,6 +247,10 @@
         input[type="checkbox"] {
           left: spacing.space(1v);
         }
+      }
+
+      @include preference.forced-colors {
+        outline: 1px solid;
       }
     }
   }
@@ -257,8 +280,10 @@
     #{ns(table__wrapper)} {
       position: relative;
 
-      @include before('', block) {
-        @include absolute(inherit, 0, 0 , 0, 100%, calc(100% - var(--table-offset)));
+      @include after('', block) {
+        @include absolute(var(--table-offset), null, null, 0, 100%, calc(100% - var(--table-offset)));
+        background-position: 0 0, 0 100%, 100% 100%, 100% 0;
+        background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
         pointer-events: none;
       }
     }

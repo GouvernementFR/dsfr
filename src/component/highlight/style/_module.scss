@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(highlight)} {
   @include padding-left(5v);
@@ -13,4 +14,10 @@
   background-size: spacing.space(1v 100%);
   background-position: 0 0;
   background-repeat: no-repeat;
+
+  @include preference.forced-colors {
+    border-left: 4px solid;
+    @include padding-left(4v);
+    @include padding-left(8v, md);
+  }
 }

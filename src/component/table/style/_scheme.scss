@@ -8,8 +8,8 @@
 @mixin _table-scheme($legacy: false) {
   #{ns(table)} {
     &__wrapper {
-      @include before {
-        @include color.box-shadow(contrast grey, (legacy:$legacy), top-1-in left-1-in bottom-1-in right-1-in);
+      @include after {
+        @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey) (border contrast grey), (legacy:$legacy));
       }
     }
 

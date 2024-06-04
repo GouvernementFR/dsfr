@@ -3,6 +3,9 @@
 /// @group Footer
 ////
 
+@use 'module/preference';
+@use 'module/selector';
+
 /**
  * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)
  * ainsi que du copyright (ferré à droite)
@@ -14,6 +17,10 @@
 
     @include nest-footer-bottom-btn(xs, left) {
       display: inline;
+    }
+
+    @include preference.forced-colors {
+      border-top: 1px solid;
     }
   }
 
@@ -46,6 +53,12 @@
     &:first-child {
       @include margin(2v 0 0);
       @include before(none);
+    }
+
+    @include preference.forced-colors {
+      #{selector.ns(btn)} {
+        border: none;
+      }
     }
   }
 

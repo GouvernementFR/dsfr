@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/preference';
+
 @mixin collapse($className: collapse) {
   --collapse: -99999px;
   --collapser: '';
@@ -13,12 +15,20 @@
   // max-height: 0;
   max-height: var(--collapse-max-height);
 
+  @include preference.reduce-motion {
+    transition: none;
+  }
+
   &::before {
     display: block;
     content: '';
     content: var(--collapser);
     transition: margin-top 0.3s;
     margin-top: 0;
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
   }
 
   #{&}:not(&--expanded):not(#{ns(collapsing)}) {

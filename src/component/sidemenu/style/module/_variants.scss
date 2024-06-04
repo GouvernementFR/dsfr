@@ -3,6 +3,8 @@
 /// @group sidemenu
 ////
 
+@use 'module/preference';
+
 #{ns(sidemenu)} {
   /**
    * Variantes du sidemenu proposées juste à partir du breakpoint md
@@ -19,6 +21,10 @@
       #{ns(sidemenu__inner)} {
         @include padding(0 4v 0 8v);
         border-right: 0;
+
+        @include preference.forced-colors {
+          border-left: 1px solid;
+        }
       }
     }
 

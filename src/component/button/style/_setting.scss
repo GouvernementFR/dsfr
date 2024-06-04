@@ -34,5 +34,6 @@ $btn-settings:(
   places: only left right,
   display: flex,
   align-on-content: true,
-  blank: true
+  blank: true,
+  forced-color: buttontext
 );

@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(tooltip)} {
   --arrow-x: 0;
@@ -22,6 +23,11 @@
   background-size: spacing.space(2v 1.5v), spacing.space(2v 1.5v), 100% 1px, spacing.space(100% calc(100% - 3v));
   white-space: normal;
 
+  @include preference.forced-colors {
+    outline: 1px solid;
+    background: canvas;
+  }
+
   &:not(&--shown) {
     // transition in/out
     display: none;
@@ -33,6 +39,10 @@
       @include padding-top(5v);
       @include padding-bottom(2v);
       background-position-y: spacing.space('2v, 1.5v, 3v, 3v');
+    }
+
+    @include preference.forced-colors {
+      @include padding(2v);
     }
   }
 }

@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 @include build-badge();
 
@@ -14,6 +15,10 @@
   @include max-width(100%);
   text-transform: uppercase;
   border-radius: spacing.space(1v);
+  @include icon-forced-color(canvastext);
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
 
   &--sm {
     @include nest-badge(sm, left, null, null, false);

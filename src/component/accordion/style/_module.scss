@@ -4,6 +4,7 @@
 ////
 
 @use 'module/animate';
+@use 'module/preference';
 
 #{ns(accordion)} {
   position: relative;
@@ -34,10 +35,15 @@
     text-align: left;
     @include margin(0);
     @include animate.caret();
+    @include icon-forced-color(buttontext, false, after);
 
     @include after {
       @include margin-right(0);
       @include margin-left(auto);
+      
+      @include preference.reduce-motion {
+        transition: none;
+      }
     }
   }
 
@@ -48,9 +54,24 @@
 
     transition: visibility 0.3s, padding 0.3s;
 
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
     &--expanded {
       @include padding-top(4v);
       @include padding-bottom(6v);
+    }
+  }
+
+  @include preference.forced-colors {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+
+  & + #{ns(accordion)} {
+    @include preference.forced-colors {
+      border-top: none;
     }
   }
 }

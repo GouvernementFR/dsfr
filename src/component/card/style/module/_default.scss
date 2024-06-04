@@ -3,9 +3,14 @@
 /// @group card
 ////
 
+@use 'module/preference';
+
 #{ns(card)} {
   @include display-flex(column);
   @include relative();
+  @include preference.forced-colors {
+    border: 1px solid;
+  }
 
   &#{ns(enlarge-link)},
   &#{ns(enlarge-button)} {
