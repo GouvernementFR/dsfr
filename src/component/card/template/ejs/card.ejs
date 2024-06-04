@@ -34,7 +34,14 @@ const content = card.content || {};
 
 if (card.id) attributes.id = card.id;
 
-if (card.enlarge) classes.push(`${prefix}-enlarge-link`);
+if (card.enlarge) switch (card.content.actionMarkup) {
+  case 'button':
+    classes.push(`${prefix}-enlarge-button`);
+    break;
+
+  default:
+    classes.push(`${prefix}-enlarge-link`);
+}
 
 switch (card.size) {
   case 'sm':

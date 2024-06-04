@@ -23,6 +23,7 @@
   }
 
   @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__pictogram);
+  @include hover-brighten(#{&}#{ns(enlarge-button)}, #{&}__pictogram);
 
   @include preference.forced-colors {
     outline: 1px solid;
@@ -56,7 +57,8 @@
     flex: 1 1 auto;
   }
 
-  &#{ns(enlarge-link)} {
+  &#{ns(enlarge-link)},
+  &#{ns(enlarge-button)} {
     #{ns(tile)}__title {
       a,
       button {
@@ -70,7 +72,6 @@
       }
 
       button {
-        font-size: inherit;
         font-weight: inherit;
         line-height: inherit;
         text-align: inherit;
@@ -82,7 +83,15 @@
   &--no-icon,
   &:not(#{ns(enlarge-link)}):not(#{ns(tile--download)}) {
     #{ns(tile__title)} {
-      a:not([target="_blank"]),
+      a:not([target="_blank"]) {
+        @include after(none);
+      }
+    }
+  }
+
+  &--no-icon,
+  &:not(#{ns(enlarge-button)}):not(#{ns(tile--download)}) {
+    #{ns(tile__title)} {
       button {
         @include after(none);
       }
@@ -163,7 +172,8 @@
     }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__content {
     @include padding-bottom(10v);
   }
 }

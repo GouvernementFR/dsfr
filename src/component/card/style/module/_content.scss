@@ -91,14 +91,16 @@
     }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__end {
+  &#{ns(enlarge-link)}:not(&--no-icon) &__end,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__end {
     @include margin-bottom(-12v); // 6v (icon) + 2v (padding end) + 4v (marge texte icon)
     @include min-height(8v); // 6v (icon) + 2v (padding end)
     @include padding-right(8v); // 6v (icon) + 2v (padding)
     justify-content: flex-end;
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__content {
     @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 2v (padding end) + 4v (marge texte icon)
   }
 

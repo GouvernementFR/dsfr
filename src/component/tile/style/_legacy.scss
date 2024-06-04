@@ -43,7 +43,8 @@
       @include margin(0 0 2v);
       max-width: 100%;
 
-      a {
+      a,
+      button {
         @include icon-legacy(arrow-right-line, sm, after);
       }
 
@@ -63,8 +64,11 @@
     }
 
     &--download {
-      #{ns(tile__title a)} {
-        @include icon-legacy(download-line, null, after);
+      #{ns(tile__title)} {
+        a,
+        button {
+          @include icon-legacy(download-line, null, after);
+        }
       }
     }
 
@@ -78,12 +82,23 @@
         }
       }
     }
+
+    &#{ns(enlarge-button)} {
+      #{ns(tile)}__title {
+        button {
+          @include icon-size-legacy(md, after) {
+            background-color: transparent;
+          }
+        }
+      }
+    }
   }
 
   #{ns(tile--sm)} {
     #{ns(tile)} {
       &__title {
-        a {
+        a,
+        button {
           @include icon-size-legacy(sm, after);
         }
       }

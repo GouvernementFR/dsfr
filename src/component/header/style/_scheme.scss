@@ -15,7 +15,10 @@
 
     &__service {
       @include color.text(title grey, (legacy:$legacy));
-      @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+
+      @include before {
+        @include color.background(border default grey, (legacy:$legacy));
+      }
     }
 
     @include media-query.respond-from(lg) {
