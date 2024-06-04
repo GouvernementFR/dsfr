@@ -24,7 +24,6 @@
    */
   &__brand {
     @include display-flex(row, center);
-    flex-basis: 100%;
 
     @include logo(md, lg) {
       @include margin(-4v);
@@ -47,7 +46,6 @@
     }
 
     @include respond-from(md) {
-      flex-basis: auto;
       @include margin-right(4v);
 
       &#{ns(enlarge-link)} {
