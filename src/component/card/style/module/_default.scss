@@ -7,7 +7,8 @@
   @include display-flex(column);
   @include relative();
 
-  &#{ns(enlarge-link)} {
+  &#{ns(enlarge-link)},
+  &#{ns(enlarge-button)} {
     #{ns(card)}__title {
       a,
       button {
@@ -28,7 +29,15 @@
   &--no-icon,
   &:not(#{ns(enlarge-link)}):not(#{ns(card--download)}) {
     #{ns(card__title)} {
-      a:not([target="_blank"]),
+      a:not([target="_blank"]) {
+        @include after(none);
+      }
+    }
+  }
+
+  &--no-icon,
+  &:not(#{ns(enlarge-button)}):not(#{ns(card--download)}) {
+    #{ns(card__title)} {
       button {
         @include after(none);
       }

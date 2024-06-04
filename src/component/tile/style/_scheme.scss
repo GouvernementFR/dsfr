@@ -48,23 +48,12 @@
         }
       }
 
-      a {
-        &:not([href]) {
-          @include disabled.colors((legacy: $legacy, text: true));
-  
-          @include before {
-            @include color.background-image((border disabled grey), (legacy: $legacy));
-          }
-        }
-      }
+      a:not([href]),
+      button:disabled {
+        @include disabled.colors((legacy: $legacy, text: true));
 
-      button {
-        &:disabled {
-          @include disabled.colors((legacy: $legacy, text: true));
-
-          @include before {
-            @include color.background-image((border disabled grey), (legacy: $legacy));
-          }
+        @include before {
+          @include color.background-image((border disabled grey), (legacy: $legacy));
         }
       }
     }

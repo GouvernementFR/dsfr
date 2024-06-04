@@ -1,0 +1,43 @@
+////
+/// Core Module : Action enlarge
+/// @group core
+////
+
+@mixin enlarge($selector, $markup) {
+  #{ns(enlarge-#{$selector})} {
+    position: relative;
+
+    #{$markup} {
+      background-image: none;
+      outline-width: 0;
+      @include before('', block) {
+        @include absolute(0, 0, 0, 0, 100%, 100%);
+        outline-offset: 2px;
+        outline-style: inherit;
+        outline-color: inherit;
+        outline-width: 2px;
+        @include z-index(over);
+      }
+    }
+
+    @include hover-media-query {
+      #{$markup} {
+        &:hover,
+        &:active {
+          background: none;
+        }
+      }
+
+      &:hover {
+        background-color: var(--hover);
+      }
+
+      &:active {
+        background-color: var(--active);
+      }
+    }
+  }
+}
+
+@include enlarge(link, a);
+@include enlarge(button, button);

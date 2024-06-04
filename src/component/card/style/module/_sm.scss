@@ -44,17 +44,20 @@
     @include padding-top(1v);
   }
 
-  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__end {
+  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__end,
+  &--sm#{ns(enlarge-button)}:not(&--no-icon) &__end {
     @include margin-bottom(-8v); // 4v (icon) + 1v (padding end) + 3v (marge texte icon)
     @include min-height(5v); // 4v (icon) + 1v (padding end)
     @include padding-right(6v); // 4v (icon) + 2v (padding)
   }
 
-  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__content {
+  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__content,
+  &--sm#{ns(enlarge-button)}:not(&--no-icon) &__content {
     @include padding-bottom(14v); // 6v (padding card) + 4v (icon) + 1v (padding end) + 3v (marge texte icon)
   }
 
-  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__title {
+  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__title,
+  &--sm#{ns(enlarge-button)}:not(&--no-icon) &__title {
     a,
     button {
       @include icon-size(sm, after) {

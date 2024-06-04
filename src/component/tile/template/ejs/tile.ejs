@@ -91,7 +91,15 @@ if (tile.variations) for (const variation of tile.variations) switch(variation) 
 
 if (tile.download) classes.push(`${prefix}-tile--download`);
 if (tile.icon === false) classes.push(`${prefix}-tile--no-icon`);
-if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
+
+if (tile.enlarge) switch (tile.content.actionMarkup) {
+  case 'button':
+    classes.push(`${prefix}-enlarge-button`);
+    break;
+
+  default:
+    classes.push(`${prefix}-enlarge-link`);
+}
 %>
 
 <div <%- includeClasses(classes)%> <%- includeAttrs(attributes) %>>

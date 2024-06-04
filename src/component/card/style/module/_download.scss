@@ -44,7 +44,8 @@
     @include icon(download-line, null, after);
   }
 
-  &#{ns(enlarge-link)} {
+  &#{ns(enlarge-link)},
+  &#{ns(enlarge-button)} {
     @include hover-media-query {
       &:hover {
         #{ns(card__header)} {

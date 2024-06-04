@@ -4,7 +4,10 @@
 ////
 
 #{ns(tile)}#{ns(tile--download)} {
-  #{ns(tile__title a)} {
-    @include icon(download-line, null, after);
+  #{ns(tile__title)} {
+    a,
+    button {
+      @include icon(download-line, null, after);
+    }
   }
 }
