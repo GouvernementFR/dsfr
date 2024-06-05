@@ -40,7 +40,7 @@
     @include after {
       @include margin-right(0);
       @include margin-left(auto);
-      
+
       @include preference.reduce-motion {
         transition: none;
       }

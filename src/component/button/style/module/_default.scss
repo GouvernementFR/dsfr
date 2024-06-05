@@ -16,7 +16,7 @@
     @include icon-forced-color(graytext);
     @include preference.forced-colors {
       border-color: graytext;
-      color: graytext
+      color: graytext;
     }
   }
 }

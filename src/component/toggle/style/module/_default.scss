@@ -56,8 +56,6 @@
             outline-color: graytext;
           }
         }
-
-        ;
       }
     }
 
@@ -115,7 +113,7 @@
 
         @include preference.forced-colors {
           background-image: none;
-          color: canvasText;
+          color: canvastext;
         }
       }
 
