@@ -22,6 +22,10 @@ const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
+  sample(getText('sample.noScroll', 'table'), './sample/table-simple', {table: {noScroll: true, table: {id: 'table-no-scroll', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
   sample({title: getText('sample.columnSizes.title', 'table'), subtitle: getText('sample.columnSizes.subtitle', 'table')}, './sample/table-column-sizes', {table: {table: {id: 'table-column-sizes', caption: getText('data.caption.default', 'table')}}}, true);
 %>
 

@@ -27,7 +27,7 @@
       @include margin-bottom(0);
       @include margin-top(4v);
     }
-  
+
     & > table {
       @include margin-bottom(calc(var(--table-offset) + 11v));
 

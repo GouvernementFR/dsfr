@@ -70,7 +70,7 @@
       }
     }
 
-    &--vigipirate {
+    &--attack {
       #{ns(notice)}__title {
         @include has-not-icon {
           @include icon-legacy(alert-warning-2-fill, md, before, false);

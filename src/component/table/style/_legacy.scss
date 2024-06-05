@@ -5,6 +5,7 @@
 
 @use 'module/legacy';
 @use 'module/spacing';
+@use 'module/color';
 
 @include legacy.is(ie11) {
   #{ns(table)} {
@@ -18,32 +19,43 @@
       }
     }
 
-    &__wrapper {
-      @include before(none);
-    }
-
     &__content {
       table {
-        border-top: 1px solid;
-        border-left: 1px solid;
-        border-right: 1px solid;
+        background-image: none;
+        @include color.border(contrast grey, (legacy: true, important: false, side: 'left'));
+        @include color.border(contrast grey, (legacy: true, important: false, side: 'right'));
 
-        #{ns(cell--fixed)} {
-          @include relative;
-
-          #{ns(checkbox-group)} {
-            #{ns(label)} {
-              @include before(none);
+        thead {
+          tr {
+            th,
+            th:last-child {
+              background-image: none;
             }
 
-            input[type="checkbox"] {
-              top: spacing.space(2v);
+            &:first-child {
+              th {
+                @include color.border(contrast grey, (legacy: true, important: false, side: 'top'));
+              }
+            }
+
+            &:last-child {
+              th {
+                @include color.border(plain grey, (legacy: true, important: false, side: 'bottom'));
+              }
             }
           }
         }
 
         tbody {
           tr {
+            background-image: none;
+
+            th,
+            td {
+              background-image: none;
+              @include color.border(contrast grey, (legacy: true, important: false, side: 'bottom'));
+            }
+
             &[aria-selected=true] {
               @include after(none);
 
@@ -67,12 +79,12 @@
     }
 
     &#{ns-attr(js-table, true)} {
+      #{ns(table__wrapper)} {
+        @include after(none);
+      }
+
       &#{ns(table--no-caption)},
       &#{ns(table--caption-bottom)} {
-        #{ns(table__wrapper)} {
-          @include before(none);
-        }
-
         caption {
           @include relative;
         }
@@ -81,6 +93,19 @@
       caption {
         @include relative;
         @include margin-bottom(4v);
+      }
+    }
+
+    &--bordered {
+      table {
+        th,
+        td {
+          @include color.border(contrast grey, (legacy: true, important: false, side: 'right'));
+
+          &:last-child {
+            border-right: none;
+          }
+        }
       }
     }
   }

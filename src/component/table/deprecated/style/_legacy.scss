@@ -8,6 +8,8 @@
 
 @include legacy.is(ie11) {
   #{ns(table)} {
+    @include before(none);
+
     & > table {
       background-image: none;
 

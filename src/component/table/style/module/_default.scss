@@ -33,9 +33,6 @@
   }
 
   &__content {
-    width: 100%;
-    min-width: 40rem;
-
     #{ns(cell)} {
       &--fixed {
         position: sticky;
@@ -235,7 +232,7 @@
           @include size(0);
           pointer-events: none;
 
-          @include preference.forced-colors{
+          @include preference.forced-colors {
             opacity: 0;
           }
 
