@@ -16,8 +16,6 @@ ${decorator.replace("<% eval(include(root + 'src/core/index.ejs')); %>", '').rep
 locals.getText = getI18nText;
 `;
 
-console.log('core', core);
-
 class Template {
   constructor (names, template) {
     this._names = names;
