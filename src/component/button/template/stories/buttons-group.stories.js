@@ -1,8 +1,7 @@
 import { fn } from '@storybook/test';
 import { renderButtonsGroup } from './button';
-import { buttonsGroupArgs, buttonsGroupArgTypes } from './buttons-group-arg-types'
+import { buttonsGroupArgs, buttonsGroupArgTypes } from './buttons-group-arg-types';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
   title: 'DSFR/Component/Button/Buttons-Group',
   tags: ['autodocs'],
