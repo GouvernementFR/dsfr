@@ -73,4 +73,7 @@ const dark = {
   inputBorderRadius: 0,
 }
 
-export default { light: create(light), dark: create(dark) };
+const lightVars = create(light);
+const darkVars = create(dark);
+
+export default { light: lightVars, dark: darkVars };

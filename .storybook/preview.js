@@ -6,7 +6,6 @@ import '../dist/utility/utility.css';
 import '../dist/dsfr.module.js';
 import dsfrTheme from './dsfr-theme';
 import { withThemeByDataAttribute, DecoratorHelpers  } from '@storybook/addon-themes';
-import { useStorybookApi } from '@storybook/manager-api';
 
 const { initializeThemeState, pluckThemeFromContext, useThemeParameters,  } = DecoratorHelpers;
 
@@ -14,21 +13,23 @@ let currentTheme;
 
 const getThemeDecorator = () => {
   const defaultTheme = 'light';
-  initializeThemeState(Object.keys(dsfrTheme), defaultTheme);
+  initializeThemeState(Object.keys[dsfrTheme], defaultTheme);
   return (Story, context) => {
     const selectedTheme = pluckThemeFromContext(context);
     const { themeOverride } = useThemeParameters();
 
     currentTheme = themeOverride || selectedTheme || defaultTheme;
+
     context.parameters.docs.theme = dsfrTheme[currentTheme];
+
     return Story();
   };
-}
+};
 
 const getInitialTheme = () => {
-  //console.log('divers', useGlobals());
-  //console.log('divers', useStoryContext());
-  return 'light';
+  const urlParams = new URLSearchParams(window.location.search);
+  const globals = (urlParams.get('globals') ?? '').split(';').reduce((acc, item) => { const pair = item.split(':'); acc[pair[0]] = pair[1]; return acc; }, {});
+  return dsfrTheme[globals.theme || 'light'];
 }
 
 const preview = {
@@ -54,10 +55,10 @@ const preview = {
       },
     },
     docs: {
-      // theme: dsfrTheme.light,
-    },
-  },
-
+      theme: getInitialTheme()
+    }
+  }
 };
+
 
 export default preview;

@@ -148,6 +148,4 @@ const buttonsGroupArgs = {
   ...getButtonArgs(5)
 };
 
-console.log('buttonsGroupArgTypes', buttonsGroupArgTypes);
-
 export { buttonsGroupArgTypes, buttonsGroupArgs };

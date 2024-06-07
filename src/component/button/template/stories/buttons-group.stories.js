@@ -42,8 +42,6 @@ export default {
       buttonsGroup.iconPlace = args.iconPlace;
     }
 
-    console.log('buttonsGroup', buttonsGroup);
-
     return renderButtonsGroup({ buttonsGroup: buttonsGroup });
   },
   argTypes: buttonsGroupArgTypes,
