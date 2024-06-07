@@ -69,11 +69,25 @@
     color: inherit;
   }
 
+  &--info,
+  &--warning,
+  &--alert,
+  &--weather-orange,
+  &--weather-red,
+  &--weather-purple,
+  &--witness,
+  &--kidnapping,
+  &--attack,
+  &--cyberattack {
+    #{selector.ns(notice)}__title {
+      @include icon-content;
+    }
+  }
+
   &--info {
     #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(info-fill, before);
-        @include icon-content;
       }
     }
   }
@@ -83,7 +97,14 @@
     #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(warning-fill, before);
-        @include icon-content;
+      }
+    }
+  }
+
+  &--alert {
+    #{selector.ns(notice)}__title {
+      @include has-not-icon {
+        @include icon-image(error-warning-fill, before);
       }
     }
   }
@@ -92,7 +113,6 @@
     #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(heavy-showers-fill, before);
-        @include icon-content;
       }
     }
   }
@@ -101,7 +121,6 @@
     #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(tornado-fill, before);
-        @include icon-content;
       }
     }
   }
@@ -110,7 +129,6 @@
     #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(typhoon-fill, before);
-        @include icon-content;
       }
     }
   }
@@ -149,21 +167,18 @@
   &--cyberattack {
     #{selector.ns(notice)}__title {
       @include icon-image(warning-fill, before);
-      @include icon-content;
     }
   }
 
   &--kidnapping {
     #{selector.ns(notice)}__title {
       @include icon-image(alert-warning-fill, before);
-      @include icon-content;
     }
   }
 
   &--attack {
     #{selector.ns(notice)}__title {
       @include icon-image(alert-warning-2-fill, before);
-      @include icon-content;
     }
   }
 }
