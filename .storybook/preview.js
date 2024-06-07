@@ -3,7 +3,8 @@
 
 import '../dist/dsfr.css';
 import '../dist/utility/utility.css';
-import '../dist/dsfr.module.js';
+import '../dist/core/core.module.js';
+import '../dist/component/component.module.js';
 import dsfrTheme from './dsfr-theme';
 import { withThemeByDataAttribute, DecoratorHelpers  } from '@storybook/addon-themes';
 
