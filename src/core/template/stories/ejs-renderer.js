@@ -31,7 +31,6 @@ class Template {
   }
 
   render (data) {
-    console.log('render', data);
     return ejs.render(this._template, data);
   }
 }
