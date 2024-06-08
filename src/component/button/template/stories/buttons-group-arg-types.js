@@ -139,7 +139,7 @@ const buttonsGroupArgs = {
   groupMarkup: 'ul',
   inline: false,
   equisized: false,
-  align: 'left',
+  align: '',
   reverse: false,
   ...getButtonArgs(1),
   ...getButtonArgs(2),

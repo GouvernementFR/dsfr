@@ -3,6 +3,7 @@ import { renderButtonsGroup } from './button';
 import { buttonsGroupArgs, buttonsGroupArgTypes } from './buttons-group-arg-types';
 
 export default {
+  id: 'buttons-group',
   title: 'DSFR/Component/Button/Buttons-Group',
   tags: ['autodocs'],
   render: (args) => {
