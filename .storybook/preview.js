@@ -1,10 +1,10 @@
 /** @type { import('@storybook/html').Preview } */
-
-
 import '../dist/dsfr.css';
 import '../dist/utility/utility.css';
 import '../dist/core/core.module.js';
 import '../dist/component/component.module.js';
+import * as prettier from "prettier";
+import htmlParser from 'prettier/parser-html';
 import dsfrTheme from './dsfr-theme';
 import { DecoratorHelpers } from '@storybook/addon-themes';
 import { UrlStore } from '@storybook/preview-api';
@@ -49,7 +49,11 @@ const preview = {
       },
     },
     docs: {
-      theme: getInitialTheme()
+      theme: getInitialTheme(),
+      source: {
+        language: 'html',
+        transform: (src) => prettier.format(src, { parser: 'html', plugins: [htmlParser], tabWidth: 2, })
+      },
     }
   }
 };

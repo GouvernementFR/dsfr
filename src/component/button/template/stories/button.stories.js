@@ -4,6 +4,7 @@ import { buttonArgs, buttonArgTypes } from './button-arg-types';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
+  id: 'button',
   title: 'DSFR/Component/Button',
   tags: ['autodocs'],
   render: (args) => {
