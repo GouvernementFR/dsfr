@@ -18,7 +18,7 @@ const light = {
   // UI
   appBg: '#fff',
   appContentBg: '#fff',
-  appPreviewBg: '#fff',
+  appPreviewBg: '#f5f5fe',
   appBorderColor: '#666',
   appBorderRadius: 0,
 
@@ -30,7 +30,7 @@ const light = {
   barTextColor: '#3a3a3a',
   barSelectedColor: '#000091',
   barHoverColor: '#000091',
-  barBg: '#ffffff',
+  barBg: '#f5f5fe',
 
   // Form colors
   inputBg: '#eee',
@@ -52,7 +52,7 @@ const dark = {
   // UI
   appBg: '#161616',
   appContentBg: '#161616',
-  appPreviewBg: '#161616',
+  appPreviewBg: '#1b1b35',
   appBorderColor: '#353535',
   appBorderRadius: 0,
 
@@ -64,7 +64,7 @@ const dark = {
   barTextColor: '#cecece',
   barSelectedColor: '#8585f6',
   barHoverColor: '#8585f6',
-  barBg: '#161616',
+  barBg: '#1b1b35',
 
   // Form colors
   inputBg: '#242424',
