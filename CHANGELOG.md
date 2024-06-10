@@ -486,7 +486,7 @@ met à jour le lien vers la page "Typographie" du site de documentation.
 
 
 #### 🐛 fix(register): alignement boutons [(#726)](https://github.com/GouvernementFR/dsfr/pull/726)
-- corrige l'alignement des boutons : 
+- corrige l'alignement des boutons :
   - en mobile, aligné l’un au dessus de l’autre, bouton primaire en premier
   - en desktop, les 2 alignés à droite, bouton primaire à droite
 
@@ -504,7 +504,7 @@ met à jour le lien vers la page "Typographie" du site de documentation.
 
 
 #### 🐛 fix(modal): a11y retire la liste dans la zone d'actions [(#720)](https://github.com/GouvernementFR/dsfr/pull/720)
-- le groupe de bouton peut désormais être une `div` à la place d'un `ul``li` 
+- le groupe de bouton peut désormais être une `div` à la place d'un `ul``li`
 - retrait de la liste non ordonnée dans le footer de la modale
 
 
@@ -548,7 +548,7 @@ met à jour le lien vers la page "Typographie" du site de documentation.
 #### ✨ feat(share, follow, utility): icone personalisée, et ajout twitter-x et threads [(#752)](https://github.com/GouvernementFR/dsfr/pull/752)
 - ajoute la possibilité de mettre une icone de réseau social personalisée dans "follow"
 - ajouts d'exemples d'icone personalisée dans "share" et "follow"
-- ajouts des icones dans utility : 
+- ajouts des icones dans utility :
   - twitter-x-fill
   - twitter-x-line
   - threads-fill
@@ -697,7 +697,7 @@ met à jour le lien vers la page "Typographie" du site de documentation.
 
 
 #### ✨ feat(tile): ajouts de variations de tuiles [(#685)](https://github.com/GouvernementFR/dsfr/pull/685)
-Ajouts des mêmes variations que la carte : 
+Ajouts des mêmes variations que la carte :
 - `.fr-tile--no-border` sans le bordure encadrant la tuile (mais la barre épaisse basse reste)
 - `.fr-tile--shadow` avec élévation
 - `.fr-tile--grey` en gris contrast
@@ -745,7 +745,7 @@ Ajouts des mêmes variations que la carte :
 #### 🐛 fix(transcription): déplacement bouton modale [(#680)](https://github.com/GouvernementFR/dsfr/pull/680)
 - Pour déterminer le bouton primaire qui sert à l’ouverture, un disclosure filtre parmi les boutons qui lui sont reliés et retire ceux qui se trouve à l’intérieur du contenu du disclosure (ce sont les boutons de fermeture)
 - Actuellement, la transcription a le bouton d'ouverture de modale à l'intérieur de son contenu, ce qui bloque le fonctionnement, le bouton n'étant pas reconnu comme primaire.
-- Le correctif déplace le bouton après la dialog de la modal et restitue le fonctionnement de la transcription
+- Le correctif déplace le bouton après la dialog de la modale et restitue le fonctionnement de la transcription
 
 
 #### 🐛 fix(form): met a jour les libelles des indications [(#674)](https://github.com/GouvernementFR/dsfr/pull/674)
@@ -766,7 +766,7 @@ Ajouts des mêmes variations que la carte :
 
 
 #### 🐛 fix(name): a11y - gestion du focus [(#664)](https://github.com/GouvernementFR/dsfr/pull/664)
-Ajoute dans la page d’exemple le déplacement du focus : 
+Ajoute dans la page d’exemple le déplacement du focus :
 - au click sur la checkbox de désactivation pour activer, le premier champ ou bouton prend le focus
 - au click sur l’ajout d’un prénom, le champs ajouté prend le focus
 - au click sur la suppression, le champ ou bouton suivant prend le focus
@@ -861,7 +861,7 @@ Ajoute dans la page d’exemple le déplacement du focus :
 
 
 #### 🐛 fix(core): correctif bug proxy Toggle [(#646)](https://github.com/GouvernementFR/dsfr/pull/646)
-- Dans la class Toggle, le proxy appelle la fonction toggle qui a été remplacée par la fonction générique handleClick : 
+- Dans la class Toggle, le proxy appelle la fonction toggle qui a été remplacée par la fonction générique handleClick :
 - Ce correctif restaure la fonction toggle et implémente son appel dans handleClick
 
 
@@ -871,7 +871,7 @@ Ajoute dans la page d’exemple le déplacement du focus :
 
 
 #### 🐛 fix(analytics): correctif hiérarchie [(#647)](https://github.com/GouvernementFR/dsfr/pull/647)
-- l'analyse de hiérarchie ignorait les headings présents dans un composant. 
+- l'analyse de hiérarchie ignorait les headings présents dans un composant.
 - ce correctif permet de les inclure dans l'analyse.
 
 
@@ -898,8 +898,8 @@ Ajoute dans la page d’exemple le déplacement du focus :
 - correctif du collect manuel au changement d'url
 - correctif du taux de clic désactivé sur certains composants
 - ajustements pages d'exemple
--  retrait des limitation de valeurs sur la propriété`user.profile` 
-- ajouts de propriétés dans la configuration de page 
+-  retrait des limitation de valeurs sur la propriété`user.profile`
+- ajouts de propriétés dans la configuration de page
   - page_id
   - page_author
   - page_tags
@@ -915,8 +915,8 @@ Sur ios le champ dépasse de 1px par rapport au bouton.
 #### ✨ feat(select, input): ajout de la bordure en état erreur / succés / info [(#635)](https://github.com/GouvernementFR/dsfr/pull/635)
 Actuellement la bordure gauche montrant l'état d'erreur/succès/info n'est appliqué que dans le cas d'un groupe de champ en erreur via les modificateur .fr-fieldset--error, .fr-fieldset--valid, .fr-fieldset--info
 
-Afin d'être ISO avec l'UI nous rajoutons cet élément visuel sur : 
-- les champs seuls (.fr-input-group) : 
+Afin d'être ISO avec l'UI nous rajoutons cet élément visuel sur :
+- les champs seuls (.fr-input-group) :
   - `.fr-input-group--error`
   - `.fr-input-group--valid`
   - `.fr-input-group--info`
@@ -974,7 +974,7 @@ Harmonisation avec la navigation sur Accordion, Sidemenu, Translate et Transcrip
 
 #### 📝 doc(core): ajoute des exemples liens bruts et resets [(#613)](https://github.com/GouvernementFR/dsfr/pull/613)
 Par défaut, le dsfr stylise les liens natifs, ce qui peut poser problème dans l'utilisation de librairie tierce.
-2 classes utilitaires sont mise à disposition pour contrecarrer le style fort du lien : 
+2 classes utilitaires sont mise à disposition pour contrecarrer le style fort du lien :
 - `.fr-raw-link` retire toute stylisation sur les liens natifs
 - `.fr-reset-link` remet le soulignement natif du navigateur (`text-decoration: underline;`)
 Des pages d'exemples en illustrant l'utilisation ont été ajoutées dans les pages d'exemples des fondamentaux.
@@ -997,7 +997,7 @@ Le snippet :
   </div>
 </div>
 ```
-DEVIENT : 
+DEVIENT :
 ```html
 <div class="fr-radio-group fr-radio-rich">
   <input value="1" type="radio" id="radio-rich-1" name="radio-rich">
@@ -1048,7 +1048,7 @@ Harmonisation de l'espacement entre les boutons de pagination :
 
 
 #### 🐛 fix(core, modal): décalage scrollbar à l'ouverture/fermeture modale & fix scroll behavior [(#519)](https://github.com/GouvernementFR/dsfr/pull/519)
-Lorsque la page est scrollable, un décalage se produit à l'ouverture d'une modal (la page étant figé elle n'est plus scrollable).
+Lorsque la page est scrollable, un décalage se produit à l'ouverture d'une modale (la page étant figé elle n'est plus scrollable).
 
 Une marge est donc appliquée à l'ouverture de la modale pour simuler la barre de scroll et ainsi éviter le mouvement du contenu en arrière plan.
 
@@ -1058,7 +1058,7 @@ Uniformisation des champs à cocher toggle/radio/checkbox
 
 toggle:
 - Ajout des variants toggle error/valid
-- Retrait du css sur input `appearance:none` 
+- Retrait du css sur input `appearance:none`
 - bordure en background svg
 - le toggle est maintenant placé dans un fieldset
 
@@ -1067,14 +1067,14 @@ radio:
 - retrait du fond blanc du radio bouton (transparence)
 - input déssiné en background image
 
-radio-rich: 
+radio-rich:
 - L'outline au focus englobe tout le radio-riche, plus l'input
 
 checkbox:
 - Le contour devient bleu
 - correction changement d'état au mouse-down (:active), maintenant au mouse up
 
-Form: 
+Form:
 - les hint-text des champs désactivés passent en couleur `--text-disabled-grey`
 
 
@@ -1104,7 +1104,7 @@ Les tuiles ont maintenant par défaut une icone.
 Les tuiles désactivées (a sans href) ont à présent:
   - la bordure bottom en grise
   - l'icone et le titre en gris
-  
+
 Ajout des classes "fr-tile--vertical@md" et  "fr-tile--vertical@lg" pour passer une tuile horizontale, ou download, en vertical à partir des breakpoints md et lg
 
 
@@ -1117,13 +1117,13 @@ Changements apportés :
   - Ajout d'un wrapper "fr-tile__content" pour englober le contenu
   - Ajout d'un wrapper "fr-tile__header" pour englober l'image
 - L'image des tuiles est remplacée par un pictogramme
-  - La classe "fr-tile__img" devient "fr-tile__pictogram" 
+  - La classe "fr-tile__img" devient "fr-tile__pictogram"
   - Son contenu est maintenant un svg "fr-artwork"
 - Ajout de la possibilité de placer un badge, un tag, un texte de détail, dans le contenu de la tuile
 - Ajout d'une taille de tuile SM : "fr-tile--sm"
 
 **⚠️ Breaking Change**
-Le snippet de code d'une tuile : 
+Le snippet de code d'une tuile :
 ```html
 <div class="fr-tile fr-enlarge-link">
     <div class="fr-tile__body">
@@ -1139,7 +1139,7 @@ Le snippet de code d'une tuile :
 </div>
 ```
 
-Devient : 
+Devient :
 ```html
 <div class="fr-tile fr-enlarge-link" id="tile-6584">
     <div class="fr-tile__body">
@@ -1167,10 +1167,10 @@ Devient :
 Pour mutualiser les comportements de la carte et du lien au composant download, celui-ci doit devenir une variante de ces composants et non pas l'inverse.
 
 Retrait du composant : téléchargement de fichier - Download -> déprécié
-Ajout de la variante de carte : fr-card--download 
-Ajout de la variante de lien : fr-link--download 
+Ajout de la variante de carte : fr-card--download
+Ajout de la variante de lien : fr-link--download
 
-Le lien de téléchargement : 
+Le lien de téléchargement :
 ```html
 <div class="fr-download">
     <h3>
@@ -1182,14 +1182,14 @@ Le lien de téléchargement :
     </h3>
 </div>
 ```
-DEVIENT : 
+DEVIENT :
 ```html
 <a class="fr-link fr-link--download" download href="[À MODIFIER - example/img/image.jpg]">
     Télécharger le document lorem ipsum sit dolores amet <span class="fr-link__detail">JPG – 61,88 ko</span>
 </a>
 ```
 
-et la carte de téléchargement : 
+et la carte de téléchargement :
 ```html
 <div class="fr-download fr-enlarge-link fr-download--card">
     <h3>
@@ -1202,7 +1202,7 @@ et la carte de téléchargement :
     <p class="fr-download__desc">Texte de description<</p>
 </div>
 ```
-DEVIENT : 
+DEVIENT :
 ```html
 <div class="fr-card fr-enlarge-link fr-card--download">
     <div class="fr-card__body">
@@ -1279,12 +1279,12 @@ La propriété CSS :where est encore trop récente (chrome 88).
 -> retrait de cette propriété
 
 
-#### 🐛 fix(modal): correction ombre modal footer [(#572)](https://github.com/GouvernementFR/dsfr/pull/572)
-L'ombre du footer de la modal scrollable est mal placée et trop forte.
+#### 🐛 fix(modal): correction ombre modale footer [(#572)](https://github.com/GouvernementFR/dsfr/pull/572)
+L'ombre du footer de la modale scrollable est mal placée et trop forte.
 
 - Remplacement de l'ombre par une bordure d'1px en defaut-grey en haut du footer
 - remplacement du token de background-color du footer par background-lifted-grey
-- ajout d'un texte plus long dans l'exemple modal + footer pour faire apparaître le scroll
+- ajout d'un texte plus long dans l'exemple modale + footer pour faire apparaître le scroll
 
 
 #### 🐛 fix(password, account): correction capslock safari [(#503)](https://github.com/GouvernementFR/dsfr/pull/503)
@@ -1302,7 +1302,7 @@ Commande à exécuter à la racine du projet, git log est exécuté en arrière-
 yarn changelog
 ```
 
-Pour ajouter les commits d'une nouvelle version en préparation, renseigner le futur tag : 
+Pour ajouter les commits d'une nouvelle version en préparation, renseigner le futur tag :
 ```
 yarn changelog -t X.X.X
 ```
@@ -1357,11 +1357,11 @@ Depuis la version 109 de Firefox, l'icone date-picker est en double sur les cham
 
 #### ✨ feat(analytics): évolution et ajout de nouveaux composants [(#560)](https://github.com/GouvernementFR/dsfr/pull/560)
 - Ajout d’un attribut id sur tous les éléments marqués. Les éléments où l'id manque sont recensés en warning dans la console.
-- ⚠ Modification de la configuration analytics : 
-  ⋅ dsfr.analytics.mode devient dsfr.analytics.collection et peut maintenant prendre les valeurs MANUAL, LOAD, FULL, HASH (voir doc). 
+- ⚠ Modification de la configuration analytics :
+  ⋅ dsfr.analytics.mode devient dsfr.analytics.collection et peut maintenant prendre les valeurs MANUAL, LOAD, FULL, HASH (voir doc).
   ⋅ Ajout du support des SPA activé automatiquement si en mode ANGULAR, REACT ou VUE
   ⋅ Ajout de la variable `enableRating` dans dsfr.analytics.enableRating, permettant d’activer le taux de clic (désactivé par défaut).
-- Ajout du support analytics sur les composants restants : 
+- Ajout du support analytics sur les composants restants :
   - [x] Ajout de fichier - File upload
   - [x] Alertes - Alert
   - [x] Badge
@@ -1396,7 +1396,7 @@ Correction des path dans les tools (windows utilise "" et linux et mac "/")
 
 
 #### ✨ feat(github): ajout de templates d'issue github [(#569)](https://github.com/GouvernementFR/dsfr/pull/569)
-Création de template d'issue Github pour indiquer les informations demandées lors d'un report de 
+Création de template d'issue Github pour indiquer les informations demandées lors d'un report de
 - bug
 - évolution
 - documentation
@@ -1411,7 +1411,7 @@ Correction css sur core.
 
 
 #### 🐛 fix(transcription): corrige largeur du bouton a l'ouverture de la modale [(#565)](https://github.com/GouvernementFR/dsfr/pull/565)
-à l'ouverture de la modale de la transcription, le déplacement des éléments en position fixed change la taille du bouton de la transcription à sa taille minimum. 
+à l'ouverture de la modale de la transcription, le déplacement des éléments en position fixed change la taille du bouton de la transcription à sa taille minimum.
 La largeur étendue à 100% permet de la conserver constante.
 
 
@@ -1444,7 +1444,7 @@ Fine tuning, ajout de licence et droit d'utilisation et corrections.
 
 
 #### ✨ feat(artwork): ajout picto document-add [(#571)](https://github.com/GouvernementFR/dsfr/pull/571)
-Ajout pictogramme : 
+Ajout pictogramme :
 - document/document-add
 
 
@@ -1649,7 +1649,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(doc): met a jour les urls de documentation [(#413)](https://github.com/GouvernementFR/dsfr/pull/413)
 
 
-#### fix(tabs): Ouverture de modal à l'intérieur d'un composant onglet [(#405)](https://github.com/GouvernementFR/dsfr/pull/405)
+#### fix(tabs): Ouverture de modale à l'intérieur d'un composant onglet [(#405)](https://github.com/GouvernementFR/dsfr/pull/405)
 
 
 #### fix(sidemenu): sidemenu disparait à l'ouverture modale FF [(#406)](https://github.com/GouvernementFR/dsfr/pull/406)
@@ -2760,7 +2760,7 @@ Co-authored-by: lab9 <lab9.fr@gmail.com>
 #### fix: Mise à jour des dépendances dans les packages accordions, pagination, tabs et tags
 
 
-#### fix(modal): modal aligné en bas en mobile
+#### fix(modal): modale alignée en bas en mobile
 
 
 #### fix: contributing [(#2)](https://github.com/GouvernementFR/dsfr/pull/2)
