@@ -18,3 +18,7 @@ a#{selector.ns(link)} {
     @include icon-forced-color(graytext);
   }
 }
+
+button#{selector.ns(link)} {
+  text-align: left;
+}
