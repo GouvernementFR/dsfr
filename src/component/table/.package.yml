@@ -8,7 +8,6 @@ style:
 script:
   - core
   - checkbox
-  - tooltip
 example:
   style:
     - alert
@@ -22,4 +21,6 @@ example:
     - segmented
     - tag
     - toggle
+    - tooltip
+  script:
     - tooltip
