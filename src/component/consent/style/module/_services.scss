@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(consent-service)} {
   @include relative;
@@ -96,6 +97,10 @@
     @include after {
       @include margin-right(-5v);
       transition: transform 0.3s;
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
     }
 
     &[aria-expanded="true"] {
