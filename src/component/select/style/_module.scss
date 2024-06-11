@@ -5,6 +5,7 @@
 
 @use 'module/spacing';
 @use 'module/reset';
+@use 'module/preference';
 
 #{ns(select)} {
   display: block;
