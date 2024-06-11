@@ -104,7 +104,8 @@
     @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 2v (padding end) + 4v (marge texte icon)
   }
 
-  &#{ns(enlarge-link)} &__title a {
+  &#{ns(enlarge-link)} &__title a,
+  &#{ns(enlarge-button)} &__title button {
     @include preference.forced-colors {
       text-decoration: none;
     }

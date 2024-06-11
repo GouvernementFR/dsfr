@@ -131,6 +131,14 @@
     transition: box-shadow 0.3s;
     z-index: z-index(modal-footer);
 
+    @include preference.forced-colors {
+      border-top: 1px solid;
+    }
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
     #{ns-group(btns)} {
       margin-bottom: -1rem;
       width: calc(100% + #{space(4v)});
