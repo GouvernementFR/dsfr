@@ -1,8 +1,25 @@
 @use 'sass:map';
+@use 'sass:list';
 @use 'module/elevation/variable/shadows';
+@use 'module/utilities';
+@use '../variable/colors';
+@use 'module/legacy';
 
 @mixin shadow($layer) {
   @if map.has-key(shadows.$values, $layer) {
     filter: drop-shadow(var(--#{$layer}-shadow));
+  }
+}
+
+@mixin shadow-legacy($layer, $background) {
+  @if map.has-key(shadows.$values, $layer) {
+    $val1: list.nth(map.get(shadows.$values, $layer), 1);
+    $val2: list.nth(map.get(shadows.$values, $layer), 2) * 0.5;
+    $val3: list.nth(map.get(shadows.$values, $layer), 3);
+    @include utilities.nest($background) {
+      @include legacy.is(ie11) {
+        box-shadow: $val1 $val2 $val3 #{map.get(colors.$values, light)};
+      }
+    }
   }
 }
