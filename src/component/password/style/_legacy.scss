@@ -11,10 +11,6 @@
     &__checkbox {
       @include absolute(0, 0);
       @include margin(0);
-
-      input[type="checkbox"] {
-        top: spacing.space(-2v);
-      }
     }
   }
 }
