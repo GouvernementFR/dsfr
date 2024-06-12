@@ -16,6 +16,7 @@ import './polyfill-io/object-get-own-property-symbols-polyfill.min';
 import './polyfill-io/element-prototype-closest-polyfill.min';
 import './polyfill-io/url-search-params-polyfill.min';
 
+import './focus-within/focus-within-polyfill.min';
 // import { ObjectFitPolyfill } from './object-fit-polyfill/object-fit-polyfill';
 
 // new ObjectFitPolyfill('.${prefix}-content-media__img img', '.${prefix}-card__img img', '${prefix}-responsive-vid');
