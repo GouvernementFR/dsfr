@@ -3,6 +3,8 @@
 /// @group form
 ////
 
+@use 'module/preference';
+
 #{ns-group(select), ns-group(input)} {
   &:not(:last-child) {
     @include margin-bottom(6v);
@@ -100,6 +102,9 @@
     display: inline-block;
     @include margin-right(1v);
   }
+  @include icon-forced-color(canvastext, true, before);
+
+ 
 
   & + #{ns(error-text)},
   & + #{ns(valid-text)},
