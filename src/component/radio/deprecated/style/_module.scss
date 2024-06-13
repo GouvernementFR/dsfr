@@ -1,9 +1,12 @@
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(fieldset)} {
   #{ns(fieldset__content)} {
     #{ns-group(radio)}:not(#{ns(radio-rich)}) {
       input[type="radio"] {
+        top: spacing.space(3v);
+
         + label {
           background-position: calc(#{space(-1v)} + 1px) calc(#{space(2v)} + 1px), calc(#{space(-1v)} + 1px) calc(#{space(2v)} + 1px);
         }
@@ -11,6 +14,8 @@
     }
 
     #{ns-group(radio)}--sm:not(#{ns(radio-rich)}) {
+      top: spacing.space(4v);
+
       input[type="radio"] {
         + label {
           background-position: calc(#{space(-0.5v)} + 1px) calc(#{space(4v)} - 1px), calc(#{space(-0.5v)} + 1px) calc(#{space(4v)} - 1px);
@@ -77,6 +82,10 @@
     background-size: 100% 1px, 100% 1px, 1px 100%, 1px calc(100% - 0.5rem);
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 100%, 100% 0, 0 0.25rem;
+
+    @include preference.forced-colors {
+      outline: 1px solid;
+    }
 
     img,
     svg {
