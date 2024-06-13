@@ -1,5 +1,7 @@
 import { create } from '@storybook/theming/create';
 
+const PREFER_COLOR_SCHEME = false;
+
 const light = {
   base: 'light',
   // Typography
@@ -77,3 +79,11 @@ const lightVars = create(light);
 const darkVars = create(dark);
 
 export default { light: lightVars, dark: darkVars };
+
+export const getPreferredColorScheme = () => {
+  if (!window || !window.matchMedia) return lightVars
+
+  if (!PREFER_COLOR_SCHEME) return lightVars;
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? darkVars : lightVars;
+};

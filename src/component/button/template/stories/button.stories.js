@@ -1,66 +1,168 @@
-import { fn } from '@storybook/test';
 import { renderButton } from './button';
-import { buttonArgs, buttonArgTypes } from './button-arg-types';
+import { buttonArgs, buttonArgTypes, buttonProps } from './button-arg-types';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
+const render = (args) => renderButton({ button: buttonProps(args) });
+
+const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
+
 export default {
   id: 'button',
   title: 'DSFR/Component/Button',
-  tags: ['autodocs'],
-  render: (args) => {
-    const button = {
-      label: args.label,
-      kind: args.kind,
-      size: args.size,
-      id: args.id || undefined,
-      title: args.title || undefined,
-      disabled: args.disabled,
-      markup: args.markup,
-      type: args.type,
-      href: args.href || undefined,
-      blank: args.target === 'blank',
-      self: args.target === 'self'
-    };
-
-    if (args.hasIcon) {
-      button.icon = args.icon;
-      button.iconPlace = args.iconPlace;
-    }
-
-    if (args.hasTooltip) {
-      button.tooltip = {
-        id: args.tooltipId,
-        content: args.tooltipContent
-      };
-    }
-
-    return renderButton({ button: button });
-  },
+  render: render,
   argTypes: buttonArgTypes,
   args: buttonArgs
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
+export const ControlsStory = {
+  tags: ['!dev'],
+  args: {}
+};
+
+export const PrimaryStory = {
+  tags: ['!dev'],
   args: {
     kind: 1
   }
 };
 
-export const Secondary = {
+export const SecondaryStory = {
+  tags: ['!dev'],
   args: {
     kind: 2
   }
 };
 
-export const Large = {
-  args: {
-    size: 'lg'
-  }
+export const TertiaryStory = {
+  tags: ['!dev'],
+  render: () => renders([
+    {
+      kind: 3
+    },
+    {
+      kind: 4
+    }
+  ])
 };
 
-export const Small = {
-  args: {
-    size: 'sm'
-  }
+export const DisabledStory = {
+  tags: ['!dev'],
+  render: () => renders([
+    {
+      kind: 1,
+      disabled: true
+    },
+    {
+      kind: 2,
+      disabled: true
+    },
+    {
+      kind: 3,
+      disabled: true
+    },
+    {
+      kind: 4,
+      disabled: true
+    }
+  ])
+};
+
+export const IconLeftStory = {
+  tags: ['!dev'],
+  render: () => renders([
+    {
+      kind: 1,
+      hasIcon: true,
+      icon: 'checkbox-line',
+      iconPlace: 'left'
+    },
+    {
+      kind: 2,
+      hasIcon: true,
+      icon: 'checkbox-line',
+      iconPlace: 'left'
+    },
+    {
+      kind: 3,
+      hasIcon: true,
+      icon: 'checkbox-line',
+      iconPlace: 'left'
+    },
+    {
+      kind: 4,
+      hasIcon: true,
+      icon: 'checkbox-line',
+      iconPlace: 'left'
+    }
+  ])
+};
+
+export const IconRightStory = {
+  tags: ['!dev'],
+  render: () => renders([
+    {
+      kind: 1,
+      hasIcon: true,
+      icon: 'checkbox-line',
+      iconPlace: 'right'
+    },
+    {
+      kind: 2,
+      hasIcon: true,
+      icon: 'checkbox-line',
+      iconPlace: 'right'
+    },
+    {
+      kind: 3,
+      hasIcon: true,
+      icon: 'checkbox-line',
+      iconPlace: 'right'
+    },
+    {
+      kind: 4,
+      hasIcon: true,
+      icon: 'checkbox-line',
+      iconPlace: 'right'
+    }
+  ])
+};
+
+export const IconOnlyStory = {
+  tags: ['!dev'],
+  render: () => renders([
+    {
+      kind: 1,
+      hasIcon: true,
+      icon: 'checkbox-line'
+    },
+    {
+      kind: 2,
+      hasIcon: true,
+      icon: 'checkbox-line'
+    },
+    {
+      kind: 3,
+      hasIcon: true,
+      icon: 'checkbox-line'
+    },
+    {
+      kind: 4,
+      hasIcon: true,
+      icon: 'checkbox-line'
+    }
+  ])
+};
+
+export const SizeStory = {
+  tags: ['!dev'],
+  render: () => renders([
+    {
+      size: 'sm'
+    },
+    {
+      size: 'md'
+    },
+    {
+      size: 'lg'
+    }
+  ])
 };

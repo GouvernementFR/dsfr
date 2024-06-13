@@ -75,6 +75,7 @@ const markupArgTypes = {
   }
 };
 
+/*
 const tooltipArgTypes = {
   hasTooltip: {
     control: 'boolean',
@@ -100,6 +101,7 @@ const tooltipArgTypes = {
     table: { category: 'tooltip' }
   }
 };
+ */
 
 const buttonArgTypes = {
   label: {
@@ -141,8 +143,14 @@ const buttonArgTypes = {
     description: 'Le bouton est désactivé'
   },
   ...iconArgTypes,
-  ...markupArgTypes,
-  ...tooltipArgTypes
+  ...markupArgTypes
+  // ...tooltipArgTypes
+};
+
+const tooltipArgs = {
+  hasTooltip: false,
+  tooltipId: 'tooltip-id',
+  tooltipContent: 'Contenu de l\'infobulle'
 };
 
 const buttonArgs = {
@@ -157,11 +165,39 @@ const buttonArgs = {
   iconPlace: 'left',
   markup: 'button',
   type: 'button',
-  hasTooltip: false,
-  tooltipId: '',
-  tooltipContent: '',
+  ...tooltipArgs,
   href: '',
   target: 'self'
 };
 
-export { buttonArgTypes, buttonArgs };
+const buttonProps = (args) => {
+  const button = {
+    label: args.label || buttonArgs.label,
+    kind: args.kind || buttonArgs.kind,
+    size: args.size || buttonArgs.size,
+    id: args.id || undefined,
+    title: args.title || undefined,
+    disabled: args.disabled,
+    markup: args.markup || buttonArgs.markup,
+    type: args.type || buttonArgs.type,
+    href: args.href || undefined,
+    blank: args.target === 'blank',
+    self: args.target === 'self'
+  };
+
+  if (args.hasIcon) {
+    button.icon = args.icon;
+    button.iconPlace = args.iconPlace;
+  }
+
+  if (args.hasTooltip) {
+    button.tooltip = {
+      id: args.tooltipId,
+      content: args.tooltipContent
+    };
+  }
+
+  return button;
+};
+
+export { buttonArgTypes, buttonArgs, buttonProps };
