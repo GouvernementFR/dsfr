@@ -67,6 +67,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       * flèche séparatrice en font-icon
       */
       &:not(:first-child) {
+        @include icon-forced-color(canvastext, true, before);
         @include icon(arrow-right-s-line, sm, before) {
           @include margin-x(1v);
           vertical-align: -0.0625em;
