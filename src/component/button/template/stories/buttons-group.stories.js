@@ -1,57 +1,60 @@
-import { fn } from '@storybook/test';
 import { renderButtonsGroup } from './button';
-import { buttonsGroupArgs, buttonsGroupArgTypes } from './buttons-group-arg-types';
+import { buttonsGroupArgs, buttonsGroupArgTypes, buttonsGroupProps } from './buttons-group-arg-types';
+
+const render = (args) => renderButtonsGroup({ buttonsGroup: buttonsGroupProps(args) });
+
+const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
 
 export default {
   id: 'buttons-group',
   title: 'DSFR/Component/Button/Buttons-Group',
-  tags: ['autodocs'],
-  render: (args) => {
-    const buttons = [];
-
-    for (let i = 1; i <= 5; i ++) {
-      if (i < 3 || args[`hasButton${i}`]) {
-        const button = {
-          label: args[`label${i}`],
-          kind: args[`kind${i}`],
-          id: args[`id${i}`] || undefined,
-          title: args[`title${i}`] || undefined,
-          disabled: args[`disabled${i}`]
-        };
-
-        if (args.hasIcon) {
-          button.icon = args[`icon${i}`];
-        }
-
-        buttons.push(button);
-      }
-    }
-
-    const buttonsGroup = {
-      size: args.size,
-      id: args.id || undefined,
-      title: args.title || undefined,
-      buttons: buttons,
-      groupMarkup: args.groupMarkup,
-      inline: args.inline,
-      align: args.align,
-      equisized: args.equisized,
-      reverse: args.reverse
-    };
-
-    if (args.hasIcon) {
-      buttonsGroup.iconPlace = args.iconPlace;
-    }
-
-    return renderButtonsGroup({ buttonsGroup: buttonsGroup });
-  },
+  render: render,
   argTypes: buttonsGroupArgTypes,
   args: buttonsGroupArgs
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
-  args: {
+export const ControlsStory = {
+  tags: ['!dev'],
+  args: {}
+};
 
+export const VerticalStory = {
+  tags: ['!dev'],
+  args: {
+    buttons: [
+      {
+        kind: 1
+      },
+      {
+        kind: 2
+      }
+    ]
   }
+};
+
+export const HorizontalStory = {
+  tags: ['!dev'],
+  args: {
+    inline: true,
+    buttons: [
+      {
+        kind: 1
+      },
+      {
+        kind: 2
+      }
+    ]
+  }
+};
+
+export const SizeStory = {
+  tags: ['!dev'],
+  render: () => renders([
+    {
+      size: 'sm'
+    },
+    {
+      size: 'lg'
+    }
+  ])
 };

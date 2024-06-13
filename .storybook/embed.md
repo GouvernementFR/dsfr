@@ -1,1 +1,1 @@
-iframe.html?globals=theme:light&id=button--primary&viewMode=story&singleStory=true
+?nav=0&viewMode=story&singleStory=true

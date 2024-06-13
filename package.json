@@ -84,6 +84,7 @@
     "prettier": "^2.8.4",
     "pure-rand": "^6.0.2",
     "react-dom": "^18.3.1",
+    "remark-gfm": "^4.0.0",
     "rollup": "^2.68.0",
     "rollup-plugin-banner2": "^1.2.2",
     "rollup-plugin-modify": "^3.0.0",

@@ -148,4 +148,46 @@ const buttonsGroupArgs = {
   ...getButtonArgs(5)
 };
 
-export { buttonsGroupArgTypes, buttonsGroupArgs };
+const buttonsGroupProps = (args) => {
+  const buttons = [];
+
+  for (let i = 1; i <= 5; i++) {
+    if (i < 3 || args[`hasButton${i}`]) {
+      const button = {
+        label: args[`label${i}`] || buttonArgs.label,
+        kind: args[`kind${i}`] || (i === 1 ? 1 : 2),
+        id: args[`id${i}`] || undefined,
+        title: args[`title${i}`] || undefined,
+        disabled: args[`disabled${i}`]
+      };
+
+      if (args.hasIcon) {
+        button.icon = args[`icon${i}`];
+      }
+
+      buttons.push(button);
+    }
+  }
+
+  const buttonsGroup = {
+    size: args.size,
+    id: args.id || undefined,
+    title: args.title || undefined,
+    buttons: buttons,
+    groupMarkup: args.groupMarkup || buttonsGroupArgs.groupMarkup,
+    inline: args.inline,
+    align: args.align,
+    equisized: args.equisized,
+    reverse: args.reverse
+  };
+
+  if (args.hasIcon) {
+    buttonsGroup.iconPlace = args.iconPlace;
+  }
+
+  console.log('buttonsGroup', buttonsGroup);
+
+  return buttonsGroup;
+};
+
+export { buttonsGroupArgTypes, buttonsGroupArgs, buttonsGroupProps };
