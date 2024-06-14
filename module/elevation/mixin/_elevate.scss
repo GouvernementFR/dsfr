@@ -16,10 +16,5 @@
     @include background.background($layer, $options);
   }
 
-  @if $legacy {
-    @include shadow.shadow-legacy($layer, $background);
-  }
-  @else {
-    @include shadow.shadow($layer);
-  }
+  @include shadow.shadow($layer, $legacy, $background);
 }
