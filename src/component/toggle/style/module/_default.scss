@@ -11,7 +11,6 @@
   display: flex;
   flex-wrap: wrap;
   @include relative;
-  @include padding(4v 0);
   @include set-text-margin(0);
   @include set-title-margin(0);
 
@@ -145,7 +144,7 @@
 
     @include after('') {
       @include display-flex(null, center, center);
-      @include absolute(4v, null, null, 0, 6v, 6v);
+      @include absolute(0, null, null, 0, 6v, 6v);
       border-radius: 50%;
       background-repeat: no-repeat;
       background-size: spacing.space(4v);
@@ -166,5 +165,22 @@
     @include margin-bottom(0);
     @include text-style(xs);
     flex-basis: 100%;
+  }
+
+  &--border-bottom {
+    @include padding-bottom(4v);
+  }
+
+  &--valid,
+  &--error {
+    @include before('') {
+      @include absolute(0, null, null, -3v, 2px, 100%);
+    }
+  }
+
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(4v);
+    }
   }
 }

@@ -5,9 +5,10 @@ const data = {
   label: 'Libellé de l\'interrupteur',
   id: uniqueId('toggle'),
   ...toggle,
-  hint: toggle.hint === true ? 'Texte de description additionnel' : toggle.hint
+  hint: hintData(toggle.hint),
+  valid: validData(toggle.valid),
+  error: errorData(toggle.error)
 }
-
 %>
 
 <%- include('../../template/ejs/toggle', {toggle: data}); %>

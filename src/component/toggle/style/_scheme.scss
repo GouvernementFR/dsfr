@@ -75,6 +75,18 @@
     &--border-bottom {
       @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
     }
+
+    &--valid {
+      @include before('') {
+        @include color.background(border plain success, (legacy:$legacy));
+      }
+    }
+
+    &--error {
+      @include before('') {
+        @include color.background(border plain error, (legacy:$legacy));
+      }
+    }
   }
 
   #{ns(toggle--error)},
