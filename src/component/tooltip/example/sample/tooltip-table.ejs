@@ -1,46 +1,10 @@
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../core/index.ejs'));
 
-<%
-let tooltip = locals.tooltip || {};
-let tooltipId = uniqueId('tooltip');
-let data = {
-  id: tooltipId,
-  content: lorem(),
-  ...tooltip
-};
-let tooltipExample = include('../sample/tooltip-default', {tooltip: data});
-let table = {
-  bordered: true,
-  noScroll: false,
-  noCaption: false,
-  captionBottom: false,
-  data: [
-    [ 'Nom', 'Prenom', 'Status', 'Prix', 'Documentation', 'Commits', 'Country', 'City', 'timestamp'],
-    [
-      'Nakamoto',
-      'Sarah',
-      `<p class="${prefix}-badge ${prefix}-badge--success ${prefix}-badge ${prefix}-badge--success">Livré</p>`,
-      '30,00€',
-      `<button class="${prefix}-btn--tooltip ${prefix}-btn" aria-describedby="${tooltipId}">${getText('sample.tooltip', 'tooltip')}</button>${tooltipExample}`,
-      'transmit primary protocol',
-      'Japan',
-      'Tokyo',
-      '2022-12-15T15:52:01+00:00'
-    ],
-    [
-      'Nakamoto',
-      'Sarah',
-      `<p class="${prefix}-badge ${prefix}-badge--success ${prefix}-badge ${prefix}-badge--success">Livré</p>`,
-      '30,00€',
-      `<a class="${prefix}-link" href="#">Libellé lien</a>`,
-      'transmit primary protocol',
-      'Japan',
-      'Tokyo',
-      '2022-12-15T15:52:01+00:00'
-    ],
-  ]
-};
-
+const tableData = JSON.parse(include('../../../table/example/data/data-simple.json.ejs', {table: {id: 'tootltip-table'}})) || [];
+if (tableData.table && tableData.table.tbodies.length) {
+  const tooltipBtn = include('./tooltip-button.ejs');
+  tableData.table.tbodies[0][1][2].content = tooltipBtn;
+}
 %>
 
-<%- include('../../../table/template/ejs/table', { table: table }); %>
+<%- include('../../../table/template/ejs/wrapper', { table: tableData }); %>

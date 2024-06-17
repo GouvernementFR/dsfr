@@ -15,10 +15,18 @@
 
     &__content {
       table {
+        caption {
+          @include color.text(title grey, (legacy:$legacy));
+        }
+
         thead {
           th {
             @include color.background(alt grey, (legacy: $legacy));
             @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
+
+            &[role='columnheader'] {
+              @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+            }
 
             &:last-child {
               @include color.background(alt grey, (legacy: $legacy));
@@ -36,7 +44,6 @@
             }
           }
 
-          th,
           td {
             @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
             @include color.background(default grey, (legacy: $legacy));
@@ -44,25 +51,7 @@
 
           th {
             @include color.background(alt grey, (legacy: $legacy));
-            @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
-          }
-        }
-      }
-    }
-
-    &__shadow--left {
-      #{ns(table__content)} {
-        #{ns(cell--fixed)} {
-          @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
-
-          &[scope='col'] {
-            @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
-          }
-        }
-
-        thead {
-          #{ns(cell--fixed)} {
-            @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+            @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
           }
         }
       }

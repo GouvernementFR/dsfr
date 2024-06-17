@@ -32,6 +32,12 @@
               background-image: none;
             }
 
+            th[role='columnheader'] {
+              background-size: 1px 100%;
+              background-repeat: no-repeat;
+              background-position: 100% 0;
+            }
+
             &:first-child {
               th {
                 @include color.border(contrast grey, (legacy: true, important: false, side: 'top'));
@@ -50,26 +56,20 @@
           tr {
             background-image: none;
 
-            th,
-            td {
-              background-image: none;
-              @include color.border(contrast grey, (legacy: true, important: false, side: 'bottom'));
-            }
-
             &[aria-selected=true] {
               @include after(none);
 
               th,
               td {
-                border-top: 2px solid;
-                border-bottom: 2px solid;
+                border-top: 2px solid #{color.$blue-france};
+                border-bottom: 2px solid #{color.$blue-france};
 
                 &:first-child {
-                  border-left: 2px solid;
+                  border-left: 2px solid #{color.$blue-france};
                 }
 
                 &:last-child {
-                  border-right: 2px solid;
+                  border-right: 2px solid #{color.$blue-france};
                 }
               }
             }

@@ -40,6 +40,12 @@
 
     &#{ns-attr(js-table, true)} {
       & > table {
+        &::after {
+          bottom: 0;
+          top: auto;
+          @include height(100%);
+        }
+
         caption {
           @include absolute(100%, 0, 0, 0);
           @include margin-top(4v);

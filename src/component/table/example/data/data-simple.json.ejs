@@ -1,5 +1,6 @@
 <%
 const table = locals.table || {};
+
 const dataLorem = JSON.parse(include('../data/data-lorem.json.ejs', { table: table.table }));
 
 const thead = dataLorem.thead;
@@ -30,6 +31,8 @@ if (table.selectable) {
   tbodies.forEach((tbody) => {
     tbody.forEach((row, index) => {
       row.unshift({
+        markup: 'th',
+        attributes: {scope: 'row'},
         classes: [`${prefix}-cell--fixed`],
         content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, label: `${getText('data.cell.action.selectRow', 'table')} ${index + 1}`, attributes: {name: 'row-select'}})
       });
@@ -41,7 +44,7 @@ if (table.doubleEntry) {
   thead.forEach((row) => {
     row.unshift({
       attributes: {
-        scope: 'row'
+        role: 'columnheader'
       },
       classes: [`${prefix}-cell--fixed`],
       content: getSrOnlyCell(getText('data.cell.doubleEntry', 'table'))

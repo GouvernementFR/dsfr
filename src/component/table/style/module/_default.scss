@@ -18,15 +18,6 @@
   @include margin-bottom(10v);
   @include margin-top(4v);
 
-  &__wrapper {
-    @include after {
-      background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-      background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
-      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-      @include z-index(over);
-    }
-  }
-
   &__container {
     overflow: auto;
     @include padding-top(var(--table-offset));
@@ -37,6 +28,35 @@
       &--fixed {
         position: sticky;
         left: 0;
+        @include z-index(over);
+
+        #{ns(checkbox-group)} {
+          & + * {
+            @include margin-left(2v);
+          }
+
+          #{ns(label)} {
+            color: transparent;
+            @include size(0);
+            pointer-events: none;
+
+            @include preference.forced-colors {
+              opacity: 0;
+            }
+
+            &::before {
+              left: spacing.space(-5v);
+            }
+          }
+
+          input[type="checkbox"] {
+            left: spacing.space(1v);
+          }
+        }
+
+        @include preference.forced-colors {
+          outline: 1px solid;
+        }
       }
 
       &--center {
@@ -129,10 +149,22 @@
 
         th {
           @include font-weight(bold);
+
+          &[role='columnheader'] {
+            background-size: 100% 1px, 1px 100%;
+            background-repeat: no-repeat, no-repeat;
+            background-position: 0 100%, 100% 0;
+          }
         }
       }
 
       tbody {
+        th {
+          background-size: 100% 1px, 1px 100%;
+          background-repeat: no-repeat, no-repeat;
+          background-position: 0 100%, 100% 0;
+        }
+
         tr:first-child[aria-selected=true]:has(+ tr:not([aria-selected=true])),
         tr:not([aria-selected=true]) + tr:last-child[aria-selected=true],
         tr:not([aria-selected=true]) + tr[aria-selected=true]:has(+ tr:not([aria-selected=true])) {
@@ -220,36 +252,6 @@
         }
       }
     }
-
-    #{ns(cell--fixed)} {
-      #{ns(checkbox-group)} {
-        & + * {
-          @include margin-left(2v);
-        }
-
-        #{ns(label)} {
-          color: transparent;
-          @include size(0);
-          pointer-events: none;
-
-          @include preference.forced-colors {
-            opacity: 0;
-          }
-
-          &::before {
-            left: spacing.space(-5v);
-          }
-        }
-
-        input[type="checkbox"] {
-          left: spacing.space(1v);
-        }
-      }
-
-      @include preference.forced-colors {
-        outline: 1px solid;
-      }
-    }
   }
 
   caption {
@@ -279,8 +281,10 @@
 
       @include after('', block) {
         @include absolute(var(--table-offset), null, null, 0, 100%, calc(100% - var(--table-offset)));
-        background-position: 0 0, 0 100%, 100% 100%, 100% 0;
+        @include z-index(over);
+        background-position: 0 0, 0 0, 100% 100%, 0 100%;
         background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
         pointer-events: none;
       }
     }
