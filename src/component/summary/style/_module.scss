@@ -44,6 +44,11 @@
       font-weight: bold;
     }
 
+    @include preference.forced-colors {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
     &:not(:hover):not(:active) {
       @include link-underline-hover-only;
     }
