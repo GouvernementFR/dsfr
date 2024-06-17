@@ -12,28 +12,28 @@
     @include icon-legacy(null, sm);
     text-decoration: none;
 
-    #{ns(tag)}--sm {
+    &#{ns(tag)}--sm {
       @include icon-legacy(null, xs, before);
     }
   }
 
   button,
   input[type=button] {
-    #{ns(tag)} {
+    &#{ns(tag)} {
       // empeche le hover du tag pressable sur ie
       @include pressed-selector(true) {
         background-size: 100% 100%, 100% 100%;
         @include icon-legacy(checkbox-circle-line, sm, after);
 
-        #{ns(tag)}--sm {
+        &#{ns(tag)}--sm {
           @include icon-legacy(null, xs, after);
         }
       }
 
-      #{ns(tag)}--dismiss {
+      &#{ns(tag)}--dismiss {
         @include icon-legacy(close-line, sm, after);
 
-        #{ns(tag)}--sm {
+        &#{ns(tag)}--sm {
           @include icon-legacy(null, xs, after);
         }
       }
@@ -48,8 +48,8 @@
     @include icon-legacy(null, sm);
 
     @include clickable-selector {
-      #{ns(tag)} {
-        #{ns(tag)}--dismiss {
+      &#{ns(tag)} {
+        &#{ns(tag)}--dismiss {
           @include icon-legacy(null, xs, after);
         }
 

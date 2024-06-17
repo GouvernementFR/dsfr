@@ -66,6 +66,10 @@
       }
 
       @include disabled.selector((), (legacy: $legacy, text: true, background: true));
+
+      &:disabled:hover {
+        @include color.background(background disabled grey, (legacy: $legacy));
+      }
     }
   }
 

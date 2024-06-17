@@ -14,6 +14,14 @@
       text-decoration: none;
     }
 
+    &#{ns(btn--secondary)},
+    &#{ns(btn--tertiary)},
+    &#{ns(btn--tertiary-no-outline)} {
+      &:disabled:hover {
+        background-color: transparent;
+      }
+    }
+
     @include class-not-start-with(#{ns(btn--icon-, '')}) {
       @include has-icon {
         @include icon-legacy(null, md);
