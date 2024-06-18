@@ -3,7 +3,7 @@
   "env": {
     "browser": true
   },
-  "ignorePatterns": ["**/polyfill-io/*.js"],
+  "ignorePatterns": ["**/polyfill-io/*.js", "**/*.min.js"],
   "rules": {
     "semi": [2, "always"],
     "no-template-curly-in-string": "off"

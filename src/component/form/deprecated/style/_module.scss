@@ -104,8 +104,6 @@
   }
   @include icon-forced-color(canvastext, true, before);
 
- 
-
   & + #{ns(error-text)},
   & + #{ns(valid-text)},
   & + #{ns(info-text)} {

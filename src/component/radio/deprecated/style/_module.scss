@@ -16,7 +16,7 @@
     #{ns-group(radio)}--sm:not(#{ns(radio-rich)}) {
       input[type="radio"] {
         top: spacing.space(4v);
-        
+
         + label {
           background-position: calc(#{space(-0.5v)} + 1px) calc(#{space(4v)} - 1px), calc(#{space(-0.5v)} + 1px) calc(#{space(4v)} - 1px);
         }
