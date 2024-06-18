@@ -27,9 +27,9 @@ subdir:
   card-tag: Carte avec tags
   connect: Bouton France Connect (connect)
   connect-a: Bouton France Connect avec etiquette a
-  content: Contenu média (content)
-  content-svg: Contenu média SVG
-  content-video: Contenu média vidéo
+  content: Contenu médias (content)
+  content-svg: Contenu médias SVG
+  content-video: Contenu médias vidéo
   consent: Gestionnaire de consentement (consent)
   consent-placeholder: Gestionnaire de consentement bloc désactivé (placeholder)
   checkbox: Case à cocher (checkbox)

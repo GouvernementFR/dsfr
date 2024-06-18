@@ -5,9 +5,9 @@ const attrModal = {};
 attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
-const links = { 
+const links = {
   buttons: [
-    { 
+    {
       icon: 'theme-fill',
       iconPlace: 'left',
       label: 'Paramètres d\'affichage',
@@ -66,7 +66,7 @@ let dataFooter = {
   <%- sample('Bouton ouverture thèmes', '../../button/template/ejs/button-display', buttonData, true) %>
 
   <!-- Le contenu de la modale des paramètres d'affichage est importé de manière globale dans les pages d'exemple -->
-  <%- sample('Snippet modal de paramètres d\'affichage', '../../modal/template/ejs/modal.ejs', {modal:dataModal}, true, './layout-snippet-only'); %>
+  <%- sample('Snippet modale de paramètres d\'affichage', '../../modal/template/ejs/modal.ejs', {modal:dataModal}, true, './layout-snippet-only'); %>
 
 </div>
 
