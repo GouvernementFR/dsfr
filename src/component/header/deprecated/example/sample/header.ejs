@@ -6,7 +6,7 @@ const data = {body: {}, menu: menu};
 let hasNavbar = false;
 let hasMenu = false;
 
-const brand = { logo: header.logo || {title: 'Intitulé<br>officiel'} };
+const brand = { logo: header.logo || {title: 'Intitulé<br role="presentation">officiel'} };
 data.body.brand = brand;
 
 if (header.operator !== undefined) {

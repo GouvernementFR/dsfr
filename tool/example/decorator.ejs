@@ -106,9 +106,9 @@ locals.imgAltText = 'texte alternatif de l’image';
 const brandData = (component = 'header', logo = true, service = false, operator = false, beta = false, href = '/') => {
   const data = {};
   const logoPlaceholder = 'Nom de l’entité (ministère, secrétariat d‘état, gouvernement)';
-  const logoTitlePlaceholder = 'Intitulé<br>officiel';
+  const logoTitlePlaceholder = 'Intitulé<br role="presentation">officiel';
   const logoPlaceholderOperator = 'République Française';
-  const logoTitlePlaceholderOperator = 'République<br>Française';
+  const logoTitlePlaceholderOperator = 'République<br role="presentation">Française';
   const operatorPlaceholder = imgAltText + ' : nom de l\'opérateur ou du site serviciel';
   const servicePlaceholder = {
     title: 'Nom du site / service',
