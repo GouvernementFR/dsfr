@@ -3,6 +3,8 @@
 /// @group navigation
 ////
 
+@use 'module/preference';
+
 #{ns(menu)} {
   @include margin(-4px -4v);
   @include padding(4px 4v);
@@ -27,6 +29,12 @@
       pointer-events: auto;
       @include padding(0);
       @include margin-bottom(8v);
+      background-size: 100% 1px;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      @include preference.forced-colors {
+        outline: 1px solid;
+      }
     }
   }
 

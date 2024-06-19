@@ -1,7 +1,7 @@
 <%#
 # paramètres button
 
-* button.label (string, required) : label du bouton
+* button.label (string, required) : Libellé du bouton
 
 * button.markup (string) : si non défini, button
 
@@ -23,10 +23,10 @@ valeurs :
 * button.icon (string, optional) : nom de l'icone dans le bouton
 
 * button.iconPlace (string, optional) : emplacement de l'icone
-si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
+si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans libellé
 valeurs :
-    ** left : icone à gauche du label
-    ** right : icone à droite du label
+    ** left : icone à gauche du libellé
+    ** right : icone à droite du libellé
 
 * button.classes (array, optional) : Classes suplémentaires sur le bouton
 
@@ -43,10 +43,17 @@ const button = locals.button || {};
 let btnClasses = button.classes || [];
 let btnAttrs = button.attributes || {};
 btnAttrs.id = button.id || uniqueId('button');
-
-const markup = button.markup || 'button';
-
 btnClasses.push(prefix + '-btn');
+let action;
+const markup = button.markup || 'button';
+switch (markup) {
+  case 'a':
+    action = 'link';
+    break;
+  default:
+    action = markup;
+    break;
+}
 
 switch(button.size) {
   case 'sm':
@@ -84,48 +91,17 @@ switch (button.kind) {
     break;
 }
 
-if (button.disabled === true) {
-  switch(markup) {
-    case 'input':
-    case 'button':
-      btnAttrs['disabled'] = '';
-      break;
-
-    case 'a':
-      btnAttrs['aria-disabled'] = 'true';
-      btnAttrs.role = 'link';
-      break;
-  }
-} else {
+if (button.disabled !== true) {
   if (button.onclick) btnAttrs.onclick = button.onclick;
-
-  switch (markup) {
-    case 'a':
-      btnAttrs.href = button.href || '#[url - à modifier]';
-      switch (true) {
-        case button.blank:
-          btnAttrs = {...targetBlankData(), ...btnAttrs};
-          break;
-
-        case button.self:
-          btnAttrs.target = '_self';
-          break;
-      }
-
-      if (button.rel) btnAttrs.rel = button.rel;
-    break;
-  }
 }
 
 if (button.title) btnAttrs['title'] = button.title;
-if (button.type !== undefined) btnAttrs['type'] = button.type;
 if (button.tooltip && button.tooltip.id) btnAttrs['aria-describedby'] = button.tooltip.id;
 %>
 
 <% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
-<<%= markup %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
-  <%- button.label %>
-</<%= markup %>>
+<%- include('../../../../core/template/ejs/action/action', {action: {...button, classes: btnClasses, attributes: btnAttrs, kind: action}}) %>
+
 
 <% if (button.tooltip) { %>
   <%- include('../../../tooltip/template/ejs/tooltip', {tooltip: button.tooltip}); %>

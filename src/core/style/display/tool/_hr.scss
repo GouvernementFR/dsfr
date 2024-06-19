@@ -3,6 +3,7 @@
 /// @group core
 ////
 
+@use 'module/preference';
 @use 'module/color';
 
 @mixin build-hr() {
@@ -13,6 +14,10 @@
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: 0 0;
+
+  @include preference.forced-colors {
+    border-top: 1px solid;
+  }
 }
 
 @mixin build-hr-scheme($legacy) {

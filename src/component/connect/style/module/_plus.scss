@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(connect)} {
   &--plus {
@@ -15,6 +16,11 @@
       font-weight: bold;
       line-height: 1;
       transform: translate(5%, -17%);
+
+      @include preference.forced-colors {
+        forced-color-adjust: none;
+        color: buttontext;
+      }
     }
   }
 }

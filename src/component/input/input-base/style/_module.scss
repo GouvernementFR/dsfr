@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(input)} {
   display: block;
@@ -73,6 +74,10 @@
 
     > *:last-child:not(:first-child) {
       border-radius: spacing.space(0 1v 0 0);
+
+      @include preference.forced-colors {
+        @include max-height(10v);
+      }
     }
   }
 

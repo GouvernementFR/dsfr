@@ -12,5 +12,10 @@
 @import 'index';
 @import 'style/scheme';
 @import 'style/legacy';
+@import 'deprecated/style/scheme';
 
 @include _table-scheme(true);
+@include _deprecated-table-scheme(true);
+
+// deprecated
+@import 'deprecated/style/legacy';

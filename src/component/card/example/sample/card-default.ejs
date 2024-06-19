@@ -1,10 +1,12 @@
 <%
 const card = locals.card || {};
+const content = card.content || {};
 const href = card.href || '#';
 const data = {
   content: {
     title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
     href: href,
+    actionMarkup: content.actionMarkup || undefined
   },
   id: card.id || uniqueId('card'),
   size: card.size,
@@ -33,7 +35,8 @@ if (card.img || card.vid) {
 
   switch (true) {
     case card.img !== undefined:
-      data.header.img = { ...imgData('img/placeholder.16x9.png', 'unknown'), ...card.img};
+      const imgRatio = card.img && card.img.ratio || '16x9';
+      data.header.img = { ...imgData(`img/placeholder.${imgRatio}.png`, 'unknown'), ...card.img};
       break;
 
     case card.vid !== undefined:
@@ -43,7 +46,7 @@ if (card.img || card.vid) {
 
 
   if (card.header && card.header.badges) {
-    data.header.badgesGroup = { badges: [{ label: 'label badge'}]};
+    data.header.badgesGroup = { badges: [{ label: 'Libellé badge'}]};
   }
 }
 
@@ -57,11 +60,11 @@ if (card.content) {
   if (card.content.description !== false) data.content.description = card.content.description || lorem('', 160);
 
   if (card.content.badges) {
-    data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'label badge', accent: 'purple-glycine'}})};
+    data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'Libellé badge', accent: 'purple-glycine'}})};
   }
 
   if (card.content.tags) {
-    data.content.tagsGroup = { tags: [...Array(2)].map(() => { return { label: 'label tag'}})};
+    data.content.tagsGroup = { tags: [...Array(2)].map(() => { return { label: 'Libellé tag'}})};
   }
 
 
@@ -86,21 +89,21 @@ if (card.download) {
   data.download = true;
   if (!data.content.details) {
     data.content.details = [];
-    data.content.details.push({ label: 'PNG - 1,1 ko', position: 'end'});
+    data.content.details.push({ label: 'PDF - 48 ko', position: 'end'});
   } else {
     const hasEnd = data.content.details.find(detail => detail.position === 'end');
-    if (!hasEnd) data.content.details.push({ label: 'PNG - 1,1 ko', position: 'end'});
+    if (!hasEnd) data.content.details.push({ label: 'PDF - 48 ko', position: 'end'});
   }
 }
 
 if (card.footer) {
   data.footer = {};
-  const label = 'Label';
+  const label = 'Libellé';
   if (card.footer.buttons) {
     data.footer.buttonsGroup = { buttons: [{label: label, kind: 2}, {label: label, kind: 1}], reverse: true, inline:'lg' }
   }
   if (card.footer.links) {
-    data.footer.linksGroup = { inline: true, links: [...Array(2)].map(() => { return { label: 'label', inline: true, href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
+    data.footer.linksGroup = { inline: true, links: [...Array(2)].map(() => { return { label: 'Libellé', inline: true, href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
   }
 }
 

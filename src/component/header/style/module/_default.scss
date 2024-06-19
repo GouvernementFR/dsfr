@@ -3,6 +3,9 @@
 /// @group header
 ////
 
+@use 'module/media-query';
+@use 'module/preference';
+
 #{ns(header)} {
   @include disable-underline;
   @include disable-list-style;
@@ -16,6 +19,13 @@
       @include display-flex(row, center, flex-start);
       @include margin(0 -4v);
       @include padding(6v 0, lg);
+    }
+  }
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+    @include media-query.respond-from(lg) {
+      outline: none;
     }
   }
 }

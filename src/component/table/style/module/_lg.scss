@@ -1,0 +1,13 @@
+////
+/// Table Module - lg
+/// @group Table
+////
+
+#{ns(table)} {
+  &--lg &__content {
+    th,
+    td {
+      @include padding(3v 6v);
+    }
+  }
+}

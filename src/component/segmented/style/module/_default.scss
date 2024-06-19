@@ -5,6 +5,8 @@
 
 @use 'module/spacing';
 @use 'module/selector';
+@use 'module/preference';
+@use 'module/disabled';
 
 #{selector.ns(segmented)} {
   @include relative;
@@ -35,6 +37,9 @@
   &__elements {
     @include display-flex;
     border-radius: #{spacing.space(1v)};
+    @include preference.forced-colors {
+      outline: 1px solid;
+    }
   }
 
   &__element {
@@ -61,6 +66,41 @@
       align-items: center;
       border-radius: #{spacing.space(1v)};
       white-space: nowrap;
+      @include icon-forced-color(buttontext, null, before);
+    }
+
+    &:checked {
+      &:focus + label {
+        @include preference.forced-colors {
+          outline: 4px solid;
+          outline-offset: 0;
+        }
+      }
+
+      + label {
+        @include preference.forced-colors {
+          outline: 2px solid;
+          color: highlight;
+          @include icon-forced-color(highlight, null, before);
+        }
+      }
+
+      @include disabled.selector {
+        + label {
+          @include preference.forced-colors {
+            color: graytext;
+            @include icon-forced-color(graytext, null, before);
+          }
+        }
+      }
+    }
+
+    @include disabled.selector {
+      + label {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+      }
     }
 
     &:not([disabled]):not(:checked) {
@@ -69,6 +109,10 @@
         @include mask-image-size((#{spacing.space('calc(100% - 2v) calc(100% - 3v)')}, #{spacing.space('calc(100% - 3v) calc(100% - 2v)')}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}));
         @include mask-image-position((#{spacing.space(1v 1.5v)}, #{spacing.space(1.5v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(calc(100% - 1v) 1v)}, #{spacing.space(1v calc(100% - 1v))}, #{spacing.space(calc(100% - 1v) calc(100% - 1v))}));
         @include mask-image-repeat(no-repeat);
+
+        @include preference.forced-colors {
+          color: buttontext;
+        }
 
         &:hover {
           background-color: var(--hover);

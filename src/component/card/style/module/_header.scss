@@ -18,6 +18,7 @@
   }
 
   @include hover-brighten(#{&}#{ns(enlarge-link)}, '#{&}__img, #{&}__vid');
+  @include hover-brighten(#{&}#{ns(enlarge-button)}, '#{&}__img, #{&}__vid');
 
   &__img,
   &__vid {

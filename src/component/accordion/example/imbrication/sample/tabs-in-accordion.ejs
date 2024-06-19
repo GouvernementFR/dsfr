@@ -2,7 +2,7 @@
 const tabs = locals.tabs || { tabsCount: 2 };
 const accordion = locals.accordion || {};
 accordion.id ??= uniqueId('accordion');
-accordion.label ??= 'Intitulé accordéon';
+accordion.label ??= 'Libellé accordéon';
 accordion.content =  include('../../../../tab/example/sample/tabs-default', { tabs: tabs });
 %>
 

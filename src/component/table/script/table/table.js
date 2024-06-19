@@ -9,6 +9,7 @@ class Table extends api.core.Instance {
   }
 
   init () {
+    this.rowsHeaderWidth = [];
     this.addAscent(TableEmission.CAPTION_HEIGHT, this.setCaptionHeight.bind(this));
   }
 

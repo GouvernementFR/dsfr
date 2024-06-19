@@ -10,9 +10,190 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 > ## DSFR v1
 
+## v1.12
+
+### [v1.12.0](https://github.com/GouvernementFR/dsfr/compare/v1.11.2...v1.12.0) - 19 Juin 2024
+
+#### 🐛 fix(*): correctifs pages d'exemple et icone bandeau d'alerte [(#948)](https://github.com/GouvernementFR/dsfr/pull/948)
+- correction icone bandeau d'alerte
+- corrections de libellés dans les pages d'exemples
+
+
+#### 🐛 fix(IE): correctifs divers [(#955)](https://github.com/GouvernementFR/dsfr/pull/955)
+- corrige la numérotation du sommaire
+- corrige les icones chevron du fil d'arianne
+- retire le hover sur les bouton désactivés
+- corrige l'alignement de la case a cocher du mot de passe
+- correction des ombres sur les menus et le tooltip
+- rend les liens d'évitement fonctionnels
+- correction du style du curseur double désactivé
+
+
+#### 🐛 fix(preference): correctifs mode contrasté et reduce motion [(#952)](https://github.com/GouvernementFR/dsfr/pull/952)
+- corrections diverses sur le mode contrasté
+
+
+#### ✨ feat(table) : Mise à jour des exemples [(#949)](https://github.com/GouvernementFR/dsfr/pull/949)
+- correction legacy
+- mise à jour de l'icone twitter
+
+
+#### 🐛 fix(link): met a jour la variante avec markup bouton [(#951)](https://github.com/GouvernementFR/dsfr/pull/951)
+- correction de l'alignement du texte des fr-lien en button
+
+
+#### 🐛 fix(toggle): ajoute les messages erreur et valide sur interrupteur simple [(#954)](https://github.com/GouvernementFR/dsfr/pull/954)
+- retrait des marges avant et après le composant
+- ajoute la bordure en état d'erreur/succès
+
+
+#### ✨ feat(icon): ajout icone weather/sparkling-2 [(#956)](https://github.com/GouvernementFR/dsfr/pull/956)
+- ajout de l'icone sparkling-2, utilisée pour indiquer l'utilisation d'IA.
+
+
+#### ✨ feat(table): ajout du tableau non scrollable [(#947)](https://github.com/GouvernementFR/dsfr/pull/947)
+- ajout d'une version de tableau sans scroll, avec réduction automatique des cellules
+
+
+#### ✨ feat(preference): mode contrasté windows & animation réduite [(#929)](https://github.com/GouvernementFR/dsfr/pull/929)
+- Amélioration du rendu des composants en mode haut contraste windows (forced-colors)
+- Retrait des animations en mode reduce-motion
+
+
+#### 🐛 fix(link, card, tile): enlarge button [(#943)](https://github.com/GouvernementFR/dsfr/pull/943)
+- ajout d'une classe utilitaire enlarge-button utilisée sur les cartes et les tuiles de téléchargement pour élargir la zone de clique à tout le composant quand l'element cliquable est un bouton
+
+
+#### 🐛 fix(footer, header): réduction de la zone de clic retour à l'accueil [(#944)](https://github.com/GouvernementFR/dsfr/pull/944)
+- sur le header mobile la partie à droite du brand n'est plus cliquable pour éviter les clics manqués sur le burger ou la recherche, et le lien du nom de service n'est plus étendu sur toute la largeur
+- sur le footer mobile la zone de clic n'est plus étendu sur toute la largeur
+
+
+#### ✨ feat(icon): ajout d'icônes [(#946)](https://github.com/GouvernementFR/dsfr/pull/946)
+Ajout des icones :
+- design/shapes-fill.svg
+- design/shapes-line.svg
+- logo/whatsapp-fill.svg
+- logo/whatsapp-line.svg
+- others/fr--accessibility-fill.svg
+- others/fr--accessibility-line.svg
+- others/fr--ear-off-fill.svg
+- others/fr--ear-off-line.svg
+- others/fr--mental-disabilities-fill.svg
+- others/fr--mental-disabilities-line.svg
+- others/fr--sign-language-fill.svg
+- others/fr--sign-language-line.svg
+- others/wheelchair-fill.svg
+- others/wheelchair-line.svg
+- system/sort-asc-desc-line.svg
+- system/sort-asc-line.svg
+- system/sort-desc-line.svg
+- weather/fire-fill.svg
+- weather/fire-line.svg
+- weather/flood-fill.svg
+- weather/flood-line.svg
+- weather/fr--avalanches-fill.svg
+- weather/fr--submersion-fill.svg
+- weather/heavy-showers-fill.svg
+- weather/heavy-showers-line.svg
+- weather/snowy-fill.svg
+- weather/snowy-line.svg
+- weather/temp-cold-fill.svg
+- weather/temp-cold-line.svg
+- weather/thunderstorms-fill.svg
+- weather/thunderstorms-line.svg
+- weather/tornado-fill.svg
+- weather/tornado-line.svg
+- weather/typhoon-fill.svg
+- weather/typhoon-line.svg
+- weather/windy-fill.svg
+- weather/windy-line.svg
+
+
+#### ✨ feat(notice): ajout de bandeaux d'information importante [(#917)](https://github.com/GouvernementFR/dsfr/pull/917)
+- ajout des bandeaux d'alertes, des bandeaux vigilance météo, et de 2 niveaux génériques (warning et alert)
+- mise en situation dans une page
+- BC : changement de la structure html pour accueillir une description et un lien en plus du titre
+
+
+#### ✨ feat(table): tableau v2 [(#911)](https://github.com/GouvernementFR/dsfr/pull/911)
+- evolution majeure du tableau
+
+
+#### ✨ feat(analytics): système de régulation des actions [(#937)](https://github.com/GouvernementFR/dsfr/pull/937)
+- ajout de la possibilité de bloquer une action particulière avec l'attribut et la valeur data-fr-analytics-action="false" quand l'envoi des actions est activé au global via la config isActionEnabled: true
+
+
+#### 🐛 fix(card): fichier télécharger et ratio carte de téléchargement [(#938)](https://github.com/GouvernementFR/dsfr/pull/938)
+- met à jour les images des exemples de carte "Image et ratio"
+- ajoute un fichier pdf placeholder pour les cartes de téléchargement
+
+
+#### ✨ feat(card, tile, enlarge-link): ajoute version avec button [(#842)](https://github.com/GouvernementFR/dsfr/pull/842)
+- ajout de la possibilité d'utiliser un "button" plutôt qu'un "a" sur la carte et la tuile
+
+
+#### 🐛 fix(footer): title des liens obligatoires du footer [(#905)](https://github.com/GouvernementFR/dsfr/pull/905)
+- remplace l'intitulé par défaut "[A modifier]" de l'attribut title par l'intitulé officiel sur les liens obligatoires du footer.
+- change l'ordre des liens, et gouvernement.fr devient info.gouv.fr
+
+
+#### ✨ feat(build): config au premier build & precision readme [(#908)](https://github.com/GouvernementFR/dsfr/pull/908)
+- lors de l'execution de la commande yarn build, crée les fichiers de configuration s'ils n'existent pas
+- ajout de browser-sync en tant que peerDependencies dans le package.json
+- ajout de précision sur le lancement du serveur des pages d'exemple dans le README
+
+
+#### ✨ feat(build): ajoute la version dsfr dans les pages d'exemple [(#909)](https://github.com/GouvernementFR/dsfr/pull/909)
+- affiche la version du DSFR en haut des pages d'exemple
+
+
+#### 🐛 fix(quote): ratio de l'image de citation [(#912)](https://github.com/GouvernementFR/dsfr/pull/912)
+- ajout de la propriété object-fit: cover sur l'image de citation pour conserver le ratio de l'image lorsqu'elle n'est pas carrée.
+- dans la mesure du possible, privilégiez un ratio d'image carré pour un meilleur support navigateur
+
+
+#### 🐛 fix(core): centrage des container-bp [(#916)](https://github.com/GouvernementFR/dsfr/pull/916)
+- les container-sm/md/lg/xl ne sont pas centrés correctement
+
+
+#### ✨ feat(pictogram): ajout du picto digital/in-progress [(#918)](https://github.com/GouvernementFR/dsfr/pull/918)
+- ajout du pictogramme "in-progress" dans la catégorie "digital"
+
+
+#### 🐛 fix(toggle): retour à la ligne statut activé/désactivé [(#928)](https://github.com/GouvernementFR/dsfr/pull/928)
+- corrige le retour à la ligne sur le label "activé/désactivé"
+
+
+#### 🐛 fix(range): bug js boucle infinie et step désactivé [(#931)](https://github.com/GouvernementFR/dsfr/pull/931)
+- corrige la boucle infinie qui fait crash la page lorsque stepwidth = 0
+- corrige le style du curseur avec étape désactivé
+- ajout d'exemples de curseurs double désactivé et avec étape désactivé
+- corrige la modification de valeur du deuxième input lorsque le min dépasse le max ou l'inverse sur le curseur double
+
+
+#### ✨ refactor(*): uniformise les intitulés des labels [(#930)](https://github.com/GouvernementFR/dsfr/pull/930)
+- passe les intitulés "label" en "libellé"
+
+
+#### 🐛 fix(content): modifie la structure HTML du composant comportant une transcription [(#932)](https://github.com/GouvernementFR/dsfr/pull/932)
+- passe la transcription apres la figure
+- a11y ajoute texte alternatif sur infographie mentionnant transcription en dessous
+- ajout un attribut title sur les videos iframe
+
+
+#### 🐛 fix(breadcrumb): alignement vertical des icônes de chevron [(#933)](https://github.com/GouvernementFR/dsfr/pull/933)
+
+
+
+
 ## v1.11
 
-### [v1.11.2](https://github.com/GouvernementFR/dsfr/compare/v1.11.1...v1.11.2) - 1er Mars 2024
+### [v1.11.2](https://github.com/GouvernementFR/dsfr/compare/v1.11.1...v1.11.2) - 4 Mars 2024
+
+#### 🐛 fix(analytics): Erreur sur IE selecteur translate [(#899)](https://github.com/GouvernementFR/dsfr/pull/899)
+- modifie le selecteur du translate pour utiliser 2 :not() à la suite au lieu d'un :not(1, 2)
+
 
 #### 🐛 fix(analytics): documentation et correctif version standalone [(#895)](https://github.com/GouvernementFR/dsfr/pull/895)
 - Apporte des éléments correctifs à l'issue #880

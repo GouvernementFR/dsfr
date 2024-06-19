@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/preference';
+
 @include enable-list-style;
 
 ul,
@@ -24,6 +26,10 @@ ul {
   > li {
     @include marker {
       font-size: calc(var(--xl-size) * 0.9);
+
+      @include preference.forced-colors {
+        color: graytext;
+      }
     }
   }
 }

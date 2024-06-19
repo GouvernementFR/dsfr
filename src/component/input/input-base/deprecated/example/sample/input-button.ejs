@@ -3,7 +3,7 @@ let input = locals.input || {}
 let jsonData = JSON.parse(include('../../../../../form/deprecated/example/sample/data'));
 let data = {...input, ...jsonData};
 data.type = input.type || 'text';
-data.label = input.label || 'Label champ de saisie';
+data.label = input.label || 'Libellé champ de saisie';
 data.addon = true;
 data.button = input.button || {label:'Envoyer', type: 'submit'};
 %>

@@ -44,8 +44,13 @@
     &__title {
       @include color.text(title grey, (legacy:$legacy));
 
-      a[href] {
+      a[href],
+      button {
         @include color.text(action-high blue-france, (legacy:$legacy));
+      }
+
+      button:disabled {
+        @include color.text(disabled grey, (legacy:$legacy));
       }
 
       @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));

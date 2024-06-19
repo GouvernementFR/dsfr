@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(connect)} {
   @include relative;
@@ -13,6 +14,10 @@
   @include disable-underline;
   @include enable-tint;
   @include hover-tint;
+
+  @include preference.forced-colors {
+    border: 1px solid;
+  }
 
   @include before('', block) {
     @include absolute(50%, null, 0.25em, 0.75em, 2.5em, 3em);
@@ -30,6 +35,10 @@
     line-height: 1;
     @include z-index(over);
     white-space: nowrap;
+
+    @include preference.forced-colors {
+      line-height: 1.1;
+    }
   }
 
   &__login {

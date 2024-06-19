@@ -5,6 +5,8 @@
 
 @use 'module/spacing';
 @use 'module/selector';
+@use 'module/preference';
+@use 'module/disabled';
 
 #{selector.ns(checkbox-group)} {
   @include relative;
@@ -15,12 +17,21 @@
     @include size(6v, 6v);
     opacity: 0;
 
+    @include preference.forced-colors {
+      opacity: 1;
+
+      @include disabled.selector {
+        + label {
+          color: graytext;
+        }
+      }
+    }
+
     + label {
+      --data-uri-svg: none;
       @include relative;
       @include display-flex(row, center, flex-start, wrap);
       @include margin-left(8v);
-
-      --data-uri-svg: none;
 
       #{selector.ns(hint-text)} {
         @include margin(0);
@@ -39,6 +50,10 @@
         background-position: 0 0, spacing.space(1v) 0, 100% 0, 0 spacing.space(1v), 100% 100%, spacing.space(calc(100% - 1v)) 100%, 0 100%, 100% spacing.space(1v), center;
         background-repeat: no-repeat;
         // transition: background-color 0.1s, color 0.1s;
+
+        @include preference.forced-colors {
+          display: none;
+        }
       }
     }
   }

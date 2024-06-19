@@ -7,61 +7,58 @@
 
 @mixin _table-scheme($legacy: false) {
   #{ns(table)} {
-    caption {
-      @include color.text(title grey, (legacy: $legacy));
-    }
-
-    thead {
-      @include color.background-image(border plain grey, (legacy: $legacy));
-
-      @include color.background(contrast grey, (legacy: $legacy));
-      @include color.text(title grey, (legacy: $legacy));
-    }
-
-    tbody {
-      @include color.background(alt grey, (legacy: $legacy));
-
-      tr:nth-child(even) {
-        @include color.background(contrast grey, (legacy: $legacy));
+    &__wrapper {
+      @include after {
+        @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey) (border contrast grey), (legacy:$legacy));
       }
     }
 
-    @include color.accentuate {
-      thead {
-        @include color.background-image(border plain accent, (legacy: $legacy));
-        @include color.background(contrast accent, (legacy: $legacy));
-      }
-
-      tbody {
-        @include color.background(alt accent, (legacy: $legacy));
-
-        tr:nth-child(even) {
-          @include color.background(contrast accent, (legacy: $legacy));
+    &__content {
+      table {
+        caption {
+          @include color.text(title grey, (legacy:$legacy));
         }
-      }
 
-      /* Style bordered, ajoute des bordures entre chaque ligne */
-      &#{ns(table--bordered)} {
+        thead {
+          th {
+            @include color.background(alt grey, (legacy: $legacy));
+            @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
+
+            &[role='columnheader'] {
+              @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+            }
+
+            &:last-child {
+              @include color.background(alt grey, (legacy: $legacy));
+              @include color.background-image((border plain grey), (legacy: $legacy));
+            }
+          }
+        }
+
         tbody {
           tr {
-            @include color.background-image(border default accent, (legacy: $legacy));
+            &[aria-selected=true] {
+              &::after {
+                @include color.background-image((border action-high blue-france) (border action-high blue-france) (border action-high blue-france) (border action-high blue-france), (legacy: $legacy));
+              }
+            }
+          }
+
+          td {
+            @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
+            @include color.background(default grey, (legacy: $legacy));
+          }
+
+          th {
+            @include color.background(alt grey, (legacy: $legacy));
+            @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
           }
         }
       }
     }
 
-    /* Style bordered, ajoute des bordures entre chaque ligne */
-    &--bordered {
-      tbody {
-        tr {
-          @include color.background-image(border default grey, (legacy: $legacy));
-
-          /* Style bordered, enleve le style even/odd  */
-          &:nth-child(even) {
-            @include color.transparent-background((legacy:$legacy, hover: true));
-          }
-        }
-      }
+    &__detail {
+      @include color.text(mention grey, (legacy:$legacy));
     }
   }
 }

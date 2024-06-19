@@ -114,6 +114,7 @@
 
             @include after {
               @include color.background-image(default grey, (legacy:$legacy), $range-progress-gradient);
+              @include color.box-shadow(disabled grey, (legacy:$legacy), left-10-in right-10-in);
             }
           }
         }

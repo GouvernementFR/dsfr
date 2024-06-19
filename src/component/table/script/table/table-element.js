@@ -1,7 +1,7 @@
 import api from '../../api.js';
 import { TableSelector } from './table-selector.js';
 
-const SCROLL_OFFSET = 8; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
+const SCROLL_OFFSET = 0; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
 
 class TableElement extends api.core.Instance {
   static get instanceClassName () {
@@ -11,6 +11,7 @@ class TableElement extends api.core.Instance {
   init () {
     this.listen('scroll', this.scroll.bind(this));
     this.content = this.querySelector('tbody');
+    this.tableOffsetHeight = 0;
     this.isResizing = true;
   }
 

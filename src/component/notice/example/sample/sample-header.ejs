@@ -1,0 +1,38 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section('Mise en situation du placement du bandeau', 'Le bandeau doit être placé au début du contenu de la page, pour être le premier élément au clique sur le lien d\'évitement "aller au contenu".', 0, true); %>
+
+<%
+const skiplinks = [
+  { label: 'Contenu', href:'#content' },
+  { label: 'Menu', href:'#header-navigation' },
+];
+%>
+
+<%- include('../../../../component/skiplink/template/ejs/skiplinks', { skiplink: {items: skiplinks} }, true); %>
+
+<%- include('../../../../component/header/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, navigation: true }}, true); %>
+
+<div id="content">
+  <%- include('../../template/ejs/notice.ejs', {notice: {type: 'info', title: 'Information importante'}}); %>
+
+  <% const breadcrumb = {
+    id: uniqueId('breadcrumb'),
+    segments: [
+      { path: '', label: 'Accueil' },
+      { path: 'segment-1', label: 'Nom de la page' },
+      { path: 'segment-2', label: 'Nom de la page' },
+      { label: 'Page Actuelle' }
+    ]
+  }
+  %>
+  <div class="<%= prefix %>-container" >
+    <%- include('../../../../component/breadcrumb/template/ejs/breadcrumb', { breadcrumb: breadcrumb }, true); %>
+  </div>
+
+  <div class="<%= prefix %>-container" >
+    <h2>lorem, ipsum dolor sit amet  </h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore similique commodi sit eligendi, esse ab sapiente necessitatibus, consequatur delectus nobis doloribus rem libero, expedita blanditiis veritatis? Nobis doloribus possimus reprehenderit.</p></div>
+</div>

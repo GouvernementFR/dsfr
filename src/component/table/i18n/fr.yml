@@ -1,0 +1,72 @@
+title: Tableaux
+description: Les tableaux sont utilisés pour organiser et afficher les informations d'un jeu de données.
+
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée
+
+sample:
+  bordered: Tableau avec bordures verticales
+  captionBottom: Tableau avec titre en bas
+  columnSizes:
+    subtitle: En ajoutant les classes <code>fr-col--xs, fr-col--sm, fr-col--md ou fr-col--lg</code> sur les cellules d'en-tête du tableau
+    title: Exemple des colonnes de tailles minimales fixées
+  complex:
+    subtitle: Lorsqu’un tableau de données contient des en-têtes qui ne sont pas répartis uniquement sur la première ligne et/ou la première colonne de la grille ou dont la portée n’est pas valable pour l’ensemble de la colonne ou de la ligne, on parle de tableau de données complexe. Il est alors nécessaire de fournir un « résumé » permettant d’en expliquer sa nature et sa structure afin d’en faciliter la consultation pour des utilisateurs de technologies d’assistance par exemple.
+    title: Tableau complexe (comportant des cellules fusionnées)
+  default: Tableau MD (défaut)
+  doubleEntry: Tableau à double entrée
+  lg: Tableau LG
+  miscellaneous: Tableau avec filtre et navigation comportant différents types de données
+  multiline:
+    subtitle: Il est possible de réactiver le retour à la ligne des éléments inline en ajoutant la classe <code>fr-cell--multiline</code> sur l'element <code>table</code>, une ligne ou une cellule du tableau
+    title: Exemple de cellules avec retour à la ligne automatique
+  noCaption: Tableau avec titre invisible
+  noScroll: Tableau non scrollable
+  selectable: Tableau avec lignes sélectionnables
+  sm: Tableau SM
+  utilityClasses:
+    subtitle: Par défaut le contenu des cellules est centré verticalement et aligné à gauche mais peut être modifié à l'aide des classe utilitaires <code>fr-cell--top, fr-cell--bottom</code> pour l'alignement vertical et <code>fr-cell--center, fr-cell--right</code> pour l'alignement horizontal
+    title: Exemple des classes utilitaires d'alignement
+
+data:
+  caption:
+    detail: '(Résumé) Emploi du temps horaire des Groupes 1 et 2, le matin des jours de la semaine ouvrée (Lundi au Vendredi) : <ul> <li>la première colonne représente le planning de la journée de Lundi pour les groupes 1 et 2,</li> <li>la deuxième colonne représente le planning de la journée de Mardi pour les groupes 1 et 2,</li> <li>la troisième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 1,</li> <li>la quatrième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 2,</li> <li>la cinquième colonne représente le planning de la journée de Vendredi pour les groupes 1 et 2.</li> </ul>'
+    default: Titre du tableau (caption)
+    large: Titre long du tableau (caption) Repellat natus illo omnis nulla nostrum ut doloremque ipsam voluptas officiis cumque porro.
+  cell:
+    action:
+      button: Libellé bouton
+      empty: Action
+      sort: Trier
+      select: Sélectionner
+      selectAll: Sélectionner toutes les lignes
+      selectRow: Sélectionner la ligne
+    collapsed: Exemple de cellule fusionnée
+    doubleEntry: En tête de colonne [À MODIFIER]
+    download:
+      detail: JPG – 61,88 Ko
+      label: Lien de Téléchargement
+    label: Libellé par défaut
+    number: 30,00&nbsp;€
+    text: Texte par défaut
+    title: Titre par défaut
+  navigation:
+    buttons:
+      label: Action tableau
+    detail: 215 lignes
+    select:
+      label: Nombre de lignes par page
+      placeholder: Nombre de lignes par page
+      options:
+        option1: 4 lignes par page
+        option2: 10 lignes par page
+        option3: 20 lignes par page
+  actionBar:
+    buttons:
+      label: Action groupée
+    detail: Nombre de lignes sélectionnées
+    segmented:
+      legend: Type d'affichage
+      list: Liste
+      table: Tableau

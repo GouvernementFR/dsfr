@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/dsfr",
-  "version": "1.11.2",
+  "version": "1.12.0",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
@@ -81,6 +81,9 @@
     "subset-font": "^1.6.1",
     "svgo": "^2.8.0",
     "yargs": "^17.7.1"
+  },
+  "peerDependencies": {
+    "browser-sync": "^2.27.10"
   },
   "husky": {
     "hooks": {

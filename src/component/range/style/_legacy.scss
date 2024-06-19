@@ -137,4 +137,23 @@
       }
     }
   }
+
+  #{selector.ns-group(range)} {
+    &--disabled {
+      #{selector.ns(range)}--double {
+        &#{selector.ns-attr(js-range)} {
+          @include color.background-image(disabled grey, (legacy: true), 'linear-gradient(to right, $COLOR 0, $COLOR 100%)');
+
+          input[type=range] {
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+              @include selector.range-ms-fill-lower {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

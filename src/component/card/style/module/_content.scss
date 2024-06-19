@@ -3,6 +3,8 @@
 /// @group card
 ////
 
+@use 'module/preference';
+
 #{ns(card)} {
   &__content {
     order: 1;
@@ -17,14 +19,34 @@
     @include font-weight(bold);
     @include margin-bottom(0);
 
-    a {
+    a,
+    button {
       @include icon(arrow-right-line, sm, after) {
         @include margin-left(2v);
       }
+      @include icon-forced-color(linktext, true, after);
+
+      @include preference.forced-colors {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+
+      &:not([href]) {
+        @include icon-forced-color(graytext, null, after);
+      }
+    }
+
+    button {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      text-align: inherit;
+      @include padding(0);
     }
 
     @include target-blank {
       @include icon(external-link-line, sm, after);
+      @include icon-forced-color(linktext, null, after);
     }
   }
 
@@ -69,14 +91,23 @@
     }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__end {
+  &#{ns(enlarge-link)}:not(&--no-icon) &__end,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__end {
     @include margin-bottom(-12v); // 6v (icon) + 2v (padding end) + 4v (marge texte icon)
     @include min-height(8v); // 6v (icon) + 2v (padding end)
     @include padding-right(8v); // 6v (icon) + 2v (padding)
     justify-content: flex-end;
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__content {
     @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 2v (padding end) + 4v (marge texte icon)
+  }
+
+  &#{ns(enlarge-link)} &__title a,
+  &#{ns(enlarge-button)} &__title button {
+    @include preference.forced-colors {
+      text-decoration: none;
+    }
   }
 }

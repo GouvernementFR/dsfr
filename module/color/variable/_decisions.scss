@@ -24,6 +24,7 @@ $values: (
       system: strong,
     ),
     action-high: (
+      neutral: strongest (hover: true),
       primary: strong (hover: true),
       accent: strong (hover: true),
       system: strong (hover: true)
@@ -107,6 +108,9 @@ $values: (
       neutral: border,
       primary: main,
       accent: main
+    ),
+    contrast: (
+      neutral: soft
     ),
     active: (
       primary: strong

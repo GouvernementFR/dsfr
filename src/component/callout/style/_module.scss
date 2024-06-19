@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(callout)} {
   @include relative();
@@ -15,6 +16,12 @@
   background-size: spacing.space(1v 100%);
   background-position: 0 0;
   background-repeat: no-repeat;
+
+  @include preference.forced-colors {
+    border-left: 4px solid;
+    @include padding-left(5v);
+    @include padding-left(11v, md);
+  }
 
   /**
    * Inclusion de l'icône (optionnel)

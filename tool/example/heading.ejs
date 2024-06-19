@@ -3,6 +3,7 @@
   const classes = [prefix + '-icon-arrow-left-line', prefix + '-link--icon-left'];
     if (id !== 'analytics') classes.push(prefix + '-link');
   %>
+  <p class="<%= prefix %>-text--sm" style="float:right"><%= locals.namespace.toUpperCase() %> v<%= locals.version %></p>
   <p><a <%- includeClasses(classes) %> href="../">Retour</a></p>
   <h1><%= title %> <%= locals.id ? `(${id})` : '' %></h1>
   <% if (locals.description) { %>

@@ -1,0 +1,13 @@
+////
+/// Table Module - sm
+/// @group Table
+////
+
+#{ns(table)} {
+  &--sm &__content {
+    th,
+    td {
+      @include padding(1v 3v);
+    }
+  }
+}

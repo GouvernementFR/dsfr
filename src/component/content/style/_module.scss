@@ -30,7 +30,12 @@
   }
 
   #{ns(transcription)} {
-    @include margin-top(3w);
+    @include margin-top(6v);
+  }
+
+  + #{ns(transcription)} {
+    @include margin-top(-4v);
+    @include margin-bottom(10v);
   }
 
   $medias: (#{&}__img, ns(responsive-vid));

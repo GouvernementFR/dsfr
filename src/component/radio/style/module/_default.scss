@@ -5,6 +5,8 @@
 
 @use 'module/spacing';
 @use 'module/selector';
+@use 'module/preference';
+@use 'module/disabled';
 
 #{selector.ns-group(radio)} {
   @include relative;
@@ -15,6 +17,16 @@
     @include margin(0);
     @include size(6v, 6v);
     opacity: 0;
+
+    @include preference.forced-colors {
+      opacity: 1;
+
+      @include disabled.selector {
+        + label {
+          color: graytext;
+        }
+      }
+    }
 
     + label {
       // @include relative;
@@ -30,6 +42,10 @@
         @include absolute(0);
         border-radius: #{spacing.space(6v)};
         @include margin-left(-8v);
+
+        @include preference.forced-colors {
+          display: none;
+        }
       }
 
       #{selector.ns(hint-text)} {
