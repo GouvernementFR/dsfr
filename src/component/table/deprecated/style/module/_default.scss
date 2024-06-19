@@ -47,7 +47,7 @@
       td,
       th {
         font-weight: font-weight(bold);
-        @include padding-bottom(3.5v); // 0.5v for the box shadow
+        @include padding-bottom(3.5v);
         @include padding-bottom(4.5v, md);
       }
     }
@@ -55,13 +55,31 @@
 
   &#{ns-attr(js-table, true)} {
     & > table {
-      @include after('', block) {
-        @include absolute(var(--table-offset), null, null, 0, 100%, calc(100% - var(--table-offset)));
-        @include z-index(over);
-        background-position: 0 0, 0 0, 100% 100%, 0 100%;
-        background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
-        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-        pointer-events: none;
+
+      thead,
+      tbody {
+        @include relative;
+
+        @include after('', block) {
+          @include absolute(0, null, null, 0, 100%, 100%);
+          @include z-index(over);
+          background-repeat: no-repeat, no-repeat, no-repeat;
+          pointer-events: none;
+        }
+      }
+
+      thead {
+        @include after {
+          background-position: 0 0, 0 0, 100% 100%;
+          background-size: 100% 1px, 1px 100%, 1px 100%;
+        }
+      }
+
+      tbody {
+        @include after {
+          background-position: 0 0, 0 100%, 100% 0;
+          background-size: 1px 100%, 100% 1px, 1px 100%;
+        }
       }
     }
   }
