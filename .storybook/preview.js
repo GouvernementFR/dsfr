@@ -35,18 +35,39 @@ const getInitialTheme = () => {
 }
 
 const viewports = {
-  kindleFire2: {
-    name: 'Kindle Fire 2',
+  xs: {
+    name: 'Phone - Breakpoint XS',
     styles: {
-      width: '600px',
-      height: '963px',
+      width: '375px',
+      height: '667px',
     },
   },
-  kindleFireHD: {
-    name: 'Kindle Fire HD',
+  sm: {
+    name: 'Phablet - Breakpoint SM',
     styles: {
-      width: '533px',
-      height: '801px',
+      width: '576px',
+      height: '1024px',
+    },
+  },
+  md: {
+    name: 'Tablette - Breakpoint MD',
+    styles: {
+      width: '768px',
+      height: '1024px',
+    },
+  },
+  lg: {
+    name: 'Tablette horizontale - Breakpoint LG',
+    styles: {
+      width: '1024px',
+      height: '768px',
+    },
+  },
+  xl: {
+    name: 'Desktop - Breakpoint XL',
+    styles: {
+      width: 'auto',
+      height: 'auto',
     },
   },
 };
@@ -73,10 +94,13 @@ const preview = {
       storySort: (a, b) => {
         const indexA = Math.min.apply(null,  a?.tags?.filter(tag => tag.startsWith('sort:')).map(tag => parseInt(tag.split(':')[1]))) || 999999;
         const indexB = Math.min.apply(null,  b?.tags?.filter(tag => tag.startsWith('sort:')).map(tag => parseInt(tag.split(':')[1]))) || 999999;
-        console.log('sort:', a.id, indexA, b.id, indexB,  a?.tags?.filter(tag => tag.startsWith('sort:')).map(tag => parseInt(tag.split(':')[1])));
         return indexA - indexB;
       }
-    }
+    },
+    viewport: {
+      viewports: viewports,
+      defaultViewport: 'lg',
+    },
   }
 };
 

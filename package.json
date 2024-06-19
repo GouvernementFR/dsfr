@@ -47,6 +47,7 @@
     "@storybook/addon-interactions": "^8.1.5",
     "@storybook/addon-links": "^8.1.5",
     "@storybook/addon-themes": "^8.1.5",
+    "@storybook/addon-viewport": "^8.1.5",
     "@storybook/blocks": "^8.1.5",
     "@storybook/html": "^8.1.5",
     "@storybook/html-vite": "^8.1.5",
