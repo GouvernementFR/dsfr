@@ -8,12 +8,14 @@ const config = {
     '@storybook/addon-interactions',
     '@storybook/theming',
     '@storybook/addon-themes',
+    '@storybook/addon-viewport',
     {
       name: '@storybook/addon-essentials',
       options: {
         backgrounds: false,
         outline: false,
         grid: false,
+        viewport: true,
       },
     },
   ],

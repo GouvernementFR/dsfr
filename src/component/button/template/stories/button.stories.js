@@ -19,7 +19,7 @@ export const ControlsStory = {
 };
 
 export const PrimaryStory = {
-  tags: ['!dev'],
+  // tags: ['!dev'],
   args: {
     kind: 1
   }
