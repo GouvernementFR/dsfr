@@ -12,6 +12,8 @@ let dataCaptionBottom = { caption: 'Titre du tableau (caption) en bas', captionB
 
 <%- sample('Tableau par défaut', './sample/table-default', {table:data}, true) %>
 
+<%- sample('Tableau minimal', './sample/table-default', {table: { caption: 'Titre du tableau (caption)', col: 2, row: 3}}, true) %>
+
 <%- sample('Tableau avec bordure', './sample/table-default', {table:dataBordered}, true) %>
 
 <%- sample('Tableau non scrollable', './sample/table-default', {table:dataNoScroll}, true) %>
