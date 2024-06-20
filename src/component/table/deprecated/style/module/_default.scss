@@ -4,12 +4,10 @@
 ////
 
 #{ns(table)} {
+  @include padding-top(var(--table-offset));
+
   @include before('', block) {
     @include size(100%, 0);
-  }
-
-  &:not(:has(#{ns(table__container)})) {
-    @include padding-top(var(--table-offset));
   }
 
   &:not(#{ns(table--no-scroll)}) {
@@ -55,7 +53,6 @@
 
   &#{ns-attr(js-table, true)} {
     & > table {
-
       thead,
       tbody {
         @include relative;
