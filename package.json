@@ -20,6 +20,7 @@
     "deploy": "node tool/tool.js deploy",
     "standalone": "node tool/tool.js standalone",
     "changelog": "node tool/tool.js changelog",
+    "pictogram-converter": "node tool/tool.js pictogram-converter",
     "serve": "browser-sync start --server --port 8080 --startPath example/"
   },
   "files": [
