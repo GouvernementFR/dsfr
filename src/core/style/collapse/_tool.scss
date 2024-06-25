@@ -6,13 +6,13 @@
 @use 'module/preference';
 
 @mixin collapse($className: collapse) {
+  --collapse-max-height: 0;
   --collapse: -99999px;
   --collapser: '';
-  --collapse-max-height: none;
 
   overflow: hidden;
   transition: visibility 0.3s;
-  // max-height: 0;
+  max-height: 0;
   max-height: var(--collapse-max-height);
 
   @include preference.reduce-motion {
@@ -29,10 +29,6 @@
     @include preference.reduce-motion {
       transition: none;
     }
-  }
-
-  #{&}:not(&--expanded):not(#{ns(collapsing)}) {
-    --collapse-max-height: 0;
   }
 
   #{&}:not(&--expanded) {

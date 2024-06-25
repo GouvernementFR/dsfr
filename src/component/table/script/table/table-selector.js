@@ -2,6 +2,7 @@ import api from '../../api.js';
 
 export const TableSelector = {
   TABLE: api.internals.ns.selector('table'),
+  TABLE_WRAPPER: [`${api.internals.ns.selector('table')} ${api.internals.ns.selector('table__wrapper')}`],
   SHADOW: api.internals.ns.selector('table__shadow'),
   SHADOW_LEFT: api.internals.ns.selector('table__shadow--left'),
   SHADOW_RIGHT: api.internals.ns.selector('table__shadow--right'),

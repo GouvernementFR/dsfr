@@ -87,6 +87,7 @@
       &#{ns(table--caption-bottom)} {
         caption {
           @include relative;
+          @include margin-bottom(4v);
         }
       }
 

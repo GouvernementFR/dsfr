@@ -27,6 +27,7 @@
     @include margin-bottom(0);
 
     #{ns(table__wrapper)} {
+      @include margin-top(0);
       @include margin-bottom(calc(var(--table-offset) + 6v));
 
       &::after {
@@ -40,6 +41,7 @@
       }
 
       caption {
+        @include margin-bottom(0);
         @include margin-top(4v);
         @include height(min-content);
         caption-side: bottom;
