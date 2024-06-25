@@ -55,7 +55,7 @@
 	c0,0.55231,0.44769,1,1,1h12l0.11658-0.00671C32.61401,45.93549,33,45.51282,33,45c0-0.55231-0.44769-1-1-1H20z"/>
   </symbol>
 
-	<use class="fr-artwork-major" href="#artwork-decorative"/>
+	<use class="fr-artwork-decorative" href="#artwork-decorative"/>
 	<use class="fr-artwork-minor" href="#artwork-minor"/>
 	<use class="fr-artwork-major" href="#artwork-major"/>
 </svg>
