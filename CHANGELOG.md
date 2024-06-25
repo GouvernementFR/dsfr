@@ -12,7 +12,28 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.12
 
+### [v1.12.1](https://github.com/GouvernementFR/dsfr/compare/v1.12.0...v1.12.1) - 25 Juin 2024
+
+#### 🐛 fix(artwork): correction pictogrammes firefox et Chrome156 [(#971)](https://github.com/GouvernementFR/dsfr/pull/971)
+- changement structurel des svg d'artwork
+  - corrige la régression apportée par la nouvelle version de chrome qui ne supporte plus la surchage de colorisation sur le svg si le path ciblé est déja coloré dans le svg
+  - le path ciblé est déja coloré dans le svg
+- corrige l'accentuation des pictogrammes sur firefox
+  - mise en place d'un script permettant de transformer les anciens pictogrammes vers la nouvelle structure
+  - `yarn pictogram-converter -p [chemin/picto]`
+
+
+#### 🐛 fix(table): corrige regressions sur les tableaux déprécies [(#969)](https://github.com/GouvernementFR/dsfr/pull/969)
+- déplace bordures des tableaux déprécies sur les thead et tbody
+- retire les selecteurs css :has
+
+
+
 ### [v1.12.0](https://github.com/GouvernementFR/dsfr/compare/v1.11.2...v1.12.0) - 19 Juin 2024
+
+#### ⬆️ chore(dependencies): met a jour les dépendances npm et correction lint [(#961)](https://github.com/GouvernementFR/dsfr/pull/961)
+- mise à jour dépendances npm
+
 
 #### 🐛 fix(*): correctifs pages d'exemple et icone bandeau d'alerte [(#948)](https://github.com/GouvernementFR/dsfr/pull/948)
 - correction icone bandeau d'alerte

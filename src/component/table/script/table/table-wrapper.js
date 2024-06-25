@@ -1,9 +1,9 @@
 import api from '../../api.js';
 import { TableEmission } from './table-emission.js';
 
-class Table extends api.core.Instance {
+class TableWrapper extends api.core.Instance {
   static get instanceClassName () {
-    return 'Table';
+    return 'TableWrapper';
   }
 
   init () {
@@ -11,8 +11,9 @@ class Table extends api.core.Instance {
   }
 
   setCaptionHeight (value) {
+    requestAnimationFrame(() => this.ascend(TableEmission.CAPTION_HEIGHT, 0));
     this.setProperty('--table-offset', value);
   }
 }
 
-export { Table };
+export { TableWrapper };

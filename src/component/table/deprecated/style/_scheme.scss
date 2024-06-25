@@ -8,17 +8,19 @@
 @mixin _deprecated-table-scheme($legacy: false) {
   #{ns(table)} {
     & > table {
-      @include after {
-        @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey) (border contrast grey), (legacy:$legacy));
-      }
-
       caption {
         @include color.text(title grey, (legacy: $legacy));
       }
 
+      thead,
+      tbody {
+        @include after {
+          @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey), (legacy:$legacy));
+        }
+      }
+
       thead {
         @include color.background-image(border plain grey, (legacy: $legacy));
-
         @include color.background(alt grey, (legacy: $legacy));
         @include color.text(title grey, (legacy: $legacy));
       }

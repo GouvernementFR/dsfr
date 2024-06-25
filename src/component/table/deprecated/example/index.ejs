@@ -6,11 +6,11 @@ let dataNoScroll = { caption: 'Titre du tableau (caption) non scrollable', noScr
 let dataLayoutFixed = { caption: 'Titre du tableau (caption) fixé', layout: "fixed", col: 3};
 let dataNoCaption = { caption: 'Titre du tableau (caption) caché', noCaption: true, col: 6};
 let dataCaptionBottom = { caption: 'Titre du tableau (caption) en bas', captionBottom: true, col: 6};
-
-// @TODO: revoir les grilles avec layout
 %>
 
 <%- sample('Tableau par défaut', './sample/table-default', {table:data}, true) %>
+
+<%- sample('Tableau minimal', './sample/table-default', {table: { caption: 'Titre du tableau (caption)', col: 2, row: 3}}, true) %>
 
 <%- sample('Tableau avec bordure', './sample/table-default', {table:dataBordered}, true) %>
 
