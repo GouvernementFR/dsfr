@@ -36,7 +36,7 @@ const generateNewPictogram = async (dir) => {
 };
 
 const _parseFolder = (mainPath, subPath = '') => {
-  const dir = `${mainPath}/${subPath}`;
+  const dir = `${mainPath}${subPath}`;
   log(38, `${dir}`);
   const files = fs.readdirSync(dir);
   files.forEach((file) => {
