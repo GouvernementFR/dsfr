@@ -37,10 +37,8 @@
 
         tbody {
           tr {
-            &[aria-selected=true] {
-              &::after {
-                @include color.background-image((border action-high blue-france) (border action-high blue-france) (border action-high blue-france) (border action-high blue-france), (legacy: $legacy));
-              }
+            @include after {
+              @include color.background-image((border action-high blue-france) (border action-high blue-france) (border action-high blue-france) (border action-high blue-france), (legacy: $legacy));
             }
           }
 

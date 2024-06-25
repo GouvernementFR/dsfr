@@ -22,11 +22,8 @@
   * Fixe le caption en bas du tableau
   */
   &--caption-bottom {
-    &:not(:has(#{ns(table__container)})) {
-      @include padding-top(0);
-      @include margin-bottom(0);
-      @include margin-top(4v);
-    }
+    @include padding-top(0);
+    @include margin-top(4v);
 
     & > table {
       @include margin-bottom(calc(var(--table-offset) + 11v));

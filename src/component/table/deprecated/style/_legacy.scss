@@ -11,10 +11,12 @@
     @include before(none);
 
     & > table {
-      background-image: none;
-
       thead {
         background-image: none;
+
+        @include after {
+          background-image: none;
+        }
 
         tr {
           &:first-child {
@@ -32,6 +34,10 @@
       }
 
       tbody {
+        @include after {
+          background-image: none;
+        }
+
         tr {
           background-image: none;
 
