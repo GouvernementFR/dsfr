@@ -318,8 +318,6 @@ const newPictogramHandler = async (argv) => {
   };
 
   generateNewPictogram(settings.path || './src/core/asset/artwork');
-  // const pictogram = new PictogramConverter(settings.path || `${root}/src/pictograms`);
-  // await pictogram.build();
 };
 
 yargs
