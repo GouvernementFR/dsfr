@@ -26,8 +26,7 @@
 * tag.iconPlace (string, optionnal) : emplacement de l'icone
   si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans libellé
   valeurs :
-  * left : icone à gauche du libellé
-  * right : icone à droite du libellé
+  * left : icone à gauche du label
 
 * tag.classes (array, optional) : Classes suplémentaires sur le bouton
 
@@ -79,16 +78,9 @@ switch(tag.type) {
   break;
 }
 
-if (tag.icon !== undefined) tagClasses.push(prefix + '-icon-' + tag.icon);
-
-if (tag.iconPlace !== undefined) switch(tag.iconPlace) {
-  case 'left':
-    tagClasses.push(prefix + '-tag--icon-left');
-    break;
-
-  case 'right':
-    tagClasses.push(prefix + '-tag--icon-right');
-    break;
+if (tag.icon !== undefined) {
+  tagClasses.push(prefix + '-icon-' + tag.icon);
+  tagClasses.push(prefix + '-tag--icon-left');
 }
 
 if (tag.disabled === true) {
