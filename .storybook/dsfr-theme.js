@@ -1,6 +1,6 @@
 import { create } from '@storybook/theming/create';
 
-const PREFER_COLOR_SCHEME = false;
+const PREFER_COLOR_SCHEME = true;
 
 const light = {
   base: 'light',
