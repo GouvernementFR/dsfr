@@ -41,7 +41,10 @@ if (badge.type !== undefined) badge.classes.push(prefix + '-badge--' + badge.typ
 else if (badge.accent !== undefined) badge.classes.push(prefix + '-badge--' + badge.accent);
 
 if (badge.icon === false) badge.classes.push(prefix + '-badge--no-icon');
-else if (badge.icon !== undefined) badge.classes.push(prefix + '-icon-' + badge.icon);
+else if (badge.icon !== undefined) {
+	badge.classes.push(prefix + '-icon-' + badge.icon);
+	badge.classes.push(prefix + '-badge--icon-left');
+}
 
 if (badge.ellipsis) badge.label = `<span class="${prefix}-ellipsis">${badge.label}</span>`;
 %>

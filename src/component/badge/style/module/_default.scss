@@ -15,6 +15,10 @@
   text-transform: uppercase;
   border-radius: spacing.space(1v);
 
+  @include has-icon {
+    @include before('');
+  }
+
   &--sm {
     @include nest-badge(sm, left, null, null, false);
   }
