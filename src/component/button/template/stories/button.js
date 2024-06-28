@@ -1,4 +1,4 @@
-import { tooltipEJSRenderer as buttonEJSRenderer } from '../../../tooltip/template/stories/tooltip.js';
+import { linkEJSRenderer as buttonEJSRenderer } from '../../../link/template/stories/link.js';
 import button from '../ejs/button.ejs?raw';
 import buttonsGroup from '../ejs/buttons-group.ejs?raw';
 
