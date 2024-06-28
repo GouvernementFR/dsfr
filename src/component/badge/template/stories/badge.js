@@ -1,12 +1,7 @@
-import { tooltipEJSRenderer as badgeEJSRenderer } from '../../../tooltip/template/stories/tooltip.js';
-import badge from '../ejs/badge.ejs?raw';
-import badgesGroup from '../ejs/badges-group.ejs?raw';
+import ejsRenderer from '../../../../renderer.js';
 
-badgeEJSRenderer.add(['badge'], badge);
-badgeEJSRenderer.add(['badges-group'], badgesGroup);
+const renderBadge = (data) => ejsRenderer.render('badge.ejs', data);
 
-const renderBadge = (data) => badgeEJSRenderer.render('badge.ejs', data);
+const renderBadgesGroup = (data) => ejsRenderer.render('badges-group.ejs', data);
 
-const renderBadgesGroup = (data) => badgeEJSRenderer.render('badges-group.ejs', data);
-
-export { renderBadge, renderBadgesGroup, badgeEJSRenderer };
+export { renderBadge, renderBadgesGroup };
