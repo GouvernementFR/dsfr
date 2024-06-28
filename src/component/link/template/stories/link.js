@@ -1,12 +1,6 @@
-import { tooltipEJSRenderer as linkEJSRenderer } from '../../../tooltip/template/stories/tooltip.js';
-import link from '../ejs/link.ejs?raw';
-import linksGroup from '../ejs/links-group.ejs?raw';
+import ejsRenderer from '../../../../renderer.js';
+const renderLink = (data) => ejsRenderer.render('link', data);
 
-linkEJSRenderer.add(['link'], link);
-linkEJSRenderer.add(['links-group'], linksGroup);
+const renderLinksGroup = (data) => ejsRenderer.render('links-group', data);
 
-const renderLink = (data) => linkEJSRenderer.render('link.ejs', data);
-
-const renderLinksGroup = (data) => linkEJSRenderer.render('links-group.ejs', data);
-
-export { renderLink, renderLinksGroup, linkEJSRenderer };
+export { renderLink, renderLinksGroup };
