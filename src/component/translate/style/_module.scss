@@ -5,6 +5,7 @@
 
 @use 'module/animate';
 @use 'module/selector';
+@use 'module/preference';
 
 #{ns(translate)} {
   --rows: 8;
@@ -18,11 +19,16 @@
     @include width(100%);
     @include width(auto, lg);
     @include animate.caret();
+    @include icon-forced-color(buttontext, true);
 
     @include icon(arrow-down-s-line, sm, after) {
       @include margin-left(auto);
       @include margin-left(1v, lg);
       @include margin-right(-1v, lg);
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
     }
 
     @include respond-from(lg) {
@@ -47,6 +53,10 @@
   &__menu {
     @include margin(0);
     @include margin(-1v -4v 0, lg);
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
   }
 
   #{ns(nav)} {
@@ -64,6 +74,10 @@
         display: grid;
         grid-template-rows: repeat(var(--rows), auto); // 8 items max per col
         grid-auto-flow: column;
+
+        @include preference.forced-colors {
+          border-top: 1px solid;
+        }
       }
     }
   }

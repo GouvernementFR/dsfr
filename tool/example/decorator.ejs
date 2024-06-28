@@ -270,11 +270,11 @@ const errorData = (error) => {
 
 locals.errorData = errorData;
 
-const targetBlankData = () => {
+const targetBlankData = (title = contentPlaceholder('Intitulé')) => {
   const attr = {};
   attr.target = '_blank';
   attr.rel = 'noopener external';
-  attr.title = `${contentPlaceholder('Intitulé')} - ${locals.getText('blank')}`;
+  attr.title = `${title} - ${locals.getText('blank')}`;
   return attr;
 }
 

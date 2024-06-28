@@ -3,6 +3,8 @@
 /// @group tab
 ////
 
+@use 'module/preference';
+
 @include build-tab();
 
 #{ns(tabs)} {
@@ -16,6 +18,14 @@
   @include padding-top(4px);
   @include display-flex(row, flex-start, null, wrap);
   @include height(var(--tabs-height));
+
+  @include preference.forced-colors {
+    border-bottom: 1px solid;
+  }
+
+  @include preference.reduce-motion {
+    transition: none;
+  }
 
   /**
   * Animation de la hauteur du panel
@@ -32,6 +42,10 @@
     @include size(100%, 100%);
     @include margin-top(-1px);
     order: 2;
+
+    @include preference.forced-colors {
+      border: 1px solid graytext;
+    }
   }
 
   /**
@@ -67,8 +81,25 @@
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
 
+    @include preference.forced-colors {
+      border: 1px solid;
+    }
+
     &[aria-selected='true'] {
       background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 0 1px;
+
+      &:not(:disabled) {
+        @include preference.forced-colors {
+          border: 1px solid highlight;
+          border-top: 4px solid highlight;
+          border-bottom: 1px solid canvas;
+          color: highlight;
+
+          @include has-icon {
+            @include icon-forced-color(highlight);
+          }
+        }
+      }
     }
   }
 
@@ -86,6 +117,10 @@
     @include margin-right(-100%);
     flex: 0 0 100%;
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
 
     &:focus,
     &:focus-visible {

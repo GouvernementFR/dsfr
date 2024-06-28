@@ -1,0 +1,11 @@
+<%
+const table = locals.table || {};
+const dataMiscellaneous = JSON.parse(include('../data/data-miscellaneous.json.ejs', { table: table.table }));
+
+const data = {
+  ...table,
+  ...dataMiscellaneous
+}
+%>
+
+<%- include('./table-default', {table: data}); %>

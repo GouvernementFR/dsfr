@@ -7,7 +7,7 @@
 ///   }
 @mixin is($target) {
   @if $target == ie10 or $target == ie11 {
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
       @content;
     }
   }

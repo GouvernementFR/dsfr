@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/dsfr",
-  "version": "1.11.2",
+  "version": "1.12.1",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
@@ -23,7 +23,8 @@
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "pictogram-converter": "node tool/tool.js pictogram-converter"
   },
   "files": [
     "/dist",
@@ -104,6 +105,9 @@
     "subset-font": "^1.6.1",
     "svgo": "^2.8.0",
     "yargs": "^17.7.1"
+  },
+  "peerDependencies": {
+    "browser-sync": "^2.27.10"
   },
   "husky": {
     "hooks": {

@@ -5,6 +5,7 @@
 
 @use 'module/spacing';
 @use 'module/selector';
+@use 'module/preference';
 
 #{ns(nav)} {
   @include disable-underline;
@@ -16,6 +17,11 @@
     @include display-flex(column);
     @include margin(0);
     @include padding(0);
+
+    @include preference.forced-colors {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+    }
 
     @include respond-from(lg) {
       flex-direction: row;
@@ -47,6 +53,11 @@
             @include before {
               @include absolute(auto, null, 0, 0, 100%, 2px);
               @include margin-top(0);
+
+              @include preference.forced-colors {
+                background-color: highlight;
+                @include height(1v);
+              }
             }
           }
         }
@@ -100,6 +111,11 @@
       @include before('', block) {
         @include absolute(50%, null, null, 0, 2px, 6v);
         @include margin-top(-3v);
+
+        @include preference.forced-colors {
+          background-color: highlight;
+          @include width(1v);
+        }
       }
     }
   }
@@ -124,7 +140,12 @@
       @include margin-left(2v);
       @include margin-right(0);
       transition: transform 0.3s;
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
     }
+    @include icon-forced-color(buttontext, true, after);
 
     @include respond-from(lg) {
       justify-content: flex-start;

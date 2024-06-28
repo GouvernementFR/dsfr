@@ -1,0 +1,42 @@
+<%#
+# paramètres Tbody
+
+* tbody.table (object, required): contenu du tableau
+  ** tbody.table.tbodies (array, required): tableau de données du tbody à trois dimensions [body][row][col]
+    *** tbody.table.tbodies[body][row][col].content (string, required): contenu de la cellule
+    *** tbody.table.tbodies[body][row][col].markup (string, optional): balise de la cellule (th, td)
+    *** tbody.table.tbodies[body][row][col].classes (array, optional): classes supplémentaires de la cellule
+    *** tbody.table.tbodies[body][row][col].attributes (array, optional): attributs supplémentaires de la cellule
+%>
+
+<% eval(include('../../../../core/index.ejs'));
+
+const table = tbody.table || {};
+const index = tbody.index || 0;
+%>
+
+<tbody>
+  <% if (table.tbodies && table.tbodies[index]) { %>
+    <% for (let row = 0; row < table.tbodies[index].length; row++) { %>
+      <%
+      const rowAttributes = {};
+      rowAttributes.id = `${table.id}-row-key-${row + 1}`;
+      rowAttributes['data-row-key'] = row + 1;
+      %>
+      <tr <%- includeAttrs(rowAttributes) %>>
+        <% if (table.tbodies[index].length) { %>
+          <% for (let col = 0; col < table.tbodies[index][row].length; col++) { %>
+            <%
+            const colMarkup = table.tbodies[index][row][col].markup || 'td';
+            const colClasses = table.tbodies[index][row][col].classes || [];
+            const colAttributes = table.tbodies[index][row][col].attributes || {};
+            %>
+            <<%- colMarkup %> <%- includeClasses(colClasses) %> <%- includeAttrs(colAttributes) %>>
+              <%- table.tbodies[index][row][col].content %>
+            </<%- colMarkup %>>
+          <% } %>
+        <% } %>
+      </tr>
+    <% } %>
+  <% } %>
+</tbody>

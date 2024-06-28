@@ -1,0 +1,83 @@
+////
+/// Table Module : default - deprecated
+/// @group Table - deprecated
+////
+
+#{ns(table)} {
+  @include padding-top(var(--table-offset));
+
+  @include before('', block) {
+    @include size(100%, 0);
+  }
+
+  &:not(#{ns(table--no-scroll)}) {
+    & > table {
+      width: 100%;
+    }
+  }
+
+  & > table {
+    @include size(100%);
+    display: block;
+    overflow: auto;
+    border-spacing: 0;
+
+    td,
+    th {
+      text-align: left;
+      vertical-align: middle;
+      display: table-cell;
+      border: 0;
+      @include padding(3v);
+      @include padding(4v, md);
+      @include text-style(sm);
+    }
+
+    th {
+      font-weight: font-weight(bold);
+    }
+
+    thead {
+      background-size: 100% 1px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+
+      td,
+      th {
+        font-weight: font-weight(bold);
+        @include padding-bottom(3.5v);
+        @include padding-bottom(4.5v, md);
+      }
+    }
+  }
+
+  &#{ns-attr(js-table, true)} {
+    & > table {
+      thead,
+      tbody {
+        @include relative;
+
+        @include after('', block) {
+          @include absolute(0, null, null, 0, 100%, 100%);
+          @include z-index(over);
+          background-repeat: no-repeat, no-repeat, no-repeat;
+          pointer-events: none;
+        }
+      }
+
+      thead {
+        @include after {
+          background-position: 0 0, 0 0, 100% 100%;
+          background-size: 100% 1px, 1px 100%, 1px 100%;
+        }
+      }
+
+      tbody {
+        @include after {
+          background-position: 0 0, 0 100%, 100% 0;
+          background-size: 1px 100%, 100% 1px, 1px 100%;
+        }
+      }
+    }
+  }
+}

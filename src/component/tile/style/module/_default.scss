@@ -4,6 +4,8 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
+@use 'module/disabled';
 
 #{ns(tile)} {
   @include relative;
@@ -21,6 +23,11 @@
   }
 
   @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__pictogram);
+  @include hover-brighten(#{&}#{ns(enlarge-button)}, #{&}__pictogram);
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
 
   &__header {
     order: 1;
@@ -50,20 +57,42 @@
     flex: 1 1 auto;
   }
 
-  &#{ns(enlarge-link)} {
+  &#{ns(enlarge-link)},
+  &#{ns(enlarge-button)} {
     #{ns(tile)}__title {
-      a {
+      a,
+      button {
         @include icon-size(md) {
           @include absolute(null, 8v, 9v);
         }
+
+        @include preference.forced-colors {
+          text-decoration: none;
+        }
+      }
+
+      button {
+        font-weight: inherit;
+        line-height: inherit;
+        text-align: inherit;
+        @include padding(0);
       }
     }
   }
 
   &--no-icon,
   &:not(#{ns(enlarge-link)}):not(#{ns(tile--download)}) {
-    #{ns(tile__title a)} {
-      &:not([target="_blank"]) {
+    #{ns(tile__title)} {
+      a:not([target="_blank"]) {
+        @include after(none);
+      }
+    }
+  }
+
+  &--no-icon,
+  &:not(#{ns(enlarge-button)}):not(#{ns(tile--download)}) {
+    #{ns(tile__title)} {
+      button {
         @include after(none);
       }
     }
@@ -83,7 +112,13 @@
       background-repeat: no-repeat;
     }
 
-    a {
+    a,
+    button {
+      @include preference.forced-colors {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+
       @include before {
         background-position: 0 100%;
         background-size: 100% spacing.space(1v);
@@ -93,10 +128,17 @@
       @include icon(arrow-right-line, sm, after) {
         @include margin-left(2v);
       }
+
+      @include icon-forced-color(linktext, true, after);
+
+      @include disabled.selector((can-be-link: true)) {
+        @include icon-forced-color(graytext, null, after);
+      }
     }
 
     @include target-blank {
       @include icon(external-link-line, sm, after);
+      @include icon-forced-color(linktext, null, after);
     }
   }
 
@@ -130,7 +172,8 @@
     }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__content {
     @include padding-bottom(10v);
   }
 }

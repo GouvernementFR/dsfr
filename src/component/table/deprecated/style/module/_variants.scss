@@ -1,0 +1,95 @@
+////
+/// Table module : Variants - deprecated
+/// @group Table - deprecated
+////
+
+#{ns(table)} {
+  /*
+  * Cache la caption
+  */
+  &--no-caption {
+    @include padding-top(0);
+
+    & > table {
+      caption {
+        @include sr-only();
+        @include height(0);
+      }
+    }
+  }
+
+  /*
+  * Fixe le caption en bas du tableau
+  */
+  &--caption-bottom {
+    @include padding-top(0);
+    @include margin-top(4v);
+
+    & > table {
+      @include margin-bottom(calc(var(--table-offset) + 11v));
+
+      caption {
+        @include margin-top(4v);
+        @include height(min-content);
+        caption-side: bottom;
+      }
+    }
+
+    &#{ns-attr(js-table, true)} {
+      & > table {
+        &::after {
+          bottom: 0;
+          top: auto;
+          @include height(100%);
+        }
+
+        caption {
+          @include absolute(100%, 0, 0, 0);
+          @include margin-top(4v);
+        }
+      }
+    }
+  }
+
+  /*
+  * pas de scroll ni de shadow
+  */
+  &--no-scroll {
+    @include min-width(auto);
+
+    & > table {
+      overflow-x: hidden;
+
+      caption {
+        @include max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
+      }
+    }
+  }
+
+  /*
+  * Fixe la taille des colonnes du tableau
+  */
+  &--layout-fixed {
+    & > table {
+      display: table;
+      table-layout: fixed;
+    }
+  }
+
+  /* Style bordered, ajoute des bordures entre chaque ligne */
+  &--bordered {
+    & > table {
+      tbody {
+        tr {
+          background-size: 100% 1px;
+          background-position: bottom;
+          background-repeat: no-repeat;
+
+          &:last-child {
+            background-image: none;
+          }
+        }
+      }
+    }
+  }
+}

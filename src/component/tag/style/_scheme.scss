@@ -22,9 +22,7 @@
     }
   }
 
-  a,
-  button,
-  input[type=button] {
+  @include clickable-selector {
     &#{ns(tag)} {
       @include color.text(action-high blue-france, (legacy: $legacy));
       @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
@@ -68,6 +66,10 @@
       }
 
       @include disabled.selector((), (legacy: $legacy, text: true, background: true));
+
+      &:disabled:hover {
+        @include color.background(background disabled grey, (legacy: $legacy));
+      }
     }
   }
 

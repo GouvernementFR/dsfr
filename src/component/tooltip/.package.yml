@@ -13,3 +13,5 @@ example:
     - share
     - input
     - table
+  script:
+    - table

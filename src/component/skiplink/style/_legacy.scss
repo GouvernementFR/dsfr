@@ -6,13 +6,13 @@
 @use 'module/legacy';
 
 @include legacy.is(ie11) {
-  /**
-  * Correctif
-  */
   #{ns(skiplinks)} {
+    @include disable-list-style-legacy;
+
     &.focus-within {
       position: relative;
       transform: translateY(0);
+      opacity: 1;
     }
   }
 }

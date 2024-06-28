@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/preference';
 
 #{ns(consent-banner)} {
   @include fixed(null, null, 0, 0, 100%);
@@ -12,6 +13,10 @@
   overflow: auto;
   @include set-text-margin(0 0 4v);
   @include set-title-margin(0 0 4v);
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
 
   @include respond-from(md) {
     @include padding(8v);

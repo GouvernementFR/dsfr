@@ -29,9 +29,15 @@ class Artwork extends Instance {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xhr.responseText, 'text/html');
       this.realSvgContent = xmlDoc.getElementById(this.svgName);
-
       if (this.realSvgContent) {
-        this.realSvgContent.classList.add(this.node.classList);
+        if (this.realSvgContent.tagName === 'symbol') {
+          this.use = xmlDoc.querySelector('use[href="#' + this.svgName + '"]');
+          if (this.use) this.node.parentNode.insertBefore(this.use, this.node);
+        } else {
+          // deprecated svg structure
+          this.realSvgContent.classList.add(this.node.classList);
+        }
+
         this.replace();
       }
     };

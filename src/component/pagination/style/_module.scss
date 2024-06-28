@@ -4,6 +4,8 @@
 ////
 
 @use 'module/selector';
+@use 'module/preference';
+@use 'module/disabled';
 
 @include build-pagination();
 
@@ -40,6 +42,14 @@
       @include selector.current {
         cursor: default;
         pointer-events: none;
+      }
+
+      @include disabled.selector((can-be-link: true)) {
+        &:not([aria-current]) {
+          @include preference.forced-colors {
+            color: graytext;
+          }
+        }
       }
     }
 

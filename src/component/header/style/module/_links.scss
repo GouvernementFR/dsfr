@@ -3,6 +3,8 @@
 /// @group header
 ////
 
+@use 'module/preference';
+
 #{ns(header)} {
   #{ns-group(btns)} {
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
@@ -64,6 +66,12 @@
     @include after('', block) {
       @include margin(3v -4v);
       @include size(calc(100% + 8v), 1px);
+    }
+
+    #{ns(btn)} {
+      @include preference.forced-colors {
+        border: none;
+      }
     }
 
     #{ns(translate)} {

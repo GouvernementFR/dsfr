@@ -17,7 +17,8 @@
     }
 
     &__title {
-      a {
+      a,
+      button {
         @include icon-legacy(arrow-right-line, sm, after) {
           background-color: transparent;
         }
@@ -65,6 +66,16 @@
       }
     }
 
+    &#{ns(enlarge-button)} {
+      #{ns(card)}__title {
+        button {
+          @include icon-size-legacy(md, after) {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
     @include respond-from(md) {
       &--download,
       &--horizontal,
@@ -78,32 +89,38 @@
   }
 
   #{ns(card--sm)} {
-    &#{ns(enlarge-link)} {
+    &#{ns(enlarge-link)},
+    &#{ns(enlarge-button)} {
       #{ns(card)}__title {
-        a {
+        a,
+        button {
           @include icon-size-legacy(sm, after);
         }
       }
     }
 
     #{ns(card)}__title {
-      a {
+      a,
+      button {
         @include icon-size-legacy(sm, after);
       }
     }
   }
 
   #{ns(card--lg)} {
-    &#{ns(enlarge-link)} {
+    &#{ns(enlarge-link)},
+    &#{ns(enlarge-button)} {
       #{ns(card)}__title {
-        a {
+        a,
+        button {
           @include icon-size-legacy(lg, after);
         }
       }
     }
 
     #{ns(card)}__title {
-      a {
+      a,
+      button {
         @include icon-size-legacy(md, after);
       }
     }

@@ -5,7 +5,7 @@
 
 * bottom.links (array, optional) : tableau de liens
   ** bottom.links[].markup (string, optional) : markup du lien
-  ** bottom.links[].label (string, required) : label du lien
+  ** bottom.links[].label (string, required) : Libellé du lien
   ** bottom.links[].classes (array, required) : classes supplémentaires du lien
   ** bottom.links[].attributes (array, required) : attributs supplémentaires du lien
 
@@ -16,7 +16,7 @@
 <% let links = bottom.links || [] %>
 <ul class="<%= prefix %>-footer__bottom-list">
   <%
-    for (let i = 0; i < links.length; i++) {      
+    for (let i = 0; i < links.length; i++) {
   %>
     <li class="<%= prefix %>-footer__bottom-item">
       <%

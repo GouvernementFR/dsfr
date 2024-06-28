@@ -1,0 +1,13 @@
+///  Mixin de préférence de transparence
+///  @param {string} $active - active ou none
+///  @example scss -
+///  // pour une réduction de la transparence
+///  @include reduce-transparency() {
+///    // your styles
+///  }
+
+@mixin reduce-transparency($active: active) {
+  @media (prefers-reduced-transparency: reduce) {
+    @content;
+  }
+}

@@ -9,13 +9,11 @@
 
 #{ns(fieldset)} {
   #{ns(toggle)}__list {
-    li:first-child #{ns(toggle)} {
-      @include padding-top(0);
+    li {
+      @include margin-bottom(4v);
 
-      label {
-        @include after {
-          top: 0;
-        }
+      &:last-child {
+        @include margin-bottom(0);
       }
     }
   }

@@ -3,6 +3,8 @@
 /// @group Footer
 ////
 
+@use 'module/preference';
+
 /**
  * La partie "partners" du footer est constituée de logos organisés
  * en partenaires principaux (ferré à gauche) et secondaires (ferrés à droite)
@@ -11,6 +13,10 @@
   &__partners {
     @include margin-top(4v);
     @include padding-top(4v);
+
+    @include preference.forced-colors {
+      border-top: 1px solid;
+    }
 
     a {
       @include display-flex(null, center, center);

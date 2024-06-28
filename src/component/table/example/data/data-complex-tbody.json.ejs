@@ -1,0 +1,135 @@
+<%
+const getPictogram = (pictogram) => include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram});
+
+const tbody = [
+  [
+    {
+      attributes: {
+        headers: 'complex-row-0 complex-thead-0-col-1 complex-thead-1-col-1'
+      },
+      content: 'Français'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-0 complex-thead-0-col-2 complex-thead-1-col-2'
+      },
+      content: 'Mathématiques'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-0 complex-thead-0-col-3 complex-thead-1-col-3'
+      },
+      content: 'LV1'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-0 complex-thead-0-col-3 complex-thead-1-col-4'
+      },
+      content: 'Histoire - Géographie'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-0 complex-thead-0-col-4 complex-thead-1-col-4'
+      },
+      content: 'EPS'
+    }
+  ],
+  [
+    {
+      attributes: {
+        colspan: 5,
+        headers: 'complex-row-1 complex-thead-0-col-1 complex-thead-0-col-2 complex-thead-0-col-3 complex-thead-0-col-4 complex-thead-1-col-1 complex-thead-1-col-2 complex-thead-1-col-3 complex-thead-1-col-4 complex-thead-1-col-4'
+      },
+      content: 'Etude dirigée<br><i>Exemple de colspan sur toute la ligne</i>'
+    }
+  ],
+  [
+      {
+      attributes: {
+        headers: 'complex-row-2 complex-thead-0-col-1 complex-thead-1-col-1'
+      },
+      content: 'Mathématiques'
+    },
+      {
+      attributes: {
+        headers: 'complex-row-2 complex-thead-0-col-2 complex-thead-1-col-2'
+      },
+      content: 'Histoire - Géographie'
+    },
+    {
+      attributes: {
+        rowspan: 2,
+        headers: 'complex-row-2 complex-row-3 complex-thead-0-col-3 complex-thead-1-col-3'
+      },
+      content: `Arts appliqués<br>${getPictogram({name: 'environment'})}`
+    },
+    {
+      attributes: {
+        headers: 'complex-row-2 complex-thead-0-col-3 complex-thead-1-col-4'
+      },
+      content: 'LV2'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-2 complex-thead-0-col-4 complex-thead-1-col-4'
+      },
+      content: 'Sciences'
+    }
+  ],
+  [
+    {
+      attributes: {
+        headers: 'complex-row-3 complex-thead-0-col-1 complex-thead-1-col-1'
+      },
+      content: 'Français'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-3 complex-thead-0-col-2 complex-thead-1-col-2'
+      },
+      content: 'EPS'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-3 complex-thead-0-col-3 complex-thead-1-col-4'
+      },
+      content: 'Histoire - Géographie'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-3 complex-thead-0-col-4 complex-thead-1-col-4'
+      },
+      content: 'Physique - Chimie'
+    }
+  ],
+  [
+    {
+      attributes: {
+        headers: 'complex-row-4 complex-thead-0-col-1 complex-thead-1-col-1'
+      },
+      content: 'Sciences'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-4 complex-thead-0-col-2 complex-thead-1-col-2'
+      },
+      content: 'LV1'
+    },
+    {
+      attributes: {
+        colspan: 2,
+        headers: 'complex-row-4 complex-thead-0-col-3 complex-thead-1-col-3 complex-thead-1-col-4'
+      },
+      content: 'EPS<br><i>Exemple de colspan sur 2 cellules</i>'
+    },
+    {
+      attributes: {
+        headers: 'complex-row-4 complex-thead-0-col-4 complex-thead-1-col-4'
+      },
+      content: 'LV2'
+    }
+  ]
+];
+%>
+
+<%- JSON.stringify(tbody); %>

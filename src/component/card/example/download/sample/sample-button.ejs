@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte de téléchargement SM avec bouton', './card-download', { card : { size: 'sm', content: { actionMarkup: 'button', description: false }}}, true, '../../sample/card-layout', {col: {md:6, lg:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement MD avec bouton', './card-download', { card : { size: 'md', content: { actionMarkup: 'button', description: false }}}, true, '../../sample/card-layout', {col: {md:8, lg:6}, desc: 'dans une grille sur 6 à 8 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement LG avec bouton', './card-download', { card : { size: 'lg', content: { actionMarkup: 'button', description: false }}}, true, '../../sample/card-layout', {col: {lg:8}, desc: 'dans une grille sur 8 à 12 colonnes en version desktop'}); %>

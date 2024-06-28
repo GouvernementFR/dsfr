@@ -1,0 +1,24 @@
+<%
+const table = locals.table || {};
+const col = table.col || 4;
+const row = table.row || 4;
+const loremLength = table.loremLength || 25;
+
+let thead = Array.from(Array(1), () => []);
+let tbody = Array.from(Array(row), () => []);
+
+for(let r = 0; r < row; r++) {
+  for(let c = 0; c < col; c++) {
+    if(r === 0) thead[0].push({content: 'th' + c});
+    tbody[r].push({content: lorem(null , loremLength)});
+  }
+}
+
+const data = {
+  ...table,
+  thead,
+  tbodies: [tbody]
+};
+%>
+
+<%- JSON.stringify(data); %>

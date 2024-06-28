@@ -3,6 +3,7 @@ import normalize from '../utils/normalize';
 import { ActionMode } from './action-mode';
 import { validateString } from '../utils/type-validator';
 import { ActionStatus } from './action-status';
+import { ActionRegulation } from './action-regulation';
 
 const getParametersLayer = (data) => {
   return Object.entries(data).map(([key, value]) => ['actionpname', normalize(key), 'actionpvalue', normalize(value)]).flat();
@@ -11,7 +12,7 @@ const getParametersLayer = (data) => {
 class Action {
   constructor (name) {
     this._isMuted = false;
-    this._isForced = false;
+    this._regulation = ActionRegulation.NONE;
     this._name = name;
     this._status = ActionStatus.UNSTARTED;
     this._labels = [];
@@ -27,12 +28,12 @@ class Action {
     this._isMuted = value;
   }
 
-  get isForced () {
-    return this._isForced;
+  get regulation () {
+    return this._regulation;
   }
 
-  set isForced (value) {
-    this._isForced = value;
+  set regulation (value) {
+    if (Object.values(ActionRegulation).includes(value)) this._regulation = value;
   }
 
   get isSingular () {

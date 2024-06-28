@@ -1,0 +1,20 @@
+<%
+const checkbox = locals.checkbox || {}
+const defaultCheckbox = {
+  id: uniqueId('table-default-checkbox'),
+  attributes: {
+    'aria-label': getText('data.cell.action.select', 'table'),
+  },
+  size: 'sm',
+  includeEmptyMessagesGroup: false,
+};
+
+const option = {
+  ...defaultCheckbox,
+  ...checkbox
+};
+
+const getCheckbox = include('../../../checkbox/template/ejs/checkbox-group.ejs', {checkbox: option});
+%>
+
+<%- getCheckbox %>

@@ -1,0 +1,57 @@
+<%#
+# paramètres Table wrapper
+
+* wrapper.table (object, required) : contenu du tableau
+
+* wrapper.noCaption (boolean, optional) : {default: false} cache le texte de la caption
+
+* wrapper.noScroll (boolean, optional) : {default: false} désactive le scroll horizontal
+
+* wrapper.captionBottom (boolean, optional) : {default: false} positionne la caption en bas
+
+* wrapper.bordered (boolean, optional) : {default: false} si true, ajoute des séparateurs entre chaque ligne et enleve l'effet even/odd
+
+* wrapper.classes (array, optional): classes supplémentaires du composant
+
+* wrapper.attributes (object, optional): attributs supplémentaires du composant
+
+* wrapper.header (boolean, optional): {default: false} affiche l'en-tête du composant
+
+* wrapper.footer (boolean, optional): {default: false} affiche le pied de page du composant
+%>
+
+<% eval(include('../../../../core/index.ejs'));
+
+let wrapper = locals.table || {};
+let classes = wrapper.classes || [];
+
+const attributes = wrapper.attributes || {};
+
+const table = wrapper.table || [[]];
+attributes.id = table.id + '-component';
+
+classes.push(prefix + '-table');
+
+if (wrapper.noCaption) classes.push(prefix + '-table--no-caption');
+if (wrapper.captionBottom) classes.push(prefix + '-table--caption-bottom');
+if (wrapper.bordered) classes.push(prefix + '-table--bordered');
+if (wrapper.noScroll) classes.push(prefix + '-table--no-scroll');
+%>
+
+<div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+  <% if (wrapper.header !== undefined) { %>
+    <div class="<%= prefix %>-table__header"><%- wrapper.header %></div>
+  <% } %>
+  <% if (table) { %>
+    <div class="<%= prefix %>-table__wrapper">
+      <div class="<%= prefix %>-table__container">
+        <div class="<%= prefix %>-table__content">
+          <%- include('./table.ejs', {table: table}); %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+  <% if (wrapper.footer !== undefined) { %>
+    <div class="<%= prefix %>-table__footer"><%- wrapper.footer %></div>
+  <% } %>
+</div>

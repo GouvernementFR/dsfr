@@ -11,7 +11,8 @@
   &--lg &__title {
     @include title-style(h4);
 
-    a {
+    a,
+    button {
       @include icon-size(md, after);
     }
   }
@@ -39,18 +40,22 @@
     @include padding-top(2v);
   }
 
-  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__end {
+  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__end,
+  &--lg#{ns(enlarge-button)}:not(&--no-icon) &__end {
     @include margin-bottom(-16v); // 8v (icon) + 2v (padding end) + 6v (marge texte icon)
     @include min-height(10v); // 8v (icon) + 2v (padding end)
     @include padding-right(10v); // 8v (icon) + 2v (padding)
   }
 
-  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__content {
+  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__content,
+  &--lg#{ns(enlarge-button)}:not(&--no-icon) &__content {
     @include padding-bottom(26v); // 10v (padding card) + 8v (icon) + 2v (padding end) + 6v (marge texte icon)
   }
 
-  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__title {
-    a {
+  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__title,
+  &--lg#{ns(enlarge-button)}:not(&--no-icon) &__title {
+    a,
+    button {
       @include icon-size(lg, after) {
         @include right(10v);
         @include bottom(10v);

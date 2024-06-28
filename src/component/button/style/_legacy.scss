@@ -4,6 +4,7 @@
 ////
 
 @use 'module/legacy';
+@use 'module/animate';
 
 @include legacy.is(ie11) {
   #{ns(btn)} {
@@ -11,6 +12,14 @@
 
     &[href] {
       text-decoration: none;
+    }
+
+    &#{ns(btn--secondary)},
+    &#{ns(btn--tertiary)},
+    &#{ns(btn--tertiary-no-outline)} {
+      &:disabled:hover {
+        background-color: transparent;
+      }
     }
 
     @include class-not-start-with(#{ns(btn--icon-, '')}) {
@@ -66,6 +75,16 @@
 
   #{ns(btn--team)} {
     @include icon-legacy(team-line, sm);
+  }
+
+  #{ns(btn--sort)} {
+    @include icon-legacy(arrow-up-down-line, sm);
+    @include animate.rotate('&[aria-sorting='desc']');
+
+    &[aria-sorting='asc'],
+    &[aria-sorting='desc'] {
+      @include icon-legacy(arrow-up-line, sm);
+    }
   }
 
   #{ns-group(btns)} {

@@ -3,10 +3,17 @@
 /// @group footer
 ////
 
+@use 'module/preference';
+
 #{ns(footer)} {
   @include disable-list-style;
   @include size(100%);
   @include padding-top(8v);
+
+  @include preference.forced-colors {
+    border-top: 2px solid;
+    @include padding-top(7.5v);
+  }
 
   @include body {
     @include display-flex(row, center, null, wrap);
@@ -24,7 +31,6 @@
    */
   &__brand {
     @include display-flex(row, center);
-    flex-basis: 100%;
 
     @include logo(md, lg) {
       @include margin(-4v);
@@ -47,7 +53,6 @@
     }
 
     @include respond-from(md) {
-      flex-basis: auto;
       @include margin-right(4v);
 
       &#{ns(enlarge-link)} {

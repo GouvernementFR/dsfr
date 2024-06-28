@@ -9,6 +9,7 @@ const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
 const { cmd } = require('./classes/changelog/utils');
+const { generateNewPictogram } = require('./generate/pictogram');
 
 /**
  * Build
@@ -303,6 +304,32 @@ const changelogHandler = async (argv) => {
   await changelog.build();
 };
 
+/**
+ * Pictogram converter
+ * Permet de transformer l'ancienne structure des pictogrammes avec des <g> en une structure avec des <symbol> et <use>
+ */
+const newPictogramBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0 -p [path/to/svg]')
+    .example(
+      '$0 -p [path/to/svg]',
+      'convertit les pictogrammes en une structure avec des <symbol> et <use>'
+    )
+    .option('path', {
+      alias: '-p',
+      describe: 'chemin vers le dossier contenant les pictogrammes',
+      type: 'string'
+    });
+};
+
+const newPictogramHandler = async (argv) => {
+  const settings = {
+    path: argv.path
+  };
+
+  generateNewPictogram(settings.path || './src/core/asset/artwork');
+};
+
 yargs
   .scriptName('tool')
   .command(
@@ -340,6 +367,12 @@ yargs
     'génération du changelog',
     changelogBuilder,
     changelogHandler
+  )
+  .command(
+    'pictogram-converter',
+    'transforme les pictogrammes en une structure avec des <symbol> et <use>',
+    newPictogramBuilder,
+    newPictogramHandler
   )
   .help()
   .argv;

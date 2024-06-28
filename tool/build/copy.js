@@ -41,7 +41,7 @@ const copyImages = (removeOrphans) => {
   const src = root('tool/example/img');
   const dest = root('example/img');
 
-  copyDir(src, dest, ['jpg', 'png', 'svg'], removeOrphans);
+  copyDir(src, dest, ['jpg', 'png', 'svg', 'pdf'], removeOrphans);
 };
 
 const copyAssets = (removeOrphans) => {

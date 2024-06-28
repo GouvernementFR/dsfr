@@ -3,7 +3,7 @@ const getItem = (id) => {
     return {
         id: `summary-link-${String(id).replace('.', '-')}`,
         href: `#anchor-${id}`,
-        label: String(id).indexOf('6') > -1 ? lorem() : `Titre du lien ${id}`
+        label: String(id).indexOf('6') > -1 ? lorem() : `Libellé du lien ${id}`
     }
 };
 
