@@ -46,6 +46,7 @@ class EJSRenderer {
   }
 
   add (names, template) {
+    if (names.some(name => this._templates.find(tpl => tpl.names.includes(name)))) throw new Error(`One of the template names [${names}] already exists`);
     const tpl = new Template(names, template);
     this._templates.push(tpl);
   }
