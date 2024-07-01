@@ -1,0 +1,6 @@
+import { Meta, Canvas, Story } from '@storybook/blocks'
+import * as UploadStories from '../upload.stories.js';
+
+<Meta of={UploadStories} tags={['sort:400']} />
+
+<Canvas of={UploadStories.MultipleStory} sourceState={'shown'} className={'hide-src-toggle'}/>
