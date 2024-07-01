@@ -1,0 +1,6 @@
+import { Meta, Canvas, Story } from '@storybook/blocks'
+import * as TagStories from '../tag.stories.js';
+
+<Meta of={TagStories} tags={['sort:500']}/>
+
+<Canvas of={TagStories.DismissibleStory} sourceState={'shown'} />

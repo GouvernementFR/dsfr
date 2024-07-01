@@ -9,7 +9,11 @@
 
 * tag.disabled (boolean, optional) : si true, composant désactivé
 
-* tag.clickable (bool, optional) : si true, rend cliquable le composant
+* tag.type (string, optional) : type de tag
+  valeurs {default: non cliquable} :
+  * clickable : tag avec lien
+  * pressable : tag activable
+  * dismissible : tag supprimable
 
 * tag.button (boolean, optional) : si true, le composant est un bouton
 
@@ -17,16 +21,9 @@
   valeurs {default: md} :
   * sm : tag taille small
 
-* tag.accent (string, optional) : accentuation du composant
-
 * tag.icon (string, optional) : icon du lien
 
 * tag.accent (string, optional) : couleur d'accentuation
-
-* tag.iconPlace (string, optionnal) : emplacement de l'icone
-  si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans libellé
-  valeurs :
-  * left : icone à gauche du label
 
 * tag.classes (array, optional) : Classes suplémentaires sur le bouton
 

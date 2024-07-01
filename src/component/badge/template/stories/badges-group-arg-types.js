@@ -132,8 +132,6 @@ const badgesGroupProps = (args) => {
     badges: badges
   };
 
-  console.log('badgesGroup', badgesGroup);
-
   return badgesGroup;
 };
 
