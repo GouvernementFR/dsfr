@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as TagStories from '../tag.stories.js';
+
+<Meta of={TagStories} tags={['sort:10']} />
+
+<Canvas of={TagStories.ControlsStory} sourceState={'shown'} />
+
+<Controls of={TagStories.ControlsStory} />
