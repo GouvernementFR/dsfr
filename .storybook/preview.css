@@ -1,0 +1,11 @@
+.docs-story {
+  background-color: var(--background-default-grey);
+}
+
+.hide-src-toggle .docblock-code-toggle {
+  display: none !important;
+}
+
+.sbdocs-wrapper {
+  padding-top: 0 !important;
+}

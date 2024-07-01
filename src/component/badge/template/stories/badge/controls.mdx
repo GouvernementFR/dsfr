@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as BadgeStories from '../badge.stories.js';
+
+<Meta of={BadgeStories} tags={['sort:10']} />
+
+<Canvas of={BadgeStories.ControlsStory} sourceState={'shown'} />
+
+<Controls of={BadgeStories.ControlsStory} />

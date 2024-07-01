@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as LinkStories from '../link.stories.js';
+
+<Meta of={LinkStories} tags={['sort:10']} />
+
+<Canvas of={LinkStories.ControlsStory} sourceState={'shown'} className={'hide-src-toggle'}/>
+
+<Controls of={LinkStories.ControlsStory} />

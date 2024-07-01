@@ -20,6 +20,10 @@
     outline: 1px solid;
   }
 
+  @include has-icon {
+    @include before('');
+  }
+
   &--sm {
     @include nest-badge(sm, left, null, null, false);
   }
