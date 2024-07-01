@@ -32,24 +32,24 @@ export const StatusStory = {
   tags: ['!dev'],
   render: () => renders([
     {
-      tyoe: 'status',
-      status: 'success'
+      type: 'status',
+      status1: 'success'
     },
     {
-      tyoe: 'status',
-      status: 'warning',
+      type: 'status',
+      status: 'warning'
     },
     {
-      tyoe: 'status',
-      status: 'error',
+      type: 'status',
+      status: 'error'
     },
     {
-      tyoe: 'status',
-      status: 'info',
+      type: 'status',
+      status: 'info'
     },
     {
-      tyoe: 'status',
-      status: 'new',
+      type: 'status',
+      status: 'new'
     }
   ])
 };
@@ -58,27 +58,27 @@ export const StatusNoIconStory = {
   tags: ['!dev'],
   render: () => renders([
     {
-      tyoe: 'status',
+      type: 'status',
       status: 'success',
       hasNoIcon: true
     },
     {
-      tyoe: 'status',
+      type: 'status',
       status: 'warning',
       hasNoIcon: true
     },
     {
-      tyoe: 'status',
+      type: 'status',
       status: 'error',
       hasNoIcon: true
     },
     {
-      tyoe: 'status',
+      type: 'status',
       status: 'info',
       hasNoIcon: true
     },
     {
-      tyoe: 'status',
+      type: 'status',
       status: 'new',
       hasNoIcon: true
     }

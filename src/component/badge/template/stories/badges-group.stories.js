@@ -20,42 +20,30 @@ export const ControlsStory = {
 
 export const MdStory = {
   tags: ['!dev'],
-  args: {
-    badges: [
-      {
-        type: 'accent',
-        accent: 'green-bourgeon'
-      },
-      {
-        type: 'accent',
-        accent: 'yellow-tournesol'
-      }
-      ,
-      {
-        type: 'accent',
-        accent: 'blue-ecume'
-      }
-    ]
-  }
+  render: () => renders([
+    {
+      size: 'md',
+      type1: 'accent',
+      accent1: 'green-bourgeon',
+      type2: 'accent',
+      accent2: 'green-menthe',
+      type3: 'accent',
+      accent3: 'blue-ecume'
+    }
+  ])
 };
 
 export const SmStory = {
   tags: ['!dev'],
-  args: {
-    size: 'sm',
-    badges: [
-      {
-        type: 'accent',
-        accent: 'green-bourgeon'
-      },
-      {
-        type: 'accent',
-        accent: 'yellow-tournesol'
-      },
-      {
-        type: 'accent',
-        accent: 'blue-ecume'
-      }
-    ]
-  }
+  render: () => renders([
+    {
+      size: 'sm',
+      type1: 'accent',
+      accent1: 'green-bourgeon',
+      type2: 'accent',
+      accent2: 'green-menthe',
+      type3: 'accent',
+      accent3: 'blue-ecume'
+    }
+  ])
 };

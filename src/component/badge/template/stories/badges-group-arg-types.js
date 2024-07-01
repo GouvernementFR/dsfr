@@ -16,7 +16,7 @@ const getBadgeArgTypes = (id) => {
 
   badge[`type${id}`] = {
     ...badgeArgTypes.type,
-    table: {...table.table, subcategory: 'type'}
+    table: { ...table.table, subcategory: 'type' }
   };
 
   badge[`id${id}`] = { ...badgeArgTypes.id, ...table };
@@ -24,31 +24,31 @@ const getBadgeArgTypes = (id) => {
   badge[`accent${id}`] = {
     if: { arg: 'type', eq: 'accent' },
     ...badgeArgTypes.accent,
-    table: {...table.table, subcategory: 'type'}
+    table: { ...table.table, subcategory: 'type' }
   };
 
   badge[`status${id}`] = {
     if: { arg: 'type', eq: 'status' },
     ...badgeArgTypes.status,
-    table: {...table.table, subcategory: 'type'}
+    table: { ...table.table, subcategory: 'type' }
   };
 
   badge[`icon${id}`] = {
     if: { arg: 'hasIcon', eq: true },
     ...badgeArgTypes.icon,
-    table: {...table.table, subcategory: 'type'}
+    table: { ...table.table, subcategory: 'type' }
   };
 
   badge[`hasIcon${id}`] = {
     if: { arg: 'type', eq: 'accent' },
     ...badgeArgTypes.hasIcon,
-    table: {...table.table, subcategory: 'type'}
+    table: { ...table.table, subcategory: 'type' }
   };
 
   badge[`hasNoIcon${id}`] = {
     if: { arg: 'type', eq: 'status' },
     ...badgeArgTypes.hasNoIcon,
-    table: {...table.table, subcategory: 'type'}
+    table: { ...table.table, subcategory: 'type' }
   };
 
   badge[`ellipsis${id}`] = {
