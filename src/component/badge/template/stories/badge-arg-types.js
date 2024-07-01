@@ -1,7 +1,7 @@
 
 const iconArgTypes = {
   hasIcon: {
-    if: { arg: 'type', eq: 'accent' },
+    if: { arg: 'type', neq: 'status' },
     control: 'boolean',
     description: 'Le badge a une icône',
     table: {
