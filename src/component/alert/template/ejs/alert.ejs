@@ -36,12 +36,14 @@ let title = alert.title || false;
 let text = alert.text || false;
 let type = alert.type || false;
 let size = alert.size || "md";
+const icon = alert.icon || false;
 let classes = alert.classes || [];
 const markup = alert.markup || 'h3';
 let attributes = alert.attributes || {};
 if (alert.id) attributes.id = alert.id;
 classes.push(prefix + '-alert');
 if (type) classes.push(prefix + '-alert--' + type);
+if (icon) classes.push(`${prefix}-icon-${icon}`);
 if (alert.alert) attributes.role = "alert";
 if (size !== "md") classes.push(prefix + '-alert--' + size);
  %>
@@ -56,7 +58,7 @@ if (size !== "md") classes.push(prefix + '-alert--' + size);
     <p><%= text %></p>
   <% } %>
 
-  <% if (alert.dismissable) { %>
+  <% if (alert.dismissible) { %>
     <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...alert.button}}) %>
   <% } %>
 </div>

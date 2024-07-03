@@ -1,6 +1,7 @@
 import { EJSRenderer } from './core/template/stories/ejs-renderer';
 import { corePartials } from './core/template/stories/partials';
 import { accordionPartials } from './component/accordion/template/stories/partials';
+import { alertPartials } from './component/alert/template/stories/partials';
 import { badgePartials } from './component/badge/template/stories/partials';
 import { buttonPartials } from './component/button/template/stories/partials';
 import { linkPartials } from './component/link/template/stories/partials';
@@ -11,6 +12,7 @@ const ejsRenderer = new EJSRenderer();
 
 corePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 accordionPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+alertPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 badgePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 buttonPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
