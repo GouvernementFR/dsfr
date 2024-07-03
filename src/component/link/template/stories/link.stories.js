@@ -23,22 +23,20 @@ export const DefaultStory = {
   args: {}
 };
 
-export const IconLeftStory = {
+export const IconStory = {
   tags: ['!dev'],
-  args: {
-    hasIcon: true,
-    icon: 'checkbox-line',
-    iconPlace: 'left'
-  }
-};
-
-export const IconRightStory = {
-  tags: ['!dev'],
-  args: {
-    hasIcon: true,
-    icon: 'checkbox-line',
-    iconPlace: 'right'
-  }
+  render: () => renders([
+    {
+      hasIcon: true,
+      icon: 'arrow-left-line',
+      iconPlace: 'left'
+    },
+    {
+      hasIcon: true,
+      icon: 'arrow-right-line',
+      iconPlace: 'right'
+    }
+  ])
 };
 
 export const SizeStory = {
@@ -63,9 +61,19 @@ export const DisabledStory = {
   }
 };
 
+export const DownloadStory = {
+  tags: ['!dev'],
+  args: {
+    label: 'Télécharger le document lorem ipsum sit dolores amet',
+    href: '/example/img/image.jpg',
+    download: true,
+    detail: 'JPG – 61,88 ko'
+  }
+};
+
 export const ExternalStory = {
   tags: ['!dev'],
   args: {
-    target: 'blank'
+    blank: true
   }
 };
