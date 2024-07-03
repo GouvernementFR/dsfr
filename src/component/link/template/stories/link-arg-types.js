@@ -50,6 +50,45 @@ const linkArgTypes = {
     control: 'boolean',
     description: 'Le lien est désactivé'
   },
+  blank: {
+    control: 'boolean',
+    description: 'Si true, target prend la valeur _blank, sinon _self'
+  },
+  href: {
+    control: 'text',
+    description: 'Adresse url du lien'
+  },
+  download: {
+    control: 'boolean',
+    description: 'Si true, lien de téléchargement',
+    table: {
+      category: 'download'
+    }
+  },
+  detail: {
+    if: { arg: 'download', eq: true },
+    control: 'text',
+    description: 'Détail du lien de téléchargement',
+    table: {
+      category: 'download'
+    }
+  },
+  hreflang: {
+    if: { arg: 'download', eq: true },
+    control: 'text',
+    description: 'Code langue du fichier à télécharger',
+    table: {
+      category: 'download'
+    }
+  },
+  assess: {
+    if: { arg: 'download', eq: true },
+    control: 'text',
+    description: 'si true, ajoute l\'attribut permettant le remplissage automatique des informations du fichier à télécharger. Si string, ajoute l\'attribut avec la valeur de la string (ex: "bytes" pour les poids en bytes)',
+    table: {
+      category: 'download'
+    }
+  },
   ...iconArgTypes
 };
 
@@ -57,12 +96,16 @@ const linkArgs = {
   label: 'libellé du lien',
   size: 'md',
   disabled: false,
+  download: false,
+  detail: '',
+  hreflang: '',
   id: '',
   hasIcon: false,
   icon: 'checkbox-line',
   iconPlace: 'left',
   href: '#',
-  target: 'self'
+  assess: '',
+  blank: false
 };
 
 const linkProps = (args) => {
@@ -71,14 +114,23 @@ const linkProps = (args) => {
     size: args.size || linkArgs.size,
     id: args.id || undefined,
     disabled: args.disabled,
-    href: args.href || undefined,
-    blank: args.target === 'blank',
-    self: args.target === 'self'
+    href: args.href || linkArgs.href,
+    download: args.download || linkArgs.download,
+    detail: args.detail || linkArgs.detail,
+    hreflang: args.hreflang || linkArgs.hreflang,
+    blank: args.blank || linkArgs.blank,
+    self: !args.blank || undefined
   };
 
   if (args.hasIcon) {
     link.icon = args.icon;
     link.iconPlace = args.iconPlace;
+  }
+
+  if (args.download) {
+    link.assess = args.assess || undefined;
+  } else {
+    link.assess = undefined;
   }
 
   return link;

@@ -1,0 +1,6 @@
+import { Meta, Canvas, Story } from '@storybook/blocks'
+import * as QuoteStories from '../quote.stories.js';
+
+<Meta of={QuoteStories} tags={['sort:400']} />
+
+<Canvas of={QuoteStories.AccentStory} sourceState={'shown'} className={'hide-src-toggle'}/>
