@@ -1,0 +1,6 @@
+import { Meta, Canvas, Story } from '@storybook/blocks'
+import * as BreadcrumbStories from '../breadcrumb.stories.js';
+
+<Meta of={BreadcrumbStories} tags={['sort:50']} />
+
+<Canvas of={BreadcrumbStories.DefaultStory} sourceState={'shown'} className={'hide-src-toggle'}/>
