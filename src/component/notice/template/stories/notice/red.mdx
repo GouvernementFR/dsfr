@@ -1,0 +1,6 @@
+import { Meta, Canvas, Story } from '@storybook/blocks'
+import * as NoticeStories from '../notice.stories.js';
+
+<Meta of={NoticeStories} tags={['sort:500']} />
+
+<Canvas of={NoticeStories.RedStory} sourceState={'shown'} className={'hide-src-toggle'}/>

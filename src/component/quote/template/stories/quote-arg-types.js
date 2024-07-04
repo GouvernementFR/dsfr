@@ -111,7 +111,12 @@ const quoteProps = (args) => {
   if (args.author !== null) quote.author = args.author || quoteArgs.author;
   if (args.sources.length) quote.sources = args.sources || quoteArgs.sources;
   if (args.accent !== 'défaut') quote.accent = args.accent || quoteArgs.accent;
-  if (args.image !== null) quote.image = { src: args.src, alt: args.alt } || quoteArgs.image;
+  if (args.image !== null) {
+    quote.image = {
+      src: args.src || quoteArgs.src,
+      alt: args.alt || quoteArgs.alt
+    };
+  };
 
   return quote;
 };

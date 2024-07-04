@@ -13,6 +13,8 @@
 
 %>
 
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 const button = locals.button || {};
 
@@ -25,4 +27,4 @@ button.label = button.label || 'Paramètres d\'affichage';
 button.title = button.title || button.label || 'Paramètres d\'affichage';
 
 %>
-<%- include('./button', button);%>
+<%- include('./button.ejs', button);%>
