@@ -40,7 +40,7 @@ const statusArgTypes = {
         error: 'Erreur',
         info: 'Information',
         new: 'Nouveauté'
-      },
+      }
     },
     description: 'Statut du badge',
     options: ['success', 'warning', 'error', 'info', 'new'],
