@@ -5,6 +5,7 @@ import { alertPartials } from './component/alert/template/stories/partials';
 import { badgePartials } from './component/badge/template/stories/partials';
 import { breadcrumbPartials } from './component/breadcrumb/template/stories/partials';
 import { buttonPartials } from './component/button/template/stories/partials';
+import { calloutPartials } from './component/callout/template/stories/partials';
 import { linkPartials } from './component/link/template/stories/partials';
 import { noticePartials } from './component/notice/template/stories/partials';
 import { quotePartials } from './component/quote/template/stories/partials';
@@ -18,6 +19,7 @@ accordionPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial
 alertPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 badgePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 breadcrumbPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+calloutPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 buttonPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 noticePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
