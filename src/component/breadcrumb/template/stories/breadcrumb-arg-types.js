@@ -64,13 +64,9 @@ const breadcrumbArgTypes = {
 const getSegmentArgs = (id) => {
   const segment = {};
 
-  segment[`id${id}`] = `segment-${id}`;
-  segment[`label${id}`] = `Segment ${id}: lorem ipsum`;
-  let href = '';
-  for (let i = 1; i <= id; i++) {
-    href += `/segment${i}`;
-  }
-  segment[`href${id}`] = href;
+  segment.id = `segment-${id}`;
+  segment.label = `Segment ${id}: lorem ipsum`;
+  segment.href = '#';
 
   return segment;
 };
@@ -79,10 +75,14 @@ const breadcrumbArgs = {
   id: '',
   buttonLabel: 'Voir le fil d\'arianne',
   segments: [
+    {
+      id: 'segment-1',
+      label: 'Accueil',
+      href: '/#'
+    },
     getSegmentArgs(1),
     getSegmentArgs(2),
-    getSegmentArgs(3),
-    getSegmentArgs(4)
+    getSegmentArgs(3)
   ]
 };
 
@@ -93,9 +93,9 @@ const breadcrumbProps = (args) => {
     const segmentArgs = args.segments[i];
     const segmentBreadcrumbArgs = breadcrumbArgs.segments[i];
     const link = {
-      id: Object.values(segmentArgs)[0] || undefined,
-      label: Object.values(segmentArgs)[1] || Object.values(segmentBreadcrumbArgs)[1],
-      href: Object.values(segmentArgs)[2] || Object.values(segmentBreadcrumbArgs)[2]
+      id: segmentArgs.id || undefined,
+      label: segmentArgs.label || segmentBreadcrumbArgs.label,
+      href: segmentArgs.href || segmentBreadcrumbArgs.href
     };
 
     segments.push(link);
@@ -106,8 +106,6 @@ const breadcrumbProps = (args) => {
     button: args.buttonLabel || breadcrumbArgs.buttonLabel,
     segments: segments
   };
-
-  console.log(breadcrumb)
 
   return breadcrumb;
 };
