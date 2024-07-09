@@ -93,7 +93,7 @@ const tagArgTypes = {
         default: 'Défaut',
         clickable: 'Cliquable',
         pressable: 'Sélectionnable',
-        dismissible: 'Supprimable',
+        dismissible: 'Supprimable'
       }
     },
     description: 'Type du tag<br>Valeurs :<br>- Défaut : tag non cliquable pour donner une information sur un contenu<br>- Cliquable : Le tag cliquable donne accès à une page avec des contenus associés à ce tag<br>- Sélectionnable : Le tag sélectionnable permet d’activer/désactiver un filtre<br>- Supprimable : Le tag supprimable permet de désactiver un filtre',

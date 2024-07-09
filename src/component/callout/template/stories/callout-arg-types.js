@@ -3,6 +3,7 @@ const accentArgTypes = {
     control: { type: 'select' },
     description: 'Couleur d\'accentuation',
     options: [
+      'défaut',
       'green-tilleul-verveine',
       'green-bourgeon',
       'green-emeraude',
@@ -38,6 +39,13 @@ const calloutArgTypes = {
     type: {
       value: 'string',
       required: true
+    }
+  },
+  id: {
+    control: 'text',
+    description: 'Attribut id de la mise en avant',
+    type: {
+      value: 'string'
     }
   },
   hasIcon: {
@@ -97,9 +105,10 @@ const calloutProps = (args) => {
     id: args.id || undefined,
     title: args.title === '' ? undefined : args.title || calloutArgs.title,
     text: args.text || calloutArgs.text,
-    markup: args.titleMarkup || calloutArgs.titleMarkup,
-    accent: args.accent || calloutArgs.accent
+    markup: args.titleMarkup || calloutArgs.titleMarkup
   };
+
+  if (args.accent !== 'défaut') callout.accent = args.accent || calloutArgs.accent;
 
   if (args.hasButton) {
     callout.button = {
@@ -111,7 +120,6 @@ const calloutProps = (args) => {
     callout.icon = args.icon || calloutArgs.icon;
   }
 
-  console.log('calloutProps', callout);
   return callout;
 };
 
