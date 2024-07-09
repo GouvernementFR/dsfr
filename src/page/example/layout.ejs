@@ -6,7 +6,7 @@ const search = locals.search || false;
     <h4><%= title %></h4>
 <% } %>
 <div class="<%= prefix %>-mb-6v" >
-  <%- include('../../component/header/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: search, navigation: true }}, true); %>
+  <%- include('../../component/header/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br role="presentation">officiel'}, service:true, links:true, search: search, navigation: true }}, true); %>
 
   <% if (locals.breadcrumb !== false) { %>
     <% const breadcrumb = {
