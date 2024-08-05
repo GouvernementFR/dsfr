@@ -2990,7 +2990,7 @@ __metadata:
 
 "@gouvfr/dsfr-cli@file:../dsfr-cli::locator=%40gouvfr%2Fdsfr%40workspace%3A.":
   version: 0.0.3
-  resolution: "@gouvfr/dsfr-cli@file:../dsfr-cli#../dsfr-cli::hash=40abca&locator=%40gouvfr%2Fdsfr%40workspace%3A."
+  resolution: "@gouvfr/dsfr-cli@file:../dsfr-cli#../dsfr-cli::hash=a20cb3&locator=%40gouvfr%2Fdsfr%40workspace%3A."
   dependencies:
     del: "npm:^7.1.0"
     path: "npm:^0.12.7"
@@ -2999,7 +2999,7 @@ __metadata:
     yargs: "npm:^17.7.2"
   bin:
     dsfr: ./index.js
-  checksum: 10c0/8caebad976a13fa3dfbd0a0b082d1cb501271cfc20a02c3c29da06c4e65d73cf4263df6675a7f16f78625973027a666af6d4b735ee9e545af266b92639628677
+  checksum: 10c0/64872cfe60f4a6909416cd23f498835e2f093e766b653ab58b6be4d8b889b65fcda184ba729a76127ed07bc0b77ab4a82b514405ee8f8f82f378407b278b0e76
   languageName: node
   linkType: hard
 
