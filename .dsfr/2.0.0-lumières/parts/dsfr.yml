@@ -1,0 +1,25 @@
+id: dsfr
+relative: dsfr/
+path: src/dsfr/
+isDraft: false
+isDetached: false
+children:
+  - analytics
+  - component
+  - core
+  - utility
+ascendants: []
+depth: 0
+descendants:
+  - analytics
+  - component
+  - fr-button
+  - core
+  - action
+  - native
+  - anchor
+  - button
+  - input
+  - input-button
+  - reflector
+  - utility

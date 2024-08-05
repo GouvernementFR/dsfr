@@ -1,9 +1,0 @@
-use:
-  label: Use and organization
-  segment: use-and-organization
-  scope:
-    label: Scope of application
-    segment: scope-of-application
-  approval:
-    label: Approval procedure
-    segment: approval-procedure

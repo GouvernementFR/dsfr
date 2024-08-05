@@ -1,0 +1,11 @@
+id: analytics
+relative: dsfr/analytics/
+path: src/dsfr/analytics/
+isDraft: false
+isDetached: true
+parent: dsfr
+children: []
+ascendants:
+  - dsfr
+depth: 1
+descendants: []

@@ -1,0 +1,14 @@
+id: input-button
+relative: dsfr/core/native/input/input-button/
+path: src/dsfr/core/native/input/input-button/
+isDraft: false
+isDetached: false
+parent: input
+children: []
+ascendants:
+  - input
+  - native
+  - core
+  - dsfr
+depth: 4
+descendants: []

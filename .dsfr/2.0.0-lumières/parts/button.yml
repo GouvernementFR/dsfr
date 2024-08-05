@@ -1,0 +1,13 @@
+id: button
+relative: dsfr/core/native/button/
+path: src/dsfr/core/native/button/
+isDraft: false
+isDetached: false
+parent: native
+children: []
+ascendants:
+  - native
+  - core
+  - dsfr
+depth: 3
+descendants: []

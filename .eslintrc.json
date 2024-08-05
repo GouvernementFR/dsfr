@@ -1,10 +1,16 @@
 {
-  "extends": "standard",
+  "extends": [
+    "standard",
+    "plugin:storybook/recommended"
+  ],
   "env": {
     "browser": true
   },
   "rules": {
-    "semi": [2, "always"],
+    "semi": [
+      2,
+      "always"
+    ],
     "no-template-curly-in-string": "off"
   }
 }

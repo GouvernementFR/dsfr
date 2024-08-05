@@ -1,0 +1,21 @@
+id: core
+relative: dsfr/core/
+path: src/dsfr/core/
+isDraft: false
+isDetached: false
+parent: dsfr
+children:
+  - action
+  - native
+  - reflector
+ascendants:
+  - dsfr
+depth: 1
+descendants:
+  - action
+  - native
+  - anchor
+  - button
+  - input
+  - input-button
+  - reflector

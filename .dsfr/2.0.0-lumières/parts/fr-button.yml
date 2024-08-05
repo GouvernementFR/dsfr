@@ -1,0 +1,12 @@
+id: fr-button
+relative: dsfr/component/fr-button/
+path: src/dsfr/component/fr-button/
+isDraft: false
+isDetached: false
+parent: component
+children: []
+ascendants:
+  - component
+  - dsfr
+depth: 2
+descendants: []

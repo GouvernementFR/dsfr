@@ -1,0 +1,12 @@
+id: reflector
+relative: dsfr/core/reflector/
+path: src/dsfr/core/reflector/
+isDraft: false
+isDetached: false
+parent: core
+children: []
+ascendants:
+  - core
+  - dsfr
+depth: 2
+descendants: []
