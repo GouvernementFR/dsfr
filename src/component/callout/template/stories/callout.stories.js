@@ -46,4 +46,3 @@ export const IconAndButtonStory = {
     buttonLabel: 'En savoir plus'
   }
 };
-
