@@ -10,7 +10,9 @@
 
 * connect.type (string, optional) type du bouton connect
 
-* connect.lang (string, optional) langue du bouton connect
+* connect.login (string, required) : texte "Se connecter avec" du bouton
+
+* connect.brand (string, required) : texte "FranceConnect" du bouton
 
 * connect.disabled (boolean, optional) : si valeur true, bouton désactivé
 
@@ -27,7 +29,7 @@ const connectClasses = [];
 const connectAttrs = {};
 if (connect.id) connectAttrs.id = connect.id;
 const markup = connect.markup || 'button';
-if (markup === 'a') connectAttrs.href = '';
+if (markup === 'a' && !connect.disabled) connectAttrs.href = '';
 connectClasses.push(prefix + '-connect');
 
 switch(connect.type) {
@@ -51,7 +53,7 @@ if (!locals.isStandalone) {
 <div class="<%= prefix %>-connect-group">
 <% } %>
 <%
-if (connect.disabled === true) connectAttrs.disabled = '';
+if (connect.disabled === true && markup !== 'a') connectAttrs.disabled = '';
 %>
 
 <<%= markup %> <%- includeClasses(connectClasses) %> <%- includeAttrs(connectAttrs); %> >

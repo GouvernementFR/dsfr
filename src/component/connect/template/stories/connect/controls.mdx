@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as ConnectStories from '../connect.stories.js';
+
+<Meta of={ConnectStories} tags={['sort:10']} />
+
+<Canvas of={ConnectStories.ControlsStory} sourceState={'shown'}/>
+
+<Controls of={ConnectStories.ControlsStory} />

@@ -17,12 +17,3 @@
   <use href="#artwork-background" class="fr-artwork-background"/>
   <use href="#artwork-motif" class="fr-artwork-motif"/>
 </svg>
-
-node picto.js 'myproject/pictogram/'
-
-while g
-  le stock dans un tab avec son id
-  le transform en symbole et retire sa classe
-end while
-
-inject a la fin du svf les use de chaque elem du tab
