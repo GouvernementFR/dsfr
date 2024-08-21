@@ -1,14 +1,14 @@
-import { renderLogo } from './logo';
-import { logoArgs, logoArgTypes, logoProps } from './logo-arg-types';
+import { renderContent } from './content';
+import { contentArgs, contentArgTypes, contentProps } from './content-arg-types';
 
-const render = (args) => renderLogo({ logo: logoProps(args) });
+const render = (args) => renderContent({ content: contentProps(args) });
 
 export default {
-  id: 'logo',
-  title: 'DSFR/Component/Logo',
+  id: 'content',
+  title: 'DSFR/Component/Content',
   render: render,
-  argTypes: logoArgTypes,
-  args: logoArgs
+  argTypes: contentArgTypes,
+  args: contentArgs
 };
 
 export const ControlsStory = {

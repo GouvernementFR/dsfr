@@ -1,7 +1,8 @@
 import action from '../ejs/action/action.ejs?raw';
-import img from '../ejs/media/img.ejs?raw';
 import responsiveImg from '../ejs/media/responsive-img.ejs?raw';
+import responsiveVid from '../ejs/media/responsive-vid.ejs?raw';
 import paragraph from '../ejs/typography/paragraph.ejs?raw';
+import img from '../ejs/media/img.ejs?raw';
 
 export const corePartials = [
   {
@@ -13,11 +14,15 @@ export const corePartials = [
     partial: paragraph
   },
   {
-    names: ['img'],
-    partial: img
-  },
-  {
     names: ['responsive-img'],
     partial: responsiveImg
+  },
+  {
+    names: ['responsive-vid'],
+    partial: responsiveVid
+  },
+  {
+    names: ['img'],
+    partial: img
   }
 ];

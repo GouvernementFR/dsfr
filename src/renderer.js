@@ -7,6 +7,7 @@ import { breadcrumbPartials } from './component/breadcrumb/template/stories/part
 import { buttonPartials } from './component/button/template/stories/partials';
 import { calloutPartials } from './component/callout/template/stories/partials';
 import { connectPartials } from './component/connect/template/stories/partials';
+import { contentPartials } from './component/content/template/stories/partials';
 import { highlightPartials } from './component/highlight/template/stories/partials';
 import { linkPartials } from './component/link/template/stories/partials';
 import { logoPartials } from './component/logo/template/stories/partials';
@@ -24,6 +25,7 @@ badgePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 breadcrumbPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 calloutPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 connectPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+contentPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 highlightPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 buttonPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
