@@ -20,6 +20,7 @@
  let media = locals.media || {};
  const mediaClasses = media.classes || [];
  mediaClasses.push(`${prefix}-responsive-img`);
+
  switch (media.ratio) {
      case '32x9':
      case '16x9':
@@ -34,4 +35,3 @@
  %>
 
 <%- include('img.ejs', {media: {...media, classes: mediaClasses}}); %>
-
