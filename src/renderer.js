@@ -13,6 +13,7 @@ import { linkPartials } from './component/link/template/stories/partials';
 import { logoPartials } from './component/logo/template/stories/partials';
 import { noticePartials } from './component/notice/template/stories/partials';
 import { quotePartials } from './component/quote/template/stories/partials';
+import { tabPartials } from './component/tab/template/stories/partials';
 import { tagPartials } from './component/tag/template/stories/partials';
 import { tooltipPartials } from './component/tooltip/template/stories/partials';
 
@@ -32,6 +33,7 @@ linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 logoPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 noticePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 quotePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+tabPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tagPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tooltipPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 
