@@ -185,8 +185,6 @@ const buttonsGroupProps = (args) => {
     buttonsGroup.iconPlace = args.iconPlace;
   }
 
-  console.log('buttonsGroup', buttonsGroup);
-
   return buttonsGroup;
 };
 
