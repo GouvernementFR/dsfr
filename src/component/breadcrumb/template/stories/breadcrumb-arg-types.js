@@ -76,7 +76,7 @@ const breadcrumbArgs = {
   buttonLabel: 'Voir le fil d\'arianne',
   segments: [
     {
-      id: 'segment-1',
+      id: 'segment-0',
       label: 'Accueil',
       href: '/#'
     },
