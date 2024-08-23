@@ -5,6 +5,7 @@
 	** summaryList[].list (array, required) : Tableau de liens enfants (href, label)
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 <% let summaryList = locals.summaryList || []; %>
 <ol>
   <% for (let i = 0; i < summaryList.length; i++) {
@@ -12,6 +13,6 @@
     if (!item.list) item.list = undefined;
   %>
 
-  <%- include('./item', {summaryItem: item}); %>
+  <%- include('./summary-item.ejs', {summaryItem: item}); %>
   <% } %>
 </ol>
