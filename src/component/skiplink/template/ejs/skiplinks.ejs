@@ -8,17 +8,15 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% let skiplink = locals.skiplink || {}; %>
 
+<% let skiplink = locals.skiplink || {}; %>
 <div class="<%= prefix %>-skiplinks">
   <nav role="navigation" aria-label="Accès rapide" class="<%= prefix %>-container">
     <ul class="<%= prefix %>-skiplinks__list">
-      <%
-      for (const item of skiplink.items) {
-      %>
-      <li>
-        <a <%- includeAttrs(item.attributes) %> class="<%= prefix%>-link" href="<%= item.href %>" ><%= item.label %></a>
-      </li>
+      <% for (const item of skiplink.items) { %>
+        <li>
+          <a <%- includeAttrs(item.attributes) %> class="<%= prefix %>-link" href="<%= item.href %>" ><%= item.label %></a>
+        </li>
       <% } %>
     </ul>
   </nav>
