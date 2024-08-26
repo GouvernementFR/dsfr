@@ -16,6 +16,7 @@ import { noticePartials } from './component/notice/template/stories/partials';
 import { quotePartials } from './component/quote/template/stories/partials';
 import { tagPartials } from './component/tag/template/stories/partials';
 import { tooltipPartials } from './component/tooltip/template/stories/partials';
+import { transcriptionPartials } from './component/transcription/template/stories/partials';
 
 const ejsRenderer = new EJSRenderer();
 
@@ -36,5 +37,6 @@ noticePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 quotePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tagPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tooltipPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+transcriptionPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 
 export default ejsRenderer;
