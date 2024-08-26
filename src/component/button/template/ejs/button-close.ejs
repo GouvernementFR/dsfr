@@ -19,14 +19,13 @@
 const button = locals.button || {};
 
 button.markup = 'button';
-if (!button.classes) button.classes = [];
+let buttonClasses = button.classes || [];
+buttonClasses.push(prefix + '-btn--close');
 if (!button.attributes) button.attributes = {};
-button.classes.push(prefix + '-btn--close');
 button.label = button.label || 'Fermer';
 button.title = button.title || button.label || 'Fermer';
 button.id = button.id || uniqueId('button');
 if (button.closeId) button.attributes['aria-controls'] = button.closeId;
-
 %>
 
-<%- include('./button.ejs', button);%>
+<%- include('./button.ejs', {button: {...button, classes: buttonClasses }});%>

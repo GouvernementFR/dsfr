@@ -7,6 +7,7 @@
   ** connect.link.href (string, required) : lien vers france connect
   ** connect.link.label (string, required) : Libellé "Qu'est ce que france connect ?"
   ** connect.link.attributes (object, optionnal) : Attributs supplémentaire sur le lien (ex: {target:'_blank'})
+  ** connect.link.newWindow (string, optionnal) : Libellé du lien pour ouvrir dans une nouvelle fenêtre
 
 * connect.type (string, optional) type du bouton connect
 
@@ -43,10 +44,11 @@ switch(connect.type) {
 }
 
 const linkAttributes = connect.link.attributes || {};
+newWindowLabel = connect.link.newWindow || getText('blank', 'global');
 linkAttributes.id = connect.link.id || uniqueId('connect-link');
 linkAttributes.target = '_blank';
 linkAttributes.rel = 'noopener';
-linkAttributes.title = `${connect.link.label} - nouvelle fenêtre`;
+linkAttributes.title = `${connect.link.label} - ` + newWindowLabel;
 
 if (!locals.isStandalone) {
 %>

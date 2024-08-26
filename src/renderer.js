@@ -11,6 +11,7 @@ import { contentPartials } from './component/content/template/stories/partials';
 import { highlightPartials } from './component/highlight/template/stories/partials';
 import { linkPartials } from './component/link/template/stories/partials';
 import { logoPartials } from './component/logo/template/stories/partials';
+import { modalPartials } from './component/modal/template/stories/partials';
 import { noticePartials } from './component/notice/template/stories/partials';
 import { quotePartials } from './component/quote/template/stories/partials';
 import { tagPartials } from './component/tag/template/stories/partials';
@@ -30,6 +31,7 @@ highlightPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial
 buttonPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 logoPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+modalPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 noticePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 quotePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tagPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));

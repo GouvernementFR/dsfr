@@ -104,6 +104,7 @@
     "stylelint-scss": "^4.4.0",
     "subset-font": "^1.6.1",
     "svgo": "^2.8.0",
+    "yaml": "^2.5.0",
     "yargs": "^17.7.1"
   },
   "peerDependencies": {
