@@ -1,33 +1,3 @@
-const getItemArgTypes = (id) => {
-  const item = {};
-
-  const table = {
-    table: {
-      category: `item${id}`
-    }
-  };
-
-  item[`label${id}`] = {
-    control: 'text',
-    description: 'Libellé du lien',
-    type: {
-      value: 'string',
-      required: true
-    },
-    ...table
-  };
-
-  item[`href${id}`] = {
-    control: 'text',
-    description: 'URL du lien',
-    type: {
-      value: 'string'
-    }
-  };
-
-  return item;
-};
-
 const summaryArgTypes = {
   title: {
     control: 'text',
