@@ -8,7 +8,7 @@ const iconArgTypes = {
   icon: {
     if: { arg: 'hasIcon', eq: true },
     control: 'text',
-    description: 'Nom de l\'iôone dans le bouton',
+    description: 'Nom de l\'icône dans le bouton',
     table: {
       category: 'icon'
     }
