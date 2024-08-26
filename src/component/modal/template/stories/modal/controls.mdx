@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as ModalStories from '../modal.stories.js';
+
+<Meta of={ModalStories} tags={['sort:10']} />
+
+<Canvas of={ModalStories.ControlsStory} sourceState={'shown'}/>
+
+<Controls of={ModalStories.ControlsStory} />
