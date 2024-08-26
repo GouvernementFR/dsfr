@@ -3,7 +3,7 @@
 
 * modal.id (string, required) : id de la modale
 
-* modal.tag (string, required) : balise de la modale (dialog, div>)
+* modal.markup (string, optional) : balise de la modale (dialog, div>)
 
 * modal.label (string, required) : Libellé du bouton de la modale
 
@@ -37,8 +37,8 @@
 
 <%
 let modal = locals.modal || {};
-let modalTag = modal.tag || 'dialog';
-const isDialog = modalTag === 'dialog';
+let modalMarkup = modal.markup || 'dialog';
+const isDialog = modalMarkup === 'dialog';
 let modalClasses = modal.classes || [];
 modalClasses.push(`${prefix}-modal`);
 
@@ -91,7 +91,7 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
 
 %>
 
-<<%= modalTag %> id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %>>
+<<%= modalMarkup %> id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %>>
   <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-md">
     <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center">
       <div <%- includeClasses(gridClasses); %>>
@@ -122,4 +122,4 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
       </div>
     </div>
   </div>
-</<%= modalTag %>>
+</<%= modalMarkup %>>
