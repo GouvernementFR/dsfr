@@ -10,6 +10,8 @@
     *** translate.languages[].locale (string, required) : Code de la langue en 2 caratères
     *** translate.languages[].active (boolean, required) : La langue qui apparait dans le bouton et en style active dans la liste (1 seule langue active)
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 const translate = locals.translate || {};
 const attributes = translate.attributes || {};
@@ -36,7 +38,6 @@ const collapseId = translate.collapseId || uniqueId('translate');
     <%- include('../../../button/template/ejs/button', {button:translateBtn}); %>
 
     <div class="<%= prefix %>-collapse <%= prefix %>-translate__menu <%= prefix %>-menu" id="<%= translate.collapseId %>">
-
         <%- include('languages.ejs', {languages: translate.languages}) %>
     </div>
   </div>
