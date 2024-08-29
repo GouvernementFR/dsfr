@@ -13,7 +13,7 @@
 const legend = locals.legend || {};
 const classes = legend.classes || [];
 classes.push(legend.sr ? `${prefix}-sr-only`: `${prefix}-fieldset__legend`);
-const attributes = { ...fieldset.attributes, id: legend.id };
+const attributes = { ...legend.attributes, id: legend.id };
 %>
 <legend <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
     <%- legend.label %>

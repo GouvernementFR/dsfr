@@ -27,7 +27,7 @@ const attributes = { ...label.attributes, 'for': label.for };
       for (let i = 0; i < label.hint.length; i++) {
         %>
         <%- include('./hint', { hint: { text: label.hint[i] } });%>
-        <% 
+        <%
       }
     } else {
     %>

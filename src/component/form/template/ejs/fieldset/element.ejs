@@ -1,13 +1,13 @@
 <%#
 # paramètres element
 
-* element.path (String, required): Chemin du template de l'élement de element
+* element.path (String, required): Chemin du template de l'élement
 
-* element.data (object, required): Paramètres de l'élément de element
+* element.data (object, required): Paramètres de l'élément
 
-* element.inline (boolean, optional) : ajoute le modifier inline sur le element
+* element.inline (boolean, optional) : ajoute le modifier inline sur l'élement
 
-* element.inlineMin (boolean, optional) : ajoute le modifier inline-min sur le element
+* element.inlineMin (boolean, optional) : ajoute le modifier inline-min sur l'élement
 
 * element.modifier (String, optional) : nom du modifieur de element, ex: 'postal' ou 'number'
 
@@ -18,11 +18,15 @@
 * element.classes (array, optional) : classes spécifiques à rajouter sur le element
 
 %>
+
+<% eval(include('../../../../../core/index.ejs')); %>
+
 <%
 let element = locals.element || {};
-const elementClass = `${prefix}-fieldset__element`
-let elementClasses = [...element.classes || [], elementClass];
-let elementAttrs = element.attributes || {};
+const elementClass = `${locals.prefix}-fieldset__element`;
+const elementClasses = element.classes || [];
+elementClasses.push(elementClass);
+const elementAttrs = element.attributes || {};
 switch (element.inline) {
   case 'md':
     elementClasses.push(`${elementClass}--inline@md`);
