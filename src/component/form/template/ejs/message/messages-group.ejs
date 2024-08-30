@@ -17,6 +17,7 @@ const classes = [...messagesGroup.classes || [], `${prefix}-messages-group`];
 const attributes = { ...messagesGroup.attributes, id: messagesGroup.id, 'aria-live': 'polite' };
 const messages = messagesGroup.messages || [];
 %>
+
 <% if (messages.length > 0 || messagesGroup.includeEmpty) { %>
 <div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %> >
     <% for (const message of messages) { %>
