@@ -76,24 +76,24 @@ if (fieldset.legend || fieldset.hint) {
 %>
 <% fieldset.includeEmptyMessagesGroup %>
 <%
-// const builder = new MessageBuilder(fieldset.id, fieldset.includeEmptyMessagesGroup);
+const builder = new MessageBuilder(fieldset.id, fieldset.includeEmptyMessagesGroup);
 
 if (fieldset.error) {
   classes.push(`${prefix}-fieldset--error`);
   attributes.role = 'group';
-  // builder.addError(fieldset.error);
+  builder.addError(fieldset.error);
 }
 if (fieldset.valid) {
   classes.push(`${prefix}-fieldset--valid`);
   attributes.role = 'group';
-  // builder.addValid(fieldset.valid);
+  builder.addValid(fieldset.valid);
 }
 
-// if (fieldset.messages) {
-//   fieldset.messages.forEach(message => builder.add(message.type, message.text, message.attributes));
-// }
+if (fieldset.messages) {
+  fieldset.messages.forEach(message => builder.add(message.type, message.text, message.attributes));
+}
 
-// if (builder.isIncluded) labelledBy.push(...builder.ids);
+if (builder.isIncluded) labelledBy.push(...builder.ids);
 
 if (fieldset.disabled === true) attributes.disabled = '';
 
@@ -102,7 +102,7 @@ if (labelledBy.length) {
   attributes['aria-labelledby'] = labelledBy.join(' ');
 }
 
-// const messagesGroup = builder.messagesGroup;
+const messagesGroup = builder.messagesGroup;
 %>
 
 <fieldset <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
@@ -112,5 +112,5 @@ if (labelledBy.length) {
   <% for (const element of fieldset.elements) { %>
     <%- include('element', { element: element }); %>
   <% } %>
-  <%- //include('../message/messages-group', { messagesGroup: messagesGroup }); %>
+  <%- include('../message/messages-group', { messagesGroup: messagesGroup }); %>
 </fieldset>

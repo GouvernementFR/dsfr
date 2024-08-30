@@ -1,6 +1,7 @@
 import pck from '../../../../package.json';
 import includes from './includes.js?raw';
 import decorator from '../../../../tool/example/decorator.ejs?raw';
+import messageBuilder from '../../../component/form/template/ejs/message/builder.js.ejs?raw';
 import i18n from '../../../../.config/i18n.json';
 import ejs from 'ejs4b/ejs';
 
@@ -14,6 +15,8 @@ ${includes}
 ${decorator.replace("<% eval(include(root + 'src/core/index.ejs')); %>", '').replace('<%- include(entry); %>', '').replace('<%', '').replace('%>', '')}
 
 locals.getText = getI18nText;
+
+${messageBuilder}
 `;
 
 class Template {

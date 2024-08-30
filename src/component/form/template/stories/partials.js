@@ -4,6 +4,8 @@ import fieldset from '../ejs/fieldset/fieldset.ejs?raw';
 import element from '../ejs/fieldset/element.ejs?raw';
 import legend from '../ejs/fieldset/legend.ejs?raw';
 import form from '../ejs/form.ejs?raw';
+import messagesGroup from '../ejs/message/messages-group.ejs?raw';
+import message from '../ejs/message/message.ejs?raw';
 
 export const formPartials = [
   {
@@ -25,6 +27,14 @@ export const formPartials = [
   {
     names: ['legend'],
     partial: legend
+  },
+  {
+    names: ['messages-group'],
+    partial: messagesGroup
+  },
+  {
+    names: ['message'],
+    partial: message
   },
   {
     names: ['form'],

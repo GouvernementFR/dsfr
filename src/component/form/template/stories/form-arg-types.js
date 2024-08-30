@@ -1,20 +1,96 @@
-const fieldsetElementsData = (type, inline) => {
+const messageArgTypes = {
+  status: {
+    control: {
+      type: 'select',
+      labels: {
+        default: 'Défaut',
+        valid: 'Succès',
+        error: 'Erreur'
+      }
+    },
+    description: 'Statut du message',
+    options: ['default', 'valid', 'error'],
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  },
+  errorMessage: {
+    if: { arg: 'status', eq: 'error' },
+    control: 'text',
+    description: 'Texte du message d\'erreur',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  },
+  validMessage: {
+    if: { arg: 'status', eq: 'valid' },
+    control: 'text',
+    description: 'Texte du message de succès',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  }
+};
+
+const fieldsetElementsData = (type) => {
   const elements = [];
   for (let i = 1; i < 4; i++) {
     elements.push({
-      type: type,
-      inline: inline || null,
-      data: {
-        id: `${type}-${i}`,
-        label: `Element ${i}`,
-        name: type,
-        value: i,
-        checked: (type === 'radio' || type === 'checkbox') && i === 2
-      }
+      id: `${type}-${i}`,
+      label: `Element ${i}`,
+      name: type,
+      value: i,
+      ...((type === 'radio' || type === 'checkbox')) && { checked: (type === 'radio' || type === 'checkbox') && i === 2 },
+      disabled: false,
+      error: undefined,
+      valid: undefined
     });
   }
 
   return elements;
+};
+
+const elementsArgTypes = {
+  elementsType: {
+    control: { type: 'select' },
+    description: 'Type d\'élements de formulaire',
+    options: ['input', 'radio', 'checkbox', 'upload'],
+    type: {
+      value: 'string',
+      required: true
+    },
+    table: { category: 'elements' }
+  },
+  checkboxesData: {
+    if: { arg: 'elementsType', eq: 'checkbox' },
+    control: { type: 'object' },
+    description: 'Paramètres des checkboxes',
+    type: {
+      value: 'array'
+    },
+    table: { category: 'elements' }
+  },
+  radiosData: {
+    if: { arg: 'elementsType', eq: 'radio' },
+    control: { type: 'object' },
+    description: 'Paramètres des radios',
+    type: {
+      value: 'array'
+    },
+    table: { category: 'elements' }
+  },
+  inputsData: {
+    if: { arg: 'elementsType', eq: 'input' },
+    control: { type: 'object' },
+    description: 'Paramètres des champs de saisie',
+    type: {
+      value: 'array'
+    },
+    table: { category: 'elements' }
+  }
 };
 
 const formArgTypes = {
@@ -39,41 +115,73 @@ const formArgTypes = {
       value: 'string'
     }
   },
-  type: {
-    control: { type: 'select' },
-    description: 'Type de formulaire',
-    options: ['input', 'radio', 'checkbox', 'upload', 'button'],
-    type: {
-      value: 'string',
-      required: true
-    }
-  },
   inline: {
     control: { type: 'boolean' },
-    description: 'Eléments en ligne',
+    description: 'Eléments du formulaire en ligne',
     type: {
       value: 'boolean'
     }
-  }
+  },
+  disabled: {
+    control: 'boolean',
+    description: 'Désactive les éléments du formulaire',
+    type: {
+      value: 'boolean'
+    }
+  },
+  ...elementsArgTypes,
+  ...messageArgTypes
 };
 
 const formArgs = {
   id: 'storybook-form',
   legend: 'Légende du formulaire',
   hint: 'texte de description additionnel',
-  type: 'input',
-  inline: true
+  elementsType: 'checkbox',
+  checkboxesData: fieldsetElementsData('checkbox'),
+  radiosData: fieldsetElementsData('radio'),
+  inputsData: fieldsetElementsData('input'),
+  inline: false,
+  disabled: false,
+  status: 'default',
+  errorMessage: 'Texte d’erreur',
+  validMessage: 'Texte de succès'
 };
 
 const formProps = (args) => {
   const form = {
     id: args.id || undefined,
     legend: args.legend || formArgs.legend,
-    hint: args.hint || formArgs.hint,
-    choice: args.type === 'radio' || args.type === 'checkbox'
+    hint: args.hint !== '' ? args.hint || formArgs.hint : undefined,
+    choice: args.elementsType === 'radio' || args.elementsType === 'checkbox',
+    inline: args.inline || formArgs.inline,
+    disabled: args.disabled || formArgs.disabled,
+    status: args.status || formArgs.status,
+    error: args.status === 'error' ? args.errorMessage || formArgs.errorMessage : undefined,
+    valid: args.status === 'valid' ? args.validMessage || formArgs.validMessage : undefined,
+    elements: []
   };
 
-  form.elements = fieldsetElementsData(args.type, args.inline);
+  let dataElements = [];
+  switch (args.elementsType) {
+    case 'input':
+      dataElements = args.inputsData || formArgs.inputsData;
+      break;
+    case 'radio':
+      dataElements = args.radiosData || formArgs.radiosData;
+      break;
+    case 'checkbox':
+      dataElements = args.checkboxesData || formArgs.checkboxesData;
+      break;
+  }
+
+  for (const data of dataElements) {
+    const element = {};
+    element.type = args.elementsType;
+    element.inline = form.inline;
+    element.data = data;
+    form.elements.push(element);
+  }
 
   return form;
 };

@@ -1,3 +1,40 @@
+const messageArgTypes = {
+  status: {
+    control: {
+      type: 'select',
+      labels: {
+        default: 'Défaut',
+        valid: 'Succès',
+        error: 'Erreur'
+      }
+    },
+    description: 'Statut du message',
+    options: ['default', 'valid', 'error'],
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  },
+  errorMessage: {
+    if: { arg: 'status', eq: 'error' },
+    control: 'text',
+    description: 'Texte du message d\'erreur',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  },
+  validMessage: {
+    if: { arg: 'status', eq: 'valid' },
+    control: 'text',
+    description: 'Texte du message de succès',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  }
+};
+
 const checkboxArgTypes = {
   id: {
     control: 'text',
@@ -31,7 +68,15 @@ const checkboxArgTypes = {
     type: {
       value: 'string'
     }
-  }
+  },
+  disabled: {
+    control: 'boolean',
+    description: 'Désactive la checkbox',
+    type: {
+      value: 'boolean'
+    }
+  },
+  ...messageArgTypes
 };
 
 const checkboxArgs = {
@@ -39,7 +84,11 @@ const checkboxArgs = {
   size: 'md',
   label: 'libellé checkbox',
   name: 'checkbox',
-  hint: 'texte additionnel'
+  hint: 'texte additionnel',
+  disabled: false,
+  status: 'default',
+  errorMessage: 'Texte d’erreur',
+  validMessage: 'Texte de succès'
 };
 
 const checkboxProps = (args) => {
@@ -48,8 +97,12 @@ const checkboxProps = (args) => {
     size: args.size || checkboxArgs.size,
     label: args.label || checkboxArgs.label,
     name: args.name || checkboxArgs.name,
-    hint: args.hint || checkboxArgs.hint,
-    inline: args.inline || false
+    hint: args.hint !== '' ? args.hint || checkboxArgs.hint : undefined,
+    disabled: args.disabled || checkboxArgs.disabled,
+    inline: args.inline || false,
+    status: args.status || checkboxArgs.status,
+    error: args.status === 'error' ? args.errorMessage || checkboxArgs.errorMessage : undefined,
+    valid: args.status === 'valid' ? args.validMessage || checkboxArgs.validMessage : undefined
   };
 
   return checkbox;
