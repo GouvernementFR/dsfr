@@ -26,6 +26,7 @@ import { tilePartials } from './component/tile/template/stories/partials';
 import { translatePartials } from './component/translate/template/stories/partials';
 import { tooltipPartials } from './component/tooltip/template/stories/partials';
 import { transcriptionPartials } from './component/transcription/template/stories/partials';
+import { uploadPartials } from './component/upload/template/stories/partials';
 
 const ejsRenderer = new EJSRenderer();
 
@@ -56,5 +57,6 @@ tilePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 translatePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tooltipPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 transcriptionPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+uploadPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 
 export default ejsRenderer;
