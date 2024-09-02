@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as TileStories from '../tile.stories.js';
+
+<Meta of={TileStories} tile={['sort:1010']} />
+
+<Canvas of={TileStories.ControlsStory} sourceState={'shown'}/>
+
+<Controls of={TileStories.ControlsStory} />

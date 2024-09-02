@@ -2,7 +2,7 @@ import media from '../ejs/media.ejs?raw';
 
 export const contentPartials = [
   {
-    names: ['content'],
+    names: ['content-media'],
     partial: media
   }
 ];

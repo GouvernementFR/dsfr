@@ -22,6 +22,7 @@ import { stepperPartials } from './component/stepper/template/stories/partials';
 import { summaryPartials } from './component/summary/template/stories/partials';
 import { tabPartials } from './component/tab/template/stories/partials';
 import { tagPartials } from './component/tag/template/stories/partials';
+import { tilePartials } from './component/tile/template/stories/partials';
 import { translatePartials } from './component/translate/template/stories/partials';
 import { tooltipPartials } from './component/tooltip/template/stories/partials';
 import { transcriptionPartials } from './component/transcription/template/stories/partials';
@@ -51,6 +52,7 @@ stepperPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial))
 summaryPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tabPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tagPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+tilePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 translatePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tooltipPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 transcriptionPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));

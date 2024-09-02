@@ -4,11 +4,10 @@
 * end.details (array, optional) : Détails
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
 <div class="<%= prefix %>-tile__end" >
-
     <% if (end.details !== undefined) { %>
-    <%- include('details', { details: end.details }); %>
+        <%- include('tile-details', { details: end.details }); %>
     <% } %>
-
 </div>
