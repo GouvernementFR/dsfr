@@ -3,6 +3,7 @@ import responsiveImg from '../ejs/media/responsive-img.ejs?raw';
 import responsiveVid from '../ejs/media/responsive-vid.ejs?raw';
 import paragraph from '../ejs/typography/paragraph.ejs?raw';
 import img from '../ejs/media/img.ejs?raw';
+import pictogram from '../ejs/artwork/pictogram.ejs?raw';
 
 export const corePartials = [
   {
@@ -24,5 +25,9 @@ export const corePartials = [
   {
     names: ['img'],
     partial: img
+  },
+  {
+    names: ['pictogram'],
+    partial: pictogram
   }
 ];

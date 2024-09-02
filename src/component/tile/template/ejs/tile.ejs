@@ -1,8 +1,6 @@
 <%#
 # paramètres tile
 
-* tile.title (string, required) : titre de la tuile
-
 * tile.markup (string, optional) : (default: h3) Niveau de titre de la tuile
 
 * tile.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la tuile
@@ -13,13 +11,7 @@
 
 * tile.horizontal (boolean, optional) : si true, passe la tuile en mode horizontal
 
-* tile.horizontalMd (boolean, optional) : si true, passe en mode horizontal en dessous du breakpoint md
-
-* tile.verticalMd (boolean, optional) : si true, passe en mode vertical en dessous du breakpoint md
-
-* tile.pictogram (object, optional) : Paramètres d'atrwork ou d'icone
-
-* tile.description (string, optional) : description de la tuile
+* tile.vertical (string, optional) : si true, valeur de breakpoint du passage en mode vertical
 
 * tile.id (string) : id de l'élément
 
@@ -89,7 +81,11 @@ if (tile.variations) for (const variation of tile.variations) switch(variation) 
     break;
 }
 
-if (tile.download) classes.push(`${prefix}-tile--download`);
+if (tile.download) {
+  classes.push(`${prefix}-tile--download`);
+  tile.content.downloadable = true;
+};
+
 if (tile.icon === false) classes.push(`${prefix}-tile--no-icon`);
 
 if (tile.enlarge) switch (tile.content.actionMarkup) {
@@ -105,10 +101,7 @@ if (tile.enlarge) switch (tile.content.actionMarkup) {
 <div <%- includeClasses(classes)%> <%- includeAttrs(attributes) %>>
 
   <div class="<%= prefix %>-tile__body" >
-    <%- include('content', { content: tile.content}) %>
-    <% if (tile.footer !== undefined) { %>
-      <%- include('footer', { footer: tile.footer}) %>
-    <% } %>
+    <%- include('content.ejs', { content: tile.content}) %>
   </div>
 
   <% if (tile.header !== undefined) { %>

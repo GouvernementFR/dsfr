@@ -8,17 +8,27 @@
 %>
 <% eval(include('../../../index.ejs')); %>
 <%
-  const pictograms = JSON.parse(include('../../../../../.config/pictogram.json'));
-
+  const toto = false;
   const pictogram = locals.pictogram || {} ;
+
+  let path;
+  let category;
+
+  if (pictogram.category === undefined) {
+    const pictograms = JSON.parse(include('../../../../../.config/pictogram.json'));
+    category = pictograms.filter(p => p.name === pictogram.name)[0].category;
+    path = relativeRoot;
+  } else {
+    category = pictogram.category;
+  }
+
   let classes = pictogram.classes || [];
   classes.push(prefix + '-artwork');
   if (pictogram.accent) classes.push(prefix + '-artwork--' + pictogram.accent);
-  const category = pictograms.filter(p => p.name === pictogram.name)[0].category;
 %>
 
 <svg aria-hidden="true" <%- includeClasses(classes) %> viewBox="0 0 80 80" width="80px" height="80px" >
-  <use class="<%= prefix %>-artwork-decorative" href="<%= relativeRoot %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-decorative"></use>
-  <use class="<%= prefix %>-artwork-minor" href="<%= relativeRoot %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-minor"></use>
-  <use class="<%= prefix %>-artwork-major" href="<%= relativeRoot %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-major"></use>
+  <use class="<%= prefix %>-artwork-decorative" href="<%= path %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-decorative"></use>
+  <use class="<%= prefix %>-artwork-minor" href="<%= path %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-minor"></use>
+  <use class="<%= prefix %>-artwork-major" href="<%= path %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-major"></use>
 </svg>

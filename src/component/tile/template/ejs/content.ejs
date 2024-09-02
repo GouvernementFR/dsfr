@@ -17,7 +17,7 @@
 
 * content.downloadable (boolean || string, optional) : Ajoute l'attribut download au lien, si string, ajoute la valeur comme nom de fichier
 
-* content.lang (boolean, optional) : Ajoute l'attribut hreflang au lien, pour définir la langue du document lié
+* content.lang (string, optional) : Ajoute l'attribut hreflang au lien, pour définir la langue du document lié
 
 * content.disabled (boolean, optional) : Si true, retire le href du lien pour le désactiver
 
@@ -29,6 +29,8 @@
 
 * content.actionMarkup (string, optional) : balise de l'actionneur du composant (a, button)
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let start = {};
 
@@ -73,21 +75,21 @@ if (content.badge) start.badge = content.badge;
 <div class="<%= prefix %>-tile__content">
   <<%= markup %> class="<%= prefix %>-tile__title">
     <% if (hasLink) { %>
-      <%- include('../../../../core/template/ejs/action/action', {action: {...content, attributes, kind: action, label: content.title, disabled: content.disabled}}) %>
+      <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...content, attributes, kind: action, label: content.title, disabled: content.disabled}}) %>
     <% } else { %>
         <%- content.title %>
     <% } %>
   </<%= markup %>>
 
   <% if (content.description !== undefined) { %>
-  <p class="<%= prefix %>-tile__desc"><%- content.description %></p>
+    <p class="<%= prefix %>-tile__desc"><%- content.description %></p>
   <% } %>
 
   <% if (content.details !== undefined) { %>
-  <%- include('details', { details: content.details }); %>
+    <%- include('details.ejs', { details: content.details }); %>
   <% } %>
 
   <% if (Object.keys(start).length) { %>
-  <%- include('start', {start: start }); %>
+    <%- include('start.ejs', {start: start }); %>
   <% } %>
 </div>
