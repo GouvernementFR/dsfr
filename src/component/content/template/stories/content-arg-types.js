@@ -65,7 +65,7 @@ const contentArgs = {
   imgRatio: '16x9',
   vidRatio: '16x9',
   img: {
-    src: '../../../example/img/placeholder.16x9.png',
+    src: 'img/placeholder.16x9.png',
     alt: 'unknown'
   },
   vid: {

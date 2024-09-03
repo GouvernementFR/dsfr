@@ -5,6 +5,7 @@ public/
 /dist/
 /example/
 /standalone/
+/storybook/
 
-*storybook.log
-storybook-static/
+dsfr-sb/*storybook.log
+dsfr-sb/storybook-static/

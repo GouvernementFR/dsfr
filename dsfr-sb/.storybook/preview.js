@@ -1,8 +1,4 @@
 /** @type { import('@storybook/html').Preview } */
-import '../dist/dsfr.css';
-import '../dist/utility/utility.css';
-import '../dist/core/core.module.js';
-import '../dist/component/component.module.js';
 import './preview.css';
 import * as prettier from "prettier";
 import htmlParser from 'prettier/parser-html';
