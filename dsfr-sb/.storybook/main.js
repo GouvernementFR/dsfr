@@ -1,7 +1,7 @@
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 
 const config = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../../src/**/*.mdx', '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@chromatic-com/storybook',
@@ -22,7 +22,7 @@ const config = {
     name: "@storybook/html-vite",
     options: {},
   },
-  staticDirs: ["./static"]
+  staticDirs: ["./static", { from: "../../dist", to: "dist" }, { from: "../../tool/example/img", to: "img" }],
 };
 
 

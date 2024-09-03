@@ -34,6 +34,7 @@
     "/i18n",
     "/example",
     "/doc",
+    "/storybook",
     "/.config",
     "SECURITY.md",
     "CONTRIBUTING.md"
