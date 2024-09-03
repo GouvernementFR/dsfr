@@ -65,7 +65,7 @@ export const DownloadStory = {
   tags: ['!dev'],
   args: {
     label: 'Télécharger le document lorem ipsum sit dolores amet',
-    href: '/example/img/image.jpg',
+    href: 'img/image.jpg',
     download: true,
     detail: 'JPG – 61,88 ko'
   }
