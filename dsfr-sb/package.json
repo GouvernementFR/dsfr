@@ -2,6 +2,7 @@
   "name": "@gouvfr/dsfr-sb",
   "version": "1.0.0",
   "description": "Storybook du Système de Design de l'Etat - DSFR",
+  "license": "MIT",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
   "engines": {
     "node": ">=18.16.1"
@@ -28,6 +29,11 @@
     "@storybook/test": "^8.1.5",
     "@storybook/theming": "^8.1.5",
     "@teskon/vite-plugin-ejs-engine": "^1.2.0",
+    "html-entities": "^2.5.2",
+    "ejs4b": "^3.1.63",
+    "react-dom": "^18.3.1",
+    "remark-gfm": "^4.0.0",
+    "storybook": "^8.1.5",
     "yaml": "^2.5.0"
   },
   "dependencies": {

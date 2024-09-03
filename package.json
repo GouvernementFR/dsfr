@@ -22,8 +22,6 @@
     "standalone": "node tool/tool.js standalone",
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "pictogram-converter": "node tool/tool.js pictogram-converter"
   },
   "files": [
@@ -40,39 +38,22 @@
     "CONTRIBUTING.md"
   ],
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.5.0",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
-    "@storybook/addon-essentials": "^8.1.5",
-    "@storybook/addon-interactions": "^8.1.5",
-    "@storybook/addon-links": "^8.1.5",
-    "@storybook/addon-themes": "^8.1.5",
-    "@storybook/addon-viewport": "^8.1.5",
-    "@storybook/blocks": "^8.1.5",
-    "@storybook/html": "^8.1.5",
-    "@storybook/html-vite": "^8.1.5",
-    "@storybook/manager-api": "^8.1.5",
-    "@storybook/preview-api": "^8.1.5",
-    "@storybook/test": "^8.1.5",
-    "@storybook/theming": "^8.1.5",
-    "@teskon/vite-plugin-ejs-engine": "^1.2.0",
     "browser-sync": "^2.27.10",
     "browserslist": "^4.21.5",
     "cssnano": "^5.1.15",
     "del": "^6.0.0",
     "ejs": "^3.1.9",
-    "ejs4b": "^3.1.63",
     "eslint": "^8.36.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-standard": "^5.0.0",
-    "eslint-plugin-storybook": "^0.8.0",
     "express": "^4.18.2",
-    "html-entities": "^2.5.2",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "js-beautify": "^1.14.7",
@@ -87,8 +68,6 @@
     "postcss-discard-duplicates": "^5.1.0",
     "prettier": "^2.8.4",
     "pure-rand": "^6.0.2",
-    "react-dom": "^18.3.1",
-    "remark-gfm": "^4.0.0",
     "rollup": "^2.68.0",
     "rollup-plugin-banner2": "^1.2.2",
     "rollup-plugin-modify": "^3.0.0",
@@ -99,13 +78,11 @@
     "sass-true": "^6.1.0",
     "semver": "^7.5.3",
     "standard": "^16.0.4",
-    "storybook": "^8.1.5",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^4.4.0",
     "subset-font": "^1.6.1",
     "svgo": "^2.8.0",
-    "yaml": "^2.5.0",
     "yargs": "^17.7.1"
   },
   "peerDependencies": {
@@ -115,9 +92,5 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "dependencies": {
-    "vite": "^5.2.12",
-    "vite-plugin-ejs": "^1.7.0"
   }
 }
