@@ -166,7 +166,6 @@ const deployHandler = async (argv) => {
     legacy: true,
     locale: argv.locale
   });
-  await cmd('storybook build --output-dir public/storybook');
   await buildRouting();
   deployFavicons();
   deployFiles();
