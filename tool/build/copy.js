@@ -78,7 +78,6 @@ const deployFiles = () => {
   copyDir(root('dist'), root('public/dist'));
   copyDir(root('example'), root('public/example'));
   copyDir(root('standalone'), root('public/standalone'));
-  copyDir(root('storybook-static'), root('public/storybook'));
 };
 
 const deployRobots = () => {
