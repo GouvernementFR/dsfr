@@ -75,7 +75,7 @@ const checkboxesGroupArgTypes = {
 const getcheckboxArgs = (id) => {
   const checkbox = {};
 
-  checkbox[`id${id}`] = checkboxArgs.id;
+  checkbox[`id${id}`] = `${checkboxArgs.id}-${id}`;
   checkbox[`label${id}`] = `${checkboxArgs.label} ${id}`;
   checkbox[`size${id}`] = checkboxArgs.size;
   checkbox[`name${id}`] = `${checkboxArgs.name}${id}`;
@@ -118,7 +118,7 @@ const checkboxesGroupProps = (args) => {
           label: args[`label${i}`] || checkboxArgs.label,
           size: args[`size${i}`] || checkboxArgs.size,
           name: args[`name${i}`] || checkboxArgs.name,
-          hint: args[`hint${i}`] || checkboxArgs.hint,
+          hint: args[`hint${i}`] !== '' ? args[`hint${i}`] || checkboxArgs.hint : undefined,
           disabled: args[`disabled${i}`]
         }
       };
@@ -131,7 +131,7 @@ const checkboxesGroupProps = (args) => {
     id: args.id || undefined,
     legend: args.legend,
     disabled: args.disabled,
-    hint: args.hint,
+    hint: args.hint !== '' ? args.hint || formArgs.hint : undefined,
     inline: args.inline,
     choice: true,
     status: args.status || formArgs.status,

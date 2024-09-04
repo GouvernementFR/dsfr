@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 locals.includeAttrs = function (attrs) {
   let html = '';
   for (const prop in attrs) {
@@ -17,6 +18,7 @@ locals.includeAttrs = function (attrs) {
   return html;
 };
 
+/* eslint-disable no-undef */
 locals.includeClasses = function (classes) {
   if (classes !== undefined && classes.length > 0) return 'class="' + classes.join(' ') + '"';
   return '';

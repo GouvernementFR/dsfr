@@ -1,5 +1,6 @@
 import pck from '../../../../package.json';
 import includes from './includes.js?raw';
+import pictograms from '../../../../.config/pictogram.json?raw';
 import decorator from '../../../../tool/example/decorator.ejs?raw';
 import messageBuilder from '../../../component/form/template/ejs/message/builder.js.ejs?raw';
 import i18n from '../../../../.config/i18n.json';
@@ -9,12 +10,15 @@ const core = `
 locals.prefix = '${pck.config.prefix}';
 locals.namespace = '${pck.config.namespace}';
 locals.organisation = '${pck.config.organisation}';
+locals.relativeRoot = '/';
 
 ${includes}
 
 ${decorator.replace("<% eval(include(root + 'src/core/index.ejs')); %>", '').replace('<%- include(entry); %>', '').replace('<%', '').replace('%>', '')}
 
 locals.getText = getI18nText;
+
+locals.pictogramJson = '${pictograms}';
 
 ${messageBuilder}
 `;
