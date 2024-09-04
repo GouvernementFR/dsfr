@@ -5,17 +5,21 @@
 
 * pictogram.accent (string, optional): couleur d'accentuation (ex: green-emeraude)
 
+* pictogram.category (string, optional): catégorie du pictogramme
+
+* pictogram.classes (array, optional): classes supplémentaires sur l'element
+
 %>
 <% eval(include('../../../index.ejs')); %>
 <%
-  const toto = false;
   const pictogram = locals.pictogram || {} ;
 
   let path;
   let category;
 
   if (pictogram.category === undefined) {
-    const pictograms = JSON.parse(include('../../../../../.config/pictogram.json'));
+    const pictogramJson = locals.pictogramJson || include('../../../../../.config/pictogram.json');
+    const pictograms = JSON.parse(pictogramJson);
     category = pictograms.filter(p => p.name === pictogram.name)[0].category;
     path = relativeRoot;
   } else {
