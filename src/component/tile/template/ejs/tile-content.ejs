@@ -86,10 +86,10 @@ if (content.badge) start.badge = content.badge;
   <% } %>
 
   <% if (content.details !== undefined) { %>
-    <%- include('details.ejs', { details: content.details }); %>
+    <%- include('tile-details.ejs', { details: content.details }); %>
   <% } %>
 
   <% if (Object.keys(start).length) { %>
-    <%- include('start.ejs', {start: start }); %>
+    <%- include('tile-start.ejs', {start: start }); %>
   <% } %>
 </div>

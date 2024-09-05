@@ -9,10 +9,12 @@
 
 %>
 
+<% eval(include('../../../../core/index.ejs')); %>
+
 <% for (const detail of details) {
     const detailClasses = [`${prefix}-card__detail`];
 
     if (detail.icon) detailClasses.push(`${prefix}-icon-${detail.icon}`);
 %>
-<p <%- includeClasses(detailClasses); %>><%- detail.label %></p>
+    <p <%- includeClasses(detailClasses); %>><%- detail.label %></p>
 <% } %>

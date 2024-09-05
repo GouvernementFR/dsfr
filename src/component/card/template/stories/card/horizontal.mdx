@@ -1,0 +1,6 @@
+import { Meta, Canvas, Story } from '@storybook/blocks'
+import * as CardStories from '../card.stories.js';
+
+<Meta of={CardStories} card={['sort:120']}/>
+
+<Canvas of={CardStories.HorizontalStory} sourceState={'shown'} />

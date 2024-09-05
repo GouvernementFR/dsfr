@@ -9,18 +9,20 @@
 
 %>
 
+<% eval(include('../../../../core/index.ejs')); %>
+
 <div class="<%= prefix %>-card__start" >
 
     <% if (start.badgesGroup) { %>
-    <%- include('../../../badge/template/ejs/badges-group', {badgesGroup: start.badgesGroup }); %>
+        <%- include('../../../badge/template/ejs/badges-group.ejs', {badgesGroup: start.badgesGroup }); %>
     <% } %>
 
     <% if (start.tagsGroup) { %>
-    <%- include('../../../tag/template/ejs/tags-group', {tagsGroup: start.tagsGroup }); %>
+        <%- include('../../../tag/template/ejs/tags-group.ejs', {tagsGroup: start.tagsGroup }); %>
     <% } %>
 
     <% if (start.details) { %>
-    <%- include('details', { details: start.details }); %>
+        <%- include('card-details.ejs', { details: start.details }); %>
     <% } %>
 
 </div>

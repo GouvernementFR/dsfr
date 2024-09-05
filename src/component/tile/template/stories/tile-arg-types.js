@@ -49,6 +49,10 @@ const tileArgTypes = {
     }
   },
   hasBadge: {
+    if: {
+      arg: 'hasTag',
+      eq: false
+    },
     control: 'boolean',
     description: 'Si true, ajoute un badge dans le contenu',
     table: {
@@ -56,6 +60,10 @@ const tileArgTypes = {
     }
   },
   hasTag: {
+    if: {
+      arg: 'hasBadge',
+      eq: false
+    },
     control: 'boolean',
     description: 'Si true, ajoute un tag dans le contenu',
     table: {
@@ -86,7 +94,7 @@ const tileArgTypes = {
   },
   disabled: {
     control: 'boolean',
-    description: 'Si true, retire le href du lien pour le désactiver',
+    description: 'Si true, retire le href du lien pour le désactiver ou ajoute l\'attribut disabled sur le bouton',
     table: {
       category: 'action'
     }
@@ -150,6 +158,14 @@ const tileArgTypes = {
     table: {
       category: 'orientation'
     }
+  },
+  variations: {
+    control: { type: 'select' },
+    description: 'Variations ésthétiques de la carte',
+    options: ['none', 'grey', 'no-border', 'no-background', 'shadow'],
+    table: {
+      category: 'variations'
+    }
   }
 };
 
@@ -170,13 +186,13 @@ const tileArgs = {
   disabled: false,
   size: 'md',
   horizontal: false,
-  verticalBreakpoint: false
+  verticalBreakpoint: false,
+  variations: 'none'
 };
 
 const tileProps = (args) => {
   const tile = {
     id: args.id || undefined,
-    markup: args.markup || tileArgs.markup,
     enlarge: args.enlarge || tileArgs.enlarge,
     download: args.download || tileArgs.download,
     size: args.size || tileArgs.size,
@@ -185,6 +201,7 @@ const tileProps = (args) => {
     content: {
       title: args.title || tileArgs.title,
       description: args.description || tileArgs.description,
+      markup: args.markup || tileArgs.markup,
       details: args.details || tileArgs.details,
       actionMarkup: args.actionMarkup || tileArgs.actionMarkup,
       blank: args.blank || tileArgs.blank,
@@ -201,6 +218,10 @@ const tileProps = (args) => {
       }
     }
   };
+
+  if (args.variations !== 'none') {
+    tile.variations = [args.variations];
+  }
 
   return tile;
 };
