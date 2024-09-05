@@ -1,3 +1,16 @@
+const pictogramArgTypes = {
+  pictogramName: {
+    control: 'text',
+    description: 'Nom du pictogramme de la tuile',
+    type: {
+      value: 'string'
+    },
+    table: {
+      category: 'content'
+    }
+  }
+};
+
 const tileArgTypes = {
   id: {
     control: 'text',
@@ -48,6 +61,7 @@ const tileArgTypes = {
       category: 'content'
     }
   },
+  ...pictogramArgTypes,
   hasBadge: {
     if: {
       arg: 'hasTag',
@@ -176,6 +190,7 @@ const tileArgs = {
   details: 'Détail (optionel)',
   markup: 'h3',
   actionMarkup: 'a',
+  pictogramName: 'city-hall',
   hasBadge: false,
   hasTag: false,
   enlarge: false,
@@ -212,10 +227,7 @@ const tileProps = (args) => {
       tag: args.hasTag && { label: 'Libellé tag' }
     },
     header: {
-      pictogram: {
-        category: 'buildings',
-        name: 'city-hall'
-      }
+      pictogram: (args.pictogramName) ? { name: args.pictogramName, accent: args.pictogramAccent } : tileArgs.pictogram,
     }
   };
 
