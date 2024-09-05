@@ -31,10 +31,11 @@
 
 * content.actionMarkup (string, optional) : balise de l'actionneur du composant (a, button)
 %>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let start, end;
-
-const startDetails = content.details ? content.details.filter(detail => !detail.position || detail.position === 'start') : [];
 
 const markup = content.markup || 'h3';
 const actionMarkup = content.actionMarkup || 'a';
@@ -67,6 +68,8 @@ switch (action) {
 if (content.downloadable === true && actionMarkup === 'a') attributes.download = '';
 if (typeof(content.downloadable) === 'string') attributes.download = content.downloadable;
 
+const startDetails = content.details ? content.details.filter(detail => !detail.position || detail.position === 'start') : [];
+
 switch (true) {
     case content.badgesGroup !== undefined :
     case content.tagsGroup !== undefined :
@@ -86,26 +89,26 @@ switch (true) {
         if (endDetails.length) end.details = endDetails;
         break;
 }
- %>
+%>
 
 <div class="<%= prefix %>-card__content">
     <<%= markup %> class="<%= prefix %>-card__title">
         <% if (hasLink) { %>
-            <%- include('../../../../core/template/ejs/action/action', {action: {...content, attributes, kind: action, label: content.title, disabled: content.disabled}}) %>
+            <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...content, attributes, kind: action, label: content.title, disabled: content.disabled}}) %>
         <% } else { %>
             <%- content.title %>
         <% } %>
     </<%= markup %>>
 
     <% if (content.description !== undefined) { %>
-    <p class="<%= prefix %>-card__desc"><%- content.description %></p>
+        <p class="<%= prefix %>-card__desc"><%- content.description %></p>
     <% } %>
 
     <% if (start) { %>
-    <%- include('start', {start: start }); %>
+        <%- include('card-start.ejs', {start: start }); %>
     <% } %>
 
     <% if (end) { %>
-    <%- include('end', {end: end }); %>
+        <%- include('card-end.ejs', {end: end }); %>
     <% } %>
 </div>

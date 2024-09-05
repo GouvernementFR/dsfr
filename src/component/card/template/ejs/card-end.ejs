@@ -5,10 +5,12 @@
 
 %>
 
+<% eval(include('../../../../core/index.ejs')); %>
+
 <div class="<%= prefix %>-card__end" >
 
     <% if (end.details !== undefined) { %>
-    <%- include('details', { details: end.details }); %>
+        <%- include('card-details.ejs', { details: end.details }); %>
     <% } %>
 
 </div>

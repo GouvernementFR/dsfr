@@ -5,11 +5,13 @@
 
 %>
 
+<% eval(include('../../../../core/index.ejs')); %>
+
 <div class="<%= prefix %>-card__footer" >
     <% if (footer.buttonsGroup) { %>
-    <%- include('../../../button/template/ejs/buttons-group', { buttonsGroup: footer.buttonsGroup }); %>
+        <%- include('../../../button/template/ejs/buttons-group.ejs', { buttonsGroup: footer.buttonsGroup }); %>
     <% } %>
     <% if (footer.linksGroup) { %>
-    <%- include('../../../link/template/ejs/links-group', { linksGroup: footer.linksGroup }); %>
+        <%- include('../../../link/template/ejs/links-group.ejs', { linksGroup: footer.linksGroup }); %>
     <% } %>
 </div>
