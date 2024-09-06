@@ -101,10 +101,10 @@ if (tile.enlarge) switch (tile.content.actionMarkup) {
 <div <%- includeClasses(classes)%> <%- includeAttrs(attributes) %>>
 
   <div class="<%= prefix %>-tile__body" >
-    <%- include('tile-content.ejs', { content: tile.content}) %>
+    <%- include('tile-content.ejs', { content: tile.content }) %>
   </div>
 
   <% if (tile.header !== undefined) { %>
-    <%- include('tile-header.ejs', {header: tile.header}) %>
+    <%- include('tile-header.ejs', { header: tile.header }) %>
   <% } %>
 </div>
