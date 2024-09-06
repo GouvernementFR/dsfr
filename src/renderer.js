@@ -18,7 +18,11 @@ import { modalPartials } from './component/modal/template/stories/partials';
 import { noticePartials } from './component/notice/template/stories/partials';
 import { quotePartials } from './component/quote/template/stories/partials';
 import { radioPartials } from './component/radio/template/stories/partials';
+<<<<<<< HEAD
 import { selectPartials } from './component/select/template/stories/partials';
+=======
+import { rangePartials } from './component/range/template/stories/partials';
+>>>>>>> ed016dadc (feat(storybook): ajoute range)
 import { segmentedPartials } from './component/segmented/template/stories/partials';
 import { sharePartials } from './component/share/template/stories/partials';
 import { skiplinkPartials } from './component/skiplink/template/stories/partials';
@@ -53,6 +57,7 @@ modalPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 noticePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 quotePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 radioPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+rangePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 selectPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 segmentedPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 sharePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
