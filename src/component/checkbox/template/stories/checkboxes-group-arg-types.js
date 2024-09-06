@@ -11,7 +11,6 @@ const getcheckboxArgTypes = (id) => {
   };
 
   checkbox[`label${id}`] = { ...checkboxArgTypes.label, ...table };
-  checkbox[`size${id}`] = { ...checkboxArgTypes.size, ...table };
   checkbox[`id${id}`] = { ...checkboxArgTypes.id, ...table };
   checkbox[`name${id}`] = { ...checkboxArgTypes.name, ...table };
   checkbox[`hint${id}`] = { ...checkboxArgTypes.hint, ...table };
@@ -32,7 +31,6 @@ const getcheckboxArgTypes = (id) => {
     checkbox[`label${id}`].if = { arg: `hascheckbox${id}` };
     checkbox[`id${id}`].if = { arg: `hascheckbox${id}` };
     checkbox[`disabled${id}`].if = { arg: `hascheckbox${id}` };
-    checkbox[`size${id}`].if = { arg: `hascheckbox${id}` };
     checkbox[`name${id}`].if = { arg: `hascheckbox${id}` };
     checkbox[`hint${id}`].if = { arg: `hascheckbox${id}` };
   }
@@ -45,16 +43,23 @@ const checkboxesGroupArgTypes = {
     ...formArgTypes.id
   },
   legend: {
-    ...formArgTypes.legend
+    ...formArgTypes.legend,
+    description: 'Légende de l’ensemble des checkboxes'
   },
   hint: {
-    ...checkboxArgTypes.hint
+    ...checkboxArgTypes.hint,
+    description: 'Texte additionnel sous la légende'
+  },
+  size: {
+    ...checkboxArgTypes.size,
+    description: 'Taille des checkboxes'
   },
   inline: {
-    ...checkboxArgTypes.inline
+    ...formArgTypes.inline
   },
   disabled: {
-    ...checkboxArgTypes.disabled
+    ...checkboxArgTypes.disabled,
+    description: 'Désactive l’ensemble des checkboxes'
   },
   status: {
     ...checkboxArgTypes.status
@@ -77,7 +82,6 @@ const getcheckboxArgs = (id) => {
 
   checkbox[`id${id}`] = `${checkboxArgs.id}-${id}`;
   checkbox[`label${id}`] = `${checkboxArgs.label} ${id}`;
-  checkbox[`size${id}`] = checkboxArgs.size;
   checkbox[`name${id}`] = `${checkboxArgs.name}${id}`;
   checkbox[`hint${id}`] = checkboxArgs.hint;
   checkbox[`disabled${id}`] = checkboxArgs.disabled;
@@ -91,8 +95,9 @@ const getcheckboxArgs = (id) => {
 
 const checkboxesGroupArgs = {
   id: formArgs.id,
-  legend: formArgs.legend,
+  legend: 'Légende pour l’ensemble des éléments',
   hint: formArgs.hint,
+  size: 'md',
   disabled: formArgs.disabled,
   inline: formArgs.inline,
   status: 'default',
@@ -116,7 +121,7 @@ const checkboxesGroupProps = (args) => {
         data: {
           id: args[`id${i}`] || undefined,
           label: args[`label${i}`] || checkboxArgs.label,
-          size: args[`size${i}`] || checkboxArgs.size,
+          size: args.size || checkboxesGroupArgs.size,
           name: args[`name${i}`] || checkboxArgs.name,
           hint: args[`hint${i}`] !== '' ? args[`hint${i}`] || checkboxArgs.hint : undefined,
           disabled: args[`disabled${i}`]

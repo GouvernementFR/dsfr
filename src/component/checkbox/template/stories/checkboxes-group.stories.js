@@ -23,3 +23,31 @@ export const DefaultStory = {
   // tags: ['!dev'],
   args: {}
 };
+
+export const SmStory = {
+  // tags: ['!dev'],
+  args: {
+    size: 'sm'
+  }
+};
+
+export const DisabledStory = {
+  // tags: ['!dev'],
+  args: {
+    disabled: true
+  }
+};
+
+export const ErrortStory = {
+  // tags: ['!dev'],
+  args: {
+    status: 'error'
+  }
+};
+
+export const SuccessStory = {
+  // tags: ['!dev'],
+  args: {
+    status: 'valid'
+  }
+};
