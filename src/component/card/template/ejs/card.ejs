@@ -5,9 +5,9 @@
 
 * card.header (object, optionnal) : Partie haute de la carte vertical, contenant l'image
 
-* card.action (object, optionnal) : Partie basse de la carte vertical, contenant les actions
+* card.footer (object, optionnal) : Partie basse de la carte vertical, contenant les actions
 
-* card.size (string, optionnal) : Taille de la carte.
+* card.size (string, optionnal) : Taille de la carte
 
 * card.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la carte
 
@@ -106,12 +106,12 @@ if (card.variations) for (const variation of card.variations) switch(variation) 
 %>
 <div <%- includeAttrs(attributes) %> <%- includeClasses(classes) %>>
   <div class="<%= prefix %>-card__body" >
-    <%- include('content', { content: content}) %>
+    <%- include('card-content.ejs', { content: content}) %>
     <% if (card.footer !== undefined) { %>
-    <%- include('footer', { footer: card.footer}) %>
+      <%- include('card-footer.ejs', { footer: card.footer}) %>
     <% } %>
   </div>
   <% if (card.header !== undefined) { %>
-  <%- include('header', { header: card.header}) %>
+    <%- include('card-header.ejs', { header: card.header}) %>
   <% } %>
 </div>

@@ -1,9 +1,9 @@
 import tile from '../ejs/tile.ejs?raw';
-import tileContent from '../ejs/content.ejs?raw';
-import tileDetails from '../ejs/details.ejs?raw';
-import tileEnd from '../ejs/end.ejs?raw';
-import tileHeader from '../ejs/header.ejs?raw';
-import tileStart from '../ejs/start.ejs?raw';
+import tileContent from '../ejs/tile-content.ejs?raw';
+import tileDetails from '../ejs/tile-details.ejs?raw';
+import tileEnd from '../ejs/tile-end.ejs?raw';
+import tileHeader from '../ejs/tile-header.ejs?raw';
+import tileStart from '../ejs/tile-start.ejs?raw';
 
 export const tilePartials = [
   {
@@ -11,23 +11,23 @@ export const tilePartials = [
     partial: tile
   },
   {
-    names: ['content'],
+    names: ['tile-content'],
     partial: tileContent
   },
   {
-    names: ['details'],
+    names: ['tile-details'],
     partial: tileDetails
   },
   {
-    names: ['end'],
+    names: ['tile-end'],
     partial: tileEnd
   },
   {
-    names: ['header'],
+    names: ['tile-header'],
     partial: tileHeader
   },
   {
-    names: ['start'],
+    names: ['tile-start'],
     partial: tileStart
   }
 ];

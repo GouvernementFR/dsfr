@@ -110,7 +110,7 @@ const messagesGroup = builder.messagesGroup;
     <%- include('legend', { legend: legend }); %>
   <% } %>
   <% for (const element of fieldset.elements) { %>
-    <%- include('element', { element: element }); %>
+    <%- include('fieldset-element', { element: element }); %>
   <% } %>
   <%- include('../message/messages-group', { messagesGroup: messagesGroup }); %>
 </fieldset>
