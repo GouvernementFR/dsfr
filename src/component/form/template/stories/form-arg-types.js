@@ -98,14 +98,16 @@ const formArgTypes = {
     control: 'text',
     description: 'Attribut id du formulaire',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   legend: {
     control: 'text',
     description: 'Légende du formulaire',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   hint: {
@@ -113,6 +115,13 @@ const formArgTypes = {
     description: 'Texte additionnel sous la légende',
     type: {
       value: 'string'
+    }
+  },
+  hideLegend: {
+    control: 'boolean',
+    description: 'Masque la légende (screan reader only)',
+    type: {
+      value: 'boolean'
     }
   },
   inline: {
@@ -136,7 +145,7 @@ const formArgTypes = {
 const formArgs = {
   id: 'storybook-form',
   legend: 'Légende du formulaire',
-  hint: 'texte de description additionnel',
+  hideLegend: false,
   elementsType: 'checkbox',
   checkboxesData: fieldsetElementsData('checkbox'),
   radiosData: fieldsetElementsData('radio'),
@@ -151,8 +160,11 @@ const formArgs = {
 const formProps = (args) => {
   const form = {
     id: args.id || undefined,
-    legend: args.legend || formArgs.legend,
-    hint: args.hint !== '' ? args.hint || formArgs.hint : undefined,
+    legend: {
+      label: args.legend || formArgs.legend,
+      sr: args.hideLegend || formArgs.hideLegend
+    },
+    hint: args.hint !== '' ? args.hint : undefined,
     choice: args.elementsType === 'radio' || args.elementsType === 'checkbox',
     inline: args.inline || formArgs.inline,
     disabled: args.disabled || formArgs.disabled,

@@ -11,7 +11,6 @@ const getradioArgTypes = (id) => {
   };
 
   radio[`label${id}`] = { ...radioArgTypes.label, ...table };
-  radio[`size${id}`] = { ...radioArgTypes.size, ...table };
   radio[`id${id}`] = { ...radioArgTypes.id, ...table };
   radio[`name${id}`] = { ...radioArgTypes.name, ...table };
   radio[`hint${id}`] = { ...radioArgTypes.hint, ...table };
@@ -34,7 +33,6 @@ const getradioArgTypes = (id) => {
     radio[`label${id}`].if = { arg: `hasradio${id}` };
     radio[`id${id}`].if = { arg: `hasradio${id}` };
     radio[`disabled${id}`].if = { arg: `hasradio${id}` };
-    radio[`size${id}`].if = { arg: `hasradio${id}` };
     radio[`name${id}`].if = { arg: `hasradio${id}` };
     radio[`pictogramName${id}`].if = { arg: `hasradio${id}` };
     radio[`pictogramAccent${id}`].if = { arg: `hasradio${id}` };
@@ -49,19 +47,27 @@ const radiosGroupArgTypes = {
     ...formArgTypes.id
   },
   legend: {
-    ...formArgTypes.legend
+    ...formArgTypes.legend,
+    description: 'Légende de l’ensemble des radios'
   },
   hint: {
-    ...radioArgTypes.hint
+    ...radioArgTypes.hint,
+    description: 'Texte additionnel sous la légende'
+  },
+  size: {
+    if: { arg: 'rich', eq: false },
+    ...radioArgTypes.size,
+    description: 'Taille des radios'
   },
   rich: {
     ...radioArgTypes.rich
   },
   inline: {
-    ...radioArgTypes.inline
+    ...formArgTypes.inline
   },
   disabled: {
-    ...radioArgTypes.disabled
+    ...radioArgTypes.disabled,
+    description: 'Désactive l’ensemble des radios'
   },
   status: {
     ...radioArgTypes.status
@@ -84,7 +90,6 @@ const getradioArgs = (id) => {
 
   radio[`id${id}`] = `${radioArgs.id}-${id}`;
   radio[`label${id}`] = `${radioArgs.label} ${id}`;
-  radio[`size${id}`] = radioArgs.size;
   radio[`name${id}`] = radioArgs.name;
   radio[`hint${id}`] = radioArgs.hint;
   radio[`pictogramName${id}`] = radioArgs.pictogram.name;
@@ -100,8 +105,9 @@ const getradioArgs = (id) => {
 
 const radiosGroupArgs = {
   id: formArgs.id,
-  legend: formArgs.legend,
+  legend: 'Légende pour l’ensemble des éléments',
   hint: formArgs.hint,
+  size: 'md',
   disabled: formArgs.disabled,
   rich: false,
   inline: formArgs.inline,
@@ -126,7 +132,7 @@ const radiosGroupProps = (args) => {
         data: {
           id: args[`id${i}`] || undefined,
           label: args[`label${i}`] || radioArgs.label,
-          size: args[`size${i}`] || radioArgs.size,
+          size: args.size || radiosGroupArgs.size,
           name: args[`name${i}`] || radioArgs.name,
           rich: args.rich || radiosGroupArgs.rich,
           hint: args[`hint${i}`] !== '' ? args[`hint${i}`] || radioArgs.hint : undefined,
@@ -135,17 +141,15 @@ const radiosGroupProps = (args) => {
       };
 
       if (radio.data.rich) {
-        radio.data.pictogram = {
-          name: args[`pictogramName${i}`] || radioArgs.pictogram.name,
-          accent: args[`pictogramAccent${i}`] || radioArgs.pictogram.accent
-        };
+        radio.data.pictogram = {};
+        radio.data.pictogram.name = args[`pictogramName${i}`] || radioArgs.pictogram.name;
+        if (args[`pictogramAccent${i}`] && args[`pictogramAccent${i}`] !== 'défaut') radio.data.pictogram.accent = args[`pictogramAccent${i}`];
       }
 
       radios.push(radio);
     }
   }
 
-  console.log('radios', radios);
   const radiosGroup = {
     id: args.id || undefined,
     legend: args.legend,

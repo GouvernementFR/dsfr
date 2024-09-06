@@ -40,7 +40,8 @@ const checkboxArgTypes = {
     control: 'text',
     description: 'Attribut id de la checkbox',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   size: {
@@ -52,7 +53,8 @@ const checkboxArgTypes = {
     control: 'text',
     description: 'Libellé de la checkbox',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   name: {
@@ -84,7 +86,6 @@ const checkboxArgs = {
   size: 'md',
   label: 'libellé checkbox',
   name: 'checkbox',
-  hint: 'texte additionnel',
   disabled: false,
   status: 'default',
   errorMessage: 'Texte d’erreur',
@@ -97,7 +98,7 @@ const checkboxProps = (args) => {
     size: args.size || checkboxArgs.size,
     label: args.label || checkboxArgs.label,
     name: args.name || checkboxArgs.name,
-    hint: args.hint !== '' ? args.hint || checkboxArgs.hint : undefined,
+    hint: args.hint !== '' ? args.hint : undefined,
     disabled: args.disabled || checkboxArgs.disabled,
     inline: args.inline || false,
     status: args.status || checkboxArgs.status,

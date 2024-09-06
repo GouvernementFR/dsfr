@@ -12,6 +12,7 @@ const pictogramArgTypes = {
     control: { type: 'select' },
     description: 'Couleur d\'accentuation du pictogramme',
     options: [
+      'défaut',
       'green-tilleul-verveine',
       'green-bourgeon',
       'green-emeraude',
@@ -75,7 +76,8 @@ const radioArgTypes = {
     control: 'text',
     description: 'Attribut id de le radio',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   size: {
@@ -106,7 +108,7 @@ const radioArgTypes = {
   },
   rich: {
     control: 'boolean',
-    description: 'Passe en mode radios riches',
+    description: 'Passe en mode radios riches (ajoute un encadré et la possibilité d’associer un pictogramme)',
     type: {
       value: 'boolean'
     }
@@ -127,7 +129,6 @@ const radioArgs = {
   size: 'md',
   label: 'libellé radio',
   name: 'radio',
-  hint: 'texte additionnel',
   disabled: false,
   status: 'default',
   rich: false,
@@ -144,15 +145,20 @@ const radioProps = (args) => {
     size: args.size || radioArgs.size,
     label: args.label || radioArgs.label,
     name: args.name || radioArgs.name,
-    hint: args.hint !== '' ? args.hint || radioArgs.hint : undefined,
+    hint: args.hint !== '' ? args.hint : undefined,
     rich: args.rich || radioArgs.rich,
-    pictogram: (args.pictogramName || args.pictogramAccent) ? { name: args.pictogramName, accent: args.pictogramAccent } : radioArgs.pictogram,
     disabled: args.disabled || radioArgs.disabled,
     inline: args.inline || false,
     status: args.status || radioArgs.status,
     error: args.status === 'error' ? args.errorMessage || radioArgs.errorMessage : undefined,
     valid: args.status === 'valid' ? args.validMessage || radioArgs.validMessage : undefined
   };
+
+  if (radio.rich) {
+    radio.pictogram = {};
+    radio.pictogram.name = args.pictogramName || radioArgs.pictogram.name;
+    if (args.pictogramAccent && args.pictogramAccent !== 'défaut') radio.pictogram.accent = args.pictogramAccent;
+  }
 
   return radio;
 };
