@@ -12,6 +12,7 @@ import { connectPartials } from './component/connect/template/stories/partials';
 import { contentPartials } from './component/content/template/stories/partials';
 import { formPartials } from './component/form/template/stories/partials';
 import { highlightPartials } from './component/highlight/template/stories/partials';
+import { inputPartials } from './component/input/input-base/template/stories/partials';
 import { linkPartials } from './component/link/template/stories/partials';
 import { logoPartials } from './component/logo/template/stories/partials';
 import { modalPartials } from './component/modal/template/stories/partials';
@@ -39,6 +40,7 @@ accordionPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial
 alertPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 badgePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 breadcrumbPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+buttonPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 calloutPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 cardPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 checkboxPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
@@ -46,7 +48,7 @@ connectPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial))
 contentPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 formPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 highlightPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
-buttonPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+inputPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 logoPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 modalPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
