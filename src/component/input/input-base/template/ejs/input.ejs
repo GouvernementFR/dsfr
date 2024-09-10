@@ -23,7 +23,7 @@
 
 * input.error (string, optional) : message d'erreur
 
-* input.massages (array, optional) : array de messages
+* input.messages (array, optional) : array de messages
 
 * input.hint (string, optional) : message d'aide
 
@@ -53,6 +53,7 @@
 
 <%
 const input = locals.input || {};
+console.log("input", input);
 const classes = input.classes || [];
 const attributes = input.attributes || {};
 const inputType = input.type || 'text';
@@ -60,7 +61,7 @@ const describedby = input.describedby || [];
 const label = {
   label: input.label,
   for: input.id,
-  classes: input.labeClasses,
+  classes: input.labelClasses,
   attributes: input.labelAttributes,
 }
 
@@ -101,7 +102,7 @@ const inputWrapClass = [];
 if (input.button || input.icon) inputWrapClass.push(`${prefix}-input-wrap`);
 if (input.icon && typeof(input.icon) === 'string') inputWrapClass.push(`${prefix}-icon-${input.icon}`);
 if (input.addon) inputWrapClass.push(`${prefix}-input-wrap--addon`);
-if (input.action) inputWrapClass.push(`${prefix}-input-wrap--action`);
+if (input.action) inputWrapClass.push(`${locals.prefix}-input-wrap--action`);
 %>
 
 <%- include('../../../../form/template/ejs/label', { label: label }); %>
