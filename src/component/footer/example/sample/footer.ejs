@@ -5,7 +5,16 @@ let data = {}
 if (footer.id) data.id = footer.id || uniqueId('footer');
 else data.id = uniqueId('footer');
 
-if (footer.top === true) data.top = { categories: {label: 'Nom de la catégorie', link: 'Lien de navigation', href: footer.href}};
+if (footer.top === true) data.top = {
+  categories: [
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] }
+  ]
+};
 
 if (footer.brand === true) {
   data.brand = brandData('footer', footer.logo, false, footer.operator);
@@ -14,10 +23,10 @@ if (footer.brand === true) {
 if (footer.content === true) data.content = {
   desc: lorem('', 240),
   links: [
-    {label: 'info.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('info.gouv.fr') }},
-    {label: 'service-public.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('service-public.fr') }},
-    {label: 'legifrance.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('legifrance.gouv.fr') }},
-    {label: 'data.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('data.gouv.fr') }}
+    {label: 'info.gouv.fr', href: 'https://info.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('info.gouv.fr') }},
+    {label: 'service-public.fr', href: 'https://service-public.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('service-public.fr') }},
+    {label: 'legifrance.gouv.fr', href: 'https://legifrance.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('legifrance.gouv.fr') }},
+    {label: 'data.gouv.fr', href: 'https://data.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('data.gouv.fr') }}
   ]
 };
 

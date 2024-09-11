@@ -27,6 +27,10 @@
             %><%- include('../../../button/template/ejs/button-display', { button: link }); %><%
             break;
 
+            case 'button':
+            %><%- include('../../../button/template/ejs/button', { button: link }); %><%
+            break;
+
 
           default:
             const classes = link.classes || [];
