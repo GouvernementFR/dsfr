@@ -20,27 +20,26 @@
   %>
     <li class="<%= prefix %>-footer__bottom-item">
       <%
-        const link = links[i];
+      const link = links[i];
 
-        switch (link.template) {
-          case 'display':
-            %><%- include('../../../button/template/ejs/button-display', { button: link }); %><%
-            break;
+      switch (link.template) {
+        case 'display':
+          %><%- include('../../../button/template/ejs/button-display', { button: link }); %><%
+          break;
 
-            case 'button':
-            %><%- include('../../../button/template/ejs/button', { button: link }); %><%
-            break;
+        case 'button':
+        %><%- include('../../../button/template/ejs/button', { button: link }); %><%
+        break;
 
-
-          default:
-            const classes = link.classes || [];
-            const markup = link.markup || 'a';
-            const attributes = link.attributes || {};
-            attributes.id = uniqueId('footer__bottom-link');
-            if (markup === 'a') attributes["href"] = link.url|| '#';
-            classes.push(`${prefix}-footer__bottom-link`);
-            %><<%= markup %> <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- links[i].label %></<%= markup %>><%
-    } %>
+        default:
+          const classes = link.classes || [];
+          const markup = link.markup || 'a';
+          const attributes = link.attributes || {};
+          attributes.id = uniqueId('footer__bottom-link');
+          if (markup === 'a') attributes["href"] = link.url || '#';
+          classes.push(`${prefix}-footer__bottom-link`);
+          %><<%= markup %> <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- links[i].label %></<%= markup %>><%
+      } %>
     </li>
   <% } %>
 </ul>
