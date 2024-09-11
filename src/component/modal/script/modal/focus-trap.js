@@ -157,7 +157,7 @@ class FocusTrap {
       }
 
       unordereds = unordereds.filter((unordered) => {
-        if (unordered.tagName.toLowerCase() !== 'input' || unordered.getAttribute('type').toLowerCase() !== 'radio') return true;
+        if (unordered.tagName.toLowerCase() !== 'input' || (!unordered.getAttribute('type') || unordered.getAttribute('type').toLowerCase() !== 'radio')) return true;
         const name = unordered.getAttribute('name');
         return groups[name].keep(unordered);
       });
