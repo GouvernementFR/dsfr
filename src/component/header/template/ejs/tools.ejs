@@ -4,6 +4,7 @@
 * tools (object, required) : Paramètres du template
   ** tools.links (object, optional) : Paramètres des liens d'accès direct - voir links
   ** tools.translate (object, optional) : Paramètres du sélecteur de langue - voir translate
+  ** tools.toolsContent (string, optional) : Permet d'ajouter du contenu custom dans le bloc tools
   ** tools.search (object, optional) : Paramètres du bloc de recherche (voir compoosant search)
     *** tools.search.id (string, required) : Id du champ de recherche
     *** tools.search.modalId (string, required) : Id de la modale de recherche (mobile)
@@ -30,6 +31,9 @@
       <% } %>
       <% if (tools.translate !== undefined) { %>
         <%- include('../../../translate/template/ejs/translate.ejs', { translate: tools.translate }); %>
+      <% } %>
+      <% if (tools.toolsContent !== undefined) { %>
+        <%- tools.toolsContent %>
       <% } %>
     </div>
   <% } %>
