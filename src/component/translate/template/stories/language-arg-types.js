@@ -22,20 +22,30 @@ const languageArgTypes = {
       value: 'string',
       required: true
     }
+  },
+  href: {
+    control: 'text',
+    description: 'Url vers la page de la langue',
+    type: {
+      value: 'string',
+      required: true
+    }
   }
 };
 
 const languageArgs = {
   id: 'language-id',
   name: 'Langue',
-  locale: 'Locale'
+  locale: 'Locale',
+  href: 'https://www.example.com/locale/'
 };
 
 const languageProps = (args) => {
   const language = {
     id: args.id || undefined,
     name: args.name || languageArgs.name,
-    locale: args.locale || languageArgs.locale
+    locale: args.locale || languageArgs.locale,
+    href: args.href || languageArgs.href
   };
 
   return language;

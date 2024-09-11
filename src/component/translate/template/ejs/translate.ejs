@@ -29,7 +29,7 @@ const collapseId = translate.collapseId || uniqueId('translate');
     const minBtnAttrs = {
       'aria-controls': collapseId,
       'aria-expanded': false,
-      title: translateBtn.title || getText('button.title', 'translate')
+      title: translateBtn.title
     };
     translateBtn.classes = translateBtn.classes !== undefined ? translateBtn.classes.concat(minBtnClasses) : minBtnClasses;
     translateBtn.attributes = translateBtn.attributes !== undefined ? {...minBtnAttrs, ...translateBtn.attributes} : minBtnAttrs;

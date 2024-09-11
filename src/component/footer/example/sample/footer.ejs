@@ -14,10 +14,10 @@ if (footer.brand === true) {
 if (footer.content === true) data.content = {
   desc: lorem('', 240),
   links: [
-    {label: 'info.gouv.fr'},
-    {label: 'service-public.fr'},
-    {label: 'legifrance.gouv.fr'},
-    {label: 'data.gouv.fr'}
+    {label: 'info.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('info.gouv.fr') }},
+    {label: 'service-public.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('service-public.fr') }},
+    {label: 'legifrance.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('legifrance.gouv.fr') }},
+    {label: 'data.gouv.fr', attributes: { rel:'noopener external', target: '_blank', title: getBlankTitle('data.gouv.fr') }}
   ]
 };
 
@@ -50,7 +50,7 @@ if (footer.bottom === true) data.bottom = {
     {label: 'Données personnelles', url: footer.href},
     {label: 'Gestion des cookies', url: footer.href}
   ],
-  copyright: `Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" ${includeAttrs(targetBlankData('Licence etalab'))}>licence etalab-2.0</a>`
+  copyright: `Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="${getBlankTitle('Licence etalab')}">licence etalab-2.0</a>`
 };
 %>
 

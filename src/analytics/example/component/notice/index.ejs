@@ -3,7 +3,7 @@
 <%
 let title = 'Vigilance météo rouge';
 let desc = 'lorem ispum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec elit ultricies ultricies.';
-let link = {label: 'En savoir plus', blank: true};
+let link = {label: 'En savoir plus', blank: true, attributes: {title: getBlankTitle('En savoir plus')}};
 %>
 
 <%- sample('Vigilance météo orange', '../../../../component/notice/example/sample/notice-default', {notice: {type: "weather-orange", title: 'Vigilance météo orange', desc:desc, link: {...link, href: 'https://www.meteofrance.fr/', id: uniqueId('link')}}}); %>

@@ -270,15 +270,11 @@ const errorData = (error) => {
 
 locals.errorData = errorData;
 
-const targetBlankData = (title = contentPlaceholder('Intitulé')) => {
-  const attr = {};
-  attr.target = '_blank';
-  attr.rel = 'noopener external';
-  attr.title = `${title} - ${locals.getText('blank')}`;
-  return attr;
+const getBlankTitle = (title = contentPlaceholder('Intitulé')) => {
+  return `${title} - ${locals.getText('blank')}`;
 }
 
-locals.targetBlankData = targetBlankData;
+locals.getBlankTitle = getBlankTitle;
 
 const randomSeed = (seed) => {
   const rng = prand.xoroshiro128plus(seed);

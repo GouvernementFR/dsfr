@@ -56,7 +56,8 @@ switch (actionKind) {
     actionAttrs.href = action.href || '[url - à modifier]';
     switch (true) {
       case action.blank:
-        actionAttrs = {...targetBlankData(), ...actionAttrs};
+        actionAttrs.target = '_blank';
+        actionAttrs.rel = 'noopener external';
         break;
 
       case action.self:
