@@ -8,7 +8,8 @@
   ** menu.tools (object, optional) : Paramètres des tools (raccourcis)
     *** menu.tools.links (object, optional) : Paramètres des tools (raccourcis)
     *** menu.tools.duplicateLinks (boolean, optional) : Si true, duplique le bloc de liens raccourcis dans le menu mobile (pour vue/angular/react)
-%>
+    *** menu.tools.toolsContent (string, optional) : Permet d'ajouter du contenu custom dans le bloc tools
+    %>
 <%
 let menu = locals.menu || {};
 if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly defined in header. modalId required');
@@ -20,6 +21,9 @@ if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly
       <div class="<%= prefix %>-header__menu-links">
         <% if (menu.tools.duplicateLinks && menu.tools.links) { %>
         <%- include('../../../button/template/ejs/buttons-group', {links: menu.tools.links}); %>
+        <% } %>
+        <% if (menu.tools.toolsContent) { %>
+          <%- menu.tools.toolsContent %>
         <% } %>
       </div>
     <% } %>
