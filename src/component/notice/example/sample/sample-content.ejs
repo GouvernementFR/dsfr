@@ -12,4 +12,4 @@ const sample = getSample(include);
 
 <%- sample('Bandeau d\'information avec icone personnalisée', './notice-dismissible', {notice: {type: "info", icon: 'virus-fill', title: "Titre du bandeau"}}, true, '../layout.ejs'); %>
 
-<%- sample('Bandeau d\'information cas max', './notice-dismissible', {notice: {type: "info", title: 'Titre du bandeau assez long', desc: 'Texte de description plutot long lorem ipsum sit consectetur adipiscing elit. Sed', link: {label: 'Lien de consultation', href: '#', blank: true}}}, true, '../layout.ejs'); %>
+<%- sample('Bandeau d\'information cas max', './notice-dismissible', {notice: {type: "info", title: 'Titre du bandeau assez long', desc: 'Texte de description plutot long lorem ipsum sit consectetur adipiscing elit. Sed', link: {label: 'Lien de consultation', href: '#', blank: true, attributes: {title: getBlankTitle('Lien de consultation')}}}}, true, '../layout.ejs'); %>

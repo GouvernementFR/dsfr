@@ -18,7 +18,7 @@ const languages = locals.languages || {};
   for (let i = 0; i < languages.length; i++) {
     const lang = languages[i];
     const attrs = {
-      href:'#',
+      href: lang.href || '#',
       id: lang.id || uniqueId('language')
     };
     if (lang.active) attrs['aria-current'] = true;

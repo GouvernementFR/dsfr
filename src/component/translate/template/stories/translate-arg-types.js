@@ -21,6 +21,11 @@ const getLanguagesArgTypes = (id) => {
     ...table
   };
 
+  language[`href${id}`] = {
+    ...languageArgTypes.href,
+    ...table
+  };
+
   return language;
 };
 
@@ -31,6 +36,13 @@ const translateArgTypes = {
     type: {
       value: 'string',
       required: true
+    }
+  },
+  noBorder: {
+    control: 'boolean',
+    description: 'Version sans bordure sur le bouton',
+    type: {
+      value: 'boolean'
     }
   },
   ...getLanguagesArgTypes(1),
@@ -45,16 +57,18 @@ const getLanguagesArgs = (id, name, locale) => {
   language[`id${id}`] = `${languageArgs.id}-${id}`;
   language[`name${id}`] = name || `${languageArgs.name} ${id}`;
   language[`locale${id}`] = locale || `${languageArgs.locale} ${id}`;
+  language[`href${id}`] = `/${locale.toLowerCase()}/`;
 
   return language;
 };
 
 const translateArgs = {
   id: 'translate-id',
-  ...getLanguagesArgs(1, 'Français', 'FR'),
-  ...getLanguagesArgs(2, 'English', 'EN'),
-  ...getLanguagesArgs(3, 'Español', 'ES'),
-  ...getLanguagesArgs(4, 'Deutsch', 'DE')
+  noBorder: false,
+  ...getLanguagesArgs(1, 'Français', 'fr'),
+  ...getLanguagesArgs(2, 'English', 'en'),
+  ...getLanguagesArgs(3, 'Español', 'es'),
+  ...getLanguagesArgs(4, 'Deutsch', 'de')
 };
 
 const translateProps = (args) => {
@@ -65,7 +79,8 @@ const translateProps = (args) => {
       id: args[`id${i}`] || languageArgs.id,
       active: i === 1,
       name: args[`name${i}`] || languageArgs.name,
-      locale: args[`locale${i}`] || languageArgs.locale
+      locale: args[`locale${i}`] || languageArgs.locale,
+      href: args[`href${i}`] || languageArgs.href
     };
 
     languages.push(language);
@@ -76,7 +91,8 @@ const translateProps = (args) => {
     collapseId: 'translate-collapse-id',
     button: {
       id: 'button-id',
-      title: 'Sélectionner une langue'
+      title: 'Sélectionner une langue',
+      kind: args.noBorder ? 4 : 3
     },
     languages: languages
   };
