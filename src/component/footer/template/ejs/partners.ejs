@@ -7,8 +7,8 @@
   ** partners.subPartners (array, required) : Tableau de paramètre des images des partenaires secondaires - voir src/core/template/ejs/media/img.ejs
 
 %>
-<% 
-  let partners = locals.partners || {} 
+<%
+  let partners = locals.partners || {}
   const attributes = partners.attributes || {};
   attributes.id = attributes.id || uniqueId('footer__partners-link');
 %>
@@ -17,7 +17,7 @@
 <div class="<%= prefix %>-footer__partners-logos">
   <% if (partners.mainPartner) { %>
     <div class="<%= prefix %>-footer__partners-main">
-      <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- partners.href %>">
+      <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- partners.mainPartner.href %>">
         <%- include('../../../../core/template/ejs/media/img.ejs',  {media: {...partners.mainPartner, classes: [prefix + '-footer__logo']}}); %>
       </a>
     </div>
@@ -27,13 +27,13 @@
     <div class="<%= prefix %>-footer__partners-sub">
       <ul>
         <%
-          for (let i = 0; i < partners.subPartners.length; i++) {
-            const attributes = {};
-            attributes.id = uniqueId('footer__subpartners-link');
+          for (subPartner of partners.subPartners) {
+            const attributes = subPartner.attributes || {};
+            attributes.id = attributes.id || uniqueId('footer__subpartners-link');
         %>
           <li>
-            <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- partners.href %>">
-              <%- include('../../../../core/template/ejs/media/img.ejs', {media: {...partners.subPartners[i], classes: [prefix + '-footer__logo']}}); %>
+            <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- subPartner.href %>">
+              <%- include('../../../../core/template/ejs/media/img.ejs', {media: {...subPartner, classes: [prefix + '-footer__logo']}}); %>
             </a>
           </li>
         <% } %>

@@ -14,12 +14,14 @@
 	<p class="<%= prefix %>-footer__content-desc"><%- content.desc %></p>
 	<ul class="<%= prefix %>-footer__content-list">
 		<%
-			for (let i = 0; i < links.length; i++) {
-				const attributes = {};
-      	attributes.id = uniqueId('footer__content-link');
+			for (link of links) {
+				const attributes = link.attributes || {};
+				const classes = link.classes || [];
+				classes.push(`${prefix}-footer__content-link`);
+      	attributes.id = attributes.id || uniqueId('footer__content-link');
 		%>
 		<li class="<%= prefix %>-footer__content-item">
-			<a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__content-link" href="<%= links[i].href %>"><%= links[i].label %></a>
+			<%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, classes: classes, attributes: attributes, kind: 'link'}}); %>
 		</li>
 		<% } %>
 	</ul>

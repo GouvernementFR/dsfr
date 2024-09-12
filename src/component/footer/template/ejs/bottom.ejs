@@ -33,12 +33,14 @@
 
         default:
           const classes = link.classes || [];
-          const markup = link.markup || 'a';
+          const kind = link.kind || 'link';
           const attributes = link.attributes || {};
           attributes.id = uniqueId('footer__bottom-link');
-          if (markup === 'a') attributes["href"] = link.url || '#';
+          if (kind === 'link') attributes["href"] = link.href || '#';
           classes.push(`${prefix}-footer__bottom-link`);
-          %><<%= markup %> <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- links[i].label %></<%= markup %>><%
+          %>
+          <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, attributes: attributes, classes: classes, kind: kind}}); %>
+          <%
       } %>
     </li>
   <% } %>
