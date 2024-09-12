@@ -164,6 +164,9 @@ $action-elements: (
       not-allowed: (
         selector: '&:disabled'
       )
+    ),
+    disabled: (
+      selector: '&:disabled'
     )
   ),
   textarea: (
