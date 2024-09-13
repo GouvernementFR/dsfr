@@ -52,7 +52,7 @@ _String_ (EA: path)
 
 * Défini le chemin de la page
 
-* Utilise `document.location.pathname` si non défini
+* Utilise `document.location.pathname/document.location.search` si non défini
 
 * * *
 
