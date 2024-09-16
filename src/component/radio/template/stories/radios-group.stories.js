@@ -1,4 +1,3 @@
-// import { formArgs, formArgTypes, formProps } from '../../../form/template/stories/form-arg-types';
 import { radiosGroupArgs, radiosGroupArgTypes, radiosGroupProps } from './radios-group-arg-types';
 import { renderFieldset } from '../../../form/template/stories/fieldset';
 
@@ -18,6 +17,5 @@ export const ControlsStory = {
 };
 
 export const DefaultStory = {
-  // tags: ['!dev'],
   args: {}
 };

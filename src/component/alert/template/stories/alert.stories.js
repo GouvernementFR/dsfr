@@ -78,7 +78,7 @@ export const DismissibleStory = {
       title: 'Information : titre du message',
       text: 'Cliquer sur la croix pour fermer l\'alerte',
       dismissible: true
-    },
+    }
   ])
 };
 
@@ -91,7 +91,7 @@ export const DismissibleNoJsStory = {
       text: 'Cliquer sur la croix pour fermer l\'alerte',
       dismissible: true,
       buttonCloseJavaScript: undefined
-    },
+    }
   ])
 };
 
@@ -100,7 +100,7 @@ export const IconCustomStory = {
   render: () => renders([
     {
       type: 'default',
-      icon: 'lock-fill',
-    },
+      icon: 'lock-fill'
+    }
   ])
 };

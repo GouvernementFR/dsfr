@@ -51,7 +51,7 @@ export const AccentStory = {
     {
       type: 'clickable',
       accent: 'yellow-moutarde'
-    },
+    }
   ])
 };
 
@@ -85,7 +85,7 @@ export const PressableStory = {
   tags: ['!dev'],
   render: () => renders([
     {
-      type: 'pressable',
+      type: 'pressable'
     },
     {
       type: 'pressable',

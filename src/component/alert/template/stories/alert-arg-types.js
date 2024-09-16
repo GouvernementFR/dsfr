@@ -29,14 +29,14 @@ const alertArgTypes = {
     control: 'text',
     description: 'Titre de l\'alerte (obligatoire en md)',
     type: {
-      value: 'string',
+      value: 'string'
     }
   },
   text: {
     control: 'text',
     description: 'Description de l\'alerte',
     type: {
-      value: 'string',
+      value: 'string'
     }
   },
   type: {
@@ -51,7 +51,7 @@ const alertArgTypes = {
       }
     },
     description: 'Type d\'alerte<br>Valeurs :<br>- Défaut : Alerte sans couleur<br>- Succès : Alerte verte pour indiquer une action ou une tâche terminée avec succès.<br>- Erreur : Alerte rouge à utiliser quand il y a plusieurs erreurs dans un formulaire, ou des erreurs bloquantes à remonter pour l’utilisateur.<br>- Information : Alerte bleue à utiliser pour mettre en exergue des informations importantes.<br>- Attention : Alerte orange à utiliser à utiliser pour mettre en exergue des risques ou points d’attention importants.',
-    options: ['default', 'success', 'error', 'info', 'warning'],
+    options: ['default', 'success', 'error', 'info', 'warning']
   },
   size: {
     control: { type: 'select' },
@@ -64,11 +64,11 @@ const alertArgTypes = {
   },
   dismissible: {
     control: 'boolean',
-    description: 'L\'alerte est refermable',
+    description: 'L\'alerte est refermable'
   },
   icon: {
     control: 'text',
-    description: 'Icône personnalisée sur l\'alerte',
+    description: 'Icône personnalisée sur l\'alerte'
   },
   ...buttonCloseArgTypes
 };

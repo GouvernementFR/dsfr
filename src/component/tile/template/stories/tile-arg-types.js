@@ -227,7 +227,7 @@ const tileProps = (args) => {
       tag: args.hasTag && { label: 'Libellé tag' }
     },
     header: {
-      pictogram: (args.pictogramName) ? { name: args.pictogramName, accent: args.pictogramAccent } : tileArgs.pictogram,
+      pictogram: (args.pictogramName) ? { name: args.pictogramName, accent: args.pictogramAccent } : tileArgs.pictogram
     }
   };
 

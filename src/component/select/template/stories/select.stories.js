@@ -23,7 +23,7 @@ export const DefaultStory = {
   }
 };
 
-export const hintStory = {
+export const HintStory = {
   tags: ['!dev'],
   args: {
     hint: 'Texte de description additionnel'
