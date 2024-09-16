@@ -1,7 +1,7 @@
 /** @type { import('@storybook/html').Preview } */
 import './preview.css';
 import * as prettier from "prettier";
-import htmlParser from 'prettier/parser-html';
+import * as htmlParser from 'prettier/parser-html';
 import dsfrTheme, { getPreferredColorScheme } from './dsfr-theme'
 import { DecoratorHelpers } from '@storybook/addon-themes';
 import { UrlStore } from '@storybook/preview-api';
