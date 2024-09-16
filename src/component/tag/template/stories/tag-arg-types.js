@@ -5,7 +5,7 @@ const iconArgTypes = {
     control: 'boolean',
     description: 'Le tag a une icône',
     table: {
-      category: 'icon',
+      category: 'icon'
     }
   },
   icon: {
@@ -13,7 +13,7 @@ const iconArgTypes = {
     control: 'text',
     description: 'Nom de l\'icône dans le tag',
     table: {
-      category: 'icon',
+      category: 'icon'
     }
   }
 };
@@ -48,34 +48,6 @@ const accentArgTypes = {
     }
   }
 };
-
-/*
-const tooltipArgTypes = {
-  hasTooltip: {
-    control: 'boolean',
-    description: 'Le tag a une infobulle',
-    table: { category: 'tooltip' }
-  },
-  tooltipId: {
-    if: {
-      arg: 'hasTooltip',
-      eq: true
-    },
-    control: 'text',
-    description: 'Identifiant de l\'infobulle',
-    table: { category: 'tooltip' }
-  },
-  tooltipContent: {
-    if: {
-      arg: 'hasTooltip',
-      eq: true
-    },
-    control: 'text',
-    description: 'Contenu texte de l\'infobulle',
-    table: { category: 'tooltip' }
-  }
-};
- */
 
 const tagArgTypes = {
   label: {
@@ -145,14 +117,7 @@ const tagArgTypes = {
   },
   ...accentArgTypes,
   ...iconArgTypes
-  // ...tooltipArgTypes
 };
-
-// const tooltipArgs = {
-//   hasTooltip: false,
-//   tooltipId: 'tooltip-id',
-//   tooltipContent: 'Contenu de l\'infobulle'
-// };
 
 const tagArgs = {
   label: 'libellé tag',
@@ -166,7 +131,6 @@ const tagArgs = {
   pressed: false,
   blank: false,
   disabled: false
-  // ...tooltipArgs
 };
 
 const tagProps = (args) => {
@@ -186,13 +150,6 @@ const tagProps = (args) => {
   if (args.hasIcon === true) {
     tag.icon = args.icon;
   }
-
-  // if (args.hasTooltip) {
-  //   tag.tooltip = {
-  //     id: args.tooltipId,
-  //     content: args.tooltipContent
-  //   };
-  // }
 
   return tag;
 };

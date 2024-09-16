@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as ToggleGroupStories from '../toggle-group.stories.js';
+
+<Meta of={ToggleGroupStories} tags={['sort:10']} />
+
+<Canvas of={ToggleGroupStories.ControlsStory} sourceState={'shown'}/>
+
+<Controls of={ToggleGroupStories.ControlsStory} />

@@ -58,7 +58,7 @@ const getTagArgTypes = (id) => {
 const tagsGroupArgTypes = {
   size: {
     ...tagArgTypes.size,
-    description: 'Taille des tags dans le groupe',
+    description: 'Taille des tags dans le groupe'
   },
   type: {
     ...tagArgTypes.type,
