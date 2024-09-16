@@ -74,6 +74,10 @@ const deployFavicons = () => {
   copyDir(src, dest, ['ico', 'jpg', 'png', 'svg', 'webmanifest']);
 };
 
+const deployStorybook = () => {
+  copyDir(root('storybook'), root('public/storybook'));
+};
+
 const deployFiles = () => {
   copyDir(root('dist'), root('public/dist'));
   copyDir(root('example'), root('public/example'));
@@ -85,4 +89,4 @@ const deployRobots = () => {
   createFile(root('public/robots.txt'), content);
 };
 
-module.exports = { copyFiles, copyImages, copyAssets, copyIcons, deployFavicons, deployFiles, deployRobots };
+module.exports = { copyFiles, copyImages, copyAssets, copyIcons, deployFavicons, deployFiles, deployRobots, deployStorybook };
