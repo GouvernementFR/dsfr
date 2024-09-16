@@ -21,14 +21,16 @@ class HeaderLinks extends api.core.Instance {
     // eslint-disable-next-line no-useless-escape
     toolsHtmlIdList = toolsHtmlIdList.map(element => element.replace('id=\"', '').replace('\"', ''));
 
-    const toolsHtmlAriaControlList = toolsHtml.match(/aria-controls="(.*?)"/gm);
     let toolsHtmlDuplicateId = toolsHtml.replace(/id="(.*?)"/gm, 'id="$1' + copySuffix + '"');
-    if (toolsHtmlAriaControlList) {
-      for (const element of toolsHtmlAriaControlList) {
-        const ariaControlsValue = element.replace('aria-controls="', '').replace('"', '');
-        if (toolsHtmlIdList.includes(ariaControlsValue)) {
-          toolsHtmlDuplicateId = toolsHtmlDuplicateId.replace(`aria-controls="${ariaControlsValue}"`, `aria-controls="${ariaControlsValue + copySuffix}"`);
-        };
+
+    const ariaAttributes = ['aria-controls', 'aria-labelledby', 'aria-describedby'];
+    for (const attribute of ariaAttributes) {
+      const toolsHtmlAriaList = toolsHtml.match(new RegExp(`${attribute}="(.*?)"`, 'gm')) || [];
+      for (const element of toolsHtmlAriaList) {
+        const ariaValue = element.replace(`${attribute}="`, '').replace('"', '');
+        if (toolsHtmlIdList.includes(ariaValue)) {
+          toolsHtmlDuplicateId = toolsHtmlDuplicateId.replace(`${attribute}="${ariaValue}"`, `${attribute}="${ariaValue + copySuffix}"`);
+        }
       }
     }
 
