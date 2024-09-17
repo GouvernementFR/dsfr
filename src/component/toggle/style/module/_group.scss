@@ -7,14 +7,12 @@
   @include disable-list-style;
 }
 
-#{ns(fieldset)} {
-  #{ns(toggle)}__list {
-    li {
-      @include margin-bottom(4v);
+#{ns(toggle)}__list {
+  li {
+    @include margin-bottom(4v);
 
-      &:last-child {
-        @include margin-bottom(0);
-      }
+    &:last-child {
+      @include margin-bottom(0);
     }
   }
 }
