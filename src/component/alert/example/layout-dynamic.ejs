@@ -4,7 +4,7 @@
   <h4><%= title %></h4>
   <% } %>
   <div class="<%= prefix %>-mb-6v" >
-    <button class="fr-btn" id="button-add" onclick="const component = document.createElement('div'); component.className = 'fr-my-8v'; component.innerHTML = decodeURIComponent('<%- encodeURIComponent(component) %>'); this.after(component);">Bouton d'ajout</button>
+    <button type="button" class="fr-btn" id="button-add" onclick="const component = document.createElement('div'); component.className = 'fr-my-8v'; component.innerHTML = decodeURIComponent('<%- encodeURIComponent(component) %>'); this.after(component);">Bouton d'ajout</button>
 
 </div>
   <% if (locals.snippet !== undefined) { %>
