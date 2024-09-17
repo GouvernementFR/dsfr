@@ -11,4 +11,4 @@ Paramètres de sidemenu btn
 %>
 
 <% let sidemenuBtn = locals.sidemenuBtn || {}; %>
-<button class="<%= prefix %>-sidemenu__btn" aria-expanded="false" aria-controls="<%= sidemenuBtn.collapseId %>" <% if(sidemenuBtn.active) { %> aria-current="true" <% } %>><%- sidemenuBtn.label %></button>
+<button type="button" class="<%= prefix %>-sidemenu__btn" aria-expanded="false" aria-controls="<%= sidemenuBtn.collapseId %>" <% if(sidemenuBtn.active) { %> aria-current="true" <% } %>><%- sidemenuBtn.label %></button>
