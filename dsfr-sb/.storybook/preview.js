@@ -1,7 +1,6 @@
 /** @type { import('@storybook/html').Preview } */
 import './preview.css';
-import * as prettier from "prettier";
-import * as htmlParser from 'prettier/parser-html';
+import jsBeautifier from 'js-beautify';
 import dsfrTheme, { getPreferredColorScheme } from './dsfr-theme'
 import { DecoratorHelpers } from '@storybook/addon-themes';
 import { UrlStore } from '@storybook/preview-api';
@@ -83,7 +82,7 @@ const preview = {
       theme: getInitialTheme(),
       source: {
         language: 'html',
-        transform: (src) => prettier.format(src, { parser: 'html', plugins: [htmlParser], tabWidth: 2, })
+        transform: (src) => jsBeautifier.html(src, { indent_size: 2, preserve_newlines: false }),
       },
     },
     options: {
