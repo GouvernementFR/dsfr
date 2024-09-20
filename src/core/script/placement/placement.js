@@ -182,8 +182,9 @@ class Placement extends Instance {
 
   render () {
     if (!this._referent) return;
-    this.rect = this.getRect();
     this.referentRect = this._referent.getRect();
+    this.node.style.removeProperty('transform');
+    this.rect = this.getRect();
 
     if (this.mode === PlacementMode.AUTO) {
       this.place = this.getPlace();
@@ -203,19 +204,19 @@ class Placement extends Instance {
 
     switch (this.place) {
       case PlacementPosition.TOP:
-        y = this.referentRect.top - this.rect.height;
+        y = this.referentRect.top - this.rect.top - this.rect.height;
         break;
 
       case PlacementPosition.RIGHT:
-        x = this.referentRect.right;
+        x = this.referentRect.left - this.rect.left + this.referentRect.width;
         break;
 
       case PlacementPosition.BOTTOM:
-        y = this.referentRect.bottom;
+        y = this.referentRect.top - this.rect.top + this.referentRect.height;
         break;
 
       case PlacementPosition.LEFT:
-        x = this.referentRect.left - this.rect.width;
+        x = this.referentRect.left - this.rect.left - this.rect.width;
         break;
     }
 
@@ -224,15 +225,15 @@ class Placement extends Instance {
       case PlacementPosition.BOTTOM:
         switch (this.align) {
           case PlacementAlign.CENTER:
-            x = this.referentRect.center - this.rect.width * 0.5;
+            x = this.referentRect.left - this.rect.left + this.referentRect.width * 0.5 - this.rect.width * 0.5;
             break;
 
           case PlacementAlign.START:
-            x = this.referentRect.left;
+            x = this.referentRect.left - this.rect.left;
             break;
 
           case PlacementAlign.END:
-            x = this.referentRect.right - this.rect.width;
+            x = this.referentRect.left - this.rect.left + this.referentRect.width - this.rect.width;
             break;
         }
         break;
@@ -241,15 +242,15 @@ class Placement extends Instance {
       case PlacementPosition.LEFT:
         switch (this.align) {
           case PlacementAlign.CENTER:
-            y = this.referentRect.middle - this.rect.height * 0.5;
+            y = this.referentRect.top - this.rect.top + this.referentRect.height * 0.5 - this.rect.height * 0.5;
             break;
 
           case PlacementAlign.START:
-            y = this.referentRect.top;
+            y = this.referentRect.top - this.rect.top;
             break;
 
           case PlacementAlign.END:
-            y = this.referentRect.bottom - this.rect.height;
+            y = this.referentRect.top - this.rect.top - this.rect.height;
             break;
         }
         break;

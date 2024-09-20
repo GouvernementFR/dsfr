@@ -61,6 +61,7 @@ class Tooltip extends api.core.Placement {
 
   render () {
     super.render();
+    this.rect = this.getRect();
     let x = this.referentRect.center - this.rect.center;
     const limit = this.rect.width * 0.5 - 8;
     if (x < -limit) x = -limit;
