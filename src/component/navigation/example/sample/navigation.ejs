@@ -2,35 +2,38 @@
 let navigation = locals.navigation || {};
 const href = navigation.href || '#'
 
-const getLink = () => {
+const getLink = (icon, iconPlace) => {
   const id = uniqueId('nav');
   return {
     type: 'link',
     label: `accès direct ${id}`,
     id: id,
-    href: href
+    href: href,
+    icon: icon,
+    iconPlace: iconPlace
   };
-
 }
 
-const getSubLink = (active = false) => {
+const getSubLink = (active = false, icon, iconPlace) => {
   const id = uniqueId('nav');
   return {
     label: `Lien de navigation ${id}`,
     id: id,
     href: href,
-    active: active
+    active: active,
+    icon: icon,
+    iconPlace: iconPlace
   }
 }
 
 const getItems = (active = false) => {
   return [
     getSubLink(),
-    getSubLink(),
+    getSubLink(false, 'arrow-right-line', 'right'),
     getSubLink(active),
     getSubLink(),
     getSubLink(),
-    getSubLink(),
+    getSubLink(false, 'arrow-left-line'),
     getSubLink(),
     getSubLink()
   ];
@@ -47,12 +50,14 @@ const getMenu = (active = false) => {
   }
 }
 
-const getCategory = (active = false) => {
+const getCategory = (active = false, icon, iconPlace) => {
   return {
     id: uniqueId('category'),
     label: 'Nom de catégorie',
     href: href,
-    items: getItems(active)
+    items: getItems(active),
+    icon: icon,
+    iconPlace: iconPlace
   };
 }
 
@@ -76,9 +81,9 @@ const getMega = (active = false, leader = false) => {
   }}),
     categories: [
       getCategory(),
-      getCategory(),
+      getCategory(false, 'arrow-left-line'),
       getCategory(true),
-      getCategory()
+      getCategory(false,'arrow-right-line', 'right')
     ]
   }
 }
@@ -90,10 +95,10 @@ let data = {
     [
         getMenu(),
         getMega(),
-        getLink(),
+        getLink('arrow-left-line'),
         getMenu(true),
         getMega(false, true),
-        getLink(),
+        getLink('arrow-right-line', 'right'),
         getMega(true, false),
         getMenu()
     ]
