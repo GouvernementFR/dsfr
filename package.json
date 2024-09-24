@@ -40,6 +40,7 @@
     "@commitlint/config-conventional": "^15.0.0",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
+    "browser-sync": ">=2.27.10",
     "browserslist": "^4.21.5",
     "cssnano": "^5.1.15",
     "del": "^6.0.0",
@@ -81,9 +82,6 @@
     "subset-font": "^1.6.1",
     "svgo": "^2.8.0",
     "yargs": "^17.7.1"
-  },
-  "peerDependencies": {
-    "browser-sync": ">=2.27.10"
   },
   "husky": {
     "hooks": {
