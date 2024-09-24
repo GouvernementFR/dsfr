@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as SearchStories from '../search.stories.js';
+
+<Meta of={SearchStories} tags={['sort:10']} />
+
+<Canvas of={SearchStories.ControlsStory} sourceState={'shown'}/>
+
+<Controls of={SearchStories.ControlsStory} />
