@@ -99,6 +99,17 @@ const tileArgTypes = {
       category: 'action'
     }
   },
+  href: {
+    if: {
+      arg: 'actionMarkup',
+      eq: 'a'
+    },
+    control: 'text',
+    description: 'URL de destination du lien',
+    table: {
+      category: 'action'
+    }
+  },
   noLink: {
     control: 'boolean',
     description: 'Si true, absence d\'actionneur',
@@ -141,7 +152,29 @@ const tileArgTypes = {
       eq: true
     },
     control: 'text',
-    description: 'Ajoute l\'attribut hreflang au lien, pour définir la langue du document lié (Ex: \'Fr\')',
+    description: 'Ajoute l\'attribut hreflang au lien, pour définir la langue du document lié (Ex: \'fr\')',
+    table: {
+      category: 'download'
+    }
+  },
+  assess: {
+    if: {
+      arg: 'download',
+      eq: true
+    },
+    control: 'boolean',
+    description: 'Si true, évaluation automatique des détails du fichier à télécharger (poids, format, etc.)',
+    table: {
+      category: 'download'
+    }
+  },
+  assessBytes: {
+    if: {
+      arg: 'assess',
+      eq: true
+    },
+    control: 'boolean',
+    description: 'Si true, change l\'unité de mesure de l\'évaluation automatique du poids en Bytes',
     table: {
       category: 'download'
     }
@@ -190,6 +223,7 @@ const tileArgs = {
   details: 'Détail (optionel)',
   markup: 'h3',
   actionMarkup: 'a',
+  href: '[URL - à modifier]',
   pictogramName: 'city-hall',
   hasBadge: false,
   hasTag: false,
@@ -198,6 +232,8 @@ const tileArgs = {
   blank: false,
   download: false,
   lang: '',
+  assess: false,
+  assessBytes: false,
   disabled: false,
   size: 'md',
   horizontal: false,
@@ -219,10 +255,12 @@ const tileProps = (args) => {
       markup: args.markup || tileArgs.markup,
       details: args.details || tileArgs.details,
       actionMarkup: args.actionMarkup || tileArgs.actionMarkup,
+      href: args.href || tileArgs.href,
       blank: args.blank || tileArgs.blank,
       noLink: args.noLink || tileArgs.noLink,
       disabled: args.disabled || tileArgs.disabled,
       lang: args.lang || tileArgs.lang,
+      assess: args.assess || tileArgs.assess,
       badge: args.hasBadge && { label: 'Libellé badge', accent: 'purple-glycine' },
       tag: args.hasTag && { label: 'Libellé tag' }
     },
@@ -233,6 +271,10 @@ const tileProps = (args) => {
 
   if (args.variations !== 'none') {
     tile.variations = [args.variations];
+  }
+
+  if (args.assessBytes === true) {
+    tile.content.assess = 'bytes';
   }
 
   return tile;
