@@ -54,7 +54,7 @@ const cardArgTypes = {
   },
   detailLabel: {
     control: 'text',
-    description: 'Détails de la carte',
+    description: 'Détails de la carte, si carte en mode téléchargement, le détail doit indiquer le poids et format du fichier',
     type: {
       value: 'string'
     },
@@ -63,6 +63,10 @@ const cardArgTypes = {
     }
   },
   detailPosition: {
+    if: {
+      arg: 'download',
+      eq: false
+    },
     control: { type: 'select' },
     description: 'Position du détail',
     options: ['start', 'end'],
@@ -122,6 +126,13 @@ const cardArgTypes = {
       category: 'content'
     }
   },
+  enlarge: {
+    control: 'boolean',
+    description: 'Si true, agrandi la zone de clic à toute la carte',
+    table: {
+      category: 'action'
+    }
+  },
   actionMarkup: {
     control: { type: 'select' },
     description: 'balise de l\'actionneur du composant (a, button)',
@@ -130,9 +141,24 @@ const cardArgTypes = {
       category: 'action'
     }
   },
-  enlarge: {
+  href: {
+    if: {
+      arg: 'actionMarkup',
+      eq: 'a'
+    },
+    control: 'text',
+    description: 'URL de destination du lien',
+    table: {
+      category: 'action'
+    }
+  },
+  blank: {
+    if: {
+      arg: 'actionMarkup',
+      eq: 'a'
+    },
     control: 'boolean',
-    description: 'Si true, agrandi la zone de clic à toute la carte',
+    description: 'Ajoute l\'attribut target="_blank" pour ouvrir le lien dans une nouvelle fenêtre, nécessite l\'ajout d\'un attribut title "intitulé - nouvelle fenêtre"',
     table: {
       category: 'action'
     }
@@ -147,17 +173,6 @@ const cardArgTypes = {
   disabled: {
     control: 'boolean',
     description: 'Si true, retire le href du lien pour le désactiver ou ajoute l\'attribut disabled sur le bouton',
-    table: {
-      category: 'action'
-    }
-  },
-  blank: {
-    if: {
-      arg: 'actionMarkup',
-      eq: 'a'
-    },
-    control: 'boolean',
-    description: 'Ajoute l\'attribut target="_blank" pour ouvrir le lien dans une nouvelle fenêtre, nécessite l\'ajout d\'un attribut title "intitulé - nouvelle fenêtre"',
     table: {
       category: 'action'
     }
@@ -182,8 +197,15 @@ const cardArgTypes = {
       arg: 'horizontal',
       eq: true
     },
-    control: { type: 'select' },
-    description: 'Proportion de l\'image par rapport à la carte en horizontal (valeurs : tier, half)',
+    control: {
+      type: 'select',
+      labels: {
+        default: 'défaut',
+        tier: '1 tier / 2 tiers',
+        half: 'moitié / moitié'
+      }
+    },
+    description: 'Proportion de l\'image par rapport au contenu en horizontal (par défaut 40% / 60%)',
     options: ['default', 'tier', 'half'],
     table: {
       category: 'orientation'
@@ -199,22 +221,22 @@ const cardArgTypes = {
   },
   hasButtons: {
     if: {
-      arg: 'hasLinks',
+      arg: 'enlarge',
       eq: false
     },
     control: 'boolean',
-    description: 'Si true, ajoute un badge dans l\'en-tête',
+    description: 'Si true, ajoute des boutons au pied de la carte',
     table: {
       category: 'footer'
     }
   },
   hasLinks: {
     if: {
-      arg: 'hasButtons',
+      arg: 'enlarge',
       eq: false
     },
     control: 'boolean',
-    description: 'Si true, ajoute un badge dans l\'en-tête',
+    description: 'Si true, ajoute des liens au pied de la carte',
     table: {
       category: 'footer'
     }
@@ -244,7 +266,29 @@ const cardArgTypes = {
       eq: true
     },
     control: 'text',
-    description: 'Ajoute l\'attribut hreflang au lien, pour définir la langue du document lié (Ex: \'Fr\')',
+    description: 'Ajoute l\'attribut hreflang au lien, pour définir la langue du document lié (Ex: \'fr\')',
+    table: {
+      category: 'download'
+    }
+  },
+  assess: {
+    if: {
+      arg: 'download',
+      eq: true
+    },
+    control: 'boolean',
+    description: 'Si true, évaluation automatique des détails du fichier à télécharger (poids, format, etc.)',
+    table: {
+      category: 'download'
+    }
+  },
+  assessBytes: {
+    if: {
+      arg: 'assess',
+      eq: true
+    },
+    control: 'boolean',
+    description: 'Si true, change l\'unité de mesure de l\'évaluation automatique du poids en Bytes',
     table: {
       category: 'download'
     }
@@ -260,15 +304,16 @@ const cardArgs = {
   hasDetailIcon: false,
   detailIcon: 'warning-fill',
   markup: 'h3',
-  actionMarkup: 'a',
   hasBadge: false,
   hasTag: false,
   enlarge: false,
-  noLink: false,
+  actionMarkup: 'a',
+  href: '[url - à modifier]',
   blank: false,
+  noLink: false,
   disabled: false,
   size: 'md',
-  horizontal: undefined,
+  horizontal: false,
   src: 'img/placeholder.16x9.png',
   alt: '[À MODIFIER - vide ou texte alternatif de l’image]',
   hasHeaderBadge: false,
@@ -276,7 +321,9 @@ const cardArgs = {
   hasLinks: false,
   variations: 'none',
   download: false,
-  lang: ''
+  lang: '',
+  assess: false,
+  assessBytes: false
 };
 
 const cardProps = (args) => {
@@ -292,24 +339,29 @@ const cardProps = (args) => {
       markup: args.markup || cardArgs.markup,
       details: [{
         label: args.detailLabel || cardArgs.detailLabel,
-        position: args.detailPosition || cardArgs.detailPosition
+        position: args.download ? 'end' : args.detailPosition || cardArgs.detailPosition
       }],
       actionMarkup: args.actionMarkup || cardArgs.actionMarkup,
+      href: args.href || cardArgs.href,
       blank: args.blank || cardArgs.blank,
       noLink: args.noLink || cardArgs.noLink,
       disabled: args.disabled || cardArgs.disabled,
       lang: args.lang || cardArgs.lang,
+      assess: args.assess || cardArgs.assess,
       badgesGroup: args.hasBadge && { badges: [{ label: 'Libellé badge', accent: 'purple-glycine' }, { label: 'Libellé badge', accent: 'purple-glycine' }] },
       tagsGroup: args.hasTag && { tags: [{ label: 'Libellé tag' }, { label: 'Libellé tag' }] }
     },
     header: {
       badgesGroup: args.hasHeaderBadge && { badges: [{ label: 'Libellé badge', accent: 'purple-glycine' }] }
-    },
-    footer: {
-      buttonsGroup: args.hasButtons && { buttons: [{ label: 'Libellé', kind: 2 }, { label: 'Libellé', kind: 1 }], reverse: true, inline: 'lg' },
-      linksGroup: args.hasLinks && { inline: true, links: [...Array(2)].map(() => { return { label: 'Libellé', inline: true, href: '#', icon: 'arrow-right-line', iconPlace: 'right' }; }) }
     }
   };
+
+  if (!args.enlarge && (args.hasButtons || args.hasLinks)) {
+    card.footer = {
+      buttonsGroup: args.hasButtons && { buttons: [{ label: 'Libellé', kind: 2 }, { label: 'Libellé', kind: 1 }], reverse: true, inline: 'lg' },
+      linksGroup: args.hasLinks && { inline: true, links: [...Array(2)].map(() => { return { label: 'Libellé', inline: true, href: '#', icon: 'arrow-right-line', iconPlace: 'right' }; }) }
+    };
+  }
 
   if (args.image !== null) {
     card.header.img = {
@@ -329,6 +381,10 @@ const cardProps = (args) => {
 
   if (args.variations !== 'none') {
     card.variations = [args.variations];
+  }
+
+  if (args.assessBytes === true) {
+    card.content.assess = 'bytes';
   }
 
   return card;
