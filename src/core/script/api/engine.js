@@ -7,6 +7,8 @@ import { Load } from './modules/load/load.js';
 import { FontSwap } from './modules/font-swap/font-swap';
 import { MouseMove } from './modules/mouse-move/mouse-move';
 import { Hash } from './modules/hash/hash';
+import { rootDispatch } from './utilities/dom/dispatch.js';
+import { RootEvent } from './modules/stage/root-event.js';
 import inspector from './inspect/inspector.js';
 import state from './state.js';
 
@@ -33,11 +35,14 @@ class Engine {
   start () {
     inspector.debug('START');
     state.isActive = true;
+    rootDispatch(RootEvent.START);
+    console.log('Engine started');
   }
 
   stop () {
     inspector.debug('STOP');
     state.isActive = false;
+    rootDispatch(RootEvent.STOP);
   }
 }
 

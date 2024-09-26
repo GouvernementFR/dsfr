@@ -39,7 +39,7 @@ class RangeInput extends api.core.Instance {
   setValue (value) {
     if (parseFloat(this.node.value) > value) {
       this.node.value = value;
-      this.dispatch('change', undefined, true);
+      this.dispatch('change');
       this.change();
     }
   }
