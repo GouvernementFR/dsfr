@@ -1,0 +1,27 @@
+<style>
+  .sample-box {
+    background-color: var(--artwork-major-blue-france);
+    color: var(--text-inverted-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    position: relative;
+  }
+</style>
+
+<%
+ const sample = getSample(include);
+
+ const colors = JSON.parse(include('../../../../../.config/colors.json'));
+ const decisions = colors.decisions;
+ const items = colors.items;
+ const backgroundColors = items.filter(item => item.context === 'background');
+
+ for (const color of backgroundColors) {
+ %>
+
+ <h3><%= color.colorClass %></h3>
+
+<% } %>
