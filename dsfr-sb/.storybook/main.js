@@ -25,6 +25,4 @@ const config = {
   staticDirs: ["./static", { from: "../../dist", to: "dist" }, { from: "../../tool/example/img", to: "img" }],
 };
 
-
-
 export default config;

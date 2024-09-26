@@ -17,6 +17,7 @@ import { linkPartials } from './component/link/template/stories/partials';
 import { logoPartials } from './component/logo/template/stories/partials';
 import { modalPartials } from './component/modal/template/stories/partials';
 import { noticePartials } from './component/notice/template/stories/partials';
+import { passwordPartials } from './component/password/template/stories/partials';
 import { quotePartials } from './component/quote/template/stories/partials';
 import { radioPartials } from './component/radio/template/stories/partials';
 import { searchPartials } from './component/search/template/stories/partials';
@@ -35,6 +36,7 @@ import { translatePartials } from './component/translate/template/stories/partia
 import { tooltipPartials } from './component/tooltip/template/stories/partials';
 import { transcriptionPartials } from './component/transcription/template/stories/partials';
 import { uploadPartials } from './component/upload/template/stories/partials';
+import { passwordArgTypes } from './component/password/template/stories/password-arg-types';
 
 const ejsRenderer = new EJSRenderer();
 
@@ -56,6 +58,7 @@ linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 logoPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 modalPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 noticePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+passwordPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 quotePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 radioPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 rangePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
