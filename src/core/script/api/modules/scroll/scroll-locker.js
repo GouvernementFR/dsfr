@@ -1,5 +1,7 @@
 import ns from '../../utilities/namespace.js';
 import { Module } from '../module.js';
+import { rootDispatch } from '../../utilities/dom/dispatch.js';
+import { RootEvent } from '../stage/root-event.js';
 
 class ScrollLocker extends Module {
   constructor () {
@@ -26,6 +28,7 @@ class ScrollLocker extends Module {
       if (scrollBarGap > 0) {
         document.documentElement.style.setProperty('--scrollbar-width', `${scrollBarGap}px`);
       }
+      rootDispatch(RootEvent.SCROLL_LOCK);
     }
   }
 
@@ -37,6 +40,7 @@ class ScrollLocker extends Module {
       window.scrollTo(0, this._scrollY);
       if (this.behavior === 'smooth') document.documentElement.style.removeProperty('scroll-behavior');
       document.documentElement.style.removeProperty('--scrollbar-width');
+      rootDispatch(RootEvent.SCROLL_UNLOCK);
     }
   }
 

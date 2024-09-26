@@ -15,7 +15,7 @@ class RangeInput2 extends RangeInput {
   setValue (value) {
     if (parseFloat(this.node.value) < value) {
       this.node.value = value;
-      this.dispatch('change', undefined, true);
+      this.dispatch('change');
       this.change();
     }
   }
