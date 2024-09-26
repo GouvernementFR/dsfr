@@ -1,0 +1,6 @@
+import { Meta, Canvas, Story } from '@storybook/blocks'
+import * as PasswordStories from '../password.stories.js';
+
+<Meta of={PasswordStories} tags={['sort:200']} />
+
+<Canvas of={PasswordStories.RegisterStory} sourceState={'shown'}/>
