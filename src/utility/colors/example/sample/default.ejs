@@ -34,12 +34,15 @@
           <div class="sample-box <%= prefix %>-mb-4v">
 
             <% if (context === 'text') { %>
-              <p class="<%= color.colorClass %> <%= prefix %>-mb-0 <%= prefix %>-mr-4v"><%- lorem('', 20) %></p>
+              <% let wrapperClass = color.usage === 'inverted' ? [`${prefix}-background-flat--${color.tint}`, `${prefix}-p-1v`] : []; %>
+              <div <%- includeClasses(wrapperClass); %>>
+                <p class="<%= color.colorClass %> <%= prefix %>-mb-0"><%- lorem('', 20) %></p>
+              </div>
             <% } else { %>
-              <span class="<%= color.colorClass %> <%= prefix %>-mr-4v"></span>
+              <span class="<%= color.colorClass %>"></span>
             <% } %>
 
-            <code><%= color.colorClass %></code>
+            <code class="<%= prefix %>-ml-4v"><%= color.colorClass %></code>
           </div>
         <% } %>
 

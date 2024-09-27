@@ -5,5 +5,3 @@ doc:
 wrapper: col-8
 style:
   - core
-script:
-  - core
