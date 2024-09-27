@@ -21,7 +21,7 @@ $values: (
       neutral: strongest,
       primary: strong,
       accent: strong,
-      system: strong,
+      system: strong
     ),
     action-high: (
       neutral: strongest (hover: true),
@@ -101,7 +101,7 @@ $values: (
     ),
     black-white: (
       neutral: absolute-black
-    ),
+    )
   ),
   border: (
     default: (
@@ -131,7 +131,7 @@ $values: (
       neutral: strongest,
       primary: strong,
       system: strong,
-      accent: strong,
+      accent: strong
     ),
     disabled: (
       neutral: light
@@ -140,7 +140,7 @@ $values: (
   artwork: (
     major: (
       primary: strong (hover: true),
-      accent: strong (hover: true),
+      accent: strong (hover: true)
     ),
     minor: (
       primary: main,
