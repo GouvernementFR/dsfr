@@ -1,0 +1,48 @@
+<style>
+  .sample-box {
+    display: flex;
+    align-items: center;
+
+     span {
+       width: 40px;
+       height: 40px;
+       border: 1px solid;
+     }
+  }
+</style>
+
+<%
+  const context = locals.context;
+  const colors = JSON.parse(include('../../../../../.config/colors.json'));
+  const items = colors.items;
+  const families = colors.families;
+  const decisions = colors.decisions;
+  const usages = decisions[context];
+
+  for (const usage of usages) {
+
+%>
+    <h3 class="<%= prefix %>-mt-16v">Usage : <%= usage %></h3>
+
+    <% for (const family of families) { %>
+      <% const backgroundColors = items.filter(item => item.context === context && item.usage === usage && item.family === family); %>
+
+      <% if (backgroundColors.length) { %>
+        <h4 class="<%= prefix %>-mt-8v">Family : <%= family %></h4>
+
+        <% for (const color of backgroundColors) { %>
+          <div class="sample-box <%= prefix %>-mb-4v">
+
+            <% if (context === 'text') { %>
+              <p class="<%= color.colorClass %> <%= prefix %>-mb-0 <%= prefix %>-mr-4v"><%- lorem('', 20) %></p>
+            <% } else { %>
+              <span class="<%= color.colorClass %> <%= prefix %>-mr-4v"></span>
+            <% } %>
+
+            <code><%= color.colorClass %></code>
+          </div>
+        <% } %>
+
+      <% } %>
+    <% } %>
+  <% } %>

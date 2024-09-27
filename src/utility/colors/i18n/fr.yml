@@ -3,5 +3,5 @@ description:
 doc:
 subdir:
   title: Mises en situation
-  background: Utilitaires de couleur de background
-  text: Utilitaires de couleur de text
+  background: Classes utilitaires de couleur de background
+  text: Classes utilitaires de couleur de text
