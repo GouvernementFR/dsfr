@@ -7,6 +7,8 @@
   ** content.links[].label (string, required) : label du lien
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <% let content = locals.content || {} %>
 <% let links = content.links || [] %>
 

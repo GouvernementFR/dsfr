@@ -12,7 +12,9 @@
     *** top.categories[].links[].href (string, required) : Lien du menu
 
 %>
-<% let top = locals.top || {} %>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% const top = locals.top || {} %>
 
 <%
   for (category of top.categories) {
@@ -31,7 +33,6 @@
       const attributes = link.attributes || {};
       const classes = link.classes || [];
       classes.push(`${prefix}-footer__top-link`);
-      attributes.id = uniqueId('footer__top-link');
       const kind = link.kind || 'link';
   %>
     <li>

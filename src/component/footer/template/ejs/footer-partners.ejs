@@ -4,13 +4,17 @@
 * partners (object, required) : Paramètres du template
   ** partners.title (string, required) : Titre du bloc partenaire
   ** partners.mainPartner (object, required) : Paramètre de l'image du partenaire principal - voir src/core/template/ejs/media/img.ejs
+    *** partners.mainPartner.href (string, required) : Lien du partenaire principal
+    *** partners.mainPartner.src (object, optional) : Chemin vers l'image du partenaire principal
+    *** partners.mainPartner.alt (string, optional) : Texte alternatif de l'image du partenaire principal
   ** partners.subPartners (array, required) : Tableau de paramètre des images des partenaires secondaires - voir src/core/template/ejs/media/img.ejs
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
   let partners = locals.partners || {}
   const attributes = partners.attributes || {};
-  attributes.id = attributes.id || uniqueId('footer__partners-link');
 %>
 
 <h2 class="<%= prefix %>-footer__partners-title"><%- partners.title %></h2>
@@ -29,7 +33,6 @@
         <%
           for (subPartner of partners.subPartners) {
             const attributes = subPartner.attributes || {};
-            attributes.id = attributes.id || uniqueId('footer__subpartners-link');
         %>
           <li>
             <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- subPartner.href %>">
