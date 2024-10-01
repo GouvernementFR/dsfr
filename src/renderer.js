@@ -10,6 +10,7 @@ import { cardPartials } from './component/card/template/stories/partials';
 import { checkboxPartials } from './component/checkbox/template/stories/partials';
 import { connectPartials } from './component/connect/template/stories/partials';
 import { contentPartials } from './component/content/template/stories/partials';
+import { footerPartials } from './component/footer/template/stories/partials';
 import { formPartials } from './component/form/template/stories/partials';
 import { highlightPartials } from './component/highlight/template/stories/partials';
 import { inputPartials } from './component/input/input-base/template/stories/partials';
@@ -37,7 +38,6 @@ import { translatePartials } from './component/translate/template/stories/partia
 import { tooltipPartials } from './component/tooltip/template/stories/partials';
 import { transcriptionPartials } from './component/transcription/template/stories/partials';
 import { uploadPartials } from './component/upload/template/stories/partials';
-// import { passwordArgTypes } from './component/password/template/stories/password-arg-types';
 
 const ejsRenderer = new EJSRenderer();
 
@@ -52,6 +52,7 @@ cardPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 checkboxPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 connectPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 contentPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+footerPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 formPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 highlightPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 inputPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));

@@ -23,7 +23,7 @@
     <div class="<%= prefix %>-footer__top">
       <div class="<%= prefix %>-container" >
         <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--start <%= prefix %>-grid-row--gutters" >
-          <%- include('./top', {top: footer.top}); %>
+          <%- include('./footer-top', {top: footer.top}); %>
         </div>
       </div>
     </div>
@@ -32,18 +32,18 @@
   <div class="<%= prefix %>-container" >
 
     <div class="<%= prefix %>-footer__body">
-      <%- include('./brand', {brand: footer.brand}); %>
-      <%- include('./content', {content: footer.content}); %>
+      <%- include('./footer-brand', {brand: footer.brand}); %>
+      <%- include('./footer-content', {content: footer.content}); %>
     </div>
 
     <% if (footer.partners !== undefined) { %>
       <div class="<%= prefix %>-footer__partners">
-          <%- include('./partners', {partners: footer.partners}); %>
+          <%- include('./footer-partners', {partners: footer.partners}); %>
       </div>
     <% } %>
 
     <div class="<%= prefix %>-footer__bottom">
-      <%- include('./bottom', {bottom: footer.bottom}); %>
+      <%- include('./footer-bottom', {bottom: footer.bottom}); %>
     </div>
 
   </div>
