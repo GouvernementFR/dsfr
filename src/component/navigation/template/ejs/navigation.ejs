@@ -47,7 +47,7 @@ attributes['aria-label'] = 'Menu principal'
 
     %>
       <li <%- includeClasses(classes); %>>
-        <%- include('./' + item.type, data); %>
+        <%- include('./navigation-' + item.type, data); %>
       </li>
     <% } %>
   </ul>

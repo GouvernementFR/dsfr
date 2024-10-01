@@ -8,7 +8,7 @@
 %>
 
 <% let menu = locals.menu || {}; %>
-<%- include('./btn', {menu:menu}); %>
+<%- include('./navigation-btn', {menu:menu}); %>
 <div class="<%= prefix %>-collapse <%= prefix %>-menu" id="<%= menu.collapseId %>">
   <ul class="<%= prefix %>-menu__list">
     <%
@@ -17,7 +17,7 @@
       item.isPage = true;
     %>
     <li>
-      <%- include('./link', {link: item}); %>
+      <%- include('./navigation-link', {link: item}); %>
     </li>
     <% } %>
   </ul>

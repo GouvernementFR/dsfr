@@ -68,8 +68,8 @@ if (header.menu.navigation && header.menu.modalId) {
 %>
 
 <header role="banner" class="<%= prefix %>-header" <%- includeAttrs(attributes) %>>
-  <%- include('./body', {body: header.body});%>
+  <%- include('./header-body', {body: header.body});%>
   <% if ((header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
-    <%- include('./menu', {menu: header.menu});%>
+    <%- include('./header-menu', {menu: header.menu});%>
   <% } %>
 </header>

@@ -11,7 +11,7 @@
 %>
 
 <% let menu = locals.menu || {}; %>
-<%- include('./btn', {menu:menu}); %>
+<%- include('./navigation-btn', {menu:menu}); %>
 <div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= menu.collapseId %>">
   <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-lg">
     <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row-lg--gutters">
@@ -21,7 +21,7 @@
       <%
       if (menu.leader !== undefined) {
       %>
-      <%- include('./leader', {menu: menu}); %>
+      <%- include('./navigation-leader', {menu: menu}); %>
 
       <% } %>
 
@@ -33,7 +33,7 @@
 
       <div class="<%= prefix%>-col-12 <%= prefix%>-col-lg-3">
         <h5 class="<%= prefix %>-mega-menu__category">
-          <%- include('./link', {link: category}); %>
+          <%- include('./navigation-link', {link: category}); %>
         </h5>
 
         <ul class="<%= prefix %>-mega-menu__list">
@@ -43,7 +43,7 @@
               item.isPage = true;
           %>
           <li>
-            <%- include('./link', {link: item}); %>
+            <%- include('./navigation-link', {link: item}); %>
           </li>
           <% } %>
         </ul>
