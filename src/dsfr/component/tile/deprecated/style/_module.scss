@@ -1,0 +1,30 @@
+@use 'src/module/spacing';
+
+#{ns(tile)} {
+  &__img {
+    @include display-flex(null, center, center);
+    flex-shrink: 0;
+    @include size(20v, 20v);
+    @include margin(0 auto 6v);
+    overflow: hidden;
+    @include hover-brighten-filter;
+
+    > svg {
+      @include size(100%, 100%);
+    }
+  }
+
+  &__body > &__desc {
+    @include padding-bottom(10v);
+  }
+
+  &--horizontal {
+    #{ns(tile__img)} {
+      @include size(12v, 12v);
+      @include margin(0 6v 0 0);
+
+      @include size(20v, 20v, md);
+      @include margin(0 8v 0 0, md);
+    }
+  }
+}

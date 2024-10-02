@@ -1,0 +1,24 @@
+@use 'sass:list';
+@use 'sass:selector';
+@use 'src/module/string';
+
+@function associate($selector, $element) {
+  $segments: string.split('#{$selector}', ',');
+  $result: ();
+  @each $segment in $segments {
+    $elements: string.split($segment, ' ');
+    $r: ();
+    $length: list.length($elements);
+    @if $length > 1 {
+      @for $i from 1 to $length {
+        $r: list.append($r, string.unquote(list.nth($elements, $i)), 'space');
+      }
+    }
+    $u: selector.unify(list.nth($elements, -1), $element);
+    @if $u != null {
+      $r: list.append($r, $u, 'space');
+      $result: list.append($result, $r, 'comma');
+    }
+  }
+  @return $result;
+}

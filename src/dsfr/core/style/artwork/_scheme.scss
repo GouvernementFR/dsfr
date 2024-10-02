@@ -1,0 +1,43 @@
+////
+/// Core Scheme : Artwork
+/// @group core
+////
+
+@use 'src/module/color';
+@use 'src/module/selector';
+
+@mixin _core-artwork-scheme($legacy: false) {
+  #{selector.ns(artwork)} {
+    &-decorative {
+      @include color.fill(artwork decorative blue-france, (legacy: $legacy));
+    }
+
+    &-minor {
+      @include color.fill(artwork minor red-marianne, (legacy: $legacy));
+    }
+
+    &-major {
+      @include color.fill(artwork major blue-france, (legacy: $legacy));
+    }
+
+    &-background {
+      @include color.fill(artwork background grey, (legacy: $legacy));
+    }
+
+    &-motif {
+      @include color.fill(artwork motif grey, (legacy: $legacy));
+    }
+
+    @include color.accentuate {
+      #{selector.ns(artwork-minor)} {
+        @include color.fill(artwork minor accent, (legacy: $legacy));
+      }
+    }
+  }
+
+  [disabled] {
+    #{selector.ns(artwork)} * {
+      @include color.fill(text disabled grey, (legacy: $legacy));
+    }
+  }
+}

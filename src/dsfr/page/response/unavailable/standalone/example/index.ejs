@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Erreur serveur</title>
+    <style>
+      <%- injection['unavailable.standalone.min.css'] || injection['unavailable.standalone.css']  %>
+    </style>
+</head>
+<body>
+  <main role="main" id="content">
+    <div class="fr-container">
+      <div class="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
+        <div class="fr-server__body fr-col-12 fr-col-md-6">
+          <h1 class="fr-h1"><%= getText('page.title', 'unavailable') %></h1>
+          <p class="fr-text--xl"><%= getText('page.infos', 'unavailable').replace('${site-name}', getText('site.name', 'global')) %></p>
+          <p class="fr-text--sm"><%= getText('page.retry', 'unavailable') %></p>
+
+          <%- include(root + 'src/dsfr/component/button/example/sample/buttons-group.ejs', {
+            buttonsGroup: { size: 'sm', inline: true, buttons: [
+              {label: '<span aria-hidden="true">' + include(root + 'src/dsfr/core/icon/logo/facebook-circle-fill.svg') + '</span>' + getText('social.facebook', 'global'), kind: 3, markup: 'a', href: contentPlaceholder(getText('social.facebook.url', 'global'))},
+              {label: '<span aria-hidden="true">' + include(root + 'src/dsfr/core/icon/logo/twitter-fill.svg') + '</span>' + getText('social.twitter', 'global'), kind: 3, markup: 'a', href: contentPlaceholder(getText('social.twitter.url', 'global'))},
+              {label: '<span aria-hidden="true">' + include(root + 'src/dsfr/core/icon/logo/linkedin-box-fill.svg') + '</span>' + getText('social.linkedin', 'global'), kind: 3, markup: 'a', href: contentPlaceholder(getText('social.linkedin.url', 'global'))},
+            ] }}); %>
+        </div>
+        <div class="fr-server__image fr-col-12 fr-col-md-3 fr-col-offset-md-1">
+          <%- include('./sample/svg.ejs') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="fr-server__footer">
+      <div class="fr-grid-row fr-grid-row--center">
+        <img width="66px" height="24px" src="<%- imgToBase64('asset/marianne.png'); %>" alt="<%= getText('marianne', 'global') %>">
+      </div>
+    </div>
+  </main>
+</body>
+</html>

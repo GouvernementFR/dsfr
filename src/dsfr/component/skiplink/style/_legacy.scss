@@ -1,0 +1,18 @@
+////
+/// Skiplink Legacy
+/// @group skiplink
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(skiplinks)} {
+    @include disable-list-style-legacy;
+
+    &.focus-within {
+      position: relative;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+////
+/// Translate Legacy
+/// @group translate
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(translate)} {
+    #{ns(translate)} &__btn {
+      @include icon-legacy(translate-2, sm, before);
+      @include icon-legacy(arrow-down-s-line, sm, after);
+    }
+  }
+}

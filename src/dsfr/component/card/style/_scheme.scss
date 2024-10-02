@@ -1,0 +1,59 @@
+////
+/// Card Scheme
+/// @group card
+////
+
+@use 'src/module/color';
+@use 'src/module/elevation';
+@use 'src/module/disabled';
+
+@mixin _card-scheme($legacy: false) {
+  #{ns(card)} {
+    @include color.background(default grey, (legacy:$legacy));
+
+    &:not(&--no-border):not(&--shadow) {
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+    }
+
+    &--grey {
+      @include color.background(contrast grey, (legacy:$legacy));
+    }
+
+    &--shadow {
+      @include elevation.elevate(raised, (legacy: $legacy));
+    }
+
+    &--shadow#{&}--grey {
+      @include color.background(contrast-raised grey, (legacy:$legacy));
+    }
+
+    &--no-background {
+      @include color.transparent-background((legacy:$legacy, hover: true));
+    }
+
+    &--download:not(#{ns(card--no-background)}) {
+      #{ns(card__header)} {
+        @include color.background(alt grey, (legacy:$legacy));
+      }
+    }
+
+    &__detail {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+
+    &__title {
+      @include color.text(title grey, (legacy:$legacy));
+
+      a[href],
+      button {
+        @include color.text(action-high blue-france, (legacy:$legacy));
+      }
+
+      button:disabled {
+        @include color.text(disabled grey, (legacy:$legacy));
+      }
+
+      @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
+    }
+  }
+}

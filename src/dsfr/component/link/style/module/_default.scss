@@ -1,0 +1,24 @@
+////
+/// Link Module : default
+/// @group link
+////
+
+@use 'src/module/selector';
+@use 'src/module/preference';
+
+@include build-link();
+
+a#{selector.ns(link)} {
+  @include preference.forced-colors {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  &:not([href]) {
+    @include icon-forced-color(graytext);
+  }
+}
+
+button#{selector.ns(link)} {
+  text-align: left;
+}

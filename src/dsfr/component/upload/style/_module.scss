@@ -1,0 +1,45 @@
+////
+/// Upload Module
+/// @group upload
+////
+
+@use 'src/module/reset';
+
+#{ns-group(upload)} {
+  #{ns(label)} {
+    #{ns(hint-text)} {
+      @include margin-top(3v);
+    }
+
+    + #{ns(upload)} {
+      @include margin-top(4v);
+    }
+  }
+
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(2v);
+    }
+  }
+}
+
+#{ns(upload)} {
+  @include text-style(sm);
+  @include width(100%);
+  display: inline-flex;
+  @include margin(0);
+
+  &:disabled {
+    &::-webkit-file-upload-button {
+      outline-style: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &::-webkit-file-upload-button {
+    @include reset.appearance(button);
+    font: inherit;
+    cursor: pointer;
+    @include margin-right(2v);
+  }
+}

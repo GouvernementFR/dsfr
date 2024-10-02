@@ -1,0 +1,12 @@
+////
+/// Input Main
+/// @group input
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import 'input-base/main';

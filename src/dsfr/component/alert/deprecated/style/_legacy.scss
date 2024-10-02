@@ -1,0 +1,17 @@
+////
+/// Alert Legacy
+/// @group alert
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * reset des marges dans l'alerte
+  */
+  #{ns(alert)} {
+    #{ns(link--close)} {
+      @include icon-legacy(close-line, sm);
+    }
+  }
+}

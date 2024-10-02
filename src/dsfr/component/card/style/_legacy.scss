@@ -1,0 +1,128 @@
+////
+/// Card Legacy
+/// @group card
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(card)} {
+    &--no-icon {
+      @include after(none);
+    }
+
+    &__title,
+    &__desc {
+      flex: 1 0 auto;
+    }
+
+    &__title {
+      a,
+      button {
+        @include icon-legacy(arrow-right-line, sm, after) {
+          background-color: transparent;
+        }
+      }
+
+      @include target-blank {
+        @include icon-legacy(external-link-line, sm, after);
+      }
+    }
+
+    &__detail {
+      @include icon-size-legacy(sm, before);
+    }
+
+    &--download {
+      #{ns(tile__title a)} {
+        @include icon-legacy(download-line, null, after);
+      }
+
+      #{ns(card__header)} {
+        padding-top: 56.25%;
+
+        @include respond-from(md) {
+          padding-top: 0;
+        }
+
+        #{ns(card__img)} {
+          img {
+            height: auto !important;
+            width: auto;
+            margin: auto;
+          }
+        }
+      }
+    }
+
+    &#{ns(enlarge-link)} {
+      #{ns(card)}__title {
+        a {
+          text-decoration: none;
+          @include icon-size-legacy(md, after) {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &#{ns(enlarge-button)} {
+      #{ns(card)}__title {
+        button {
+          @include icon-size-legacy(md, after) {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    @include respond-from(md) {
+      &--download,
+      &--horizontal,
+      &--horizontal-half,
+      &--horizontal-tier {
+        #{ns(card__body)} {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+  #{ns(card--sm)} {
+    &#{ns(enlarge-link)},
+    &#{ns(enlarge-button)} {
+      #{ns(card)}__title {
+        a,
+        button {
+          @include icon-size-legacy(sm, after);
+        }
+      }
+    }
+
+    #{ns(card)}__title {
+      a,
+      button {
+        @include icon-size-legacy(sm, after);
+      }
+    }
+  }
+
+  #{ns(card--lg)} {
+    &#{ns(enlarge-link)},
+    &#{ns(enlarge-button)} {
+      #{ns(card)}__title {
+        a,
+        button {
+          @include icon-size-legacy(lg, after);
+        }
+      }
+    }
+
+    #{ns(card)}__title {
+      a,
+      button {
+        @include icon-size-legacy(md, after);
+      }
+    }
+  }
+}

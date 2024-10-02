@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use 'src/module/elevation/variable/z-indexes';
+@use 'src/module/legacy';
+
+@mixin z-index($level, $legacy: false) {
+  @if map.has-key(z-indexes.$values, $level) {
+    $z-index: map.get(z-indexes.$values, $level);
+    @if $legacy {
+      @include legacy.is(ie11) {
+        z-index: #{$z-index};
+      }
+    }
+    @else {
+      z-index: calc(var(--ground) + #{$z-index});
+    }
+  }
+}

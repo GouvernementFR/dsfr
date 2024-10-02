@@ -1,0 +1,46 @@
+////
+/// Tab Legacy
+/// @group tab
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(tabs)} {
+    @include disable-list-style-legacy;
+
+    @include before {
+      @include absolute(12v, 0, 0, 0);
+    }
+
+    #{ns(tabs__list)} {
+      @include padding(1v 3v);
+    }
+
+    &__tab {
+      @include icon-size-legacy(sm);
+    }
+
+    &__panel {
+      @include padding(0 0.1px);
+      left: 0;
+      @include enable-list-style-legacy;
+      @include enable-underline-legacy;
+
+      > * {
+        @include margin-x(4v);
+        @include margin-x(8v, md);
+      }
+
+      > *:first-child {
+        @include margin-top(3v);
+        @include margin-top(7v, md);
+      }
+
+      > *:last-child {
+        @include margin-bottom(4v);
+        @include margin-bottom(8v, md);
+      }
+    }
+  }
+}

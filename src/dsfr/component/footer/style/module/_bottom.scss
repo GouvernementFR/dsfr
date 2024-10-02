@@ -1,0 +1,87 @@
+////
+/// Footer module : Bottom
+/// @group Footer
+////
+
+@use 'src/module/preference';
+@use 'src/module/selector';
+
+/**
+ * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)
+ * ainsi que du copyright (ferré à droite)
+ */
+#{ns(footer)} {
+  &__bottom {
+    @include display-flex(row, center, null, wrap);
+    @include margin-top(10v);
+
+    @include nest-footer-bottom-btn(xs, left) {
+      display: inline;
+    }
+
+    @include preference.forced-colors {
+      border-top: 1px solid;
+    }
+  }
+
+  /**
+  * Liste de liens avec séparateur
+  */
+  &__bottom-list {
+    @include size(100%);
+    @include padding(2v 0);
+    @include size(100%);
+    @include margin(0);
+  }
+
+  &__bottom-item {
+    @include relative;
+    @include margin(2v 0 0 1v);
+    @include margin(2v 0 0 3v, md);
+    display: inline;
+
+    @include before('', inline-block) {
+      vertical-align: middle;
+      @include relative;
+      @include size(1px, 4v);
+      @include margin-right(1v);
+      @include margin-right(3v, md);
+      @include margin-bottom(2.5v);
+      @include margin-top(2.5v);
+    }
+
+    &:first-child {
+      @include margin(2v 0 0);
+      @include before(none);
+    }
+
+    @include preference.forced-colors {
+      #{selector.ns(btn)} {
+        border: none;
+      }
+    }
+  }
+
+  /**
+  * Style du lien de la liste
+  */
+  &__bottom-link {
+    @include text-style(xs);
+
+    &:not(:hover):not(:active) {
+      @include link-underline-hover-only;
+    }
+  }
+
+  /**
+  * Copyright
+  */
+  &__bottom-copy {
+    @include set-text-margin(0 0 4v 0);
+    @include margin-top(2v);
+
+    * {
+      @include text-style(xs);
+    }
+  }
+}

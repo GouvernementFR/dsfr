@@ -1,0 +1,37 @@
+////
+/// Core Tool
+/// @group core
+////
+
+@mixin build-utility($category, $name, $modifier: null) {
+  // Récupération des variables depuis src/dsfr/variables.scss
+  $utilityVars: map-get($variables, $category);
+
+  @if map-get($variables, $category) != null {
+    $utilityVars: to-map(map-get($utilityVars, $name));
+    $breakpointsVars: map-get($utilityVars, 'breakpoints');
+
+    // breakpoints: all = xs, sm, md, lg, xl
+    $breakpointsList: if($breakpointsVars == all, map-keys($breakpoints), $breakpointsVars);
+    @if ($breakpointsList == null) { $breakpointsList: first; } // default: first
+
+    // si l'utilitaire n'est pas désactivé
+    @if (map-get($utilityVars, 1) != false and map-get($utilityVars, active) != false) {
+      @each $bp in $breakpointsList {
+        $mod: '-#{$bp}';
+        @if ($bp == xs or $bp == first) {
+          $bp: first;
+          $mod: '';
+        }
+        @if $modifier {
+          $mod: #{$mod + '-' + $modifier};
+        }
+        @include respond-from($bp) {
+          #{ns($name)}#{$mod} {
+            @content;
+          }
+        }
+      }
+    }
+  }
+}

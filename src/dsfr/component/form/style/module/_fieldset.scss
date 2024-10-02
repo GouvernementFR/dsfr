@@ -1,0 +1,147 @@
+@use 'src/module/spacing';
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+#{ns(fieldset)} {
+  @include relative;
+  @include margin(0 -3v 4v);
+  @include padding(0 1v);
+  @include display-flex(row, flex-end, null, wrap);
+  border: 0;
+
+  &__legend {
+    @include padding-bottom(4v);
+    @include padding-x(3v);
+    @include margin-x(-1v);
+    @include text-style(md);
+    @include font-weight(bold);
+    @include width(100%);
+
+    &--regular {
+      @include font-weight(regular);
+    }
+
+    #{ns(hint-text)} {
+      @include margin-top(2v);
+      @include font-weight(regular);
+    }
+  }
+
+  @include disabled.selector {
+    #{ns(label)},
+    #{ns(hint-text)},
+    #{ns(fieldset__legend)} {
+      @include preference.forced-colors {
+        color: graytext;
+      }
+    }
+  }
+
+  input {
+    @include disabled.selector {
+      + label,
+      + label #{ns(hint-text)},
+      + label + #{ns(hint-text)} {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+      }
+    }
+  }
+
+  &--valid,
+  &--error,
+  &--info {
+    background-repeat: no-repeat;
+    background-position: 0 spacing.space(-9v);
+    background-size: spacing.space(2px calc(100% + (5v)));
+  }
+
+  &--valid &__legend,
+  &--error &__legend,
+  &--info &__legend {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 2px 100%;
+  }
+
+  &__element {
+    flex: 1 1 100%;
+    @include max-width(100%);
+    @include padding-x(2v);
+    @include margin-bottom(4v);
+    align-self: flex-start;
+
+    &--inline {
+      flex: 0 0 auto;
+
+      &\@md {
+        @include respond-from(md) {
+          flex: 0 0 auto;
+        }
+      }
+
+      &-grow,
+      &\@md#{&}-grow {
+        flex-grow: 1;
+      }
+    }
+
+    $year-width: 32v;
+
+    &--year {
+      flex: space(0 0 #{$year-width});
+    }
+
+    &--year:not(&--inline) {
+      @include margin-right(calc(100% - #{$year-width}));
+    }
+
+    $postal-width: 64v;
+
+    &--postal {
+      flex: space(0 0 #{$postal-width});
+    }
+
+    &--postal:not(&--inline) {
+      @include margin-right(calc(100% - #{$postal-width}));
+    }
+
+    $number-width: 24v;
+
+    &--number {
+      flex: space(0 0 #{$number-width});
+    }
+
+    &--number:not(&--inline) {
+      @include margin-right(calc(100% - #{$number-width}));
+    }
+  }
+
+  &__legend,
+  &__element {
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6,
+    > p,
+    > #{ns(fieldset)} {
+      &:last-child {
+        @include after('', block) {
+          @include margin-bottom(-4v);
+        }
+      }
+    }
+  }
+
+  > #{ns(messages-group)} {
+    flex: 1 1 100%;
+    @include padding-x(2v);
+
+    > #{ns(message)}:last-child {
+      @include margin-bottom(4v);
+    }
+  }
+}

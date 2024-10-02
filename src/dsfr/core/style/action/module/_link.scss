@@ -1,0 +1,70 @@
+////
+/// Core Module : Action link
+/// @group core
+////
+
+@use 'src/module/preference';
+
+a {
+  @include a-reset;
+
+  &:not([href]) {
+    @include preference.forced-colors {
+      color: graytext;
+    }
+  }
+}
+
+:root {
+  @include init-underline;
+  @include enable-underline;
+  @include enable-external;
+
+  --text-decoration: none;
+}
+
+// TODO: à checker avec <area href="" >
+[href] {
+  @include link-underline;
+
+  @include preference.forced-colors {
+    &,
+    &:visited {
+      color: linktext;
+    }
+  }
+}
+
+@include target-blank {
+  @include external-link;
+
+  @include has-icon {
+    @include external-link;
+  }
+}
+
+form {
+  @include target-blank(true) {
+    @include after(none);
+  }
+}
+
+#{ns(raw-link)} {
+  --text-decoration: none;
+
+  &[href],
+  [href] {
+    @include disable-underline;
+    @include disable-external;
+  }
+}
+
+#{ns(reset-link)} {
+  --text-decoration: underline;
+
+  &[href],
+  [href] {
+    @include disable-underline;
+    text-underline-offset: 2px;
+  }
+}

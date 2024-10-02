@@ -1,0 +1,26 @@
+////
+/// Breadcrumb legacy
+/// @group breadcrumb
+////
+
+@use 'src/module/legacy';
+@use 'src/module/selector';
+
+@include legacy.is(ie11) {
+  #{ns(breadcrumb)} {
+    @include disable-list-style-legacy;
+
+    &__link {
+      @include selector.not-current {
+        @include icon-legacy(arrow-right-s-line, sm, after) {
+          content: '';
+          display: inline-block;
+          pointer-events: none;
+          @include margin-left(2v);
+          @include margin-right(-1v);
+          vertical-align: -4px;
+        }
+      }
+    }
+  }
+}

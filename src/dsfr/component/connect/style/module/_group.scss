@@ -1,0 +1,23 @@
+////
+/// Connect Module : default
+/// @group connect
+////
+
+@use 'src/module/preference';
+
+#{ns-group(connect)} {
+  @include set-text-margin(0 0 4v 0);
+
+  p {
+    @include text-style(xs);
+  }
+
+  #{ns(connect)} + p a {
+    @include text-style(sm);
+
+    @include preference.forced-colors {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+  }
+}

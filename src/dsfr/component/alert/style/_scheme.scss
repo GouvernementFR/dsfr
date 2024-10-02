@@ -1,0 +1,32 @@
+////
+/// alert Scheme
+/// @group alert
+////
+
+@use 'src/module/color';
+
+@mixin _alert-scheme($legacy: false) {
+  #{ns(alert)} {
+    @include color.background-image((border plain grey) (border plain grey) (border plain grey) (border plain grey) (flat grey), (legacy:$legacy));
+
+    @include before {
+      @include color.text(inverted grey, (legacy:$legacy));
+    }
+
+    &--info {
+      @include color.background-image((border plain info) (border plain info) (border plain info) (border plain info) (flat info), (legacy:$legacy));
+    }
+
+    &--error {
+      @include color.background-image((border plain error) (border plain error) (border plain error) (border plain error) (flat error), (legacy:$legacy));
+    }
+
+    &--success {
+      @include color.background-image((border plain success) (border plain success) (border plain success) (border plain success) (flat success), (legacy:$legacy));
+    }
+
+    &--warning {
+      @include color.background-image((border plain warning) (border plain warning) (border plain warning) (border plain warning) (flat warning), (legacy:$legacy));
+    }
+  }
+}

@@ -1,0 +1,56 @@
+////
+/// Summary Module
+/// @group summary
+////
+
+@use 'src/module/preference';
+
+//TODO: rapprocher de la liste ordonnée et vérifier les sous-niveaux.
+
+#{ns(summary)} {
+  @include set-text-margin(0 0 2v 0);
+  @include set-title-margin(0 0 2v 0);
+  @include padding(6v);
+  @include padding(8v, md);
+  @include text-style(xs);
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
+
+  ol {
+    list-style-type: none;
+  }
+
+  li {
+    @include marker(none);
+    @include padding(2v 0);
+  }
+
+  @include title {
+    @include text-style(xs);
+    @include padding-left(2v);
+    font-weight: font-weight(bold);
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: inline;
+    position: relative;
+    @include text-style(xs);
+    @include before(var(--ol-content)) {
+      @include absolute(null, 100%);
+      font-size: var(--xl-size);
+      font-weight: bold;
+    }
+
+    @include preference.forced-colors {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    &:not(:hover):not(:active) {
+      @include link-underline-hover-only;
+    }
+  }
+}

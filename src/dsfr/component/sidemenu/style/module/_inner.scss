@@ -1,0 +1,40 @@
+////
+/// Sidemenu Module : inner
+/// @group sidemenu
+////
+
+@use 'src/module/preference';
+
+#{ns(sidemenu)} {
+  &__inner {
+    @include padding(0 6v 0 0, md);
+
+    @include preference.forced-colors {
+      border-right: 1px solid;
+    }
+
+    /**
+    * Ce wrapper ne sert que pour la version mobile
+    * On l'utilise pour l'ouverture/fermeture du sidemenu entier
+    */
+    > #{ns(collapse)} {
+      @include margin(-1v 3v 0);
+      @include padding(1v 3v 0);
+      @include padding(0, md);
+      @include margin(0, md);
+
+      @include respond-from(md) {
+        overflow: initial;
+        max-height: none;
+
+        @include before {
+          display: none;
+        }
+
+        &:not(#{ns(collapse)}--expanded) {
+          visibility: inherit;
+        }
+      }
+    }
+  }
+}

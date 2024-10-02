@@ -1,0 +1,40 @@
+////
+/// Header Module : navigation bar
+/// @group header
+////
+
+@use 'src/module/elevation';
+
+#{ns(header)} {
+  &__navbar {
+    @include display-flex(row, flex-start, flex-end);
+    @include padding(1v);
+    @include margin-right(-2v);
+    @include margin-top(1v);
+    order: 3;
+    flex: 1;
+    align-self: stretch;
+    @include elevation.z-index(overlap);
+
+    @include respond-from(lg) {
+      display: none;
+    }
+
+    @include nest-btn(md, only) {
+      @include margin-left(2v);
+      @include margin-right(2v);
+      flex: 0 0 auto;
+      white-space: nowrap;
+
+      &--menu {
+        @include icon(menu-fill, null, before);
+        @include icon-forced-color(buttontext, true, before);
+      }
+
+      &--search {
+        @include icon(search-line, null, before);
+        @include icon-forced-color(buttontext, true, before);
+      }
+    }
+  }
+}

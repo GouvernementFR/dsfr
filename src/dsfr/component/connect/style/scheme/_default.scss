@@ -1,0 +1,19 @@
+////
+/// Connect Scheme : default
+/// @group connect
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin _connect-scheme-default($legacy: false, $standalone: false) {
+  #{ns(connect)} {
+    @include color.background(action-high blue-france, (legacy: $legacy, standalone: $standalone));
+    @include color.text(inverted blue-france, (legacy: $legacy, standalone: $standalone));
+
+    @include disabled.selector((can-be-link: true)) {
+      @include color.background(disabled grey, (legacy: $legacy, standalone: $standalone));
+      @include color.text(disabled grey, (legacy: $legacy, standalone: $standalone));
+    }
+  }
+}

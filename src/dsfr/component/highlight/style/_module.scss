@@ -1,0 +1,23 @@
+////
+/// Highlight Module
+/// @group Highlight
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(highlight)} {
+  @include padding-left(5v);
+  @include text-style(md);
+  @include padding-left(9v, md);
+  @include margin-left(8v, md);
+  background-size: spacing.space(1v 100%);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  @include preference.forced-colors {
+    border-left: 4px solid;
+    @include padding-left(4v);
+    @include padding-left(8v, md);
+  }
+}

@@ -1,0 +1,35 @@
+////
+/// Share Legacy
+/// @group share
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(share)} {
+    &__group {
+      & > li {
+        list-style: none;
+      }
+    }
+
+    #{ns-group(btns)} {
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include icon-legacy(null, md);
+          }
+        }
+      }
+    }
+
+    @include build-share-social-icons-legacy();
+
+    #{ns(btn)}--mail {
+      @include icon-legacy(mail-line, md, before);
+    }
+    #{ns(btn)}--copy {
+      @include icon-legacy(links-fill, md, before);
+    }
+  }
+}

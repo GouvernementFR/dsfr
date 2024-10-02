@@ -171,7 +171,7 @@ Il est **impératif** d’appeler les **deux fichiers** javascript afin que le c
 </html>
 ```
 
-> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://github.com/GouvernementFR/dsfr/blob/main/src/analytics/doc/analytics.md)
+> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://github.com/GouvernementFR/dsfr/blob/main/src/dsfr/analytics/doc/analytics.md)
 
 De la même façon que le CSS il est possible d’importer uniquement le JS des composants utilisés (et leurs dépendances).
 

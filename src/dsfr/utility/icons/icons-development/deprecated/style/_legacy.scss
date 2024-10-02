@@ -1,0 +1,10 @@
+////
+/// Icon Development Legacy
+/// @group icon-development
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('development'));
+}

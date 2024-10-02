@@ -1,0 +1,27 @@
+////
+/// Link Main
+/// @group link
+////
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  LINK
+\* ˍˍˍˍˍˍˍˍˍ */
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import 'index';
+@import 'style/module';
+@import 'style/scheme';
+
+// deprecated
+@import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
+
+@include _link-scheme;
+
+// deprecated
+@include _link-deprecated-scheme;

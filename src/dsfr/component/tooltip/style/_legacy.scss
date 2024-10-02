@@ -1,0 +1,14 @@
+////
+/// Tooltip Legacy
+/// @group tooltip
+////
+
+@use 'src/module/legacy';
+@use 'src/module/spacing';
+
+@include legacy.is(ie11) {
+  #{ns(tooltip)} {
+    position: relative;
+    @include margin-top(2v);
+  }
+}

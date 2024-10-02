@@ -1,0 +1,20 @@
+////
+/// Pagination Constrast
+/// @group pagination
+////
+
+@use 'src/module/color';
+@use 'src/module/media-query';
+@use 'src/module/selector';
+
+@mixin _pagination-contrast-scheme($legacy: false) {
+  @include media-query.high-contrast() {
+    #{ns(pagination)} {
+      &__link {
+        @include selector.current {
+          @include color.border(active blue-france, (legacy: $legacy, hover: true));
+        }
+      }
+    }
+  }
+}

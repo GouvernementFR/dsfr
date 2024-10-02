@@ -1,0 +1,20 @@
+////
+/// Tile Module : download
+/// @group tile
+////
+
+@use 'src/module/disabled';
+
+#{ns(tile)}#{ns(tile--download)} {
+  #{ns(tile__title)} {
+    a,
+    button {
+      @include icon(download-line, null, after);
+      @include icon-forced-color(linktext, null, after);
+
+      @include disabled.selector((can-be-link: true)) {
+        @include icon-forced-color(graytext, null, after);
+      }
+    }
+  }
+}
