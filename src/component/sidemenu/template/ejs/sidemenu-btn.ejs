@@ -9,6 +9,7 @@ Paramètres de sidemenu btn
 * sidemenuBtn.collapseId (string, required) : id du collapse
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
 <% let sidemenuBtn = locals.sidemenuBtn || {}; %>
 <button class="<%= prefix %>-sidemenu__btn" aria-expanded="false" aria-controls="<%= sidemenuBtn.collapseId %>" <% if(sidemenuBtn.active) { %> aria-current="true" <% } %>><%- sidemenuBtn.label %></button>

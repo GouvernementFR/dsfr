@@ -5,6 +5,7 @@ Paramètres de sidemenu btn
 * sidemenuItems (array, required) : tableau d'items de sidemenu
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
 <% let sidemenuItems = locals.sidemenuItems || []; %>
 
@@ -12,11 +13,11 @@ Paramètres de sidemenu btn
   <%
   for (let i = 0; i < sidemenuItems.length; i++) {
     let item = sidemenuItems[i];
-    item.href = sidemenuItems.href;
+    item.href = sidemenuItems[i].href || sidemenuItems.href;
     let classes = [prefix + '-sidemenu__item'];
   %>
     <li <%- includeClasses(classes); %>>
-        <%- include('./' + item.type, {sidemenuItem : item}); %>
+      <%- include('./sidemenu-' + item.type + '.ejs', { sidemenuItem : item }); %>
     </li>
   <% } %>
 </ul>

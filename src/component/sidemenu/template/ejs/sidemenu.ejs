@@ -18,7 +18,7 @@
 		<button class="<%= prefix %>-sidemenu__btn" aria-controls="<%= sidemenu.collapseId %>" aria-expanded="false">Dans cette rubrique</button>
 		<div class="<%= prefix %>-collapse" id="<%- sidemenu.collapseId %>">
 			<p class="<%= prefix %>-sidemenu__title" id="<%= sidemenu.titleId %>"><%- sidemenu.title %></p>
-			<%- include('./list', {sidemenuItems: sidemenu.items}); %>
+			<%- include('./sidemenu-list.ejs', {sidemenuItems: sidemenu.items}); %>
 		</div>
 	</div>
 </nav>

@@ -7,6 +7,7 @@ Paramètres de sidemenu item
 * sidemenuItem.active (booolean, optional) : si true, l'élement est actif
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
 <% let sidemenuItem = locals.sidemenuItem || {};
   const linkAttrs = {};

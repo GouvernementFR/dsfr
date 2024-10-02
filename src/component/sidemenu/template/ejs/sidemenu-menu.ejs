@@ -9,6 +9,7 @@ Paramètres de sidemenu item
 * sidemenuItem.items (array, optional) : tableau de sous éléments
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
 <%
 let sidemenuItem = locals.sidemenuItem || {};
@@ -17,15 +18,15 @@ const sidemenuAttrs = {};
 %>
 
 <% if (sidemenuItem.collapsable) { %>
-  <%- include('./btn', {sidemenuBtn: sidemenuItem}); %>
+  <%- include('./sidemenu-btn', {sidemenuBtn: sidemenuItem}); %>
   <%
     sidemenuClasses.push(`${prefix}-collapse`);
     sidemenuAttrs.id = sidemenuItem.collapseId;
   %>
 <% } else { %>
-  <%- include('./link', {sidemenuItem: sidemenuItem}); %>
+  <%- include('./sidemenu-link.ejs', {sidemenuItem: sidemenuItem}); %>
 <% } %>
 
 <div <%- includeClasses(sidemenuClasses) %> <%- includeAttrs(sidemenuAttrs)%>>
-  <%- include('./list', {sidemenuItems: sidemenuItem.items}); %>
+  <%- include('./sidemenu-list.ejs', {sidemenuItems: sidemenuItem.items}); %>
 </div>

@@ -25,6 +25,7 @@ import { selectPartials } from './component/select/template/stories/partials';
 import { rangePartials } from './component/range/template/stories/partials';
 import { segmentedPartials } from './component/segmented/template/stories/partials';
 import { sharePartials } from './component/share/template/stories/partials';
+import { sidemenuPartials } from './component/sidemenu/template/stories/partials';
 import { skiplinkPartials } from './component/skiplink/template/stories/partials';
 import { stepperPartials } from './component/stepper/template/stories/partials';
 import { summaryPartials } from './component/summary/template/stories/partials';
@@ -36,7 +37,7 @@ import { translatePartials } from './component/translate/template/stories/partia
 import { tooltipPartials } from './component/tooltip/template/stories/partials';
 import { transcriptionPartials } from './component/transcription/template/stories/partials';
 import { uploadPartials } from './component/upload/template/stories/partials';
-import { passwordArgTypes } from './component/password/template/stories/password-arg-types';
+// import { passwordArgTypes } from './component/password/template/stories/password-arg-types';
 
 const ejsRenderer = new EJSRenderer();
 
@@ -66,6 +67,7 @@ searchPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 selectPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 segmentedPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 sharePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+sidemenuPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 skiplinkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 stepperPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 summaryPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
