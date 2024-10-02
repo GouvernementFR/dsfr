@@ -8,9 +8,8 @@ attrModal[`data-${prefix}-opened`] = false;
 const links = {
   buttons: [
     {
-      icon: 'theme-fill',
-      iconPlace: 'left',
       label: 'Paramètres d\'affichage',
+      classes: [`${prefix}-btn--display`],
       attributes: {...attrModal},
       markup: 'button'
     }
@@ -62,7 +61,7 @@ let dataFooter = {
 
 <div class="<%= prefix%>-container <%= prefix %>-mt-8v">
   <h1>Scheme - gestion du dark mode</h1>
-    <% const buttonData = { button: { attributes: attrModal }}; %>
+  <% const buttonData = { button: { attributes: attrModal }}; %>
   <%- sample('Bouton ouverture thèmes', '../../button/template/ejs/button-display', buttonData, true) %>
 
   <!-- Le contenu de la modale des paramètres d'affichage est importé de manière globale dans les pages d'exemple -->
