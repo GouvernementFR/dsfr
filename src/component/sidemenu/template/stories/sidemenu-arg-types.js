@@ -8,7 +8,7 @@ const sidemenuArgTypes = {
     }
   },
   modifier: {
-    control: { kind: 'select' },
+    control: { type: 'select' },
     description: 'Modifier de style de sidemenu',
     options: ['sticky', 'right', 'sticky-full-height']
   },
