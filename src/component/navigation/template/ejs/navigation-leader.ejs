@@ -8,6 +8,7 @@
 * menu.leader.link (object, optional) : paramètres du lien du texte leader (voir composant link)
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
 <% let menu = locals.menu || {}; %>
 <% let leader = menu.leader || {}; %>
@@ -25,7 +26,7 @@
     <%
     if (leader.link !== undefined) {
     %>
-      <%- include('../../../link/example/sample/link-default', {link: { ...leader.link, alignOnContent: true}}); %>
+      <%- include('../../../link/template/link', {link: { ...leader.link, alignOnContent: true}}); %>
     <% } %>
   </div>
 </div>

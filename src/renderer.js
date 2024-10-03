@@ -17,6 +17,7 @@ import { inputPartials } from './component/input/input-base/template/stories/par
 import { linkPartials } from './component/link/template/stories/partials';
 import { logoPartials } from './component/logo/template/stories/partials';
 import { modalPartials } from './component/modal/template/stories/partials';
+import { navigationPartials } from './component/navigation/template/stories/partials';
 import { noticePartials } from './component/notice/template/stories/partials';
 import { passwordPartials } from './component/password/template/stories/partials';
 import { quotePartials } from './component/quote/template/stories/partials';
@@ -59,6 +60,7 @@ inputPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 logoPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 modalPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+navigationPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 noticePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 passwordPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 quotePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));

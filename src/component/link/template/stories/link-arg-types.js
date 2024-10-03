@@ -54,6 +54,11 @@ const linkArgTypes = {
     control: 'boolean',
     description: 'Si true, target prend la valeur _blank, sinon _self'
   },
+  title: {
+    if: { arg: 'blank', eq: true },
+    control: 'text',
+    description: 'Attribut title du lien'
+  },
   href: {
     control: 'text',
     description: 'Adresse url du lien'
@@ -105,7 +110,8 @@ const linkArgs = {
   iconPlace: 'left',
   href: '#',
   assess: '',
-  blank: false
+  blank: false,
+  title: 'libellé du lien - nouvelle fenêtre'
 };
 
 const linkProps = (args) => {
@@ -121,6 +127,11 @@ const linkProps = (args) => {
     blank: args.blank || linkArgs.blank,
     self: !args.blank || undefined
   };
+
+  if (args.blank) {
+    link.attributes = {};
+    link.attributes.title = args.title || linkArgs.title;
+  }
 
   if (args.hasIcon) {
     link.icon = args.icon;

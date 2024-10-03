@@ -9,9 +9,10 @@
   ** menu.categories.items (array, required) : tableau d'éléments de navigation
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
 <% let menu = locals.menu || {}; %>
-<%- include('./navigation-btn', {menu:menu}); %>
+<%- include('./navigation-btn', {btn:menu}); %>
 <div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= menu.collapseId %>">
   <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-lg">
     <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row-lg--gutters">
@@ -26,9 +27,7 @@
       <% } %>
 
       <%
-        let category;
-        for (let j = 0; j < menu.categories.length; j++) {
-          category = menu.categories[j];
+        for (category of menu.categories) {
       %>
 
       <div class="<%= prefix%>-col-12 <%= prefix%>-col-lg-3">

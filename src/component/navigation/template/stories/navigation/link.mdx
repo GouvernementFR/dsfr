@@ -1,0 +1,6 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as NavigationStories from '../navigation.stories.js';
+
+<Meta of={NavigationStories} tags={['sort:100']}/>
+
+<Canvas of={NavigationStories.LinkStory} sourceState={'shown'}/>

@@ -11,19 +11,23 @@
 
 * link.active (boolean, optional) : si true l'élément est actif
 
+* link.disabled (boolean, optional) : si true l'élément est désactivé
+
 * link.isPage (boolean, optional) : si true aria-current: 'page', sinon aria-current: 'true'
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
 <%
 let link = locals.link || {};
-let attrs = {
-  href: link.href,
-  id: link.id
-}
-if (link.blank) attrs = {...targetBlankData(), ...attrs};
+const linkClasses = link.classes || [];
+const linkAttrs = link.attributes || {};
+linkClasses.push(`${prefix}-nav__link`);
+linkAttrs.id = link.id;
 
-if (link.active) attrs['aria-current'] = link.isPage ? 'page' : 'true';
+if (link.active) linkAttrs['aria-current'] = link.isPage ? 'page' : 'true';
 
 %>
-<a class="<%= prefix %>-nav__link" <%- includeAttrs(attrs); %> ><%- link.label %></a>
+
+<%- include('../../../../core/template/ejs/action/action', {action: {...link, classes: linkClasses, attributes: linkAttrs, kind: 'link'}}) %>
+

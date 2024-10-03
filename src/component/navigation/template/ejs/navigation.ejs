@@ -3,6 +3,8 @@
 
 * navigation.id (string, required) : id de la barre de navigation
 
+* navigation.arialabel (string, optional) : aria-label de la barre de navigation
+
 * navigation.items (array, required) : tableau d'éléments de navigation (voir : menu, mega-menu, link, btn)
 
 * navigation.classes (array, optional) : classes supplémentaires sur la navigation
@@ -21,7 +23,7 @@ classes.push(`${prefix}-nav`);
 let attributes = navigation.attributes || {};
 attributes.id = navigation.navigationId || navigation.id;
 attributes.role = 'navigation';
-attributes['aria-label'] = 'Menu principal'
+attributes['aria-label'] = navigation.ariaLabel;
 %>
 
 <nav <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
