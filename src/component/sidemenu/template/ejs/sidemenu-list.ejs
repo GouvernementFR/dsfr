@@ -13,11 +13,16 @@ Paramètres de sidemenu btn
   <%
   for (let i = 0; i < sidemenuItems.length; i++) {
     let item = sidemenuItems[i];
-    item.href = sidemenuItems[i].href || sidemenuItems.href;
+    item.href = item.href || sidemenuItems.href;
+    item.classes = [`${prefix}-sidemenu__${item.kind}`];
     let classes = [prefix + '-sidemenu__item'];
   %>
     <li <%- includeClasses(classes); %>>
-      <%- include('./sidemenu-' + item.type + '.ejs', { sidemenuItem : item }); %>
+      <% if (item.kind === 'menu') { %>
+        <%- include('./sidemenu-menu.ejs', { sidemenuItem : item }); %>
+      <% } else {%>
+        <%- include('../../../../core/template/ejs/action/action', {action: item}) %>
+      <% } %>
     </li>
   <% } %>
 </ul>

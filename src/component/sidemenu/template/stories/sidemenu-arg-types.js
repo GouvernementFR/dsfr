@@ -2,29 +2,29 @@ const sidemenuArgTypes = {
   title: {
     control: 'text',
     description: 'Titre du menu latéral',
-    type: {
+    kind: {
       value: 'string',
       required: true
     }
   },
   modifier: {
-    control: { type: 'select' },
+    control: { kind: 'select' },
     description: 'Modifier de style de sidemenu',
     options: ['sticky', 'right', 'sticky-full-height']
   },
   items: []
 };
 
-const getItemArgs = (id, type = 'link', isActive = false) => {
+const getItemArgs = (id, kind = 'link', isActive = false) => {
   const item = {};
 
-  item.id = type === 'link' ? `sidemenu-item-${id}` : `sidemenu-${id}`;
+  item.id = kind === 'link' ? `sidemenu-item-${id}` : `sidemenu-${id}`;
   item.label = `Titre du lien ${id}`;
-  item.href = type === 'link' && '#';
-  item.type = type;
+  item.href = kind === 'link' && '#';
+  item.kind = kind;
   item.active = isActive;
-  item.collapsable = type === 'menu';
-  item.collapseId = type === 'menu' ? `sidemenu-${id}` : undefined;
+  item.collapsable = kind === 'menu';
+  item.collapseId = kind === 'menu' ? `sidemenu-${id}` : undefined;
 
   return item;
 };
@@ -64,6 +64,7 @@ const sidemenuProps = (args) => {
   const sidemenu = {
     title: args.title || sidemenuArgs.title,
     titleId: 'sidemenu-title',
+    buttonLabel: 'Dans cette rubrique',
     modifier: args.modifier || sidemenuArgs.modifier,
     items: args.items || sidemenuArgs.items
   };

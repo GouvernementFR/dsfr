@@ -15,17 +15,23 @@ Paramètres de sidemenu item
 let sidemenuItem = locals.sidemenuItem || {};
 const sidemenuClasses = [];
 const sidemenuAttrs = {};
+
+if (sidemenuItem.collapsable) {
+  sidemenuItem.kind = 'button';
+  sidemenuItem.attributes = {
+    'aria-expanded': false,
+    'aria-controls': sidemenuItem.collapseId,
+    'aria-current': sidemenuItem.active
+  };
+  sidemenuItem.classes = [`${prefix}-sidemenu__btn`];
+
+
+  sidemenuClasses.push(`${prefix}-collapse`);
+  sidemenuAttrs.id = sidemenuItem.collapseId;
+}
 %>
 
-<% if (sidemenuItem.collapsable) { %>
-  <%- include('./sidemenu-btn', {sidemenuBtn: sidemenuItem}); %>
-  <%
-    sidemenuClasses.push(`${prefix}-collapse`);
-    sidemenuAttrs.id = sidemenuItem.collapseId;
-  %>
-<% } else { %>
-  <%- include('./sidemenu-link.ejs', {sidemenuItem: sidemenuItem}); %>
-<% } %>
+<%- include('../../../../core/template/ejs/action/action', {action: sidemenuItem}) %>
 
 <div <%- includeClasses(sidemenuClasses) %> <%- includeAttrs(sidemenuAttrs)%>>
   <%- include('./sidemenu-list.ejs', {sidemenuItems: sidemenuItem.items}); %>
