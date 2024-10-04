@@ -35,10 +35,8 @@ class Template {
 
   retrieve (path) {
     return this._names.some(name => {
-      const pathes = path.split('/');
-      const shortPath = pathes[pathes.length - 1].replace('.ejs', '');
-      return name === shortPath;
-      // return path.match(new RegExp(`${name}(.ejs)?$`)) !== null;
+      // eslint-disable-next-line no-useless-escape
+      return path.match(new RegExp(`^(.*\/)?${name}(.ejs)?$`)) !== null;
     });
   }
 

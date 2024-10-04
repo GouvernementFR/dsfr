@@ -17,7 +17,7 @@ export const ControlsStory = {
 };
 
 export const DefaultStory = {
-  // tags: ['!dev'],
+  tags: ['!dev'],
   args: {}
 };
 

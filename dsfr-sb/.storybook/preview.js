@@ -87,8 +87,19 @@ const preview = {
     },
     options: {
       storySort: (a, b) => {
-        const indexA = Math.min.apply(null,  a?.tags?.filter(tag => tag.startsWith('sort:')).map(tag => parseInt(tag.split(':')[1]))) || 999999;
-        const indexB = Math.min.apply(null,  b?.tags?.filter(tag => tag.startsWith('sort:')).map(tag => parseInt(tag.split(':')[1]))) || 999999;
+        const getLetterIndex = letter => letter.toLowerCase().charCodeAt(0) - 64;
+
+        const getStoryIndex = (story) => {
+          const chunks = story.title.split('/');
+          const name = chunks.pop();
+          const sort = story?.tags?.filter(tag => tag.startsWith('sort:')).map(tag => parseInt(tag.split(':')[1]));
+          const index = getLetterIndex(name[0]) * 10**9 + getLetterIndex(name[1]) * 10**7 + getLetterIndex(name[2]) * 10**5 + (sort ?? 0);
+          return index;
+        };
+
+        const indexA = getStoryIndex(a);
+        const indexB = getStoryIndex(b);
+
         return indexA - indexB;
       }
     },

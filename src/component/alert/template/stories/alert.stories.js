@@ -14,12 +14,12 @@ export default {
 };
 
 export const ControlsStory = {
-  alerts: ['!dev'],
+  tags: ['!dev'],
   args: {}
 };
 
 export const SmStory = {
-  alerts: ['!dev'],
+  tags: ['!dev'],
   render: () => renders([
     {
       size: 'sm',
@@ -49,7 +49,7 @@ export const SmStory = {
 };
 
 export const MdStory = {
-  alerts: ['!dev'],
+  tags: ['!dev'],
   render: () => renders([
     {
       type: 'error',
@@ -60,7 +60,7 @@ export const MdStory = {
 };
 
 export const MdDescStory = {
-  alerts: ['!dev'],
+  tags: ['!dev'],
   render: () => renders([
     {
       type: 'success',
@@ -71,7 +71,7 @@ export const MdDescStory = {
 };
 
 export const DismissibleStory = {
-  alerts: ['!dev'],
+  tags: ['!dev'],
   render: () => renders([
     {
       type: 'info',
@@ -83,7 +83,7 @@ export const DismissibleStory = {
 };
 
 export const DismissibleNoJsStory = {
-  alerts: ['!dev'],
+  tags: ['!dev'],
   render: () => renders([
     {
       type: 'info',
@@ -96,7 +96,7 @@ export const DismissibleNoJsStory = {
 };
 
 export const IconCustomStory = {
-  alerts: ['!dev'],
+  tags: ['!dev'],
   render: () => renders([
     {
       type: 'default',

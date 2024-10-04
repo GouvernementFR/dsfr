@@ -17,7 +17,7 @@ export const ControlsStory = {
 };
 
 export const DefaultStory = {
-  // tags: ['!dev'],
+  tags: ['!dev'],
   args: {}
 };
 
@@ -47,6 +47,6 @@ export const RegisterValidateStory = {
       { text: '12 caractères minimum', type: 'error' },
       { text: '1 caractère spécial minimum', type: 'valid' },
       { text: '1 chiffre minimum', type: 'valid' }
-    ],
+    ]
   }
 };

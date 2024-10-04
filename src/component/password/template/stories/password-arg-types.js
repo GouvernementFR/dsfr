@@ -63,7 +63,7 @@ const inputArgTypes = {
     table: { category: 'input' }
   },
   inputAutocomplete: {
-    control: { type: 'select'},
+    control: { type: 'select' },
     options: ['off', 'current-password', 'new-password'],
     description: 'Attribut \'autocomplete\' de l\'input (mot de passe nouveau ou existant)',
     type: {
