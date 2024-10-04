@@ -9,3 +9,27 @@
 .sbdocs-wrapper {
   padding-top: 0 !important;
 }
+
+#anchor--modal--controls-story + .sbdocs-preview .sb-story [data-fr-opened="true"] {
+  margin-bottom: calc(100vh - 40px);
+}
+
+#anchor--navigation--controls-story + .sbdocs-preview .sb-story {
+  height: 400px;
+}
+
+#anchor--transcription--controls-story + .sbdocs-preview .sb-story {
+  height: 260px;
+}
+
+#anchor--transcription--controls-story + .sbdocs-preview .sb-story .fr-modal[open="true"] {
+  height: 100vh;
+}
+
+#anchor--translate--controls-story + .sbdocs-preview .sb-story {
+  height: 220px;
+}
+
+#anchor--display--controls-story + .sbdocs-preview .sb-story [data-fr-opened="true"] {
+  margin-bottom: calc(100vh - 40px);
+}

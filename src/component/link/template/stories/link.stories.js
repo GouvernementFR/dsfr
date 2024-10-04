@@ -77,3 +77,14 @@ export const ExternalStory = {
     blank: true
   }
 };
+
+export const BackToTopStory = {
+  tags: ['!dev'],
+  args: {
+    label: 'Haut de page',
+    href: '#top',
+    hasIcon: true,
+    icon: 'arrow-up-fill',
+    iconPlace: 'left'
+  }
+};

@@ -1,7 +1,7 @@
 import { renderTranscription } from './transcription';
 import { transcriptionArgs, transcriptionArgTypes, transcriptionProps } from './transcription-arg-types';
 
-const render = (args) => renderTranscription({ transcription: { ...transcriptionProps(args), attributes: { style: 'margin-bottom: 300px' } } });
+const render = (args) => renderTranscription({ transcription: transcriptionProps(args) });
 
 export default {
   id: 'transcription',

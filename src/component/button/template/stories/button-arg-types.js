@@ -75,34 +75,6 @@ const markupArgTypes = {
   }
 };
 
-/*
-const tooltipArgTypes = {
-  hasTooltip: {
-    control: 'boolean',
-    description: 'Le bouton a une infobulle',
-    table: { category: 'tooltip' }
-  },
-  tooltipId: {
-    if: {
-      arg: 'hasTooltip',
-      eq: true
-    },
-    control: 'text',
-    description: 'Identifiant de l\'infobulle',
-    table: { category: 'tooltip' }
-  },
-  tooltipContent: {
-    if: {
-      arg: 'hasTooltip',
-      eq: true
-    },
-    control: 'text',
-    description: 'Contenu texte de l\'infobulle',
-    table: { category: 'tooltip' }
-  }
-};
- */
-
 const buttonArgTypes = {
   label: {
     control: 'text',
@@ -144,13 +116,6 @@ const buttonArgTypes = {
   },
   ...iconArgTypes,
   ...markupArgTypes
-  // ...tooltipArgTypes
-};
-
-const tooltipArgs = {
-  hasTooltip: false,
-  tooltipId: 'tooltip-id',
-  tooltipContent: 'Contenu de l\'infobulle'
 };
 
 const buttonArgs = {
@@ -165,7 +130,6 @@ const buttonArgs = {
   iconPlace: 'left',
   markup: 'button',
   type: 'button',
-  ...tooltipArgs,
   href: '',
   target: 'self'
 };
@@ -182,7 +146,8 @@ const buttonProps = (args) => {
     type: args.type || buttonArgs.type,
     href: args.href || undefined,
     blank: args.target === 'blank',
-    self: args.target === 'self'
+    self: args.target === 'self',
+    classes: args.classes || undefined
   };
 
   if (args.hasIcon) {

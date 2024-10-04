@@ -4,7 +4,7 @@ import { modalArgs, modalArgTypes, modalProps } from './modal-arg-types';
 
 // const render = (args) => renderModal({ modal: modalProps(args), modalButton: { id: 'modale-button', label: 'Ouvrir la modale' } });
 
-const render = (args) => renderButton({ button: { id: 'modale-button', label: 'Ouvrir la modale', attributes: { style: 'margin-bottom: calc(100vh - 40px)', 'aria-controls': args.id, 'data-fr-opened': true } } }) + renderModal({ modal: modalProps(args) });
+const render = (args) => renderButton({ button: { id: 'modale-button', label: 'Ouvrir la modale', attributes: { 'aria-controls': args.id, 'data-fr-opened': false } } }) + renderModal({ modal: modalProps(args) });
 
 export default {
   id: 'modal',

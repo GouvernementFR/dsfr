@@ -1,7 +1,7 @@
 import { renderNavigation } from './navigation';
 import { navigationArgs, navigationArgTypes, navigationProps, getItemArgs } from './navigation-arg-types';
 
-const render = (args) => renderNavigation({ navigation: { ...navigationProps(args), attributes: { style: 'margin-bottom: 400px' } } });
+const render = (args) => renderNavigation({ navigation: navigationProps(args) });
 
 export default {
   id: 'navigation',

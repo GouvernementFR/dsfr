@@ -1,7 +1,7 @@
 import { renderTranslate } from './translate';
 import { translateArgs, translateArgTypes, translateProps } from './translate-arg-types';
 
-const render = (args) => renderTranslate({ translate: { ...translateProps(args), attributes: { style: 'margin-bottom: 200px' } } });
+const render = (args) => renderTranslate({ translate: translateProps(args) });
 
 export default {
   id: 'translate',

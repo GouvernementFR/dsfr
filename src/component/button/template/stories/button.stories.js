@@ -166,3 +166,49 @@ export const SizeStory = {
     }
   ])
 };
+
+export const BtnCloseStory = {
+  tags: ['!dev'],
+  args: {
+    label: 'Fermer',
+    classes: ['fr-btn--close']
+  }
+};
+
+export const BtnDisplayStory = {
+  tags: ['!dev'],
+  args: {
+    label: 'Paramètres d\'affichage',
+    classes: ['fr-btn--display']
+  }
+};
+
+export const BtnTeamStory = {
+  tags: ['!dev'],
+  args: {
+    label: 'Contact',
+    markup: 'a',
+    href: '[URL - à modifier]',
+    classes: ['fr-btn--team']
+  }
+};
+
+export const BtnBriefcaseStory = {
+  tags: ['!dev'],
+  args: {
+    label: 'Espace recruteur',
+    markup: 'a',
+    href: '[URL - à modifier]',
+    classes: ['fr-btn--briefcase']
+  }
+};
+
+export const BtnAccountStory = {
+  tags: ['!dev'],
+  args: {
+    label: 'Espace particulier',
+    markup: 'a',
+    href: '[URL - à modifier]',
+    classes: ['fr-btn--account']
+  }
+};
