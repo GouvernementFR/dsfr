@@ -256,11 +256,9 @@ class Placement extends Instance {
         break;
     }
 
-    if (this._x !== x || this._y !== y) {
-      this._x = (x + 0.5) | 0;
-      this._y = (y + 0.5) | 0;
-      this.node.style.transform = `translate(${this._x}px,${this._y}px)`;
-    }
+    this._x = (x + 0.5) | 0;
+    this._y = (y + 0.5) | 0;
+    this.node.style.transform = `translate(${this._x}px,${this._y}px)`;
   }
 
   getPlace () {
