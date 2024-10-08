@@ -11,6 +11,8 @@
     *** navbar.menu.modalId (String, optional) : id de la modale de recherche
     *** navbar.menu.label (String, optional) : Libellé du bouton recherche
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let navbar = locals.navbar || {};
 let label;

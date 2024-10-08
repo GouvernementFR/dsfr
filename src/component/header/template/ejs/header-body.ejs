@@ -6,6 +6,8 @@
   ** tools.tools (object, optional) : Paramètres du template tools (search, links)
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <% let body = locals.body || {}; %>
 
 <div class="<%= prefix %>-header__body">

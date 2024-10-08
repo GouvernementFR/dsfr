@@ -10,6 +10,9 @@
     *** menu.tools.duplicateLinks (boolean, optional) : Si true, duplique le bloc de liens raccourcis dans le menu mobile (pour vue/angular/react)
     *** menu.tools.toolsContent (string, optional) : Permet d'ajouter du contenu custom dans le bloc tools
     %>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let menu = locals.menu || {};
 if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly defined in header. modalId required');

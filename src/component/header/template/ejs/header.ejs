@@ -2,30 +2,32 @@
 # paramètres header
 
 * header (object, required) : Paramètres du template
+  ** header.id (String, required) : attribut id du header
   ** header.body (object, required) : Paramètres du template body
   ** header.menu (object, optional) : Paramètres du template menu
 
 Exemple complet :
 
 header = {
+  id: '',
   body: {
     brand: {
       logo: { voir logo },
       operator: {
-	src: 'url de l'img',
-	alt: 'texte alternatif',
-	style: ''
+        src: 'url de l'img',
+        alt: 'texte alternatif',
+        style: ''
       },
       service: {
-	title: '',
-	tagline: ''
+        title: '',
+        tagline: ''
       },
     },
     tools: {
       links: {
-	items: [
-	  { voir buttonsGroup dans button }
-	]
+        items: [
+          { voir buttonsGroup dans button }
+        ]
       },
       search: {
         id: '',

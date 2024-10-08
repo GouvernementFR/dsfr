@@ -11,12 +11,14 @@
     *** tools.search.placeholder (string, required) : placeholder du champ de recherche
     *** tools.search.sample (string, optional) : chemin vers le template de search (si différent)
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <% let tools = locals.tools || {}; %>
 
 <div class="<%= prefix %>-header__tools">
   <% if (tools.links !== undefined || tools.translate !== undefined) { %>
     <div class="<%= prefix %>-header__tools-links">
-      <% if (tools.links.buttons.length) { %>
+      <% if (tools.links.buttons) { %>
         <% if (tools.links.buttons.length > 1) { %>
           <ul class="<%= prefix %>-btns-group">
             <% for (let i = 0; i < tools.links.buttons.length; i++) { %>

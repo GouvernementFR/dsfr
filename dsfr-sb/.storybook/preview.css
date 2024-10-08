@@ -33,3 +33,13 @@
 #anchor--display--controls-story + .sbdocs-preview .sb-story [data-fr-opened="true"] {
   margin-bottom: calc(100vh - 40px);
 }
+
+#story--header--default-story,
+#story--header--controls-story {
+  height: 500px;
+}
+
+#story--header--translate-story,
+#story--header--tool-links-translate-story {
+  height: 250px;
+}

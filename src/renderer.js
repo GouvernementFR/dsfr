@@ -12,6 +12,7 @@ import { connectPartials } from './component/connect/template/stories/partials';
 import { contentPartials } from './component/content/template/stories/partials';
 import { footerPartials } from './component/footer/template/stories/partials';
 import { formPartials } from './component/form/template/stories/partials';
+import { headerPartials } from './component/header/template/stories/partials';
 import { highlightPartials } from './component/highlight/template/stories/partials';
 import { inputPartials } from './component/input/input-base/template/stories/partials';
 import { linkPartials } from './component/link/template/stories/partials';
@@ -55,6 +56,7 @@ connectPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial))
 contentPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 footerPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 formPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+headerPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 highlightPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 inputPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 linkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
