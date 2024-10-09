@@ -5,6 +5,9 @@
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
   "license": "SEE LICENSE IN LICENSE.md",
+  "main": "dist/dsfr.nomodule.min.js",
+  "module": "dist/dsfr.module.min.js",
+  "style": "dist/dsfr.min.css",
   "config": {
     "prefix": "fr",
     "namespace": "dsfr",
