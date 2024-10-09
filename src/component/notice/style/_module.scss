@@ -19,8 +19,7 @@
 
   &__body {
     @include relative;
-    @include padding(0 9v 0 0);
-    @include padding(0 12v 0 0, md);
+    @include display-flex(row, flex-start, space-between);
   }
 
   &__title {
@@ -65,7 +64,9 @@
 
   #{selector.ns(btn--close)} {
     @include nest-btn(sm, only, close-line, null, false);
-    @include absolute(-1v, 0);
+    @include margin-top(-1v);
+    @include margin-left(1v);
+    @include margin-left(4v, md);
     color: inherit;
   }
 
