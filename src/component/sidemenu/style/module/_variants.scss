@@ -36,6 +36,10 @@
 
       #{ns(sidemenu__inner)} {
         @include padding-top(2v);
+        @include padding-left(1v);
+        @include margin-left(-1v);
+        @include padding-bottom(1v);
+        @include margin-bottom(-1v);
         overflow: auto;
         max-height: 100vh;
       }
@@ -49,6 +53,10 @@
 
       #{ns(sidemenu__inner)} {
         @include padding-top(2v);
+        @include padding-left(1v);
+        @include margin-left(-1v);
+        @include padding-bottom(1v);
+        @include margin-bottom(-1v);
         overflow: auto;
         @include size(null, 100%);
       }
