@@ -13,7 +13,7 @@ const tooltipArgTypes = {
 
 const tooltipArgs = {
   id: 'storybook-tooltip',
-  content: 'lorem ipsum dolor sit amet consectetur adipiscing elit',
+  content: 'lorem ipsum dolor sit amet consectetur adipiscing elit'
 };
 
 const tooltipProps = (args) => {
