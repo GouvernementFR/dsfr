@@ -1,6 +1,7 @@
 import api from '../../api.js';
 import { RangeEmission } from './range-emission.js';
 import { RangeConstraints } from './range-constraints';
+import { completeAssign } from '../../../../core/script/api/utilities/property/complete-assign.js';
 
 class RangeInput extends api.core.Instance {
   static get instanceClassName () {
@@ -9,11 +10,9 @@ class RangeInput extends api.core.Instance {
 
   init () {
     this._init();
-    this.node.value = this.getAttribute('value');
-    this._changing = this.change.bind(this);
-    this._listenerType = this.isLegacy ? 'change' : 'input';
-    this.listen(this._listenerType, this._changing);
+    this._value = parseFloat(this.node.getAttribute('value'));
     if (this.isLegacy) this.addDescent(RangeEmission.ENABLE_POINTER, this._enablePointer.bind(this));
+    this.isRendering = true;
     this.change();
   }
 
@@ -28,6 +27,21 @@ class RangeInput extends api.core.Instance {
     this.addDescent(RangeEmission.VALUE2, this.setValue.bind(this));
   }
 
+  get proxy () {
+    const scope = this;
+
+    const proxyAccessors = {
+      get value () {
+        return scope.value;
+      },
+      set value (value) {
+        scope.value = value;
+      }
+    };
+
+    return completeAssign(super.proxy, proxyAccessors);
+  }
+
   _enablePointer (pointerId) {
     const isEnabled = pointerId === this._pointerId;
     if (this._isPointerEnabled === isEnabled) return;
@@ -36,16 +50,32 @@ class RangeInput extends api.core.Instance {
     else this.style.setProperty('pointer-events', 'none');
   }
 
+  get value () {
+    return parseFloat(this.node.value);
+  }
+
+  set value (value) {
+    const parsedValue = parseFloat(value);
+    if (parsedValue === this._value) return;
+    this._value = parsedValue;
+    this.node.value = parsedValue;
+    this.dispatch('change');
+    this.change();
+  }
+
   setValue (value) {
     if (parseFloat(this.node.value) > value) {
-      this.node.value = value;
-      this.dispatch('change', undefined, true);
-      this.change();
+      this.value = value;
     }
   }
 
   change () {
-    this.ascend(RangeEmission.VALUE, parseFloat(this.node.value));
+    this.ascend(RangeEmission.VALUE, this._value);
+  }
+
+  render () {
+    const parsedValue = parseFloat(this.node.value);
+    if (parsedValue !== this._value) this.value = parsedValue;
   }
 
   mutate (attributesNames) {
