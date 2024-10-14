@@ -43,3 +43,7 @@
 #story--header--tool-links-translate-story {
   height: 250px;
 }
+
+#anchor--tooltip--controls-story + .sbdocs-preview .sb-story {
+  padding: 20px 0;
+}
