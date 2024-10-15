@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as NavigationStories from '../navigation.stories.js';
+
+<Meta of={NavigationStories} tags={['sort:10']} />
+
+<Canvas of={NavigationStories.ControlsStory} sourceState={'shown'}/>
+
+<Controls of={NavigationStories.ControlsStory} />

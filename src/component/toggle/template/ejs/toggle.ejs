@@ -39,16 +39,16 @@ if (toggle.hint) describedby.push(toggle.groupId ? toggle.groupId + toggle.id + 
 
 classes.push(prefix + '-toggle');
 
-if (toggle.border !== undefined) {
+if (toggle.border) {
   classes.push(prefix +'-toggle--border-bottom');
 }
-if (toggle.left !== undefined) {
+if (toggle.left) {
   classes.push(prefix +'-toggle--label-left');
 }
-if (toggle.error !== undefined) {
+if (toggle.error) {
   classes.push(prefix +'-toggle--error');
 }
-if (toggle.valid !== undefined) {
+if (toggle.valid) {
   classes.push(prefix +'-toggle--valid');
 }
 if (toggle.disabled) inputAttr['disabled'] = '';

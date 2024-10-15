@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as PaginationStories from '../pagination.stories.js';
+
+<Meta of={PaginationStories} tags={['sort:10']} />
+
+<Canvas of={PaginationStories.ControlsStory} sourceState={'shown'}/>
+
+<Controls of={PaginationStories.ControlsStory} />

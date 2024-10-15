@@ -1,0 +1,8 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as CheckboxStories from '../checkbox.stories.js';
+
+<Meta of={CheckboxStories} tags={['sort:10']} />
+
+<Canvas of={CheckboxStories.ControlsStory} sourceState={'shown'}/>
+
+<Controls of={CheckboxStories.ControlsStory} />

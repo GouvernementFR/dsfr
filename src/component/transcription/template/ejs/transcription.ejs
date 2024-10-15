@@ -11,6 +11,10 @@
 
 * transcription.modalId (string, optional) : id de la modale de transcription.
 
+* transcription.fullscreen (string, optional) : libellé du bouton de plein écran.
+
+* transcription.fullscreenAriaLabel (string, optional) : libellé de l'attribut aria-label du bouton de plein écran.
+
 * transcription.attributes (object, optional) : attributs supplémentaires sur le composant.
 
 #%>
@@ -20,8 +24,8 @@
 <%
 const transcription = locals.transcription || {};
 const attributes = transcription.attributes || {};
-const isExpanded = transcription.isExpanded === false;
-const title = getText('collapse.title', 'transcription');
+const isExpanded = transcription.isExpanded === true;
+const title = locals.getText('collapse.title', 'transcription');
 
 if (transcription.id) attributes.id = transcription.id;
 

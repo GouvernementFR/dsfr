@@ -8,8 +8,9 @@
 * newsletter.type (string, optional) [button|form]: type de bloc newsletter (avec bouton ou avec formulaire)
 
 * newsletter.form (object, optional) : paramètres du formulaire champ/boutton (si type form)
+  ** newsletter.form.action (string, optional) : Attribute action du formulaire
   ** newsletter.form.input (object, required) : paramètres du champ mail
-  ** newsletter.form.button (object, optional) : paramètres du boutton
+  ** newsletter.form.button (object, required) : paramètres du boutton
   ** newsletter.form.error (string, optional) : texte d'erreur
   ** newsletter.form.valid (string, optional) : texte valide
   ** newsletter.form.hint (string, optional) : texte additionel
@@ -33,7 +34,7 @@ let newsletterClasses = [prefix + '-follow__newsletter'];
   <div>
     <% if (newsletter.type === 'form') { %>
       <% if (newsletter.form && newsletter.form.input) { %>
-        <form action="">
+        <form action="<%= newsletter.form.action %>">
           <%- include('../../../input/input-base/template/ejs/input-group.ejs', {input: {addon: true, describedby: [`${newsletter.form.input.id}-hint-text`], ...newsletter.form.input}}); %>
           <% if (newsletter.form.hint) { %>
             <p id="<%= newsletter.form.input.id %>-hint-text" class="<%= prefix %>-hint-text"><%- newsletter.form.hint %></p>

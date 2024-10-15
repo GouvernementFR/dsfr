@@ -3,6 +3,8 @@
 
 * element.id (string, required) : id de l'élément
 
+* element.label (string, required) : Libellé de l'input
+
 * element.name (string, optional) : attribut name de l'input
 
 * element.value (String, optional) : valeur de l'input
@@ -41,5 +43,5 @@ if (element.checked) attributes.checked = '';
 
 <div <%- includeClasses(classes); %>>
   <input <%- includeAttrs(attributes); %> type="radio" id="<%= element.id %>" name="<%= element.name %>">
-  <%- include('../../../form/template/ejs/label', { label: label }); %>
+  <%- include('../../../form/template/ejs/label.ejs', { label: label }); %>
 </div>

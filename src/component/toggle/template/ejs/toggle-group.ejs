@@ -7,13 +7,14 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
+
 <% let toggle = locals.toggle || {}; %>
 <ul class="<%= prefix %>-toggle__list">
   <%
     for (let i = 0; i < 5; i++) {
   %>
     <li>
-        <%- include('./toggle', {toggle: {...toggle, id: toggle.hint ? 'toggle-hint-' + i : 'toggle-' + i}} ); %>
+        <%- include('./toggle.ejs', {toggle: {...toggle, id: toggle.hint ? 'toggle-hint-' + i : 'toggle-' + i}} ); %>
     </li>
   <% } %>
 </ul>

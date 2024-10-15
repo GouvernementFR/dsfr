@@ -15,7 +15,7 @@ let select = locals.select || {};
 let groupClasses = [`${prefix}-select-group`];
 
 if (select.error !== undefined) groupClasses.push(`${prefix}-select-group--error`);
-if (select.disabled !== undefined) groupClasses.push(`${prefix}-select-group--disabled`);
+if (select.disabled) groupClasses.push(`${prefix}-select-group--disabled`);
 if (select.valid !== undefined) groupClasses.push(`${prefix}-select-group--valid`);
 %>
 

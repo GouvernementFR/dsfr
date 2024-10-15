@@ -1,0 +1,28 @@
+<%#
+# paramètres de la partie start du contenu principal de la carte, placés avant titre et description
+
+* start.badgesGroup (array, optional) : Groupe de badges (voir badge)
+
+* start.tagsGroup (array, optional) : Groupe de tags (voir tag)
+
+* start.details (array, optional) : Détails
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<div class="<%= prefix %>-card__start" >
+
+    <% if (start.badgesGroup) { %>
+        <%- include('../../../badge/template/ejs/badges-group.ejs', {badgesGroup: start.badgesGroup }); %>
+    <% } %>
+
+    <% if (start.tagsGroup) { %>
+        <%- include('../../../tag/template/ejs/tags-group.ejs', {tagsGroup: start.tagsGroup }); %>
+    <% } %>
+
+    <% if (start.details) { %>
+        <%- include('card-details.ejs', { details: start.details }); %>
+    <% } %>
+
+</div>

@@ -7,7 +7,9 @@
   ** languages[].locale (string, required) : Code de la langue en 2 caratères
   ** languages[].active (boolean, required) : La langue qui apparait dans le bouton et en style active dans la liste (1 seule langue active)
 %>
-<% 
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
 const languages = locals.languages || {};
 %>
 
@@ -16,7 +18,7 @@ const languages = locals.languages || {};
   for (let i = 0; i < languages.length; i++) {
     const lang = languages[i];
     const attrs = {
-      href:'#',
+      href: lang.href || '#',
       id: lang.id || uniqueId('language')
     };
     if (lang.active) attrs['aria-current'] = true;
