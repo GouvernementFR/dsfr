@@ -29,7 +29,7 @@ const getNavData = (label, hasLgLabel) => {
 const getPages = () => {
   const pages = [];
   for (let i = 1; i < 4; i++) pages.push(getPageData(i.toString(), i > 2));
-  pages.push(getData('…', true));
+  pages.push({ markup: 'span', ...getData('…', true) });
   for (let i = 130; i < 133; i++) pages.push(getPageData(i.toString(), i < 132));
   return pages;
 };
@@ -49,12 +49,14 @@ const paginationProps = (args) => {
   for (let i = 0; i < args.pages.length; i++) {
     const pagesArgs = args.pages[i];
     const pagePaginationArgs = paginationArgs.pages[i];
-    console.log('pagePaginationArgs', pagePaginationArgs);
     const page = {
       active: i === 2,
       label: pagesArgs.label || pagePaginationArgs.label,
       title: pagesArgs.title || pagePaginationArgs.title,
-      href: pagesArgs.href || pagePaginationArgs.href
+      href: pagesArgs.href || pagePaginationArgs.href,
+      displayedLg: pagesArgs.displayedLg || pagePaginationArgs.displayedLg,
+      hasLgLabel: pagesArgs.hasLgLabel || pagePaginationArgs.hasLgLabel,
+      markup: pagesArgs.markup || pagePaginationArgs.markup
     };
 
     pages.push(page);
