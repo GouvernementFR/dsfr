@@ -22,6 +22,8 @@
 * paginationItem.attributes (object, optional): Attributs supplémentaires sur l'élement
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let paginationItem = locals.paginationItem || {};
 const classes = paginationItem.classes || [];
