@@ -82,6 +82,17 @@ class DisclosuresGroup extends Instance {
     this.getMembers();
     this._isRetrieving = false;
     this._hasRetrieved = true;
+
+    if (!this.isGrouped) {
+      for (let i = 0; i < this.length; i++) {
+        const member = this.members[i];
+        if (member.isInitiallyDisclosed) {
+          member.disclose(true);
+        }
+      }
+      return;
+    }
+
     if (this.hash) {
       for (let i = 0; i < this.length; i++) {
         const member = this.members[i];
@@ -106,7 +117,9 @@ class DisclosuresGroup extends Instance {
 
   update () {
     this.getMembers();
-    if (this._hasRetrieved) this.getIndex();
+    if (this._hasRetrieved) {
+      if (this.isGrouped) this.getIndex();
+    }
   }
 
   get members () {
@@ -143,7 +156,7 @@ class DisclosuresGroup extends Instance {
       if (value === i) {
         if (!member.isDisclosed) member.disclose(true);
       } else {
-        if ((this.isGrouped || !this.canUngroup) && member.isDisclosed) member.conceal(true);
+        if ((this.isGrouped || !this.canUngroup) && member.isDisclosed !== false) member.conceal(true);
       }
     }
     this.apply();
