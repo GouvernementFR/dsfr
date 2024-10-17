@@ -13,13 +13,12 @@ export default {
   args: tagArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const TagStory = {
   args: {}
 };
 
 export const SizesStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'md'
@@ -39,7 +38,7 @@ export const SizesStory = {
 };
 
 export const AccentStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'clickable'
@@ -56,7 +55,7 @@ export const AccentStory = {
 };
 
 export const ClickableStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'clickable',
@@ -82,7 +81,7 @@ export const ClickableStory = {
 };
 
 export const PressableStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'pressable'
@@ -115,7 +114,7 @@ export const PressableStory = {
 };
 
 export const DismissibleStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'dismissible',

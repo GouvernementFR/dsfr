@@ -34,17 +34,11 @@ export default {
   args: tooltipArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const TooltipStory = {
   args: {}
 };
 
 export const HoverStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: renderLinkTooltip
 };

@@ -12,18 +12,12 @@ export default {
   args: toggleArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const ToggleStory = {
   args: {}
 };
 
 export const LeftStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       hint: '',

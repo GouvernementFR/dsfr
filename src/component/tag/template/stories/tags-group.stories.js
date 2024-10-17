@@ -13,15 +13,14 @@ export default {
   args: tagsGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const TagsGroupStory = {
   args: {
     type: 'default'
   }
 };
 
 export const MdStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'md',
@@ -31,7 +30,7 @@ export const MdStory = {
 };
 
 export const SmStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm',
@@ -41,7 +40,7 @@ export const SmStory = {
 };
 
 export const ClickableStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'clickable'
@@ -50,7 +49,7 @@ export const ClickableStory = {
 };
 
 export const PressableStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'pressable'
@@ -59,7 +58,7 @@ export const PressableStory = {
 };
 
 export const DismissibleStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'dismissible'

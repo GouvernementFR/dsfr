@@ -11,12 +11,7 @@ export default {
   args: uploadArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const UploadStory = {
+  tags: ['autodocs'],
   args: {}
 };
