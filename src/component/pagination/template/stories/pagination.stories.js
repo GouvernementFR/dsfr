@@ -11,12 +11,7 @@ export default {
   args: paginationArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const PaginationStory = {
+  tags: ['autodocs'],
   args: {}
 };

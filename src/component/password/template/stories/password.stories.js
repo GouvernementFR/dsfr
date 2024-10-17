@@ -11,25 +11,19 @@ export default {
   args: passwordArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const PasswordStory = {
   args: {}
 };
 
 export const LoginStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasLink: true
   }
 };
 
 export const RegisterStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasLink: false,
     hasMessages: true
@@ -37,7 +31,7 @@ export const RegisterStory = {
 };
 
 export const RegisterValidateStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasLink: false,
     hasMessages: true,

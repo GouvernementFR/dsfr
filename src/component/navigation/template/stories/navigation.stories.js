@@ -11,18 +11,12 @@ export default {
   args: navigationArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const NavigationStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const LinkStory = {
-  tags: ['!dev'],
+export const WithLinkStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     items: [
       getItemArgs(1),
@@ -34,7 +28,7 @@ export const LinkStory = {
 };
 
 export const MenuStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     items: [
       {
@@ -73,7 +67,7 @@ export const MenuStory = {
 };
 
 export const MegaMenuStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     items: [
       {

@@ -18,18 +18,12 @@ export default {
   args: noticeArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const NoticeStory = {
   args: {}
 };
 
 export const InfoStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'info',
     title: 'Titre du bandeau d\'information importante',
@@ -38,7 +32,7 @@ export const InfoStory = {
 };
 
 export const WarningStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'warning',
     title: 'Titre du bandeau d\'avertissement',
@@ -47,7 +41,7 @@ export const WarningStory = {
 };
 
 export const AlertStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'alert',
     title: 'Titre du bandeau d\'alerte',
@@ -56,7 +50,7 @@ export const AlertStory = {
 };
 
 export const OrangeStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'weather-orange',
     title: 'Vigilance météo orange',
@@ -67,7 +61,7 @@ export const OrangeStory = {
 };
 
 export const RedStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'weather-red',
     title: 'Vigilance météo rouge',
@@ -76,7 +70,7 @@ export const RedStory = {
 };
 
 export const PurpleStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'weather-purple',
     title: 'Vigilance météo violette',
@@ -85,7 +79,7 @@ export const PurpleStory = {
 };
 
 export const AttackStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'attack',
     title: 'Attentat en cours',
@@ -94,7 +88,7 @@ export const AttackStory = {
 };
 
 export const WitnessStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'witness',
     title: 'Appel à témoins',
@@ -103,7 +97,7 @@ export const WitnessStory = {
 };
 
 export const CyberattackStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'cyberattack',
     title: 'Cyber-attaque',
