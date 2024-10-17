@@ -13,19 +13,12 @@ export default {
   args: toggleGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const ToggleGroupStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {
-  }
-};
-
 export const LeftStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       left: true,

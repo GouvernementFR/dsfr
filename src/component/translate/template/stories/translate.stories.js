@@ -11,12 +11,7 @@ export default {
   args: translateArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const TranslateStory = {
+  tags: ['autodocs'],
   args: {}
 };
