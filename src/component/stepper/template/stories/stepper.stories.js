@@ -11,12 +11,7 @@ export default {
   args: stepperArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const StepperStory = {
+  tags: ['autodocs'],
   args: {}
 };

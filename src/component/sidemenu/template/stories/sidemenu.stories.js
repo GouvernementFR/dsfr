@@ -11,12 +11,7 @@ export default {
   args: sidemenuArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const SidemenuStory = {
+  tags: ['autodocs'],
   args: {}
 };
