@@ -13,7 +13,7 @@ export default {
   args: buttonArgs
 };
 
-export const ControlsStory = {
+export const ButtonStory = {
   args: {}
 };
 

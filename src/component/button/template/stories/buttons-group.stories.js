@@ -13,7 +13,7 @@ export default {
   args: buttonsGroupArgs
 };
 
-export const ControlsStory = {
+export const ButtonsGroupStory = {
   tags: ['autodocs'],
   args: {}
 };

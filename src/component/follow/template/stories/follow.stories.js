@@ -11,7 +11,7 @@ export default {
   args: followArgs
 };
 
-export const ControlsStory = {
+export const FollowStory = {
   args: {}
 };
 
