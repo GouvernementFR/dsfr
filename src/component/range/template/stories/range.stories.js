@@ -11,12 +11,7 @@ export default {
   args: rangeArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const RangeStory = {
+  tags: ['autodocs'],
   args: {}
 };

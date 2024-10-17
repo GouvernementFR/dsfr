@@ -11,12 +11,7 @@ export default {
   args: radiosGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const RadiosGroupStory = {
+  tags: ['autodocs'],
   args: {}
 };

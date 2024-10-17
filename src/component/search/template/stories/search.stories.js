@@ -11,18 +11,12 @@ export default {
   args: searchArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const SearchStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const LgtStory = {
-  tags: ['!dev'],
+export const SizeLgStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'lg'
   }

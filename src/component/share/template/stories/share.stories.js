@@ -11,18 +11,12 @@ export default {
   args: shareArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const ShareStory = {
   args: {}
 };
 
 export const DisabledStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     disabled: true
   }
