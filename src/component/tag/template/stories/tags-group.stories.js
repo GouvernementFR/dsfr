@@ -19,7 +19,7 @@ export const TagsGroupStory = {
   }
 };
 
-export const MdStory = {
+export const SizeMdStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -29,7 +29,7 @@ export const MdStory = {
   ])
 };
 
-export const SmStory = {
+export const SizeSmStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -39,7 +39,7 @@ export const SmStory = {
   ])
 };
 
-export const ClickableStory = {
+export const TagsGroupClickableStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -48,7 +48,7 @@ export const ClickableStory = {
   ])
 };
 
-export const PressableStory = {
+export const TagsGroupPressableStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -57,7 +57,7 @@ export const PressableStory = {
   ])
 };
 
-export const DismissibleStory = {
+export const TagsGroupDismissibleStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {

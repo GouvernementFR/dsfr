@@ -37,7 +37,7 @@ export const SizesStory = {
   ])
 };
 
-export const AccentStory = {
+export const TagAccentStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -54,7 +54,7 @@ export const AccentStory = {
   ])
 };
 
-export const ClickableStory = {
+export const TagClickableStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -80,7 +80,7 @@ export const ClickableStory = {
   ])
 };
 
-export const PressableStory = {
+export const TagPressableStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -113,7 +113,7 @@ export const PressableStory = {
   ])
 };
 
-export const DismissibleStory = {
+export const TagDismissibleStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {

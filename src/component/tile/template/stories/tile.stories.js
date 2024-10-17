@@ -27,7 +27,7 @@ export const VerticalStory = {
   ])
 };
 
-export const SmStory = {
+export const SizeSmStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -49,7 +49,7 @@ export const HorizontalStory = {
   ])
 };
 
-export const SmHorizontalStory = {
+export const SizeSmHorizontalStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -87,7 +87,7 @@ export const DownloadButtonStory = {
   ])
 };
 
-export const HorizontalVerticalMdStory = {
+export const HorizontalVerticalFromMdStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {

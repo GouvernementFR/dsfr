@@ -17,7 +17,7 @@ export const ToggleGroupStory = {
   args: {}
 };
 
-export const LeftStory = {
+export const AlignLeftStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {

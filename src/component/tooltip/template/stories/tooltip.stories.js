@@ -38,7 +38,7 @@ export const TooltipStory = {
   args: {}
 };
 
-export const HoverStory = {
+export const TooltipHoverStory = {
   tags: ['autodocs', '!dev'],
   render: renderLinkTooltip
 };
