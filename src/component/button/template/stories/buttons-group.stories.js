@@ -14,12 +14,12 @@ export default {
 };
 
 export const ControlsStory = {
-  tags: ['!dev'],
+  tags: ['autodocs'],
   args: {}
 };
 
 export const VerticalStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     buttons: [
       {
@@ -33,7 +33,7 @@ export const VerticalStory = {
 };
 
 export const HorizontalStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     inline: true,
     buttons: [
@@ -48,7 +48,7 @@ export const HorizontalStory = {
 };
 
 export const SizeStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm'

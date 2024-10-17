@@ -12,24 +12,18 @@ export default {
 };
 
 export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
   args: {}
 };
 
 export const SocialsStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasSocials: true
   }
 };
 
 export const NewsletterButtonStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasNewsletter: true,
     newsletterType: 'button'
@@ -37,7 +31,7 @@ export const NewsletterButtonStory = {
 };
 
 export const NewsletterFormStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasNewsletter: true,
     newsletterType: 'form'
@@ -45,7 +39,7 @@ export const NewsletterFormStory = {
 };
 
 export const SocialsNewsletterButtonStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasSocials: true,
     hasNewsletter: true,
@@ -54,7 +48,7 @@ export const SocialsNewsletterButtonStory = {
 };
 
 export const SocialsNewsletterFormStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasSocials: true,
     hasNewsletter: true,
@@ -63,7 +57,7 @@ export const SocialsNewsletterFormStory = {
 };
 
 export const SocialsNewsletterFormErrorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasSocials: true,
     hasNewsletter: true,
@@ -73,7 +67,7 @@ export const SocialsNewsletterFormErrorStory = {
 };
 
 export const SocialsNewsletterConfirmStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasSocials: true,
     hasNewsletter: true,

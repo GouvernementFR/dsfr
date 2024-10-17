@@ -276,7 +276,7 @@ const followArgs = {
   newsletterAlertId: 'newsletter-alert',
   newsletterAlertText: 'Votre inscription a bien été prise en compte.',
   newsletterAlertType: 'success',
-  hasSocials: false,
+  hasSocials: true,
   socialsTitle: 'Suivez-nous sur les réseaux sociaux',
   socialsSize: 'md',
   socialsButtons: [

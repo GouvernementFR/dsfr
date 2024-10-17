@@ -9,7 +9,7 @@ const light = {
   fontCode: 'monospace',
 
   brandTitle: 'Système de design de l\'État français',
-  brandUrl: 'https://www.systeme-de-design.gouv.fr/',
+  brandUrl: 'https://storybook.systeme-de-design.gouv.fr/',
   brandImage: 'logo-light.png',
   brandTarget: '_self',
 
