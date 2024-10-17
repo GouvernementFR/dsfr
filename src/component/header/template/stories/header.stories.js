@@ -11,18 +11,13 @@ export default {
   args: headerArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
+export const HeaderStory = {
   tags: ['!dev'],
   args: {}
 };
 
 export const MinStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     brandService: '',
     brandTagline: '',
@@ -35,14 +30,14 @@ export const MinStory = {
 };
 
 export const ServiceStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     navigationItems: []
   }
 };
 
 export const ToolLinksStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasToolLinks: true,
     navigationItems: []
@@ -50,7 +45,7 @@ export const ToolLinksStory = {
 };
 
 export const SearchStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasSearch: true,
     navigationItems: []
@@ -58,7 +53,7 @@ export const SearchStory = {
 };
 
 export const ToolLinksSearchStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasToolLinks: true,
     hasSearch: true,
@@ -67,7 +62,7 @@ export const ToolLinksSearchStory = {
 };
 
 export const TranslateStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasTranslate: true,
     translateButtonKind: 3,
@@ -76,7 +71,7 @@ export const TranslateStory = {
 };
 
 export const ToolLinksTranslateStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasToolLinks: true,
     hasTranslate: true,
@@ -85,7 +80,7 @@ export const ToolLinksTranslateStory = {
 };
 
 export const VerticalOperatorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasBrandOperator: true,
     navigationItems: []
@@ -93,7 +88,7 @@ export const VerticalOperatorStory = {
 };
 
 export const HorizontalOperatorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasBrandOperator: true,
     brandOperatorSrc: 'img/placeholder.16x9.png',

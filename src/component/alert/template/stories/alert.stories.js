@@ -13,13 +13,12 @@ export default {
   args: alertArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const AlertStory = {
   args: {}
 };
 
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm',
@@ -49,29 +48,29 @@ export const SmStory = {
 };
 
 export const MdStory = {
-  tags: ['!dev'],
-  render: () => renders([
-    {
-      type: 'error',
-      title: 'Erreur : description détaillée du message....',
-      text: undefined
-    }
-  ])
-};
-
-export const MdDescStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'success',
-      title: 'Succès : titre du message',
-      text: 'Description détaillée du message Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      title: 'Succès : Lorem ipsum dolor sit amet'
+    },
+    {
+      type: 'error',
+      title: 'Erreur : Lorem ipsum dolor sit amet'
+    },
+    {
+      type: 'info',
+      title: 'Information : Lorem ipsum dolor sit amet'
+    },
+    {
+      type: 'warning',
+      title: 'Attention : Lorem ipsum dolor sit amet'
     }
   ])
 };
 
 export const DismissibleStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'info',
@@ -83,20 +82,20 @@ export const DismissibleStory = {
 };
 
 export const DismissibleNoJsStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'info',
       title: 'Information : titre du message',
       text: 'Cliquer sur la croix pour fermer l\'alerte',
       dismissible: true,
-      buttonCloseJavaScript: undefined
+      buttonCloseOnClick: null
     }
   ])
 };
 
 export const IconCustomStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'default',

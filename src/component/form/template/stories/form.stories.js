@@ -11,12 +11,7 @@ export default {
   args: formArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const FormStory = {
+  tags: ['autodocs'],
   args: {}
 };

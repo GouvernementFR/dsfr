@@ -11,32 +11,26 @@ export default {
   args: logoArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const LogoStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'sm'
   }
 };
 
-export const MdStory = {
-  tags: ['!dev'],
+export const SizeMdStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'md'
   }
 };
 
-export const LgStory = {
-  tags: ['!dev'],
+export const SizeLgStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'lg'
   }

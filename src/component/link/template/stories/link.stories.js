@@ -13,18 +13,12 @@ export default {
   args: linkArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const LinkStory = {
   args: {}
 };
 
 export const IconStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       hasIcon: true,
@@ -39,8 +33,8 @@ export const IconStory = {
   ])
 };
 
-export const SizeStory = {
-  tags: ['!dev'],
+export const SizesStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm'
@@ -55,14 +49,14 @@ export const SizeStory = {
 };
 
 export const DisabledStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     disabled: true
   }
 };
 
 export const DownloadStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     label: 'Télécharger le document lorem ipsum sit dolores amet',
     href: 'img/image.jpg',
@@ -72,14 +66,14 @@ export const DownloadStory = {
 };
 
 export const ExternalStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     blank: true
   }
 };
 
 export const BackToTopStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     label: 'Haut de page',
     href: '#top',

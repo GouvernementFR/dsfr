@@ -11,18 +11,12 @@ export default {
   args: checkboxArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const CheckboxStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'sm'
   }

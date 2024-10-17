@@ -18,7 +18,7 @@ export const ControlsStory = {
   args: {}
 };
 
-export const SizeStory = {
+export const SizesStory = {
   tags: ['!dev'],
   render: () => renders([
     {

@@ -14,39 +14,33 @@ export default {
   args: modalArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const ModalStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'sm'
   }
 };
 
-export const MdStory = {
-  tags: ['!dev'],
+export const SizeMdStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'md'
   }
 };
 
-export const LgStory = {
-  tags: ['!dev'],
+export const SizeLgStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'lg'
   }
 };
 
 export const Footer = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     id: 'modal',
     size: 'md',

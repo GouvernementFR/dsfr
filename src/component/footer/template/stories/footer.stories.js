@@ -11,12 +11,7 @@ export default {
   args: footerArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const FooterStory = {
+  tags: ['autodocs'],
   args: {}
 };

@@ -11,32 +11,26 @@ export default {
   args: inputsGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const InputsGroupStory = {
   args: {}
 };
 
 export const DisabledStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     disabled: true
   }
 };
 
 export const ErrorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     status: 'error'
   }
 };
 
 export const SuccessStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     status: 'valid'
   }

@@ -13,23 +13,24 @@ export default {
   args: badgeArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const BadgeStory = {
   args: {}
 };
 
-export const AccentStory = {
-  tags: ['!dev'],
+export const SizesStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
-      type: 'accent',
-      accent: 'green-menthe'
+      size: 'sm'
+    },
+    {
+      size: 'md'
     }
   ])
 };
 
 export const StatusStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'status',
@@ -55,7 +56,7 @@ export const StatusStory = {
 };
 
 export const StatusNoIconStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       type: 'status',
@@ -85,14 +86,12 @@ export const StatusNoIconStory = {
   ])
 };
 
-export const SizeStory = {
-  tags: ['!dev'],
+export const AccentStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
-      size: 'sm'
-    },
-    {
-      size: 'md'
+      type: 'accent',
+      accent: 'green-menthe'
     }
   ])
 };

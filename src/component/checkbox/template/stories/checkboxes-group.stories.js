@@ -11,39 +11,33 @@ export default {
   args: checkboxesGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const CheckboxesGroupStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'sm'
   }
 };
 
 export const DisabledStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     disabled: true
   }
 };
 
 export const ErrorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     status: 'error'
   }
 };
 
 export const SuccessStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     status: 'valid'
   }

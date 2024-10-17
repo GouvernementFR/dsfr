@@ -47,11 +47,14 @@ export const HorizontalStory = {
   }
 };
 
-export const SizeStory = {
+export const SizesStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm'
+    },
+    {
+      size: 'md'
     },
     {
       size: 'lg'

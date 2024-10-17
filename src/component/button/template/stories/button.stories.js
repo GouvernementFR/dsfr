@@ -151,7 +151,7 @@ export const IconOnlyStory = {
   ])
 };
 
-export const SizeStory = {
+export const SizesStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
