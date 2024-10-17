@@ -12,7 +12,6 @@ export default {
 };
 
 export const HeaderStory = {
-  tags: ['!dev'],
   args: {}
 };
 
