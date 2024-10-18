@@ -35,6 +35,7 @@ import { skiplinkPartials } from './component/skiplink/template/stories/partials
 import { stepperPartials } from './component/stepper/template/stories/partials';
 import { summaryPartials } from './component/summary/template/stories/partials';
 import { tabPartials } from './component/tab/template/stories/partials';
+import { tablePartials } from './component/table/template/stories/partials';
 import { tagPartials } from './component/tag/template/stories/partials';
 import { tilePartials } from './component/tile/template/stories/partials';
 import { togglePartials } from './component/toggle/template/stories/partials';
@@ -81,6 +82,7 @@ skiplinkPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial)
 stepperPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 summaryPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tabPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+tablePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tagPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 tilePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 togglePartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));

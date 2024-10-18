@@ -5,7 +5,8 @@ export const paginationPartials = [
   {
     names: ['pagination'],
     partial: pagination
-  },{
+  },
+  {
     names: ['pagination-item'],
     partial: paginationItem
   }
