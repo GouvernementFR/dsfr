@@ -1,3 +1,4 @@
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 import { renderTable } from './table';
 import { tableArgs, tableArgTypes, tableProps, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails } from './table-arg-types';
 
@@ -19,6 +20,7 @@ export const TableStory = {
 export const SizeSMStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('table'),
     size: 'sm'
   }
 };
@@ -26,6 +28,7 @@ export const SizeSMStory = {
 export const SizeLGStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('table'),
     size: 'lg'
   }
 };
@@ -33,6 +36,7 @@ export const SizeLGStory = {
 export const VerticalBordersStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('table'),
     bordered: true
   }
 };
@@ -40,6 +44,7 @@ export const VerticalBordersStory = {
 export const NoScrollStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('table'),
     noScroll: true
   }
 };
@@ -47,6 +52,7 @@ export const NoScrollStory = {
 export const SelectableTableStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('table'),
     table: getSelectableTableArgs()
   }
 };
@@ -54,6 +60,7 @@ export const SelectableTableStory = {
 export const ComplexTableStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('table'),
     bordered: true,
     captionDetail: getComplexTableCaptionDetails(),
     table: getComplexTableArgs()
