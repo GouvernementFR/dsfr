@@ -56,14 +56,6 @@ const buttonsGroupArgTypes = {
   size: {
     ...buttonArgTypes.size
   },
-  id: {
-    control: 'text',
-    description: 'Attribut \'id\' du groupe de boutons'
-  },
-  title: {
-    control: 'text',
-    description: 'Attribut \'title\' du groupe de boutons'
-  },
   hasIcon: {
     ...buttonArgTypes.hasIcon,
     table: undefined
@@ -116,9 +108,9 @@ const buttonsGroupArgTypes = {
 const getButtonArgs = (id) => {
   const button = {};
 
+  button[`id${id}`] = buttonArgs.id;
   button[`label${id}`] = `${buttonArgs.label} ${id}`;
   button[`kind${id}`] = id === 1 ? 1 : 2;
-  button[`id${id}`] = buttonArgs.id;
   button[`title${id}`] = buttonArgs.title;
   button[`disabled${id}`] = buttonArgs.disabled;
   button[`icon${id}`] = buttonArgs.icon;
@@ -132,8 +124,6 @@ const getButtonArgs = (id) => {
 
 const buttonsGroupArgs = {
   size: buttonArgs.size,
-  id: '',
-  title: '',
   hasIcon: buttonArgs.hasIcon,
   iconPlace: buttonArgs.iconPlace,
   groupMarkup: 'ul',

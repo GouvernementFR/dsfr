@@ -55,23 +55,23 @@ header = {
 <% let header = locals.header || {body:{}, menu: {}};
 const attributes = header.attributes || {};
 if (header.id) attributes.id = header.id;
-if (header.menu.tools && header.menu.tools.duplicateLinks) {
+if (header.menu && header.menu.tools && header.menu.tools.duplicateLinks) {
   header.menu.tools.links = header.body.tools.links;
 }
-if (header.menu.modalId && header.menu.id) {
+if (header.menu && header.menu.modalId && header.menu.id) {
   header.body.brand.navbar.menu = header.menu;
 }
 if (header.body.tools && header.body.tools.search && header.body.tools.search.modalId && header.body.tools.search.id) {
   header.body.brand.navbar.search = header.body.tools.search;
 }
-if (header.menu.navigation && header.menu.modalId) {
+if (header.menu && header.menu.navigation && header.menu.modalId) {
   header.menu.navigation.modalId = header.menu.modalId;
 }
 %>
 
 <header role="banner" class="<%= prefix %>-header" <%- includeAttrs(attributes) %>>
   <%- include('./header-body', {body: header.body});%>
-  <% if ((header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
+  <% if ((header.menu && header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
     <%- include('./header-menu', {menu: header.menu});%>
   <% } %>
 </header>

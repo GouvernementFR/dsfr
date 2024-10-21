@@ -18,6 +18,7 @@ export const ConnectStory = {
 export const ConnectPlusStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: 'france-connect-plus',
     type: 'plus'
   }
 };

@@ -18,6 +18,8 @@ export const SearchStory = {
 export const SizeLgStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    size: 'lg'
+    size: 'lg',
+    id: 'search-lg',
+    inputId: 'search-input-lg'
   }
 };

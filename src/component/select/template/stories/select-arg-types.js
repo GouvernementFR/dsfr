@@ -1,3 +1,5 @@
+import { uniqueId } from '../../../../core/template/stories/unique-id';
+
 const messageArgTypes = {
   status: {
     control: {
@@ -40,7 +42,8 @@ const selectArgTypes = {
     control: 'text',
     description: 'Attribut id de la liste déroulante',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   label: {
@@ -99,8 +102,9 @@ const selectArgTypes = {
 };
 
 const selectArgs = {
-  id: 'storybook-select',
+  id: uniqueId('storybook-select'),
   label: 'Libellé de la liste déroulante',
+  hint: '',
   placeholder: 'Sélectionnez une option',
   disabled: false,
   groupedOptions: false,
@@ -132,7 +136,7 @@ const selectArgs = {
 
 const selectProps = (args) => {
   const select = {
-    id: args.id || selectArgs.id,
+    id: args.id || uniqueId('storybook-select'),
     label: args.label || selectArgs.label,
     hint: args.hint !== '' ? args.hint : undefined,
     placeholder: args.placeholder || selectArgs.placeholder,

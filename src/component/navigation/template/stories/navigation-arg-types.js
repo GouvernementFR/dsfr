@@ -28,14 +28,14 @@ const getItemArgs = (id, type = 'link', isActive = false) => {
 
   switch (type) {
     case 'link':
-      item.label = `Titre du lien ${id}`;
+      item.label = 'Intitulé lien';
       item.href = '#';
       break;
     case 'menu':
-      item.label = `Menu ${id}`;
+      item.label = 'Intitulé menu';
       break;
     case 'mega-menu':
-      item.label = `Mega menu ${id}`;
+      item.label = 'Intitulé mega menu';
       item.close = 'Fermer le menu';
       item.leader = {
         title: 'Titre éditorialisé',
@@ -60,66 +60,66 @@ const navigationArgs = {
   ariaLabel: 'Menu principal',
   items: [
     {
-      ...getItemArgs(1, 'menu', true),
+      ...getItemArgs('01', 'menu', true),
       items: [
-        getItemArgs('1-1'),
-        getItemArgs('1-2', 'link', true),
-        getItemArgs('1-3')
+        getItemArgs('01-1'),
+        getItemArgs('01-2', 'link', true),
+        getItemArgs('01-3')
       ]
     },
-    getItemArgs(2),
+    getItemArgs('02'),
     {
-      ...getItemArgs(3, 'menu'),
+      ...getItemArgs('03', 'menu'),
       items: [
-        getItemArgs('3-1'),
+        getItemArgs('03-1'),
         {
-          ...getItemArgs('3-2', 'menu'),
+          ...getItemArgs('03-2', 'menu'),
           items: [
-            getItemArgs('3-2-1'),
-            getItemArgs('3-2-2'),
-            getItemArgs('3-2-3')
+            getItemArgs('03-2-1'),
+            getItemArgs('03-2-2'),
+            getItemArgs('03-2-3')
           ]
         },
-        getItemArgs('3-3')
+        getItemArgs('03-3')
       ]
     },
     {
-      ...getItemArgs(4, 'mega-menu'),
+      ...getItemArgs('04', 'mega-menu'),
       categories: [
         {
           label: 'Catégorie 1',
           href: '#',
           items: [
-            getItemArgs('4-1-1', 'link'),
-            getItemArgs('4-1-2', 'link'),
-            getItemArgs('4-1-3', 'link')
+            getItemArgs('04-1-1', 'link'),
+            getItemArgs('04-1-2', 'link'),
+            getItemArgs('04-1-3', 'link')
           ]
         },
         {
           label: 'Catégorie 2',
           href: '#',
           items: [
-            getItemArgs('4-2-1', 'link'),
-            getItemArgs('4-2-2', 'link'),
-            getItemArgs('4-2-3', 'link')
+            getItemArgs('04-2-1', 'link'),
+            getItemArgs('04-2-2', 'link'),
+            getItemArgs('04-2-3', 'link')
           ]
         },
         {
           label: 'Catégorie 3',
           href: '#',
           items: [
-            getItemArgs('4-3-1', 'link'),
-            getItemArgs('4-3-2', 'link'),
-            getItemArgs('4-3-3', 'link')
+            getItemArgs('04-3-1', 'link'),
+            getItemArgs('04-3-2', 'link'),
+            getItemArgs('04-3-3', 'link')
           ]
         },
         {
           label: 'Catégorie 4',
           href: '#',
           items: [
-            getItemArgs('4-4-1', 'link'),
-            getItemArgs('4-4-2', 'link'),
-            getItemArgs('4-4-3', 'link')
+            getItemArgs('04-4-1', 'link'),
+            getItemArgs('04-4-2', 'link'),
+            getItemArgs('04-4-3', 'link')
           ]
         }
       ]

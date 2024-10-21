@@ -27,6 +27,8 @@ const stepperArgTypes = {
     description: 'Numéro de l\'étape courrante',
     type: {
       value: 'integer',
+      min: 2,
+      max: 8,
       required: true
     }
   },
@@ -35,6 +37,8 @@ const stepperArgTypes = {
     description: 'Nombre d\'étapes',
     type: {
       value: 'integer',
+      min: 2,
+      max: 8,
       required: true
     }
   },

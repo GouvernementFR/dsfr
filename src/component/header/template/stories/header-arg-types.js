@@ -503,11 +503,14 @@ const headerProps = (args) => {
           title: args.brandLinkTitle || headerArgs.brandLinkTitle,
           href: args.brandLinkHref || headerArgs.brandLinkHref,
           position: args.hasBrandOperator ? 'operator' : (args.brandService === '' && args.brandTagline === '') ? 'logo' : 'service'
-        },
-        navbar: {}
+        }
       }
-    },
-    menu: {
+    }
+  };
+
+  if (args.navigationItems.length || args.hasToolLinks || args.hasSearch || args.hasTranslate) {
+    header.body.brand.navbar = {};
+    header.menu = {
       id: args.menuId || headerArgs.menuId,
       modalId: args.menuModalId || headerArgs.menuModalId,
       navigation: {
@@ -516,10 +519,10 @@ const headerProps = (args) => {
         items: args.navigationItems || headerArgs.navigationItems
       },
       tools: {
-        duplicateLinks: args.duplicateToolsLinks || headerArgs.duplicateToolsLinks
+        duplicateLinks: args.duplicateToolsLinks || headerArgs.duplicateToolLinks
       }
-    }
-  };
+    };
+  }
 
   if (args.brandService !== '') {
     header.body.brand.service = header.body.brand.service || {};

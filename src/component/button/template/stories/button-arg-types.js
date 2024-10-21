@@ -139,7 +139,7 @@ const buttonProps = (args) => {
     label: args.label || buttonArgs.label,
     kind: args.kind || buttonArgs.kind,
     size: args.size || buttonArgs.size,
-    id: args.id || undefined,
+    id: args.id !== '' ? args.id : undefined,
     title: args.title || undefined,
     disabled: args.disabled,
     markup: args.markup || buttonArgs.markup,
@@ -162,6 +162,7 @@ const buttonProps = (args) => {
     };
   }
 
+  console.log('buttonProps', button);
   return button;
 };
 

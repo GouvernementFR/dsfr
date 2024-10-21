@@ -1,5 +1,6 @@
 import { renderFollow } from './follow';
 import { followArgs, followArgTypes, followProps } from './follow-arg-types';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const render = (args) => renderFollow({ follow: followProps(args) });
 
@@ -25,52 +26,67 @@ export const SocialsStory = {
 export const NewsletterButtonStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('follow'),
     hasNewsletter: true,
-    newsletterType: 'button'
+    newsletterType: 'button',
+    newsletterButtonId: uniqueId('newsletter-button')
   }
 };
 
 export const NewsletterFormStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('follow'),
     hasNewsletter: true,
-    newsletterType: 'form'
+    newsletterType: 'form',
+    newsletterFormInputId: uniqueId('newsletter-input'),
+    newsletterFormButtonId: uniqueId('newsletter-button')
   }
 };
 
 export const SocialsNewsletterButtonStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('follow'),
     hasSocials: true,
     hasNewsletter: true,
-    newsletterType: 'button'
+    newsletterType: 'button',
+    newsletterButtonId: uniqueId('newsletter-button')
   }
 };
 
 export const SocialsNewsletterFormStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('follow'),
     hasSocials: true,
     hasNewsletter: true,
-    newsletterType: 'form'
+    newsletterType: 'form',
+    newsletterFormInputId: uniqueId('newsletter-input'),
+    newsletterFormButtonId: uniqueId('newsletter-button')
   }
 };
 
 export const SocialsNewsletterFormErrorStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('follow'),
     hasSocials: true,
     hasNewsletter: true,
     newsletterType: 'form',
-    newsletterFormInputhasError: true
+    newsletterFormInputhasError: true,
+    newsletterFormInputId: uniqueId('newsletter-input'),
+    newsletterFormButtonId: uniqueId('newsletter-button')
   }
 };
 
 export const SocialsNewsletterConfirmStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('follow'),
     hasSocials: true,
     hasNewsletter: true,
-    newsletterType: 'alert'
+    newsletterType: 'alert',
+    newsletterAlertId: uniqueId('newsletter-alert')
   }
 };

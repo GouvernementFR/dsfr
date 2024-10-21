@@ -26,6 +26,7 @@ const groupClasses = segmented.classes || [];
 const groupAttributes = segmented.attributes || {};
 const legendClasses = [`${prefix}-segmented__legend`];
 groupClasses.push(prefix + '-segmented');
+if (segmented.id) groupAttributes.id = segmented.id;
 if (segmented.legendInline === true) legendClasses.push(prefix + '-segmented__legend--inline');
 if (segmented.noLegend) groupClasses.push(prefix + '-segmented--no-legend');
 switch (segmented.size) {
@@ -35,7 +36,7 @@ switch (segmented.size) {
 }
 %>
 
-<fieldset <%- includeClasses(groupClasses); %>>
+<fieldset <%- includeClasses(groupClasses); %> <%- includeAttrs(groupAttributes) %>>
   <legend <%- includeClasses(legendClasses); %>>
     <% if (segmented.legend) { %>
       <%= segmented.legend %>

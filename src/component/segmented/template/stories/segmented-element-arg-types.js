@@ -26,6 +26,20 @@ const segmentedElementArgTypes = {
     type: {
       value: 'string'
     }
+  },
+  checked: {
+    control: 'boolean',
+    description: 'Si true, l\'élément est sélectionné',
+    type: {
+      value: 'boolean'
+    }
+  },
+  disabled: {
+    control: 'boolean',
+    description: 'Si true, l\'élément est désactivé',
+    type: {
+      value: 'boolean'
+    }
   }
 };
 

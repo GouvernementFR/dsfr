@@ -1,5 +1,6 @@
 import { toggleArgs, toggleArgTypes, toggleProps } from './toggle-arg-types';
 import { renderToggle } from './toggle';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const render = (args) => renderToggle({ toggle: toggleProps(args) });
 const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
@@ -21,6 +22,8 @@ export const AlignLeftStory = {
   render: () => renders([
     {
       hint: '',
+      id: uniqueId('toggle'),
+      groupId: uniqueId('toggle-group'),
       left: true
     }
   ])
