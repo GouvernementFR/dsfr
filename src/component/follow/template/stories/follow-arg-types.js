@@ -258,7 +258,7 @@ const followArgs = {
   hasNewsletter: false,
   newsletterTitle: 'Abonnez-vous à notre lettre d’information',
   newsletterDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.',
-  newsletterType: undefined,
+  newsletterType: 'button',
   newsletterButtonId: 'newsletter-button',
   newsletterButtonLabel: 'S\'abonner',
   newsletterButtonTitle: 'S‘abonner à notre lettre d’information',
@@ -276,7 +276,7 @@ const followArgs = {
   newsletterAlertId: 'newsletter-alert',
   newsletterAlertText: 'Votre inscription a bien été prise en compte.',
   newsletterAlertType: 'success',
-  hasSocials: false,
+  hasSocials: true,
   socialsTitle: 'Suivez-nous sur les réseaux sociaux',
   socialsSize: 'md',
   socialsButtons: [

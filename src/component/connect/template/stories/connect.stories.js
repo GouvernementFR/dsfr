@@ -11,19 +11,14 @@ export default {
   args: connectArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const ConnectStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const PlusStory = {
-  tags: ['!dev'],
+export const ConnectPlusStory = {
+  tags: ['autodocs', '!dev'],
   args: {
+    id: 'france-connect-plus',
     type: 'plus'
   }
 };

@@ -1,5 +1,6 @@
 import { checkboxesGroupArgs, checkboxesGroupArgTypes, checkboxesGroupProps } from './checkboxes-group-arg-types';
 import { renderFieldset } from '../../../form/template/stories/fieldset';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const render = (args) => renderFieldset({ fieldset: checkboxesGroupProps(args) });
 
@@ -11,40 +12,42 @@ export default {
   args: checkboxesGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const CheckboxesGroupStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   args: {
-    size: 'sm'
+    size: 'sm',
+    id1: uniqueId('checkbox'),
+    id2: uniqueId('checkbox')
   }
 };
 
 export const DisabledStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
-    disabled: true
+    disabled: true,
+    id1: uniqueId('checkbox'),
+    id2: uniqueId('checkbox')
   }
 };
 
 export const ErrorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
-    status: 'error'
+    status: 'error',
+    id1: uniqueId('checkbox'),
+    id2: uniqueId('checkbox')
   }
 };
 
 export const SuccessStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
-    status: 'valid'
+    status: 'valid',
+    id1: uniqueId('checkbox'),
+    id2: uniqueId('checkbox')
   }
 };

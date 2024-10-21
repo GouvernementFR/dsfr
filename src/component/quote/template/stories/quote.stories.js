@@ -11,39 +11,33 @@ export default {
   args: quoteArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const QuoteStory = {
   args: {}
 };
 
 export const AuthorlessStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     author: null
   }
 };
 
 export const SourcelessStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     sources: []
   }
 };
 
 export const ImagelessStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     image: null
   }
 };
 
 export const AccentStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     accent: 'green-menthe'
   }

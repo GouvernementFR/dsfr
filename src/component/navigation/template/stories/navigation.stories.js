@@ -1,3 +1,4 @@
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 import { renderNavigation } from './navigation';
 import { navigationArgs, navigationArgTypes, navigationProps, getItemArgs } from './navigation-arg-types';
 
@@ -11,61 +12,57 @@ export default {
   args: navigationArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const NavigationStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const LinkStory = {
-  tags: ['!dev'],
+export const WithLinkStory = {
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('navigation'),
     items: [
-      getItemArgs(1),
-      getItemArgs(2),
-      getItemArgs(3, 'link', true),
-      getItemArgs(4)
+      getItemArgs(uniqueId('nav')),
+      getItemArgs(uniqueId('nav')),
+      getItemArgs(uniqueId('nav'), 'link', true),
+      getItemArgs(uniqueId('nav'))
     ]
   }
 };
 
 export const MenuStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('navigation'),
     items: [
       {
-        ...getItemArgs(1, 'menu', true),
+        ...getItemArgs(uniqueId('nav'), 'menu', true),
         items: [
-          getItemArgs('1-1'),
-          getItemArgs('1-2', 'link', true),
-          getItemArgs('1-3')
+          getItemArgs(uniqueId('nav')),
+          getItemArgs(uniqueId('nav'), 'link', true),
+          getItemArgs(uniqueId('nav'))
         ]
       },
       {
-        ...getItemArgs(2, 'menu'),
+        ...getItemArgs(uniqueId('nav'), 'menu'),
         items: [
-          getItemArgs('2-1'),
-          getItemArgs('2-2'),
-          getItemArgs('2-3')
+          getItemArgs(uniqueId('nav')),
+          getItemArgs(uniqueId('nav')),
+          getItemArgs(uniqueId('nav'))
         ]
       },
       {
-        ...getItemArgs(3, 'menu'),
+        ...getItemArgs(uniqueId('nav'), 'menu'),
         items: [
-          getItemArgs('3-1'),
+          getItemArgs(uniqueId('nav')),
           {
-            ...getItemArgs('3-2', 'menu'),
+            ...getItemArgs(uniqueId('nav'), 'menu'),
             items: [
-              getItemArgs('3-2-1'),
-              getItemArgs('3-2-2'),
-              getItemArgs('3-2-3')
+              getItemArgs(uniqueId('nav')),
+              getItemArgs(uniqueId('nav')),
+              getItemArgs(uniqueId('nav'))
             ]
           },
-          getItemArgs('3-3')
+          getItemArgs(uniqueId('nav'))
         ]
       }
     ]
@@ -73,128 +70,129 @@ export const MenuStory = {
 };
 
 export const MegaMenuStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('navigation'),
     items: [
       {
-        ...getItemArgs(1, 'mega-menu'),
+        ...getItemArgs(uniqueId('nav'), 'mega-menu'),
         categories: [
           {
             label: 'Catégorie 1',
             href: '#',
             items: [
-              getItemArgs('1-1-1', 'link'),
-              getItemArgs('1-1-2', 'link'),
-              getItemArgs('1-1-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 2',
             href: '#',
             items: [
-              getItemArgs('1-2-1', 'link'),
-              getItemArgs('1-2-2', 'link'),
-              getItemArgs('1-2-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 3',
             href: '#',
             items: [
-              getItemArgs('1-3-1', 'link'),
-              getItemArgs('1-3-2', 'link'),
-              getItemArgs('1-3-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 4',
             href: '#',
             items: [
-              getItemArgs('1-4-2', 'link'),
-              getItemArgs('1-4-1', 'link'),
-              getItemArgs('1-4-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           }
         ]
       },
       {
-        ...getItemArgs(2, 'mega-menu', true),
+        ...getItemArgs(uniqueId('nav'), 'mega-menu', true),
         categories: [
           {
             label: 'Catégorie 1',
             href: '#',
             items: [
-              getItemArgs('2-1-1', 'link'),
-              getItemArgs('2-1-2', 'link'),
-              getItemArgs('2-1-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 2',
             href: '#',
             items: [
-              getItemArgs('2-2-1', 'link'),
-              getItemArgs('2-2-2', 'link', true),
-              getItemArgs('2-2-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link', true),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 3',
             href: '#',
             items: [
-              getItemArgs('2-3-1', 'link'),
-              getItemArgs('2-3-2', 'link'),
-              getItemArgs('2-3-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 4',
             href: '#',
             items: [
-              getItemArgs('2-4-1', 'link'),
-              getItemArgs('2-4-2', 'link'),
-              getItemArgs('2-4-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           }
         ]
       },
       {
-        ...getItemArgs(3, 'mega-menu'),
+        ...getItemArgs(uniqueId('nav'), 'mega-menu'),
         categories: [
           {
             label: 'Catégorie 1',
             href: '#',
             items: [
-              getItemArgs('3-1-1', 'link'),
-              getItemArgs('3-1-2', 'link'),
-              getItemArgs('3-1-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 2',
             href: '#',
             items: [
-              getItemArgs('3-2-1', 'link'),
-              getItemArgs('3-2-2', 'link'),
-              getItemArgs('3-2-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 3',
             href: '#',
             items: [
-              getItemArgs('3-3-1', 'link'),
-              getItemArgs('3-3-2', 'link'),
-              getItemArgs('3-3-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           },
           {
             label: 'Catégorie 4',
             href: '#',
             items: [
-              getItemArgs('3-4-1', 'link'),
-              getItemArgs('3-4-2', 'link'),
-              getItemArgs('3-4-3', 'link')
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link'),
+              getItemArgs(uniqueId('nav'), 'link')
             ]
           }
         ]

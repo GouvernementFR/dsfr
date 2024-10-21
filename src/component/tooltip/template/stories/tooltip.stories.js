@@ -2,6 +2,7 @@ import { renderTooltip } from './tooltip';
 import { renderButton } from '../../../button/template/stories/button';
 import { renderLink } from '../../../link/template/stories/link';
 import { tooltipArgs, tooltipArgTypes, tooltipProps } from './tooltip-arg-types';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const render = (args) => renderTooltip({ tooltip: tooltipProps(args) });
 const renderButtonTooltip = (args) => renderButton({ button: { ...buttonArgs, tooltip: args } });
@@ -34,17 +35,14 @@ export default {
   args: tooltipArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const TooltipStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const HoverStory = {
-  tags: ['!dev'],
+export const TooltipHoverStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('tooltip')
+  },
   render: renderLinkTooltip
 };

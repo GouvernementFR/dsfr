@@ -1,3 +1,4 @@
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 import { segmentedElementArgTypes, segmentedElementArgs } from './segmented-element-arg-types';
 
 const getSegmentedElementArgTypes = (id) => {
@@ -23,6 +24,16 @@ const getSegmentedElementArgTypes = (id) => {
 
   segmentedElement[`value${id}`] = {
     ...segmentedElementArgTypes.value,
+    ...table
+  };
+
+  segmentedElement[`checked${id}`] = {
+    ...segmentedElementArgTypes.checked,
+    ...table
+  };
+
+  segmentedElement[`disabled${id}`] = {
+    ...segmentedElementArgTypes.disabled,
     ...table
   };
 
@@ -95,7 +106,7 @@ const segmentedArgTypes = {
 const getSegmentedElementArgs = (id) => {
   const segmentedElement = {};
 
-  segmentedElement[`id${id}`] = `${segmentedElementArgs.id}-${id}`;
+  segmentedElement[`id${id}`] = uniqueId('storybook-segmented-element');
   segmentedElement[`label${id}`] = `${segmentedElementArgs.label} ${id}`;
   segmentedElement[`name${id}`] = `${segmentedElementArgs.name}`;
   segmentedElement[`value${id}`] = `${segmentedElementArgs.value}-${id}`;
@@ -118,30 +129,36 @@ const segmentedArgs = {
 };
 
 const segmentedProps = (args) => {
-  const elements = [];
+  const elements = (id) => {
+    const elements = [];
 
-  for (let i = 1; i <= 3; i++) {
-    const element = {
-      id: args[`id${i}`] || segmentedElementArgs.id,
-      label: args[`label${i}`] || segmentedElementArgs.label,
-      name: args[`name${i}`] || segmentedElementArgs.name,
-      value: args[`value${i}`] || segmentedElementArgs.value,
-      icon: args.hasIcon && (args.icon || segmentedArgs.icon),
-      checked: i === 1
-    };
+    for (let i = 1; i <= 3; i++) {
+      const element = {
+        id: args[`id${i}`] || uniqueId('storybook-segmented-element'),
+        label: args[`label${i}`] || segmentedElementArgs.label,
+        name: args[`name${i}`] || id,
+        value: args[`value${i}`] || segmentedElementArgs.value,
+        icon: args.hasIcon && (args.icon || segmentedArgs.icon),
+        checked: (args.checked1 || args.checked2 || args.checked3) ? args[`checked${i}`] : i === 1,
+        disabled: args[`disabled${i}`] || undefined
+      };
 
-    elements.push(element);
-  }
+      elements.push(element);
+    }
+
+    return elements;
+  };
 
   const segmented = {
-    id: args.id || segmentedArgs.id,
+    id: args.id || uniqueId('storybook-segmented'),
     size: args.size || segmentedArgs.size,
     legend: args.legend || segmentedArgs.legend,
     legendInline: args.legendInline || false,
     noLegend: args.noLegend || false,
-    hint: args.hint !== '' ? args.hint || segmentedArgs.hint : undefined,
-    elements: elements
+    hint: args.hint !== '' ? args.hint || segmentedArgs.hint : undefined
   };
+
+  segmented.elements = elements(segmented.id);
 
   return segmented;
 };

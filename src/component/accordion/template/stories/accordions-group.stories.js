@@ -11,12 +11,7 @@ export default {
   args: accordionsGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const AccordionsGroupStory = {
+  tags: ['autodocs'],
   args: {}
 };

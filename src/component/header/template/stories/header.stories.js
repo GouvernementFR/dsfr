@@ -1,3 +1,4 @@
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 import { renderHeader } from './header';
 import { headerArgs, headerArgTypes, headerProps, getItemArgs } from './header-arg-types';
 
@@ -11,21 +12,17 @@ export default {
   args: headerArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const HeaderStory = {
   args: {}
 };
 
 export const MinStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     brandService: '',
     brandTagline: '',
+    menuModalId: uniqueId('menu-modal'),
     navigationItems: [
       getItemArgs(1),
       getItemArgs(2),
@@ -35,66 +32,92 @@ export const MinStory = {
 };
 
 export const ServiceStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     navigationItems: []
   }
 };
 
 export const ToolLinksStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     hasToolLinks: true,
+    menuId: uniqueId('menu'),
+    menuModalId: uniqueId('menu-modal'),
     navigationItems: []
   }
 };
 
 export const SearchStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     hasSearch: true,
+    searchId: uniqueId('search'),
+    searchModalId: uniqueId('search-modal'),
+    searchBtnId: uniqueId('search-btn'),
+    searchInputId: uniqueId('search-input'),
     navigationItems: []
   }
 };
 
 export const ToolLinksSearchStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     hasToolLinks: true,
+    menuId: uniqueId('menu'),
+    menuModalId: uniqueId('menu-modal'),
     hasSearch: true,
+    searchId: uniqueId('search'),
+    searchModalId: uniqueId('search-modal'),
+    searchBtnId: uniqueId('search-btn'),
+    searchInputId: uniqueId('search-input'),
     navigationItems: []
   }
 };
 
 export const TranslateStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     hasTranslate: true,
+    translateId: uniqueId('translate'),
+    translateCollapseId: uniqueId('translate-collapse'),
     translateButtonKind: 3,
     navigationItems: []
   }
 };
 
 export const ToolLinksTranslateStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     hasToolLinks: true,
+    menuId: uniqueId('menu'),
+    menuModalId: uniqueId('menu-modal'),
     hasTranslate: true,
+    translateId: uniqueId('translate'),
+    translateCollapseId: uniqueId('translate-collapse'),
     navigationItems: []
   }
 };
 
 export const VerticalOperatorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     hasBrandOperator: true,
     navigationItems: []
   }
 };
 
 export const HorizontalOperatorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('header'),
     hasBrandOperator: true,
     brandOperatorSrc: 'img/placeholder.16x9.png',
     brandOperatorStyle: 'max-width: 9.0625rem;',

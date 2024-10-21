@@ -12,28 +12,12 @@ export default {
   args: cardArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const CardStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const VerticalStory = {
-  tags: ['!dev'],
-  render: () => renders([
-    {
-      enlarge: true,
-      description: 'Description (optionnelle)'
-    }
-  ])
-};
-
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -43,8 +27,18 @@ export const SmStory = {
   ])
 };
 
+export const VerticalStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      enlarge: true,
+      description: 'Description (optionnelle)'
+    }
+  ])
+};
+
 export const HorizontalStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -55,7 +49,7 @@ export const HorizontalStory = {
 };
 
 export const HorizontalTierStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -67,7 +61,7 @@ export const HorizontalTierStory = {
 };
 
 export const HorizontalHalfStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -79,19 +73,19 @@ export const HorizontalHalfStory = {
 };
 
 export const DownloadStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
       title: 'Télécharger le document XX',
       download: true,
-      details: 'Détail obligatoire (Extension - Poids - Langue)'
+      detailLabel: 'Détail obligatoire (Extension - Poids - Langue)'
     }
   ])
 };
 
 export const DownloadButtonStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -99,13 +93,44 @@ export const DownloadButtonStory = {
       actionMarkup: 'button',
       download: true,
       description: 'Description (optionnelle)',
-      details: 'Détail obligatoire (Extension - Poids - Langue)'
+      detailLabel: 'Détail obligatoire (Extension - Poids - Langue)'
+    }
+  ])
+};
+
+export const DownloadAssessFileStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      enlarge: true,
+      title: 'Télécharger le document XX',
+      description: 'Les détails du document (format, poids) sont injectés en js automatiquement',
+      download: true,
+      href: 'img/placeholder.16x9.pdf',
+      assess: true,
+      detailLabel: 'PDF'
+    }
+  ])
+};
+
+export const DownloadAssessFileEnglishStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      enlarge: true,
+      title: 'Télécharger le document XX',
+      description: 'Les détails du document (format, poids, langue) sont injectés en js automatiquement et le poids est en Bytes',
+      download: true,
+      lang: 'en',
+      href: 'img/placeholder.16x9.pdf',
+      assess: 'bytes',
+      detailLabel: 'PDF'
     }
   ])
 };
 
 export const ActionButtonsStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       hasButtons: true
@@ -114,7 +139,7 @@ export const ActionButtonsStory = {
 };
 
 export const ActionLinksStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       hasLinks: true

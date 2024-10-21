@@ -1,5 +1,6 @@
 import { toggleArgs, toggleArgTypes, toggleProps } from './toggle-arg-types';
 import { renderToggle } from './toggle';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const render = (args) => renderToggle({ toggle: toggleProps(args) });
 const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
@@ -12,21 +13,17 @@ export default {
   args: toggleArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const ToggleStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const LeftStory = {
-  tags: ['!dev'],
+export const AlignLeftStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       hint: '',
+      id: uniqueId('toggle'),
+      groupId: uniqueId('toggle-group'),
       left: true
     }
   ])

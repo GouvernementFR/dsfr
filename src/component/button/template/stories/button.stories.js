@@ -13,27 +13,26 @@ export default {
   args: buttonArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const ButtonStory = {
   args: {}
 };
 
 export const PrimaryStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     kind: 1
   }
 };
 
 export const SecondaryStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     kind: 2
   }
 };
 
 export const TertiaryStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       kind: 3
@@ -45,7 +44,7 @@ export const TertiaryStory = {
 };
 
 export const DisabledStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       kind: 1,
@@ -67,7 +66,7 @@ export const DisabledStory = {
 };
 
 export const IconLeftStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       kind: 1,
@@ -97,7 +96,7 @@ export const IconLeftStory = {
 };
 
 export const IconRightStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       kind: 1,
@@ -127,7 +126,7 @@ export const IconRightStory = {
 };
 
 export const IconOnlyStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       kind: 1,
@@ -152,8 +151,8 @@ export const IconOnlyStory = {
   ])
 };
 
-export const SizeStory = {
-  tags: ['!dev'],
+export const SizesStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm'
@@ -168,7 +167,7 @@ export const SizeStory = {
 };
 
 export const BtnCloseStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     label: 'Fermer',
     classes: ['fr-btn--close']
@@ -176,7 +175,7 @@ export const BtnCloseStory = {
 };
 
 export const BtnDisplayStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     label: 'Paramètres d\'affichage',
     classes: ['fr-btn--display']
@@ -184,7 +183,7 @@ export const BtnDisplayStory = {
 };
 
 export const BtnTeamStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     label: 'Contact',
     markup: 'a',
@@ -194,7 +193,7 @@ export const BtnTeamStory = {
 };
 
 export const BtnBriefcaseStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     label: 'Espace recruteur',
     markup: 'a',
@@ -204,7 +203,7 @@ export const BtnBriefcaseStory = {
 };
 
 export const BtnAccountStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     label: 'Espace particulier',
     markup: 'a',

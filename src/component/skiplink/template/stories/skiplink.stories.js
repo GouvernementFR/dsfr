@@ -11,12 +11,7 @@ export default {
   args: skiplinkArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const SkiplinkStory = {
+  tags: ['autodocs'],
   args: {}
 };

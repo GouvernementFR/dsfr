@@ -13,13 +13,12 @@ export default {
   args: badgesGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const BadgesGroupStory = {
   args: {}
 };
 
 export const MdStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'md',
@@ -33,8 +32,8 @@ export const MdStory = {
   ])
 };
 
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm',

@@ -12,12 +12,7 @@ export default {
   args: displayArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const DisplayStory = {
+  tags: ['autodocs'],
   args: {}
 };

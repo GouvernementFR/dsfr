@@ -1,5 +1,6 @@
 import { checkboxArgTypes, checkboxArgs } from './checkbox-arg-types';
 import { formArgTypes, formArgs } from '../../../form/template/stories/form-arg-types';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const getcheckboxArgTypes = (id) => {
   const checkbox = {};
@@ -80,7 +81,7 @@ const checkboxesGroupArgTypes = {
 const getcheckboxArgs = (id) => {
   const checkbox = {};
 
-  checkbox[`id${id}`] = `${checkboxArgs.id}-${id}`;
+  checkbox[`id${id}`] = uniqueId('checkbox');
   checkbox[`label${id}`] = `${checkboxArgs.label} ${id}`;
   checkbox[`name${id}`] = `${checkboxArgs.name}${id}`;
   checkbox[`hint${id}`] = checkboxArgs.hint;
@@ -111,29 +112,31 @@ const checkboxesGroupArgs = {
 };
 
 const checkboxesGroupProps = (args) => {
-  const checkboxes = [];
+  const elements = (id) => {
+    const checkboxes = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i < 3 || args[`hascheckbox${i}`]) {
+        const checkbox = {
+          type: 'checkbox',
+          inline: args.inline,
+          data: {
+            id: args[`id${i}`] || uniqueId(id),
+            label: args[`label${i}`] || checkboxArgs.label,
+            size: args.size || checkboxesGroupArgs.size,
+            name: args[`name${i}`] || checkboxArgs.name,
+            hint: args[`hint${i}`] !== '' ? args[`hint${i}`] || checkboxArgs.hint : undefined,
+            disabled: args[`disabled${i}`]
+          }
+        };
 
-  for (let i = 1; i <= 5; i++) {
-    if (i < 3 || args[`hascheckbox${i}`]) {
-      const checkbox = {
-        type: 'checkbox',
-        inline: args.inline,
-        data: {
-          id: args[`id${i}`] || undefined,
-          label: args[`label${i}`] || checkboxArgs.label,
-          size: args.size || checkboxesGroupArgs.size,
-          name: args[`name${i}`] || checkboxArgs.name,
-          hint: args[`hint${i}`] !== '' ? args[`hint${i}`] || checkboxArgs.hint : undefined,
-          disabled: args[`disabled${i}`]
-        }
-      };
-
-      checkboxes.push(checkbox);
+        checkboxes.push(checkbox);
+      }
     }
-  }
+    return checkboxes;
+  };
 
   const checkboxesGroup = {
-    id: args.id || undefined,
+    id: args.id || uniqueId('checkbox-form'),
     legend: args.legend,
     disabled: args.disabled,
     hint: args.hint !== '' ? args.hint || formArgs.hint : undefined,
@@ -141,9 +144,10 @@ const checkboxesGroupProps = (args) => {
     choice: true,
     status: args.status || formArgs.status,
     error: args.status === 'error' ? args.errorMessage || formArgs.errorMessage : undefined,
-    valid: args.status === 'valid' ? args.validMessage || formArgs.validMessage : undefined,
-    elements: checkboxes
+    valid: args.status === 'valid' ? args.validMessage || formArgs.validMessage : undefined
   };
+
+  checkboxesGroup.elements = elements(checkboxesGroup.id);
 
   return checkboxesGroup;
 };

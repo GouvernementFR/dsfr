@@ -1,5 +1,6 @@
 import { passwordArgs, passwordArgTypes, passwordProps } from './password-arg-types';
 import { renderPassword } from './password';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const render = (args) => renderPassword({ password: passwordProps(args) });
 
@@ -11,37 +12,41 @@ export default {
   args: passwordArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const PasswordStory = {
   args: {}
 };
 
 export const LoginStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
-    hasLink: true
+    hasLink: true,
+    id: uniqueId('password'),
+    checkboxId: uniqueId('password-checkbox'),
+    inputId: uniqueId('password-input'),
+    linkId: uniqueId('password-link')
   }
 };
 
 export const RegisterStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasLink: false,
-    hasMessages: true
+    hasMessages: true,
+    id: uniqueId('password'),
+    checkboxId: uniqueId('password-checkbox'),
+    inputId: uniqueId('password-input')
   }
 };
 
 export const RegisterValidateStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasLink: false,
     hasMessages: true,
     inputValue: 't1t1!',
+    id: uniqueId('password'),
+    checkboxId: uniqueId('password-checkbox'),
+    inputId: uniqueId('password-input'),
     messages: [
       { text: 'Votre mot de passe doit contenir :' },
       { text: '12 caractères minimum', type: 'error' },

@@ -12,18 +12,12 @@ export default {
   args: segmentedArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const SegmentedStory = {
   args: {}
 };
 
 export const WithIconStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       hasIcon: true
@@ -31,8 +25,8 @@ export const WithIconStory = {
   ])
 };
 
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm'
@@ -41,7 +35,7 @@ export const SmStory = {
 };
 
 export const LegendInlineStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       legendInline: true
@@ -50,7 +44,7 @@ export const LegendInlineStory = {
 };
 
 export const NoLegendStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       noLegend: true

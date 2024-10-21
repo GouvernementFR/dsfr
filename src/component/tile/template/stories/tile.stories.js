@@ -13,18 +13,12 @@ export default {
   args: tileArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const TileStory = {
   args: {}
 };
 
 export const VerticalStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -33,8 +27,8 @@ export const VerticalStory = {
   ])
 };
 
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -45,7 +39,7 @@ export const SmStory = {
 };
 
 export const HorizontalStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -55,8 +49,8 @@ export const HorizontalStory = {
   ])
 };
 
-export const SmHorizontalStory = {
-  tags: ['!dev'],
+export const SizeSmHorizontalStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -68,7 +62,7 @@ export const SmHorizontalStory = {
 };
 
 export const DownloadStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -80,7 +74,7 @@ export const DownloadStory = {
 };
 
 export const DownloadButtonStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,
@@ -93,8 +87,8 @@ export const DownloadButtonStory = {
   ])
 };
 
-export const HorizontalVerticalMdStory = {
-  tags: ['!dev'],
+export const HorizontalVerticalFromMdStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       enlarge: true,

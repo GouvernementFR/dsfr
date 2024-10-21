@@ -69,13 +69,19 @@ const viewports = {
 
 const preview = {
   decorators: [
-    themeDecorator,
+    themeDecorator
   ],
   parameters: {
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
+      },
+    },
+    html: {
+      highlighter: {
+        showLineNumbers: true, // default: false
+        wrapLines: false, // default: true
       },
     },
     docs: {

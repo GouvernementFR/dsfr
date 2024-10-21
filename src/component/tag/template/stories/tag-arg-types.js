@@ -148,7 +148,7 @@ const tagProps = (args) => {
   if (args.type === 'clickable' && args.accent && args.accent !== 'défaut') tag.accent = args.accent || tagArgs.accent;
 
   if (args.hasIcon === true) {
-    tag.icon = args.icon;
+    tag.icon = args.icon || tagArgs.icon;
   }
 
   return tag;

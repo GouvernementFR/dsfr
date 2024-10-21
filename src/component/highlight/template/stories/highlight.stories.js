@@ -11,32 +11,26 @@ export default {
   args: highlightArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const HighlightStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'sm'
   }
 };
 
-export const LgStory = {
-  tags: ['!dev'],
+export const SizeLgStory = {
+  tags: ['autodocs', '!dev'],
   args: {
     size: 'lg'
   }
 };
 
 export const AccentStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     accent: 'green-menthe'
   }

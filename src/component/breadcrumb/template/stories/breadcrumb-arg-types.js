@@ -72,7 +72,7 @@ const getSegmentArgs = (id) => {
 };
 
 const breadcrumbArgs = {
-  id: '',
+  id: 'breadcrumb',
   buttonLabel: 'Voir le fil d\'arianne',
   segments: [
     {

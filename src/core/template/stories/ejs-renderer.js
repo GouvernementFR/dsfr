@@ -5,6 +5,7 @@ import decorator from '../../../../tool/example/decorator.ejs?raw';
 import messageBuilder from '../../../component/form/template/ejs/message/builder.js.ejs?raw';
 import i18n from '../../../../.config/i18n.json';
 import ejs from 'ejs4b/ejs';
+import { uniqueId } from './unique-id.js';
 
 const core = `
 locals.prefix = '${pck.config.prefix}';
@@ -48,11 +49,6 @@ class Template {
 class EJSRenderer {
   constructor () {
     this._templates = [];
-    this._count = 0;
-  }
-
-  uniqueId (element) {
-    return `${element}-${this._count++}`;
   }
 
   add (names, template) {
@@ -65,7 +61,7 @@ class EJSRenderer {
     const template = this._templates.find(tpl => tpl.retrieve(path));
     if (!template) return '';
     data.include = (path, data) => this.render(path, data);
-    data.uniqueId = () => undefined;
+    data.uniqueId = uniqueId;
     data.getI18nText = (key, id = 'global') => this.getI18nText(key, id);
     data.locale = 'fr';
     return template.render(data).trim();

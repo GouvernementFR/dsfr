@@ -11,12 +11,7 @@ export default {
   args: tabsArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const TabsStory = {
+  tags: ['autodocs'],
   args: {}
 };

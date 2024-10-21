@@ -11,20 +11,12 @@ export default {
   args: selectArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const SelectStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {
-    hint: ''
-  }
-};
-
 export const HintStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hint: 'Texte de description additionnel'
   }

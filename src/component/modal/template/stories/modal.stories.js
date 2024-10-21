@@ -1,10 +1,11 @@
 import { renderModal } from './modal';
 import { renderButton } from '../../../button/template/stories/button';
 import { modalArgs, modalArgTypes, modalProps } from './modal-arg-types';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 // const render = (args) => renderModal({ modal: modalProps(args), modalButton: { id: 'modale-button', label: 'Ouvrir la modale' } });
 
-const render = (args) => renderButton({ button: { id: 'modale-button', label: 'Ouvrir la modale', attributes: { 'aria-controls': args.id, 'data-fr-opened': false } } }) + renderModal({ modal: modalProps(args) });
+const render = (args) => renderButton({ button: { label: 'Ouvrir la modale', attributes: { 'aria-controls': args.id, 'data-fr-opened': false } } }) + renderModal({ modal: modalProps(args) });
 
 export default {
   id: 'modal',
@@ -14,41 +15,38 @@ export default {
   args: modalArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const ModalStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const SmStory = {
-  tags: ['!dev'],
+export const SizeSmStory = {
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('modal'),
     size: 'sm'
   }
 };
 
-export const MdStory = {
-  tags: ['!dev'],
+export const SizeMdStory = {
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('modal'),
     size: 'md'
   }
 };
 
-export const LgStory = {
-  tags: ['!dev'],
+export const SizeLgStory = {
+  tags: ['autodocs', '!dev'],
   args: {
+    id: uniqueId('modal'),
     size: 'lg'
   }
 };
 
 export const Footer = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
-    id: 'modal',
+    id: uniqueId('modal'),
     size: 'md',
     icon: 'info-line',
     footer: true

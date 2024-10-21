@@ -1,3 +1,5 @@
+import { uniqueId } from '../../../../core/template/stories/unique-id';
+
 const messageArgTypes = {
   status: {
     control: {
@@ -82,7 +84,7 @@ const checkboxArgTypes = {
 };
 
 const checkboxArgs = {
-  id: 'storybook-checkbox',
+  id: uniqueId('checkbox'),
   size: 'md',
   label: 'libellé checkbox',
   name: 'checkbox',
@@ -94,7 +96,7 @@ const checkboxArgs = {
 
 const checkboxProps = (args) => {
   const checkbox = {
-    id: args.id || checkboxArgs.id,
+    id: args.id || uniqueId('checkbox'),
     size: args.size || checkboxArgs.size,
     label: args.label || checkboxArgs.label,
     name: args.name || checkboxArgs.name,

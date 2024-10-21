@@ -11,88 +11,82 @@ export default {
   args: inputArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const InputStory = {
   args: {}
 };
 
 export const ErrorStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     status: 'error'
   }
 };
 
 export const SuccessStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     status: 'valid'
   }
 };
 
 export const DisabledStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     disabled: true
   }
 };
 
 export const TelStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'tel'
   }
 };
 
 export const NumberStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'number'
   }
 };
 
 export const PasswordStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'password'
   }
 };
 
 export const SearchStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'search'
   }
 };
 
 export const DateStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'date'
   }
 };
 
 export const ButtonStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     addon: true
   }
 };
 
 export const ActionStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     action: true
   }
 };
 
 export const UrlStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     label: 'Adresse du site',
     placeholder: 'https://',
@@ -101,7 +95,7 @@ export const UrlStory = {
 };
 
 export const TextareaStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     type: 'textarea'
   }

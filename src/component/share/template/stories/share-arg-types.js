@@ -1,6 +1,8 @@
-const buttons = [
+import { uniqueId } from '../../../../core/template/stories/unique-id';
+
+const buttons = (id) => [
   {
-    id: 'facebook',
+    id: 'facebook-' + id,
     type: 'facebook',
     label: 'Partager sur Facebook',
     url: 'https://www.facebook.com/sharer.php?u=http://google.fr',
@@ -8,7 +10,7 @@ const buttons = [
     height: 450
   },
   {
-    id: 'twitter',
+    id: 'twitter-' + id,
     type: 'twitter-x',
     label: 'Partager sur X (anciennement Twitter)',
     url: 'https://twitter.com/intent/tweet?url=[À MODIFIER - url de la page]&text=[À MODIFIER - titre ou texte descriptif de la page]&via=[À MODIFIER - twitter username]&hashtags=[À MODIFIER - hashtags]',
@@ -17,7 +19,7 @@ const buttons = [
     comments: 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)'
   },
   {
-    id: 'linkedin',
+    id: 'linkedin-' + id,
     type: 'linkedin',
     label: 'Partager sur LinkedIn',
     url: 'https://www.linkedin.com/shareArticle?url=[À MODIFIER - url de la page]&title=[À MODIFIER - titre ou texte descriptif de la page]',
@@ -25,13 +27,13 @@ const buttons = [
     height: 550
   },
   {
-    id: 'mail',
+    id: 'mail-' + id,
     type: 'mail',
     label: 'Partager par email',
     url: 'mailto:?subject=[À MODIFIER - objet du mail]&body=[À MODIFIER - titre ou texte descriptif de la page] [À MODIFIER - url de la page]'
   },
   {
-    id: 'copy',
+    id: 'copy-' + id,
     type: 'copy',
     label: 'Copier dans le presse-papier',
     onclick: "navigator.clipboard.writeText(window.location).then(function() {alert('Adresse copiée dans le presse papier.')});" // @TODO: ajouter un polyfill pour IE11
@@ -71,7 +73,7 @@ const shareProps = (args) => {
   const share = {
     title: args.title || shareArgs.title,
     disabled: args.disabled || shareArgs.disabled,
-    buttons: buttons
+    buttons: buttons(uniqueId('share'))
   };
 
   if (share.disabled === true) share.text = args.text || shareArgs.text;

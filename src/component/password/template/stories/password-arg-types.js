@@ -118,6 +118,7 @@ const linkArgTypes = {
     table: { category: 'link' }
   },
   linkId: {
+    if: { arg: 'hasLink', eq: true },
     control: 'text',
     description: 'Attribut \'id\' du lien',
     type: {
@@ -126,6 +127,7 @@ const linkArgTypes = {
     table: { category: 'link' }
   },
   linkLabel: {
+    if: { arg: 'hasLink', eq: true },
     control: 'text',
     description: 'Libellé du lien',
     type: {
@@ -135,6 +137,7 @@ const linkArgTypes = {
     table: { category: 'link' }
   },
   linkHref: {
+    if: { arg: 'hasLink', eq: true },
     control: 'text',
     description: 'URL de destination du lien',
     type: {
@@ -203,14 +206,13 @@ const passwordProps = (args) => {
     const msgAttributes = {};
     msgAttributes['data-fr-valid'] = args.validMessage || passwordArgs.validMessage;
     msgAttributes['data-fr-error'] = args.errorMessage || passwordArgs.errorMessage;
-    console.log(args.messages);
     args.messages.filter(message => message.type !== undefined).forEach(message => { message.attributes = msgAttributes; });
     password.messages = args.messages;
   }
 
   if (args.hasLink) {
     password.link = {
-      id: args.linkId || passwordArgs.linkId,
+      id: args.linkId !== '' ? args.linkId || passwordArgs.linkId : undefined,
       label: args.linkLabel || passwordArgs.linkLabel,
       href: args.linkHref || passwordArgs.linkHref
     };

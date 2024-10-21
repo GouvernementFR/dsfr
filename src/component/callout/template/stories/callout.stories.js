@@ -11,18 +11,12 @@ export default {
   args: calloutArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const DefaultStory = {
-  tags: ['!dev'],
+export const CalloutStory = {
   args: {}
 };
 
 export const IconStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasIcon: true,
     icon: 'info-line'
@@ -30,7 +24,7 @@ export const IconStory = {
 };
 
 export const ButtonStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasButton: true,
     buttonLabel: 'En savoir plus'
@@ -38,7 +32,7 @@ export const ButtonStory = {
 };
 
 export const IconAndButtonStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     hasIcon: true,
     icon: 'info-line',

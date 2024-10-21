@@ -13,21 +13,18 @@ export default {
   args: linksGroupArgs
 };
 
-export const ControlsStory = {
-  tags: ['!dev'],
+export const LinksGroupStory = {
   args: {}
 };
 
-export const DefaultStory = {
-  tags: ['!dev'],
-  args: {}
-};
-
-export const SizeStory = {
-  tags: ['!dev'],
+export const SizesStory = {
+  tags: ['autodocs', '!dev'],
   render: () => renders([
     {
       size: 'sm'
+    },
+    {
+      size: 'md'
     },
     {
       size: 'lg'
@@ -36,7 +33,7 @@ export const SizeStory = {
 };
 
 export const HorizontalStory = {
-  tags: ['!dev'],
+  tags: ['autodocs', '!dev'],
   args: {
     inline: true
   }

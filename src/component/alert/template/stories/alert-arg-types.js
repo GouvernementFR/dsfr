@@ -11,7 +11,7 @@ const buttonCloseArgTypes = {
       category: 'button close'
     }
   },
-  buttonCloseJavaScript: {
+  buttonCloseOnClick: {
     if: { arg: 'dismissible', eq: true },
     control: 'text',
     description: 'Code JavaScript à exécuter lors du clic sur le bouton de fermeture',
@@ -82,7 +82,7 @@ const alertArgs = {
   icon: '',
   dismissible: false,
   buttonCloseLabel: 'Masquer le message',
-  buttonCloseJavaScript: 'const alert = this.parentNode; alert.parentNode.removeChild(alert)'
+  buttonCloseOnClick: 'const alert = this.parentNode; alert.parentNode.removeChild(alert)'
 };
 
 const alertProps = (args) => {
@@ -99,12 +99,12 @@ const alertProps = (args) => {
     alert.type = args.type;
   }
 
-  if (alert.dismissible && args.buttonCloseJavaScript) {
+  if (alert.dismissible) {
     alert.button = {
       label: args.buttonCloseLabel || alertArgs.buttonCloseLabel,
       attributes: {
         title: args.buttonCloseLabel || alertArgs.buttonCloseLabel,
-        onClick: args.buttonCloseJavaScript || undefined
+        onClick: args.buttonCloseOnClick !== null ? args.buttonCloseOnClick || alertArgs.buttonCloseOnClick : undefined
       }
     };
   }
