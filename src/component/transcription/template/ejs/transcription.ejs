@@ -37,7 +37,7 @@ let collapseId = prefix + '-transcription-collapse-' + transcription.id;
 %>
 
 <div class="<%= prefix %>-transcription" <%- includeAttrs(attributes) %>>
-  <button class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
+  <button type="button" class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
   <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
     <div class="<%= prefix %>-transcription__footer">
       <div class="<%= prefix %>-transcription__actions-group">
