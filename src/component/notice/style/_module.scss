@@ -103,8 +103,7 @@
     }
   }
 
-  &--warning,
-  &--alert {
+  &--warning {
     #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(warning-fill, before);
@@ -131,7 +130,7 @@
   &--weather-red {
     #{selector.ns(notice)}__title {
       @include has-not-icon {
-        @include icon-image(tornado-fill, before);
+        @include icon-image(heavy-showers-fill, before);
       }
     }
   }
