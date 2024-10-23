@@ -1,7 +1,7 @@
 <%#
 # paramètres notice
 
-* notice.title (String, optional): Titre du bandeau
+* notice.title (String, required): Titre du bandeau
 
 * notice.id (String, optional): Id du bandeau
 
@@ -13,9 +13,9 @@
 
 * notice.icon (String, optional): Nom de l'icône du bandeau ou false pour ne pas afficher d'icône
 
-* notice.dismissable (boolean, optional): Ajoute un bouton de fermeture
+* notice.dismissible (boolean, optional): Ajoute un bouton de fermeture
 
-* notice.button (object, optional): Paramètre du bouton de fermeture (si dismissable: true)
+* notice.button (object, optional): Paramètre du bouton de fermeture (si dismissible: true)
 
 * notice.notice (boolean, optional): Si true, ajoute un role notice (si insertion à la volée du bandeau)
 
@@ -59,11 +59,11 @@ else if (notice.icon) titleClasses.push(prefix + '-icon-' + notice.icon);
           <span class="<%= prefix %>-notice__desc"><%- desc %></span>
         <% } %>
         <% if (link) { %>
-          <%- include('../../../../core/template/ejs/action/action', {action: {...notice.link, classes: [`${prefix}-notice__link`], kind: 'link'}}) %>
+          <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...notice.link, classes: [`${prefix}-notice__link`], kind: 'link'}}) %>
         <% } %>
       </<%= markup %>>
-      <% if (notice.dismissable) { %>
-        <%- include('../../../button/template/ejs/button-close', {button: {size: 'md', ...notice.button}}) %>
+      <% if (notice.dismissible) { %>
+        <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...notice.button}}) %>
       <% } %>
     </div>
   </div>

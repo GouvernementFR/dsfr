@@ -70,6 +70,7 @@
     @include max-width(100%);
     @include padding-x(2v);
     @include margin-bottom(4v);
+    align-self: flex-start;
 
     &--inline {
       flex: 0 0 auto;

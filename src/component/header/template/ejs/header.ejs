@@ -2,30 +2,32 @@
 # paramètres header
 
 * header (object, required) : Paramètres du template
+  ** header.id (String, required) : attribut id du header
   ** header.body (object, required) : Paramètres du template body
   ** header.menu (object, optional) : Paramètres du template menu
 
 Exemple complet :
 
 header = {
+  id: '',
   body: {
     brand: {
       logo: { voir logo },
       operator: {
-	src: 'url de l'img',
-	alt: 'texte alternatif',
-	style: ''
+        src: 'url de l'img',
+        alt: 'texte alternatif',
+        style: ''
       },
       service: {
-	title: '',
-	tagline: ''
+        title: '',
+        tagline: ''
       },
     },
     tools: {
       links: {
-	items: [
-	  { voir buttonsGroup dans button }
-	]
+        items: [
+          { voir buttonsGroup dans button }
+        ]
       },
       search: {
         id: '',
@@ -53,23 +55,23 @@ header = {
 <% let header = locals.header || {body:{}, menu: {}};
 const attributes = header.attributes || {};
 if (header.id) attributes.id = header.id;
-if (header.menu.tools && header.menu.tools.duplicateLinks) {
+if (header.menu && header.menu.tools && header.menu.tools.duplicateLinks) {
   header.menu.tools.links = header.body.tools.links;
 }
-if (header.menu.modalId && header.menu.id) {
+if (header.menu && header.menu.modalId && header.menu.id) {
   header.body.brand.navbar.menu = header.menu;
 }
 if (header.body.tools && header.body.tools.search && header.body.tools.search.modalId && header.body.tools.search.id) {
   header.body.brand.navbar.search = header.body.tools.search;
 }
-if (header.menu.navigation && header.menu.modalId) {
+if (header.menu && header.menu.navigation && header.menu.modalId) {
   header.menu.navigation.modalId = header.menu.modalId;
 }
 %>
 
 <header role="banner" class="<%= prefix %>-header" <%- includeAttrs(attributes) %>>
-  <%- include('./body', {body: header.body});%>
-  <% if ((header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
-    <%- include('./menu', {menu: header.menu});%>
+  <%- include('./header-body', {body: header.body});%>
+  <% if ((header.menu && header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
+    <%- include('./header-menu', {menu: header.menu});%>
   <% } %>
 </header>

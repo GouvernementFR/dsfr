@@ -15,11 +15,11 @@
 
 * alert.attribute (object, optional): Attributs supplémentaires sur l'alerte
 
-* alert.dismissable (boolean, optional): Ajoute un bouton de fermeture
+* alert.dismissible (boolean, optional): Ajoute un bouton de fermeture
 
 * alert.expanded (boolean, optional) [default: true] : valeur de l'attribut aria-expanded du bouton de fermeture de l'alerte
 
-* alert.button (object, optional): Paramètre du bouton de fermeture (si dismissable: true)
+* alert.button (object, optional): Paramètre du bouton de fermeture (si dismissible: true)
 
 * alert.alert (boolean, optional): Si true, ajoute un role alert (si insertion à la volée de l'alerte)
 
@@ -36,12 +36,14 @@ let title = alert.title || false;
 let text = alert.text || false;
 let type = alert.type || false;
 let size = alert.size || "md";
+const icon = alert.icon || false;
 let classes = alert.classes || [];
 const markup = alert.markup || 'h3';
 let attributes = alert.attributes || {};
 if (alert.id) attributes.id = alert.id;
 classes.push(prefix + '-alert');
 if (type) classes.push(prefix + '-alert--' + type);
+if (icon) classes.push(`${prefix}-icon-${icon}`);
 if (alert.alert) attributes.role = "alert";
 if (size !== "md") classes.push(prefix + '-alert--' + size);
  %>
@@ -56,7 +58,7 @@ if (size !== "md") classes.push(prefix + '-alert--' + size);
     <p><%= text %></p>
   <% } %>
 
-  <% if (alert.dismissable) { %>
+  <% if (alert.dismissible) { %>
     <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...alert.button}}) %>
   <% } %>
 </div>

@@ -1,0 +1,21 @@
+<%#
+# paramètres summary item
+
+* summaryItem.href (string, required) : url ou ancre du lien
+
+* summaryItem.label (string, required) : libellé du lien
+
+* summaryItem.list (array, optional) : Tableau de liens enfants (href, label)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% let summaryItem = locals.summaryItem || {};
+  const linkAttrs = {};
+  if (summaryItem.id) linkAttrs.id = summaryItem.id;
+%>
+<li>
+  <a class="<%= prefix %>-summary__link" <%- includeAttrs(linkAttrs) %> href="<%- summaryItem.href %>"><%- summaryItem.label %></a>
+  <% if (summaryItem.list) { %>
+    <%- include('./summary-list.ejs', {summaryList: summaryItem.list}); %>
+  <% } %>
+</li>

@@ -1,0 +1,334 @@
+const tableHeader = `
+  <fieldset class='fr-segmented fr-segmented--no-legend'>
+      <legend class='fr-segmented__legend'>Type d&#39;affichage</legend>
+      <div class='fr-segmented__elements'>
+          <div class='fr-segmented__element'>
+              <input
+                  value='1'
+                  checked
+                  type='radio'
+                  id='table-header-segmented-table-7845'
+                  name='table-header-segmented-table'
+              />
+              <label
+                  class='fr-icon-table-line fr-label'
+                  for='table-header-segmented-table-7845'
+              >
+                  Tableau
+              </label>
+          </div>
+          <div class='fr-segmented__element'>
+              <input
+                  value='2'
+                  type='radio'
+                  id='table-header-segmented-list-7846'
+                  name='table-header-segmented-table'
+              />
+              <label
+                  class='fr-icon-list-unordered fr-label'
+                  for='table-header-segmented-list-7846'
+              >
+                  Liste
+              </label>
+          </div>
+      </div>
+  </fieldset>
+  <p class='fr-table__detail'>Nombre de lignes sélectionnées</p>
+  <ul
+      class='fr-btns-group fr-btns-group--right fr-btns-group--inline-md fr-btns-group--icon-left'
+  >
+      <li>
+          <button
+              id='table-header-button-primary-7842'
+              class='fr-btn fr-icon-settings-5-line fr-btn--icon-left fr-btn--secondary'
+          >
+              Action groupée
+          </button>
+      </li>
+      <li>
+          <button
+              id='table-header-button-secondary-7843'
+              class='fr-btn fr-icon-settings-5-line fr-btn--icon-left fr-btn--secondary'
+          >
+              Action groupée
+          </button>
+      </li>
+  </ul>
+`;
+
+const tableFooter = `
+  <div class='fr-table__footer--start'>
+      <p class='fr-table__detail'>215 lignes</p>
+      <div class='fr-select-group'>
+          <label class='fr-sr-only fr-label' for='table-footer-select-7847'>
+              Nombre de lignes par page
+          </label>
+          <select class='fr-select' aria-describedby='table-footer-select-7847-messages' id='table-footer-select-7847' name='table-footer-select-7847'>
+              <option value='' selected disabled hidden>Nombre de lignes par page</option>
+              <option value='4'>4 lignes par page</option>
+              <option value='10'>10 lignes par page</option>
+              <option value='20'>20 lignes par page</option>
+          </select>
+          <div class='fr-messages-group' id='table-footer-select-7847-messages' aria-live='polite'>
+          </div>
+      </div>
+  </div>
+  <div class='fr-table__footer--middle'>
+      <nav role='navigation' class='fr-pagination' aria-label='Pagination' data-fr-analytics-page-total='3'>
+          <ul class='fr-pagination__list'>
+              <li>
+                  <a class='fr-pagination__link fr-pagination__link--first' id='table-footer-pagination-7851' title='Première page' aria-disabled='true' role='link'>
+                      Première page
+                  </a>
+              </li>
+              <li>
+                  <a class='fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label' id='table-footer-pagination-7852' title='Précédente' aria-disabled='true' role='link'>
+                      Précédente
+                  </a>
+              </li>
+              <li>
+                  <a class='fr-pagination__link' id='table-footer-pagination-7848' aria-current='page' title='Page 1'>
+                      1
+                  </a>
+              </li>
+              <li>
+                  <a class='fr-pagination__link' id='table-footer-pagination-7849' href='#' title='Page 2'>
+                      2
+                  </a>
+              </li>
+              <li>
+                  <a class='fr-pagination__link fr-hidden fr-unhidden-lg' id='table-footer-pagination-7850' href='#' title='Page 3'>
+                      3
+                  </a>
+              </li>
+              <li>
+                  <a class='fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label' id='table-footer-pagination-7853' href='#' title='Suivante'>
+                      Suivante
+                  </a>
+              </li>
+              <li>
+                  <a class='fr-pagination__link fr-pagination__link--last' id='table-footer-pagination-7854' href='#' title='Dernière page'>
+                      Dernière page
+                  </a>
+              </li>
+          </ul>
+      </nav>
+  </div>
+  <div class='fr-table__footer--end'>
+      <ul class='fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-md'>
+          <li>
+              <button id='table-footer-button-primary-7855' class='fr-btn'>Action tableau</button>
+          </li>
+          <li>
+              <button id='table-footer-button-secondary-7856' class='fr-btn fr-btn--secondary'>Action tableau</button>
+          </li>
+      </ul>
+  </div>
+`;
+
+const srOnlyCellSelect = '<span class="fr-sr-only">Sélectionner</span>';
+
+const getCheckbox = (id) => {
+  return `
+    <div class='fr-checkbox-group fr-checkbox-group--sm'>
+        <input name='row-select' id='table-select-checkbox--${id}' type='checkbox'>
+        <label class='fr-label' for='table-select-checkbox--${id}'>
+            Sélectionner la ligne ${id + 1}
+        </label>
+    </div>
+  `;
+};
+
+const tableArgTypes = {
+  id: {
+    control: 'text',
+    description: 'Attribut \'id\' du tableau',
+    type: {
+      value: 'string'
+    }
+  },
+  caption: {
+    control: 'text',
+    description: 'Titre du tableau',
+    type: {
+      value: 'string',
+      required: true
+    }
+  },
+  captionDetail: {
+    control: 'text',
+    description: 'Description précise du tableau',
+    type: {
+      value: 'string'
+    }
+  },
+  noCaption: {
+    control: 'boolean',
+    description: 'Cache le texte de la caption',
+    table: {
+      category: 'caption'
+    }
+  },
+  captionBottom: {
+    if: { arg: 'noCaption', eq: false },
+    control: 'boolean',
+    description: 'Positionne la caption en bas',
+    table: {
+      category: 'caption'
+    }
+  },
+  bordered: {
+    control: 'boolean',
+    description: 'ajoute des séparateurs entre chaque ligne'
+  },
+  noScroll: {
+    control: 'boolean',
+    description: 'Désactive le scroll horizontal'
+  },
+  hasHeader: {
+    control: 'boolean',
+    description: 'Affiche un exemple d\'en-tête du tableau'
+  },
+  hasFooter: {
+    control: 'boolean',
+    description: 'Affiche un exemple de pied de page du tableau'
+  },
+  size: {
+    control: { type: 'select' },
+    description: 'Taille des espacements du tableau',
+    options: ['sm', 'md', 'lg']
+  },
+  table: {
+    control: 'object',
+    description: 'contenu du tableau',
+    type: {
+      value: 'array'
+    },
+    table: { category: 'table' }
+  }
+};
+
+const getSimpleTableArgs = (col = 4, row = 4) => {
+  const content = 'Lorem ipsum dolor sit ame';
+  const thead = Array.from(Array(1), () => []);
+  const tbody = Array.from(Array(row), () => []);
+
+  for (let r = 0; r < row; r++) {
+    for (let c = 0; c < col; c++) {
+      if (r === 0) thead[0].push({ content: 'th' + c });
+      tbody[r].push({ content });
+    }
+  }
+
+  return { thead, tbodies: [tbody] };
+};
+
+const getSelectableTableArgs = () => {
+  const table = getSimpleTableArgs();
+
+  table.thead.forEach((row) => {
+    row.unshift({
+      attributes: {
+        role: 'columnheader'
+      },
+      classes: ['fr-cell--fixed'],
+      content: srOnlyCellSelect
+    });
+  });
+
+  table.tbodies.forEach((tbody) => {
+    tbody.forEach((row, index) => {
+      row.unshift({
+        markup: 'th',
+        attributes: { scope: 'row' },
+        classes: ['fr-cell--fixed'],
+        content: getCheckbox(index)
+      });
+    });
+  });
+
+  return table;
+};
+
+const getComplexTableArgs = () => {
+  return {
+    thead: [
+      [
+        { attributes: { role: 'columnheader', rowspan: 2, id: 'complex-thead-0-col-0' }, classes: ['fr-cell--fixed'], content: 'Horaires' }, { content: 'Lundi', attributes: { id: 'complex-thead-0-col-1' } }, { content: 'Mardi', attributes: { id: 'complex-thead-0-col-2' } }, { attributes: { colspan: 2, id: 'complex-thead-0-col-3' }, content: 'Mercredi & Jeudi<br>Exemple de 2 cellules fusionnées dans le Header' }, { content: 'Vendredi', attributes: { id: 'complex-thead-0-col-4' } }], [{ attributes: { headers: 'complex-thead-0-col-1', id: 'complex-thead-1-col-0' }, content: 'Groupes 1 & 2' }, { attributes: { headers: 'complex-thead-0-col-2', id: 'complex-thead-1-col-1' }, content: 'Groupes 1 & 2' }, { attributes: { headers: 'complex-thead-0-col-3', id: 'complex-thead-1-col-2' }, content: 'Groupe 1' }, { attributes: { headers: 'complex-thead-0-col-3', id: 'complex-thead-1-col-3' }, content: 'Groupe 2' }, { attributes: { headers: 'complex-thead-0-col-4', id: 'complex-thead-1-col-4' }, content: 'Groupes 1 & 2' }
+      ]
+    ],
+    tbodies: [
+      [
+        [
+          { markup: 'th', attributes: { id: 'complex-row-0', headers: 'complex-thead-0-col-0' }, classes: ['fr-cell--fixed'], content: '8h' }, { attributes: { headers: 'complex-row-0 complex-thead-0-col-1 complex-thead-1-col-1' }, content: 'Français' }, { attributes: { headers: 'complex-row-0 complex-thead-0-col-2 complex-thead-1-col-2' }, content: 'Mathématiques' }, { attributes: { headers: 'complex-row-0 complex-thead-0-col-3 complex-thead-1-col-3' }, content: 'LV1' }, { attributes: { headers: 'complex-row-0 complex-thead-0-col-3 complex-thead-1-col-4' }, content: 'Histoire - Géographie' }, { attributes: { headers: 'complex-row-0 complex-thead-0-col-4 complex-thead-1-col-4' }, content: 'EPS' }], [{ markup: 'th', attributes: { id: 'complex-row-1', headers: 'complex-thead-0-col-0' }, classes: ['fr-cell--fixed'], content: '9h' }, { attributes: { colspan: 5, headers: 'complex-row-1 complex-thead-0-col-1 complex-thead-0-col-2 complex-thead-0-col-3 complex-thead-0-col-4 complex-thead-1-col-1 complex-thead-1-col-2 complex-thead-1-col-3 complex-thead-1-col-4 complex-thead-1-col-4' }, content: 'Etude dirigée Exemple de colspan sur toute la ligne' }], [{ markup: 'th', attributes: { id: 'complex-row-2', headers: 'complex-thead-0-col-0' }, classes: ['fr-cell--fixed'], content: '10h' }, { attributes: { headers: 'complex-row-2 complex-thead-0-col-1 complex-thead-1-col-1' }, content: 'Mathématiques' }, { attributes: { headers: 'complex-row-2 complex-thead-0-col-2 complex-thead-1-col-2' }, content: 'Histoire - Géographie' }, { attributes: { rowspan: 2, headers: 'complex-row-2 complex-row-3 complex-thead-0-col-3 complex-thead-1-col-3' }, content: 'Arts appliqués' }, { attributes: { headers: 'complex-row-2 complex-thead-0-col-3 complex-thead-1-col-4' }, content: 'LV2' }, { attributes: { headers: 'complex-row-2 complex-thead-0-col-4 complex-thead-1-col-4' }, content: 'Sciences' }], [{ markup: 'th', attributes: { id: 'complex-row-3', headers: 'complex-thead-0-col-0' }, classes: ['fr-cell--fixed'], content: '11h' }, { attributes: { headers: 'complex-row-3 complex-thead-0-col-1 complex-thead-1-col-1' }, content: 'Français' }, { attributes: { headers: 'complex-row-3 complex-thead-0-col-2 complex-thead-1-col-2' }, content: 'EPS' }, { attributes: { headers: 'complex-row-3 complex-thead-0-col-3 complex-thead-1-col-4' }, content: 'Histoire - Géographie' }, { attributes: { headers: 'complex-row-3 complex-thead-0-col-4 complex-thead-1-col-4' }, content: 'Physique - Chimie' }], [{ markup: 'th', attributes: { id: 'complex-row-4', headers: 'complex-thead-0-col-0' }, classes: ['fr-cell--fixed'], content: '12h' }, { attributes: { headers: 'complex-row-4 complex-thead-0-col-1 complex-thead-1-col-1' }, content: 'Sciences' }, { attributes: { headers: 'complex-row-4 complex-thead-0-col-2 complex-thead-1-col-2' }, content: 'LV1' }, { attributes: { colspan: 2, headers: 'complex-row-4 complex-thead-0-col-3 complex-thead-1-col-3 complex-thead-1-col-4' }, content: 'EPS Exemple de colspan sur 2 cellules' }, { attributes: { headers: 'complex-row-4 complex-thead-0-col-4 complex-thead-1-col-4' }, content: 'LV2' }
+        ]
+      ]
+    ]
+  };
+};
+
+const getComplexTableCaptionDetails = () => `
+  (Résumé) Emploi du temps horaire des Groupes 1 et 2, le matin des jours de la semaine ouvrée (Lundi au Vendredi) :
+  <ul>
+    <li>la première colonne représente le planning de la journée de Lundi pour les groupes 1 et 2,</li>
+    <li>la deuxième colonne représente le planning de la journée de Mardi pour les groupes 1 et 2,</li>
+    <li>la troisième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 1,</li>
+    <li>la quatrième colonne représente le planning des journées de Mercredi et Jeudi pour le groupe 2,</li>
+    <li>la cinquième colonne représente le planning de la journée de Vendredi pour les groupes 1 et 2.</li>
+  </ul>
+`;
+
+const tableArgs = {
+  id: 'table',
+  caption: 'Titre du tableau (caption)',
+  captionDetail: 'Description précise du tableau',
+  noCaption: false,
+  captionBottom: false,
+  bordered: false,
+  noScroll: false,
+  hasHeader: false,
+  hasFooter: false,
+  size: 'md',
+  table: getSimpleTableArgs()
+};
+
+const tableProps = (args) => {
+  const wrapper = {
+    size: args.size || tableArgs.size,
+    table: {
+      id: args.id || undefined,
+      caption: args.caption || tableArgs.caption,
+      captionDetail: args.captionDetail || tableArgs.captionDetail,
+      thead: args.table.thead || tableArgs.table.thead,
+      tbodies: args.table.tbodies || tableArgs.table.tbodies
+    }
+  };
+
+  if (args.noCaption === true) {
+    wrapper.noCaption = args.noCaption;
+  }
+
+  if (args.captionBottom === true) {
+    wrapper.captionBottom = args.captionBottom;
+  }
+
+  if (args.bordered === true) {
+    wrapper.bordered = args.bordered;
+  }
+
+  if (args.noScroll === true) {
+    wrapper.noScroll = args.noScroll;
+  }
+
+  if (args.hasHeader === true) {
+    wrapper.header = tableHeader;
+  }
+
+  if (args.hasFooter === true) {
+    wrapper.footer = tableFooter;
+  }
+
+  return wrapper;
+};
+
+export { tableArgTypes, tableArgs, tableProps, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails };

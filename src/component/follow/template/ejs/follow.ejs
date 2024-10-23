@@ -13,14 +13,14 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-let follow = locals.follow || {};
-let followClasses = follow.classes || [];
+const follow = locals.follow || {};
+const followClasses = follow.classes || [];
 followClasses.push(prefix + '-follow');
 const followAttributes = follow.attributes || {};
 followAttributes.id = follow.id || uniqueId('follow');
 
-let socials = follow.socials || undefined;
-let newsletter = follow.newsletter || undefined;
+const socials = follow.socials || undefined;
+const newsletter = follow.newsletter || undefined;
 %>
 
 <div <%- includeClasses(followClasses); %> <%- includeAttrs(followAttributes) %>>

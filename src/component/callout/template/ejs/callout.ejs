@@ -7,8 +7,6 @@
 
 * callout.classes (array, optional): Classes suplémentaires sur la mise en avant
 
-* callout.size (string, optional) [default: 'lg']: Taille de la mise en avant
-
 * callout.button (string, optional): label du bouton dans la mise en avant
 
 * callout.buttonTpl (string, optional): Chemin vers le sample de bouton a utiliser
@@ -25,9 +23,9 @@
  let classes = callout.classes || [];
  let attributes = callout.attributes || {};
  classes.push(prefix + '-callout');
- const markup = locals.markup || 'h3';
+ const markup = callout.markup || 'h3';
 
- if (callout.icon !== undefined) classes.push(prefix + '-' + callout.icon);
+ if (callout.icon !== undefined) classes.push(prefix + '-icon-' + callout.icon);
  if (callout.accent !== undefined) classes.push(prefix + '-callout--' + callout.accent);
  if (callout.id !== undefined) attributes.id = callout.id;
  let pClasses = [];

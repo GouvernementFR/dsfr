@@ -12,7 +12,7 @@
 * pagination.last (object, optional): item last
 
 %>
-<% 
+<%
   let pagination = locals.pagination || {};
   const attrPagination = pagination.attr || {};
   attrPagination['aria-label'] = 'Pagination';
@@ -25,21 +25,21 @@
     <%
     let disabled = pagination.pages && pagination.pages[0].active === true;
     %>
-    <% if (pagination.first !== undefined) { %><%- include('./item', {paginationItem: {...pagination.first, type:'first', disabled: disabled}}); %><% } %>
-    <% if (pagination.prev !== undefined) { %><%- include('./item', {paginationItem: {...pagination.prev, type:'prev', disabled: disabled}}); %><% } %>
+    <% if (pagination.first !== undefined) { %><%- include('./pagination-item.ejs', {paginationItem: {...pagination.first, type:'first', disabled: disabled}}); %><% } %>
+    <% if (pagination.prev !== undefined) { %><%- include('./pagination-item.ejs', {paginationItem: {...pagination.prev, type:'prev', disabled: disabled}}); %><% } %>
 
     <%
     let page;
     if (pagination.pages) for (let i = 0; i < pagination.pages.length; i++) {
       page = pagination.pages[i];
     %>
-      <%- include('./item', {paginationItem: page}); %>
-    <% }%>
+      <%- include('./pagination-item.ejs', {paginationItem: page}); %>
+    <% } %>
 
     <%
     disabled = pagination.pages && pagination.pages[pagination.pages.length - 1].active === true;
     %>
-    <% if (pagination.next !== undefined) { %><%- include('./item', {paginationItem: {...pagination.next, type:'next', disabled: disabled}}); %><% } %>
-    <% if (pagination.last !== undefined) { %><%- include('./item', {paginationItem: {...pagination.last, type:'last', disabled: disabled}}); %><% } %>
+    <% if (pagination.next !== undefined) { %><%- include('./pagination-item.ejs', {paginationItem: {...pagination.next, type:'next', disabled: disabled}}); %><% } %>
+    <% if (pagination.last !== undefined) { %><%- include('./pagination-item.ejs', {paginationItem: {...pagination.last, type:'last', disabled: disabled}}); %><% } %>
   </ul>
 </nav>

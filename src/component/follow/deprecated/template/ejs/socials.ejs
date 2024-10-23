@@ -21,7 +21,7 @@ let groupClasses = [prefix + '-links-group'];
   <ul  <%- includeClasses(groupClasses); %>>
     <% for (let i=0; i < socials.networks.length; i++) { %>
       <li>
-        <%- include('../../../../link/template/ejs/link', { link: {attributes: {title: contentPlaceholder("Intitulé du lien") + " - nouvelle fenêtre"}, href: socials.networks[i].url, blank: true, label: socials.networks[i].label, classes: [prefix + '-link--' + socials.networks[i].label] }}); %>
+        <%- include('../../../../link/template/ejs/link', { link: {attributes: {title: getBlankTitle(contentPlaceholder("Intitulé du lien"))}, href: socials.networks[i].url, blank: true, label: socials.networks[i].label, classes: [prefix + '-link--' + socials.networks[i].label] }}); %>
       </li>
     <% } %>
   </ul>

@@ -5,16 +5,22 @@
 
 * pictogram.accent (string, optional): couleur d'accentuation (ex: green-emeraude)
 
+* pictogram.category (string, optional): catégorie du pictogramme
+
+* pictogram.classes (array, optional): classes supplémentaires sur l'element
+
 %>
 <% eval(include('../../../index.ejs')); %>
 <%
-  const pictograms = JSON.parse(include('../../../../../.config/pictogram.json'));
-
   const pictogram = locals.pictogram || {} ;
+
+  const pictogramJson = locals.pictogramJson || include('../../../../../.config/pictogram.json');
+  const pictograms = JSON.parse(pictogramJson);
+  const category = pictograms.filter(p => p.name === pictogram.name)[0].category;
+
   let classes = pictogram.classes || [];
   classes.push(prefix + '-artwork');
   if (pictogram.accent) classes.push(prefix + '-artwork--' + pictogram.accent);
-  const category = pictograms.filter(p => p.name === pictogram.name)[0].category;
 %>
 
 <svg aria-hidden="true" <%- includeClasses(classes) %> viewBox="0 0 80 80" width="80px" height="80px" >

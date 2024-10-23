@@ -20,10 +20,14 @@
 * form.classes (array, optional) : classes spécifiques à rajouter sur le form
 %>
 
+<% eval(include('../../../../core/index.ejs')); %>
+
  <%
  const form = locals.form || {};
- const classes = [...form.classes || []];
- const attributes = { ...form.attributes, id: form.id };
+ const classes = form.classes || [];
+ const attributes = form.attributes || {}
+ attributes.id = form.id;
+
  const fieldset = {...form, attributes: {}, id: `${form.id}-fieldset`};
  if (!form.legend) fieldset.attributes['aria-label'] = form.label;
  %>

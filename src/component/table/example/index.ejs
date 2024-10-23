@@ -10,11 +10,11 @@ const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
-  sample(getText('sample.sm', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--sm`], table: {id: 'table-sm', caption: getText('data.caption.default', 'table')}}}, true);
+  sample(getText('sample.sm', 'table'), './sample/table-simple', {table: {size: 'sm', table: {id: 'table-sm', caption: getText('data.caption.default', 'table')}}}, true);
 %>
 
 <%-
-  sample(getText('sample.lg', 'table'), './sample/table-simple', {table: {classes: [`${prefix}-table--lg`], table: {id: 'table-lg', caption: getText('data.caption.default', 'table')}}}, true);
+  sample(getText('sample.lg', 'table'), './sample/table-simple', {table: {size: 'lg', table: {id: 'table-lg', caption: getText('data.caption.default', 'table')}}}, true);
 %>
 
 <%-

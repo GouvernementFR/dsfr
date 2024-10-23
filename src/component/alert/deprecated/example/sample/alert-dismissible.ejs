@@ -1,0 +1,12 @@
+<%
+let alert = locals.alert || {};
+let data = {
+  ...alert,
+  id: uniqueId('alert'),
+  text: alert.text || 'Cliquer sur la croix pour fermer l\'alerte',
+  button: { label: 'Masquer le message', attributes: {title: 'Masquer le message', onclick: 'const alert = this.parentNode; alert.parentNode.removeChild(alert)'}},
+  dismissible: true
+};
+ %>
+
+<%- include('alert-default.ejs', {alert:data}); %>

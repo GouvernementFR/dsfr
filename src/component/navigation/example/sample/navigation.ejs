@@ -85,6 +85,7 @@ const getMega = (active = false, leader = false) => {
 
 let data = {
   id: navigation.id || uniqueId('navigation'),
+  ariaLabel: navigation.ariaLabel || 'Menu principal',
   items: navigation.min === true ?
     [getLink(), getLink(), getLink(), getLink()] :
     [

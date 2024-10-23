@@ -8,6 +8,8 @@
 * tab.isActive (bool, required): défini le panel actif (1 max)
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let tab = locals.tab || {};
 let classes = [prefix + '-tabs__panel']

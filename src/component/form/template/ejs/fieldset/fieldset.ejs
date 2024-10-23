@@ -33,7 +33,8 @@
 
 <%
 const fieldset = locals.fieldset || {};
-const classes = [...fieldset.classes || [], `${prefix}-fieldset`];
+const classes = fieldset.classes || [];
+classes.push(`${prefix}-fieldset`);
 const attributes = { ...fieldset.attributes, id: fieldset.id };
 let legend;
 const labelledBy = [];
@@ -72,7 +73,9 @@ if (fieldset.legend || fieldset.hint) {
       break;
   }
 }
-
+%>
+<% fieldset.includeEmptyMessagesGroup %>
+<%
 const builder = new MessageBuilder(fieldset.id, fieldset.includeEmptyMessagesGroup);
 
 if (fieldset.error) {
@@ -107,7 +110,7 @@ const messagesGroup = builder.messagesGroup;
     <%- include('legend', { legend: legend }); %>
   <% } %>
   <% for (const element of fieldset.elements) { %>
-    <%- include('element', { element: element }); %>
+    <%- include('fieldset-element', { element: element }); %>
   <% } %>
   <%- include('../message/messages-group', { messagesGroup: messagesGroup }); %>
 </fieldset>
