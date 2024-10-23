@@ -5,7 +5,7 @@
 
 #{ns(link--close)} {
   @include nest-btn(sm, right, close-line, null, false);
-  display: flex;
+  @include display-flex(row, center);
   @include margin-left(auto);
   @include margin-right(-4v);
 }

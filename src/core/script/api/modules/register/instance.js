@@ -56,7 +56,7 @@ class Instance {
 
     const proxyAccessors = {
       get node () {
-        return this.node;
+        return scope.node;
       },
       get isEnabled () {
         return scope.isEnabled;

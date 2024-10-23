@@ -46,6 +46,18 @@
         }
       }
     }
+
+    &#{ns(enlarge-link)} {
+      a[href] {
+        @include before {
+          outline-offset: -2px;
+
+          @include media-query.respond-from(lg) {
+            outline-offset: 2px;
+          }
+        }
+      }
+    }
   }
 
   &__logo,
