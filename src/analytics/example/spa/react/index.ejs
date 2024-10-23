@@ -112,5 +112,16 @@
 
   ReactDOM.render(<ReactRouterDOM.BrowserRouter><App /></ReactRouterDOM.BrowserRouter>, document.querySelector('#react-container'));
 
+  switch (document.readyState) {
+    case "loading":
+      document.addEventListener("DOMContentLoaded", () => dsfr.start());
+      break;
+    case "interactive":
+      dsfr.start();
+    break;
+    case "complete":
+      dsfr.start();
+    break;
+  }
 
 </script>
