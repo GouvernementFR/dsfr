@@ -1,4 +1,5 @@
 import { Instance } from '../api/modules/register/instance.js';
+import { DisclosureEvent } from './disclosure-event.js';
 import { DisclosureEmission } from './disclosure-emission.js';
 import { completeAssign } from '../api/utilities/property/complete-assign.js';
 import { DisclosureSelector } from './disclosure-selector.js';
@@ -147,6 +148,7 @@ class DisclosuresGroup extends Instance {
       }
     }
     this.apply();
+    this.dispatch(DisclosureEvent.CURRENT, this.current);
   }
 
   get current () {

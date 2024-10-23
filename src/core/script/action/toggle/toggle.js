@@ -26,7 +26,6 @@ class Toggle extends Instance {
 
   set pressed (value) {
     this.setAttribute('aria-pressed', value ? 'true' : 'false');
-    this.dispatch(ToggleEvent.TOGGLE, value);
   }
 
   get proxy () {
