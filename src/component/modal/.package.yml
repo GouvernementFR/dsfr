@@ -13,3 +13,6 @@ example:
   style:
     - form
     - input
+    - table
+  script:
+    - table
