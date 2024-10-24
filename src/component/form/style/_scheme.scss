@@ -74,6 +74,10 @@
     &--info {
       @include color.text(default info, (legacy:$legacy));
     }
+
+    &--warning {
+      @include color.text(default warning, (legacy:$legacy));
+    }
   }
 
   #{ns(fieldset)} {

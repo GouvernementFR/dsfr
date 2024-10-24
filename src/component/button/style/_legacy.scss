@@ -79,10 +79,9 @@
 
   #{ns(btn--sort)} {
     @include icon-legacy(arrow-up-down-line, sm);
-    @include animate.rotate('&[aria-sorting='desc']');
 
-    &[aria-sorting='asc'],
-    &[aria-sorting='desc'] {
+    &[aria-sort='ascending'],
+    &[aria-sort='descending'] {
       @include icon-legacy(arrow-up-line, sm);
     }
   }

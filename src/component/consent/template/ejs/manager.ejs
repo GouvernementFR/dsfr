@@ -44,7 +44,7 @@ let buttons = consent.buttons || [{label: 'Confirmer mes choix'}];
 
       <% if (finalities[finality].services) { %>
         <div class="<%= prefix %>-consent-service__collapse">
-          <button class="<%= prefix %>-consent-service__collapse-btn" aria-expanded="false" aria-describedby="<%= finalities[finality].id + '-legend' %>" aria-controls="<%= finalities[finality].id  %>-collapse"> Voir plus de détails</button>
+          <button type="button" class="<%= prefix %>-consent-service__collapse-btn" aria-expanded="false" aria-describedby="<%= finalities[finality].id + '-legend' %>" aria-controls="<%= finalities[finality].id  %>-collapse"> Voir plus de détails</button>
         </div>
 
         <div class="<%= prefix %>-consent-services <%= prefix %>-collapse" id="<%= finalities[finality].id  %>-collapse">

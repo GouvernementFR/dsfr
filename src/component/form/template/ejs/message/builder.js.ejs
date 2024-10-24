@@ -7,7 +7,8 @@ class MessageBuilder {
     this.appends = {
       error: -1,
       valid: -1,
-      info: -1
+      info: -1,
+      warning: -1
     };
     this._group = {
       id: this.groupId,
@@ -66,6 +67,10 @@ class MessageBuilder {
 
   addInfo (data) {
     this.add('info', data);
+  }
+
+  addWarning (data) {
+    this.add('warning', data);
   }
 }
 
