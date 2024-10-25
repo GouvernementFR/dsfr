@@ -1,7 +1,6 @@
 import api from '../../api.js';
 import { RangeEmission } from './range-emission.js';
 import { RangeConstraints } from './range-constraints';
-import { completeAssign } from '../../../../core/script/api/utilities/property/complete-assign.js';
 
 class RangeInput extends api.core.Instance {
   static get instanceClassName () {
@@ -39,7 +38,7 @@ class RangeInput extends api.core.Instance {
       }
     };
 
-    return completeAssign(super.proxy, proxyAccessors);
+    return api.internals.property.completeAssign(super.proxy, proxyAccessors);
   }
 
   _enablePointer (pointerId) {
