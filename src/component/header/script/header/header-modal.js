@@ -6,8 +6,8 @@ class HeaderModal extends api.core.Instance {
   }
 
   init () {
-    this.isResizing = true;
     this.storeAria();
+    this.isResizing = true;
   }
 
   resize () {
@@ -19,8 +19,7 @@ class HeaderModal extends api.core.Instance {
     const modal = this.element.getInstance('Modal');
     if (!modal) return;
     modal.isEnabled = true;
-    this.setAttribute('aria-labelledby', this._ariaLabelledBy);
-    this.setAttribute('aria-label', this._ariaLabel);
+    this.restoreAria();
     this.listenClick({ capture: true });
   }
 
@@ -30,14 +29,19 @@ class HeaderModal extends api.core.Instance {
     modal.conceal();
     modal.isEnabled = false;
     this.storeAria();
-    this.removeAttribute('aria-labelledby');
-    this.removeAttribute('aria-label');
     this.unlistenClick({ capture: true });
   }
 
   storeAria () {
     if (this.hasAttribute('aria-labelledby')) this._ariaLabelledBy = this.getAttribute('aria-labelledby');
     if (this.hasAttribute('aria-label')) this._ariaLabel = this.getAttribute('aria-label');
+    this.removeAttribute('aria-labelledby');
+    this.removeAttribute('aria-label');
+  }
+
+  restoreAria () {
+    if (this._ariaLabelledBy) this.setAttribute('aria-labelledby', this._ariaLabelledBy);
+    if (this._ariaLabel) this.setAttribute('aria-label', this._ariaLabel);
   }
 
   handleClick (e) {
