@@ -18,10 +18,8 @@ class HeaderModal extends api.core.Instance {
     const modal = this.element.getInstance('Modal');
     if (!modal) return;
     modal.isEnabled = true;
-    this._hasAriaLabelledByData = this.getAttribute('data-fr-aria-labelledby');
-    this._hasAriaLabelData = this.getAttribute('data-fr-aria-label');
-    if (this._hasAriaLabelledByData) this.setAttribute('aria-labelledby', this._hasAriaLabelledByData);
-    if (this._hasAriaLabelData) this.setAttribute('aria-label', this._hasAriaLabelData);
+    if (this._ariaLabelledByData) this.setAttribute('aria-labelledby', this._ariaLabelledByData);
+    if (this._ariaLabelData) this.setAttribute('aria-label', this._ariaLabelData);
     this.listenClick({ capture: true });
   }
 
@@ -31,11 +29,11 @@ class HeaderModal extends api.core.Instance {
     modal.conceal();
     modal.isEnabled = false;
     if (this.hasAttribute('aria-labelledby')) {
-      if (!this._hasAriaLabelledByData) this.setAttribute('data-fr-aria-labelledby', this.getAttribute('aria-labelledby'));
+      if (this._ariaLabelledByData === undefined) this._ariaLabelledByData = this.getAttribute('aria-labelledby');
       this.removeAttribute('aria-labelledby');
     };
     if (this.hasAttribute('aria-label')) {
-      if (!this._hasAriaLabelData) this.setAttribute('data-fr-aria-label', this.getAttribute('aria-label'));
+      if (this._ariaLabelData === undefined) this._ariaLabelledByData = this.getAttribute('aria-label');
       this.removeAttribute('aria-label');
     }
     this.unlistenClick({ capture: true });
