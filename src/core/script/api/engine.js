@@ -36,7 +36,6 @@ class Engine {
     inspector.debug('START');
     state.isActive = true;
     rootDispatch(RootEvent.START);
-    console.log('Engine started');
   }
 
   stop () {
