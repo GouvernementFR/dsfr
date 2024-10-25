@@ -14,7 +14,7 @@ const getLink = (icon, iconPlace) => {
   };
 }
 
-const getSubLink = (active = false, icon, iconPlace) => {
+const getSubLink = (active = false, icon = undefined, iconPlace = 'left') => {
   const id = uniqueId('nav');
   return {
     label: `Lien de navigation ${id}`,
@@ -50,7 +50,7 @@ const getMenu = (active = false) => {
   }
 }
 
-const getCategory = (active = false, icon, iconPlace) => {
+const getCategory = (active = false, icon = undefined, iconPlace = 'left') => {
   return {
     id: uniqueId('category'),
     label: 'Nom de catégorie',
