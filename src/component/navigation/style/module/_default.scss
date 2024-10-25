@@ -56,17 +56,10 @@
               background-image: linear-gradient(0deg, highlight, highlight);
               background-size: #{spacing.space(100% 1v)};
               forced-color-adjust: none;
-              color: buttontext;
-
-              &a[href] {
-                color: linktext;
-              }
             }
           }
         }
       }
-
-
     }
   }
 
@@ -134,11 +127,6 @@
         background-image: linear-gradient(0deg, highlight, highlight);
         background-size: #{spacing.space(1v calc(100% - 6v))};
         forced-color-adjust: none;
-        color: buttontext;
-
-        &a[href] {
-          color: linktext;
-        }
       }
     }
   }
@@ -152,12 +140,22 @@
         cursor: default;
       }
     }
+
+    @include preference.forced-colors {
+      &[href] {
+        color: linktext;
+      }
+    }
   }
 
   &__btn {
     @include display-flex(null, center, space-between);
     flex-direction: row;
     @include padding(4v 3v 4v 4v, lg);
+
+    @include preference.forced-colors {
+      color: buttontext;
+    }
 
     @include respond-from(lg) {
       justify-content: flex-start;
