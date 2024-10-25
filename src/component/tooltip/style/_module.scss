@@ -29,8 +29,11 @@
   }
 
   &:not(&--shown) {
-    // transition in/out
     display: none;
+    opacity: 0;
+  }
+
+  &--hidding {
     opacity: 0;
   }
 
