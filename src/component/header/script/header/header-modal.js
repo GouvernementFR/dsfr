@@ -7,6 +7,7 @@ class HeaderModal extends api.core.Instance {
 
   init () {
     this.isResizing = true;
+    this.storeAria();
   }
 
   resize () {
@@ -18,8 +19,8 @@ class HeaderModal extends api.core.Instance {
     const modal = this.element.getInstance('Modal');
     if (!modal) return;
     modal.isEnabled = true;
-    if (this._ariaLabelledByData) this.setAttribute('aria-labelledby', this._ariaLabelledByData);
-    if (this._ariaLabelData) this.setAttribute('aria-label', this._ariaLabelData);
+    this.setAttribute('aria-labelledby', this._ariaLabelledBy);
+    this.setAttribute('aria-label', this._ariaLabel);
     this.listenClick({ capture: true });
   }
 
@@ -28,15 +29,15 @@ class HeaderModal extends api.core.Instance {
     if (!modal) return;
     modal.conceal();
     modal.isEnabled = false;
-    if (this.hasAttribute('aria-labelledby')) {
-      if (this._ariaLabelledByData === undefined) this._ariaLabelledByData = this.getAttribute('aria-labelledby');
-      this.removeAttribute('aria-labelledby');
-    };
-    if (this.hasAttribute('aria-label')) {
-      if (this._ariaLabelData === undefined) this._ariaLabelledByData = this.getAttribute('aria-label');
-      this.removeAttribute('aria-label');
-    }
+    this.storeAria();
+    this.removeAttribute('aria-labelledby');
+    this.removeAttribute('aria-label');
     this.unlistenClick({ capture: true });
+  }
+
+  storeAria () {
+    if (this.hasAttribute('aria-labelledby')) this._ariaLabelledBy = this.getAttribute('aria-labelledby');
+    if (this.hasAttribute('aria-label')) this._ariaLabel = this.getAttribute('aria-label');
   }
 
   handleClick (e) {
