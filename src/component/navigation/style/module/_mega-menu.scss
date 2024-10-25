@@ -64,6 +64,10 @@
 
   &__category {
     @include font-weight(bold);
+
+    @include forced-colors {
+      border-bottom: 1px solid;
+    }
   }
 
   &__list {
