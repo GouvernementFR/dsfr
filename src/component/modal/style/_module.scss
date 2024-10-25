@@ -128,7 +128,7 @@
     @include margin-top(-10v);
     @include margin-top(-12v, md);
     @include sticky(null,null,0);
-    @include z-index(above);
+    @include elevation.z-index(overlap-over);
     transition: box-shadow 0.3s;
 
     @include preference.forced-colors {
