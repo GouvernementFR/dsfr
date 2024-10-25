@@ -33,14 +33,14 @@ class HeaderModal extends api.core.Instance {
   }
 
   storeAria () {
-    if (this.hasAttribute('aria-labelledby')) this._ariaLabelledBy = this.getAttribute('aria-labelledby');
+    if (this.hasAttribute('aria-labelledby')) this._ariaLabelledby = this.getAttribute('aria-labelledby');
     if (this.hasAttribute('aria-label')) this._ariaLabel = this.getAttribute('aria-label');
     this.removeAttribute('aria-labelledby');
     this.removeAttribute('aria-label');
   }
 
   restoreAria () {
-    if (this._ariaLabelledBy) this.setAttribute('aria-labelledby', this._ariaLabelledBy);
+    if (this._ariaLabelledby) this.setAttribute('aria-labelledby', this._ariaLabelledby);
     if (this._ariaLabel) this.setAttribute('aria-label', this._ariaLabel);
   }
 
