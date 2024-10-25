@@ -47,8 +47,6 @@
           min-height: spacing.space(14v);
           font-weight: normal;
 
-          // @include z-index(auto);
-
           @include selector.current {
             background-repeat: no-repeat;
             background-position: 0 100%;
@@ -56,10 +54,19 @@
 
             @include preference.forced-colors {
               background-image: linear-gradient(0deg, highlight, highlight);
+              background-size: #{spacing.space(100% 1v)};
+              forced-color-adjust: none;
+              color: buttontext;
+
+              &a[href] {
+                color: linktext;
+              }
             }
           }
         }
       }
+
+
     }
   }
 
@@ -87,7 +94,7 @@
         transition: transform 0.3s;
 
         @include preference.forced-colors {
-          color: buttontext;
+          background-color: buttontext;
         }
       }
     }
@@ -125,6 +132,13 @@
 
       @include preference.forced-colors {
         background-image: linear-gradient(0deg, highlight, highlight);
+        background-size: #{spacing.space(1v calc(100% - 6v))};
+        forced-color-adjust: none;
+        color: buttontext;
+
+        &a[href] {
+          color: linktext;
+        }
       }
     }
   }
