@@ -54,7 +54,7 @@
             background-position: 0 100%;
             background-size: #{spacing.space(100% 0.5v)};
 
-            @include forced-colors {
+            @include preference.forced-colors {
               background-image: linear-gradient(0deg, highlight, highlight);
             }
           }
@@ -123,7 +123,7 @@
       background-position: #{spacing.space(0 3v)};
       background-size: #{spacing.space(2px calc(100% - 6v))};
 
-      @include forced-colors {
+      @include preference.forced-colors {
         background-image: linear-gradient(0deg, highlight, highlight);
       }
     }
