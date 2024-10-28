@@ -30,10 +30,10 @@
 const connect = locals.connect || {};
 const connectClasses = [];
 const connectAttrs = {};
-connectAttrs.type = connect.type || 'button';
 if (connect.id) connectAttrs.id = connect.id;
 const markup = connect.markup || 'button';
 if (markup === 'a' && !connect.disabled) connectAttrs.href = '';
+if (markup === 'button') connectAttrs.type = connect.type || 'button';
 connectClasses.push(prefix + '-connect');
 
 switch(connect.variant) {

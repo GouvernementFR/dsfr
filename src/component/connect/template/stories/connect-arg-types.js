@@ -35,7 +35,7 @@ const connectArgTypes = {
       value: 'string'
     }
   },
-  type: {
+  variant: {
     control: {
       type: 'select',
       labels: {
@@ -44,7 +44,7 @@ const connectArgTypes = {
         plus: 'FranceConnect+'
       }
     },
-    description: 'Type de bouton franceConnect',
+    description: 'Variation de bouton franceConnect',
     options: ['default', 'plus']
   },
   lang: {
@@ -121,13 +121,13 @@ const getGlobalLang = (lang) => {
 const connectProps = (args) => {
   const connect = {
     id: args.id || undefined,
-    type: args.type || connectArgs.type,
+    variant: args.variant || connectArgs.variant,
     login: getLang(args.lang).default.login,
     markup: args.markup || connectArgs.markup,
     disabled: args.disabled || connectArgs.disabled
   };
 
-  switch (connect.type) {
+  switch (connect.variant) {
     // case 'agent':
     //   connect.brand = 'AgentConnect';
     //   break;
@@ -136,8 +136,8 @@ const connectProps = (args) => {
   }
 
   const link = {
-    label: connect.type === 'plus' ? getLang(args.lang).plus.link : getLang(args.lang).default.link,
-    href: connect.type === 'plus' ? connectPlusArgs.linkHref : args.linkHref || connectArgs.linkHref,
+    label: connect.variant === 'plus' ? getLang(args.lang).plus.link : getLang(args.lang).default.link,
+    href: connect.variant === 'plus' ? connectPlusArgs.linkHref : args.linkHref || connectArgs.linkHref,
     newWindow: getGlobalLang(args.lang).blank
   };
 
