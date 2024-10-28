@@ -21,14 +21,19 @@ class HeaderLinks extends api.core.Instance {
     // eslint-disable-next-line no-useless-escape
     toolsHtmlIdList = toolsHtmlIdList.map(element => element.replace('id=\"', '').replace('\"', ''));
 
-    const toolsHtmlAriaControlList = toolsHtml.match(/aria-controls="(.*?)"/gm);
-    let toolsHtmlDuplicateId = toolsHtml.replace(/id="(.*?)"/gm, 'id="$1' + copySuffix + '"');
-    if (toolsHtmlAriaControlList) {
-      for (const element of toolsHtmlAriaControlList) {
-        const ariaControlsValue = element.replace('aria-controls="', '').replace('"', '');
-        if (toolsHtmlIdList.includes(ariaControlsValue)) {
-          toolsHtmlDuplicateId = toolsHtmlDuplicateId.replace(`aria-controls="${ariaControlsValue}"`, `aria-controls="${ariaControlsValue + copySuffix}"`);
-        };
+    const dupplicateAttributes = ['aria-controls', 'aria-describedby', 'aria-labelledby'];
+
+    let toolsHtmlDuplicateId = toolsHtml.replace(/id="(.*?)"/gm, `id="$1${copySuffix}"`);
+
+    for (const attribute of dupplicateAttributes) {
+      const toolsHtmlAttributeList = toolsHtml.match(new RegExp(`${attribute}="(.*?)"`, 'gm'));
+      if (toolsHtmlAttributeList) {
+        for (const element of toolsHtmlAttributeList) {
+          const attributeValue = element.replace(`${attribute}="`, '').replace('"', '');
+          if (toolsHtmlIdList.includes(attributeValue)) {
+            toolsHtmlDuplicateId = toolsHtmlDuplicateId.replace(`${attribute}="${attributeValue}"`, `${attribute}="${attributeValue + copySuffix}"`);
+          };
+        }
       }
     }
 
