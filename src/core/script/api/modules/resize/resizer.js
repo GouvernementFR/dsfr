@@ -1,4 +1,6 @@
 import { Module } from '../module.js';
+import { rootDispatch } from '../../utilities/dom/dispatch.js';
+import { RootEvent } from '../stage/root-event.js';
 
 class Resizer extends Module {
   constructor () {
@@ -27,6 +29,7 @@ class Resizer extends Module {
     if (!this.requireResize) return;
     this.forEach((instance) => instance.resize());
     this.requireResize = false;
+    rootDispatch(RootEvent.RESIZE);
   }
 }
 

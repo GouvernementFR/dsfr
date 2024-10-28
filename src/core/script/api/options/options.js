@@ -2,6 +2,8 @@ import inspector from '../inspect/inspector.js';
 import { startAtDomContentLoaded, startAuto } from './starters.js';
 import config from '../../../config';
 import { Modes } from './modes';
+import { rootDispatch } from '../utilities/dom/dispatch.js';
+import { RootEvent } from '../modules/stage/root-event.js';
 
 class Options {
   constructor () {
@@ -32,6 +34,7 @@ class Options {
         break;
     }
     inspector.info(`version ${config.version}`);
+    rootDispatch(RootEvent.READY);
     this.mode = settings.mode || Modes.AUTO;
   }
 

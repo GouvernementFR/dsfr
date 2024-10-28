@@ -1,6 +1,8 @@
 import state from '../../state.js';
 import { Module } from '../module.js';
 import { Collection } from '../../utilities/collection.js';
+import { rootDispatch } from '../../utilities/dom/dispatch.js';
+import { RootEvent } from '../stage/root-event.js';
 
 class Renderer extends Module {
   constructor () {
@@ -25,6 +27,7 @@ class Renderer extends Module {
     const nexts = this.nexts.clone();
     this.nexts.clear();
     nexts.forEach((instance) => instance.next());
+    rootDispatch(RootEvent.RENDER);
   }
 }
 
