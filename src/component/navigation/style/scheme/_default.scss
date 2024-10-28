@@ -14,9 +14,7 @@
 
       @include selector.current {
         @include color.text(active blue-france, (legacy: $legacy));
-        @include before {
-          @include color.background(active blue-france, (legacy: $legacy));
-        }
+        @include color.background-image(active blue-france, (legacy:$legacy));
       }
     }
 
