@@ -47,6 +47,7 @@ switch (actionMarkup) {
     break;
   default:
     action = actionMarkup;
+    if (actionMarkup === 'button') attributes.type = actionMarkup;
     break;
 }
 

@@ -19,8 +19,18 @@
 
   &__body {
     @include relative;
-    @include padding(0 9v 0 0);
-    @include padding(0 12v 0 0, md);
+    @include display-flex(row, flex-start, space-between);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: inherit;
+      line-height: inherit;
+      font-size: inherit;
+    }
   }
 
   &__title {
@@ -65,7 +75,9 @@
 
   #{selector.ns(btn--close)} {
     @include nest-btn(sm, only, close-line, null, false);
-    @include absolute(-1v, 0);
+    @include margin-top(-1v);
+    @include margin-left(1v);
+    @include margin-left(4v, md);
     color: inherit;
   }
 
@@ -92,8 +104,7 @@
     }
   }
 
-  &--warning,
-  &--alert {
+  &--warning {
     #{selector.ns(notice)}__title {
       @include has-not-icon {
         @include icon-image(warning-fill, before);
@@ -120,7 +131,7 @@
   &--weather-red {
     #{selector.ns(notice)}__title {
       @include has-not-icon {
-        @include icon-image(tornado-fill, before);
+        @include icon-image(heavy-showers-fill, before);
       }
     }
   }

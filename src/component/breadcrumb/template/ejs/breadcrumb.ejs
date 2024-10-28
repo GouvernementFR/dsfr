@@ -19,7 +19,7 @@ if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane
 %>
 
 <nav role="navigation" class="<%= prefix %>-breadcrumb" aria-label="vous êtes ici :">
-  <button class="<%= prefix %>-breadcrumb__button" aria-expanded="false"
+  <button type="button" class="<%= prefix %>-breadcrumb__button" aria-expanded="false"
     aria-controls="<%= breadcrumb.id %>"><%= breadcrumb.button %></button>
   <div class="<%= prefix %>-collapse" id="<%= breadcrumb.id %>">
     <ol class="<%= prefix %>-breadcrumb__list">

@@ -15,6 +15,10 @@
   * pressable : tag activable
   * dismissible : tag supprimable
 
+* tag.pressable (bool, optional) : si true, rend sélectionnable le composant
+
+* tag.dismissible (bool, optional) : si true, rend supprimable le composant
+
 * tag.button (boolean, optional) : si true, le composant est un bouton
 
 * tag.size (string, optional) : taille du composant
@@ -63,10 +67,12 @@ switch(tag.type) {
   break;
   case 'pressable':
     if (tag.markup === undefined) tag.markup = 'button';
+    tagAttrs.type = 'button';
     tagAttrs["aria-pressed"] = tag.pressed === true ? 'true' : 'false';
   break;
   case 'dismissible':
     if (tag.markup === undefined) tag.markup = 'button';
+    tagAttrs.type = 'button';
     tagClasses.push(prefix + '-tag--dismiss');
     tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
   break;

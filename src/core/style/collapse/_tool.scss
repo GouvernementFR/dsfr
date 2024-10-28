@@ -15,6 +15,10 @@
   // max-height: 0;
   max-height: var(--collapse-max-height);
 
+  &--expanded {
+    overflow: auto;
+  }
+
   @include preference.reduce-motion {
     transition: none;
   }

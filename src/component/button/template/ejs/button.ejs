@@ -42,6 +42,7 @@ valeurs :
 const button = locals.button || {};
 let btnClasses = button.classes || [];
 let btnAttrs = button.attributes || {};
+const type = button.type || 'button';
 btnClasses.push(prefix + '-btn');
 let action;
 const markup = button.markup || 'button';
@@ -99,7 +100,7 @@ if (button.tooltip && button.tooltip.id) btnAttrs['aria-describedby'] = button.t
 %>
 
 <% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
-<%- include('../../../../core/template/ejs/action/action', {action: {...button, classes: btnClasses, attributes: btnAttrs, kind: action}}) %>
+<%- include('../../../../core/template/ejs/action/action', {action: {...button, classes: btnClasses, attributes: btnAttrs, type: type, kind: action}}) %>
 
 
 <% if (button.tooltip) { %>

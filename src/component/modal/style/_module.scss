@@ -128,8 +128,8 @@
     @include margin-top(-10v);
     @include margin-top(-12v, md);
     @include sticky(null,null,0);
+    @include elevation.z-index(overlap-over);
     transition: box-shadow 0.3s;
-    z-index: z-index(modal-footer);
 
     @include preference.forced-colors {
       border-top: 1px solid;

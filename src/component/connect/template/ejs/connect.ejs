@@ -3,13 +3,15 @@
 
 * connect.id (string) : id du bouton connect
 
+* connect.type (string) : attribut type du bouton connect
+
 * connect.link (object, required) paramètres du lien france connnect
   ** connect.link.href (string, required) : lien vers france connect
   ** connect.link.label (string, required) : Libellé "Qu'est ce que france connect ?"
   ** connect.link.attributes (object, optionnal) : Attributs supplémentaire sur le lien (ex: {target:'_blank'})
   ** connect.link.newWindow (string, optionnal) : Libellé du lien pour ouvrir dans une nouvelle fenêtre
 
-* connect.type (string, optional) type du bouton connect
+* connect.variant (string, optional) variante du bouton connect
 
 * connect.login (string, required) : texte "Se connecter avec" du bouton
 
@@ -28,12 +30,13 @@
 const connect = locals.connect || {};
 const connectClasses = [];
 const connectAttrs = {};
+connectAttrs.type = connect.type || 'button';
 if (connect.id) connectAttrs.id = connect.id;
 const markup = connect.markup || 'button';
 if (markup === 'a' && !connect.disabled) connectAttrs.href = '';
 connectClasses.push(prefix + '-connect');
 
-switch(connect.type) {
+switch(connect.variant) {
   case 'plus':
     connectClasses.push(prefix + '-connect--plus');
   break;
