@@ -16,6 +16,7 @@
 
   &--error,
   &--valid,
+  &--warning,
   &--info {
     @include icon(null, sm, before) {
       display: inline-block;
@@ -36,5 +37,9 @@
 
   &--info {
     @include icon-image(info-fill, before);
+  }
+
+  &--warning {
+    @include icon-image(warning-fill, before);
   }
 }

@@ -3,10 +3,12 @@ import state from '../../state.js';
 import inspector from '../../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
+import { dispatch } from '../../utilities/dom/dispatch.js';
 import { uniqueId } from '../../utilities/dom/id';
 import { completeAssign } from '../../utilities/property/complete-assign.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 import { queryActions } from '../../utilities/dom/actions.js';
+import { InstanceEvent } from './Instance-event.js';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -19,7 +21,7 @@ class Instance {
     this._isEnabled = true;
     this._isDisposed = false;
     this._listeners = {};
-    this._handlingClick = this.handleClick.bind(this);
+    this._handlingClick = this._handleClick.bind(this);
     this._hashes = [];
     this._hash = '';
     this._keyListenerTypes = [];
@@ -56,7 +58,7 @@ class Instance {
 
     const proxyAccessors = {
       get node () {
-        return this.node;
+        return scope.node;
       },
       get isEnabled () {
         return scope.isEnabled;
@@ -104,9 +106,8 @@ class Instance {
     return [];
   }
 
-  dispatch (type, detail, bubbles, cancelable) {
-    const event = new CustomEvent(type, { detail: detail, bubble: bubbles === true, cancelable: cancelable === true });
-    this.node.dispatchEvent(event);
+  dispatch (type, detail = null, bubbles = true, cancelable = false) {
+    dispatch(this.node, type, detail, bubbles, cancelable);
   }
 
   // TODO v2 => listener au niveau des éléments qui redistribuent aux instances.
@@ -145,6 +146,11 @@ class Instance {
 
   unlistenClick (options) {
     this.unlisten('click', this._handlingClick, options);
+  }
+
+  _handleClick (e) {
+    this.handleClick(e);
+    this.dispatch(InstanceEvent.CLICK, this);
   }
 
   handleClick (e) {}

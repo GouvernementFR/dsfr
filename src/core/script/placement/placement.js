@@ -14,6 +14,7 @@ class Placement extends Instance {
     this._aligns = aligns;
     this._safeAreaMargin = safeAreaMargin;
     this._isShown = false;
+    this._x = this._y = 0;
   }
 
   static get instanceClassName () {
@@ -169,21 +170,11 @@ class Placement extends Instance {
     this._referent = referent;
   }
 
-  resize () {
-    this.safeArea = {
-      top: this._safeAreaMargin,
-      right: window.innerWidth - this._safeAreaMargin,
-      bottom: window.innerHeight - this._safeAreaMargin,
-      left: this._safeAreaMargin,
-      center: window.innerWidth * 0.5,
-      middle: window.innerHeight * 0.5
-    };
-  }
-
   render () {
     if (!this._referent) return;
-    this.rect = this.getRect();
     this.referentRect = this._referent.getRect();
+    this.rect = this.getRect();
+    this.safeArea = this.getSafeArea();
 
     if (this.mode === PlacementMode.AUTO) {
       this.place = this.getPlace();
@@ -203,19 +194,19 @@ class Placement extends Instance {
 
     switch (this.place) {
       case PlacementPosition.TOP:
-        y = this.referentRect.top - this.rect.height;
+        y = this.referentRect.top - this.rect.top - this.rect.height;
         break;
 
       case PlacementPosition.RIGHT:
-        x = this.referentRect.right;
+        x = this.referentRect.left - this.rect.left + this.referentRect.width;
         break;
 
       case PlacementPosition.BOTTOM:
-        y = this.referentRect.bottom;
+        y = this.referentRect.top - this.rect.top + this.referentRect.height;
         break;
 
       case PlacementPosition.LEFT:
-        x = this.referentRect.left - this.rect.width;
+        x = this.referentRect.left - this.rect.left - this.rect.width;
         break;
     }
 
@@ -224,15 +215,15 @@ class Placement extends Instance {
       case PlacementPosition.BOTTOM:
         switch (this.align) {
           case PlacementAlign.CENTER:
-            x = this.referentRect.center - this.rect.width * 0.5;
+            x = this.referentRect.left - this.rect.left + this.referentRect.width * 0.5 - this.rect.width * 0.5;
             break;
 
           case PlacementAlign.START:
-            x = this.referentRect.left;
+            x = this.referentRect.left - this.rect.left;
             break;
 
           case PlacementAlign.END:
-            x = this.referentRect.right - this.rect.width;
+            x = this.referentRect.left - this.rect.left + this.referentRect.width - this.rect.width;
             break;
         }
         break;
@@ -241,25 +232,23 @@ class Placement extends Instance {
       case PlacementPosition.LEFT:
         switch (this.align) {
           case PlacementAlign.CENTER:
-            y = this.referentRect.middle - this.rect.height * 0.5;
+            y = this.referentRect.top - this.rect.top + this.referentRect.height * 0.5 - this.rect.height * 0.5;
             break;
 
           case PlacementAlign.START:
-            y = this.referentRect.top;
+            y = this.referentRect.top - this.rect.top;
             break;
 
           case PlacementAlign.END:
-            y = this.referentRect.bottom - this.rect.height;
+            y = this.referentRect.top - this.rect.top - this.rect.height;
             break;
         }
         break;
     }
 
-    if (this._x !== x || this._y !== y) {
-      this._x = (x + 0.5) | 0;
-      this._y = (y + 0.5) | 0;
-      this.node.style.transform = `translate(${this._x}px,${this._y}px)`;
-    }
+    this._x += (x + 0.5) | 0;
+    this._y += (y + 0.5) | 0;
+    this.node.style.transform = `translate(${this._x}px,${this._y}px)`;
   }
 
   getPlace () {
@@ -324,6 +313,46 @@ class Placement extends Instance {
     }
 
     return this._aligns[0];
+  }
+
+  getSafeArea () {
+    let element = this.node;
+    let isX, isY;
+    let top = this._safeAreaMargin;
+    let right = window.innerWidth - this._safeAreaMargin;
+    let bottom = window.innerHeight - this._safeAreaMargin;
+    let left = this._safeAreaMargin;
+
+    while (element) {
+      if (element === document.body) break;
+      element = element.parentElement;
+      const style = window.getComputedStyle(element);
+
+      const overflow = /(visible|(\w+))(\s(visible|(\w+)))?/.exec(style.overflow);
+      isX = overflow[2] !== undefined;
+      isY = overflow[3] !== undefined ? overflow[5] !== undefined : overflow[2] !== undefined;
+
+      if (!isX && !isY) continue;
+      const rect = element.getBoundingClientRect();
+
+      if (isX) {
+        if (rect.left > left) left = rect.left;
+        if (rect.right < right) right = rect.right;
+      }
+      if (isY) {
+        if (rect.top > top) top = rect.top;
+        if (rect.bottom < bottom) bottom = rect.bottom;
+      }
+    }
+
+    return {
+      top: top,
+      right: right,
+      bottom: bottom,
+      left: left,
+      center: left + (right - left) * 0.5,
+      middle: top + (bottom - top) * 0.5
+    };
   }
 
   dispose () {

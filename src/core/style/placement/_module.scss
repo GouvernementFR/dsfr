@@ -6,5 +6,6 @@
 @use 'module/spacing';
 
 #{ns(placement)} {
-  @include fixed(0, null, null, 0);
+  @include absolute;
+  width: max-content;
 }

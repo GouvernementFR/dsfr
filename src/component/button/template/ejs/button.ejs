@@ -43,6 +43,7 @@ const button = locals.button || {};
 let btnClasses = button.classes || [];
 let btnAttrs = button.attributes || {};
 btnAttrs.id = button.id || uniqueId('button');
+btnAttrs.type = button.type || 'button';
 btnClasses.push(prefix + '-btn');
 let action;
 const markup = button.markup || 'button';
