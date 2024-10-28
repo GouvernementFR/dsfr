@@ -28,6 +28,8 @@ class Tooltip extends api.core.Placement {
 
   transitionEnd () {
     if (this._state === TooltipState.HIDING) {
+      this.removeClass(TooltipSelector.SHOWN);
+      this.removeClass(TooltipSelector.HIDDING);
       this._state = TooltipState.HIDDEN;
       this.isShown = false;
     }
@@ -43,17 +45,19 @@ class Tooltip extends api.core.Placement {
       case value:
         this._state = TooltipState.SHOWN;
         this.addClass(TooltipSelector.SHOWN);
+        this.removeClass(TooltipSelector.HIDDING);
         this.dispatch(TooltipEvent.SHOW);
         super.isShown = true;
         break;
 
       case this.isShown && !value && this._state === TooltipState.SHOWN:
         this._state = TooltipState.HIDING;
-        this.removeClass(TooltipSelector.SHOWN);
+        this.addClass(TooltipSelector.HIDDING);
         break;
 
       case this.isShown && !value && this._state === TooltipState.HIDDEN:
         this.dispatch(TooltipEvent.HIDE);
+        this.removeClass(TooltipSelector.HIDDING);
         super.isShown = false;
         break;
     }
@@ -61,6 +65,7 @@ class Tooltip extends api.core.Placement {
 
   render () {
     super.render();
+    this.rect = this.getRect();
     let x = this.referentRect.center - this.rect.center;
     const limit = this.rect.width * 0.5 - 8;
     if (x < -limit) x = -limit;
