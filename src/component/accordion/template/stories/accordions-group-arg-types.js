@@ -25,6 +25,10 @@ const getAccordionArgTypes = (id) => {
 };
 
 const accordionsGroupArgTypes = {
+  group: {
+    control: 'boolean',
+    description: 'Accordéons groupés (ferme le précédent à l’ouverture d\'un autre)'
+  },
   ...getAccordionArgTypes(1),
   ...getAccordionArgTypes(2),
   ...getAccordionArgTypes(3),
@@ -42,6 +46,7 @@ const getAccordionArgs = (id) => {
 };
 
 const accordionsGroupArgs = {
+  group: true,
   ...getAccordionArgs(1),
   ...getAccordionArgs(2),
   ...getAccordionArgs(3),
@@ -62,6 +67,7 @@ const accordionsGroupProps = (args) => {
   }
 
   const accordionsGroup = {
+    group: args.group === true,
     accordions: accordions
   };
 

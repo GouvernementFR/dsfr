@@ -134,6 +134,10 @@ const cardArgTypes = {
     }
   },
   actionMarkup: {
+    if: {
+      arg: 'enlarge',
+      eq: true
+    },
     control: { type: 'select' },
     description: 'balise de l\'actionneur du composant (a, button)',
     options: ['a', 'button'],
@@ -164,6 +168,10 @@ const cardArgTypes = {
     }
   },
   noLink: {
+    if: {
+      arg: 'enlarge',
+      eq: false
+    },
     control: 'boolean',
     description: 'Si true, absence d\'actionneur',
     table: {
@@ -250,10 +258,6 @@ const cardArgTypes = {
     }
   },
   download: {
-    if: {
-      arg: 'actionMarkup',
-      eq: 'a'
-    },
     control: 'boolean',
     description: 'Si true, passe la carte en mode téléchargement',
     table: {

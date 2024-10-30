@@ -77,7 +77,7 @@ const connectArgTypes = {
 
 const connectArgs = {
   id: 'france-connect',
-  type: 'default',
+  variant: 'default',
   linkLabel: 'Qu\'est-ce que FranceConnect ?',
   linkHref: 'https://franceconnect.gouv.fr',
   markup: 'button',

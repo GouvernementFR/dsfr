@@ -57,7 +57,7 @@ const elementsArgTypes = {
   elementsType: {
     control: { type: 'select' },
     description: 'Type d\'élements de formulaire',
-    options: ['input', 'radio', 'checkbox', 'upload'],
+    options: ['input', 'radio', 'checkbox'],
     type: {
       value: 'string',
       required: true

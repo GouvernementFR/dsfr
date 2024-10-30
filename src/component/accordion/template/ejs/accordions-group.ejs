@@ -3,10 +3,12 @@
 
 * accordionGroup.accordions (array, required) : tableau d'accordion
 
+* accordionGroup.group (boolean, optional) : permet de dégrouper les accordions
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
-<% 
+<%
 let accordionsGroup = locals.accordionsGroup || {accordions: []}
 let attributes = accordionsGroup.attributes || {};
 if (accordionsGroup.group !== undefined)  attributes[`data-${prefix}-group`] = accordionsGroup.group;

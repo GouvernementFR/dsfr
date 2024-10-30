@@ -17,7 +17,6 @@ const sidemenuClasses = [];
 const sidemenuAttrs = {};
 
 if (sidemenuItem.collapsable) {
-  sidemenuItem.kind = 'button';
   sidemenuItem.attributes = {
     'aria-expanded': false,
     'aria-controls': sidemenuItem.collapseId,
@@ -31,7 +30,7 @@ if (sidemenuItem.collapsable) {
 }
 %>
 
-<%- include('../../../../core/template/ejs/action/action', {action: sidemenuItem}) %>
+<%- include('../../../../core/template/ejs/action/action', { action: { label: sidemenuItem.label, type: 'button', kind: 'button', attributes: sidemenuItem.attributes, classes: [`${prefix}-sidemenu__btn`] }}) %>
 
 <div <%- includeClasses(sidemenuClasses) %> <%- includeAttrs(sidemenuAttrs)%>>
   <%- include('./sidemenu-list.ejs', {sidemenuItems: sidemenuItem.items}); %>

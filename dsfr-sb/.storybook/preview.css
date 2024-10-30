@@ -60,3 +60,7 @@
 #story--tooltip--tooltip-hover-story {
   padding: 20px 0;
 }
+
+#story--sidemenu--sidemenu-story--primary-inner {
+  max-width: 300px;
+}

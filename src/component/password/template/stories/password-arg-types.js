@@ -110,6 +110,7 @@ const inputArgTypes = {
 
 const linkArgTypes = {
   hasLink: {
+    if: { arg: 'hasMessages', eq: false },
     control: 'boolean',
     description: 'Affiche le lien "Mot de passe oublié ?"',
     type: {

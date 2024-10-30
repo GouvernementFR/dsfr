@@ -1,6 +1,7 @@
 
 const iconArgTypes = {
   hasIcon: {
+    if: { arg: 'download', eq: false },
     control: 'boolean',
     description: 'Le lien a une icône',
     table: { category: 'icon' }
@@ -88,7 +89,7 @@ const linkArgTypes = {
   },
   assess: {
     if: { arg: 'download', eq: true },
-    control: 'text',
+    control: 'boolean',
     description: 'si true, ajoute l\'attribut permettant le remplissage automatique des informations du fichier à télécharger. Si string, ajoute l\'attribut avec la valeur de la string (ex: "bytes" pour les poids en bytes)',
     table: {
       category: 'download'

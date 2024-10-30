@@ -84,17 +84,21 @@ const tileArgTypes = {
       category: 'content'
     }
   },
-  actionMarkup: {
-    control: { type: 'select' },
-    description: 'balise de l\'actionneur du composant (a, button)',
-    options: ['a', 'button'],
+  enlarge: {
+    control: 'boolean',
+    description: 'Si true, agrandi la zone de clic à toute la tuile',
     table: {
       category: 'action'
     }
   },
-  enlarge: {
-    control: 'boolean',
-    description: 'Si true, agrandi la zone de clic à toute la tuile',
+  actionMarkup: {
+    if: {
+      arg: 'enlarge',
+      eq: true
+    },
+    control: { type: 'select' },
+    description: 'balise de l\'actionneur du composant (a, button)',
+    options: ['a', 'button'],
     table: {
       category: 'action'
     }
@@ -111,6 +115,10 @@ const tileArgTypes = {
     }
   },
   noLink: {
+    if: {
+      arg: 'actionMarkup',
+      eq: false
+    },
     control: 'boolean',
     description: 'Si true, absence d\'actionneur',
     table: {
@@ -136,10 +144,6 @@ const tileArgTypes = {
     }
   },
   download: {
-    if: {
-      arg: 'actionMarkup',
-      eq: 'a'
-    },
     control: 'boolean',
     description: 'Si true, passe la tuile en mode téléchargement',
     table: {
@@ -222,12 +226,12 @@ const tileArgs = {
   description: '',
   details: 'Détail (optionel)',
   markup: 'h3',
-  actionMarkup: 'a',
-  href: '[URL - à modifier]',
-  pictogramName: 'city-hall',
   hasBadge: false,
   hasTag: false,
   enlarge: false,
+  actionMarkup: 'a',
+  href: '[URL - à modifier]',
+  pictogramName: 'city-hall',
   noLink: false,
   blank: false,
   download: false,

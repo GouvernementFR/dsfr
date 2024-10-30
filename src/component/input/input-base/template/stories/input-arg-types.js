@@ -65,15 +65,16 @@ const inputArgTypes = {
       labels: {
         date: 'Date',
         email: 'Email',
-        number: 'Nombre',
         password: 'Mot de passe',
+        number: 'Nombre',
+        search: 'Recherche',
         tel: 'Téléphone',
         text: 'Texte',
         url: 'URL'
       }
     },
     description: 'Type du champs de saisie, par défaut: "text"',
-    options: ['date', 'email', 'number', 'password', 'tel', 'text', 'url'],
+    options: ['date', 'email', 'password', 'number', 'search', 'tel', 'text', 'url'],
     type: {
       value: 'string'
     }

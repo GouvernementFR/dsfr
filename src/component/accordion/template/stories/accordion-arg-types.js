@@ -1,7 +1,10 @@
 const accordionArgTypes = {
   isExpanded: {
     control: 'boolean',
-    description: 'L\'accordéon est-il ouvert au départ'
+    description: 'L\'accordéon est-il ouvert au départ',
+    type: {
+      value: 'boolean'
+    }
   },
   id: {
     control: 'text',
@@ -40,7 +43,8 @@ const accordionProps = (args) => {
   const accordion = {
     id: args.id || undefined,
     label: args.label || accordionArgs.label,
-    content: args.content || accordionArgs.content
+    content: args.content || accordionArgs.content,
+    isExpanded: args.isExpanded || accordionArgs.isExpanded
   };
 
   return accordion;
