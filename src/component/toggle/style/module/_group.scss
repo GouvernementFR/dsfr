@@ -5,9 +5,7 @@
 
 #{ns(toggle)}__list {
   @include disable-list-style;
-}
 
-#{ns(toggle)}__list {
   li {
     @include margin-bottom(4v);
 

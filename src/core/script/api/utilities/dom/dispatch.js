@@ -3,7 +3,6 @@ const dispatch = (node, type, detail = null, bubbles = true, cancelable = false)
   if (detail) options.detail = detail;
   const event = new CustomEvent(type, options);
   node.dispatchEvent(event);
-  console.log(`Dispatched event: ${type}`);
 };
 
 const rootDispatch = (type, detail = null, bubbles = false, cancelable = false) => dispatch(document.documentElement, type, detail, bubbles, cancelable);
