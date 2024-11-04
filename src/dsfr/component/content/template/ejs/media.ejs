@@ -83,7 +83,7 @@ switch(type) {
 %>
         <% if (content.consent !== undefined) { %>
             <div class="<%= prefix %>-responsive-vid">
-            <%- include('../../../consent/template/ejs/placeholder', {consent: content.consent}) %>
+            <%- include('../../../consent/template/ejs/consent-placeholder', {consent: content.consent}) %>
             </div>
         <% } else { %>
             <%- include('../../../../core/template/ejs/media/responsive-vid', {media: content.vid}) %>

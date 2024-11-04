@@ -9,6 +9,7 @@ import { calloutPartials } from './component/callout/template/stories/partials';
 import { cardPartials } from './component/card/template/stories/partials';
 import { checkboxPartials } from './component/checkbox/template/stories/partials';
 import { connectPartials } from './component/connect/template/stories/partials';
+import { consentPartials } from './component/consent/template/stories/partials';
 import { contentPartials } from './component/content/template/stories/partials';
 import { followPartials } from './component/follow/template/stories/partials';
 import { footerPartials } from './component/footer/template/stories/partials';
@@ -56,6 +57,7 @@ calloutPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial))
 cardPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 checkboxPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 connectPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
+consentPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 contentPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 followPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
 footerPartials.forEach(({ names, partial }) => ejsRenderer.add(names, partial));
