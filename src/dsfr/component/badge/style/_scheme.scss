@@ -1,0 +1,43 @@
+////
+/// Badge Module
+/// @group badge
+////
+
+@use 'src/module/color';
+
+@mixin _badge-scheme($legacy: false) {
+  #{ns(badge)} {
+    @include color.text(default grey, (legacy: $legacy));
+    @include color.background(contrast grey, (legacy: $legacy));
+
+    &--info {
+      @include color.text(default info, (legacy: $legacy));
+      @include color.background(contrast info, (legacy: $legacy));
+    }
+
+    &--error {
+      @include color.text(default error, (legacy: $legacy));
+      @include color.background(contrast error, (legacy: $legacy));
+    }
+
+    &--success {
+      @include color.text(default success, (legacy: $legacy));
+      @include color.background(contrast success, (legacy: $legacy));
+    }
+
+    &--warning {
+      @include color.text(default warning, (legacy: $legacy));
+      @include color.background(contrast warning, (legacy: $legacy));
+    }
+
+    &--new {
+      @include color.text(action-high yellow-moutarde, (legacy: $legacy));
+      @include color.background(contrast yellow-moutarde, (legacy: $legacy));
+    }
+
+    @include color.accentuate {
+      @include color.text(label accent, (legacy: $legacy));
+      @include color.background(contrast accent, (legacy: $legacy));
+    }
+  }
+}

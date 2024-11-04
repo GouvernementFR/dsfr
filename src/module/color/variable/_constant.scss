@@ -1,0 +1,3 @@
+@use 'src/module/string';
+
+$value: string.unquote('$COLOR') !default;

@@ -1,0 +1,157 @@
+////
+/// Tab Module : default
+/// @group tab
+////
+
+@use 'src/module/preference';
+
+@include build-tab();
+
+#{ns(tabs)} {
+  --tabs-height: auto;
+  @include disable-list-style;
+  @include disable-underline;
+  @include relative;
+  overflow: hidden;
+  @include margin-x(0);
+  @include margin-top(-4px);
+  @include padding-top(4px);
+  @include display-flex(row, flex-start, null, wrap);
+  @include height(var(--tabs-height));
+
+  @include preference.forced-colors {
+    border-bottom: 1px solid;
+  }
+
+  @include preference.reduce-motion {
+    transition: none;
+  }
+
+  /**
+  * Animation de la hauteur du panel
+  */
+  transition: height $tabs-transition-duration;
+
+  // retire le padding du container en mobile
+  &--viewport-width {
+    @include margin-x(calc(50% - 50vw));
+    @include margin-x(0, md);
+  }
+
+  @include before('', block) {
+    @include size(100%, 100%);
+    @include margin-top(-1px);
+    order: 2;
+
+    @include preference.forced-colors {
+      border: 1px solid graytext;
+    }
+  }
+
+  /**
+   * ul : element srollable des boutons
+   */
+  @include list {
+    @include display-flex(null, stretch);
+    overflow-x: auto;
+    @include width(100%);
+    @include min-height(12v);
+    z-index: z-index(over);
+    order: 1;
+
+    /**
+    * overflow vertical de 4px pour le focus
+    */
+    @include margin(-4px 0 -4px);
+    @include padding(4px 3v);
+  }
+
+  /**
+  * Tab button
+  */
+  &__tab {
+    @include relative;
+    overflow: visible;
+    font-weight: font-weight(bold);
+    @include z-index(over);
+    @include margin(0 1v);
+    @include height(100%);
+    white-space: nowrap;
+    background-size: 0 2px, 1px 0, 1px 0, 100% 1px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
+
+    @include preference.forced-colors {
+      border: 1px solid;
+    }
+
+    &[aria-selected='true'] {
+      background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 0 1px;
+
+      &:not(:disabled) {
+        @include preference.forced-colors {
+          border: 1px solid highlight;
+          border-top: 4px solid highlight;
+          border-bottom: 1px solid canvas;
+          color: highlight;
+
+          @include has-icon {
+            @include icon-forced-color(highlight);
+          }
+        }
+      }
+    }
+  }
+
+  /**
+  * Tab Panel
+  */
+  &__panel {
+    @include enable-underline;
+    @include enable-list-style;
+    display: block;
+    order: 3;
+    @include relative(null, null, null, -100%, 100%, auto);
+    @include padding(4v);
+    @include padding(8v, md);
+    @include margin-right(-100%);
+    flex: 0 0 100%;
+    transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline-offset: calc(-1rem + 2px);
+      @include respond-from(md) {
+        outline-offset: calc(-2rem + 2px);
+      }
+    }
+
+    &--direction-end {
+      transform: translate(100%);
+    }
+
+    &--direction-start {
+      transform: translate(-100%);
+    }
+
+    /**
+    * Les éléments non sélectionnés sont cachés et rendus innaccessibles au focus
+    * Point d'attention : visibility hidden sur le panel et surcharge sur l'élément selected avec visibility visible créé des problèmes dans la gestion du focus en cas d'imbrication d'onglets
+    *
+    * tabs
+    * └─ panel selected
+    * └─ panel (visibility hidden, tabindex -1)
+    *    └─ tabs
+    *       └─ panel selected (visibility visible tabindex 0)
+    *            ↑ ce panel est accessible alors que caché par son panel parent
+    * solution : visibility hidden seulement sur les éléments non sélectionnés
+    **/
+    @at-root #{&}:not(&--selected) {
+      visibility: hidden;
+    }
+  }
+}

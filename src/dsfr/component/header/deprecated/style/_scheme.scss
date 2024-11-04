@@ -1,0 +1,23 @@
+////
+/// header Scheme
+/// @group header
+////
+
+@use 'src/module/color';
+
+@mixin _header-deprecated-scheme($legacy: false) {
+  #{ns(header)} {
+    &__menu-links {
+      #{ns(link)} {
+        @include btn-kind-scheme(4, $legacy);
+        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+      }
+    }
+
+    &__tools-links {
+      #{ns(link)} {
+        @include btn-kind-scheme(4, $legacy);
+      }
+    }
+  }
+}

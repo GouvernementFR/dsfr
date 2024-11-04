@@ -1,0 +1,42 @@
+////
+/// Tag Tool
+/// @group tag
+////
+
+@use 'src/module/color';
+@use 'src/module/spacing';
+
+@mixin build-tag() {
+  @include _build-link($tags-settings);
+}
+
+@mixin nest-tag($size:md, $place: null, $icon:null, $from: null, $insert: true) {
+  @include _nest-link($tags-settings, $size, $place, $icon, $from, $insert) {
+    @content;
+  }
+}
+
+@mixin pressed-selector($value:null) {
+  $attr: 'aria-pressed';
+  @if $value == true or $value == false {
+    $attr: 'aria-pressed="#{$value}"';
+  }
+
+  &[#{$attr}] {
+    @content;
+  }
+}
+
+@mixin tag-punched-background ($token, $size: md, $legacy: false, $hover: true) {
+  $top: 1v;
+  $stop-1: 2.3125v;
+  $stop-2: 2.5v;
+
+  @if $size == sm {
+    $top: 0.75v;
+    $stop-1: 1.79v;
+    $stop-2: 2v;
+  }
+
+  @include color.background-image($token, (legacy: $legacy, hover: $hover), 'radial-gradient(circle at 100% #{spacing.space($top)}, transparent #{spacing.space($stop-1)}, $COLOR #{spacing.space($stop-2)})');
+}

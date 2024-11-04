@@ -1,0 +1,11 @@
+////
+/// Schemes Module : decisions
+/// @group schemes
+////
+
+@use 'src/module/color';
+@use 'src/module/selector';
+
+@include selector.theme(dark) {
+  @include color.define(dark);
+}

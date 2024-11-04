@@ -8,7 +8,7 @@ const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots, deployStorybook } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
-const { cmd } = require('./classes/changelog/utils');
+const { generateNewPictogram } = require('./generate/pictogram');
 
 /**
  * Build
@@ -327,7 +327,7 @@ const newPictogramHandler = async (argv) => {
     path: argv.path
   };
 
-  generateNewPictogram(settings.path || './src/core/asset/artwork');
+  generateNewPictogram(settings.path || './src/dsfr/core/asset/artwork');
 };
 
 yargs

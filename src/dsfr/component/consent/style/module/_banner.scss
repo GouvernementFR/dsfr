@@ -1,0 +1,39 @@
+////
+/// Placeholder Module
+/// @group consent
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(consent-banner)} {
+  @include fixed(null, null, 0, 0, 100%);
+  max-height: calc(100% - #{space(32v)});
+  @include padding(4v);
+  overflow: auto;
+  @include set-text-margin(0 0 4v);
+  @include set-title-margin(0 0 4v);
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
+
+  @include respond-from(md) {
+    @include padding(8v);
+    bottom: spacing.space(10v);
+    left: spacing.space(10v);
+    max-width: spacing.space(160v);
+    max-height: calc(100% - #{spacing.space(20v)});
+  }
+
+  &__title {
+    @include title-style(h6);
+    @include margin-bottom(4v);
+  }
+
+  &__buttons {
+    @include margin-top(6v);
+    @include margin-top(8v, md);
+    @include margin-bottom(-4v);
+  }
+}

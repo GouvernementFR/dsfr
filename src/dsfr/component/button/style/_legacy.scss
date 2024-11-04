@@ -1,0 +1,112 @@
+////
+/// Button Legacy
+/// @group button
+////
+
+@use 'src/module/legacy';
+@use 'src/module/animate';
+
+@include legacy.is(ie11) {
+  #{ns(btn)} {
+    @include icon-legacy(null, sm);
+
+    &[href] {
+      text-decoration: none;
+    }
+
+    &#{ns(btn--secondary)},
+    &#{ns(btn--tertiary)},
+    &#{ns(btn--tertiary-no-outline)} {
+      &:disabled:hover {
+        background-color: transparent;
+      }
+    }
+
+    @include class-not-start-with(#{ns(btn--icon-, '')}) {
+      @include has-icon {
+        @include icon-legacy(null, md);
+      }
+    }
+
+    &--sm {
+      @include icon-legacy(null, xs);
+
+      @include class-not-start-with(#{ns(btn--icon-, '')}) {
+        @include has-icon {
+          @include icon-legacy(null, sm);
+        }
+      }
+    }
+
+    &--lg {
+      @include icon-legacy(null, md);
+
+      @include class-not-start-with(#{ns(btn--icon-, '')}) {
+        @include has-icon {
+          @include icon-legacy(null, lg);
+        }
+      }
+    }
+  }
+
+  #{ns(btn--close)} {
+    @include icon-legacy(close-line, sm);
+  }
+
+  #{ns(btn--tooltip)} {
+    @include icon-legacy(question-line, sm);
+  }
+
+  #{ns(btn--fullscreen)} {
+    @include icon-legacy(fullscreen-line, sm);
+  }
+
+  #{ns(btn--display)} {
+    @include icon-legacy(theme-fill, sm);
+  }
+
+  #{ns(btn--briefcase)} {
+    @include icon-legacy(briefcase-fill, sm);
+  }
+
+  #{ns(btn--account)} {
+    @include icon-legacy(account-circle-fill, sm);
+  }
+
+  #{ns(btn--team)} {
+    @include icon-legacy(team-line, sm);
+  }
+
+  #{ns(btn--sort)} {
+    @include icon-legacy(arrow-up-down-line, sm);
+
+    &[aria-sort='ascending'],
+    &[aria-sort='descending'] {
+      @include icon-legacy(arrow-up-line, sm);
+    }
+  }
+
+  #{ns-group(btns)} {
+    @include disable-list-style-legacy(true);
+
+    &--sm {
+      @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+        #{ns(btn)} {
+          @include has-icon {
+            @include icon-legacy(null, sm);
+          }
+        }
+      }
+    }
+
+    &--lg {
+      @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+        #{ns(btn)} {
+          @include has-icon {
+            @include icon-legacy(null, lg);
+          }
+        }
+      }
+    }
+  }
+}

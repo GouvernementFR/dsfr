@@ -1,0 +1,18 @@
+////
+/// Core Legacy : Medias
+/// @group core
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(responsive-vid)} {
+    @include aspect-ratio-legacy();
+
+    @each $ratio in (16x9 4x3 1x1) {
+      &--#{$ratio} {
+        @include aspect-ratio-legacy($ratio, true);
+      }
+    }
+  }
+}

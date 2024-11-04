@@ -1,0 +1,12 @@
+////
+/// Skiplink Scheme
+/// @group skiplink
+////
+
+@use 'src/module/color';
+
+@mixin _skiplink-scheme($legacy: false) {
+  #{ns(skiplinks)} {
+    @include color.background(contrast grey, (legacy:$legacy));
+  }
+}

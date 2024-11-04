@@ -1,0 +1,77 @@
+////
+/// Card Module - download
+/// @group card
+////
+
+@use 'src/module/media-query';
+@use 'src/module/disabled';
+
+#{ns(card--download)} {
+  @include media-query.respond-from(md) {
+    flex-direction: row;
+
+    #{ns(card__header)} {
+      @include width(40%);
+      flex: 0 0 40%;
+      aspect-ratio: auto;
+
+      #{ns(card__img)} {
+        img {
+          object-position: 50% 0;
+        }
+      }
+    }
+
+    #{ns(card__img)} {
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  #{ns(card__header)} {
+    aspect-ratio: #{16/9};
+
+    #{ns(card__img)} {
+      @include absolute(2v, null, null, 2v, calc(100% - 4v), calc(100% - 4v));
+
+      img {
+        @include max-width(100%);
+        @include max-height(100%);
+        object-fit: contain;
+      }
+    }
+  }
+
+  #{ns(card__title)} {
+    a,
+    button {
+      @include icon(download-line, null, after);
+      @include icon-forced-color(linktext, null, after);
+
+      @include disabled.selector((can-be-link: true)) {
+        @include icon-forced-color(graytext, null, after);
+      }
+    }
+  }
+
+  &#{ns(enlarge-link)},
+  &#{ns(enlarge-button)} {
+    @include hover-media-query {
+      &:hover {
+        #{ns(card__header)} {
+          background-color: var(--hover);
+        }
+      }
+
+      &:active {
+        #{ns(card__header)} {
+          background-color: var(--active);
+        }
+      }
+    }
+  }
+}

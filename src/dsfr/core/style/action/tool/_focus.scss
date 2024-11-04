@@ -1,0 +1,123 @@
+////
+/// Core Tool : Action focus
+/// @group core
+////
+
+@use 'src/module/color';
+
+@mixin focusable-selector($elements: $action-elements) {
+  $selectors: ();
+  @each $element, $setting in $elements {
+    $focus: map-get($setting, focus);
+    $isolated: map-get($setting, isolated);
+    $selector: map-get($setting, selector);
+    @if $focus {
+      @if $isolated {
+        $isolated-selectors: nest($selector, '&:focus', map-get($focus, selector));
+        #{$isolated-selectors} {
+          @content;
+        }
+      }
+      @else {
+        $selectors: append($selectors, nest($selector, '&:focus', map-get($focus, selector)), 'comma');
+      }
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
+@mixin focusable-selector-focus($elements: $action-elements) {
+  $selectors: ();
+  @each $element, $setting in $elements {
+    $focus: map-get($setting, focus);
+    $isolated: map-get($setting, isolated);
+    $selector: map-get($setting, selector);
+    @if $focus {
+      @if $isolated {
+        $isolated-selectors: nest($selector, '&:focus', map-get($focus, selector));
+        #{$isolated-selectors} {
+          @content;
+        }
+      }
+      @else {
+        $selectors: append($selectors, nest($selector, '&:focus', map-get($focus, selector)), 'comma');
+      }
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
+@mixin focusable-selector-focus-not-visible($elements: $action-elements) {
+  $selectors: ();
+  @each $element, $setting in $elements {
+    $focus: map-get($setting, focus);
+    $isolated: map-get($setting, isolated);
+    $selector: map-get($setting, selector);
+    @if $focus {
+      @if $isolated {
+        $isolated-selectors: nest($selector, '&:focus:not(:focus-visible)', map-get($focus, selector));
+        #{$isolated-selectors} {
+          @content;
+        }
+      }
+      @else {
+        $selectors: append($selectors, nest($selector, '&:focus:not(:focus-visible)', map-get($focus, selector)), 'comma');
+      }
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
+@mixin focusable-selector-focus-visible($elements: $action-elements) {
+  $selectors: ();
+
+  @each $element, $setting in $elements {
+    $focus: map-get($setting, focus);
+    $isolated: map-get($setting, isolated);
+    $selector: map-get($setting, selector);
+    @if $focus {
+      @if $isolated {
+        $isolated-selectors: nest($selector, '&:focus-visible', map-get($focus, selector));
+        #{$isolated-selectors} {
+          @content;
+        }
+      }
+      @else {
+        $selectors: append($selectors, nest($selector, '&:focus-visible', map-get($focus, selector)), 'comma');
+      }
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
+@mixin focusable($elements: $action-elements) {
+  @include focusable-selector($elements) {
+    outline-offset: 2px;
+    outline-width: 2px;
+    outline-color: color.$focus;
+  }
+
+  @include focusable-selector-focus($elements) {
+    outline-style: solid;
+  }
+
+  @include focusable-selector-focus-not-visible($elements) {
+    outline-style: none;
+  }
+
+  @include focusable-selector-focus-visible($elements) {
+    outline-style: solid;
+  }
+}

@@ -1,0 +1,47 @@
+////
+/// Link Module - group
+/// @group link
+////
+
+@use 'src/module/spacing';
+
+#{ns-group(links)} {
+  --li-bottom: #{space(2v)};
+
+  &--inline {
+    @include disable-list-style;
+    display: inline;
+    @include margin(0 -2v);
+
+    > li {
+      display: inline;
+      line-height: spacing.space(11v);
+    }
+
+    #{ns(link)} {
+      @include margin(0 2v 4v);
+    }
+  }
+
+  &--sm {
+    @include nest-link(sm, null);
+
+    #{ns(link)}:not(#{ns(link--download)}) {
+      vertical-align: top;
+    }
+  }
+
+  &--lg {
+    @include nest-link(lg, null);
+  }
+
+  &__title {
+    @include title-style(h4);
+    @include margin(var(--title-spacing));
+  }
+
+  &--bordered {
+    @include padding(6v 6v 2v);
+    @include padding(8v 8v 2v, md);
+  }
+}

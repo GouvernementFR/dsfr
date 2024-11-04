@@ -1,0 +1,16 @@
+////
+/// Core Legacy
+/// @group core
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(1);
+@include media-query.order;
+
+@import 'index';
+@import 'style/legacy';
+@import 'style/scheme';
+
+@include _core-scheme(true);

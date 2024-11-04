@@ -1,0 +1,21 @@
+////
+/// Connect Standalone
+/// @group connect
+////
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  CONNECT
+\* ˍˍˍˍˍˍˍˍˍ */
+
+@import '../../../core/index';
+@import '../../../core/standalone';
+@import '../index';
+
+@import '../../../../../.config/subsets/connect';
+@import 'style/module';
+
+@import '../style/module/default';
+@import '../style/module/plus';
+@import '../style/scheme/default';
+
+@include _connect-scheme-default(false, true);

@@ -1,0 +1,29 @@
+////
+/// Modal Scheme
+/// @group modal
+////
+
+@use 'src/module/color';
+@use 'src/module/elevation';
+
+@mixin _modal-scheme($legacy: false) {
+  #{ns(modal)} {
+    @include body {
+      @include elevation.elevate(lifted, (legacy: $legacy));
+    }
+
+    &__title {
+      @include color.text(title grey, (legacy:$legacy));
+    }
+
+    &__footer {
+      @include color.background(lifted grey, (legacy:$legacy));
+    }
+
+    &__body#{ns(scroll-divider)} {
+      #{ns(modal)}__footer {
+        @include color.background-image(border default grey, (legacy:$legacy));
+      }
+    }
+  }
+}

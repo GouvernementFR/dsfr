@@ -1,0 +1,64 @@
+////
+/// Share Module
+/// @group share
+////
+
+@use 'src/module/disabled';
+@use 'src/module/preference';
+
+#{ns(share)} {
+  @include display-flex(column);
+  @include set-text-margin(0 0 4v);
+  @include set-title-margin(0 0 4v);
+
+  &__title {
+    @include text-style(md);
+    order: 1;
+  }
+
+  &__text {
+    @include text-style(xs);
+    @include max-width(72v, md);
+    order: 3;
+  }
+
+  #{ns-group(btns)} {
+    @include horizontal-btns-group;
+    @include width(auto);
+    order: 2;
+
+    #{ns(btn)} {
+      justify-content: flex-start;
+
+      @include preference.forced-colors {
+        border: none;
+      }
+    }
+
+    &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+      #{ns(btn)} {
+        @include has-not-icon {
+          @include nest-btn(md, only, null, null, false);
+          @include icon(null, md, before);
+          @include icon-forced-color(buttontext, true, before);
+        }
+
+        @include disabled.selector((can-be-link: true)) {
+          @include has-not-icon {
+            @include icon-forced-color(graytext, null, before);
+          }
+        }
+      }
+
+      a[href]#{ns(btn)} {
+        @include has-not-icon {
+          @include icon-forced-color(linktext, null, before);
+        }
+      }
+    }
+  }
+}
+
+@include build-share-social-icons();
+@include build-share-icon(mail, mail-line);
+@include build-share-icon(copy, links-fill);

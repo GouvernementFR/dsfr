@@ -1,0 +1,45 @@
+////
+/// Toggle Module : Variants
+/// @group toggle
+////
+
+@use 'src/module/spacing';
+
+#{ns(toggle--label-left)} {
+  #{ns(toggle__input)} {
+    order: 1;
+    @include margin(0 0 0 auto);
+
+    + label#{ns-attr(checked-label)} {
+      @include before {
+        @include margin-right(0);
+        @include margin-left(calc(var(--toggle-status-width) - #{spacing.space(2v)}));
+      }
+    }
+  }
+
+  #{ns(toggle__label)} {
+    justify-content: space-between;
+    @include padding-left(0);
+    width: calc(100% - #{space(8v)});
+    flex: 1;
+
+    @include before {
+      flex-shrink: 0;
+      order: 1;
+      @include margin-left(4v);
+      @include margin-right(0);
+      text-align: right;
+      direction: rtl;
+    }
+
+    @include after {
+      left: auto;
+      right: spacing.space(4v);
+    }
+  }
+
+  #{ns(hint-text)} {
+    order: 2;
+  }
+}

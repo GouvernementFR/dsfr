@@ -1,0 +1,31 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'src/module/string';
+@use 'src/module/color';
+@use 'src/module/utilities';
+@use 'src/module/elevation/variable/backgrounds';
+
+@mixin background($layer, $options: ()) {
+  $legacy: map.get($options, legacy);
+  $usage: _usage($options);
+  $background: map.get($options, background);
+
+  @if map.has-key(backgrounds.$values, $usage) {
+    $tokens: map.get(backgrounds.$values, $usage);
+    @if map.has-key($tokens, $layer) {
+      @include utilities.nest($background) {
+        @include color.background(map.get($tokens, $layer), (legacy: $legacy));
+      }
+    }
+  }
+}
+
+@function _usage($options) {
+  @if map.has-key($options, usage) {
+    $usage: map.get($options, usage);
+    @if map.has-key(backgrounds.$values, $usage) {
+      @return $usage;
+    }
+  }
+  @return default;
+}

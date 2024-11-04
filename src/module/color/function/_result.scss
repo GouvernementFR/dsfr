@@ -1,0 +1,19 @@
+@use 'sass:list';
+@use 'src/module/string';
+@use 'constant';
+
+/// Remplace les variables par les couleurs dans la valeur à traiter
+/// @access public
+/// @param {list} $colors - list d'éléments de couleur sous diverses formes comme renvoyées par get-colors.
+/// @param {} $value - définition de la valeur à traiter
+/// @return {String} Retourne la valeur avec les couleurs remplacées
+@function get($colors, $value: constant.$value) {
+  $length: list.length($colors);
+  $result: constant.indexed($value);
+  @for $i from 1 through $length {
+    $color: list.nth($colors, $i);
+    $needle: constant.get($i);
+    $result: string.replace($result, $needle, $color);
+  }
+  @return $result;
+}

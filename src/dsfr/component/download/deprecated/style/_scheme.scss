@@ -1,0 +1,41 @@
+////
+/// Download Module
+/// @group download
+////
+
+@use 'src/module/color';
+
+@mixin _download-scheme($legacy: false) {
+  #{ns(download)} {
+    &--card {
+      @include color.background(default grey, (legacy:$legacy));
+      @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
+
+      #{ns(download__link)} {
+        @include color.text(action-high blue-france, (legacy:$legacy));
+
+        @include after {
+          @include color.text(action-high blue-france, (legacy:$legacy));
+        }
+      }
+    }
+
+    &__link {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
+
+    &__detail {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+  }
+
+  #{ns-group(downloads)} {
+    li::marker {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
+
+    &--bordered {
+      @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
+    }
+  }
+}

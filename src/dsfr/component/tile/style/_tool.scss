@@ -1,0 +1,86 @@
+////
+/// Tag Tool
+/// @group tag
+////
+
+@use 'src/module/color';
+@use 'src/module/spacing';
+
+@mixin build-tile-horizontal() {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+
+  #{ns(tile__header)} {
+    @include margin-right(8v);
+    @include margin-bottom(0);
+  }
+
+  #{ns(tile__pictogram)} {
+    @include size(16v, 16v);
+  }
+
+  #{ns(tile__content)} {
+    align-items: flex-start;
+  }
+
+  &:not(#{ns(tile--no-icon)}) {
+    #{ns(tile__detail)} {
+      @include padding-right(8v);
+      @include margin-bottom(-10v);
+      @include margin-top(5v);
+    }
+
+    #{ns(tile__content)} {
+      @include padding-bottom(10v);
+    }
+
+    &#{ns(tile--sm)} {
+      #{ns(tile__detail)} {
+        @include padding-right(8v);
+        @include margin-bottom(-8v);
+        @include margin-top(3v);
+      }
+
+      #{ns(tile__content)} {
+        @include padding-bottom(8v);
+      }
+    }
+  }
+}
+
+@mixin build-tile-vertical() {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  #{ns(tile__header)} {
+    @include margin-bottom(4v);
+    @include margin-right(0 !important);
+  }
+
+  #{ns(tile__pictogram)} {
+    @include size(20v, 20v);
+  }
+
+  #{ns(tile__content)} {
+    align-items: center;
+  }
+
+  #{ns(tile__detail)} {
+    @include margin-top(3v);
+  }
+
+  &#{ns(enlarge-link)}:not(#{ns(tile--no-icon)}),
+  &#{ns(enlarge-button)}:not(#{ns(tile--no-icon)}) {
+    #{ns(tile__content)} {
+      @include padding-bottom(10v);
+    }
+
+    #{ns(tile__detail)} {
+      @include margin-bottom(0);
+      @include padding-right(0);
+    }
+  }
+}

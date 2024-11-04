@@ -1,0 +1,32 @@
+////
+/// Button Module : default
+/// @group button
+////
+
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+@include build-btn() {
+  @include font-weight(medium);
+  @include icon-forced-color(buttontext);
+}
+
+#{ns(btn)} {
+  @include disabled.selector((can-be-link: true)) {
+    @include icon-forced-color(graytext);
+    @include preference.forced-colors {
+      border-color: graytext;
+      color: graytext;
+    }
+  }
+}
+
+a[href]#{ns(btn)} {
+  @include icon-forced-color(linktext);
+}
+
+button#{ns(btn)} {
+  @include preference.forced-colors {
+    border: 1px solid buttontext;
+  }
+}

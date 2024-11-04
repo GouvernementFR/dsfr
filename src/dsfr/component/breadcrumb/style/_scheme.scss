@@ -1,0 +1,19 @@
+////
+/// Breadcrumb Scheme
+/// @group breadcrumb
+////
+
+@use 'src/module/color';
+@use 'src/module/selector';
+
+@mixin _breadcrumb-scheme($legacy: false) {
+  #{ns(breadcrumb)} {
+    @include color.text(mention grey, (legacy:$legacy));
+
+    &__link {
+      @include selector.current {
+        @include color.text(default grey, (legacy:$legacy));
+      }
+    }
+  }
+}

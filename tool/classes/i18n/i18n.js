@@ -70,7 +70,7 @@ class I18n {
 
   static async merge () {
     const i18n = {};
-    const global = new I18nPackage('.');
+    const global = new I18nPackage('./src/');
     i18n.global = global.data;
 
     const config = await Config.get();

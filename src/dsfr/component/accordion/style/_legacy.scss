@@ -1,0 +1,29 @@
+////
+/// Accordion Legacy
+/// @group accordion
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * Reset liste à puce
+  */
+  #{ns-group(accordions)} {
+    @include disable-list-style-legacy;
+  }
+
+  #{ns(accordion)} {
+    @include enable-list-style-legacy;
+
+    &__btn {
+      @include icon-legacy(arrow-down-s-line, sm);
+
+      &[aria-expanded="true"] {
+        @include after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}

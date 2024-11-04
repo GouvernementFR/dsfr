@@ -1,0 +1,54 @@
+////
+/// Component Legacy
+/// @group component
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(1);
+@include media-query.order;
+
+@import 'range/legacy';
+@import 'accordion/legacy';
+@import 'badge/legacy';
+@import 'logo/legacy';
+@import 'button/legacy';
+@import 'connect/legacy';
+@import 'quote/legacy';
+@import 'breadcrumb/legacy';
+@import 'form/legacy';
+@import 'stepper/legacy';
+@import 'tooltip/legacy';
+@import 'link/legacy';
+@import 'sidemenu/legacy';
+@import 'highlight/legacy';
+@import 'tab/legacy';
+@import 'pagination/legacy';
+@import 'summary/legacy';
+@import 'table/legacy';
+@import 'tag/legacy';
+@import 'alert/legacy';
+@import 'notice/legacy';
+@import 'radio/legacy';
+@import 'card/legacy';
+@import 'checkbox/legacy';
+@import 'segmented/legacy';
+@import 'toggle/legacy';
+@import 'skiplink/legacy';
+@import 'select/legacy';
+@import 'callout/legacy';
+@import 'modal/legacy';
+@import 'navigation/legacy';
+@import 'share/legacy';
+@import 'footer/legacy';
+@import 'tile/legacy';
+@import 'translate/legacy';
+@import 'transcription/legacy';
+@import 'input/legacy';
+@import 'search/legacy';
+@import 'content/legacy';
+@import 'consent/legacy';
+@import 'follow/legacy';
+@import 'password/legacy';
+@import 'header/legacy';

@@ -9,3 +9,5 @@ public/
 
 dsfr-sb/*storybook.log
 dsfr-sb/storybook-static/
+
+.DS_Store

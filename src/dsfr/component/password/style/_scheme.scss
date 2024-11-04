@@ -1,0 +1,32 @@
+////
+/// Password Scheme
+/// @group password
+////
+
+@use 'src/module/color';
+@use 'src/module/selector';
+
+@mixin _password-scheme($legacy: false) {
+  #{selector.ns(password)} {
+    &__btn {
+      @include btn-kind-scheme(4, $legacy);
+    }
+
+    #{selector.ns-attr(capslock)} {
+      @include before {
+        @include color.data-uri-svg(label grey, (legacy: $legacy), $capslock-svg);
+      }
+    }
+
+    & &__checkbox {
+      input[type="checkbox"] {
+        + label {
+          @include color.text(label grey, (legacy: $legacy));
+          @include before {
+            @include color.background-image(border action-high blue-france, (), checkbox-background-image());
+          }
+        }
+      }
+    }
+  }
+}

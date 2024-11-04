@@ -1,0 +1,35 @@
+////
+/// Transcription Legacy
+/// @group transcription
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(transcription)} {
+    position: relative;
+
+    &__btn {
+      @include icon-legacy(align-left, sm, before);
+      @include icon-legacy(arrow-down-s-line, sm, after);
+
+      &[aria-expanded="true"] {
+        @include after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    &__actions-group {
+      @include disable-list-style-legacy(true);
+    }
+
+    #{ns(modal)} {
+      &:not(#{ns(modal)}--opened) {
+        #{ns(modal)}__content {
+          max-height: 9.5rem;
+        }
+      }
+    }
+  }
+}

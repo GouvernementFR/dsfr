@@ -1,0 +1,20 @@
+////
+/// Connect Scheme : default
+/// @group connect
+////
+
+@use 'src/module/color';
+
+@mixin _connect-scheme-group($legacy: false, $standalone: false) {
+  #{ns(connect)} {
+    &-group {
+      #{ns(connect)} + p a {
+        @include color.text(action-high blue-france, (legacy:$legacy));
+      }
+
+      p {
+        @include color.text(mention grey, (legacy:$legacy));
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<% const sample = getSample(include); %>
+
+<%- section('Méta données', 'Données à insérer dans la partie <code>< head ></code> de la page, pour fournir un aperçu de la page aux applications tierces lors du partage.', 0); %>
+
+<%- sample('', './sample/meta-share', {}, true); %>
+
+<%- section('Boutons de partage par défaut', 'Les icones réseaux sociaux disponibles pour ce composant sont définies dans :', 0); %>
+
+<%
+const accordion = {
+    label: 'src/component/share/style/_setting.scss',
+    id: uniqueId('snippet'),
+    content: '<pre class=" language-scss"><code>' + include('../style/_setting.scss') + '</code></pre>'
+};
+%>
+<div class="<%= prefix %>-mb-4v" >
+    <%- include(root + 'src/dsfr/component/accordion/template/ejs/accordion', {accordion: accordion}); %>
+</div>
+<%- section(null, 'Il est aussi possible d\'appliquer une classe utilitaire sur un bouton pour utiliser une icone du dsfr (ex: "fr-icon-rss-line")', 0); %>
+
+<%- sample('', './sample/share-default', {}, true); %>
+
+<%- sample('Boutons de partage version inactive', './sample/share-default', {share:{disabled: true}}, true); %>
+
+<%- deprecation(); %>
+
+<%- sample('Boutons de partage par défaut', '../deprecated/example/sample/share-default', {}, true); %>
+
+<%- sample('Boutons de partage version inactive', '../deprecated/example/sample/share-default', {share:{disabled: true}}, true); %>

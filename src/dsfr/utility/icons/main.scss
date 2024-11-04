@@ -1,0 +1,28 @@
+////
+/// Icons Main
+/// @group icons
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import 'icons-buildings/main';
+@import 'icons-business/main';
+@import 'icons-communication/main';
+@import 'icons-design/main';
+@import 'icons-development/main';
+@import 'icons-device/main';
+@import 'icons-document/main';
+@import 'icons-editor/main';
+@import 'icons-finance/main';
+@import 'icons-health/main';
+@import 'icons-logo/main';
+@import 'icons-map/main';
+@import 'icons-media/main';
+@import 'icons-others/main';
+@import 'icons-system/main';
+@import 'icons-user/main';
+@import 'icons-weather/main';

@@ -1,0 +1,47 @@
+////
+/// Logo Module
+/// @group logo
+////
+
+@use 'sass:math';
+@use 'src/module/color';
+
+#{ns(logo)} {
+  @include set-text-margin(0);
+  @include disable-underline;
+  display: inline-block;
+  @include font-weight(bold);
+  line-height: #{math.div(13, 12.6)}em;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-indent: -0.1em;
+  @include logo-size(md);
+
+  @include before('', block) {
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    $marianne: svg-encode($svg-marianne, true);
+    background-image: url($marianne), linear-gradient(90deg, color.$blue-france 0%, color.$blue-france 50%, color.$red-marianne 50%, color.$red-marianne 100%), linear-gradient(90deg, color.$absolute-black 0%, color.$absolute-black 100%);
+    forced-color-adjust: none;
+  }
+
+  @include after('', block) {
+    background-repeat: no-repeat;
+    $motto: svg-encode($svg-motto, true);
+    background-image: url($motto);
+  }
+
+  &--sm {
+    @include logo-size(sm);
+  }
+
+  &--lg {
+    @include logo-size(lg);
+  }
+}
+
+:root#{ns-attr(mourning)} #{ns(logo)} {
+  @include before {
+    box-shadow: 0 0 0 1px color.$white;
+  }
+}

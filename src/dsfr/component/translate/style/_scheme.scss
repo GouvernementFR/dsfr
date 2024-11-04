@@ -1,0 +1,24 @@
+////
+/// translate Scheme
+/// @group translate
+////
+
+@use 'src/module/color';
+
+@mixin _translate-scheme($legacy: false) {
+  #{ns(translate)} {
+    #{ns(translate)}__btn {
+      &[aria-expanded="true"] {
+        @include color.text(active blue-france, (legacy: $legacy));
+        @include color.background(open blue-france, (legacy: $legacy));
+        @include hover-tint;
+      }
+    }
+
+    &__menu {
+      #{ns(translate)}__language {
+        @include color.no-box-shadow((legacy:$legacy));
+      }
+    }
+  }
+}

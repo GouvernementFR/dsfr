@@ -1,0 +1,104 @@
+////
+/// Pagination Module
+/// @group pagination
+////
+
+@use 'src/module/selector';
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+@include build-pagination();
+
+#{ns(pagination)} {
+  @include disable-underline;
+  @include disable-list-style;
+
+  @include list {
+    @include display-flex(row, center, flex-start, wrap);
+
+    & > *:first-child {
+      &,
+      & * {
+        @include margin-left(0);
+      }
+    }
+
+    & > *:last-child {
+      &,
+      & * {
+        @include margin-right(0);
+      }
+    }
+  }
+
+  &__link {
+    @include min-size(8v);
+    @include margin-x(2v);
+    @include margin-bottom(4v);
+    @include disable-underline;
+    @include relative;
+
+    &:not([href]) {
+      @include selector.current {
+        cursor: default;
+        pointer-events: none;
+      }
+
+      @include disabled.selector((can-be-link: true)) {
+        &:not([aria-current]) {
+          @include preference.forced-colors {
+            color: graytext;
+          }
+        }
+      }
+    }
+
+    &--first {
+      @include nest-pagination(only, arrow-left-s-first-line);
+
+      &#{ns(pagination__link--label)} {
+        @include nest-pagination(left, arrow-left-s-first-line);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include nest-pagination(left, arrow-left-s-first-line, lg);
+      }
+    }
+
+    &--prev {
+      @include nest-pagination(only, arrow-left-s-line);
+
+      &#{ns(pagination__link--label)} {
+        @include nest-pagination(left, arrow-left-s-line);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include nest-pagination(left, arrow-left-s-line, lg);
+      }
+    }
+
+    &--next {
+      @include nest-pagination(only, arrow-right-s-line);
+
+      &#{ns(pagination__link--label)} {
+        @include nest-pagination(right, arrow-right-s-line);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include nest-pagination(right, arrow-right-s-line, lg);
+      }
+    }
+
+    &--last {
+      @include nest-pagination(only, arrow-right-s-last-line);
+
+      &#{ns(pagination__link--label)} {
+        @include nest-pagination(right, arrow-right-s-last-line);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include nest-pagination(right, arrow-right-s-last-line, lg);
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+////
+/// Icon Device Legacy
+/// @group icon-device
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('device'));
+}

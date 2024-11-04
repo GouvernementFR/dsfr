@@ -1,0 +1,186 @@
+////
+/// Toggle Module : toggle
+/// @group toggle
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+#{ns(toggle)} {
+  display: flex;
+  flex-wrap: wrap;
+  @include relative;
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+
+  input[type="checkbox"] {
+    @include size(10v, 6v);
+    @include absolute;
+    opacity: 0;
+
+    &:checked {
+      ~#{ns(toggle__label)} {
+        &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
+          @include before(attr(#{ns-attr(checked-label, null, true)}));
+        }
+
+        @include before {
+          @include preference.forced-colors {
+            border: 2px solid highlight;
+            background-color: transparent;
+            background-image: none;
+            forced-color-adjust: none;
+            color: canvastext;
+          }
+        }
+
+        @include after {
+          transform: translateX(space(4v));
+          @include z-index(higher);
+
+          @include preference.forced-colors {
+            background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M10 15.17l9.2-9.2 1.4 1.42L10 18l-6.36-6.36 1.4-1.42z'/></svg>");
+            border: 2px solid highlight;
+            background-color: highlight;
+          }
+        }
+      }
+    }
+
+    &:focus {
+      ~#{ns(toggle__label)} {
+        @include before {
+          @include preference.forced-colors {
+            outline-color: graytext;
+          }
+        }
+      }
+    }
+
+    @include disabled.selector {
+      ~#{ns(toggle__label)} {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+
+        @include _pseudo(before after) {
+          @include preference.forced-colors {
+            background-image: none;
+            border: 2px solid graytext;
+            box-shadow: none;
+            color: graytext;
+          }
+        }
+      }
+
+      &:checked {
+        ~#{ns(toggle__label)} {
+          @include _pseudo(before after) {
+            @include preference.forced-colors {
+              background-image: none;
+              border: 2px solid graytext;
+              box-shadow: none;
+            }
+          }
+
+          @include after {
+            @include preference.forced-colors {
+              background-color: graytext;
+              background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M10 15.17l9.2-9.2 1.4 1.42L10 18l-6.36-6.36 1.4-1.42z'/></svg>");
+            }
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    --toggle-status-width: auto;
+    display: inline-flex;
+    width: spacing.space(calc(100% - 8v));
+    min-height: spacing.space(6v);
+    @include text-style(md);
+
+    &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
+      @include padding-left(0);
+
+      @include before(attr(#{ns-attr(unchecked-label, null, true)})) {
+        @include margin-right(calc(var(--toggle-status-width) - #{spacing.space(2v)}));
+        @include margin-bottom(4v);
+        word-wrap: normal;
+
+        @include preference.forced-colors {
+          background-image: none;
+          color: canvastext;
+        }
+      }
+
+      +#{ns(hint-text)} {
+        @include margin-top(2v);
+      }
+    }
+
+    @include before('', block) {
+      flex-shrink: 0;
+      height: spacing.space(calc(5v + 1px));
+      @include padding-top(7v);
+      @include text-style(xs);
+      border-radius: spacing.space(3v);
+      @include margin-right(8v);
+      min-width: spacing.space(10v);
+      max-width: spacing.space(10v);
+      background-repeat: no-repeat;
+
+      @include preference.forced-colors {
+        @include height(6v);
+        background-image: none;
+        border: 2px solid buttontext;
+        background-color: transparent;
+        forced-color-adjust: none;
+        @include padding-top(5v);
+      }
+    }
+
+    @include after('') {
+      @include display-flex(null, center, center);
+      @include absolute(0, null, null, 0, 6v, 6v);
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: spacing.space(4v);
+      background-position: center;
+
+      @include preference.forced-colors {
+        box-shadow: none;
+        border: 2px solid buttontext;
+        forced-color-adjust: none;
+        background-color: transparent;
+      }
+    }
+  }
+
+  #{ns(hint-text)} {
+    display: block;
+    @include margin-top(4v);
+    @include margin-bottom(0);
+    @include text-style(xs);
+    flex-basis: 100%;
+  }
+
+  &--border-bottom {
+    @include padding-bottom(4v);
+  }
+
+  &--valid,
+  &--error {
+    @include before('') {
+      @include absolute(0, null, null, -3v, 2px, 100%);
+    }
+  }
+
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(4v);
+    }
+  }
+}

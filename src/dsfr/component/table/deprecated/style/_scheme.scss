@@ -1,0 +1,89 @@
+////
+/// Table Module - deprecated
+/// @group Table - deprecated
+////
+
+@use 'src/module/color';
+
+@mixin _deprecated-table-scheme($legacy: false) {
+  #{ns(table)} {
+    & > table {
+      caption {
+        @include color.text(title grey, (legacy: $legacy));
+      }
+
+      thead,
+      tbody {
+        @include after {
+          @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey), (legacy:$legacy));
+        }
+      }
+
+      thead {
+        @include color.background-image(border plain grey, (legacy: $legacy));
+        @include color.background(alt grey, (legacy: $legacy));
+        @include color.text(title grey, (legacy: $legacy));
+      }
+
+      tbody {
+        @include color.background(default grey, (legacy: $legacy));
+
+        tr:nth-child(even) {
+          @include color.background(alt grey, (legacy: $legacy));
+        }
+      }
+    }
+
+    @include color.accentuate {
+      & > table {
+        @include after {
+          @include color.background-image((border default accent) (border default accent) (border default accent) (border default accent), (legacy: $legacy));
+        }
+
+        thead {
+          @include color.background-image(border plain accent, (legacy: $legacy));
+          @include color.background(contrast accent, (legacy: $legacy));
+        }
+
+        tbody {
+          @include color.background(alt accent, (legacy: $legacy));
+
+          tr:nth-child(even) {
+            @include color.background(contrast accent, (legacy: $legacy));
+          }
+        }
+      }
+
+      /* Style bordered, ajoute des bordures entre chaque ligne */
+      &#{ns(table--bordered)} {
+        & > table {
+          tbody {
+            tr {
+              @include color.background-image(border default accent, (legacy: $legacy));
+
+              &:last-child {
+                background-image: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* Style bordered, ajoute des bordures entre chaque ligne */
+    &--bordered {
+      & > table {
+        tbody {
+          tr {
+            @include color.background-image(border default grey, (legacy: $legacy));
+
+            /* Style bordered, enleve le style even/odd  */
+            &:nth-child(even) {
+              @include color.transparent-background((legacy:$legacy, hover: true));
+            }
+          }
+        }
+      }
+    }
+  }
+}

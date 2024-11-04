@@ -1,0 +1,89 @@
+////
+/// Table module : Shadow - deprecated
+/// @group Table - deprecated
+////
+
+@use 'src/module/selector';
+
+/*
+* Ombres ajoutées en Js si le contenu est plus grand que le conteneur
+*/
+#{ns(table)} {
+  & > table {
+    &#{ns(table__shadow)} {
+      @include before('', block) {
+        @include absolute(var(--table-offset), 0, 0, 0);
+        @include z-index(over);
+        @include _table-scroll-shadow(false, false);
+        opacity: 0.32;
+        pointer-events: none;
+        transition: box-shadow 0.3s;
+      }
+
+      /**
+      * Modifier ombre à gauche
+      **/
+      &--left {
+        @include before {
+          @include _table-scroll-shadow(true, false); // @TODO: à implementer dans la mixin shadow
+        }
+
+        /**
+        * Modifier combinaison ombre à gauche et ombre à droite
+        **/
+        &#{ns(table__shadow--right)} {
+          @include before('', block) {
+            @include _table-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
+          }
+        }
+      }
+
+      /**
+      * Modifier ombre à droite
+      **/
+      &--right {
+        @include before {
+          @include _table-scroll-shadow(false, true);// @TODO: à implementer dans la mixin shadow
+        }
+      }
+    }
+  }
+}
+
+/*
+* Positionnement ombres sur le tableau sans caption
+*/
+#{ns(table--no-caption)} {
+  & > table {
+    &#{ns(table__shadow)} {
+      @include before('', block) {
+        @include absolute(0, 0, 0, 0);
+      }
+    }
+  }
+}
+
+/*
+* Positionnement ombres sur le tableau avec caption en bas
+*/
+#{ns(table--caption-bottom)} {
+  & > table {
+    &#{ns(table__shadow)} {
+      @include before('', block) {
+        @include absolute(0, 0, 0, 0);
+      }
+    }
+  }
+}
+
+@include selector.theme(dark) {
+  #{ns(table)} {
+    & > table {
+      &#{ns(table__shadow)} {
+        @include before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

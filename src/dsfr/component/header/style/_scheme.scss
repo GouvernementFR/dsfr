@@ -1,0 +1,85 @@
+////
+/// header Scheme
+/// @group header
+////
+
+@use 'src/module/color';
+@use 'src/module/elevation';
+@use 'src/module/media-query';
+
+@mixin _header-scheme($legacy: false) {
+  #{ns(header)} {
+    &__brand {
+      @include elevation.elevate(raised-over, (legacy: $legacy));
+    }
+
+    &__service {
+      @include color.text(title grey, (legacy:$legacy));
+
+      @include before {
+        @include color.background(border default grey, (legacy:$legacy));
+      }
+    }
+
+    @include media-query.respond-from(lg) {
+      @include elevation.elevate(raised-over, (legacy: $legacy));
+
+      &__brand {
+        @include elevation.drop((legacy:$legacy));
+      }
+
+      &__service {
+        @include color.no-box-shadow((legacy:$legacy));
+      }
+    }
+
+    &__menu-links {
+      @include after {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      }
+
+      #{ns(btn)} {
+        @include btn-kind-scheme(4, $legacy);
+        @include color.no-box-shadow((legacy: $legacy));
+      }
+    }
+
+    &__tools-links {
+      #{ns(btn)} {
+        @include btn-kind-scheme(4, $legacy);
+      }
+
+      > #{ns(translate)}:first-child:last-child {
+        #{ns(btn)} {
+          @include btn-kind-scheme(3, $legacy);
+        }
+      }
+    }
+
+    &__navbar {
+      #{ns(service)} {
+        @include title {
+          @include color.text(title grey, (legacy:$legacy));
+        }
+      }
+
+      #{ns(btn)} {
+        @include btn-kind-scheme(4, $legacy);
+
+        &--menu {
+          @include btn-kind-scheme(3, $legacy);
+        }
+      }
+    }
+
+    #{ns(header__menu)} {
+      @include respond-from(lg) {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      }
+    }
+
+    #{ns(modal)} {
+      @include color.background(lifted grey, (legacy:$legacy));
+    }
+  }
+}

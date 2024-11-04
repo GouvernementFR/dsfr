@@ -1,0 +1,69 @@
+////
+/// Core Tool : Typography font-face
+/// @group core
+////
+
+@use 'src/module/path';
+
+@mixin font-face($name, $filename, $font-weight: 400, $font-style: normal, $font-display: swap) {
+  @font-face {
+    font-family: #{$name};
+    src:
+      url('#{path.dist()}fonts/#{$filename}.woff2') format('woff2'),
+      url('#{path.dist()}fonts/#{$filename}.woff') format('woff');
+    font-weight: #{$font-weight};
+    font-style: #{$font-style};
+    font-display: #{$font-display};
+  }
+}
+
+@mixin build-font-faces($settings: $font-settings) {
+  @each $type, $type-settings in $settings {
+    $name: map-get($type-settings, name);
+    $display: map-get($type-settings, display);
+    @include font-face-styles($name, $display, map-get($type-settings, styles));
+  }
+}
+
+@mixin font-face-styles($name, $display, $settings) {
+  @each $style, $variation in $settings {
+    $font-weight: map_get($variation, font-weight);
+    $font-style: map_get($variation, font-style);
+    $filename: map_get($variation, file);
+
+    @if $font-style == null {
+      $font-style: normal;
+    }
+    @if $display == null {
+      $display: swap;
+    }
+    @include font-face ($name, $filename, $font-weight, $font-style, $display);
+  }
+}
+
+@function font-family($type: primary, $settings: $font-settings) {
+  $type-settings: map-get($settings, $type);
+  $families: join(map-get($type-settings, name), map-get($type-settings, fallback), 'comma');
+  @return $families;
+}
+
+@mixin font-family($type: primary, $important: false, $settings: $font-settings) {
+  $families: font-family($type, $settings);
+  @if $important {
+    font-family: $families !important;
+  }
+  @else {
+    font-family: $families;
+  }
+}
+
+@mixin text-adjustments {
+  text-rendering: optimizeLegibility;
+  @include font-smoothing;
+  -webkit-text-size-adjust: 100%;
+}
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
