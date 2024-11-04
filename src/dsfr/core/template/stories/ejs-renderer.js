@@ -15,7 +15,7 @@ locals.relativeRoot = '/';
 
 ${includes}
 
-${decorator.replace("<% eval(include(root + 'src/core/index.ejs')); %>", '').replace('<%- include(entry); %>', '').replace('<%', '').replace('%>', '')}
+${decorator.replace("<% eval(include(root + 'src/dsfr/core/index.ejs')); %>", '').replace('<%- include(entry); %>', '').replace('<%', '').replace('%>', '')}
 
 locals.getText = getI18nText;
 
