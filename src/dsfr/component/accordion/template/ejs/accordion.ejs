@@ -16,13 +16,14 @@
 <%
   let accordion = locals.accordion || {}
  const isExpanded = accordion.isExpanded === true;
+  const collapseAttributes = { ...accordion.collapseAttributes ?? {}, id: accordion.id, class: `${prefix}-collapse` };
  %>
 
 <section class="<%= prefix %>-accordion">
   <h3 class="<%= prefix %>-accordion__title">
     <button type="button" class="<%= prefix %>-accordion__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= accordion.id %>" ><%- accordion.label %></button>
   </h3>
-  <div class="<%= prefix %>-collapse" id="<%= accordion.id %>">
+  <div <%- includeAttrs(collapseAttributes); %>>
     <% if (accordion.content !== undefined) { %>
       <%- accordion.content %>
     <% } %>

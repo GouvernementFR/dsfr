@@ -55,7 +55,7 @@ class Queue {
       case ActionRegulation.ENFORCE:
         return true;
       default:
-        return this._collector.isActionEnabled;
+        return this._collector.isActionEnabled === true;
     }
   }
 

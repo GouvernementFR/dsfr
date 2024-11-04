@@ -4,6 +4,7 @@ doc:
 subdir:
   title: Pages
   action: Activation des actions
+  reduce: Réduction des actions
   attribute: Attributs
   component: Composants
   agnostic: sans framework

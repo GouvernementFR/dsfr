@@ -1,9 +1,10 @@
 import api from '../../../../api';
 import { AlertSelector } from './alert-selector';
 import { AlertActionee } from './alert-actionee';
+import { joinSelector } from '../../join-selector';
 
-const integrateAlert = () => {
-  api.internals.register(AlertSelector.ALERT, AlertActionee);
+const integrateAlert = (selector = '') => {
+  api.internals.register(joinSelector(AlertSelector.ALERT, selector), AlertActionee);
 };
 
 export default integrateAlert;

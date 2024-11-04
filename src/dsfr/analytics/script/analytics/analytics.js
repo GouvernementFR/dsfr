@@ -65,6 +65,8 @@ class Analytics {
     this._collector = new Collector(this._config);
     this._collector.reset();
 
+    console.log('ready');
+
     this._isReady = true;
     this._resolve();
 
