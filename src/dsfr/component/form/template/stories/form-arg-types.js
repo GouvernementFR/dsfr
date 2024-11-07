@@ -98,8 +98,7 @@ const formArgTypes = {
     control: 'text',
     description: 'Attribut id du formulaire',
     type: {
-      value: 'string',
-      required: true
+      value: 'string'
     }
   },
   legend: {

@@ -6,6 +6,8 @@
 * badgesGroup.size (string, optional) : définie la taille des badges dans le groupe (default md)
   * sm : Badge taille sm
 
+* badgesGroup.groupMarkup (string, optional) : Type de balise pour le groupe de badges (default ul)
+
 * badgesGroup.classes (array, optionnal) : Classes suplémentaires sur le groupe de badges
 
 * badgesGroup.attributes (object, optionnal) : Attributs suplémentaires sur le groupe de badges
@@ -19,7 +21,9 @@ const badgesGroup = locals.badgesGroup || {};
 let groupClasses = badgesGroup.classes || [];
 let groupAttrs = badgesGroup.attributes || {};
 let badges = badgesGroup.badges || [];
+const groupMarkup = badgesGroup.groupMarkup || 'ul';
 groupClasses.push(prefix + '-badges-group');
+const isList = groupMarkup === 'ul';
 
 switch(badgesGroup.size) {
   case 'sm':
@@ -28,10 +32,14 @@ switch(badgesGroup.size) {
  }
  %>
 
-<ul <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
+<<%= groupMarkup %> <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
 <% for (let i = 0; i < badges.length; i++) { %>
-  <li>
+  <% if (isList) { %>
+    <li>
+  <% } %>
     <%- include('./badge.ejs', { badge:badges[i] }); %>
-  </li>
+  <% if (isList) { %>
+    </li>
+  <% } %>
 <% } %>
-</ul>
+</<%= groupMarkup %>>

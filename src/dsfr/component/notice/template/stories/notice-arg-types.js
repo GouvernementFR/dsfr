@@ -28,14 +28,14 @@ const noticeArgTypes = {
   },
   desc: {
     control: 'text',
-    description: 'Texte de decription de bandeau',
+    description: 'Texte de description du bandeau',
     type: {
       value: 'string'
     }
   },
   hasIcon: {
     control: 'boolean',
-    description: 'La bandeau a une icône',
+    description: 'Le bandeau a une icône',
     table: { category: 'icon' }
   },
   icon: {

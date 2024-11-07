@@ -26,8 +26,7 @@ const cardArgTypes = {
     control: 'text',
     description: 'Attribut \'id\' de la carte',
     type: {
-      value: 'string',
-      required: true
+      value: 'string'
     }
   },
   title: {
@@ -45,8 +44,7 @@ const cardArgTypes = {
     control: 'text',
     description: 'Description de la carte',
     type: {
-      value: 'string',
-      required: true
+      value: 'string'
     },
     table: {
       category: 'content'

@@ -33,7 +33,8 @@ const inputArgTypes = {
     control: 'text',
     description: 'Attribut \'id\' de l\'input',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     },
     table: { category: 'input' }
   },

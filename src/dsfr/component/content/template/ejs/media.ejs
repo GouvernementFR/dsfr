@@ -20,7 +20,9 @@
 
 * content.caption (string, optional): paramètres de l'image
 
-* content.link (string, optional): intitulé du lien sur le caption
+* content.link (string, optional): paramètre du lien sur le caption
+    ** label (string, required) : texte du lien
+    ** href (string, optional) : url du lien
 
 * content.classes (array, optional) : Classes supplémentaires sur l'élément
 
@@ -97,7 +99,8 @@ switch(type) {
         <%= content.caption %>
         <% if (content.link != undefined) {
             let data = {
-                label: content.link
+                label: content.link.label,
+                href: content.link.href
             }
         %>
             <%- include('../../../link/template/ejs/link', {link: data}); %>

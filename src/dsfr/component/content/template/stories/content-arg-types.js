@@ -13,9 +13,22 @@ const contentArgTypes = {
       value: 'string'
     }
   },
-  link: {
+  hasLink: {
+    control: 'boolean',
+    description: 'Ajoute un lien à la suite du texte de description'
+  },
+  linkLabel: {
+    if: { arg: 'hasLink', eq: true },
     control: 'text',
-    description: 'Libellé du lien à la suite du texte de description',
+    description: 'Libellé du lien',
+    type: {
+      value: 'string'
+    }
+  },
+  linkHref: {
+    if: { arg: 'hasLink', eq: true },
+    control: 'text',
+    description: 'URL de destination du lien',
     type: {
       value: 'string'
     }
@@ -60,7 +73,9 @@ const contentArgTypes = {
 const contentArgs = {
   size: 'md',
   caption: 'Description / Source',
-  link: 'Libellé du lien',
+  hasLink: false,
+  linkLabel: 'Libellé du lien',
+  linkHref: '#',
   type: 'img',
   imgRatio: '16x9',
   vidRatio: '16x9',
@@ -82,9 +97,15 @@ const contentArgs = {
 const contentProps = (args) => {
   const content = {
     size: args.size || contentArgs.size,
-    caption: args.caption || contentArgs.caption,
-    link: args.link || contentArgs.link
+    caption: args.caption || contentArgs.caption
   };
+
+  if (args.hasLink) {
+    content.link = {
+      label: args.linkLabel || contentArgs.linkLabel,
+      href: args.linkHref || contentArgs.linkHref
+    };
+  }
 
   switch (args.type) {
     case 'img':

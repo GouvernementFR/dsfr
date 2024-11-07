@@ -38,7 +38,10 @@ const getinputArgTypes = (id) => {
 
 const inputsGroupArgTypes = {
   id: {
-    ...formArgTypes.id
+    ...formArgTypes.id,
+    type: {
+      value: 'string'
+    }
   },
   legend: {
     ...formArgTypes.legend,

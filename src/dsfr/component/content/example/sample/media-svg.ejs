@@ -6,7 +6,10 @@ let data = {
   ...locals.content || {},
   caption: 'Description / Source',
   id: content.id || uniqueId('media'),
-  link: 'Libellé lien',
+  link: {
+    label: 'Libellé lien',
+    href: "#"
+  }
 };
 
 %>

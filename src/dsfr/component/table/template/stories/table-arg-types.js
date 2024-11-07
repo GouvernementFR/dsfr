@@ -153,6 +153,9 @@ const tableArgTypes = {
     type: {
       value: 'string',
       required: true
+    },
+    table: {
+      category: 'caption'
     }
   },
   captionDetail: {
@@ -160,6 +163,9 @@ const tableArgTypes = {
     description: 'Description précise du tableau',
     type: {
       value: 'string'
+    },
+    table: {
+      category: 'caption'
     }
   },
   noCaption: {
@@ -281,7 +287,6 @@ const getComplexTableCaptionDetails = () => `
 const tableArgs = {
   id: 'table',
   caption: 'Titre du tableau (caption)',
-  captionDetail: 'Description précise du tableau',
   noCaption: false,
   captionBottom: false,
   bordered: false,

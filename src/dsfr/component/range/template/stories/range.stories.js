@@ -1,7 +1,10 @@
 import { rangeArgs, rangeArgTypes, rangeProps } from './range-arg-types';
 import { renderRange } from './range';
 
-const render = (args) => renderRange({ range: rangeProps(args) });
+const render = (args) => {
+  if (args.isStep && args.step === undefined) args.step = 10;
+  return renderRange({ range: rangeProps(args) });
+};
 
 export default {
   id: 'range',

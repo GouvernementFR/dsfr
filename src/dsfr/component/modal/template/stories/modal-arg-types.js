@@ -15,7 +15,8 @@ const modalArgTypes = {
     control: 'text',
     description: 'Identifiant unique de la modale',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   title: {

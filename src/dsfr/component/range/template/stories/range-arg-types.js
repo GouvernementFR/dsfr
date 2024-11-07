@@ -170,7 +170,6 @@ const rangeArgs = {
   min: 0,
   max: 100,
   value: 50,
-  step: 10,
   prefix: '',
   suffix: '',
   disabled: false,
@@ -179,6 +178,7 @@ const rangeArgs = {
   value2: 70,
   isStep: false,
   indicators: true,
+  status: 'default',
   errorMessage: 'Valeur sélectionnée impossible'
 };
 

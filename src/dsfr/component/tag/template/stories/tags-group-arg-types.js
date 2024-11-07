@@ -65,6 +65,11 @@ const tagsGroupArgTypes = {
     description: 'Type des tags dans le groupe',
     table: undefined
   },
+  groupMarkup: {
+    control: { type: 'select' },
+    description: 'Type de balise HTML pour la liste du groupe de tags',
+    options: ['div', 'ul']
+  },
   ...getTagArgTypes(1),
   ...getTagArgTypes(2),
   ...getTagArgTypes(3)
@@ -89,6 +94,7 @@ const getTagArgs = (id) => {
 const tagsGroupArgs = {
   size: tagArgs.size,
   type: tagArgs.type,
+  groupMarkup: 'ul',
   ...getTagArgs(1),
   ...getTagArgs(2),
   ...getTagArgs(3)
@@ -122,6 +128,7 @@ const tagsGroupProps = (args) => {
   const tagsGroup = {
     size: args.size,
     type: args.type,
+    groupMarkup: args.groupMarkup || tagsGroupArgs.groupMarkup,
     tags: tags
   };
 

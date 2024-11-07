@@ -4,7 +4,10 @@ const data = {
   vid: {
     ...vidData(null, getText('sample.video.title', 'content'), content.ratio || null)},
     caption: 'Description / Source',
-    link: 'Libellé lien',
+    link: {
+      label: 'Libellé lien',
+      href: "#"
+    },
     id: content.id || uniqueId('media'),
     ...content
 };

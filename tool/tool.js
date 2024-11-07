@@ -156,6 +156,7 @@ const deployHandler = async (argv) => {
     examples: true,
     storybook: true,
     clean: true,
+    minify: true,
     legacy: true,
     locale: argv.locale
   });

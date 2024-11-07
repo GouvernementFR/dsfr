@@ -151,7 +151,8 @@ const toolsArgTypes = {
     control: 'text',
     description: 'Attribut id du collapse du menu de traduction',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     },
     table: { category: 'tools' }
   },
@@ -294,9 +295,9 @@ const headerArgTypes = {
     control: 'text',
     description: 'Attribut id du header',
     type: {
-      value: 'string',
-      required: true
-    }
+      value: 'string'
+    },
+    table: { category: 'Attributes' }
   },
   ...toolsArgTypes,
   ...brandArgTypes,

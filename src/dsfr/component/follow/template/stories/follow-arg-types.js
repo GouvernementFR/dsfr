@@ -39,8 +39,7 @@ const newsletterArgTypes = {
     description: 'Type d\'action d\'accès à la newsletter',
     options: ['button', 'form', 'alert'],
     type: {
-      value: 'string',
-      required: true
+      value: 'string'
     },
     table: {
       category: 'newsletter'

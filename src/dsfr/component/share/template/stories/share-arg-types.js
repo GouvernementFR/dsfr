@@ -60,13 +60,21 @@ const shareArgTypes = {
     type: {
       value: 'string'
     }
+  },
+  buttons: {
+    control: 'object',
+    description: 'Liste des boutons de partage',
+    type: {
+      value: 'array'
+    }
   }
 };
 
 const shareArgs = {
   title: 'Partager la page',
   disabled: false,
-  text: 'Veuillez autoriser le dépôt de cookies pour partager sur Facebook, Twitter et LinkedIn.'
+  text: 'Veuillez autoriser le dépôt de cookies pour partager sur Facebook, Twitter et LinkedIn.',
+  buttons: buttons(uniqueId('share'))
 };
 
 const shareProps = (args) => {

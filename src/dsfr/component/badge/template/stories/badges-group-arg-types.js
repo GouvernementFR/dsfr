@@ -65,7 +65,7 @@ const badgesGroupArgTypes = {
   },
   groupMarkup: {
     control: { type: 'select' },
-    description: 'Type de balise HTML pour la liste du groupe de boutons',
+    description: 'Type de balise HTML pour la liste du groupe de badges',
     options: ['div', 'ul']
   },
   ...getBadgeArgTypes(1),
@@ -90,7 +90,7 @@ const getBadgeArgs = (id) => {
 
 const badgesGroupArgs = {
   size: badgeArgs.size,
-  groupMarkup: 'div',
+  groupMarkup: 'ul',
   ...getBadgeArgs(1),
   ...getBadgeArgs(2),
   ...getBadgeArgs(3)

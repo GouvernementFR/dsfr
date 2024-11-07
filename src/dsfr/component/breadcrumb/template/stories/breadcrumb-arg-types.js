@@ -40,9 +40,10 @@ const getSegmentArgTypes = (id) => {
 const breadcrumbArgTypes = {
   id: {
     control: 'text',
-    description: 'Attribut \'id\' de l\'accordéon',
+    description: 'Attribut \'id\' du collapse du fil d\'arianne',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   buttonLabel: {

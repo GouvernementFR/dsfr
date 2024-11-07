@@ -3,7 +3,8 @@ const logoArgTypes = {
     control: 'text',
     description: 'Titre du logo (nom de l\'entité)',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   size: {

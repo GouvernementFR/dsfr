@@ -14,12 +14,11 @@ const iconArgTypes = {
     control: 'boolean',
     description: 'Retrait de l\'icône de statut',
     table: {
-      category: 'type',
-      subcategory: 'icon'
+      category: 'type'
     }
   },
   icon: {
-    if: { arg: 'hasIcon', eq: true },
+    if: { arg: 'type', neq: 'status' },
     control: 'text',
     description: 'Nom de l\'icône dans le badge',
     table: {

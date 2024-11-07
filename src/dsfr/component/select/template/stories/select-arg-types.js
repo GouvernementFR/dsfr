@@ -104,7 +104,6 @@ const selectArgTypes = {
 const selectArgs = {
   id: uniqueId('storybook-select'),
   label: 'Libellé de la liste déroulante',
-  hint: '',
   placeholder: 'Sélectionnez une option',
   disabled: false,
   groupedOptions: false,

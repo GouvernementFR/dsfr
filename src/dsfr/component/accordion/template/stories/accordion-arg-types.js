@@ -8,7 +8,7 @@ const accordionArgTypes = {
   },
   id: {
     control: 'text',
-    description: 'Attribut \'id\' de l\'accordéon',
+    description: 'Attribut \'id\' du collapse de l\'accordéon',
     type: {
       value: 'string',
       required: true

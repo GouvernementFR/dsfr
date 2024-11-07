@@ -7,6 +7,13 @@ export default {
   id: 'skiplink',
   title: 'DSFR/Component/Skiplink',
   render: render,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Appuyez sur la touche tab pour faire apparaitre les liens d\'évitement.'
+      }
+    }
+  },
   argTypes: skiplinkArgTypes,
   args: skiplinkArgs
 };
