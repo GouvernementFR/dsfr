@@ -1,38 +1,15 @@
-import { languageArgTypes, languageArgs } from './language-arg-types';
-
-const getLanguagesArgTypes = (id) => {
-  const language = {};
-
-  const table = {
-    table: {
-      category: `langue ${id}`
-    }
-  };
-
-  language[`id${id}`] = { ...languageArgTypes.id, ...table };
-
-  language[`name${id}`] = {
-    ...languageArgTypes.name,
-    ...table
-  };
-
-  language[`locale${id}`] = {
-    ...languageArgTypes.locale,
-    ...table
-  };
-
-  language[`href${id}`] = {
-    ...languageArgTypes.href,
-    ...table
-  };
-
-  return language;
-};
-
 const translateArgTypes = {
   id: {
     control: 'text',
     description: 'Attribut \'id\' du sélecteur de langue',
+    type: {
+      value: 'string',
+      required: true
+    }
+  },
+  collapseId: {
+    control: 'text',
+    description: 'Attribut \'id\' du menu à controler',
     type: {
       value: 'string',
       required: true
@@ -44,57 +21,43 @@ const translateArgTypes = {
     type: {
       value: 'boolean'
     }
-  },
-  ...getLanguagesArgTypes(1),
-  ...getLanguagesArgTypes(2),
-  ...getLanguagesArgTypes(3),
-  ...getLanguagesArgTypes(4)
+  }
 };
 
 const getLanguagesArgs = (id, name, locale) => {
-  const language = {};
-
-  language[`id${id}`] = `${languageArgs.id}-${id}`;
-  language[`name${id}`] = name || `${languageArgs.name} ${id}`;
-  language[`locale${id}`] = locale || `${languageArgs.locale} ${id}`;
-  language[`href${id}`] = `/${locale.toLowerCase()}/`;
+  const language = {
+    active: id === 1,
+    id: `language-id-${id}`,
+    name: name,
+    locale: locale,
+    href: `/${locale}/`
+  };
 
   return language;
 };
 
 const translateArgs = {
   id: 'translate-id',
+  collapseId: 'translate-collapse-id',
   noBorder: false,
-  ...getLanguagesArgs(1, 'Français', 'fr'),
-  ...getLanguagesArgs(2, 'English', 'en'),
-  ...getLanguagesArgs(3, 'Español', 'es'),
-  ...getLanguagesArgs(4, 'Deutsch', 'de')
+  languages: [
+    getLanguagesArgs(1, 'Français', 'fr'),
+    getLanguagesArgs(2, 'English', 'en'),
+    getLanguagesArgs(2, 'Español', 'es'),
+    getLanguagesArgs(4, 'Deutsch', 'de')
+  ]
 };
 
 const translateProps = (args) => {
-  const languages = [];
-
-  for (let i = 1; i <= 4; i++) {
-    const language = {
-      id: args[`id${i}`] || languageArgs.id,
-      active: i === 1,
-      name: args[`name${i}`] || languageArgs.name,
-      locale: args[`locale${i}`] || languageArgs.locale,
-      href: args[`href${i}`] || languageArgs.href
-    };
-
-    languages.push(language);
-  }
-
   const translate = {
     id: args.id || undefined,
-    collapseId: 'translate-collapse-id',
+    collapseId: args.collapseId || translateArgs.collapseId,
     button: {
       id: 'button-id',
       title: 'Sélectionner une langue',
       kind: args.noBorder ? 4 : 3
     },
-    languages: languages
+    languages: args.languages || translateArgs.languages
   };
 
   return translate;

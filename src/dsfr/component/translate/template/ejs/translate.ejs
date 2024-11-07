@@ -23,8 +23,10 @@ const collapseId = translate.collapseId || uniqueId('translate');
   <div class="<%= prefix %>-nav__item">
     <%
     const translateBtn = translate.button || {};
-    const activeLanguage = translate.languages.find(lang => lang.active === true);
-    translateBtn.label = activeLanguage.locale.toUpperCase() + `<span class="${prefix}-hidden-lg">&nbsp;- ` + activeLanguage.name + '</span>';
+    if (translate.languages.length) {
+      const activeLanguage = translate.languages.find(lang => lang.active === true);
+      translateBtn.label = activeLanguage.locale.toUpperCase() + `<span class="${prefix}-hidden-lg">&nbsp;- ` + activeLanguage.name + '</span>';
+    }
     const minBtnClasses = [`${prefix}-translate__btn`];
     const minBtnAttrs = {
       'aria-controls': collapseId,
@@ -37,8 +39,10 @@ const collapseId = translate.collapseId || uniqueId('translate');
 
     <%- include('../../../button/template/ejs/button', {button:translateBtn}); %>
 
-    <div class="<%= prefix %>-collapse <%= prefix %>-translate__menu <%= prefix %>-menu" id="<%= translate.collapseId %>">
-        <%- include('languages.ejs', {languages: translate.languages}) %>
-    </div>
+    <% if (translate.languages.length) { %>
+      <div class="<%= prefix %>-collapse <%= prefix %>-translate__menu <%= prefix %>-menu" id="<%= translate.collapseId %>">
+          <%- include('languages.ejs', {languages: translate.languages}) %>
+      </div>
+    <% } %>
   </div>
 </nav>

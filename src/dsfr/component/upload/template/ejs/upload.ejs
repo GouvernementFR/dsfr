@@ -37,7 +37,7 @@ const attributes = upload.attributes || [];
 const labelAttrs = upload.labelAttrs || {};
 const labelClass = upload.labelClasses || [];
 const builder = new MessageBuilder(upload.id);
-groupAttributes.id = upload.groupId || uniqueId('upload-group');
+groupAttributes.id = upload.groupId || undefined;
 
 if (upload.valid) {
   groupClasses.push(`${prefix}-upload-group--valid`);

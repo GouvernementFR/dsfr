@@ -7,14 +7,8 @@ const transcriptionArgTypes = {
     control: 'text',
     description: 'Identifiant unique de la transcription',
     type: {
-      value: 'string'
-    }
-  },
-  modalId: {
-    control: 'text',
-    description: 'Identifiant unique de la modale',
-    type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   fullscreen: {
@@ -42,7 +36,6 @@ const transcriptionArgTypes = {
 
 const transcriptionArgs = {
   id: 'transcription',
-  modalId: 'modal-transcription',
   fullscreen: 'Agrandir',
   fullscreenArialLabel: 'Agrandir la transcription',
   isExpanded: false
@@ -51,7 +44,6 @@ const transcriptionArgs = {
 const transcriptionProps = (args) => {
   const transcription = {
     id: args.id || transcriptionArgs.id,
-    modalId: args.modalId || transcriptionArgs.modalId,
     isExpanded: args.isExpanded || transcriptionArgs.isExpanded,
     fullscreen: args.fullscreen || transcriptionArgs.fullscreen,
     fullscreenArialLabel: args.fullscreenArialLabel || transcriptionArgs.fullscreenArialLabel,

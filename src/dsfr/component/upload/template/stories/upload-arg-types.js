@@ -30,14 +30,16 @@ const uploadArgTypes = {
     control: 'text',
     description: 'Attribut id de l\'ajout de fichier',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   label: {
     control: 'text',
     description: 'Libellé de l\'ajout de fichier',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   name: {
@@ -51,7 +53,8 @@ const uploadArgTypes = {
     control: 'text',
     description: 'Texte additionnel de l\'ajout de fichier',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   disabled: {
