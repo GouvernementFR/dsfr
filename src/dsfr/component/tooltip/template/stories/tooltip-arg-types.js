@@ -2,18 +2,49 @@ const tooltipArgTypes = {
   id: {
     control: 'text',
     description: 'Identifiant de l\'infobulle',
+    type: {
+      value: 'string',
+      required: true
+    },
     table: { category: 'tooltip' }
   },
   content: {
     control: 'text',
     description: 'Contenu texte de l\'infobulle',
     table: { category: 'tooltip' }
+  },
+  type: {
+    control: {
+      type: 'select',
+      labels: {
+        default: 'Information contextuelle',
+        infobulle: 'Infobulle'
+      }
+    },
+    description: 'Types d\'infobulle<br>Valeurs :<br>- Information contextuelle : Déclenchement au survol<br>- Infobulle : Déclenchement au clic',
+    options: ['default', 'infobulle'],
+    type: {
+      value: 'string'
+    },
+    table: { category: 'variant' }
   }
 };
 
 const tooltipArgs = {
-  id: 'storybook-tooltip',
-  content: 'lorem ipsum dolor sit amet consectetur adipiscing elit'
+  id: 'tooltip',
+  content: 'lorem ipsum dolor sit amet consectetur adipiscing elit',
+  type: 'default'
+};
+
+const tooltipButtonProps = (args) => {
+  const buttonClasses = [];
+  if (args.type === 'infobulle') {
+    buttonClasses.push('fr-btn--tooltip');
+  }
+  return {
+    label: args.type === 'infobulle' ? 'infobulle' : 'Information contextuelle',
+    classes: buttonClasses
+  };
 };
 
 const tooltipProps = (args) => {
@@ -25,4 +56,4 @@ const tooltipProps = (args) => {
   return tooltip;
 };
 
-export { tooltipArgTypes, tooltipArgs, tooltipProps };
+export { tooltipArgTypes, tooltipArgs, tooltipProps, tooltipButtonProps };
