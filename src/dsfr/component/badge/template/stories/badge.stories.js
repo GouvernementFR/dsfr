@@ -95,3 +95,13 @@ export const AccentStory = {
     }
   ])
 };
+
+export const EllipsisStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      ellipsis: true,
+      label: 'Label très long qui sera tronqué lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus'
+    }
+  ])
+};

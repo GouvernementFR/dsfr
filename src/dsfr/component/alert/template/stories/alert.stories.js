@@ -23,46 +23,50 @@ export const SizeSmStory = {
     {
       size: 'sm',
       type: 'success',
-      title: undefined,
+      hasTitle: false,
       text: 'Succès : Description détaillée du message...'
     },
     {
       size: 'sm',
       type: 'error',
-      title: undefined,
+      hasTitle: false,
       text: 'Erreur : Description détaillée du message...'
     },
     {
       size: 'sm',
       type: 'info',
-      title: undefined,
+      hasTitle: false,
       text: 'Information : Description détaillée du message...'
     },
     {
       size: 'sm',
       type: 'warning',
-      title: undefined,
+      hasTitle: false,
       text: 'Attention : Description détaillée du message...'
     }
   ])
 };
 
-export const MdStory = {
+export const SizeMdStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
+      hasTitle: true,
       type: 'success',
       title: 'Succès : Lorem ipsum dolor sit amet'
     },
     {
+      hasTitle: true,
       type: 'error',
       title: 'Erreur : Lorem ipsum dolor sit amet'
     },
     {
+      hasTitle: true,
       type: 'info',
       title: 'Information : Lorem ipsum dolor sit amet'
     },
     {
+      hasTitle: true,
       type: 'warning',
       title: 'Attention : Lorem ipsum dolor sit amet'
     }

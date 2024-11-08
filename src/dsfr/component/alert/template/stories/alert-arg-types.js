@@ -25,9 +25,14 @@ const buttonCloseArgTypes = {
 };
 
 const alertArgTypes = {
+  hasTitle: {
+    control: 'boolean',
+    description: 'L\'alerte a un titre (obligatoire en taille md)'
+  },
   title: {
+    if: { arg: 'hasTitle', eq: true },
     control: 'text',
-    description: 'Titre de l\'alerte (obligatoire en md)',
+    description: 'Titre de l\'alerte',
     type: {
       value: 'string'
     }
@@ -60,7 +65,10 @@ const alertArgTypes = {
   },
   id: {
     control: 'text',
-    description: 'Attribut \'id\' de l\'alerte'
+    description: 'Attribut \'id\' de l\'alerte',
+    table: {
+      category: 'attributes'
+    }
   },
   dismissible: {
     control: 'boolean',
@@ -74,6 +82,7 @@ const alertArgTypes = {
 };
 
 const alertArgs = {
+  hasTitle: true,
   title: 'Lorem ipsum dolor',
   text: 'sit amet, consectetur adipiscing elit. Nullam id purus nec purus ultricies lacinia. Nullam nec purus nec purus ultricies lacinia.',
   type: 'default',
@@ -87,13 +96,16 @@ const alertArgs = {
 
 const alertProps = (args) => {
   const alert = {
-    title: args.title || alertArgs.title,
     text: args.text || alertArgs.text,
     size: args.size || alertArgs.size,
     icon: args.icon || alertArgs.icon,
     dismissible: args.dismissible || alertArgs.dismissible,
     id: args.id || undefined
   };
+
+  if (args.hasTitle) {
+    alert.title = args.title || alertArgs.title;
+  }
 
   if (args.type !== 'default') {
     alert.type = args.type;

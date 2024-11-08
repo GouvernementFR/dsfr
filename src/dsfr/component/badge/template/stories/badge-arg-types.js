@@ -79,34 +79,6 @@ const accentArgTypes = {
   }
 };
 
-/*
-const tooltipArgTypes = {
-  hasTooltip: {
-    control: 'boolean',
-    description: 'Le badge a une infobulle',
-    table: { category: 'tooltip' }
-  },
-  tooltipId: {
-    if: {
-      arg: 'hasTooltip',
-      eq: true
-    },
-    control: 'text',
-    description: 'Identifiant de l\'infobulle',
-    table: { category: 'tooltip' }
-  },
-  tooltipContent: {
-    if: {
-      arg: 'hasTooltip',
-      eq: true
-    },
-    control: 'text',
-    description: 'Contenu texte de l\'infobulle',
-    table: { category: 'tooltip' }
-  }
-};
- */
-
 const badgeArgTypes = {
   label: {
     control: 'text',
@@ -136,10 +108,6 @@ const badgeArgTypes = {
     description: 'Taille du badge',
     options: ['sm', 'md']
   },
-  id: {
-    control: 'text',
-    description: 'Attribut \'id\' du badge'
-  },
   ellipsis: {
     control: 'boolean',
     description: 'Le badge a une ellipse quand le libellé est trop long'
@@ -147,14 +115,7 @@ const badgeArgTypes = {
   ...accentArgTypes,
   ...statusArgTypes,
   ...iconArgTypes
-  // ...tooltipArgTypes
 };
-
-// const tooltipArgs = {
-//   hasTooltip: false,
-//   tooltipId: 'tooltip-id',
-//   tooltipContent: 'Contenu de l\'infobulle'
-// };
 
 const badgeArgs = {
   label: 'libellé badge',
@@ -162,20 +123,17 @@ const badgeArgs = {
   accent: 'green-tilleul-verveine',
   status: 'success',
   size: 'md',
-  id: '',
   hasIcon: false,
   hasNoIcon: false,
   icon: 'checkbox-line',
   ellipsis: false
-  // ...tooltipArgs
 };
 
 const badgeProps = (args) => {
   const badge = {
     label: args.label || badgeArgs.label,
     size: args.size || badgeArgs.size,
-    ellipsis: args.ellipsis || badgeArgs.ellipsis,
-    id: args.id || undefined
+    ellipsis: args.ellipsis || badgeArgs.ellipsis
   };
 
   switch (args.type) {
@@ -194,13 +152,6 @@ const badgeProps = (args) => {
   if (args.hasNoIcon) {
     badge.icon = false;
   }
-
-  // if (args.hasTooltip) {
-  //   badge.tooltip = {
-  //     id: args.tooltipId,
-  //     content: args.tooltipContent
-  //   };
-  // }
 
   return badge;
 };

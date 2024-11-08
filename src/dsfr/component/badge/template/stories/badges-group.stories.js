@@ -17,7 +17,7 @@ export const BadgesGroupStory = {
   args: {}
 };
 
-export const MdStory = {
+export const SizeMdStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
