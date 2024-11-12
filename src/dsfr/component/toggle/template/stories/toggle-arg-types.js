@@ -1,3 +1,5 @@
+import { uniqueId } from '../../../../core/template/stories/unique-id';
+
 const messageArgTypes = {
   status: {
     control: {
@@ -39,29 +41,34 @@ const toggleArgTypes = {
     control: 'text',
     description: 'Attribut id de l\'input',
     type: {
-      value: 'string'
-    }
-  },
-  groupId: {
-    control: 'text',
-    description: 'Attribut id du composant',
-    type: {
-      value: 'string'
-    }
+      value: 'string',
+      required: true
+    },
+    table: { category: 'attributes' }
   },
   label: {
     control: 'text',
-    description: 'Libellé du curseur',
+    description: 'Libellé de l\'interrupteur',
     type: {
       value: 'string'
     }
   },
   hint: {
     control: 'text',
-    description: 'Texte additionnel du curseur',
+    description: 'Texte additionnel de l\'interrupteur',
     type: {
       value: 'string'
     }
+  },
+  hintId: {
+    if: { arg: 'hint', neq: undefined },
+    control: 'text',
+    description: 'ID du texte additionnel de l\'interrupteur',
+    type: {
+      value: 'string',
+      required: true
+    },
+    table: { category: 'attributes' }
   },
   disabled: {
     control: 'boolean',
@@ -105,10 +112,7 @@ const toggleArgTypes = {
 };
 
 const toggleArgs = {
-  id: 'storybook-toggle-input',
-  groupId: 'storybook-toggle-group',
   label: 'Libellé de l\'interrupteur',
-  hint: 'Texte de description additionnel',
   disabled: false,
   checked: false,
   border: false,
@@ -116,13 +120,15 @@ const toggleArgs = {
   state: false,
   status: 'default',
   errorMessage: 'Texte d’erreur',
-  validMessage: 'Texte de succès'
+  validMessage: 'Texte de succès',
+  id: uniqueId('storybook-toggle-input'),
+  hintId: uniqueId('storybook-toggle-hint')
 };
 
 const toggleProps = (args) => {
   const toggle = {
     id: args.id || toggleArgs.id,
-    groupId: args.groupId || toggleArgs.groupId,
+    groupId: args.groupId || undefined,
     label: args.label || toggleArgs.label,
     hint: args.hint !== '' ? args.hint || toggleArgs.hint : undefined,
     disabled: args.disabled || toggleArgs.disabled,

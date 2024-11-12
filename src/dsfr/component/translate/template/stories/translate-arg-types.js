@@ -5,7 +5,8 @@ const translateArgTypes = {
     type: {
       value: 'string',
       required: true
-    }
+    },
+    table: { category: 'attributes' }
   },
   collapseId: {
     control: 'text',
@@ -13,7 +14,8 @@ const translateArgTypes = {
     type: {
       value: 'string',
       required: true
-    }
+    },
+    table: { category: 'attributes' }
   },
   noBorder: {
     control: 'boolean',
@@ -37,15 +39,15 @@ const getLanguagesArgs = (id, name, locale) => {
 };
 
 const translateArgs = {
-  id: 'translate-id',
-  collapseId: 'translate-collapse-id',
   noBorder: false,
   languages: [
     getLanguagesArgs(1, 'Français', 'fr'),
     getLanguagesArgs(2, 'English', 'en'),
     getLanguagesArgs(2, 'Español', 'es'),
     getLanguagesArgs(4, 'Deutsch', 'de')
-  ]
+  ],
+  id: 'translate-id',
+  collapseId: 'translate-collapse-id'
 };
 
 const translateProps = (args) => {
