@@ -9,7 +9,8 @@ const transcriptionArgTypes = {
     type: {
       value: 'string',
       required: true
-    }
+    },
+    table: { category: 'attributes' }
   },
   fullscreen: {
     control: 'text',
@@ -35,10 +36,10 @@ const transcriptionArgTypes = {
 };
 
 const transcriptionArgs = {
-  id: 'transcription',
   fullscreen: 'Agrandir',
   fullscreenArialLabel: 'Agrandir la transcription',
-  isExpanded: false
+  isExpanded: false,
+  id: 'transcription-id'
 };
 
 const transcriptionProps = (args) => {

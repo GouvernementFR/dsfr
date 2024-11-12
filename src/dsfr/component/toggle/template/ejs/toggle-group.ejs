@@ -8,14 +8,23 @@
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
-<% let toggle = locals.toggle || {}; %>
-<% const id = toggle.id || uniqueId('toggle'); %>
+<%
+  let toggle = locals.toggle || {};
+  const toggles = toggle.toggles || [];
+  if (!toggles.length) {
+    const id = uniqueId('toggle');
+    for (let i = 0; i < 5; i++) {
+      toggles.push({ ...toggle, id: id + i });
+    }
+  }
+%>
+
 <ul class="<%= prefix %>-toggle__list">
   <%
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < toggles.length; i++) {
   %>
     <li>
-        <%- include('./toggle.ejs', {toggle: {...toggle, id: id + i}} ); %>
+        <%- include('./toggle.ejs', {toggle: toggles[i]} ); %>
     </li>
   <% } %>
 </ul>

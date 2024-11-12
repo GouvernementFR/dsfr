@@ -3,7 +3,7 @@
 
 * toggle.id (string, required): id de l'input
 
-* toggle.groupId (string, required): id du groupe
+* toggle.groupId (string, optional): id du groupe
 
 * toggle.label (string, required): libellé du toggle
 
@@ -31,11 +31,24 @@
 
 <%
 let toggle = locals.toggle || {};
+const id = toggle.id || uniqueId('toggle');
 let classes = toggle.classes || [];
+
 let inputAttr = toggle.inputAttr || {};
+inputAttr.id = id;
+
+const groupAttr = toggle.groupAttr || {};
+groupAttr.id = toggle.groupId ? toggle.groupId + inputAttr.id  : undefined;
+
 const describedby = [];
 
-if (toggle.hint) describedby.push(toggle.groupId ? toggle.groupId + toggle.id + "-hint-text" : toggle.id + "-hint-text");
+const hintAttr = toggle.hintAttr || {};
+
+if (toggle.hint) {
+  const hintId = toggle.hintId || uniqueId('toggle-hint');
+  hintAttr.id = hintId;
+  describedby.push(hintId);
+}
 
 classes.push(prefix + '-toggle');
 
@@ -68,9 +81,11 @@ if (builder.isIncluded) describedby.push(...builder.ids);
 if (describedby.length > 0) inputAttr['aria-describedby'] = describedby.join(' ');
 %>
 
-<div <%- includeClasses(classes)%>>
-  <input type="checkbox" class="<%= prefix %>-toggle__input" <%- includeAttrs(inputAttr)%> id="<% if(toggle.groupId){ %><%= toggle.groupId %><%= toggle.id %><% } else {%><%= toggle.id %><% } %>">
-  <label class="<%= prefix %>-toggle__label" for="<% if(toggle.groupId){ %><%= toggle.groupId %><%= toggle.id %><% } else {%><%= toggle.id %><% } %>" <% if(toggle.state){ %> data-<%= prefix %>-checked-label="Activé" data-<%= prefix %>-unchecked-label="Désactivé" <% } %>><%- toggle.label %></label>
-  <% if(toggle.hint){ %><p class="<%= prefix %>-hint-text" id="<%= toggle.groupId %><%= toggle.id %>-hint-text"><%- toggle.hint %></p><% } %>
+<div <%- includeClasses(classes)%> <%- includeAttrs(groupAttr)%>>
+  <input type="checkbox" class="<%= prefix %>-toggle__input" <%- includeAttrs(inputAttr)%>>
+  <label class="<%= prefix %>-toggle__label" for="<%= toggle.id %>" <% if(toggle.state){ %> data-<%= prefix %>-checked-label="Activé" data-<%= prefix %>-unchecked-label="Désactivé" <% } %>><%- toggle.label %></label>
+  <% if (toggle.hint){ %>
+    <p class="<%= prefix %>-hint-text" <%- includeAttrs(hintAttr)%>><%- toggle.hint %></p>
+  <% } %>
   <%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
 </div>

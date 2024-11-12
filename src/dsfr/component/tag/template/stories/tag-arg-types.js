@@ -79,10 +79,6 @@ const tagArgTypes = {
     description: 'Taille du tag',
     options: ['sm', 'md']
   },
-  id: {
-    control: 'text',
-    description: 'Attribut \'id\' du tag'
-  },
   blank: {
     if: { arg: 'type', eq: 'clickable' },
     control: 'boolean',
@@ -125,7 +121,6 @@ const tagArgs = {
   accent: 'défaut',
   size: 'md',
   href: '#',
-  id: '',
   hasIcon: false,
   icon: 'arrow-right-line',
   pressed: false,

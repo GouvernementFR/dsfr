@@ -1,6 +1,8 @@
 <%#
 # paramètres tag
 
+* tag.id (string, optional) : id du tag
+
 * tag.label (string, required) : contenu texte
 
 * tag.href (string, required) : adresse url du lien
@@ -39,7 +41,7 @@
 let tag = locals.tag || {};
 let tagClasses = tag.classes || [];
 let tagAttrs = tag.attributes || {};
-tagAttrs.id = tag.id || uniqueId('tag');
+tagAttrs.id = tag.id || undefined;
 tagClasses.push(prefix + '-tag');
 
 if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
