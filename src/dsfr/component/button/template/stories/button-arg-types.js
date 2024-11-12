@@ -104,11 +104,17 @@ const buttonArgTypes = {
   },
   id: {
     control: 'text',
-    description: 'Attribut \'id\' du bouton'
+    description: 'Attribut \'id\' du bouton',
+    table: {
+      category: 'attributes'
+    }
   },
   title: {
     control: 'text',
-    description: 'Attribut \'title\' du bouton'
+    description: 'Attribut \'title\' du bouton',
+    table: {
+      category: 'attributes'
+    }
   },
   disabled: {
     control: 'boolean',
@@ -123,8 +129,6 @@ const buttonArgs = {
   kind: 1,
   size: 'md',
   disabled: false,
-  id: '',
-  title: '',
   hasIcon: false,
   icon: 'checkbox-line',
   iconPlace: 'left',

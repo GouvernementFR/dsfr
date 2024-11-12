@@ -44,6 +44,9 @@ const breadcrumbArgTypes = {
     type: {
       value: 'string',
       required: true
+    },
+    table: {
+      category: 'attributes'
     }
   },
   buttonLabel: {

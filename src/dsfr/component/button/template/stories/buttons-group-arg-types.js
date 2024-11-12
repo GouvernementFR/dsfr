@@ -1,63 +1,13 @@
 import { buttonArgTypes, buttonArgs } from './button-arg-types';
 
-const getButtonArgTypes = (id) => {
-  const button = {};
-
-  const table = {
-    table: {
-      category: `button${id}`
-    }
-  };
-
-  button[`label${id}`] = {
-    ...buttonArgTypes.label,
-    ...table
-  };
-
-  button[`kind${id}`] = {
-    ...buttonArgTypes.kind,
-    options: id === 1 ? [1, 2, 3, 4] : [2, 3, 4],
-    ...table
-  };
-
-  button[`id${id}`] = { ...buttonArgTypes.id, ...table };
-  button[`title${id}`] = { ...buttonArgTypes.title, ...table };
-  button[`disabled${id}`] = { ...buttonArgTypes.disabled, ...table };
-  button[`icon${id}`] = {
-    if: { arg: 'hasIcon', eq: true },
-    ...buttonArgTypes.icon,
-    ...table
-  };
-
-  if (id > 2) {
-    button[`hasButton${id}`] = {
-      control: 'boolean',
-      table: {
-        category: `button${id}`
-      }
-    };
-
-    if (id > 3) {
-      button[`hasButton${id}`].if = { arg: `hasButton${id - 1}` };
-    }
-
-    button[`label${id}`].if = { arg: `hasButton${id}` };
-    button[`kind${id}`].if = { arg: `hasButton${id}` };
-    button[`id${id}`].if = { arg: `hasButton${id}` };
-    button[`title${id}`].if = { arg: `hasButton${id}` };
-    button[`disabled${id}`].if = { arg: `hasButton${id}` };
-    button[`icon${id}`].if = { arg: `hasButton${id}` };
-  }
-
-  return button;
-};
-
 const buttonsGroupArgTypes = {
   size: {
-    ...buttonArgTypes.size
+    ...buttonArgTypes.size,
+    description: 'Taille des boutons'
   },
   hasIcon: {
     ...buttonArgTypes.hasIcon,
+    description: 'Les boutons ont une icône',
     table: undefined
   },
   iconPlace: {
@@ -97,29 +47,7 @@ const buttonsGroupArgTypes = {
     if: { arg: 'align', eq: 'right' },
     description: 'Inverse l\'ordre des boutons en ligne lorsqu\'ils sont spécifiquement alignés à droite',
     control: 'boolean'
-  },
-  ...getButtonArgTypes(1),
-  ...getButtonArgTypes(2),
-  ...getButtonArgTypes(3),
-  ...getButtonArgTypes(4),
-  ...getButtonArgTypes(5)
-};
-
-const getButtonArgs = (id) => {
-  const button = {};
-
-  button[`id${id}`] = buttonArgs.id;
-  button[`label${id}`] = `${buttonArgs.label} ${id}`;
-  button[`kind${id}`] = id === 1 ? 1 : 2;
-  button[`title${id}`] = buttonArgs.title;
-  button[`disabled${id}`] = buttonArgs.disabled;
-  button[`icon${id}`] = buttonArgs.icon;
-
-  if (id > 2) {
-    button[`hasButton${id}`] = false;
   }
-
-  return button;
 };
 
 const buttonsGroupArgs = {
@@ -131,39 +59,40 @@ const buttonsGroupArgs = {
   equisized: false,
   align: '',
   reverse: false,
-  ...getButtonArgs(1),
-  ...getButtonArgs(2),
-  ...getButtonArgs(3),
-  ...getButtonArgs(4),
-  ...getButtonArgs(5)
+  buttons: [
+    {
+      label: 'libellé du bouton 1',
+      kind: 1,
+      icon: 'checkbox-circle-line',
+      disabled: false,
+      id: '',
+      title: ''
+    },
+    {
+      label: 'libellé du bouton 2',
+      kind: 2,
+      icon: 'checkbox-circle-line',
+      disabled: false,
+      id: '',
+      title: ''
+    },
+    {
+      label: 'libellé du bouton 3',
+      kind: 2,
+      icon: 'checkbox-circle-line',
+      disabled: false,
+      id: '',
+      title: ''
+    }
+  ]
 };
 
 const buttonsGroupProps = (args) => {
-  const buttons = [];
-
-  for (let i = 1; i <= 5; i++) {
-    if (i < 3 || args[`hasButton${i}`]) {
-      const button = {
-        label: args[`label${i}`] || buttonArgs.label,
-        kind: args[`kind${i}`] || (i === 1 ? 1 : 2),
-        id: args[`id${i}`] || undefined,
-        title: args[`title${i}`] || undefined,
-        disabled: args[`disabled${i}`]
-      };
-
-      if (args.hasIcon) {
-        button.icon = args[`icon${i}`];
-      }
-
-      buttons.push(button);
-    }
-  }
-
   const buttonsGroup = {
     size: args.size,
     id: args.id || undefined,
     title: args.title || undefined,
-    buttons: buttons,
+    buttons: args.buttons,
     groupMarkup: args.groupMarkup || buttonsGroupArgs.groupMarkup,
     inline: args.inline,
     align: args.align,
@@ -173,6 +102,13 @@ const buttonsGroupProps = (args) => {
 
   if (args.hasIcon) {
     buttonsGroup.iconPlace = args.iconPlace;
+    for (let i = 0; i < buttonsGroup.buttons.length; i++) {
+      buttonsGroup.buttons[i].icon = buttonsGroup.buttons[i].icon || buttonsGroupArgs.buttons[i].icon || 'checkbox-circle-line';
+    }
+  } else {
+    for (let i = 0; i < buttonsGroup.buttons.length; i++) {
+      buttonsGroup.buttons[i].icon = undefined;
+    }
   }
 
   return buttonsGroup;

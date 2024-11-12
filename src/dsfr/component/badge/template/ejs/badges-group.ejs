@@ -18,9 +18,9 @@
 
 <%
 const badgesGroup = locals.badgesGroup || {};
-let groupClasses = badgesGroup.classes || [];
-let groupAttrs = badgesGroup.attributes || {};
-let badges = badgesGroup.badges || [];
+const groupClasses = badgesGroup.classes || [];
+const groupAttrs = badgesGroup.attributes || {};
+const badges = badgesGroup.badges || [];
 const groupMarkup = badgesGroup.groupMarkup || 'ul';
 groupClasses.push(prefix + '-badges-group');
 const isList = groupMarkup === 'ul';

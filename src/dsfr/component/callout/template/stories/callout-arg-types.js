@@ -26,9 +26,17 @@ const accentArgTypes = {
 };
 
 const calloutArgTypes = {
+  hasTitle: {
+    control: 'boolean',
+    description: 'Ajoute un titre dans la mise en avant',
+    type: {
+      value: 'boolean'
+    }
+  },
   title: {
+    if: { arg: 'hasTitle', eq: true },
     control: 'text',
-    description: 'titre de la mise en avant',
+    description: 'Titre de la mise en avant',
     type: {
       value: 'string'
     }
@@ -64,6 +72,7 @@ const calloutArgTypes = {
     }
   },
   titleMarkup: {
+    if: { arg: 'hasTitle', eq: true },
     control: { type: 'select' },
     description: 'Niveau d\'entête du titre',
     options: ['h2', 'h3', 'h4', 'h5', 'h6', 'p']
@@ -90,10 +99,11 @@ const calloutArgTypes = {
 };
 
 const calloutArgs = {
-  title: 'Mise en avant',
   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec libero ultricies aliquet',
-  buttonLabel: 'En savoir plus',
+  hasTitle: true,
+  title: 'Titre de la mise en avant',
   titleMarkup: 'h3',
+  buttonLabel: 'En savoir plus',
   hasIcon: false,
   icon: 'info-line',
   accent: undefined,
@@ -103,10 +113,13 @@ const calloutArgs = {
 const calloutProps = (args) => {
   const callout = {
     id: args.id || undefined,
-    title: args.title === '' ? undefined : args.title || calloutArgs.title,
     text: args.text || calloutArgs.text,
     markup: args.titleMarkup || calloutArgs.titleMarkup
   };
+
+  if (args.hasTitle) {
+    callout.title = args.title === '' ? undefined : args.title || calloutArgs.title;
+  }
 
   if (args.accent !== 'défaut') callout.accent = args.accent || calloutArgs.accent;
 

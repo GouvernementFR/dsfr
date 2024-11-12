@@ -40,7 +40,15 @@ const cardArgTypes = {
       category: 'content'
     }
   },
+  hasDescription: {
+    control: 'boolean',
+    description: 'Si true, ajoute une description à la carte',
+    table: {
+      category: 'content'
+    }
+  },
   description: {
+    if: { arg: 'hasDescription', eq: true },
     control: 'text',
     description: 'Description de la carte',
     type: {
@@ -50,9 +58,17 @@ const cardArgTypes = {
       category: 'content'
     }
   },
-  detailLabel: {
+  hasDetailTop: {
+    control: { type: 'boolean' },
+    description: 'Ajoute un texte de détail en haut de carte',
+    table: {
+      category: 'details'
+    }
+  },
+  detailTop: {
+    if: { arg: 'hasDetailTop', eq: true },
     control: 'text',
-    description: 'Détails de la carte, si carte en mode téléchargement, le détail doit indiquer le poids et format du fichier',
+    description: 'Texte de détail en haut de carte',
     type: {
       value: 'string'
     },
@@ -60,35 +76,63 @@ const cardArgTypes = {
       category: 'details'
     }
   },
-  detailPosition: {
-    if: {
-      arg: 'download',
-      eq: false
-    },
-    control: { type: 'select' },
-    description: 'Position du détail',
-    options: ['start', 'end'],
-    table: {
-      category: 'details'
-    }
-  },
-  hasDetailIcon: {
+  hasDetailTopIcon: {
+    if: { arg: 'hasDetailTop', eq: true },
     control: 'boolean',
-    description: 'Si true, ajoute une icône dans le détails de la carte',
+    description: 'Ajoute une icône dans le détail en haut de carte',
     table: {
       category: 'details'
     }
   },
-  detailIcon: {
+  detailTopIcon: {
     if: {
-      arg: 'hasDetailIcon',
+      arg: 'hasDetailTopIcon',
       eq: true
     },
     control: 'text',
-    description: 'Icône du détails de la carte',
+    description: 'Icône du détail en haut de carte',
     type: {
-      value: 'string',
-      required: true
+      value: 'string'
+    },
+    table: {
+      category: 'details'
+    }
+  },
+  hasDetailBottom: {
+    control: { type: 'boolean' },
+    description: 'Ajoute un texte de détail en bas de la carte',
+    table: {
+      category: 'details'
+    }
+  },
+  detailBottom: {
+    if: { arg: 'hasDetailBottom', eq: true },
+    control: 'text',
+    description: 'Texte de détail en bas de carte',
+    type: {
+      value: 'string'
+    },
+    table: {
+      category: 'details'
+    }
+  },
+  hasDetailBottomIcon: {
+    if: { arg: 'hasDetailBottom', eq: true },
+    control: 'boolean',
+    description: 'Ajoute une icône dans le détail en bas de la carte',
+    table: {
+      category: 'details'
+    }
+  },
+  detailBottomIcon: {
+    if: {
+      arg: 'hasDetailBottomIcon',
+      eq: true
+    },
+    control: 'text',
+    description: 'Icône du détail en bas de carte',
+    type: {
+      value: 'string'
     },
     table: {
       category: 'details'
@@ -300,17 +344,22 @@ const cardArgTypes = {
 const cardArgs = {
   id: 'card-id',
   title: 'Intitulé de la carte',
+  hasDescription: true,
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et',
-  detailLabel: 'détail (optionnel)',
-  detailPosition: 'start',
-  hasDetailIcon: false,
-  detailIcon: 'warning-fill',
+  hasDetailTop: false,
+  detailTop: 'détail (optionnel)',
+  hasDetailTopIcon: false,
+  detailTopIcon: 'warning-fill',
+  hasDetailBottom: false,
+  detailBottom: 'détail (optionnel)',
+  hasDetailBottomIcon: false,
+  detailBottomIcon: 'warning-fill',
   markup: 'h3',
   hasBadge: false,
   hasTag: false,
   enlarge: false,
   actionMarkup: 'a',
-  href: '[url - à modifier]',
+  href: 'img/placeholder.16x9.png',
   blank: false,
   noLink: false,
   disabled: false,
@@ -339,10 +388,7 @@ const cardProps = (args) => {
       title: args.title || cardArgs.title,
       description: args.description || cardArgs.description,
       markup: args.markup || cardArgs.markup,
-      details: [{
-        label: args.detailLabel || cardArgs.detailLabel,
-        position: args.download ? 'end' : args.detailPosition || cardArgs.detailPosition
-      }],
+      details: [],
       actionMarkup: args.actionMarkup || cardArgs.actionMarkup,
       href: args.href || cardArgs.href,
       blank: args.blank || cardArgs.blank,
@@ -358,6 +404,20 @@ const cardProps = (args) => {
     }
   };
 
+  if (args.hasDetailTop) {
+    card.content.details.push({ label: args.detailTop, position: 'start' });
+    if (args.hasDetailTopIcon) {
+      card.content.details[0].icon = args.detailTopIcon;
+    }
+  }
+
+  if (args.hasDetailBottom) {
+    card.content.details.push({ label: args.detailBottom, position: 'end' });
+    if (args.hasDetailBottomIcon) {
+      card.content.details[card.content.details.length - 1].icon = args.detailBottomIcon;
+    }
+  }
+
   if (!args.enlarge && (args.hasButtons || args.hasLinks)) {
     card.footer = {
       buttonsGroup: args.hasButtons && { buttons: [{ label: 'Libellé', kind: 2 }, { label: 'Libellé', kind: 1 }], reverse: true, inline: 'lg' },
@@ -371,10 +431,6 @@ const cardProps = (args) => {
       alt: args.alt || cardArgs.alt
     };
   };
-
-  if (args.hasDetailIcon) {
-    card.content.details[0].icon = args.detailIcon;
-  }
 
   if (args.horizontal) {
     card.horizontal = {};
