@@ -33,7 +33,9 @@ let classes = wrapper.classes || [];
 const attributes = wrapper.attributes || {};
 
 const table = wrapper.table || [[]];
-attributes.id = table.id + '-component';
+if (table.id) {
+  attributes.id = table.id + '-component';
+}
 
 classes.push(prefix + '-table');
 

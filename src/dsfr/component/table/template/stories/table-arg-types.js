@@ -519,11 +519,11 @@ const tableProps = (args) => {
   const wrapper = {
     size: args.size || tableArgs.size,
     table: {
-      id: args.id || undefined,
       caption: args.caption || tableArgs.caption,
       captionDetail: args.captionDetail || tableArgs.captionDetail,
       thead: args.table.thead || tableArgs.table.thead,
-      tbodies: args.table.tbodies || tableArgs.table.tbodies
+      tbodies: args.table.tbodies || tableArgs.table.tbodies,
+      id: args.id || undefined
     }
   };
 
