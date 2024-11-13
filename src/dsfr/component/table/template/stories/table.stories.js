@@ -1,6 +1,6 @@
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 import { renderTable } from './table';
-import { tableArgs, tableArgTypes, tableProps, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails } from './table-arg-types';
+import { tableArgs, tableArgTypes, tableProps, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs } from './table-arg-types';
 
 const render = (args) => renderTable({ table: tableProps(args) });
 
@@ -14,7 +14,9 @@ export default {
 
 export const TableStory = {
   tags: ['autodocs'],
-  args: {}
+  args: {
+    id: uniqueId('table')
+  }
 };
 
 export const SizeSMStory = {
@@ -64,5 +66,13 @@ export const ComplexTableStory = {
     bordered: true,
     captionDetail: getComplexTableCaptionDetails(),
     table: getComplexTableArgs()
+  }
+};
+
+export const MiscellaneousTableStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('table'),
+    table: getMiscellaneousTableArgs()
   }
 };
