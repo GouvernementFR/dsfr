@@ -46,25 +46,25 @@ const toggleGroupArgs = {
   validMessage: 'Texte de succès',
   elements: [
     {
-      id: uniqueId('storybook-toggle-group-input'),
       label: `${toggleArgs.label} 1`,
       checked: true,
       disabled: false,
-      hint: undefined
+      hint: undefined,
+      id: uniqueId('storybook-toggle-group-input')
     },
     {
-      id: uniqueId('storybook-toggle-group-input'),
       label: `${toggleArgs.label} 2`,
       checked: false,
       disabled: false,
-      hint: undefined
+      hint: undefined,
+      id: uniqueId('storybook-toggle-group-input')
     },
     {
-      id: uniqueId('storybook-toggle-group-input'),
       label: `${toggleArgs.label} 3`,
       checked: false,
       disabled: false,
-      hint: undefined
+      hint: undefined,
+      id: uniqueId('storybook-toggle-group-input')
     }
   ],
   id: 'toggle-group-id'
@@ -87,12 +87,22 @@ const toggleGroupProps = (args) => {
     elements: toggles
   };
 
-  if (toggles[0].data.length) {
-    toggles[0].data.forEach(toggle => {
-      toggle.left = args.left;
-      toggle.border = args.border;
-      toggle.state = args.state;
-    });
+  if (args.left) {
+    for (const element of toggleGroup.elements[0].data.toggles) {
+      element.left = args.left;
+    }
+  }
+
+  if (args.border) {
+    for (const element of toggleGroup.elements[0].data.toggles) {
+      element.border = args.border;
+    }
+  }
+
+  if (args.state) {
+    for (const element of toggleGroup.elements[0].data.toggles) {
+      element.state = args.state;
+    }
   }
 
   return toggleGroup;

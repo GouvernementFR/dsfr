@@ -12,14 +12,6 @@ const pictogramArgTypes = {
 };
 
 const tileArgTypes = {
-  id: {
-    control: 'text',
-    description: 'Attribut \'id\' de la tuile',
-    type: {
-      value: 'string',
-      required: true
-    }
-  },
   title: {
     control: 'text',
     description: 'Titre de la tuile',
@@ -31,23 +23,43 @@ const tileArgTypes = {
       category: 'content'
     }
   },
+  hasDescription: {
+    control: 'boolean',
+    description: 'Si true, ajoute une description dans le contenu',
+    table: {
+      category: 'content'
+    }
+  },
   description: {
+    if: {
+      arg: 'hasDescription',
+      eq: true
+    },
     control: 'text',
     description: 'Description de la tuile',
     type: {
-      value: 'string',
-      required: true
+      value: 'string'
     },
     table: {
       category: 'content'
     }
   },
+  hasDetails: {
+    control: 'boolean',
+    description: 'Si true, ajoute une ligne détails dans le contenu',
+    table: {
+      category: 'content'
+    }
+  },
   details: {
+    if: {
+      arg: 'hasDetails',
+      eq: true
+    },
     control: 'text',
     description: 'Détails de la tuile',
     type: {
-      value: 'string',
-      required: true
+      value: 'string'
     },
     table: {
       category: 'content'
@@ -221,11 +233,12 @@ const tileArgTypes = {
 };
 
 const tileArgs = {
-  id: 'tile-id',
   title: 'Intitulé de la tuile',
-  description: '',
-  details: 'Détail (optionel)',
   markup: 'h3',
+  hasDescription: false,
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing, incididu',
+  hasDetails: false,
+  details: 'Détail (optionel)',
   hasBadge: false,
   hasTag: false,
   enlarge: false,
@@ -247,7 +260,6 @@ const tileArgs = {
 
 const tileProps = (args) => {
   const tile = {
-    id: args.id || undefined,
     enlarge: args.enlarge || tileArgs.enlarge,
     download: args.download || tileArgs.download,
     size: args.size || tileArgs.size,
@@ -255,9 +267,9 @@ const tileProps = (args) => {
     vertical: args.verticalBreakpoint || tileArgs.verticalBreakpoint,
     content: {
       title: args.title || tileArgs.title,
-      description: args.description || tileArgs.description,
+      description: args.hasDescription ? args.description : undefined,
       markup: args.markup || tileArgs.markup,
-      details: args.details || tileArgs.details,
+      details: args.hasDetails ? args.details : undefined,
       actionMarkup: args.actionMarkup || tileArgs.actionMarkup,
       href: args.href || tileArgs.href,
       blank: args.blank || tileArgs.blank,

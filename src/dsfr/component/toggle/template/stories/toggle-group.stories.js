@@ -1,9 +1,9 @@
+import { toggleArgs } from './toggle-arg-types';
 import { toggleGroupArgs, toggleGroupArgTypes, toggleGroupProps } from './toggle-group-arg-types';
 import { renderFieldset } from '../../../form/template/stories/fieldset';
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const render = (args) => renderFieldset({ fieldset: toggleGroupProps(args) });
-const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
 
 export default {
   id: 'toggle-group',
@@ -19,12 +19,32 @@ export const ToggleGroupStory = {
 
 export const AlignLeftStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      id: uniqueId('toggle'),
-      groupId: uniqueId('toggle-group'),
-      left: true,
-      border: true
-    }
-  ])
+  args: {
+    id: uniqueId('toggle-group-id'),
+    elements: [
+      {
+        id: uniqueId('storybook-toggle-group-left-input'),
+        label: `${toggleArgs.label} 1`,
+        checked: true,
+        disabled: false,
+        hint: undefined
+      },
+      {
+        id: uniqueId('storybook-toggle-group-left-input'),
+        label: `${toggleArgs.label} 2`,
+        checked: false,
+        disabled: false,
+        hint: undefined
+      },
+      {
+        id: uniqueId('storybook-toggle-group-left-input'),
+        label: `${toggleArgs.label} 3`,
+        checked: false,
+        disabled: false,
+        hint: undefined
+      }
+    ],
+    left: true,
+    border: true
+  }
 };
