@@ -13,37 +13,31 @@ export default {
   args: toggleGroupArgs
 };
 
+const getElements = (num) => {
+  const elements = [];
+  for (let i = 1; i <= num; i++) {
+    elements.push({
+      id: uniqueId('storybook-toggle-group-input'),
+      label: `${toggleArgs.label} ${i}`,
+      checked: i === 1,
+      disabled: false,
+      hint: undefined
+    });
+  }
+  return elements;
+};
+
 export const ToggleGroupStory = {
-  args: {}
+  args: {
+    elements: getElements(3)
+  }
 };
 
 export const AlignLeftStory = {
   tags: ['autodocs', '!dev'],
   args: {
     id: uniqueId('toggle-group-id'),
-    elements: [
-      {
-        id: uniqueId('storybook-toggle-group-left-input'),
-        label: `${toggleArgs.label} 1`,
-        checked: true,
-        disabled: false,
-        hint: undefined
-      },
-      {
-        id: uniqueId('storybook-toggle-group-left-input'),
-        label: `${toggleArgs.label} 2`,
-        checked: false,
-        disabled: false,
-        hint: undefined
-      },
-      {
-        id: uniqueId('storybook-toggle-group-left-input'),
-        label: `${toggleArgs.label} 3`,
-        checked: false,
-        disabled: false,
-        hint: undefined
-      }
-    ],
+    elements: getElements(3),
     left: true,
     border: true
   }
