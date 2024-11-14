@@ -44,7 +44,8 @@ const selectArgTypes = {
     type: {
       value: 'string',
       required: true
-    }
+    },
+    table: { category: 'attributes' }
   },
   label: {
     control: 'text',
@@ -102,7 +103,6 @@ const selectArgTypes = {
 };
 
 const selectArgs = {
-  id: uniqueId('storybook-select'),
   label: 'Libellé de la liste déroulante',
   placeholder: 'Sélectionnez une option',
   disabled: false,
@@ -130,7 +130,8 @@ const selectArgs = {
   ],
   status: 'default',
   errorMessage: 'Texte d’erreur',
-  validMessage: 'Texte de succès'
+  validMessage: 'Texte de succès',
+  id: uniqueId('storybook-select')
 };
 
 const selectProps = (args) => {

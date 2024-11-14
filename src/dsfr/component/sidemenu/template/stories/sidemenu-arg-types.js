@@ -1,7 +1,15 @@
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const sidemenuArgTypes = {
+  hasTitle: {
+    control: 'boolean',
+    description: 'Si true, ajoute un titre au menu latéral'
+  },
   title: {
+    if: {
+      arg: 'hasTitle',
+      eq: true
+    },
     control: 'text',
     description: 'Titre du menu latéral',
     kind: {
@@ -73,7 +81,7 @@ const sidemenuArgs = {
 
 const sidemenuProps = (args) => {
   const sidemenu = {
-    title: args.title || sidemenuArgs.title,
+    title: args.hasTitle ? args.title : undefined,
     titleId: 'sidemenu-title',
     buttonLabel: args.buttonLabel || sidemenuArgs.buttonLabel,
     modifier: args.modifier || sidemenuArgs.modifier,
