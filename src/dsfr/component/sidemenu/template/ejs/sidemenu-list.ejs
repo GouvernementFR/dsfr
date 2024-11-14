@@ -19,10 +19,9 @@ Paramètres de sidemenu btn
   %>
     <li <%- includeClasses(classes); %>>
       <% if (item.kind === 'menu') { %>
-        <% item.classes = [`${prefix}-sidemenu__${item.kind}`];%>
         <%- include('./sidemenu-menu.ejs', { sidemenuItem : item }); %>
       <% } else {%>
-        <% item.classes = [`${prefix}-sidemenu__btn`]; %>
+        <% item.classes = item.kind === 'button' ? [`${prefix}-sidemenu__btn`] : [`${prefix}-sidemenu__link`]; %>
         <%- include('../../../../core/template/ejs/action/action', { action: item }) %>
       <% } %>
     </li>

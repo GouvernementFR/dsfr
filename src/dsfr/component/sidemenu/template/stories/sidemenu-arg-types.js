@@ -1,3 +1,5 @@
+import { uniqueId } from '../../../../core/template/stories/unique-id';
+
 const sidemenuArgTypes = {
   title: {
     control: 'text',
@@ -12,7 +14,14 @@ const sidemenuArgTypes = {
     description: 'Modifier de style de sidemenu',
     options: ['sticky', 'right', 'sticky-full-height']
   },
-  items: []
+  buttonLabel: {
+    control: 'text',
+    description: 'Titre du bouton accordéon en mobile',
+    kind: {
+      value: 'string',
+      required: true
+    }
+  }
 };
 
 const getItemArgs = (id, kind = 'link', isActive = false) => {
@@ -30,7 +39,9 @@ const getItemArgs = (id, kind = 'link', isActive = false) => {
 };
 
 const sidemenuArgs = {
+  hasTitle: true,
   title: 'Titre de rubrique',
+  buttonLabel: 'Dans cette rubrique',
   modifier: undefined,
   items: [
     {
@@ -64,8 +75,9 @@ const sidemenuProps = (args) => {
   const sidemenu = {
     title: args.title || sidemenuArgs.title,
     titleId: 'sidemenu-title',
-    buttonLabel: 'Dans cette rubrique',
+    buttonLabel: args.buttonLabel || sidemenuArgs.buttonLabel,
     modifier: args.modifier || sidemenuArgs.modifier,
+    collapseId: uniqueId('sidemenu'),
     items: args.items || sidemenuArgs.items
   };
 
