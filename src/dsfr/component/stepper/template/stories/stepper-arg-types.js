@@ -1,11 +1,4 @@
 const stepperArgTypes = {
-  id: {
-    control: 'text',
-    description: 'Attribut \'id\' de l\'indicateur d\'étapes',
-    type: {
-      value: 'string'
-    }
-  },
   title: {
     control: 'text',
     description: 'Titre de l\'indicateur d\'étapes',
@@ -50,7 +43,6 @@ const stepperArgTypes = {
 };
 
 const stepperArgs = {
-  id: 'stepper-id',
   title: 'Titre de l’étape en cours',
   nextStep: 'Titre de l’étape suivante',
   currentStep: 1,

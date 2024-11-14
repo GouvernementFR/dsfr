@@ -14,9 +14,7 @@ export default {
 
 export const TableStory = {
   tags: ['autodocs'],
-  args: {
-    id: uniqueId('table')
-  }
+  args: {}
 };
 
 export const SizeSMStory = {
