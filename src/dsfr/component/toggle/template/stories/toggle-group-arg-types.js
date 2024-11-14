@@ -87,22 +87,10 @@ const toggleGroupProps = (args) => {
     elements: toggles
   };
 
-  if (args.left) {
-    for (const element of toggleGroup.elements[0].data.toggles) {
-      element.left = args.left;
-    }
-  }
-
-  if (args.border) {
-    for (const element of toggleGroup.elements[0].data.toggles) {
-      element.border = args.border;
-    }
-  }
-
-  if (args.state) {
-    for (const element of toggleGroup.elements[0].data.toggles) {
-      element.state = args.state;
-    }
+  for (const element of toggleGroup.elements[0].data.toggles) {
+    element.left = args.left;
+    element.border = args.border;
+    element.state = args.state;
   }
 
   return toggleGroup;

@@ -1,68 +1,38 @@
-import { tabArgTypes, tabArgs } from './tab-arg-types';
-
-const getTabArgTypes = (id) => {
-  const tab = {};
-
-  const table = {
-    table: {
-      category: `onglet ${id}`
-    }
-  };
-
-  tab[`id${id}`] = { ...tabArgTypes.id, ...table };
-
-  tab[`label${id}`] = {
-    ...tabArgTypes.label,
-    ...table
-  };
-
-  tab[`content${id}`] = {
-    ...tabArgTypes.content,
-    ...table
-  };
-
-  return tab;
-};
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const tabsArgTypes = {
-  ...getTabArgTypes(1),
-  ...getTabArgTypes(2),
-  ...getTabArgTypes(3),
-  ...getTabArgTypes(4)
+  hasIcon: {
+    control: 'boolean',
+    description: 'Si true, ajoute une icone dans le titre des onglets'
+  }
 };
 
-const getTabArgs = (id) => {
-  const tab = {};
+const getTabArgs = (num) => {
+  const tabs = [];
 
-  tab[`id${id}`] = `${tabArgs.id}-${id}`;
-  tab[`label${id}`] = `${tabArgs.label} ${id}`;
-  tab[`content${id}`] = `${tabArgs.content} ${id}`;
+  for (let i = 1; i <= num; i++) {
+    tabs.push({
+      id: uniqueId('storybook-tab'),
+      label: `Libellé onglet ${i}`,
+      content: `Contenu onglet ${i}`
+    });
+  };
 
-  return tab;
+  return tabs;
 };
 
 const tabsArgs = {
-  ...getTabArgs(1),
-  ...getTabArgs(2),
-  ...getTabArgs(3),
-  ...getTabArgs(4)
+  hasIcon: false,
+  tabs: getTabArgs(4)
 };
 
 const tabsProps = (args) => {
-  const tabs = [];
-
-  for (let i = 1; i <= 4; i++) {
-    const tab = {
-      label: args[`label${i}`] || tabArgs.label,
-      content: args[`content${i}`] || tabArgs.content,
-      id: args[`id${i}`] || tabArgs.id
-    };
-
-    tabs.push(tab);
+  for (const tab of args.tabs) {
+    tab.icon = args.hasIcon ? 'checkbox-circle-line' : undefined;
   }
 
   const tabsGroup = {
-    tabs: tabs
+    tabs: args.tabs
   };
 
   return tabsGroup;
