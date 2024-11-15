@@ -54,14 +54,16 @@ const calloutArgTypes = {
     description: 'Attribut id de la mise en avant',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   hasIcon: {
     control: 'boolean',
     description: 'Affiche une icône',
     type: {
       value: 'boolean'
-    }
+    },
+    table: { category: 'icon' }
   },
   icon: {
     if: { arg: 'hasIcon', eq: true },
@@ -69,7 +71,8 @@ const calloutArgTypes = {
     description: 'Nom de l\'icône',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'icon' }
   },
   titleMarkup: {
     if: { arg: 'hasTitle', eq: true },

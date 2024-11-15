@@ -58,15 +58,15 @@ const cardArgTypes = {
       category: 'content'
     }
   },
-  hasDetailTop: {
+  hasDetailStart: {
     control: { type: 'boolean' },
     description: 'Ajoute un texte de détail en haut de carte',
     table: {
       category: 'details'
     }
   },
-  detailTop: {
-    if: { arg: 'hasDetailTop', eq: true },
+  detailStart: {
+    if: { arg: 'hasDetailStart', eq: true },
     control: 'text',
     description: 'Texte de détail en haut de carte',
     type: {
@@ -76,17 +76,17 @@ const cardArgTypes = {
       category: 'details'
     }
   },
-  hasDetailTopIcon: {
-    if: { arg: 'hasDetailTop', eq: true },
+  hasDetailStartIcon: {
+    if: { arg: 'hasDetailStart', eq: true },
     control: 'boolean',
     description: 'Ajoute une icône dans le détail en haut de carte',
     table: {
       category: 'details'
     }
   },
-  detailTopIcon: {
+  detailStartIcon: {
     if: {
-      arg: 'hasDetailTopIcon',
+      arg: 'hasDetailStartIcon',
       eq: true
     },
     control: 'text',
@@ -98,15 +98,15 @@ const cardArgTypes = {
       category: 'details'
     }
   },
-  hasDetailBottom: {
+  hasDetailEnd: {
     control: { type: 'boolean' },
     description: 'Ajoute un texte de détail en bas de la carte',
     table: {
       category: 'details'
     }
   },
-  detailBottom: {
-    if: { arg: 'hasDetailBottom', eq: true },
+  detailEnd: {
+    if: { arg: 'hasDetailEnd', eq: true },
     control: 'text',
     description: 'Texte de détail en bas de carte',
     type: {
@@ -116,17 +116,17 @@ const cardArgTypes = {
       category: 'details'
     }
   },
-  hasDetailBottomIcon: {
-    if: { arg: 'hasDetailBottom', eq: true },
+  hasDetailEndIcon: {
+    if: { arg: 'hasDetailEnd', eq: true },
     control: 'boolean',
     description: 'Ajoute une icône dans le détail en bas de la carte',
     table: {
       category: 'details'
     }
   },
-  detailBottomIcon: {
+  detailEndIcon: {
     if: {
-      arg: 'hasDetailBottomIcon',
+      arg: 'hasDetailEndIcon',
       eq: true
     },
     control: 'text',
@@ -346,14 +346,14 @@ const cardArgs = {
   title: 'Intitulé de la carte',
   hasDescription: true,
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et',
-  hasDetailTop: false,
-  detailTop: 'détail (optionnel)',
-  hasDetailTopIcon: false,
-  detailTopIcon: 'warning-fill',
-  hasDetailBottom: false,
-  detailBottom: 'détail (optionnel)',
-  hasDetailBottomIcon: false,
-  detailBottomIcon: 'warning-fill',
+  hasDetailStart: false,
+  detailStart: 'détail (optionnel)',
+  hasDetailStartIcon: false,
+  detailStartIcon: 'warning-fill',
+  hasDetailEnd: false,
+  detailEnd: 'détail (optionnel)',
+  hasDetailEndIcon: false,
+  detailEndIcon: 'warning-fill',
   markup: 'h3',
   hasBadge: false,
   hasTag: false,
@@ -404,17 +404,17 @@ const cardProps = (args) => {
     }
   };
 
-  if (args.hasDetailTop) {
-    card.content.details.push({ label: args.detailTop, position: 'start' });
-    if (args.hasDetailTopIcon) {
-      card.content.details[0].icon = args.detailTopIcon;
+  if (args.hasDetailStart) {
+    card.content.details.push({ label: args.detailStart, position: 'start' });
+    if (args.hasDetailStartIcon) {
+      card.content.details[0].icon = args.detailStartIcon;
     }
   }
 
-  if (args.hasDetailBottom) {
-    card.content.details.push({ label: args.detailBottom, position: 'end' });
-    if (args.hasDetailBottomIcon) {
-      card.content.details[card.content.details.length - 1].icon = args.detailBottomIcon;
+  if (args.hasDetailEnd) {
+    card.content.details.push({ label: args.detailEnd, position: 'end' });
+    if (args.hasDetailEndIcon) {
+      card.content.details[card.content.details.length - 1].icon = args.detailEndIcon;
     }
   }
 

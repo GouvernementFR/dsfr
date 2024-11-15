@@ -33,7 +33,8 @@ const connectArgTypes = {
     description: 'Attribut id du bouton franceConnect',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   variant: {
     control: {
@@ -76,20 +77,20 @@ const connectArgTypes = {
 };
 
 const connectArgs = {
-  id: 'france-connect',
   variant: 'default',
   linkLabel: 'Qu\'est-ce que FranceConnect ?',
   linkHref: 'https://franceconnect.gouv.fr',
   markup: 'button',
   lang: 'fr',
-  disabled: false
+  disabled: false,
+  id: 'france-connect'
 };
 
 const connectPlusArgs = {
-  id: 'france-connect-plus',
   type: 'plus',
   linkLabel: 'Qu\'est-ce que FranceConnect+ ?',
-  linkHref: 'https://franceconnect.gouv.fr/france-connect-plus'
+  linkHref: 'https://franceconnect.gouv.fr/france-connect-plus',
+  id: 'france-connect-plus'
 };
 
 const getLang = (lang) => {

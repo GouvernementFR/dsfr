@@ -99,7 +99,8 @@ const formArgTypes = {
     description: 'Attribut id du formulaire',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   legend: {
     control: 'text',
@@ -142,7 +143,6 @@ const formArgTypes = {
 };
 
 const formArgs = {
-  id: 'storybook-form',
   legend: 'Légende du formulaire',
   hideLegend: false,
   elementsType: 'checkbox',
@@ -153,7 +153,8 @@ const formArgs = {
   disabled: false,
   status: 'default',
   errorMessage: 'Texte d’erreur',
-  validMessage: 'Texte de succès'
+  validMessage: 'Texte de succès',
+  id: 'storybook-form'
 };
 
 const formProps = (args) => {

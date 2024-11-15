@@ -79,7 +79,7 @@ export const DownloadStory = {
       enlarge: true,
       title: 'Télécharger le document XX',
       download: true,
-      detailLabel: 'Détail obligatoire (Extension - Poids - Langue)'
+      detailEnd: 'Détail obligatoire (Extension - Poids - Langue)'
     }
   ])
 };
@@ -93,7 +93,7 @@ export const DownloadButtonStory = {
       actionMarkup: 'button',
       download: true,
       description: 'Description (optionnelle)',
-      detailLabel: 'Détail obligatoire (Extension - Poids - Langue)'
+      detailEnd: 'Détail obligatoire (Extension - Poids - Langue)'
     }
   ])
 };
@@ -108,7 +108,7 @@ export const DownloadAssessFileStory = {
       download: true,
       href: 'img/placeholder.16x9.pdf',
       assess: true,
-      detailLabel: 'PDF'
+      detailEnd: 'PDF'
     }
   ])
 };

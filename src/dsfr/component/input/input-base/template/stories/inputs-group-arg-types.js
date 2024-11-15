@@ -1,40 +1,6 @@
-import { inputArgTypes, inputArgs } from './input-arg-types';
+import { inputArgTypes } from './input-arg-types';
 import { formArgTypes, formArgs } from '../../../../form/template/stories/form-arg-types';
-
-const getinputArgTypes = (id) => {
-  const input = {};
-
-  const table = {
-    table: {
-      category: `input${id}`
-    }
-  };
-
-  input[`label${id}`] = { ...inputArgTypes.label, ...table };
-  input[`id${id}`] = { ...inputArgTypes.id, ...table };
-  input[`hint${id}`] = { ...inputArgTypes.hint, ...table };
-  input[`disabled${id}`] = { ...inputArgTypes.disabled, ...table };
-
-  if (id > 2) {
-    input[`hasinput${id}`] = {
-      control: 'boolean',
-      table: {
-        category: `input${id}`
-      }
-    };
-
-    if (id > 3) {
-      input[`hasinput${id}`].if = { arg: `hasinput${id - 1}` };
-    }
-
-    input[`label${id}`].if = { arg: `hasinput${id}` };
-    input[`id${id}`].if = { arg: `hasinput${id}` };
-    input[`disabled${id}`].if = { arg: `hasinput${id}` };
-    input[`hint${id}`].if = { arg: `hasinput${id}` };
-  }
-
-  return input;
-};
+import { uniqueId } from '../../../../../core/template/stories/unique-id';
 
 const inputsGroupArgTypes = {
   id: {
@@ -67,30 +33,16 @@ const inputsGroupArgTypes = {
   validMessage: {
     ...inputArgTypes.validMessage
   },
-  ...getinputArgTypes(1),
-  ...getinputArgTypes(2),
-  ...getinputArgTypes(3),
-  ...getinputArgTypes(4),
-  ...getinputArgTypes(5)
-};
-
-const getinputArgs = (id) => {
-  const input = {};
-
-  input[`id${id}`] = `${inputArgs.id}-${id}`;
-  input[`label${id}`] = `${inputArgs.label} ${id}`;
-  input[`hint${id}`] = inputArgs.hint;
-  input[`disabled${id}`] = inputArgs.disabled;
-
-  if (id > 2) {
-    input[`hasinput${id}`] = false;
+  inputs: {
+    control: { type: 'object' },
+    description: 'Liste des inputs',
+    type: {
+      value: 'array'
+    }
   }
-
-  return input;
 };
 
 const inputsGroupArgs = {
-  id: formArgs.id,
   legend: 'Légende pour l’ensemble des éléments',
   hint: formArgs.hint,
   disabled: formArgs.disabled,
@@ -98,45 +50,56 @@ const inputsGroupArgs = {
   status: 'default',
   errorMessage: 'Texte d’erreur',
   validMessage: 'Texte de succès',
-  ...getinputArgs(1),
-  ...getinputArgs(2),
-  ...getinputArgs(3),
-  ...getinputArgs(4),
-  ...getinputArgs(5)
+  inputs: [
+    {
+      id: uniqueId('input'),
+      label: 'Label 1',
+      name: 'input1',
+      hint: 'Texte d’aide',
+      disabled: false
+    },
+    {
+      id: uniqueId('input'),
+      label: 'Label 2',
+      name: 'input2',
+      hint: 'Texte d’aide',
+      disabled: false
+    },
+    {
+      id: uniqueId('input'),
+      label: 'Label 3',
+      name: 'input3',
+      hint: 'Texte d’aide',
+      disabled: false
+    }
+  ],
+  id: formArgs.id
 };
 
 const inputsGroupProps = (args) => {
-  const inputs = [];
-
-  for (let i = 1; i <= 5; i++) {
-    if (i < 3 || args[`hasinput${i}`]) {
-      const input = {
-        type: 'input',
-        inline: args.inline,
-        data: {
-          id: args[`id${i}`] || undefined,
-          label: args[`label${i}`] || inputArgs.label,
-          name: args[`name${i}`] || inputArgs.name,
-          hint: args[`hint${i}`] !== '' ? args[`hint${i}`] || inputArgs.hint : undefined,
-          disabled: args[`disabled${i}`]
-        }
-      };
-
-      inputs.push(input);
-    }
-  }
-
   const inputsGroup = {
     id: args.id || undefined,
     legend: args.legend,
     disabled: args.disabled,
     hint: args.hint !== '' ? args.hint || formArgs.hint : undefined,
-    inline: args.inline,
     choice: true,
     status: args.status || formArgs.status,
     error: args.status === 'error' ? args.errorMessage || formArgs.errorMessage : undefined,
     valid: args.status === 'valid' ? args.validMessage || formArgs.validMessage : undefined,
-    elements: inputs
+    elements: args.inputs.map((input, index) => {
+      const inputProps = {
+        type: 'input',
+        inline: args.inline,
+        data: {
+          label: input.label,
+          id: input.id,
+          name: input.name,
+          hint: input.hint,
+          disabled: input.disabled
+        }
+      };
+      return inputProps;
+    })
   };
 
   return inputsGroup;

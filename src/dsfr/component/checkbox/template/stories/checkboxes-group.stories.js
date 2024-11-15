@@ -12,25 +12,42 @@ export default {
   args: checkboxesGroupArgs
 };
 
+const checkboxesData = (count = 3) => {
+  const checkboxes = [];
+  for (let i = 0; i < count; i++) {
+    checkboxes.push(
+      {
+        label: `Checkbox ${i}`,
+        id: uniqueId('checkbox'),
+        name: `checkbox${i}`,
+        hint: '',
+        disabled: false
+      }
+    );
+  }
+  return checkboxes;
+};
+
 export const CheckboxesGroupStory = {
-  args: {}
+  args: {
+    checkboxes: checkboxesData(3)
+  }
 };
 
 export const SizeSmStory = {
   tags: ['autodocs', '!dev'],
   args: {
     size: 'sm',
-    id1: uniqueId('checkbox'),
-    id2: uniqueId('checkbox')
+    checkboxes: checkboxesData(3)
+
   }
 };
 
 export const DisabledStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    disabled: true,
-    id1: uniqueId('checkbox'),
-    id2: uniqueId('checkbox')
+    checkboxes: checkboxesData(3),
+    disabled: true
   }
 };
 
@@ -38,8 +55,7 @@ export const ErrorStory = {
   tags: ['autodocs', '!dev'],
   args: {
     status: 'error',
-    id1: uniqueId('checkbox'),
-    id2: uniqueId('checkbox')
+    checkboxes: checkboxesData(3)
   }
 };
 
@@ -47,7 +63,6 @@ export const SuccessStory = {
   tags: ['autodocs', '!dev'],
   args: {
     status: 'valid',
-    id1: uniqueId('checkbox'),
-    id2: uniqueId('checkbox')
+    checkboxes: checkboxesData(3)
   }
 };

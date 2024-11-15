@@ -8,9 +8,10 @@ const getDisplayBody = () => {
 const displayArgTypes = {
   id: {
     control: 'text',
-    description: 'Identifiant unique du paramètre d\'affichage',
+    description: 'Attribut id de la modale du paramètre d\'affichage',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   }
 };

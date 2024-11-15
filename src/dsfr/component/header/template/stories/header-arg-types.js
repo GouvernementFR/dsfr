@@ -16,7 +16,16 @@ const brandArgTypes = {
     },
     table: { category: 'brand' }
   },
+  hasBrandTagline: {
+    control: 'boolean',
+    description: 'Ajoute une baseline',
+    type: {
+      value: 'boolean'
+    },
+    table: { category: 'brand' }
+  },
   brandTagline: {
+    if: { arg: 'hasBrandTagline', eq: true },
     control: 'text',
     description: 'Baseline - précisions sur l‘organisation',
     type: {
@@ -261,7 +270,16 @@ const toolsArgTypes = {
 };
 
 const navigationArgTypes = {
+  hasNavigation: {
+    control: 'boolean',
+    description: 'Ajoute une navigation principale',
+    type: {
+      value: 'boolean'
+    },
+    table: { category: 'navigation' }
+  },
   navigationId: {
+    if: { arg: 'hasNavigation', eq: true },
     control: 'text',
     description: 'Attribut id de la navigation principale',
     type: {
@@ -271,6 +289,7 @@ const navigationArgTypes = {
     table: { category: 'navigation' }
   },
   navigationAriaLabel: {
+    if: { arg: 'hasNavigation', eq: true },
     control: 'text',
     description: 'Attribut aria-label de la navigation principale',
     type: {
@@ -280,6 +299,7 @@ const navigationArgTypes = {
     table: { category: 'navigation' }
   },
   navigationItems: {
+    if: { arg: 'hasNavigation', eq: true },
     control: { type: 'object' },
     description: 'Éléments de la navigation principale',
     type: {
@@ -345,6 +365,7 @@ const getItemArgs = (id, type = 'link', isActive = false) => {
 const headerArgs = {
   id: 'header',
   brandService: 'Nom du site / service',
+  hasBrandTagline: true,
   brandTagline: 'baseline - précisions sur l‘organisation',
   brandLogoTitle: 'Intitulé <br>officiel',
   brandLinkId: 'brand-link',
@@ -356,6 +377,7 @@ const headerArgs = {
   brandOperatorStyle: 'width: 3.5rem',
   menuId: 'header-menu-btn',
   menuModalId: 'header-menu',
+  hasNavigation: true,
   navigationId: 'header-navigation',
   navigationAriaLabel: 'Menu principal',
   navigationItems: [
@@ -509,20 +531,23 @@ const headerProps = (args) => {
     }
   };
 
-  if (args.navigationItems.length || args.hasToolLinks || args.hasSearch || args.hasTranslate) {
+  if (args.hasNavigation || args.hasToolLinks || args.hasSearch || args.hasTranslate) {
     header.body.brand.navbar = {};
     header.menu = {
       id: args.menuId || headerArgs.menuId,
       modalId: args.menuModalId || headerArgs.menuModalId,
-      navigation: {
-        id: args.navigationId || headerArgs.navigationId,
-        ariaLabel: args.navigationAriaLabel || headerArgs.navigationAriaLabel,
-        items: args.navigationItems || headerArgs.navigationItems
-      },
       tools: {
         duplicateLinks: args.duplicateToolsLinks || headerArgs.duplicateToolLinks
       }
     };
+
+    if (args.hasNavigation) {
+      header.menu.navigation = {
+        id: args.navigationId || headerArgs.navigationId,
+        ariaLabel: args.navigationAriaLabel || headerArgs.navigationAriaLabel,
+        items: args.navigationItems
+      };
+    }
   }
 
   if (args.brandService !== '') {
@@ -530,7 +555,7 @@ const headerProps = (args) => {
     header.body.brand.service.title = args.brandService || headerArgs.brandService;
   }
 
-  if (args.brandTagline !== '') {
+  if (args.hasBrandTagline && args.brandTagline !== '') {
     header.body.brand.service = header.body.brand.service || {};
     header.body.brand.service.tagline = args.brandTagline || headerArgs.brandTagline;
   }

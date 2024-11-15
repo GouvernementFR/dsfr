@@ -20,17 +20,26 @@ const topArgTypes = {
 };
 
 const contentArgTypes = {
+  hasDescription: {
+    control: 'boolean',
+    description: 'Ajoute une description',
+    type: {
+      value: 'boolean'
+    },
+    table: { category: 'content' }
+  },
   contentDescription: {
+    if: { arg: 'hasDescription', eq: true },
     control: 'text',
-    description: 'Texte de présentation',
+    description: 'Texte de description',
     type: {
       value: 'string'
     },
     table: { category: 'content' }
   },
   contentLinks: {
-    control: 'object',
-    description: 'Liste des liens',
+    control: { type: 'object', disable: true },
+    description: 'Liste des liens (non modifiables)',
     type: {
       value: 'array'
     },
@@ -148,6 +157,14 @@ const brandArgTypes = {
     },
     table: { category: 'brand' }
   },
+  brandLinkId: {
+    control: 'text',
+    description: 'Attribut id du lien du bloc marque',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'brand' }
+  },
   hasBrandOperator: {
     control: 'boolean',
     description: 'Ajoute un logo opérateur dans le bloc marque',
@@ -191,7 +208,8 @@ const footerArgTypes = {
     description: 'Attribut id du pied de page',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   ...topArgTypes,
   ...brandArgTypes,
@@ -201,7 +219,6 @@ const footerArgTypes = {
 };
 
 const footerArgs = {
-  id: 'footer',
   hasTopFooter: false,
   topFooterCategories: [
     { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
@@ -211,6 +228,7 @@ const footerArgs = {
     { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
     { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] }
   ],
+  hasDescription: true,
   contentDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.',
   contentLinks: [
     { label: 'info.gouv.fr', href: 'https://info.gouv.fr', blank: true, attributes: { title: 'info.gouv.fr - nouvelle fenêtre' } },
@@ -222,7 +240,6 @@ const footerArgs = {
   brandLinkId: 'brand-link',
   brandLinkHref: '/',
   brandLinkTitle: 'Retour à l\'accueil du site - [À MODIFIER - texte alternatif de l\'image : nom de l\'opérateur ou du site serviciel] - République Française',
-  brandLinkPosition: 'service',
   hasBrandOperator: false,
   brandOperatorAlt: 'nom de l\'opérateur ou du site serviciel',
   brandOperatorSrc: 'img/placeholder.9x16.png',
@@ -245,15 +262,14 @@ const footerArgs = {
     { label: 'Données personnelles', href: '#', kind: 'link' },
     { label: 'Gestion des cookies', href: '#', kind: 'link' }
   ],
-  bottomCopyright: 'Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="Licence etalab - nouvelle fenêtre">licence etalab-2.0</a>'
-
+  bottomCopyright: 'Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="Licence etalab - nouvelle fenêtre">licence etalab-2.0</a>',
+  id: 'footer'
 };
 
 const footerProps = (args) => {
   const footer = {
     id: args.id || footerArgs.id,
     content: {
-      desc: args.contentDescription || footerArgs.contentDescription,
       links: args.contentLinks || footerArgs.contentLinks
     },
     bottom: {
@@ -272,6 +288,10 @@ const footerProps = (args) => {
       }
     }
   };
+
+  if (args.hasDescription) {
+    footer.content.desc = args.contentDescription;
+  }
 
   if (args.hasBrandOperator) {
     footer.brand.operator = {

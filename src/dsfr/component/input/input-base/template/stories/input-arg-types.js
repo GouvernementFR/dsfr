@@ -42,7 +42,8 @@ const inputArgTypes = {
     type: {
       value: 'string',
       required: true
-    }
+    },
+    table: { category: 'attributes' }
   },
   label: {
     control: 'text',
@@ -105,14 +106,16 @@ const inputArgTypes = {
     description: 'Attribut name du champs de saisie',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   autocomplete: {
     control: 'text',
     description: 'Attribut autocomplete du champs de saisie, voir la liste des valeurs possibles sur MDN',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   disabled: {
     control: 'boolean',
@@ -125,13 +128,13 @@ const inputArgTypes = {
 };
 
 const inputArgs = {
-  id: 'storybook-input',
   label: 'libellé input',
   type: 'text',
   disabled: false,
   status: 'default',
   errorMessage: 'Texte d’erreur',
-  validMessage: 'Texte de succès'
+  validMessage: 'Texte de succès',
+  id: 'storybook-input'
 };
 
 const inputProps = (args) => {

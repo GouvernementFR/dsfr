@@ -18,8 +18,16 @@ const newsletterArgTypes = {
       category: 'newsletter'
     }
   },
-  newsletterDesc: {
+  newsletterHasDesc: {
     if: { arg: 'hasNewsletter', eq: true },
+    control: 'boolean',
+    description: 'Ajoute une description au bloc newsletter',
+    table: {
+      category: 'newsletter'
+    }
+  },
+  newsletterDesc: {
+    if: { arg: 'newsletterHasDesc', eq: true },
     control: 'text',
     description: 'Description du bloc newsletter',
     table: {
@@ -246,16 +254,17 @@ const socialsArgTypes = {
 const followArgTypes = {
   id: {
     control: 'text',
-    description: 'Identifiant du bloc lettre d’information et réseaux sociaux'
+    description: 'Identifiant du bloc lettre d’information et réseaux sociaux',
+    table: { category: 'attributes' }
   },
   ...newsletterArgTypes,
   ...socialsArgTypes
 };
 
 const followArgs = {
-  id: 'follow',
   hasNewsletter: false,
   newsletterTitle: 'Abonnez-vous à notre lettre d’information',
+  newsletterHasDesc: true,
   newsletterDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.',
   newsletterType: 'button',
   newsletterButtonId: 'newsletter-button',
@@ -314,7 +323,8 @@ const followArgs = {
       url: '[Lien vers le youtube de l\'organisation - à modifier]',
       type: 'youtube'
     }
-  ]
+  ],
+  id: 'follow'
 };
 
 const followProps = (args) => {
@@ -333,9 +343,12 @@ const followProps = (args) => {
   if (args.hasNewsletter) {
     follow.newsletter = {
       title: args.newsletterTitle || followArgs.newsletterTitle,
-      desc: args.newsletterDesc || followArgs.newsletterDesc,
       type: args.newsletterType || followArgs.newsletterType
     };
+
+    if (args.newsletterHasDesc) {
+      follow.newsletter.desc = args.newsletterDesc;
+    }
 
     if (args.newsletterType === 'button') {
       follow.newsletter.button = {

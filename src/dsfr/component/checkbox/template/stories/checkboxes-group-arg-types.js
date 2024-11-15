@@ -1,47 +1,14 @@
-import { checkboxArgTypes, checkboxArgs } from './checkbox-arg-types';
+import { checkboxArgTypes } from './checkbox-arg-types';
 import { formArgTypes, formArgs } from '../../../form/template/stories/form-arg-types';
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 
-const getcheckboxArgTypes = (id) => {
-  const checkbox = {};
-
-  const table = {
-    table: {
-      category: `checkbox${id}`
-    }
-  };
-
-  checkbox[`label${id}`] = { ...checkboxArgTypes.label, ...table };
-  checkbox[`id${id}`] = { ...checkboxArgTypes.id, ...table };
-  checkbox[`name${id}`] = { ...checkboxArgTypes.name, ...table };
-  checkbox[`hint${id}`] = { ...checkboxArgTypes.hint, ...table };
-  checkbox[`disabled${id}`] = { ...checkboxArgTypes.disabled, ...table };
-
-  if (id > 2) {
-    checkbox[`hascheckbox${id}`] = {
-      control: 'boolean',
-      table: {
-        category: `checkbox${id}`
-      }
-    };
-
-    if (id > 3) {
-      checkbox[`hascheckbox${id}`].if = { arg: `hascheckbox${id - 1}` };
-    }
-
-    checkbox[`label${id}`].if = { arg: `hascheckbox${id}` };
-    checkbox[`id${id}`].if = { arg: `hascheckbox${id}` };
-    checkbox[`disabled${id}`].if = { arg: `hascheckbox${id}` };
-    checkbox[`name${id}`].if = { arg: `hascheckbox${id}` };
-    checkbox[`hint${id}`].if = { arg: `hascheckbox${id}` };
-  }
-
-  return checkbox;
-};
-
 const checkboxesGroupArgTypes = {
   id: {
-    ...formArgTypes.id
+    ...formArgTypes.id,
+    type: {
+      value: 'string',
+      required: true
+    }
   },
   legend: {
     ...formArgTypes.legend,
@@ -70,32 +37,10 @@ const checkboxesGroupArgTypes = {
   },
   validMessage: {
     ...checkboxArgTypes.validMessage
-  },
-  ...getcheckboxArgTypes(1),
-  ...getcheckboxArgTypes(2),
-  ...getcheckboxArgTypes(3),
-  ...getcheckboxArgTypes(4),
-  ...getcheckboxArgTypes(5)
-};
-
-const getcheckboxArgs = (id) => {
-  const checkbox = {};
-
-  checkbox[`id${id}`] = uniqueId('checkbox');
-  checkbox[`label${id}`] = `${checkboxArgs.label} ${id}`;
-  checkbox[`name${id}`] = `${checkboxArgs.name}${id}`;
-  checkbox[`hint${id}`] = checkboxArgs.hint;
-  checkbox[`disabled${id}`] = checkboxArgs.disabled;
-
-  if (id > 2) {
-    checkbox[`hascheckbox${id}`] = false;
   }
-
-  return checkbox;
 };
 
 const checkboxesGroupArgs = {
-  id: formArgs.id,
   legend: 'Légende pour l’ensemble des éléments',
   hint: formArgs.hint,
   size: 'md',
@@ -104,37 +49,33 @@ const checkboxesGroupArgs = {
   status: 'default',
   errorMessage: 'Texte d’erreur',
   validMessage: 'Texte de succès',
-  ...getcheckboxArgs(1),
-  ...getcheckboxArgs(2),
-  ...getcheckboxArgs(3),
-  ...getcheckboxArgs(4),
-  ...getcheckboxArgs(5)
+  checkboxes: [
+    {
+      label: 'Checkbox 1',
+      id: uniqueId('checkbox'),
+      name: 'checkbox1',
+      hint: '',
+      disabled: false
+    },
+    {
+      label: 'Checkbox 2',
+      id: uniqueId('checkbox'),
+      name: 'checkbox2',
+      hint: '',
+      disabled: false
+    },
+    {
+      label: 'Checkbox 3',
+      id: uniqueId('checkbox'),
+      name: 'checkbox3',
+      hint: '',
+      disabled: false
+    }
+  ],
+  id: formArgs.id
 };
 
 const checkboxesGroupProps = (args) => {
-  const elements = (id) => {
-    const checkboxes = [];
-    for (let i = 1; i <= 5; i++) {
-      if (i < 3 || args[`hascheckbox${i}`]) {
-        const checkbox = {
-          type: 'checkbox',
-          inline: args.inline,
-          data: {
-            id: args[`id${i}`] || uniqueId(id),
-            label: args[`label${i}`] || checkboxArgs.label,
-            size: args.size || checkboxesGroupArgs.size,
-            name: args[`name${i}`] || checkboxArgs.name,
-            hint: args[`hint${i}`] !== '' ? args[`hint${i}`] || checkboxArgs.hint : undefined,
-            disabled: args[`disabled${i}`]
-          }
-        };
-
-        checkboxes.push(checkbox);
-      }
-    }
-    return checkboxes;
-  };
-
   const checkboxesGroup = {
     id: args.id || uniqueId('checkbox-form'),
     legend: args.legend,
@@ -144,10 +85,24 @@ const checkboxesGroupProps = (args) => {
     choice: true,
     status: args.status || formArgs.status,
     error: args.status === 'error' ? args.errorMessage || formArgs.errorMessage : undefined,
-    valid: args.status === 'valid' ? args.validMessage || formArgs.validMessage : undefined
-  };
+    valid: args.status === 'valid' ? args.validMessage || formArgs.validMessage : undefined,
+    elements: args.checkboxes.map((checkbox, index) => {
+      const checkboxProps = {
+        type: 'checkbox',
+        inline: args.inline,
+        data: {
+          label: checkbox.label,
+          size: args.size,
+          id: checkbox.id,
+          name: checkbox.name,
+          hint: checkbox.hint,
+          disabled: checkbox.disabled
+        }
+      };
 
-  checkboxesGroup.elements = elements(checkboxesGroup.id);
+      return checkboxProps;
+    })
+  };
 
   return checkboxesGroup;
 };
