@@ -30,7 +30,7 @@ const getTagsData = (count = 3) => {
       pressed: false,
       blank: false,
       disabled: false,
-      id: uniqueId('storybook-tag-group')
+      id: uniqueId('tag-group')
     });
   }
   return tags;

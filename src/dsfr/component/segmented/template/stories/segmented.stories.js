@@ -1,8 +1,7 @@
-import { segmentedArgs, segmentedArgTypes, segmentedProps } from './segmented-arg-types';
+import { segmentedArgs, segmentedArgTypes, segmentedProps, getSegmentedData } from './segmented-arg-types';
 import { renderSegmented } from './segmented';
 
 const render = (args) => renderSegmented({ segmented: segmentedProps(args) });
-const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
 
 export default {
   id: 'segmented',
@@ -13,41 +12,45 @@ export default {
 };
 
 export const SegmentedStory = {
+  tags: ['autodocs', '!dev'],
   args: {}
 };
 
 export const WithIconStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      hasIcon: true
-    }
-  ])
+  args: {
+    hasIcon: true,
+    elements: getSegmentedData()
+  }
 };
 
 export const SizeSmStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      size: 'sm'
-    }
-  ])
+  args: {
+    size: 'sm',
+    elements: getSegmentedData()
+  }
 };
 
 export const LegendInlineStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      legendInline: true
-    }
-  ])
+  args: {
+    legendInline: true,
+    elements: getSegmentedData()
+  }
 };
 
 export const NoLegendStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      noLegend: true
-    }
-  ])
+  args: {
+    noLegend: true,
+    elements: getSegmentedData()
+  }
+};
+
+export const HasDisabledStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    elements: getSegmentedData(3, true)
+  }
 };

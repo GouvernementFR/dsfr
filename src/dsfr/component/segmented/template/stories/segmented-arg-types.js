@@ -1,69 +1,6 @@
 import { uniqueId } from '../../../../core/template/stories/unique-id';
-import { segmentedElementArgTypes, segmentedElementArgs } from './segmented-element-arg-types';
-
-const getSegmentedElementArgTypes = (id) => {
-  const segmentedElement = {};
-
-  const table = {
-    table: {
-      category: `element ${id}`
-    }
-  };
-
-  segmentedElement[`id${id}`] = { ...segmentedElementArgTypes.id, ...table };
-
-  segmentedElement[`label${id}`] = {
-    ...segmentedElementArgTypes.label,
-    ...table
-  };
-
-  segmentedElement[`name${id}`] = {
-    ...segmentedElementArgTypes.name,
-    ...table
-  };
-
-  segmentedElement[`value${id}`] = {
-    ...segmentedElementArgTypes.value,
-    ...table
-  };
-
-  segmentedElement[`checked${id}`] = {
-    ...segmentedElementArgTypes.checked,
-    ...table
-  };
-
-  segmentedElement[`disabled${id}`] = {
-    ...segmentedElementArgTypes.disabled,
-    ...table
-  };
-
-  return segmentedElement;
-};
-
-const iconArgTypes = {
-  hasIcon: {
-    control: 'boolean',
-    description: 'Le contrôle segmenté a une icône',
-    table: { category: 'icon' }
-  },
-  icon: {
-    if: { arg: 'hasIcon', eq: true },
-    control: 'text',
-    description: 'Nom de l\'icône dans le contrôle segmenté',
-    table: {
-      category: 'icon'
-    }
-  }
-};
 
 const segmentedArgTypes = {
-  id: {
-    control: 'text',
-    description: 'Attribut id du contrôle segmenté',
-    type: {
-      value: 'string'
-    }
-  },
   size: {
     control: { type: 'select' },
     description: 'Taille du contrôle segmenté',
@@ -97,70 +34,54 @@ const segmentedArgTypes = {
       value: 'string'
     }
   },
-  ...iconArgTypes,
-  ...getSegmentedElementArgTypes(1),
-  ...getSegmentedElementArgTypes(2),
-  ...getSegmentedElementArgTypes(3)
+  hasIcon: {
+    control: 'boolean',
+    description: 'Le contrôle segmenté a une icône'
+  }
 };
 
-const getSegmentedElementArgs = (id) => {
-  const segmentedElement = {};
-
-  segmentedElement[`id${id}`] = uniqueId('storybook-segmented-element');
-  segmentedElement[`label${id}`] = `${segmentedElementArgs.label} ${id}`;
-  segmentedElement[`name${id}`] = `${segmentedElementArgs.name}`;
-  segmentedElement[`value${id}`] = `${segmentedElementArgs.value}-${id}`;
-
-  return segmentedElement;
+const getSegmentedData = (count = 3, hasDisabled = false) => {
+  const elements = [];
+  const id = uniqueId('segmented');
+  for (let i = 1; i <= count; i++) {
+    elements.push({
+      checked: i === 1,
+      label: `libellé ${i}`,
+      name: id,
+      value: i,
+      disabled: (hasDisabled && i === 3) || false,
+      id: `${id}-${i}`
+    });
+  }
+  return elements;
 };
 
 const segmentedArgs = {
-  id: 'storybook-segmented',
   size: 'md',
   legend: 'Légende',
   legendInline: false,
   noLegend: false,
   hint: undefined,
   hasIcon: false,
-  icon: 'road-map-line',
-  ...getSegmentedElementArgs(1),
-  ...getSegmentedElementArgs(2),
-  ...getSegmentedElementArgs(3)
+  elements: getSegmentedData()
 };
 
 const segmentedProps = (args) => {
-  const elements = (id) => {
-    const elements = [];
-
-    for (let i = 1; i <= 3; i++) {
-      const element = {
-        id: args[`id${i}`] || uniqueId('storybook-segmented-element'),
-        label: args[`label${i}`] || segmentedElementArgs.label,
-        name: args[`name${i}`] || id,
-        value: args[`value${i}`] || segmentedElementArgs.value,
-        icon: args.hasIcon && (args.icon || segmentedArgs.icon),
-        checked: (args.checked1 || args.checked2 || args.checked3) ? args[`checked${i}`] : i === 1,
-        disabled: args[`disabled${i}`] || undefined
-      };
-
-      elements.push(element);
-    }
-
-    return elements;
-  };
-
   const segmented = {
-    id: args.id || uniqueId('storybook-segmented'),
     size: args.size || segmentedArgs.size,
     legend: args.legend || segmentedArgs.legend,
     legendInline: args.legendInline || false,
     noLegend: args.noLegend || false,
-    hint: args.hint !== '' ? args.hint || segmentedArgs.hint : undefined
+    hint: args.hint !== '' ? args.hint || segmentedArgs.hint : undefined,
+    elements: [...args.elements],
+    id: args.id || undefined
   };
 
-  segmented.elements = elements(segmented.id);
+  for (const element of args.elements) {
+    element.icon = args.hasIcon ? 'checkbox-circle-line' : undefined;
+  }
 
   return segmented;
 };
 
-export { segmentedArgTypes, segmentedArgs, segmentedProps };
+export { segmentedArgTypes, segmentedArgs, segmentedProps, getSegmentedData };
