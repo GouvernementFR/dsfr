@@ -28,6 +28,9 @@
 * content.attributes (object, optional) : Attributs à ajouter au lien
 
 * content.actionMarkup (string, optional) : balise de l'actionneur du composant (a, button)
+
+* content.actionTitle (string, optional) : Attribut title de l'actionneur
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
@@ -39,6 +42,8 @@ const actionMarkup = content.actionMarkup || 'a';
 const href = content.href || '#';
 const attributes = content.attributes || {};
 const hasLink = !content.noLink;
+
+if (content.actionTitle) attributes.title = content.actionTitle;
 
 let action;
 switch (actionMarkup) {

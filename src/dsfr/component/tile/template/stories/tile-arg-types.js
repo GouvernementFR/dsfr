@@ -276,6 +276,7 @@ const tileProps = (args) => {
       markup: args.markup || tileArgs.markup,
       details: args.hasDetails ? args.details : undefined,
       actionMarkup: args.actionMarkup || tileArgs.actionMarkup,
+      actionTitle: args.actionTitle,
       href: args.href || tileArgs.href,
       blank: args.blank || tileArgs.blank,
       noLink: args.noLink || tileArgs.noLink,

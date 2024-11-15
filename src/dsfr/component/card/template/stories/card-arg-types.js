@@ -177,10 +177,6 @@ const cardArgTypes = {
     }
   },
   actionMarkup: {
-    if: {
-      arg: 'enlarge',
-      eq: true
-    },
     control: { type: 'select' },
     description: 'balise de l\'actionneur du composant (a, button)',
     options: ['a', 'button'],
@@ -398,6 +394,7 @@ const cardProps = (args) => {
       markup: args.markup || cardArgs.markup,
       details: [],
       actionMarkup: args.actionMarkup || cardArgs.actionMarkup,
+      actionTitle: args.actionTitle,
       href: args.href || cardArgs.href,
       blank: args.blank || cardArgs.blank,
       noLink: args.noLink || cardArgs.noLink,
