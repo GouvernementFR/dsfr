@@ -40,6 +40,22 @@ const checkboxesGroupArgTypes = {
   }
 };
 
+const getCheckboxesData = (count = 3) => {
+  const checkboxes = [];
+  for (let i = 1; i <= count; i++) {
+    checkboxes.push(
+      {
+        label: `Checkbox ${i}`,
+        id: uniqueId('checkbox'),
+        name: `checkbox${i}`,
+        hint: '',
+        disabled: false
+      }
+    );
+  }
+  return checkboxes;
+};
+
 const checkboxesGroupArgs = {
   legend: 'Légende pour l’ensemble des éléments',
   hint: formArgs.hint,
@@ -49,29 +65,7 @@ const checkboxesGroupArgs = {
   status: 'default',
   errorMessage: 'Texte d’erreur',
   validMessage: 'Texte de succès',
-  checkboxes: [
-    {
-      label: 'Checkbox 1',
-      id: uniqueId('checkbox'),
-      name: 'checkbox1',
-      hint: '',
-      disabled: false
-    },
-    {
-      label: 'Checkbox 2',
-      id: uniqueId('checkbox'),
-      name: 'checkbox2',
-      hint: '',
-      disabled: false
-    },
-    {
-      label: 'Checkbox 3',
-      id: uniqueId('checkbox'),
-      name: 'checkbox3',
-      hint: '',
-      disabled: false
-    }
-  ],
+  checkboxes: getCheckboxesData(),
   id: formArgs.id
 };
 
@@ -107,4 +101,4 @@ const checkboxesGroupProps = (args) => {
   return checkboxesGroup;
 };
 
-export { checkboxesGroupArgTypes, checkboxesGroupArgs, checkboxesGroupProps };
+export { checkboxesGroupArgTypes, checkboxesGroupArgs, checkboxesGroupProps, getCheckboxesData };

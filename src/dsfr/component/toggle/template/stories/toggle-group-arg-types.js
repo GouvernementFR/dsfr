@@ -36,11 +36,11 @@ const toggleGroupArgTypes = {
   }
 };
 
-const getToggleGroup = (num) => {
+const getTogglesData = (count = 3) => {
   const elements = [];
-  for (let i = 1; i <= num; i++) {
+  for (let i = 1; i <= count; i++) {
     elements.push({
-      id: uniqueId('storybook-toggle-group-input'),
+      id: uniqueId('toggle'),
       label: `${toggleArgs.label} ${i}`,
       checked: i === 1,
       disabled: false,
@@ -58,7 +58,7 @@ const toggleGroupArgs = {
   status: 'default',
   errorMessage: 'Texte d’erreur',
   validMessage: 'Texte de succès',
-  elements: [],
+  elements: getTogglesData(),
   id: 'toggle-group-id'
 };
 
@@ -88,4 +88,4 @@ const toggleGroupProps = (args) => {
   return toggleGroup;
 };
 
-export { toggleGroupArgTypes, toggleGroupArgs, toggleGroupProps, getToggleGroup };
+export { toggleGroupArgTypes, toggleGroupArgs, toggleGroupProps, getTogglesData };

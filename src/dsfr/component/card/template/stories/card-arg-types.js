@@ -169,6 +169,7 @@ const cardArgTypes = {
     }
   },
   enlarge: {
+    if: { arg: 'actionMarkup', eq: 'a' },
     control: 'boolean',
     description: 'Si true, agrandi la zone de clic à toute la carte',
     table: {
@@ -186,6 +187,14 @@ const cardArgTypes = {
     table: {
       category: 'action'
     }
+  },
+  actionTitle: {
+    control: 'text',
+    description: 'Attribut title de l\'actionneur. Si blank = true, il est obligatoire et doit reprendre le titre suivi de la mention "- nouvelle fenêtre"',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'attributes' }
   },
   href: {
     if: {
@@ -323,7 +332,7 @@ const cardArgTypes = {
       eq: true
     },
     control: 'boolean',
-    description: 'Si true, évaluation automatique des détails du fichier à télécharger (poids, format, etc.)',
+    description: 'Si true, évaluation automatique des détails du fichier à télécharger (poids, format, etc.). <br>Testez avec href = "img/placeholder.16x9.png"',
     table: {
       category: 'download'
     }
@@ -357,9 +366,9 @@ const cardArgs = {
   markup: 'h3',
   hasBadge: false,
   hasTag: false,
-  enlarge: false,
+  enlarge: true,
   actionMarkup: 'a',
-  href: 'img/placeholder.16x9.png',
+  href: '[URL - à modifier]',
   blank: false,
   noLink: false,
   disabled: false,
@@ -380,7 +389,6 @@ const cardArgs = {
 const cardProps = (args) => {
   const card = {
     id: args.id || undefined,
-    enlarge: args.enlarge || cardArgs.enlarge,
     download: args.download || cardArgs.download,
     size: args.size || cardArgs.size,
     horizontalProportion: args.horizontalProportion || cardArgs.horizontalProportion,
@@ -403,6 +411,12 @@ const cardProps = (args) => {
       badgesGroup: args.hasHeaderBadge && { badges: [{ label: 'Libellé badge', accent: 'purple-glycine' }] }
     }
   };
+
+  if (args.actionMarkup === 'a') {
+    card.enlarge = args.enlarge;
+  } else {
+    card.enlarge = true;
+  }
 
   if (args.hasDetailStart) {
     card.content.details.push({ label: args.detailStart, position: 'start' });

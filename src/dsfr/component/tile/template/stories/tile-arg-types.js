@@ -45,6 +45,7 @@ const tileArgTypes = {
     }
   },
   hasDetails: {
+    if: { arg: 'download', eq: false },
     control: 'boolean',
     description: 'Si true, ajoute une ligne détails dans le contenu',
     table: {
@@ -57,7 +58,7 @@ const tileArgTypes = {
       eq: true
     },
     control: 'text',
-    description: 'Détails de la tuile',
+    description: 'Détails de la tuile. Obligatoire si download = true',
     type: {
       value: 'string'
     },
@@ -97,6 +98,7 @@ const tileArgTypes = {
     }
   },
   enlarge: {
+    if: { arg: 'actionMarkup', eq: 'a' },
     control: 'boolean',
     description: 'Si true, agrandi la zone de clic à toute la tuile',
     table: {
@@ -104,10 +106,6 @@ const tileArgTypes = {
     }
   },
   actionMarkup: {
-    if: {
-      arg: 'enlarge',
-      eq: true
-    },
     control: { type: 'select' },
     description: 'balise de l\'actionneur du composant (a, button)',
     options: ['a', 'button'],
@@ -125,6 +123,14 @@ const tileArgTypes = {
     table: {
       category: 'action'
     }
+  },
+  actionTitle: {
+    control: 'text',
+    description: 'Attribut title de l\'actionneur. Si blank = true, il est obligatoire et doit reprendre le titre suivi de la mention "- nouvelle fenêtre"',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'attributes' }
   },
   noLink: {
     if: {
@@ -179,7 +185,7 @@ const tileArgTypes = {
       eq: true
     },
     control: 'boolean',
-    description: 'Si true, évaluation automatique des détails du fichier à télécharger (poids, format, etc.)',
+    description: 'Si true, évaluation automatique des détails du fichier à télécharger (poids, format, etc.). <br>Testez avec href = "img/placeholder.16x9.png"',
     table: {
       category: 'download'
     }
@@ -237,11 +243,11 @@ const tileArgs = {
   markup: 'h3',
   hasDescription: false,
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing, incididu',
-  hasDetails: false,
+  hasDetails: true,
   details: 'Détail (optionel)',
   hasBadge: false,
   hasTag: false,
-  enlarge: false,
+  enlarge: true,
   actionMarkup: 'a',
   href: '[URL - à modifier]',
   pictogramName: 'city-hall',
@@ -260,7 +266,6 @@ const tileArgs = {
 
 const tileProps = (args) => {
   const tile = {
-    enlarge: args.enlarge || tileArgs.enlarge,
     download: args.download || tileArgs.download,
     size: args.size || tileArgs.size,
     horizontal: args.horizontal || tileArgs.horizontal,
@@ -284,6 +289,16 @@ const tileProps = (args) => {
       pictogram: (args.pictogramName) ? { name: args.pictogramName, accent: args.pictogramAccent } : tileArgs.pictogram
     }
   };
+
+  if (args.download === true) {
+    tile.content.details = args.details || 'TYPE - POIDS - LANGUE';
+  }
+
+  if (args.actionMarkup === 'a') {
+    tile.enlarge = args.enlarge;
+  } else {
+    tile.enlarge = true;
+  }
 
   if (args.variations !== 'none') {
     tile.variations = [args.variations];
