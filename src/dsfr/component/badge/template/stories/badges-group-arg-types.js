@@ -49,7 +49,7 @@ const badgesGroupProps = (args) => {
   const badgesGroup = {
     size: args.size,
     groupMarkup: args.groupMarkup || badgesGroupArgs.groupMarkup,
-    badges: badgesGroupArgs.badges
+    badges: args.badges
   };
 
   return badgesGroup;

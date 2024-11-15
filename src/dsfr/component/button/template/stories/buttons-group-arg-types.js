@@ -103,7 +103,7 @@ const buttonsGroupProps = (args) => {
   if (args.hasIcon) {
     buttonsGroup.iconPlace = args.iconPlace;
     for (let i = 0; i < buttonsGroup.buttons.length; i++) {
-      buttonsGroup.buttons[i].icon = buttonsGroup.buttons[i].icon || buttonsGroupArgs.buttons[i].icon || 'checkbox-circle-line';
+      buttonsGroup.buttons[i].icon = buttonsGroup.buttons[i].icon || 'checkbox-circle-line';
     }
   } else {
     for (let i = 0; i < buttonsGroup.buttons.length; i++) {
