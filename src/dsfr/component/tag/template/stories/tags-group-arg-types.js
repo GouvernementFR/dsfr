@@ -18,9 +18,9 @@ const tagsGroupArgTypes = {
   }
 };
 
-const getTagsGroup = (num) => {
+const getTagsData = (count = 3) => {
   const tags = [];
-  for (let i = 1; i <= num; i++) {
+  for (let i = 1; i <= count; i++) {
     tags.push({
       label: `${tagArgs.label} ${i}`,
       accent: 'défaut',
@@ -40,7 +40,7 @@ const tagsGroupArgs = {
   size: tagArgs.size,
   type: tagArgs.type,
   groupMarkup: 'ul',
-  tags: []
+  tags: getTagsData()
 };
 
 const tagsGroupProps = (args) => {
@@ -58,4 +58,4 @@ const tagsGroupProps = (args) => {
   return tagsGroup;
 };
 
-export { tagsGroupArgTypes, tagsGroupArgs, tagsGroupProps, getTagsGroup };
+export { tagsGroupArgTypes, tagsGroupArgs, tagsGroupProps, getTagsData };

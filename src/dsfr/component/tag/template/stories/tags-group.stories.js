@@ -1,5 +1,5 @@
 import { renderTagsGroup } from './tag';
-import { tagsGroupArgs, tagsGroupArgTypes, tagsGroupProps, getTagsGroup } from './tags-group-arg-types';
+import { tagsGroupArgs, tagsGroupArgTypes, tagsGroupProps, getTagsData } from './tags-group-arg-types';
 
 const render = (args) => renderTagsGroup({ tagsGroup: tagsGroupProps(args) });
 
@@ -13,8 +13,7 @@ export default {
 
 export const TagsGroupStory = {
   args: {
-    type: 'default',
-    tags: getTagsGroup(3)
+    type: 'default'
   }
 };
 
@@ -23,7 +22,7 @@ export const SizeMdStory = {
   args: {
     size: 'md',
     type: 'default',
-    tags: getTagsGroup(3)
+    tags: getTagsData()
   }
 };
 
@@ -32,7 +31,7 @@ export const SizeSmStory = {
   args: {
     size: 'sm',
     type: 'default',
-    tags: getTagsGroup(3)
+    tags: getTagsData()
   }
 };
 
@@ -40,7 +39,7 @@ export const TagsGroupClickableStory = {
   tags: ['autodocs', '!dev'],
   args: {
     type: 'clickable',
-    tags: getTagsGroup(3)
+    tags: getTagsData()
   }
 };
 
@@ -48,7 +47,7 @@ export const TagsGroupPressableStory = {
   tags: ['autodocs', '!dev'],
   args: {
     type: 'pressable',
-    tags: getTagsGroup(3)
+    tags: getTagsData()
   }
 };
 
@@ -56,6 +55,6 @@ export const TagsGroupDismissibleStory = {
   tags: ['autodocs', '!dev'],
   args: {
     type: 'dismissible',
-    tags: getTagsGroup(3)
+    tags: getTagsData()
   }
 };

@@ -6,12 +6,11 @@ const tooltipArgTypes = {
       value: 'string',
       required: true
     },
-    table: { category: 'tooltip' }
+    table: { category: 'attributes' }
   },
   content: {
     control: 'text',
-    description: 'Contenu texte de l\'infobulle',
-    table: { category: 'tooltip' }
+    description: 'Contenu texte de l\'infobulle'
   },
   type: {
     control: {
@@ -31,9 +30,9 @@ const tooltipArgTypes = {
 };
 
 const tooltipArgs = {
-  id: 'tooltip',
   content: 'lorem ipsum dolor sit amet consectetur adipiscing elit',
-  type: 'default'
+  type: 'default',
+  id: 'tooltip'
 };
 
 const tooltipButtonProps = (args) => {

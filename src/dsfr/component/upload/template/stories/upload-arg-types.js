@@ -48,7 +48,8 @@ const uploadArgTypes = {
     description: 'Attribut name de l\'ajout de fichier',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   hint: {
     control: 'text',
@@ -77,13 +78,13 @@ const uploadArgTypes = {
 
 const uploadArgs = {
   label: 'libellé de l\'ajout de fichier',
-  name: 'upload',
   hint: 'Indication : taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.',
   disabled: false,
   multiple: false,
   status: 'default',
   errorMessage: 'Format de fichier non supporté',
-  id: 'upload-id'
+  id: 'upload-id',
+  name: 'upload'
 };
 
 const uploadProps = (args) => {
