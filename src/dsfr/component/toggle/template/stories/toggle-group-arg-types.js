@@ -36,6 +36,20 @@ const toggleGroupArgTypes = {
   }
 };
 
+const getToggleGroup = (num) => {
+  const elements = [];
+  for (let i = 1; i <= num; i++) {
+    elements.push({
+      id: uniqueId('storybook-toggle-group-input'),
+      label: `${toggleArgs.label} ${i}`,
+      checked: i === 1,
+      disabled: false,
+      hint: undefined
+    });
+  }
+  return elements;
+};
+
 const toggleGroupArgs = {
   legend: 'Légende pour l\'ensemble des éléments',
   left: false,
@@ -44,29 +58,7 @@ const toggleGroupArgs = {
   status: 'default',
   errorMessage: 'Texte d’erreur',
   validMessage: 'Texte de succès',
-  elements: [
-    {
-      label: `${toggleArgs.label} 1`,
-      checked: true,
-      disabled: false,
-      hint: undefined,
-      id: uniqueId('storybook-toggle-group-input')
-    },
-    {
-      label: `${toggleArgs.label} 2`,
-      checked: false,
-      disabled: false,
-      hint: undefined,
-      id: uniqueId('storybook-toggle-group-input')
-    },
-    {
-      label: `${toggleArgs.label} 3`,
-      checked: false,
-      disabled: false,
-      hint: undefined,
-      id: uniqueId('storybook-toggle-group-input')
-    }
-  ],
+  elements: [],
   id: 'toggle-group-id'
 };
 
@@ -96,4 +88,4 @@ const toggleGroupProps = (args) => {
   return toggleGroup;
 };
 
-export { toggleGroupArgTypes, toggleGroupArgs, toggleGroupProps };
+export { toggleGroupArgTypes, toggleGroupArgs, toggleGroupProps, getToggleGroup };

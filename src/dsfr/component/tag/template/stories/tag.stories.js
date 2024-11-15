@@ -17,7 +17,7 @@ export const TagStory = {
   args: {}
 };
 
-export const SizesStory = {
+export const SizeMDStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -26,7 +26,13 @@ export const SizesStory = {
     {
       size: 'md',
       hasIcon: true
-    },
+    }
+  ])
+};
+
+export const SizeSMStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
     {
       size: 'sm'
     },
@@ -66,7 +72,13 @@ export const TagClickableStory = {
       size: 'md',
       hasIcon: true,
       icon: 'arrow-right-line'
-    },
+    }
+  ])
+};
+
+export const TagClickableSizeSMStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
     {
       type: 'clickable',
       size: 'sm'
@@ -94,7 +106,13 @@ export const TagPressableStory = {
     {
       type: 'pressable',
       pressed: true
-    },
+    }
+  ])
+};
+
+export const TagPressableSizeSMStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
     {
       type: 'pressable',
       size: 'sm'
@@ -125,7 +143,13 @@ export const TagDismissibleStory = {
       size: 'md',
       hasIcon: true,
       icon: 'arrow-right-line'
-    },
+    }
+  ])
+};
+
+export const TagDismissibleSizeSMStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
     {
       type: 'dismissible',
       size: 'sm'

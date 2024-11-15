@@ -1,9 +1,7 @@
 import { renderTagsGroup } from './tag';
-import { tagsGroupArgs, tagsGroupArgTypes, tagsGroupProps } from './tags-group-arg-types';
+import { tagsGroupArgs, tagsGroupArgTypes, tagsGroupProps, getTagsGroup } from './tags-group-arg-types';
 
 const render = (args) => renderTagsGroup({ tagsGroup: tagsGroupProps(args) });
-
-const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
 
 export default {
   id: 'tags-group',
@@ -15,53 +13,49 @@ export default {
 
 export const TagsGroupStory = {
   args: {
-    type: 'default'
+    type: 'default',
+    tags: getTagsGroup(3)
   }
 };
 
 export const SizeMdStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      size: 'md',
-      type: 'default'
-    }
-  ])
+  args: {
+    size: 'md',
+    type: 'default',
+    tags: getTagsGroup(3)
+  }
 };
 
 export const SizeSmStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      size: 'sm',
-      type: 'default'
-    }
-  ])
+  args: {
+    size: 'sm',
+    type: 'default',
+    tags: getTagsGroup(3)
+  }
 };
 
 export const TagsGroupClickableStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      type: 'clickable'
-    }
-  ])
+  args: {
+    type: 'clickable',
+    tags: getTagsGroup(3)
+  }
 };
 
 export const TagsGroupPressableStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      type: 'pressable'
-    }
-  ])
+  args: {
+    type: 'pressable',
+    tags: getTagsGroup(3)
+  }
 };
 
 export const TagsGroupDismissibleStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      type: 'dismissible'
-    }
-  ])
+  args: {
+    type: 'dismissible',
+    tags: getTagsGroup(3)
+  }
 };

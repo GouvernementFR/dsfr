@@ -35,11 +35,13 @@ switch(tagsGroup.size) {
 <<%= groupMarkup %> <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
 <% for (let i = 0; i < tags.length; i++) { %>
   <% if (isList) { %>
-  <li>
+    <li>
   <% } %>
-    <%- include('./tag.ejs', { tag: tags[i] }); %>
+
+  <%- include('./tag.ejs', { tag: tags[i] }); %>
+
   <% if (isList) { %>
-  </li>
+    </li>
   <% } %>
 <% } %>
 </<%= groupMarkup %>>

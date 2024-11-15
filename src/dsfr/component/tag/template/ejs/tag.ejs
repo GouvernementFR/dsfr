@@ -37,6 +37,7 @@
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
+
 <%
 let tag = locals.tag || {};
 let tagClasses = tag.classes || [];
@@ -54,7 +55,7 @@ switch(tag.size) {
 
 switch(tag.type) {
   case 'clickable':
-    if (tag.markup === undefined) tag.markup = 'a';
+    tag.markup = 'a';
     if (tag.disabled !== true) {
       tagAttrs.href = tag.href || contentPlaceholder('url');
       switch (true) {
@@ -68,18 +69,18 @@ switch(tag.type) {
     }
   break;
   case 'pressable':
-    if (tag.markup === undefined) tag.markup = 'button';
+    tag.markup = 'button';
     tagAttrs.type = 'button';
     tagAttrs["aria-pressed"] = tag.pressed === true ? 'true' : 'false';
   break;
   case 'dismissible':
-    if (tag.markup === undefined) tag.markup = 'button';
+    tag.markup = 'button';
     tagAttrs.type = 'button';
     tagClasses.push(prefix + '-tag--dismiss');
     tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
   break;
   default:
-      if (tag.markup === undefined) tag.markup = 'p';
+    if (tag.markup === undefined) tag.markup = 'p';
   break;
 }
 
