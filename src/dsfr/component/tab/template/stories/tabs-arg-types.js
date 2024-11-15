@@ -14,7 +14,8 @@ const getTabArgs = (num) => {
     tabs.push({
       id: uniqueId('storybook-tab'),
       label: `Libellé onglet ${i}`,
-      content: `Contenu onglet ${i}`
+      content: `Contenu onglet ${i}`,
+      icon: 'checkbox-circle-line'
     });
   };
 
@@ -27,13 +28,17 @@ const tabsArgs = {
 };
 
 const tabsProps = (args) => {
-  for (const tab of args.tabs) {
-    tab.icon = args.hasIcon ? 'checkbox-circle-line' : undefined;
-  }
-
   const tabsGroup = {
     tabs: args.tabs
   };
+
+  for (let i = 0; i < tabsGroup.tabs.length; i++) {
+    if (args.hasIcon) {
+      tabsGroup.tabs[i].icon = tabsGroup.tabs[i].icon || 'checkbox-circle-line';
+    } else {
+      tabsGroup.tabs[i].icon = undefined;
+    }
+  }
 
   return tabsGroup;
 };

@@ -49,6 +49,7 @@ const getSegmentedData = (count = 3, hasDisabled = false) => {
       label: `libellé ${i}`,
       name: id,
       value: i,
+      icon: 'checkbox-circle-line',
       disabled: (hasDisabled && i === 3) || false,
       id: `${id}-${i}`
     });
@@ -77,8 +78,12 @@ const segmentedProps = (args) => {
     id: args.id || undefined
   };
 
-  for (const element of args.elements) {
-    element.icon = args.hasIcon ? 'checkbox-circle-line' : undefined;
+  for (let i = 0; i < segmented.elements.length; i++) {
+    if (args.hasIcon) {
+      segmented.elements[i].icon = segmented.elements[i].icon || 'checkbox-circle-line';
+    } else {
+      segmented.elements[i].icon = undefined;
+    }
   }
 
   return segmented;
