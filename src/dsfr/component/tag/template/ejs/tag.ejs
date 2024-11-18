@@ -9,6 +9,8 @@
 
 * tag.blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
 
+* tag.title (string, optional) : attribut title du tag
+
 * tag.disabled (boolean, optional) : si true, composant désactivé
 
 * tag.type (string, optional) : type de tag
@@ -43,6 +45,7 @@ let tag = locals.tag || {};
 let tagClasses = tag.classes || [];
 let tagAttrs = tag.attributes || {};
 tagAttrs.id = tag.id || undefined;
+tagAttrs.title = tag.title || undefined;
 tagClasses.push(prefix + '-tag');
 
 if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
@@ -59,9 +62,6 @@ switch(tag.type) {
     if (tag.disabled !== true) {
       tagAttrs.href = tag.href || contentPlaceholder('url');
       switch (true) {
-        case tag.blank:
-          tagAttrs = {...targetBlankData(), ...tagAttrs};
-        break;
         case tag.self:
           tagAttrs.target = '_self';
         break;
@@ -80,7 +80,7 @@ switch(tag.type) {
     tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
   break;
   default:
-    if (tag.markup === undefined) tag.markup = 'p';
+    tag.markup = 'p';
   break;
 }
 

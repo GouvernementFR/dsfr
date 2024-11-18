@@ -79,6 +79,14 @@ const tagArgTypes = {
     description: 'Taille du tag',
     options: ['sm', 'md']
   },
+  href: {
+    if: { arg: 'type', eq: 'clickable' },
+    control: 'text',
+    description: 'Lien de redirection du tag cliquable',
+    table: {
+      category: 'type'
+    }
+  },
   blank: {
     if: { arg: 'type', eq: 'clickable' },
     control: 'boolean',
@@ -87,13 +95,14 @@ const tagArgTypes = {
       category: 'type'
     }
   },
-  href: {
+  title: {
     if: { arg: 'type', eq: 'clickable' },
     control: 'text',
-    description: 'Lien de redirection du tag cliquable',
-    table: {
-      category: 'type'
-    }
+    description: 'Attribut title de l\'actionneur. Si blank = true, il est obligatoire et doit reprendre le titre suivi de la mention "- nouvelle fenêtre"',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'attributes' }
   },
   pressed: {
     if: { arg: 'type', eq: 'pressable' },
@@ -120,11 +129,12 @@ const tagArgs = {
   type: 'default',
   accent: 'défaut',
   size: 'md',
-  href: '#',
+  href: '[URL - à modifier]',
   hasIcon: false,
   icon: 'arrow-right-line',
   pressed: false,
   blank: false,
+  title: undefined,
   disabled: false
 };
 
@@ -135,8 +145,9 @@ const tagProps = (args) => {
     type: args.type || tagArgs.type,
     disabled: args.disabled || tagArgs.disabled,
     pressed: args.pressed || tagArgs.pressed,
-    blank: args.blank || tagArgs.blank,
     href: args.href || tagArgs.href,
+    blank: args.blank || tagArgs.blank,
+    title: args.title || tagArgs.title,
     id: args.id || undefined
   };
 
