@@ -47,22 +47,6 @@ const inputArgTypes = {
     },
     table: { category: 'input' }
   },
-  inputName: {
-    control: 'text',
-    description: 'Attribut \'name\' de l\'input',
-    type: {
-      value: 'string'
-    },
-    table: { category: 'input' }
-  },
-  inputValue: {
-    control: 'text',
-    description: 'Valeur de l\'input',
-    type: {
-      value: 'string'
-    },
-    table: { category: 'input' }
-  },
   inputAutocomplete: {
     control: { type: 'select' },
     options: ['off', 'current-password', 'new-password'],
@@ -151,23 +135,14 @@ const linkArgTypes = {
 };
 
 const passwordArgTypes = {
-  id: {
-    control: 'text',
-    description: 'Attribut id de la liste déroulante',
-    type: {
-      value: 'string'
-    }
-  },
   ...inputArgTypes,
   ...checkboxArgTypes,
   ...linkArgTypes
 };
 
 const passwordArgs = {
-  id: 'storybook-password',
   inputId: 'storybook-password-input',
   inputLabel: 'Mot de passe',
-  inputName: 'password',
   inputAutocomplete: 'current-password',
   checkboxId: 'storybook-password-checkbox',
   checkboxLabel: 'Afficher',
@@ -189,12 +164,10 @@ const passwordArgs = {
 
 const passwordProps = (args) => {
   const password = {
-    id: args.id || passwordArgs.id,
+    id: args.id || undefined,
     input: {
       id: args.inputId || passwordArgs.inputId,
       label: args.inputLabel || passwordArgs.inputLabel,
-      name: args.inputName || passwordArgs.inputName,
-      value: args.inputValue || undefined,
       autocomplete: args.inputAutocomplete || passwordArgs.inputAutocomplete
     },
     checkbox: {
