@@ -1,4 +1,4 @@
-import { radiosGroupArgs, radiosGroupArgTypes, radiosGroupProps } from './radios-group-arg-types';
+import { radiosGroupArgs, radiosGroupArgTypes, radiosGroupProps, getRadiosGroupData } from './radios-group-arg-types';
 import { renderFieldset } from '../../../form/template/stories/fieldset';
 
 const render = (args) => renderFieldset({ fieldset: radiosGroupProps(args) });
@@ -12,6 +12,13 @@ export default {
 };
 
 export const RadiosGroupStory = {
-  tags: ['autodocs'],
   args: {}
+};
+
+export const RadiosGroupRichStory = {
+  tags: ['autodocs'],
+  args: {
+    rich: true,
+    elements: getRadiosGroupData()
+  }
 };

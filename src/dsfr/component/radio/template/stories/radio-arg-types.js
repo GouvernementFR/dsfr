@@ -5,7 +5,8 @@ const pictogramArgTypes = {
     description: 'Nom du pictogramme du radio',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'pictogram' }
   },
   pictogramAccent: {
     if: { arg: 'rich', eq: true },
@@ -30,7 +31,8 @@ const pictogramArgTypes = {
       'brown-caramel',
       'brown-opera',
       'beige-gris-galet'
-    ]
+    ],
+    table: { category: 'pictogram' }
   }
 };
 
@@ -74,15 +76,17 @@ const messageArgTypes = {
 const radioArgTypes = {
   id: {
     control: 'text',
-    description: 'Attribut id de le radio',
+    description: 'Attribut id du radio',
     type: {
       value: 'string',
       required: true
-    }
+    },
+    table: { category: 'attributes' }
   },
   size: {
+    if: { arg: 'rich', eq: false },
     control: { type: 'select' },
-    description: 'Taille de radio',
+    description: 'Taille du radio',
     options: ['sm', 'md']
   },
   label: {
@@ -97,7 +101,8 @@ const radioArgTypes = {
     description: 'Attribut name du radio',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   hint: {
     control: 'text',
@@ -132,9 +137,7 @@ const radioArgs = {
   disabled: false,
   status: 'default',
   rich: false,
-  pictogram: {
-    name: 'city-hall'
-  },
+  pictogramName: 'city-hall',
   errorMessage: 'Texte d’erreur',
   validMessage: 'Texte de succès'
 };
@@ -156,11 +159,11 @@ const radioProps = (args) => {
 
   if (radio.rich) {
     radio.pictogram = {};
-    radio.pictogram.name = args.pictogramName || radioArgs.pictogram.name;
+    radio.pictogram.name = args.pictogramName || radioArgs.pictogramName;
     if (args.pictogramAccent && args.pictogramAccent !== 'défaut') radio.pictogram.accent = args.pictogramAccent;
   }
 
   return radio;
 };
 
-export { radioArgTypes, radioArgs, radioProps };
+export { radioArgTypes, radioArgs, radioProps, pictogramArgTypes };

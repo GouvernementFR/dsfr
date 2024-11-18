@@ -1,50 +1,14 @@
-import { radioArgTypes, radioArgs } from './radio-arg-types';
+import { radioArgTypes } from './radio-arg-types';
 import { formArgTypes, formArgs } from '../../../form/template/stories/form-arg-types';
-
-const getradioArgTypes = (id) => {
-  const radio = {};
-
-  const table = {
-    table: {
-      category: `radio${id}`
-    }
-  };
-
-  radio[`label${id}`] = { ...radioArgTypes.label, ...table };
-  radio[`id${id}`] = { ...radioArgTypes.id, ...table };
-  radio[`name${id}`] = { ...radioArgTypes.name, ...table };
-  radio[`hint${id}`] = { ...radioArgTypes.hint, ...table };
-  radio[`pictogramName${id}`] = { ...radioArgTypes.pictogramName, ...table };
-  radio[`pictogramAccent${id}`] = { ...radioArgTypes.pictogramAccent, ...table };
-  radio[`disabled${id}`] = { ...radioArgTypes.disabled, ...table };
-
-  if (id > 2) {
-    radio[`hasradio${id}`] = {
-      control: 'boolean',
-      table: {
-        category: `radio${id}`
-      }
-    };
-
-    if (id > 3) {
-      radio[`hasradio${id}`].if = { arg: `hasradio${id - 1}` };
-    }
-
-    radio[`label${id}`].if = { arg: `hasradio${id}` };
-    radio[`id${id}`].if = { arg: `hasradio${id}` };
-    radio[`disabled${id}`].if = { arg: `hasradio${id}` };
-    radio[`name${id}`].if = { arg: `hasradio${id}` };
-    radio[`pictogramName${id}`].if = { arg: `hasradio${id}` };
-    radio[`pictogramAccent${id}`].if = { arg: `hasradio${id}` };
-    radio[`hint${id}`].if = { arg: `hasradio${id}` };
-  }
-
-  return radio;
-};
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const radiosGroupArgTypes = {
   id: {
-    ...formArgTypes.id
+    ...formArgTypes.id,
+    type: {
+      value: 'string',
+      required: true
+    }
   },
   legend: {
     ...formArgTypes.legend,
@@ -77,34 +41,30 @@ const radiosGroupArgTypes = {
   },
   validMessage: {
     ...radioArgTypes.validMessage
-  },
-  ...getradioArgTypes(1),
-  ...getradioArgTypes(2),
-  ...getradioArgTypes(3),
-  ...getradioArgTypes(4),
-  ...getradioArgTypes(5)
+  }
 };
 
-const getradioArgs = (id) => {
-  const radio = {};
-
-  radio[`id${id}`] = `${radioArgs.id}-${id}`;
-  radio[`label${id}`] = `${radioArgs.label} ${id}`;
-  radio[`name${id}`] = radioArgs.name;
-  radio[`hint${id}`] = radioArgs.hint;
-  radio[`pictogramName${id}`] = radioArgs.pictogram.name;
-  radio[`pictogramAccent${id}`] = radioArgs.pictogram.accent;
-  radio[`disabled${id}`] = radioArgs.disabled;
-
-  if (id > 2) {
-    radio[`hasradio${id}`] = false;
+const getRadiosGroupData = (count = 3) => {
+  const radios = [];
+  const radioName = uniqueId('radios-group-name');
+  for (let i = 1; i <= count; i++) {
+    radios.push(
+      {
+        label: `Checkbox ${i}`,
+        id: uniqueId('radio'),
+        name: radioName,
+        hint: '',
+        disabled: false,
+        rich: false,
+        pictogramName: 'city-hall',
+        pictogramAccent: 'défaut'
+      }
+    );
   }
-
-  return radio;
+  return radios;
 };
 
 const radiosGroupArgs = {
-  id: formArgs.id,
   legend: 'Légende pour l’ensemble des éléments',
   hint: formArgs.hint,
   size: 'md',
@@ -114,56 +74,53 @@ const radiosGroupArgs = {
   status: 'default',
   errorMessage: 'Texte d’erreur',
   validMessage: 'Texte de succès',
-  ...getradioArgs(1),
-  ...getradioArgs(2),
-  ...getradioArgs(3),
-  ...getradioArgs(4),
-  ...getradioArgs(5)
+  elements: getRadiosGroupData(),
+  id: formArgs.id
 };
 
 const radiosGroupProps = (args) => {
-  const radios = [];
-
-  for (let i = 1; i <= 5; i++) {
-    if (i < 3 || args[`hasradio${i}`]) {
-      const radio = {
-        type: 'radio',
-        inline: args.inline,
-        data: {
-          id: args[`id${i}`] || undefined,
-          label: args[`label${i}`] || radioArgs.label,
-          size: args.size || radiosGroupArgs.size,
-          name: args[`name${i}`] || radioArgs.name,
-          rich: args.rich || radiosGroupArgs.rich,
-          hint: args[`hint${i}`] !== '' ? args[`hint${i}`] || radioArgs.hint : undefined,
-          disabled: args[`disabled${i}`]
-        }
-      };
-
-      if (radio.data.rich) {
-        radio.data.pictogram = {};
-        radio.data.pictogram.name = args[`pictogramName${i}`] || radioArgs.pictogram.name;
-        if (args[`pictogramAccent${i}`] && args[`pictogramAccent${i}`] !== 'défaut') radio.data.pictogram.accent = args[`pictogramAccent${i}`];
-      }
-
-      radios.push(radio);
-    }
-  }
-
   const radiosGroup = {
-    id: args.id || undefined,
+    id: args.id || uniqueId('radios-form'),
     legend: args.legend,
     disabled: args.disabled,
     hint: args.hint,
+    rich: args.rich || radiosGroupArgs.rich,
     inline: args.inline,
     choice: true,
     status: args.status || formArgs.status,
     error: args.status === 'error' ? args.errorMessage || formArgs.errorMessage : undefined,
     valid: args.status === 'valid' ? args.validMessage || formArgs.validMessage : undefined,
-    elements: radios
+    elements: args.elements.map((radio) => {
+      const radioProps = {
+        type: 'radio',
+        inline: args.inline,
+        data: {
+          label: radio.label,
+          size: args.size,
+          id: radio.id,
+          name: radio.name,
+          hint: radio.hint,
+          disabled: radio.disabled,
+          rich: args.rich
+        }
+      };
+
+      return radioProps;
+    })
   };
+
+  for (let i = 0; i < radiosGroup.elements.length; i++) {
+    if (args.rich) {
+      radiosGroup.elements[i].data.pictogram = {
+        name: args.elements[i].pictogramName || 'city-hall',
+        accent: args.elements[i].pictogramAccent || 'défaut'
+      };
+    } else {
+      radiosGroup.elements[i].pictogram = undefined;
+    }
+  }
 
   return radiosGroup;
 };
 
-export { radiosGroupArgTypes, radiosGroupArgs, radiosGroupProps };
+export { radiosGroupArgTypes, radiosGroupArgs, radiosGroupProps, getRadiosGroupData };
