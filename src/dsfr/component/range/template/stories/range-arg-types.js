@@ -30,14 +30,8 @@ const rangeArgTypes = {
     control: 'text',
     description: 'Attribut id de l\'input',
     type: {
-      value: 'string'
-    }
-  },
-  groupId: {
-    control: 'text',
-    description: 'Attribut id du composant',
-    type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   label: {
@@ -58,7 +52,8 @@ const rangeArgTypes = {
     control: 'text',
     description: 'Texte additionnel du curseur',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     }
   },
   size: {
@@ -92,7 +87,7 @@ const rangeArgTypes = {
   },
   step: {
     control: 'number',
-    description: 'Valeur maximale du curseur',
+    description: 'Pas du curseur',
     type: {
       value: 'integer'
     }
@@ -162,7 +157,6 @@ const rangeArgTypes = {
 };
 
 const rangeArgs = {
-  groupId: 'storybook-range',
   id: 'storybook-range-input',
   label: 'Libellé du curseur',
   name: 'range',
@@ -185,7 +179,6 @@ const rangeArgs = {
 const rangeProps = (args) => {
   const range = {
     id: args.id || rangeArgs.id,
-    groupId: args.groupId || rangeArgs.groupId,
     label: args.label || rangeArgs.label,
     name: args.name || rangeArgs.name,
     hint: args.hint !== '' ? args.hint || rangeArgs.hint : undefined,

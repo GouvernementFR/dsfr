@@ -1,12 +1,4 @@
 const buttonArgsTypes = {
-  buttonId: {
-    control: 'text',
-    description: 'Attribut \'id\' du bouton',
-    type: {
-      value: 'string'
-    },
-    table: { category: 'button' }
-  },
   buttonLabel: {
     control: 'text',
     description: 'Libellé du bouton',
@@ -32,7 +24,8 @@ const inputArgsTypes = {
     control: 'text',
     description: 'Attribut \'id\' de l\'input',
     type: {
-      value: 'string'
+      value: 'string',
+      required: true
     },
     table: { category: 'input' }
   },
@@ -56,13 +49,6 @@ const inputArgsTypes = {
 };
 
 const searchArgTypes = {
-  id: {
-    control: 'text',
-    description: 'Attribut \'id\' de la barre de recherche',
-    type: {
-      value: 'string'
-    }
-  },
   size: {
     control: { type: 'select' },
     description: 'Taille de la barre de recherche (défaut: md)',
@@ -73,12 +59,10 @@ const searchArgTypes = {
 };
 
 const searchArgs = {
-  id: 'header-search',
   size: 'md',
   inputId: 'search-input',
   inputLabel: 'Rechercher',
   inputPlaceholder: 'Rechercher',
-  buttonId: '',
   buttonTitle: 'Rechercher',
   buttonLabel: 'Rechercher'
 };
@@ -93,7 +77,6 @@ const searchProps = (args) => {
       placeholder: args.inputPlaceholder || searchArgs.inputPlaceholder
     },
     button: {
-      id: args.buttonId || searchArgs.buttonId,
       label: args.buttonLabel || searchArgs.buttonLabel,
       title: args.buttonTitle || searchArgs.buttonTitle
     }
