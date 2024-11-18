@@ -1,5 +1,13 @@
 const imageArgTypes = {
+  hasImage: {
+    control: 'boolean',
+    description: 'Si true, ajoute une image à la citation',
+    table: {
+      category: 'Image'
+    }
+  },
   src: {
+    if: { arg: 'hasImage', eq: true },
     control: 'text',
     description: 'Source de l\'image',
     type: {
@@ -10,6 +18,7 @@ const imageArgTypes = {
     }
   },
   alt: {
+    if: { arg: 'hasImage', eq: true },
     control: 'text',
     description: 'L\'alternative de l\'image doit rester vide car l\'image est illustrative et ne doit pas être restituée aux technologies d’assistance)',
     type: {
@@ -46,7 +55,7 @@ const accentArgTypes = {
       'beige-gris-galet'
     ],
     table: {
-      category: 'type'
+      category: 'variant'
     }
   }
 };
@@ -65,39 +74,56 @@ const quoteArgTypes = {
     description: 'Taille du texte de citation',
     options: ['md', 'lg', 'xl']
   },
-  href: {
-    control: 'text',
-    description: 'Url du texte original cité',
-    type: {
-      value: 'string'
+  hasAuthor: {
+    control: 'boolean',
+    description: 'Si true, ajoute un auteur à la citation',
+    table: {
+      category: 'Author'
     }
   },
   author: {
+    if: { arg: 'hasAuthor', eq: true },
     control: 'text',
     description: 'Nom de l\'auteur',
     type: {
       value: 'string'
+    },
+    table: {
+      category: 'Author'
+    }
+  },
+  hasDetails: {
+    control: 'boolean',
+    description: 'Si true, ajoute des textes de détail à la citation',
+    table: {
+      category: 'Sources'
     }
   },
   sources: {
+    if: { arg: 'hasDetails', eq: true },
     control: 'object',
     description: 'Tableau des textes de détail',
     type: {
       value: 'array'
+    },
+    table: {
+      category: 'Sources'
     }
   },
-  ...accentArgTypes,
-  ...imageArgTypes
+  ...imageArgTypes,
+  ...accentArgTypes
 };
 
 const quoteArgs = {
   text: 'Lorem [...] elit ut.',
   size: 'md',
-  href: '[À MODIFIER | https://lien-vers-la-source.fr || supprimer l\'attribut si pas d\'url pour la source]',
+  hasAuthor: true,
   author: 'Auteur',
-  sources: ['<cite>Ouvrage</cite>', 'Détail 1', 'Détail 2', 'Détail 3', '<a target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="[À MODIFIER | Lien vers la sources ou des infos complémentaires]">Détail 4</a>'],
+  hasImage: true,
   src: 'https://main--ds-gouv.netlify.app/example/img/placeholder.1x1.png',
   alt: '',
+  hasDetails: true,
+  sources: ['<cite>Ouvrage</cite>', 'Détail 1', 'Détail 2', 'Détail 3', '<a target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="[À MODIFIER | Lien vers la sources ou des infos complémentaires]">Détail 4</a>'],
   accent: 'défaut'
 };
 
@@ -105,13 +131,13 @@ const quoteProps = (args) => {
   const quote = {
     text: args.text || quoteArgs.text,
     size: args.size || quoteArgs.size,
-    href: args.href || quoteArgs.href
+    href: '[À MODIFIER | https://lien-vers-la-source.fr || supprimer l\'attribut si pas d\'url pour la source]'
   };
 
-  if (args.author !== null) quote.author = args.author || quoteArgs.author;
-  if (args.sources.length) quote.sources = args.sources || quoteArgs.sources;
+  if (args.hasAuthor) quote.author = args.author || quoteArgs.author;
+  if (args.hasDetails) quote.sources = args.sources || quoteArgs.sources;
   if (args.accent !== 'défaut') quote.accent = args.accent || quoteArgs.accent;
-  if (args.image !== null) {
+  if (args.hasImage) {
     quote.image = {
       src: args.src || quoteArgs.src,
       alt: args.alt || quoteArgs.alt
