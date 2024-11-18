@@ -1,29 +1,82 @@
 const paginationArgTypes = {
-  id: {
-    control: 'text',
-    description: 'Attribut \'id\' du composant',
+  hasFirstAndLast: {
+    control: 'boolean',
+    description: 'Ajoute des boutons Première et Dernière page',
+    table: { category: 'first and last' }
+  },
+  first: {
+    if: { arg: 'hasFirstAndLast', eq: true },
+    control: 'object',
+    description: 'Données du bouton de Première page',
     type: {
-      value: 'string'
-    }
+      value: 'array'
+    },
+    table: { category: 'first and last' }
+  },
+  last: {
+    if: { arg: 'hasFirstAndLast', eq: true },
+    control: 'object',
+    description: 'Données du bouton de Dernière page',
+    type: {
+      value: 'array'
+    },
+    table: { category: 'first and last' }
+  },
+  FirstAndLastDisplayedLg: {
+    control: 'boolean',
+    description: 'Affiche les boutons Première et Dernière page à partir du breakpoint LG',
+    table: { category: 'first and last' }
+  },
+
+  hasPrevAndNext: {
+    control: 'boolean',
+    description: 'Ajoute des boutons page Précédente et Suivante',
+    table: { category: 'prev and next' }
+  },
+  prev: {
+    if: { arg: 'hasPrevAndNext', eq: true },
+    control: 'object',
+    description: 'Données du bouton de page Précédente',
+    type: {
+      value: 'array'
+    },
+    table: { category: 'prev and next' }
+  },
+  next: {
+    if: { arg: 'hasPrevAndNext', eq: true },
+    control: 'object',
+    description: 'Données du bouton de page Suivante',
+    type: {
+      value: 'array'
+    },
+    table: { category: 'prev and next' }
+  },
+  PrevAndNextDisplayedLg: {
+    control: 'boolean',
+    description: 'Affiche les boutons page Précédente et Suivante à partir du breakpoint LG',
+    table: { category: 'prev and next' }
+  },
+  PrevAndNextHasLgLabel: {
+    control: 'boolean',
+    description: 'Affiche les libellés des boutons page Précédente et Suivante à partir du breakpoint LG',
+    table: { category: 'prev and next' }
   }
 };
 
-const getData = (label, displayedLg = false, hasLgLabel = false, title = null) => {
+const getData = (label, title = null) => {
   return {
     label: label,
     title: title,
-    href: '#',
-    displayedLg: displayedLg === true,
-    hasLgLabel: hasLgLabel === true
+    href: '#'
   };
 };
 
-const getPageData = (pageNumber, displayedLg) => {
-  return getData(pageNumber, displayedLg === true, false, `Page ${pageNumber}`);
+const getPageData = (pageNumber) => {
+  return { ...getData(pageNumber, `Page ${pageNumber}`) };
 };
 
-const getNavData = (label, hasLgLabel) => {
-  return getData(label, false, hasLgLabel === true, label);
+const getNavData = (label) => {
+  return { ...getData(label, label) };
 };
 
 const getPages = () => {
@@ -35,41 +88,44 @@ const getPages = () => {
 };
 
 const paginationArgs = {
-  id: 'pagination',
+  hasFirstAndLast: true,
   first: getNavData('Première page'),
-  prev: getNavData('Page précédente', true),
-  next: getNavData('Page suivante', true),
   last: getNavData('Dernière page'),
+  FirstAndLastDisplayedLg: false,
+  hasPrevAndNext: true,
+  prev: getNavData('Page précédente'),
+  next: getNavData('Page suivante'),
+  PrevAndNextDisplayedLg: false,
+  PrevAndNextHasLgLabel: true,
   pages: getPages()
 };
 
 const paginationProps = (args) => {
-  const pages = [];
-
-  for (let i = 0; i < args.pages.length; i++) {
-    const pagesArgs = args.pages[i];
-    const pagePaginationArgs = paginationArgs.pages[i];
-    const page = {
-      active: i === 2,
-      label: pagesArgs.label || pagePaginationArgs.label,
-      title: pagesArgs.title || pagePaginationArgs.title,
-      href: pagesArgs.href || pagePaginationArgs.href,
-      displayedLg: pagesArgs.displayedLg || pagePaginationArgs.displayedLg,
-      hasLgLabel: pagesArgs.hasLgLabel || pagePaginationArgs.hasLgLabel,
-      markup: pagesArgs.markup || pagePaginationArgs.markup
-    };
-
-    pages.push(page);
-  }
-
   const pagination = {
     id: args.id || undefined,
-    first: args.first || paginationArgs.first,
-    prev: args.prev || paginationArgs.prev,
-    next: args.next || paginationArgs.next,
-    last: args.last || paginationArgs.last,
-    pages: pages
+    pages: args.pages || paginationArgs.pages
   };
+
+  pagination.pages[1].active = true;
+
+  if (args.hasFirstAndLast) {
+    pagination.first = args.first || paginationArgs.first;
+    pagination.last = args.last || paginationArgs.last;
+  }
+
+  if (args.hasPrevAndNext) {
+    pagination.prev = args.prev || paginationArgs.prev;
+    pagination.next = args.next || paginationArgs.next;
+  }
+
+  pagination.first.displayedLg = args.FirstAndLastDisplayedLg;
+  pagination.last.displayedLg = args.FirstAndLastDisplayedLg;
+
+  pagination.prev.displayedLg = args.PrevAndNextDisplayedLg;
+  pagination.next.displayedLg = args.PrevAndNextDisplayedLg;
+
+  pagination.prev.hasLgLabel = args.PrevAndNextHasLgLabel;
+  pagination.next.hasLgLabel = args.PrevAndNextHasLgLabel;
 
   return pagination;
 };

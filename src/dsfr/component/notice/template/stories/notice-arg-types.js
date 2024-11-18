@@ -11,13 +11,6 @@ const buttonArgsTypes = {
 };
 
 const noticeArgTypes = {
-  id: {
-    control: 'text',
-    description: 'Attribut \'id\' du bandeau',
-    type: {
-      value: 'string'
-    }
-  },
   title: {
     control: 'text',
     description: 'Titre du bandeau',
@@ -26,7 +19,12 @@ const noticeArgTypes = {
       required: true
     }
   },
+  hasDescription: {
+    control: 'boolean',
+    description: 'Le bandeau a une description'
+  },
   desc: {
+    if: { arg: 'hasDescription', eq: true },
     control: 'text',
     description: 'Texte de description du bandeau',
     type: {
@@ -138,7 +136,8 @@ const noticeArgTypes = {
 const noticeArgs = {
   id: '',
   title: 'Titre du bandeau',
-  desc: '',
+  hasDescription: false,
+  desc: 'Texte de description',
   hasIcon: true,
   icon: '',
   type: 'info',
@@ -157,13 +156,14 @@ const noticeProps = (args) => {
   const notice = {
     id: args.id || undefined,
     title: args.title || noticeArgs.title,
-    desc: args.desc || undefined,
     dismissible: args.dismissible || noticeArgs.dismissible,
     icon: args.hasIcon ? args.icon : false,
     type: args.type || noticeArgs.type,
     markup: args.markup || noticeArgs.markup,
     notice: args.notice || noticeArgs.notice
   };
+
+  if (args.hasDescription) notice.desc = args.desc || undefined;
 
   if (args.hasLink) {
     notice.link = {
