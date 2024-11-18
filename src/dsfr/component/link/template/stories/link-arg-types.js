@@ -45,7 +45,8 @@ const linkArgTypes = {
   },
   id: {
     control: 'text',
-    description: 'Attribut \'id\' du lien'
+    description: 'Attribut \'id\' du lien',
+    table: { category: 'attributes' }
   },
   disabled: {
     control: 'boolean',
@@ -58,7 +59,8 @@ const linkArgTypes = {
   title: {
     if: { arg: 'blank', eq: true },
     control: 'text',
-    description: 'Attribut title du lien'
+    description: 'Attribut title du lien',
+    table: { category: 'attributes' }
   },
   href: {
     control: 'text',
@@ -105,13 +107,13 @@ const linkArgs = {
   download: false,
   detail: '',
   hreflang: '',
-  id: '',
   hasIcon: false,
   icon: 'checkbox-line',
   iconPlace: 'left',
   href: '#',
   assess: '',
   blank: false,
+  id: '',
   title: 'libellé du lien - nouvelle fenêtre'
 };
 

@@ -1,5 +1,6 @@
 import { renderLinksGroup } from './link';
 import { linksGroupArgs, linksGroupArgTypes, linksGroupProps } from './links-group-arg-types';
+import { linkArgs } from './link-arg-types';
 
 const render = (args) => renderLinksGroup({ linksGroup: linksGroupProps(args) });
 
@@ -21,13 +22,46 @@ export const SizesStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
-      size: 'sm'
+      size: 'sm',
+      links: [
+        {
+          label: linkArgs.label + ' 1'
+        },
+        {
+          label: linkArgs.label + ' 2'
+        },
+        {
+          label: linkArgs.label + ' 3'
+        }
+      ]
     },
     {
-      size: 'md'
+      size: 'md',
+      links: [
+        {
+          label: linkArgs.label + ' 1'
+        },
+        {
+          label: linkArgs.label + ' 2'
+        },
+        {
+          label: linkArgs.label + ' 3'
+        }
+      ]
     },
     {
-      size: 'lg'
+      size: 'lg',
+      links: [
+        {
+          label: linkArgs.label + ' 1'
+        },
+        {
+          label: linkArgs.label + ' 2'
+        },
+        {
+          label: linkArgs.label + ' 3'
+        }
+      ]
     }
   ])
 };
