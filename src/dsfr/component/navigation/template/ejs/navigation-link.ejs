@@ -29,5 +29,5 @@ if (link.active) linkAttrs['aria-current'] = link.isPage ? 'page' : 'true';
 
 %>
 
-<%- include('../../../../core/template/ejs/action/action', {action: {...link, classes: linkClasses, attributes: linkAttrs, kind: 'link'}}) %>
+<%- include('../../../../core/template/ejs/action/action', {action: {...link, classes: linkClasses, attributes: linkAttrs, markup: 'a'}}) %>
 

@@ -46,14 +46,6 @@ const type = button.type || 'button';
 btnClasses.push(prefix + '-btn');
 let action;
 const markup = button.markup || 'button';
-switch (markup) {
-  case 'a':
-    action = 'link';
-    break;
-  default:
-    action = markup;
-    break;
-}
 
 switch(button.size) {
   case 'sm':
@@ -100,7 +92,7 @@ if (button.tooltip && button.tooltip.id) btnAttrs['aria-describedby'] = button.t
 %>
 
 <% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
-<%- include('../../../../core/template/ejs/action/action', {action: {...button, classes: btnClasses, attributes: btnAttrs, type: type, kind: action}}) %>
+<%- include('../../../../core/template/ejs/action/action', {action: {...button, classes: btnClasses, attributes: btnAttrs, type: type, markup: markup}}) %>
 
 
 <% if (button.tooltip) { %>

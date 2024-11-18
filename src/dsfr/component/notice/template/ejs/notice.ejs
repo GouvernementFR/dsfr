@@ -59,7 +59,7 @@ else if (notice.icon) titleClasses.push(prefix + '-icon-' + notice.icon);
           <span class="<%= prefix %>-notice__desc"><%- desc %></span>
         <% } %>
         <% if (link) { %>
-          <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...notice.link, classes: [`${prefix}-notice__link`], kind: 'link'}}) %>
+          <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...notice.link, classes: [`${prefix}-notice__link`], markup: 'a'}}) %>
         <% } %>
       </<%= markup %>>
       <% if (notice.dismissible) { %>

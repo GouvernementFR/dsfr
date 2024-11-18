@@ -256,11 +256,11 @@ const footerArgs = {
     { src: 'img/placeholder.16x9.png', href: '#', alt: 'Intitulé du partenaire secondaire', style: 'height: 5.625rem' }
   ],
   bottomLinks: [
-    { label: 'Plan du site', href: '#', kind: 'link' },
-    { label: 'Accessibilité : non/partiellement/totalement conforme', href: '#', kind: 'link' },
-    { label: 'Mentions légales', href: '#', kind: 'link' },
-    { label: 'Données personnelles', href: '#', kind: 'link' },
-    { label: 'Gestion des cookies', href: '#', kind: 'link' }
+    { label: 'Plan du site', href: '#', markup: 'a' },
+    { label: 'Accessibilité : non/partiellement/totalement conforme', href: '#', markup: 'a' },
+    { label: 'Mentions légales', href: '#', markup: 'a' },
+    { label: 'Données personnelles', href: '#', markup: 'a' },
+    { label: 'Gestion des cookies', href: '#', markup: 'a' }
   ],
   bottomCopyright: 'Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="Licence etalab - nouvelle fenêtre">licence etalab-2.0</a>',
   id: 'footer'

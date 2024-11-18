@@ -48,19 +48,10 @@ let label = link.label || 'lorem ipsum';
 const disabled = link.disabled === true;
 linkAttrs.id = link.id || uniqueId('link');
 linkClasses.push(prefix + '-link');
-let action;
 const markup = link.markup || 'a';
+
 switch (markup) {
   case 'a':
-    action = 'link';
-    break;
-  default:
-    action = markup;
-    break;
-}
-
-switch (action) {
-  case 'link':
     if (link.rel) linkAttrs.rel = link.rel;
     if (link.hreflang) linkAttrs.hreflang = link.hreflang;
     if (link.assess === true) {
@@ -106,4 +97,4 @@ if (link.detail) {
 
 %>
 
-<%- include('../../../../core/template/ejs/action/action', {action: {...link, classes: linkClasses, attributes: linkAttrs, kind: action, label: label, disabled: disabled}}) %>
+<%- include('../../../../core/template/ejs/action/action', {action: {...link, classes: linkClasses, attributes: linkAttrs, markup: markup, label: label, disabled: disabled}}) %>

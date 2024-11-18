@@ -33,13 +33,13 @@
 
         default:
           const classes = link.classes || [];
-          const kind = link.kind || 'link';
+          const markup = link.markup || 'a';
           const attributes = link.attributes || {};
           attributes.id = uniqueId('footer__bottom-link');
-          if (kind === 'link') attributes["href"] = link.href || '#';
+          if (markup === 'a') attributes["href"] = link.href || '#';
           classes.push(`${prefix}-footer__bottom-link`);
           %>
-          <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, attributes: attributes, classes: classes, kind: kind}}); %>
+          <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, attributes: attributes, classes: classes, markup: markup}}); %>
           <%
       } %>
     </li>

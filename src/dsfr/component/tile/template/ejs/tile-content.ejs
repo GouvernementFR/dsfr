@@ -31,6 +31,8 @@
 
 * content.actionTitle (string, optional) : Attribut title de l'actionneur
 
+* content.actionType (string, optional) : Attribut type de l'actionneur
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
@@ -45,19 +47,10 @@ const hasLink = !content.noLink;
 
 if (content.actionTitle) attributes.title = content.actionTitle;
 
-let action;
+if (actionMarkup === 'button') attributes.type = content.actionType || actionMarkup;
+
 switch (actionMarkup) {
   case 'a':
-    action = 'link';
-    break;
-  default:
-    action = actionMarkup;
-    if (actionMarkup === 'button') attributes.type = actionMarkup;
-    break;
-}
-
-switch (action) {
-  case 'link':
     if (content.rel) attributes.rel = content.rel;
     if (content.lang) attributes.hreflang = content.lang;
     if (content.assess === true) {
@@ -81,7 +74,7 @@ if (content.badge) start.badge = content.badge;
 <div class="<%= prefix %>-tile__content">
   <<%= markup %> class="<%= prefix %>-tile__title">
     <% if (hasLink) { %>
-      <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...content, attributes, kind: action, label: content.title, disabled: content.disabled}}) %>
+      <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...content, attributes, markup: actionMarkup, label: content.title, disabled: content.disabled}}) %>
     <% } else { %>
         <%- content.title %>
     <% } %>

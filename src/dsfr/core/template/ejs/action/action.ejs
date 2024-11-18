@@ -33,26 +33,19 @@ valeurs :
 const action = locals.action || {};
 const actionClasses = action.classes || [];
 let actionAttrs = action.attributes || {};
-const actionKind = action.kind || 'button';
+const actionMarkup = action.markup || 'button';
 const actionLabel = action.label;
 const actionDisabled = action.disabled === true;
-let markup;
 
 if (action.type) actionAttrs.type = action.type;
 if (action.id) actionAttrs.id = action.id;
 
-switch (actionKind) {
+switch (actionMarkup) {
   case 'input':
-    markup = 'input';
     actionAttrs.value = actionLabel;
     break;
 
-  case 'button':
-    markup = 'button';
-    break;
-
-  case 'link':
-    markup = 'a';
+  case 'a':
     actionAttrs.href = action.href || '[url - à modifier]';
     switch (true) {
       case action.blank:
@@ -68,13 +61,13 @@ switch (actionKind) {
 }
 
 if (actionDisabled === true) {
-  switch (actionKind) {
+  switch (actionMarkup) {
     case 'input':
     case 'button':
       actionAttrs['disabled'] = '';
       break;
 
-    case 'link':
+    case 'a':
       actionAttrs['aria-disabled'] = 'true';
       actionAttrs.role = 'link';
       actionAttrs.href = undefined;
@@ -83,4 +76,4 @@ if (actionDisabled === true) {
 }
 %>
 
-<<%= markup %> <%- includeAttrs(actionAttrs); %> <%- includeClasses(actionClasses); %>><% if (actionKind !== 'input') { %><%- actionLabel %></<%= markup %>><% } %>
+<<%= actionMarkup %> <%- includeAttrs(actionAttrs); %> <%- includeClasses(actionClasses); %>><% if (actionMarkup !== 'input') { %><%- actionLabel %></<%= actionMarkup %>><% } %>

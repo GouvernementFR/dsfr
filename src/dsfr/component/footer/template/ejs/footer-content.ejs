@@ -5,6 +5,7 @@
 
 * content.links (array, required) : Tableau de liens
   ** content.links[].label (string, required) : label du lien
+	** content.links[].href (string, required) : url du lien
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -23,7 +24,7 @@
       	attributes.id = attributes.id || uniqueId('footer__content-link');
 		%>
 		<li class="<%= prefix %>-footer__content-item">
-			<%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, classes: classes, attributes: attributes, kind: 'link'}}); %>
+			<%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, classes: classes, attributes: attributes, markup: 'a'}}); %>
 		</li>
 		<% } %>
 	</ul>

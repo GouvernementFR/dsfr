@@ -12,7 +12,7 @@ const sidemenuArgTypes = {
     },
     control: 'text',
     description: 'Titre du menu latéral',
-    kind: {
+    type: {
       value: 'string',
       required: true
     }
@@ -25,23 +25,23 @@ const sidemenuArgTypes = {
   buttonLabel: {
     control: 'text',
     description: 'Titre du bouton accordéon en mobile',
-    kind: {
+    type: {
       value: 'string',
       required: true
     }
   }
 };
 
-const getItemArgs = (id, kind = 'link', isActive = false) => {
+const getItemArgs = (id, type = 'link', isActive = false) => {
   const item = {};
 
-  item.id = kind === 'link' ? `sidemenu-item-${id}` : `sidemenu-${id}`;
+  item.id = type === 'link' ? `sidemenu-item-${id}` : `sidemenu-${id}`;
   item.label = `Titre du lien ${id}`;
-  item.href = kind === 'link' && '#';
-  item.kind = kind;
+  item.href = type === 'link' && '#';
+  item.type = type;
   item.active = isActive;
-  item.collapsable = kind === 'menu';
-  item.collapseId = kind === 'menu' ? `sidemenu-${id}` : undefined;
+  item.collapsable = type === 'menu';
+  item.collapseId = type === 'menu' ? `sidemenu-${id}` : undefined;
 
   return item;
 };
@@ -82,10 +82,10 @@ const sidemenuArgs = {
 const sidemenuProps = (args) => {
   const sidemenu = {
     title: args.hasTitle ? args.title : undefined,
-    titleId: 'sidemenu-title',
+    titleId: args.titleId || 'sidemenu-title',
     buttonLabel: args.buttonLabel || sidemenuArgs.buttonLabel,
     modifier: args.modifier || sidemenuArgs.modifier,
-    collapseId: uniqueId('sidemenu'),
+    collapseId: args.collapseId || uniqueId('sidemenu'),
     items: args.items || sidemenuArgs.items
   };
 

@@ -21,4 +21,4 @@ btnAttrs['aria-controls'] = btn.collapseId;
 if (btn.active) btnAttrs['aria-current'] = true;
 %>
 
-<%- include('../../../../core/template/ejs/action/action', {action: {...btn, classes: btnClasses, attributes: btnAttrs, kind: 'button', label: btn.label}}) %>
+<%- include('../../../../core/template/ejs/action/action', {action: {...btn, classes: btnClasses, attributes: btnAttrs, markup: 'button', label: btn.label}}) %>

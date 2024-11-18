@@ -27,7 +27,8 @@ const cardArgTypes = {
     description: 'Attribut \'id\' de la carte',
     type: {
       value: 'string'
-    }
+    },
+    table: { category: 'attributes' }
   },
   title: {
     control: 'text',
@@ -347,7 +348,6 @@ const cardArgTypes = {
 };
 
 const cardArgs = {
-  id: 'card-id',
   title: 'Intitulé de la carte',
   hasDescription: true,
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et',
@@ -390,7 +390,7 @@ const cardProps = (args) => {
     horizontalProportion: args.horizontalProportion || cardArgs.horizontalProportion,
     content: {
       title: args.title || cardArgs.title,
-      description: args.description || cardArgs.description,
+      description: args.hasDescription ? args.description : undefined,
       markup: args.markup || cardArgs.markup,
       details: [],
       actionMarkup: args.actionMarkup || cardArgs.actionMarkup,
