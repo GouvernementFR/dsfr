@@ -16,7 +16,7 @@ export const RadiosGroupStory = {
 };
 
 export const RadiosGroupRichStory = {
-  tags: ['autodocs'],
+  tags: ['autodocs', '!dev'],
   args: {
     rich: true,
     elements: getRadiosGroupData()

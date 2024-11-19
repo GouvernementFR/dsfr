@@ -36,43 +36,6 @@ const pictogramArgTypes = {
   }
 };
 
-const messageArgTypes = {
-  status: {
-    control: {
-      type: 'select',
-      labels: {
-        default: 'Défaut',
-        valid: 'Succès',
-        error: 'Erreur'
-      }
-    },
-    description: 'Statut du message',
-    options: ['default', 'valid', 'error'],
-    type: {
-      value: 'string'
-    },
-    table: { category: 'message' }
-  },
-  errorMessage: {
-    if: { arg: 'status', eq: 'error' },
-    control: 'text',
-    description: 'Texte du message d\'erreur',
-    type: {
-      value: 'string'
-    },
-    table: { category: 'message' }
-  },
-  validMessage: {
-    if: { arg: 'status', eq: 'valid' },
-    control: 'text',
-    description: 'Texte du message de succès',
-    type: {
-      value: 'string'
-    },
-    table: { category: 'message' }
-  }
-};
-
 const radioArgTypes = {
   id: {
     control: 'text',
@@ -125,8 +88,7 @@ const radioArgTypes = {
     type: {
       value: 'boolean'
     }
-  },
-  ...messageArgTypes
+  }
 };
 
 const radioArgs = {
@@ -135,11 +97,8 @@ const radioArgs = {
   label: 'libellé radio',
   name: 'radio',
   disabled: false,
-  status: 'default',
   rich: false,
-  pictogramName: 'city-hall',
-  errorMessage: 'Texte d’erreur',
-  validMessage: 'Texte de succès'
+  pictogramName: 'city-hall'
 };
 
 const radioProps = (args) => {
@@ -151,10 +110,7 @@ const radioProps = (args) => {
     hint: args.hint !== '' ? args.hint : undefined,
     rich: args.rich || radioArgs.rich,
     disabled: args.disabled || radioArgs.disabled,
-    inline: args.inline || false,
-    status: args.status || radioArgs.status,
-    error: args.status === 'error' ? args.errorMessage || radioArgs.errorMessage : undefined,
-    valid: args.status === 'valid' ? args.validMessage || radioArgs.validMessage : undefined
+    inline: args.inline || false
   };
 
   if (radio.rich) {
@@ -166,4 +122,4 @@ const radioProps = (args) => {
   return radio;
 };
 
-export { radioArgTypes, radioArgs, radioProps, pictogramArgTypes };
+export { radioArgTypes, radioArgs, radioProps };
