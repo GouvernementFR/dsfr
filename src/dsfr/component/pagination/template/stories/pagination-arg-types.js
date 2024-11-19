@@ -23,6 +23,7 @@ const paginationArgTypes = {
     table: { category: 'first and last' }
   },
   FirstAndLastDisplayedLg: {
+    if: { arg: 'hasFirstAndLast', eq: true },
     control: 'boolean',
     description: 'Affiche les boutons Première et Dernière page à partir du breakpoint LG',
     table: { category: 'first and last' }
@@ -52,11 +53,13 @@ const paginationArgTypes = {
     table: { category: 'prev and next' }
   },
   PrevAndNextDisplayedLg: {
+    if: { arg: 'hasPrevAndNext', eq: true },
     control: 'boolean',
     description: 'Affiche les boutons page Précédente et Suivante à partir du breakpoint LG',
     table: { category: 'prev and next' }
   },
   PrevAndNextHasLgLabel: {
+    if: { arg: 'hasPrevAndNext', eq: true },
     control: 'boolean',
     description: 'Affiche les libellés des boutons page Précédente et Suivante à partir du breakpoint LG',
     table: { category: 'prev and next' }
@@ -111,22 +114,21 @@ const paginationProps = (args) => {
   if (args.hasFirstAndLast) {
     pagination.first = args.first || paginationArgs.first;
     pagination.last = args.last || paginationArgs.last;
+
+    pagination.first.displayedLg = args.FirstAndLastDisplayedLg;
+    pagination.last.displayedLg = args.FirstAndLastDisplayedLg;
   }
 
   if (args.hasPrevAndNext) {
     pagination.prev = args.prev || paginationArgs.prev;
     pagination.next = args.next || paginationArgs.next;
+
+    pagination.prev.displayedLg = args.PrevAndNextDisplayedLg;
+    pagination.next.displayedLg = args.PrevAndNextDisplayedLg;
+
+    pagination.prev.hasLgLabel = args.PrevAndNextHasLgLabel;
+    pagination.next.hasLgLabel = args.PrevAndNextHasLgLabel;
   }
-
-  pagination.first.displayedLg = args.FirstAndLastDisplayedLg;
-  pagination.last.displayedLg = args.FirstAndLastDisplayedLg;
-
-  pagination.prev.displayedLg = args.PrevAndNextDisplayedLg;
-  pagination.next.displayedLg = args.PrevAndNextDisplayedLg;
-
-  pagination.prev.hasLgLabel = args.PrevAndNextHasLgLabel;
-  pagination.next.hasLgLabel = args.PrevAndNextHasLgLabel;
-
   return pagination;
 };
 
