@@ -12,7 +12,6 @@ export default {
 };
 
 export const SegmentedStory = {
-  tags: ['autodocs', '!dev'],
   args: {}
 };
 
