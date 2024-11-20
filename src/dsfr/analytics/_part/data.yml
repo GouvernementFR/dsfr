@@ -1,2 +1,6 @@
 id: analytics
 isDetached: true
+title: Mesure d'audience
+title@en: Analytics
+description: API du DSFR permettant la mesure d'audience automatisée
+description@en: DSFR API for automated analytics

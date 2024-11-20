@@ -10,8 +10,8 @@ export default {
   title: 'DSFR/Core/FrIcon',
   tags: ['autodocs'],
   component: FrIcon,
-  // argTypes: schemaToArgTypes(FrIconModel.schema),
-  // args: schemaToArgs(FrIconModel.schema)
+  argTypes: schemaToArgTypes(FrIconModel.schema),
+  args: schemaToArgs(FrIconModel.schema)
 };
 
 export { warning, warningSm, warningLg } from './stories.js';

@@ -1,5 +1,5 @@
 import { ComponentModel } from '@gouvfr/dsfr-kit';
-import frIconSchema from './fr-icon-schema.json';
+import frIconSchema from './schema.json';
 
 class FrIconModel extends ComponentModel {
   assign (props, getters = {}) {

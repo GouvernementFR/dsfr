@@ -1,0 +1,23 @@
+%YAML 1.2
+---
+$schema: https://json-schema.org/draft/2020-12/schema
+id: https://github.com/GouvernementFR/dsfr/src/dsfr/core/icon
+title: DSFR/core/artwork/FrIcon
+type: object
+properties:
+  name:
+    type: string
+    description: Nom de l'icône, correspondant à son identifiant
+    description@en: Icon name, corresponding to its identifier
+    example: warning-fill
+  size:
+    type: string
+    description: Taille de l'icône, par défaut md. Les valeurs possibles sont [sm, md, lg]
+    description@en: Icon size, default is md. Possible values are [sm, md, lg]
+    example: md
+    enum:
+      - sm
+      - md
+      - lg
+required:
+  - name

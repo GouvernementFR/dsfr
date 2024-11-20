@@ -1,6 +1,0 @@
-languages:
-  - name: Français
-    code: fr
-  - name: English
-    code: en
-default: fr

@@ -1,4 +1,0 @@
----
-title: Introduction (Pourquoi un système de design ?)
-segment: introduction
----

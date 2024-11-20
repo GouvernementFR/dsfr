@@ -1,0 +1,15 @@
+{
+  "name": "@gouvfr/dsfr-kit",
+  "version": "1.0.33",
+  "description": "outils internes transverses pour les projets DSFR",
+  "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "type": "module",
+  "scripts": {
+    "tsc": " pnpm npx -p typescript tsc"
+  },
+  "devDependencies": {
+    "prop-types": "^15.8.1",
+    "typescript": "~5.4.2"
+  }
+}

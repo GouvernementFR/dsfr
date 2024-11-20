@@ -1,5 +1,5 @@
-import '../../../../../../dist/dsfr.css';
-import '../../../../../../dist/utility/utility.css';
+import '../../../../../../../dist/dsfr.css';
+import '../../../../../../../dist/utility/utility.css';
 import FrIcon from '../component/vue/fr-icon.vue';
 import { FrIconModel } from '../component/model/fr-icon-model.js';
 import { docStory } from '@gouvfr/dsfr-kit/src/stories';

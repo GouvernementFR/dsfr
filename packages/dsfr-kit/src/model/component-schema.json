@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GouvernementFR/dsfr-kit/src/model/component-schema.json",
+  "title": "Component",
+  "type": "object",
+  "props": {
+    "id": {
+      "type": "string",
+      "description": "Une chaîne de caractères représentant l'id du composant.",
+      "description@en-US": "A string representing the id of the component."
+    }
+  },
+  "element": {
+    "attributes": ["id", "class"],
+    "properties": ["innerHTML"]
+  }
+}
