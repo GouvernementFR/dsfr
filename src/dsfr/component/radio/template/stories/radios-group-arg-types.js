@@ -1,4 +1,4 @@
-import { radioArgTypes } from './radio-arg-types';
+import { radioArgTypes, pictogramArgTypes } from './radio-arg-types';
 import { formArgTypes, formArgs } from '../../../form/template/stories/form-arg-types';
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 
@@ -25,6 +25,9 @@ const radiosGroupArgTypes = {
   },
   rich: {
     ...radioArgTypes.rich
+  },
+  hasPictogram: {
+    ...pictogramArgTypes.hasPictogram
   },
   inline: {
     ...formArgTypes.inline
@@ -70,6 +73,7 @@ const radiosGroupArgs = {
   size: 'md',
   disabled: formArgs.disabled,
   rich: false,
+  hasPictogram: true,
   inline: formArgs.inline,
   status: 'default',
   errorMessage: 'Texte d’erreur',
@@ -110,7 +114,7 @@ const radiosGroupProps = (args) => {
   };
 
   for (let i = 0; i < radiosGroup.elements.length; i++) {
-    if (args.rich) {
+    if (radiosGroup.rich && args.hasPictogram) {
       radiosGroup.elements[i].data.pictogram = {
         name: args.elements[i].pictogramName || 'city-hall',
         accent: args.elements[i].pictogramAccent || 'défaut'

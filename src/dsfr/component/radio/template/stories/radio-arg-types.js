@@ -1,6 +1,15 @@
 const pictogramArgTypes = {
-  pictogramName: {
+  hasPictogram: {
     if: { arg: 'rich', eq: true },
+    control: 'boolean',
+    description: 'Ajoute un pictogramme au radio riche',
+    type: {
+      value: 'boolean'
+    },
+    table: { category: 'pictogram' }
+  },
+  pictogramName: {
+    if: { arg: 'hasPictogram', eq: true },
     control: 'text',
     description: 'Nom du pictogramme du radio',
     type: {
@@ -9,7 +18,7 @@ const pictogramArgTypes = {
     table: { category: 'pictogram' }
   },
   pictogramAccent: {
-    if: { arg: 'rich', eq: true },
+    if: { arg: 'hasPictogram', eq: true },
     control: { type: 'select' },
     description: 'Couleur d\'accentuation du pictogramme',
     options: [
@@ -98,6 +107,7 @@ const radioArgs = {
   name: 'radio',
   disabled: false,
   rich: false,
+  hasPictogram: true,
   pictogramName: 'city-hall'
 };
 
@@ -113,7 +123,7 @@ const radioProps = (args) => {
     inline: args.inline || false
   };
 
-  if (radio.rich) {
+  if (radio.rich && args.hasPictogram) {
     radio.pictogram = {};
     radio.pictogram.name = args.pictogramName || radioArgs.pictogramName;
     if (args.pictogramAccent && args.pictogramAccent !== 'défaut') radio.pictogram.accent = args.pictogramAccent;
@@ -122,4 +132,4 @@ const radioProps = (args) => {
   return radio;
 };
 
-export { radioArgTypes, radioArgs, radioProps };
+export { radioArgTypes, radioArgs, radioProps, pictogramArgTypes };
