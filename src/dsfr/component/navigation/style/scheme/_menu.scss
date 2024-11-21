@@ -19,7 +19,7 @@
         & > *:hover,
         & > *:hover + * {
           &,
-          & > #{ns(nav__link)} {
+          & #{ns(nav__link)} {
             @include color.no-box-shadow((legacy:$legacy));
           }
         }

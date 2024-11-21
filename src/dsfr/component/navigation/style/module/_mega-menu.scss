@@ -4,6 +4,7 @@
 ////
 
 @use 'src/module/preference';
+@use 'src/module/selector';
 
 #{ns(mega-menu)} {
   @include respond-from(lg) {
@@ -41,10 +42,22 @@
   }
 
   #{ns(nav__link)} {
-    @include padding-x(4v);
-    @include padding(3v 4v, lg);
-    @include before {
-      left: 0;
+    @include padding(3v 4v);
+    @include size(100%, auto);
+    min-height: auto;
+    font-weight: normal;
+
+    @include selector.current {
+      position: relative;
+      @include before('', block) {
+        @include absolute(50%, null, null, 0, 2px, 6v);
+        @include margin-top(-3v);
+
+        @include preference.forced-colors {
+          background-color: highlight;
+          @include width(1v);
+        }
+      }
     }
   }
 
@@ -63,7 +76,9 @@
   }
 
   &__category {
-    @include font-weight(bold);
+    #{ns(nav__link)} {
+      @include font-weight(bold);
+    }
   }
 
   &__list {
