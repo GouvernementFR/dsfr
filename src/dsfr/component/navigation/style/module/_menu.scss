@@ -4,6 +4,7 @@
 ////
 
 @use 'src/module/preference';
+@use 'src/module/selector';
 
 #{ns(menu)} {
   @include margin(-4px -4v);
@@ -39,14 +40,21 @@
   }
 
   #{ns(nav__link)} {
-    @include padding-x(4v);
-    @include before {
-      left: 0;
-    }
-    @include respond-from(lg) {
-      @include padding(3v 4v);
-      @include before {
-        left: 0;
+    @include padding(3v 4v);
+    @include size(100%, auto);
+    font-weight: normal;
+    min-height: auto;
+
+    @include selector.current {
+      position: relative;
+      @include before('', block) {
+        @include absolute(50%, null, null, 0, 2px, 6v);
+        @include margin-top(-3v);
+
+        @include preference.forced-colors {
+          background-color: highlight;
+          @include width(1v);
+        }
       }
     }
   }
