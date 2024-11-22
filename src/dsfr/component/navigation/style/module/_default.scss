@@ -66,6 +66,7 @@
 
   &__link,
   &__btn {
+    @include display-flex(row, center, space-between);
     font-weight: bold;
     @include padding(3v 4v);
     @include margin(0);
@@ -97,8 +98,6 @@
   }
 
   &__link {
-    display: block;
-
     &:not([href]) {
       @include selector.current {
         pointer-events: none;
@@ -108,9 +107,6 @@
   }
 
   &__btn {
-    @include display-flex(null, center, space-between);
-    flex-direction: row;
-
     @include icon(arrow-down-s-line, sm, after) {
       @include margin-left(2v);
       @include margin-right(0);
