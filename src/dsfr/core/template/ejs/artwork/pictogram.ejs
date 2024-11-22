@@ -14,7 +14,7 @@
 <%
   const pictogram = locals.pictogram || {} ;
 
-  const pictogramJson = locals.pictogramJson || include('../../../../../.config/pictogram.json');
+  const pictogramJson = locals.pictogramJson || include('../../../../../../.config/pictogram.json');
   const pictograms = JSON.parse(pictogramJson);
   const category = pictograms.filter(p => p.name === pictogram.name)[0].category;
 

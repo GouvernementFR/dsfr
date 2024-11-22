@@ -3,10 +3,10 @@
 /// @group Table
 ////
 
-@use 'module/media-query';
-@use 'module/color';
-@use 'module/spacing';
-@use 'module/preference';
+@use 'src/module/media-query';
+@use 'src/module/color';
+@use 'src/module/spacing';
+@use 'src/module/preference';
 
 #{ns(table)} {
   --table-offset: calc(0px);

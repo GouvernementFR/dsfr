@@ -7,7 +7,7 @@
 @use 'sass:meta';
 @use 'sass:string';
 @use 'sass:list';
-@use 'module/string' as str;
+@use 'src/module/string' as str;
 
 /// Return space value from type map and convert to rem.
 ///

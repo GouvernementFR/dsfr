@@ -3,8 +3,8 @@
 /// @group core
 ////
 
-@use 'module/color';
-@use 'module/selector';
+@use 'src/module/color';
+@use 'src/module/selector';
 
 @mixin _core-artwork-scheme($legacy: false) {
   #{selector.ns(artwork)} {

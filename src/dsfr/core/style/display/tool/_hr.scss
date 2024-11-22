@@ -3,8 +3,8 @@
 /// @group core
 ////
 
-@use 'module/preference';
-@use 'module/color';
+@use 'src/module/preference';
+@use 'src/module/color';
 
 @mixin build-hr() {
   @include padding(var(--text-spacing));

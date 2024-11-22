@@ -1,5 +1,5 @@
-@use 'module/string';
-@use 'module/color/variable/constant';
+@use 'src/module/string';
+@use 'src/module/color/variable/constant';
 
 $value: constant.$value;
 

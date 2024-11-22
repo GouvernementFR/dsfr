@@ -3,8 +3,8 @@
 /// @group core
 ////
 
-@use 'module/selector';
-@use 'module/preference';
+@use 'src/module/selector';
+@use 'src/module/preference';
 
 #{selector.ns(artwork)} {
   &-background,

@@ -3,7 +3,7 @@
 /// @group link
 ////
 
-@use 'module/spacing';
+@use 'src/module/spacing';
 
 #{ns-group(links)} {
   --li-bottom: #{space(2v)};

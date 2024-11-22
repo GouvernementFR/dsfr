@@ -3,9 +3,9 @@
 /// @group pagination
 ////
 
-@use 'module/color';
-@use 'module/media-query';
-@use 'module/selector';
+@use 'src/module/color';
+@use 'src/module/media-query';
+@use 'src/module/selector';
 
 @mixin _pagination-contrast-scheme($legacy: false) {
   @include media-query.high-contrast() {

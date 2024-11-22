@@ -3,7 +3,7 @@
 /// @group tag
 ////
 
-@use 'module/preference';
+@use 'src/module/preference';
 
 @include clickable-selector {
   &#{ns(tag)} {

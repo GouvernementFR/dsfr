@@ -3,9 +3,9 @@
 /// @group select
 ////
 
-@use 'module/spacing';
-@use 'module/reset';
-@use 'module/preference';
+@use 'src/module/spacing';
+@use 'src/module/reset';
+@use 'src/module/preference';
 
 #{ns(select)} {
   display: block;

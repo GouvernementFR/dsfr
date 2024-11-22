@@ -3,7 +3,7 @@
 /// @group transcription
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _transcription-scheme($legacy: false) {
   #{ns(transcription)} {

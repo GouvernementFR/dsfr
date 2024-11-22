@@ -3,8 +3,8 @@
 /// @group card
 ////
 
-@use 'module/media-query';
-@use 'module/disabled';
+@use 'src/module/media-query';
+@use 'src/module/disabled';
 
 #{ns(card--download)} {
   @include media-query.respond-from(md) {

@@ -3,7 +3,7 @@
 /// @group Table - deprecated
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _deprecated-table-scheme($legacy: false) {
   #{ns(table)} {

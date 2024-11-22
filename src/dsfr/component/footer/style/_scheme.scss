@@ -3,7 +3,7 @@
 /// @group footer
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _footer-scheme($legacy: false) {
   #{ns(footer)} {

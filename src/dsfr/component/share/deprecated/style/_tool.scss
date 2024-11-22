@@ -3,7 +3,7 @@
 /// @group share
 ////
 
-@use 'module/selector';
+@use 'src/module/selector';
 
 @mixin build-share-link($name, $icon) {
   #{ns(share__link)}--#{$name} {

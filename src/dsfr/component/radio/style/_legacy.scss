@@ -3,8 +3,8 @@
 /// @group radio
 ////
 
-@use 'module/spacing';
-@use 'module/legacy';
+@use 'src/module/spacing';
+@use 'src/module/legacy';
 
 @include legacy.is(ie11) {
   #{ns(fieldset--inline)} {

@@ -3,8 +3,8 @@
 /// @group share
 ////
 
-@use 'module/disabled';
-@use 'module/preference';
+@use 'src/module/disabled';
+@use 'src/module/preference';
 
 #{ns(share)} {
   @include display-flex(column);

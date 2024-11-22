@@ -3,8 +3,8 @@
 /// @group tooltip
 ////
 
-@use 'module/legacy';
-@use 'module/spacing';
+@use 'src/module/legacy';
+@use 'src/module/spacing';
 
 @include legacy.is(ie11) {
   #{ns(tooltip)} {

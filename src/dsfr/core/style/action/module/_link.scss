@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use 'module/preference';
+@use 'src/module/preference';
 
 a {
   @include a-reset;

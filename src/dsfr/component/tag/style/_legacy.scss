@@ -3,9 +3,9 @@
 /// @group tag
 ////
 
-@use 'module/color';
-@use 'module/spacing';
-@use 'module/legacy';
+@use 'src/module/color';
+@use 'src/module/spacing';
+@use 'src/module/legacy';
 
 @include legacy.is(ie11) {
   #{ns(tag)} {

@@ -3,10 +3,10 @@
 /// @group notice
 ////
 
-@use 'module/preference';
-@use 'module/media-query';
-@use 'module/selector';
-@use 'module/spacing';
+@use 'src/module/preference';
+@use 'src/module/media-query';
+@use 'src/module/selector';
+@use 'src/module/spacing';
 
 #{selector.ns(notice)} {
   @include relative();

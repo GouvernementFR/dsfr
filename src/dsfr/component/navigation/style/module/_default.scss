@@ -3,9 +3,9 @@
 /// @group navigation
 ////
 
-@use 'module/spacing';
-@use 'module/selector';
-@use 'module/preference';
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/preference';
 
 #{ns(nav)} {
   @include disable-underline;

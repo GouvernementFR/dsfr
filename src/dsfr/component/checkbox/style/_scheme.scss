@@ -3,9 +3,9 @@
 /// @group checkboxe
 ////
 
-@use 'module/color';
-@use 'module/disabled';
-@use 'module/selector';
+@use 'src/module/color';
+@use 'src/module/disabled';
+@use 'src/module/selector';
 
 @mixin _checkbox-scheme($legacy: false) {
   #{selector.ns(checkbox-group)} {

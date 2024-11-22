@@ -3,10 +3,10 @@
 /// @group sidemenu
 ////
 
-@use 'module/color';
-@use 'module/elevation';
-@use 'module/media-query';
-@use 'module/selector';
+@use 'src/module/color';
+@use 'src/module/elevation';
+@use 'src/module/media-query';
+@use 'src/module/selector';
 
 @mixin _sidemenu-scheme($legacy: false) {
   #{ns(sidemenu)} {

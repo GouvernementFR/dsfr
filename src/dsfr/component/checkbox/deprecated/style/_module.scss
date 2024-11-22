@@ -3,7 +3,7 @@
 /// @group checkbox
 ////
 
-@use 'module/spacing';
+@use 'src/module/spacing';
 
 #{ns(fieldset)} {
   #{ns(fieldset__content)} {

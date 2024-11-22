@@ -3,7 +3,7 @@
 /// @group callout
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _callout-scheme($legacy: false) {
   #{ns(callout)} {

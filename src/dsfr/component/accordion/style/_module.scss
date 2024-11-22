@@ -3,8 +3,8 @@
 /// @group accordion
 ////
 
-@use 'module/animate';
-@use 'module/preference';
+@use 'src/module/animate';
+@use 'src/module/preference';
 
 #{ns(accordion)} {
   position: relative;

@@ -3,7 +3,7 @@
 /// @group server
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 body {
   @include color.background(alt blue-france, (standalone: true));

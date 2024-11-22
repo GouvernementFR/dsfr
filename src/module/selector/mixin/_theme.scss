@@ -1,6 +1,6 @@
 // TODO
 @use 'namespace';
-@use 'module/utilities';
+@use 'src/module/utilities';
 
 @mixin theme($theme: null) {
   @if $theme != 'dark' {

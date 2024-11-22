@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use 'module/string';
+@use 'src/module/string';
 
 @function svg-encode($svg, $legacy) {
   $svg: string.replace($svg, '#', '%23');

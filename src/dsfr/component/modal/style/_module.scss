@@ -3,10 +3,10 @@
 /// @group modal
 ////
 
-@use 'module/spacing';
-@use 'module/elevation';
-@use 'module/color';
-@use 'module/preference';
+@use 'src/module/spacing';
+@use 'src/module/elevation';
+@use 'src/module/color';
+@use 'src/module/preference';
 
 #{ns(modal)} {
   // reset dialog @TODO à déplacer dans reset ?

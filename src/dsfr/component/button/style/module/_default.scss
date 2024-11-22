@@ -3,8 +3,8 @@
 /// @group button
 ////
 
-@use 'module/preference';
-@use 'module/disabled';
+@use 'src/module/preference';
+@use 'src/module/disabled';
 
 @include build-btn() {
   @include font-weight(medium);

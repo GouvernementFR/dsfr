@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use 'module/specificity';
+@use 'src/module/specificity';
 
 @include build-utility (display, ellipsis) {
   display: specificity.important(inline);

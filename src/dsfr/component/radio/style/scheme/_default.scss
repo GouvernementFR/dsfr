@@ -3,9 +3,9 @@
 /// @group radio
 ////
 
-@use 'module/color';
-@use 'module/disabled';
-@use 'module/selector';
+@use 'src/module/color';
+@use 'src/module/disabled';
+@use 'src/module/selector';
 
 @mixin _radio-scheme-md($legacy: false) {
   #{selector.ns-group(radio)} {

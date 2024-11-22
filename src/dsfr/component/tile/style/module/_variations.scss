@@ -3,8 +3,8 @@
 /// @group Tile
 ////
 
-@use 'module/spacing';
-@use 'module/media-query';
+@use 'src/module/spacing';
+@use 'src/module/media-query';
 
 #{ns(tile)} {
   &--horizontal,

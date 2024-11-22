@@ -3,7 +3,7 @@
 /// @group download
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _download-scheme($legacy: false) {
   #{ns(download)} {

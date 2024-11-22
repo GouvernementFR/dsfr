@@ -3,8 +3,8 @@
 /// @group radio
 ////
 
-@use 'module/spacing';
-@use 'module/selector';
+@use 'src/module/spacing';
+@use 'src/module/selector';
 
 #{selector.ns-group(radio)}--sm {
   input[type="radio"] {

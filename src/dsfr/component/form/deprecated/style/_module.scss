@@ -3,7 +3,7 @@
 /// @group form
 ////
 
-@use 'module/preference';
+@use 'src/module/preference';
 
 #{ns-group(select), ns-group(input)} {
   &:not(:last-child) {

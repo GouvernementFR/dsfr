@@ -5,10 +5,10 @@
 
 @use 'sass:list';
 @use 'sass:map';
-@use 'module/color';
-@use 'module/color/variable/sets';
-@use 'module/color/variable/decisions';
-@use 'module/selector';
+@use 'src/module/color';
+@use 'src/module/color/variable/sets';
+@use 'src/module/color/variable/decisions';
+@use 'src/module/selector';
 
 $decisions: () !default;
 

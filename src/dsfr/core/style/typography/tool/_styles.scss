@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use 'module/spacing';
+@use 'src/module/spacing';
 
 @function get-text-style($font-size) {
   @return map-get($text-styles, $font-size);

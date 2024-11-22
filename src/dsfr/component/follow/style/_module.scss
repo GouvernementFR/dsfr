@@ -3,7 +3,7 @@
 /// @group follow
 ////
 
-@use 'module/spacing';
+@use 'src/module/spacing';
 
 #{ns(follow)} {
   @include padding(6v 0);

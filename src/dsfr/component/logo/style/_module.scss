@@ -4,7 +4,7 @@
 ////
 
 @use 'sass:math';
-@use 'module/color';
+@use 'src/module/color';
 
 #{ns(logo)} {
   @include set-text-margin(0);

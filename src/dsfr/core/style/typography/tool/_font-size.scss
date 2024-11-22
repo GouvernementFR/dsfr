@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use 'module/spacing';
+@use 'src/module/spacing';
 
 @function font-size($font-size: 4v) {
   @return spacing.space($font-size);

@@ -1,7 +1,7 @@
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 
 const config = {
-  stories: ['../*.mdx', '../../src/**/*.mdx', '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../*.mdx', '../../src/dsfr/**/*.mdx', '../../src/dsfr/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/theming',
     '@storybook/addon-themes',

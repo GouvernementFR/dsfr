@@ -3,8 +3,8 @@
 /// @group link
 ////
 
-@use 'module/selector';
-@use 'module/preference';
+@use 'src/module/selector';
+@use 'src/module/preference';
 
 @include build-link();
 

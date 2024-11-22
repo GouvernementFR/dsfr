@@ -3,7 +3,7 @@
 /// @group translate
 ////
 
-@use 'module/legacy';
+@use 'src/module/legacy';
 
 @include legacy.is(ie11) {
   #{ns(translate)} {

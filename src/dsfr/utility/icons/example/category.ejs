@@ -1,7 +1,7 @@
 <%
  const sample = getSample(include);
 
- const icons = JSON.parse(include('../../../../.config/icon.json'));
+ const icons = JSON.parse(include('../../../../../.config/icon.json'));
  const selected = icons.filter(icon => icon.category === locals.category);
 
  for (const icon of selected) {

@@ -3,8 +3,8 @@
 /// @group Footer
 ////
 
-@use 'module/preference';
-@use 'module/selector';
+@use 'src/module/preference';
+@use 'src/module/selector';
 
 /**
  * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)

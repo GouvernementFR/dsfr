@@ -1,10 +1,10 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'module/string';
+@use 'src/module/string';
 @use 'background';
 @use 'z-index';
 @use 'shadow';
-@use 'module/elevation/variable/shadows';
+@use 'src/module/elevation/variable/shadows';
 
 @mixin elevate($level, $options: ()) {
   $layer: list.nth(string.split($level, '-'), 1);

@@ -7,8 +7,8 @@
   LINK
 \* ˍˍˍˍˍˍˍˍˍ */
 
-@use 'module/path';
-@use 'module/shame/media-query';
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
 
 @include path.to-dist(2);
 @include media-query.order;

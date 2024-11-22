@@ -1,6 +1,6 @@
 <%- include('./template/ejs/includes.ejs'); %>
 
-const package = `<%- include('../../package.json') %>`;
+const package = `<%- include('../../../package.json') %>`;
 const json = JSON.parse(package);
 locals.prefix = json.config.prefix;
 locals.namespace = json.config.namespace;

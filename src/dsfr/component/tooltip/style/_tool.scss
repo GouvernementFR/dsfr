@@ -3,7 +3,7 @@
 /// @group tooltip
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin tooltip-border($tokens, $direction, $legacy) {
   $value : '#{_conic-gradient($direction, "$color#1")}, #{_conic-gradient($direction, "$color#2")}, linear-gradient(90deg, $color#2, $color#2), linear-gradient(90deg, $color#1, $color#1)';

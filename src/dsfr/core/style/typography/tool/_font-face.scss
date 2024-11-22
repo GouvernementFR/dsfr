@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use 'module/path';
+@use 'src/module/path';
 
 @mixin font-face($name, $filename, $font-weight: 400, $font-style: normal, $font-display: swap) {
   @font-face {

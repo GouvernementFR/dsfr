@@ -3,10 +3,10 @@
 /// @group segmented
 ////
 
-@use 'module/selector';
-@use 'module/spacing';
-@use 'module/disabled';
-@use 'module/color';
+@use 'src/module/selector';
+@use 'src/module/spacing';
+@use 'src/module/disabled';
+@use 'src/module/color';
 
 @mixin _segmented-scheme($legacy: false) {
   #{selector.ns(segmented)} {

@@ -1,11 +1,11 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'module/legacy';
-@use 'module/media-query';
-@use 'module/spacing';
-@use 'module/specificity';
-@use 'module/string';
-@use 'module/utilities';
+@use 'src/module/legacy';
+@use 'src/module/media-query';
+@use 'src/module/spacing';
+@use 'src/module/specificity';
+@use 'src/module/string';
+@use 'src/module/utilities';
 @use '../variable/constant';
 @use '../function/box-shadow' as bs;
 @use '../function/colors';

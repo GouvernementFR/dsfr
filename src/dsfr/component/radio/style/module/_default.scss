@@ -3,10 +3,10 @@
 /// @group radio
 ////
 
-@use 'module/spacing';
-@use 'module/selector';
-@use 'module/preference';
-@use 'module/disabled';
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/preference';
+@use 'src/module/disabled';
 
 #{selector.ns-group(radio)} {
   @include relative;

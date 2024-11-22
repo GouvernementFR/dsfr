@@ -3,8 +3,8 @@
 /// @group segmented
 ////
 
-@use 'module/selector';
-@use 'module/legacy';
+@use 'src/module/selector';
+@use 'src/module/legacy';
 
 @include legacy.is(ie11) {
   #{selector.ns(segmented)} {

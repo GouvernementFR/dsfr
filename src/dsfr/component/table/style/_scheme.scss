@@ -3,7 +3,7 @@
 /// @group Table
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _table-scheme($legacy: false) {
   #{ns(table)} {

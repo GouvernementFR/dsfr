@@ -3,8 +3,8 @@
 /// @group tag
 ////
 
-@use 'module/color';
-@use 'module/disabled';
+@use 'src/module/color';
+@use 'src/module/disabled';
 
 @mixin _tag-scheme($legacy: false) {
   #{ns(tag)} {

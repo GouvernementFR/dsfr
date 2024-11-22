@@ -3,8 +3,8 @@
 /// @group Table
 ////
 
-@use 'module/spacing';
-@use 'module/color';
+@use 'src/module/spacing';
+@use 'src/module/color';
 
 @function _get-tabs-shadow($side, $active: true, $theme: light) {
   @if $active == false {

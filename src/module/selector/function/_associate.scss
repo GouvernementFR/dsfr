@@ -1,6 +1,6 @@
 @use 'sass:list';
 @use 'sass:selector';
-@use 'module/string';
+@use 'src/module/string';
 
 @function associate($selector, $element) {
   $segments: string.split('#{$selector}', ',');

@@ -3,8 +3,8 @@
 /// @group tag
 ////
 
-@use 'module/spacing';
-@use 'module/preference';
+@use 'src/module/spacing';
+@use 'src/module/preference';
 
 #{ns-group(tags)} {
   @include disable-list-style;

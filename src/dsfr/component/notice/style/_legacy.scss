@@ -3,7 +3,7 @@
 /// @group notice
 ////
 
-@use 'module/legacy';
+@use 'src/module/legacy';
 
 @include legacy.is(ie11) {
   #{ns(notice)} {

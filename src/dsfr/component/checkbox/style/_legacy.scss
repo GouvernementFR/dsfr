@@ -3,9 +3,9 @@
 /// @group checkbox
 ////
 
-@use 'module/selector';
-@use 'module/legacy';
-@use 'module/spacing';
+@use 'src/module/selector';
+@use 'src/module/legacy';
+@use 'src/module/spacing';
 
 @include legacy.is(ie11) {
   #{selector.ns(checkbox-group)} {

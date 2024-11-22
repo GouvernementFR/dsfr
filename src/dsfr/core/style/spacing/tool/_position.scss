@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use 'module/spacing';
+@use 'src/module/spacing';
 
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
   position: #{$position};

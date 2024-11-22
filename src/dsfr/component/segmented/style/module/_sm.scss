@@ -3,8 +3,8 @@
 /// @group semgented
 ////
 
-@use 'module/spacing';
-@use 'module/selector';
+@use 'src/module/spacing';
+@use 'src/module/selector';
 
 #{selector.ns(segmented)}--sm {
   #{selector.ns(segmented)}__legend {

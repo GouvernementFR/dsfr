@@ -1,8 +1,8 @@
 @use 'sass:map';
-@use 'module/elevation/variable/shadows';
-@use 'module/utilities';
+@use 'src/module/elevation/variable/shadows';
+@use 'src/module/utilities';
 @use '../variable/colors';
-@use 'module/legacy';
+@use 'src/module/legacy';
 
 @mixin shadow($layer, $legacy: false, $background: null) {
   @if $legacy {

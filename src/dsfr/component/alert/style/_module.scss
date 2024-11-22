@@ -3,8 +3,8 @@
 /// @group alert
 ////
 
-@use 'module/spacing';
-@use 'module/preference';
+@use 'src/module/spacing';
+@use 'src/module/preference';
 
 #{ns(alert)} {
   @include relative();

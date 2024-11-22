@@ -4,7 +4,7 @@
 ////
 
 @use "sass:math";
-@use 'module/spacing';
+@use 'src/module/spacing';
 
 @mixin _build-link-size($size-settings, $border-radius: false) {
   $font-size: map_get($size-settings, font-size);

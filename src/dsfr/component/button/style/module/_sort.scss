@@ -3,7 +3,7 @@
 /// @group button
 ////
 
-@use 'module/animate';
+@use 'src/module/animate';
 
 #{ns(btn--sort)} {
   @include nest-btn(sm, only, arrow-up-down-line, null, false);

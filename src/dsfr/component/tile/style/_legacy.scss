@@ -3,8 +3,8 @@
 /// @group tile
 ////
 
-@use 'module/legacy';
-@use 'module/media-query';
+@use 'src/module/legacy';
+@use 'src/module/media-query';
 
 @include legacy.is(ie11) {
   /**

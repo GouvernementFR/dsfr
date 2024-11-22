@@ -3,7 +3,7 @@
 /// @group footer
 ////
 
-@use 'module/preference';
+@use 'src/module/preference';
 
 #{ns(footer)} {
   @include disable-list-style;

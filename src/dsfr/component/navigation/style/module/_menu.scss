@@ -3,7 +3,7 @@
 /// @group navigation
 ////
 
-@use 'module/preference';
+@use 'src/module/preference';
 
 #{ns(menu)} {
   @include margin(-4px -4v);

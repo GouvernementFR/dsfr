@@ -3,7 +3,7 @@
 /// @group connect
 ////
 
-@use 'module/preference';
+@use 'src/module/preference';
 
 #{ns-group(connect)} {
   @include set-text-margin(0 0 4v 0);

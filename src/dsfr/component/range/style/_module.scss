@@ -3,11 +3,11 @@
 /// @group range
 ////
 
-@use 'module/reset';
-@use 'module/spacing';
-@use 'module/selector';
-@use 'module/disabled';
-@use 'module/preference';
+@use 'src/module/reset';
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/disabled';
+@use 'src/module/preference';
 
 #{selector.ns-group(range)} {
   @include relative;

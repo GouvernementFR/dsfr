@@ -3,8 +3,8 @@
 /// @group tag
 ////
 
-@use 'module/color';
-@use 'module/spacing';
+@use 'src/module/color';
+@use 'src/module/spacing';
 
 @mixin build-tag() {
   @include _build-link($tags-settings);

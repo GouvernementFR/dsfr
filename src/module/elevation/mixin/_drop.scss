@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use 'module/legacy';
-@use 'module/utilities';
+@use 'src/module/legacy';
+@use 'src/module/utilities';
 
 @mixin drop($options: ()) {
   $legacy: map.get($options, legacy);

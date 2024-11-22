@@ -3,9 +3,9 @@
 /// @group navigation
 ////
 
-@use 'module/color';
-@use 'module/elevation';
-@use 'module/media-query';
+@use 'src/module/color';
+@use 'src/module/elevation';
+@use 'src/module/media-query';
 
 @mixin _navigation-scheme-mega-menu($legacy: false) {
   #{ns(mega-menu)} {

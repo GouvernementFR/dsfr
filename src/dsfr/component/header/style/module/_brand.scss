@@ -3,8 +3,8 @@
 /// @group header
 ////
 
-@use 'module/media-query';
-@use 'module/spacing';
+@use 'src/module/media-query';
+@use 'src/module/spacing';
 
 #{ns(header)} {
   &__brand {

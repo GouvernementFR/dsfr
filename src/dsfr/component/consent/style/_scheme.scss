@@ -3,8 +3,8 @@
 /// @group consent
 ////
 
-@use 'module/color';
-@use 'module/elevation';
+@use 'src/module/color';
+@use 'src/module/elevation';
 
 @mixin _consent-scheme($legacy: false) {
   #{ns(consent-placeholder)} {

@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use 'sass:meta';
 @use 'sass:list';
-@use 'module/string';
+@use 'src/module/string';
 @use '../variable/units';
 
 $V: units.$V;

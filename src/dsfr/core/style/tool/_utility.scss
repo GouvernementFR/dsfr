@@ -4,7 +4,7 @@
 ////
 
 @mixin build-utility($category, $name, $modifier: null) {
-  // Récupération des variables depuis src/variables.scss
+  // Récupération des variables depuis src/dsfr/variables.scss
   $utilityVars: map-get($variables, $category);
 
   @if map-get($variables, $category) != null {

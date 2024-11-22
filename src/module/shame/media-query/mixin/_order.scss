@@ -1,5 +1,5 @@
-@use 'module/media-query/variable/breakpoints';
-@use 'module/media-query';
+@use 'src/module/media-query/variable/breakpoints';
+@use 'src/module/media-query';
 
 @mixin order () {
   @each $bp, $limits in breakpoints.$values {

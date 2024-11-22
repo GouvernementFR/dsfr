@@ -3,7 +3,7 @@
 /// @group quote
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _quote-scheme($legacy: false) {
   #{ns(quote)} {

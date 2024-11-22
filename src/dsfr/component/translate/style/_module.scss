@@ -3,9 +3,9 @@
 /// @group header
 ////
 
-@use 'module/animate';
-@use 'module/selector';
-@use 'module/preference';
+@use 'src/module/animate';
+@use 'src/module/selector';
+@use 'src/module/preference';
 
 #{ns(translate)} {
   --rows: 8;

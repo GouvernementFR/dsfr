@@ -45,14 +45,14 @@ const copyImages = (removeOrphans) => {
 };
 
 const copyAssets = (removeOrphans) => {
-  const src = root('src/core/asset/');
+  const src = root('src/dsfr/core/asset/');
   const dest = root('dist/');
 
   copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
 };
 
 const copyIcons = (removeOrphans) => {
-  const src = root('src/core/icon/');
+  const src = root('src/dsfr/core/icon/');
   const dest = root('dist/icons');
 
   copyDir(src, dest, ['svg', 'png', 'jpg'], removeOrphans);

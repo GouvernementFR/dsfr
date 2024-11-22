@@ -3,8 +3,8 @@
 /// @group modal
 ////
 
-@use 'module/color';
-@use 'module/elevation';
+@use 'src/module/color';
+@use 'src/module/elevation';
 
 @mixin _modal-scheme($legacy: false) {
   #{ns(modal)} {

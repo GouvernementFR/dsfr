@@ -3,8 +3,8 @@
 /// @group header
 ////
 
-@use 'module/media-query';
-@use 'module/preference';
+@use 'src/module/media-query';
+@use 'src/module/preference';
 
 #{ns(header)} {
   @include disable-underline;

@@ -1,5 +1,5 @@
 @use 'sass:list';
-@use 'module/string';
+@use 'src/module/string';
 @use 'constant';
 
 /// Remplace les variables par les couleurs dans la valeur à traiter

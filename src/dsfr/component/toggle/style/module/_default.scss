@@ -3,9 +3,9 @@
 /// @group toggle
 ////
 
-@use 'module/spacing';
-@use 'module/preference';
-@use 'module/disabled';
+@use 'src/module/spacing';
+@use 'src/module/preference';
+@use 'src/module/disabled';
 
 #{ns(toggle)} {
   display: flex;

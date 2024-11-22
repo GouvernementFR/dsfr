@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use 'module/reset';
+@use 'src/module/reset';
 
 @mixin btn-reset ($minimal: false) {
   @include reset.appearance(none);

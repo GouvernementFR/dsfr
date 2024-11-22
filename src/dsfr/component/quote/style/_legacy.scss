@@ -3,7 +3,7 @@
 /// @group quote
 ////
 
-@use 'module/legacy';
+@use 'src/module/legacy';
 
 @include legacy.is(ie11) {
   /**

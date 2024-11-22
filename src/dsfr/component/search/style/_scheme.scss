@@ -3,7 +3,7 @@
 /// @group search
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _search-scheme($legacy: false) {
   #{ns(search-bar)} {

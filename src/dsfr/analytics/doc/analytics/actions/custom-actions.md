@@ -23,7 +23,7 @@ Envoyez un événement lors du clic sur
 
 #### ActionType
 
-Les différents types d’action sont définis dans : src/analytics/script/analytics/action/type.js
+Les différents types d’action sont définis dans : src/dsfr/analytics/script/analytics/action/type.js
 
 Il existe les types d'actions suivants :
 
@@ -35,7 +35,7 @@ Mode : [out] | type : _interaction_
 
 Interaction générique du clic.
 
-De manière automatique, le type de l'action approprié sera sélectionné : 
+De manière automatique, le type de l'action approprié sera sélectionné :
 * `DOWNLOAD` s'il s'agit d'un anchor avec href et attribut download
 * `INTERNAL` s'il s'agit d'un anchor avec href qui pointe sur le même domaine
 * `EXTERNAL` s'il s'agit d'un anchor avec href qui pointe sur un domaine différent

@@ -3,8 +3,8 @@
 /// @group pagination
 ////
 
-@use 'module/color';
-@use 'module/legacy';
+@use 'src/module/color';
+@use 'src/module/legacy';
 
 @include legacy.is(ie11) {
   /**

@@ -3,7 +3,7 @@
 /// @group alert
 ////
 
-@use 'module/color';
+@use 'src/module/color';
 
 @mixin _alert-scheme($legacy: false) {
   #{ns(alert)} {

@@ -4,7 +4,7 @@
 ////
 
 @use 'sass:math';
-@use 'module/specificity';
+@use 'src/module/specificity';
 
 /// Force un ratio d'aspect sur le block par l'ajout d'un pseudo-element en before
 /// @param {String} $ratio - key du ratio attendu selon la map $ratio-scale

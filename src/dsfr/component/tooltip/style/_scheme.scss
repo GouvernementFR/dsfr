@@ -3,8 +3,8 @@
 /// @group core
 ////
 
-@use 'module/color';
-@use 'module/elevation';
+@use 'src/module/color';
+@use 'src/module/elevation';
 
 @mixin _tooltip-scheme($legacy: false) {
   #{ns(tooltip)} {

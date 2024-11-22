@@ -3,8 +3,8 @@
 /// @group connect
 ////
 
-@use 'module/color';
-@use 'module/disabled';
+@use 'src/module/color';
+@use 'src/module/disabled';
 
 @mixin _connect-scheme-default($legacy: false, $standalone: false) {
   #{ns(connect)} {

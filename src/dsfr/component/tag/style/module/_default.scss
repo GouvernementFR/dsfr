@@ -3,8 +3,8 @@
 /// @group tag
 ////
 
-@use 'module/preference';
-@use 'module/disabled';
+@use 'src/module/preference';
+@use 'src/module/disabled';
 
 @include build-tag();
 

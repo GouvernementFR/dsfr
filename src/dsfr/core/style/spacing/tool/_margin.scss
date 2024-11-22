@@ -3,8 +3,8 @@
 /// @group tools
 ////
 
-@use 'module/spacing';
-@use 'module/string';
+@use 'src/module/spacing';
+@use 'src/module/string';
 
 @function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
   $start: string.slice($prop, 1, 1);

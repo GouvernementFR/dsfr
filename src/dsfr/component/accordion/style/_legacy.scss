@@ -3,7 +3,7 @@
 /// @group accordion
 ////
 
-@use 'module/legacy';
+@use 'src/module/legacy';
 
 @include legacy.is(ie11) {
   /**
