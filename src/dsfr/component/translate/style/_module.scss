@@ -51,8 +51,8 @@
   }
 
   &__menu {
-    @include margin(0);
-    @include margin(-1v -4v 0, lg);
+    @include margin(-1v 0);
+    @include margin(-1v -4v, lg);
 
     @include preference.reduce-motion {
       transition: none;
