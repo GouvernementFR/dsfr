@@ -40,7 +40,7 @@ const collapseId = translate.collapseId || uniqueId('translate');
     <%- include('../../../button/template/ejs/button', {button:translateBtn}); %>
 
     <% if (translate.languages.length) { %>
-      <div class="<%= prefix %>-collapse <%= prefix %>-translate__menu <%= prefix %>-menu" id="<%= translate.collapseId %>">
+      <div class="<%= prefix %>-collapse <%= prefix %>-translate__menu <%= prefix %>-menu" id="<%= collapseId %>">
           <%- include('languages.ejs', {languages: translate.languages}) %>
       </div>
     <% } %>

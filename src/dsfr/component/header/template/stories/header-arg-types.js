@@ -462,12 +462,6 @@ const headerArgs = {
         url: '#',
         label: 'Espace recruteur',
         markup: 'a'
-      },
-      {
-        classes: ['fr-btn--account'],
-        url: '#',
-        label: 'Espace particulier',
-        markup: 'a'
       }
     ]
   },
@@ -486,26 +480,22 @@ const headerArgs = {
   translateButtonKind: 'tertiary',
   translateLanguages: [
     {
-      id: 'language-fr',
       name: 'Français',
       locale: 'fr',
       href: '/fr/',
       active: true
     },
     {
-      id: 'language-en',
       name: 'English',
       href: '/en/',
       locale: 'en'
     },
     {
-      id: 'language-es',
       name: 'Español',
       href: '/es/',
       locale: 'es'
     },
     {
-      id: 'language-de',
       name: 'Deutsch',
       href: '/de/',
       locale: 'de'
@@ -537,7 +527,7 @@ const headerProps = (args) => {
       id: args.menuId || headerArgs.menuId,
       modalId: args.menuModalId || headerArgs.menuModalId,
       tools: {
-        duplicateLinks: args.duplicateToolsLinks || headerArgs.duplicateToolLinks
+        duplicateLinks: args.duplicateToolLinks || headerArgs.duplicateToolLinks
       }
     };
 

@@ -29,6 +29,7 @@ header = {
           { voir buttonsGroup dans button }
         ]
       },
+      translate: { voir translate }
       search: {
         id: '',
         modalId: '',
@@ -55,8 +56,10 @@ header = {
 <% let header = locals.header || {body:{}, menu: {}};
 const attributes = header.attributes || {};
 if (header.id) attributes.id = header.id;
-if (header.menu && header.menu.tools && header.menu.tools.duplicateLinks) {
-  header.menu.tools.links = header.body.tools.links;
+if (header.body.tools && header.menu.tools.duplicateLinks) {
+  if (header.body.tools && header.body.tools.links) header.menu.tools.links = header.body.tools.links;
+  if (header.body.tools && header.body.tools.translate) header.menu.tools.translate = header.body.tools.translate;
+  if (header.body.tools && header.body.tools.toolsContent) header.menu.tools.toolsContent = header.body.tools.toolsContent;
 }
 if (header.menu && header.menu.modalId && header.menu.id) {
   header.body.brand.navbar.menu = header.menu;

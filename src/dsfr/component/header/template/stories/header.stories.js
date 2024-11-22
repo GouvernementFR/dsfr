@@ -35,7 +35,7 @@ export const ServiceStory = {
   tags: ['autodocs', '!dev'],
   args: {
     id: uniqueId('header'),
-    navigationItems: []
+    hasNavigation: false
   }
 };
 
@@ -46,7 +46,29 @@ export const ToolLinksStory = {
     hasToolLinks: true,
     menuId: uniqueId('menu'),
     menuModalId: uniqueId('menu-modal'),
-    navigationItems: []
+    hasNavigation: false,
+    toolLinks: {
+      buttons: [
+        {
+          classes: ['fr-btn--team'],
+          url: '#',
+          label: 'Contact',
+          markup: 'a'
+        },
+        {
+          classes: ['fr-btn--briefcase'],
+          url: '#',
+          label: 'Espace recruteur',
+          markup: 'a'
+        },
+        {
+          classes: ['fr-btn--account'],
+          url: '#',
+          label: 'Espace particulier',
+          markup: 'a'
+        }
+      ]
+    }
   }
 };
 
@@ -59,7 +81,7 @@ export const SearchStory = {
     searchModalId: uniqueId('search-modal'),
     searchBtnId: uniqueId('search-btn'),
     searchInputId: uniqueId('search-input'),
-    navigationItems: []
+    hasNavigation: false
   }
 };
 
@@ -75,7 +97,29 @@ export const ToolLinksSearchStory = {
     searchModalId: uniqueId('search-modal'),
     searchBtnId: uniqueId('search-btn'),
     searchInputId: uniqueId('search-input'),
-    navigationItems: []
+    hasNavigation: false,
+    toolLinks: {
+      buttons: [
+        {
+          classes: ['fr-btn--team'],
+          url: '#',
+          label: 'Contact',
+          markup: 'a'
+        },
+        {
+          classes: ['fr-btn--briefcase'],
+          url: '#',
+          label: 'Espace recruteur',
+          markup: 'a'
+        },
+        {
+          classes: ['fr-btn--account'],
+          url: '#',
+          label: 'Espace particulier',
+          markup: 'a'
+        }
+      ]
+    }
   }
 };
 
@@ -87,7 +131,7 @@ export const TranslateStory = {
     translateId: uniqueId('translate'),
     translateCollapseId: uniqueId('translate-collapse'),
     translateButtonKind: 3,
-    navigationItems: []
+    hasNavigation: false
   }
 };
 
@@ -101,7 +145,8 @@ export const ToolLinksTranslateStory = {
     hasTranslate: true,
     translateId: uniqueId('translate'),
     translateCollapseId: uniqueId('translate-collapse'),
-    navigationItems: []
+    translateButtonKind: 3,
+    hasNavigation: false
   }
 };
 
@@ -110,7 +155,7 @@ export const VerticalOperatorStory = {
   args: {
     id: uniqueId('header'),
     hasBrandOperator: true,
-    navigationItems: []
+    hasNavigation: false
   }
 };
 
@@ -121,6 +166,6 @@ export const HorizontalOperatorStory = {
     hasBrandOperator: true,
     brandOperatorSrc: 'img/placeholder.16x9.png',
     brandOperatorStyle: 'max-width: 9.0625rem;',
-    navigationItems: []
+    hasNavigation: false
   }
 };
