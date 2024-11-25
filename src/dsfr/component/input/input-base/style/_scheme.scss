@@ -1,0 +1,82 @@
+////
+/// Input Scheme
+/// @group input
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin _input-scheme($legacy: false) {
+  #{ns(input)} {
+    @include color.text(default grey, (legacy:$legacy));
+    @include color.background(contrast grey, (legacy:$legacy));
+    @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);
+
+    @include placeholder {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+
+    @include contact-auto-fill-button {
+      @include color.background(text label grey, (legacy:$legacy, hover: true));
+    }
+
+    @include disabled.selector((legacy: $legacy), (text: true, box-shadow: bottom-2-in));
+
+    @include autofill {
+      @include color.box-shadow((plain grey) (background contrast info), (legacy:$legacy), bottom-2-in all-in);
+      @include color.text-fill(label grey, (legacy:$legacy));
+    }
+
+    @if not $legacy {
+      @supports selector(::-webkit-calendar-picker-indicator) {
+        &[type=date] {
+          @include color.data-uri-svg(text action-high grey, (legacy: $legacy), $input-calendar-line);
+
+          @include disabled.selector((legacy: $legacy), (text: true, box-shadow: bottom-2-in)) {
+            @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $input-calendar-line);
+          }
+        }
+      }
+    }
+
+    &-wrap--addon {
+      > #{ns(input)}:not(:last-child) {
+        @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
+      }
+    }
+
+    @at-root #{ns(fieldset--valid)},
+    &-group--valid {
+      #{ns(input)},
+      #{ns(input-wrap--addon)} > #{ns(input)}:not(:last-child) {
+        @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
+      }
+    }
+
+    @at-root #{ns(fieldset--error)},
+    &-group--error {
+      #{ns(input)},
+      #{ns(input-wrap--addon)} > #{ns(input)}:not(:last-child) {
+        @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
+      }
+    }
+
+    &-group--error {
+      @include before {
+        @include color.background-image(border plain error, (legacy:$legacy));
+      }
+    }
+
+    &-group--valid {
+      @include before {
+        @include color.background-image(border plain success, (legacy:$legacy));
+      }
+    }
+
+    &-group--info {
+      @include before {
+        @include color.background-image(border plain info, (legacy:$legacy));
+      }
+    }
+  }
+}

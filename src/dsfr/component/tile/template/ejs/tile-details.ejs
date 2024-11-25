@@ -1,0 +1,16 @@
+<%#
+# paramètres des détails de la tuile
+
+* details (array, required) : collection d'objet définissant les détails
+
+* details[].label (string, required) : Intitulé du détail
+
+* icon (string, optionnal) : nom de l'icon
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+  const detailClasses = [`${prefix}-tile__detail`];
+%>
+<p <%- includeClasses(detailClasses); %>><%- details %></p>

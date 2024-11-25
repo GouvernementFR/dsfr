@@ -1,0 +1,34 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'ground';
+@use 'src/module/selector';
+@use '../variable/colors';
+@use '../variable/shadows';
+
+@mixin define () {
+  :root {
+    @include ground.ground(default);
+
+    --shadow-color: #{map.get(colors.$values, light)};
+
+    @each $id, $value in shadows.$values {
+      $result: ();
+      // on divise les valeurs par 2 pour correspondance entre box-shadow et drop-shadow
+      @each $v in $value {
+        @if meta.type-of($v) == number {
+          $result: list.append($result, $v * 0.5, $separator: space);
+        }
+        @else {
+          $result: list.append($result, $v, $separator: space);
+        }
+      }
+
+      --#{$id}-shadow: #{$result};
+    }
+  }
+
+  @include selector.theme(dark) {
+    --shadow-color: #{map.get(colors.$values, dark)};
+  }
+}

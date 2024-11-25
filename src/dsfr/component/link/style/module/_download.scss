@@ -1,0 +1,56 @@
+///
+/// Link Module - download
+/// @group link
+////
+
+@use 'src/module/preference';
+
+#{ns-group(links)}--download #{ns(link)},
+#{ns(link--download)} {
+  @include relative;
+  @include nest-link(md, right, download-line, null, false);
+  @include after {
+    @include margin-bottom(7v);
+    vertical-align: calc((#{space(3v)} - var(--icon-size)) * 0.5 - #{space(7v)});
+  }
+
+  #{ns(link__detail)} {
+    @include absolute(null, null, null, 0);
+    @include text-style(xs);
+    @include font-weight(regular);
+    @include margin-top(7v);
+    white-space: nowrap;
+    pointer-events: none;
+    cursor: text;
+
+    @include preference.forced-colors {
+      color: canvastext;
+    }
+
+    abbr {
+      text-decoration: none;
+    }
+  }
+
+  &:not([href]) {
+    #{ns(link__detail)} {
+      @include preference.forced-colors {
+        color: graytext;
+      }
+    }
+  }
+}
+
+#{ns-group(links)}--download {
+  @include enable-list-style;
+
+  > li {
+    display: block;
+  }
+}
+
+#{ns-group(links)}--download #{ns(link)},
+#{ns-group(links)} #{ns(link--download)} {
+  @include margin-bottom(10v);
+  @include margin-bottom(12v, md);
+}

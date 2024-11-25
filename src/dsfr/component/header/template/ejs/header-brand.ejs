@@ -1,0 +1,82 @@
+<%#
+# paramètres header brand
+
+* brand (object, required) : Paramètres du template
+  ** brand.service (object, optional) : Paramètres des services
+    *** brand.service.title (String, required) : titre du service
+    *** brand.service.tagline (String, optional) : description du service - précisions sur l‘organisation
+  ** brand.logo (string, optional) : chemin du template logo, ou paramètres du logo bloc marque - voir composant logo src/component/logo/template/ejs/logo.ejs
+  ** brand.operator (object, optional) : Paramètres logo opérateur - voir src/core/template/ejs/media/img.ejs
+  ** brand.navbar (object, optional) : Paramètres de la navbar - voir navbar
+  ** brand.link (object, optional) : Paramètres du lien
+    *** brand.link.title (string, required) : Titre du lien "Accueil - nom service - nom entité"
+    *** brand.link.href (string, optional) : Href du lien, généralement "/" pour retourner à la racine du site
+    *** brand.link.position (string, optional) : Elément sur lequel positionner le lien ('logo', 'service', ou 'operator')
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let brand = locals.brand || {};
+%>
+<div class="<%= prefix %>-header__brand <%= prefix %>-enlarge-link">
+  <%
+  const linkInfos = brand.link || brandData('header', header.logo !== undefined, brand.service !== undefined && brand.service.title !== undefined, brand.operator !== undefined);
+
+  const link = `<a href="${linkInfos.href}" title="${linkInfos.title}" >`;
+  %>
+
+  <div class="<%= prefix %>-header__brand-top" >
+    <div class="<%= prefix %>-header__logo" >
+      <% if (linkInfos.position === 'logo') { %><%- link %><% } %>
+        <%
+          let path, data;
+          switch(typeof brand.logo) {
+            case 'string':
+              path = brand.logo;
+              break;
+
+            default :
+              path = '../../../logo/template/ejs/logo';
+              data = brand.logo;
+              break;
+          }
+        %>
+        <%- include(path, {logo: data}); %>
+      <% if (linkInfos.position === 'logo') { %><%- '</a>' %><% } %>
+    </div>
+
+
+    <% if (brand.operator !== undefined) { %>
+      <div class="<%= prefix %>-header__operator">
+        <% if (linkInfos.position === 'operator') { %><%- link %><% } %>
+        <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: brand.operator}); %>
+        <% if (linkInfos.position === 'operator') { %><%- '</a>' %><% } %>
+      </div>
+    <% } %>
+
+    <% if (brand.navbar) { %>
+      <%- include('./header-navbar', {navbar: brand.navbar}); %>
+    <% } %>
+  </div>
+
+  <% if (brand.service !== undefined) { %>
+    <div class="<%= prefix %>-header__service" >
+      <% if (linkInfos.position === 'service') { %><%- link %><% } %>
+        <% if (brand.service && (brand.service.title || brand.service.beta)) { %>
+          <p class="<%= prefix %>-header__service-title">
+            <% if (brand.service.title) { %>
+              <%- brand.service.title %>
+            <% } %>
+            <% if (brand.service.beta) { %>
+              <%- include('../../../badge/template/ejs/badge.ejs', {badge: {markup: 'span', label: "BETA", size: 'sm', accent: 'green-emeraude'} }) %>
+            <% } %>
+          </p>
+        <% } %>
+      <% if (linkInfos.position === 'service') { %><%- '</a>' %><% } %>
+      <% if (brand.service && brand.service.tagline !== undefined) { %>
+        <p class="<%= prefix %>-header__service-tagline"><%- brand.service.tagline %></p>
+      <% } %>
+    </div>
+  <% } %>
+</div>

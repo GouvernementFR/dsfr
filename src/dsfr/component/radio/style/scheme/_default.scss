@@ -1,0 +1,94 @@
+////
+/// Radio Scheme : radio md
+/// @group radio
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+@use 'src/module/selector';
+
+@mixin _radio-scheme-md($legacy: false) {
+  #{selector.ns-group(radio)} {
+    input[type="radio"] {
+      & + label {
+        @include color.background-image((border action-high blue-france), (legacy:$legacy), radio-background-image(false));
+      }
+
+      @include disabled.selector {
+        + label {
+          @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false));
+        }
+      }
+
+      &:checked {
+        + label {
+          @include color.background-image((border active blue-france) (active blue-france), (legacy:$legacy), radio-background-image(true));
+        }
+
+        @include disabled.selector {
+          + label {
+            @include color.background-image((disabled grey) (disabled grey), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+  }
+
+  #{selector.ns(fieldset)} {
+    &--error {
+      #{selector.ns-group(radio)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border plain error), (legacy:$legacy), radio-background-image(false));
+          }
+
+          &:checked + label {
+            @include color.background-image((border plain error) (active blue-france), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+
+    &--valid {
+      #{selector.ns-group(radio)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border plain success), (legacy:$legacy), radio-background-image(false));
+          }
+
+          &:checked + label {
+            @include color.background-image((border plain success) (active blue-france), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+
+    &--info {
+      #{selector.ns-group(radio)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border plain info), (legacy:$legacy), radio-background-image(false));
+          }
+
+          &:checked + label {
+            @include color.background-image((border plain info) (active blue-france), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+
+    & #{selector.ns-group(radio)} {
+      input[type="radio"] {
+        @include disabled.selector {
+          & + label {
+            @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false));
+          }
+
+          &:checked + label {
+            @include color.background-image((disabled grey) (disabled grey), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+  }
+}

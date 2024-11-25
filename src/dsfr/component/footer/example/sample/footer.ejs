@@ -1,0 +1,66 @@
+<%
+let footer = locals.footer || {};
+let data = {}
+
+if (footer.id) data.id = footer.id || uniqueId('footer');
+else data.id = uniqueId('footer');
+
+if (footer.top === true) data.top = {
+  categories: [
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] },
+    { label: 'Nom de la catégorie', links: [{ label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }, { label: 'Lien de navigation', href: '#' }] }
+  ]
+};
+
+if (footer.brand === true) {
+  data.brand = brandData('footer', footer.logo, false, footer.operator);
+}
+
+if (footer.content === true) data.content = {
+  desc: lorem('', 240),
+  links: [
+    {label: 'info.gouv.fr', href: 'https://info.gouv.fr', blank: true, attributes: { title: getBlankTitle('info.gouv.fr') }},
+    {label: 'service-public.fr', href: 'https://service-public.fr', blank: true, attributes: { title: getBlankTitle('service-public.fr') }},
+    {label: 'legifrance.gouv.fr', href: 'https://legifrance.gouv.fr', blank: true, attributes: { title: getBlankTitle('legifrance.gouv.fr') }},
+    {label: 'data.gouv.fr', href: 'https://data.gouv.fr', blank: true, attributes: { title: getBlankTitle('data.gouv.fr') }}
+  ]
+};
+
+if (footer.partners !== undefined) {
+  data.partners = {
+    title: footer.partners.subPartners ? 'Nos partenaires' : 'Notre partenaire'
+  }
+
+  if (footer.partners.mainPartner === true) {
+    data.partners.mainPartner = imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem');
+    data.partners.mainPartner.href = footer.href
+  }
+
+  if (footer.partners.subPartners === true) {
+    data.partners.subPartners = [
+      {...imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'), href: footer.href},
+      {...imgData('img/placeholder.1x1.png', 'rendered', null, null, 'height: 5.625rem'), href: footer.href},
+      {...imgData('img/placeholder.9x16.png', 'rendered', null, null, 'height: 5.625rem'), href: footer.href}
+    ]
+  }
+}
+
+
+
+if (footer.bottom === true) data.bottom = {
+  links: [
+    {label: 'Plan du site', href: footer.href},
+    {label: 'Accessibilité : non/partiellement/totalement conforme', href: footer.href},
+    {label: 'Mentions légales', href: footer.href},
+    {label: 'Données personnelles', href: footer.href},
+    {label: 'Gestion des cookies', href: footer.href}
+  ],
+  copyright: `Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="${getBlankTitle('Licence etalab')}">licence etalab-2.0</a>`
+};
+%>
+
+<%- include('../../template/ejs/footer', {footer: data}); %>

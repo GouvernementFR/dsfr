@@ -1,0 +1,79 @@
+<%#
+# paramètres action
+
+* action.kind (string, optional) : type d'action [button/input/link]
+valeurs :
+  ** button (default) : bouton
+  ** input : input
+  ** link : lien
+
+* action.id (string, optional) : id de l'élément d'action
+
+* action.label (string, required) : libellé de l'élément d'action
+
+* action.href (string, optional) : adresse url du lien si action.kind = link
+
+* action.type (string, optional) : attribut type de l'élément d'action si action.kind = input ou button [button/submit/reset]
+
+* action.blank (bool, optional) : si true, target prend la valeur _blank, si action.kind = link
+
+* action.self (bool, optional) : si true, target prend la valeur _self, si action.kind = link
+
+* action.disabled (boolean, optional) : si valeur true, action désactivée
+
+* action.classes (array, optional) : classes de l'élément d'action
+
+* action.attributes (object, optional) : attributs de l'élément d'action
+
+#%>
+
+<% eval(include('../../../index.ejs')); %>
+
+<%
+const action = locals.action || {};
+const actionClasses = action.classes || [];
+let actionAttrs = action.attributes || {};
+const actionMarkup = action.markup || 'button';
+const actionLabel = action.label;
+const actionDisabled = action.disabled === true;
+
+if (action.type) actionAttrs.type = action.type;
+if (action.id) actionAttrs.id = action.id;
+
+switch (actionMarkup) {
+  case 'input':
+    actionAttrs.value = actionLabel;
+    break;
+
+  case 'a':
+    actionAttrs.href = action.href || '[url - à modifier]';
+    switch (true) {
+      case action.blank:
+        actionAttrs.target = '_blank';
+        actionAttrs.rel = 'noopener external';
+        break;
+
+      case action.self:
+        actionAttrs.target = '_self';
+        break;
+    }
+    break;
+}
+
+if (actionDisabled === true) {
+  switch (actionMarkup) {
+    case 'input':
+    case 'button':
+      actionAttrs['disabled'] = '';
+      break;
+
+    case 'a':
+      actionAttrs['aria-disabled'] = 'true';
+      actionAttrs.role = 'link';
+      actionAttrs.href = undefined;
+      break;
+  }
+}
+%>
+
+<<%= actionMarkup %> <%- includeAttrs(actionAttrs); %> <%- includeClasses(actionClasses); %>><% if (actionMarkup !== 'input') { %><%- actionLabel %></<%= actionMarkup %>><% } %>

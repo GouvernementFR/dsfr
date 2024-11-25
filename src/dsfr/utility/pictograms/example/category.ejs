@@ -1,0 +1,11 @@
+<%
+ const sample = getSample(include);
+
+ const pictograms = JSON.parse(include('../../../../../.config/pictogram.json'));
+ const selected = pictograms.filter(pictogram => pictogram.category === locals.category);
+
+ for (const pictogram of selected) {
+ %>
+<%- sample(pictogram.name, '../../../core/template/ejs/artwork/pictogram', { pictogram: pictogram }, true); %>
+
+<% } %>

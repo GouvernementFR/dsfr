@@ -1,0 +1,16 @@
+////
+/// Callout Legacy
+/// @group core
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import 'index';
+@import 'style/scheme';
+@import 'style/legacy';
+
+@include _callout-scheme(true);

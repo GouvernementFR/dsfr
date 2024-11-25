@@ -1,0 +1,195 @@
+////
+/// Notice Module
+/// @group notice
+////
+
+@use 'src/module/preference';
+@use 'src/module/media-query';
+@use 'src/module/selector';
+@use 'src/module/spacing';
+
+#{selector.ns(notice)} {
+  @include relative();
+  @include set-title-margin(0);
+  @include set-text-margin(0);
+  @include padding-y(4v);
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
+
+  &__body {
+    @include relative;
+    @include display-flex(row, flex-start, space-between);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: inherit;
+      line-height: inherit;
+      font-size: inherit;
+    }
+  }
+
+  &__title {
+    @include relative;
+    @include margin-right(1v);
+    @include font-weight(bold);
+    @include icon-size(md, before);
+    @include icon-style(before) {
+      @include margin-right(2v);
+    }
+    @include icon-forced-color(canvastext, true, before);
+  }
+
+  &__desc {
+    @include margin-right(1v);
+  }
+
+  &__title,
+  &__desc {
+    display: block;
+    @include media-query.respond-from(sm) {
+      display: inline;
+    }
+  }
+
+  &__title,
+  &__desc,
+  &__link {
+    @include text-style(sm);
+    @include media-query.respond-from(md) {
+      @include text-style(md);
+    }
+  }
+
+  &--no-icon {
+    #{selector.ns(notice)}__title {
+      @include before {
+        display: none;
+      }
+    }
+  }
+
+  #{selector.ns(btn--close)} {
+    @include nest-btn(sm, only, close-line, null, false);
+    @include margin-top(-1v);
+    @include margin-left(1v);
+    @include margin-left(4v, md);
+    color: inherit;
+  }
+
+  &--info,
+  &--warning,
+  &--alert,
+  &--weather-orange,
+  &--weather-red,
+  &--weather-purple,
+  &--witness,
+  &--kidnapping,
+  &--attack,
+  &--cyberattack {
+    #{selector.ns(notice)}__title {
+      @include icon-content;
+    }
+  }
+
+  &--info {
+    #{selector.ns(notice)}__title {
+      @include has-not-icon {
+        @include icon-image(info-fill, before);
+      }
+    }
+  }
+
+  &--warning {
+    #{selector.ns(notice)}__title {
+      @include has-not-icon {
+        @include icon-image(warning-fill, before);
+      }
+    }
+  }
+
+  &--alert {
+    #{selector.ns(notice)}__title {
+      @include has-not-icon {
+        @include icon-image(error-warning-fill, before);
+      }
+    }
+  }
+
+  &--weather-orange {
+    #{selector.ns(notice)}__title {
+      @include has-not-icon {
+        @include icon-image(heavy-showers-fill, before);
+      }
+    }
+  }
+
+  &--weather-red {
+    #{selector.ns(notice)}__title {
+      @include has-not-icon {
+        @include icon-image(heavy-showers-fill, before);
+      }
+    }
+  }
+
+  &--weather-purple {
+    #{selector.ns(notice)}__title {
+      @include has-not-icon {
+        @include icon-image(typhoon-fill, before);
+      }
+    }
+  }
+
+  &--weather-red,
+  &--weather-purple {
+    @include preference.forced-colors {
+      color: highlight;
+    }
+
+    #{selector.ns(notice)}__title {
+      @include icon-forced-color(highlight, true, before);
+    }
+  }
+
+  &--witness,
+  &--kidnapping,
+  &--attack,
+  &--cyberattack {
+    @include padding-top(5.5v);
+    background-position: 0 0;
+    background-size: spacing.space(100% 1.5v);
+    background-repeat: no-repeat;
+
+    #{selector.ns(notice)}__title {
+      text-transform: uppercase;
+      @include icon-forced-color(highlight, true, before);
+    }
+
+    @include preference.forced-colors {
+      color: highlight;
+    }
+  }
+
+  &--witness,
+  &--cyberattack {
+    #{selector.ns(notice)}__title {
+      @include icon-image(warning-fill, before);
+    }
+  }
+
+  &--kidnapping {
+    #{selector.ns(notice)}__title {
+      @include icon-image(alert-warning-fill, before);
+    }
+  }
+
+  &--attack {
+    #{selector.ns(notice)}__title {
+      @include icon-image(alert-warning-2-fill, before);
+    }
+  }
+}

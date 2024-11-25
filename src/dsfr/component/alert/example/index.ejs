@@ -1,0 +1,37 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section('Alerte statique', 'Précisez le type d\'alerte (Information/Succès/Erreur) dans le titre ou, à défaut, dans le contenu de l\'alerte. <br> Le titre est défini par la classe "fr-alert__title", la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte.', 0); %>
+
+<%- sample('Alerte par défaut', './sample/alert-default', {}, true); %>
+
+<%- sample('Alerte succès', './sample/alert-default', {alert: {type: "success", title: "Succès de l'envoi"}}, true); %>
+
+<%- sample('Alerte erreur', './sample/alert-default', {alert: {type: "error", title: "Erreur détectée dans le formulaire"}}, true); %>
+
+<%- sample('Alerte info', './sample/alert-default', {alert: {type: "info", title: "Information Covid"}}, true); %>
+
+<%- sample('Alerte attention', './sample/alert-default', {alert: {type: "warning", title: "Attention"}}, true); %>
+
+<%- sample('Alerte sans titre', './sample/alert-default', {alert: {type: "info", title:false, text: "Information : titre de l'information"}}, true); %>
+
+<%- sample('Alerte avec bouton fermer', './sample/alert-dismissible', {alert: {type: "info", title: "Information Covid"}}, true); %>
+
+<%- sample('Alerte taille SM', './sample/alert-default', {alert: {size: "sm", type: "info"}}, true); %>
+
+<%- sample('Alerte taille SM sans titre', './sample/alert-default', {alert: {title:false, size: "sm", type: "info", text: "Information : titre de l'information"}}, true); %>
+
+<%- sample('Alerte taille SM refermable', './sample/alert-dismissible', {alert: {title:false, size: "sm", type: "info", text: "Information : cliquer sur la croix pour fermer l'alerte"}}, true); %>
+
+<%- sample('Alerte icône personnalisée', './sample/alert-default', {alert: {icon: 'lock-fill'}}, true); %>
+
+<%- section('Alerte dynamique', 'Ajouter l\'attribut role="alert" lorsque les alertes sont ajoutées dynamiquement dans le DOM (en js après le chargement de la page)', 0); %>
+
+<%- sample('Alerte ajoutée dynamiquement (type)', './sample/alert-dismissible', {alert: {alert: true, type: "error", title: "Erreur détectée dans le formulaire"}}, true, './layout-dynamic.ejs'); %>
+
+<%- deprecation(); %>
+
+<%- sample('Alerte avec bouton fermer', '../deprecated/example/sample/alert-dismissible', {alert: {type: "info", title: "Information Covid"}}, true); %>
+
+

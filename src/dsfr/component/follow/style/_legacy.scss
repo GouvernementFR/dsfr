@@ -1,0 +1,39 @@
+////
+/// Follow Legacy
+/// @group follow
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * Correctif de la largeur max des textes
+  */
+  #{ns(follow__newsletter)} {
+    & > * {
+      max-width: 100%;
+    }
+  }
+
+  #{ns(follow)} {
+    @include build-follow-social-icons-legacy();
+
+    #{ns-group(btns)} {
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include icon-legacy(null, md);
+          }
+        }
+      }
+
+      &--lg {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include icon-legacy(null, lg);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<% const sample = getSample(include); %>
+<% const resetSubtitle = `Utilisation de la classe <code>${prefix}-reset-link</code> sur les balises de lien pour réinitialiser le style des liens.` %>
+<% const resetWrapperSubtitle = `Utilisation de la classe <code>${prefix}-reset-link</code> sur un wrapper pour afficher les liens de manière brut.` %>
+
+<div class="<%= prefix %>-container" >
+  <%- section('Liens réinitialisés', `Utilisation de la classe <code>${prefix}-reset-link</code> pour réinitialiser le style des liens.`, 0) %>
+
+  <%- sample({ title: 'Lien réinitialisé', subtitle: resetSubtitle }, '../../reset/sample/paragraph', { paragraph: {insert: `<a class="${prefix}-reset-link" title="titre lien" href="../">lien interne</a>`} }, true); %>
+
+  <%- sample({ title: 'Lien externe réinitialisé', subtitle: resetSubtitle }, '../../reset/sample/paragraph', { paragraph: {insert: `<a class="${prefix}-reset-link" href="https://www.systeme-de-design.gouv.fr/" rel="noopener external" target="_blank" title="lien externe - nouvelle fenêtre">lien externe - nouvelle fenêtre</a>`} }, true); %>
+
+  <%- sample({ title: 'Exemple sur plusieurs blocs de texte', subtitle: `Utilisation de la classe <code>${prefix}-reset-link</code> sur un wrapper pour réinitialiser le style des liens.`}, '../sample/blocks', { classes: [`${prefix}-reset-link`], paragraphes: [ {insert: `<a title="titre lien" href="../">lien interne</a>`}, {insert: `<a href="https://www.systeme-de-design.gouv.fr/" rel="noopener external" target="_blank" title="lien externe - nouvelle fenêtre">lien externe - nouvelle fenêtre</a>`}] }, true); %>
+
+  <%- sample({ title: 'Exemple d\'utilisation avec une librairie externe', subtitle: resetWrapperSubtitle }, '../sample/library', { classes: [`${prefix}-reset-link`] }, true); %>
+</div>

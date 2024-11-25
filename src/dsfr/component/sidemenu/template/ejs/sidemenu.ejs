@@ -1,0 +1,26 @@
+<%#
+# paramètres sidemenu
+
+* sidemenu.items (array, required) : tableau d'elements
+
+* sidemenu.title (String, required) : titre du sidemenu
+
+* sidemenu.modifier (string, optional) : modifier de style de sidemenu ('sticky-full-height', 'sticky', 'right')
+
+* sidemenu.collapseId : id du collapse (mobile)
+
+* sidemenu.buttonLabel (object, required) : libellé du bouton du sidemenu en mobile
+
+%>
+<% let sidemenu = locals.sidemenu || {}; %>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<nav class="<%= prefix %>-sidemenu<% if(sidemenu.modifier){%> <%= prefix %>-sidemenu--<%- sidemenu.modifier %><%}%>" role="navigation" aria-labelledby="<%= sidemenu.titleId %>">
+	<div class="<%= prefix %>-sidemenu__inner">
+		<%- include('../../../../core/template/ejs/action/action', { action: { label: sidemenu.buttonLabel, type: 'button', markup: 'button', attributes: { 'aria-expanded': false, 'aria-controls': sidemenu.collapseId }, classes: [`${prefix}-sidemenu__btn`] }}) %>
+		<div class="<%= prefix %>-collapse" id="<%- sidemenu.collapseId %>">
+			<p class="<%= prefix %>-sidemenu__title" id="<%= sidemenu.titleId %>"><%- sidemenu.title %></p>
+			<%- include('./sidemenu-list.ejs', {sidemenuItems: sidemenu.items}); %>
+		</div>
+	</div>
+</nav>

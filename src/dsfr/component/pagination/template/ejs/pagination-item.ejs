@@ -1,0 +1,76 @@
+<%#
+# Paramètres pagination item
+
+* paginationItem.markup (string, optional): markup de l'élement (default: 'a'))
+
+* paginationItem.type (string, optional): type d'élement (first, prev, next, last)
+
+* paginationItem.href (string, optional): url de destination, si l'élement est un lien
+
+* paginationItem.title (string, optional): attribut title de l'élement
+
+* paginationItem.disabled (boolean, optional): si true, désactive l'élement
+
+* paginationItem.hasLabel (boolean, optional): affiche le libellé dans l'élement
+
+* paginationItem.hasLgLabel (boolean, optional): affiche le libellé dans l'élement à partir du breakpoint lg
+
+* paginationItem.displayedLg (boolean, optional): affiche l'élement à partir du breakpoint lg
+
+* paginationItem.classes (array, optional): Classe supplémentaires sur l'élement
+
+* paginationItem.attributes (object, optional): Attributs supplémentaires sur l'élement
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let paginationItem = locals.paginationItem || {};
+const classes = paginationItem.classes || [];
+const attrs = paginationItem.attributes || {};
+attrs.id = paginationItem.id;
+const markup = paginationItem.markup || 'a';
+
+classes.push(prefix + '-pagination__link');
+
+if (paginationItem.active) attrs['aria-current'] = 'page';
+
+if (paginationItem.type) classes.push(prefix + '-pagination__link--' + paginationItem.type);
+
+if (paginationItem.href !== undefined && !paginationItem.disabled && markup === 'a' && !paginationItem.active) attrs.href = paginationItem.href;
+if (paginationItem.title) attrs.title = paginationItem.title;
+
+switch(true) {
+  case paginationItem.hasLgLabel:
+    classes.push(prefix + '-pagination__link--lg-label');
+    break;
+
+  case paginationItem.hasLabel:
+    classes.push(prefix + '-pagination__link--label');
+    break;
+}
+
+if (paginationItem.displayedLg === true) {
+  classes.push(prefix + '-hidden');
+  classes.push(prefix + '-unhidden-lg');
+}
+if (paginationItem.disabled) {
+  switch(markup) {
+    case 'input':
+    case 'button':
+      attrs.disabled = '';
+        break;
+
+    case 'a':
+      attrs['aria-disabled'] = 'true';
+      attrs.role = 'link';
+        break;
+  }
+}
+%>
+
+<li>
+  <<%= markup %> <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
+    <% if (paginationItem.label !== undefined ) { %><%- paginationItem.label %><% } %>
+  </<%= markup %>>
+</li>

@@ -45,14 +45,14 @@ const copyImages = (removeOrphans) => {
 };
 
 const copyAssets = (removeOrphans) => {
-  const src = root('src/core/asset/');
+  const src = root('src/dsfr/core/asset/');
   const dest = root('dist/');
 
   copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
 };
 
 const copyIcons = (removeOrphans) => {
-  const src = root('src/core/icon/');
+  const src = root('src/dsfr/core/icon/');
   const dest = root('dist/icons');
 
   copyDir(src, dest, ['svg', 'png', 'jpg'], removeOrphans);
@@ -74,9 +74,14 @@ const deployFavicons = () => {
   copyDir(src, dest, ['ico', 'jpg', 'png', 'svg', 'webmanifest']);
 };
 
+const deployStorybook = () => {
+  copyDir(root('storybook'), root('public/storybook'));
+};
+
 const deployFiles = () => {
   copyDir(root('dist'), root('public/dist'));
   copyDir(root('example'), root('public/example'));
+  copyDir(root('standalone'), root('public/standalone'));
 };
 
 const deployRobots = () => {
@@ -84,4 +89,4 @@ const deployRobots = () => {
   createFile(root('public/robots.txt'), content);
 };
 
-module.exports = { copyFiles, copyImages, copyAssets, copyIcons, deployFavicons, deployFiles, deployRobots };
+module.exports = { copyFiles, copyImages, copyAssets, copyIcons, deployFavicons, deployFiles, deployRobots, deployStorybook };

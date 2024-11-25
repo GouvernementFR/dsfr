@@ -1,0 +1,80 @@
+<%#
+# paramètres header
+
+* header (object, required) : Paramètres du template
+  ** header.id (String, required) : attribut id du header
+  ** header.body (object, required) : Paramètres du template body
+  ** header.menu (object, optional) : Paramètres du template menu
+
+Exemple complet :
+
+header = {
+  id: '',
+  body: {
+    brand: {
+      logo: { voir logo },
+      operator: {
+        src: 'url de l'img',
+        alt: 'texte alternatif',
+        style: ''
+      },
+      service: {
+        title: '',
+        tagline: ''
+      },
+    },
+    tools: {
+      links: {
+        items: [
+          { voir buttonsGroup dans button }
+        ]
+      },
+      translate: { voir translate }
+      search: {
+        id: '',
+        modalId: '',
+        btnId: '',
+        sample: '',
+      }
+    },
+  }
+  menu: {
+    id: '', // id du bouton du menu
+    modalId: '', // id de la modale de menu
+    navigation: {
+      id: '', // id de la navigation
+      + voir composant navigation
+    },
+    tools: {
+      links: [],
+      duplicateLinks: false
+    }
+  }
+}
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% let header = locals.header || {body:{}, menu: {}};
+const attributes = header.attributes || {};
+if (header.id) attributes.id = header.id;
+if (header.body.tools && header.menu.tools.duplicateLinks) {
+  if (header.body.tools && header.body.tools.links) header.menu.tools.links = header.body.tools.links;
+  if (header.body.tools && header.body.tools.translate) header.menu.tools.translate = header.body.tools.translate;
+  if (header.body.tools && header.body.tools.toolsContent) header.menu.tools.toolsContent = header.body.tools.toolsContent;
+}
+if (header.menu && header.menu.modalId && header.menu.id) {
+  header.body.brand.navbar.menu = header.menu;
+}
+if (header.body.tools && header.body.tools.search && header.body.tools.search.modalId && header.body.tools.search.id) {
+  header.body.brand.navbar.search = header.body.tools.search;
+}
+if (header.menu && header.menu.navigation && header.menu.modalId) {
+  header.menu.navigation.modalId = header.menu.modalId;
+}
+%>
+
+<header role="banner" class="<%= prefix %>-header" <%- includeAttrs(attributes) %>>
+  <%- include('./header-body', {body: header.body});%>
+  <% if ((header.menu && header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
+    <%- include('./header-menu', {menu: header.menu});%>
+  <% } %>
+</header>

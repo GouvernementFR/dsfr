@@ -1,0 +1,11 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section('Bandeaux génériques', 'Il existe 3 bandeaux génériques utilisables en fonction du niveau de gravité de l\'information. L\'icône peut être modifiée et seul le titre est obligatoire', 0, true); %>
+
+<%- sample('Bandeau d\'information', './notice-dismissible', {notice: {type: "info", title: 'Titre du bandeau d\'information', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true, attributes: {title: getBlankTitle('Lien de consultation')}}}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'avertissement', './notice-dismissible', {notice: {type: "warning", title: 'Titre du bandeau d\'avertissement', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true, attributes: {title: getBlankTitle('Lien de consultation')}}}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'alerte', './notice-dismissible', {notice: {type: "alert", title: 'Titre du bandeau d\'alerte', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true, attributes: {title: getBlankTitle('Lien de consultation')}}}}, true, '../layout.ejs'); %>

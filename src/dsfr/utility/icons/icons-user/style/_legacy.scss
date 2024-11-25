@@ -1,0 +1,10 @@
+////
+/// Icon User Legacy
+/// @group icons-user
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  @include generate-icons-legacy(filter-icons('user'));
+}

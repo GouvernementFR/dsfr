@@ -1,0 +1,136 @@
+////
+/// form Scheme
+/// @group form
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin _form-scheme($legacy: false) {
+  #{ns-group(select), ns-group(input), ns-group(range), ns-group(upload)} {
+    &--valid {
+      label {
+        @include color.text(default success, (legacy:$legacy));
+      }
+    }
+
+    &--error {
+      label {
+        @include color.text(default error, (legacy:$legacy));
+      }
+    }
+
+    &--info {
+      label {
+        @include color.text(default info, (legacy:$legacy));
+      }
+    }
+
+    &--disabled {
+      label,
+      #{ns(hint-text)} {
+        @include disabled.colors((legacy: $legacy, text: true));
+      }
+    }
+  }
+
+  #{ns(label)} {
+    @include color.text(label grey, (legacy:$legacy));
+
+    &--error {
+      @include color.text(default error, (legacy:$legacy));
+    }
+
+    &--success {
+      @include color.text(default success, (legacy:$legacy));
+    }
+
+    &--info {
+      @include color.text(default info, (legacy:$legacy));
+    }
+
+    &--disabled {
+      &,
+      & #{ns(hint-text)} {
+        @include disabled.colors((legacy: $legacy, text: true));
+      }
+    }
+  }
+
+  #{ns(hint-text)},
+  #{ns(message)} {
+    @include color.text(mention grey, (legacy:$legacy));
+  }
+
+  #{ns(message)} {
+    &--error {
+      @include color.text(default error, (legacy:$legacy));
+    }
+
+    &--valid {
+      @include color.text(default success, (legacy:$legacy));
+    }
+
+    &--info {
+      @include color.text(default info, (legacy:$legacy));
+    }
+
+    &--warning {
+      @include color.text(default warning, (legacy:$legacy));
+    }
+  }
+
+  #{ns(fieldset)} {
+    @include disabled.selector {
+      #{ns(label)},
+      #{ns(hint-text)},
+      #{ns(fieldset__legend)} {
+        @include disabled.colors((legacy: $legacy, text: true));
+      }
+    }
+
+    input {
+      @include disabled.selector {
+        + label,
+        + label #{ns(hint-text)},
+        + label + #{ns(hint-text)} {
+          @include disabled.colors((legacy: $legacy, text: true));
+        }
+      }
+    }
+
+    &__legend {
+      @include color.text(label grey, (legacy:$legacy));
+    }
+
+    &--error,
+    &--error &__legend {
+      @include color.background-image(border plain error, (legacy:$legacy));
+    }
+
+    &--error &__legend,
+    &--error #{ns(label)} {
+      @include color.text(default error, (legacy:$legacy));
+    }
+
+    &--valid,
+    &--valid &__legend {
+      @include color.background-image(border plain success, (legacy:$legacy));
+    }
+
+    &--valid &__legend,
+    &--valid #{ns(label)} {
+      @include color.text(default success, (legacy:$legacy));
+    }
+
+    &--info,
+    &--info &__legend {
+      @include color.background-image(border plain info, (legacy:$legacy));
+    }
+
+    &--info &__legend,
+    &--info #{ns(label)} {
+      @include color.text(default info, (legacy:$legacy));
+    }
+  }
+}

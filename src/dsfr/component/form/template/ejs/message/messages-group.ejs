@@ -1,0 +1,27 @@
+<%#
+# paramètres messagesGroup
+
+* messagesGroup.id (string, otpional) : id de l'élément référencé
+
+* messagesGroup.messages (array, optional): Array de messages
+
+* messagesGroup.attributes (object, optional) : attributs spécifiques à rajouter sur le message
+
+* messagesGroup.classes (array, optional) : classes spécifiques à rajouter sur le message
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+<%
+const messagesGroup = locals.messagesGroup || {};
+const classes = [...messagesGroup.classes || [], `${prefix}-messages-group`];
+const attributes = { ...messagesGroup.attributes, id: messagesGroup.id, 'aria-live': 'polite' };
+const messages = messagesGroup.messages || [];
+%>
+
+<% if (messages.length > 0 || messagesGroup.includeEmpty) { %>
+<div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %> >
+    <% for (const message of messages) { %>
+        <%- include('./message', { message: message })%>
+    <% } %>
+</div>
+<% } %>

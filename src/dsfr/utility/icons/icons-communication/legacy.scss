@@ -1,0 +1,17 @@
+////
+/// Icon Communication
+/// @group icons-communication
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(3);
+@include media-query.order;
+
+@import 'index';
+@import 'style/legacy';
+
+// deprecated
+@import 'deprecated/style/setting';
+@import 'deprecated/style/legacy';

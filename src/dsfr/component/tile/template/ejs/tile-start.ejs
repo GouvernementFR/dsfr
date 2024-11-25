@@ -1,0 +1,25 @@
+<%#
+# paramètres de la partie start du contenu principal de la carte, placés avant titre et description
+
+* start.badgesGroup (object, optional) : Groupe de badges (voir badge)
+
+* start.tagsGroup (object, optional) : Groupe de tags (voir tag)
+
+* start.tag (object, optional) : tag seul (voir tag)
+
+* start.badge (object, optional) : badge seul (voir tag)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<div class="<%= prefix %>-tile__start" >
+
+    <% if (start.badge) { %>
+        <%- include('../../../badge/template/ejs/badge.ejs', {badge: start.badge }); %>
+    <% } %>
+
+    <% if (start.tag) { %>
+        <%- include('../../../tag/template/ejs/tag.ejs', {tag: start.tag }); %>
+    <% } %>
+
+</div>

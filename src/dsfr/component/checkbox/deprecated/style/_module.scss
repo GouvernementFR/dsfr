@@ -1,0 +1,24 @@
+////
+/// Checkbox Module
+/// @group checkbox
+////
+
+@use 'src/module/spacing';
+
+#{ns(fieldset)} {
+  #{ns(fieldset__content)} {
+    #{ns-group(checkbox)} {
+      &--sm {
+        label {
+          &::before {
+            @include margin-top(1v);
+          }
+        }
+      }
+
+      input[type='checkbox'] {
+        margin-top: spacing.space(3v);
+      }
+    }
+  }
+}

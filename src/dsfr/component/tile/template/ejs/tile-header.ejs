@@ -1,0 +1,15 @@
+<%#
+# paramètres de l'en-tête de la tuile
+
+* header.pictogram (object, optional) : paramètres du pictogram
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<div class="<%= prefix%>-tile__header" >
+  <% if (header.pictogram) { %>
+    <div class="<%= prefix %>-tile__pictogram">
+      <%- include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram: header.pictogram}); %>
+    </div>
+  <% } %>
+</div>

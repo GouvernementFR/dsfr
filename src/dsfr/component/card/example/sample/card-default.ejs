@@ -1,0 +1,115 @@
+<%
+const card = locals.card || {};
+const content = card.content || {};
+const href = card.href || '#';
+const data = {
+  content: {
+    title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
+    href: href,
+    actionMarkup: content.actionMarkup || undefined
+  },
+  id: card.id || uniqueId('card'),
+  size: card.size,
+  enlarge: card.enlarge !== false && card.footer === undefined && !card.noLink,
+  icon: card.icon,
+  variations: card.variations
+}
+
+if (card.noLink) data.content.noLink = true;
+
+if (card.horizontal) {
+  const horizontal = {};
+
+  switch (card.horizontal) {
+    case 'half':
+    case 'tier':
+      horizontal.proportion = card.horizontal;
+      break;
+  }
+
+  data.horizontal = horizontal;
+}
+
+if (card.img || card.vid) {
+  data.header = {};
+
+  switch (true) {
+    case card.img !== undefined:
+      const imgRatio = card.img && card.img.ratio || '16x9';
+      data.header.img = { ...imgData(`img/placeholder.${imgRatio}.png`, 'unknown'), ...card.img};
+      break;
+
+    case card.vid !== undefined:
+      data.header.vid = { ...vidData(), ...card.vid };
+      break;
+  }
+
+
+  if (card.header && card.header.badges) {
+    data.header.badgesGroup = { badges: [{ label: 'Libellé badge'}]};
+  }
+}
+
+if (card.content) {
+  data.content.attributes = card.content.attributes ?? {};
+  if (card.content.assess) data.content.assess = card.content.assess;
+  if (card.content.disabled) data.content.disabled = card.content.disabled;
+  if (card.content.blank === true) {
+    data.content.blank = card.content.blank;
+    data.content.attributes.title = getBlankTitle(data.content.title);
+  }
+  if (card.content.lang) data.content.lang = card.content.lang;
+
+  if (card.content.description !== false) data.content.description = card.content.description || lorem('', 160);
+
+  if (card.content.badges) {
+    data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'Libellé badge', accent: 'purple-glycine'}})};
+  }
+
+  if (card.content.tags) {
+    data.content.tagsGroup = { tags: [...Array(2)].map(() => { return { label: 'Libellé tag'}})};
+  }
+
+
+  if (card.content.details) {
+    data.content.details = [];
+    for (const detail of card.content.details) {
+      const d = { label: 'détail (optionnel)'};
+      if (typeof detail === 'string') {
+        if (detail.indexOf('icon') > -1) d.icon = 'warning-fill';
+        if (detail.indexOf('end') > -1) d.position = 'end';
+      } else if (typeof detail === 'object') {
+        d.label = detail.label || d.label;
+        d.icon = detail.icon || undefined;
+        d.position = detail.position || 'end';
+      }
+      data.content.details.push(d);
+    }
+  }
+}
+
+if (card.download) {
+  data.download = true;
+  if (!data.content.details) {
+    data.content.details = [];
+    data.content.details.push({ label: 'PDF - 48 ko', position: 'end'});
+  } else {
+    const hasEnd = data.content.details.find(detail => detail.position === 'end');
+    if (!hasEnd) data.content.details.push({ label: 'PDF - 48 ko', position: 'end'});
+  }
+}
+
+if (card.footer) {
+  data.footer = {};
+  const label = 'Libellé';
+  if (card.footer.buttons) {
+    data.footer.buttonsGroup = { buttons: [{label: label, kind: 2}, {label: label, kind: 1}], reverse: true, inline:'lg' }
+  }
+  if (card.footer.links) {
+    data.footer.linksGroup = { inline: true, links: [...Array(2)].map(() => { return { label: 'Libellé', inline: true, href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
+  }
+}
+
+%>
+
+<%- include('../../template/ejs/card', {card: data}); %>

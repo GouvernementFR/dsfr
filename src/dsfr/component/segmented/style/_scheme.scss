@@ -1,0 +1,39 @@
+////
+/// Segmented Scheme
+/// @group segmented
+////
+
+@use 'src/module/selector';
+@use 'src/module/spacing';
+@use 'src/module/disabled';
+@use 'src/module/color';
+
+@mixin _segmented-scheme($legacy: false) {
+  #{selector.ns(segmented)} {
+    &__elements {
+      @include color.box-shadow(default grey, (legacy:$legacy));
+    }
+
+    &__element {
+      label {
+        @include color.text(action-high grey, (legacy:$legacy));
+      }
+
+      input {
+        &:checked {
+          + label {
+            @include color.box-shadow(active blue-france, (legacy:$legacy));
+            @include color.text(active blue-france, (legacy:$legacy));
+          }
+
+          @include disabled.selector {
+            + label {
+              @include color.box-shadow(text disabled grey, (legacy:$legacy));
+              @include color.text(disabled grey, (legacy:$legacy));
+            }
+          }
+        }
+      }
+    }
+  }
+}

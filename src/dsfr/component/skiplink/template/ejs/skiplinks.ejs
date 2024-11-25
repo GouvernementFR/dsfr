@@ -1,0 +1,23 @@
+<%#
+# paramètres skiplink
+
+* skiplink.items (array, required): tableau de liens
+  ** skiplink.items[].href (string, required) : ancre vers un id dans la page
+  ** skiplink.items[].label (string, required) : libellé du lien
+  ** skiplink.items[].attributes (object, optional) : attributs supplémentaires du lien
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% let skiplink = locals.skiplink || {}; %>
+<div class="<%= prefix %>-skiplinks">
+  <nav role="navigation" aria-label="Accès rapide" class="<%= prefix %>-container">
+    <ul class="<%= prefix %>-skiplinks__list">
+      <% for (const item of skiplink.items) { %>
+        <li>
+          <a <%- includeAttrs(item.attributes) %> class="<%= prefix %>-link" href="<%= item.href %>" ><%= item.label %></a>
+        </li>
+      <% } %>
+    </ul>
+  </nav>
+</div>

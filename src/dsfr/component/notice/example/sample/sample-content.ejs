@@ -1,0 +1,15 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section('Contenu des Bandeaux d\'information importante', 'Le bandeau doit être placé sur toutes les pages du site.<br> La balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte.', 0, true); %>
+
+<%- sample('Bandeau d\'information minimum', './notice-default', {notice: {type: "info", title: "Titre du bandeau d'information"}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'information avec bouton fermer', './notice-dismissible', {notice: {type: "info", title: "Titre du bandeau"}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'information sans icône', './notice-dismissible', {notice: {type: "info", icon: false, title: "Titre du bandeau"}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'information avec icone personnalisée', './notice-dismissible', {notice: {type: "info", icon: 'virus-fill', title: "Titre du bandeau"}}, true, '../layout.ejs'); %>
+
+<%- sample('Bandeau d\'information cas max', './notice-dismissible', {notice: {type: "info", title: 'Titre du bandeau assez long', desc: 'Texte de description plutot long lorem ipsum sit consectetur adipiscing elit. Sed', link: {label: 'Lien de consultation', href: '#', blank: true, attributes: {title: getBlankTitle('Lien de consultation')}}}}, true, '../layout.ejs'); %>

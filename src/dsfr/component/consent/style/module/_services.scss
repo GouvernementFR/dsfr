@@ -1,0 +1,152 @@
+////
+/// services Module
+/// @group consent
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(consent-service)} {
+  @include relative;
+
+  > #{ns(fieldset)} {
+    @include padding(0 0 5v);
+    @include padding(0 0 5v, md);
+    @include margin(0);
+    align-items: flex-start;
+    @include display-flex(column);
+    @include size(100%);
+    position: initial;
+
+    @include respond-from(md) {
+      @include display-flex(row,null,null,wrap);
+    }
+  }
+
+  &:last-child {
+    > #{ns(fieldset)} {
+      @include padding(8v 0 4v);
+      @include padding(5v 0 4v, md);
+
+      #{ns(consent-service)} > #{ns(fieldset)}:last-child {
+        @include margin-bottom(0);
+      }
+    }
+  }
+
+  &__title {
+    @include title-style(h6);
+    @include padding(8v 0 3v);
+    @include margin(0);
+
+    @include respond-from(md) {
+      @include size(50%);
+    }
+  }
+
+  &__desc {
+    @include text-style(sm);
+    @include set-text-margin(3v 0 2v 0);
+
+    @include respond-from(md) {
+      @include set-text-margin(1v 6v 2v 0);
+      @include size(60%);
+    }
+  }
+
+  &__collapse {
+    @include margin-top(-1v);
+    @include margin-bottom(3v);
+    @include size(100%);
+    @include nest-consent-btn;
+  }
+
+  &__radios {
+    @include margin-y(3v);
+    @include display-flex(row, null, null, wrap);
+
+    @include respond-from(md) {
+      @include display-flex(row,center,flex-end);
+      @include absolute(5v, 0);
+      @include size(50%);
+    }
+  }
+
+  #{ns-group(radio)} {
+    position: relative;
+
+    &:not(:last-child) {
+      @include margin-right(12v);
+    }
+
+    &:not(:first-child) {
+      @include before('','block') {
+        @include size(1px, 6v);
+        @include absolute(0, null, null, calc(#{space(-6v)} - 1px));
+      }
+    }
+  }
+
+  @include build-consent-btn {
+    background: transparent;
+    @include padding(0 1v 0 0);
+    color: inherit;
+    @include disable-tint;
+    @include link-underline;
+    @include hover-underline;
+    @include after {
+      @include margin-right(-5v);
+      transition: transform 0.3s;
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
+    }
+
+    &[aria-expanded="true"] {
+      @include after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+#{ns(consent-services)} {
+  @include margin-top(2v);
+  @include margin-bottom(-2v);
+  @include size(100%);
+
+  #{ns(consent-service)} {
+    &,
+    &:last-child {
+      > #{ns(fieldset)} {
+        @include padding(0);
+      }
+    }
+
+    &:last-child {
+      > #{ns(fieldset)} {
+        @include margin-bottom(5v);
+      }
+    }
+
+    & + #{ns(consent-service)} {
+      @include margin-top(-1v, md);
+    }
+
+    &__title {
+      @include padding-top(3v);
+    }
+
+    &__radios {
+      top: 0;
+    }
+
+    &__desc {
+      @include set-text-margin(1v 0 3v 0);
+      @include respond-from(md) {
+        @include set-text-margin(1v 0 2v 0);
+      }
+    }
+  }
+}

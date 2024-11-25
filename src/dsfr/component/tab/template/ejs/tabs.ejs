@@ -1,0 +1,32 @@
+<%#
+# paramètres Tabs
+
+* tabs (array, required) : tableau de tab
+  ** tabs.classes (array, optional): classes du composant
+  ** tabs.attributes (object, optional): attributs du composant
+  ** tabs.viewportWidth (boolean, optional): Si true, défini la taille du composant en full width (sans marge en mobile)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let tabsGroup = locals.tabs || {tabs: []};
+let tabs = tabsGroup.tabs;
+let tabsClasses = tabs.classes || [];
+let tabsAttrs = tabs.attributes || {};
+let activeClass = '';
+tabsClasses.push(prefix + '-tabs');
+
+if (tabsGroup.viewportWidth) tabsClasses.push(prefix + '-tabs--viewport-width');
+
+%>
+<div <%- includeClasses(tabsClasses) %> <%- includeAttrs(tabsAttrs); %> >
+  <ul class="<%= prefix + '-tabs__list' %>" role="tablist" aria-label="[A modifier | nom du système d'onglet]">
+    <% for (let i = 0; i < tabs.length; i++) { %>
+      <%- include('./tab.ejs', {tab: {...tabs[i], isActive: i === 0}}); %>
+    <% } %>
+  </ul>
+  <% for (let i = 0; i < tabs.length; i++) { %>
+    <%- include('./tab-panel.ejs', {tab: {...tabs[i], isActive: i === 0}}); %>
+  <% } %>
+</div>

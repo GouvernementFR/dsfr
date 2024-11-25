@@ -1,0 +1,33 @@
+<%#
+  tabs.tabs (array, optional) : tableau d'objets tab (label, content, icon)
+  si tabs.tabs n'est pas défini, tabs.tabsCount permet de définir le nombre d'onglets à générer avec un contenu de test
+%>
+
+<%
+let tabsGroup = locals.tabs || {tabsCount: 2};
+let data = {tabs: []};
+let length = tabsGroup.tabsCount;
+if (tabsGroup.tabs) length = tabsGroup.tabs.length;
+if (tabsGroup.viewportWidth) data.viewportWidth = tabsGroup.viewportWidth;
+
+for (let i = 0; i < length; i++) {
+  let label = `Libellé onglet ${i + 1}`;
+  let content = randomContent(['title', 'img', 'text', 'list'], i + 1);
+  let icon = tabsGroup.icon || undefined;
+
+  if (tabsGroup.tabs && tabsGroup.tabs[i]) {
+    label = tabsGroup.tabs[i].label || label;
+    content = tabsGroup.tabs[i].content || content;
+    icon = tabsGroup.tabs[i].icon || tabsGroup.icon || icon;
+  }
+
+  data.tabs[i] = {
+    id: uniqueId('tab'),
+    label: label,
+    content: content,
+    icon: icon
+  }
+}
+%>
+
+<%- include('../../template/ejs/tabs', {tabs: data}) %>

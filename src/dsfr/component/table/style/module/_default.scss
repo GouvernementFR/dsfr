@@ -1,0 +1,278 @@
+////
+/// Table Module : default
+/// @group Table
+////
+
+@use 'src/module/media-query';
+@use 'src/module/color';
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(table)} {
+  --table-offset: calc(0px);
+  --row-height: #{spacing.space(0.5v)};
+
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+  @include relative;
+  @include margin-bottom(10v);
+  @include margin-top(4v);
+
+  &__container {
+    overflow: auto;
+    @include padding-top(var(--table-offset));
+  }
+
+  &__content {
+    #{ns(cell)} {
+      &--fixed {
+        position: sticky;
+        left: 0;
+        @include z-index(over);
+
+        #{ns(checkbox-group)} {
+          & + * {
+            @include margin-left(2v);
+          }
+
+          #{ns(label)} {
+            color: transparent;
+            @include size(0);
+            pointer-events: none;
+
+            @include preference.forced-colors {
+              opacity: 0;
+            }
+
+            &::before {
+              left: spacing.space(-5v);
+            }
+          }
+
+          input[type="checkbox"] {
+            left: spacing.space(1v);
+          }
+        }
+
+        @include preference.forced-colors {
+          outline: 1px solid;
+        }
+      }
+
+      &--center {
+        text-align: center;
+      }
+
+      &--right {
+        text-align: right;
+      }
+
+      &--top {
+        vertical-align: top;
+      }
+
+      &--bottom {
+        vertical-align: bottom;
+      }
+
+      &__title {
+        font-weight: 700;
+      }
+
+      &__desc {
+        font-weight: 400;
+      }
+
+      &--inline {
+        display: flex;
+        align-items: center;
+        @include margin(0 -2v);
+
+        > * {
+          @include margin(0 2v);
+        }
+      }
+
+      &--multiline {
+        &,
+        & * {
+          white-space: normal;
+        }
+      }
+
+      &--sort {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        #{ns(btn--sort)} {
+          @include margin-left(4v);
+        }
+      }
+    }
+
+    #{ns(col)} {
+      &--xs {
+        white-space: normal;
+        @include min-width(16v);
+      }
+
+      &--sm {
+        white-space: normal;
+        @include min-width(20v);
+      }
+
+      &--md {
+        white-space: normal;
+        @include min-width(50v);
+      }
+
+      &--lg {
+        white-space: normal;
+        @include min-width(100v);
+      }
+    }
+
+    table {
+      @include size(100%);
+      border-spacing: 0;
+      border-collapse: collapse;
+
+      thead {
+        position: relative;
+
+        @include before('', block) {
+          @include absolute(inherit, 0, 0 , 0, 100%, 1px);
+          pointer-events: none;
+          @include z-index(over);
+        }
+
+        th {
+          @include font-weight(bold);
+
+          &[role='columnheader'] {
+            background-size: 100% 1px, 1px 100%;
+            background-repeat: no-repeat, no-repeat;
+            background-position: 0 100%, 100% 0;
+          }
+        }
+      }
+
+      tbody {
+        th {
+          background-size: 100% 1px, 1px 100%;
+          background-repeat: no-repeat, no-repeat;
+          background-position: 0 100%, 100% 0;
+        }
+
+        tr {
+          @include after {
+            @include absolute(null, null, null, 0, 100%, var(--row-height));
+            @include z-index(above);
+            pointer-events: none;
+            transform: translateY(spacing.space(-0.5v));
+
+            background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%), spacing.space(100% 0.5v), 0 0;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 0 0, 100% 0, 0 0, 0 100%;
+
+            @include preference.forced-colors {
+              border: 2px solid highlight;
+            }
+          }
+
+          &[aria-selected="true"],
+          &[aria-selected="true"] + tr {
+            @include after('');
+          }
+
+          &[aria-selected="true"] + tr[aria-selected="true"] {
+            @include after {
+              background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%), 0 0, 0 0;
+            }
+          }
+
+          &[aria-selected="true"] + tr:not([aria-selected="true"]) {
+            @include after {
+              background-size: 0 0, 0 0, spacing.space(100% 0.5v), 0 0;
+            }
+          }
+
+          &:last-of-type[aria-selected="true"] {
+            @include after {
+              background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%), spacing.space(100% 0.5v), spacing.space(100% 0.5v);
+            }
+          }
+
+          &[aria-selected="true"] + tr:last-of-type[aria-selected="true"] {
+            @include after {
+              background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%), 0 0, spacing.space(100% 0.5v);
+            }
+          }
+        }
+      }
+    }
+
+    th,
+    td {
+      display: table-cell;
+      @include padding(2v 4v);
+      @include text-style(sm);
+      text-align: left;
+      vertical-align: middle;
+      white-space: nowrap;
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+
+      @include preference.forced-colors {
+        border: 1px solid;
+      }
+
+      #{ns(checkbox-group)} {
+        display: inline-block;
+
+        #{ns(label)} {
+          @include text-style(sm);
+        }
+      }
+    }
+  }
+
+  caption {
+    position: initial;
+    @include title-style(h4, true);
+    @include font-weight(bold);
+    @include margin-bottom(4v);
+    text-align: left;
+
+    #{ns(table__caption__desc)} {
+      @include margin-top(4v);
+      @include text-style(md);
+      @include font-weight(regular);
+    }
+  }
+
+  &__detail {
+    @include text-style(sm);
+  }
+
+  &#{ns-attr(js-table, true)} {
+    caption {
+      @include absolute(0);
+    }
+
+    #{ns(table__wrapper)} {
+      position: relative;
+
+      @include after('', block) {
+        @include absolute(var(--table-offset), null, null, 0, 100%, calc(100% - var(--table-offset)));
+        @include z-index(over);
+        background-position: 0 0, 0 0, 100% 100%, 0 100%;
+        background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        pointer-events: none;
+      }
+    }
+  }
+}

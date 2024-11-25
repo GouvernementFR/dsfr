@@ -1,0 +1,53 @@
+<%#
+# paramètres navigation mega-menu
+
+* menu.collapseId (string, required) : id du collapse
+
+* menu.leader (object, optional) : Paramètres du leader du mega-menu (voir leader)
+
+* menu.categories (object, required) : Paramètres des éléments de navigation
+  ** menu.categories.items (array, required) : tableau d'éléments de navigation
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% let menu = locals.menu || {}; %>
+<%- include('./navigation-btn', {btn:menu}); %>
+<div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= menu.collapseId %>">
+  <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-lg">
+    <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row-lg--gutters">
+      <div class="<%= prefix %>-col-12 <%= prefix %>-mb-n3v">
+        <%- include('../../../button/template/ejs/button-close', {button: { closeId: menu.collapseId, label: "Fermer" }}); %>
+      </div>
+      <%
+      if (menu.leader !== undefined) {
+      %>
+      <%- include('./navigation-leader', {menu: menu}); %>
+
+      <% } %>
+
+      <%
+        for (category of menu.categories) {
+      %>
+
+      <div class="<%= prefix%>-col-12 <%= prefix%>-col-lg-3">
+        <h5 class="<%= prefix %>-mega-menu__category">
+          <%- include('./navigation-link', {link: category}); %>
+        </h5>
+
+        <ul class="<%= prefix %>-mega-menu__list">
+          <%
+          for (let i = 0; i < category.items.length; i++) {
+              let item = category.items[i];
+              item.isPage = true;
+          %>
+          <li>
+            <%- include('./navigation-link', {link: item}); %>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<%
+const pagination = locals.pagination || {};
+const href = pagination.href || '#';
+const pages = [];
+let i;
+
+const getData = (label, displayedLg = false, hasLgLabel = false, title = null) => {
+  return {
+    id: uniqueId('pagination'),
+    label: label,
+    title: title,
+    href: href,
+    displayedLg: displayedLg === true,
+    hasLgLabel: hasLgLabel === true
+  };
+};
+
+const getPageData = (pageNumber, displayedLg) => {
+  return getData(pageNumber, displayedLg === true, false, `Page ${pageNumber}`);
+}
+
+const getNavData = (label, hasLgLabel) => {
+  return getData(label, false, hasLgLabel === true, label);
+}
+
+for (i = 1; i < 4; i++) pages.push(getPageData(i, i > 2));
+pages.push({ markup: 'span', ...getData('…', true) });
+for (i = 130; i < 133; i++) pages.push(getPageData(i, i < 132));
+
+if (pagination.index !== undefined) pages[pagination.index].active = true;
+
+
+
+let data = {
+  first: getNavData('Première page'),
+  prev: getNavData('Page précédente', true),
+  next: getNavData('Page suivante', true),
+  last: getNavData('Dernière page'),
+  pages: pages
+}
+%>
+
+<%- include('../../template/ejs/pagination', {pagination: data}); %>

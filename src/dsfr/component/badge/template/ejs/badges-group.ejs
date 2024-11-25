@@ -1,0 +1,45 @@
+<%#
+# paramètres groupe de badge
+
+* badgesGroup.badges (array, required): paramètres spécifique de chaque badge du groupe
+
+* badgesGroup.size (string, optional) : définie la taille des badges dans le groupe (default md)
+  * sm : Badge taille sm
+
+* badgesGroup.groupMarkup (string, optional) : Type de balise pour le groupe de badges (default ul)
+
+* badgesGroup.classes (array, optionnal) : Classes suplémentaires sur le groupe de badges
+
+* badgesGroup.attributes (object, optionnal) : Attributs suplémentaires sur le groupe de badges
+
+#%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const badgesGroup = locals.badgesGroup || {};
+const groupClasses = badgesGroup.classes || [];
+const groupAttrs = badgesGroup.attributes || {};
+const badges = badgesGroup.badges || [];
+const groupMarkup = badgesGroup.groupMarkup || 'ul';
+groupClasses.push(prefix + '-badges-group');
+const isList = groupMarkup === 'ul';
+
+switch(badgesGroup.size) {
+  case 'sm':
+    groupClasses.push(prefix + '-badges-group--sm');
+    break;
+ }
+ %>
+
+<<%= groupMarkup %> <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
+<% for (let i = 0; i < badges.length; i++) { %>
+  <% if (isList) { %>
+    <li>
+  <% } %>
+    <%- include('./badge.ejs', { badge:badges[i] }); %>
+  <% if (isList) { %>
+    </li>
+  <% } %>
+<% } %>
+</<%= groupMarkup %>>

@@ -1,0 +1,130 @@
+////
+/// Range Module
+/// @group range
+////
+
+@use 'src/module/color';
+@use 'src/module/selector';
+@use 'src/module/elevation';
+@use 'src/module/disabled';
+
+@mixin _range-scheme($legacy: false) {
+  #{selector.ns(range)} {
+    &#{selector.ns-attr(js-range)} {
+      @include before {
+        @include color.box-shadow(action-high blue-france, (legacy:$legacy), );
+      }
+
+      @include after {
+        @include color.background(active blue-france, (legacy:$legacy));
+      }
+
+      input[type=range] {
+        @include selector.range-thumb($legacy) {
+          @include elevation.elevate(raised, (legacy: $legacy));
+          @include color.background(default grey, (legacy:$legacy));
+          @include color.border(action-high blue-france, (legacy:$legacy));
+        }
+
+        @include disabled.selector {
+          @include selector.range-thumb($legacy) {
+            @include color.border(disabled grey, (legacy:$legacy));
+          }
+        }
+      }
+    }
+
+    &__output {
+      @include color.text(active blue-france, (legacy:$legacy));
+    }
+
+    &__min,
+    &__max {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+
+    &--step {
+      &#{selector.ns-attr(js-range)} {
+        @include before {
+          @include color.background-image(action-high blue-france, (legacy:$legacy), $range-track-gradient);
+        }
+
+        @include after {
+          @include color.background-image(action-low blue-france, (legacy:$legacy), $range-progress-gradient);
+          @include color.box-shadow(active blue-france, (legacy:$legacy), left-10-in right-10-in);
+        }
+      }
+    }
+
+    &--step#{&}--sm {
+      &#{selector.ns-attr(js-range)} {
+        @include after {
+          @include color.box-shadow(active blue-france, (legacy:$legacy), left-6-in right-6-in);
+        }
+      }
+    }
+
+    // &--double#{&}--step {
+    //   &#{selector.ns-attr(js-range)} {
+    //     @include after {
+    //       @include color.box-shadow(active blue-france, (legacy:$legacy), left-22-in right-22-in);
+    //     }
+    //   }
+    // }
+
+    // &--double#{&}--step#{&}--sm {
+    //   &#{selector.ns-attr(js-range)} {
+    //     @include after {
+    //       @include color.box-shadow(active blue-france, (legacy:$legacy), left-14-in right-14-in);
+    //     }
+    //   }
+    // }
+  }
+
+  #{selector.ns-group(range)} {
+    &--error {
+      @include before {
+        @include color.background-image(border plain error, (legacy:$legacy));
+      }
+    }
+
+    &--valid {
+      @include before {
+        @include color.background-image(border plain success, (legacy:$legacy));
+      }
+    }
+
+    &--disabled {
+      #{selector.ns(range)} {
+        &#{selector.ns-attr(js-range)} {
+          @include before {
+            @include color.box-shadow(disabled grey, (legacy:$legacy));
+          }
+
+          @include after {
+            @include color.background(disabled grey, (legacy:$legacy));
+          }
+        }
+
+        &--step {
+          &#{selector.ns-attr(js-range)} {
+            @include before {
+              @include color.background-image(disabled grey, (legacy:$legacy), $range-track-gradient);
+            }
+
+            @include after {
+              @include color.background-image(default grey, (legacy:$legacy), $range-progress-gradient);
+              @include color.box-shadow(disabled grey, (legacy:$legacy), left-10-in right-10-in);
+            }
+          }
+        }
+
+        &__output,
+        &__min,
+        &__max {
+          @include color.text(disabled grey, (legacy:$legacy));
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<%#
+# paramètres form
+
+* form.id (string, required) : id du fieldset
+
+* form.items (array, optional) : tableau d'élément de control
+
+* form.label (array, optional) : Texte du aria-label du fieldset (required si pas de légende)
+
+* form.legend (string, optional) : légende du composant
+
+* form.hint (string, optional) : message de description additionel
+
+* form.error (string, optional) : message d'erreur
+
+* form.valid (string, optional) : message de succès
+
+* form.attributes (object, optional) : attributs spécifiques à rajouter sur le form
+
+* form.classes (array, optional) : classes spécifiques à rajouter sur le form
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+ <%
+ const form = locals.form || {};
+ const classes = form.classes || [];
+ const attributes = form.attributes || {}
+ attributes.id = form.id;
+
+ const fieldset = {...form, attributes: {}, id: `${form.id}-fieldset`};
+ if (!form.legend) fieldset.attributes['aria-label'] = form.label;
+ %>
+
+<% if (form.elements && form.elements.length) { %>
+  <form <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+    <%- include('fieldset/fieldset', { fieldset: fieldset }); %>
+  </form>
+<% } %>

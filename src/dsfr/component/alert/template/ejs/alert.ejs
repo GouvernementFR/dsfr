@@ -1,0 +1,64 @@
+<%#
+# paramètres alert
+
+* alert.id (String, required): id
+
+* alert.title (String, optional): Titre de l'alerte
+
+* alert.text (string, optional) : Texte de decription de l'alerte
+
+* alert.type (String, required): type d'alerte [info/success/error/warning]
+
+* alert.size (String, optional): taille de l'alerte [sm/md/lg]
+
+* alert.classes (array, optional): Classes supplémentaires sur l'alerte
+
+* alert.attribute (object, optional): Attributs supplémentaires sur l'alerte
+
+* alert.dismissible (boolean, optional): Ajoute un bouton de fermeture
+
+* alert.expanded (boolean, optional) [default: true] : valeur de l'attribut aria-expanded du bouton de fermeture de l'alerte
+
+* alert.button (object, optional): Paramètre du bouton de fermeture (si dismissible: true)
+
+* alert.alert (boolean, optional): Si true, ajoute un role alert (si insertion à la volée de l'alerte)
+
+* alert.markup (string, optional) : (défaut : h3) niveau de titre
+
+%>
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let alert = locals.alert || {};
+let title = alert.title || false;
+let text = alert.text || false;
+let type = alert.type || false;
+let size = alert.size || "md";
+const icon = alert.icon || false;
+let classes = alert.classes || [];
+const markup = alert.markup || 'h3';
+let attributes = alert.attributes || {};
+if (alert.id) attributes.id = alert.id;
+classes.push(prefix + '-alert');
+if (type) classes.push(prefix + '-alert--' + type);
+if (icon) classes.push(`${prefix}-icon-${icon}`);
+if (alert.alert) attributes.role = "alert";
+if (size !== "md") classes.push(prefix + '-alert--' + size);
+ %>
+
+<div <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
+
+  <% if (title) { %>
+    <<%= markup %> class="<%= prefix %>-alert__title"><%= title %></<%= markup %>>
+  <% } %>
+
+  <% if (text) { %>
+    <p><%= text %></p>
+  <% } %>
+
+  <% if (alert.dismissible) { %>
+    <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...alert.button}}) %>
+  <% } %>
+</div>

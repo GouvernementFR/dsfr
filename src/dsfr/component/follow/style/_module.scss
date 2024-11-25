@@ -1,0 +1,182 @@
+////
+/// Follow Module
+/// @group follow
+////
+
+@use 'src/module/spacing';
+
+#{ns(follow)} {
+  @include padding(6v 0);
+  @include padding(8v 0, md);
+  @include set-title-margin(0 0 2v);
+  @include set-text-margin(0 0 4v);
+
+  &__newsletter {
+    #{ns-group(input)} {
+      @include margin-bottom(4v);
+      @include margin-bottom(2v, sm);
+    }
+
+    #{ns(hint-text)} {
+      @include margin-bottom(0);
+    }
+
+    #{ns(label)} {
+      @include sr-only();
+    }
+
+    #{ns(input-wrap)} {
+      @include display-flex(column);
+      @include max-width(150v);
+      @include margin-top(0);
+
+      #{ns(input)} {
+        @include margin-bottom(4v);
+        @include margin-top(0);
+        border-radius: #{spacing.space(1v)} #{spacing.space(1v)} 0 0;
+      }
+
+      #{ns(btn)} {
+        justify-content: center;
+        @include width(100%);
+        @include width(auto, sm);
+        border-radius: 0;
+      }
+
+      @include respond-from(sm) {
+        flex-direction: row;
+
+        #{ns(btn)} {
+          border-radius: 0 #{spacing.space(1v)} 0 0;
+        }
+
+        #{ns(input)} {
+          @include margin-bottom(0);
+          border-radius: #{spacing.space(1v)} 0 0 0;
+        }
+      }
+    }
+
+    #{ns-group(messages)} {
+      @include margin-top(4v);
+      @include margin-bottom(2v, sm);
+    }
+  }
+
+  &__social {
+    @include set-text-margin(0 0 3v);
+    @include set-title-margin(0 0 3v);
+
+    #{ns-group(btns)} {
+      @include horizontal-btns-group;
+      @include margin-bottom(-4v);
+      @include width(auto);
+
+      #{ns(btn)} {
+        justify-content: flex-start;
+      }
+
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include nest-btn(md, only, null, null, false);
+            @include icon(null, md, before);
+            @include icon-forced-color(buttontext, true, before);
+          }
+        }
+        a#{ns(btn)} {
+          @include has-not-icon {
+            @include icon-forced-color(linktext, null, before);
+          }
+
+          &:not([href]) {
+            @include has-not-icon {
+              @include icon-forced-color(graytext, null, before);
+            }
+          }
+        }
+      }
+
+      &--lg {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include nest-btn(lg, only, null, null, false);
+            @include icon(null, lg, before);
+            @include icon-forced-color(buttontext, true, before);
+          }
+        }
+
+        a#{ns(btn)} {
+          @include has-not-icon {
+            @include icon-forced-color(linktext, null, before);
+          }
+
+          &:not([href]) {
+            @include has-not-icon {
+              @include icon-forced-color(graytext, null, before);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #{ns(grid-row)} {
+    > * > div {
+      @include respond-from(md) {
+        @include display-flex(column, flex-start, center);
+        @include height(100%);
+      }
+    }
+
+    > *:not(:first-child) {
+      // Séparateur en box-shadow dans schemes
+      @include padding-left(calc(100% / 12), md);
+      @include margin-top(6v);
+      @include padding-top(6v);
+      @include padding-top(0, md);
+      @include margin-top(0, md);
+    }
+
+    > *:not(:last-child) {
+      @include padding-right(calc(100% / 12), md);
+    }
+
+    > *:first-child:last-child {
+      > div {
+        @include respond-from(md) {
+          @include display-flex(row, center, space-between);
+        }
+      }
+
+      > #{ns(follow)}__newsletter {
+        // code spécifique à newsletter seul
+        @include set-text-margin(0,md);
+        @include respond-from(md) {
+          & > * {
+            @include max-width(50%);
+            @include padding-right(3v);
+            @include padding-left(3v);
+          }
+
+          & > :first-child {
+            @include padding-right(3v);
+            @include padding-left(0);
+          }
+
+          & > :last-child {
+            @include padding-right(0);
+            @include padding-left(3v);
+          }
+        }
+      }
+
+      > #{ns(follow)}__social {
+        // code spécifique à social seul
+        @include set-title-margin(0, md);
+      }
+    }
+  }
+
+  @include build-follow-social-icons();
+}

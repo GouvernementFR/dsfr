@@ -1,0 +1,28 @@
+<%#
+# paramètres socials
+
+* socials.title (string, required) : titre du bloc réseaux sociaux
+
+* socials.networks (array, required) : Tableau de réseaux sociaux
+  ** socials.networks[].label (string, required) : nom du réseau social
+  ** socials.networks[].url (string, required) : adresse url du réseau social
+
+%>
+<% eval(include('../../../../../core/index.ejs'));
+
+let socials = locals.socials || {networks: []};
+let socialsClasses = [prefix + '-follow__social'];
+let groupClasses = [prefix + '-links-group'];
+// groupClasses.push(prefix + '-links-group--lg');
+%>
+
+<div <%- includeClasses(socialsClasses); %> >
+  <p class="<%= prefix %>-h5"><%- socials.title %></p>
+  <ul  <%- includeClasses(groupClasses); %>>
+    <% for (let i=0; i < socials.networks.length; i++) { %>
+      <li>
+        <%- include('../../../../link/template/ejs/link', { link: {attributes: {title: getBlankTitle(contentPlaceholder("Intitulé du lien"))}, href: socials.networks[i].url, blank: true, label: socials.networks[i].label, classes: [prefix + '-link--' + socials.networks[i].label] }}); %>
+      </li>
+    <% } %>
+  </ul>
+</div>

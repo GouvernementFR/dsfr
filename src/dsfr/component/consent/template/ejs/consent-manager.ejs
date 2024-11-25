@@ -1,0 +1,85 @@
+<%#
+# paramètres du gestionnaire de consentement
+
+* consent.finalities (array, required) : Tableau de finalités
+  ** consent.finalities[].title (string, recommanded): titre de la finalité
+  ** consent.finalities[].desc (string, optional): texte de description additionnel
+  ** consent.finalities[].radios (array, optional): paramètres de boutons radios (par défaut 2 éléments accepter/refuser)
+  ** consent.finalities[].services (array, optional) : Tableau de sous-finalités
+    *** consent.finalities[].services[].title (string, recommanded): titre de la finalité
+    *** consent.finalities[].services[].desc (string, optional): texte de description additionnel
+
+* consent.buttons (array, required): paramètres spécifique de chaque bouton du groupe
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let consent = locals.consent || {};
+let finalities = consent.finalities || [];
+let buttons = consent.buttons || [{label: 'Confirmer mes choix'}];
+%>
+
+<div class="<%= prefix %>-consent-manager">
+  <!-- Finalités -->
+  <% for (finality = 0; finality < finalities.length; finality++) { %>
+  <div class="<%= prefix %>-consent-service <%- (finality === 0) ? prefix + '-consent-manager__header' : ''; %>">
+    <%
+      let fieldsetAttrs = {};
+      if (finalities[finality].title && finalities[finality].desc) {
+        fieldsetAttrs['aria-labelledby'] = finalities[finality].id + '-legend ' + finalities[finality].id + '-desc';
+        fieldsetAttrs['role'] = 'group';
+      }
+    %>
+    <fieldset <%- includeAttrs(fieldsetAttrs) %> class="<%= prefix %>-fieldset">
+      <% if (finalities[finality].title) { %>
+        <legend id="<%= finalities[finality].id %>-legend" class="<%= prefix %>-consent-service__title"><%- finalities[finality].title %></legend>
+      <% } %>
+      <div class="<%= prefix %>-consent-service__radios">
+        <%- include('../../../radio/template/ejs/radio-group', {radio: {...finalities[finality].radios[0]}} ) %>
+        <%- include('../../../radio/template/ejs/radio-group', {radio: {...finalities[finality].radios[1]}} ) %>
+      </div>
+      <% if (finalities[finality].desc) { %>
+        <p id="<%= finalities[finality].id %>-desc" class="<%= prefix %>-consent-service__desc"><%- finalities[finality].desc %></p>
+      <% } %>
+
+      <% if (finalities[finality].services) { %>
+        <div class="<%= prefix %>-consent-service__collapse">
+          <button type="button" class="<%= prefix %>-consent-service__collapse-btn" aria-expanded="false" aria-describedby="<%= finalities[finality].id + '-legend' %>" aria-controls="<%= finalities[finality].id  %>-collapse"> Voir plus de détails</button>
+        </div>
+
+        <div class="<%= prefix %>-consent-services <%= prefix %>-collapse" id="<%= finalities[finality].id  %>-collapse">
+          <!-- Sous finalités -->
+          <% for (service = 0; service < finalities[finality].services.length; service++) { %>
+            <div class="<%= prefix %>-consent-service">
+              <%
+                let fieldsetAttrs = {};
+                if (finalities[finality].services[service].title && finalities[finality].services[service].desc) {
+                  fieldsetAttrs['aria-labelledby'] = finalities[finality].services[service].id  + '-legend ' + finalities[finality].services[service].id + '-desc';
+                  fieldsetAttrs['role'] = 'group';
+                }
+              %>
+              <fieldset <%- includeAttrs(fieldsetAttrs) %> class="<%= prefix %>-fieldset <%= prefix %>-fieldset--inline">
+              <% if (finalities[finality].services[service].title) { %>
+                <legend id="<%= finalities[finality].services[service].id %>-legend" class="<%= prefix %>-consent-service__title" <%- (finalities[finality].services[service].desc) ? includeAttrs({'aria-describedby' : finalities[finality].services[service].id + '-desc'}) : '' %>><%- finalities[finality].services[service].title %></legend>
+              <% } %>
+              <div class="<%= prefix %>-consent-service__radios <%= prefix %>-fieldset--inline">
+                <%- include('../../../radio/template/ejs/radio-group', {radio: {...finalities[finality].services[service].radios[0]}} ) %>
+                <%- include('../../../radio/template/ejs/radio-group', {radio: {...finalities[finality].services[service].radios[1]}} ) %>
+              </div>
+              <% if (finalities[finality].services[service].desc) { %>
+                <p id="<%= finalities[finality].services[service].id %>-desc" class="<%= prefix %>-consent-service__desc"><%- finalities[finality].services[service].desc %></p>
+              <% } %>
+              </fieldset>
+            </div>
+          <% } %>
+
+        </div>
+      <% } %>
+    </fieldset>
+  </div>
+  <% } %>
+
+  <!-- Bouton de confirmation/fermeture -->
+  <%- include('../../../button/template/ejs/buttons-group.ejs', {buttonsGroup: {classes: [prefix + '-consent-manager__buttons'], size: 'md', inline: 'sm', align:'right', buttons: buttons}}); %>
+</div>

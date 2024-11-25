@@ -1,0 +1,117 @@
+<%#
+# paramètres content
+
+* content.size (string, optional) : taille du contenu
+
+* content.img (object, optional): paramètres de l'image
+    ** src (string, required) : url de l'image
+    ** alt (string, optional) : texte alternatif
+    ** ratio (string, optional) : ratio de l'image
+    ** style (string, optional) : style de l'image
+    ** attributes (object, optional) : Attributs supplémentaires sur l'image
+
+* content.svg (string, optional): image en svg
+
+* content.vid (object, optional): paramètres de la vidéo
+    ** src (string, required) : url de la vidéo
+    ** title (string, optional) : titre de la vidéo
+    ** ratio (string, optional) : ratio de la vidéo
+    ** attributes (object, optional) : Attributs supplémentaires sur la balise video
+
+* content.caption (string, optional): paramètres de l'image
+
+* content.link (string, optional): paramètre du lien sur le caption
+    ** label (string, required) : texte du lien
+    ** href (string, optional) : url du lien
+
+* content.classes (array, optional) : Classes supplémentaires sur l'élément
+
+* content.attributes (object, optional) : Attributs supplémentaires sur l'élément
+
+* content.transcription (object, optional) : Attributs de la transcription sur l'élément
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% let content = locals.content || {} %>
+
+<%
+let classes = content.classes || [];
+let attributes = content.attributes || [];
+classes.push(prefix + '-content-media');
+
+if (content.id) attributes.id = content.id;
+
+switch (content.size) {
+    case 'sm':
+        classes.push(prefix + '-content-media--sm');
+        break;
+
+    case 'lg':
+        classes.push(prefix + '-content-media--lg');
+        break;
+}
+
+let type;
+switch (true) {
+    case content.img !== undefined:
+    case content.svg !== undefined:
+      type = 'img';
+      break;
+
+    case content.vid !== undefined:
+        type = 'vid';
+        break;
+}
+
+if (type === 'img' && content.caption != undefined) attributes["aria-label"] = content.caption;
+
+%>
+
+<figure role="group" <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+<%
+switch(type) {
+    case 'img':
+%>
+        <div class="<%= prefix %>-content-media__img" >
+            <% if (content.img != undefined) { %>
+                <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: content.img}); %>
+            <% } else if (content.svg != undefined) { %>
+                <%- content.svg %>
+            <% } %>
+        </div>
+<%      break;
+
+    case 'vid':
+%>
+        <% if (content.consent !== undefined) { %>
+            <div class="<%= prefix %>-responsive-vid">
+            <%- include('../../../consent/template/ejs/consent-placeholder', {consent: content.consent}) %>
+            </div>
+        <% } else { %>
+            <%- include('../../../../core/template/ejs/media/responsive-vid', {media: content.vid}) %>
+        <% } %>
+<%      break;
+}
+%>
+
+<% if (content.caption != undefined) { %>
+    <figcaption class="<%= prefix %>-content-media__caption" >
+        <%= content.caption %>
+        <% if (content.link != undefined) {
+            let data = {
+                label: content.link.label,
+                href: content.link.href
+            }
+        %>
+            <%- include('../../../link/template/ejs/link', {link: data}); %>
+        <% } %>
+    </figcaption>
+<% } %>
+</figure>
+
+<%
+if (content.transcription != undefined) {
+    let data = content.transcription;
+%>
+    <%- include('../../../transcription/template/ejs/transcription', {transcription: data}); %>
+<% } %>

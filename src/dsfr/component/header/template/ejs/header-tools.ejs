@@ -1,0 +1,54 @@
+<%#
+# paramètres header tools
+
+* tools (object, required) : Paramètres du template
+  ** tools.links (object, optional) : Paramètres des liens d'accès direct - voir links
+  ** tools.translate (object, optional) : Paramètres du sélecteur de langue - voir translate
+  ** tools.toolsContent (string, optional) : Permet d'ajouter du contenu custom dans le bloc tools
+  ** tools.search (object, optional) : Paramètres du bloc de recherche (voir compoosant search)
+    *** tools.search.id (string, required) : Id du champ de recherche
+    *** tools.search.modalId (string, required) : Id de la modale de recherche (mobile)
+    *** tools.search.placeholder (string, required) : placeholder du champ de recherche
+    *** tools.search.sample (string, optional) : chemin vers le template de search (si différent)
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% let tools = locals.tools || {}; %>
+
+<div class="<%= prefix %>-header__tools">
+  <% if (tools.links !== undefined || tools.translate !== undefined) { %>
+    <div class="<%= prefix %>-header__tools-links">
+      <% if (tools.links.buttons) { %>
+        <% if (tools.links.buttons.length > 1) { %>
+          <ul class="<%= prefix %>-btns-group">
+            <% for (let i = 0; i < tools.links.buttons.length; i++) { %>
+              <li>
+                <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[i]}); %>
+              </li>
+            <% } %>
+          </ul>
+        <% } else { %>
+          <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[0]}); %>
+        <% } %>
+      <% } %>
+      <% if (tools.translate !== undefined) { %>
+        <%- include('../../../translate/template/ejs/translate.ejs', { translate: tools.translate }); %>
+      <% } %>
+      <% if (tools.toolsContent !== undefined) { %>
+        <%- tools.toolsContent %>
+      <% } %>
+    </div>
+  <% } %>
+
+  <% if (tools.search !== undefined) {
+      if (!tools.search.id || !tools.search.modalId) throw new Error('tools.search is not defined in header. id & modalId required');
+  %>
+    <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="<%= tools.search.modalId %>" aria-labelledby="<%= navbar.search.btnId %>">
+      <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid" >
+        <%- include('../../../button/template/ejs/button-close', {button: { closeId: tools.search.modalId }}); %>
+        <%- include( tools.search.sample !== undefined ? tools.search.sample : '../../../search/template/ejs/search', {search: tools.search}); %>
+      </div>
+    </div>
+
+  <% } %>
+</div>

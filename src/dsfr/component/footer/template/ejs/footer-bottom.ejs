@@ -1,0 +1,50 @@
+<%#
+# paramètres footer bottom
+
+* bottom.copyright (string, required) : texte de copyright
+
+* bottom.links (array, optional) : tableau de liens
+  ** bottom.links[].markup (string, optional) : markup du lien
+  ** bottom.links[].label (string, required) : Libellé du lien
+  ** bottom.links[].classes (array, required) : classes supplémentaires du lien
+  ** bottom.links[].attributes (array, required) : attributs supplémentaires du lien
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% let bottom = locals.bottom || {} %>
+<% let links = bottom.links || [] %>
+<ul class="<%= prefix %>-footer__bottom-list">
+  <%
+    for (let i = 0; i < links.length; i++) {
+  %>
+    <li class="<%= prefix %>-footer__bottom-item">
+      <%
+      const link = links[i];
+
+      switch (link.template) {
+        case 'display':
+          %><%- include('../../../button/template/ejs/button-display', { button: link }); %><%
+          break;
+
+        case 'button':
+        %><%- include('../../../button/template/ejs/button', { button: link }); %><%
+        break;
+
+        default:
+          const classes = link.classes || [];
+          const markup = link.markup || 'a';
+          const attributes = link.attributes || {};
+          attributes.id = uniqueId('footer__bottom-link');
+          if (markup === 'a') attributes["href"] = link.href || '#';
+          classes.push(`${prefix}-footer__bottom-link`);
+          %>
+          <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, attributes: attributes, classes: classes, markup: markup}}); %>
+          <%
+      } %>
+    </li>
+  <% } %>
+</ul>
+<div class="<%= prefix %>-footer__bottom-copy">
+  <p><%- bottom.copyright %></p>
+</div>

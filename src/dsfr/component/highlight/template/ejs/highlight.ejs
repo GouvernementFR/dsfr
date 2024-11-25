@@ -1,0 +1,30 @@
+<%#
+# paramètres highlight
+
+* highlight.text (string, required) : contenu texte
+
+* highlight.id (string, optional) : id du highlight
+
+* highlight.size (string, optional) : Taille du texte
+
+* highlight.classes (array, optional) : Classes supplémentaires sur le highlight
+
+* highlight.accent (string, optional): Couleur d'accenturation du composant
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let highlight = locals.highlight || {};
+let classes = highlight.classes || [];
+let attributes = highlight.attributes || {};
+
+if (highlight.accent !== undefined) classes.push(prefix + '-highlight--' + highlight.accent);
+if (highlight.id !== undefined) attributes.id = highlight.id;
+
+classes.push(prefix + '-highlight');
+%>
+
+<div <%- includeClasses(classes)%> <%- includeAttrs(attributes)%>>
+  <%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: highlight.text, size: highlight.size}}) %>
+</div>

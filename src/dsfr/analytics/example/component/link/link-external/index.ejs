@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+  <%- sample('lien externe', '../../../../../component/link/example/sample/link-default', { link: { id: uniqueId('link'), label: 'Libellé lien externe', href:'https://www.systeme-de-design.gouv.fr/', blank: true, attributes: {title: getBlankTitle('Libellé lien externe')} } }); %>
+</div>

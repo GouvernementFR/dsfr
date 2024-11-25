@@ -1,0 +1,11 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section('Bandeaux vigilance météo', 'Il existe 3 bandeaux météo utilisables en fonction du niveau d\'alerte météo. L\'icône peut être modifiée et seul le titre est obligatoire', 0, true); %>
+
+<%- sample('Vigilance météo orange', './notice-dismissible', {notice: {type: "weather-orange", title: 'Vigilance météo orange', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true, attributes: {title: getBlankTitle('Lien de consultation')}}}}, true, '../layout.ejs'); %>
+
+<%- sample('Vigilance météo rouge', './notice-dismissible', {notice: {type: "weather-red", title: 'Vigilance météo rouge', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true, attributes: {title: getBlankTitle('Lien de consultation')}}}}, true, '../layout.ejs'); %>
+
+<%- sample({title:'Vigilance météo violette', subtitle: 'Ce bandeau n’est propre qu’aux territoires ultra-marins'}, './notice-dismissible', {notice: {type: "weather-purple", title: 'Vigilance météo violette', desc: 'Texte de description lorem ipsum sit consectetur adipiscing.', link: {label: 'Lien de consultation', href: '#', blank: true, attributes: {title: getBlankTitle('Lien de consultation')}}}}, true, '../layout.ejs'); %>

@@ -1,0 +1,117 @@
+////
+/// Input Module
+/// @group input
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(input)} {
+  display: block;
+  @include size(100%);
+  border-radius: spacing.space(1v 1v 0 0);
+  @include text-style(md);
+  @include padding(2v 4v);
+
+  &:not(textarea) {
+    max-height: 2.5rem;
+  }
+
+  @include placeholder {
+    opacity: 1;
+    font-style: italic;
+  }
+
+  @include contact-auto-fill-button {
+    cursor: pointer;
+  }
+
+  &[type=date] {
+    min-height: 2.5rem;
+
+    @supports selector(::-webkit-calendar-picker-indicator) {
+      background-repeat: no-repeat;
+      background-position: spacing.space(calc(100% - 4v) 50%);
+      background-size: spacing.space(4v) spacing.space(4v);
+      @include padding-right(12v);
+
+      &::-webkit-calendar-picker-indicator {
+        display: block;
+        @include padding(4v);
+        @include margin-right(-10v);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+#{ns(input-wrap)} {
+  @include relative;
+  display: block;
+
+  @include has-icon {
+    #{ns(input)} {
+      @include padding-right(12v);
+    }
+
+    @include icon-size(sm, before) {
+      @include absolute(3v, 4v, 3v);
+      @include margin(auto);
+      pointer-events: none;
+    }
+  }
+
+  &--addon,
+  &--action {
+    @include display-flex;
+    @include size(100%);
+  }
+
+  &--addon {
+    > *:first-child:not(:last-child) {
+      border-radius: spacing.space(1v 0 0 0);
+    }
+
+    > *:last-child:not(:first-child) {
+      border-radius: spacing.space(0 1v 0 0);
+
+      @include preference.forced-colors {
+        @include max-height(10v);
+      }
+    }
+  }
+
+  &--action #{ns(btn)} {
+    @include margin-left(4v);
+  }
+
+  + #{ns(hint-text)} {
+    @include margin-top(4v);
+  }
+}
+
+#{ns(input-group)} {
+  @include relative;
+
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(4v);
+    }
+  }
+
+  &--valid,
+  &--error,
+  &--info {
+    @include before('', block) {
+      pointer-events: none;
+      @include absolute(0, -3v, 0, -3v);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: spacing.space(0.5v 100%);
+    }
+  }
+}
+
+textarea#{ns(input)} {
+  min-height: spacing.space(15v);
+}

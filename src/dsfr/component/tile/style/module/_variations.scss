@@ -1,0 +1,26 @@
+////
+/// Tile module : Variations
+/// @group Tile
+////
+
+@use 'src/module/spacing';
+@use 'src/module/media-query';
+
+#{ns(tile)} {
+  &--horizontal,
+  &--download {
+    @include build-tile-horizontal();
+  }
+
+  &--vertical\@md {
+    @include media-query.respond-from(md) {
+      @include build-tile-vertical();
+    }
+  }
+
+  &--vertical\@lg {
+    @include media-query.respond-from(lg) {
+      @include build-tile-vertical();
+    }
+  }
+}

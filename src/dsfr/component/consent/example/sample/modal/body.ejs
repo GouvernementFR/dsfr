@@ -1,0 +1,86 @@
+
+<%
+let id = 'consent';
+let finalities = [];
+
+let config = [
+  {
+    id: 'finality',
+    title: 'Préférences pour tous les services. <a href="">Données personnelles et cookies</a>',
+    type: 'all'
+  },
+  {
+    id: 'finality-0',
+    title: 'Cookies obligatoires',
+    desc: 'Ce site utilise des cookies nécessaires à son bon fonctionnement qui ne peuvent pas être désactivés.',
+    type: 'mandatory'
+  },
+  {
+    id: 'finality-1',
+    title: 'Nom de la finalité',
+    desc: 'Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.',
+    services: 3
+  },
+  {
+    id: 'finality-2',
+    title: 'Nom de la finalité',
+    desc: 'Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.',
+    services: 3
+  },
+]
+
+function getFinality(id, title, desc, radios, services) {
+  let finality = {};
+  finality.id = id;
+  finality.title = title || undefined;
+  finality.desc = desc || undefined;
+  finality.radios = radios;
+  if (services) finality.services = services;
+
+  return finality;
+}
+
+function getRadios (id, itemId, type) {
+  let name = type === 'all' ? 'all' : itemId;
+  let elementAccept = type === 'all' ? {label: 'Tout accepter'} : { label : 'Accepter'};
+  let elementRefuse = type === 'all' ? {label: 'Tout refuser'} : { label : 'Refuser'};
+  let disabled = type === 'mandatory';
+  let checked = type === 'mandatory';
+
+  return [
+    {
+      name: id + '-' + name,
+      ...elementAccept,
+      id: id + '-' + name + '-accept',
+      checked: checked
+    },
+    {
+      name: id + '-' + name,
+      ...elementRefuse,
+      id: id + '-' + name + '-refuse',
+      disabled: disabled
+    }
+  ]
+}
+
+for (i in config) {
+  let item = config[i];
+  let finality = getFinality(
+    item.id,
+    item.title,
+    item.desc,
+    getRadios (id, item.id, item.type)
+  );
+
+  if (item.services) finality.services = [];
+  for(let service = 1; service <= item.services; service++) {
+    finality.services.push(
+      getFinality(item.id+'-service-'+service, 'Sous finalité '+service, service === 2 ? 'Ce service utilise 3 cookies.' : null, getRadios(id, item.id+'-service-'+service))
+    );
+  }
+
+  finalities.push(finality);
+}
+%>
+
+<%- include('../../../template/ejs/consent-manager', {consent: {finalities: finalities}}); %>

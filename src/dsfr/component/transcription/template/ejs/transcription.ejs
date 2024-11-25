@@ -1,0 +1,53 @@
+<%#
+# paramètres transcription
+
+* transcription.id (string, required) : Identifiant du composant (lie le bouton au collapse).
+
+* transcription.title (string, optional) : titre de la modale de transcription.
+
+* transcription.content (string, optional) : contenu de la transcription.
+
+* transcription.isExpanded (boolean, optional) [default: false] : le composant est-il ouvert au départ.
+
+* transcription.modalId (string, optional) : id de la modale de transcription.
+
+* transcription.fullscreen (string, optional) : libellé du bouton de plein écran.
+
+* transcription.fullscreenAriaLabel (string, optional) : libellé de l'attribut aria-label du bouton de plein écran.
+
+* transcription.attributes (object, optional) : attributs supplémentaires sur le composant.
+
+#%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const transcription = locals.transcription || {};
+const attributes = transcription.attributes || {};
+const isExpanded = transcription.isExpanded === true;
+const title = locals.getText('collapse.title', 'transcription');
+
+if (transcription.id) attributes.id = transcription.id;
+
+let modal = {
+  tag: 'div',
+  title: transcription.title,
+  body: transcription.content,
+  id: transcription.modalId || uniqueId('modal-transcription'),
+  size: 'lg'
+}
+let modalId = prefix + '-transcription-modal-' + transcription.id;
+let collapseId = prefix + '-transcription-collapse-' + transcription.id;
+%>
+
+<div class="<%= prefix %>-transcription" <%- includeAttrs(attributes) %>>
+  <button type="button" class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
+  <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
+    <div class="<%= prefix %>-transcription__footer">
+      <div class="<%= prefix %>-transcription__actions-group">
+        <%- include('../../../button/template/ejs/button.ejs', { button: {label: transcription.fullscreen, classes: [prefix + '-btn--fullscreen'], attributes: {'aria-controls': modalId, 'aria-label': transcription.fullscreenAriaLabel, 'data-fr-opened': false} } } ); %>
+      </div>
+    </div>
+    <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
+  </div>
+</div>

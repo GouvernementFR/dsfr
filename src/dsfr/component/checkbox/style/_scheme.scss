@@ -1,0 +1,108 @@
+////
+/// Checkbox Scheme
+/// @group checkboxe
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+@use 'src/module/selector';
+
+@mixin _checkbox-scheme($legacy: false) {
+  #{selector.ns(checkbox-group)} {
+    input[type="checkbox"] {
+      + label {
+        @include before {
+          @include color.background-image(border action-high blue-france, (), checkbox-background-image());
+        }
+      }
+
+      &:checked {
+        + label {
+          @include before {
+            @include color.background(active blue-france);
+            @include color.background-image(border active blue-france, (), checkbox-background-image());
+            @include color.data-uri-svg(text inverted blue-france, (), $checkbox-svg, false);
+          }
+        }
+      }
+
+      @include disabled.selector {
+        & + label {
+          @include before {
+            @include disabled.colors();
+            @include color.background-image(disabled grey, (), checkbox-background-image());
+          }
+        }
+
+        &:checked {
+          & + label {
+            @include before {
+              @include disabled.colors((background: true));
+              @include color.data-uri-svg(text disabled grey, (), $checkbox-svg, false);
+            }
+          }
+        }
+      }
+    }
+
+    &--error {
+      input[type="checkbox"],
+      input[type="checkbox"]:checked {
+        & + label {
+          @include color.text(default error, (legacy:$legacy));
+
+          @include before {
+            @include color.background-image(border plain error, (), checkbox-background-image());
+          }
+        }
+      }
+
+      @include before {
+        @include color.background(border plain error, (legacy:$legacy));
+      }
+    }
+
+    &--valid {
+      input[type="checkbox"],
+      input[type="checkbox"]:checked {
+        & + label {
+          @include color.text(default success, (legacy:$legacy));
+
+          @include before {
+            @include color.background-image(border plain success, (), checkbox-background-image());
+          }
+        }
+      }
+
+      @include before {
+        @include color.background(border plain success, (legacy:$legacy));
+      }
+    }
+  }
+
+  #{selector.ns(fieldset)} {
+    &--error {
+      #{selector.ns(checkbox-group)} {
+        input[type="checkbox"] {
+          + label {
+            @include before {
+              @include color.background-image(border plain error, (), checkbox-background-image());
+            }
+          }
+        }
+      }
+    }
+
+    &--valid {
+      #{selector.ns(checkbox-group)} {
+        input[type="checkbox"] {
+          + label {
+            @include before {
+              @include color.background-image(border plain success, (), checkbox-background-image());
+            }
+          }
+        }
+      }
+    }
+  }
+}

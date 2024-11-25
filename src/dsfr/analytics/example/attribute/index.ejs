@@ -1,0 +1,28 @@
+<div class="<%= prefix %>-container" >
+  <div>
+    <h4>button</h4>
+    <div class="<%= prefix %>-mb-6v">
+      <a href="javascript:alert('click')" data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-click" >libellé du lien</a>
+    </div>
+  </div>
+  <div>
+    <h4>lien interne</h4>
+    <div class="<%= prefix %>-mb-6v">
+      <a href="../" data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-internal" >libellé du lien</a>
+    </div>
+  </div>
+  <div>
+    <h4>lien externe</h4>
+    <div class="<%= prefix %>-mb-6v">
+      <a href="https://systeme-de-design.gouv.fr" data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-external" target="_blank" rel="noopener external" title="<%= getBlankTitle('libellé du lien') %>">libellé du lien</a>
+    </div>
+  </div>
+  <div>
+    <h4>lien download</h4>
+    <div class="<%= prefix %>-mb-6v">
+      <a href="" download data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-download" >libellé du lien</a>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,124 @@
+////
+/// Form Module DEPRECATED
+/// @group form
+////
+
+@use 'src/module/preference';
+
+#{ns-group(select), ns-group(input)} {
+  &:not(:last-child) {
+    @include margin-bottom(6v);
+  }
+
+  #{ns(label)} {
+    #{ns(hint-text)} {
+      @include margin-top(1v);
+    }
+  }
+}
+
+#{ns(fieldset)} {
+  &--inline {
+    #{ns(fieldset__content)} {
+      @include display-flex(null, baseline, flex-start, wrap);
+      @include margin(-3v 2v 0 2v);
+    }
+
+    #{ns-group(checkbox)} {
+      display: inline-flex;
+      @include margin-bottom(0);
+
+      &:first-child {
+        @include margin-top(0);
+      }
+
+      &:not(:last-child) {
+        @include margin-right(5v);
+      }
+
+      &:last-child {
+        @include margin-bottom(0);
+      }
+    }
+
+    #{ns-group(radio)} {
+      display: inline-flex;
+
+      &:not(:last-child) {
+        @include margin-right(7v);
+      }
+
+      &:first-child {
+        @include margin-top(0);
+      }
+
+      &:last-child {
+        @include margin-bottom(0);
+      }
+    }
+  }
+
+  &__content {
+    @include relative;
+    @include margin(0 2v);
+    width: 100%;
+
+    #{ns-group(radio)},
+    #{ns-group(checkbox)} {
+      &:first-child {
+        @include margin-top(-3v);
+      }
+
+      label {
+        @include padding(3v 0);
+      }
+    }
+
+    #{ns-group(radio)}:not(#{ns(radio-rich)}) input[type="radio"] + label,
+    #{ns-group(checkbox)} input[type="checkbox"] + label {
+      &::before {
+        top: #{space(3v)};
+      }
+    }
+
+    & + #{ns(error-text)},
+    & + #{ns(valid-text)},
+    & + #{ns(info-text)} {
+      @include margin-top(0);
+      @include margin-left(2v);
+      @include margin-bottom(4v);
+    }
+  }
+}
+
+#{ns(error-text)},
+#{ns(valid-text)},
+#{ns(info-text)} {
+  @include display-flex(row, center);
+  @include text-style(xs);
+  @include margin-top(4v);
+  @include margin-bottom(0);
+  @include icon(null, sm, before) {
+    display: inline-block;
+    @include margin-right(1v);
+  }
+  @include icon-forced-color(canvastext, true, before);
+
+  & + #{ns(error-text)},
+  & + #{ns(valid-text)},
+  & + #{ns(info-text)} {
+    @include margin-top(1v);
+  }
+}
+
+#{ns(error-text)} {
+  @include icon-image(error-fill, before);
+}
+
+#{ns(valid-text)} {
+  @include icon-image(success-fill, before);
+}
+
+#{ns(info-text)} {
+  @include icon-image(info-fill, before);
+}

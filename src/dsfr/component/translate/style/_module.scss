@@ -1,0 +1,92 @@
+////
+/// Header Module : translate
+/// @group header
+////
+
+@use 'src/module/animate';
+@use 'src/module/selector';
+@use 'src/module/preference';
+
+#{ns(translate)} {
+  --rows: 8;
+  position: relative;
+
+  #{ns(translate__btn)} {
+    @include nest-btn(md, left, translate-2, null, false);
+    @include font-weight(medium);
+    @include min-height(12v);
+    @include min-height(auto, lg);
+    @include width(100%);
+    @include width(auto, lg);
+    @include animate.caret();
+    @include icon-forced-color(buttontext, true);
+
+    @include icon(arrow-down-s-line, sm, after) {
+      @include margin-left(auto);
+      @include margin-left(1v, lg);
+      @include margin-right(-1v, lg);
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
+    }
+
+    @include respond-from(lg) {
+      @include text-style(sm);
+      @include icon-size(sm, before);
+      @include padding(1v 3v);
+    }
+  }
+
+  // Cache le langage courant en mobile
+  &__language {
+    white-space: nowrap;
+
+    @include selector.current {
+      display: none;
+      @include respond-from(lg) {
+        display: inline-flex;
+      }
+    }
+  }
+
+  &__menu {
+    @include margin(-1v 0);
+    @include margin(-1v -4v, lg);
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+  }
+
+  #{ns(nav)} {
+    &__item {
+      @include before(none);
+    }
+  }
+
+  #{ns(menu)} {
+    &__list {
+      @include width(auto);
+      @include padding(0);
+
+      @include respond-from(lg) {
+        display: grid;
+        grid-template-rows: repeat(var(--rows), auto); // 8 items max per col
+        grid-auto-flow: column;
+
+        @include preference.forced-colors {
+          border-top: 1px solid;
+        }
+      }
+    }
+  }
+}
+
+#{ns-group(btns)} {
+  #{ns(translate)} {
+    &__menu {
+      @include margin(-5v -3v 0, lg);
+    }
+  }
+}

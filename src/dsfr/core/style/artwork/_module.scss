@@ -1,0 +1,29 @@
+////
+/// Core Module : Artwork
+/// @group core
+////
+
+@use 'src/module/selector';
+@use 'src/module/preference';
+
+#{selector.ns(artwork)} {
+  &-background,
+  &-motif {
+    @include preference.forced-colors {
+      fill: graytext;
+    }
+  }
+
+  &-decorative {
+    @include preference.forced-colors {
+      fill: none;
+    }
+  }
+
+  &-minor,
+  &-major {
+    @include preference.forced-colors {
+      fill: canvastext;
+    }
+  }
+}

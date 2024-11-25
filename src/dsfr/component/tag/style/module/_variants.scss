@@ -1,0 +1,78 @@
+////
+/// Tag active Module
+/// @group tag
+////
+
+@use 'src/module/preference';
+
+@include clickable-selector {
+  &#{ns(tag)} {
+    // tag pressable
+    @include pressed-selector(true) {
+      @include relative;
+      overflow: visible;
+      background-position: 50%;
+      background-size: 100%;
+      background-repeat: no-repeat;
+
+      @include preference.forced-colors {
+        &:not(:disabled) {
+          color: highlight;
+          border: 1px solid highlight;
+          border-top: 4px solid highlight;
+          @include icon-forced-color(highlight);
+
+          @include after {
+            display: none;
+          }
+        }
+      }
+
+      @include icon(checkbox-circle-line, sm, after) {
+        @include absolute(4px, 0);
+        @include margin(-2v);
+      }
+
+      &#{ns(tag)}--sm {
+        @include icon(null, xs, after, false) {
+          @include absolute(3px, 0);
+          @include margin(-1.5v);
+          @include preference.forced-colors {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // tag supprimable
+  &#{ns(tag)}--dismiss {
+    @include before {
+      content: none;
+    }
+
+    @include icon(close-line, sm, after) {
+      @include margin-left(1v);
+      @include margin-right(-1v);
+    }
+
+    @include icon-forced-color(buttontext, true, after);
+
+    &:disabled {
+      @include icon-forced-color(graytext, null, after);
+    }
+
+    &#{ns(tag)}--sm {
+      @include icon(null, xs, after) {
+        @include margin-right(-0.75v);
+        @include margin-left(0.5v);
+      }
+
+      @include icon-forced-color(buttontext, null, after);
+
+      &:disabled {
+        @include icon-forced-color(graytext, null, after);
+      }
+    }
+  }
+}

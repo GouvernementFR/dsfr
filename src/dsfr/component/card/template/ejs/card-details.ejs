@@ -1,0 +1,20 @@
+<%#
+# paramètres des détails de la carte
+
+* details (array, required) : collection d'objet définissant les détails
+
+* details[].label (string, required) : Intitulé du détail
+
+* icon (string, optionnal) : nom de l'icon
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% for (const detail of details) {
+    const detailClasses = [`${prefix}-card__detail`];
+
+    if (detail.icon) detailClasses.push(`${prefix}-icon-${detail.icon}`);
+%>
+    <p <%- includeClasses(detailClasses); %>><%- detail.label %></p>
+<% } %>

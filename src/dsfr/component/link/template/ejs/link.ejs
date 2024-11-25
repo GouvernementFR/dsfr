@@ -1,0 +1,100 @@
+<%#
+# paramètres link
+
+* link.label (string, required) : contenu texte
+
+* link.markup (string, optional) : balise de l'actionneur du composant (a, button)
+
+* link.href (string, required) : adresse url du lien
+
+* link.detail (string, optional) : detail du lien de telechargement
+
+* link.blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
+
+* link.disabled (boolean, optional) : si valeur true, link désactivé
+
+* link.size (string, optional) : taille du lien
+  valeurs :
+  * sm
+  * lg
+
+* link.icon (string, optional) : icon du lien
+
+* link.download (boolean, optional): Si true, lien de téléchargement
+
+* link.iconPlace (string, optional) : emplacement de l'icone
+  si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans libellé
+  valeurs :
+  * left : icone à gauche du libellé
+  * right : icone à droite du libellé
+
+* link.id (string, optional) : id du lien
+
+* link.attributes (object, optional) : attributs spécifiques à rajouter sur le composant
+
+* link.classes (array, optional) : classes spécifiques à rajouter sur le composant
+
+* link.assess (bool | string, optional) : si true, ajoute l'attribut permettant le remplissage automatique des informations du fichier à télécharger. Si string, ajoute l'attribut avec la valeur de la string (ex: "bytes" pour les poids en bytes)
+
+* link.hreflang (string, optional) : code langue du fichier à télécharger
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<%
+const link = locals.link || {};
+const linkClasses = link.classes || [];
+const linkAttrs = link.attributes || {};
+let label = link.label || 'lorem ipsum';
+const disabled = link.disabled === true;
+linkAttrs.id = link.id || uniqueId('link');
+linkClasses.push(prefix + '-link');
+const markup = link.markup || 'a';
+
+switch (markup) {
+  case 'a':
+    if (link.rel) linkAttrs.rel = link.rel;
+    if (link.hreflang) linkAttrs.hreflang = link.hreflang;
+    if (link.assess === true) {
+      linkAttrs[`data-${prefix}-assess-file`] = ''
+    } else if (typeof(link.assess) === 'string') {
+      linkAttrs[`data-${prefix}-assess-file`] = link.assess
+    }
+    break;
+}
+
+switch (link.size) {
+  case 'sm':
+    linkClasses.push(prefix + '-link--sm');
+    break;
+
+  case 'lg':
+    linkClasses.push(prefix + '-link--lg');
+    break;
+}
+
+if (link.download) {
+  linkAttrs.download = link.download;
+  linkClasses.push(prefix + '-link--download');
+}
+
+if (link.icon !== undefined) linkClasses.push(`${prefix}-icon-${link.icon}`);
+
+if (link.iconPlace !== undefined) {
+  switch (link.iconPlace) {
+    case 'left':
+      linkClasses.push(`${prefix}-link--icon-left`);
+      break;
+
+    case 'right':
+      linkClasses.push(`${prefix}-link--icon-right`);
+      break;
+  }
+}
+
+if (link.detail) {
+  label += ` <span class="${prefix}-link__detail">${link.detail}</span>`;
+}
+
+%>
+
+<%- include('../../../../core/template/ejs/action/action', {action: {...link, classes: linkClasses, attributes: linkAttrs, markup: markup, label: label, disabled: disabled}}) %>

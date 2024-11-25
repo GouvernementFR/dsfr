@@ -1,0 +1,26 @@
+////
+/// Core Tool : Medias
+/// @group core
+////
+
+@use 'sass:math';
+@use 'src/module/specificity';
+
+/// Force un ratio d'aspect sur le block par l'ajout d'un pseudo-element en before
+/// @param {String} $ratio - key du ratio attendu selon la map $ratio-scale
+/// @param {Size | Bool} $block - détermine si le block est créé et sa taille correspondante
+@mixin aspect-ratio($ratio: 16x9, $important: false) {
+  aspect-ratio: specificity.important(map_get($ratio-scale, $ratio), $important);
+}
+
+@mixin media-overlay-cover {
+  @include fit-cover-center;
+  @include absolute(0, 0, 0, 0, 100%, 100%);
+}
+
+@mixin aspect-ratio-legacy($ratio: 16x9, $important: false) {
+  @include before('', block) {
+    $pb: specificity.important(math.div(100%, map_get($ratio-scale, $ratio)), $important);
+    padding-bottom: $pb;
+  }
+}

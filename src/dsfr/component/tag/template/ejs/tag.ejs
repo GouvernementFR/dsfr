@@ -1,0 +1,109 @@
+<%#
+# paramètres tag
+
+* tag.id (string, optional) : id du tag
+
+* tag.label (string, required) : contenu texte
+
+* tag.href (string, required) : adresse url du lien
+
+* tag.blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
+
+* tag.title (string, optional) : attribut title du tag
+
+* tag.disabled (boolean, optional) : si true, composant désactivé
+
+* tag.type (string, optional) : type de tag
+  valeurs {default: non cliquable} :
+  * clickable : tag avec lien
+  * pressable : tag activable
+  * dismissible : tag supprimable
+
+* tag.pressable (bool, optional) : si true, rend sélectionnable le composant
+
+* tag.dismissible (bool, optional) : si true, rend supprimable le composant
+
+* tag.button (boolean, optional) : si true, le composant est un bouton
+
+* tag.size (string, optional) : taille du composant
+  valeurs {default: md} :
+  * sm : tag taille small
+
+* tag.icon (string, optional) : icon du lien
+
+* tag.accent (string, optional) : couleur d'accentuation
+
+* tag.classes (array, optional) : Classes suplémentaires sur le bouton
+
+* tag.attributes (object, optional) : Attributs suplémentaires sur le tag
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+
+<%
+let tag = locals.tag || {};
+let tagClasses = tag.classes || [];
+let tagAttrs = tag.attributes || {};
+tagAttrs.id = tag.id || undefined;
+tagAttrs.title = tag.title || undefined;
+tagClasses.push(prefix + '-tag');
+
+if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
+
+switch(tag.size) {
+  case 'sm':
+    tagClasses.push(prefix + '-tag--sm');
+  break;
+}
+
+switch(tag.type) {
+  case 'clickable':
+    tag.markup = 'a';
+    if (tag.disabled !== true) {
+      tagAttrs.href = tag.href || contentPlaceholder('url');
+      switch (true) {
+        case tag.self:
+          tagAttrs.target = '_self';
+        break;
+      }
+    }
+  break;
+  case 'pressable':
+    tag.markup = 'button';
+    tagAttrs.type = 'button';
+    tagAttrs["aria-pressed"] = tag.pressed === true ? 'true' : 'false';
+  break;
+  case 'dismissible':
+    tag.markup = 'button';
+    tagAttrs.type = 'button';
+    tagClasses.push(prefix + '-tag--dismiss');
+    tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
+  break;
+  default:
+    tag.markup = 'p';
+  break;
+}
+
+if (tag.icon !== undefined) {
+  tagClasses.push(prefix + '-icon-' + tag.icon);
+  tagClasses.push(prefix + '-tag--icon-left');
+}
+
+if (tag.disabled === true) {
+  switch(tag.markup) {
+  case 'input':
+  case 'button':
+    tagAttrs.disabled = '';
+    break;
+
+  case 'a':
+    tagAttrs['aria-disabled'] = 'true';
+    tagAttrs.role = 'link';
+    break;
+  }
+}
+
+tagAttrs = {...tagAttrs, ...tag.attributes}; // place les attributs venant du sample à la fin
+%>
+
+<<%= tag.markup %> <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></<%= tag.markup %>>

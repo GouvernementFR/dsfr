@@ -1,0 +1,10 @@
+////
+/// Icon Map Legacy
+/// @group icons-map
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  @include generate-icons-legacy(filter-icons('map'));
+}

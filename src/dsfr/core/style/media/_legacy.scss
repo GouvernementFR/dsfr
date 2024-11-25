@@ -1,0 +1,12 @@
+////
+/// Core Legacy : Medias
+/// @group core
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(responsive-vid)} {
+    @include aspect-ratio-legacy();
+  }
+}

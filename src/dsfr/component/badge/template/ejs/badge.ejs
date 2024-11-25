@@ -1,0 +1,52 @@
+<%#
+# paramètres badge
+
+* badge (object, required) : Objet contenant les paramètres
+
+** label (string, required) : classes supplémentaires sur l'element
+
+** type (string, optional) : le type défini la couleur du badge (error/success/warning/new)
+
+** accent (string, optional) : défini la couleur d'accentuation (type ne doit pas être défini)
+
+** markup (string, optional) : balise html du markup (default: p)
+
+** classes (array, optional) : classes supplémentaires sur l'element
+
+** attrs (object, optional) : Attributs supplémentaires sur l'element
+
+** icon (string, optional) : nom de l'icône du badge ou 'false' pour désactiver l'icone
+
+** ellipsis (boolean, optional) [default: false] : Si true, ajoute un span ellipsis autour du Libellé
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let badge = locals.badge || {};
+const markup = badge.markup || 'p';
+const classes = badge.classes || [];
+const attrs = badge.attrs || {};
+classes.push(prefix + '-badge');
+if (badge.id) attrs.id = badge.id;
+
+switch(badge.size) {
+	case 'sm':
+			classes.push(prefix + '-badge--sm');
+		break;
+}
+
+if (badge.type !== undefined) classes.push(prefix + '-badge--' + badge.type);
+
+else if (badge.accent !== undefined) classes.push(prefix + '-badge--' + badge.accent);
+
+if (badge.icon === false) classes.push(prefix + '-badge--no-icon');
+else if (badge.icon !== undefined) {
+	classes.push(prefix + '-icon-' + badge.icon);
+	classes.push(prefix + '-badge--icon-left');
+}
+
+if (badge.ellipsis) badge.label = `<span class="${prefix}-ellipsis">${badge.label}</span>`;
+%>
+
+<<%= markup %> <%- includeAttrs(attrs)%> <%- includeClasses(classes)%>><%- badge.label %></<%= markup %>>

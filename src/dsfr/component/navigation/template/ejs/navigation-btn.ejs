@@ -1,0 +1,24 @@
+<%#
+# paramètres navigation menu btn
+
+* btn.collapseId (string, required) : id du collapse
+
+* btn.label (string, required) : Libellé du bouton
+
+* btn.active (boolean, optional) : si true l'élément est actif
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const btn = locals.btn || {}
+btnClasses = btn.classes || [];
+btnAttrs = btn.attributes || {};
+btnClasses.push(`${prefix}-nav__btn`);
+btnAttrs.id = btn.id;
+btnAttrs['aria-expanded'] = false;
+btnAttrs['aria-controls'] = btn.collapseId;
+if (btn.active) btnAttrs['aria-current'] = true;
+%>
+
+<%- include('../../../../core/template/ejs/action/action', {action: {...btn, classes: btnClasses, attributes: btnAttrs, markup: 'button', label: btn.label}}) %>

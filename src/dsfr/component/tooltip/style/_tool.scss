@@ -1,0 +1,22 @@
+////
+/// Tooltip Tool
+/// @group tooltip
+////
+
+@use 'src/module/color';
+
+@mixin tooltip-border($tokens, $direction, $legacy) {
+  $value : '#{_conic-gradient($direction, "$color#1")}, #{_conic-gradient($direction, "$color#2")}, linear-gradient(90deg, $color#2, $color#2), linear-gradient(90deg, $color#1, $color#1)';
+  @include color.background-image($tokens, (legacy: $legacy), $value);
+}
+
+@function _conic-gradient ($direction, $color) {
+  $from: '-33.69deg';
+  $y: '100%';
+  @if $direction == bottom {
+    $from: '146.31deg';
+    $y: '0%';
+  }
+  $gradient : 'conic-gradient(from #{$from} at 50% #{$y}, transparent 0deg, #{$color} 0deg, #{$color} 67.38deg, transparent 67.38deg)';
+  @return $gradient;
+}

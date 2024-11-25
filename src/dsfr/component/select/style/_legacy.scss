@@ -1,0 +1,17 @@
+////
+/// Select legacy
+/// @group select
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * Cache l'icone native du select sur IE
+  */
+  #{ns(select)} {
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}

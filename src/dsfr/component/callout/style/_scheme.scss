@@ -1,0 +1,26 @@
+////
+/// Callout Scheme
+/// @group callout
+////
+
+@use 'src/module/color';
+
+@mixin _callout-scheme($legacy: false) {
+  #{ns(callout)} {
+    @include color.background(contrast grey, (legacy:$legacy));
+    @include color.background-image(border default blue-france, (legacy:$legacy));
+
+    @include before {
+      @include color.text(title grey, (legacy:$legacy));
+    }
+
+    @include title {
+      @include color.text(title grey, (legacy:$legacy));
+    }
+
+    @include color.accentuate {
+      @include color.background-image(border default accent, (legacy:$legacy));
+      @include color.background(contrast accent, (legacy:$legacy));
+    }
+  }
+}

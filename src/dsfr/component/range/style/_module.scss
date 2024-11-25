@@ -1,0 +1,271 @@
+////
+/// Range Module
+/// @group range
+////
+
+@use 'src/module/reset';
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/disabled';
+@use 'src/module/preference';
+
+#{selector.ns-group(range)} {
+  @include relative;
+
+  &--valid,
+  &--error {
+    @include before('', block) {
+      pointer-events: none;
+      @include absolute(0, -3v, 0, -3v);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: spacing.space(0.5v 100%);
+    }
+  }
+
+  &--disabled {
+    #{selector.ns(range)} {
+      &__output,
+      &__min,
+      &__max {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+      }
+
+      &#{selector.ns-attr(js-range)} {
+        @include _pseudo (before after) {
+          @include preference.forced-colors {
+            border: 1px solid graytext;
+          }
+        }
+      }
+    }
+
+    #{selector.ns(label)} {
+      &,
+      #{selector.ns(hint-text)} {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+      }
+    }
+  }
+}
+
+#{selector.ns(range)} {
+  --thumb-size: #{spacing.space(6v)};
+  @include relative;
+  @include display-flex(row, null, space-between, wrap);
+
+  input[type=range] {
+    outline: none;
+    @include width(100%);
+    @include preference.forced-colors {
+      border: none;
+    }
+  }
+
+  &__output {
+    visibility: hidden;
+  }
+
+  &__output,
+  &__min,
+  &__max {
+    text-align: center;
+    @include min-width(var(--thumb-size));
+    @include text-style(xs);
+  }
+
+  &#{selector.ns-attr(js-range)} {
+    --progress-left: 0;
+    --progress-right: calc(var(--thumb-size) * 0.5);
+
+    @include _pseudo (before after, '', block) {
+      @include absolute(6.5v, 0, null, 0);
+      @include size(100%, 3v);
+      border-radius: spacing.space(1.5v);
+      forced-color-adjust: none;
+    }
+
+    @include before {
+      outline-offset: -1px;
+
+      @include preference.forced-colors {
+        box-shadow: 0 0 0 1px buttontext;
+      }
+    }
+
+    @include after {
+      clip-path: polygon(var(--progress-left) 0, var(--progress-right) 0, var(--progress-right) 100%, var(--progress-left) 100%);
+      @include preference.forced-colors {
+        background-color: highlight;
+      }
+    }
+
+    input[type=range] {
+      @include reset.appearance(none);
+      background-color: transparent;
+      @include size(100%, var(--thumb-size));
+      @include z-index(over);
+
+      @include preference.forced-colors {
+        border: none;
+      }
+
+      &:focus {
+        @include selector.range-thumb {
+          @include preference.forced-colors {
+            outline-color: highlight;
+          }
+        }
+      }
+
+      &:not(:only-of-type) {
+        pointer-events: none;
+      }
+
+      @include selector.range-thumb {
+        @include reset.appearance(none);
+        @include size(var(--thumb-size), var(--thumb-size));
+        border-radius: 50%;
+        border: none;
+        pointer-events: auto;
+
+        @include preference.forced-colors {
+          background: buttontext;
+          box-shadow: none;
+        }
+
+        &:active {
+          @include z-index(above);
+        }
+      }
+
+      @include disabled.selector {
+        border-color: graytext;
+
+        @include selector.range-thumb {
+          @include preference.forced-colors {
+            background: graytext;
+          }
+        }
+      }
+    }
+
+    #{selector.ns(range__output)} {
+      visibility: visible;
+    }
+  }
+
+  &--sm {
+    --thumb-size: #{spacing.space(4v)};
+
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
+        @include top(6v);
+        @include height(2v);
+        border-radius: spacing.space(1v);
+      }
+    }
+  }
+
+  &--step {
+    &#{selector.ns-attr(js-range)} {
+      --step-width: 0;
+      @include _pseudo(before after) {
+        @include padding-x(2.5v);
+        background-repeat: repeat-x;
+        background-size: var(--step-width) 100%;
+        background-position: spacing.space(2.5v 0);
+        background-clip: content-box;
+      }
+
+      @include before {
+        @include preference.forced-colors {
+          background-image: radial-gradient(circle at 2px 50%, buttontext 0, buttontext 1px, transparent 1px);
+        }
+      }
+
+      @include after {
+        @include preference.forced-colors {
+          box-shadow: inset 10px 0 0 0 highlight, inset -10px 0 0 0 highlight;
+          background-image: radial-gradient(circle at 2px 50%, highlighttext 0, highlighttext 2px, transparent 2px);
+        }
+      }
+    }
+  }
+
+  &--step#{&}--sm {
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
+        background-position: spacing.space(1.5v 0);
+        @include padding-x(1.5v);
+      }
+
+      @include after {
+        @include preference.forced-colors {
+          box-shadow: inset 6px 0 0 0 highlight, inset -6px 0 0 0 highlight;
+        }
+      }
+    }
+  }
+
+  &--double &__output {
+    @include min-width(calc(var(--thumb-size) * 2));
+  }
+
+  &--double {
+    &#{selector.ns-attr(js-range)} {
+      input[type=range] {
+        @include width(calc(100% - var(--thumb-size)));
+
+        &:nth-of-type(1) {
+          @include margin-right(var(--thumb-size));
+
+          @include preference.forced-colors {
+            border-right: none;
+          }
+        }
+
+        &:nth-of-type(2) {
+          @include absolute;
+          @include right(0);
+          @include top(5v);
+
+          @include preference.forced-colors {
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+
+  // step désactivé sur le curseur double
+  &--double#{&}--step {
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
+        background-size: 0;
+      }
+    }
+  }
+
+  // &--double#{&}--step {
+  //   &#{selector.ns-attr(js-range)} {
+  //     @include _pseudo(before after) {
+  //       @include padding-x(5.5v);
+  //       background-position: spacing.space(5.5v 0);
+  //     }
+  //   }
+  // }
+
+  // &--double#{&}--step#{&}--sm {
+  //   &#{selector.ns-attr(js-range)} {
+  //     @include _pseudo(before after) {
+  //       @include padding-x(3.5v);
+  //       background-position: spacing.space(3.5v 0);
+  //     }
+  //   }
+  // }
+}

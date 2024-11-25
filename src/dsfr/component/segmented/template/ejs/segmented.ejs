@@ -1,0 +1,55 @@
+<%#
+# paramètres segmented
+
+* segmented.elements (array, required) : Tableau d'éléments segmented-element
+
+* segmented.legend (string, required) : Texte de la légende
+
+* segmented.hint (array, optional) : texte additionel dans la légende (uniquement si inlineLegend = false)
+
+* segmented.size (string, optional) : la valeur "sm" permet d'opter pour une taille plus petite
+
+* segmented.legendInline (boolean, optional) : si true, affiche la légende sur la même ligne que le contrôle segmenté [default: false]
+
+* segmented.noLegend (boolean, optional) : si true, n'affiche pas la légende [default: false]
+
+* segmented.groupClasses (array, optional) : Classes supplémentaires sur le groupe
+
+* segmented.groupAttributes (object, optional) : Attributs supplémentaires sur le groupe
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const segmented = locals.segmented || {};
+const groupClasses = segmented.classes || [];
+const groupAttributes = segmented.attributes || {};
+const legendClasses = [`${prefix}-segmented__legend`];
+groupClasses.push(prefix + '-segmented');
+if (segmented.id) groupAttributes.id = segmented.id;
+if (segmented.legendInline === true) legendClasses.push(prefix + '-segmented__legend--inline');
+if (segmented.noLegend) groupClasses.push(prefix + '-segmented--no-legend');
+switch (segmented.size) {
+  case 'sm' :
+    groupClasses.push(prefix + '-segmented--sm');
+    break;
+}
+%>
+
+<fieldset <%- includeClasses(groupClasses); %> <%- includeAttrs(groupAttributes) %>>
+  <legend <%- includeClasses(legendClasses); %>>
+    <% if (segmented.legend) { %>
+      <%= segmented.legend %>
+    <% } %>
+
+    <% if (segmented.hint) { %>
+      <span class="<%= prefix %>-hint-text"><%= segmented.hint %></span>
+    <% } %>
+  </legend>
+
+  <div class="<%= prefix %>-segmented__elements">
+    <% for (const element of segmented.elements) { %>
+      <%- include('segmented-element.ejs', { element: element }); %>
+    <% } %>
+  </div>
+</fieldset>

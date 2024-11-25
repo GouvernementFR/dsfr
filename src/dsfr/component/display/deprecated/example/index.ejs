@@ -1,0 +1,76 @@
+<%
+const sample = getSample(include);
+
+const attrModal = {};
+attrModal['aria-controls'] = prefix + '-theme-modal-deprecated';
+attrModal[`data-${prefix}-opened`] = false;
+
+const links = {
+  items: [
+    {
+      icon: 'theme-fill',
+      iconPlace: 'left',
+      label: 'Paramètres d\'affichage',
+      attributes: {...attrModal},
+      markup: 'button'
+    }
+  ]
+};
+
+let dataModal = {
+  id: prefix + "-theme-modal-deprecated",
+  title: 'Paramètres d’affichage',
+  body: include('../../../display/deprecated/example/sample/body'),
+  size: "sm"
+}
+
+let dataFooter = {
+    id: uniqueId('footer'),
+    brand: {
+      logo: {
+          title: 'république<br>française',
+      },
+    },
+    content: {
+      desc: lorem(),
+      links: [
+        {label: 'legifrance.gouv.fr'},
+        {label: 'gouvernement.fr'},
+        {label: 'service-public.fr'},
+        {label: 'data.gouv.fr'}
+      ]
+    },
+    bottom: {
+      links: [
+        {label: 'Plan du site'},
+        {label: 'Accessibilité : non/partiellement/totalement conforme'},
+        {label: 'Mentions légales'},
+        {label: 'Données personnelles'},
+        {label: 'Gestion des cookies'},
+        {
+          label: 'Paramètres d\'affichage',
+          markup: 'button',
+          classes: [prefix + '-fi-theme-fill', prefix + '-link--icon-left'],
+          attributes: {
+            type: 'button',
+            'aria-controls': prefix + '-theme-modal-deprecated',
+            [`data-${prefix}-opened`]: false,
+          }
+        }
+      ],
+      copyright: `Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="${getBlankTitle('licence etalab-2.0')}">licence etalab-2.0</a>`
+    }
+}
+%>
+
+<%- include('../../../header/deprecated/example/sample/header.ejs', {header: { links: links, navigation: true, navigationId:'header-navigation' }}); %>
+
+<div class="<%= prefix%>-container <%= prefix %>-mt-8v">
+  <h1>Scheme - gestion du dark mode</h1>
+  <%- sample('Bouton ouverture thèmes', '../../../link/example/sample/link-default', {link:links.items[0]}, true) %>
+
+  <%- sample('Snippet modale de paramètres d\'affichage', '../../../modal/template/ejs/modal.ejs', {modal:dataModal}, true); %>
+
+</div>
+
+<%- include('../../../footer/template/ejs/footer.ejs', {footer: dataFooter }); %>

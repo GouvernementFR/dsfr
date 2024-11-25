@@ -1,0 +1,30 @@
+<%#
+# paramètres pictogram
+
+* pictogram.name (string, required): nom du pictogramme
+
+* pictogram.accent (string, optional): couleur d'accentuation (ex: green-emeraude)
+
+* pictogram.category (string, optional): catégorie du pictogramme
+
+* pictogram.classes (array, optional): classes supplémentaires sur l'element
+
+%>
+<% eval(include('../../../index.ejs')); %>
+<%
+  const pictogram = locals.pictogram || {} ;
+
+  const pictogramJson = locals.pictogramJson || include('../../../../../../.config/pictogram.json');
+  const pictograms = JSON.parse(pictogramJson);
+  const category = pictograms.filter(p => p.name === pictogram.name)[0].category;
+
+  let classes = pictogram.classes || [];
+  classes.push(prefix + '-artwork');
+  if (pictogram.accent) classes.push(prefix + '-artwork--' + pictogram.accent);
+%>
+
+<svg aria-hidden="true" <%- includeClasses(classes) %> viewBox="0 0 80 80" width="80px" height="80px" >
+  <use class="<%= prefix %>-artwork-decorative" href="<%= relativeRoot %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-decorative"></use>
+  <use class="<%= prefix %>-artwork-minor" href="<%= relativeRoot %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-minor"></use>
+  <use class="<%= prefix %>-artwork-major" href="<%= relativeRoot %>dist/artwork/pictograms/<%= category %>/<%= pictogram.name %>.svg#artwork-major"></use>
+</svg>

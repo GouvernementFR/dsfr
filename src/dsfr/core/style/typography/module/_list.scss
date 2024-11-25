@@ -1,0 +1,70 @@
+////
+/// Core Module : Reset lists
+/// @group core
+////
+
+@use 'src/module/preference';
+
+@include enable-list-style;
+
+ul,
+ol,
+dl {
+  @include margin(0);
+  @include padding(0);
+
+  margin-block-start: var(--xl-block);
+  margin-block-end: var(--xl-block);
+
+  --xl-size: var(--xl-base);
+}
+
+ul {
+  list-style-type: var(--ul-type);
+  padding-inline-start: var(--ul-start);
+
+  > li {
+    @include marker {
+      font-size: calc(var(--xl-size) * 0.9);
+
+      @include preference.forced-colors {
+        color: graytext;
+      }
+    }
+  }
+}
+
+ol {
+  list-style-type: var(--ol-type);
+  padding-inline-start: var(--ol-start);
+  counter-reset: li-counter;
+
+  > li {
+    counter-increment: li-counter;
+    @include marker(var(--ol-content)) {
+      font-size: var(--xl-size);
+      font-weight: bold;
+    }
+  }
+}
+
+dl,
+dd {
+  @include margin(0);
+  padding-inline-start: var(--ul-start);
+}
+
+li,
+dd,
+dt {
+  --xl-base: calc(var(--xl-size) * 0.9);
+  @include padding-bottom(var(--li-bottom));
+}
+
+#{ns(raw-list)} {
+  @include disable-list-style;
+}
+
+#{ns(list)} {
+  @include enable-list-style;
+}

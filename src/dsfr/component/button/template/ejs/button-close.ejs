@@ -1,0 +1,31 @@
+<%#
+# paramètres button-close
+
+* button.label (string, required) : contenu texte
+
+* button.closeId (string, required): id de l'élément à fermer
+
+* button.title (string, optional) : titre du lien
+
+* button.id (string) : id de l'élément
+
+* button.classes (array, optional) : Classes supplémentaires sur l'élément
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const button = locals.button || {};
+
+button.markup = 'button';
+let buttonClasses = button.classes || [];
+buttonClasses.push(prefix + '-btn--close');
+if (!button.attributes) button.attributes = {};
+button.label = button.label || 'Fermer';
+button.title = button.title || button.label || 'Fermer';
+button.id = button.id || uniqueId('button');
+if (button.closeId) button.attributes['aria-controls'] = button.closeId;
+%>
+
+<%- include('./button.ejs', {button: {...button, classes: buttonClasses }});%>

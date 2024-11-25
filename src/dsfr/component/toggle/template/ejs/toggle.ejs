@@ -1,0 +1,91 @@
+<%#
+# paramètres toggle
+
+* toggle.id (string, required): id de l'input
+
+* toggle.groupId (string, optional): id du groupe
+
+* toggle.label (string, required): libellé du toggle
+
+* toggle.hint (string, optional): texte additionel
+
+* toggle.border (boolean, optional): ajoute une bordure sous le toggle
+
+* toggle.left (boolean, optional): place le libellé sur la gauche
+
+* toggle.state (boolean, optional): ajoute les libellés "activé"/"désactivé" sous le champ
+
+* toggle.disabled (boolean, optional): désactive le toggle
+
+* toggle.checked (boolean, optional): coche le toggle
+
+* toggle.inputAttr (object, optional): attributs supplémentaires sur l'input du toggle
+
+* toggle.classes (array, optional): classes supplémentaires sur le toggle
+
+// TODO: templatisation
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
+
+<%
+let toggle = locals.toggle || {};
+const id = toggle.id || uniqueId('toggle');
+let classes = toggle.classes || [];
+
+let inputAttr = toggle.inputAttr || {};
+inputAttr.id = id;
+
+const groupAttr = toggle.groupAttr || {};
+groupAttr.id = toggle.groupId ? toggle.groupId + inputAttr.id  : undefined;
+
+const describedby = [];
+
+const hintAttr = toggle.hintAttr || {};
+
+if (toggle.hint) {
+  const hintId = toggle.hintId || uniqueId('toggle-hint');
+  hintAttr.id = hintId;
+  describedby.push(hintId);
+}
+
+classes.push(prefix + '-toggle');
+
+if (toggle.border) {
+  classes.push(prefix +'-toggle--border-bottom');
+}
+if (toggle.left) {
+  classes.push(prefix +'-toggle--label-left');
+}
+if (toggle.error) {
+  classes.push(prefix +'-toggle--error');
+}
+if (toggle.valid) {
+  classes.push(prefix +'-toggle--valid');
+}
+if (toggle.disabled) inputAttr['disabled'] = '';
+if (toggle.checked) inputAttr['checked'] = '';
+
+const builder = new MessageBuilder(toggle.id, toggle.includeEmptyMessagesGroup);
+
+if (toggle.valid) {
+    builder.addValid(toggle.valid);
+}
+if (toggle.error) {
+    builder.addError(toggle.error);
+}
+
+if (builder.isIncluded) describedby.push(...builder.ids);
+
+if (describedby.length > 0) inputAttr['aria-describedby'] = describedby.join(' ');
+%>
+
+<div <%- includeClasses(classes)%> <%- includeAttrs(groupAttr)%>>
+  <input type="checkbox" class="<%= prefix %>-toggle__input" <%- includeAttrs(inputAttr)%>>
+  <label class="<%= prefix %>-toggle__label" for="<%= toggle.id %>" <% if(toggle.state){ %> data-<%= prefix %>-checked-label="Activé" data-<%= prefix %>-unchecked-label="Désactivé" <% } %>><%- toggle.label %></label>
+  <% if (toggle.hint){ %>
+    <p class="<%= prefix %>-hint-text" <%- includeAttrs(hintAttr)%>><%- toggle.hint %></p>
+  <% } %>
+  <%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
+</div>

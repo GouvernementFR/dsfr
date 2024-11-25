@@ -1,0 +1,18 @@
+<%
+let accordionsGroup = locals.accordionsGroup || {};
+
+const accordions = [];
+for (let i = 0; i < 6; i++) accordions.push({
+  label: 'Libellé accordéon',
+  content: randomContent(),
+  id: uniqueId('accordion'),
+  isExpanded: true
+});
+
+accordionsGroup = {
+  accordions: accordions,
+  ...accordionsGroup
+}
+%>
+
+<%- include('../../template/ejs/accordions-group', { accordionsGroup: accordionsGroup }); %>

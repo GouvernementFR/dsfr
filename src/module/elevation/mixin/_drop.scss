@@ -1,0 +1,22 @@
+@use 'sass:map';
+@use 'src/module/legacy';
+@use 'src/module/utilities';
+
+@mixin drop($options: ()) {
+  $legacy: map.get($options, legacy);
+  $background: map.get($options, background);
+  @if $legacy {
+    @include legacy.is(ie11) {
+      z-index: auto;
+      background: transparent;
+      @include utilities.nest($background) {
+        box-shadow: none;
+      }
+    }
+  }
+  @else {
+    z-index: auto;
+    background: transparent;
+    filter: none;
+  }
+}

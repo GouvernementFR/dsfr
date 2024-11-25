@@ -1,0 +1,13 @@
+<%#
+# paramètres de la partie end du contenu principal de la tuile, placé après titre et description
+
+* end.details (array, optional) : Détails
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<div class="<%= prefix %>-tile__end" >
+    <% if (end.details !== undefined) { %>
+        <%- include('tile-details', { details: end.details }); %>
+    <% } %>
+</div>

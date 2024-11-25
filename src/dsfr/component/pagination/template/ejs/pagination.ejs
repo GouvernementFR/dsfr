@@ -1,0 +1,45 @@
+<%#
+# Paramètres pagination
+
+* pagination.first (object, optional): item first
+
+* pagination.prev (object, optional): item précédent
+
+* pagination.pages (array, optional): Paramètres des items de pagination par numéro de pages
+
+* pagination.next (object, optional): item suivant
+
+* pagination.last (object, optional): item last
+
+%>
+<%
+  let pagination = locals.pagination || {};
+  const attrPagination = pagination.attr || {};
+  attrPagination['aria-label'] = 'Pagination';
+  if (pagination.pages && pagination.pages.length) attrPagination['data-fr-analytics-page-total'] = pagination.pages[pagination.pages.length - 1].label;
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<nav role="navigation" class="<%= prefix %>-pagination" <%- includeAttrs(attrPagination) %>>
+  <ul class="<%= prefix %>-pagination__list">
+    <%
+    let disabled = pagination.pages && pagination.pages[0].active === true;
+    %>
+    <% if (pagination.first !== undefined) { %><%- include('./pagination-item.ejs', {paginationItem: {...pagination.first, type:'first', disabled: disabled}}); %><% } %>
+    <% if (pagination.prev !== undefined) { %><%- include('./pagination-item.ejs', {paginationItem: {...pagination.prev, type:'prev', disabled: disabled}}); %><% } %>
+
+    <%
+    let page;
+    if (pagination.pages) for (let i = 0; i < pagination.pages.length; i++) {
+      page = pagination.pages[i];
+    %>
+      <%- include('./pagination-item.ejs', {paginationItem: page}); %>
+    <% } %>
+
+    <%
+    disabled = pagination.pages && pagination.pages[pagination.pages.length - 1].active === true;
+    %>
+    <% if (pagination.next !== undefined) { %><%- include('./pagination-item.ejs', {paginationItem: {...pagination.next, type:'next', disabled: disabled}}); %><% } %>
+    <% if (pagination.last !== undefined) { %><%- include('./pagination-item.ejs', {paginationItem: {...pagination.last, type:'last', disabled: disabled}}); %><% } %>
+  </ul>
+</nav>

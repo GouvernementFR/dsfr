@@ -1,0 +1,125 @@
+<%#
+# paramètres de la modale
+
+* modal.id (string, required) : id de la modale
+
+* modal.markup (string, optional) : balise de la modale (dialog, div>)
+
+* modal.label (string, required) : Libellé du bouton de la modale
+
+* modal.title (string, required) : titre de la modale
+
+* modal.icon (string, optional) : icône de la modale
+
+* modal.body (string, required) : contenu de la modale
+
+* modal.footer (string, optional) : contenu du footer de la modale, généralement des boutons
+
+* modal.customFooter (string, optional) : contenu du footer custom de la modale
+
+* modal.size (string, optional) : modificateur de taille
+  valeurs :
+  * sm : modale étroite
+  * lg : modale large
+
+* modal.classes (array, optional) : classes supplémentaires sur la modale
+
+* modal.closeButton (object, optional) : paramètres du bouton de fermeture
+
+* modal.attributes (object, optional) : attributs supplémentaires sur la modale
+
+* modal.concealingBackdrop (boolean, optional) : par défaut considéré à true, si la valeur false est passée, la modale ne se referme pas au click sur le backdrop.
+
+  // TODO: revoir le template pour remettre les éléments de sample dans sample (footer en array d'objet de config de button par exemple)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let modal = locals.modal || {};
+let modalMarkup = modal.markup || 'dialog';
+const isDialog = modalMarkup === 'dialog';
+let modalClasses = modal.classes || [];
+modalClasses.push(`${prefix}-modal`);
+
+let modalAttrs = modal.attributes || {};
+
+const closeButton = modal.closeButton || {};
+closeButton.closeId = modal.id;
+
+const gridClasses = [];
+const SIZES = {
+  sm: {
+    first: 12,
+    md: 6,
+    lg: 4
+  },
+  md: {
+    first: 12,
+    md: 8,
+    lg: 6
+  },
+  lg: {
+    first: 12,
+    md: 10,
+    lg: 8
+  },
+}
+const getGridClasses = (size) => {
+  const classes = [];
+  const settings = SIZES[size];
+  for (let bp in settings) classes.push(`${prefix}-col${bp === 'first' ? '' : '-' + bp }-${settings[bp]}` );
+  return classes;
+}
+
+switch(modal.size) {
+  case 'sm':
+    case 'lg':
+    gridClasses.push.apply(gridClasses, getGridClasses(modal.size));
+    break;
+  default:
+    gridClasses.push.apply(gridClasses, getGridClasses('md'));
+}
+
+const titleId = modal.id + '-title';
+
+if (modal.title) modalAttrs['aria-labelledby'] = titleId;
+
+if (modal.top) modalClasses.push(`${prefix}-modal--top`);
+
+if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealing-backdrop`] = modal.concealingBackdrop;
+
+%>
+
+<<%= modalMarkup %> id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %>>
+  <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-md">
+    <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center">
+      <div <%- includeClasses(gridClasses); %>>
+        <div class="<%= prefix %>-modal__body">
+          <div class="<%= prefix %>-modal__header">
+            <%- include('../../../button/template/ejs/button-close', {button: closeButton} )%>
+          </div>
+          <div class="<%= prefix %>-modal__content">
+            <% if(modal.title !== undefined) { %>
+            <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
+              <% if (modal.icon !== undefined) { %>
+              <span class="<%= prefix %>-icon-<%= modal.icon %> <%= prefix %>-icon--lg" aria-hidden="true"></span>
+              <% } %>
+              <%= modal.title %>
+            </h1>
+            <% } %>
+            <%- modal.body %>
+          </div>
+          <% if(modal.footer !== undefined) { %>
+          <div class="<%= prefix %>-modal__footer">
+            <%- modal.footer %>
+          </div>
+          <% } %>
+          <% if(modal.customFooter !== undefined) { %>
+            <%- modal.customFooter %>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</<%= modalMarkup %>>

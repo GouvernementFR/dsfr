@@ -1,0 +1,51 @@
+<%#
+# paramètres footer
+
+* footer.id (string, optional): id du footer
+
+* footer.top (object, optional) : Paramètres du bloc top (menu)
+
+* footer.brand (object, optional) : Paramètres du bloc marque
+
+* footer.content (object, optional) : Paramètres du bloc de contenu (texte + lien)
+
+* footer.partners (object, optional) : Paramètres du bloc partenaire (logos)
+
+* footer.bottom (object, optional) : Paramètres du bloc bottom (liens et copyright)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% let footer = locals.footer || {brand: {}} %>
+
+<footer class="<%= prefix %>-footer" role="contentinfo" <% if (footer.id !== undefined) { %>id="<%- footer.id %>"<% } %>>
+
+  <% if (footer.top !== undefined) { %>
+    <div class="<%= prefix %>-footer__top">
+      <div class="<%= prefix %>-container" >
+        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--start <%= prefix %>-grid-row--gutters" >
+          <%- include('./footer-top', {top: footer.top}); %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+
+  <div class="<%= prefix %>-container" >
+
+    <div class="<%= prefix %>-footer__body">
+      <%- include('./footer-brand', {brand: footer.brand}); %>
+      <%- include('./footer-content', {content: footer.content}); %>
+    </div>
+
+    <% if (footer.partners !== undefined) { %>
+      <div class="<%= prefix %>-footer__partners">
+          <%- include('./footer-partners', {partners: footer.partners}); %>
+      </div>
+    <% } %>
+
+    <div class="<%= prefix %>-footer__bottom">
+      <%- include('./footer-bottom', {bottom: footer.bottom}); %>
+    </div>
+
+  </div>
+
+</footer>

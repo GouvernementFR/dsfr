@@ -1,0 +1,48 @@
+<%#
+# paramètres header translate
+
+* translate (object, optional) : Paramètres du sélecteur de langue
+  ** translate.id (string) : id de l'élément
+  ** translate.button (object, optional) : Paramètres du bouton du sélecteur de langue (ex: {kind:3} pour un btn tertiary)
+  ** translate.collapseId (string, required) : Id du menu à controler
+  ** translate.languages (array, required) : Tableau d'objets langues
+    *** translate.languages[].name (string, required) : Nom de la langue dans son alphabet
+    *** translate.languages[].locale (string, required) : Code de la langue en 2 caratères
+    *** translate.languages[].active (boolean, required) : La langue qui apparait dans le bouton et en style active dans la liste (1 seule langue active)
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const translate = locals.translate || {};
+const attributes = translate.attributes || {};
+attributes.id = translate.id || uniqueId('translate');
+const collapseId = translate.collapseId || uniqueId('translate');
+%>
+
+<nav role="navigation" class="<%= prefix %>-translate <%= prefix %>-nav" <%- includeAttrs(attributes) %>>
+  <div class="<%= prefix %>-nav__item">
+    <%
+    const translateBtn = translate.button || {};
+    if (translate.languages.length) {
+      const activeLanguage = translate.languages.find(lang => lang.active === true);
+      translateBtn.label = activeLanguage.locale.toUpperCase() + `<span class="${prefix}-hidden-lg">&nbsp;- ` + activeLanguage.name + '</span>';
+    }
+    const minBtnClasses = [`${prefix}-translate__btn`];
+    const minBtnAttrs = {
+      'aria-controls': collapseId,
+      'aria-expanded': false,
+      title: translateBtn.title
+    };
+    translateBtn.classes = translateBtn.classes !== undefined ? translateBtn.classes.concat(minBtnClasses) : minBtnClasses;
+    translateBtn.attributes = translateBtn.attributes !== undefined ? {...minBtnAttrs, ...translateBtn.attributes} : minBtnAttrs;
+    %>
+
+    <%- include('../../../button/template/ejs/button', {button:translateBtn}); %>
+
+    <% if (translate.languages.length) { %>
+      <div class="<%= prefix %>-collapse <%= prefix %>-translate__menu <%= prefix %>-menu" id="<%= collapseId %>">
+          <%- include('languages.ejs', {languages: translate.languages}) %>
+      </div>
+    <% } %>
+  </div>
+</nav>

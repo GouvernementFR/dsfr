@@ -1,0 +1,24 @@
+<%#
+# paramètres navigation menu
+
+* menu.collapseId (string, required) : id du collapse
+
+* menu.items (array, required) : tableau d'éléments de navigation (voir : menu, mega-menu, link, btn)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% let menu = locals.menu || {}; %>
+<%- include('./navigation-btn', {btn:menu}); %>
+<div class="<%= prefix %>-collapse <%= prefix %>-menu" id="<%= menu.collapseId %>">
+  <ul class="<%= prefix %>-menu__list">
+    <%
+    for (item of menu.items) {
+      item.isPage = true;
+    %>
+    <li>
+      <%- include('./navigation-link', {link: item}); %>
+    </li>
+    <% } %>
+  </ul>
+</div>

@@ -1,0 +1,42 @@
+////
+/// Transcription Scheme
+/// @group transcription
+////
+
+@use 'src/module/color';
+
+@mixin _transcription-scheme($legacy: false) {
+  #{ns(transcription)} {
+    @include before {
+      @include color.box-shadow(default grey, (legacy:$legacy));
+    }
+
+    &__btn {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+
+      &[aria-expanded='true'] {
+        @include color.background(open blue-france, (legacy: $legacy));
+      }
+    }
+
+    &__content {
+      @include before {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      }
+    }
+
+    &__footer {
+      @include before {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      }
+    }
+
+    #{ns(modal)} {
+      &:not(#{ns(modal)}--opened) {
+        @include before {
+          @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+        }
+      }
+    }
+  }
+}

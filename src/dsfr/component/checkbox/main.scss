@@ -1,0 +1,23 @@
+////
+/// Checkbox Main
+/// @group checkbox
+////
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  CHECKBOX
+\* ˍˍˍˍˍˍˍˍˍ */
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import 'index';
+@import 'style/module';
+@import 'style/scheme';
+
+@include _checkbox-scheme;
+
+// deprecated
+@import 'deprecated/style/module';

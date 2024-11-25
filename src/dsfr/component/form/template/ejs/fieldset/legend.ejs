@@ -1,0 +1,23 @@
+<%#
+# paramètres fieldset legend
+
+* legend.id (string, required) : id du fieldset
+
+* legend.attributes (object, optional) : attributs spécifiques à rajouter sur la legend
+
+* legend.classes (array, optional) : classes spécifiques à rajouter sur la legend
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+<%
+const legend = locals.legend || {};
+const classes = legend.classes || [];
+classes.push(legend.sr ? `${prefix}-sr-only`: `${prefix}-fieldset__legend`);
+const attributes = { ...legend.attributes, id: legend.id };
+%>
+<legend <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+    <%- legend.label %>
+    <% if (legend.hint) { %>
+    <%- include('../hint', { hint: legend.hint });%>
+    <% } %>
+</legend>
