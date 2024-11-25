@@ -13,13 +13,13 @@
 
     & + label {
       @include padding-left(6v);
-      background-position: calc(#{spacing.space(-0.5v)} + 1px) calc(#{spacing.space(1v)} - 1px), calc(#{spacing.space(-0.5v)} + 1px) calc(#{spacing.space(1v)} - 1px);
-      background-size: #{spacing.space(4.5v)} #{spacing.space(4.5v)}, #{spacing.space(4.5v)} #{spacing.space(4.5v)};
+      background-position: 0 #{spacing.space(1v)}, 0 #{spacing.space(1v)};
+      background-size: #{spacing.space(4v)} #{spacing.space(4v)}, #{spacing.space(4v)} #{spacing.space(4v)};
 
       @include before {
         top: #{spacing.space(1v)};
         @include size(4v, 4v);
-        border-radius: #{spacing.space(4v)};
+        border-radius: #{spacing.space(2v)};
         @include margin-left(-6v);
       }
     }
