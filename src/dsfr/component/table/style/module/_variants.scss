@@ -64,12 +64,6 @@
         background-size: 100% 1px, 1px 100%;
         background-repeat: no-repeat, no-repeat;
         background-position: 0 100%, 100% 0;
-
-        &:last-child {
-          background-size: 100% 1px;
-          background-repeat: no-repeat;
-          background-position: 100% 100%;
-        }
       }
     }
   }

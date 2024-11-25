@@ -27,11 +27,6 @@
             &[role='columnheader'] {
               @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
             }
-
-            &:last-child {
-              @include color.background(alt grey, (legacy: $legacy));
-              @include color.background-image((border plain grey), (legacy: $legacy));
-            }
           }
         }
 
