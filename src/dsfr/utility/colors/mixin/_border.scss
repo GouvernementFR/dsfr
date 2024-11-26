@@ -1,0 +1,69 @@
+////
+/// Colors Mixin : border
+/// @group colors
+////
+
+@use 'src/module/spacing';
+@use 'src/module/string';
+@use 'src/module/selector';
+
+$border-width: () !default;
+
+@function _border-name($value: 0, $unit: null) {
+  $start: 'border-width';
+
+  $middle: '';
+
+  $end: "#{string.replace($value, '.', '-')}";
+
+  @if $value != 0 and $unit != null {
+    $end: '#{$end}#{$unit}';
+  }
+
+  $selector: '#{$start}-#{$middle}#{$end}';
+
+  @return $selector;
+}
+
+@function _border-selectors($value) {
+  @if type-of($value) != 'number' {
+    @return '#{selector.ns(_border-name($value, null))}';
+  }
+
+  $selectors:'#{selector.ns(_border-name($value, v))}';
+
+  @return $selectors;
+}
+
+@mixin _border-property-variations($value: 0) {
+  $v: $value;
+
+  @if type-of($value) == 'number' {
+    $v: spacing.space('#{$value}v') !important;
+  }
+
+  #{_border-selectors($value)} {
+    border-width: $v;
+  }
+}
+
+@mixin _border-properties($border-width) {
+
+  $from: map-get($border-width, from);
+  $through: map-get($border-width, through);
+
+  @for $i from $from through $through {
+    // ajoute 0.5v
+    @if $i == 0 {
+      @include _border-property-variations($i + 0.5);
+    }
+
+    @if $i > 0 {
+      @include _border-property-variations($i);
+    }
+  }
+}
+
+@mixin generate() {
+  @include _border-properties($border-width);
+}
