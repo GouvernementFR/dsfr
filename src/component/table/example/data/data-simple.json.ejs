@@ -34,7 +34,7 @@ if (table.selectable) {
         markup: 'th',
         attributes: {scope: 'row'},
         classes: [`${prefix}-cell--fixed`],
-        content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, label: `${getText('data.cell.action.selectRow', 'table')} ${index + 1}`, attributes: {name: 'row-select'}})
+        content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, label: `${getText('data.cell.action.selectRow', 'table')} ${index + 1}`, attributes: {[`data-${prefix}-row-select`]: 'true'}})
       });
     });
   });

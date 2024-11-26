@@ -14,7 +14,8 @@ class TableRow extends api.core.Instance {
   }
 
   _handleCheckboxChange (node) {
-    if (node.name === 'row-select') {
+    if (node.name === 'row-select' ||
+      node.getAttribute(api.internals.ns.attr('row-select')) === 'true') {
       this.isSelected = node.checked === true;
     }
   }
