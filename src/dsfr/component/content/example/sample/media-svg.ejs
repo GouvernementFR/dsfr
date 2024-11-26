@@ -1,0 +1,17 @@
+<%
+let content = locals.content || {};
+content.svg = include(`../../../../core/example/media/sample/svg${content.illustration ? '--illu' : ''}.ejs`, true);
+let data = {
+  ...content,
+  ...locals.content || {},
+  caption: 'Description / Source',
+  id: content.id || uniqueId('media'),
+  link: {
+    label: 'Libellé lien',
+    href: "#"
+  }
+};
+
+%>
+
+<%- include('media-default', {content:data}); %>

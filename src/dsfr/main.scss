@@ -1,0 +1,14 @@
+////
+/// Dsfr Main
+/// @group dsfr
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(0);
+@include media-query.order;
+
+@import 'core/main';
+@import 'scheme/main';
+@import 'component/main';

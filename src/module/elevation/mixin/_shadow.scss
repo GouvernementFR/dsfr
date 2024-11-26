@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use 'src/module/elevation/variable/shadows';
+@use 'src/module/utilities';
+@use '../variable/colors';
+@use 'src/module/legacy';
+
+@mixin shadow($layer, $legacy: false, $background: null) {
+  @if $legacy {
+    @include utilities.nest($background) {
+      @include legacy.is(ie11) {
+        box-shadow: 0 0 0 1px #{map.get(colors.$values, light)};
+      }
+    }
+  }
+  @else {
+    @if map.has-key(shadows.$values, $layer) {
+      filter: drop-shadow(var(--#{$layer}-shadow));
+    }
+  }
+}

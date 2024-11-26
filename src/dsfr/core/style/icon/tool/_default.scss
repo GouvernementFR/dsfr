@@ -1,0 +1,129 @@
+////
+/// Core Tool : Icon default
+/// @group core
+////
+
+@use 'src/module/path';
+@use 'src/module/spacing';
+@use 'src/module/specificity';
+@use 'src/module/preference';
+
+/// Return icon size from map
+/// @param {String} $size ['md'] - Icon size from `$icon-size-map` (Default to 'md' = 16px)
+///
+/// @example scss - Set icon size to `SM` (12px)
+///   .foo {
+///     width: icon-size(sm);
+///     height: icon-size(sm);
+///   }
+@function icon-size($size: md) {
+  @return spacing.space(map-get($icon-size-map, $size));
+}
+
+@function get-icon-url($icon, $important: false) {
+  $config: map-get($icons-config, $icon);
+  $url: url('#{path.dist()}#{map-get($config, path)}');
+  @return specificity.important($url, $important);
+}
+
+@function get-icon-pseudo($restrain) {
+  @if $restrain == before or $restrain == after {
+    @return $restrain;
+  }
+  @return before after;
+}
+
+@mixin _icon-pseudo ($restrain: null) {
+  @include _pseudo(get-icon-pseudo($restrain)) {
+    @content;
+  }
+}
+
+@mixin icon-size ($size:md, $restrain: null) {
+  @include _icon-pseudo($restrain) {
+    --icon-size: #{icon-size($size)};
+    @content;
+  }
+}
+
+@mixin icon-image ($icon, $restrain: null, $important: false) {
+  $url: get-icon-url($icon, $important);
+
+  @include _icon-pseudo($restrain) {
+    @include mask-image($url);
+  }
+}
+
+@mixin icon-style($restrain: null) {
+  @include _icon-pseudo($restrain) {
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: calc((0.75em - var(--icon-size)) * 0.5);
+    background-color: currentColor;
+    @include size(var(--icon-size), var(--icon-size));
+    @include mask-image-size(100% 100%);
+    @content;
+  }
+}
+
+@mixin icon-content($is-before: true, $override: false) {
+  $pseudos: before after;
+  @if not $is-before {
+    $pseudos: after before;
+  }
+  @include _pseudo(nth($pseudos, 1), '') {
+    @content;
+  }
+  @if $override {
+    @include _pseudo(nth($pseudos, 2), none);
+  }
+}
+
+@mixin icon($icon: null, $size: md, $restrain: null, $styling: true, $is-before: $restrain != after, $override: false) {
+  @if $styling {
+    @include icon-style($restrain);
+  }
+
+  @if $icon != null {
+    @include icon-image($icon, $restrain);
+  }
+
+  @if $size != null {
+    @include icon-size($size, $restrain);
+  }
+
+  @if $is-before != null {
+    @include icon-content($is-before, $override) {
+      @content;
+    }
+  }
+}
+
+@mixin icon-forced-color($color: graytext, $adjust: false, $restrain: before after) {
+  @include _pseudo($restrain) {
+    @include preference.forced-colors {
+      @if $adjust == true {
+        forced-color-adjust: none;
+      }
+      background-color: $color;
+    }
+  }
+}
+
+@function filter-icons($category, $config: $icons-config) {
+  $filtered: ();
+  @each $icon, $setting in $config {
+    @if map-get($setting, category) == $category {
+      $filtered: map-merge($filtered, (#{$icon}: $setting));
+    }
+  }
+  @return $filtered;
+}
+
+@mixin generate-icons($config: $icons-config) {
+  @each $icon, $setting in $config {
+    #{ns(icon-#{$icon})} {
+      @include icon-image($icon);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+////
+/// Tag Module : default
+/// @group tag
+////
+
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+@include build-tag();
+
+#{ns(tag)} {
+  @include icon-forced-color(canvastext);
+  @include preference.forced-colors {
+    border: 1px solid;
+
+    @include disabled.selector((can-be-link: true)) {
+      color: graytext;
+    }
+  }
+}

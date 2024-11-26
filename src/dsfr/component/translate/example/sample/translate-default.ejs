@@ -1,0 +1,10 @@
+<%
+let translate = locals.translate || {};
+const data = {
+  collapseId: translate.collapseId || uniqueId('translate'),
+  button: translate.button || {kind: 3, title: getText('button.title', 'translate')},
+  languages: translate.languages || eval(include('get-translations'))(4)
+}
+%>
+
+<%- include('../../template/ejs/translate', {translate: data}); %>

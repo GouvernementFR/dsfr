@@ -1,0 +1,134 @@
+<%#
+# paramètres element
+
+* element.path (String, required): Chemin du template de l'élement
+
+* element.data (object, required): Paramètres de l'élément
+
+* element.inline (boolean, optional) : ajoute le modifier inline sur l'élement
+
+* element.inlineMin (boolean, optional) : ajoute le modifier inline-min sur l'élement
+
+* element.modifier (String, optional) : nom du modifieur de element, ex: 'postal' ou 'number'
+
+* element.breakAfter (boolean, optional) : ajoute un hr pour forcer le retour à la ligne
+
+* element.attributes (object, optional) : attributs spécifiques à rajouter sur le element
+
+* element.classes (array, optional) : classes spécifiques à rajouter sur le element
+
+%>
+
+<% eval(include('../../../../../core/index.ejs')); %>
+
+<%
+let element = locals.element || {};
+const elementClass = `${locals.prefix}-fieldset__element`;
+const elementClasses = element.classes || [];
+elementClasses.push(elementClass);
+const elementAttrs = element.attributes || {};
+switch (element.inline) {
+  case 'md':
+    elementClasses.push(`${elementClass}--inline@md`);
+    break;
+
+  case true:
+    elementClasses.push(`${elementClass}--inline`);
+    break;
+}
+if (element.grow) elementClasses.push(`${elementClass}--inline-grow`);
+if (element.modifier) elementClasses.push(`${elementClass}--${element.modifier}`);
+
+let path, data;
+
+switch (element.type) {
+  case 'input':
+    path = '../../../../input/input-base/template/ejs/input-group';
+    data = { input: element.data };
+    break;
+
+  case 'email':
+    path = '../../../../input/input-email/template/ejs/email';
+    data = { input: element.data };
+    break;
+
+  case 'tel':
+    path = '../../../../input/input-tel/template/ejs/tel';
+    data = { input: element.data };
+    break;
+
+  case 'select':
+    path = '../../../../select/template/ejs/select-group';
+    data = { select: element.data };
+    break;
+
+  case 'checkbox':
+    path = '../../../../checkbox/template/ejs/checkbox-group';
+    data = { checkbox: element.data };
+    break;
+
+  case 'radio':
+    path = '../../../../radio/template/ejs/radio-group';
+    data = { radio: element.data };
+    break;
+
+  case 'toggle':
+    path = '../../../../toggle/template/ejs/toggle-group';
+    data = { toggle: element.data };
+    break;
+
+  case 'password':
+    path = '../../../../password/template/ejs/password';
+    data = { password: element.data };
+    break;
+
+  case 'fieldset':
+    path = './fieldset';
+    data = { fieldset: element.data };
+    break;
+
+  case 'hint':
+    path = '../hint';
+    data = { hint: element.data };
+    break;
+
+  case 'button':
+    path = '../../../../button/template/ejs/button';
+    data = { button: element.data };
+    break;
+
+  case 'buttonsGroup':
+    path = '../../../../button/template/ejs/buttons-group';
+    data = { buttonsGroup: element.data };
+    break;
+
+  case 'link':
+    path = '../../../../link/template/ejs/link';
+    data = { link: element.data };
+    break;
+
+  case 'paragraph':
+    path = '../../../../../core/template/ejs/typography/paragraph';
+    data = { paragraph: element.data };
+    break;
+
+  case 'alert':
+    path = '../../../../alert/template/ejs/alert';
+    data = { alert: element.data };
+    break;
+
+  case 'upload':
+    path = '../../../../upload/template/ejs/upload';
+    data = { upload: element.data };
+    break;
+
+}
+%>
+
+<div <%- includeClasses(elementClasses); %> <%- includeAttrs(elementAttrs); %>>
+  <%- include(path, data); %>
+</div>
+
+<% if (element.breakAfter) { %>
+  <hr class="<%= prefix %>-hr--break-line">
+<% } %>

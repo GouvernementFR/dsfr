@@ -1,0 +1,20 @@
+////
+/// Tab Main
+/// @group tab
+////
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  TAB
+\* ˍˍˍˍˍˍˍˍˍ */
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import 'index';
+@import 'style/module';
+@import 'style/scheme';
+
+@include _tab-scheme;

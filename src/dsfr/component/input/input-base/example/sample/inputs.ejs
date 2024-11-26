@@ -1,0 +1,28 @@
+<%
+const inputs = locals.inputs || {};
+const input = locals.input || {};
+
+inputs.valid = validData(inputs.valid);
+inputs.error = errorData(inputs.error);
+inputs.hint = hintData(inputs.hint);
+input.hint = hintData(input.hint);
+
+input.type = input.type || 'text';
+input.label = input.label || (getText('label', 'form') + ' ' + getText('title', 'input-base').toLowerCase());
+
+
+const id = inputs.id;
+const elements = [];
+for (let i = 1; i < 4; i++) elements.push({
+  type: 'input',
+  data: {
+    ...input,
+    id: `${id}-${i}`,
+    name: `${id}-${i}`
+  }
+});
+
+inputs.elements = elements;
+%>
+
+<%- include('../../../../form/example/sample/fieldset', {fieldset: inputs}) %>

@@ -1,0 +1,95 @@
+////
+/// Checkbox Module
+/// @group checkbox
+////
+
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+#{selector.ns(checkbox-group)} {
+  @include relative;
+
+  input[type="checkbox"] {
+    @include absolute;
+    @include margin(0);
+    @include size(6v, 6v);
+    opacity: 0;
+
+    @include preference.forced-colors {
+      opacity: 1;
+
+      @include disabled.selector {
+        + label {
+          color: graytext;
+        }
+      }
+    }
+
+    + label {
+      --data-uri-svg: none;
+      @include relative;
+      @include display-flex(row, center, flex-start, wrap);
+      @include margin-left(8v);
+
+      #{selector.ns(hint-text)} {
+        @include margin(0);
+        @include size(100%);
+      }
+
+      /**
+      * On ajoute l'icône check-line en taille sm via un pseudo element before
+      */
+      @include before('', block) {
+        @include absolute(0, null, null, -8v);
+        @include size(6v, 6v);
+        @include margin-right(2v);
+        border-radius: spacing.space(1v);
+        background-size: spacing.space(1v 1v), spacing.space(calc(100% - 1v) 1px), spacing.space(1v 1v), spacing.space(1px calc(100% - 2v)), spacing.space(1v 1v), spacing.space(calc(100% - 2v) 1px), spacing.space(1v 1v), spacing.space(1px calc(100% - 2v)), spacing.space(4v);
+        background-position: 0 0, spacing.space(1v) 0, 100% 0, 0 spacing.space(1v), 100% 100%, spacing.space(calc(100% - 1v)) 100%, 0 100%, 100% spacing.space(1v), center;
+        background-repeat: no-repeat;
+        // transition: background-color 0.1s, color 0.1s;
+
+        @include preference.forced-colors {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &--sm {
+    input[type="checkbox"] {
+      top: #{space(1v)};
+      @include size(4v, 4v);
+
+      + label {
+        @include margin-left(6v);
+
+        @include before {
+          @include size(4v, 4v);
+          @include margin-top(1v);
+          left: #{space(-6v)};
+        }
+      }
+    }
+  }
+
+  &--error {
+    @include before('') {
+      @include absolute(0, null, null, -3v, 2px, 100%);
+    }
+  }
+
+  &--valid {
+    @include before('') {
+      @include absolute(0, null, null, -3v, 2px, 100%);
+    }
+  }
+
+  #{selector.ns(message)} {
+    &:first-child {
+      @include margin-top(4v);
+    }
+  }
+}

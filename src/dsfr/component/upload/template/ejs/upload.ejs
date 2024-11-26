@@ -1,0 +1,62 @@
+<%#
+# paramètres upload
+
+* upload.id (string, required) : id de l'upload
+
+* upload.name (string, required) : nom de l'input
+
+* upload.label (string, required) : texte du label
+
+* upload.hint (string, optional) : texte de description sous le label
+
+* upload.labelAttrs (object, optional) : Pour passer des attributs au label
+
+* upload.labelClasses (array, optional) : Pour passer des classes au label
+
+* upload.attributes (array, optional) : Pour passer des attributs au input
+
+* upload.error (string, optional) : ajoute un texte d'erreur
+
+* upload.valid (string, optional) : ajoute un texte de succès
+
+* upload.success (string, optional) : ajoute un texte de succès
+
+* upload.multiple (boolean, optional) : Active la selection multiple de fichiers [defaut: false]
+
+* upload.disabled (boolean, optional) : Permet de désactiver le champ [defaut: false]
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
+<%
+const upload = locals.upload || {};
+const groupAttributes = upload.attributes || {};
+const classes = [prefix + '-upload'];
+const groupClasses = [prefix + '-upload-group'];
+const attributes = upload.attributes || [];
+const labelAttrs = upload.labelAttrs || {};
+const labelClass = upload.labelClasses || [];
+const builder = new MessageBuilder(upload.id);
+groupAttributes.id = upload.groupId || undefined;
+
+if (upload.valid) {
+  groupClasses.push(`${prefix}-upload-group--valid`);
+  builder.addError(upload.valid);
+}
+if (upload.error) {
+  groupClasses.push(`${prefix}-upload-group--error`);
+  builder.addError(upload.error);
+}
+if (upload.disabled) {
+  groupClasses.push(`${prefix}-upload-group--disabled`);
+  attributes['disabled'] = '';
+}
+if (builder.describedby.length > 0) attributes['aria-describedby'] = builder.describedby.join(' ');
+if (upload.multiple) attributes['multiple'] = '';
+%>
+
+<div <%- includeClasses(groupClasses); %> <%- includeAttrs(groupAttributes); %>>
+  <%- include('../../../form/template/ejs/label', {label : {label: upload.label, hint: upload.hint, for: upload.id, attributes: labelAttrs}}); %>
+  <input <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> type="file" id="<%= upload.id %>" name="<%= upload.name %>">
+  <%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
+</div>

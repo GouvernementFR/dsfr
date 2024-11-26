@@ -1,0 +1,15 @@
+////
+/// Core Scheme : Reset body
+/// @group core
+////
+
+@use 'src/module/color';
+
+@mixin _core-reset-body-scheme($legacy: false) {
+  @if (map-get($reset-settings, body)) {
+    body {
+      @include color.background(default grey, (legacy:$legacy));
+      @include color.text(default grey, (legacy:$legacy));
+    }
+  }
+}

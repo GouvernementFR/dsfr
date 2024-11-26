@@ -1,0 +1,33 @@
+////
+/// Navigation Scheme : Menu
+/// @group navigation
+////
+
+@use 'sass:selector';
+@use 'src/module/color';
+@use 'src/module/elevation';
+
+@mixin _navigation-scheme-menu($legacy: false) {
+  #{ns(menu)} {
+    @include respond-from(lg) {
+      @include elevation.elevate(overlap, (background: #{'&__list'}, legacy: $legacy));
+
+      &__list {
+        @include color.background-image(open blue-france, (legacy:$legacy));
+
+        & > *:first-child,
+        & > *:hover,
+        & > *:hover + * {
+          &,
+          & #{ns(nav__link)} {
+            @include color.no-box-shadow((legacy:$legacy));
+          }
+        }
+      }
+
+      #{ns(nav__link)} {
+        @include color.box-shadow(default grey, (legacy: $legacy), 0 calc(-4v - 1px) 0 -4v color.$constant);
+      }
+    }
+  }
+}

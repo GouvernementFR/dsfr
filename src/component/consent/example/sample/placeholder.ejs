@@ -1,9 +1,0 @@
-<%
-let consent = locals.consent || {};
-let button = consent.button || {};
-button.label = 'Autoriser';
-button.title = 'Autorisez le dépôt de cookies pour accéder au service **Nom du service**';
-let service = consent.service || '**Nom du service**';
-let data = {title: service + ' est désactivé', body: 'Autorisez le dépôt de cookies pour accéder à cette fonctionnalité.', button: button};
-%>
-<%- include('../../template/ejs/placeholder.ejs', {consent:data}); %>

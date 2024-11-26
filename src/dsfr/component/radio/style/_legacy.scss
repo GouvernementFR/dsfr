@@ -1,0 +1,27 @@
+////
+/// Radio Legacy
+/// @group radio
+////
+
+@use 'src/module/spacing';
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(fieldset--inline)} {
+    #{ns(radio-rich)} {
+      &:last-child {
+        input[type="radio"] + label {
+          @include margin-bottom(2v !important);
+        }
+      }
+    }
+  }
+
+  // Correctif alignement vertical IE
+  // Inconvéniant : fixe la height à la min-height, soit 5.5 rem
+  #{ns(radio-rich)} {
+    input[type="radio"] + #{ns(label)} {
+      @include height(1px);
+    }
+  }
+}

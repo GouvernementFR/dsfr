@@ -1,0 +1,56 @@
+<%#
+# paramètres checkbox
+
+* checkbox.id (string, required): id du checkbox
+
+* checkbox.attributes (object, optional): attributs sur l'input
+
+* checkbox.name (object, optional): attributs sur l'input
+
+* checkbox.label (string, optional): label du checkbox
+
+* checkbox.hint (string, optional) : message de description additionel
+
+* checkbox.disabled (boolean, optional) : si true, désactive la checkbox
+
+* input.includeEmptyMessagesGroup (boolean, optional) : true par défaut
+
+* checkbox.checked (boolean, optional) : si true, la checkbox est cochée
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
+<%
+let checkbox = locals.checkbox || {};
+let attributes = checkbox.attributes || {};
+if (checkbox.checked === true) attributes.checked = "";
+if (checkbox.disabled === true) attributes.disabled = "";
+if (checkbox.name) attributes.name = checkbox.name;
+attributes.id = checkbox.id;
+attributes.type = "checkbox";
+const describedby = [];
+const label = {
+  label: checkbox.label,
+  for: checkbox.id,
+  classes: checkbox.classes,
+  hint: checkbox.hint
+};
+
+const builder = new MessageBuilder(checkbox.id, checkbox.includeEmptyMessagesGroup);
+
+if (checkbox.valid) {
+    builder.addValid(checkbox.valid);
+}
+if (checkbox.error) {
+    builder.addError(checkbox.error);
+}
+
+if (builder.isIncluded) describedby.push(...builder.ids);
+
+if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
+
+%>
+
+<input <%- includeAttrs(attributes); %>>
+<%- include('../../../form/template/ejs/label', { label: label } ); %>
+<%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>

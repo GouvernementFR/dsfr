@@ -1,0 +1,47 @@
+<%#
+# paramètres groupe de tags
+
+* tagsGroup.tags (array, required): paramètres spécifique de chaque tag du groupe
+
+* tagsGroup.size (string, optional) : définie la taille des tags dans le groupe (default md)
+  * sm : Tags taille sm
+
+* tagsGroup.groupMarkup (string, optional) : Type de balise pour le groupe de tags (default ul)
+
+* tagsGroup.classes (array, optionnal) : Classes suplémentaires sur le groupe de tags
+
+* tagsGroup.attributes (object, optionnal) : Attributs suplémentaires sur le groupe de tags
+
+#%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const tagsGroup = locals.tagsGroup || {};
+let groupClasses = tagsGroup.classes || [];
+let groupAttrs = tagsGroup.attributes || {};
+let tags = tagsGroup.tags || [];
+const groupMarkup = tagsGroup.groupMarkup || 'ul';
+const isList = groupMarkup === 'ul';
+groupClasses.push(prefix + '-tags-group');
+
+switch(tagsGroup.size) {
+  case 'sm':
+    groupClasses.push(prefix + '-tags-group--sm');
+    break;
+ }
+ %>
+
+<<%= groupMarkup %> <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
+<% for (let i = 0; i < tags.length; i++) { %>
+  <% if (isList) { %>
+    <li>
+  <% } %>
+
+  <%- include('./tag.ejs', { tag: tags[i] }); %>
+
+  <% if (isList) { %>
+    </li>
+  <% } %>
+<% } %>
+</<%= groupMarkup %>>

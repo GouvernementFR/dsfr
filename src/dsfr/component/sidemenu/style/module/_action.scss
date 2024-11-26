@@ -1,0 +1,98 @@
+////
+/// Sidemenu Module : action
+/// @group sidemenu
+////
+
+@use 'src/module/selector';
+@use 'src/module/preference';
+
+/**
+ * Styles du bouton et du lien d'accès direct du sidemnu
+ */
+#{ns(sidemenu__link)},
+#{ns(sidemenu__btn)} {
+  @include relative;
+  @include display-flex(row, center);
+  @include size(100%);
+  @include padding(3v 4v);
+  @include margin(0, md);
+  @include text-style(md);
+  text-align: left;
+  @include font-weight(bold);
+
+  @include enable-tint;
+
+  @include selector.current {
+    @include before('') {
+      @include absolute(3v, null, 3v, 0, 2px);
+
+      @include preference.forced-colors {
+        background-color: highlight;
+        forced-color-adjust: none;
+      }
+    }
+  }
+
+  @include size(100%, null, md);
+}
+
+#{ns(sidemenu__link)} {
+  &:not([href]) {
+    @include selector.current {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}
+
+/**
+ * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
+ * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
+ */
+#{ns(sidemenu__btn)} {
+  &[aria-expanded] {
+    @include display-flex(row, center);
+    @include padding(3v 10v 3v 4v, md);
+
+    @include icon(arrow-down-s-line, sm, after) {
+      @include margin-left(auto);
+      @include margin-right(0);
+      transition: transform 0.3s;
+
+      @include margin-right(-6v, md);
+    }
+    @include icon-forced-color(buttontext, true, after);
+  }
+
+  &[aria-expanded="true"] {
+    @include after {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+/**
+ * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
+ * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
+ */
+// @TODO transformer en modifier
+#{ns(sidemenu__inner)} > #{ns(sidemenu__btn)} {
+  @include size(100%);
+  @include font-weight(medium);
+  outline-offset: -2px;
+
+  @include after {
+    @include margin-right(4v);
+  }
+
+  /**
+  * Ajout de l'icône de menu en mode mobile (provisoire)
+  */
+  @include icon(menu-2-fill, sm, before) {
+    @include margin-x(2v);
+  }
+
+  @include respond-from(md) {
+    display: none;
+  }
+}

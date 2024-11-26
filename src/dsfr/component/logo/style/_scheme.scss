@@ -1,0 +1,12 @@
+////
+/// Logo Scheme
+/// @group logo
+////
+
+@use 'src/module/color';
+
+@mixin _logo-scheme($legacy: false) {
+  #{ns(logo)} {
+    @include color.text(black-white grey, (legacy:$legacy));
+  }
+}

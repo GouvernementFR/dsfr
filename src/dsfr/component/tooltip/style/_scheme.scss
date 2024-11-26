@@ -1,0 +1,30 @@
+////
+/// Tooltip Scheme : tooltip
+/// @group core
+////
+
+@use 'src/module/color';
+@use 'src/module/elevation';
+
+@mixin _tooltip-scheme($legacy: false) {
+  #{ns(tooltip)} {
+    @include color.text(default grey, (legacy: $legacy));
+
+    &#{ns(placement)} {
+      @include elevation.elevate(overlap, (legacy: $legacy, no-background: true));
+      @include color.background-image(overlap grey, (legacy: $legacy), 'linear-gradient(90deg, $color#1, $color#1)'); // fallback for conic gradient
+
+      @if not $legacy {
+        @supports (background: conic-gradient(white, black)) {
+          &--top {
+            @include tooltip-border((overlap grey) (border default grey), top, $legacy);
+          }
+
+          &--bottom {
+            @include tooltip-border((overlap grey) (border default grey), bottom, $legacy);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+////
+/// Navigation Module : Mega menu
+/// @group navigation
+////
+
+@use 'src/module/preference';
+@use 'src/module/selector';
+
+#{ns(mega-menu)} {
+  @include respond-from(lg) {
+    @include absolute(100%, 0, null, 0);
+    @include margin(0);
+    @include padding(0);
+    @include preference.forced-colors {
+      outline: 1px solid;
+    }
+
+    @include after('', block) {
+      @include padding-bottom(6v);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  > #{ns(container)} {
+    @include padding(2v 4v 0);
+    @include padding(0 6v, lg);
+    @include respond-from(lg) {
+      @include before('', block) {
+        @include padding-top(4v);
+      }
+    }
+  }
+
+  #{ns(btn--close)} {
+    display: none;
+    @include respond-from(lg) {
+      display: flex;
+    }
+  }
+
+  #{ns(nav__link)} {
+    @include padding(3v 4v);
+    @include size(100%, auto);
+    min-height: auto;
+    font-weight: normal;
+
+    @include selector.current {
+      position: relative;
+      @include before('', block) {
+        @include absolute(50%, null, null, 0, 2px, 6v);
+        @include margin-top(-3v);
+
+        @include preference.forced-colors {
+          background-color: highlight;
+          @include width(1v);
+        }
+      }
+    }
+  }
+
+  &__leader {
+    @include enable-underline;
+    @include margin-top(-5v, lg);
+    @include padding-top(2v);
+    @include padding-top(0, lg);
+    @include set-text-margin(0 0 2v);
+    @include set-title-margin(0 0 2v);
+    @include nest-link(sm, null);
+
+    p {
+      @include text-style(sm);
+    }
+  }
+
+  &__category {
+    #{ns(nav__link)} {
+      @include font-weight(bold);
+    }
+  }
+
+  &__list {
+    @include padding-bottom(4v);
+
+    @include relative;
+    @include before('', block) {
+      @include absolute(0, 0, 0 , 0, 100%, 100%);
+      pointer-events: none;
+    }
+
+    @include respond-from(lg) {
+      @include before(none);
+    }
+  }
+}

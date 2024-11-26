@@ -1,0 +1,13 @@
+////
+/// Core Module : Display ellispsis
+/// @group core
+////
+
+@use 'src/module/specificity';
+
+@include build-utility (display, ellipsis) {
+  display: specificity.important(inline);
+  white-space: specificity.important(nowrap);
+  overflow: specificity.important(hidden);
+  text-overflow: specificity.important(ellipsis);
+}

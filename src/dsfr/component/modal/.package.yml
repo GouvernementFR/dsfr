@@ -1,0 +1,18 @@
+id: modal
+title: Modale
+description: La modale permet de concentrer l’attention de l’utilisateur exclusivement sur une tâche ou un élément d’information, sans perdre le contexte de la page en cours. Ce composant nécessite une action de l’utilisateur afin d'être clôturé ou ouverte.
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/modale
+wrapper: col-8
+style:
+  - core
+  - link
+  - button
+script:
+  - core
+example:
+  style:
+    - form
+    - input
+    - table
+  script:
+    - table

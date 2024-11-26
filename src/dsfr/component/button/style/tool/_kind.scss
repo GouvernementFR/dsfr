@@ -1,0 +1,35 @@
+////
+/// Button Tool - kind
+/// @group button
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin btn-kind-scheme ($kind: 2, $legacy: false) {
+  @if ($kind == 2) {
+    @include color.transparent-background((legacy:$legacy, hover: true));
+    @include color.text(action-high blue-france, (legacy:$legacy));
+    @include color.box-shadow(action-high blue-france, (legacy:$legacy));
+
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, box-shadow: true)) {
+      @include color.transparent-background((legacy:$legacy, hover: true));
+    }
+  }
+  @else if ($kind == 3) {
+    @include color.transparent-background((legacy:$legacy, hover: true));
+    @include color.text(action-high blue-france, (legacy:$legacy));
+    @include color.box-shadow(default grey, (legacy:$legacy));
+
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, box-shadow: true)) {
+      @include color.transparent-background((legacy:$legacy, hover: true));
+    }
+  }
+  @else if ($kind == 4) {
+    @include color.transparent-background((legacy:$legacy, hover: true));
+    @include color.text(action-high blue-france, (legacy:$legacy));
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, box-shadow: false)) {
+      @include color.transparent-background((legacy:$legacy, hover: true));
+    }
+  }
+}

@@ -1,0 +1,39 @@
+////
+/// Segmented Legacy
+/// @group segmented
+////
+
+@use 'src/module/selector';
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{selector.ns(segmented)} {
+    display: block;
+
+    &--sm {
+      #{selector.ns(segmented__legend--inline)} {
+        @include margin(1v 0 0);
+      }
+    }
+
+    &__legend--inline {
+      @include margin(2v 0 0);
+    }
+
+    &__elements {
+      display: inline-flex;
+    }
+
+    input + label {
+      @include icon-size-legacy(sm, before) {
+        vertical-align: -2px;
+      }
+    }
+
+    input:focus + label {
+      @include before {
+        outline: none;
+      }
+    }
+  }
+}

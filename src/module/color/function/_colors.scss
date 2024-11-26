@@ -1,0 +1,182 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:color';
+@use 'src/module/string';
+@use '../variable/options';
+@use '../variable/sets';
+@use '../variable/decisions';
+
+@function from-list($tokens, $type, $parameters: ()) {
+  $colors: ();
+  $length: list.length($tokens);
+  @for $i from 1 through $length {
+    $colors: list.append($colors, from(list.nth($tokens, $i), $type, $parameters));
+  }
+  @return $colors;
+}
+
+@function from($token, $type, $parameters: ()) {
+  @if $type == hex {
+    @return _hex($token, $parameters);
+  }
+  @else if $type == decision {
+    @return _decision($token, $parameters);
+  }
+  @else if $type == set {
+    @return _set($token, $parameters);
+  }
+}
+
+@function _hex($token, $parameters) {
+  $theme: map.get($parameters, theme);
+  $settings: _settings($token);
+  $index: 1;
+
+  @if $theme == dark {
+    $index: 2;
+  }
+  $name: list.nth($settings, $index);
+
+  @if not map.has-key(options.$values, $name) {
+    @error ('color ' + $name + ' doesn\'t exists');
+  }
+
+  $option: map.get(options.$values, $name);
+
+  $hex: list.nth($option, 1);
+
+  @if map.get($parameters, hover) == true {
+    $hex: list.nth($option, 2);
+  }
+
+  @if map.get($parameters, active) == true {
+    $hex: list.nth($option, 3);
+  }
+
+  @if list.length($settings) > 2 {
+    $setting: list.nth($settings, 3);
+    @if map.has-key($setting, alpha) {
+      @return rgba($hex, map.get($setting, alpha));
+    }
+  }
+
+  @return $hex;
+}
+
+@function _decision($token, $parameters) {
+  $var: map.get($parameters, var);
+  $prop: --#{list.nth($token, 1)}-#{list.nth($token, 2)}-#{list.nth($token, 3)};
+
+  @if map.get($parameters, hover) == true {
+    $prop: #{$prop}-hover;
+  }
+
+  @if map.get($parameters, active) == true {
+    $prop: #{$prop}-active;
+  }
+
+  @if map.get($parameters, var) == true {
+    @return var($prop);
+  }
+  @return $prop;
+}
+
+@function _set($token, $parameters) {
+  $settings: _settings($token);
+  $light: list.nth($settings, 1);
+  $light-split: string.split($light, '-');
+  $light-length: list.length($light-split);
+  $dark: list.nth($settings, 2);
+  $dark-split: string.split($dark, '-');
+  $dark-length: list.length($dark-split);
+  $name: $light;
+  $identical: true;
+  @for $i from 1 through $dark-length {
+    $chunk: list.nth($dark-split, $i);
+    @if list.index($light-split, $chunk) == null {
+      $name: #{$name}-#{$chunk};
+    }
+  }
+
+  $prop: --#{$name};
+  @if list.length($settings) > 2 {
+    $params: list.nth($settings, 3);
+    @if map.has-key($params, alpha) {
+      $prop: _alpha($prop, map.get($params, alpha));
+    }
+  }
+
+  @if map.get($parameters, hover) == true {
+    $prop: #{$prop}-hover;
+  }
+
+  @if map.get($parameters, active) == true {
+    $prop: #{$prop}-active;
+  }
+
+  @if map.get($parameters, var) == true {
+    @return var($prop);
+  }
+  @return $prop;
+}
+
+/// Retourne l'option correspondante
+/// @access private
+/// @param {String} $token
+/// @param {String} $theme
+/// @return {String} Retourne la liste correspondant à l'option
+@function _settings($token, $theme: light) {
+  $context: list.nth($token, 1);
+  $use: list.nth($token, 2);
+  $tint: list.nth($token, 3);
+
+  $family: null;
+  @if map.has-key(sets.$values, $tint) {
+    $family: $tint;
+  }
+  @else {
+    @each $set-family, $tints in sets.$values {
+      @if map.has-key($tints, $tint) {
+        $family: $set-family;
+      }
+    }
+  }
+  @if $family == null {
+    @error ('no family corresponding to tint #{$tint}');
+  }
+
+  @if not map.has-key(decisions.$values, $context) {
+    @error ('no $context #{$context} in $scheme-decisions');
+  }
+  $uses: map.get(decisions.$values, $context);
+
+  @if not map.has-key($uses, $use) {
+    @error ('no $use #{$use} in $scheme-decisions #{$context}');
+  }
+  $families: map.get($uses, $use);
+
+  @if not map.has-key($families, $family) {
+    @error ('no $family #{$family} in $scheme-decisions #{$context} #{$use}');
+  }
+  $decision: map.get($families, $family);
+  $shade: list.nth($decision, 1);
+
+  $set-families: map.get(sets.$values, $family);
+  $set-shades: map.get($set-families, $tint);
+  $settings: map.get($set-shades, $shade);
+
+  @if list.length($decision) > 1 {
+    $settings: list.append($settings, list.nth($decision, 2));
+  }
+
+  @return $settings;
+}
+
+@function _alpha($prop, $alpha: 1) {
+  @if $alpha == null or $alpha == 1 {
+    @return $prop;
+  }
+
+  $a: list.nth(string.split('#{$alpha}', '.'), 2);
+  @return #{$prop}-a#{$a};
+}

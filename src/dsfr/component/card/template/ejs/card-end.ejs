@@ -1,0 +1,16 @@
+<%#
+# paramètres de la partie end du contenu principal de la carte, placé après titre et description
+
+* end.details (array, optional) : Détails
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<div class="<%= prefix %>-card__end" >
+
+    <% if (end.details !== undefined) { %>
+        <%- include('card-details.ejs', { details: end.details }); %>
+    <% } %>
+
+</div>

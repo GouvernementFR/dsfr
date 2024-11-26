@@ -1,0 +1,40 @@
+////
+/// Alert Legacy
+/// @group alert
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * reset des marges dans l'alerte
+  */
+  #{ns(alert)} {
+    @include icon-legacy(null, md);
+
+    &__title,
+    p {
+      @include margin(0 0 1v);
+    }
+
+    &--info {
+      @include icon-legacy(info-fill, null, before, false);
+    }
+
+    &--success {
+      @include icon-legacy(success-fill, null, before, false);
+    }
+
+    &--error {
+      @include icon-legacy(error-fill, null, before, false);
+    }
+
+    &--warning {
+      @include icon-legacy(warning-fill, null, before, false);
+    }
+
+    #{ns(btn--close)} {
+      @include icon-legacy(close-line, sm);
+    }
+  }
+}

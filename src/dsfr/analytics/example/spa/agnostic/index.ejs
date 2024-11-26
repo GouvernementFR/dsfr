@@ -1,0 +1,105 @@
+<header role="banner" class="<%= prefix %>-header" id="header-120">
+  <div class="<%= prefix %>-header__body">
+    <div class="<%= prefix %>-container">
+      <div class="<%= prefix %>-header__body-row">
+        <div class="<%= prefix %>-header__brand <%= prefix %>-enlarge-link">
+          <div class="<%= prefix %>-header__brand-top">
+            <div class="<%= prefix %>-header__logo">
+              <p class="<%= prefix %>-logo">
+                République
+                <br>Française
+              </p>
+            </div>
+            <div class="<%= prefix %>-header__operator">
+              <img class="<%= prefix %>-responsive-img" style="max-width:9.0625rem;"
+                src="../../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - texte alternatif de l’image]"
+                data-<%= prefix %>-js-ratio="true">
+              <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+            </div>
+            <div class="<%= prefix %>-header__navbar">
+              <button type="button" class="<%= prefix %>-btn--search <%= prefix %>-btn" data-<%= prefix %>-opened="false"
+                aria-controls="modal-122" id="button-123" title="Rechercher"
+                data-<%= prefix %>-js-modal-button="true">
+                Rechercher
+              </button>
+              <button type="button" class="<%= prefix %>-btn--menu <%= prefix %>-btn" data-<%= prefix %>-opened="false"
+                aria-controls="modal-124" id="button-125" title="Menu">
+                Menu
+              </button>
+            </div>
+          </div>
+          <div class="<%= prefix %>-header__service">
+            <a href="/"
+              title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
+              <p class="<%= prefix %>-header__service-title">
+                Nom du site / service
+              </p>
+            </a>
+            <p class="<%= prefix %>-header__service-tagline">baseline - précisions sur l‘organisation</p>
+          </div>
+        </div>
+        <div class="<%= prefix %>-header__tools">
+          <div class="<%= prefix %>-header__tools-links">
+            <ul class="<%= prefix %>-btns-group">
+              <li>
+                <a class="<%= prefix %>-btn" id="button-127" href="link">Lien</a>
+              </li>
+            </ul>
+          </div>
+          <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="modal-122">
+            <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid">
+              <button type="button" class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-122" id="button-130"
+                title="Fermer">
+                Fermer
+              </button>
+              <div class="<%= prefix %>-search-bar" id="search-121" role="search">
+                <label class="<%= prefix %>-label" for="search-121-input">
+                  Rechercher
+                </label>
+                <input class="<%= prefix %>-input" aria-describedby="search-121-input-messages"
+                  placeholder="Rechercher" id="search-121-input" type="search">
+                <div class="<%= prefix %>-messages-group" id="search-121-input-messages" aria-live="polite">
+                </div>
+                <button type="button" class="<%= prefix %>-btn" id="search-btn-132" title="Rechercher">
+                  Rechercher
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="modal-124">
+    <div class="<%= prefix %>-container">
+      <button class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-124" id="button-133"
+        title="Fermer">
+        Fermer
+      </button>
+      <div class="<%= prefix %>-header__menu-links">
+      </div>
+      <nav class="<%= prefix %>-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
+        <ul class="<%= prefix %>-nav__list">
+          <li class="<%= prefix %>-nav__item">
+            <a id="link-1" class="<%= prefix %>-nav__link" href="./">Base</a>
+          </li>
+          <li class="<%= prefix %>-nav__item">
+            <a id="link-2" href="link" class="<%= prefix %>-nav__link">Links</a>
+          </li>
+          <li class="<%= prefix %>-nav__item">
+            <a id="link-3" href="button" class="<%= prefix %>-nav__link">Boutons</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="<%= prefix %>-container <%= prefix %>-mt-8v">
+
+  <div class="col-md-8">
+    <div id="content"></div>
+  </div>
+</div>
+
+<%- include('route.js.ejs'); %>

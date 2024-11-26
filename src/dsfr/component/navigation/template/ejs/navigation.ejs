@@ -1,0 +1,57 @@
+<%#
+# paramètres navigation
+
+* navigation.id (string, required) : id de la barre de navigation
+
+* navigation.arialabel (string, optional) : aria-label de la barre de navigation
+
+* navigation.items (array, required) : tableau d'éléments de navigation (voir : menu, mega-menu, link, btn)
+
+* navigation.classes (array, optional) : classes supplémentaires sur la navigation
+
+* navigation.attributes (object, optional) : attributs supplémentaires sur la navigation
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let navigation = locals.navigation || {};
+
+let classes = navigation.classes || [];
+classes.push(`${prefix}-nav`);
+
+let attributes = navigation.attributes || {};
+attributes.id = navigation.navigationId || navigation.id;
+attributes.role = 'navigation';
+attributes['aria-label'] = navigation.ariaLabel;
+%>
+
+<nav <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+  <% if(navigation.items) { %>
+  <ul class="<%= prefix %>-nav__list">
+    <%
+    for (let i = 0; i < navigation.items.length; i++) {
+      const item = navigation.items[i];
+
+      const classes = [prefix + '-nav__item'];
+      if (item.align === 'right') classes.push(prefix + '-nav__item--align-right');
+
+      const data = {};
+
+      switch (item.type) {
+        case 'link':
+          data.link = item;
+          break;
+
+        default:
+          data.menu = item;
+      }
+
+    %>
+      <li <%- includeClasses(classes); %>>
+        <%- include('./navigation-' + item.type, data); %>
+      </li>
+    <% } %>
+  </ul>
+  <% } %>
+</nav>

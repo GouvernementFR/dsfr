@@ -1,0 +1,130 @@
+<%#
+# paramètres range
+
+* range.id (string, required) : id du curseur
+
+* range.groupId (string, optional) : id du groupe
+
+* range.classes (array, optional) : classes du groupe
+
+* range.attributes (object, optional) : attributs du groupe
+
+* range.name (string, required) : attribut 'name' de l'input
+
+* range.label (string, required) : texte du label
+
+* range.hint (string, optional) : texte de description sous le label
+
+* range.size (string, optional) : taille du curseur (valeur : 'sm')
+
+* range.inputAttributes (array, optional) : attributs de l'input
+
+* range.min (number, required) : valeur minimale du curseur
+
+* range.max (number, required) : valeur maximale du curseur
+
+* range.value (number, optional) : valeur initiale du curseur
+
+* range.value2 (number, optional) : 2eme valeur initiale pour le curseur double
+
+* range.step (number, optional) : pas du curseur
+
+* range.prefix (string, optional) : texte avant la valeur du curseur
+
+* range.suffix (string, optional) : texte après la valeur du curseur
+
+* range.isDouble (boolean, optional) : mode double curseur [default: false]
+
+* range.isStep (boolean, optional) : mode curseur à pas [default: false]
+
+* range.indicators (boolean, optionnal): Pour afficher les valeurs min et max sous le curseur [default: true]
+
+* range.error (string, optional) : ajoute un texte d'erreur
+
+* range.valid (string, optional) : ajoute un texte de succès
+
+* range.disabled (boolean, optional) : Permet de désactiver le champ [defaut: false]
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
+<%
+
+const range = locals.range || {};
+
+const groupAttributes = range.attributes || {};
+groupAttributes.id = range.groupId || uniqueId('range-group');
+const groupClasses = range.classes || [];
+groupClasses.push(`${prefix}-range-group`);
+
+const label = { label: range.label, hint: range.hint, id: `${range.id}-label` };
+
+const decorate = (value) => `${range.prefix ?? ''}${value}${range.suffix ?? ''}`;
+
+const rangeAttributes = {};
+if (range.prefix) rangeAttributes[`data-${prefix}-prefix`] = range.prefix;
+if (range.suffix) rangeAttributes[`data-${prefix}-suffix`] = range.suffix;
+const rangeClasses = [`${prefix}-range`];
+if (range.size) rangeClasses.push(`${prefix}-range--${range.size}`);
+if (range.isDouble) rangeClasses.push(`${prefix}-range--double`);
+if (range.isStep) rangeClasses.push(`${prefix}-range--step`);
+
+const inputAttributes = range.inputAttributes || {};
+inputAttributes.id = range.id;
+inputAttributes.name = range.name;
+inputAttributes.type = 'range';
+inputAttributes['aria-labelledby'] = label.id;
+if (range.min) inputAttributes.min = range.min;
+if (range.max) inputAttributes.max = range.max;
+if (range.value) inputAttributes.value = range.value;
+if (range.step) inputAttributes.step = range.step;
+
+const input2Attributes = {
+  ...inputAttributes,
+  value: range.value2,
+  id: `${range.id}-2`,
+  name: `${range.name}-2`
+}
+
+const builder = new MessageBuilder(range.id);
+if (range.valid) {
+  groupClasses.push(`${prefix}-range-group--valid`);
+  builder.addValid(range.valid);
+}
+if (range.error) {
+  groupClasses.push(`${prefix}-range-group--error`);
+  builder.addError(range.error);
+}
+if (range.disabled) {
+  groupClasses.push(`${prefix}-range-group--disabled`);
+  inputAttributes.disabled = '';
+  input2Attributes.disabled = '';
+}
+if (builder.describedby.length > 0) {
+  inputAttributes['aria-describedby'] = builder.describedby.join(' ');
+  input2Attributes['aria-describedby'] = builder.describedby.join(' ');
+}
+%>
+
+<div <%- includeClasses(groupClasses); %> <%- includeAttrs(groupAttributes); %>>
+  <%- include('../../../form/template/ejs/label', { label : label }); %>
+
+  <div <%- includeClasses(rangeClasses); %> <%- includeAttrs(rangeAttributes); %>>
+    <span class="<%= prefix %>-range__output"><%= decorate(range.value) %></span>
+
+    <input <%- includeAttrs(inputAttributes); %> >
+
+    <% if (range.isDouble) { %>
+      <input <%- includeAttrs(input2Attributes); %> >
+    <% } %>
+
+    <% if (range.indicators !== false) { %>
+      <span class="<%= prefix %>-range__min" aria-hidden="true"><%= decorate(range.min) %></span>
+      <span class="<%= prefix %>-range__max" aria-hidden="true"><%= decorate(range.max) %></span>
+    <% } %>
+
+  </div>
+
+  <%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
+</div>

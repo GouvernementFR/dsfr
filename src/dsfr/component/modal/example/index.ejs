@@ -1,0 +1,47 @@
+<%
+const sample = getSample(include);
+
+let dataText = {
+    title: 'Titre de la modale',
+    icon: 'arrow-right-line',
+    body: include('sample/body/text')
+}
+
+let dataForm = {
+    title: 'Titre de la modale',
+    icon: 'arrow-right-line',
+    body: include('sample/body/form')
+}
+
+let dataFooterButtons = {
+    title: 'Titre de la modale',
+    icon: 'arrow-right-line',
+    body: include('sample/body/text', { text: { paragraphs: 6 } }),
+    footer: include('../example/sample/footer/buttons')
+}
+
+let dataTable = {
+    title: 'Titre de la modale',
+    icon: 'arrow-right-line',
+    body: include('sample/body/table'),
+    footer: include('../example/sample/footer/buttons')
+}
+%>
+
+<%- sample('Modale simple', './sample/modal-default', {modal: { ...dataText, label: 'Modale simple'}}, true ); %>
+
+<%- sample('Modale SM', './sample/modal-default', {modal: { ...dataText, size: 'sm', label: 'Modale SM'}}, true ); %>
+
+<%- sample('Modale LG', './sample/modal-default', {modal: { ...dataText, size: 'lg', label: 'Modale LG'}}, true ); %>
+
+<%- sample('Modale formulaire', './sample/modal-default', {modal: { ...dataForm, label: 'Modale formulaire'}}, true ); %>
+
+<%- sample('Modale avec iframe', './sample/modal-default', {modal: { ...dataText, label: 'Modale iframe', body: include('../example/sample/body/iframe')}}, true ); %>
+
+<%- sample('Modale avec zone d\'action et boutons', './sample/modal-default', {modal: { ...dataFooterButtons, label: 'Modale avec zone d\'action'}}, true ); %>
+
+<%- sample('Modale avec zone d\'action ancré en haut en mobile', './sample/modal-default', {modal: { ...dataFooterButtons, label: 'Modale ancrée en haut', top: true}}, true ); %>
+
+<%- sample('Modale avec zone d\'action et tableau', './sample/modal-default', {modal: { ...dataTable, label: 'Modale tableau'}}, true ); %>
+
+<%- sample('Modale simple non refermable au click sur le fond', './sample/modal-default', {modal: { ...dataText, label: 'Modale simple', concealingBackdrop: false}}, true ); %>

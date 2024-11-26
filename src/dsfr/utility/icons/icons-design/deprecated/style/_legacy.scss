@@ -1,0 +1,10 @@
+////
+/// Icon Design Legacy
+/// @group icon-design
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('design'));
+}

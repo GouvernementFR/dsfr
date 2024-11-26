@@ -1,0 +1,117 @@
+<%#
+# paramètres de la carte
+
+* card.content (object, required) : Contenu central de la carte
+
+* card.header (object, optionnal) : Partie haute de la carte vertical, contenant l'image
+
+* card.footer (object, optionnal) : Partie basse de la carte vertical, contenant les actions
+
+* card.size (string, optionnal) : Taille de la carte
+
+* card.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la carte
+
+* card.horizontal (boolean || object, optional) : si true, passe la card en mode horizontal
+  ** card.horizontal.proportion (string, optional) : proportion de l'image par rapport à la carte en horizontal (valeurs : tier, half)
+
+* card.icon (string or boolean, optional) : icône illustrative ou suppression de l'icon avec false
+
+* card.variations (array, optional): variations ésthétiques de la carte (valeurs: accent, no-border, no-background, shadow)
+
+* card.download (boolean, optional): Si true, carte de téléchargement
+
+* card.classes (array, optional): Classes suplémentaires sur le composant
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const card = locals.card || {};
+const classes = card.classes || [];
+const attributes = card.attributes || {};
+classes.push(`${prefix}-card`);
+const content = card.content || {};
+
+if (card.id) attributes.id = card.id;
+
+if (card.enlarge) switch (card.content.actionMarkup) {
+  case 'button':
+    classes.push(`${prefix}-enlarge-button`);
+    break;
+
+  default:
+    classes.push(`${prefix}-enlarge-link`);
+}
+
+switch (card.size) {
+  case 'sm':
+    classes.push(`${prefix}-card--sm`);
+    break;
+
+  case 'lg':
+    classes.push(`${prefix}-card--lg`);
+    break;
+}
+
+if (card.horizontal !== undefined) {
+  switch (card.horizontal.proportion) {
+    case 'half':
+      classes.push(`${prefix}-card--horizontal-half`);
+      break;
+
+    case 'tier':
+      classes.push(`${prefix}-card--horizontal-tier`);
+      break
+
+    default:
+      classes.push(`${prefix}-card--horizontal`);
+  }
+}
+
+if (card.download === true) {
+  classes.push(`${prefix}-card--download`);
+  content.downloadable = true;
+}
+
+switch (card.icon) {
+  case undefined:
+    break;
+
+  case false:
+    classes.push(`${prefix}-card--no-icon`);
+    break;
+
+  default:
+    classes.push(`${prefix}-icon-${card.icon}`);
+}
+
+if (card.variations) for (const variation of card.variations) switch(variation) {
+  case 'grey':
+    classes.push(`${prefix}-card--grey`);
+    break;
+
+  case 'no-border':
+    classes.push(`${prefix}-card--no-border`);
+    break;
+
+  case 'no-background':
+    classes.push(`${prefix}-card--no-background`);
+    break;
+
+  case 'shadow':
+    classes.push(`${prefix}-card--shadow`);
+    break;
+}
+
+%>
+<div <%- includeAttrs(attributes) %> <%- includeClasses(classes) %>>
+  <div class="<%= prefix %>-card__body" >
+    <%- include('card-content.ejs', { content: content}) %>
+    <% if (card.footer !== undefined) { %>
+      <%- include('card-footer.ejs', { footer: card.footer}) %>
+    <% } %>
+  </div>
+  <% if (card.header !== undefined) { %>
+    <%- include('card-header.ejs', { header: card.header}) %>
+  <% } %>
+</div>

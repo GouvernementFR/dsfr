@@ -13,6 +13,7 @@
   "engines": {
     "node": ">=18.16.1"
   },
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "test": "node tool/tool.js test",
     "build": "node tool/tool.js build",
@@ -20,8 +21,8 @@
     "deploy": "node tool/tool.js deploy",
     "standalone": "node tool/tool.js standalone",
     "changelog": "node tool/tool.js changelog",
-    "pictogram-converter": "node tool/tool.js pictogram-converter",
-    "serve": "browser-sync start --server --port 8080 --startPath example/"
+    "serve": "browser-sync start --server --port 8080 --startPath example/",
+    "pictogram-converter": "node tool/tool.js pictogram-converter"
   },
   "files": [
     "/dist",
@@ -31,6 +32,7 @@
     "/i18n",
     "/example",
     "/doc",
+    "/storybook",
     "/.config",
     "SECURITY.md",
     "CONTRIBUTING.md"
@@ -40,11 +42,12 @@
     "@commitlint/config-conventional": "^15.0.0",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
-    "browser-sync": "^2.27.10",
+    "browser-sync": ">=2.27.10",
     "browserslist": "^4.21.5",
     "cssnano": "^5.1.15",
     "del": "^6.0.0",
     "ejs": "^3.1.9",
+    "ejs4b": "^3.1.63",
     "eslint": "^8.36.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.27.5",
@@ -64,7 +67,6 @@
     "postcss-banner": "^4.0.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-discard-duplicates": "^5.1.0",
-    "prettier": "^2.8.4",
     "pure-rand": "^6.0.2",
     "rollup": "^2.68.0",
     "rollup-plugin-banner2": "^1.2.2",
@@ -83,13 +85,9 @@
     "svgo": "^2.8.0",
     "yargs": "^17.7.1"
   },
-  "peerDependencies": {
-    "browser-sync": "^2.27.10"
-  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "dependencies": {}
+  }
 }

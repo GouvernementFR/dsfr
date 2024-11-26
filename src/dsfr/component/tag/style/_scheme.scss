@@ -1,0 +1,99 @@
+////
+/// Tag Module
+/// @group tag
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin _tag-scheme($legacy: false) {
+  #{ns(tag)} {
+    @include color.text(label grey, (legacy: $legacy));
+    @include color.background(contrast grey, (legacy: $legacy));
+
+    @include pressed-selector(false) {
+      @include color.text(action-high blue-france, (legacy: $legacy));
+      @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+    }
+
+    &#{ns(tag)}--dismiss {
+      @include color.text(inverted blue-france, (legacy: $legacy));
+      @include color.background(action-high blue-france, (legacy: $legacy, hover: true));
+    }
+  }
+
+  @include clickable-selector {
+    &#{ns(tag)} {
+      @include color.text(action-high blue-france, (legacy: $legacy));
+      @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+
+      @include color.accentuate {
+        @include color.text(action-high accent, (legacy: $legacy));
+        @include color.background(action-low accent, (legacy: $legacy, hover: true));
+      }
+    }
+  }
+
+  button,
+  input[type=button] {
+    &#{ns(tag)} {
+      @include pressed-selector(true) {
+        &:not(:disabled) {
+          @include color.transparent-background((legacy:$legacy));
+          @include color.text(inverted blue-france, (legacy: $legacy));
+          @include tag-punched-background(background active blue-france, md, $legacy);
+        }
+
+        @include after {
+          @include color.text(action-high blue-france, (legacy: $legacy));
+        }
+
+        @include disabled.selector {
+          @include color.transparent-background((legacy:$legacy));
+          @include tag-punched-background(background disabled grey, md, $legacy, false);
+          @include after {
+            @include color.text(disabled grey, (legacy: $legacy));
+          }
+        }
+
+        &#{ns(tag)}--sm {
+          @include tag-punched-background(background active blue-france, sm, $legacy);
+
+          @include disabled.selector {
+            @include tag-punched-background(background disabled grey, sm, $legacy, false);
+          }
+        }
+      }
+
+      @include disabled.selector((), (legacy: $legacy, text: true, background: true));
+
+      &:disabled:hover {
+        @include color.background(background disabled grey, (legacy: $legacy));
+      }
+    }
+  }
+
+  a:not([href]) {
+    &#{ns(tag)} {
+      @include color.text(disabled grey, (legacy: $legacy));
+      @include color.background(disabled grey, (legacy: $legacy));
+    }
+  }
+
+  #{ns-group(tags)} {
+    &#{ns-group(tags)}--sm {
+      button,
+      input[type=button] {
+        &#{ns(tag)} {
+          @include pressed-selector(true) {
+            @include tag-punched-background(background active blue-france, sm, $legacy);
+
+            @include disabled.selector {
+              @include tag-punched-background(background disabled grey, sm, $legacy, false);
+            }
+          }
+        }
+      }
+    }
+  }
+}

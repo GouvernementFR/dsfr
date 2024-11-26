@@ -1,0 +1,31 @@
+<%#
+# paramètres footer content
+
+* content.desc (string, required) : Contenu text/html du bloc de contenu
+
+* content.links (array, required) : Tableau de liens
+  ** content.links[].label (string, required) : label du lien
+	** content.links[].href (string, required) : url du lien
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% let content = locals.content || {} %>
+<% let links = content.links || [] %>
+
+<div class="<%= prefix %>-footer__content" >
+	<p class="<%= prefix %>-footer__content-desc"><%- content.desc %></p>
+	<ul class="<%= prefix %>-footer__content-list">
+		<%
+			for (link of links) {
+				const attributes = link.attributes || {};
+				const classes = link.classes || [];
+				classes.push(`${prefix}-footer__content-link`);
+      	attributes.id = attributes.id || uniqueId('footer__content-link');
+		%>
+		<li class="<%= prefix %>-footer__content-item">
+			<%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, classes: classes, attributes: attributes, markup: 'a'}}); %>
+		</li>
+		<% } %>
+	</ul>
+</div>

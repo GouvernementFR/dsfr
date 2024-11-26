@@ -1,0 +1,19 @@
+////
+/// Input Scheme
+/// @group input
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin _input-scheme-deprecated($legacy: false) {
+  #{ns(input)} {
+    &--valid {
+      @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
+    }
+
+    &--error {
+      @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
+    }
+  }
+}

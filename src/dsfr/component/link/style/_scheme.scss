@@ -1,0 +1,26 @@
+////
+/// Link Scheme
+/// @group link
+////
+
+@use 'src/module/color';
+
+@mixin _link-scheme($legacy: false) {
+  #{ns(link)} {
+    @include color.text(action-high blue-france, (legacy:$legacy));
+
+    &__detail {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+  }
+
+  #{ns-group(links)} {
+    li::marker {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
+
+    &--bordered {
+      @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
+    }
+  }
+}

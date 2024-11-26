@@ -1,0 +1,33 @@
+<%#
+# paramètres navigation menu link
+
+* link.label (string, required) : Libellé du lien
+
+* link.id (string, required) : id du lien
+
+* link.href (string, required) : url du lien
+
+* link.blank (boolean, optional) [default: false] : si true, target '_blank'
+
+* link.active (boolean, optional) : si true l'élément est actif
+
+* link.disabled (boolean, optional) : si true l'élément est désactivé
+
+* link.isPage (boolean, optional) : si true aria-current: 'page', sinon aria-current: 'true'
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let link = locals.link || {};
+const linkClasses = link.classes || [];
+const linkAttrs = link.attributes || {};
+linkClasses.push(`${prefix}-nav__link`);
+linkAttrs.id = link.id;
+
+if (link.active) linkAttrs['aria-current'] = link.isPage ? 'page' : 'true';
+
+%>
+
+<%- include('../../../../core/template/ejs/action/action', {action: {...link, classes: linkClasses, attributes: linkAttrs, markup: 'a'}}) %>
+

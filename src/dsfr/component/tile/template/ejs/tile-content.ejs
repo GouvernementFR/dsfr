@@ -1,0 +1,94 @@
+<%#
+# paramètres du contenu principal de la carte
+
+* content.title (string, required) : Titre de la carte
+
+* content.description (string, optional) : Description
+
+* content.badgesGroup (array, optional) : Groupe de badges (voir badge)
+
+* content.tagsGroup (array, optional) : Groupe de tags (voir tag)
+
+* content.details (array, optional) : Détails
+
+* content.markup (string, optional) : (défaut : h3) niveau de titre
+
+* content.blank (boolean, optional) : Ajoute l'attribut target="_blank" pour ouvrir le lien dans une nouvelle fenêtre, nécessite l'ajout d'un attribut title "intitulé - nouvelle fenêtre"
+
+* content.downloadable (boolean || string, optional) : Ajoute l'attribut download au lien, si string, ajoute la valeur comme nom de fichier
+
+* content.lang (string, optional) : Ajoute l'attribut hreflang au lien, pour définir la langue du document lié
+
+* content.disabled (boolean, optional) : Si true, retire le href du lien pour le désactiver
+
+* content.assess (String, optional): Si true, remplissage automatique du poid et type de fichier à telecharger
+
+* content.noLink (boolean, optional) : Présence du lien
+
+* content.attributes (object, optional) : Attributs à ajouter au lien
+
+* content.actionMarkup (string, optional) : balise de l'actionneur du composant (a, button)
+
+* content.actionTitle (string, optional) : Attribut title de l'actionneur
+
+* content.actionType (string, optional) : Attribut type de l'actionneur
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let start = {};
+
+const markup = content.markup || 'h3';
+const actionMarkup = content.actionMarkup || 'a';
+const href = content.href || '#';
+const attributes = content.attributes || {};
+const hasLink = !content.noLink;
+
+if (content.actionTitle) attributes.title = content.actionTitle;
+
+if (actionMarkup === 'button') attributes.type = content.actionType || actionMarkup;
+
+switch (actionMarkup) {
+  case 'a':
+    if (content.rel) attributes.rel = content.rel;
+    if (content.lang) attributes.hreflang = content.lang;
+    if (content.assess === true) {
+        attributes[`data-${prefix}-assess-file`] = ''
+    } else if (typeof(content.assess) === 'string') {
+        attributes[`data-${prefix}-assess-file`] = content.assess
+    }
+    break;
+}
+
+if (content.downloadable === true && actionMarkup === 'a') attributes.download = '';
+if (typeof(content.downloadable) === 'string') attributes.download = content.downloadable;
+
+if (content.badgesGroup) start.badgesGroup = content.badgesGroup;
+if (content.tagsGroup) start.tagsGroup = content.tagsGroup;
+if (content.tag) start.tag = content.tag;
+if (content.badge) start.badge = content.badge;
+
+%>
+
+<div class="<%= prefix %>-tile__content">
+  <<%= markup %> class="<%= prefix %>-tile__title">
+    <% if (hasLink) { %>
+      <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...content, attributes, markup: actionMarkup, label: content.title, disabled: content.disabled}}) %>
+    <% } else { %>
+        <%- content.title %>
+    <% } %>
+  </<%= markup %>>
+
+  <% if (content.description !== undefined) { %>
+    <p class="<%= prefix %>-tile__desc"><%- content.description %></p>
+  <% } %>
+
+  <% if (content.details !== undefined) { %>
+    <%- include('tile-details.ejs', { details: content.details }); %>
+  <% } %>
+
+  <% if (Object.keys(start).length) { %>
+    <%- include('tile-start.ejs', {start: start }); %>
+  <% } %>
+</div>

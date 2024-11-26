@@ -1,0 +1,116 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+  $routeProvider
+  .when("/", {
+    template : '<div><h2>HOME</h2><p>lorem ipsum dolor sit amet</p></div>'
+  })
+  .when("/link", {
+    template : '<div><h2>LINK</h2><a href="#" data-<%= prefix %>-analytics-click="libellé du lien envoyé à l\'analytics" id="link-attr-click">test</a></div>'
+  })
+  .when("/button", {
+    template : '<div><h2>BUTTON</h2><button type="button" id="btn-3" class="<%= prefix %>-btn">Button</button></div>'
+  });
+});
+</script>
+
+<div ng-app="myApp">
+
+  <header role="banner" class="fr-header" id="header-120">
+    <div class="fr-header__body">
+        <div class="fr-container">
+            <div class="fr-header__body-row">
+                <div class="fr-header__brand fr-enlarge-link">
+                    <div class="fr-header__brand-top">
+                        <div class="fr-header__logo">
+                            <p class="fr-logo">
+                                République <br/>
+                                Française
+                            </p>
+                        </div>
+                        <div class="fr-header__navbar">
+                            <button type="button" class="fr-btn--search fr-btn" data-fr-opened="false" aria-controls="modal-122" id="button-123" title="Rechercher" >
+                                Rechercher
+                            </button>
+                            <button type="button" class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-124" id="button-125" title="Menu">
+                                Menu
+                            </button>
+                        </div>
+                    </div>
+                    <div class="fr-header__service">
+                        <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
+                            <p class="fr-header__service-title">
+                                Nom du site / service
+                            </p>
+                        </a>
+                        <p class="fr-header__service-tagline">baseline - précisions sur l‘organisation</p>
+                    </div>
+                </div>
+                <div class="fr-header__tools">
+                    <div class="fr-header__tools-links">
+                        <ul class="fr-btns-group">
+                            <li>
+                              <a id="to-home-1" class="fr-btn" href="#!">HOME</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fr-header__search fr-modal" id="modal-122">
+                        <div class="fr-container fr-container-lg--fluid">
+                            <button type="button" class="fr-btn--close fr-btn" aria-controls="modal-122" id="button-130" title="Fermer">
+                                Fermer
+                            </button>
+                            <div class="fr-search-bar" id="search-121" role="search">
+                                <label class="fr-label" for="search-121-input">
+                                    Rechercher
+                                </label>
+                                <input class="fr-input" aria-describedby="search-121-input-messages" placeholder="Rechercher" id="search-121-input" type="search"/>
+                                <div class="fr-messages-group" id="search-121-input-messages" aria-live="polite">
+                                </div>
+                                <button type="button" class="fr-btn" id="search-btn-132" title="Rechercher">
+                                    Rechercher
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fr-header__menu fr-modal" id="modal-124">
+      <div class="fr-container">
+        <button type="button" class="fr-btn--close fr-btn" aria-controls="modal-2414" id="button-2419" title="Fermer">
+            Fermer
+        </button>
+        <div class="fr-header__menu-links">
+            <ul class="fr-btns-group">
+            </ul>
+        </div>
+        <nav class="fr-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
+          <ul class="fr-nav__list">
+            <li class="fr-nav__item"><a id="to-home-2" class="fr-nav__link" href="#!">HOME</a></li>
+            <li class="fr-nav__item"><a id="to-link-2" class="fr-nav__link" href="#!link">Link</a></li>
+            <li class="fr-nav__item"><a id="to-button-2" class="fr-nav__link" href="#!button">Button</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div ng-view></div>
+
+  <script>
+    switch (document.readyState) {
+        case "loading":
+        document.addEventListener("DOMContentLoaded", () => dsfr.start());
+        break;
+        case "interactive":
+        dsfr.start();
+        break;
+        case "complete":
+        dsfr.start();
+        break;
+    }
+  </script>
+</div>

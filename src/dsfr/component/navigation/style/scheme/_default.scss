@@ -1,0 +1,48 @@
+////
+/// Navigation Scheme : Nav
+/// @group navigation
+////
+
+@use 'src/module/color';
+@use 'src/module/selector';
+
+@mixin _navigation-scheme-nav($legacy: false) {
+  #{ns(nav)} {
+    &__link,
+    &__btn {
+      @include color.text(action-high grey, (legacy: $legacy));
+
+      @include selector.current {
+        @include color.text(active blue-france, (legacy: $legacy));
+        @include before {
+          @include color.background(active blue-france, (legacy: $legacy));
+        }
+      }
+    }
+
+    &__btn {
+      &[aria-expanded="true"]:not(:disabled) {
+        @include color.background(open blue-france, (legacy: $legacy));
+        @include color.text(action-high blue-france, (legacy: $legacy));
+      }
+    }
+
+    @include list-item {
+      @include before {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
+      }
+
+      &:first-child {
+        @include before {
+          @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+        }
+      }
+
+      &:last-child {
+        @include before {
+          @include color.box-shadow(default grey, (legacy:$legacy), top-1-out);
+        }
+      }
+    }
+  }
+}

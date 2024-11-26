@@ -1,0 +1,36 @@
+////
+/// Core Standalone : Action focus
+/// @group core
+////
+
+@use 'src/module/color';
+
+@mixin standalone-focus ($elements, $element: &) {
+  @at-root {
+    @include focusable-selector ($elements) {
+      @at-root #{selector-unify(&, $element)} {
+        outline-offset: 2px;
+        outline-width: 2px;
+        outline-color: color.$focus;
+      }
+    }
+
+    @include focusable-selector-focus ($elements) {
+      @at-root #{selector-unify(&, $element)} {
+        outline-style: solid;
+      }
+    }
+
+    @include focusable-selector-focus-not-visible ($elements) {
+      &#{$element} {
+        outline-style: none;
+      }
+    }
+
+    @include focusable-selector-focus-visible ($elements) {
+      &#{$element} {
+        outline-style: solid;
+      }
+    }
+  }
+}

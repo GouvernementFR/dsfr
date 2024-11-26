@@ -1,0 +1,179 @@
+////
+/// Tile Module : default
+/// @group tile
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+#{ns(tile)} {
+  @include relative;
+  @include display-flex(column);
+  @include set-text-margin(0);
+  @include set-title-margin(0 0 1v);
+  background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 100%, 0 0, 100% 0, 100% 0;
+  @include padding(8v 8v 9v);
+  text-align: center;
+
+  #{ns(grid-row)} & {
+    @include size(null, 100%);
+  }
+
+  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__pictogram);
+  @include hover-brighten(#{&}#{ns(enlarge-button)}, #{&}__pictogram);
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+  }
+
+  &__header {
+    order: 1;
+    @include margin-bottom(4v);
+  }
+
+  &__pictogram {
+    @include display-flex(null, center, center);
+    flex-shrink: 0;
+    @include size(20v, 20v);
+    @include margin(0 auto);
+    overflow: hidden;
+
+    svg {
+      @include size(100%, 100%);
+    }
+  }
+
+  &__content {
+    @include display-flex(column, center);
+    @include height(100%);
+  }
+
+  &__body {
+    @include height(100%);
+    order: 2;
+    flex: 1 1 auto;
+  }
+
+  &#{ns(enlarge-link)},
+  &#{ns(enlarge-button)} {
+    #{ns(tile)}__title {
+      a,
+      button {
+        @include icon-size(md) {
+          @include absolute(null, 8v, 9v);
+        }
+
+        @include preference.forced-colors {
+          text-decoration: none;
+        }
+      }
+
+      button {
+        font-weight: inherit;
+        line-height: inherit;
+        text-align: inherit;
+        @include padding(0);
+      }
+    }
+  }
+
+  &--no-icon,
+  &:not(#{ns(enlarge-link)}):not(#{ns(tile--download)}) {
+    #{ns(tile__title)} {
+      a:not([target="_blank"]) {
+        @include after(none);
+      }
+    }
+  }
+
+  &--no-icon,
+  &:not(#{ns(enlarge-button)}):not(#{ns(tile--download)}) {
+    #{ns(tile__title)} {
+      button {
+        @include after(none);
+      }
+    }
+  }
+
+  @include title {
+    @include title-style(h6);
+    @include margin-bottom(2v);
+    order: 2;
+
+    @include before('', block) {
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      @include z-index(over);
+      pointer-events: none;
+      background-position: 0 100%;
+      background-size: 100% spacing.space(1v);
+      background-repeat: no-repeat;
+    }
+
+    a,
+    button {
+      @include preference.forced-colors {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+
+      @include before {
+        background-position: 0 100%;
+        background-size: 100% spacing.space(1v);
+        background-repeat: no-repeat;
+      }
+
+      @include icon(arrow-right-line, sm, after) {
+        @include margin-left(2v);
+      }
+
+      @include icon-forced-color(linktext, true, after);
+
+      @include disabled.selector((can-be-link: true)) {
+        @include icon-forced-color(graytext, null, after);
+      }
+    }
+
+    @include target-blank {
+      @include icon(external-link-line, sm, after);
+      @include icon-forced-color(linktext, null, after);
+    }
+  }
+
+  &__desc {
+    @include text-style(md);
+    flex: 1 1 auto;
+    order: 3;
+  }
+
+  &__start {
+    order: 1;
+    @include margin-bottom(3v);
+
+    #{ns(badges-group)},
+    #{ns(tags-group)} {
+      @include margin-bottom(-2v);
+    }
+  }
+
+  &__detail {
+    @include text-style(xs);
+    @include display-flex(row, flex-start);
+    @include margin-bottom(0);
+    @include margin-top(3v);
+    order: 4;
+
+    @include has-icon {
+      @include icon-size(sm, before) {
+        @include margin-right(2v);
+      }
+    }
+  }
+
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__content {
+    @include padding-bottom(10v);
+  }
+}

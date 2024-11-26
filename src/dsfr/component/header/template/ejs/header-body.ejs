@@ -1,0 +1,23 @@
+<%#
+# paramètres header body
+
+* body (object, required) : Paramètres du template
+  ** body.brand (object, required) : Paramètres du template brand
+  ** tools.tools (object, optional) : Paramètres du template tools (search, links)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% let body = locals.body || {}; %>
+
+<div class="<%= prefix %>-header__body">
+  <div class="<%= prefix %>-container" >
+    <div class="<%= prefix %>-header__body-row">
+      <%- include('./header-brand', {brand: body.brand}); %>
+
+      <% if (body.tools) { %>
+        <%- include('./header-tools', {tools: body.tools, navbar: body.brand.navbar}); %>
+      <% } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+////
+/// Card Module - content
+/// @group card
+////
+
+@use 'src/module/preference';
+
+#{ns(card)} {
+  &__content {
+    order: 1;
+    @include display-flex(column);
+    @include padding(8v);
+    @include height(100%);
+  }
+
+  &__title {
+    order: 2;
+    @include title-style(h5);
+    @include font-weight(bold);
+    @include margin-bottom(0);
+
+    a,
+    button {
+      @include icon(arrow-right-line, sm, after) {
+        @include margin-left(2v);
+      }
+      @include icon-forced-color(linktext, true, after);
+
+      @include preference.forced-colors {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+
+      &:not([href]) {
+        @include icon-forced-color(graytext, null, after);
+      }
+    }
+
+    button {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      text-align: inherit;
+      @include padding(0);
+    }
+
+    @include target-blank {
+      @include icon(external-link-line, sm, after);
+      @include icon-forced-color(linktext, null, after);
+    }
+  }
+
+  &__desc {
+    order: 3;
+    @include text-style(sm);
+    @include margin-top(3v);
+    @include margin-bottom(0);
+  }
+
+  &__start {
+    order: 1;
+    @include margin-bottom(1v);
+
+    #{ns(badges-group)},
+    #{ns(tags-group)} {
+      @include margin-bottom(1v);
+    }
+  }
+
+  &__start &__detail {
+    @include margin-bottom(3v);
+  }
+
+  &__end {
+    order: 4;
+    @include display-flex(column);
+    @include margin-top(4v);
+    @include padding-top(2v);
+    @include height(100%);
+  }
+
+  &__detail {
+    @include text-style(xs);
+    @include display-flex(row, flex-start);
+    @include margin-bottom(0);
+
+    @include has-icon {
+      @include icon-size(sm, before) {
+        @include margin-right(2v);
+      }
+    }
+  }
+
+  &#{ns(enlarge-link)}:not(&--no-icon) &__end,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__end {
+    @include margin-bottom(-12v); // 6v (icon) + 2v (padding end) + 4v (marge texte icon)
+    @include min-height(8v); // 6v (icon) + 2v (padding end)
+    @include padding-right(8v); // 6v (icon) + 2v (padding)
+    justify-content: flex-end;
+  }
+
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content,
+  &#{ns(enlarge-button)}:not(&--no-icon) &__content {
+    @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 2v (padding end) + 4v (marge texte icon)
+  }
+
+  &#{ns(enlarge-link)} &__title a,
+  &#{ns(enlarge-button)} &__title button {
+    @include preference.forced-colors {
+      text-decoration: none;
+    }
+  }
+}

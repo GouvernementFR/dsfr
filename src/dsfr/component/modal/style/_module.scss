@@ -1,0 +1,165 @@
+////
+/// Modal Module
+/// @group modal
+////
+
+@use 'src/module/spacing';
+@use 'src/module/elevation';
+@use 'src/module/color';
+@use 'src/module/preference';
+
+#{ns(modal)} {
+  // reset dialog @TODO à déplacer dans reset ?
+  border: none;
+  color: inherit;
+  visibility: hidden;
+  opacity: 0;
+  background-color: color.$black-a64;
+
+  @include elevation.ground(modal);
+
+  @include padding(0);
+  @include margin(0);
+  @include display-flex(column, stretch, space-between);
+  @include fixed(0, 0, 0, 0, 100%, 100%);
+  @include padding-right(var(--scrollbar-width), md);
+  // transition in/out
+  transition: opacity 0.3s, visibility 0.3s;
+
+  @include preference.reduce-motion {
+    transition: none;
+  }
+
+  & > #{ns(container)} {
+    pointer-events: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include before('', block) {
+    @include size(0, 8v);
+    flex: 1 0 spacing.space(8v);
+  }
+
+  @include after(none, block) {
+    @include size(0, 8v);
+    flex: 1 0 spacing.space(8v);
+  }
+
+  /**
+  * Modifier pour fixer la modale en haut en mobile (par defaut en bas)
+  */
+  &--top {
+    @include before {
+      content: none;
+      @include respond-from(md) {
+        content: '';
+      }
+    }
+
+    @include after {
+      content: '';
+    }
+  }
+
+  @include respond-from(md) {
+    @include before {
+      @include size(0, 10vh);
+      flex: 1 0 10vh;
+    }
+
+    @include after('') {
+      @include size(0, 10vh);
+      flex: 1 0 10vh;
+    }
+  }
+
+  &--opened {
+    // transition in/out
+    visibility: inherit;
+    opacity: 1;
+    @include size(100%, 100%);
+    transition: opacity 0.3s, visibility 0.3s;
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
+    #{ns(modal__body)} {
+      @include preference.forced-colors {
+        border: 1px solid;
+      }
+    }
+  }
+
+  @include body {
+    --modal-max-height: calc(100vh - 2rem);
+    pointer-events: all;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    max-height: var(--modal-max-height);
+
+    @include respond-from(md) {
+      max-height: 80vh !important;
+    }
+  }
+
+  &__header {
+    flex: auto 0 0;
+    @include display-flex(null, center);
+    @include padding(4v 4v 2v);
+    @include padding(4v 8v, md);
+  }
+
+  &__content {
+    @include padding-x(4v);
+    @include padding-x(8v, md);
+    @include margin-bottom(14v);
+    @include margin-bottom(16v, md);
+  }
+
+  &__footer {
+    flex: auto 0 0;
+    @include display-flex(null);
+    @include padding(4v);
+    @include padding(8v, md);
+    @include margin-top(-10v);
+    @include margin-top(-12v, md);
+    @include sticky(null,null,0);
+    @include elevation.z-index(overlap-over);
+    transition: box-shadow 0.3s;
+
+    @include preference.forced-colors {
+      border-top: 1px solid;
+    }
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
+    #{ns-group(btns)} {
+      margin-bottom: -1rem;
+      width: calc(100% + #{space(4v)});
+    }
+  }
+
+  &__title {
+    @include set-title-margin(0 0 4v 0);
+    @include title-style('h4');
+    @include font-weight('bold');
+
+    @include has-icon {
+      @include margin-right(2v);
+    }
+  }
+
+  &__body#{ns(scroll-divider)} {
+    #{ns(modal)}__footer {
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 100% 1px;
+    }
+  }
+}

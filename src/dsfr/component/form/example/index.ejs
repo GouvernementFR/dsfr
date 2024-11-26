@@ -1,0 +1,40 @@
+<script>
+  function preventSubmit(e) {
+    e.preventDefault();
+    return false;
+  }
+</script>
+
+<form onsubmit="return preventSubmit(event)">
+
+<% const sample = getSample(include); %>
+
+<%- sample('Ensemble de champs de saisie', '../../input/input-base/example/sample/inputs', { inputs: { id:'text' }}, true);  %>
+
+<%- sample('Ensemble de boutons radio', '../../radio/example/sample/radios', { radios: { id:'radio' }}, true);  %>
+
+<%- sample('Ensemble de cases à cocher', '../../checkbox/example/sample/checkboxes', { checkboxes: { id:'checkbox' }}, true);  %>
+
+<%- sample('Ensemble de boutons radio, en ligne', '../../radio/example/sample/radios', { radios: { id:'radio-inline', inline:true }}, true);  %>
+
+<%- sample('Ensemble de cases à cocher, en ligne', '../../checkbox/example/sample/checkboxes', { checkboxes: { id:'checkbox-inline', inline:true }}, true);  %>
+
+<%- sample('Ensemble de boutons radio avec erreur', '../../radio/example/sample/radios', { radios: { id:'radio-error', error:true, hint:true }}, true);  %>
+
+<%- sample('Ensemble de boutons radio riches', '../../radio/example/sample/radios', { radios: { id:'radio-rich', hint: true}, radio: { rich: true, hint: true }}, true);  %>
+
+<%- sample('Ensemble de cases à cocher, avec erreur', '../../checkbox/example/sample/checkboxes', { checkboxes: { id:'checkbox-error', error: true, hint: true }}, true);  %>
+
+<%- sample('Ensemble de champs de saisie désactivés', '../../input/input-base/example/sample/inputs', { inputs: { id:'text-disabled', hint: true, disabled: true}, input: { hint: true }}, true);  %>
+
+<%- sample('Ensemble de boutons radio désactivés', '../../radio/example/sample/radios', { radios: { id:'radio-disabled', hint: true, disabled: true}, radio: { hint: true }}, true);  %>
+
+<%- sample('Ensemble de cases à cocher désactivés', '../../checkbox/example/sample/checkboxes', { checkboxes: { id: 'checkbox-disabled', disabled: true, hint: true}, checkbox: { hint: true }}, true);  %>
+
+<%- sample('Bouton type submit', '../../button/example/sample/button-default', { button: { type:'submit', label: 'Envoyer', title: 'Envoyer le formulaire' }}, true);  %>
+
+<%- sample('Input type submit', '../../button/example/sample/button-default', { button: { markup: 'input', label: 'Envoyer', title: 'Envoyer le formulaire', type:'submit', attributes: { title: 'Envoyer le formulaire' }}}, true);  %>
+
+<%- sample({title: 'Messages de formulaire', subtitle: 'L\'id des messages, ou du groupe de message, doit être associé à l\'attribut <em>aria-describedby</em> ou <em>aria-labelledby</em> de l\'élément de formulaire auquel il fait référence (le fieldset, ou le champ).'}, '../template/ejs/message/messages-group.ejs', { messagesGroup: { id: 'message-group', messages: [{id: 'message-neutral', text: 'Message neutre'}, {id: 'message-info', text: 'Message d\'information', type: 'info'}, {id: 'message-valid', text: 'Message de succès', type: 'valid'}, {id: 'message-warning', text: 'Message d\'avertissement', type: 'warning'}, {id: 'message-error', text: 'Message d\'erreur', type: 'error'}] }}, true);  %>
+
+</form>

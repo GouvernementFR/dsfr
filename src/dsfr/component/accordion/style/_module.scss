@@ -1,0 +1,81 @@
+////
+/// Accordion Module
+/// @group accordion
+////
+
+@use 'src/module/animate';
+@use 'src/module/preference';
+
+#{ns(accordion)} {
+  position: relative;
+
+  @include before('', block) {
+    @include absolute(0, 0, 0 , 0, 100%, 100%);
+    pointer-events: none;
+  }
+
+  // add heading style for accessibility concerns and reset margins
+  @include title {
+    @include margin(0);
+    display: block;
+    font-size: unset;
+    line-height: unset;
+  }
+
+  &:focus-within {
+    @include z-index(over);
+  }
+
+  &__btn {
+    @include _build-link-base;
+    @include _link-display(flex);
+    @include font-weight('medium');
+    @include nest-accordion-button(arrow-down-s-line);
+    @include size(100%);
+    text-align: left;
+    @include margin(0);
+    @include animate.caret();
+    @include icon-forced-color(buttontext, false, after);
+
+    @include after {
+      @include margin-right(0);
+      @include margin-left(auto);
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
+    }
+  }
+
+  #{ns(collapse)} {
+    @include enable-list-style;
+    @include margin(0 -1v, md);
+    @include padding-x(4v, md);
+
+    transition: visibility 0.3s, padding 0.3s;
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
+    &--expanded {
+      @include padding-top(4v);
+      @include padding-bottom(6v);
+    }
+  }
+
+  @include preference.forced-colors {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+
+  & + #{ns(accordion)} {
+    @include preference.forced-colors {
+      border-top: none;
+    }
+  }
+}
+
+#{ns-group(accordions)} {
+  @include disable-list-style;
+}

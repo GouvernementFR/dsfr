@@ -1,0 +1,56 @@
+<%#
+# paramètres header menu
+
+* menu (object, required) : Paramètres du template
+  ** menu.navigation (object, optional) : Paramètres du menu de navigation
+    *** menu.navigation.id (String, optional) : Id du bouton d'ouverture du menu
+    *** menu.navigation.modalId (String, optional) : Id de la modale du menu de navigation
+  ** menu.tools (object, optional) : Paramètres des tools (raccourcis)
+    *** menu.tools.links (object, optional) : Paramètres des tools (raccourcis)
+    *** menu.tools.duplicateLinks (boolean, optional) : Si true, duplique le bloc de liens raccourcis dans le menu mobile (pour vue/angular/react)
+    *** menu.tools.translate (object, optional) : Paramètres du sélecteur de langue - voir translate
+    *** menu.tools.toolsContent (string, optional) : Permet d'ajouter du contenu custom dans le bloc tools
+    %>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let menu = locals.menu || {};
+if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly defined in header. modalId required');
+%>
+<div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= menu.modalId %>" aria-labelledby="<%= menu.id %>">
+  <div class="<%= prefix %>-container%>" >
+    <%- include('../../../button/template/ejs/button-close', {button: { closeId: menu.modalId }}); %>
+    <% if (menu.tools) { %>
+      <div class="<%= prefix %>-header__menu-links">
+        <% if (menu.tools  && menu.tools.duplicateLinks) { %>
+          <% if (menu.tools.links && menu.tools.links.buttons) { %>
+            <% if (menu.tools.links.buttons.length > 1) { %>
+              <ul class="<%= prefix %>-btns-group">
+                <% for (let i = 0; i < menu.tools.links.buttons.length; i++) { %>
+                  <li>
+                    <%- include('../../../button/template/ejs/button', {button:menu.tools.links.buttons[i]}); %>
+                  </li>
+                <% } %>
+              </ul>
+            <% } else { %>
+              <%- include('../../../button/template/ejs/button', {button:menu.tools.links.buttons[0]}); %>
+            <% } %>
+          <% } %>
+
+          <% if (menu.tools.translate) { %>
+            <%- include('../../../translate/template/ejs/translate.ejs', { translate: {...menu.tools.translate, collapseId: menu.tools.translate.collapseId + '-mobile', id: menu.tools.translate.id + '-mobile'} }); %>
+          <% } %>
+
+          <% if (menu.tools.toolsContent) { %>
+            <%- menu.tools.toolsContent %>
+          <% } %>
+        <% } %>
+      </div>
+    <% } %>
+
+    <% if (menu.navigation && menu.navigation.id) { %>
+      <%- include( menu.navigation.sample !== undefined ? menu.navigation.sample : '../../../navigation/template/ejs/navigation', {navigation: menu.navigation} ); %>
+    <% } %>
+  </div>
+</div>
