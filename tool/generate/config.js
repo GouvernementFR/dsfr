@@ -7,6 +7,7 @@ const yaml = require('js-yaml');
 const { flatten } = require('../utilities/config');
 const { Example } = require('../classes/example/example');
 const { generatePictogram } = require('./pictogram');
+const { generateColors } = require('./colors');
 
 const analyse = (id, path, ascendants = []) => {
   const absolute = root(path);
@@ -213,6 +214,7 @@ const generateConfig = async () => {
   generateCore();
   await generateIcon('src/dsfr/core/icon');
   await generatePictogram('src/dsfr/core/asset/artwork/pictograms');
+  await generateColors();
   generateJSON();
 };
 

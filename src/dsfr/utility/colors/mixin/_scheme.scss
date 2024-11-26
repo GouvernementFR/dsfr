@@ -41,6 +41,9 @@ $decisions: () !default;
                 }
                 @include color.background($use $tint, (legacy: $legacy, important: true, hover: $hover));
               }
+              @else if $context == border {
+                @include color.border($use $tint, (legacy: $legacy, important: true));
+              }
               @else if $context == text {
                 @include color.text($use $tint, (legacy: $legacy, important: true));
               }
