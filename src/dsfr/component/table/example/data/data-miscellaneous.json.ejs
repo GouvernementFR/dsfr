@@ -68,7 +68,7 @@ for(let r = 0; r < rowsLength; r++) {
       markup: 'th',
       attributes: {scope: 'row'},
       classes: [`${prefix}-cell--fixed`],
-      content:  getCheckbox({id: `${table.id}-select-row-checkbox-${r + 1}`, label: `${getText('data.cell.action.selectRow', 'table')} ${r + 1} : ${getText('data.cell.title', 'table')}`, attributes: {name: 'row-select', checked: selectedLines.includes(r) || undefined}}) + getTitleCell('span')
+      content:  getCheckbox({id: `${table.id}-select-row-checkbox-${r + 1}`, label: `${getText('data.cell.action.selectRow', 'table')} ${r + 1} : ${getText('data.cell.title', 'table')}`, attributes: {[`data-${prefix}-row-select`]: 'true', checked: selectedLines.includes(r) || undefined}}) + getTitleCell('span')
     },
     {
       content: getText('data.cell.text', 'table')
