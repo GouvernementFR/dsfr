@@ -18,9 +18,17 @@ const sidemenuArgTypes = {
     }
   },
   modifier: {
-    control: { type: 'select' },
+    control: {
+      type: 'select',
+      labels: {
+        default: 'Défaut',
+        sticky: 'Sticky',
+        right: 'Aligné à droite',
+        'sticky-full-height': 'Sticky et sur toute la hauteur'
+      }
+    },
     description: 'Modifier de style de sidemenu',
-    options: ['sticky', 'right', 'sticky-full-height']
+    options: ['default', 'sticky', 'right', 'sticky-full-height']
   },
   buttonLabel: {
     control: 'text',
@@ -32,16 +40,16 @@ const sidemenuArgTypes = {
   }
 };
 
-const getItemArgs = (id, type = 'link', isActive = false) => {
+const getItemArgs = (id, kind = 'link', isActive = false) => {
   const item = {};
 
-  item.id = type === 'link' ? `sidemenu-item-${id}` : `sidemenu-${id}`;
+  item.id = kind === 'link' ? `sidemenu-item-${id}` : `sidemenu-${id}`;
   item.label = `Titre du lien ${id}`;
-  item.href = type === 'link' && '#';
-  item.type = type;
+  item.href = kind === 'link' && '#';
+  item.kind = kind;
   item.active = isActive;
-  item.collapsable = type === 'menu';
-  item.collapseId = type === 'menu' ? `sidemenu-${id}` : undefined;
+  item.collapsable = kind === 'menu';
+  item.collapseId = kind === 'menu' ? `sidemenu-${id}` : undefined;
 
   return item;
 };
@@ -50,7 +58,7 @@ const sidemenuArgs = {
   hasTitle: true,
   title: 'Titre de rubrique',
   buttonLabel: 'Dans cette rubrique',
-  modifier: undefined,
+  modifier: 'default',
   items: [
     {
       ...getItemArgs(1, 'menu', true),
@@ -84,10 +92,13 @@ const sidemenuProps = (args) => {
     title: args.hasTitle ? args.title : undefined,
     titleId: args.titleId || 'sidemenu-title',
     buttonLabel: args.buttonLabel || sidemenuArgs.buttonLabel,
-    modifier: args.modifier || sidemenuArgs.modifier,
-    collapseId: args.collapseId || uniqueId('sidemenu'),
+    collapseId: args.collapseId || uniqueId('sidemenu-collapse'),
     items: args.items || sidemenuArgs.items
   };
+
+  if (args.modifier !== 'default') {
+    sidemenu.modifier = args.modifier;
+  }
 
   return sidemenu;
 };
