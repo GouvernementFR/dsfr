@@ -83,7 +83,6 @@
         @include after(none);
       }
 
-      &#{ns(table--no-caption)},
       &#{ns(table--caption-bottom)} {
         caption {
           @include relative;
