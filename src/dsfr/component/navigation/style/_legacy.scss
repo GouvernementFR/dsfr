@@ -36,9 +36,17 @@
 
 @include respond-from(lg) {
   @include legacy.is(ie11) {
-    /**
-    * Correctif de l'alignement des menus sur la droite
-    */
+    #{ns(nav__list)} {
+      & > #{ns(nav)}__item:first-child:nth-last-child(2),
+      & > #{ns(nav)}__item:first-child:nth-last-child(3),
+      & > #{ns(nav)}__item:first-child:nth-last-child(4) {
+        &,
+        & ~ * {
+          flex-basis: auto;
+        }
+      }
+    }
+
     #{ns(nav)}__item {
       position: static;
       flex-basis: 100%;
