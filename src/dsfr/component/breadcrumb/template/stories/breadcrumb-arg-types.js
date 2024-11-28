@@ -49,14 +49,6 @@ const breadcrumbArgTypes = {
       category: 'attributes'
     }
   },
-  buttonLabel: {
-    control: 'text',
-    description: 'Libellé du bouton d\'ouverture en mobile',
-    type: {
-      value: 'string',
-      required: true
-    }
-  },
   markup: {
     control: { type: 'select' },
     description: 'Tag html des boutons (default: a)',
@@ -82,7 +74,6 @@ const getSegmentArgs = (id) => {
 
 const breadcrumbArgs = {
   id: 'breadcrumb',
-  buttonLabel: 'Voir le fil d\'arianne',
   markup: 'a',
   segments: [
     {
@@ -114,7 +105,7 @@ const breadcrumbProps = (args) => {
 
   const breadcrumb = {
     id: args.id || undefined,
-    button: args.buttonLabel || breadcrumbArgs.buttonLabel,
+    button: 'Voir le fil d\'arianne',
     segments: segments
   };
 
