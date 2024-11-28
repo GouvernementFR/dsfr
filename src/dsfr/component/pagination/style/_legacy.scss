@@ -14,9 +14,14 @@
     @include disable-underline-legacy;
     @include disable-list-style-legacy;
 
-    &__link {
-      @include color.transparent-background((legacy: true, hover: true));
+    a[href],
+    button {
+      &#{ns(pagination__link)}
+        @include color.transparent-background((legacy: true, hover: true));
+      }
+    }
 
+    &__link {
       #{ns(pagination)} &--first {
         @include icon-legacy(arrow-left-s-first-line, md);
       }

@@ -41,10 +41,18 @@
     */
     #{ns(nav)}__item {
       position: static;
+      flex-basis: 100%;
+
+      #{ns(nav)}__link,
+      #{ns(nav)}__btn, {
+        max-width: 100%;
+        flex-wrap: nowrap;
+      }
 
       &--align-right {
+        position: relative;
         #{ns(collapse)} {
-          transform: translateX(-100%);
+          right: 0;
         }
       }
     }

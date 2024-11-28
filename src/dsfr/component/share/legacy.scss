@@ -14,7 +14,9 @@
 @import 'style/legacy';
 
 // deprecated
+@import 'deprecated/style/tool';
 @import 'deprecated/style/scheme';
+@import 'deprecated/style/legacy';
 
 @include _share-scheme(true);
 
