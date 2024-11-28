@@ -57,6 +57,11 @@ const breadcrumbArgTypes = {
       required: true
     }
   },
+  markup: {
+    control: { type: 'select' },
+    description: 'Tag html des boutons (default: a)',
+    options: ['a', 'button']
+  },
   segments: [
     getSegmentArgTypes(1),
     getSegmentArgTypes(2),
@@ -78,6 +83,7 @@ const getSegmentArgs = (id) => {
 const breadcrumbArgs = {
   id: 'breadcrumb',
   buttonLabel: 'Voir le fil d\'arianne',
+  markup: 'a',
   segments: [
     {
       id: 'segment-0',
@@ -99,7 +105,8 @@ const breadcrumbProps = (args) => {
     const link = {
       id: segmentArgs.id || undefined,
       label: segmentArgs.label || segmentBreadcrumbArgs.label,
-      href: segmentArgs.href || segmentBreadcrumbArgs.href
+      href: segmentArgs.href || segmentBreadcrumbArgs.href,
+      markup: args.markup
     };
 
     segments.push(link);
