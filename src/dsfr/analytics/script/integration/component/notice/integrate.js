@@ -2,10 +2,11 @@ import api from '../../../../api';
 import { NoticeSelector } from './notice-selector';
 import { NoticeActionee } from './notice-actionee';
 import { NoticeLinkActionee } from './notice-link-actionee';
+import { joinSelector } from '../../join-selector';
 
-const integrateNotice = () => {
-  api.internals.register(NoticeSelector.NOTICE, NoticeActionee);
-  api.internals.register(NoticeSelector.LINK, NoticeLinkActionee);
+const integrateNotice = (selector = '') => {
+  api.internals.register(joinSelector(NoticeSelector.NOTICE, selector), NoticeActionee);
+  api.internals.register(joinSelector(NoticeSelector.LINK, selector), NoticeLinkActionee);
 };
 
 export default integrateNotice;

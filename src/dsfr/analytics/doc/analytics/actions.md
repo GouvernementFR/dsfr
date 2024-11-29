@@ -47,6 +47,9 @@ Par défaut, l'envoi des actions est désactivé. Le paramètre de configuration
 Il est possible de d'activer l'envoi sporadiquement sur un élément particulier en utilisant l'attribut `data-fr-analytics-action`, qui permet également de donner une valeur spécifique au title de l'[ActionName](#ActionName).
 À l'inverse, il est possible de désactiver l'envoi d'actions sur un élément particulier en utilisant l'attribut `data-fr-analytics-action="false"` lorsque l'envoi d'actions est activé au global.
 
+> **Note :**
+> Dans le cas spécifique où la présence de nombreux éléments dans le DOM pourrait générer de la latence et qu'une optimisation des instances de tracking est nécessaire, il est possible de passer la valeur `reduce` à la propriété `isActionEnabled` pour que seules les instances ayant l'attribut `data-fr-analytics-action` soient générées par l'API.
+
 #### Taux d'interaction
 
 L’API analytics utilise des actions pour suivre les interactions de l’utilisateur dans et en dehors des composants.
