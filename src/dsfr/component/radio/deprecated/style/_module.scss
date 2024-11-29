@@ -27,6 +27,12 @@
       @include margin-top(2v);
       @include margin-bottom(4v);
 
+      input[type="radio"] {
+        + label {
+          min-height: spacing.space(22v);
+        }
+      }
+
       &:last-child {
         @include margin-bottom(3v);
       }

@@ -75,6 +75,7 @@ const alertArgTypes = {
     description: 'L\'alerte est refermable'
   },
   icon: {
+    if: { arg: 'type', eq: 'default' },
     control: 'text',
     description: 'Icône personnalisée sur l\'alerte'
   },
