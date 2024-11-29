@@ -1,9 +1,10 @@
 import Type from '../../analytics/action/type';
 import { Actionee } from '../core/actionee';
+import { ActionRegulation } from '../../analytics/action/action-regulation';
 
 class AttributeActionee extends Actionee {
   constructor () {
-    super(100, '', null, true);
+    super(100, '', null, ActionRegulation.ENFORCE);
   }
 
   static get instanceClassName () {
