@@ -38,9 +38,28 @@
       }
     }
 
+    &__service {
+      &-title,
+      &-tagline {
+        @include margin(0);
+      }
+    }
+
     &__operator {
       img {
         height: auto !important;
+      }
+    }
+
+    &__navbar {
+      #{ns(btn)} {
+        &--menu {
+          @include icon-legacy(menu-fill, md, before);
+        }
+
+        &--search {
+          @include icon-legacy(search-line, md, before);
+        }
       }
     }
 
