@@ -116,13 +116,16 @@ Getter qui retourne le mode de récolte des données de la page. Défini dans la
 
 ##### isActionEnabled
 
-_Boolean_
+_Boolean_ ou _String_
 
 `window.dsfr.analytics.isActionEnabled`
 
 Permet d’activer / désactiver la mesure d'audience des actions au niveau global.
 
 * Par défaut, la mesure d'audience des actions est désactivée.
+* Si la valeur est `true` : la mesure d'audience des actions est activée.
+* Si la valeur est `false` : la mesure d'audience des actions est désactivée.
+* Si la valeur est `reduce` : la mesure d'audience des actions est activée uniquement sur les éléments ayant l'attribut `data-fr-analytics-action`. (voir [Activer les actions](../actions.md#Activer les actions))
 
 Défini dans la configuration (voir propriété `isActionEnabled` de la [configuration](../installation/configuration.md))
 Voir [Activer les actions](../actions.md#Activer les actions) pour plus d'informations sur l'activation ou la désactivation des actions au cas par cas.
