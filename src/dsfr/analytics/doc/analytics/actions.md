@@ -48,7 +48,7 @@ Il est possible de d'activer l'envoi sporadiquement sur un élément particulier
 À l'inverse, il est possible de désactiver l'envoi d'actions sur un élément particulier en utilisant l'attribut `data-fr-analytics-action="false"` lorsque l'envoi d'actions est activé au global.
 
 > **Note :**
-> Dans le cas spécifique où la présence de nombreux éléments dans le DOM pourrait générer de la latence et qu'une optimisation des instances de tracking est nécessaire, il est possible de passer la valeur `reduce` à la propriété `isActionEnabled` pour que seule les instances ayant l'attribut `data-fr-analytics-action` soit générés par l'API.
+> Dans le cas spécifique où la présence de nombreux éléments dans le DOM pourrait générer de la latence et qu'une optimisation des instances de tracking est nécessaire, il est possible de passer la valeur `reduce` à la propriété `isActionEnabled` pour que seules les instances ayant l'attribut `data-fr-analytics-action` soient générées par l'API.
 
 #### Taux d'interaction
 
