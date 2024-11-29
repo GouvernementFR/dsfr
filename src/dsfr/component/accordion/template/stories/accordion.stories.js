@@ -1,7 +1,8 @@
 import { renderAccordion } from './accordion';
 import { accordionArgs, accordionArgTypes, accordionProps } from './accordion-arg-types';
+import { uniqueId } from '../../../../core/template/stories/unique-id';
 
-const render = (args) => renderAccordion({ accordion: accordionProps(args) });
+const render = (args) => renderAccordion({ accordion: accordionProps({ ...args, id: uniqueId('accordion') }) });
 
 export default {
   id: 'accordion',

@@ -8,7 +8,7 @@ export default {
   title: 'DSFR/Component/Accordion/Accordions-Group',
   render: render,
   argTypes: accordionsGroupArgTypes,
-  args: accordionsGroupArgs
+  args: accordionsGroupArgs()
 };
 
 export const AccordionsGroupStory = {
