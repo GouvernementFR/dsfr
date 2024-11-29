@@ -1,9 +1,10 @@
 import api from '../../../../api';
 import { TooltipActionee } from './tooltip-actionee';
+import { joinSelector } from '../../join-selector';
 
-const integrateTooltip = () => {
+const integrateTooltip = (selector = '') => {
   if (api.tooltip) {
-    api.internals.register(api.tooltip.TooltipSelector.TOOLTIP, TooltipActionee);
+    api.internals.register(joinSelector(api.tooltip.TooltipSelector.TOOLTIP, selector), TooltipActionee);
   }
 };
 

@@ -3,12 +3,13 @@ import { NavigationActionee } from './navigation-actionee';
 import { NavigationSelector } from './navigation-selector';
 import { NavigationLinkActionee } from './navigation-link-actionee';
 import { NavigationSectionActionee } from './navigation-section-actionee';
+import { joinSelector } from '../../join-selector';
 
-const integrateNavigation = () => {
+const integrateNavigation = (selector = '') => {
   if (api.navigation) {
-    api.internals.register(api.navigation.NavigationSelector.NAVIGATION, NavigationActionee);
-    api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
-    api.internals.register(api.navigation.NavigationSelector.COLLAPSE, NavigationSectionActionee);
+    api.internals.register(joinSelector(api.navigation.NavigationSelector.NAVIGATION, selector), NavigationActionee);
+    api.internals.register(joinSelector(NavigationSelector.LINK, selector), NavigationLinkActionee);
+    api.internals.register(joinSelector(api.navigation.NavigationSelector.COLLAPSE, selector), NavigationSectionActionee);
   }
 };
 

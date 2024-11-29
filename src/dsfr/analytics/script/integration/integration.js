@@ -2,9 +2,9 @@
 import integrateAttributes from './attributes/attributes';
 import integrateComponents from './component/components';
 
-const integration = () => {
+const integration = (selector) => {
   integrateAttributes();
-  integrateComponents();
+  integrateComponents(selector);
 };
 
 export default integration;

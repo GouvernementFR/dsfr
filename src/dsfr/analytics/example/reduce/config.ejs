@@ -1,0 +1,77 @@
+{
+  // verbose: true,
+  // production: true,
+  // mode: 'manual',
+  analytics: {
+    domain: 'gva.et-gv.fr',
+    // collection: 'manual', // method of collection [manual, load, full, hash]
+    isActionEnabled: 'reduce', // enable action tracking
+    cmp: {
+      id: 'tarteaucitron'
+    },
+    page: {
+      // path: 'path_name/from/url', // path for page tracking
+      // referrer: 'path_name/ref/url/', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
+      // title: 'page title', // page title for virtual pages
+      // name: 'page name', // equivalent to title if not defined
+      labels: ['category1', 'label2', 'label3', 'label4', 'label5'],
+      categories: ['category1', 'category2', 'category3'],
+      template: 'nom template', // page template
+      // group: 'group', // page group. if not defined, fallback to template value
+      // segment: 'segment', // site segment. if not defined, fallback to template value
+      date: '2021-11-08',
+      subtemplate: 'sous template', // page sub template
+      theme: 'theme page', // page theme
+      subtheme: 'page sous theme', // page subtheme
+      related: 'page liée', // related page id
+      // depth: 2, // page depth
+      // isError: true, // is this an error page (404, 500, 503...)
+      // current: 4, // In case of pagination, current page number
+      // total: 40, // In case of pagination, total pages number
+      // filters: ['actualités', 'Dossier de presse'] // array of filters that were applied on the page (strings)
+    },
+    user: {
+      /*
+      connect: {
+        uid: 'XXX', // user id - required when connected
+        email: 'email@domain.com', // encoded user email - required when connected
+        isNew: true, // user just registered
+      },
+      */
+      // profile: 'visitor', // user profile
+      // language: '',
+      // type: 'pro',
+    },
+    site: {
+      // environment: 'production', // by default development ['development', 'stage', 'production']
+      entity: 'Ministère des armées', // Entity responsible for website
+      // language: '', // language of the website (ISO 639-1). default to html lang
+      // target: 'target', // site target
+      // type: 'type', // site type
+      // region: 'FR-IDF', // region of the website (ISO 3166-2:FR)
+      // department: 'FR-75', // department of the website (ISO 3166-2:FR)
+      version: '1.0.0', // version of the website
+    },
+    /*
+    search: {
+      engine: 'principal',
+      results: 486,
+      terms: 'télécharger le cerfa 1234',
+      category: 'categorie',
+      theme: 'theme',
+      type: 'type',
+      method: ''
+    },
+    funnel: {
+      id: 'id',
+      type: 'type',
+      name: 'name',
+      step: 'step', // step name
+      current: 2, // step number
+      total: 7, // total number of steps
+      objective: 'objective', // form objective
+      error: 'email' // form's error type
+    }
+    */
+  }
+};

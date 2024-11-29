@@ -1,0 +1,51 @@
+<%
+const sample = getSample(include, 87);
+
+const buttonPath = '../../../component/button/template/ejs/button.ejs';
+
+const buttonActive = () => ({
+  label: 'Libellé button',
+  id: uniqueId('button'),
+  attributes: { [`data-${prefix}-analytics-action`]: 'libellé envoyé à l\'analytics' }
+});
+
+const buttonInactive = () => ({
+  label: 'Libellé button',
+  id: uniqueId('button'),
+});
+
+const accordionPath = '../../../component/accordion/template/ejs/accordion.ejs';
+
+const accordionActive = () => ({
+  label: 'Libellé accordéon',
+  content: randomContent(),
+  id: uniqueId('accordion'),
+  collapseAttributes: { [`data-${prefix}-analytics-action`]: 'libellé envoyé à l\'analytics' }
+});
+
+const accordionInactive = () => ({
+  label: 'Libellé accordéon',
+  content: randomContent(),
+  id: uniqueId('accordion')
+});
+
+%>
+
+<div class="<%= prefix %>-container" >
+
+    <%- section('Action générant une instance', null, 0) %>
+    <%- sample('bouton', buttonPath, { button: buttonActive() }); %>
+
+    <%- section('Action sans instance', null, 0) %>
+    <%- sample('bouton', buttonPath, { button: buttonInactive() }); %>
+    <%- sample('bouton', buttonPath, { button: buttonInactive() }); %>
+
+    <%- section('Accordéon générant une instance', null, 0) %>
+    <%- sample('Accordéon', accordionPath, {accordion: accordionActive()}); %>
+
+    <%- section('Accordéon sans instance', null, 0) %>
+
+    <%- sample('Accordéon', accordionPath, {accordion: accordionInactive()}); %>
+    <%- sample('Accordéon', accordionPath, {accordion: accordionInactive()}); %>
+
+</div>

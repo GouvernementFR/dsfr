@@ -11,6 +11,7 @@ import actions from '../action/actions';
 import { Location } from './location';
 import { CollectorEvent } from './collector-event';
 import { ActioneeEmission } from '../../integration/core/actionee-emission';
+import { ActionEnable } from './action-enable'
 
 class Collector {
   constructor (config) {
@@ -50,7 +51,7 @@ class Collector {
         }
     }
 
-    this._isActionEnabled = config.isActionEnabled === 'false' || config.isActionEnabled;
+    this.isActionEnabled = config.isActionEnabled;
 
     this._user = new User(config.user);
     this._site = new Site(config.site);
@@ -148,11 +149,15 @@ class Collector {
   }
 
   get isActionEnabled () {
-    return this._isActionEnabled;
+    return this._isActionEnabled.value;
   }
 
   set isActionEnabled (value) {
-    this._isActionEnabled = value;
+    this._isActionEnabled = Object.values(ActionEnable).find(enable => enable.entries.includes(value)) || ActionEnable.DISABLE;
+  }
+
+  get isActionReduced () {
+    return this._isActionEnabled === ActionEnable.REDUCE;
   }
 
   get layer () {
