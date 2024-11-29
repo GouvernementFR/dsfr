@@ -35,3 +35,17 @@ export const SizeLgStory = {
     size: 'lg'
   }
 };
+
+export const RepubliqueFrançaiseStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    title: 'République <br>Française'
+  }
+};
+
+export const LongStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    title: 'Secrétaire d’État <br>chargé(e) de <br>l’égalité entre les <br>femmes et les <br>hommes et de la <br>lutte contre les <br>discriminations'
+  }
+};
