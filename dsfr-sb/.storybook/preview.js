@@ -128,5 +128,4 @@ addEventListener("DOMContentLoaded", (event) => {
   }
 });
 
-
 export default preview;
