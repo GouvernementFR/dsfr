@@ -1,9 +1,9 @@
+
 <%
-  const sample = getSample(include);
-  let data = { caption: 'Titre du tableau (caption)', col: 6, row: 3};
+  eval(include('../../../../core/index.ejs'));
+  const data = JSON.parse(include('../../../../component/table/example/data/data-simple.json.ejs', {table: {caption: 'tableau analytics', id: 'table'}})) || [];
 %>
 
-
 <div class="<%= prefix %>-container">
-  <%- sample('Tableau', '../../../../component/table/example/sample/table-default', {table:data});  %>
+  <%- include('../../../../component/table/template/ejs/table-wrapper', { table: data }); %>
 </div>
