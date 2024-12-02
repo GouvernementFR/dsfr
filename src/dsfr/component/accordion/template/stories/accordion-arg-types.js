@@ -34,6 +34,7 @@ const accordionArgTypes = {
 
 const accordionArgs = {
   isExpanded: false,
+  id: 'accordion-id',
   label: 'Libellé accordéon',
   content: '<h4 class="fr-h4">Contenu </h4> <p>Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et. Diam maecenas sed enim ut. Accumsan lacus vel facilisis volutpat est. Ut aliquam purus sit amet luctus. Lorem ipsum dolor sit amet consectetur adipiscing elit ut.</p>'
 };
