@@ -71,6 +71,7 @@ const preview = {
   decorators: [
     themeDecorator
   ],
+
   parameters: {
     controls: {
       matchers: {
@@ -113,7 +114,9 @@ const preview = {
       viewports: viewports,
       defaultViewport: 'lg',
     },
-  }
+  },
+
+  tags: ['autodocs']
 };
 
 
