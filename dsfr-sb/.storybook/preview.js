@@ -117,4 +117,13 @@ const preview = {
 };
 
 
+// FIX : Vide la div 'storybook-root' pour eviter les conflits d'ID entre les docs et les stories
+addEventListener("DOMContentLoaded", (event) => {
+  const root = document.getElementById('storybook-root');
+  if (root && root.hasAttribute('hidden')) {
+    root.innerHTML = '';
+  }
+});
+
+
 export default preview;
