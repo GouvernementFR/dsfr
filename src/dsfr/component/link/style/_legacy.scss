@@ -21,6 +21,10 @@
   }
 
   #{ns-group(links)} {
-    @include disable-list-style-legacy(true);
+    @include enable-list-style-legacy;
+
+    &--inline {
+      @include disable-list-style-legacy(true);
+    }
   }
 }
