@@ -15,6 +15,7 @@
   max-height: var(--collapse-max-height);
 
   &--expanded {
+    overflow-x: hidden;
     overflow-y: auto;
   }
 
