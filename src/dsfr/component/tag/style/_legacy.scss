@@ -32,13 +32,13 @@
 
       &#{ns(tag)}--dismiss {
         @include icon-legacy(close-line, sm, after) {
-          background-color: currentcolor;
+          background-color: currentColor;
           @include margin-left(2.5v);
         };
 
         &#{ns(tag)}--sm {
           @include icon-legacy(null, xs, after) {
-            background-color: currentcolor;
+            background-color: currentColor;
             @include margin-left(2v);
           };
         }

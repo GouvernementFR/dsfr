@@ -16,7 +16,7 @@
 
     a[href],
     button {
-      &#{ns(pagination__link)}
+      &#{ns(pagination__link)} {
         @include color.transparent-background((legacy: true, hover: true));
       }
     }
