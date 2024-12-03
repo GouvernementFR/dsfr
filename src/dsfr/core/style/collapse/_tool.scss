@@ -12,11 +12,10 @@
 
   overflow: hidden;
   transition: visibility 0.3s;
-  // max-height: 0;
   max-height: var(--collapse-max-height);
 
   &--expanded {
-    overflow: auto;
+    overflow-y: auto;
   }
 
   @include preference.reduce-motion {
