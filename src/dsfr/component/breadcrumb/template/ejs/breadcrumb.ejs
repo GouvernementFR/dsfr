@@ -6,6 +6,7 @@
 * breadcrumb.segments (array, required) : Tableau de données de chaque segment du fil d'Ariane
   ** breadcrumb.segments[].path : partie de l'url
   ** breadcrumb.segments[].label : le libellé du segment
+  ** breadcrumb.segments[].markup : tag html des boutons (a/button), si non défini, a
 
 * breadcrumb.button: Libellé du bouton du Fil d'Ariane en mobile
 
@@ -29,6 +30,7 @@ if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane
             const segmentAttrs = {};
             const segment = breadcrumb.segments[i];
             const markup = segment.markup || 'a';
+            if (markup === 'button') segmentAttrs.type = 'button';
             if (segment.path != undefined) path += segment.path + '/';
             if (segment.id) segmentAttrs.id = segment.id;
             if (i === breadcrumb.segments.length - 1) {

@@ -3,11 +3,11 @@
 
 * button.label (string, required) : Libellé du bouton
 
-* button.markup (string) : si non défini, button
+* button.markup (string,optional) : tag html du bouton (a/button/input), si non défini, button
 
-* button.id (string) : id du bouton
+* button.id (string, optional) : id du bouton
 
-* button.kind (number, optional) : par défaut 1, qui équivaut au bouton primaire, sinon 2 pour secondary et 3 pour tertiary
+* button.kind (number, optional) : par défaut 1, qui équivaut au bouton primaire, sinon 2 pour secondaire, 3 pour tertiaire, et 4 pour tertiaire sans contour
 
 * button.type (string, optional) type du bouton
 
@@ -42,9 +42,8 @@ valeurs :
 const button = locals.button || {};
 let btnClasses = button.classes || [];
 let btnAttrs = button.attributes || {};
-const type = button.type || 'button';
+const type = button.type || button.markup !== 'a' ? 'button' : undefined;
 btnClasses.push(prefix + '-btn');
-let action;
 const markup = button.markup || 'button';
 
 switch(button.size) {

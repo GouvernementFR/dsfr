@@ -49,7 +49,7 @@
     &--weather-red {
       #{ns(notice)}__title {
         @include has-not-icon {
-          @include icon-legacy(tornado-fill, md, before, false);
+          @include icon-legacy(heavy-showers-fill, md, before, false);
         }
       }
     }

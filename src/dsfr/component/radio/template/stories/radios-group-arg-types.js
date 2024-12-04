@@ -2,6 +2,43 @@ import { radioArgTypes, pictogramArgTypes } from './radio-arg-types';
 import { formArgTypes, formArgs } from '../../../form/template/stories/form-arg-types';
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 
+const messageArgTypes = {
+  status: {
+    control: {
+      type: 'select',
+      labels: {
+        default: 'Défaut',
+        valid: 'Succès',
+        error: 'Erreur'
+      }
+    },
+    description: 'Statut du message',
+    options: ['default', 'valid', 'error'],
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  },
+  errorMessage: {
+    if: { arg: 'status', eq: 'error' },
+    control: 'text',
+    description: 'Texte du message d\'erreur',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  },
+  validMessage: {
+    if: { arg: 'status', eq: 'valid' },
+    control: 'text',
+    description: 'Texte du message de succès',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  }
+};
+
 const radiosGroupArgTypes = {
   id: {
     ...formArgTypes.id,
@@ -36,15 +73,7 @@ const radiosGroupArgTypes = {
     ...radioArgTypes.disabled,
     description: 'Désactive l’ensemble des radios'
   },
-  status: {
-    ...radioArgTypes.status
-  },
-  errorMessage: {
-    ...radioArgTypes.errorMessage
-  },
-  validMessage: {
-    ...radioArgTypes.validMessage
-  }
+  ...messageArgTypes
 };
 
 const getRadiosGroupData = (count = 3) => {

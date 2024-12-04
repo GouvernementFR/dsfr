@@ -3,6 +3,7 @@
 /// @group input
 ////
 
+@use 'src/module/color';
 @use 'src/module/legacy';
 
 @include legacy.is(ie11) {
@@ -11,6 +12,13 @@
       #{ns(btn)} {
         flex-shrink: 0;
       }
+    }
+  }
+
+  #{ns(input)} {
+    &:-ms-input-placeholder {
+      font-style: italic;
+      @include color.text(mention grey, (legacy:true));
     }
   }
 }

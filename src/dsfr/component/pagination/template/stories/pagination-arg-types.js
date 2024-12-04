@@ -66,16 +66,17 @@ const paginationArgTypes = {
   }
 };
 
-const getData = (label, title = null) => {
+const getData = (label, title = null, displayedLg = true) => {
   return {
     label: label,
     title: title,
-    href: '#'
+    href: '#',
+    displayedLg: displayedLg
   };
 };
 
-const getPageData = (pageNumber) => {
-  return { ...getData(pageNumber, `Page ${pageNumber}`) };
+const getPageData = (pageNumber, displayedLg) => {
+  return { ...getData(pageNumber, `Page ${pageNumber}`, displayedLg) };
 };
 
 const getNavData = (label) => {
@@ -85,7 +86,7 @@ const getNavData = (label) => {
 const getPages = () => {
   const pages = [];
   for (let i = 1; i < 4; i++) pages.push(getPageData(i.toString(), i > 2));
-  pages.push({ markup: 'span', ...getData('…', true) });
+  pages.push({ markup: 'span', ...getData('…', null) });
   for (let i = 130; i < 133; i++) pages.push(getPageData(i.toString(), i < 132));
   return pages;
 };

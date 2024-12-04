@@ -11,7 +11,7 @@ import actions from '../action/actions';
 import { Location } from './location';
 import { CollectorEvent } from './collector-event';
 import { ActioneeEmission } from '../../integration/core/actionee-emission';
-import { ActionEnable } from './action-enable'
+import { ActionEnable } from './action-enable';
 
 class Collector {
   constructor (config) {

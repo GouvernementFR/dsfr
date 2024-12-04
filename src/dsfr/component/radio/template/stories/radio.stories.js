@@ -14,11 +14,3 @@ export default {
 export const RadioStory = {
   args: {}
 };
-
-export const SizeSmStory = {
-  tags: ['autodocs', '!dev'],
-  args: {
-    id: 'radio-sm',
-    size: 'sm'
-  }
-};

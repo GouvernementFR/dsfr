@@ -36,15 +36,31 @@
 
 @include respond-from(lg) {
   @include legacy.is(ie11) {
-    /**
-    * Correctif de l'alignement des menus sur la droite
-    */
+    #{ns(nav__list)} {
+      & > #{ns(nav)}__item:first-child:nth-last-child(2),
+      & > #{ns(nav)}__item:first-child:nth-last-child(3),
+      & > #{ns(nav)}__item:first-child:nth-last-child(4) {
+        &,
+        & ~ * {
+          flex-basis: auto;
+        }
+      }
+    }
+
     #{ns(nav)}__item {
       position: static;
+      flex-basis: 100%;
+
+      #{ns(nav)}__link,
+      #{ns(nav)}__btn, {
+        max-width: 100%;
+        flex-wrap: nowrap;
+      }
 
       &--align-right {
+        position: relative;
         #{ns(collapse)} {
-          transform: translateX(-100%);
+          right: 0;
         }
       }
     }

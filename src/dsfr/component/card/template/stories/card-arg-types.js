@@ -275,6 +275,15 @@ const cardArgTypes = {
       category: 'header'
     }
   },
+  imageRatio: {
+    if: { arg: 'download', eq: false },
+    control: { type: 'select' },
+    description: 'Ratio forcé de l\'image',
+    options: ['default', '32x9', '3x2', '4x3', '1x1', '3x4', '2x3'],
+    table: {
+      category: 'header'
+    }
+  },
   hasButtons: {
     if: {
       arg: 'enlarge',
@@ -373,6 +382,7 @@ const cardArgs = {
   src: 'img/placeholder.16x9.png',
   alt: '[À MODIFIER - vide ou texte alternatif de l’image]',
   hasHeaderBadge: false,
+  imageRatio: 'default',
   hasButtons: false,
   hasLinks: false,
   variations: 'none',
@@ -442,6 +452,10 @@ const cardProps = (args) => {
       alt: args.alt || cardArgs.alt
     };
   };
+
+  if (!args.download && args.imageRatio !== 'default') {
+    card.header.img.ratio = args.imageRatio;
+  }
 
   if (args.horizontal) {
     card.horizontal = {};

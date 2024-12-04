@@ -24,7 +24,7 @@
 
 <%- sample('Média image, SVG décoratif', './sample/media-svg', { content: { illustration: true } }, true); %>
 
-<%- sample('Média image avec une transcription', './sample/media-img', { content: { img: { ratio:'2x3', src: '../../../example/img/placeholder-transcription.jpg', caption: getText('sample.img.caption', 'content'), alt: getText('sample.img.alternative', 'content'), link: {label: getText('sample.img.link', 'content'), href: '#'}}, transcription: { title: getText('sample.img.transcription.title', 'content'), content: getText('sample.img.transcription.content', 'content')}}}, true); %>
+<%- sample('Média image avec une transcription', './sample/media-img', { content: { img: { ratio:'2x3', src: '../../../example/img/placeholder-transcription.jpg', caption: getText('sample.img.caption', 'content'), alt: getText('sample.img.alternative', 'content') }, link: {label: getText('sample.img.link', 'content'), href: '#'}, transcription: { title: getText('sample.img.transcription.title', 'content'), content: getText('sample.img.transcription.content', 'content')}}}, true); %>
 
 <%- sample('Média video edito, ratio d’aspect 16/9 par défaut', './sample/media-vid-default', { content: { transcription: true } }, true); %>
 

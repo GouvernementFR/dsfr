@@ -16,3 +16,11 @@
     }
   }
 }
+
+@mixin build-share-links-legacy() {
+  @each $name, $icon in $share-icons {
+    #{ns(share__link)}--#{$name} {
+      @include icon-legacy($icon, md, before);
+    }
+  }
+}

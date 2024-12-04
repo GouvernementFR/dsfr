@@ -15,14 +15,17 @@ Paramètres de sidemenu btn
     let item = sidemenuItems[i];
     item.href = item.href || sidemenuItems.href;
     item.classes = [`${prefix}-sidemenu__${item.kind}`];
+    item.attributes = sidemenuItems[i].attributes || {};
+    item.markup = item.kind === 'button' ? item.kind : 'a';
     let classes = [prefix + '-sidemenu__item'];
   %>
     <li <%- includeClasses(classes); %>>
-      <% if (item.type === 'menu') { %>
+      <% if (item.kind === 'menu') { %>
         <%- include('./sidemenu-menu.ejs', { sidemenuItem : item }); %>
       <% } else {%>
-        <% item.classes = item.type === 'button' ? [`${prefix}-sidemenu__btn`] : [`${prefix}-sidemenu__link`]; %>
-        <%- include('../../../../core/template/ejs/action/action', { action: {...item, markup: item.type === 'button' ? item.type : 'a'} }) %>
+        <% item.classes = item.kind === 'button' ? [`${prefix}-sidemenu__btn`] : [`${prefix}-sidemenu__link`]; %>
+        <% if (item.active) item.attributes['aria-current'] = 'page'; %>
+        <%- include('../../../../core/template/ejs/action/action', { action: { ...item } }) %>
       <% } %>
     </li>
   <% } %>

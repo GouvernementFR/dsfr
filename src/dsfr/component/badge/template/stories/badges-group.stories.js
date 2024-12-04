@@ -3,8 +3,6 @@ import { badgesGroupArgs, badgesGroupArgTypes, badgesGroupProps } from './badges
 
 const render = (args) => renderBadgesGroup({ badgesGroup: badgesGroupProps(args) });
 
-const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
-
 export default {
   id: 'badges-group',
   title: 'DSFR/Component/Badge/Badges-Group',
@@ -19,7 +17,7 @@ export const BadgesGroupStory = {
 
 export const SizeMdStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
+  args:
     {
       size: 'md',
       type1: 'accent',
@@ -29,12 +27,11 @@ export const SizeMdStory = {
       type3: 'accent',
       accent3: 'blue-ecume'
     }
-  ])
 };
 
 export const SizeSmStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
+  args:
     {
       size: 'sm',
       type1: 'accent',
@@ -44,5 +41,4 @@ export const SizeSmStory = {
       type3: 'accent',
       accent3: 'blue-ecume'
     }
-  ])
 };
