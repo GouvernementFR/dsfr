@@ -1,0 +1,41 @@
+<%#
+# paramètres media-vid
+
+* content.consent (object, optional): paramètres de consentenement
+    ** title (string, recommended) : titre du placeholder
+    ** body (string, optional) : texte explicatif
+    ** button (object, optional) : paramètre du bouton
+
+* content.vidTpl (string, optional): template de video
+
+* content.vid (object, optional): paramètre de la video
+
+* content.transcription (string, optional): texte de transcription
+
+* content.caption (string, optional): paramètres de l'image
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+<% let content = locals.content || {} %>
+
+<% if (content.consent !== undefined) { %>
+    <div class="<%= prefix %>-responsive-vid">
+    <%- include('../../../../consent/template/ejs/consent-placeholder', {consent: content.consent}) %>
+    </div>
+<% } else { %>
+    <%- include(content.vidTpl !== undefined ? content.vidTpl  : '../../../../../core/deprecated/template/ejs/media/responsive-vid', {media: content.vid}) %>
+<% } %>
+<% if (content.caption != undefined) { %>
+    <div class="<%= prefix %>-content-media__caption" ><%= content.caption %></div>
+<% } %>
+<%
+if (content.transcription != undefined) {
+    let data = {
+        label: content.transcription,
+        size: 'md'
+    }
+%>
+    <div class="<%= prefix %>-content-media__transcription" >
+        <%- include('../../../../link/template/ejs/link', {link: data}); %>
+    </div>
+<% } %>

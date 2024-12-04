@@ -1,0 +1,10 @@
+<% eval(include('../../../../core/index.ejs'));
+
+const tableData = JSON.parse(include('../../../table/example/data/data-simple.json.ejs', {table: {id: 'tootltip-table'}})) || [];
+if (tableData.table && tableData.table.tbodies.length) {
+  const tooltipBtn = include('./tooltip-button.ejs');
+  tableData.table.tbodies[0][1][2].content = tooltipBtn;
+}
+%>
+
+<%- include('../../../table/template/ejs/table-wrapper', { table: tableData }); %>

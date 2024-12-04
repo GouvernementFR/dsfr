@@ -1,0 +1,113 @@
+////
+/// Header Module : shortcuts
+/// @group header
+////
+
+@use 'src/module/preference';
+
+#{ns(header)} {
+  #{ns-group(btns)} {
+    &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+      @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+        #{ns(btn)} {
+          justify-content: flex-start;
+          @include nest-btn(md, left, null, null, false);
+
+          @include respond-from(lg) {
+            @include has-icon {
+              @include nest-btn(sm, left, null, null, false);
+            }
+
+            @include has-not-icon {
+              @include nest-btn(sm, left, null, null, false);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__tools-links {
+    display: none;
+
+    @include respond-from(lg) {
+      @include display-flex(row, null, flex-end);
+      gap: space(2v);
+    }
+
+    > #{ns(btn)} {
+      @include has-icon {
+        @include nest-btn(sm, left, null, null, false);
+      }
+
+      @include has-not-icon {
+        @include nest-btn(sm, left, null, null, false);
+      }
+    }
+
+    #{ns-group(btns)} {
+      @include respond-from(lg) {
+        @include horizontal-btns-group;
+        justify-content: flex-end;
+        @include margin(0 -1v -4v);
+
+        & > li {
+          align-items: flex-start;
+        }
+
+        #{ns(btn)} {
+          @include margin-x(1v);
+        }
+      }
+    }
+  }
+
+  & &__menu-links {
+    @include after('', block) {
+      @include margin(3v -4v);
+      @include size(calc(100% + 8v), 1px);
+    }
+
+    #{ns(btn)} {
+      @include preference.forced-colors {
+        border: none;
+      }
+    }
+
+    #{ns(translate)} {
+      @include margin-x(-2v);
+      @include margin-x(0, lg);
+      @include margin-bottom(-4v, lg);
+
+      &__btn {
+        @include padding-x(2v);
+      }
+    }
+
+    #{ns-group(btns)} {
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+          @include display-flex(column);
+
+          #{ns(btn)} {
+            @include has-icon {
+              @include min-size(null, 12v);
+              @include padding-x(0);
+            }
+
+            @include has-not-icon {
+              @include min-size(null, 12v);
+              @include padding-x(0);
+            }
+
+            @include margin-bottom(0);
+          }
+        }
+      }
+    }
+
+    @include respond-from(lg) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+////
+/// Stepper Scheme
+/// @group stepper
+////
+
+@use 'src/module/color';
+
+@mixin _stepper-scheme($legacy: false) {
+  #{ns(stepper)} {
+    @include title {
+      @include color.text(title grey, (legacy:$legacy));
+    }
+
+    &__state {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+
+    &__details {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+
+    &__steps {
+      $active-step: 'repeating-linear-gradient(to right, $color#1 0, $color#1 var(--active-inner), transparent var(--active-inner), transparent var(--active-outer) )';
+      $default-step: 'repeating-linear-gradient(to right, $color#2 0, $color#2 var(--default-inner), transparent var(--default-inner), transparent var(--default-outer) )';
+      @include color.background-image((active blue-france) (contrast grey), (legacy:$legacy), '#{$active-step}, #{$default-step}');
+    }
+  }
+}

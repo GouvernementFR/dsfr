@@ -1,0 +1,47 @@
+<%#
+# paramètres
+
+* element.id (string, required) : id de l'élément
+
+* element.label (string, required) : Libellé de l'input
+
+* element.name (string, optional) : attribut name de l'input
+
+* element.value (String, optional) : valeur de l'input
+
+* element.icon (string, optional) : nom de l'icône dans le label
+
+* element.disabled (boolean, optional) : si true, désactive l'élément [default: false]
+
+* element.checked (boolean, optional) : si true, l'élement est actif (1 seul possible par segmented) [default: false]
+
+* element.classes (array, optional) : classes supplémentaires sur l'élément
+
+* element.attributes (object, optional) : attributs supplémentaires sur l'élément
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const element = locals.element || {};
+const attributes = element.attributes || {};
+const classes = element.classes || [];
+classes.push(`${prefix}-segmented__element`);
+
+const label = {
+  label: element.label,
+  for: element.id,
+  classes: [],
+};
+
+if (element.icon) label.classes.push(`${prefix}-icon-${element.icon}`);
+if (element.value) attributes.value = element.value;
+if (element.disabled) attributes.disabled = '';
+if (element.checked) attributes.checked = '';
+
+%>
+
+<div <%- includeClasses(classes); %>>
+  <input <%- includeAttrs(attributes); %> type="radio" id="<%= element.id %>" name="<%= element.name %>">
+  <%- include('../../../form/template/ejs/label.ejs', { label: label }); %>
+</div>

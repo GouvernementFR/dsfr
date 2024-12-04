@@ -1,0 +1,27 @@
+////
+/// Radio Module : radio sm
+/// @group radio
+////
+
+@use 'src/module/spacing';
+@use 'src/module/selector';
+
+#{selector.ns-group(radio)}--sm {
+  input[type="radio"] {
+    @include size(4v, 4v);
+    top: #{spacing.space(1v)};
+
+    & + label {
+      @include padding-left(6v);
+      background-position: 0 #{spacing.space(1v)}, 0 #{spacing.space(1v)};
+      background-size: #{spacing.space(4v)} #{spacing.space(4v)}, #{spacing.space(4v)} #{spacing.space(4v)};
+
+      @include before {
+        top: #{spacing.space(1v)};
+        @include size(4v, 4v);
+        border-radius: #{spacing.space(2v)};
+        @include margin-left(-6v);
+      }
+    }
+  }
+}

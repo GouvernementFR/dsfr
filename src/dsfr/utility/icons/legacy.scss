@@ -1,0 +1,28 @@
+////
+/// Icons Legacy
+/// @group icons
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import 'icons-buildings/legacy';
+@import 'icons-business/legacy';
+@import 'icons-communication/legacy';
+@import 'icons-design/legacy';
+@import 'icons-development/legacy';
+@import 'icons-device/legacy';
+@import 'icons-document/legacy';
+@import 'icons-editor/legacy';
+@import 'icons-finance/legacy';
+@import 'icons-health/legacy';
+@import 'icons-logo/legacy';
+@import 'icons-map/legacy';
+@import 'icons-media/legacy';
+@import 'icons-others/legacy';
+@import 'icons-system/legacy';
+@import 'icons-user/legacy';
+@import 'icons-weather/legacy';

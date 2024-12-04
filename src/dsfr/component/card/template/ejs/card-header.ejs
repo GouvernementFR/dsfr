@@ -1,0 +1,28 @@
+<%#
+# paramètres de l'en-tête de la carte
+
+* header.img (object, optional) : paramètres de l'image
+
+* header.vid (object, optional) : paramètres de vidéo
+
+* header.badgesGroup (array, optional) : Groupe de badges (voir badge)
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<div class="<%= prefix%>-card__header" >
+    <% if (header.img) { %>
+        <div class="<%= prefix %>-card__img">
+            <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: header.img}); %>
+        </div>
+    <% } else if (header.vid) { %>
+        <div class="<%= prefix %>-card__vid">
+            <%- include('../../../../core/template/ejs/media/responsive-vid.ejs', {media: header.vid}); %>
+        </div>
+    <% } %>
+
+    <% if (header.badgesGroup) { %>
+        <%- include('../../../badge/template/ejs/badges-group.ejs', {badgesGroup: header.badgesGroup }); %>
+    <% } %>
+</div>

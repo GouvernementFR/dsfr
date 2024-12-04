@@ -1,0 +1,73 @@
+////
+/// Header Legacy
+/// @group header
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(header)} {
+    @include disable-list-style-legacy;
+    @include disable-underline-legacy;
+
+    #{ns-group(btns)} {
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+          #{ns(btn)} {
+            @include has-not-icon {
+              &:not(#{ns(btn--display)}) {
+                @include icon-legacy(null, sm, before, false);
+              }
+            }
+
+            @include has-icon {
+              @include icon-legacy(null, sm, before, false);
+            }
+
+            &#{ns(btn--display)} {
+              @include icon-legacy(null, sm, before, false);
+            }
+          }
+        }
+      }
+    }
+
+    &__tools-links {
+      #{ns(link)} {
+        overflow: visible;
+      }
+    }
+
+    &__service {
+      &-title,
+      &-tagline {
+        @include margin(0);
+      }
+    }
+
+    &__operator {
+      img {
+        height: auto !important;
+      }
+    }
+
+    &__navbar {
+      #{ns(btn)} {
+        &--menu {
+          @include icon-legacy(menu-fill, md, before);
+        }
+
+        &--search {
+          @include icon-legacy(search-line, md, before);
+        }
+      }
+    }
+
+    #{ns(modal)} {
+      @include respond-from(lg) {
+        position: static;
+        overflow: visible;
+      }
+    }
+  }
+}

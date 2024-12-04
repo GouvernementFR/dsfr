@@ -1,0 +1,23 @@
+////
+/// Sidemenu Legacy
+/// @group sidemenu
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * Correctif de la hauteur de la navigation latérale
+  */
+  #{ns(sidemenu)} {
+    height: auto;
+    @include disable-list-style-legacy;
+    @include disable-underline-legacy;
+
+    &__btn {
+      &[aria-expanded] {
+        @include icon-legacy(arrow-down-s-line, sm, after);
+      }
+    }
+  }
+}

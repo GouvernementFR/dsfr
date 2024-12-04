@@ -1,0 +1,51 @@
+
+<% const sample = getSample(include); %>
+
+<%
+  const elements = [
+    {
+      title: 'Tailles',
+      path: 'sample-sizes'
+    },
+    {
+      title: 'Sans image',
+      path: 'sample-no-img'
+    },
+    {
+      title: 'Tailles d\'images',
+      path: 'sample-img'
+    },
+    {
+      title: 'Contenu',
+      path: 'sample-content'
+    },
+    {
+      title: 'Remplissage automatique des détails',
+      path: 'sample-assess-file'
+    },
+    {
+      title: 'Fichier en langue étrangère',
+      path: 'sample-lang'
+    },
+    {
+      title: 'Markup button',
+      path: 'sample-button'
+    },
+  ];
+
+  const accordions = [];
+
+  for (let element of elements) {
+    accordions.push({
+      label: element.title,
+      id: uniqueId('card-download'),
+      content: include(`./sample/${element.path}`)
+    })
+  }
+
+  const data = {
+    accordions: accordions
+  }
+ %>
+
+<%- include('../../../accordion/template/ejs/accordions-group', {accordionsGroup: data }); %>

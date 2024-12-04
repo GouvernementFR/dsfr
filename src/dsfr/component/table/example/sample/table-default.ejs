@@ -1,0 +1,13 @@
+<%
+const table = locals.table || {};
+
+if (table.header) {
+  table.header = include('../header/header.ejs');
+}
+
+if (table.footer) {
+  table.footer = include('../footer/footer.ejs');
+}
+%>
+
+<%- include('../../template/ejs/table-wrapper', {table}); %>

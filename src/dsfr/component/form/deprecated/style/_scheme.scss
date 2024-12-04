@@ -1,0 +1,47 @@
+////
+/// form Scheme
+/// @group form
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin _deprecated-form-scheme($legacy: false) {
+  #{ns(error-text)} {
+    @include color.text(default error, (legacy:$legacy));
+  }
+
+  #{ns(valid-text)} {
+    @include color.text(default success, (legacy:$legacy));
+  }
+
+  #{ns(info-text)} {
+    @include color.text(default info, (legacy:$legacy));
+  }
+
+  #{ns(fieldset)} {
+    &--valid {
+      #{ns(fieldset__content)} {
+        @include before {
+          @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
+        }
+      }
+    }
+
+    &--error {
+      #{ns(fieldset__content)} {
+        @include before {
+          @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
+        }
+      }
+    }
+
+    &--info {
+      #{ns(fieldset__content)} {
+        @include before {
+          @include color.box-shadow(plain info, (legacy:$legacy), left-2-in);
+        }
+      }
+    }
+  }
+}

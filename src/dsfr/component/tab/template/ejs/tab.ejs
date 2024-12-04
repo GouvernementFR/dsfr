@@ -1,0 +1,35 @@
+<%#
+# paramètres Tab
+
+* tab.id (string, required) : id du panel
+
+* tab.isActive (bool, required) : défini le panel actif (1 max)
+
+* tab.icon (string, optional) : nom de l'icone dans le bouton
+
+* tab.label (string, required) : libellé du bouton
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let tab = locals.tab || {};
+let btn = {
+  attributes: {
+    tabindex: tab.isActive ? '0' : '-1',
+    role: 'tab',
+    'aria-selected': tab.isActive === true,
+    'aria-controls': tab.id + "-panel"
+  },
+  classes: [prefix + '-tabs__tab']
+}
+
+if (tab.icon !== undefined) {
+  btn.classes.push(prefix + '-icon-' + tab.icon);
+  btn.classes.push(prefix + '-tabs__tab--icon-left');
+}
+%>
+
+<li role="presentation">
+  <button type="button" id="<%= tab.id %>" <%- includeClasses(btn.classes) %> <%- includeAttrs(btn.attributes); %>><%= tab.label %></button>
+</li>

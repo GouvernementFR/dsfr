@@ -1,0 +1,28 @@
+////
+/// Footer Legacy
+/// @group footer
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * Reset liste à puce
+  */
+  #{ns(footer)} {
+    @include disable-list-style-legacy;
+
+    &__content-desc {
+      @include enable-underline-legacy;
+    }
+
+    &__bottom {
+      #{ns(btn)},
+      #{ns(footer__bottom-link)} {
+        @include icon-legacy(null, sm) {
+          @include margin-bottom(-1v);
+        };
+      }
+    }
+  }
+}

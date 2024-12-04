@@ -1,0 +1,50 @@
+<%#
+# paramètres newsletter
+
+* newsletter.title (string, required) : titre du bloc newsletter
+
+* newsletter.desc (string, optional) : description du bloc newsletter
+
+* newsletter.type (string, optional) [button|form]: type de bloc newsletter (avec bouton ou avec formulaire)
+
+* newsletter.form (object, optional) : paramètres du formulaire champ/boutton (si type form)
+  ** newsletter.form.action (string, optional) : Attribute action du formulaire
+  ** newsletter.form.input (object, required) : paramètres du champ mail
+  ** newsletter.form.button (object, required) : paramètres du boutton
+  ** newsletter.form.error (string, optional) : texte d'erreur
+  ** newsletter.form.valid (string, optional) : texte valide
+  ** newsletter.form.hint (string, optional) : texte additionel
+
+* newsletter.button (object, optional) : paramètres du boutton (si type button)
+
+%>
+<% eval(include('../../../../core/index.ejs'));
+
+let newsletter = locals.newsletter || {};
+let newsletterClasses = [prefix + '-follow__newsletter'];
+%>
+
+<div <%- includeClasses(newsletterClasses); %> >
+  <div>
+    <h2 class="<%= prefix %>-h5"><%- newsletter.title %></h2>
+    <% if (newsletter.desc) { %>
+    <p class="<%= prefix %>-text--sm"><%- newsletter.desc %></p>
+    <% } %>
+  </div>
+  <div>
+    <% if (newsletter.type === 'form') { %>
+      <% if (newsletter.form && newsletter.form.input) { %>
+        <form action="<%= newsletter.form.action %>">
+          <%- include('../../../input/input-base/template/ejs/input-group.ejs', {input: {addon: true, describedby: [`${newsletter.form.input.id}-hint-text`], ...newsletter.form.input}}); %>
+          <% if (newsletter.form.hint) { %>
+            <p id="<%= newsletter.form.input.id %>-hint-text" class="<%= prefix %>-hint-text"><%- newsletter.form.hint %></p>
+          <% } %>
+        </form>
+      <% } %>
+    <% } else if (newsletter.type === 'button') { %>
+      <%- include('../../../button/template/ejs/buttons-group.ejs', {buttonsGroup: {inline: 'md', buttons: [newsletter.button]}}); %>
+    <% } else if (newsletter.type === 'alert') { %>
+      <%- include('../../../alert/template/ejs/alert.ejs', {alert: newsletter.alert}); %>
+    <% } %>
+  </div>
+</div>

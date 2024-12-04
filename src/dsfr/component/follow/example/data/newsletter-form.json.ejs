@@ -1,0 +1,30 @@
+<%
+const newsletter = locals.newsletter || {};
+const data = {};
+data.newsletter = {
+  title: "Abonnez-vous à notre lettre d’information",
+  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.",
+  type: 'form',
+  form: {
+    input: {
+      id: uniqueId("newsletter-email"),
+      placeholder: "Votre adresse électronique (ex. : nom@domaine.fr)",
+      label: "Votre adresse électronique (ex. : nom@domaine.fr)",
+      type: "email",
+      error: newsletter.error === true ? 'Le format de l’adresse electronique saisie n’est pas valide. Le format attendu est : nom@domaine.fr' : undefined,
+      attributes:{
+        title: 'Votre adresse électronique (ex. : nom@domaine.fr)',
+        autocomplete: 'email'
+      },
+      button: {
+        id: uniqueId("newsletter-button"),
+        type: 'submit',
+        label: "S\'abonner",
+        title: "S‘abonner à notre lettre d’information",
+      }
+    },
+    hint: 'En renseignant votre adresse électronique, vous acceptez de recevoir nos actualités par courriel. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.',
+  }
+}
+%>
+<%- JSON.stringify(data); %>

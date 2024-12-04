@@ -1,0 +1,19 @@
+<%#
+# paramètres summary
+
+* summary (array, required) : Paramètre summary
+  ** summary.list (array, required) : Tableau de liens enfants (href, label)
+  ** summary.title (String, required) : Titre du sommaire
+  ** summary.markup (String, optional) : (default: h2) Niveau de titre
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% let summary = locals.summary || {};
+const markup = summary.markup || 'h2'; %>
+
+<nav class="<%= prefix %>-summary" role="navigation" aria-labelledby="<%= prefix %>-summary-title">
+  <% if (summary.title) { %>
+    <<%= markup %> class="<%= prefix %>-summary__title" id="<%= prefix %>-summary-title"><%- summary.title %></<%= markup %>>
+  <% } %>
+  <%- include('./summary-list.ejs', {summaryList: summary.list}); %>
+</nav>

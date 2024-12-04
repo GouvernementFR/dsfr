@@ -1,0 +1,98 @@
+////
+/// Core Tool : Spacing space
+/// @group core
+////
+
+@use 'src/module/spacing';
+
+/// Set space property
+///
+/// @param {String} $property ['margin'] - propriété à appliquer à l'espacement `['margin', 'padding']`
+/// @param {Number | list} $value [2] - valeur de l'espacement en v ou w. peut être une liste si la direction n'est pas renseignée
+/// @param {String} $direction - direction de l'espacement `['x', 'y', 'top', 'right', 'bottom', 'left']`
+///
+/// @example scss - Set margin-bottom to 24px
+///   .foo {
+///     @include _spacing('margin', 6v, 'bottom');
+///   }
+@mixin _spacing($property: margin, $value: 0, $direction: null) {
+  $v: spacing.space($value);
+  @if $direction != null {
+    @if $direction == 'x' {
+      #{$property}-left: $v;
+      #{$property}-right: $v;
+    }
+    @else if $direction == 'y' {
+      #{$property}-top: $v;
+      #{$property}-bottom: $v;
+    }
+    @else {
+      #{$property}-#{$direction}: $v;
+    }
+  }
+  @else {
+    #{$property}: $v;
+  }
+}
+
+@mixin _spacing-from($property: margin, $value: 0, $direction: null, $from: null) {
+  @include respond-from($from) {
+    @include _spacing($property, $value, $direction);
+  }
+}
+
+@mixin padding($values: 0 0 0 0, $from: null) {
+  @include _spacing-from(padding, $values, null, $from);
+}
+
+@mixin padding-x($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'x', $from);
+}
+
+@mixin padding-y($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'y', $from);
+}
+
+@mixin padding-top($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'top', $from);
+}
+
+@mixin padding-right($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'right', $from);
+}
+
+@mixin padding-bottom($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'bottom', $from);
+}
+
+@mixin padding-left($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'left', $from);
+}
+
+@mixin margin($values: 0 0 0 0, $from: null) {
+  @include _spacing-from(margin, $values, null, $from);
+}
+
+@mixin margin-x($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'x', $from);
+}
+
+@mixin margin-y($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'y', $from);
+}
+
+@mixin margin-top($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'top', $from);
+}
+
+@mixin margin-right($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'right', $from);
+}
+
+@mixin margin-bottom($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'bottom', $from);
+}
+
+@mixin margin-left($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'left', $from);
+}

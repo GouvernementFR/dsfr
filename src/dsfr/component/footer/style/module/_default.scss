@@ -1,0 +1,73 @@
+////
+/// Footer Module : default
+/// @group footer
+////
+
+@use 'src/module/preference';
+
+#{ns(footer)} {
+  @include disable-list-style;
+  @include size(100%);
+  @include padding-top(8v);
+
+  @include preference.forced-colors {
+    border-top: 2px solid;
+    @include padding-top(7.5v);
+  }
+
+  @include body {
+    @include display-flex(row, center, null, wrap);
+    @include margin-bottom(4v);
+    @include margin-bottom(6v, md);
+
+    & + #{ns(footer__bottom)} {
+      @include margin-top(4v);
+    }
+  }
+
+  /**
+   * Conteneur du bloc marque, avec le logo principal et éventuellement
+   * un logo opérateur
+   */
+  &__brand {
+    @include display-flex(row, center);
+
+    @include logo(md, lg) {
+      @include margin(-4v);
+      @include margin(-5v, md);
+    }
+
+    &-link {
+      @include display-flex;
+      @include disable-external();
+    }
+
+    /**
+     * Si on ajoute un logo opérateur à côté du logo principal, on lui applique une marge à gauche
+     * On prévoit que le logo soit encapsulé dans un <a>, ou bien directement en img ou en svg
+     * (Eventuellement prévoir une classe pour pouvoir le mettre en background image)
+     */
+    #{ns(logo)} + #{ns(footer__brand-link)} {
+      @include margin-left(6v);
+      @include margin-left(8v, md);
+    }
+
+    @include respond-from(md) {
+      @include margin-right(4v);
+
+      &#{ns(enlarge-link)} {
+        @include margin(-4v 0 -4v -4v);
+        @include padding(4v);
+        align-self: flex-start;
+      }
+    }
+  }
+
+  /**
+   * Hauteur auto pour le logo opérateur
+   */
+  &__logo {
+    @include size(null, auto);
+    max-height: 100%;
+  }
+}

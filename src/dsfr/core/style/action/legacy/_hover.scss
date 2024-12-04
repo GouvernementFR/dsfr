@@ -1,0 +1,16 @@
+////
+/// Core Legacy : Action hover
+/// @group core
+////
+
+@use 'src/module/color';
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(enlarge-link)},
+  #{ns(enlarge-button)} {
+    @include color.transparent-background((legacy: true, hover: true));
+
+    @include disable-underline-legacy;
+  }
+}

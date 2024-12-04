@@ -1,0 +1,45 @@
+<% const sample = getSample(include); %>
+
+<style>
+    @media (min-width: 62em) {
+        .relative-sample\@lg {
+            position: relative;
+        }
+    }
+</style>
+
+<%- sample('Header minimal', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header sans navigation', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service: true }}, true, './layout');  %>
+
+<%- sample('Header sans navigation avec un seul raccourci', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links: { buttons: [{ url: '[url - à modifier]', label: 'Espace particulier', markup: 'a', classes: [`${prefix}-btn--account`]}] }, service: true}}, true, './layout');  %>
+
+<%- sample('Header sans navigation avec une liste de raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, service: true}}, true, './layout');  %>
+
+<%- sample('Header avec Navigation complète', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: true, navigation: true }}, true, './layout');  %>
+
+<%- sample('Header avec selecteur de langues', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:{}, navigation: true, translate: true, service: true}}, true, './layout');  %>
+
+<%- sample('Header avec selecteur de langues et raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links: { buttons: [{ url: '[url - à modifier]', label: 'Contact', markup: 'a', classes: [`${prefix}-btn--team`]}, { url: '[url - à modifier]', label: 'Espace recruteur', markup: 'a', classes: [`${prefix}-btn--briefcase`]}] }, navigation: true, translate: true, service: true}}, true, './layout');  %>
+
+<%- sample('Header avec selecteur de langues et paramètre d\'affichage', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:{ buttons: [{ label: 'Paramètres d\'affichage', classes: [`${prefix}-icon-theme-fill`, `${prefix}-btn--icon-left`], attributes: {'aria-controls': `${prefix}-theme-modal`, 'data-fr-opened': false}}]}, navigation: true, translate: true, display: true, service: true}}, true, './layout');  %>
+
+<%- sample('Header avec nom de service, lien d’accès', './sample/header.ejs', {header: { logo:{ title: 'Ministère<br>de l’europe<br>et des affaires<br>étrangères'}, service: true, links: true, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header avec nom de service, recherche', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service: 'title', search: true, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header avec logo opérateur vertical, recherche', './sample/header.ejs', {header: { logo:{ title: 'République<br>Française'}, operator: imgData('img/placeholder.3x4.png', 'rendered', null,  null, 'max-width:3.5rem;'), search: true, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header avec logo opérateur horizontal, nom de service, lien d’accès, recherche', './sample/header.ejs', {header: { logo:{ title: 'République<br>Française'}, operator: imgData('img/placeholder.16x9.png', 'rendered', null, null, 'max-width:8rem;'), service: true, links:true, search: true, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header avec raccourcis dupliqués, pour Angular, React et Vue', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, duplicateLinks: true }}, true, './layout');  %>
+
+<%- sample('Header avec bandeau BETA', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, beta: true, service: true, links:true, search: true, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header logo opérateur + bandeau BETA', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, operator: imgData('img/placeholder.16x9.png', 'rendered', null, null, 'max-width:8rem;'), beta: true, service: true, links:true, search: true, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header min avec bandeau BETA', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, beta: true, navigation: 'min' }}, true, './layout');  %>
+
+<%- deprecation(); %>
+
+<%- sample('Header déprécié', '../deprecated/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: true, navigation: true }}, true, './layout');  %>

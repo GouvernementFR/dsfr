@@ -1,0 +1,104 @@
+<%
+let navigation = locals.navigation || {};
+const href = navigation.href || '#'
+
+const getLink = () => {
+  const id = uniqueId('nav');
+  return {
+    type: 'link',
+    label: `accès direct ${id}`,
+    id: id,
+    href: href
+  };
+
+}
+
+const getSubLink = (active = false) => {
+  const id = uniqueId('nav');
+  return {
+    label: `Lien de navigation ${id}`,
+    id: id,
+    href: href,
+    active: active
+  }
+}
+
+const getItems = (active = false) => {
+  return [
+    getSubLink(),
+    getSubLink(),
+    getSubLink(active),
+    getSubLink(),
+    getSubLink(),
+    getSubLink(),
+    getSubLink(),
+    getSubLink()
+  ];
+}
+
+const getMenu = (active = false) => {
+  return {
+    id: uniqueId('menu'),
+    collapseId: uniqueId('collapse'),
+    type: 'menu',
+    label: 'Entrée menu',
+    items: getItems(active),
+    active: active
+  }
+}
+
+const getCategory = (active = false) => {
+  return {
+    id: uniqueId('category'),
+    label: 'Nom de catégorie',
+    href: href,
+    items: getItems(active)
+  };
+}
+
+const getMega = (active = false, leader = false) => {
+
+  return {
+    id: uniqueId('mega-menu'),
+    collapseId: uniqueId('collapse'),
+    type: 'mega-menu',
+    label: 'Entrée mega menu',
+    close: 'Fermer le menu',
+    ...(leader && {leader: {
+      title: 'Titre éditorialisé',
+      text: lorem(),
+      link: {
+        id: uniqueId('link'),
+        label: 'Voir toute la rubrique',
+        iconPlace:'right',
+        icon: 'arrow-right-line'
+      }
+  }}),
+    categories: [
+      getCategory(),
+      getCategory(),
+      getCategory(true),
+      getCategory()
+    ]
+  }
+}
+
+let data = {
+  id: navigation.id || uniqueId('navigation'),
+  ariaLabel: navigation.ariaLabel || 'Menu principal',
+  items: navigation.min === true ?
+    [getLink(), getLink(), getLink(), getLink()] :
+    [
+        getMenu(),
+        getMega(),
+        getLink(),
+        getMenu(true),
+        getMega(false, true),
+        getLink(),
+        getMega(true, false),
+        getMenu()
+    ]
+}
+%>
+
+<%- include('../../template/ejs/navigation.ejs', {navigation:data}); %>

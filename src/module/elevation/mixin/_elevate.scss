@@ -1,0 +1,20 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'src/module/string';
+@use 'background';
+@use 'z-index';
+@use 'shadow';
+@use 'src/module/elevation/variable/shadows';
+
+@mixin elevate($level, $options: ()) {
+  $layer: list.nth(string.split($level, '-'), 1);
+  $legacy: map.get($options, legacy);
+  $background: map.get($options, background);
+
+  @include z-index.z-index($level, $legacy);
+  @if not map.get($options, no-background) {
+    @include background.background($layer, $options);
+  }
+
+  @include shadow.shadow($layer, $legacy, $background);
+}

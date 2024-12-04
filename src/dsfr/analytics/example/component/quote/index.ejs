@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container">
+  <%- sample('Exemple de citation', '../../../../component/quote/example/sample/quote-default', {quote: {id: uniqueId('quote'), sources: ['<cite>Ouvrage</cite>', 'Détail 1', 'Détail 2', 'Détail 3', `<a target="_blank" rel="noopener external" title="${getBlankTitle('Détail 4')}" href="https://www.systeme-de-design.gouv.fr/">Détail 4</a>`]}}); %>
+</div>

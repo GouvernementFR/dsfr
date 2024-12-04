@@ -1,4 +1,4 @@
-<% eval(include(root + 'src/core/index.ejs')); %>
+<% eval(include(root + 'src/dsfr/core/index.ejs')); %>
 <%
 let sampling = false;
 
@@ -45,7 +45,7 @@ function getSample (include, seed) {
         content: '<pre class=" language-html"><code>' + html + '</code></pre>'
       };
 
-      snippet = include(root + 'src/component/accordion/template/ejs/accordion', { accordion: accordion });
+      snippet = include(root + 'src/dsfr/component/accordion/template/ejs/accordion', { accordion: accordion });
     }
 
     if (layout === undefined) layout = root + 'tool/example/layout';
@@ -80,12 +80,15 @@ const lorem = (insert, length) => {
 
 locals.lorem = lorem;
 
-locals.contentPlaceholder = (text) => {
+
+const contentPlaceholder = (text) => {
   if (text === 'alt') text = 'texte alternatif de l’image';
   return `[À MODIFIER - ${text}]`;
 };
 
-locals.lengthen = (length, label) => {
+locals.contentPlaceholder = contentPlaceholder;
+
+const lengthen = (length, label) => {
   switch (length) {
     case 1:
       return label + ' long';
@@ -101,7 +104,10 @@ locals.lengthen = (length, label) => {
   }
 }
 
-locals.imgAltText = 'texte alternatif de l’image';
+locals.lengthen = lengthen;
+
+const imgAltText = 'texte alternatif de l’image';
+locals.imgAltText = imgAltText;
 
 const brandData = (component = 'header', logo = true, service = false, operator = false, beta = false, href = '/') => {
   const data = {};
@@ -219,7 +225,7 @@ const hintData = (hint) => {
       return hint;
 
     case 'boolean':
-      if (hint) return getText('hint', 'form');
+      if (hint) return locals.getText('hint', 'form');
 
     default:
       return undefined;
@@ -237,7 +243,7 @@ const validData = (valid) => {
       return valid;
 
     case 'boolean':
-      if (valid) return getText('message.valid', 'form');
+      if (valid) return locals.getText('message.valid', 'form');
 
     default:
       return undefined;
@@ -255,7 +261,7 @@ const errorData = (error) => {
       return error;
 
     case 'boolean':
-      if (error) return getText('message.error', 'form');
+      if (error) return locals.getText('message.error', 'form');
 
     default:
       return undefined;
@@ -264,15 +270,11 @@ const errorData = (error) => {
 
 locals.errorData = errorData;
 
-const targetBlankData = (title = contentPlaceholder('Intitulé')) => {
-  const attr = {};
-  attr.target = '_blank';
-  attr.rel = 'noopener external';
-  attr.title = `${title} - ${getText('blank')}`;
-  return attr;
+const getBlankTitle = (title = contentPlaceholder('Intitulé')) => {
+  return `${title} - ${locals.getText('blank')}`;
 }
 
-locals.targetBlankData = targetBlankData;
+locals.getBlankTitle = getBlankTitle;
 
 const randomSeed = (seed) => {
   const rng = prand.xoroshiro128plus(seed);
@@ -287,7 +289,7 @@ const randomContent = (types = ['title', 'img', 'text', 'list'], id) => {
     content += `<h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
   }
   if (types.includes('img')) {
-    if (prand.unsafeUniformIntDistribution(0, 10, locals.rng) < 4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
+    if (prand.unsafeUniformIntDistribution(0, 10, locals.rng) < 4) content += include(root + 'src/dsfr/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
   }
   if (types.includes('text')) {
     for (let i = prand.unsafeUniformIntDistribution(0, 1, locals.rng); i > 0; i--) content += `<p>${lorem('<a href="https://www.systeme-de-design.gouv.fr/" target="_blank">link test</a>')}</p>`;

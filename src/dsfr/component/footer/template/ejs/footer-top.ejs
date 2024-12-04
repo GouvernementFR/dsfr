@@ -1,0 +1,44 @@
+<%#
+# paramètres footer top
+
+* top.categories (object, required) : Paramètre de catégories
+  ** top.categories[].label (string, required) : Libellé de la catégorie du menu
+  ** top.categories[].link (object, optional) : Lien de la catégorie du menu
+    *** top.categories[].link.href (string, required) : URL de la catégorie du menu
+    *** top.categories[].link.classes (array, optional) : Classes supplémentaires du lien
+    *** top.categories[].link.attributes (object, optional) : Attributs supplémentaires du lien
+  ** top.categories[].links (string, required) : tableau de liens
+    *** top.categories[].links[].label (string, required) : Libellé du lien
+    *** top.categories[].links[].href (string, required) : Lien du menu
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% const top = locals.top || {} %>
+
+<%
+  for (category of top.categories) {
+%>
+<div class="<%= prefix%>-col-12 <%= prefix%>-col-sm-3 <%= prefix%>-col-md-2">
+  <h3 class="<%= prefix %>-footer__top-cat">
+    <% if (category.link) { %>
+      <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...category.link, markup: 'a', label: category.label}}); %>
+    <% } else { %>
+      <%- category.label %>
+    <% } %>
+  </h3>
+  <ul class="<%= prefix %>-footer__top-list">
+  <%
+    for (link of category.links) {
+      const attributes = link.attributes || {};
+      const classes = link.classes || [];
+      classes.push(`${prefix}-footer__top-link`);
+      const markup = link.markup || 'a';
+  %>
+    <li>
+      <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...link, markup: markup, classes: classes, attributes: attributes}}); %>
+    </li>
+  <% } %>
+  </ul>
+</div>
+<% } %>

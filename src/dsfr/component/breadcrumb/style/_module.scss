@@ -1,0 +1,103 @@
+////
+/// Breadcrumb Module
+/// @group breadcrumb
+////
+
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/preference';
+
+/**
+un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
+ */
+#{ns(breadcrumb)} {
+  @include margin(4v 0 8v);
+  @include margin-bottom(10v, md);
+  @include text-style(xs);
+  @include set-text-margin(0 0 2v);
+  position: relative;
+
+  &__button {
+    @include link-underline;
+    @include text-style(xs);
+    @include margin(0);
+    @include padding(0);
+    @include disable-tint;
+    @include hover-underline;
+    color: inherit;
+
+    &[aria-expanded="true"] {
+      display: none;
+    }
+
+    @include respond-from(md) {
+      display: none;
+    }
+  }
+
+  #{ns(collapse)} {
+    @include margin-x(-4px);
+    @include padding-x(4px);
+    transform: translateY(-4px);
+
+    @include respond-from(md) {
+      @include margin-x(0);
+      @include padding-x(0);
+      transform: none;
+      visibility: inherit;
+      overflow: visible;
+      max-height: none;
+      @include before(none);
+    }
+  }
+
+  @include list() {
+    @include disable-list-style;
+    transform: translateY(4px);
+
+    @include respond-from(md) {
+      transform: none;
+    }
+
+    li {
+      display: inline;
+      line-height: spacing.space(7v);
+
+      /**
+      * flèche séparatrice en font-icon
+      */
+      &:not(:first-child) {
+        @include icon-forced-color(canvastext, true, before);
+        @include icon(arrow-right-s-line, sm, before) {
+          @include margin-x(1v);
+          vertical-align: -0.0625em;
+        }
+      }
+    }
+  }
+
+  &__link {
+    vertical-align: spacing.space(1v);
+    position: relative;
+    @include link-underline;
+    @include disable-tint;
+    @include text-style(xs);
+    @include hover-underline;
+    @include padding(0);
+
+    @include preference.forced-colors {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    @include selector.current {
+      pointer-events: none;
+      cursor: default;
+      @include disable-underline;
+
+      @include preference.forced-colors {
+        text-decoration: none;
+      }
+    }
+  }
+}

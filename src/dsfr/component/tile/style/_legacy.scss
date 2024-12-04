@@ -1,0 +1,107 @@
+////
+/// Tile Legacy
+/// @group tile
+////
+
+@use 'src/module/legacy';
+@use 'src/module/media-query';
+
+@include legacy.is(ie11) {
+  /**
+  * Correctif de la largeur du texte dans la tuile
+  */
+  #{ns(tile)} {
+    &--download,
+    &--horizontal {
+      #{ns(tile)}__body {
+        flex-basis: 100%;
+      }
+
+      &#{ns(tile--vertical\@md)} {
+        @include media-query.respond-from(md) {
+          #{ns(tile)}__body {
+            flex-basis: auto;
+          }
+        }
+      }
+
+      &#{ns(tile--vertical\@lg)} {
+        @include media-query.respond-from(lg) {
+          #{ns(tile)}__body {
+            flex-basis: auto;
+          }
+        }
+      }
+    }
+
+    &__body,
+    &__body > * {
+      max-width: 100%;
+    }
+
+    &__title {
+      @include margin(0 0 2v);
+      max-width: 100%;
+
+      a,
+      button {
+        @include icon-legacy(arrow-right-line, sm, after);
+      }
+
+      @include target-blank {
+        @include icon-legacy(external-link-line, sm, after);
+      }
+    }
+
+    &__desc {
+      @include margin(0);
+      max-width: 100%;
+    }
+
+    &__start,
+    &__detail {
+      max-width: 100%;
+    }
+
+    &--download {
+      #{ns(tile__title)} {
+        a,
+        button {
+          @include icon-legacy(download-line, null, after);
+        }
+      }
+    }
+
+    &#{ns(enlarge-link)} {
+      #{ns(tile)}__title {
+        a {
+          text-decoration: none;
+          @include icon-size-legacy(md, after) {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &#{ns(enlarge-button)} {
+      #{ns(tile)}__title {
+        button {
+          @include icon-size-legacy(md, after) {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  #{ns(tile--sm)} {
+    #{ns(tile)} {
+      &__title {
+        a,
+        button {
+          @include icon-size-legacy(sm, after);
+        }
+      }
+    }
+  }
+}

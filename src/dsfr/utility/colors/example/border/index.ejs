@@ -1,0 +1,12 @@
+<%
+  const widths = [0.5, 1, 2];
+  const bordersWidth = [];
+  widths.forEach(width => {
+    const borderWidthClass = `${prefix}-border-width-${width.toString().replace('.', '-')}v`;
+    bordersWidth.push({ borderClass: borderWidthClass });
+  });
+%>
+
+<% const sample = getSample(include); %>
+
+<%- sample(getText('subdir.border', 'colors'), '../sample/default', {context: 'border', borders: bordersWidth}, false); %>

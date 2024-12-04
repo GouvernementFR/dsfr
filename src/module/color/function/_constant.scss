@@ -1,0 +1,12 @@
+@use 'src/module/string';
+@use 'src/module/color/variable/constant';
+
+$value: constant.$value;
+
+@function indexed($haystack, $index: 1) {
+  @return string.replace($haystack, $value, get($index));
+}
+
+@function get($id: 1) {
+  @return '$color##{$id}';
+}

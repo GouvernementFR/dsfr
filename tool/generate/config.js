@@ -7,6 +7,7 @@ const yaml = require('js-yaml');
 const { flatten } = require('../utilities/config');
 const { Example } = require('../classes/example/example');
 const { generatePictogram } = require('./pictogram');
+const { generateColors } = require('./colors');
 
 const analyse = (id, path, ascendants = []) => {
   const absolute = root(path);
@@ -103,10 +104,10 @@ const analyse = (id, path, ascendants = []) => {
 
   config.dependencies = dependencies;
   config.replace = replace;
-  config.dist = data.dist ? data.dist : config.path.replace('src', 'dist').replace(data.id, data.filename || data.id);
+  config.dist = data.dist ? data.dist : config.path.replace('src/dsfr', 'dist').replace(data.id, data.filename || data.id);
 
   if (config.standalone) {
-    config.standalone.dist = config.path.replace('src', 'standalone').replace(data.id, data.filename || data.id);
+    config.standalone.dist = config.path.replace('src/dsfr', 'standalone').replace(data.id, data.filename || data.id);
     config.standalone.example = new Example(type, `${path}/standalone/example`, data.example, true).data;
   }
 
@@ -196,7 +197,7 @@ const evaluate = (packages, type) => {
 };
 
 const generateJSON = () => {
-  const config = analyse('dsfr', 'src');
+  const config = analyse('dsfr', 'src/dsfr');
   const packages = flatten(config);
   evaluate(packages, 'style');
   evaluate(packages, 'script');
@@ -211,8 +212,9 @@ const generateJSON = () => {
 
 const generateConfig = async () => {
   generateCore();
-  await generateIcon('src/core/icon');
-  await generatePictogram('src/core/asset/artwork/pictograms');
+  await generateIcon('src/dsfr/core/icon');
+  await generatePictogram('src/dsfr/core/asset/artwork/pictograms');
+  await generateColors();
   generateJSON();
 };
 

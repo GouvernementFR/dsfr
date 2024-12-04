@@ -1,0 +1,54 @@
+////
+/// Callout Module
+/// @group callout
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(callout)} {
+  @include relative();
+  @include padding(6v);
+  @include padding(8v 12v, md);
+  @include set-title-margin(0 0 2v);
+  @include set-text-margin(0);
+  @include margin(map-get($text-spacing, text));
+  background-size: spacing.space(1v 100%);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  @include preference.forced-colors {
+    border-left: 4px solid;
+    @include padding-left(5v);
+    @include padding-left(11v, md);
+  }
+
+  /**
+   * Inclusion de l'icône (optionnel)
+   */
+  @include has-icon {
+    @include before {
+      display: block;
+      @include margin(-2v 0 2v);
+
+      @include respond-from(md) {
+        @include margin(-4v 0 4v -8v);
+      }
+    }
+  }
+
+  @include title() {
+    @include title-style(h4);
+  }
+
+  &__text {
+    @include text-style(lg);
+  }
+
+  /**
+   * Ajout de marge quand on inclut un bouton (optionnel)
+   */
+  #{ns(btn)} {
+    @include margin-top(4v);
+  }
+}

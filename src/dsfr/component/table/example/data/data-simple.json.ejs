@@ -1,0 +1,75 @@
+<%
+const table = locals.table || {};
+
+const dataLorem = JSON.parse(include('../data/data-lorem.json.ejs', { table: table.table }));
+
+const thead = dataLorem.thead;
+const tbodies = dataLorem.tbodies;
+
+const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkbox});
+const getSrOnlyCell = (content) => `<span class="${prefix}-sr-only">${content}</span>`;
+
+thead.forEach((row, rowIndex) => {
+  row.forEach((th, thIndex) => {
+    th.attributes = {
+      ...th.attributes,
+      scope: 'col'
+    };
+  });
+});
+
+if (table.selectable) {
+  thead.forEach((row) => {
+    row.unshift({
+      attributes: {
+        role: 'columnheader'
+      },
+      classes: [`${prefix}-cell--fixed`],
+      content: getSrOnlyCell(getText('data.cell.action.select', 'table'))
+    });
+  });
+  tbodies.forEach((tbody) => {
+    tbody.forEach((row, index) => {
+      row.unshift({
+        markup: 'th',
+        attributes: {scope: 'row'},
+        classes: [`${prefix}-cell--fixed`],
+        content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, label: `${getText('data.cell.action.selectRow', 'table')} ${index + 1}`, attributes: {[`data-${prefix}-row-select`]: 'true'}})
+      });
+    });
+  });
+}
+
+if (table.doubleEntry) {
+  thead.forEach((row) => {
+    row.unshift({
+      attributes: {
+        role: 'columnheader'
+      },
+      classes: [`${prefix}-cell--fixed`],
+      content: getSrOnlyCell(getText('data.cell.doubleEntry', 'table'))
+    });
+  });
+
+  tbodies.forEach((tbody) => {
+    tbody.forEach((row, index) => {
+      row.unshift({
+        markup: 'th',
+        attributes: {scope: 'row'},
+        classes: [`${prefix}-cell--fixed`],
+        content: `th${index}`
+      });
+    });
+  });
+}
+
+const data = {
+  table: {
+    ...table,
+    thead,
+    tbodies
+  }
+};
+%>
+
+<%- JSON.stringify(data); %>

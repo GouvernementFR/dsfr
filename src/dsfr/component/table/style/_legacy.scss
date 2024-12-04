@@ -1,0 +1,112 @@
+////
+/// Table Legacy
+/// @group table
+////
+
+@use 'src/module/legacy';
+@use 'src/module/spacing';
+@use 'src/module/color';
+
+@include legacy.is(ie11) {
+  #{ns(table)} {
+    &__header {
+      #{ns(segmented)} {
+        flex: 1;
+      }
+
+      #{ns(table__detail)} {
+        flex: 2;
+      }
+    }
+
+    &__content {
+      table {
+        background-image: none;
+        @include color.border(contrast grey, (legacy: true, important: false, side: 'left'));
+        @include color.border(contrast grey, (legacy: true, important: false, side: 'right'));
+
+        thead {
+          tr {
+            th,
+            th:last-child {
+              background-image: none;
+            }
+
+            th[role='columnheader'] {
+              background-size: 1px 100%;
+              background-repeat: no-repeat;
+              background-position: 100% 0;
+            }
+
+            &:first-child {
+              th {
+                @include color.border(contrast grey, (legacy: true, important: false, side: 'top'));
+              }
+            }
+
+            &:last-child {
+              th {
+                @include color.border(plain grey, (legacy: true, important: false, side: 'bottom'));
+              }
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            background-image: none;
+
+            &[aria-selected=true] {
+              @include after(none);
+
+              th,
+              td {
+                border-top: 2px solid #{color.$blue-france};
+                border-bottom: 2px solid #{color.$blue-france};
+
+                &:first-child {
+                  border-left: 2px solid #{color.$blue-france};
+                }
+
+                &:last-child {
+                  border-right: 2px solid #{color.$blue-france};
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &#{ns-attr(js-table, true)} {
+      #{ns(table__wrapper)} {
+        @include after(none);
+      }
+
+      &#{ns(table--caption-bottom)} {
+        caption {
+          @include relative;
+          @include margin-bottom(4v);
+        }
+      }
+
+      caption {
+        @include relative;
+        @include margin-bottom(4v);
+      }
+    }
+
+    &--bordered {
+      table {
+        th,
+        td {
+          @include color.border(contrast grey, (legacy: true, important: false, side: 'right'));
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}

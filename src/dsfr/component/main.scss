@@ -1,0 +1,56 @@
+////
+/// Component Main
+/// @group component
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(1);
+@include media-query.order;
+
+@import 'upload/main';
+@import 'range/main';
+@import 'accordion/main';
+@import 'badge/main';
+@import 'logo/main';
+@import 'button/main';
+@import 'connect/main';
+@import 'quote/main';
+@import 'breadcrumb/main';
+@import 'form/main';
+@import 'stepper/main';
+@import 'tooltip/main';
+@import 'link/main';
+@import 'sidemenu/main';
+@import 'highlight/main';
+@import 'tab/main';
+@import 'pagination/main';
+@import 'summary/main';
+@import 'table/main';
+@import 'tag/main';
+@import 'download/main';
+@import 'alert/main';
+@import 'notice/main';
+@import 'radio/main';
+@import 'card/main';
+@import 'checkbox/main';
+@import 'segmented/main';
+@import 'toggle/main';
+@import 'skiplink/main';
+@import 'select/main';
+@import 'callout/main';
+@import 'modal/main';
+@import 'navigation/main';
+@import 'share/main';
+@import 'footer/main';
+@import 'tile/main';
+@import 'translate/main';
+@import 'transcription/main';
+@import 'input/main';
+@import 'search/main';
+@import 'content/main';
+@import 'consent/main';
+@import 'follow/main';
+@import 'password/main';
+@import 'header/main';

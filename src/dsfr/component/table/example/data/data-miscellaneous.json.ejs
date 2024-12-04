@@ -1,0 +1,118 @@
+<%
+const table = locals.table || {};
+
+const getSrOnlyCell = (content) => `<span class="${prefix}-sr-only">${content}</span>`;
+const getTextCell = (markup = 'span', classes = `${prefix}-cell__desc`) => `<${markup} class="${classes}">${getText('data.cell.text', 'table')}</${markup}>`;
+const getTitleCell = (markup = 'span', classes = `${prefix}-cell__title`) => `<${markup} class="${classes}">${getText('data.cell.title', 'table')}</${markup}>`;
+
+const getBadge = (badge) => include('../../../badge/template/ejs/badge.ejs', {badge});
+const getButton = (button) => include('../partials/getButton.ejs', {button});
+const getCheckbox = (checkbox) => include('../partials/getCheckbox.ejs', {checkbox});
+const getIcon = (icon) => include('../../../../core/template/ejs/icon/icon.ejs', {icon});
+const getInput = (input) => include('../../../input/input-base/template/ejs/input-group.ejs', {input});
+const getLink = (link) => include('../../../link/template/ejs/link.ejs', {link});
+const getPictogram = (pictogram) => include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram});
+const getTag = (tag) => include('../../../tag/template/ejs/tag.ejs', {tag});
+
+const thead = [
+  [
+    {
+      attributes: {
+        role: 'columnheader'
+      },
+      classes: [`${prefix}-cell--fixed`],
+      content: getSrOnlyCell(getText('data.cell.action.select', 'table'))
+    },
+    {
+      content: getTitleCell()
+    },
+    {
+      content: getTitleCell('div') + getTextCell('div')
+    },
+    {
+      content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: `${table.id}-thead-sort-asc-desc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})}</div>`
+    },
+    {
+      content: getButton({id: `${table.id}-thead-sort-descending`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sort': 'descending'}})
+    },
+    {
+      content: `${getTextCell()} ${getButton({label: getText('data.cell.text', 'table'), classes: [`${prefix}-ml-2v`, `${prefix}-btn--tooltip`], tooltip: {id: `${table.id}-thead-tooltip`, content: lorem()}})}`
+    },
+    {
+      content: getButton({id: `${table.id}-thead-sort-ascending`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sort': 'ascending'}})
+    },
+    {
+      content: getBadge({id: `${table.id}-thead-badge`, type: 'info', label: getText('data.cell.label', 'table')})
+    },
+    {
+      content: getTextCell()
+    },
+    {
+      content: getTitleCell()
+    },
+    {
+      content: getTitleCell() + getTextCell('span', `${prefix}-cell__desc ${prefix}-ml-2v`)
+    },
+    {
+      content: getIcon({name: 'arrow-right-s-line', size: 'sm', classes: [`${prefix}-mr-2v`]}) + getText('data.cell.text', 'table')
+    }
+  ]
+];
+
+const rowsLength = 6;
+const selectedLines = [0, 3, 4];
+const tbody = new Array(rowsLength);
+for(let r = 0; r < rowsLength; r++) {
+  tbody[r] = [
+    {
+      markup: 'th',
+      attributes: {scope: 'row'},
+      classes: [`${prefix}-cell--fixed`],
+      content:  getCheckbox({id: `${table.id}-select-row-checkbox-${r + 1}`, label: `${getText('data.cell.action.selectRow', 'table')} ${r + 1} : ${getText('data.cell.title', 'table')}`, attributes: {[`data-${prefix}-row-select`]: 'true', checked: selectedLines.includes(r) || undefined}}) + getTitleCell('span')
+    },
+    {
+      content: getText('data.cell.text', 'table')
+    },
+    {
+      content: getBadge({type: 'info', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mb-2v`], size: 'sm'}) + getTitleCell('div', `${prefix}-cell__title ${prefix}-mb-2v`) + getTextCell('div')
+    },
+    {
+      content: getBadge({type: 'success', label: getText('data.cell.label', 'table'), classes: [`${prefix}-mr-2v`], size: 'sm'}) + getText('data.cell.text', 'table')
+    },
+    {
+      content: getText('data.cell.text', 'table')
+    },
+    {
+      content: getInput({id: `text-input-text-${r + 1}`})
+    },
+    {
+      content: getText('data.cell.number', 'table')
+    },
+    {
+      content: getBadge({type: 'info', label: getText('data.cell.label', 'table')})
+    },
+    {
+      content: getButton({kind: 2})
+    },
+    {
+      content: getTag({type: 'clickable', href: '#', label: getText('data.cell.label', 'table')})
+    },
+    {
+      content: getLink({download: true, href: '/example/img/image.jpg', label: getText('data.cell.download.label', 'table'), detail: getText('data.cell.download.detail', 'table')})
+    },
+    {
+      content: getPictogram({name: 'leaf'})
+    }
+  ];
+}
+
+const data = {
+  table: {
+    ...table,
+    thead,
+    tbodies: [tbody]
+  }
+};
+%>
+
+<%- JSON.stringify(data); %>

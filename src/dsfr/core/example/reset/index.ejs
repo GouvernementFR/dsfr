@@ -1,0 +1,39 @@
+<%
+ let ul = {
+   lis:[{
+       lis:[{
+            lis:[{}, {}, {}]
+       }, {}, {}]
+     }, {text: true}, {}
+   ]}
+ %>
+<%
+let ol = {
+  lis:[{
+      lis:[{
+        lis:[{}, {}, {}]
+      }, {text: true}, {}]
+    }, {}, {}
+  ]}
+%>
+
+<% const sample = getSample(include); %>
+
+
+<%- sample('Test de titre de paragraphe :', './sample/headings', {}, true); %>
+
+<%- sample('Test de paragraphe et de lien interne :', './sample/paragraph', { paragraph: {insert: '<a title="titre lien interne" href="#" target="_self">lien interne</a>'} }, true); %>
+
+<%- sample('Test de paragraphe et de lien externe :', './sample/paragraph', { paragraph: {insert: `<a href="#" rel="noopener external" target="_blank" title="${getBlankTitle('lien externe')}">lien externe - nouvelle fenêtre</a>`} }, true); %>
+
+<%- sample('Test de liste non-ordonnée:', './sample/ul', {list:ul}, true); %>
+
+<%- sample('Test de liste ordonnée :', './sample/ol', {list:ol}, true); %>
+
+<%- sample('Test de liste de description :', './sample/dl', {}, true); %>
+
+<%- sample('Séparateur de base - hr', './sample/hr', {}, true); %>
+
+<%- sample('Test d\'exposant :', './sample/paragraph', { paragraph: { insert: 'un texte avec un <sup>exposant</sup>' }}, true); %>
+
+<%- sample('Test d\'indice :', './sample/paragraph', { paragraph: { insert: 'un texte avec un <sub>indice</sub>' }}, true); %>

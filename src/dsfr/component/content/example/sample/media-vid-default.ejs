@@ -1,0 +1,16 @@
+<%
+const content = locals.content || {};
+const data = {
+  vid: {
+    ...vidData(null, getText('sample.video.title', 'content'), content.ratio || null)},
+    caption: 'Description / Source',
+    link: {
+      label: 'Libellé lien',
+      href: "#"
+    },
+    id: content.id || uniqueId('media'),
+    ...content
+};
+%>
+
+<%- include('media-default', {content:data}); %>

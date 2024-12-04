@@ -1,0 +1,64 @@
+<script>
+  const urlPageTitle = 'JS Single Page Application Router';
+  const HREF = document.location.href;
+
+  // create document click that watches the nav links only
+  document.addEventListener('click', (e) => {
+    if (!e.target.matches('a[href]')) return;
+    const href = e.target.href;
+    if (href.indexOf(HREF) === -1) return;
+
+    e.preventDefault();
+    window.history.pushState({}, '', href);
+    handleUrlLocation();
+  });
+
+  // create an object that maps the url to the template, title, and description
+  const urlRoutes = {
+    404: {
+      template: '<h1>404</h1><p>Page not found</p',
+      title: '404 | ' + urlPageTitle,
+      description: 'Page not found',
+    },
+    '': {
+      template: 'lorem ipsum dolor sit amet',
+      title: 'Home | ' + urlPageTitle,
+      description: 'This is the home page',
+    },
+    'link': {
+      template: `<a href="#" data-<%= prefix %>-analytics-click="libellé du lien envoyé à l'analytics" id="link-attr-click">test</a>`,
+      title: 'Links | ' + urlPageTitle,
+      description: 'This is the about page',
+    },
+    'button': {
+      template: `<button type="button" id="btn-3" class="<%= prefix %>-btn">Button page 3</button>`,
+      title: 'Buttons | ' + urlPageTitle,
+      description: 'This is the contact page',
+    },
+  };
+
+  // create a function that handles the url location
+  const handleUrlLocation = async () => {
+    let location = window.location.href.replace(HREF, ''); // get the url route
+
+    // get the route object from the urlRoutes object
+    const route = urlRoutes[location] || urlRoutes['404'];
+    // get the html from the template
+    const html = route.template;
+    // set the content of the content div to the html
+    document.getElementById('content').innerHTML = html;
+    // set the title of the document to the title of the route
+    document.title = route.title;
+    // set the description of the document to the description of the route
+    //   document
+    //     .querySelector('meta[name="description"]')
+    //     .setAttribute('content', route.description);
+  };
+
+  // add an event listener to the window that watches for url changes
+  window.onpopstate = handleUrlLocation;
+  // call the handleUrlLocation function to handle the initial url
+  window.route = handleUrlLocation;
+  // call the handleUrlLocation function to handle the initial url
+  handleUrlLocation();
+</script>

@@ -1,0 +1,62 @@
+
+<%
+const sample = getSample(include);
+let loremData = JSON.parse(include('./data/data-lorem.json.ejs'));
+const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
+%>
+
+<%-
+  sample(getText('sample.default', 'table'), './sample/table-simple', {table: {table: {id: 'table-md', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample(getText('sample.sm', 'table'), './sample/table-simple', {table: {size: 'sm', table: {id: 'table-sm', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample(getText('sample.lg', 'table'), './sample/table-simple', {table: {size: 'lg', table: {id: 'table-lg', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample(getText('sample.bordered', 'table'), './sample/table-simple', {table: {bordered: true, table: {id: 'table-bordered', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample(getText('sample.noScroll', 'table'), './sample/table-simple', {table: {noScroll: true, table: {id: 'table-no-scroll', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample({title: getText('sample.columnSizes.title', 'table'), subtitle: getText('sample.columnSizes.subtitle', 'table')}, './sample/table-column-sizes', {table: {table: {id: 'table-column-sizes', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample({title: getText('sample.utilityClasses.title', 'table'), subtitle: getText('sample.utilityClasses.subtitle', 'table')}, './sample/table-utility-classes', {table: {bordered: true, table: {id: 'table-default', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample({title: getText('sample.multiline.title', 'table'), subtitle: getText('sample.multiline.subtitle', 'table')}, './sample/table-simple', {table: {table: {id: 'table-multiline', classes: [`${prefix}-cell--multiline`], caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample(getText('sample.noCaption', 'table'), './sample/table-simple', {table: {noCaption: true, table: {id: 'table-noCaption', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample(getText('sample.captionBottom', 'table'), './sample/table-simple', {table: {captionBottom: true, table: {id: 'table-captionBottom', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample(getText('sample.selectable', 'table'), './sample/table-simple', {table: {table: {id: 'table-selectable', caption: getText('data.caption.default', 'table'), selectable: true}}}, true);
+%>
+
+<%-
+  sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {table: {id: 'table-double-entry', caption: getText('data.caption.default', 'table'), doubleEntry: true}}}, true);
+%>
+
+<%-
+  sample({title: getText('sample.complex.title', 'table'), subtitle: getText('sample.complex.subtitle', 'table')}, './sample/table-default', {table: {bordered: true, table: {id: 'table-complex', caption: getText('data.caption.default', 'table'), captionDetail: getText('data.caption.detail', 'table'), ...complexData}}}, true);
+%>
+
+<%-
+  sample(getText('sample.miscellaneous', 'table'), './sample/table-miscellaneous', {table: {header: true, footer: true, table: {id: 'table-miscellaneous', caption: getText('data.caption.large', 'table')}}}, true);
+%>

@@ -1,0 +1,10 @@
+////
+/// Navigation Print
+/// @group core
+////
+
+@use 'src/module/selector';
+
+@media print {
+  @import 'style/print';
+}

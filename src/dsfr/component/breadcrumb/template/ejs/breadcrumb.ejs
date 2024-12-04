@@ -1,0 +1,55 @@
+<%#
+# paramètres breadcrumb
+
+* breadcrumb.id (required):
+
+* breadcrumb.segments (array, required) : Tableau de données de chaque segment du fil d'Ariane
+  ** breadcrumb.segments[].path : partie de l'url
+  ** breadcrumb.segments[].label : le libellé du segment
+  ** breadcrumb.segments[].markup : tag html des boutons (a/button), si non défini, a
+
+* breadcrumb.button: Libellé du bouton du Fil d'Ariane en mobile
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let breadcrumb = locals.breadcrumb || {segments : []};
+if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane';
+%>
+
+<nav role="navigation" class="<%= prefix %>-breadcrumb" aria-label="vous êtes ici :">
+  <button type="button" class="<%= prefix %>-breadcrumb__button" aria-expanded="false"
+    aria-controls="<%= breadcrumb.id %>"><%= breadcrumb.button %></button>
+  <div class="<%= prefix %>-collapse" id="<%= breadcrumb.id %>">
+    <ol class="<%= prefix %>-breadcrumb__list">
+      <%
+        let path = '';
+        for (let i = 0; i < breadcrumb.segments.length; i++) {
+            const segmentAttrs = {};
+            const segment = breadcrumb.segments[i];
+            const markup = segment.markup || 'a';
+            if (markup === 'button') segmentAttrs.type = 'button';
+            if (segment.path != undefined) path += segment.path + '/';
+            if (segment.id) segmentAttrs.id = segment.id;
+            if (i === breadcrumb.segments.length - 1) {
+              segmentAttrs['aria-current'] = 'page';
+            } else {
+              if (markup == 'a') {
+                if (segment.href) {
+                  segmentAttrs['href'] = segment.href;
+                } else {
+                  segmentAttrs['href'] = path;
+                }
+              }
+            }
+        %>
+      <li>
+        <<%= markup %> class="<%= prefix %>-breadcrumb__link" <%- includeAttrs(segmentAttrs);%>><%= segment.label %></<%= markup %>>
+      </li>
+      <% } %>
+    </ol>
+  </div>
+
+</nav>

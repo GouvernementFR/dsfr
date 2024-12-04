@@ -1,0 +1,10 @@
+<%
+let notice = locals.notice || {};
+let data = {
+  ...notice,
+  button: { label: 'Masquer le message', attributes: {title: 'Masquer le message', onclick: 'const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)'}},
+  dismissible: true
+};
+ %>
+
+<%- include('notice-default.ejs', {notice:data}); %>

@@ -1,0 +1,77 @@
+////
+/// Navigation Legacy
+/// @group navigation
+////
+
+@use 'src/module/color';
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * reset liste à puce
+  */
+  #{ns(nav)} {
+    @include disable-underline-legacy;
+    @include disable-list-style-legacy;
+
+    &__link,
+    &__btn {
+      @include color.transparent-background((legacy: true, hover: true));
+    }
+
+    &__btn {
+      @include icon-legacy(arrow-down-s-line, sm, after);
+    }
+  }
+
+  /**
+  * reset margin
+  */
+  #{ns(mega-menu)} {
+    &__category {
+      margin: 0;
+    }
+  }
+}
+
+@include respond-from(lg) {
+  @include legacy.is(ie11) {
+    #{ns(nav__list)} {
+      & > #{ns(nav)}__item:first-child:nth-last-child(2),
+      & > #{ns(nav)}__item:first-child:nth-last-child(3),
+      & > #{ns(nav)}__item:first-child:nth-last-child(4) {
+        &,
+        & ~ * {
+          flex-basis: auto;
+        }
+      }
+    }
+
+    #{ns(nav)}__item {
+      position: static;
+      flex-basis: 100%;
+
+      #{ns(nav)}__link,
+      #{ns(nav)}__btn, {
+        max-width: 100%;
+        flex-wrap: nowrap;
+      }
+
+      &--align-right {
+        position: relative;
+        #{ns(collapse)} {
+          right: 0;
+        }
+      }
+    }
+
+    /**
+    * Override du reset des marges des ul
+    **/
+    #{ns(menu)} {
+      #{ns(menu__list)} {
+        @include margin-bottom(8v);
+      }
+    }
+  }
+}

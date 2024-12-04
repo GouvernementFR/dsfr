@@ -1,0 +1,46 @@
+<%#
+# paramètres footer partners
+
+* partners (object, required) : Paramètres du template
+  ** partners.title (string, required) : Titre du bloc partenaire
+  ** partners.mainPartner (object, required) : Paramètre de l'image du partenaire principal - voir src/core/template/ejs/media/img.ejs
+    *** partners.mainPartner.href (string, required) : Lien du partenaire principal
+    *** partners.mainPartner.src (object, optional) : Chemin vers l'image du partenaire principal
+    *** partners.mainPartner.alt (string, optional) : Texte alternatif de l'image du partenaire principal
+  ** partners.subPartners (array, required) : Tableau de paramètre des images des partenaires secondaires - voir src/core/template/ejs/media/img.ejs
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+  let partners = locals.partners || {}
+  const attributes = partners.attributes || {};
+%>
+
+<h2 class="<%= prefix %>-footer__partners-title"><%- partners.title %></h2>
+<div class="<%= prefix %>-footer__partners-logos">
+  <% if (partners.mainPartner) { %>
+    <div class="<%= prefix %>-footer__partners-main">
+      <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- partners.mainPartner.href %>">
+        <%- include('../../../../core/template/ejs/media/img.ejs',  {media: {...partners.mainPartner, classes: [prefix + '-footer__logo']}}); %>
+      </a>
+    </div>
+  <% } %>
+
+  <% if (partners.subPartners && partners.subPartners.length) { %>
+    <div class="<%= prefix %>-footer__partners-sub">
+      <ul>
+        <%
+          for (subPartner of partners.subPartners) {
+            const attributes = subPartner.attributes || {};
+        %>
+          <li>
+            <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- subPartner.href %>">
+              <%- include('../../../../core/template/ejs/media/img.ejs', {media: {...subPartner, classes: [prefix + '-footer__logo']}}); %>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  <% } %>
+</div>

@@ -1,0 +1,56 @@
+////
+/// Link Tool : icons
+/// @group link
+////
+
+@use 'src/module/spacing';
+
+@mixin _build-link-icon($size-settings, $place, $size:md, $override-icon: true) {
+
+  $icon-size: icon-size(map_get($size-settings, icon));
+
+  @if $place == only {
+    $icon-size: icon-size(map_get($size-settings, icon-only));
+  }
+
+  $icon-margin: _link-icon-margin(map_get($size-settings, icon));
+  $icon-margin-x: spacing.space(map_get($size-settings, icon-margin-x));
+
+  @if $place == left {
+    overflow: initial;
+    max-width: 100%;
+    max-height: none;
+    @include before {
+      --icon-size: #{$icon-size};
+      margin-left: -($icon-margin);
+      margin-right: $icon-margin-x;
+    }
+  }
+  @else if $place == right {
+    overflow: initial;
+    max-width: 100%;
+    max-height: none;
+    @include icon-content(false, $override-icon) {
+      --icon-size: #{$icon-size};
+      margin-right: -($icon-margin);
+      margin-left: $icon-margin-x;
+    }
+  }
+  @else if $place == only {
+    $min-height: spacing.space(map_get($size-settings, min-height));
+    $padding-x: ($min-height - $icon-size) * 0.5;
+
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: $min-height;
+    max-height: $min-height;
+    padding-left: $padding-x;
+    padding-right: $padding-x;
+
+    @include before {
+      --icon-size: #{$icon-size};
+      margin-left: 0;
+      margin-right: $padding-x;
+    }
+  }
+}

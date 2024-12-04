@@ -1,0 +1,15 @@
+<% const sample = getSample(include); %>
+<% const rawSubtitle = `Utilisation de la classe <code>${prefix}-raw-link</code> sur les balises de lien pour les afficher de manière brut.` %>
+<% const rawWrapperSubtitle = `Utilisation de la classe <code>${prefix}-raw-link</code> sur un wrapper pour afficher les liens de manière brut.` %>
+
+<div class="<%= prefix %>-container" >
+  <%- section('Liens bruts', null, 0) %>
+
+  <%- sample({ title: 'Lien brut', subtitle: rawSubtitle }, '../../reset/sample/paragraph', { paragraph: {insert: `<a class="${prefix}-raw-link" title="titre lien" href="../">lien interne</a>`} }, true); %>
+
+  <%- sample({ title: 'Lien externe brut', subtitle: rawSubtitle }, '../../reset/sample/paragraph', { paragraph: {insert: `<a class="${prefix}-raw-link" href="https://www.systeme-de-design.gouv.fr/" rel="noopener external" target="_blank" title="lien externe - nouvelle fenêtre">lien externe - nouvelle fenêtre</a>`} }, true); %>
+
+  <%- sample({ title: 'Exemple sur plusieurs blocs de texte', subtitle: rawWrapperSubtitle}, '../sample/blocks', { classes: [`${prefix}-raw-link`], paragraphes: [ {insert: `<a title="titre lien" href="../">lien interne</a>`}, {insert: `<a href="https://www.systeme-de-design.gouv.fr/" rel="noopener external" target="_blank" title="lien externe - nouvelle fenêtre">lien externe - nouvelle fenêtre</a>`}] }, true); %>
+
+  <%- sample({ title: 'Exemple d\'utilisation avec une librairie externe', subtitle: rawWrapperSubtitle }, '../sample/library', { classes: [`${prefix}-raw-link`] }, true); %>
+</div>

@@ -83,12 +83,12 @@ Une structure minimale serait :
 └── favicon/
 └── fonts/
 └── utility/
-  └── utilities.min.css
+  └── utility.min.css
 ```
 
 Les polices de caractères utilisées sur le DS, à savoir la Marianne et la Spectral, sont des fichiers .woff et .woff2, ils doivent se trouver dans le répertoire `fonts`. Les dossiers `fonts` et `favicon` doivent être placés au même niveau que le dossier contenant le CSS du core du dsfr (ou au même niveau que le css `dsfr.min.css` à la racine de dist, qui contient le core).
 
-Le fichier `utilities.min.css` doit être placé un niveau plus bas que le dossier `icons`, dans dossier utility par exemple, pour respecter les chemins d'accès vers les icônes.
+Le fichier `utility.min.css` doit être placé un niveau plus bas que le dossier `icons`, dans dossier utility par exemple, pour respecter les chemins d'accès vers les icônes.
 
 ### Le HTML
 
@@ -171,7 +171,7 @@ Il est **impératif** d’appeler les **deux fichiers** javascript afin que le c
 </html>
 ```
 
-> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://github.com/GouvernementFR/dsfr/blob/main/src/analytics/doc/analytics.md)
+> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://github.com/GouvernementFR/dsfr/blob/main/src/dsfr/analytics/doc/analytics.md)
 
 De la même façon que le CSS il est possible d’importer uniquement le JS des composants utilisés (et leurs dépendances).
 

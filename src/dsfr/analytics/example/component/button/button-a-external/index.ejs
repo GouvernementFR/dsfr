@@ -1,0 +1,8 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+
+  <%- section('Étiquette d’élément A', null, 0) %>
+
+  <%- sample('lien externe', '../../../../../component/button/template/ejs/button.ejs', { button: { label: 'Libellé a externe', id: uniqueId('button'), markup:'a', href:'https://www.systeme-de-design.gouv.fr/', blank: true, attributes: {title: getBlankTitle('Libellé a externe')} } }); %>
+</div>

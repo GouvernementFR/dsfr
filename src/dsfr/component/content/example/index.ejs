@@ -1,0 +1,53 @@
+<% const sample = getSample(include, 666); %>
+
+<%- sample('Média image edito', './sample/media-img', {}, true); %>
+
+<%- sample('Média image edito, petite taille', './sample/media-img', { content: { size:'sm' } }, true); %>
+
+<%- sample('Média image edito, grande taille', './sample/media-img', { content: { size:'lg' } }, true); %>
+
+<%- sample('Média image edito ratio 32x9', './sample/media-img', { content: { ratio:'32x9' } }, true); %>
+
+<%- sample('Média image edito ratio 16x9', './sample/media-img', { content: { ratio:'16x9' } }, true); %>
+
+<%- sample('Média image edito ratio 3x2', './sample/media-img', { content: { ratio:'3x2' } }, true); %>
+
+<%- sample('Média image edito ratio 4x3', './sample/media-img', { content: { ratio:'4x3' } }, true); %>
+
+<%- sample('Média image edito ratio 1x1', './sample/media-img', { content: { ratio:'1x1' } }, true); %>
+
+<%- sample('Média image edito ratio 3x4', './sample/media-img', { content: { ratio:'3x4' } }, true); %>
+
+<%- sample('Média image edito ratio 2x3', './sample/media-img', { content: { ratio:'2x3' } }, true); %>
+
+<%- sample('Média image en svg, porteur d’information', './sample/media-svg', { content: { illustration: false, transcription: true } }, true); %>
+
+<%- sample('Média image, SVG décoratif', './sample/media-svg', { content: { illustration: true } }, true); %>
+
+<%- sample('Média image avec une transcription', './sample/media-img', { content: { img: { ratio:'2x3', src: '../../../example/img/placeholder-transcription.jpg', caption: getText('sample.img.caption', 'content'), alt: getText('sample.img.alternative', 'content') }, link: {label: getText('sample.img.link', 'content'), href: '#'}, transcription: { title: getText('sample.img.transcription.title', 'content'), content: getText('sample.img.transcription.content', 'content')}}}, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 16/9 par défaut', './sample/media-vid-default', { content: { transcription: true } }, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 16/9 par défaut, petite taille', './sample/media-vid-default', { content: { size:'sm', transcription: true } }, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 16/9 par défaut, grande taille', './sample/media-vid-default', { content: { size:'lg', transcription: true } }, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 4x3', './sample/media-vid-4x3', { content: { transcription: true } }, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 4x3, petite taille', './sample/media-vid-4x3', { content:{ size:'sm', transcription: true } }, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 4x3, grande taille', './sample/media-vid-4x3', { content:{ size:'lg', transcription: true } }, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 1x1', './sample/media-vid-1x1', { content: { transcription: true } }, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 1x1, petite taille', './sample/media-vid-1x1', { content: { size:'sm', transcription: true } }, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 1x1, grande taille', './sample/media-vid-1x1', { content: { size:'lg', transcription: true } }, true); %>
+
+<%- deprecation(); %>
+
+<%- sample('Média video edito, ratio d’aspect 16/9 par défaut', '../deprecated/example/sample/media-vid-default', {}, true); %>
+
+<%- sample('Média video edito, ratio d’aspect 4/3', '../deprecated/example/sample/media-vid-default', { content: { ratio:'4x3' } }, true); %>
+
+<%- sample('Média image edito, ratio d’aspect 4/3', '../deprecated/example/sample/media-img', { content: { ratio:'4x3' } }, true); %>

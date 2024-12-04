@@ -1,0 +1,16 @@
+////
+/// Toggle Module : Group
+/// @group toggle
+////
+
+#{ns(toggle)}__list {
+  @include disable-list-style;
+
+  li {
+    @include margin-bottom(4v);
+
+    &:last-child {
+      @include margin-bottom(0);
+    }
+  }
+}

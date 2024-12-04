@@ -1,0 +1,62 @@
+////
+/// Card Module - default
+/// @group card
+////
+
+@use 'src/module/preference';
+
+#{ns(card)} {
+  @include display-flex(column);
+  @include relative();
+  @include preference.forced-colors {
+    border: 1px solid;
+  }
+
+  &#{ns(enlarge-link)},
+  &#{ns(enlarge-button)} {
+    #{ns(card)}__title {
+      a,
+      button {
+        @include icon-size(md, after) {
+          @include absolute(null, 8v, 8v);
+        }
+      }
+    }
+  }
+
+  &:not(&--no-border):not(&--shadow) {
+    background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+    @include padding(1px);
+  }
+
+  &--no-icon,
+  &:not(#{ns(enlarge-link)}):not(#{ns(card--download)}) {
+    #{ns(card__title)} {
+      a:not([target="_blank"]) {
+        @include after(none);
+      }
+    }
+  }
+
+  &--no-icon,
+  &:not(#{ns(enlarge-button)}):not(#{ns(card--download)}) {
+    #{ns(card__title)} {
+      button {
+        @include after(none);
+      }
+    }
+  }
+
+  @include body() {
+    @include display-flex(column);
+    @include height(100%);
+    flex: 1 1 auto;
+    order: 2;
+  }
+
+  #{ns(grid-row)} & {
+    @include size(null, 100%);
+  }
+}

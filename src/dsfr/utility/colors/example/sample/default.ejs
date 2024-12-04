@@ -1,0 +1,60 @@
+<style>
+  .sample-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .sample-box span,
+  .sample-box p {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 64px;
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--border-plain-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+<%
+  const context = locals.context;
+  const borders = locals.borders;
+  const colors = JSON.parse(include('../../../../../../.config/colors.json'));
+  const items = colors.items;
+  const families = colors.families;
+  const decisions = colors.decisions;
+  const usages = decisions[context];
+%>
+
+<% for (const usage of usages) { %>
+  <h4 class="<%= prefix %>-mt-16v">Usage : <%= usage %></h4>
+  <% for (const family of families) { %>
+    <% const backgroundColors = items.filter(item => item.context === context && item.usage === usage && item.family === family); %>
+    <% if (backgroundColors.length) { %>
+      <h5 class="<%= prefix %>-mt-8v">Family : <%= family %></h5>
+      <% for (const color of backgroundColors) { %>
+        <div class="sample-box <%= prefix %>-mb-2v">
+          <% if (context === 'text') { %>
+            <% let backgroundAttributes = color.usage === 'inverted' ? {style: 'background-color: #7b7b7b'} : {}; %>
+            <p class="<%= color.colorClass %> <%= prefix %>-mb-0" <%- includeAttrs(backgroundAttributes);%>>Aa</p>
+          <% } else { %>
+            <span class="<%= color.colorClass %>"></span>
+          <% } %>
+          <code class="<%= prefix %>-ml-4v"><%= color.colorClass %></code>
+        </div>
+      <% } %>
+    <% } %>
+  <% } %>
+<% } %>
+
+<% if (context === 'border') { %>
+  <h3 class="<%= prefix %>-mt-16v">Classes utilitaires de largeur de bordures</h3>
+  <% for (const border of borders) { %>
+    <div class="sample-box <%= prefix %>-mb-2v">
+      <span class="<%= border.borderClass %>"></span>
+      <code class="<%= prefix %>-ml-4v"><%= border.borderClass %></code>
+    </div>
+  <% } %>
+<% } %>

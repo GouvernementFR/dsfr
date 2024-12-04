@@ -1,0 +1,31 @@
+////
+/// Header Module : default
+/// @group header
+////
+
+@use 'src/module/media-query';
+@use 'src/module/preference';
+
+#{ns(header)} {
+  @include disable-underline;
+  @include disable-list-style;
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+  @include size(100%);
+  @include relative;
+
+  @include body {
+    &-row {
+      @include display-flex(row, center, flex-start);
+      @include margin(0 -4v);
+      @include padding(6v 0, lg);
+    }
+  }
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+    @include media-query.respond-from(lg) {
+      outline: none;
+    }
+  }
+}

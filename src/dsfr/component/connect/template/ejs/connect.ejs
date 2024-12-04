@@ -1,0 +1,83 @@
+<%#
+# paramètres connect
+
+* connect.id (string) : id du bouton connect
+
+* connect.type (string) : attribut type du bouton connect
+
+* connect.link (object, required) paramètres du lien france connnect
+  ** connect.link.href (string, required) : lien vers france connect
+  ** connect.link.label (string, required) : Libellé "Qu'est ce que france connect ?"
+  ** connect.link.attributes (object, optionnal) : Attributs supplémentaire sur le lien (ex: {target:'_blank'})
+  ** connect.link.newWindow (string, optionnal) : Libellé du lien pour ouvrir dans une nouvelle fenêtre
+
+* connect.variant (string, optional) variante du bouton connect
+
+* connect.login (string, required) : texte "Se connecter avec" du bouton
+
+* connect.brand (string, required) : texte "FranceConnect" du bouton
+
+* connect.disabled (boolean, optional) : si valeur true, bouton désactivé
+
+* connect.markup (String, optional) : tag html du bouton, si valeur 'a', génère un lien au lieu d'un bouton
+
+* isStandalone (boolean, optional): si valeur true, génére la version standalone (sans dsfr)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const connect = locals.connect || {};
+const connectClasses = [];
+const connectAttrs = {};
+if (connect.id) connectAttrs.id = connect.id;
+const markup = connect.markup || 'button';
+if (markup === 'a' && !connect.disabled) connectAttrs.href = '';
+if (markup === 'button') connectAttrs.type = connect.type || 'button';
+connectClasses.push(prefix + '-connect');
+
+switch(connect.variant) {
+  case 'plus':
+    connectClasses.push(prefix + '-connect--plus');
+  break;
+
+  case 'agent':
+    connectClasses.push(prefix + '-connect--agent');
+  break;
+}
+
+const linkAttributes = connect.link.attributes || {};
+newWindowLabel = connect.link.newWindow || getText('blank', 'global');
+linkAttributes.id = connect.link.id || uniqueId('connect-link');
+linkAttributes.target = '_blank';
+linkAttributes.rel = 'noopener';
+linkAttributes.title = `${connect.link.label} - ` + newWindowLabel;
+
+if (!locals.isStandalone) {
+%>
+<div class="<%= prefix %>-connect-group">
+<% } %>
+<%
+if (connect.disabled === true && markup !== 'a') connectAttrs.disabled = '';
+%>
+
+<<%= markup %> <%- includeClasses(connectClasses) %> <%- includeAttrs(connectAttrs); %> >
+  <span class="<%= prefix %>-connect__login"><%- connect.login %></span>
+  <span class="<%= prefix %>-connect__brand"><%- connect.brand %></span>
+</<%= markup %>>
+
+<% if (connect.link) { %>
+  <p>
+    <a href="<%= connect.link.href %>" <%- includeAttrs(linkAttributes); %>><%= connect.link.label %></a>
+  </p>
+<% } %>
+
+<% if (connect.desc) { %>
+  <p>
+  <%- connect.desc %>
+  </p>
+<% } %>
+
+<% if (!locals.isStandalone) { %>
+</div>
+<% } %>

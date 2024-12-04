@@ -1,0 +1,18 @@
+////
+/// Share Scheme
+/// @group share
+////
+
+@use 'src/module/color';
+
+@mixin _share-scheme($legacy: false) {
+  #{ns(share)} {
+    #{ns(btn)} {
+      @include btn-kind-scheme(3, $legacy);
+    }
+
+    &__text {
+      @include color.text(mention grey, (legacy: $legacy));
+    }
+  }
+}

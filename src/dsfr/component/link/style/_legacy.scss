@@ -1,0 +1,30 @@
+////
+/// Link Legacy
+/// @group link
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(link)} {
+    background-image: none;
+    text-decoration: underline;
+    @include icon-legacy(null, sm, before);
+
+    &--sm {
+      @include icon-legacy(null, sm, before);
+    }
+
+    &--lg {
+      @include icon-legacy(null, md, before);
+    }
+  }
+
+  #{ns-group(links)} {
+    @include enable-list-style-legacy;
+
+    &--inline {
+      @include disable-list-style-legacy(true);
+    }
+  }
+}

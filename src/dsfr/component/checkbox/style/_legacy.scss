@@ -1,0 +1,30 @@
+////
+/// Checkbox legacy
+/// @group checkbox
+////
+
+@use 'src/module/selector';
+@use 'src/module/legacy';
+@use 'src/module/spacing';
+
+@include legacy.is(ie11) {
+  #{selector.ns(checkbox-group)} {
+    input[type="checkbox"] {
+      opacity: 1;
+      @include margin-top(0);
+    }
+  }
+
+  #{selector.ns(fieldset__content)} {
+    #{selector.ns(checkbox-group)} {
+      input[type="checkbox"] {
+        @include margin-top(6v);
+      }
+    }
+
+    + #{selector.ns(valid-text)},
+    + #{selector.ns(error-text)} {
+      @include margin-top(4v);
+    }
+  }
+}

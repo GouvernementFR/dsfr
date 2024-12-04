@@ -1,0 +1,46 @@
+{
+  "name": "@gouvfr/dsfr-sb",
+  "version": "1.0.0",
+  "description": "Storybook du Système de Design de l'Etat - DSFR",
+  "license": "MIT",
+  "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
+  "engines": {
+    "node": ">=18.16.1"
+  },
+  "packageManager": "yarn@1.22.22",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o ../storybook"
+  },
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-virtual": "^2.1.0",
+    "@storybook/addon-essentials": "^8.4.6",
+    "@storybook/addon-interactions": "^8.4.6",
+    "@storybook/addon-links": "^8.4.6",
+    "@storybook/addon-mdx-gfm": "^8.4.6",
+    "@storybook/addon-themes": "^8.4.6",
+    "@storybook/addon-viewport": "^8.4.6",
+    "@storybook/blocks": "^8.4.6",
+    "@storybook/html": "^8.4.6",
+    "@storybook/html-vite": "^8.4.6",
+    "@storybook/manager-api": "^8.4.6",
+    "@storybook/preview-api": "^8.4.6",
+    "@storybook/test": "^8.4.6",
+    "@storybook/theming": "^8.4.6",
+    "@teskon/vite-plugin-ejs-engine": "^1.2.0",
+    "@whitespace/storybook-addon-html": "^6.1.1",
+    "ejs4b": "^3.1.63",
+    "html-entities": "^2.5.2",
+    "js-beautify": "^1.14.7",
+    "prettier": "^3.3.3",
+    "react-dom": "^18.3.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "remark-gfm": "^4.0.0",
+    "storybook": "^8.4.6",
+    "yaml": "^2.5.0"
+  },
+  "dependencies": {
+    "vite": "^5.4.2"
+  }
+}

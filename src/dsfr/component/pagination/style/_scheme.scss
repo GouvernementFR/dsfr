@@ -1,0 +1,25 @@
+////
+/// Pagination Scheme
+/// @group pagination
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+@use 'src/module/selector';
+
+@mixin _pagination-scheme($legacy: false) {
+  #{ns(pagination)} {
+    @include color.text(action-high grey, (legacy: $legacy));
+
+    &__link {
+      @include selector.current {
+        @include color.background(active blue-france, (legacy: $legacy, hover: true));
+        @include color.text(inverted blue-france, (legacy: $legacy));
+      }
+
+      @include selector.not-current {
+        @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true,));
+      }
+    }
+  }
+}

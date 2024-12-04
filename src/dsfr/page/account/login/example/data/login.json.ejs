@@ -1,0 +1,112 @@
+<%
+const login = locals.login || {};
+
+const alert = {
+  id: uniqueId('alert'),
+  classes: ['fr-mb-2v'],
+  size: 'sm',
+  text: getText('login.error', 'login'),
+  type: 'error'
+};
+
+const elements = [];
+
+if (login.error) {
+  elements.push({
+    type: 'alert',
+    data: alert
+  });
+}
+
+const fieldsetElements = [];
+
+const classes = [];
+const attributes = {};
+
+if (login.error) {
+  attributes['aria-describedby'] = alert.id;
+}
+
+fieldsetElements.push({
+  type: 'input',
+  data: {
+    id: uniqueId('username'),
+    label: getText('login.username', 'login'),
+    hint: getText('login.username.hint', 'login'),
+    attributes: {
+      ...attributes,
+      'autocomplete': 'username',
+      'aria-required': true,
+      'autocapitalize': 'off',
+      'autocorrect': 'off',
+    },
+    name: 'username'
+  }
+});
+
+fieldsetElements.push({
+  type: 'password',
+  data: {
+    name: 'password',
+    id: uniqueId('password'),
+    input: {
+      label: getText('login.password', 'login'),
+      attributes: attributes,
+      autocomplete: 'current-password'
+    },
+    checkbox: {},
+    format: false,
+    link: {
+      href: contentPlaceholder(getText('link.href', 'password')),
+      label: getText('link.label', 'password'),
+    }
+  }
+});
+
+elements.push({
+  type: 'fieldset',
+  data: {
+    id: 'credentials',
+    classes: ['fr-mb-n4v'],
+    legend: {
+      label: getText('login.credentials', 'login'),
+      sr: true
+    },
+    elements: fieldsetElements,
+    error: login.error
+  }
+})
+
+elements.push({
+  type: 'checkbox',
+  data: {
+    id: uniqueId('remember'),
+    label: getText('login.remember', 'login'),
+    name: 'remember',
+    checked: false,
+    size: 'sm',
+  }
+});
+
+elements.push({
+  type: 'buttonsGroup',
+  data: {
+    buttons: [
+      {
+        label: getText('login.button', 'login'),
+        kind: 1,
+        type: 'submit',
+        classes: [prefix + '-mt-2v']
+      }
+    ]
+  }
+});
+
+const data = {
+  id: uniqueId('login'),
+  legend: `<h2 class="${prefix}-h5">${getText('login.legend', 'login')}</h2>`,
+  elements: elements
+};
+ %>
+
+<%- JSON.stringify(data); %>

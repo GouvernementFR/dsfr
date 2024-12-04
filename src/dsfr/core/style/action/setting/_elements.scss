@@ -1,0 +1,216 @@
+////
+/// Core Setting : Action element
+/// @group core
+////
+
+$action-elements: (
+  a: (
+    selector: 'a',
+    focus: (),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:not([href])'
+      )
+    ),
+    hover: (
+      selector: '&[href]',
+      type: underline
+    ),
+    disabled: (
+      selector: '&:not([href])'
+    ),
+    clickable: true
+  ),
+  button: (
+    selector: 'button',
+    focus: (),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    hover: (
+      selector: '&:not(:disabled)',
+      type: tint
+    ),
+    disabled: (
+      selector: '&:disabled'
+    ),
+    clickable: true
+  ),
+  input: (
+    selector: 'input',
+    focus: (),
+    cursor: (
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    disabled: (
+      selector: '&:disabled'
+    )
+  ),
+  choices: (
+    selector: 'input[type="checkbox"], input[type="radio"]',
+    focus: (
+      selector: ' + label::before'
+    ),
+    cursor: (
+      pointer: (
+        selector: '&, & + label'
+      ),
+      not-allowed: (
+        selector: '&:disabled, &:disabled + label'
+      )
+    ),
+    disabled: (
+      selector: '&:disabled, &:disabled + label',
+    )
+  ),
+  input-upload: (
+    selector: 'input[type="file"]',
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    )
+  ),
+  input-range: (
+    selector: 'input[type="range"]',
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    )
+  ),
+  input-range-webkit: (
+    selector: 'input[type="range"]',
+    isolated: true,
+    focus: (
+      selector: '&::-webkit-slider-thumb'
+    ),
+    cursor: (
+      grab: (
+        selector: '&::-webkit-slider-thumb'
+      ),
+      grabbing: (
+        selector: '&::-webkit-slider-thumb:active'
+      ),
+      not-allowed: (
+        selector: '&:disabled::-webkit-slider-thumb, &:disabled::-webkit-slider-thumb:active'
+      )
+    )
+  ),
+  input-range-moz: (
+    selector: 'input[type="range"]',
+    isolated: true,
+    focus: (
+      selector: '&::-moz-range-thumb'
+    ),
+    cursor: (
+      grab: (
+        selector: '&::-moz-range-thumb'
+      ),
+      grabbing: (
+        selector: '&::-moz-range-thumb:active'
+      ),
+      not-allowed: (
+        selector: '&:disabled::-moz-range-thumb, &:disabled::-moz-range-thumb:active'
+      )
+    )
+  ),
+  input-range-ms: (
+    selector: 'input[type="range"]',
+    isolated: true,
+    focus: (
+      selector: '&::-ms-thumb'
+    ),
+    cursor: (
+      grab: (
+        selector: '&::-ms-thumb'
+      ),
+      grabbing: (
+        selector: '&::-ms-thumb:active'
+      ),
+      not-allowed: (
+        selector: '&:disabled::-ms-thumb, &:disabled::-ms-thumb:active'
+      )
+    )
+  ),
+  input-buttons: (
+    selector: 'input[type="button"], input[type="image"], input[type="reset"], input[type="submit"]',
+    focus: (),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    hover: (
+      selector: '&:not(:disabled)',
+      type: tint
+    ),
+    clickable: true
+  ),
+  select: (
+    selector: 'select',
+    focus: (),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    disabled: (
+      selector: '&:disabled'
+    )
+  ),
+  textarea: (
+    selector: 'textarea',
+    focus: (),
+    cursor: (
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    disabled: (
+      selector: '&:disabled'
+    )
+  ),
+  tabindex: (
+    selector: '[tabindex]',
+    focus: ()
+  ),
+  medias: (
+    selector: 'video, audio',
+    focus: (
+      selector: '&[controls]'
+    ),
+    cursor: (
+      pointer: (
+        selector: '&[controls]'
+      ),
+      not-allowed: (
+        selector: '&:not([href])[controls]'
+      )
+    ),
+    disabled: (
+      selector: '&:not([href])',
+    )
+  ),
+  contenteditable: (
+    selector: '[contenteditable]:not([contenteditable="false"])',
+    focus: (),
+  ),
+  details: (
+    selector: 'details, details > summary:first-of-type',
+    focus: (),
+    cursor: (
+      pointer: ()
+    ),
+  )
+);

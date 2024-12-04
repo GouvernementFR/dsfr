@@ -1,0 +1,25 @@
+////
+/// Toggle Legacy
+/// @group toggle
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(toggle)} {
+    input[type="checkbox"] {
+      &::-ms-check {
+        display: none;
+      }
+
+      &:checked {
+        @include icon-legacy(check-line, md);
+      }
+    }
+
+    &__list {
+      list-style: none;
+      @include padding(0);
+    }
+  }
+}

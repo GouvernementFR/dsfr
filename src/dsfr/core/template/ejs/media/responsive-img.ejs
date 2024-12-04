@@ -1,0 +1,37 @@
+<%#
+# paramètres média responsive image
+
+* media.src (string, required): url de l'image
+
+* media.alt (string, optional): texte alternatif de l'image (peut être vide si l'image est illlustrative)
+
+* media.ratio (string, optional): ratio forcé de l'image
+
+* media.classes (array, optional) : classes supplémentaires sur l'image
+
+* media.attributes (object, optional) : Attributs supplémentaires sur l'image
+
+* media.style (object, optional) : raccourci vers l'attribut style
+
+%>
+<% eval(include('../../../index.ejs')); %>
+
+<%
+ let media = locals.media || {};
+ const mediaClasses = media.classes || [];
+ mediaClasses.push(`${prefix}-responsive-img`);
+
+ switch (media.ratio) {
+     case '32x9':
+     case '16x9':
+     case '3x2':
+     case '4x3':
+     case '1x1':
+     case '3x4':
+     case '2x3':
+         mediaClasses.push(`${prefix}-ratio-${media.ratio}`);
+         break;
+ }
+ %>
+
+<%- include('img.ejs', {media: {...media, classes: mediaClasses}}); %>

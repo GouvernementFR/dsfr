@@ -1,0 +1,57 @@
+////
+/// Table Module
+/// @group Table
+////
+
+@use 'src/module/color';
+
+@mixin _table-scheme($legacy: false) {
+  #{ns(table)} {
+    &__wrapper {
+      @include after {
+        @include color.background-image((border contrast grey) (border contrast grey) (border contrast grey) (border contrast grey), (legacy:$legacy));
+      }
+    }
+
+    &__content {
+      table {
+        caption {
+          @include color.text(title grey, (legacy:$legacy));
+        }
+
+        thead {
+          th {
+            @include color.background(alt grey, (legacy: $legacy));
+            @include color.background-image((border plain grey) (border contrast grey), (legacy: $legacy));
+
+            &[role='columnheader'] {
+              @include color.background-image((border plain grey) (border plain grey), (legacy: $legacy));
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            @include after {
+              @include color.background-image((border action-high blue-france) (border action-high blue-france) (border action-high blue-france) (border action-high blue-france), (legacy: $legacy));
+            }
+          }
+
+          td {
+            @include color.background-image((border contrast grey) (border contrast grey), (legacy: $legacy));
+            @include color.background(default grey, (legacy: $legacy));
+          }
+
+          th {
+            @include color.background(alt grey, (legacy: $legacy));
+            @include color.background-image((border contrast grey) (border plain grey), (legacy: $legacy));
+          }
+        }
+      }
+    }
+
+    &__detail {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+  }
+}

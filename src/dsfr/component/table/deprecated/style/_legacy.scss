@@ -1,0 +1,100 @@
+////
+/// Table Legacy - deprecated
+/// @group table - deprecated
+////
+
+@use 'src/module/legacy';
+@use 'src/module/color';
+
+@include legacy.is(ie11) {
+  #{ns(table)} {
+    @include before(none);
+
+    & > table {
+      thead {
+        background-image: none;
+
+        @include after {
+          background-image: none;
+        }
+
+        tr {
+          &:first-child {
+            th {
+              @include color.border(contrast grey, (legacy: true, important: false, side: 'top'));
+            }
+          }
+
+          &:last-child {
+            th {
+              @include color.border(plain grey, (legacy: true, important: false, side: 'bottom'));
+            }
+          }
+        }
+      }
+
+      tbody {
+        @include after {
+          background-image: none;
+        }
+
+        tr {
+          background-image: none;
+
+          &:last-child {
+            th,
+            td {
+              @include color.border(contrast grey, (legacy: true, important: false, side: 'bottom'));
+            }
+          }
+        }
+      }
+
+      th,
+      td {
+        &:first-child {
+          @include color.border(contrast grey, (legacy: true, important: false, side: 'left'));
+        }
+
+        &:last-child {
+          @include color.border(contrast grey, (legacy: true, important: false, side: 'right'));
+        }
+      }
+    }
+
+    @include color.accentuate {
+      & > table {
+        background-image: none;
+
+        thead {
+          background-image: none;
+        }
+
+        tbody {
+          tr {
+            background-image: none;
+          }
+        }
+      }
+
+      &#{ns(table--bordered)} {
+        & > table {
+          tbody {
+            tr {
+              background-image: none;
+            }
+          }
+        }
+      }
+    }
+
+    &--bordered {
+      & > table {
+        th,
+        td {
+          @include color.border(contrast grey, (legacy: true, important: false, side: 'bottom'));
+        }
+      }
+    }
+  }
+}

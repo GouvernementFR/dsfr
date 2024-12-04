@@ -1,0 +1,180 @@
+<div class="<%= prefix %>-container">
+  <div id="vue-container">
+    <div>
+      <header role="banner" class="<%= prefix %>-header" id="header-120">
+        <div class="<%= prefix %>-header__body">
+            <div class="<%= prefix %>-container">
+                <div class="<%= prefix %>-header__body-row">
+                    <div class="<%= prefix %>-header__brand <%= prefix %>-enlarge-link">
+                        <div class="<%= prefix %>-header__brand-top">
+                            <div class="<%= prefix %>-header__logo">
+                                <p class="<%= prefix %>-logo">
+                                    République
+                                    <br>Française
+                                </p>
+                            </div>
+                            <div class="<%= prefix %>-header__operator">
+                                <img class="<%= prefix %>-responsive-img" style="max-width:9.0625rem;" src="../../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - texte alternatif de l’image]" data-<%= prefix %>-js-ratio="true">
+                                <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+                            </div>
+                            <div class="<%= prefix %>-header__navbar">
+                                <button type="button" class="<%= prefix %>-btn--search <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-122" id="button-123" title="Rechercher" data-<%= prefix %>-js-modal-button="true" >
+                                    Rechercher
+                                </button>
+                                <button type="button" class="<%= prefix %>-btn--menu <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-124" id="button-125" title="Menu">
+                                    Menu
+                                </button>
+                            </div>
+                        </div>
+                        <div class="<%= prefix %>-header__service">
+                            <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
+                                <p class="<%= prefix %>-header__service-title">
+                                    Nom du site / service
+                                </p>
+                            </a>
+                            <p class="<%= prefix %>-header__service-tagline">baseline - précisions sur l‘organisation</p>
+                        </div>
+                    </div>
+                    <div class="<%= prefix %>-header__tools">
+                        <div class="<%= prefix %>-header__tools-links">
+                            <ul class="<%= prefix %>-btns-group">
+                                <li>
+                                    <router-link exact-path id="btn-shortcut-1" class="<%= prefix %>-btn" to="/link">Lien</router-link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="modal-122">
+                            <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid">
+                                <button type="button" class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-122" id="button-130" title="Fermer">
+                                    Fermer
+                                </button>
+                                <div class="<%= prefix %>-search-bar" id="search-121" role="search">
+                                    <label class="<%= prefix %>-label" for="search-121-input">
+                                        Rechercher
+                                    </label>
+                                    <input class="<%= prefix %>-input" aria-describedby="search-121-input-messages" placeholder="Rechercher" id="search-121-input" type="search">
+                                    <div class="<%= prefix %>-messages-group" id="search-121-input-messages" aria-live="polite">
+                                    </div>
+                                    <button type="button" class="<%= prefix %>-btn" id="search-btn-132" title="Rechercher">
+                                        Rechercher
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="modal-124">
+            <div class="<%= prefix %>-container">
+                <button type="button" class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-124" id="button-133" title="Fermer">
+                    Fermer
+                </button>
+                <div class="<%= prefix %>-header__menu-links">
+                </div>
+                <nav class="<%= prefix %>-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
+                  <ul class="<%= prefix %>-nav__list">
+                    <li class="<%= prefix %>-nav__item">
+                      <router-link exact-path id="link-3" class="<%= prefix %>-nav__link" to="/">Base</router-link>
+                    </li>
+                    <li class="<%= prefix %>-nav__item">
+                      <router-link exact-path id="link-3" class="<%= prefix %>-nav__link" to="/link">Liens</router-link>
+                    </li>
+                    <li class="<%= prefix %>-nav__item">
+                      <router-link exact-path id="link-3" class="<%= prefix %>-nav__link" to="/button">Boutons</router-link>
+                    </li>
+                  </ul>
+                </nav>
+            </div>
+        </div>
+      </header>
+
+      <div class="<%= prefix %>-container <%= prefix %>-mt-8v">
+
+        <h2>Contenu router view</h2>
+        <router-view></router-view>
+
+        <br>
+        <hr class="<%=prefix%>-my-12v">
+
+        <h2>Affichage conditionné (v-if)</h2>
+        <div v-if="pagination==1">
+          <h1>Page {{pagination}}</h1>
+          <a id="btn-0" href="#" data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-click" >Home</a>
+        </div>
+        <div v-if="pagination==2">
+          <h1>Page {{pagination}}</h1>
+          <button type="button" id="btn-1" class="<%= prefix %>-btn">Button 1</button>
+        </div>
+        <div v-if="pagination==3">
+          <h1>Page {{pagination}}</h1>
+          <button type="button" id="btn-2" class="<%= prefix %>-btn">Button 2</button>
+        </div>
+
+        <nav role="navigation" class="<%= prefix %>-pagination <%= prefix %>-mt-8v" aria-label="Pagination">
+          <ul class="<%= prefix %>-pagination__list">
+              <li>
+                  <a class="<%= prefix %>-pagination__link <%= prefix %>-pagination__link--lg-label" id="pagination__link-309" href="" v-on:click.prevent="pagination=1">
+                      1
+                  </a>
+              </li>
+              <li>
+                  <a class="<%= prefix %>-pagination__link" id="pagination__link-310" href="prevented" title="Page 1" v-on:click.prevent="pagination = 2" >
+                      2
+                  </a>
+              </li>
+              <li>
+                  <a class="<%= prefix %>-pagination__link <%= prefix %>-pagination__link--lg-label" id="pagination__link-317" href="/ici" v-on:click.prevent="pagination = 3">
+                      3
+                  </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
+
+<script>
+  const { createApp } = Vue
+  const { createRouter, createMemoryHistory } = VueRouter
+
+  const Base = { template: `lorem ipsum dolor sit amet` };
+  const Link = { template: `<a href="#" id="btn-4" data-<%= prefix %>-analytics-click="libellé du lien envoyé à l'analytics">test</a>` };
+  const Button = { template: `<button type="button" id="btn-5" class="<%= prefix %>-btn">Button page 3</button>` };
+
+  const routes = [
+      { path: "/", component: Base },
+      { path: "/link", component: Link },
+      { path: "/button", component: Button },
+  ];
+
+  const router = createRouter({
+    history: createMemoryHistory(),
+    routes
+  });
+
+  createApp({
+    data() {
+      return {
+        pagination: 1
+      }
+    }
+  })
+  .use(router)
+  .mount("#vue-container")
+
+  switch (document.readyState) {
+    case "loading":
+      document.addEventListener("DOMContentLoaded", () => dsfr.start());
+      break;
+    case "interactive":
+      dsfr.start();
+    break;
+    case "complete":
+      dsfr.start();
+    break;
+  }
+</script>

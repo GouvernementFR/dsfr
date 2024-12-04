@@ -1,0 +1,32 @@
+////
+/// Form legacy
+/// @group form
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(fieldset)} {
+    &__legend {
+      max-width: 100%;
+    }
+  }
+
+  #{ns(message)} {
+    &--error {
+      @include icon-legacy(error-fill, sm);
+    }
+
+    &--valid {
+      @include icon-legacy(success-fill, sm);
+    }
+
+    &--info {
+      @include icon-legacy(info-fill, sm);
+    }
+
+    &--warning {
+      @include icon-legacy(warning-fill, sm);
+    }
+  }
+}

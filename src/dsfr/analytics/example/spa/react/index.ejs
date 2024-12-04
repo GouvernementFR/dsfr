@@ -1,0 +1,127 @@
+<div class="fr-container">
+  <div id="react-container">
+
+  </div>
+</div>
+
+
+<script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+<script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
+<script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+<script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+
+
+<script type='text/babel'>
+  const Link = ReactRouterDOM.Link,
+  Route = ReactRouterDOM.Route,
+  BrowserRouter = ReactRouterDOM.BrowserRouter;
+
+  const App = props => (
+    <div>
+      <header role="banner" class="fr-header" id="header-120">
+        <div class="fr-header__body">
+            <div class="fr-container">
+                <div class="fr-header__body-row">
+                    <div class="fr-header__brand fr-enlarge-link">
+                        <div class="fr-header__brand-top">
+                            <div class="fr-header__logo">
+                                <p class="fr-logo">
+                                    République <br/>
+                                    Française
+                                </p>
+                            </div>
+                            <div class="fr-header__navbar">
+                                <button type="button" class="fr-btn--search fr-btn" data-fr-opened="false" aria-controls="modal-122" id="button-123" title="Rechercher" >
+                                    Rechercher
+                                </button>
+                                <button type="button" class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-124" id="button-125" title="Menu">
+                                    Menu
+                                </button>
+                            </div>
+                        </div>
+                        <div class="fr-header__service">
+                            <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
+                                <p class="fr-header__service-title">
+                                    Nom du site / service
+                                </p>
+                            </a>
+                            <p class="fr-header__service-tagline">baseline - précisions sur l‘organisation</p>
+                        </div>
+                    </div>
+                    <div class="fr-header__tools">
+                        <div class="fr-header__tools-links">
+                            <ul class="fr-btns-group">
+                                <li>
+                                  <Link id="to-home-1" class="fr-btn" to="/example/analytics/spa/react/">HOME</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fr-header__search fr-modal" id="modal-122">
+                            <div class="fr-container fr-container-lg--fluid">
+                                <button type="button" class="fr-btn--close fr-btn" aria-controls="modal-122" id="button-130" title="Fermer">
+                                    Fermer
+                                </button>
+                                <div class="fr-search-bar" id="search-121" role="search">
+                                    <label class="fr-label" for="search-121-input">
+                                        Rechercher
+                                    </label>
+                                    <input class="fr-input" aria-describedby="search-121-input-messages" placeholder="Rechercher" id="search-121-input" type="search"/>
+                                    <div class="fr-messages-group" id="search-121-input-messages" aria-live="polite">
+                                    </div>
+                                    <button type="button" class="fr-btn" id="search-btn-132" title="Rechercher">
+                                        Rechercher
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fr-header__menu fr-modal" id="modal-124">
+          <div class="fr-container">
+            <button type="button" class="fr-btn--close fr-btn" aria-controls="modal-2414" id="button-2419" title="Fermer">
+                Fermer
+            </button>
+            <div class="fr-header__menu-links">
+                <ul class="fr-btns-group">
+                </ul>
+            </div>
+            <nav class="fr-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
+              <ul class="fr-nav__list">
+                <li class="fr-nav__item"><Link id="to-home-2" class="fr-nav__link" to="/example/analytics/spa/react/">HOME</Link></li>
+                <li class="fr-nav__item"><Link id="to-link-2" class="fr-nav__link" to="/example/analytics/spa/react/link">Link</Link></li>
+                <li class="fr-nav__item"><Link id="to-button-2" class="fr-nav__link" to="/example/analytics/spa/react/button">Button</Link></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <div class="fr-container fr-mt-8v">
+        <Route path="/example/analytics/spa/react/" exact component={Home} />
+        <Route path="/example/analytics/spa/react/link" component={Links} />
+        <Route path="/example/analytics/spa/react/button" component={Button} />
+      </div>
+    </div>
+  )
+
+  const Home = props => <div><h2>HOME</h2><p>lorem ipsum dolor sit amet</p></div>
+  const Links = props => <div><h2>LINK</h2><a href="#" data-fr-analytics-click="libellé du lien envoyé à l'analytics" id="link-attr-click">test</a></div>
+  const Button = props => <div><h2>BUTTON</h2><button type="button" id="btn-3" class="<%= prefix %>-btn">Button</button></div>
+
+  ReactDOM.render(<ReactRouterDOM.BrowserRouter><App /></ReactRouterDOM.BrowserRouter>, document.querySelector('#react-container'));
+
+  switch (document.readyState) {
+    case "loading":
+      document.addEventListener("DOMContentLoaded", () => dsfr.start());
+      break;
+    case "interactive":
+      dsfr.start();
+    break;
+    case "complete":
+      dsfr.start();
+    break;
+  }
+
+</script>

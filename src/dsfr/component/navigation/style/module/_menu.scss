@@ -1,0 +1,61 @@
+////
+/// Navigation Module : Menu
+/// @group navigation
+////
+
+@use 'src/module/preference';
+@use 'src/module/selector';
+
+#{ns(menu)} {
+  @include margin(-4px -4v);
+  @include padding(4px 4v);
+  @include size(auto);
+
+  &#{ns(collapsing)} {
+    @include margin-top(0);
+    @include padding-top(0);
+  }
+
+  @include respond-from(lg) {
+    pointer-events: none;
+    @include absolute(100%);
+  }
+
+  @include list {
+    @include margin(0);
+    @include padding(0 4v 4v);
+
+    @include respond-from(lg) {
+      @include width(80v);
+      pointer-events: auto;
+      @include padding(0);
+      @include margin-bottom(8v);
+      background-size: 100% 1px;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      @include preference.forced-colors {
+        outline: 1px solid;
+      }
+    }
+  }
+
+  #{ns(nav__link)} {
+    @include padding(3v 4v);
+    @include size(100%, auto);
+    font-weight: normal;
+    min-height: auto;
+
+    @include selector.current {
+      position: relative;
+      @include before('', block) {
+        @include absolute(50%, null, null, 0, 2px, 6v);
+        @include margin-top(-3v);
+
+        @include preference.forced-colors {
+          background-color: highlight;
+          @include width(1v);
+        }
+      }
+    }
+  }
+}
