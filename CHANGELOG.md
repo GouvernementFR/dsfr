@@ -10,6 +10,207 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 > ## DSFR v1
 
+## v1.13
+
+### [v1.13.0](https://github.com/GouvernementFR/dsfr/compare/v1.13.0...v1.13.0) - 4 Décembre 2024
+
+#### 🐛 fix: corrections diverses 1.13.0 [(#1054)](https://github.com/GouvernementFR/dsfr/pull/1054)
+- Corrections mineures : legacy, storybook, analytics, ...
+
+
+#### ✨ feat(analytics): optimisation des créations d'instances [(#1055)](https://github.com/GouvernementFR/dsfr/pull/1055)
+- La propriété `isActionEnabled` peut maintenant prendre la valeur reduce pour limiter la création d'instance de tracking aux éléments comportant l'attribut `data-fr-analytics-action`
+
+
+
+### [v1.13.0](https://github.com/GouvernementFR/dsfr/compare/v1.12.1...v1.13.0) - 26 Novembre 2024
+
+#### ⬆️ chore(dependencies): mise à jour des dépendances npm [(#1052)](https://github.com/GouvernementFR/dsfr/pull/1052)
+- bump cross-spawn from 7.0.3 to 7.0.6
+- bump micromatch from 4.0.5 to 4.0.8
+- bump semver from 7.3.5 to 7.6.2
+- bump ws from 7.5.9 to 7.5.10
+
+
+#### ✨ feat(table): supporte le comportement `row-select` via data attribute [(#1053)](https://github.com/GouvernementFR/dsfr/pull/1053)
+- la sélection de ligne du tableau est implémentée via l'attribut data-fr-row-select="true" sur la case à cocher, le fonctionnement via l'attribut name="row-select" est déprécié.
+
+
+#### ✨ feat(colors) : page d'exemple utilitaires de couleurs [(#1013)](https://github.com/GouvernementFR/dsfr/pull/1013)
+- Ajoute au build la generation d'un json des colors
+- Ajoute des classes utilitaire de bordure (couleur et épaisseur)
+- Ajoute des pages d'exemple d'utilisation des classes utilitaires des couleurs de background, texte et bordure
+- Ajoute une page d'exemple d'utilisation des classes utilitaires de largeur de bordures
+
+
+#### 🐛 fix(tile, navigation): retrait des sélecteur css ">" [(#1049)](https://github.com/GouvernementFR/dsfr/pull/1049)
+- Retrait des selecteurs d'enfants directs pour éviter les problèmes lors de l'ajout de balises intermediaires (cas de création de sous composants)
+
+
+#### 🐛 fix(tab): correction de l'ombre au scroll en RTL [(#1051)](https://github.com/GouvernementFR/dsfr/pull/1051)
+- Correction de l'ombre au scroll en direction RTL
+
+
+#### 🐛 fix(analytics): correction syntaxique documentation des actions [(#1043)](https://github.com/GouvernementFR/dsfr/pull/1043)
+- Correction d'éléments manquants ou mal écrits dans la documentation analytics
+
+
+#### 🐛 fix(table): bordure disparait lors d'un rowspan en dernière position [(#1041)](https://github.com/GouvernementFR/dsfr/pull/1041)
+- Correction de la bordure lorsqu'un rowspan est en dernière position
+
+
+#### ✨ feat(radio): radio riche sans pictogramme compact [(#1047)](https://github.com/GouvernementFR/dsfr/pull/1047)
+- modification du bouton radio pour une version compacte du radio riche sans pictogramme
+
+
+#### ✨ feat: ajout de storybook & restructuration [(#945)](https://github.com/GouvernementFR/dsfr/pull/945)
+- ajout de storybook
+    - ajout d'un package storybook dans `/dsfr-sb`
+    - ajout de stories dans le dossier `template` de chaque composant
+    - accès au storybook en local dans le dossier `/storybook` généré via la commande `yarn build-storybook`
+- changement de structure 
+    - tous les dossiers de `/src` sont déplacés dans un sous-dossier `dsfr`
+    - les dossiers `module` et `i18n` passent dans `src`
+- correction des valeurs en dur dans les templates
+
+
+#### 🐛 fix(legacy): retrait des références à polyfill-io (faille sécurité) [(#1038)](https://github.com/GouvernementFR/dsfr/pull/1038)
+- Toute référence à polyfill-io a été retirée pour éviter une redirection vers ses noms de domaines qui ont été détourné
+
+
+#### 🐛 fix(range): ajout de la possibilité de changer la value en JS [(#1025)](https://github.com/GouvernementFR/dsfr/pull/1025)
+- Le composant est mis à jour graphiquement au changement de value des inputs en js.
+- Ajout d'un accesseur "value" dans l'api du range
+
+
+#### 🐛 fix(accordion): ouverture initiale des accordéons dégroupés [(#1032)](https://github.com/GouvernementFR/dsfr/pull/1032)
+- Correction lorsque tous les disclosures d'un groupe avec l'attribut group="false" sont ouverts au chargement
+
+
+#### 🐛 fix(header): retrait aria-label sur modales désactivées [(#1018)](https://github.com/GouvernementFR/dsfr/pull/1018)
+- En desktop, lorsque les modales de menu et recherche sont désactivés, les attributs aria-label et aria-labelledby sont  retirés
+
+
+#### ✨ feat(api): ajouts d'évènements dans l'api [(#1012)](https://github.com/GouvernementFR/dsfr/pull/1012)
+Ajout des événements : 
+Sur le éléments root (documentElement) :
+- dsfr.ready : lorsque le js est chargé
+- dsfr.start : au démarrage du moteur js du dsfr
+- dsfr.stop : à l'arrêt du moteur js du dsfr
+- dsfr.render : lors du rendu d'une instance
+- dsfr.resize : lors du changement de taille du viewport
+- dsfr.scroll-lock : au blocage du scroll
+- dsfr.scroll-unlock : au déblocage du scroll
+- dsfr.scheme : au chargement et changement du scheme (dark, light, auto)
+- dsfr.theme : au chargement et changement du theme (light, dark)
+
+Au niveau des instances, et remontées aux parents jusqu'au documentElement :
+- dsfr.click : au click sur un bouton
+- dsfr.disclose : à l'ouverture d'un disclosure
+- dsfr.conceal : à la fermeture d'un disclosure
+- dsfr.current : retourne l'élément ouvert d'un groupe de disclosure (accordions, tabs, etc.)
+- dsfr.dismiss : a la fermeture d'un tag supprimable
+- dsfr.toggle : au cochage d'un tag sélectionnable
+- dsfr.show : à l'affichage d'un tooltip
+- dsfr.hide : lorsque le tooltip est masqué
+
+
+#### 🐛 fix(core, tooltip): positionnement du tooltip dans header & modale [(#1010)](https://github.com/GouvernementFR/dsfr/pull/1010)
+- Correction du placement du tooltip dans un élément possédant un filter (modal, header)
+- Gestion du placement en position absolute plutot que fixed
+
+
+#### 🐛 fix(modal): correction modal footer z-index [(#1000)](https://github.com/GouvernementFR/dsfr/pull/1000)
+- Passage du footer de la modale au niveau de z-index "overlap-above", permettant d'être au dessus du tooltip
+
+
+#### 🐛 fix(header): duplication aria-describedby & labelledby [(#976)](https://github.com/GouvernementFR/dsfr/pull/976)
+- Permet la duplication des attributs aria dans le menu mobile des accès rapides
+
+
+#### 🐛 fix(core): bug firefox menu passe en arrière plan [(#1023)](https://github.com/GouvernementFR/dsfr/pull/1023)
+- Ajout d'un overflow auto sur le collapse pour éviter le passage des menus sous des éléments survolés ou le texte surligné
+
+
+#### 🐛 fix(notice): padding notice sans close btn [(#1019)](https://github.com/GouvernementFR/dsfr/pull/1019)
+- Retrait du padding à droite du bandeau lorsqu'il n'y a pas de bouton de fermeture
+
+
+#### 🐛 fix(range): amélioration du rendu en mode contrasté [(#1011)](https://github.com/GouvernementFR/dsfr/pull/1011)
+- Amélioration du design du curseur en mode couleurs forcées
+
+
+#### ✨ feat(form): ajout du message d'avertissement 'warning' [(#1015)](https://github.com/GouvernementFR/dsfr/pull/1015)
+- Ajout de la classe fr-message--warning
+- Ajout d'exemples de messages dans la page d'exemple formulaire
+
+
+#### 🐛 feat(header, sidemenu): correction focus croppé [(#1008)](https://github.com/GouvernementFR/dsfr/pull/1008)
+- Correction du focus croppé sur la navigation latérale
+- Correction du focus croppé sur le header en mobile
+
+
+#### 🐛 fix(link): alignement icône link close déprécié [(#1007)](https://github.com/GouvernementFR/dsfr/pull/1007)
+- Correction de l'alignement vertical de l'icône du lien de fermeture déprécié (maintenant btn-close)
+
+
+#### 🐛 fix(toggle): correction groupe d'interrupteurs dépréciés [(#1006)](https://github.com/GouvernementFR/dsfr/pull/1006)
+- Correction des espacements des groupes d'interrupteurs dépréciés
+
+
+#### 🐛 fix(button): ajoute le type button par défaut [(#1005)](https://github.com/GouvernementFR/dsfr/pull/1005)
+- ajoute le type `button` aux boutons par défaut
+- met à jour les exemples des modèles de pages analytics et page de connexion
+- met à jour les snippets d'exemple des composants : accordéon, alerte, fil d'ariane, bouton, bouton France Connect, carte, gestionnaire de consentement, paramètres d'affichage, champ de saisie, lettre d'information, navigation principale, menu latéral, onglets, tag, tuile et transcription
+- remplace l'attribut `type` par `variant` dans le template du Bouton France Connect et ajoute le type `button` par défaut
+
+
+#### ✨ feat(notice): icone alerte météo rouge [(#1004)](https://github.com/GouvernementFR/dsfr/pull/1004)
+- Changement de l'icône par défaut du bandeau d'alerte météo rouge
+
+
+#### 🐛 fix(notice): correction css markup hx sur le titre du bandeau [(#1003)](https://github.com/GouvernementFR/dsfr/pull/1003)
+- Correction du style du titre du bandeau lors de l'utilisation d'un niveau d'entête hx à la place de la balise p
+
+
+#### 🐛 fix(readme): correction nom fichier utility [(#1002)](https://github.com/GouvernementFR/dsfr/pull/1002)
+- Correction du nom du fichier utility.min.css dans le readme
+
+
+#### ✨ feat(pagination): retrait du lien sur les points de suspension [(#1001)](https://github.com/GouvernementFR/dsfr/pull/1001)
+- Remplace le lien par un span sur les points de suspension de la pagination
+
+
+#### 🐛 fix(anayltics): correction doc page.path [(#998)](https://github.com/GouvernementFR/dsfr/pull/998)
+- Correction de la valeur, si non renseignée, du paramètre page.path dans la documentation analytics
+
+
+#### ✨ fix(dependencies): browsersync dependency >=2.27 [(#997)](https://github.com/GouvernementFR/dsfr/pull/997)
+- Modifie la version de la dépendance à BrowserSync dans le package.json, permettant l'utilisation d'une version plus récente.
+- Retrait de browserSync des peerDependencies
+
+
+#### 🐛 fix(core): opacité du texte du select désactivé  #996
+- Correction de l'opacité du texte des listes déroulantes (select) désactivées
+
+
+#### 🐛 fix(analytics): lancement dsfr start dans les pages SPA [(#995)](https://github.com/GouvernementFR/dsfr/pull/995)
+- correction des collectes d'actions des pages d'exemples react et vue, le dsfr en manuel n'était pas lancé
+
+
+#### 🐛 fix(modal): input sans type bug dans le focus trap de la modale [(#992)](https://github.com/GouvernementFR/dsfr/pull/992)
+* Correction d'une erreur js liée au focus trap lorsqu'un champ de saisie n'a pas d'attribut "type" dans une modale
+
+
+#### 🐛 fix(core): Bug de récursivité infinie sur le getter node [(#993)](https://github.com/GouvernementFR/dsfr/pull/993)
+- Correction du retour du getter instance.node qui engendrait une boucle infinie
+
+
+#### fix(core): getter node
+
+
+
+
 ## v1.12
 
 ### [v1.12.1](https://github.com/GouvernementFR/dsfr/compare/v1.12.0...v1.12.1) - 25 Juin 2024
