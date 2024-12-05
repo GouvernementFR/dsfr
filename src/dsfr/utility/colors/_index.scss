@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use 'setting';
+$setting: setting.$setting !default;
+@use 'mixin/scheme' with ($decisions: map.get($setting, color, decisions));
+@use 'mixin/border' with ($border-width: map.get($setting, border, width));
+
+@mixin base() {
+  @include scheme.scheme();
+  @include border.generate();
+}
+
+@mixin legacy() {
+  @include scheme.scheme(true);
+}
+
+@mixin print() {
+  @include scheme.scheme('print');
+}
+
+@mixin full() {
+  @include base;
+  @include legacy;
+}

@@ -1,0 +1,88 @@
+////
+/// Table module : Variants
+/// @group Table
+////
+
+#{ns(table)} {
+  /*
+	* Cache la caption
+	*/
+  &#{ns(table--no-caption)} {
+    #{ns(table__wrapper)} {
+      #{ns(table__container)} {
+        @include padding-top(0);
+      }
+
+      caption {
+        @include sr-only();
+        @include height(0);
+      }
+    }
+  }
+
+  /*
+  * Fixe le caption en bas du tableau
+  */
+  &#{ns(table--caption-bottom)} {
+    @include margin-bottom(0);
+
+    #{ns(table__wrapper)} {
+      @include margin-top(0);
+      @include margin-bottom(calc(var(--table-offset) + 6v));
+
+      &::after {
+        bottom: 0;
+        top: auto;
+        @include height(100%);
+      }
+
+      #{ns(table__container)} {
+        @include padding-top(0);
+      }
+
+      caption {
+        @include margin-bottom(0);
+        @include margin-top(4v);
+        @include height(min-content);
+        caption-side: bottom;
+      }
+    }
+
+    &#{ns-attr(js-table, true)} {
+      caption {
+        @include absolute(100%, 0, 0, 0);
+        @include margin-top(4v);
+      }
+    }
+  }
+
+  /* Style bordered, ajoute des bordures verticales entre chaque cellule */
+  &#{ns(table--bordered)} {
+    #{ns(table__content)} {
+      th,
+      td {
+        background-size: 100% 1px, 1px 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0 100%, 100% 0;
+      }
+    }
+  }
+
+  /* Désactive le scroll horizontal */
+  &#{ns(table--no-scroll)} {
+    #{ns(table__wrapper)} {
+      width: fit-content;
+
+      #{ns(table__content)} {
+        table {
+          width: auto;
+
+          th,
+          td {
+            white-space: normal;
+          }
+        }
+      }
+    }
+  }
+}

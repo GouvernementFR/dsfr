@@ -1,0 +1,59 @@
+////
+/// Colors Mixin : scheme
+/// @group colors
+////
+
+@use 'sass:list';
+@use 'sass:map';
+@use 'src/module/color';
+@use 'src/module/color/variable/sets';
+@use 'src/module/color/variable/decisions';
+@use 'src/module/selector';
+
+$decisions: () !default;
+
+@mixin scheme($legacy: false) {
+  @each $context, $list in $decisions {
+
+    $uses: map.get(decisions.$values, $context);
+    @if $uses == null {
+      @error 'context #{$context} doesn\'t exist in $scheme-decisions';
+    }
+    @each $use in $list {
+      $families: map.get($uses, $use);
+      @if $families == null {
+        @error 'use #{$use} doesn\'t exist in $scheme-decisions';
+      }
+      @each $family, $settings in $families {
+        $shade: list.nth($settings, 1);
+        @each $tint, $shades in map.get(sets.$values, $family) {
+          @if map.has-key($shades, $shade) {
+            $selector: '#{$context}-#{$use}--#{$tint}';
+            // @debug $selector;
+            #{selector.ns($selector)} {
+              @if $context == background {
+                $hover: false;
+                @if list.length($settings) > 1 {
+                  $params: list.nth($settings, 2);
+                  @if map.get($params, hover) {
+                    $hover: true;
+                  }
+                }
+                @include color.background($use $tint, (legacy: $legacy, important: true, hover: $hover));
+              }
+              @else if $context == border {
+                @include color.border($use $tint, (legacy: $legacy, important: true));
+              }
+              @else if $context == text {
+                @include color.text($use $tint, (legacy: $legacy, important: true));
+              }
+              @else if $context == artwork {
+                @include color.fill(artwork $use $tint, (legacy: $legacy, important: true));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

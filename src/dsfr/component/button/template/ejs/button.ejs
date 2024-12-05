@@ -1,0 +1,99 @@
+<%#
+# paramètres button
+
+* button.label (string, required) : Libellé du bouton
+
+* button.markup (string,optional) : tag html du bouton (a/button/input), si non défini, button
+
+* button.id (string, optional) : id du bouton
+
+* button.kind (number, optional) : par défaut 1, qui équivaut au bouton primaire, sinon 2 pour secondaire, 3 pour tertiaire, et 4 pour tertiaire sans contour
+
+* button.type (string, optional) type du bouton
+
+* button.title (string, optional) Attribut 'title' du bouton
+
+* button.disabled (boolean, optional) : si valeur true, bouton désactivé
+
+* button.size (string, optional) : modificateur de taille
+valeurs :
+    ** sm : bouton petit
+    ** lg : bouton large
+
+* button.icon (string, optional) : nom de l'icone dans le bouton
+
+* button.iconPlace (string, optional) : emplacement de l'icone
+si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans libellé
+valeurs :
+    ** left : icone à gauche du libellé
+    ** right : icone à droite du libellé
+
+* button.classes (array, optional) : Classes suplémentaires sur le bouton
+
+* button.attributes (object, optional) : Attributs suplémentaires sur le bouton
+
+* button.tooltip (object, optional) : Paramètres de l'infobulle associée au bouton
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const button = locals.button || {};
+let btnClasses = button.classes || [];
+let btnAttrs = button.attributes || {};
+const type = button.type || button.markup !== 'a' ? 'button' : undefined;
+btnClasses.push(prefix + '-btn');
+const markup = button.markup || 'button';
+
+switch(button.size) {
+  case 'sm':
+    btnClasses.push(prefix + '-btn--sm');
+    break;
+
+  case 'lg':
+    btnClasses.push(prefix + '-btn--lg');
+    break;
+}
+
+if (button.icon !== undefined) btnClasses.push(prefix + '-icon-' + button.icon);
+
+if (button.iconPlace !== undefined) switch(button.iconPlace) {
+  case 'left':
+    btnClasses.push(prefix + '-btn--icon-left');
+    break;
+
+  case 'right':
+    btnClasses.push(prefix + '-btn--icon-right');
+    break;
+}
+
+switch (button.kind) {
+  case 2:
+    btnClasses.push(prefix +'-btn--secondary');
+    break;
+
+  case 3:
+    btnClasses.push(prefix +'-btn--tertiary');
+    break;
+
+  case 4:
+    btnClasses.push(prefix +'-btn--tertiary-no-outline');
+    break;
+}
+
+if (button.disabled !== true) {
+  if (button.onclick) btnAttrs.onclick = button.onclick;
+}
+
+if (button.title) btnAttrs['title'] = button.title;
+if (button.tooltip && button.tooltip.id) btnAttrs['aria-describedby'] = button.tooltip.id;
+%>
+
+<% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
+<%- include('../../../../core/template/ejs/action/action', {action: {...button, classes: btnClasses, attributes: btnAttrs, type: type, markup: markup}}) %>
+
+
+<% if (button.tooltip) { %>
+  <%- include('../../../tooltip/template/ejs/tooltip.ejs', {tooltip: button.tooltip}); %>
+<% } %>

@@ -1,0 +1,86 @@
+////
+/// Sidemenu Scheme
+/// @group sidemenu
+////
+
+@use 'src/module/color';
+@use 'src/module/elevation';
+@use 'src/module/media-query';
+@use 'src/module/selector';
+
+@mixin _sidemenu-scheme($legacy: false) {
+  #{ns(sidemenu)} {
+    @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in top-1-in);
+    @include media-query.respond-from(md) {
+      @include color.no-box-shadow((legacy: $legacy));
+    }
+
+    /*
+    @include elevation.elevate(raised, (legacy:$legacy));
+    @include respond-from(md) {
+      @include elevation.drop((legacy:$legacy));
+    }
+     */
+
+    @include title {
+      @include color.text(title grey, (legacy:$legacy));
+      @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+      @include color.no-box-shadow((breakpoint: md, legacy: $legacy));
+    }
+
+    @include list-item {
+      #{ns(sidemenu__link)},
+      #{ns(sidemenu__btn)} {
+        @include color.text(action-high grey, (legacy: $legacy));
+      }
+
+      @include before {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
+      }
+
+      &:first-child {
+        @include before {
+          @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+        }
+      }
+
+      &:last-child {
+        @include before {
+          @include color.box-shadow(default grey, (legacy:$legacy), top-1-out);
+        }
+      }
+    }
+
+    &__inner {
+      @include media-query.respond-from(md) {
+        @include color.box-shadow(default grey, (legacy:$legacy), right-1-in);
+      }
+    }
+
+    @include media-query.respond-from(md) {
+      &--right {
+        #{ns(sidemenu__inner)} {
+          @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
+        }
+      }
+    }
+
+    &__link,
+    &__btn {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+
+      @include selector.current {
+        @include color.text(active blue-france, (legacy:$legacy));
+        @include before {
+          @include color.background(border active blue-france, (legacy:$legacy));
+        }
+      }
+    }
+
+    &__btn {
+      &[aria-expanded='true'] {
+        @include color.background(open blue-france, (legacy: $legacy));
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+////
+/// Core Tool : Typography font-size
+/// @group core
+////
+
+@use 'src/module/spacing';
+
+@function font-size($font-size: 4v) {
+  @return spacing.space($font-size);
+}
+
+@mixin font-size($font-size: 4v) {
+  font-size: font-size($font-size);
+}

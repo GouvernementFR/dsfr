@@ -1,0 +1,50 @@
+@use 'sass:map';
+@use 'src/module/specificity';
+@use 'src/module/legacy';
+@use 'src/module/selector/mixin/theme' as selector;
+@use 'src/module/utilities';
+@use 'src/module/string';
+@use '../function/token';
+@use '../function/colors';
+@use '../function/result';
+
+/// Combinaison de couleur appliquée à un svg intégré en data-uri
+/// @access public
+// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+/// @param {Object} $value - le SVG en data-uri
+/// @param {String} $prop - propriété sur laquelle est assignée le svg
+/// @example @include scheme-element-data-uri-svg(text title grey, false, "<svg><path fill='$COLOR'></path></svg>"));
+@mixin data-uri-svg($tokens, $options: (), $value: "<svg><path fill='$COLOR'></path></svg>", $prop: background-image, $var: 'data-uri-svg') {
+  $legacy: map.get($options, legacy);
+  $important: map.get($options, important);
+  $tokens: token.normalise($tokens);
+  $light-colors: colors.from-list($tokens, hex, (theme: light, hover: map.get($options, hover), active: map.get($options, active)));
+  $light: result.get($light-colors, $value);
+  $light: specificity.important($light, $important);
+
+  @if $legacy and $prop != false {
+    @include legacy.is(ie11) {
+      @if $prop != false {
+        #{$prop}: #{url(utilities.data-uri(string.encode-svg($light, true), svg))};
+      }
+    }
+  }
+  @else {
+    --#{$var}: #{url(utilities.data-uri(string.encode-svg($light, false), svg))};
+
+    $dark-colors: colors.from-list($tokens, hex, (theme: dark, hover: map.get($options, hover), active: map.get($options, active)));
+    $dark: result.get($dark-colors, $value);
+    $dark: specificity.important($dark, $important);
+
+    @include selector.theme(dark) {
+      --#{$var}: #{url(utilities.data-uri(string.encode-svg($dark, false), svg))};
+    }
+
+    @if $prop != false {
+      #{$prop}: var(--#{$var});
+    }
+  }
+}

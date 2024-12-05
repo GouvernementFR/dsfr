@@ -1,0 +1,110 @@
+<%#
+# paramètres tile
+
+* tile.markup (string, optional) : (default: h3) Niveau de titre de la tuile
+
+* tile.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la tuile
+
+* tile.download (boolean, optional) : si true, passe la tuile en mode téléchargement
+
+* tile.size (string, optionnal) : Taille de la tuile ("md" - default | "sm").
+
+* tile.horizontal (boolean, optional) : si true, passe la tuile en mode horizontal
+
+* tile.vertical (string, optional) : si true, valeur de breakpoint du passage en mode vertical
+
+* tile.id (string, optional) : id de l'élément
+
+* tile.variations (array, optional) : variations de la tuile (valeurs : grey, no-border, no-background, shadow)
+
+* tile.content (object, optional) : Paramètres du contenu de la tuile
+
+* tile.icon (boolean, optional) : Si false, ajoute la classe fr-tile--no-icon pour désactiver l'icone associée au lien
+
+* tile.attributes (object, optional) : attributs de la tuile
+
+* tile.classes (array, optional) : Classes suplémentaires sur la tuile
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let tile = locals.tile || {};
+const content = tile.content || {};
+let classes = tile.classes || [];
+const attributes = tile.attributes || {};
+attributes.id = tile.id || uniqueId('tile');
+const markup = tile.markup || 'h3';
+classes.push(`${prefix}-tile`);
+
+switch (tile.size) {
+  case 'sm':
+    classes.push(`${prefix}-tile--sm`);
+    break;
+}
+
+switch (tile.horizontal) {
+  case true:
+    classes.push(`${prefix}-tile--horizontal`);
+    break;
+}
+
+switch (tile.vertical) {
+  case true:
+    classes.push(`${prefix}-tile--vertical`);
+    break;
+
+  case 'md':
+    classes.push(`${prefix}-tile--vertical@md`);
+    break;
+
+  case 'lg':
+    classes.push(`${prefix}-tile--vertical@lg`);
+    break;
+}
+
+if (tile.variations) for (const variation of tile.variations) switch(variation) {
+  case 'grey':
+    classes.push(`${prefix}-tile--grey`);
+    break;
+
+  case 'no-border':
+    classes.push(`${prefix}-tile--no-border`);
+    break;
+
+  case 'no-background':
+    classes.push(`${prefix}-tile--no-background`);
+    break;
+
+  case 'shadow':
+    classes.push(`${prefix}-tile--shadow`);
+    break;
+}
+
+if (tile.download) {
+  classes.push(`${prefix}-tile--download`);
+  tile.content.downloadable = true;
+};
+
+if (tile.icon === false) classes.push(`${prefix}-tile--no-icon`);
+
+if (tile.enlarge) switch (tile.content.actionMarkup) {
+  case 'button':
+    classes.push(`${prefix}-enlarge-button`);
+    break;
+
+  default:
+    classes.push(`${prefix}-enlarge-link`);
+}
+%>
+
+<div <%- includeClasses(classes)%> <%- includeAttrs(attributes) %>>
+
+  <div class="<%= prefix %>-tile__body" >
+    <%- include('tile-content.ejs', { content: tile.content }) %>
+  </div>
+
+  <% if (tile.header !== undefined) { %>
+    <%- include('tile-header.ejs', { header: tile.header }) %>
+  <% } %>
+</div>

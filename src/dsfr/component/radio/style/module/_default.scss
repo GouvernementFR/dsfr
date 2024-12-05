@@ -1,0 +1,57 @@
+////
+/// Radio Module : radio md
+/// @group radio
+////
+
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+#{selector.ns-group(radio)} {
+  @include relative;
+  @include max-width('max-content');
+
+  input[type="radio"] {
+    @include absolute;
+    @include margin(0);
+    @include size(6v, 6v);
+    opacity: 0;
+
+    @include preference.forced-colors {
+      opacity: 1;
+
+      @include disabled.selector {
+        + label {
+          color: graytext;
+        }
+      }
+    }
+
+    + label {
+      // @include relative;
+      @include display-flex(column, flex-start, flex-start);
+      @include padding-left(8v);
+      background-position: calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px), calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px);
+      background-size: #{spacing.space(7.5v)} #{spacing.space(7.5v)}, #{spacing.space(7.5v)} #{spacing.space(7.5v)};
+      background-repeat: no-repeat, no-repeat;
+
+      // empty before for the focus
+      @include before('') {
+        @include size(6v, 6v);
+        @include absolute(0);
+        border-radius: #{spacing.space(6v)};
+        @include margin-left(-8v);
+
+        @include preference.forced-colors {
+          display: none;
+        }
+      }
+
+      #{selector.ns(hint-text)} {
+        @include margin(0);
+        @include size(100%);
+      }
+    }
+  }
+}

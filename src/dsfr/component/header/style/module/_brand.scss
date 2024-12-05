@@ -1,0 +1,117 @@
+////
+/// Header Module : brand
+/// @group header
+////
+
+@use 'src/module/media-query';
+@use 'src/module/spacing';
+
+#{ns(header)} {
+  &__brand {
+    @include display-flex(row, center, flex-start, wrap);
+    @include margin-y(-4v, lg);
+    @include size(100%);
+    @include padding-x(1v);
+
+    @include after('', block) {
+      @include relative;
+      @include z-index(over);
+      flex: 1;
+      align-self: stretch;
+    }
+
+    @include media-query.respond-from(lg) {
+      flex-wrap: nowrap;
+      @include size(auto);
+      @include padding-x(0);
+    }
+
+    &-top {
+      @include display-flex(row, center, flex-start);
+      @include size(100%);
+      @include size(auto, null, lg);
+      overflow: hidden;
+    }
+
+    @include hover-media-query {
+      &#{ns(enlarge-link)} {
+        a[href] {
+          &:hover {
+            --a: 0.1;
+          }
+
+          &:active {
+            --a: 0.2;
+          }
+        }
+      }
+    }
+
+    &#{ns(enlarge-link)} {
+      a[href] {
+        @include before {
+          outline-offset: -2px;
+
+          @include media-query.respond-from(lg) {
+            outline-offset: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  &__logo,
+  &__operator,
+  &__service {
+    @include padding(4v, lg);
+  }
+
+  &__logo {
+    order: 1;
+    flex: 0 0 auto;
+    @include padding(3v);
+    @include logo(sm, null) {
+      @include margin(-3v);
+    }
+  }
+
+  &__operator {
+    @include padding(3v);
+    order: 2;
+    flex: 0 1 auto;
+
+    img {
+      display: block;
+      @include min-width(14v);
+    }
+  }
+
+  &__service {
+    @include padding-y(3v);
+    @include margin-x(3v);
+    @include margin-x(0, lg);
+    @include disable-external();
+
+    @include before("", block) {
+      @include size(calc(100% - 8v), 1px);
+      @include absolute;
+      transform: translateY(spacing.space(-3v));
+      @include media-query.respond-from(lg) {
+        content: none;
+      }
+    }
+
+    &-title {
+      @include title-style(h6, false);
+
+      #{ns(badge)} {
+        vertical-align: middle;
+        @include margin(-1v 0 0 1v);
+      }
+    }
+
+    &-tagline {
+      @include text-style(sm);
+    }
+  }
+}

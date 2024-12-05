@@ -1,0 +1,219 @@
+$values: (
+  neutral: (
+    grey: (
+      absolute-black: grey-0 grey-1000,
+      black: grey-50 grey-1000,
+      darkest: grey-75 grey-975,
+      darker: grey-100 grey-950,
+      dark: grey-125 grey-925,
+      strongest: grey-200 grey-850,
+      strong: grey-425 grey-625,
+      soft: grey-625 grey-425,
+      softest: grey-850 grey-200,
+      light: grey-925 grey-125,
+      lighter: grey-950 grey-100,
+      lightest: grey-975 grey-75,
+      white: grey-1000 grey-50,
+      border: grey-900 grey-175,
+      raised: grey-1000 grey-75,
+      overlap: grey-1000 grey-100,
+      lifted: grey-1000 grey-75,
+      alt-raised: grey-975 grey-100,
+      alt-overlap: grey-975 grey-125,
+      contrast-raised: grey-950 grey-125,
+      contrast-overlap: grey-950 grey-150
+    )
+  ),
+  primary: (
+    blue-france: (
+      strong: blue-france-sun-113 blue-france-625,
+      softest: blue-france-850 blue-france-200,
+      light: blue-france-925 blue-france-125,
+      lighter: blue-france-950 blue-france-100,
+      lightest: blue-france-975 blue-france-75,
+      main: blue-france-main-525 blue-france-main-525,
+      inverted: blue-france-975 blue-france-sun-113
+    ),
+    red-marianne: (
+      strong: red-marianne-425 red-marianne-625,
+      softest: red-marianne-850 red-marianne-200,
+      light: red-marianne-925 red-marianne-125,
+      lighter: red-marianne-950 red-marianne-100,
+      lightest: red-marianne-975 red-marianne-75,
+      main: red-marianne-main-472 red-marianne-main-472,
+      inverted: red-marianne-975 red-marianne-75
+    )
+  ),
+  system: (
+    info: (
+      strong: info-425 info-625,
+      softest: info-850 info-200,
+      light: info-925 info-125,
+      lighter: info-950 info-100,
+      lightest: info-975 info-75,
+      main: info-main-525 info-main-525
+    ),
+    success: (
+      strong: success-425 success-625,
+      softest: success-850 success-200,
+      light: success-925 success-125,
+      lighter: success-950 success-100,
+      lightest: success-975 success-75,
+      main: success-main-525 success-main-525
+    ),
+    warning: (
+      strong: warning-425 warning-625,
+      softest: warning-850 warning-200,
+      light: warning-925 warning-125,
+      lighter: warning-950 warning-100,
+      lightest: warning-975 warning-75,
+      main: warning-main-525 warning-main-525
+    ),
+    error: (
+      strong: error-425 error-625,
+      softest: error-850 error-200,
+      light: error-925 error-125,
+      lighter: error-950 error-100,
+      lightest: error-975 error-75,
+      main: error-main-525 error-main-525
+    )
+  ),
+  accent: (
+    green-tilleul-verveine: (
+      strong: green-tilleul-verveine-sun-418 green-tilleul-verveine-moon-817,
+      softest: green-tilleul-verveine-850 green-tilleul-verveine-200,
+      light: green-tilleul-verveine-925 green-tilleul-verveine-125,
+      lighter: green-tilleul-verveine-950 green-tilleul-verveine-100,
+      lightest: green-tilleul-verveine-975 green-tilleul-verveine-75,
+      main: green-tilleul-verveine-main-707 green-tilleul-verveine-main-707
+    ),
+    green-bourgeon: (
+      strong: green-bourgeon-sun-425 green-bourgeon-moon-759,
+      softest: green-bourgeon-850 green-bourgeon-200,
+      light: green-bourgeon-925 green-bourgeon-125,
+      lighter: green-bourgeon-950 green-bourgeon-100,
+      lightest: green-bourgeon-975 green-bourgeon-75,
+      main: green-bourgeon-main-640 green-bourgeon-main-640
+    ),
+    green-emeraude: (
+      strong: green-emeraude-sun-425 green-emeraude-moon-753,
+      softest: green-emeraude-850 green-emeraude-200,
+      light: green-emeraude-925 green-emeraude-125,
+      lighter: green-emeraude-950 green-emeraude-100,
+      lightest: green-emeraude-975 green-emeraude-75,
+      main: green-emeraude-main-632 green-emeraude-main-632
+    ),
+    green-menthe: (
+      strong: green-menthe-sun-373 green-menthe-moon-652,
+      softest: green-menthe-850 green-menthe-200,
+      light: green-menthe-925 green-menthe-125,
+      lighter: green-menthe-950 green-menthe-100,
+      lightest: green-menthe-975 green-menthe-75,
+      main: green-menthe-main-548 green-menthe-main-548
+    ),
+    green-archipel: (
+      strong: green-archipel-sun-391 green-archipel-moon-716,
+      softest: green-archipel-850 green-archipel-200,
+      light: green-archipel-925 green-archipel-125,
+      lighter: green-archipel-950 green-archipel-100,
+      lightest: green-archipel-975 green-archipel-75,
+      main: green-archipel-main-557 green-archipel-main-557
+    ),
+    blue-ecume: (
+      strong: blue-ecume-sun-247 blue-ecume-moon-675,
+      softest: blue-ecume-850 blue-ecume-200,
+      light: blue-ecume-925 blue-ecume-125,
+      lighter: blue-ecume-950 blue-ecume-100,
+      lightest: blue-ecume-975 blue-ecume-75,
+      main: blue-ecume-main-400 blue-ecume-main-400
+    ),
+    blue-cumulus: (
+      strong: blue-cumulus-sun-368 blue-cumulus-moon-732,
+      softest: blue-cumulus-850 blue-cumulus-200,
+      light: blue-cumulus-925 blue-cumulus-125,
+      lighter: blue-cumulus-950 blue-cumulus-100,
+      lightest: blue-cumulus-975 blue-cumulus-75,
+      main: blue-cumulus-main-526 blue-cumulus-main-526
+    ),
+    purple-glycine: (
+      strong: purple-glycine-sun-319 purple-glycine-moon-630,
+      softest: purple-glycine-850 purple-glycine-200,
+      light: purple-glycine-925 purple-glycine-125,
+      lighter: purple-glycine-950 purple-glycine-100,
+      lightest: purple-glycine-975 purple-glycine-75,
+      main: purple-glycine-main-494 purple-glycine-main-494
+    ),
+    pink-macaron: (
+      strong: pink-macaron-sun-406 pink-macaron-moon-833,
+      softest: pink-macaron-850 pink-macaron-200,
+      light: pink-macaron-925 pink-macaron-125,
+      lighter: pink-macaron-950 pink-macaron-100,
+      lightest: pink-macaron-975 pink-macaron-75,
+      main: pink-macaron-main-689 pink-macaron-main-689
+    ),
+    pink-tuile: (
+      strong: pink-tuile-sun-425 pink-tuile-moon-750,
+      softest: pink-tuile-850 pink-tuile-200,
+      light: pink-tuile-925 pink-tuile-125,
+      lighter: pink-tuile-950 pink-tuile-100,
+      lightest: pink-tuile-975 pink-tuile-75,
+      main: pink-tuile-main-556 pink-tuile-main-556
+    ),
+    yellow-tournesol: (
+      strong: yellow-tournesol-sun-407 yellow-tournesol-moon-922,
+      softest: yellow-tournesol-850 yellow-tournesol-200,
+      light: yellow-tournesol-925 yellow-tournesol-125,
+      lighter: yellow-tournesol-950 yellow-tournesol-100,
+      lightest: yellow-tournesol-975 yellow-tournesol-75,
+      main: yellow-tournesol-main-731 yellow-tournesol-main-731
+    ),
+    yellow-moutarde: (
+      strong: yellow-moutarde-sun-348 yellow-moutarde-moon-860,
+      softest: yellow-moutarde-850 yellow-moutarde-200,
+      light: yellow-moutarde-925 yellow-moutarde-125,
+      lighter: yellow-moutarde-950 yellow-moutarde-100,
+      lightest: yellow-moutarde-975 yellow-moutarde-75,
+      main: yellow-moutarde-main-679 yellow-moutarde-main-679
+    ),
+    orange-terre-battue: (
+      strong: orange-terre-battue-sun-370 orange-terre-battue-moon-672,
+      softest: orange-terre-battue-850 orange-terre-battue-200,
+      light: orange-terre-battue-925 orange-terre-battue-125,
+      lighter: orange-terre-battue-950 orange-terre-battue-100,
+      lightest: orange-terre-battue-975 orange-terre-battue-75,
+      main: orange-terre-battue-main-645 orange-terre-battue-main-645
+    ),
+    brown-cafe-creme: (
+      strong: brown-cafe-creme-sun-383 brown-cafe-creme-moon-885,
+      softest: brown-cafe-creme-850 brown-cafe-creme-200,
+      light: brown-cafe-creme-925 brown-cafe-creme-125,
+      lighter: brown-cafe-creme-950 brown-cafe-creme-100,
+      lightest: brown-cafe-creme-975 brown-cafe-creme-75,
+      main: brown-cafe-creme-main-782 brown-cafe-creme-main-782
+    ),
+    brown-caramel: (
+      strong: brown-caramel-sun-425 brown-caramel-moon-901,
+      softest: brown-caramel-850 brown-caramel-200,
+      light: brown-caramel-925 brown-caramel-125,
+      lighter: brown-caramel-950 brown-caramel-100,
+      lightest: brown-caramel-975 brown-caramel-75,
+      main: brown-caramel-main-648 brown-caramel-main-648
+    ),
+    brown-opera: (
+      strong: brown-opera-sun-395 brown-opera-moon-820,
+      softest: brown-opera-850 brown-opera-200,
+      light: brown-opera-925 brown-opera-125,
+      lighter: brown-opera-950 brown-opera-100,
+      lightest: brown-opera-975 brown-opera-75,
+      main: brown-opera-main-680 brown-opera-main-680
+    ),
+    beige-gris-galet: (
+      strong: beige-gris-galet-sun-407 beige-gris-galet-moon-821,
+      softest: beige-gris-galet-850 beige-gris-galet-200,
+      light: beige-gris-galet-925 beige-gris-galet-125,
+      lighter: beige-gris-galet-950 beige-gris-galet-100,
+      lightest: beige-gris-galet-975 beige-gris-galet-75,
+      main: beige-gris-galet-main-702 beige-gris-galet-main-702
+    )
+  )
+);

@@ -1,0 +1,131 @@
+////
+/// Navigation Module : default
+/// @group navigation
+////
+
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/preference';
+
+#{ns(nav)} {
+  @include disable-underline;
+  @include disable-list-style;
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+
+  @include list {
+    @include display-flex(column);
+    @include margin(0);
+    @include padding(0);
+
+    @include preference.forced-colors {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    @include respond-from(lg) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      & > *:first-child:nth-last-child(2) ~ *,
+      & > *:first-child:nth-last-child(3) ~ *,
+      & > *:first-child:nth-last-child(4) ~ * {
+        @include margin-left(5v);
+      }
+    }
+  }
+
+  @include list-item {
+    // TODO: supprimer la stylisation de la liste item, trouver une solution différente pour l'affichage du menu à droite et la barre d'espacement grise en mobile
+    @include display-flex(column, stretch);
+    flex: 0 1 auto;
+
+    @include relative;
+    @include before('', block) {
+      @include absolute(0, 0, 0 , 0, 100%, 100%);
+      pointer-events: none;
+    }
+
+    #{ns(btn)},
+    #{ns(link)} {
+      @include min-height(12v);
+      @include min-height(auto, lg);
+    }
+
+    @include respond-from(lg) {
+      position: initial;
+
+      @include before(none);
+      align-items: flex-start;
+
+      &--align-right {
+        align-items: flex-end;
+      }
+    }
+  }
+
+  &__link,
+  &__btn {
+    @include display-flex(row, center, space-between);
+    font-weight: bold;
+    @include padding(3v 4v);
+    @include margin(0);
+    @include size(auto, 100%);
+    @include text-style(md);
+    text-align: left;
+
+    @include respond-from(lg) {
+      min-height: spacing.space(14v);
+      @include padding(4v);
+      @include text-style(sm);
+      font-weight: normal;
+      @include enable-tint;
+
+      @include selector.current {
+        @include relative;
+
+        @include before('') {
+          @include absolute(auto, null, 0, 0, 100%, 2px);
+          @include margin-top(0);
+
+          @include preference.forced-colors {
+            background-color: highlight;
+            @include height(1v);
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    &:not([href]) {
+      @include selector.current {
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+  }
+
+  &__btn {
+    @include icon(arrow-down-s-line, sm, after) {
+      @include margin-left(2v);
+      @include margin-right(0);
+      transition: transform 0.3s;
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
+    }
+    @include icon-forced-color(buttontext, true, after);
+
+    @include respond-from(lg) {
+      justify-content: flex-start;
+    }
+
+    &[aria-expanded="true"] {
+      @include after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}

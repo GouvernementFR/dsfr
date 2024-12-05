@@ -1,0 +1,40 @@
+<% const sample = getSample(include); %>
+
+<%- section('Réseaux sociaux seuls', 'Les icones réseaux sociaux disponibles pour ce composant sont définies dans :', 0, true); %>
+
+<div class="fr-container">
+    <%
+    const accordion = {
+        label: 'src/component/follow/style/_setting.scss',
+        id: uniqueId('snippet'),
+        content: '<pre class=" language-scss"><code>' + include('../style/_setting.scss') + '</code></pre>'
+    };
+    %>
+    <div class="<%= prefix %>-mb-4v" >
+        <%- include(root + 'src/dsfr/component/accordion/template/ejs/accordion', {accordion: accordion}); %>
+    </div>
+
+
+    <%- section(null, 'Il est aussi possible d\'appliquer une classe utilitaire sur un bouton pour utiliser une icone du dsfr (ex: "fr-icon-rss-line")', 0); %>
+
+</div>
+
+<%- sample('', './sample/socials-only.ejs', {}, true); %>
+
+<%- sample('Lettre d\'info seule', './sample/newsletter-only.ejs', {}, true); %>
+
+<%- sample('Lettre d\'info seule avec formulaire', './sample/newsletter-only-form.ejs', {}, true); %>
+
+<%- sample('Réseaux sociaux et Lettre d\'info mise en avant', './sample/socials-newsletter-button.ejs', {}, true); %>
+
+<%- sample('Réseaux sociaux et Lettre d\'info avec formulaire', './sample/socials-newsletter-form.ejs', {}, true); %>
+
+<%- sample('Réseaux sociaux et Lettre d\'info avec formulaire - succès', './sample/socials-newsletter-alert.ejs', {follow: {newsletter: { succes: true }}}, true); %>
+
+<%- sample('Réseaux sociaux et Lettre d\'info avec formulaire - erreur', './sample/socials-newsletter-form.ejs', {follow: {newsletter: { error: true }}}, true); %>
+
+<%- deprecation(); %>
+
+<%- sample('Réseaux sociaux seuls', '../deprecated/example/sample/socials-only.ejs', {}, true); %>
+
+<%- sample('Réseaux sociaux et Lettre d\'info mise en avant', '../deprecated/example/sample/socials-newsletter-highlight.ejs', {}, true); %>

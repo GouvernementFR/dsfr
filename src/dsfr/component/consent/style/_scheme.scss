@@ -1,0 +1,48 @@
+////
+/// Consent Scheme
+/// @group consent
+////
+
+@use 'src/module/color';
+@use 'src/module/elevation';
+
+@mixin _consent-scheme($legacy: false) {
+  #{ns(consent-placeholder)} {
+    @include color.background(contrast grey, (legacy:$legacy));
+  }
+
+  #{ns(consent-banner)} {
+    // @include color.background(contrast grey, (legacy:$legacy));
+    @include elevation.elevate(overlap-above, (legacy:$legacy, usage: alt));
+    @include color.box-shadow(default grey, (legacy:$legacy));
+  }
+
+  #{ns(consent-manager__header)},
+  #{ns(consent-service)} {
+    @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+    @include color.text(default grey, (legacy:$legacy));
+
+    #{ns-group(radio)} {
+      + #{ns-group(radio)} {
+        @include before {
+          @include color.box-shadow(default grey, (legacy:$legacy));
+        }
+      }
+    }
+  }
+
+  #{ns(consent-service)} {
+    &__title {
+      @include color.text(title grey, (legacy:$legacy));
+    }
+
+    &:last-of-type,
+    #{ns(consent-service)} {
+      @include color.no-box-shadow((legacy: $legacy));
+    }
+
+    #{ns(consent-service__collapse-btn)} {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<%#
+# paramètres de la zone d'action
+
+* footer.buttonsGroup (object, optionnal) : paramètres de configuration d'un groupe de boutons
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<div class="<%= prefix %>-card__footer" >
+    <% if (footer.buttonsGroup) { %>
+        <%- include('../../../button/template/ejs/buttons-group.ejs', { buttonsGroup: footer.buttonsGroup }); %>
+    <% } %>
+    <% if (footer.linksGroup) { %>
+        <%- include('../../../link/template/ejs/links-group.ejs', { linksGroup: footer.linksGroup }); %>
+    <% } %>
+</div>

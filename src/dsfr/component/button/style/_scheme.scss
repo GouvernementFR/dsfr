@@ -1,0 +1,39 @@
+////
+/// button Scheme
+/// @group button
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin _button-scheme($legacy: false) {
+  #{ns(btn)} {
+    @include color.background(action-high blue-france, (legacy:$legacy, hover: true));
+    @include color.text(inverted blue-france, (legacy:$legacy));
+
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
+
+    // Outline variant
+    &--secondary {
+      @include btn-kind-scheme(2, $legacy);
+    }
+
+    // Grey outline variant
+    &--tertiary,
+    &--sort,
+    &--account {
+      @include btn-kind-scheme(3, $legacy);
+    }
+
+    // Ghost variant
+    &--tertiary-no-outline,
+    &--close,
+    &--display,
+    &--fullscreen,
+    &--tooltip,
+    &--briefcase,
+    &--team {
+      @include btn-kind-scheme(4, $legacy);
+    }
+  }
+}

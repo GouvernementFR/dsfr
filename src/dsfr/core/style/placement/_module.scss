@@ -1,0 +1,11 @@
+////
+/// Core Module : Placement
+/// @group core
+////
+
+@use 'src/module/spacing';
+
+#{ns(placement)} {
+  @include fixed;
+  width: max-content;
+}

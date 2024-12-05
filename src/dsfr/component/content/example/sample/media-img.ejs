@@ -1,0 +1,18 @@
+<%
+const content = locals.content || {};
+const ratio = content.ratio || null;
+const imgSrc = content.img  && content.img.src || 'img/placeholder.16x9.png';
+
+let data = {
+  img: imgData(imgSrc, 'unknown', ratio ? ratio : '16x9'),
+  caption: content.img && content.img.caption || 'Description / Source',
+  link: {
+    label: content.img && content.img.link || 'Libellé lien',
+    href: content.img && content.img.href || '#'
+  },
+  id: content.id || uniqueId('media'),
+  ...content
+};
+%>
+
+<%- include('media-default', {content:data}); %>

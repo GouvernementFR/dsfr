@@ -1,0 +1,25 @@
+<%
+let tabsGroup = locals.tabs || {tabs: []};
+let tabs = tabsGroup.tabs || [];
+let data = {tabs: []};
+
+for (let i = 0; i < 2; i++) {
+  const subdata = { tabs: [], tabsCount: 2 };
+
+  for (let j = 0; j < 3 - i; j++) {
+    subdata.tabs[j] = {
+      id:  uniqueId('subtabs-in-tabs'),
+      content: include('./tabs-default', { tabs: {tabsCount:(2 + j) } }),
+      label: `Onglet imbriqué ${j}`
+      }
+  }
+
+  data.tabs[i] = {
+    id:  uniqueId('tabs-in-tabs'),
+    content: include('./tabs-default', {tabs: subdata}),
+    label: `Onglet principal ${i}`
+  }
+}
+%>
+
+<%- include('../../template/ejs/tabs', {tabs: data}) %>

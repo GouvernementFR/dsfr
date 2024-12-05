@@ -1,0 +1,51 @@
+////
+/// Tag group Module
+/// @group tag
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns-group(tags)} {
+  @include disable-list-style;
+  @include display-flex;
+  @include margin-x(-1v);
+  flex-wrap: wrap;
+
+  > li {
+    line-height: spacing.space(11v);
+  }
+
+  #{ns(tag)} {
+    @include margin(0 1v 2v 1v);
+    vertical-align: top;
+  }
+
+  &#{ns-group(tags)}--sm {
+    @include nest-tag(sm, null);
+
+    button,
+    input[type=button] {
+      &#{ns(tag)} {
+        &#{ns(tag)}--dismiss {
+          @include icon(null, xs, after) {
+            @include margin-right(-0.75v);
+          }
+
+          @include icon-forced-color(buttontext, null, after);
+        }
+
+        @include pressed-selector(true) {
+          @include icon(null, xs, after) {
+            @include absolute(3px, 0);
+            @include margin(-1.5v);
+
+            @include preference.forced-colors {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

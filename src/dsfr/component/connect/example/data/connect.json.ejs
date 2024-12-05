@@ -1,0 +1,18 @@
+<%
+const connect = locals.connect || {};
+const variant = connect.variant || 'default';
+
+const data = {
+  markup: connect.markup || 'button',
+  id: connect.id || uniqueId('connect'),
+  login: getText('default.login', 'connect'),
+  brand: getText(`${variant}.brand`, 'connect', true),
+  variant: variant,
+};
+
+const linkType = hasText(`${variant}.link`, 'connect') && hasText(`${variant}.href`, 'connect') ? variant : 'default';
+data.link = connect.link ? connect.link : { label: getText(`${linkType}.link`, 'connect'), href: getText(`${linkType}.href`, 'connect') };
+
+%>
+
+<%- JSON.stringify(data); %>

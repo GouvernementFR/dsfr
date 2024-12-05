@@ -1,0 +1,29 @@
+////
+/// Navigation Scheme : Mega menu
+/// @group navigation
+////
+
+@use 'src/module/color';
+@use 'src/module/elevation';
+@use 'src/module/media-query';
+
+@mixin _navigation-scheme-mega-menu($legacy: false) {
+  #{ns(mega-menu)} {
+    @include media-query.respond-from(lg) {
+      @include elevation.elevate(overlap, (legacy: $legacy));
+      @include color.box-shadow(open blue-france, (legacy:$legacy), top-1-in);
+    }
+
+    &__list {
+      @include before {
+        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-out);
+      }
+    }
+
+    &__category {
+      @include respond-from(lg) {
+        @include color.box-shadow(default grey, (legacy:$legacy), 0 calc(4v + 1px) 0 -4v color.$constant);
+      }
+    }
+  }
+}

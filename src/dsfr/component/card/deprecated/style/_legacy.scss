@@ -1,0 +1,14 @@
+////
+/// Card Legacy - deprecated
+/// @group card
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(card)} {
+    & > &__img {
+      flex-shrink: 0;
+    }
+  }
+}

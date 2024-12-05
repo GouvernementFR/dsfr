@@ -1,0 +1,42 @@
+////
+/// Pagination Legacy
+/// @group pagination
+////
+
+@use 'src/module/color';
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  /**
+  * Correctif de la largeur de la légende d'un fieldset
+  */
+  #{ns(pagination)} {
+    @include disable-underline-legacy;
+    @include disable-list-style-legacy;
+
+    a[href],
+    button {
+      &#{ns(pagination__link)} {
+        @include color.transparent-background((legacy: true, hover: true));
+      }
+    }
+
+    &__link {
+      #{ns(pagination)} &--first {
+        @include icon-legacy(arrow-left-s-first-line, md);
+      }
+
+      #{ns(pagination)} &--prev {
+        @include icon-legacy(arrow-left-s-line, md);
+      }
+
+      #{ns(pagination)} &--next {
+        @include icon-legacy(arrow-right-s-line, md);
+      }
+
+      #{ns(pagination)} &--last {
+        @include icon-legacy(arrow-right-s-last-line, md);
+      }
+    }
+  }
+}

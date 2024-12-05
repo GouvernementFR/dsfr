@@ -1,0 +1,279 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'src/module/legacy';
+@use 'src/module/media-query';
+@use 'src/module/spacing';
+@use 'src/module/specificity';
+@use 'src/module/string';
+@use 'src/module/utilities';
+@use '../variable/constant';
+@use '../function/box-shadow' as bs;
+@use '../function/colors';
+@use '../function/result';
+@use '../function/token';
+
+$COLOR: constant.$value;
+
+@mixin element($prop, $context, $tokens, $options: (), $value: $COLOR) {
+  $legacy: map.get($options, legacy);
+  $important: map.get($options, important);
+  $hover: map.get($options, hover);
+  $standalone: map.get($options, standalone);
+
+  $legacy-target: null;
+  @if $legacy == true {
+    $legacy-target: ie11;
+  }
+
+  $tokens: token.normalise($tokens, $context);
+  $type: decision;
+  $options: (var: true);
+
+  @if $legacy or $standalone {
+    $type: hex;
+    $option: (theme: light);
+  }
+
+  $colors: colors.from-list($tokens, $type, $options);
+  $result: result.get($colors, $value);
+  $result: specificity.important($result, $important);
+
+  @include legacy.is($legacy-target) {
+    #{$prop}: #{string.unstringify($result)};
+  }
+
+  @if ($hover == true or ($hover == inherit and $legacy == false)) and ($context == background and list.length($tokens) == 1) {
+
+    $token: nth($tokens, 1);
+    @if $legacy or $standalone {
+      @include _apply-pseudos($token, false, true, $legacy-target, $prop, $value, $important);
+    }
+    @else {
+      @if $prop == background-color {
+        --idle: transparent; // #{$result};
+        @include _apply-pseudos($token, true, false, null, $prop, $value, $important);
+      }
+      @else {
+        @include _apply-pseudos($token, true, true, null, $prop, $value, $important);
+      }
+    }
+  }
+}
+
+@mixin _apply-pseudos($token, $decision: true, $pseudo: false, $target: null, $prop: background-color, $value: constant.$value, $important: false) {
+  @include legacy.is($target) {
+    @include _apply-pseudo($token, hover, $decision, $pseudo, $prop, $value, $important);
+    @include _apply-pseudo($token, active, $decision, $pseudo, $prop, $value, $important);
+  }
+}
+
+@mixin _apply-pseudo($token, $type, $decision: true, $pseudo: false, $prop: background-color, $value: constant.$value, $important: false) {
+  $nest: null;
+  $p: --#{$type};
+  @if $pseudo {
+    $nest: '&:#{$type}';
+    $p: $prop;
+  }
+
+  $t: hex;
+  $options: (#{$type}: true);
+  @if $decision {
+    $t: decision;
+    $options: (var: true, #{$type}: true);
+  }
+
+  $color: colors.from($token, $t, $options);
+  $result: result.get($color, $value);
+  $result: specificity.important($result, $important);
+
+  @include utilities.nest($nest) {
+    #{$p}: #{string.unstringify($result)};
+  }
+}
+
+/// Ajout d'une couleur de background sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+@mixin background($tokens, $options:()) {
+  @if not map.has-key($options, hover) {
+    $options: map.merge($options, (hover: inherit));
+  }
+  @include element(background-color, background, $tokens, $options);
+}
+
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+///   - hover {boolean}: si true, surcharge la valeur de blend pour être héritée
+@mixin transparent-background($options) {
+  $legacy: map.get($options, legacy);
+  $important: map.get($options, important);
+  $hover: map.get($options, hover);
+  $tokens: token.normalise(default grey, background);
+  $value: specificity.important(transparent, $important);
+
+  @if $legacy {
+    @include legacy.is(ie11) {
+      background-color: transparent;
+
+      @if $hover {
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &:active {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+  @else {
+    background-color: #{$value};
+    @if $hover {
+      --hover: inherit;
+      --active: inherit;
+    }
+  }
+}
+
+/// Ajout d'une couleur de background sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+@mixin background-image($tokens, $options, $value: linear-gradient(0deg, $COLOR, $COLOR)) {
+  $d: token.length($tokens);
+  @if $d > 1 and $value == linear-gradient(0deg, $COLOR, $COLOR) {
+    $transformed: ();
+    @for $i from 1 through $d {
+      $c: string.unquote('$color##{$i}');
+      $transformed: list.append($transformed, linear-gradient(0deg, $c, $c), comma);
+    }
+    $value: $transformed;
+  }
+  @include element(background-image, background, $tokens, $options, $value);
+}
+
+/// Ajout d'une couleur de texte sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+@mixin text($tokens, $options) {
+  @include element(color, text, $tokens, $options);
+}
+
+/// Ajout d'une couleur de texte sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+@mixin text-fill($tokens, $options) {
+  @include element(-webkit-text-fill-color, text, $tokens, $options);
+}
+
+/// Ajout d'une couleur de fill sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+@mixin fill($tokens, $options) {
+  @include element(fill, background , $tokens, $options);
+}
+
+/// Ajout d'une couleur de border sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+///   - side {String}: le côté affecté. valeurs: top, right, bottom, left
+/// @param {List} $value - définition des propriétés de border
+@mixin border($tokens, $options, $value:1px solid $COLOR) {
+  $prop:border;
+  @if map.has-key($options, side) {
+    $prop:border-#{map.get($options, side)};
+  }
+  @include element($prop, border, $tokens, $options, $value);
+}
+
+@mixin no-border($options: ()) {
+  $breakpoint: map.get($options, breakpoint);
+  $legacy: map.get($options, legacy);
+  @include media-query.respond-from($breakpoint) {
+    @if $legacy {
+      @include legacy.is(ie11) {
+        border: 0;
+      }
+    }
+    @else {
+      border: 0;
+    }
+  }
+}
+
+/// Ajout d'une couleur d'outline sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+/// @param {List} $value - définition des propriétés d'outline
+@mixin outline($tokens, $options, $value:1px solid $COLOR) {
+  @include element(outline, border, $tokens, $options, $value);
+}
+
+/// Ajout d'une couleur de box-shadow sur un élément
+/// @access public
+/// @param {list} $tokens - liste des tokens de décision
+/// @param {map} $options - map des options :
+///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
+///   - important {boolean}: si true, applique !important à la règle css
+/// @param {List} $value - définition des propriétés de box-shadow
+@mixin box-shadow($tokens, $options, $value: all-1-in) {
+  $has-keys: true;
+  $transformed: ();
+  $d: token.length($tokens);
+  $i: 1;
+  @each $v in $value {
+    @if bs.has($v) {
+      $transformed: append($transformed, bs.get($v, $i), comma);
+      @if $i < $d {
+        $i: $i + 1;
+      }
+    }
+    @else {
+      $has-keys: false;
+    }
+  }
+  @if $has-keys {
+    $value: $transformed;
+  }
+  @include element(box-shadow, border, $tokens, $options, spacing.space($value));
+}
+
+/// Supprime la shadow-box sur l'élément
+/// @access public
+/// @param {string} $breakpoint - la shadow-box est retiré à partir d'un breakpoint si celui-ci est défini
+@mixin no-box-shadow($options) {
+  $breakpoint: map.get($options, breakpoint);
+  $legacy: map.get($options, legacy);
+  @include media-query.respond-from($breakpoint) {
+    @if $legacy {
+      @include legacy.is(ie11) {
+        box-shadow: none;
+      }
+    }
+    @else {
+      box-shadow: none;
+    }
+  }
+}

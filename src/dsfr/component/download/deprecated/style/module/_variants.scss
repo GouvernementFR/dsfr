@@ -1,0 +1,57 @@
+////
+/// Download Module : variants
+/// @group download
+////
+
+@use 'src/module/spacing';
+
+#{ns(download)} {
+  &--card {
+    @include padding(6v 6v 16v 6v);
+    @include padding(8v 8v 20v 8v, md);
+    @include set-text-margin(0);
+    @include set-title-margin(0);
+  }
+
+  &--card &__link {
+    @include title-style(h5);
+    @include icon-size(sm, after);
+
+    @include respond-from(md) {
+      @include icon-size(md, after);
+    }
+
+    @include after {
+      @include absolute(null, 6v, 6v);
+      @include margin(0);
+
+      @include respond-from(md) {
+        bottom: spacing.space(8v);
+        right: spacing.space(8v);
+      }
+    }
+  }
+
+  &--card &__desc {
+    display: block;
+    @include margin-top(2v);
+    @include margin-top(3v, md);
+  }
+
+  &--card &__detail {
+    @include absolute(null, null, 6v, 6v);
+    max-width: calc(100% - #{space(25v)});
+
+    @include respond-from(md) {
+      bottom: spacing.space(8v);
+      left: spacing.space(8v);
+    }
+
+    @include has-icon {
+      @include icon-size(sm, before);
+      @include before {
+        @include margin-right(2v);
+      }
+    }
+  }
+}

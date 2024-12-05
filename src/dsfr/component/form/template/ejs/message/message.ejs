@@ -1,0 +1,38 @@
+<%#
+# paramètres message
+
+* message.id (string, required) : id de l'élément référencé
+
+* message.type (string, optional): type du message d'erreur
+
+* message.text (string, optional): contenu du message
+
+* message.attributes (object, optional) : attributs spécifiques à rajouter sur le message
+
+* message.classes (array, optional) : classes spécifiques à rajouter sur le message
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+<%
+const message = locals.message || {};
+const classes = [...message.classes || [], `${prefix}-message`];
+const attributes = { ...message.attributes, id: message.id };
+switch (message.type) {
+  case 'error':
+    classes.push(`${prefix}-message--error`);
+    break;
+
+  case 'valid':
+    classes.push(`${prefix}-message--valid`);
+    break;
+
+  case 'info':
+    classes.push(`${prefix}-message--info`);
+    break;
+
+  case 'warning':
+    classes.push(`${prefix}-message--warning`);
+    break;
+}
+%>
+<p <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- message.text %></p>

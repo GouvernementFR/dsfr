@@ -1,0 +1,76 @@
+////
+/// Table Module - footer
+/// @group Table
+////
+
+@use 'src/module/media-query';
+
+#{ns(table)} {
+  &__footer {
+    @include media-query.respond-from(md) {
+      @include display-flex(row, center, space-between, wrap);
+
+      #{ns(select-group)} {
+        #{ns(select)} {
+          @include size(64v);
+        }
+      }
+
+      #{ns(btns-group)} {
+        @include padding-left(2v);
+      }
+    }
+
+    &--start {
+      @include margin-top(4v);
+
+      @include media-query.respond-from(md) {
+        @include display-flex(row, center, flex-start);
+
+        #{ns(select-group)} {
+          @include padding-left(2v);
+          @include padding-right(2v);
+
+          #{ns(select)} {
+            @include margin-top(0);
+          }
+        }
+      }
+
+      #{ns(table__detail)} {
+        @include padding-right(2v);
+      }
+    }
+
+    &--middle {
+      @include margin-top(4v);
+
+      @include display-flex(row, center, center);
+
+      @include media-query.respond-from(lg) {
+        display: block;
+        @include padding-left(2v);
+        @include padding-right(2v);
+      }
+
+      #{ns(pagination)} {
+        @include margin-top(3v);
+
+        &__list {
+          @include media-query.respond-from(lg) {
+            flex-wrap: nowrap;
+          }
+        }
+      }
+    }
+
+    &--end {
+      @include media-query.respond-from(lg) {
+        flex: 1 0 0;
+      }
+
+      @include margin-top(6v);
+      flex: 1 0 100%;
+    }
+  }
+}

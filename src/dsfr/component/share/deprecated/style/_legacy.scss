@@ -1,0 +1,17 @@
+////
+/// Share Deprecated Legacy
+/// @group share
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  @include build-share-links-legacy();
+
+  #{ns(share__link)}--mail {
+    @include icon-legacy(mail-line, md, before);
+  }
+  #{ns(share__link)}--copy {
+    @include icon-legacy(links-fill, md, before);
+  }
+}

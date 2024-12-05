@@ -1,0 +1,26 @@
+////
+/// Connect Module : plus
+/// @group connect
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(connect)} {
+  &--plus {
+    @include padding-right(3em);
+
+    @include after ('+', block) {
+      @include absolute(null, 0.25em, 0);
+      font-size: 3em;
+      font-weight: bold;
+      line-height: 1;
+      transform: translate(5%, -17%);
+
+      @include preference.forced-colors {
+        forced-color-adjust: none;
+        color: buttontext;
+      }
+    }
+  }
+}

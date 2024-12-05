@@ -1,0 +1,18 @@
+////
+/// Summary Legacy
+/// @group summary
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(summary)} {
+    ol {
+      list-style-type: decimal;
+    }
+
+    &__link {
+      @include before(none);
+    }
+  }
+}

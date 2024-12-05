@@ -1,0 +1,72 @@
+<%
+const tile = locals.tile || {};
+const content = tile.content || {};
+const data = {
+  content: {
+    ...content,
+    title: content.title || 'Intitulé de la tuile',
+    actionMarkup: content.actionMarkup || undefined,
+    ...(content.description && {description: content.description === true ? lorem('', 60) : content.description})
+  },
+  size: tile.size,
+  enlarge: tile.enlarge !== false && tile.footer === undefined && !tile.noLink,
+  icon: tile.icon,
+  download: tile.download,
+  variations: tile.variations
+}
+
+if (tile.horizontal) {
+  data.horizontal = tile.horizontal;
+}
+
+if (tile.vertical) {
+  data.vertical = tile.vertical;
+}
+
+if (tile.pictogram) {
+  data.header = {};
+  data.header.pictogram = {};
+  switch (typeof tile.pictogram) {
+    case 'string':
+      data.header.pictogram.name = tile.pictogram;
+      break;
+
+    case 'object':
+      data.header.pictogram = tile.pictogram;
+      break;
+
+    default:
+      data.header.pictogram = {name: 'city-hall'};
+      break;
+  }
+}
+
+if (tile.noLink) data.content.noLink = true;
+
+if (tile.content) {
+  data.content.attributes = tile.content.attributes ?? {};
+  if (tile.content.assess) data.content.assess = tile.content.assess;
+  if (tile.content.lang) data.content.lang = tile.content.lang;
+  if (tile.content.blank === true) {
+    data.content.blank = tile.content.blank;
+    data.content.attributes.title = getBlankTitle(data.content.title);
+  }
+
+  if (tile.content.disabled) data.content.disabled = tile.content.disabled;
+
+  if (tile.content.details) {
+    data.content.details = content.details === true ? 'Détail (optionel)' : tile.content.details
+  }
+
+  if (tile.content.badge) {
+    data.content.badge = { label: 'Libellé badge', accent: 'purple-glycine'};
+  }
+
+  if (tile.content.tag) {
+    data.content.tag = { label: 'Libellé tag'};
+  }
+}
+
+%>
+
+<%- include('../../template/ejs/tile', {tile: data}); %>

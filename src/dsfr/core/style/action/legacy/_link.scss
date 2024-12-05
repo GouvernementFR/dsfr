@@ -1,0 +1,23 @@
+////
+/// Core Legacy : Action link
+/// @group core
+////
+
+@use 'src/module/legacy';
+@use 'src/module/spacing';
+
+@include legacy.is(ie11) {
+  #{ns(raw-link)} {
+    &[href],
+    [href] {
+      @include after(none);
+    }
+  }
+
+  [target="_blank"] {
+    @include icon-legacy(external-link-line, sm, after) {
+      content: "";
+      vertical-align: sub;
+    }
+  }
+}

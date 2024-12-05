@@ -1,0 +1,80 @@
+title: Analytics
+description:
+doc:
+subdir:
+  title: Pages
+  action: Activation des actions
+  reduce: Réduction des actions
+  attribute: Attributs
+  component: Composants
+  agnostic: sans framework
+  alert: Alerte (alert)
+  alert-close: Alerte avec bouton de fermeture
+  alert-dynamic: Alerte ajoutée dynamiquement
+  accordion: Accordéon (accordion)
+  accordion-nested: Accordéon imbriqué
+  angular: Angular (angular)
+  badge: Badge (badge)
+  breadcrumb: Fil d’ariane (breadcrumb)
+  breadcrumb-button: Fil d’ariane avec boutons
+  button: Bouton (button)
+  button-a-internal: Bouton interne avec etiquette a
+  button-a-external: Bouton externe avec etiquette a
+  button-a-download: Bouton de téléchargement avec etiquette a
+  callout: Mise en avant (callout)
+  card: Carte (card)
+  card-button: Carte avec boutons
+  card-link: Carte avec liens
+  card-tag: Carte avec tags
+  connect: Bouton France Connect (connect)
+  connect-a: Bouton France Connect avec etiquette a
+  content: Contenu médias (content)
+  content-svg: Contenu médias SVG
+  content-video: Contenu médias vidéo
+  consent: Gestionnaire de consentement (consent)
+  consent-placeholder: Gestionnaire de consentement bloc désactivé (placeholder)
+  checkbox: Case à cocher (checkbox)
+  checkbox-checked: Case à cocher cochée
+  download: Téléchargement de fichier (download)
+  footer: Pied de page (footer)
+  follow: Lettre d'information et Réseaux Sociaux (follow)
+  follow-form: Lettre d'information avec formulaire et Réseaux Sociaux
+  header: En-tête (header)
+  highlight: Mise en exergue (highlight)
+  input: Champ de saisie (input)
+  input-button: Combo champ de saisie avec bouton d'envoi
+  link: Lien (link)
+  link-external: Lien externe
+  link-download: Lien de téléchargement
+  modal: Modale (modal)
+  navigation: Navigation principale (navigation)
+  notice: Bandeau d'information (notice)
+  page: Pages
+  pagination: Pagination (pagination)
+  quote: Citation (quote)
+  radio: Bouton radio (radio)
+  radio-rich: Bouton radio riche
+  react: React (react)
+  search: Barre de recherche (search)
+  select: Liste déroulante (select)
+  share: Boutons de partage (share)
+  sidemenu: Menu latéral (sidemenu)
+  spa: Single-page application
+  stepper: Indicateur d'étapes (stepper)
+  summary: Sommaire (summary)
+  tab: Onglets (tab)
+  tag: Tag (tag)
+  tag-dismissible: Tag supprimable
+  tag-pressable: Tag pressable
+  tag-pressable-checked: Tag pressable coché
+  tag-clickable: Tag cliquable
+  table: Tableau (table)
+  tile: Tuile (tile)
+  toggle: Interrupteur (toggle)
+  toggle-checked: Interrupteur coché
+  tooltip: Information contextuelle (tooltip)
+  tooltip-btn: Infobulle
+  transcription: Transcription (transcription)
+  translate: Sélecteur de langue (translate)
+  upload: Ajout de fichier (upload)
+  vue: Vue (vue)

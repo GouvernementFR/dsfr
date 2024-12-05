@@ -1,6 +1,7 @@
 const { buildStyles } = require('./styles');
 const { buildScript } = require('./scripts');
 const { buildExample } = require('./example');
+const { buildStorybook } = require('./storybook');
 const { concatenate } = require('../generate/concatenate');
 const { copyImages, copyIcons, copyAssets } = require('./copy');
 const global = require('../../package.json');
@@ -76,6 +77,11 @@ const build = async (settings) => {
         log.error(e);
       }
     }
+  }
+
+  if (settings.storybook) {
+    log.section('storybook', true);
+    await buildStorybook();
   }
 
   if (settings.markdowns) {

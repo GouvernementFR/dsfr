@@ -1,0 +1,165 @@
+$values: (
+  background: (
+    default: (
+      neutral: white (hover: true)
+    ),
+    elevated: (
+      neutral: elevated (hover: true)
+    ),
+    alt: (
+      neutral: lightest (hover: true),
+      primary: lightest (hover: true),
+      accent: lightest (hover: true)
+    ),
+    contrast: (
+      neutral: lighter (hover: true),
+      primary: lighter (hover: true),
+      accent: lighter (hover: true),
+      system: lighter (hover: true)
+    ),
+    flat: (
+      neutral: strongest,
+      primary: strong,
+      accent: strong,
+      system: strong
+    ),
+    action-high: (
+      neutral: strongest (hover: true),
+      primary: strong (hover: true),
+      accent: strong (hover: true),
+      system: strong (hover: true)
+    ),
+    action-low: (
+      primary: light (hover: true),
+      accent: light (hover: true)
+    ),
+    active: (
+      primary: strong (hover: true)
+    ),
+    open: (
+      primary: light (hover: true)
+    ),
+    disabled: (
+      neutral: light
+    ),
+    raised: (
+      neutral: raised (hover: true)
+    ),
+    overlap: (
+      neutral: overlap (hover: true)
+    ),
+    lifted: (
+      neutral: lifted (hover: true)
+    ),
+    alt-raised: (
+      neutral: alt-raised (hover: true)
+    ),
+    alt-overlap: (
+      neutral: alt-overlap (hover: true)
+    ),
+    contrast-raised: (
+      neutral: contrast-raised (hover: true)
+    ),
+    contrast-overlap: (
+      neutral: contrast-overlap (hover: true)
+    )
+  ),
+  text: (
+    default: (
+      neutral: strongest,
+      system: strong
+    ),
+    action-high: (
+      neutral: black,
+      primary: strong,
+      accent: strong
+    ),
+    title: (
+      neutral: black,
+      primary: strong
+    ),
+    label: (
+      neutral: black,
+      primary: strong,
+      accent: strong
+    ),
+    active: (
+      neutral: black,
+      primary: strong
+    ),
+    mention: (
+      neutral: strong
+    ),
+    inverted: (
+      neutral: white,
+      primary: inverted,
+      system: lightest,
+      accent: lightest
+    ),
+    disabled: (
+      neutral: soft
+    ),
+    black-white: (
+      neutral: absolute-black
+    )
+  ),
+  border: (
+    default: (
+      neutral: border,
+      primary: main,
+      accent: main
+    ),
+    contrast: (
+      neutral: soft
+    ),
+    active: (
+      primary: strong
+    ),
+    action-high: (
+      neutral: black,
+      primary: strong,
+      system: strong
+    ),
+    action-low: (
+      primary: softest,
+      accent: softest
+    ),
+    open: (
+      primary: light
+    ),
+    plain: (
+      neutral: strongest,
+      primary: strong,
+      system: strong,
+      accent: strong
+    ),
+    disabled: (
+      neutral: light
+    )
+  ),
+  artwork: (
+    major: (
+      primary: strong (hover: true),
+      accent: strong (hover: true)
+    ),
+    minor: (
+      primary: main,
+      accent: main
+    ),
+    decorative: (
+      neutral: lighter,
+      primary: lighter,
+      accent: lighter
+    ),
+    background: (
+      neutral: lightest,
+      primary: lightest,
+      accent: lightest
+    ),
+    motif: (
+      neutral: light,
+      primary: light,
+      accent: light
+    )
+  )
+);

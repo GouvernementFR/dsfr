@@ -1,0 +1,116 @@
+<%#
+# paramètres fieldset
+
+* fieldset.id (string, required) : id du fieldset
+
+* fieldset.choice (boolean, optional) : si true, la graisse du label devient normal
+
+* fieldset.grid (boolean, optional) : (default: false) Ajoute une grid-row autour des éléments
+
+* fieldset.elements (array, optional) : tableau d'éléments control (voir control)
+
+* fieldset.disabled (boolean, optional): attribut disabled du composant
+
+* fieldset.legend (string, optional) : légende du composant
+
+* fieldset.hint (string, optional) : message de description additionel
+
+* fieldset.error (string, optional) : message d'erreur
+
+* fieldset.valid (string, optional) : message de succès
+
+* fieldset.massages (array, optional) : array de messages
+
+* fieldset.includeEmptyMessagesGroup (boolean, optional) : true par défaut
+
+* fieldset.attributes (object, optional) : attributs spécifiques à rajouter sur le fieldset
+
+* fieldset.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+<% eval(include('../message/builder.js.ejs')); %>
+
+<%
+const fieldset = locals.fieldset || {};
+const classes = fieldset.classes || [];
+classes.push(`${prefix}-fieldset`);
+const attributes = { ...fieldset.attributes, id: fieldset.id };
+let legend;
+const labelledBy = [];
+const messages = [];
+const ids = {
+  legend: `${fieldset.id}-legend`,
+  hint: `${fieldset.id}-hint`
+};
+
+if (fieldset.legend || fieldset.hint) {
+  let hint;
+
+  if (fieldset.hint) {
+    hint = {
+      text: fieldset.hint,
+      id: ids.hint
+    };
+  }
+
+  const legendClasses = [];
+  if (fieldset.choice) legendClasses.push(`${prefix}-fieldset__legend--regular`);
+
+  legend = {
+    id: ids.legend,
+    hint: hint,
+    classes: legendClasses
+  };
+
+  switch (typeof fieldset.legend) {
+    case 'string':
+      legend.label = fieldset.legend;
+      break;
+
+    case 'object':
+      legend = { ...legend, ...fieldset.legend };
+      break;
+  }
+}
+%>
+<% fieldset.includeEmptyMessagesGroup %>
+<%
+const builder = new MessageBuilder(fieldset.id, fieldset.includeEmptyMessagesGroup);
+
+if (fieldset.error) {
+  classes.push(`${prefix}-fieldset--error`);
+  attributes.role = 'group';
+  builder.addError(fieldset.error);
+}
+if (fieldset.valid) {
+  classes.push(`${prefix}-fieldset--valid`);
+  attributes.role = 'group';
+  builder.addValid(fieldset.valid);
+}
+
+if (fieldset.messages) {
+  fieldset.messages.forEach(message => builder.add(message.type, message.text, message.attributes));
+}
+
+if (builder.isIncluded) labelledBy.push(...builder.ids);
+
+if (fieldset.disabled === true) attributes.disabled = '';
+
+if (labelledBy.length) {
+  if (legend) labelledBy.unshift(ids.legend);
+  attributes['aria-labelledby'] = labelledBy.join(' ');
+}
+
+const messagesGroup = builder.messagesGroup;
+%>
+
+<fieldset <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+  <% if (legend) { %>
+    <%- include('legend', { legend: legend }); %>
+  <% } %>
+  <% for (const element of fieldset.elements) { %>
+    <%- include('fieldset-element', { element: element }); %>
+  <% } %>
+  <%- include('../message/messages-group', { messagesGroup: messagesGroup }); %>
+</fieldset>

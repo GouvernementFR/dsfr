@@ -1,0 +1,159 @@
+////
+/// Input Legacy
+/// @group input
+////
+
+@use 'src/module/legacy';
+@use 'src/module/selector';
+@use 'src/module/disabled';
+@use 'src/module/color';
+@use 'src/module/spacing';
+
+@include legacy.is(ie11) {
+  #{selector.ns(range)} {
+    &__output,
+    &__min,
+    &__max {
+      @include min-width(6v);
+    }
+
+    input[type=range] {
+      @include padding(0);
+    }
+
+    &#{selector.ns-attr(js-range)} {
+      @include after(none);
+      justify-content: flex-start;
+
+      #{selector.ns(range__max)} {
+        @include margin-left(auto);
+      }
+
+      input[type=range] {
+        @include margin-top(-1v);
+
+        @include selector.range-ms-track {
+          @include height(3v);
+          background: transparent;
+          border-color: transparent;
+          border-width: #{spacing.space(2.5v)} 0;
+          color: transparent;
+        }
+
+        @include selector.range-ms-fill-lower {
+          @include height(3v);
+          @include color.background(active blue-france, (legacy: true));
+          border-radius: spacing.space(1.5v);
+        }
+
+        @include selector.range-ms-thumb {
+          @include size(6v, 6v);
+          border-radius: 50%;
+        }
+
+        &:not(:only-of-type) {
+          pointer-events: auto;
+        }
+
+        @include disabled.selector {
+          @include selector.range-ms-fill-lower {
+            @include color.background(disabled grey, (legacy: true));
+          }
+        }
+      }
+
+      &#{selector.ns(range)}--double {
+        @include color.background-image(active blue-france, (legacy: true), 'linear-gradient(to right, $COLOR 0, $COLOR 100%)');
+        background-position-y: spacing.space(6.5v);
+        background-repeat: no-repeat;
+
+        #{selector.ns(range__output)} {
+          @include min-width(12v);
+        }
+
+        input[type=range] {
+          width: calc(100% - #{spacing.space(6v)});
+
+          @include selector.range-ms-fill-lower {
+            background-color: transparent;
+          }
+
+          &:nth-of-type(1) {
+            @include margin-right(6v);
+            @include z-index(above);
+          }
+
+          &:nth-of-type(2) {
+            left: #{spacing.space(6v)};
+          }
+        }
+      }
+    }
+
+    &--sm {
+      &#{selector.ns-attr(js-range)} {
+        #{selector.ns(range)} {
+          &__output,
+          &__min,
+          &__max {
+            @include min-width(4v);
+          }
+        }
+
+        input[type=range] {
+          @include selector.range-ms-track {
+            @include height(2v);
+            border-width: #{spacing.space(2v)} 0;
+          }
+
+          @include selector.range-ms-fill-lower {
+            @include height(2v);
+          }
+
+          @include selector.range-ms-thumb {
+            @include size(4v, 4v);
+          }
+        }
+
+        &#{selector.ns(range)}--double {
+          background-position-y: spacing.space(6v);
+
+          #{selector.ns(range__output)} {
+            @include min-width(8v);
+          }
+
+          input[type=range] {
+            width: calc(100% - #{spacing.space(4v)});
+
+            &:nth-of-type(1) {
+              @include margin-right(4v);
+            }
+
+            &:nth-of-type(2) {
+              left: #{spacing.space(4v)};
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #{selector.ns-group(range)} {
+    &--disabled {
+      #{selector.ns(range)}--double {
+        &#{selector.ns-attr(js-range)} {
+          @include color.background-image(disabled grey, (legacy: true), 'linear-gradient(to right, $COLOR 0, $COLOR 100%)');
+
+          input[type=range] {
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+              @include selector.range-ms-fill-lower {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+////
+/// Select Module
+/// @group select
+////
+
+@use 'src/module/spacing';
+@use 'src/module/reset';
+@use 'src/module/preference';
+
+#{ns(select)} {
+  display: block;
+  @include reset.appearance(none);
+  @include size(100%);
+  border-radius: spacing.space(1v 1v 0 0);
+  @include text-style(md);
+  @include padding(2v 10v 2v 4v);
+  background-repeat: no-repeat;
+  background-position: spacing.space(calc(100% - 4v) 50%);
+  background-size: spacing.space(4v 4v);
+  @include preference.forced-colors {
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' fill='canvastext'><path d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+  }
+}
+
+#{ns(select-group)} {
+  @include relative;
+
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(4v);
+    }
+  }
+
+  &--valid,
+  &--error,
+  &--info {
+    @include before('', block) {
+      pointer-events: none;
+      @include absolute(0, -3v, 0, -3v);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: spacing.space(0.5v 100%);
+    }
+  }
+}

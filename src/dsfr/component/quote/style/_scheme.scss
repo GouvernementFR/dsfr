@@ -1,0 +1,26 @@
+////
+/// quote Scheme
+/// @group quote
+////
+
+@use 'src/module/color';
+
+@mixin _quote-scheme($legacy: false) {
+  #{ns(quote)} {
+    @include before {
+      @include color.text((artwork minor blue-france), (legacy:$legacy));
+    }
+
+    @include color.accentuate {
+      @include before {
+        @include color.text((artwork minor accent), (legacy:$legacy));
+      }
+    }
+
+    @include color.background-image((border default grey), (legacy:$legacy));
+
+    &__source {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+  }
+}

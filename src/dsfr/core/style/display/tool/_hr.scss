@@ -1,0 +1,25 @@
+////
+/// Core Tool : Reset hr
+/// @group core
+////
+
+@use 'src/module/preference';
+@use 'src/module/color';
+
+@mixin build-hr() {
+  @include padding(var(--text-spacing));
+  @include margin(0);
+  border: 0;
+  display: block;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  @include preference.forced-colors {
+    border-top: 1px solid;
+  }
+}
+
+@mixin build-hr-scheme($legacy) {
+  @include color.background-image(border default grey, (legacy:$legacy));
+}

@@ -1,0 +1,74 @@
+////
+/// Alert Module
+/// @group alert
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(alert)} {
+  @include relative();
+  @include padding(4v 9v 3v 14v);
+  @include set-title-margin(0 0 1v);
+  @include set-text-margin(0 0 1v);
+  background-size: 100% 1px, 1px 100%, 100% 1px, spacing.space(10v) 100%;
+  background-position: 0 0, 100% 0, 0 100%, 0 0, 100% 100%;
+  background-repeat: no-repeat, no-repeat no-repeat, no-repeat;
+  @include icon-size(md, before);
+  @include icon-style(before) {
+    @include absolute(0, null, null, 0);
+    @include margin(4v 2v);
+  }
+
+  @include preference.forced-colors {
+    outline: 1px solid;
+    @include before {
+      background-color: graytext;
+      left: 8px;
+    }
+  }
+
+  &__title {
+    @include title-style(h6);
+  }
+
+  #{ns(btn--close)} {
+    @include absolute(1v,1v);
+    @include nest-btn(sm, only, close-line, null, false);
+  }
+
+  + #{ns(alert)} {
+    @include margin-top(4v);
+  }
+
+  &--info {
+    @include icon-image(info-fill, before);
+  }
+
+  &--success {
+    @include icon-image(success-fill, before);
+  }
+
+  &--error {
+    @include icon-image(error-fill, before);
+  }
+
+  &--warning {
+    @include icon-image(warning-fill, before);
+  }
+
+  &--info,
+  &--success,
+  &--error,
+  &--warning {
+    @include icon-content;
+  }
+
+  &--sm {
+    @include padding(2v 9v 1v 12v);
+
+    @include before {
+      @include margin(2v 2v);
+    }
+  }
+}

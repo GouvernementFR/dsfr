@@ -1,0 +1,57 @@
+////
+/// Stepper Module
+/// @group stepper
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(stepper)} {
+  @include set-title-margin(0);
+  @include set-text-margin(0);
+  @include margin-bottom(8v);
+  @include display-flex(column);
+
+  @include title {
+    @include display-flex(column-reverse);
+    @include title-style(h6);
+    @include set-title-margin(0 0 3v 0);
+    @include set-text-margin(0 0 3v 0);
+  }
+
+  &__state {
+    @include text-style(sm);
+    @include set-title-margin(0 0 1v 0);
+    @include set-text-margin(0 0 1v 0);
+    @include font-weight(regular);
+    @include after('\00000a') {
+      white-space: pre;
+      line-height: spacing.space(8v);
+    }
+  }
+
+  &__details {
+    @include text-style(xs);
+    @include margin-top(3v);
+  }
+
+  @include hide-last-step-detail();
+
+  &__steps {
+    --stepper-size: #{spacing.space(2v)};
+    --default-outer: calc((100% + var(--stepper-size)) / var(--steps));
+    --default-inner: calc(var(--default-outer) - var(--stepper-size));
+    --active-outer: calc((100% + var(--stepper-size)) / var(--current-step));
+    --active-inner: calc(var(--active-outer) - var(--stepper-size));
+    @include size(100%, var(--stepper-size));
+    background-repeat: no-repeat;
+    background-size: calc((100% + var(--stepper-size)) * var(--current-step) / var(--steps) - var(--stepper-size)) 100%, 100% 100%;
+    background-position: 0 0, 0 0;
+    @include stepper-build();
+
+    @include preference.forced-colors {
+      forced-color-adjust: none;
+      background-image: repeating-linear-gradient(to right, highlight 0, highlight var(--active-inner), transparent var(--active-inner), transparent var(--active-outer)), repeating-linear-gradient(to right, graytext 0, graytext var(--default-inner), transparent var(--default-inner), transparent var(--default-outer));
+    }
+  }
+}

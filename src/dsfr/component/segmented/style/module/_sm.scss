@@ -1,0 +1,19 @@
+////
+/// Semgented Module : semgented sm
+/// @group semgented
+////
+
+@use 'src/module/spacing';
+@use 'src/module/selector';
+
+#{selector.ns(segmented)}--sm {
+  #{selector.ns(segmented)}__legend {
+    @include text-style(sm);
+  }
+
+  input {
+    + label {
+      @include nest-segmented-element(sm, left);
+    }
+  }
+}

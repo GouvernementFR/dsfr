@@ -1,0 +1,71 @@
+////
+/// Tag Legacy
+/// @group tag
+////
+
+@use 'src/module/color';
+@use 'src/module/spacing';
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(tag)} {
+    @include icon-legacy(null, sm);
+    text-decoration: none;
+
+    &#{ns(tag)}--sm {
+      @include icon-legacy(null, xs, before);
+    }
+  }
+
+  button,
+  input[type=button] {
+    &#{ns(tag)} {
+      // empeche le hover du tag pressable sur ie
+      @include pressed-selector(true) {
+        background-size: 100% 100%, 100% 100%;
+        @include icon-legacy(checkbox-circle-line, sm, after);
+
+        &#{ns(tag)}--sm {
+          @include icon-legacy(null, xs, after);
+        }
+      }
+
+      &#{ns(tag)}--dismiss {
+        @include icon-legacy(close-line, sm, after) {
+          background-color: currentColor;
+          @include margin-left(2.5v);
+        };
+
+        &#{ns(tag)}--sm {
+          @include icon-legacy(null, xs, after) {
+            background-color: currentColor;
+            @include margin-left(2v);
+          };
+        }
+      }
+    }
+  }
+
+  #{ns-group(tags)} {
+    @include disable-list-style-legacy(true);
+  }
+
+  #{ns-group(tags)}--sm {
+    @include icon-legacy(null, sm);
+
+    @include clickable-selector {
+      &#{ns(tag)} {
+        &#{ns(tag)}--dismiss {
+          @include icon-legacy(null, xs, after);
+        }
+
+        @include pressed-selector(true) {
+
+          @include icon-legacy(null, xs, after) {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}

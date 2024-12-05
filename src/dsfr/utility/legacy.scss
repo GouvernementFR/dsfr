@@ -1,0 +1,13 @@
+////
+/// Utility Legacy
+/// @group utility
+////
+
+@use 'src/module/path';
+@use 'src/module/shame/media-query';
+
+@include path.to-dist(1);
+@include media-query.order;
+
+@import 'colors/legacy';
+@import 'icons/legacy';

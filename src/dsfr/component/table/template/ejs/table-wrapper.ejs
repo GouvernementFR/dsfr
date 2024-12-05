@@ -1,0 +1,73 @@
+<%#
+# paramètres Table wrapper
+
+* wrapper.table (object, required) : contenu du tableau
+
+* wrapper.noCaption (boolean, optional) : {default: false} cache le texte de la caption
+
+* wrapper.noScroll (boolean, optional) : {default: false} désactive le scroll horizontal
+
+* wrapper.captionBottom (boolean, optional) : {default: false} positionne la caption en bas
+
+* wrapper.bordered (boolean, optional) : {default: false} si true, ajoute des séparateurs entre chaque ligne
+
+* wrapper.classes (array, optional): classes supplémentaires du composant
+
+* wrapper.attributes (object, optional): attributs supplémentaires du composant
+
+* wrapper.size (string, optional): modificateur de taille des espacements
+valeurs :
+    ** sm : tableau espacements petits
+    ** lg : tableau espacements larges
+
+* wrapper.header (string, optional): contenu de l'en-tête du composant
+
+* wrapper.footer (string, optional): contenu du pied de page du composant
+%>
+
+<% eval(include('../../../../core/index.ejs'));
+
+let wrapper = locals.table || {};
+let classes = wrapper.classes || [];
+
+const attributes = wrapper.attributes || {};
+
+const table = wrapper.table || [[]];
+if (table.id) {
+  attributes.id = table.id + '-component';
+}
+
+classes.push(prefix + '-table');
+
+switch(wrapper.size) {
+	case 'sm':
+			classes.push(prefix + '-table--sm');
+		break;
+  case 'lg':
+			classes.push(prefix + '-table--lg');
+		break;
+}
+
+if (wrapper.noCaption) classes.push(prefix + '-table--no-caption');
+if (wrapper.captionBottom) classes.push(prefix + '-table--caption-bottom');
+if (wrapper.bordered) classes.push(prefix + '-table--bordered');
+if (wrapper.noScroll) classes.push(prefix + '-table--no-scroll');
+%>
+
+<div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+  <% if (wrapper.header !== undefined) { %>
+    <div class="<%= prefix %>-table__header"><%- wrapper.header %></div>
+  <% } %>
+  <% if (table !== undefined) { %>
+    <div class="<%= prefix %>-table__wrapper">
+      <div class="<%= prefix %>-table__container">
+        <div class="<%= prefix %>-table__content">
+          <%- include('./table.ejs', {table: table}); %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+  <% if (wrapper.footer !== undefined) { %>
+    <div class="<%= prefix %>-table__footer"><%- wrapper.footer %></div>
+  <% } %>
+</div>

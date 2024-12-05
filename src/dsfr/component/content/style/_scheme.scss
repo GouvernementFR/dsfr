@@ -1,0 +1,15 @@
+////
+/// Content Scheme
+/// @group content
+////
+
+@use 'src/module/color';
+
+@mixin _content-scheme($legacy: false) {
+  #{ns(content-media)} {
+    &__caption,
+    #{ns(link)} {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+  }
+}

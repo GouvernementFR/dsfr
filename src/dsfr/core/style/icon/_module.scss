@@ -1,0 +1,44 @@
+////
+/// Core Module : Icons
+/// @group core
+////
+
+@use 'src/module/preference';
+
+@include has-icon {
+  @include icon-style;
+  @include icon-size;
+  @include icon-content;
+}
+
+@include preference.forced-colors {
+  @include has-icon {
+    @include icon-forced-color(canvastext, true);
+  }
+
+  button:not([disabled]) {
+    @include has-icon {
+      @include icon-forced-color(buttontext);
+    }
+  }
+
+  a[href] {
+    @include has-icon {
+      @include icon-forced-color(linktext);
+    }
+  }
+
+  @include disabled-selector {
+    @include has-icon {
+      @include icon-forced-color(graytext);
+    }
+  }
+}
+
+#{ns(icon)} {
+  @each $size, $value in $icon-size-map {
+    &--#{$size} {
+      @include icon-size($size);
+    }
+  }
+}

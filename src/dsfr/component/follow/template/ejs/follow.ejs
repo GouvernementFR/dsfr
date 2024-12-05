@@ -1,0 +1,46 @@
+<%#
+# paramètres follow
+
+* follow.classes (array, required) : Classes supplémentaires
+
+* follow.attributes (array, optional) : attributs spécifiques
+
+* follow.socials (object, optional) : données des réseaux sociaux (cf: socials.ejs)
+
+* follow.newsletter (object, optional) : données du bloc newsletter (cf: newletter.ejs)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const follow = locals.follow || {};
+const followClasses = follow.classes || [];
+followClasses.push(prefix + '-follow');
+const followAttributes = follow.attributes || {};
+followAttributes.id = follow.id || uniqueId('follow');
+
+const socials = follow.socials || undefined;
+const newsletter = follow.newsletter || undefined;
+%>
+
+<div <%- includeClasses(followClasses); %> <%- includeAttrs(followAttributes) %>>
+  <div class="<%= prefix %>-container">
+    <div class="<%= prefix %>-grid-row">
+      <%
+      let gClasses = [prefix+'-col-12'];
+      if (follow.newsletter) {
+        if (follow.socials) gClasses = [prefix+'-col-12', prefix+'-col-md-8'] %>
+        <div <%- includeClasses(gClasses) %> >
+          <%- include('newsletter.ejs', {newsletter: follow.newsletter}); %>
+        </div>
+      <% }
+      if (follow.socials) {
+        if (follow.newsletter) gClasses = [prefix+'-col-12', prefix+'-col-md-4'];
+      %>
+        <div <%- includeClasses(gClasses) %>>
+          <%- include('socials.ejs', {socials: follow.socials}); %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>

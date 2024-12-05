@@ -1,0 +1,32 @@
+<%#
+
+Paramètres de sidemenu btn
+
+* sidemenuItems (array, required) : tableau d'items de sidemenu
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<% let sidemenuItems = locals.sidemenuItems || []; %>
+
+<ul class="<%= prefix %>-sidemenu__list" >
+  <%
+  for (let i = 0; i < sidemenuItems.length; i++) {
+    let item = sidemenuItems[i];
+    item.href = item.href || sidemenuItems.href;
+    item.classes = [`${prefix}-sidemenu__${item.kind}`];
+    item.attributes = sidemenuItems[i].attributes || {};
+    item.markup = item.kind === 'button' ? item.kind : 'a';
+    let classes = [prefix + '-sidemenu__item'];
+  %>
+    <li <%- includeClasses(classes); %>>
+      <% if (item.kind === 'menu') { %>
+        <%- include('./sidemenu-menu.ejs', { sidemenuItem : item }); %>
+      <% } else {%>
+        <% item.classes = item.kind === 'button' ? [`${prefix}-sidemenu__btn`] : [`${prefix}-sidemenu__link`]; %>
+        <% if (item.active) item.attributes['aria-current'] = 'page'; %>
+        <%- include('../../../../core/template/ejs/action/action', { action: { ...item } }) %>
+      <% } %>
+    </li>
+  <% } %>
+</ul>

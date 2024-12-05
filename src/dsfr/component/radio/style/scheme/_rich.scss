@@ -1,0 +1,114 @@
+////
+/// Radio Scheme : radio rich
+/// @group radio
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+@use 'src/module/selector';
+
+@mixin _radio-scheme-rich($legacy: false) {
+  #{selector.ns(radio-rich)} {
+    &__pictogram {
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+      @include color.background((background default grey), (legacy: $legacy));
+    }
+
+    input[type="radio"] {
+      + label {
+        @include color.background-image((border default grey) (border action-high blue-france), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+        @include color.background((background default grey), (legacy: $legacy));
+      }
+
+      @include disabled.selector {
+        + label {
+          @include color.background-image((border default grey) (disabled grey) (disabled grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+        }
+
+        ~ #{selector.ns(radio-rich__pictogram)} {
+          svg * {
+            @include color.fill(text disabled grey, (legacy: $legacy));
+          }
+        }
+      }
+
+      &:checked {
+        + label {
+          @include color.background-image((border active blue-france) (border active blue-france) (active blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+        }
+
+        ~ #{selector.ns(radio-rich__pictogram)} {
+          @include color.background-image((action-high blue-france) (action-high blue-france) (action-high blue-france) (border default grey), (legacy: $legacy));
+        }
+
+        @include disabled.selector {
+          + label {
+            @include color.background-image((text disabled grey) (disabled grey) (disabled grey), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+          }
+
+          ~ #{selector.ns(radio-rich__pictogram)} {
+            @include color.background-image((disabled grey) (disabled grey) (disabled grey) (border default grey), (legacy: $legacy));
+          }
+        }
+      }
+    }
+  }
+
+  #{ns(fieldset)} {
+    &--error {
+      #{ns(radio-rich)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border default grey) (border plain error), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+          }
+
+          &:checked + label {
+            @include color.background-image((action-high blue-france) (border plain error) (active blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+          }
+        }
+      }
+    }
+
+    &--valid {
+      #{ns(radio-rich)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border default grey) (border plain success), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+          }
+
+          &:checked + label {
+            @include color.background-image((action-high blue-france) (border plain success) (active blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+          }
+        }
+      }
+    }
+
+    &--info {
+      #{ns(radio-rich)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border default grey) (border plain info), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+          }
+
+          &:checked + label {
+            @include color.background-image((action-high blue-france) (border plain info) (active blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+          }
+        }
+      }
+    }
+
+    #{ns(radio-rich)} {
+      input[type="radio"] {
+        @include disabled.selector {
+          & + label {
+            @include color.background-image((border default grey) (disabled grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+          }
+
+          &:checked + label {
+            @include color.background-image((border default grey) (disabled grey) (disabled grey), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+$setting: (
+  color: (
+    decisions: (
+      background: default alt contrast flat action-high action-low,
+      text: default title label mention inverted action-high,
+      border: default plain,
+      artwork: major minor decorative background motif
+    )
+  ),
+  border: (
+    width: (
+      from: 0,
+      through: 2
+    )
+  )
+);

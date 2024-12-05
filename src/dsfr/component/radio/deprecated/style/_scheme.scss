@@ -1,0 +1,40 @@
+////
+/// Radio Scheme : radio rich
+/// @group radio
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+@use 'src/module/selector';
+
+// img devient pictogram
+@mixin _radio-scheme-deprecated($legacy: false) {
+  #{ns(radio-rich)} {
+    &__img {
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+      @include color.background((background default grey), (legacy: $legacy));
+    }
+
+    input[type="radio"] {
+      @include disabled.selector {
+        ~ #{selector.ns(radio-rich__img)} {
+          svg * {
+            @include color.fill(text disabled grey, (legacy: $legacy));
+          }
+        }
+      }
+
+      &:checked {
+        ~ #{ns(radio-rich__img)} {
+          @include color.background-image((action-high blue-france) (action-high blue-france) (action-high blue-france) (border default grey) , (legacy: $legacy));
+        }
+
+        @include disabled.selector {
+          ~ #{ns(radio-rich__img)} {
+            @include color.background-image((text disabled grey) (text disabled grey) (text disabled grey) (border default grey), (legacy: $legacy));
+          }
+        }
+      }
+    }
+  }
+}

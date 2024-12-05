@@ -1,0 +1,18 @@
+////
+/// Core Tool : Reset btn
+/// @group core
+////
+
+@use 'src/module/reset';
+
+@mixin btn-reset ($minimal: false) {
+  @include reset.appearance(none);
+  border: none;
+  margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
+  @if not $minimal {
+    color: inherit;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+  }
+}

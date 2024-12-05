@@ -1,0 +1,44 @@
+////
+/// Core Module : Reset input & form field
+/// @group core
+////
+
+@use 'src/module/reset';
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+input,
+select,
+textarea {
+  @include reset.appearance(none);
+  @include font-family;
+  @include text-adjustments;
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
+
+  @include preference.forced-colors {
+    border: 1px solid;
+  }
+}
+
+// Fix for normalize.css
+input[type=search] {
+  @include reset.appearance(none);
+}
+
+// Fix for NVDA
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  @include reset.appearance;
+}
+
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  @include margin-left(4v);
+  @include margin-right(-1px);
+  @include size(5v, 5v);
+  -webkit-mask-size: #{spacing.space(5v 5v)};
+}

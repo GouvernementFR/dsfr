@@ -1,0 +1,26 @@
+////
+/// Search Scheme
+/// @group search
+////
+
+@use 'src/module/color';
+
+@mixin _search-scheme($legacy: false) {
+  #{ns(search-bar)} {
+    #{ns(input)} {
+      @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
+
+      &--valid {
+        @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
+      }
+
+      &--error {
+        @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
+      }
+
+      &::-webkit-search-cancel-button {
+        @include color.data-uri-svg(text label grey, (legacy: $legacy), $input-search-cancel);
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+////
+/// Core Module : Reset button
+/// @group core
+////
+
+@use 'src/module/preference';
+
+button {
+  @include btn-reset;
+
+  @include preference.forced-colors {
+    color: buttontext;
+  }
+}
+
+button:disabled {
+  @include preference.forced-colors {
+    color: graytext;
+  }
+}

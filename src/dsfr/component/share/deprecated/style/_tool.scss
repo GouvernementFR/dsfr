@@ -1,0 +1,26 @@
+////
+/// Share Deprecated Tool
+/// @group share
+////
+
+@use 'src/module/selector';
+
+@mixin build-share-link($name, $icon) {
+  #{ns(share__link)}--#{$name} {
+    @include nest-btn(md, only, $icon, null, false);
+    @at-root a[href]#{&} {
+      @include icon-forced-color(linktext, true, before);
+    }
+    @at-root a:not([href])#{&} {
+      @include icon-forced-color(graytext, true, before);
+    }
+  }
+}
+
+@mixin build-share-links-legacy() {
+  @each $name, $icon in $share-icons {
+    #{ns(share__link)}--#{$name} {
+      @include icon-legacy($icon, md, before);
+    }
+  }
+}

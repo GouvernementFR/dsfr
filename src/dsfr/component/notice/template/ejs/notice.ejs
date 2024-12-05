@@ -1,0 +1,70 @@
+<%#
+# paramètres notice
+
+* notice.title (String, required): Titre du bandeau
+
+* notice.id (String, optional): Id du bandeau
+
+* notice.desc (string, optional) : Texte de decription de bandeau
+
+* notice.link (object, optional): Paramètres du lien
+
+* notice.type (String, optional): Type de bandeau [info/warning/alert/weather-orange/weather-red/weather-purple/kidnapping/cyberattack/vigipirate/witness]
+
+* notice.icon (String, optional): Nom de l'icône du bandeau ou false pour ne pas afficher d'icône
+
+* notice.dismissible (boolean, optional): Ajoute un bouton de fermeture
+
+* notice.button (object, optional): Paramètre du bouton de fermeture (si dismissible: true)
+
+* notice.notice (boolean, optional): Si true, ajoute un role notice (si insertion à la volée du bandeau)
+
+* notice.markup (string, optional): Balise de contenu du bandeau (p [default], h1, h2, h3, h4, h5, h6)
+
+* notice.classes (array, optional): Classes supplémentaires sur le bandeau
+
+* notice.attribute (object, optional): Attributs supplémentaires sur le bandeau
+
+%>
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const notice = locals.notice || {};
+const title = notice.title || false;
+const desc = notice.desc || false;
+const link = notice.link || false;
+const type = notice.type || false;
+const classes = notice.classes || [];
+const attributes = notice.attributes || {};
+const markup = notice.markup || 'p';
+classes.push(prefix + '-notice');
+const titleClasses = [`${prefix}-notice__title`];
+if (type) classes.push(prefix + '-notice--' + type);
+if (notice.notice) attributes.role = "notice";
+if (notice.id) attributes.id = notice.id;
+if (notice.icon === false) classes.push(prefix + '-notice--no-icon');
+else if (notice.icon) titleClasses.push(prefix + '-icon-' + notice.icon);
+ %>
+
+<div <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
+  <div class="<%= prefix %>-container">
+    <div class="<%= prefix %>-notice__body">
+      <<%= markup %>>
+        <% if (title) { %>
+          <span <%- includeClasses(titleClasses) %>><%- title %></span>
+        <% } %>
+        <% if (desc) { %>
+          <span class="<%= prefix %>-notice__desc"><%- desc %></span>
+        <% } %>
+        <% if (link) { %>
+          <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...notice.link, classes: [`${prefix}-notice__link`], markup: 'a'}}) %>
+        <% } %>
+      </<%= markup %>>
+      <% if (notice.dismissible) { %>
+        <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...notice.button}}) %>
+      <% } %>
+    </div>
+  </div>
+</div>

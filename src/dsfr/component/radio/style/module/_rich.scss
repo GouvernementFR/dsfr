@@ -1,0 +1,113 @@
+////
+/// Radio Module : radio rich
+/// @group radio
+////
+
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+#{selector.ns(radio-rich)} {
+  @include relative;
+  @include display-flex(row, center);
+  @include max-width(100%);
+
+  input[type="radio"] {
+    @include size(4v, 4v);
+    left: #{space(4v)};
+    top: calc(50% - #{space(2v)});
+
+    @include disabled.selector {
+      + label {
+        @include preference.forced-colors {
+          outline: 1px solid;
+
+          @include before {
+            background-color: transparent;
+          }
+        }
+      }
+
+      ~ #{selector.ns(radio-rich__pictogram)} {
+        @include preference.forced-colors {
+          outline: 1px solid graytext;
+        }
+      }
+    }
+
+    + label {
+      @include padding-left(11v);
+      @include margin-left(0);
+      align-self: stretch;
+      @include size(100%);
+      @include padding-top(3v);
+      @include padding-bottom(3v);
+      @include padding-right(4v);
+      @include display-flex(column, stretch, center);
+      background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%, #{space(4v)} #{space(4v)}, #{space(4v)} #{space(4v)};
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position: 0 0, 100% 0, 0 100%, 0 0, #{space(4v)} 50%, #{space(4v) 50%};
+
+      @include preference.forced-colors {
+        outline: 1px solid;
+      }
+
+      @include before('', block) {
+        @include absolute(0, 0, 0, 0, 100%, 100%);
+        @include margin-left(0);
+        border-radius: 0;
+      }
+
+      #{selector.ns(hint-text)} {
+        @include margin-left(0);
+      }
+    }
+
+    &:not(:disabled) ~ label {
+      @include hover-tint;
+      @include enable-tint;
+
+      &:hover {
+        + #{ns(radio-rich__pictogram)} {
+          background-color: var(--hover);
+        }
+      }
+
+      &:active {
+        + #{ns(radio-rich__pictogram)} {
+          background-color: var(--active);
+        }
+      }
+    }
+  }
+
+  &__pictogram {
+    @include display-flex(row, center, center);
+    @include margin-left(-1px);
+    @include padding(1v);
+    @include size(22v);
+    @include min-width(22v);
+    @include min-height(22v);
+    align-self: stretch;
+    pointer-events: none;
+    background-size: 100% 1px, 100% 1px, 1px 100%, 1px calc(100% - 0.5rem);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 0 0, 0 100%, 100% 0, 0 0.25rem;
+
+    @include preference.forced-colors {
+      outline: 1px solid;
+    }
+
+    img,
+    svg {
+      @include max-size(14v, 14v);
+    }
+  }
+}
+
+#{selector.ns(control)} {
+  > #{selector.ns(radio-rich)}#{selector.ns-group(radio)} {
+    @include margin-y(0);
+  }
+}

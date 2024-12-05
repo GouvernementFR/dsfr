@@ -1,0 +1,31 @@
+<%#
+# paramètres accordion
+
+* accordion.id (string, required) : Identifiant de l'accordeon (lie le bouton au collapse).
+
+* accordion.label (string, required) : Libellé du bouton
+
+* accordion.content (String, optional) : contenu du collapse
+
+* accordion.isExpanded (boolean, optional) [default: false] : l'accordéon est-il ouvert au départ.
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+  let accordion = locals.accordion || {}
+ const isExpanded = accordion.isExpanded === true;
+  const collapseAttributes = { ...accordion.collapseAttributes ?? {}, id: accordion.id, class: `${prefix}-collapse` };
+ %>
+
+<section class="<%= prefix %>-accordion">
+  <h3 class="<%= prefix %>-accordion__title">
+    <button type="button" class="<%= prefix %>-accordion__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= accordion.id %>" ><%- accordion.label %></button>
+  </h3>
+  <div <%- includeAttrs(collapseAttributes); %>>
+    <% if (accordion.content !== undefined) { %>
+      <%- accordion.content %>
+    <% } %>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<%#
+# paramètres radio group
+
+* radio.size (string, optional) : la valeur "sm" permet d'opter pour de petites cases à cocher
+
+* radio.rich (boolean, optional) : si true, radio de type radio-rich
+
+* radio.disabled (boolean, optional) : si true, désactive le radio
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<%
+let radio = locals.radio || {};
+let groupClasses = [prefix + '-radio-group'];
+if (radio.rich) groupClasses.push(prefix + '-radio-rich');
+switch(radio.size) {
+  case 'sm' :
+    groupClasses.push(prefix + '-radio-group--sm');
+    break;
+}
+%>
+
+<div <%- includeClasses(groupClasses); %>>
+  <%- include('./radio', {radio: {...radio, disabled: radio.disabled ? radio.disabled : false}}); %>
+</div>

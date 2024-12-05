@@ -1,4 +1,4 @@
-<% eval(include(root + 'src/core/index.ejs')); %>
+<% eval(include(root + 'src/dsfr/core/index.ejs')); %>
 <!doctype html>
 <html lang="fr" data-<%= prefix %>-theme>
 <head>
@@ -7,7 +7,7 @@
   <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
   <title><%= title %> - Système de design</title>
 
-  <%- include('../../src/core/template/ejs/favicon/favicon.ejs', {favicon: {path: `${relativeRoot}dist/favicon/`}}); %>
+  <%- include('../../src/dsfr/core/template/ejs/favicon/favicon.ejs', {favicon: {path: `${relativeRoot}dist/favicon/`}}); %>
 
   <%- include('style'); %>
 

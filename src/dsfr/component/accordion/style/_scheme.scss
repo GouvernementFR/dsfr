@@ -1,0 +1,22 @@
+////
+/// Accordion Scheme
+/// @group accordion
+////
+
+@use 'src/module/color';
+
+@mixin _accordion-scheme($legacy: false) {
+  #{ns(accordion)} {
+    @include before {
+      @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-out);
+    }
+
+    &__btn {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+
+      &[aria-expanded='true'] {
+        @include color.background(open blue-france, (legacy: $legacy));
+      }
+    }
+  }
+}

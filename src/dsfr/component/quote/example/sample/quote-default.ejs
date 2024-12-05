@@ -1,0 +1,13 @@
+<%
+let quote = locals.quote || {}
+let data = {
+  ...locals.quote,
+  text: quote.text || lorem(),
+  size: quote.size || undefined,
+  author: quote.author || 'Auteur',
+  href: quote.href || contentPlaceholder('https://lien-vers-la-source.fr'),
+  sources: quote.sources || ['<cite>Ouvrage</cite>', 'Détail 1', 'Détail 2', 'Détail 3', `<a target="_blank" rel="noopener external" title="${getBlankTitle('Détail 4')}" href="${contentPlaceholder('Lien vers la sources ou des infos complémentaires')}">Détail 4</a>`],
+};
+%>
+
+<%- include('../../template/ejs/quote.ejs', {quote:data}); %>

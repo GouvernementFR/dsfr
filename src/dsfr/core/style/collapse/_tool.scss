@@ -1,0 +1,50 @@
+////
+/// Core Tool : Collapse
+/// @group core
+////
+
+@use 'src/module/preference';
+
+@mixin collapse($className: collapse) {
+  --collapse: -99999px;
+  --collapser: '';
+  --collapse-max-height: none;
+
+  overflow: hidden;
+  transition: visibility 0.3s;
+  max-height: var(--collapse-max-height);
+
+  &--expanded {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  @include preference.reduce-motion {
+    transition: none;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    content: var(--collapser);
+    transition: margin-top 0.3s;
+    margin-top: 0;
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+  }
+
+  #{&}:not(&--expanded):not(#{ns(collapsing)}) {
+    --collapse-max-height: 0;
+  }
+
+  #{&}:not(&--expanded) {
+    visibility: hidden;
+
+    @include before {
+      margin-top: -99999px;
+      margin-top: var(--collapse);
+    }
+  }
+}

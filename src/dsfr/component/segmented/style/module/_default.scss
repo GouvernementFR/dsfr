@@ -1,0 +1,156 @@
+////
+/// Semgented Module : semgented md
+/// @group semgented
+////
+
+@use 'src/module/spacing';
+@use 'src/module/selector';
+@use 'src/module/preference';
+@use 'src/module/disabled';
+
+#{selector.ns(segmented)} {
+  @include relative;
+  @include padding(0);
+  @include margin(0);
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+
+  &__legend {
+    @include margin-bottom(3v);
+    @include padding(0);
+
+    #{selector.ns(hint-text)} {
+      @include margin-top(1v);
+    }
+
+    &--inline {
+      float: left;
+      display: contents;
+
+      + #{selector.ns(segmented)}__elements {
+        @include margin-left(4v);
+      }
+    }
+  }
+
+  &__elements {
+    @include display-flex;
+    border-radius: #{spacing.space(1v)};
+    @include preference.forced-colors {
+      outline: 1px solid;
+    }
+  }
+
+  &__element {
+    @include relative;
+  }
+
+  & &__element {
+    input {
+      opacity: 0;
+    }
+  }
+
+  input {
+    @include absolute;
+    @include margin(0);
+    @include size(100%, 100%);
+    z-index: -1;
+
+    + label {
+      @include nest-segmented-element(md, left);
+      @include width(100%);
+      @include font-weight(medium);
+      display: inline-flex;
+      align-items: center;
+      border-radius: #{spacing.space(1v)};
+      white-space: nowrap;
+      @include icon-forced-color(buttontext, null, before);
+    }
+
+    &:checked {
+      &:focus + label {
+        @include preference.forced-colors {
+          outline: 4px solid;
+          outline-offset: 0;
+        }
+      }
+
+      + label {
+        @include preference.forced-colors {
+          outline: 2px solid;
+          color: highlight;
+          @include icon-forced-color(highlight, null, before);
+        }
+      }
+
+      @include disabled.selector {
+        + label {
+          @include preference.forced-colors {
+            color: graytext;
+            @include icon-forced-color(graytext, null, before);
+          }
+        }
+      }
+    }
+
+    @include disabled.selector {
+      + label {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+      }
+    }
+
+    &:not([disabled]):not(:checked) {
+      + label {
+        @include mask-image((linear-gradient(0deg, #fff 0, #fff 100%), linear-gradient(0deg, #fff 0, #fff 100%), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}")));
+        @include mask-image-size((#{spacing.space('calc(100% - 2v) calc(100% - 3v)')}, #{spacing.space('calc(100% - 3v) calc(100% - 2v)')}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}));
+        @include mask-image-position((#{spacing.space(1v 1.5v)}, #{spacing.space(1.5v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(calc(100% - 1v) 1v)}, #{spacing.space(1v calc(100% - 1v))}, #{spacing.space(calc(100% - 1v) calc(100% - 1v))}));
+        @include mask-image-repeat(no-repeat);
+
+        @include preference.forced-colors {
+          color: buttontext;
+        }
+
+        &:hover {
+          background-color: var(--hover);
+        }
+
+        &:active {
+          background-color: var(--active);
+        }
+      }
+    }
+  }
+
+  &--vertical {
+    #{selector.ns(segmented)}__elements {
+      flex-direction: column;
+      @include margin-left(0);
+    }
+
+    #{selector.ns(segmented)}__legend--inline {
+      float: none;
+      display: block;
+    }
+  }
+
+  &--no-legend {
+    legend {
+      @include sr-only();
+
+      + #{selector.ns(segmented)}__elements {
+        @include margin-left(0);
+      }
+    }
+  }
+}
+
+@include focusable((choices: (
+  selector: '#{selector.ns(segmented__element)} input',
+  focus: (
+    selector: ' + label'
+  )
+)));

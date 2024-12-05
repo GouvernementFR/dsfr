@@ -1,0 +1,64 @@
+<%
+let sidemenu = locals.sidemenu || {};
+const defaultModels = [ 'MALMMLMMLM', 'LMMLLLL', 'LLLLLL' ];
+const models1 = locals.models || defaultModels;
+const models2 = ['MALMMLMMLM', 'LMALLL', 'LLLL'];
+
+function link(level, active) {
+  return {
+    id: uniqueId('sidemenu-item'),
+    kind: 'link',
+    active: active === true,
+    label: 'Accès direct' + (level > 1 ? ' niveau ' + level: '')
+  }
+}
+
+function items(level, active) {
+  const items = [];
+  let model = models1[level];
+  (active === true) ? model = models2[level] : models1[level];
+  items.href = sidemenu.href || '#';
+  for (let i = 0; i < model.length; i++) switch(model.charAt(i)) {
+    case 'L': // 'L' pour Link
+      items.push(link(level + 1, active && i === 1));
+      break;
+
+    case 'M': // 'M' pour Menu
+      items.push(menu(level + 1, false, true));
+      break;
+
+    case 'A': // 'A' pour Active
+      items.push(menu(level + 1, true, true));
+      break;
+
+    case 'O': // 'O' pour Open
+      items.push(menu(level + 1, false, false));
+      break;
+  }
+  return items;
+}
+
+function menu(level, active, collapsable) {
+  return {
+    kind: 'menu',
+    active: active === true,
+    label: active === true ? 'Entrée menu active' : 'Niveau ' + level,
+    collapseId: uniqueId('sidemenu'),
+    collapsable: collapsable === true,
+    items: items(level, active)
+  }
+}
+
+
+let data = {
+  items: items(0),
+  title: sidemenu.title || 'Titre de rubrique',
+  titleId: uniqueId('sidemenu-title'),
+  buttonLabel: 'Dans cette rubrique',
+  modifier: sidemenu.modifier,
+  collapseId: uniqueId('sidemenu')
+}
+
+%>
+
+<%- include('../../template/ejs/sidemenu', {sidemenu: data}); %>

@@ -1,0 +1,125 @@
+////
+/// Quote Module
+/// @group quote
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(quote)} {
+  @include relative;
+  @include margin(0);
+  @include padding(0 2v 8v 2v);
+  @include padding(0 0 0 8v, md);
+
+  background-size: 50% 1px;
+  background-repeat: no-repeat;
+  background-position: spacing.space(2v 100%);
+
+  @include preference.forced-colors {
+    border-left: 1px solid;
+  }
+
+  @include respond-from(md) {
+    background-size: 1px 100%;
+    background-position: 0 0;
+  }
+
+  @include icon(quote-line,lg) {
+    display: block;
+    @include margin-bottom(2v);
+  }
+
+  &--column {
+    @include display-flex(column, flex-start, center);
+    @include margin-left(54v, md);
+
+    @include respond-from(md) {
+      @include min-height(52v);
+    }
+
+    #{ns(quote__author)} {
+      @include margin-left(21v);
+      @include margin-left(0, md);
+    }
+
+    #{ns(quote__source)} {
+      @include margin-left(21v);
+      @include margin-left(0, md);
+    }
+
+    figcaption {
+      @include min-height(17v);
+      @include display-flex(column, flex-start, center);
+
+      @include respond-from(md) {
+        @include min-height(auto);
+      }
+    }
+  }
+
+  blockquote {
+    @include margin(0);
+    @include set-text-margin(0 0 4v);
+
+    p {
+      @include text-style(xl);
+      @include font-weight(bold);
+
+      // Pour ajouter les guillets en css
+      // @include before('«\0000A0', 'inline-block');
+
+      // &:last-of-type() {
+      //   @include after('\0000A0»', 'inline-block');
+      // }
+    }
+  }
+
+  &__author {
+    @include font-weight(bold);
+    @include text-style(md);
+    @include set-text-margin(0 0 1v);
+  }
+
+  &__image {
+    @include size(17v);
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    @include absolute;
+    @include display-flex;
+
+    img {
+      @include size(100%, 100%);
+      object-fit: cover;
+    }
+
+    @include respond-from(md) {
+      @include absolute(50%,null,null,-54v,46v,46v);
+      @include margin-top(-23v);
+    }
+  }
+
+  cite {
+    font-style: italic;
+  }
+
+  figcaption {
+    @include disable-list-style;
+
+    #{ns(quote)}__source {
+      @include display-flex(row,null,flex-start,wrap);
+      @include text-style(xs);
+
+      li {
+        display: inline-block;
+
+        &:not(:last-child) {
+          @include after('·', 'inline-block') {
+            @include padding-x(1v);
+          }
+        }
+      }
+    }
+  }
+}

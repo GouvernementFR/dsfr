@@ -1,0 +1,44 @@
+////
+/// Search Module
+/// @group search
+////
+
+@use 'src/module/spacing';
+
+#{ns(search-bar)} {
+  @include display-flex(row);
+
+  #{ns(label)} {
+    @include sr-only();
+  }
+
+  #{ns(input)} {
+    @include margin(0);
+    border-radius: spacing.space(1v) 0 0;
+    @include max-height(10v);
+
+    &::placeholder {
+      font-style: italic;
+    }
+
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      @include size(4v, 4v);
+      background-repeat: no-repeat;
+      background-size: spacing.space(4v) spacing.space(4v);
+    }
+  }
+
+  @include nest-btn(md, only, search-line) {
+    flex: 1 0 auto;
+    border-radius: 0 spacing.space(1v) 0 0;
+  }
+
+  &--lg {
+    @include nest-btn(lg, left, null, md);
+
+    #{ns(input)} {
+      @include max-height(12v, md);
+    }
+  }
+}

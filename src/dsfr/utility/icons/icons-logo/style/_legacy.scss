@@ -1,0 +1,10 @@
+////
+/// Icon Logo Legacy
+/// @group icons-logo
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  @include generate-icons-legacy(filter-icons('logo'));
+}

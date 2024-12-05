@@ -1,0 +1,63 @@
+////
+/// Select Module
+/// @group select
+////
+
+@use 'src/module/color';
+@use 'src/module/disabled';
+
+@mixin _select-scheme($legacy: false) {
+  #{ns(select)} {
+    @include color.text(default grey, (legacy:$legacy));
+    @include color.background(contrast grey, (legacy:$legacy));
+    @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);
+
+    @include color.data-uri-svg(text label grey, (legacy: $legacy), $select-arrow-down-svg);
+
+    #{ns(fieldset--valid)} &,
+    &-group--valid & {
+      @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
+    }
+
+    #{ns(fieldset--error)} &,
+    &-group--error & {
+      @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
+    }
+
+    &-group--error {
+      @include before {
+        @include color.background-image(border plain error, (legacy:$legacy));
+      }
+    }
+
+    &-group--valid {
+      @include before {
+        @include color.background-image(border plain success, (legacy:$legacy));
+      }
+    }
+
+    &-group--info {
+      @include before {
+        @include color.background-image(border plain info, (legacy:$legacy));
+      }
+    }
+
+    /**
+    * Mixin pour gérer l'état disabled
+    */
+    @include disabled.selector((), (legacy: $legacy, text: true, box-shadow: bottom-2-in)) {
+      @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $select-arrow-down-svg);
+    }
+
+    /**
+    * On applique un style lorsque la valeur est automatiquement remplie par le navigateur
+    * sur les navigateurs webkit.
+    */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      @include color.box-shadow((plain grey) (background contrast blue-france), (legacy:$legacy), bottom-2-in all-in);
+      @include color.text-fill(label grey, (legacy:$legacy));
+    }
+  }
+}

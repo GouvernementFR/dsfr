@@ -1,0 +1,5 @@
+<%
+  const tableData = JSON.parse(include('../../../../table/example/data/data-simple.json.ejs', {table: {id: 'modal-table', table: { col: 2, row: 16 }}})) || [];
+%>
+
+<%- include('../../../../table/template/ejs/table-wrapper', { table: tableData }); %>

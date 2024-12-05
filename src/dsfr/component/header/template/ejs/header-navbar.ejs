@@ -1,0 +1,56 @@
+<%#
+# paramètres header navbar
+
+* navbar (object, required) : Paramètres du template
+  ** navbar.menu (object, optional) : Paramètres du menu (mobile)
+    *** navbar.menu.id (String, required) : id du bouton menu
+    *** navbar.menu.modalId (String, required) : id de la modale de menu
+    *** navbar.menu.label (String, optional) : Libellé du bouton menu
+  ** navbar.search (object, optional) : Paramètres de la barre de recherche (mobile)
+    *** navbar.menu.id (String, optional) : id du bouton recherche
+    *** navbar.menu.modalId (String, optional) : id de la modale de recherche
+    *** navbar.menu.label (String, optional) : Libellé du bouton recherche
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let navbar = locals.navbar || {};
+let label;
+%>
+<div class="<%= prefix %>-header__navbar">
+  <%
+  const attrs = {};
+  attrs[`data-${prefix}-opened`] = false;
+
+  if (navbar.search) {
+      label = navbar.search.label || 'Rechercher';
+  %>
+    <%- include('../../../button/template/ejs/button', {button: {
+        classes: [prefix + '-btn--search'],
+        title: label,
+        attributes: {
+            ...attrs,
+            'aria-controls': navbar.search.modalId,
+        },
+        label: label,
+        id: navbar.search.btnId
+    }}); %>
+<% } %>
+
+  <%
+    if (navbar.menu) {
+      label = navbar.menu.label || 'Menu';
+
+  %>
+  <%- include('../../../button/template/ejs/button', {button: {
+      classes: [prefix + '-btn--menu'],
+      title: label,
+      attributes: {
+          ...attrs,
+          'aria-controls': navbar.menu.modalId
+      },
+      label: label,
+      id: navbar.menu.id
+  }}); %>
+  <% } %>
+</div>
