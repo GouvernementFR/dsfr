@@ -720,12 +720,6 @@ $grid-breakpoints: ("sm", "md", "lg", "xl") !default;
   .fr-nav__link {
     text-align: right;
   }
-  .fr-nav__item.fr-nav__item--align-right .fr-menu {
-    .fr-nav__btn,
-    .fr-nav__link {
-      text-align: left;
-    }
-  }
   .fr-nav__btn[aria-current]:not([aria-current="false"])::before,
   .fr-nav__link[aria-current]:not([aria-current="false"])::before {
     left: auto;
@@ -1014,29 +1008,77 @@ $grid-breakpoints: ("sm", "md", "lg", "xl") !default;
         var(--background-active-blue-france-hover) 0.625rem
       );
     }
+    &.fr-tag[aria-pressed="true"]:disabled,
+    &.fr-tag[aria-pressed="true"]:disabled:hover {
+      background-image: radial-gradient(
+        circle at 0.25rem 0.25rem, transparent 0.578125rem, var(--background-disabled-grey) 0.625rem
+      );
+    }
     &.fr-tag[aria-pressed="true"].fr-tag--sm:not(:disabled) {
       background-image: radial-gradient(
-        circle at 0.25rem 0.1875rem,
+        circle at 0 0.1875rem,
         transparent 0.4475rem,
         var(--background-active-blue-france) 0.5rem
       );
     }
     &.fr-tag[aria-pressed="true"].fr-tag--sm:hover {
       background-image: radial-gradient(
-        circle at 0.25rem 0.1875rem,
+        circle at 0 0.1875rem,
         transparent 0.4475rem,
         var(--background-active-blue-france-hover) 0.5rem
       );
+    }
+    &.fr-tag[aria-pressed="true"].fr-tag--sm:disabled,
+    &.fr-tag[aria-pressed="true"].fr-tag--sm:disabled:hover {
+      background-image: radial-gradient(
+        circle at 0 0.1875rem,
+        transparent 0.4475rem,
+        var(--background-disabled-grey) 0.5rem
+      );
+    }
+    &.fr-tag[aria-pressed="true"].fr-tag--sm {
+      &::after {
+        left: 0;
+        right: auto;
+      }
     }
   }
   .fr-tags-group.fr-tags-group--sm {
     button,
     input[type="button"] {
       &.fr-tag.fr-tag--dismiss {
-       &::after {
-         margin-right: 0.1875rem;
-       }
-     }
+        &::after {
+          margin-right: 0.1875rem;
+        }
+      }
+      &.fr-tag[aria-pressed="true"]:not(:disabled) {
+        background-image: radial-gradient(
+          circle at 0 0.1875rem,
+          transparent 0.4475rem,
+          var(--background-active-blue-france) 0.5rem
+        );
+      }
+      &.fr-tag[aria-pressed="true"]:hover {
+        background-image: radial-gradient(
+          circle at 0 0.1875rem,
+          transparent 0.4475rem,
+          var(--background-active-blue-france-hover) 0.5rem
+        );
+      }
+      &.fr-tag[aria-pressed="true"]:disabled,
+      &.fr-tag[aria-pressed="true"]:disabled:hover {
+        background-image: radial-gradient(
+          circle at 0 0.1875rem,
+          transparent 0.4475rem,
+          var(--background-disabled-grey) 0.5rem
+        );
+      }
+      &.fr-tag[aria-pressed="true"] {
+        &::after {
+          left: 0;
+          right: auto;
+        }
+      }
     }
   }
 
@@ -1163,7 +1205,7 @@ $grid-breakpoints: ("sm", "md", "lg", "xl") !default;
 
   // Range
   .fr-range[data-fr-js-range] {
-    --progress-left: 0px;
+    --progress-left: 0.0001px;
     &::after {
       clip-path: polygon(calc(100% - var(--progress-left)) 0, calc(100% - var(--progress-right)) 0, calc(100% - var(--progress-right)) 100%, calc(100% - var(--progress-left)) 100%);
     }
@@ -1290,7 +1332,7 @@ $grid-breakpoints: ("sm", "md", "lg", "xl") !default;
     $half: map.get($settings, "half");
     $special: map.get($settings, "special");
 
-    @for $i from $from to $through {
+    @for $i from $from through $through {
       @include spacing-property-variations($prop, $i, $breakpoint);
 
       @if $i > -$half and $i < $half {
