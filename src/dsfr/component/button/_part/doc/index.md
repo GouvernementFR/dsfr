@@ -1,11 +1,10 @@
 ---
 title: Bouton (button)
-segment: bouton
 ---
 ![Bouton](./asset/cover/button.png)
 # Bouton
 
-:::tabbedNavigation
+:::dsfr-doc-tab-navigation
 - Usage
 - [Design](./design/index.md)
 - [Développement](./develop/index.md)
@@ -15,7 +14,7 @@ segment: bouton
 
 ## Présentation
 
-::storybook{id=button--controls height=1200px}
+::dsfr-doc-storybook{id=button--controls height=1200px}
 
 #### Anatomie
 

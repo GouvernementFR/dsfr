@@ -4,7 +4,7 @@ order: 5
 ---
 # Analytics
 
-> **Note**
+> [!NOTE]
 > Ajout de la propriété `isActionEnabled` dans la configuration et sur l'objet `window.dsfr.analytics` permettant d'activer l'envoi de l'ensemble des données d'actions des composants. Pour activer l'envoi d'action sur des éléments spécifiques au cas par cas, il est possible d'ajouter l'attribut `data-fr-analytics-action` sur l'élément.
 
 > **Important**

@@ -5,7 +5,7 @@ segment: design
 
 # Bouton
 
-:::tabbedNavigation
+:::dsfr-doc-tab-navigation
 - [Usage](../index.md)
 - Design
 - [Développement](../develop/index.md)

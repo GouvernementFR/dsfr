@@ -4,7 +4,7 @@ title: Accessibilité du Bouton
 
 # Bouton
 
-:::tabbedNavigation
+:::dsfr-doc-tab-navigation
 - [Usage](../index.md)
 - [Design](../design/index.md)
 - [Développement](../develop/index.md)

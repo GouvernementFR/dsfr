@@ -40,10 +40,11 @@
     "typescript-eslint": "^8.0.1"
   },
   "dependencies": {
-    "@gouvfr/dsfr-cli": "../dsfr-cli",
+    "@gouvfr/dsfr-cli": "^0.0.12",
     "@gouvfr/dsfr-kit": "./packages/dsfr-kit"
   },
   "resolutions": {
+    "@gouvfr/dsfr-cli": "../dsfr-cli/packages/dsfr-cli",
     "@gouvfr/dsfr-cli-utils": "../dsfr-cli/packages/dsfr-cli-utils",
     "@gouvfr/dsfr-compiler": "../dsfr-cli/packages/dsfr-compiler",
     "@gouvfr/dsfr-doc-static": "../dsfr-cli/packages/dsfr-doc-static",

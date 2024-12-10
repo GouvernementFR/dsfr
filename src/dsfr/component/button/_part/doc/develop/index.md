@@ -5,7 +5,7 @@ segment: developpement
 
 # Bouton
 
-:::tabbedNavigation
+:::dsfr-doc-tab-navigation
 - [Usage](../index.md)
 - [Design](../design/index.md)
 - Développement
@@ -13,8 +13,6 @@ segment: developpement
 
 :::
 
-## Bouton Primaire
-
-Un seul bouton primaire est autorisé par page
-
-## Bouton Secondaire
+label<sup>2</sup>
+<ul><li>Libellé du bouton</li><li>`button`</li></ul>
+bla
