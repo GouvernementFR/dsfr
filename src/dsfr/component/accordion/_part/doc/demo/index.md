@@ -5,7 +5,7 @@ title: Démonstration de l'Accordéon
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
-- [Anatomie](../anatomy/index.md)
+- [Design](../design/index.md)
 - [Code](../code/index.md)
 - Démonstration
 - [Accessibilité](../accessibility/index.md)
@@ -14,3 +14,5 @@ title: Démonstration de l'Accordéon
 
 
 ## Démonstration
+
+::dsfr-doc-storybook{id=button--docs}
