@@ -1,3 +1,7 @@
+---
+title: Opt
+---
+
 ## Opt
 L’instance de Opt est accessible depuis
 `window.dsfr.analytics.opt`

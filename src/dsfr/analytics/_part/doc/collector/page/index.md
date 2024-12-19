@@ -1,3 +1,6 @@
+---
+title: Class Page
+---
 
 ## class Page
 
@@ -40,7 +43,7 @@ window.dsfr.analytics.page
 ```
 
 ### PROPRIÉTÉS
-> **Note**
+> [!NOTE]
 > Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
 

@@ -1,3 +1,7 @@
+---
+title: Class Funnel
+---
+
 ## class Funnel
 
 L’instance de Funnel est accessible depuis
@@ -27,7 +31,7 @@ L’instance de Funnel est accessible depuis
 
 ### PROPRIÉTÉS
 
-> **Note**
+> [!NOTE]
 > Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
 
