@@ -7,7 +7,7 @@ title: Alerte
 - Présentation
 - [Design](../design/index.md)
 - [Code](../code/index.md)
-- [Démonstration](./storybook/index.md)
+- [Démonstration](./demo/index.md)
 - [Accessibilité](./accessibility/index.md)
 
 :::

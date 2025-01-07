@@ -7,7 +7,7 @@ title: Anatomie de l'Alerte
 - [Présentation](../index.md)
 - Design
 - [Code](../code/index.md)
-- [Démonstration](../storybook/index.md)
+- [Démonstration](../demo/index.md)
 - [Accessibilité](../accessibility/index.md)
 :::
 

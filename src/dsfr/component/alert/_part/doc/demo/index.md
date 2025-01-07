@@ -13,3 +13,5 @@ title: Démonstration de l'Alerte
 
 
 ## Démonstration
+
+::dsfr-doc-storybook{id=alert--docs}
