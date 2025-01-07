@@ -1,7 +1,7 @@
 ---
 title: Alerte
 ---
-# Accordéon
+# Alerte
 
 :::dsfr-doc-tab-navigation
 - Présentation
