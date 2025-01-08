@@ -18,7 +18,7 @@ Le système d'accordéon utilise le motif de conception ARIA WAI "Accordion" et 
 
 ### Interactions clavier
 
-- `Entrer` ou `Espace` :
+- `Entrée` ou `Espace` :
   - Lorsque le focus est placé sur le bouton d'ouverture de l'accordéon, et que son "collapse" associé est fermé, ouvre le collapse. Si l'accordéon est lié aux autres accordéon du groupe et qu'un accordéon était déjà ouvert, celui-ci est alors fermé.
   - Lorsque le focus est placé sur le bouton d'ouverture de l'accordéon, et que son "collapse" associé est déjà ouvert, referme le collapse.
 - `Tab` : Place le focus sur le prochain élément focalisable. Tous les éléments focalisables placés dans le collapse sont inclus dans la séquence des éléments accessibles au `tab` de la page.
