@@ -5,9 +5,9 @@ title: Démonstration du badge
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
+- Démo
 - [Design](../design/index.md)
 - [Code](../code/index.md)
-- Démonstration
 - [Accessibilité](../accessibility/index.md)
 :::
 
