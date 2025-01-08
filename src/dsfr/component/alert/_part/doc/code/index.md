@@ -5,9 +5,9 @@ title: Code de l'Alerte
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
+- [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
-- [Démonstration](../demo/index.md)
 - [Accessibilité](../accessibility/index.md)
 
 :::

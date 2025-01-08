@@ -5,9 +5,9 @@ title: Accessibilité de l'Alerte
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
+- [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
-- [Démonstration](../demo/index.md)
 - Accessibilité
 
 :::
