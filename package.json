@@ -23,7 +23,7 @@
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
     "pictogram-converter": "node tool/tool.js pictogram-converter",
-    "chouquette": "yarn upgrade @gouvfr/dsfr-chouquette && yarn upgrade @gouvfr/dsfr-cli"
+    "chouquette": "yarn upgrade @gouvfr/dsfr-cli @gouvfr/dsfr-forge @gouvfr/dsfr-compiler @gouvfr/dsfr-doc-publisher @gouvfr/dsfr-doc-static"
   },
   "files": [
     "/dist",
@@ -41,8 +41,11 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "@gouvfr/dsfr-chouquette": "git+https://github.com/GouvernementFR/dsfr-chouquette.git#doc",
-    "@gouvfr/dsfr-cli": "./node_modules/@gouvfr/dsfr-chouquette/modules/cli",
+    "@gouvfr/dsfr-cli": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@cli",
+    "@gouvfr/dsfr-compiler": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@compiler",
+    "@gouvfr/dsfr-doc-publisher": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-publisher",
+    "@gouvfr/dsfr-doc-static": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-static",
+    "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@forge",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
     "browser-sync": ">=2.27.10",
@@ -88,15 +91,16 @@
     "svgo": "^2.8.0",
     "yargs": "^17.7.1"
   },
+  "resolutions": {
+    "@gouvfr/dsfr-cli": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@cli",
+    "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@forge",
+    "@gouvfr/dsfr-compiler": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@compiler",
+    "@gouvfr/dsfr-doc-publisher": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-publisher",
+    "@gouvfr/dsfr-doc-static": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-static"
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "resolutions": {
-    "@gouvfr/dsfr-forge": "./node_modules/@gouvfr/dsfr-chouquette/modules/shared/forge",
-    "@gouvfr/dsfr-compiler": "./node_modules/@gouvfr/dsfr-chouquette/modules/shared/compiler",
-    "@gouvfr/dsfr-doc-publisher": "./node_modules/@gouvfr/dsfr-chouquette/modules/doc/publisher",
-    "@gouvfr/dsfr-doc-static": "./node_modules/@gouvfr/dsfr-chouquette/modules/doc/static"
   }
 }
