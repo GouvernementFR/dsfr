@@ -34,8 +34,7 @@ Le composant Fil d’Ariane permet aux utilisateurs de comprendre leur position 
 
 **Exemple de structure HTML**
 
-HTML
-'''
+```HTML
 <nav role="navigation" class="fr-breadcrumb" aria-label="vous êtes ici :">
     <button class="fr-breadcrumb__button" aria-expanded="false" aria-controls="breadcrumb-1">
         Voir le fil d’Ariane
@@ -52,21 +51,12 @@ HTML
                 <a class="fr-breadcrumb__link" href="#/segment-1/segment-2/">Segment 2</a>
             </li>
             <li>
-                <a class="fr-breadcrumb__link" href="#/segment-1/segment-2/segment-3/">Segment 3</a>
-            </li>
-            <li>
-                <a class="fr-breadcrumb__link" href="#/segment-1/segment-2/segment-3/segment-4/">Segment 4</a>
-            </li>
-            <li>
-                <a class="fr-breadcrumb__link" href="#/segment-1/segment-2/segment-3/segment-4/segment-5/">Segment 5</a>
-            </li>
-            <li>
                 <a class="fr-breadcrumb__link" aria-current="page">Page Actuelle</a>
             </li>
         </ol>
     </div>
 </nav>
-'''
+```
 
 #### Comportement en mobile
 - En affichage mobile, seul le bouton avec la classe `fr-breadcrumb__button` est visible par défaut.
@@ -82,28 +72,26 @@ HTML
 
 Pour fonctionner correctement, le style CSS du fil d’Ariane et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
 
-HTML
-'''
+```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/breadcrumb/breadcrumb.min.css" rel="stylesheet">
-'''
+```
 
 <small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
 
 Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent également être ajoutés :
 
-HTML
-'''
+```HTML
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/breadcrumb/breadcrumb.legacy.min.css" rel="stylesheet">
-'''
+```
 
 #### Styles du composant
 
 - **Affichage par défaut** : Le fil d’Ariane est masqué sur mobile, seul le bouton est visible.
 - **Affichage étendu** : Lorsque l’attribut `aria-expanded` du bouton est à `true`, la classe `fr-collapse--expanded` est ajoutée au conteneur `<div>` pour le rendre visible.
 
-
+---
 
 ### JavaScript
 
@@ -142,7 +130,7 @@ Pour la compatibilité avec Internet Explorer 11, les versions legacy en ES5 peu
 
 L’API du composant **Fil d’Ariane** permet de manipuler ses comportements via JavaScript. Elle est accessible par la méthode `window.dsfr(instance)`.
 
-##### Propriétés et Méthodes Disponibles
+##### Propriétés et méthodes disponibles
 
 ##### breadcrumb
 
