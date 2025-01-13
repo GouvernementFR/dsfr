@@ -1,3 +1,7 @@
+---
+title: Consent Manager Platform
+---
+
 ## class ConsentManagerPlatform
 
 L’instance de ConsentManagerPlatform est accessible depuis

@@ -1,3 +1,7 @@
+---
+title: Class Site
+---
+
 ## class Site
 
 L’instance de Site est accessible depuis
@@ -27,7 +31,7 @@ window.dsfr.analytics.site
 
 ### PROPRIÉTÉS
 
-> **Note**
+> [!NOTE]
 > Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
 

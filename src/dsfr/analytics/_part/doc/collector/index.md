@@ -1,3 +1,7 @@
+---
+title: Collector
+---
+
 ## Collector
 
 Le collector permet la collecte de données de page du site.
@@ -11,7 +15,7 @@ Chacune de ces données est répartie dans différentes catégories qui sont dis
         analytics: {
             domain: 'mon.domainedetracking.com',
             // collection: 'manual',
-            // isActionEnabled: false,  
+            // isActionEnabled: false,
         }
     };
 </script>
@@ -51,12 +55,3 @@ Défini si la mesure d'audience des actions est activée ou non.
 * Par défaut, la mesure d'audience des actions est désactivée (`false`)
 
 * * *
-
-
-- analytics/collector
-  - [class Analytics](collector/analytics.md)
-  - [class Page](collector/page.md)
-  - [class User](collector/user.md)
-  - [class Site](collector/site.md)
-  - [class Search](collector/search.md)
-  - [class Funnel](collector/funnel.md)

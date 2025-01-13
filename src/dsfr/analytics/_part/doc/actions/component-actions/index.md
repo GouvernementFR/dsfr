@@ -1,3 +1,7 @@
+---
+title: Actions sur les composants DSFR
+---
+
 ## Actions sur les composants DSFR
 
 Les composants du DSFR envoient automatiquement des actions prédéfinies.
@@ -37,7 +41,7 @@ Vous trouverez pour chaque composant une colonne :
 | download      | .fr-download__link [download]                                                                               |            DOWNLOAD             |                 |     href<sup>4</sup>     | <ul><li>libellé du bloc de téléchargement</li><li>`téléchargement`</li></ul>                                                                                 |
 | follow        | .fr-follow__newsletter                                                                                      |            SUBSCRIBE            |                 |    label<sup>2</sup>     | <ul><li>`lettre d'information et réseaux sociaux`</li></ul>                                                                                                  |
 | footer        | .fr-footer                                                                                                  |                                 |                 |                          | <ul><li>Pied de page</li></ul>                                                                                                                               |
-|               | .fr-footer__content-link,<br>.fr-footer__bottom-link,<br>.fr-footer__top-link,<br>.fr-footer__partners-link | INTERNAL / EXTERNAL<sup>1</sup> |                 |     href<sup>4</sup>     | <ul><li>Libellé du lien</li><li>`lien pied de page`</li></ul>                                                                                                |
+|               | .fr-footer__content-link,<br/>.fr-footer__bottom-link,<br/>.fr-footer__top-link,<br/>.fr-footer__partners-link | INTERNAL / EXTERNAL<sup>1</sup> |                 |     href<sup>4</sup>     | <ul><li>Libellé du lien</li><li>`lien pied de page`</li></ul>                                                                                                |
 | header        | .fr-header                                                                                                  |                                 |                 |                          | <ul><li>`En-tête`</li></ul>                                                                                                                                  |
 |               | .fr-header__tools-links .fr-btn                                                                             | INTERNAL / EXTERNAL<sup>1</sup> |    [LG] [XL]    |     href<sup>4</sup>     | <ul><li>Libellé du bouton</li><li>`button`</li></ul>                                                                                                         |
 |               | .fr-header__menu-links .fr-btn                                                                              | INTERNAL / EXTERNAL<sup>1</sup> | [XS] [SM] [MD]  |     href<sup>4</sup>     | <ul><li>Libellé du bouton</li><li>`button`</li></ul>                                                                                                         |
@@ -92,5 +96,5 @@ Vous trouverez pour chaque composant une colonne :
 
 * * *
 
-> **Note**
-> Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires `data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions](component-actions.md)).
+> [!NOTE]
+> Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires `data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions](../custom-actions/index.md)).

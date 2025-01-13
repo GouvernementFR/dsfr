@@ -1,3 +1,7 @@
+---
+title: Class User
+---
+
 ## class User
 
 L’instance de User est accessible depuis
@@ -27,7 +31,7 @@ window.dsfr.analytics.user
 
 ### PROPRIÉTÉS
 
-> **Note**
+> [!NOTE]
 > Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
 
