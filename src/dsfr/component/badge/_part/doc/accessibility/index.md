@@ -6,7 +6,7 @@ title: Accessibilité du badge
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
-- [Anatomie](../anatomy/index.md)
+- [Anatomie](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
 

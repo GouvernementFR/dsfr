@@ -15,7 +15,7 @@ title: Accessibilité du fil d'Ariane
 
 ## Accessibilité
 
-Le composant **Fil d’Ariane** est conçu pour être accessible et respecter les normes WCAG 2.1 AA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Fil d’Ariane** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
 
 ### Interactions clavier
 
