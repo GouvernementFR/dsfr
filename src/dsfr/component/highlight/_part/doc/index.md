@@ -1,4 +1,3 @@
-
 ---
 title: Mise en exergue
 ---

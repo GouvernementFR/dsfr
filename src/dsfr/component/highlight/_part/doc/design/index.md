@@ -1,4 +1,3 @@
-
 ---
 title: Design de la mise en exergue
 ---
