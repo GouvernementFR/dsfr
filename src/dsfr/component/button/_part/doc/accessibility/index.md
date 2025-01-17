@@ -1,7 +1,7 @@
 ---
-title: Accessibilité de la mise en avant
+title: Accessibilité du bouton
 ---
-# Mise en avant
+# Bouton
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
@@ -15,7 +15,7 @@ title: Accessibilité de la mise en avant
 
 ## Accessibilité
 
-Le composant **Mise en avant** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Bouton** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
 
 ### Interactions clavier
 
@@ -45,4 +45,5 @@ Lorsque le focus est positionné sur le Bouton :
 ### Références
 
 - [https://www.w3.org/WAI/WCAG21/quickref/](https://www.w3.org/WAI/WCAG21/quickref/)
+- [https://www.w3.org/WAI/ARIA/apg/patterns/button/](https://www.w3.org/WAI/ARIA/apg/patterns/button/)
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

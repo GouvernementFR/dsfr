@@ -81,3 +81,12 @@ Le composant Mise en exergue est accentuable, permettant le changement de la cou
 ### JavaScript
 
 Le composant **Mise en exergue** ne nécessite pas de JavaScript spécifique pour fonctionner.
+
+
+---
+
+### Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+highlight+)
+
+::dsfr-doc-changelog

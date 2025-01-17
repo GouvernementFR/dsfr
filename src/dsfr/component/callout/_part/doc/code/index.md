@@ -68,3 +68,11 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 ### JavaScript
 
 Le composant **Mise en avant** ne nécessite pas de JavaScript spécifique pour fonctionner.
+
+---
+
+### Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+callout+)
+
+::dsfr-doc-changelog

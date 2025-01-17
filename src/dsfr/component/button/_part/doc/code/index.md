@@ -114,7 +114,7 @@ Dans le cas d'un groupe de boutons, la taille des boutons peut être généralis
 ```
 
 #### Variantes d'icônes
-Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir Icônes).
+Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../fondamentaux/icones/)).
 
 Cette classe peut être associée à une classe de positionnement de l'icône :
 - Par défaut : Icône seule, le libellé est caché.
@@ -123,12 +123,17 @@ Cette classe peut être associée à une classe de positionnement de l'icône :
 
 Dans le cas d'un groupe de boutons, le positionnement de l'icône des boutons peut être généralisé au niveau du groupe avec les classes `fr-btns-group--icon-left` ou `fr-btns-group--icon-right`.
 
-#### Variantes des groupes de boutons
+
+#### Variante désactivé
+
+Le style désactivé du bouton est appliqué par l'ajout de l'attribut `disabled` sur l'élément `<button>`. Le bouton est alors grisé et les effets au survol et au clic sont retirés. Le pointeur de la souris prend la valeur "not-allowed" au survol du bouton ce qui change sont style.
+
+#### Variantes du groupe de bouton
 
 Le groupe de bouton vient avec de nombreuses variations, telles que :
 - **Taille des boutons** : Les variations de taille sont accessibles au niveau du groupe avec les classes :
   - `fr-btns-group--sm`: Groupe de boutons SM
-  - `fr-btns-group--ld`: Groupe de boutons LG
+  - `fr-btns-group--lg`: Groupe de boutons LG
 - **Positionnement des icônes des boutons** : Les variations de position de l'icône des boutons sont accessibles au niveau du groupe avec les classes :
   - `fr-btns-group--icon-left` : Icône des boutons à gauche
   - `fr-btns-group--icon-right` : Icône des boutons à droite

@@ -65,7 +65,7 @@ _ConsentManagerPlatform_
 
 `window.dsfr.analytics.cmp`
 
-Getter qui retourne l’instance de [ConsentManagerPlatform](../cmp/index.md)
+Getter qui retourne l’instance de [ConsentManagerPlatform](../../installation/cmp/index.md)
 
 * * *
 
@@ -75,7 +75,7 @@ _Opt_
 
 `window.dsfr.analytics.opt`
 
-Getter qui retourne l’instance de [Opt](../opt/index.md)
+Getter qui retourne l’instance de [Opt](../../installation/opt/index.md)
 
 ##### isReady
 
@@ -132,7 +132,7 @@ Permet d’activer / désactiver la mesure d'audience des actions au niveau glob
 * Si la valeur est `reduce` : la mesure d'audience des actions est activée uniquement sur les éléments ayant l'attribut `data-fr-analytics-action`. (voir [Activer les actions](../actions.md#Activer les actions))
 
 Défini dans la configuration (voir propriété `isActionEnabled` de la [configuration](../../installation/configuration/index.md))
-Voir [Activer les actions](../actions/index.md#Activer-les-actions) pour plus d'informations sur l'activation ou la désactivation des actions au cas par cas.
+Voir [Activer les actions](../../actions/index.md#Activer-les-actions) pour plus d'informations sur l'activation ou la désactivation des actions au cas par cas.
 
 * * *
 

@@ -128,8 +128,11 @@ document.querySelector('.fr-alert__close').addEventListener('click', function() 
 
 Dans l'exemple HTML fourni, cette fonction est déjà intégrée directement dans l'attribut `onclick` du bouton de fermeture.
 
+
+---
+
 ### Note de version
 
-- [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+alert+)
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+alert+)
 
 ::dsfr-doc-changelog

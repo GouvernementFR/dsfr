@@ -97,8 +97,9 @@ Les badges peuvent être affichés dans deux tailles différentes. Par défaut, 
 ```
 
 ---
+
 ### Note de version
 
-- [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+badge+)
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+badge+)
 
 ::dsfr-doc-changelog

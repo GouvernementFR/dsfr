@@ -264,8 +264,8 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 
 ---
 
-### Notes de version
+### Note de version
 
-- [Voir les évolutions sur GitHub](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+breadcrumb)
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+breadcrumb+)
 
 ::dsfr-doc-changelog
