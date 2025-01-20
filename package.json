@@ -41,11 +41,11 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "@gouvfr/dsfr-cli": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@cli",
-    "@gouvfr/dsfr-compiler": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@compiler",
-    "@gouvfr/dsfr-doc-publisher": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-publisher",
-    "@gouvfr/dsfr-doc-static": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-static",
-    "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@forge",
+    "@gouvfr/dsfr-cli": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@cli",
+    "@gouvfr/dsfr-compiler": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@compiler",
+    "@gouvfr/dsfr-doc-publisher": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@doc-publisher",
+    "@gouvfr/dsfr-doc-static": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@doc-static",
+    "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@forge",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
     "browser-sync": ">=2.27.10",
@@ -92,11 +92,11 @@
     "yargs": "^17.7.1"
   },
   "resolutions": {
-    "@gouvfr/dsfr-cli": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@cli",
-    "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@forge",
-    "@gouvfr/dsfr-compiler": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@compiler",
-    "@gouvfr/dsfr-doc-publisher": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-publisher",
-    "@gouvfr/dsfr-doc-static": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-static"
+    "@gouvfr/dsfr-cli": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@cli",
+    "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@forge",
+    "@gouvfr/dsfr-compiler": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@compiler",
+    "@gouvfr/dsfr-doc-publisher": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@doc-publisher",
+    "@gouvfr/dsfr-doc-static": "git+https://github.com/GouvernementFR/dsfr-cli.git#pck/feat/publisher-storybook-directive/@doc-static"
   },
   "husky": {
     "hooks": {
