@@ -21,7 +21,7 @@ L'infobulle doit être accessible via le clavier. Assurez-vous que les élément
 
 ### Règles d'accessibilité
 
-- L'élément qui déclenche l'infobulle fait référence à l'élément conteneur avec l'attribut `aria-describeby`.
+- L'élément qui déclenche l'infobulle fait référence à l'élément conteneur avec l'attribut `aria-describedby`.
 - L'élément qui sert de conteneur d'infobulle a l'attribut `role="tooltip"` ([tooltip](https://w3c.github.io/aria/#tooltip)) et `aria-hidden="true"` lorsqu'il est masqué.
 - Assurez-vous que le texte de l'infobulle est clair et concis.
 - Le contraste entre le texte de l'infobulle et son arrière-plan doit être suffisant pour être lisible.
