@@ -91,11 +91,13 @@ Aucune personnalisation n'est possible.
 
 ### JavaScript
 
-Le composant **Infobulle** nécessite du JavaScript pour fonctionner correctement. Assurez-vous d'inclure le fichier JavaScript correspondant dans votre projet.
+Pour fonctionner le composant **Infobulle** nécessite l'utilisation de JavaScript.
+Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
+Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 ```HTML
-<script src="dist/component/tooltip/tooltip.min.js"></script>
-```
+<script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/tootltip/tootltip.module.min.js"></script>
 
 ---
 
