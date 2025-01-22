@@ -86,21 +86,6 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 
 #### Styles du composant
 
-##### Variantes de position
-Le tooltip peut être positionné de différentes manières par rapport à l'élément cible :
-- Par défaut en haut.
-- `fr-tooltip--bottom` : En bas.
-- `fr-tooltip--left` : À gauche.
-- `fr-tooltip--right` : À droite.
-
-**Exemple de tooltip avec différentes positions**
-
-```HTML
-<div class="fr-tooltip fr-tooltip--bottom">
-  <span>Texte de l'infobulle</span>
-</div>
-```
-
 ##### Accentuation
 Aucune personnalisation n'est possible.
 
