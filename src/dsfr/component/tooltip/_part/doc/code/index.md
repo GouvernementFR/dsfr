@@ -108,7 +108,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/table/table.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/tooltip/tooltip.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
