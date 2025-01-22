@@ -95,16 +95,21 @@ Pour fonctionner le composant **Infobulle** nécessite l'utilisation de JavaScri
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/table/table.module.min.js"></script>
+```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/table/table.nomodule.min.js"></script>
+```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
