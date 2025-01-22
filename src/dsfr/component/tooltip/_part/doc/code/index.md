@@ -98,7 +98,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
-<script type="module" src="dist/component/table/table.module.min.js"></script>
+<script type="module" src="dist/component/tooltip/tooltip.module.min.js"></script>
 ```
 
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
