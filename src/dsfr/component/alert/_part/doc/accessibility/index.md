@@ -21,10 +21,10 @@ Le système d'alerte utilise les bonnes pratiques d'accessibilité pour les comp
 
 ### Règles d'accessibilités
 
-- Une alerte ajouté dynamiquement, après le chargement de la page, doit être rendue automatiquement visible à l'utilisateur sans interaction. Pour ce faire :
+- Une **alerte ajouté dynamiquement**, après le chargement de la page, doit être rendue automatiquement visible à l'utilisateur sans interaction. Pour ce faire :
   - L’alerte doit avoir un `role="alert"` pour signaler son importance aux technologies d’assistance.
   - Les alertes critiques peuvent utiliser `role="alertdialog"` si elles nécessitent une interaction utilisateur ou un retour explicite.
-- Les alertes refermables doivent inclure un bouton clairement identifiable pour fermer l'alerte.
+- Les **alertes refermables** doivent inclure un bouton clairement identifiable pour fermer l'alerte.
   - Le bouton de fermeture doit avoir un label explicite via un texte caché et un attribut `title`.
 - Les alertes doivent être incluses dans un conteneur facilement identifiable visuellement et sémantiquement :
   - L'ajout d'attributs `aria-live=assertive` et `aria-atomic=true` n'est pas nécessaire car implicite avec le `role=alert`.
