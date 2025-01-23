@@ -24,16 +24,17 @@ L’infobulle au survol se compose des éléments suivants :
     - Elle est liée au conteneur via l'attribut `aria-describedby`, sa valeur doit correspondre à l'attribut `id` du conteneur.
 2. Un conteneur pour le texte de l'infobulle :
     - Représenté par un élément `<span>`.
-    - Il dispose d'un attribut `id` obligatoire, pour être lié à la zone de déclenchement.
-    - Doit avoir la classe `fr-tooltip`.
+    - Doit avoir un attribut `id` obligatoire, pour être lié à la zone de déclenchement.
+    - Doit avoir un attribut `role="tooltip"`.
+    - Doit avoir les classes `fr-tooltip` et `fr-placement`.
 
 **Exemple de structure HTML**
 
 ```HTML
-<a class="fr-link" aria-describedby="tooltip-2989" id="link-2990" href="#">
+<a class="fr-link" aria-describedby="tooltip-1" href="[à modifier]">
     Exemple
 </a>
-<span class="fr-tooltip fr-placement" id="tooltip-2989" role="tooltip" aria-hidden="true">
+<span class="fr-tooltip fr-placement" id="tooltip-1" role="tooltip">
     Lorem [...] elit ut.
 </span>
 ```
@@ -48,16 +49,17 @@ L’infobulle au clic se compose des éléments suivants :
 
 2. Un conteneur pour le texte de l'infobulle :
     - Représenté par un élément `<span>`.
-    - Il dispose d'un attribut `id` obligatoire, pour être lié à la zone de déclenchement.
-    - Doit avoir la classe `fr-tooltip`.
+    - Doit avoir un attribut `id` obligatoire, pour être lié à la zone de déclenchement.
+    - Doit avoir un attribut `role="tooltip"`.
+    - Doit avoir les classes `fr-tooltip` et `fr-placement`.
 
 **Exemple de structure HTML**
 
 ```HTML
-<button class="fr-btn--tooltip fr-btn" type="button" id="button-2995" aria-describedby="tooltip-2994">
+<button class="fr-btn--tooltip fr-btn" type="button" aria-describedby="tooltip-2">
     Information contextuelle
 </button>
-<span class="fr-tooltip fr-placement" id="tooltip-2994" role="tooltip" aria-hidden="true">
+<span class="fr-tooltip fr-placement" id="tooltip-2" role="tooltip">
     Lorem [...] elit ut.
 </span>
 ```
@@ -86,12 +88,12 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 
 #### Styles du composant
 
-##### Accentuation
-Aucune personnalisation n'est possible.
+
+---
 
 ### JavaScript
 
-Pour fonctionner le composant **Infobulle** nécessite l'utilisation de JavaScript.
+Pour fonctionner le composant infobulle nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
@@ -112,6 +114,160 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
+
+#### Instances
+
+Sur le tooltip, les éléments suivants sont instanciés :
+- Le conteneur, via la classe : `fr-tooltip`
+- Le déclencheur, via l'attribut : `aria-describedby` lié à l'`id` du conteneur
+
+Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
+
+#### API
+
+Il est possible d'interagir avec les instances du composants en JavaScript via une API.
+
+Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
+
+Exemple :
+```js
+const elem = document.getElementById('ID_TOOLTIP');
+dsfr(elem).tooltip.show();
+```
+
+L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
+
+###### tooltip
+
+:::dsfr-doc-table{valign=top scroll=false}
+| parent | |
+|:-----|:-----|
+| Description | Retourne l'instance du dsfr parente |
+| Type | property |
+| Retour | object \| null |
+| Exemple | `dsfr(elem).parent` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| children | |
+|:-----|:-----|
+| Description | Renvoie un tableau d'instances enfants |
+| Type | property |
+| Retour | Array |
+| Exemple | `dsfr(elem).children` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| node | |
+|------|-----|
+| Description | Renvoie le noeud HTML de l'élément. |
+| Type | property |
+| Retour | DOMElement |
+| Exemple | `dsfr(elem).tooltip.node` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| isEnabled | |
+|------|-----|
+| Description | Défini si le fonctionnement de l'infobulle est activé ou non |
+| Type | property |
+| Retour | true \| false |
+| Exemple | `dsfr(elem).tooltip.isEnabled = false` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| isShown | |
+|------|-----|
+| Description | Défini si l'infobulle est affichée ou non |
+| Type | property |
+| Retour | true \| false |
+| Exemple | `dsfr(elem).tooltip.isShown = false` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| show | |
+|:-----|:-----|
+| Description | Affiche l'infobulle |
+| Type | function |
+| Arguments | none |
+| Retour | none |
+| Exemple | `dsfr(elem).tooltip.show()` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| hide | |
+|:-----|:-----|
+| Description | Cache l'infobulle |
+| Type | function |
+| Arguments | none |
+| Retour | none |
+| Exemple | `dsfr(elem).tooltip.hide()` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| mode | |
+|------|-----|
+| Description | Défini le mode de placement de l'infobulle |
+| Type | property |
+| Retour | 'placement_auto' \| 'placement_manual' |
+| Exemple | `dsfr(elem).tooltip.mode = 'placement_manual'` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| align | |
+|------|-----|
+| Description | Défini l'alignement vertical de l'infobulle en `mode='placement_manual'` |
+| Type | property |
+| Retour | 'align_start' \| 'align_center' \| 'align_end' |
+| Exemple | `dsfr(elem).tooltip.align = 'align_start'` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| place | |
+|------|-----|
+| Description | Défini le placement de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
+| Type | property |
+| Retour | 'placement--top' \| 'placement--bottom' \| 'placement--left' \| 'placement--right' |
+| Exemple | `dsfr(elem).tooltip.place = 'placement--top'` |
+:::
+
+###### tooltipReferent
+
+:::dsfr-doc-table{valign=top scroll=false}
+| parent | |
+|:-----|:-----|
+| Description | Retourne l'instance du dsfr parente |
+| Type | property |
+| Retour | object \| null |
+| Exemple | `dsfr(elem).parent` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| children | |
+|:-----|:-----|
+| Description | Renvoie un tableau d'instances enfants |
+| Type | property |
+| Retour | Array |
+| Exemple | `dsfr(elem).children` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| node | |
+|------|-----|
+| Description | Renvoie le noeud HTML de l'élément. |
+| Type | property |
+| Retour | DOMElement |
+| Exemple | `dsfr(elem).tooltipReferent.node` |
+:::
+
+:::dsfr-doc-table{valign=top scroll=false}
+| isEnabled | |
+|------|-----|
+| Description | Défini si le fonctionnement du déclencheur est activé ou non |
+| Type | property |
+| Retour | true \| false |
+| Exemple | `dsfr(elem).tooltipReferent.isEnabled = false` |
+:::
 
 ---
 

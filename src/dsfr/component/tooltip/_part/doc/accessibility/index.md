@@ -17,18 +17,18 @@ Le composant **Infobulle** est conçu pour être accessible et suit les critère
 
 ### Interactions clavier
 
-L'infobulle doit être accessible via le clavier. Assurez-vous que les éléments déclencheurs de l'infobulle sont accessibles avec la touche Tab et que l'infobulle est visible lors de la prise de focus.
+L'infobulle doit être accessible via le clavier. Lorsque le focus est placé sur l'élément déclencheur de l'infobulle celle-ci devient visible.
+- `Tab` : Place le focus sur le prochain élément focalisable et ferme l'infobulle.
+- `shift` + `Tab` : Place le focus sur l'élément focalisable précédent et ferme l'infobulle.
 
 ### Règles d'accessibilité
 
-- L'élément qui déclenche l'infobulle fait référence à l'élément conteneur avec l'attribut `aria-describedby`.
-- L'élément qui sert de conteneur d'infobulle a l'attribut `role="tooltip"` ([tooltip](https://w3c.github.io/aria/#tooltip)) et `aria-hidden="true"` lorsqu'il est masqué.
+- L'élément qui déclenche l'infobulle a l'attribut `aria-describedby` défini sur l'`id` de l'infobulle.
+- L'élément qui sert de conteneur d'infobulle a l'attribut `role="tooltip"` ([tooltip](https://w3c.github.io/aria/#tooltip)).
 - Assurez-vous que le texte de l'infobulle est clair et concis.
-- Le contraste entre le texte de l'infobulle et son arrière-plan doit être suffisant pour être lisible.
-- L'infobulle doit disparaître lorsque l'utilisateur passe à un autre élément pour éviter toute confusion.
 
-### Bonnes pratiques
-Au lieu d'utiliser des infobulles et de masquer des informations importantes, pensez à rédiger des descriptions claires, succinctes et toujours visibles. Si vous avez de l'espace, n'utilisez pas d'infobulles. Fournissez simplement des libellés clairs et un corps de texte suffisant.
+>[!WARNING]
+>L'utilisation d'une infobulle n'est pas une bonne pratique en soit, ses informations sont masquées et son accessibilité ne peut être garantie. Évitez tant que possible son utilisation. Préférez des libellés clairs ou un texte descriptif.
 
 ### Références
 
