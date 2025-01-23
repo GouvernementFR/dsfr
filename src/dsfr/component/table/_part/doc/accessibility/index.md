@@ -14,7 +14,7 @@ title: Accessibilité du tableau
 
 ## Accessibilité
 
-Le composant **Tableau** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Tableau** utilise le motif de conception ARIA WAI "Table" et suit les critères du RGAA.
 
 ### Interactions clavier
 
@@ -22,10 +22,16 @@ Aucune interaction clavier n'est liée au composant.
 
 ### Règles d'accessibilité
 
-- Utilisez des en-têtes de colonne (`<th>`) pour améliorer la compréhension du tableau.
-- Assurez-vous que le texte dans les cellules est clair et concis.
-- Utilisez des attributs `scope` pour indiquer les en-têtes de colonne et de ligne.
-- Assurez-vous que le contraste des couleurs est suffisant pour être visible.
+Sur ce composant plus qu’ailleurs, le respect des règles de gestion de l’accessibilité est primordial pour assurer la bonne utilisation par les technologies d’assistance. Les pré-requis sont :
+
+  - Le tableau propose une balise caption contenant un titre pertinent.
+  - Les en-têtes de lignes et de colonnes `<th>` doivent être déclarées comme telles :
+    - Elles doivent être associées aux cellules de données :
+      - Pour les en-têtes de ligne avec un attribut `scope="row"`.
+      - Pour les en-têtes de colonne avec un attribut `scope="col"`.
+  - Dans les tableaux dits complexes :
+    - L’utilisation de cellules fusionnées en en-tête ou dans le corps du tableau implique de préciser la composition du tableau dans le caption afin d’aider un utilisateur à appréhender son contenu.
+    - Il faudra également lier les cellules de contenu aux cellules d’en-tête via l’attribut `headers` et les `id` des cellules d’en-tête séparés par un espace. Dans ce cas, les attributs d’en-tête de ligne et colonne scope n’ont plus lieu d’être ajoutés ([Source Acces42](https://access42.net/tableaux-donnees-complexes-integration-html-accessible-rgaa/)).
 
 ### Références
 
