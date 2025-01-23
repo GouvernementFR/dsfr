@@ -104,10 +104,10 @@ Cette variante reprend la même structure que la tuile standard à l'exception d
 #### Groupe de Tuiles
 
 Il n'existe pas à proprement parlé de groupe de Tuiles. Néanmoins, les Tuiles sont généralement utilisées sous forme d'un ensemble d'élément. Elles peuvent être disposées côte à côte grâce à la **grille** disponible dans les fondamentaux.
-La grille permet de définir un nombre de colonne pour chaque carte, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint).
+La grille permet de définir un nombre de colonne pour chaque Tuile, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint).
 Voir page [grille](../../fondamentaux/grille/) pour plus d'information.
 
-**Exemple de grille de carte**
+**Exemple de grille de Tuile**
 
 ```HTML
 <div class="fr-grid-row fr-grid-row--gutters">
@@ -155,8 +155,8 @@ Par défaut, la tuile prend 100% de la largeur de son conteneur et sa hauteur va
 
 Utiliser une taille de Tuile adaptée à la largeur de son conteneur :
 
-- 2 à 4 colonne pour une carte SM.
-- 3 à 6 colonne pour une carte MD.
+- 2 à 4 colonne pour une Tuile SM.
+- 3 à 6 colonne pour une Tuile MD.
 
 **Exemples de variantes de taille**
 

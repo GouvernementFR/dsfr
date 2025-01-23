@@ -590,13 +590,13 @@
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
 "@gouvfr/dsfr-cli@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@cli":
-  version "0.0.60"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#f9252a379b952733d767e9b1023daa50f84fa57d"
+  version "0.0.63"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#dd0f666a0a821694306dd0380ef581f869e3def5"
   dependencies:
-    "@gouvfr/dsfr-compiler" "=0.0.60"
-    "@gouvfr/dsfr-doc-publisher" "=0.0.60"
-    "@gouvfr/dsfr-doc-static" "=0.0.60"
-    "@gouvfr/dsfr-forge" "=0.0.60"
+    "@gouvfr/dsfr-compiler" "=0.0.63"
+    "@gouvfr/dsfr-doc-publisher" "=0.0.63"
+    "@gouvfr/dsfr-doc-static" "=0.0.63"
+    "@gouvfr/dsfr-forge" "=0.0.63"
     browser-sync "^3.0.3"
     del "^7.1.0"
     mdast-util-directive "^3.0.0"
@@ -612,19 +612,20 @@
     yaml "^2.4.1"
     yargs "^17.7.2"
 
-"@gouvfr/dsfr-compiler@=0.0.60", "@gouvfr/dsfr-compiler@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@compiler":
-  version "0.0.60"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#01c579f964b75fe132848edf95a405d498a8073c"
+"@gouvfr/dsfr-compiler@=0.0.63", "@gouvfr/dsfr-compiler@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@compiler":
+  version "0.0.63"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#e92bcd72e68cf761a3454bb645ccb4fab4ef6e66"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.60"
+    "@gouvfr/dsfr-forge" "=0.0.63"
     esbuild "^0.24.2"
     lightningcss "^1.29.1"
     sass "^1.79.3"
 
-"@gouvfr/dsfr-doc-publisher@=0.0.60", "@gouvfr/dsfr-doc-publisher@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-publisher":
-  version "0.0.60"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#f9f929522ec04b3155076f36a23328ab0e464751"
+"@gouvfr/dsfr-doc-publisher@=0.0.63", "@gouvfr/dsfr-doc-publisher@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-publisher":
+  version "0.0.63"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#87a35175a986f18ed339947274a1c63efad258bc"
   dependencies:
+    "@gouvfr/dsfr-forge" "=0.0.59"
     "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.0"
     deepmerge "^4.3.1"
     ejs "^3.1.10"
@@ -632,13 +633,16 @@
     prettier "^3.3.3"
     yaml "^2.4.1"
 
-"@gouvfr/dsfr-doc-static@=0.0.60", "@gouvfr/dsfr-doc-static@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-static":
-  version "0.0.60"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#09efb20efabd3d0302d340294ae9e43f876046c6"
+"@gouvfr/dsfr-doc-static@=0.0.63", "@gouvfr/dsfr-doc-static@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-static":
+  version "0.0.63"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#354bd6a0347bef56975a320751b1e57e60264f61"
+  dependencies:
+    "@gouvfr/dsfr-forge" "=0.0.59"
 
-"@gouvfr/dsfr-forge@=0.0.60", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@forge":
-  version "0.0.60"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#4d9e052597ef2ea5b04842bcdee417683fd787ae"
+"@gouvfr/dsfr-forge@=0.0.59", "@gouvfr/dsfr-forge@=0.0.63", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@forge":
+  version "0.0.63"
+  uid "6748abdd3912f0b7b27360781f46b97c022fe7ef"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#6748abdd3912f0b7b27360781f46b97c022fe7ef"
 
 "@gouvfr/dsfr-publisher@npm:@gouvfr/dsfr@1.13.0":
   version "1.13.0"
@@ -1142,11 +1146,6 @@
   dependencies:
     magic-string "^0.25.0"
 
-"@types/cookie@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@types/cookie/-/cookie-0.4.1.tgz#bfd02c1f2224567676c1545199f87c3a861d878d"
-  integrity sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==
-
 "@types/cors@^2.8.12":
   version "2.8.17"
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.17.tgz#5d718a5e494a8166f569d986794e49c48b216b2b"
@@ -1234,9 +1233,9 @@
   integrity sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==
 
 "@types/node@*", "@types/node@>=10.0.0":
-  version "22.10.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.7.tgz#14a1ca33fd0ebdd9d63593ed8d3fbc882a6d28d7"
-  integrity sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==
+  version "22.10.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.9.tgz#b62b5e8485b9b412262466209280405525320108"
+  integrity sha512-Ir6hwgsKyNESl/gLOcEz3krR4CBGgliDqBQ2ma4wIhEx0w+xnoeTq3tdrNw15kU3SxogDjOgv9sqdtLW8mIHaw==
   dependencies:
     undici-types "~6.20.0"
 
@@ -1289,7 +1288,12 @@
   dependencies:
     "@types/node" "*"
 
-"@ungap/structured-clone@^1.0.0", "@ungap/structured-clone@^1.2.0":
+"@ungap/structured-clone@^1.0.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.3.0.tgz#d06bbb384ebcf6c505fde1c3d0ed4ddffe0aaff8"
+  integrity sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==
+
+"@ungap/structured-clone@^1.2.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.1.tgz#28fa185f67daaf7b7a1a8c1d445132c5d979f8bd"
   integrity sha512-fEzPV3hSkSMltkw152tJKNARhOupqbH96MZWyRjNaYZOMIzbrTeQDG+MTc6Mr2pgzFQzFxAfmhGDNP5QK++2ZA==
@@ -2270,10 +2274,10 @@ cookie@0.7.1:
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.7.1.tgz#2f73c42142d5d5cf71310a74fc4ae61670e5dbc9"
   integrity sha512-6DnInpx7SJ2AK3+CTUE/ZM0vWTUboZCegxhC2xiIydHR9jNuTAASBrfEpHhiGOZw/nX51bHt6YQl8jsGo4y/0w==
 
-cookie@~0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.7.2.tgz#556369c472a2ba910f2979891b526b3436237ed7"
-  integrity sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==
+cookie@~1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-1.0.2.tgz#27360701532116bd3f1f9416929d176afe1e4610"
+  integrity sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==
 
 cors@~2.8.5:
   version "2.8.5"
@@ -2839,9 +2843,9 @@ end-of-stream@^1.1.0, end-of-stream@^1.4.1:
     once "^1.4.0"
 
 engine.io-client@~6.6.1:
-  version "6.6.2"
-  resolved "https://registry.yarnpkg.com/engine.io-client/-/engine.io-client-6.6.2.tgz#e0a09e1c90effe5d6264da1c56d7281998f1e50b"
-  integrity sha512-TAr+NKeoVTjEVW8P3iHguO1LO6RlUz9O5Y8o7EY0fU+gY1NYqas7NN3slpFtbXEsLMHk0h90fJMfKjRkQ0qUIw==
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/engine.io-client/-/engine.io-client-6.6.3.tgz#815393fa24f30b8e6afa8f77ccca2f28146be6de"
+  integrity sha512-T0iLjnyNWahNyv/lcjS2y4oE358tVS/SYQNxYXGAJ9/GLgH4VCvOQ/mhTjqU88mLZCQgiG8RIegFHYCdVC+j5w==
   dependencies:
     "@socket.io/component-emitter" "~3.1.0"
     debug "~4.3.1"
@@ -2855,16 +2859,15 @@ engine.io-parser@~5.2.1:
   integrity sha512-HqD3yTBfnBxIrbnM1DoD6Pcq8NECnh8d4As1Qgh0z5Gg3jRRIqijury0CL3ghu/edArpUYiYqQiDUQBIs4np3Q==
 
 engine.io@~6.6.0:
-  version "6.6.2"
-  resolved "https://registry.yarnpkg.com/engine.io/-/engine.io-6.6.2.tgz#32bd845b4db708f8c774a4edef4e5c8a98b3da72"
-  integrity sha512-gmNvsYi9C8iErnZdVcJnvCpSKbWTt1E8+JZo8b+daLninywUWi5NQ5STSHZ9rFjFO7imNcvb8Pc5pe/wMR5xEw==
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/engine.io/-/engine.io-6.6.3.tgz#a2ec69f72bf17c709ed832868bf17eb1a80a6470"
+  integrity sha512-2hkLItQMBkoYSagneiisupWGvsQlWXqzhSMvsjaM8GYbnfUsX7tzYQq9QARnate5LRedVTX+MbkSZAANAr3NtQ==
   dependencies:
-    "@types/cookie" "^0.4.1"
     "@types/cors" "^2.8.12"
     "@types/node" ">=10.0.0"
     accepts "~1.3.4"
     base64id "2.0.0"
-    cookie "~0.7.2"
+    cookie "~1.0.2"
     cors "~2.8.5"
     debug "~4.3.1"
     engine.io-parser "~5.2.1"
@@ -5556,12 +5559,13 @@ mathml-tag-names@^2.1.3:
   integrity sha512-APMBEanjybaPzUrfqU0IMU5I0AswKMH7k8OTLs0vvV4KZpExkTkY87nR/zpbuTPj+gARop7aGUbl11pnDfW6xg==
 
 mdast-util-directive@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/mdast-util-directive/-/mdast-util-directive-3.0.0.tgz#3fb1764e705bbdf0afb0d3f889e4404c3e82561f"
-  integrity sha512-JUpYOqKI4mM3sZcNxmF/ox04XYFFkNwr0CFlrQIkCwbvH0xzMCqkMqAde9wRd80VAhaUrwFwKm2nxretdT1h7Q==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/mdast-util-directive/-/mdast-util-directive-3.1.0.tgz#f3656f4aab6ae3767d3c72cfab5e8055572ccba1"
+  integrity sha512-I3fNFt+DHmpWCYAT7quoM6lHf9wuqtI+oCOfvILnoicNIqjh5E3dEJWiXuYME2gNe8vl1iMQwyUHa7bgFmak6Q==
   dependencies:
     "@types/mdast" "^4.0.0"
     "@types/unist" "^3.0.0"
+    ccount "^2.0.0"
     devlop "^1.0.0"
     mdast-util-from-markdown "^2.0.0"
     mdast-util-to-markdown "^2.0.0"
@@ -5894,9 +5898,9 @@ micromark-extension-gfm-strikethrough@^2.0.0:
     micromark-util-types "^2.0.0"
 
 micromark-extension-gfm-table@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.1.0.tgz#5cadedfbb29fca7abf752447967003dc3b6583c9"
-  integrity sha512-Ub2ncQv+fwD70/l4ou27b4YzfNaCJOvyX4HxXU15m7mpYY+rjuWzsLIPZHJL253Z643RpbcP1oeIJlQ/SKW67g==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.1.1.tgz#fac70bcbf51fe65f5f44033118d39be8a9b5940b"
+  integrity sha512-t2OU/dXXioARrC6yWfJ4hqB7rct14e8f7m0cbI5hUmDyyIlwv5vEtooptH8INkbLzOatzKuVbQmAYcbWoyz6Dg==
   dependencies:
     devlop "^1.0.0"
     micromark-factory-space "^2.0.0"
@@ -6066,9 +6070,9 @@ micromark-util-sanitize-uri@^2.0.0:
     micromark-util-symbol "^2.0.0"
 
 micromark-util-subtokenize@^2.0.0:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/micromark-util-subtokenize/-/micromark-util-subtokenize-2.0.3.tgz#70ffb99a454bd8c913c8b709c3dc97baefb65f96"
-  integrity sha512-VXJJuNxYWSoYL6AJ6OQECCFGhIU2GGHMw8tahogePBrjkG8aCCas3ibkp7RnVOSTClg2is05/R7maAhF1XyQMg==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/micromark-util-subtokenize/-/micromark-util-subtokenize-2.0.4.tgz#50d8ca981373c717f497dc64a0dbfccce6c03ed2"
+  integrity sha512-N6hXjrin2GTJDe3MVjf5FuXpm12PGm80BrUAeub9XFXca8JZbP+oIwY4LJSVwFUCL1IPm/WwSVUN7goFHmSGGQ==
   dependencies:
     devlop "^1.0.0"
     micromark-util-chunked "^2.0.0"
