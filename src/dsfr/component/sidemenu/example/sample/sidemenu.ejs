@@ -7,7 +7,7 @@ const models2 = ['MALMMLMMLM', 'LMALLL', 'LLLL'];
 function link(level, active) {
   return {
     id: uniqueId('sidemenu-item'),
-    kind: 'link',
+    type: 'link',
     active: active === true,
     label: 'Accès direct' + (level > 1 ? ' niveau ' + level: '')
   }
@@ -38,13 +38,13 @@ function items(level, active) {
   return items;
 }
 
-function menu(level, active, collapsable) {
+function menu(level, active, isCollapsible) {
   return {
-    kind: 'menu',
+    type: 'menu',
     active: active === true,
     label: active === true ? 'Entrée menu active' : 'Niveau ' + level,
     collapseId: uniqueId('sidemenu'),
-    collapsable: collapsable === true,
+    isCollapsible: isCollapsible === true,
     items: items(level, active)
   }
 }

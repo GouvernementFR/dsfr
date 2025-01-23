@@ -2,7 +2,7 @@
 
 Paramètres de sidemenu item
 
-* sidemenuItem.collapsable (booolean, optional) : si true, l'élement est refermable
+* sidemenuItem.isCollapsible (booolean, optional) : si true, l'élement est refermable
 
 * sidemenuItem.collapseId (string, required) : id du collapse
 
@@ -15,21 +15,19 @@ Paramètres de sidemenu item
 let sidemenuItem = locals.sidemenuItem || {};
 const sidemenuClasses = [];
 const sidemenuAttrs = {};
+sidemenuItemAttrs = sidemenuItem.attributes || {};
 
-if (sidemenuItem.collapsable) {
-  sidemenuItem.attributes = {
-    'aria-expanded': false,
-    'aria-controls': sidemenuItem.collapseId,
-    'aria-current': sidemenuItem.active
-  };
-  sidemenuItem.classes = [`${prefix}-sidemenu__btn`];
+if (sidemenuItem.active) sidemenuItemAttrs['aria-current'] = true;
 
+if (sidemenuItem.isCollapsible) {
+  sidemenuItemAttrs['aria-expanded'] = sidemenuItem.isExpanded === true;
+  sidemenuItemAttrs['aria-controls'] = sidemenuItem.collapseId;
   sidemenuClasses.push(`${prefix}-collapse`);
   sidemenuAttrs.id = sidemenuItem.collapseId;
 }
 %>
 
-<%- include('../../../../core/template/ejs/action/action', { action: { label: sidemenuItem.label, type: 'button', markup: 'button', attributes: sidemenuItem.attributes, classes: [`${prefix}-sidemenu__btn`] }}) %>
+<%- include('../../../../core/template/ejs/action/action', { action: { label: sidemenuItem.label, type: 'button', markup: 'button', attributes: sidemenuItemAttrs, classes: [`${prefix}-sidemenu__btn`] }}) %>
 
 <div <%- includeClasses(sidemenuClasses) %> <%- includeAttrs(sidemenuAttrs)%>>
   <%- include('./sidemenu-list.ejs', {sidemenuItems: sidemenuItem.items}); %>
