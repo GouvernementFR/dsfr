@@ -71,7 +71,8 @@ Cette variante reprend la même structure que la carte standard à l'exception d
 - **Étendre le clic** à toute la carte est obligatoire.
   - Ajouter la classe : `fr-enlarge-link` sur la carte pour étendre le lien.
   - Dans le cas d'un téléchargement programmatique, le téléchargement peut venir d'un bouton. Il est possible de remplacer le lien du titre par un `button`. Il faudra alors utiliser la classe `fr-enlarge-button` sur la carte.
-- La zone `fr-card__end` placée après le contenu est obligatoire et doit contenir impérativement et uniquement un **texte de détail** `fr-card__details`. Celui-ci doit indiqué le type de fichier (son extension), son poids, et sa langue si différente de la page.
+- La zone `fr-card__end` placée après le contenu est obligatoire et doit contenir impérativement et uniquement un **texte de détail** `fr-card__details`.
+  - Il doit indiquer le type de fichier (son extension), son poids, et sa langue si différente de la page.
   - Il est possible de remplir automatiquement le détail en JS grâce à l'attribut `data-fr-assess-file` sur le lien (Voir section [Javascript](#javascript)).
 
 **Exemple de carte de téléchargement**
@@ -131,7 +132,6 @@ Voir page [grille](../../fondamentaux/grille/) pour plus d'information.
 </div>
 ```
 
-
 ---
 
 ### CSS
@@ -163,7 +163,7 @@ La carte peut avoir différentes tailles qui auront un impact sur la taille du t
 - Par défaut : Carte moyenne.
 - `fr-card--lg` : Grande carte.
 
-Par défaut, la carte prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des cartes peut être ajustée via la largeur des colonnes de la grille (Voir [grille](../../fondamentaux/grille/)).
+Par défaut, la carte prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des cartes peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../fondamentaux/grille/)).
 
 Utiliser une taille de carte adaptée à la largeur de son conteneur :
 
