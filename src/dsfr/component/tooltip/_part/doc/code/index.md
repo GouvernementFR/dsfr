@@ -86,9 +86,6 @@ Pour une compatibilit√© avec Internet Explorer 11, les fichiers legacy peuvent √
 <link href="dist/component/tooltip/tooltip.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
-
-
 ---
 
 ### JavaScript
