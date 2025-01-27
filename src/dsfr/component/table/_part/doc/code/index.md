@@ -509,6 +509,6 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ### Note de version
 
-[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+table)
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+table)
 
 ::dsfr-doc-changelog
