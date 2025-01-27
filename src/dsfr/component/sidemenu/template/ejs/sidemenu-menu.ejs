@@ -13,21 +13,36 @@ Paramètres de sidemenu item
 
 <%
 let sidemenuItem = locals.sidemenuItem || {};
+const action = {
+    label: sidemenuItem.label,
+    attributes: {},
+    classes: []
+};
 const sidemenuClasses = [];
 const sidemenuAttrs = {};
-const btnAttrs = {};
 
-if (sidemenuItem.active) btnAttrs['aria-current'] = true;
+if (sidemenuItem.active) action.attributes['aria-current'] = true;
 
-if (sidemenuItem.isCollapsible) {
-  btnAttrs['aria-expanded'] = sidemenuItem.isExpanded === true;
-  btnAttrs['aria-controls'] = sidemenuItem.collapseId;
-  sidemenuClasses.push(`${prefix}-collapse`);
-  sidemenuAttrs.id = sidemenuItem.collapseId;
+switch (sidemenuItem.isCollapsible) {
+    case true:
+        action.type = 'button';
+        action.markup = 'button';
+        action.classes.push(`${prefix}-sidemenu__btn`);
+        action.attributes['aria-expanded'] = sidemenuItem.isExpanded === true;
+        action.attributes['aria-controls'] = sidemenuItem.collapseId;
+        sidemenuClasses.push(`${prefix}-collapse`);
+        sidemenuAttrs.id = sidemenuItem.collapseId;
+        break;
+    default:
+        action.markup = 'a';
+        action.classes.push(`${prefix}-sidemenu__link`);
+        action.href = sidemenuItem.href;
+        break;
 }
+
 %>
 
-<%- include('../../../../core/template/ejs/action/action', { action: { label: sidemenuItem.label, type: 'button', markup: 'button', attributes: btnAttrs, classes: [`${prefix}-sidemenu__btn`] }}) %>
+<%- include('../../../../core/template/ejs/action/action', { action: action }) %>
 
 <div <%- includeClasses(sidemenuClasses) %> <%- includeAttrs(sidemenuAttrs)%>>
   <%- include('./sidemenu-list.ejs', {sidemenuItems: sidemenuItem.items}); %>
