@@ -31,7 +31,7 @@ Le composant Tableau permet de présenter des données tabulaires. Sa structure 
 6. Une ligne d’en-tête de colonne, obligatoire :
     - Représentée par un élément `<thead>`.
 7. Plusieurs ligne de corps, obligatoires :
-    - Regroupées dans un ou plusieurs élémente `<tbody>`.
+    - Regroupées dans un ou plusieurs éléments `<tbody>`.
     - Représentées par un élément `<tr>`.
 8. Plusieurs cellules de contenu, obligatoires :
     - Représentées par un élément `<th>` ou `<td>`.
