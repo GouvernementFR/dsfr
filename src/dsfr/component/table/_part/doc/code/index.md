@@ -64,7 +64,7 @@ Le composant Tableau permet de présenter des données tabulaires. Sa structure 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-row-key="1">
+                        <tr>
                             <td>
                                 Lorem [...] elit ut.
                             </td>
@@ -78,7 +78,7 @@ Le composant Tableau permet de présenter des données tabulaires. Sa structure 
                                 Lorem [...] elit ut.
                             </td>
                         </tr>
-                        <tr data-row-key="2">
+                        <tr>
                             <td>
                                 Lorem [...] elit ut.
                             </td>
@@ -92,7 +92,7 @@ Le composant Tableau permet de présenter des données tabulaires. Sa structure 
                                 Lorem [...] elit ut.
                             </td>
                         </tr>
-                        <tr data-row-key="3">
+                        <tr>
                             <td>
                                 Lorem [...] elit ut.
                             </td>
@@ -106,7 +106,7 @@ Le composant Tableau permet de présenter des données tabulaires. Sa structure 
                                 Lorem [...] elit ut.
                             </td>
                         </tr>
-                        <tr data-row-key="4">
+                        <tr>
                             <td>
                                 Lorem [...] elit ut.
                             </td>
@@ -255,7 +255,7 @@ Le tableau peut contenir des en-têtes de ligne contenant des cases à cocher pe
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-row-key="1">
+                        <tr>
                             <th class="fr-cell--fixed" scope="row">
                                 <div class="fr-checkbox-group fr-checkbox-group--sm">
                                     <input data-fr-row-select="true" id="table-select-checkbox-1" type="checkbox">
@@ -315,7 +315,7 @@ Le tableau peut présenter des en-têtes de ligne `<th>` fixes au scroll horizon
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-row-key="1">
+                        <tr>
                             <th class="fr-cell--fixed" scope="row">
                                 th0
                             </th>
@@ -382,7 +382,7 @@ Vous avez à votre disposition des classes CSS pour modifier l’**alignement ho
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-row-key="1">
+                        <tr>
                             <td class="fr-cell--top">
                                 Lorem [...] elit ut.
                             </td>
