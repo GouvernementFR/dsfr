@@ -133,6 +133,6 @@ Dans l'exemple HTML fourni, cette fonction est déjà intégrée directement dan
 
 ### Note de version
 
-[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+alert+)
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+alert+)
 
 ::dsfr-doc-changelog

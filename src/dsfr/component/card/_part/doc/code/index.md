@@ -303,6 +303,6 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 ### Note de version
 
-[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+card+)
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+card+)
 
 ::dsfr-doc-changelog

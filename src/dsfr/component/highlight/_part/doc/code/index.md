@@ -87,6 +87,6 @@ Le composant **Mise en exergue** ne nécessite pas de JavaScript spécifique pou
 
 ### Note de version
 
-[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+highlight+)
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+highlight+)
 
 ::dsfr-doc-changelog

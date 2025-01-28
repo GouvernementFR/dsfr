@@ -73,6 +73,6 @@ Le composant **Mise en avant** ne nécessite pas de JavaScript spécifique pour 
 
 ### Note de version
 
-[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclose+callout+)
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+callout+)
 
 ::dsfr-doc-changelog
