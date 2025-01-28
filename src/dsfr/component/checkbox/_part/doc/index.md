@@ -12,9 +12,3 @@ title: Case à cocher
 :::
 
 ## Présentation
-
-## Changelog
-
-[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+checkbox+)
-
-::dsfr-doc-changelog

@@ -55,31 +55,26 @@ Pour **regrouper plusieurs checkboxes liées**, utilisez un élément `<fieldset
     </legend>
     <div class="fr-fieldset__element">
         <div class="fr-checkbox-group">
-            <input name="checkboxes-1" id="checkboxes-1" type="checkbox" aria-describedby="checkboxes-1-messages">
+            <input name="checkboxes-1" id="checkboxes-1" type="checkbox">
             <label class="fr-label" for="checkboxes-1">
                 Libellé case à cocher
             </label>
-            <div class="fr-messages-group" id="checkboxes-1-messages" aria-live="polite">
-            </div>
         </div>
     </div>
     <div class="fr-fieldset__element">
         <div class="fr-checkbox-group">
-            <input checked name="checkboxes-2" id="checkboxes-2" type="checkbox" aria-describedby="checkboxes-2-messages">
+            <input checked name="checkboxes-2" id="checkboxes-2" type="checkbox">
             <label class="fr-label" for="checkboxes-2">
                 Libellé case à cocher
             </label>
-            <div class="fr-messages-group" id="checkboxes-2-messages" aria-live="polite">
-            </div>
         </div>
     </div>
     <div class="fr-fieldset__element">
         <div class="fr-checkbox-group">
-            <input name="checkboxes-3" id="checkboxes-3" type="checkbox" aria-describedby="checkboxes-3-messages">
+            <input name="checkboxes-3" id="checkboxes-3" type="checkbox">
             <label class="fr-label" for="checkboxes-3">
                 Libellé case à cocher
             </label>
-            <div class="fr-messages-group" id="checkboxes-3-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -113,8 +108,8 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 La checkbox est disponible en deux variantes de tailles :
 
-- En taille MD, par défaut.
-- En taille SM, définie par la classe `fr-checkbox-group--sm`.
+- En taille MD : par défaut.
+- En taille SM : définie par la classe `fr-checkbox-group--sm`.
 
 **Exemples de variantes de tailles**
 
