@@ -31,7 +31,7 @@ Pour plus de clarté, le bouton est peut être accompagné de la phrase :
 
 **Structure HTML du bouton FranceConnect**
 
-'''HTML
+```HTML
 <div class="fr-connect-group">
     <button class="fr-connect" type="button">
         <span class="fr-connect__login">S’identifier avec</span>
@@ -41,11 +41,11 @@ Pour plus de clarté, le bouton est peut être accompagné de la phrase :
         <a href="https://franceconnect.gouv.fr/" target="_blank" rel="noopener" title="Qu’est-ce que FranceConnect ? - nouvelle fenêtre">Qu’est-ce que FranceConnect ?</a>
     </p>
 </div>
-'''
+```
 
 **Structure HTML du bouton FranceConnect+**
 
-'''HTML
+```HTML
 <div class="fr-connect-group">
     <button class="fr-connect fr-connect--plus" type="button">
         <span class="fr-connect__login">S’identifier avec</span>
@@ -64,19 +64,19 @@ Pour plus de clarté, le bouton est peut être accompagné de la phrase :
 Pour fonctionner correctement, les styles CSS du core et du bouton FranceConnect doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
-'''HTML
+```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/connect/connect.min.css" rel="stylesheet">
-'''
+```
 
 <small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
 
-'''HTML
+```HTML
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/connect/connect.legacy.min.css" rel="stylesheet">
-'''
+```
 
 #### Styles du composant
 
