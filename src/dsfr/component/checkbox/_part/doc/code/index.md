@@ -17,11 +17,11 @@ title: Code de la case à cocher
 
 Le composant Case à cocher, ci-après nommée **Checkbox**, est un élément interactif permettant de sélectionner une ou plusieurs options. Sa structure est la suivante :
 
-- La **Checkbox** doit être contenu dans un élément HTML `<div>` défini par la classe `fr-checkbox-group`.
+- La Checkbox doit être **contenu** dans un élément HTML `<div>` défini par la classe `fr-checkbox-group`.
 - La **Checkbox** est un élément HTML `<input>` de type `checkbox` défini par la classe `fr-checkbox`.
 - La checkbox doit être associée à un **label** `<label>` avec la classe `fr-label`.
-- Une description additionnelle de l'option - optionnelle - peut être ajoutée dans le label, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
-- Un message d'erreur ou de succès peut être associé à la checkbox en utilisant un élément `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`. Son attribut`id` doit être associé à l'attribut `aria-describedby` de la checkbox. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
+- Une **description additionnelle** de l'option - optionnelle - peut être ajoutée dans le label, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
+- Un **message** d'erreur ou de succès peut être associé à la checkbox en utilisant un élément `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`. Son attribut`id` doit être associé à l'attribut `aria-describedby` de la checkbox. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
 
 **Exemple de structure HTML simple**
 
@@ -30,6 +30,7 @@ Le composant Case à cocher, ci-après nommée **Checkbox**, est un élément in
     <input id="checkbox" type="checkbox" aria-describedby="checkbox-messages">
     <label class="fr-label" for="checkbox">
         Libellé checkbox
+        <span class="fr-hint-text">Description optionnelle</span>
     </label>
     <div class="fr-messages-group" id="checkbox-messages" aria-live="polite">
     </div>
@@ -82,6 +83,8 @@ Pour **regrouper plusieurs checkboxes liées**, utilisez un élément `<fieldset
     </div>
 </fieldset>
 ```
+
+---
 
 ### CSS
 
@@ -186,9 +189,13 @@ Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis su
 </fieldset>
 ```
 
+---
+
 ### JavaScript
 
 Le composant Case à cocher **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+
+---
 
 ## Changelog
 

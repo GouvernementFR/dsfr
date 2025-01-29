@@ -57,6 +57,8 @@ Pour plus de clarté, le bouton est peut être accompagné de la phrase :
 </div>
 ```
 
+---
+
 ### CSS
 
 #### Installation
