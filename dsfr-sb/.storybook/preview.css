@@ -68,3 +68,7 @@
 #story--consent--consent-banner-story--primary {
   height: 400px;
 }
+
+#story--consent-modal--consent-modal-story--primary {
+  height: 500px;
+}
