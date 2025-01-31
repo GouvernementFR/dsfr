@@ -22,7 +22,7 @@ Sa structure est la suivante :
 - La **Carte** est un élément HTML `<div>` défini par la classe `fr-card`.
 - Les cartes sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../fondamentaux/grille/)).
 - Son contenu est structuré en deux parties :
-  - Le **corp de la carte** `fr-card__body` est obligatoire, il contient le contenu de la carte :
+  - Le **corps de la carte** `fr-card__body` est obligatoire, il contient le contenu de la carte :
     - Un **bloc de contenu** `fr-card__content`, obligatoire, qui contient les informations propres à la carte :
        - Le **titre** de la carte, obligatoire, un élément HTML avec un niveau d'entête `<hx>` et la classe `fr-card__title` pouvant contenir un lien ou un simple texte. Le zone de clic du lien peut être **étendu** à toute la carte en ajoutant la classe `fr-enlarge-link` sur la carte.
        - Une **description**, optionnelle, `fr-card__desc`, un élément HTML de type `<p>`.

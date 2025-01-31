@@ -41,11 +41,10 @@ Lorsque le focus est positionné sur le bouton de transcription :
   - Le bouton d'ouverture de la modale a l'attribut `aria-controls` défini sur l'ID de la modale.
   - Si la modale est visible, le bouton a l'attribut `data-fr-opened` défini sur true. Si la modale n'est pas visible, `data-fr-opened` est défini sur false.
 - La modale de transcription est un élément HTML "dialog" et dispose d'un attribut `aria-modal="true"` pour indiquer aux lecteurs d'écran que l'élément est une modale lorsqu'il est affiché.
-  - Si la modale est visible, son attribut `open` est défini sur true. Si la modale n'est pas visible, `open` est défini sur false.
-  - La modale a l'attribut `aria-labelledby` défini sur l'ID du titre de la modale.
+  - La modale dispose d'un attribut `aria-labelledby` défini sur l'ID du titre de la modale.
 - La modale de transcription contient un titre de niveau `H1`.
-- La modale de transcription contient un bouton de fermeture avec le type="button".
-  - Le bouton de fermeture de la modale a l'attribut `aria-controls` défini sur l'ID de la modale.
+- La modale de transcription contient un bouton de fermeture de type="button".
+  - Le bouton de fermeture de la modale dispose d'un attribut `aria-controls` défini sur l'ID de la modale.
 
 ### Références
 
