@@ -64,7 +64,7 @@ Le bandeau de cookies est composé des éléments suivants :
 
 La modale de gestion des cookies est composée des éléments suivants :
 
-- Une modale de taille LG (voir la documentation sur les [modales](../../modale/)) contenant un bouton de fermerture, un titre et un bloc de contenu `fr-consent-manager`. Ce bloc contient :
+- Une modale de taille LG (voir la documentation sur les [modales](../../modale/)) contenant un bouton de fermeture, un titre et un bloc de contenu `fr-consent-manager`. Ce bloc contient :
   - Une liste de services de cookies, chaque service étant représenté par un élément `<div>` avec la classe `fr-consent-service`.
     - Le premier bloc service permet d'activer ou désactiver tous les services. Nous ajouterons ici une classe `fr-consent-manager__header` pour le style de la légende. Les libellés des boutons radios seront "Tout accepter" et "Tout refuser".
     - Le second élément correspond aux services essentiels, qui ne peuvent pas être désactivés. Le bloc contient fieldset avec une légende, une description et deux boutons radio. Le bouton radio "Accepter" est coché par défaut, et le bouton "Refuser" est désactivé.
@@ -74,6 +74,8 @@ La modale de gestion des cookies est composée des éléments suivants :
     - Ce groupe ne contient qu'un seul bouton, primaire, pour enregistrer les préférences. On utilise le groupe pour ces fonctionnalités de positionnement.
 
 **Exemple de structure de modale de gestion des cookies**
+
+:::fr-accordion[Déplier pour voir le code]{id=modale-consent-structure}
 
 ```HTML
 <dialog id="consent-modal" class="fr-modal" aria-labelledby="fr-consent-modal-title">
@@ -273,6 +275,7 @@ La modale de gestion des cookies est composée des éléments suivants :
 </dialog>
 ```
 
+:::
 
 #### Structure du placeholder de contenu masqué
 

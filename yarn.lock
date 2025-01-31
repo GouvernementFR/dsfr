@@ -590,13 +590,13 @@
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
 "@gouvfr/dsfr-cli@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@cli":
-  version "0.0.64"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#cf878a47a38122211b76332aaa97ee1b3b04b1b3"
+  version "0.0.65"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#8579fce8be5e5b7e51641875ce6dbc627ab26c78"
   dependencies:
-    "@gouvfr/dsfr-compiler" "=0.0.64"
-    "@gouvfr/dsfr-doc-publisher" "=0.0.64"
-    "@gouvfr/dsfr-doc-static" "=0.0.64"
-    "@gouvfr/dsfr-forge" "=0.0.64"
+    "@gouvfr/dsfr-compiler" "=0.0.65"
+    "@gouvfr/dsfr-doc-publisher" "=0.0.65"
+    "@gouvfr/dsfr-doc-static" "=0.0.65"
+    "@gouvfr/dsfr-forge" "=0.0.65"
     browser-sync "^3.0.3"
     del "^7.1.0"
     mdast-util-directive "^3.0.0"
@@ -612,20 +612,20 @@
     yaml "^2.4.1"
     yargs "^17.7.2"
 
-"@gouvfr/dsfr-compiler@=0.0.64", "@gouvfr/dsfr-compiler@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@compiler":
-  version "0.0.64"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#b7ea0fc9a183a3d512c81af032ec4ce41975d80d"
+"@gouvfr/dsfr-compiler@=0.0.65", "@gouvfr/dsfr-compiler@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@compiler":
+  version "0.0.65"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#787575170a3f0216d8a01ea8c49facac6763700d"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.64"
+    "@gouvfr/dsfr-forge" "=0.0.65"
     esbuild "^0.24.2"
     lightningcss "^1.29.1"
     sass "^1.79.3"
 
-"@gouvfr/dsfr-doc-publisher@=0.0.64", "@gouvfr/dsfr-doc-publisher@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-publisher":
-  version "0.0.64"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#ef1addd5164cb17624c7480c4fae31c358bc0f82"
+"@gouvfr/dsfr-doc-publisher@=0.0.65", "@gouvfr/dsfr-doc-publisher@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-publisher":
+  version "0.0.65"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#89d7248906f04a5448be796f9c85de25357c0175"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.64"
+    "@gouvfr/dsfr-forge" "=0.0.65"
     "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.0"
     deepmerge "^4.3.1"
     ejs "^3.1.10"
@@ -633,15 +633,15 @@
     prettier "^3.3.3"
     yaml "^2.4.1"
 
-"@gouvfr/dsfr-doc-static@=0.0.64", "@gouvfr/dsfr-doc-static@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-static":
-  version "0.0.64"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#783c034a512c999b1cba9bb0061cf83e7f36a954"
+"@gouvfr/dsfr-doc-static@=0.0.65", "@gouvfr/dsfr-doc-static@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@doc-static":
+  version "0.0.65"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#b1ff6e3bef1a07eb646debfa8c0c066a1832f01d"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.64"
+    "@gouvfr/dsfr-forge" "=0.0.65"
 
-"@gouvfr/dsfr-forge@=0.0.64", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@forge":
-  version "0.0.64"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#4e624aef1dbf2ddd9fae76e6a6038d8643556eaa"
+"@gouvfr/dsfr-forge@=0.0.65", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#pck/doc/@forge":
+  version "0.0.65"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#f53ac47114cd43dfabeea4c594f18a491ee15c58"
 
 "@gouvfr/dsfr-publisher@npm:@gouvfr/dsfr@1.13.0":
   version "1.13.0"

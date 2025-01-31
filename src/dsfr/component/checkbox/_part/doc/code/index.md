@@ -1,14 +1,16 @@
 ---
 title: Code de la case à cocher
 ---
-# Case à cocher
+## Case à cocher
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -49,6 +51,8 @@ Pour **regrouper plusieurs checkboxes liées**, utilisez un élément `<fieldset
 
 **Exemple de groupe de checkboxes**
 
+:::fr-accordion[Déplier pour voir le code]{id=checkboxes-structure}
+
 ```HTML
 <fieldset class="fr-fieldset" aria-labelledby="checkboxes-legend checkboxes-messages">
     <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="checkboxes-legend">
@@ -83,6 +87,8 @@ Pour **regrouper plusieurs checkboxes liées**, utilisez un élément `<fieldset
     </div>
 </fieldset>
 ```
+
+:::
 
 ---
 
@@ -133,13 +139,17 @@ La checkbox est disponible en plusieurs variantes d'états :
 - La Checkbox avec **succès** : définie par la classe `fr-checkbox-group--valid`.
 - La Checkbox **désactivée** : définie par l'attribut `disabled` sur l'élément `<input>`.
 
-Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis sur le groupe de checkbox, et non sur chaque checkbox.
+Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis sur le groupe (le fieldset), et non sur chaque checkbox.
 
 - Groupe en **erreur** : définie par la classe `fr-fieldset--error`.
 - Groupe en **succès** : définie par la classe `fr-fieldset--valid`.
-- Groupe **désactivée** : définie par l'attribut `disabled` sur les éléments `<input>` de chaque checkboxes.
+- Groupe **désactivée** : définie par l'attribut `disabled`.
 
 **Exemples de variantes d'états**
+
+:::fr-accordion[Déplier pour voir le code]{id=checkbox-etats}
+
+**Erreur**
 
 ```HTML
 <div class="fr-checkbox-group fr-checkbox-group--error">
@@ -151,7 +161,11 @@ Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis su
         <p class="fr-message fr-message--error">Texte d’erreur</p>
     </div>
 </div>
+```
 
+**Succès**
+
+```HTML
 <div class="fr-checkbox-group fr-checkbox-group--valid">
     <input id="checkbox-valid" type="checkbox" aria-describedby="checkbox-messages-valid">
     <label class="fr-label" for="checkbox-valid">
@@ -161,7 +175,11 @@ Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis su
         <p class="fr-message fr-message--valid">Texte de succès</p>
     </div>
 </div>
+```
 
+**Désactivé**
+
+```HTML
 <div class="fr-checkbox-group">
     <input id="checkbox-disabled" type="checkbox" disabled>
     <label class="fr-label" for="checkbox-disabled">
@@ -170,7 +188,13 @@ Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis su
 </div>
 ```
 
+:::
+
 **Exemple de variante d'état au niveau du groupe**
+
+:::fr-accordion[Déplier pour voir le code]{id=checkboxes-etats}
+
+**Erreur**
 
 ```HTML
 <fieldset class="fr-fieldset fr-fieldset--error" aria-labelledby="checkboxes-legend checkboxes-messages">
@@ -189,6 +213,45 @@ Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis su
 </fieldset>
 ```
 
+**Succès**
+
+```HTML
+<fieldset class="fr-fieldset fr-fieldset--valid" aria-labelledby="checkboxes-legend checkboxes-messages">
+    <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="checkboxes-legend">
+        Légende pour l’ensemble des éléments en succès
+    </legend>
+    <div class="fr-fieldset__element">
+        <div class="fr-checkbox-group">(...)</div>
+    </div>
+    <div class="fr-fieldset__element">
+        <div class="fr-checkbox-group">(...)</div>
+    </div>
+    <div class="fr-messages-group" id="checkboxes-messages" aria-live="polite">
+        <p class="fr-message fr-message--error">Texte de succès global</p>
+    </div>
+</fieldset>
+```
+
+**Désactivé**
+
+```HTML
+<fieldset class="fr-fieldset" disabled aria-labelledby="checkboxes-legend checkboxes-messages">
+    <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="checkboxes-legend">
+        Légende pour l’ensemble des éléments déactivés
+    </legend>
+    <div class="fr-fieldset__element">
+        <div class="fr-checkbox-group">(...)</div>
+    </div>
+    <div class="fr-fieldset__element">
+        <div class="fr-checkbox-group">(...)</div>
+    </div>
+    <div class="fr-messages-group" id="checkboxes-messages" aria-live="polite">
+    </div>
+</fieldset>
+```
+
+:::
+
 ---
 
 ### JavaScript
@@ -197,7 +260,7 @@ Le composant Case à cocher **ne nécessite pas l'utilisation de JavaScript** po
 
 ---
 
-## Changelog
+### Note de version
 
 [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+checkbox+)
 

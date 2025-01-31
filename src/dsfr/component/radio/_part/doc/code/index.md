@@ -48,6 +48,8 @@ Un bouton radio seul ne fait pas sens, il doit **toujours être dans un ensemble
 
 **Exemple de groupe de radios**
 
+:::fr-accordion[Déplier pour voir le code]{id=radios-structure}
+
 ```HTML
 <fieldset class="fr-fieldset" aria-labelledby="radio-legend radio-messages">
     <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
@@ -81,6 +83,8 @@ Un bouton radio seul ne fait pas sens, il doit **toujours être dans un ensemble
     </div>
 </fieldset>
 ```
+
+:::
 
 #### Bouton radio riche
 
@@ -142,21 +146,22 @@ Les boutons radios riches sont aussi disponibles en taille SM et MD.
 
 #### Variantes d'états
 
-Les boutons radios étant toujours utilisés en groupe, les états d'erreur/succès sont gérés au niveau du groupe. Pour ajouter un état à un bouton radio, ajoutez une des classes suivantes à l'élément `<fieldset class="fr-fieldset">` :
+Les boutons radios étant toujours utilisés en groupe, les états d'erreur/succès sont gérés au niveau du groupe. Pour ajouter un état à un bouton radio, ajoutez une des propriétés suivantes à l'élément `<fieldset class="fr-fieldset">` :
 
-- `fr-fieldset--error` : Indique une erreur.
-- `fr-fieldset--valid` : Indique un succès.
+- La classe `fr-fieldset--error` : Indique une erreur.
+- La classe `fr-fieldset--valid` : Indique un succès.
+- L'attribut `disabled` : Indique un état désactivé.
 
 Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-group` à la fin du fieldset et doit être lié au fieldset via un attribut `aria-describedby`.
 
-L'état **désactivé** est, lui, géré au niveau de l'élément `<input>` de chaque bouton radio en ajoutant l'attribut `disabled`.
-
 **Exemple de groupe de radios avec erreur**
+
+:::fr-accordion[Déplier pour voir le code]{id=code-radios-erreur}
 
 ```HTML
 <fieldset class="fr-fieldset fr-fieldset--error" role="group" aria-labelledby="radio-legend radio-messages">
     <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
-        Légende pour l’ensemble des éléments
+        Légende pour l’ensemble des éléments en erreur
     </legend>
     <div class="fr-fieldset__element">
         <div class="fr-radio-group">
@@ -180,6 +185,73 @@ L'état **désactivé** est, lui, géré au niveau de l'élément `<input>` de c
 </fieldset>
 ```
 
+:::
+
+**Exemple de groupe de radios avec succès**
+
+:::fr-accordion[Déplier pour voir le code]{id=code-radios-succes}
+
+```HTML
+<fieldset class="fr-fieldset fr-fieldset--valid" role="group" aria-labelledby="radio-legend radio-messages">
+    <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
+        Légende pour l’ensemble des éléments en succès
+    </legend>
+    <div class="fr-fieldset__element">
+        <div class="fr-radio-group">
+            <input value="1" type="radio" id="radio-1" name="radio">
+            <label class="fr-label" for="radio-1">
+                Libellé bouton radio 1
+            </label>
+        </div>
+    </div>
+    <div class="fr-fieldset__element">
+        <div class="fr-radio-group">
+            <input value="2" type="radio" id="radio-2" name="radio">
+            <label class="fr-label" for="radio-2">
+                Libellé bouton radio 2
+            </label>
+        </div>
+    </div>
+    <div class="fr-messages-group" id="radio-messages" aria-live="polite">
+        <p class="fr-message fr-message--error" id="radio-message-error">Texte de succès</p>
+    </div>
+</fieldset>
+```
+
+:::
+
+**Exemple de groupe de radios désactivés**
+
+:::fr-accordion[Déplier pour voir le code]{id=code-radios-disabled}
+
+```HTML
+<fieldset class="fr-fieldset" disabled role="group" aria-labelledby="radio-legend radio-messages">
+    <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
+        Légende pour l’ensemble des éléments désactivés
+    </legend>
+    <div class="fr-fieldset__element">
+        <div class="fr-radio-group">
+            <input value="1" type="radio" id="radio-1" name="radio">
+            <label class="fr-label" for="radio-1">
+                Libellé bouton radio 1
+            </label>
+        </div>
+    </div>
+    <div class="fr-fieldset__element">
+        <div class="fr-radio-group">
+            <input value="2" type="radio" id="radio-2" name="radio">
+            <label class="fr-label" for="radio-2">
+                Libellé bouton radio 2
+            </label>
+        </div>
+    </div>
+    <div class="fr-messages-group" id="radio-messages" aria-live="polite">
+    </div>
+</fieldset>
+```
+
+:::
+
 ---
 
 ### JavaScript
@@ -188,7 +260,7 @@ Le composant Bouton radio **ne nécessite pas l'utilisation de JavaScript** pour
 
 ---
 
-## Changelog
+### Note de version
 
 [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+radio+)
 

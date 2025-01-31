@@ -15,3 +15,5 @@ title: Démonstration de la case à cocher
 ## Démonstration
 
 ::dsfr-doc-storybook{id=checkbox--docs}
+
+::dsfr-doc-storybook{id=checkboxes-group--docs}

@@ -15,3 +15,5 @@ title: Démonstration du bouton radio
 ## Démonstration
 
 ::dsfr-doc-storybook{id=radio--docs}
+
+::dsfr-doc-storybook{id=radios-group--docs}

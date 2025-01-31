@@ -15,3 +15,7 @@ title: Démonstration du Gestionnaire de consentement
 ## Démonstration
 
 ::dsfr-doc-storybook{id=consent--docs}
+
+::dsfr-doc-storybook{id=consent-modal--docs}
+
+::dsfr-doc-storybook{id=placeholder--docs}
