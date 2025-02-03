@@ -18,7 +18,7 @@ Le composant **Ajout de fichier** est conçu pour être accessible et suit les c
 
 ### Interactions clavier
 
-Lorsque le focus est positionné sur le champ de fichier :
+Lorsque le focus est positionné sur le champ d'ajout de fichier :
 
 - `Entrée` : Ouvre la boîte de dialogue pour sélectionner un fichier.
 - `Esc` : Referme la boîte de dialogue pour sélectionner un fichier.
@@ -27,8 +27,8 @@ Lorsque le focus est positionné sur le champ de fichier :
 
 ### Règles d'accessibilité
 
-- Le **libellé** doit être associé au champ de fichier via l'attribut `for` et l'id du champ de fichier.
-- Le **groupe de messages** doit être associé au champ de fichier via l'attribut `aria-describedby` et doit disposer de l'attribut `aria-live="polite"` pour permettre la restitution des mises à jour de contenu en attendant la fin d’une éventuelle restitution en cours ([aria-live](https://access42.net/live-regions-aria-live-analogues-alert-log-status/)).
+- Le **libellé** doit être associé au champ d'ajout de fichier via l'attribut `for` et l'id du champ d'ajout de fichier.
+- Un **message** d'erreur, d'information, ou de succès peut être associé au champ d'ajout de fichier. Son attribut `id` doit être associé à l'attribut `aria-describedby` du champ d'ajout de fichier. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé au technologies d'assistance en utilisant l'attribut `aria-live="polite"`.
 
 ### Références
 
