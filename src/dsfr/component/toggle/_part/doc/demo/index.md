@@ -15,3 +15,5 @@ title: Démonstration de l'interrupteur
 ## Démonstration
 
 ::dsfr-doc-storybook{id=toggle--docs}
+
+::dsfr-doc-storybook{id=toggle-group--docs}

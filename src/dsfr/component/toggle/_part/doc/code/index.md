@@ -2,7 +2,7 @@
 title: Code de l'interrupteur
 ---
 
-# Interrupteur
+## Interrupteur
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
@@ -51,6 +51,8 @@ Pour **regrouper plusieurs interrupteurs liées**, utilisez un élément `<field
 
 **Exemple de groupe d'interrupteurs**
 
+:::fr-accordion[Déplier pour voir le code]{id=toggles-structure}
+
 ```HTML
 <fieldset class="fr-fieldset" aria-labelledby="toggles-legend toggles-messages">
     <legend class="fr-fieldset__legend" id="toggles-legend">
@@ -88,6 +90,8 @@ Pour **regrouper plusieurs interrupteurs liées**, utilisez un élément `<field
     </div>
 </fieldset>
 ```
+
+:::
 
 ---
 
@@ -150,13 +154,17 @@ L’interrupteur est disponible en plusieurs variantes d'états :
 - L’interrupteur avec **succès** : défini par la classe `fr-toggle----valid`.
 - L’interrupteur **désactivé** : défini par l'attribut `disabled` sur l'élément `<input>`.
 
-Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont définis sur le groupe de d’interrupteurs, et non sur chaque interrupteur.
+Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont définis sur le groupe (le fieldset), et non sur chaque interrupteur.
 
 - Groupe en **erreur** : défini par la classe `fr-fieldset--error`.
 - Groupe en **succès** : défini par la classe `fr-fieldset--valid`.
-- Groupe **désactivé** : défini par l'attribut `disabled` sur les éléments `<input>` de chaque interrupteur.
+- Groupe **désactivé** : défini par l'attribut `disabled`.
 
 **Exemples de variantes d'états**
+
+:::fr-accordion[Déplier pour voir le code]{id=toggle-states}
+
+**Erreur**
 
 ```HTML
 <div class="fr-toggle fr-toggle--error">
@@ -166,7 +174,11 @@ Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont défini
         <p class="fr-message fr-message--error" id="toggle-error-message-error">Texte d’erreur obligatoire</p>
     </div>
 </div>
+```
 
+**Succès**
+
+```HTML
 <div class="fr-toggle fr-toggle--valid">
     <input type="checkbox" class="fr-toggle__input" id="toggle-valid" aria-describedby="toggle-valid-messages">
     <label class="fr-toggle__label" for="toggle-valid">Libellé de l'interrupteur avec succès</label>
@@ -174,7 +186,11 @@ Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont défini
         <p class="fr-message fr-message--valid" id="toggle-valid-message-valid">Texte de validation</p>
     </div>
 </div>
+```
 
+**Désactivé**
+
+```HTML
 <div class="fr-toggle">
     <input type="checkbox" class="fr-toggle__input" id="toggle-disabled" disabled aria-describedby="toggle-disabled-messages">
     <label class="fr-toggle__label" for="toggle-disabled">Libellé de l'interrupteur désactivé</label>
@@ -183,49 +199,90 @@ Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont défini
 </div>
 ```
 
+:::
+
 **Exemple de variante d'état au niveau du groupe**
 
+:::fr-accordion[Déplier pour voir le code]{id=toggles-states}
+
+**Erreur**
+
 ```HTML
-<fieldset class="fr-fieldset fr-fieldset--error" role="group" aria-labelledby="toggles-error-legend toggles-error-messages">
+<fieldset class="fr-fieldset fr-fieldset--error" aria-labelledby="toggles-error-legend toggles-error-messages">
     <legend class="fr-fieldset__legend" id="toggles-error-legend">
-        Légende pour l’ensemble des éléments
+        Légende pour l’ensemble des éléments en erreur
     </legend>
     <div class="fr-fieldset__element">
         <ul class="fr-toggle__list">
             <li>
-                <div class="fr-toggle fr-toggle--border-bottom">
-                    <input type="checkbox" class="fr-toggle__input" id="toggles-error-01" aria-describedby="toggles-error-01-hint toggles-error-01-messages">
-                    <label class="fr-toggle__label" for="toggles-error-01" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
-                    <p class="fr-hint-text" id="toggles-error-01-hint">Texte de description additionnel</p>
-                    <div class="fr-messages-group" id="toggles-error-01-messages" aria-live="polite">
-                    </div>
-                </div>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
             </li>
             <li>
-                <div class="fr-toggle fr-toggle--border-bottom">
-                    <input type="checkbox" class="fr-toggle__input" id="toggles-error-02" aria-describedby="toggles-error-02-hint toggles-error-02-messages">
-                    <label class="fr-toggle__label" for="toggles-error-02" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
-                    <p class="fr-hint-text" id="toggles-error-02-hint">Texte de description additionnel</p>
-                    <div class="fr-messages-group" id="toggles-error-02-messages" aria-live="polite">
-                    </div>
-                </div>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
             </li>
             <li>
-                <div class="fr-toggle fr-toggle--border-bottom">
-                    <input type="checkbox" class="fr-toggle__input" id="toggles-error-03" aria-describedby="toggles-error-03-hint toggles-error-03-messages">
-                    <label class="fr-toggle__label" for="toggles-error-03" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
-                    <p class="fr-hint-text" id="toggles-error-03-hint">Texte de description additionnel</p>
-                    <div class="fr-messages-group" id="toggles-error-03-messages" aria-live="polite">
-                    </div>
-                </div>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
             </li>
         </ul>
     </div>
     <div class="fr-messages-group" id="toggles-error-messages" aria-live="polite">
-        <p class="fr-message fr-message--error" id="toggles-error-message-error">Texte d’erreur obligatoire</p>
+        <p class="fr-message fr-message--error" id="toggles-error-message-error">Texte d’erreur globale</p>
     </div>
 </fieldset>
 ```
+
+**Succès**
+
+```HTML
+<fieldset class="fr-fieldset fr-fieldset--valid" aria-labelledby="toggles-valid-legend toggles-valid-messages">
+    <legend class="fr-fieldset__legend" id="toggles-valid-legend">
+        Légende pour l’ensemble des éléments en succès
+    </legend>
+    <div class="fr-fieldset__element">
+        <ul class="fr-toggle__list">
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+        </ul>
+    </div>
+    <div class="fr-messages-group" id="toggles-valid-messages" aria-live="polite">
+        <p class="fr-message fr-message--error" id="toggles-valid-message-error">Texte de succès global</p>
+    </div>
+</fieldset>
+```
+
+**Désactivé**
+
+```HTML
+<fieldset class="fr-fieldset" disabled aria-labelledby="toggles-disabled-legend toggles-disabled-messages">
+    <legend class="fr-fieldset__legend" id="toggles-disabled-legend">
+        Légende pour l’ensemble des éléments désactivés
+    </legend>
+    <div class="fr-fieldset__element">
+        <ul class="fr-toggle__list">
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+        </ul>
+    </div>
+    <div class="fr-messages-group" id="toggles-disabled-messages" aria-live="polite">
+    </div>
+</fieldset>
+```
+
+:::
 
 ---
 
