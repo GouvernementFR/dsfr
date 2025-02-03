@@ -138,7 +138,7 @@ Le composant Bouton radio propose une variante de taille pour s'adapter à diff�
 
 #### Variantes du radio bouton riche
 
-La variante de bouton radio riche est définie par la classe `fr-radio-rich`. Pour ajouter un pictogramme, ajoutez un élément `<div>` de classe `fr-radio-rich__pictogram` contenant un pictogramme SVG. Le pictogramme doit être ajouté avec ses 3 parties : `fr-artwork-decorative`, `fr-artwork-minor` et `fr-artwork-major`. La partie mineur peut être accentuée via les classes utilitaires d'artwork `fr-artwork--NOM-COULEUR`, ex : fr-artwork--green-emeraude. Voir la [documentation des pictogrammes](../../fondamentaux/pictogramme) pour plus d'informations.
+La variante de bouton radio riche est définie par la classe `fr-radio-rich`. Pour ajouter un pictogramme, ajoutez un élément `<div>` de classe `fr-radio-rich__pictogram` contenant un pictogramme SVG. Le pictogramme doit être ajouté avec ses 3 parties : `fr-artwork-decorative`, `fr-artwork-minor` et `fr-artwork-major`. La partie mineur peut être accentuée via les classes utilitaires d'artwork `fr-artwork--NOM-COULEUR`, ex : fr-artwork--green-emeraude. Voir la [documentation des pictogrammes](../../../fondamentaux/pictogramme) pour plus d'informations.
 
 Il est aussi possible d'utiliser cette variante **sans pictogramme**. Il suffit pour cela de ne pas ajouter l'élément `<div>` de classe `fr-radio-rich__pictogram`.
 

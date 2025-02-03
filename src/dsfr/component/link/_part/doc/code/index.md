@@ -144,7 +144,7 @@ Le lien peut avoir différentes tailles qui auront un impact sur la taille du te
 
 #### Variantes d'icônes
 
-Le Lien peut avoir une icône juxtaposé, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../fondamentaux/icones/)).
+Le Lien peut avoir une icône juxtaposé, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../fondamentaux/icones/)).
 
 Cette classe peut être associée à une **classe de positionnement** de l'icône :
 - Par défaut : Icône seule, le libellé est caché.

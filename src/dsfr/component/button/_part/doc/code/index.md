@@ -114,15 +114,16 @@ Dans le cas d'un groupe de boutons, la taille des boutons peut être généralis
 ```
 
 #### Variantes d'icônes
-Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../fondamentaux/icones/)).
+
+Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../fondamentaux/icones/)).
 
 Cette classe peut être associée à une classe de positionnement de l'icône :
+
 - Par défaut : Icône seule, le libellé est caché.
 - `fr-btn--icon-left`: L'icône apparaît à gauche du libellé.
 - `fr-btn--icon-right`: L'icône apparaît à droite du libellé.
 
 Dans le cas d'un groupe de boutons, le positionnement de l'icône des boutons peut être généralisé au niveau du groupe avec les classes `fr-btns-group--icon-left` ou `fr-btns-group--icon-right`.
-
 
 #### Variante désactivé
 

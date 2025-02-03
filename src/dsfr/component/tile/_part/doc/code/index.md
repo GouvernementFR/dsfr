@@ -19,10 +19,10 @@ title: Code de la tuile
 Le composant Tuile est un élément interactif permettant de donner des aperçus cliquables d’une page de contenu. Sa structure est la suivante :
 
 - La **Tuile** est un élément HTML `<div>` défini par la classe `fr-tile`.
-- Les Tuiles sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../fondamentaux/grille/)).
+- Les Tuiles sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../fondamentaux/grille/)).
 - Son contenu est structuré en plusieurs parties :
   - Le **header de la tuile** `fr-tile__header`, optionnel, pouvant contenir :
-    - Un **pictogramme** dans un élément `fr-tile__pictogram` (voir [Pictogramme](../../fondamentaux/pictogramme)).
+    - Un **pictogramme** dans un élément `fr-tile__pictogram` (voir [Pictogramme](../../../fondamentaux/pictogramme)).
   - Le **corps de la tuile** `fr-tile__body`, obligatoire, il contient le contenu de la tuile :
     - Un **titre**, obligatoire, un élément HTML avec un niveau d'entête `<hx>` et la classe `fr-tile__title` pouvant contenir un lien ou un simple texte.
     - Une **description**, optionnelle, `fr-tile__desc`, un élément HTML de type `<p>`.
@@ -105,7 +105,7 @@ Cette variante reprend la même structure que la tuile standard à l'exception d
 
 Il n'existe pas à proprement parlé de groupe de Tuiles. Néanmoins, les Tuiles sont généralement utilisées sous forme d'un ensemble d'élément. Elles peuvent être disposées côte à côte grâce à la **grille** disponible dans les fondamentaux.
 La grille permet de définir un nombre de colonne pour chaque Tuile, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint).
-Voir page [grille](../../fondamentaux/grille/) pour plus d'information.
+Voir page [grille](../../../fondamentaux/grille/) pour plus d'information.
 
 **Exemple de grille de Tuile**
 
@@ -151,7 +151,7 @@ La tuile peut avoir différentes tailles qui auront un impact sur la taille du t
 - `fr-tile--sm` : Petite tuile.
 - Par défaut : Tuile moyenne.
 
-Par défaut, la tuile prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des Tuiles peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../fondamentaux/grille/)).
+Par défaut, la tuile prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des Tuiles peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../../fondamentaux/grille/)).
 
 Utiliser une taille de Tuile adaptée à la largeur de son conteneur :
 

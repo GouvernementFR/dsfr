@@ -98,7 +98,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 #### Variantes de taille
 
-La modale peut avoir différentes tailles en fonction du nombre de colonnes de la grille qui la compose (Voir [grille](../../fondamentaux/grille/)), sur mobile la modale sera toujours sur 12 colonnes :
+La modale peut avoir différentes tailles en fonction du nombre de colonnes de la grille qui la compose (Voir [grille](../../../fondamentaux/grille/)), sur mobile la modale sera toujours sur 12 colonnes :
 - 4 colonnes en LG et 6 colonnes en MD pour une modale SM.
 - Par défaut : 6 colonnes en LG et 8 colonnes en MD pour une modale MD.
 - 8 colonnes en LG et 10 colonnes en MD pour une modale LG.

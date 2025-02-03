@@ -20,7 +20,7 @@ Le composant Carte est un élément interactif permettant de donner des aperçus
 Sa structure est la suivante :
 
 - La **Carte** est un élément HTML `<div>` défini par la classe `fr-card`.
-- Les cartes sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../fondamentaux/grille/)).
+- Les cartes sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../fondamentaux/grille/)).
 - Son contenu est structuré en deux parties :
   - Le **corps de la carte** `fr-card__body` est obligatoire, il contient le contenu de la carte :
     - Un **bloc de contenu** `fr-card__content`, obligatoire, qui contient les informations propres à la carte :
@@ -114,7 +114,7 @@ Cette variante reprend la même structure que la carte standard à l'exception d
 
 Il n'existe pas à proprement parlé de groupe de carte. Néanmoins, les cartes sont généralement utilisées sous forme d'un ensemble d'élément. Elles peuvent être disposées côte à côte grâce à la **grille** disponible dans les fondamentaux.
 La grille permet de définir un nombre de colonne pour chaque carte, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint).
-Voir page [grille](../../fondamentaux/grille/) pour plus d'information.
+Voir page [grille](../../../fondamentaux/grille/) pour plus d'information.
 
 **Exemple de grille de carte**
 
@@ -163,7 +163,7 @@ La carte peut avoir différentes tailles qui auront un impact sur la taille du t
 - Par défaut : Carte moyenne.
 - `fr-card--lg` : Grande carte.
 
-Par défaut, la carte prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des cartes peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../fondamentaux/grille/)).
+Par défaut, la carte prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des cartes peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../../fondamentaux/grille/)).
 
 Utiliser une taille de carte adaptée à la largeur de son conteneur :
 
@@ -237,7 +237,7 @@ Le **ratio image/contenu** de la carte horizontale est par défaut de 40% de la 
 #### Ratio d'images
 
 L'image placée dans la partie "header" de la carte doit avoir la classe `fr-responsive-img` pour s'adapter à la largeur de la carte. Sa hauteur dépend de son ratio largeur/hauteur.
-Le ratio de l'image est par défaut en 16/9ème. Celui-ci peut être modifier en fonction du besoin grâce aux [classes utilitaires de ratio](../../fondamentaux/medias) disponibles dans le core :
+Le ratio de l'image est par défaut en 16/9ème. Celui-ci peut être modifier en fonction du besoin grâce aux [classes utilitaires de ratio](../../../fondamentaux/medias) disponibles dans le core :
 
 - `fr-ratio-32x9` : pour un ratio largeur/hauteur de 32/9.
 - `fr-ratio-3x2` : pour un ratio largeur/hauteur de 3/2.
