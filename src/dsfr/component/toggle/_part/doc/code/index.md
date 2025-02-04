@@ -378,7 +378,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | Description | Met a jour la taille de l'emplacement de l'état de l'interrupteur |
 | Type | function |
 | Arguments | none |
-| Retour | true \| false |
+| Retour | none |
 | Exemple | `dsfr(elem).toggleStatusLabel.update()` |
 :::
 
