@@ -379,7 +379,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | Description | Replace le focus sur le bouton de la modale |
 | Type | function |
 | Arguments | none |
-| Retour | true \| false |
+| Retour | none |
 | Exemple | `dsfr(elem).modal.focus()` |
 :::
 
