@@ -1,6 +1,7 @@
 ---
 title: Code de l'Accordéon
 ---
+
 # Accordéon
 
 :::dsfr-doc-tab-navigation
@@ -15,8 +16,10 @@ title: Code de l'Accordéon
 ### HTML
 
 #### Structure du composant
+
 L'accordéon est composé de deux parties : son titre qui contient le bouton d'ouverture, et un bloc de contenu libre refermable, dit "collapse".
 Sa structure est la suivante :
+
 - Le conteneur de l'accordéon est une balise `<section>` avec la classe `fr-accordion`.
 - Son titre est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
 - Un `<button>` est placé dans cette balise `<hx>`, et son libellé constitue le titre.
@@ -40,15 +43,16 @@ Sa structure est la suivante :
 </section>
 ```
 
-
 #### Groupe d'accordéons
 
 L'accordéon peut être utilisé en groupe de plusieurs éléments, liés ou non entre eux.
 Les accordéons sont disposés à la suite dans un conteneur.
+
 - Le conteneur est une `<div>` défini par la classe `fr-accordions-group`
 - Le conteneur peut posséder un attribut `data-fr-group`, sa valeur [true|false] permet de lier les accordéons entre eux ou non. Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut.
 
 **Exemple de structure HTML**
+
 ```HTML
 <div class="fr-accordions-group" data-fr-group="true">
   <section class="fr-accordion">
@@ -61,6 +65,7 @@ Les accordéons sont disposés à la suite dans un conteneur.
 ```
 
 ---
+
 ### CSS
 
 #### Installation
@@ -71,9 +76,11 @@ Pour fonctionner correctement le style CSS de l'accordéon et du core doivent ê
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/accordion/accordion.min.css" rel="stylesheet">
 ```
+
 <small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, peut aussi être importé :
+
 ```HTML
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/accordion/accordion.legacy.min.css" rel="stylesheet">
@@ -86,6 +93,7 @@ Sur l'accordéon, aucune variation ni accentuation n'est possible.
 Quand le JavaScript est activé, le bloc refermable (collapse) reçoit la classe `fr-collapse--expanded` lorsque le bouton lié possède l'attribut `aria-expanded="true"`. C'est cette classe qui ouvre le collapse.
 
 ---
+
 ### JavaScript
 
 #### Installation
@@ -94,13 +102,16 @@ Pour fonctionner le composant accordéon nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/accordion/accordion.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -109,10 +120,10 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-
 #### Instances
 
 Sur l'accordéon, les éléments suivants sont instanciés :
+
 - Le groupe, via la classe : `fr-accordions-group`
 - L'accordéon, via la classe : `fr-accordion`
 - Le bouton d'ouverture, via la classe `fr-accordion__btn`

@@ -188,7 +188,7 @@ L'import doit se faire en fin de page, avant la fermeture du body, et de préfé
 Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
 
 ```HTML
-<script  type="text/javascript" nomodule src="dist/core/core.legacy.min.js"></script>
+<script type="text/javascript" nomodule src="dist/core/core.legacy.min.js"></script>
 ```
 
 Une fois le fichier JS importé, la gestion des ratios est automatiquement prise en charge par le navigateur.

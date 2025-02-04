@@ -294,13 +294,16 @@ Pour fonctionner le composant interrupteur nécessite l'utilisation de JavaScrip
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/toggle/toggle.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -317,7 +320,6 @@ Sur l'interrupteur, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés.
 
-
 #### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
@@ -325,6 +327,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_COLLAPSE');
 dsfr(elem).toggleInput.isEnabled;
@@ -332,7 +335,7 @@ dsfr(elem).toggleInput.isEnabled;
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### toggleInput
+##### toggleInput
 
 :::dsfr-doc-table{valign=top scroll=false}
 | isEnabled | |
@@ -352,7 +355,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | Exemple | `dsfr(elem).toggleInput.node` |
 :::
 
-###### toggleStatusLabel
+##### toggleStatusLabel
 
 :::dsfr-doc-table{valign=top scroll=false}
 | isEnabled | |
