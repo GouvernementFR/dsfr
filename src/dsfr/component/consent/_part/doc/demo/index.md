@@ -2,7 +2,7 @@
 title: Démonstration du Gestionnaire de consentement
 ---
 
-# Gestionnaire de consentement
+## Gestionnaire de consentement
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
@@ -12,7 +12,7 @@ title: Démonstration du Gestionnaire de consentement
 - [Accessibilité](../accessibility/index.md)
 :::
 
-## Démonstration
+### Démonstration
 
 ::dsfr-doc-storybook{id=consent--docs}
 

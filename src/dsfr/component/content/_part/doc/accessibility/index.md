@@ -2,25 +2,27 @@
 title: Accessibilité du contenu médias
 ---
 
-# Contenu médias
+## Contenu médias
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
+
 :::
 
-## Accessibilité
+### Accessibilité
 
 Le composant **Contenu médias**, est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
 
-### Interactions clavier
+#### Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant **Contenu médias**.
 
-### Règles d'accessibilité
+#### Règles d'accessibilité
 
 - Utiliser des balises sémantiques pour structurer le contenu multimédia.
   - Utiliser la balise `<figure>` pour encapsuler les contenus multimédias.
@@ -41,8 +43,8 @@ Il n'y a aucune interaction spécifique au composant **Contenu médias**.
   - Le lecteur est utilisable au clavier selon un ordre logique.
   - Les vidéos (hors direct) sont sous-titrées.
 
-### Références
+#### Références
 
 - [https://www.w3.org/WAI/tutorials/images/decision-tree/](https://www.w3.org/WAI/tutorials/images/decision-tree/)
-- [https://www.w3.org/Translations/WCAG21-fr/#perceivable](https://www.w3.org/Translations/WCAG21-fr/#perceivable)
+- [https://www.w3.org/Translations/WCAG22-fr/#perceivable](https://www.w3.org/Translations/WCAG22-fr/#perceivable)
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

@@ -2,14 +2,16 @@
 title: Code du Contenu médias
 ---
 
-# Contenu médias
+## Contenu médias
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -96,7 +98,7 @@ Dans le cas d'un fichier audio, la structure est similaire à celle d'une vidéo
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et du contenu médias doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
@@ -176,7 +178,7 @@ Aucun JavaScript spécifique n'est requis pour le composant Contenu médias.
 
 Un fallback JS est prévu pour la **gestion des ratios** sur les navigateurs ne supportant pas la propriété CSS `aspect-ratio`. Il est inclus dans le fichier JS du core.
 
-#### Installation du JS
+#### Installation du JavaScript
 
 Pour fonctionner correctement, le fichier JS du core doit être importé.
 L'import doit se faire en fin de page, avant la fermeture du body, et de préférence avec le fichier minifié, car plus léger.

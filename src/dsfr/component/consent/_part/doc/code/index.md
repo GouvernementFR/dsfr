@@ -2,14 +2,16 @@
 title: Code du Gestionnaire de consentement
 ---
 
-# Gestionnaire de consentement
+## Gestionnaire de consentement
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -304,13 +306,17 @@ Le placeholder est composé des éléments suivants :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du gestionnaire de consentement doivent être importés.
+Pour fonctionner correctement, les styles CSS du core et du gestionnaire de consentement doivent être importés. Le composant a aussi des dépendances avec le composant **modale**, **bouton**, **formulaire**, et **checkbox**. Il sera aussi nécessaire d'importer les styles de ces composants.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/modal/modal.min.css" rel="stylesheet">
+<link href="dist/component/button/button.min.css" rel="stylesheet">
+<link href="dist/component/form/form.min.css" rel="stylesheet">
+<link href="dist/component/checkbox/checkbox.min.css" rel="stylesheet">
 <link href="dist/component/consent/consent.min.css" rel="stylesheet">
 ```
 
@@ -320,6 +326,10 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 ```HTML
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
+<link href="dist/component/modal/modal.legacy.min.css" rel="stylesheet">
+<link href="dist/component/button/button.legacy.min.css" rel="stylesheet">
+<link href="dist/component/form/form.legacy.min.css" rel="stylesheet">
+<link href="dist/component/checkbox/checkbox.legacy.min.css" rel="stylesheet">
 <link href="dist/component/consent/consent.legacy.min.css" rel="stylesheet">
 ```
 
@@ -333,7 +343,7 @@ Aucune variation de style n'est possible pour le composant Gestionnaire de conse
 
 Le composant Gestionnaire de consentement utilise le JavaScript du composant [Modale](../../modale/), et du core pour le collapse des sous finalité dans la modale de gestion des cookies.
 
-#### Installation
+#### Installation du JavaScript
 
 Pour fonctionner, la modale de gestion des cookies nécessite l'utilisation de JavaScript.
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
@@ -342,9 +352,11 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
