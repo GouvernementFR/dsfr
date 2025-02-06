@@ -128,7 +128,7 @@ Le menu latéral peut contenir jusqu'à trois niveaux d’arborescence et permet
 
 #### Installation
 
-Pour fonctionner correctement le style CSS du menu latéral et du core doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du menu latéral et du core doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">

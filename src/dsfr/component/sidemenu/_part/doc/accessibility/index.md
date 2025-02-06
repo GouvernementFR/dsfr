@@ -12,6 +12,8 @@ title: Accessibilité du Menu latéral
 - Accessibilité
 :::
 
+### Accessibilité
+
 Le composant **Menu latéral** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
 
 #### Interactions clavier
@@ -23,7 +25,7 @@ Le composant **Menu latéral** est conçu pour être accessible et suit les crit
 - `shift` + `Tab` : Place le focus sur l'élément focalisable précédent. Tous les éléments focalisables placés dans la sous-section sont inclus dans la séquence des éléments accessibles au `tab` de la page.
 
 
-#### Règles d'accessibilités
+#### Règles d'accessibilité
 
 - Le conteneur principal du menu latéral a l'attribut `aria-labelledby` défini sur l'ID du titre du menu latéral.
 - Le bouton d'ouverture du menu latéral a l'attribut `aria-controls` défini sur l'ID de la sous-section.

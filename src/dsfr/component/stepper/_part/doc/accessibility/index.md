@@ -26,7 +26,7 @@ Il n'y a aucune interaction spécifique au composant **Indicateur d'étapes**.
 - Le nom de l'étape suivante est dans un élément `<p>`.
 - La barre de progression ne nécessite aucune alternative ni attribut aria (car purement illustrative).
 
-#### Références
+### Références
 
 - [https://www.w3.org/WAI/WCAG21/quickref/](https://www.w3.org/WAI/WCAG21/quickref/)
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
