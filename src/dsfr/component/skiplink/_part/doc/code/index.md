@@ -24,11 +24,11 @@ Le composant **Liens d'évitement** permet aux utilisateurs de naviguer rapideme
 - Les liens d'évitement sont entourés par un élément HTML `<nav>` défini par la classe `fr-container` avec le rôle `navigation` et comportant un attribut `aria-label` dont la valeur est "Accès rapide".
 - La **liste des liens d'évitement** est un élément HTML `<ul>` défini par la classe `fr-skiplinks__list`.
 - Chaque élément `<li>` de la liste contient :
-    - Un **lien d'évitement**, un élément HTML `<a>` défini par la classe `fr-link`.
+  - Un **lien d'évitement**, un élément HTML `<a>` défini par la classe `fr-link`.
 
 > [!WARNING]
 > Les liens d'évitement pointent vers des ancres (`#intitulé`), qui doivent être présentes dans la page.
-> Par exemple, Le lien `<a class="fr-link" href="#contenu">Contenu</a>` ne peut fonctionner que si un élément avec l’id “contenu” est présent dans la page (comme `<main id=”contenu”>`), à l’endroit souhaité.
+> Par exemple, Le lien `<a class="fr-link" href="#content">Contenu</a>` ne peut fonctionner que si un élément avec l’id “content” est présent dans la page (comme `<main id=”content”>`), à l’endroit souhaité.
 
 **Exemple de structure HTML**
 
@@ -53,6 +53,8 @@ Le composant **Liens d'évitement** permet aux utilisateurs de naviguer rapideme
 </div>
 ```
 
+---
+
 ### CSS
 
 #### Installation du CSS
@@ -73,6 +75,10 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/skiplink/skiplink.legacy.min.css" rel="stylesheet">
 ```
+
+#### Variantes de style
+
+Le composant **Liens d'évitement** ne possède pas de variantes de style.
 
 ---
 
