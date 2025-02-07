@@ -83,7 +83,7 @@ Pour appliquer une variante de taille, ajoutez une des classes suivantes à l'é
 - En taille MD : par défaut.
 - En taille SM : définie par la classe `fr-segmented--sm`.
 
-**Exemples de variante de taille**
+**Exemple de variante de taille**
 
 ```HTML
 <fieldset class="fr-segmented fr-segmented--sm">
