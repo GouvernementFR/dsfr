@@ -179,6 +179,8 @@ Si vous disposez d’une longue liste d’options, les groupes d’options assoc
 
 :::
 
+---
+
 ### JavaScript
 
 Le composant Liste déroulante **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.

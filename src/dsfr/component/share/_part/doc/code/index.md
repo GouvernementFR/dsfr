@@ -132,9 +132,13 @@ Par défaut, les services doivent être désactivés, les boutons sont donc pass
 </div>
 ```
 
+---
+
 ### JavaScript
 
 Le composant **Partage** ne nécessite pas d'import de JavaScript spécifique pour fonctionner.
+
+---
 
 ### Note de version
 

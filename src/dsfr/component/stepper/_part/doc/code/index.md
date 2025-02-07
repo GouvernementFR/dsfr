@@ -64,9 +64,13 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/stepper/stepper.legacy.min.css" rel="stylesheet">
 ```
 
+---
+
 ### JavaScript
 
 Le composant **Indicateur d'étapes** ne nécessite pas de JavaScript spécifique pour fonctionner.
+
+---
 
 ### Note de version
 

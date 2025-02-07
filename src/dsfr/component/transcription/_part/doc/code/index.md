@@ -120,7 +120,6 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-
 #### Instances
 
 Sur la transcription, les éléments suivants sont instanciés :
@@ -145,9 +144,7 @@ const elem = document.getElementById('ID_COLLAPSE');
 dsfr(elem).collapse.disclose();
 ```
 
-
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
-
 
 ###### transcription
 

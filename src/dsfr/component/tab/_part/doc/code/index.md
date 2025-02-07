@@ -129,6 +129,8 @@ Les onglets peuvent s'afficher em mobile sur la totalité de la largeur du viewp
 </div>
 ```
 
+---
+
 ### JavaScript
 
 #### Installation

@@ -238,6 +238,8 @@ Le groupe de tag est disponible en deux variantes de tailles :
 
 :::
 
+---
+
 ### JavaScript
 
 #### Installation

@@ -74,9 +74,13 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/skiplink/skiplink.legacy.min.css" rel="stylesheet">
 ```
 
+---
+
 ### JavaScript
 
 Le composant **Liens d'évitement** ne nécessite pas de JavaScript spécifique pour fonctionner.
+
+---
 
 ### Note de version
 

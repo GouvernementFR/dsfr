@@ -158,6 +158,8 @@ Les libellés des segment du contrôle segmenté peuvent avoir une icône juxtap
 
 :::
 
+---
+
 ### JavaScript
 
 Le composant Contrôle segmenté **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.

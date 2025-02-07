@@ -74,6 +74,8 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/summary/summary.legacy.min.css" rel="stylesheet">
 ```
 
+---
+
 ### JavaScript
 
 Le composant **Sommaire** ne nécessite pas de JavaScript spécifique pour fonctionner.
