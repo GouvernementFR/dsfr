@@ -84,9 +84,11 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 #### Variante avec icônes
 
-Les onglets peuventt avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../fondamentaux/icones/)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
+Les onglets peuvent avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../fondamentaux/icones/)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
 
-**Exemple de variantes avec icônes**
+**Exemple de variante avec icônes**
+
+:::fr-accordion[Déplier pour voir le code]{id=code-tabs-icons}
 
 ```HTML
 <div class="fr-tabs">
@@ -112,6 +114,8 @@ Les onglets peuventt avoir une icône juxtaposée à gauche, elle est ajoutée v
     </div>
 </div>
 ```
+
+:::
 
 #### Variantes 100% largeur du viewport en mobile
 
