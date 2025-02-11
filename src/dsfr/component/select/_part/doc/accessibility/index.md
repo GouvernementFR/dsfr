@@ -32,6 +32,7 @@ Lorsque le focus est positionné sur la liste déroulante :
 - Chaque liste déroulante doit être associée à un `<label>` pour indiquer son libellé. L'attribut `for` du `<label>` doit correspondre à l'attribut `id` du `<select>`. Ainsi, le clic sur le label place sur le focus sur la liste déroulante.
 - Le **libellé des options** doit être explicite et décrire clairement l'option que la liste déroulante représente.
 - Pour sélectionner une option par défaut, ajoutez l'attribut `selected` à l'`<option>`. Une seule option peut être sélectionnée par défaut.
+- Un **message** d'erreur ou de succès peut être associé à la liste déroulante. Son attribut `id` doit être associé à l'attribut `aria-describedby` de la liste déroulante. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé au technologies d'assistance en utilisant l'attribut `aria-live="polite"`.
 
 ### Références
 
