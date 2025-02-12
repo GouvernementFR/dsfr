@@ -21,7 +21,7 @@ Sa structure est la suivante :
 - La liste déroulante doit être **contenu** dans un élément HTML `<div>` défini par la classe `fr-select-group`.
 - La **Liste déroulante** est un élément HTML `<select>` défini par la classe `fr-select`.
 - La liste déroulante doit être associée à un **libellé** `<label>` avec la classe `fr-label`.
-- Une **description additionnelle** de l'option - optionnelle - peut être ajoutée dans le label, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
+- Une **description additionnelle** de l'option - optionnelle - peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
 - Chaque option est un élément `<option>` contenu dans le `<select>`.
 - Un **message** d'erreur ou de succès peut être associé à la liste déroulante en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
     - Son attribut `id` doit être associé à l'attribut `aria-describedby` de la liste déroulante.

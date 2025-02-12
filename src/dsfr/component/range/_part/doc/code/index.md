@@ -21,8 +21,8 @@ Sa structure est la suivante :
 - Le **Conteneur global** du composant curseur doit être un élément HTML `<div>` défini par la classe `fr-range-group`.
 - Le **libellé** du curseur, obligatoire, doit être un élément HTML `<label>` avec la classe `fr-label`.
   - Son attribut `id` doit être associé à l'attribut `aria-labelledby` du curseur.
-- Une **description additionnelle** du curseur, optionnelle, peut être ajoutée dans le label, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
-- L'élément **Curseur** est contenu dans un conteneur, un élément HTML `<div>` défini par la classe `fr-range`.
+- Une **description additionnelle** du curseur, optionnelle, peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
+- L'élément **Curseur** est contenu dans un élément HTML `<div>` défini par la classe `fr-range`.
 - La **Valeur courante affichée** du curseur est un élément HTML `<span>` défini par la classe `fr-range__output`.
 - Le **Curseur** est un élément HTML `<input>` de type `range` défini par la classe `fr-range__input`.
   - La valeur par défaut du curseur est définie par l'attribut `value`.
@@ -254,7 +254,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
 Sur le curseur, les éléments suivants sont instanciés :
 - Le conteneur, via la classe : `fr-range`
-- Le ou les curseurs dans leur conteneur, via la classe : `fr-range` et les éléments `<input>` de type `<range>`.
+- Le ou les curseurs dans leur conteneur, via la classe : `fr-range` et les éléments `<input>` de type `<range>`
 - La valeur courante, via la classe : `fr-range__output`
 - Les valeurs minimale et maximale, via les classes `fr-range__min` et `fr-range__max`
 
