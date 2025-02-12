@@ -25,7 +25,7 @@ Lorsque le focus est positionné sur le champ de mot de passe :
 
 ### Règles d'accessibilité
 
-- Le champ de mot de passe doit être associé à un `<label>` pour indiquer son libellé. L'attribut `for` du `<label>` doit correspondre à l'attribut `id` du `<input>`. Ainsi, le clic sur le label place sur le focus sur le champ de mot de passe.
+- Le champ de mot de passe doit être associé à un `<label>` pour indiquer son libellé. L'attribut `for` du `<label>` doit correspondre à l'attribut `id` du `<input>`. Ainsi, le clic sur le label place le focus sur le champ de mot de passe.
     - Il doit disposer du type `password`.
     - Utiliser l’attribut `autocomplete="new-password"` pour la création et `autocomplete="current-password"` pour la connexion.
     - Reprendre les éléments d'accessibilité liés au composant [champ de saisie](../../../../input/input-base/_part/doc/accessibility/index.md).
