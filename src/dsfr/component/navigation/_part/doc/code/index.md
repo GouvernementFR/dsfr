@@ -438,7 +438,6 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 Sur la navigation, les éléments suivants sont instanciés :
 
 - Le conteneur principal, via la classe : `fr-nav`.
-- La liste de liens, via la classe : `fr-nav__list`.
 - Les éléments de la liste, via la classe : `fr-nav__item`.
 - Le bouton d'ouverture, via la classe `fr-nav__btn`.
 - La sous-section, via la classe `fr-collapse`.
