@@ -18,13 +18,13 @@ Le composant **Gestionnaire de consentement** est conçu pour être accessible e
 
 #### Interactions clavier
 
-Il n'y a aucune interaction spécifique au composant **Gestionnaire de consentement**. Voir les règles d'accessibilité pour les [boutons](../../bouton/) et la [modale](../../modale/).
+Il n'y a aucune interaction spécifique au composant **Gestionnaire de consentement**. Voir les règles d'accessibilité pour les [boutons](../../../../button/_part/doc/accessibility/index.md) et la [modale](../../../../modal/_part/doc/accessibility/index.md).
 
 #### Règles d'accessibilité
 
 - Le bandeau de consentement doit être le premier élément du DOM.
 - Les boutons "Tout accepter" et "Tout refuser" doivent exceptionnellement être tous deux des boutons primaires pour ne pas influencer le choix de l'utilisateur.
-- La modale de gestion des cookies doit suivre les règles d'accessibilité des [modales](../../modale/accessibilite-de-la-modale/).
+- La modale de gestion des cookies doit suivre les règles d'accessibilité des [modales](../../../../modal/_part/doc/accessibility/index.md).
 
 #### Références
 

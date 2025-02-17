@@ -168,7 +168,7 @@ Pour les vidéos, les classes suivantes sont disponibles :
 - `fr-ratio-4x3` : ratio 4:3
 - `fr-ratio-1x1` : ratio 1:1
 
-Voir la section [Ratios dans les fondamentaux](../../../fondamentaux/ratios) pour plus d'informations.
+Voir la section [Ratios dans les fondamentaux](../../../../../core/_part/doc/index.md) pour plus d'informations.
 
 ---
 

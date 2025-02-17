@@ -22,14 +22,14 @@ Le composant **Lettre d'information et Réseaux Sociaux** est conçu pour être 
 
 Il n'y a aucune interaction spécifique au composant **Lettre d'information et Réseaux Sociaux**.
 
-Les interactions clavier sont celles liées aux [liens](../../lien/accessibilite-du-lien), aux [boutons](../../bouton/accessibilite-du-bouton) et aux [champs de saisies](../../champ-de-saisie/accessibilite-du-champ-de-saisie).
+Les interactions clavier sont celles liées aux [liens](../../../../link/_part/doc/accessibility/index.md), aux [boutons](../../../../button/_part/doc/accessibility/index.md) et aux [champs de saisies](../../../../input/_part/doc/accessibility/index.md).
 
 #### Règles d'accessibilité
 
 - Pour rendre accessibles les liens réseaux sociaux, il suffit de renseigner l’attribut `title` du lien de façon à ce qu’il indique explicitement sa fonction.
 - Le `<label>` du champs de saisie de la newsletter doit être présent, même s'il est masqué visuellement. Et un attribut `title` sur l'`<input>` doit expliquer la fonction du champs.
 - Le placeholder de l'`<input>` doit être utilisé pour donner un exemple sur le format attendu.
-- L'ensembles des règles d'accessibilité des [liens](../../lien/accessibilite-du-lien), des [boutons](../../bouton/accessibilite-du-bouton) et des [champs de saisies](../../champ-de-saisie/accessibilite-du-champ-de-saisie) doivent être respectées.
+- L'ensembles des règles d'accessibilité des [liens](../../../../input/_part/doc/accessibility/index.md), des [boutons](../../../../button/_part/doc/accessibility/index.md) et des [champs de saisies](../../../../input/_part/doc/accessibility/index.md) doivent être respectées.
 
 #### Références
 

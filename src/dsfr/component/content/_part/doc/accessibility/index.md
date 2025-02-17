@@ -33,7 +33,7 @@ Il n'y a aucune interaction spécifique au composant **Contenu médias**.
   - Si l'image est un SVG, les SVG illustratifs (non porteur de sens) doivent avoir l'attribut `aria-hidden="true"`. Les SVG porteurs de sens doivent avoir l'attribut `role="img"` et un attribut `aria-label`.
   - Pour les `<video>`, l'alternative doit être présente dans un paragraphe `<p>` au sein de la balise `<video>`.
   - Utiliser l'attribut `title` pour les `iframe` pour indiquer le titre de la vidéo.
-  - Lorsque le contenu à renseigner dans l'alternative est trop long, utiliser le composant [Transcription](../../transcription/) sous le média pour afficher le contenu complet.
+  - Lorsque le contenu à renseigner dans l'alternative est trop long, utiliser le composant [Transcription](../../../../transcription/_part/doc/code/index.md) sous le média pour afficher le contenu complet.
 - Les contenus multimédias doivent être **responsive**.
   - Utiliser la classe `fr-responsive-img` pour les images.
   - Utiliser la classe `fr-responsive-vid` pour les vidéos.

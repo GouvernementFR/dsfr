@@ -30,7 +30,7 @@ Le bandeau de cookies est composé des éléments suivants :
 - Un **titre** contenu dans un élément `<h2>`, ou autre en fonction du contexte, avec la classe `.fr-h6`.
 - Un bloc de contenu `fr-consent-banner__content`. Le texte doit être contenu dans un élément `<p>`. L'utilisation de la classe utilitaire `.fr-text--sm` permet de réduire la taille du texte.
 - Un groupe de boutons `fr-consent-banner__buttons`.
-  - Nous préconisons l'utilisation d'un groupe de bouton "inline" à partir du breakpoint SM, aligné à droite, et inversé à partir du breakpoint SM. Voir la documentation sur les [boutons](../../bouton/) pour plus d'informations.
+  - Nous préconisons l'utilisation d'un groupe de bouton "inline" à partir du breakpoint SM, aligné à droite, et inversé à partir du breakpoint SM. Voir la documentation sur les [boutons](../../../../button/_part/doc/code/index.md) pour plus d'informations.
   - Utilisez des boutons primaires pour accepter et refuser les cookies, et un bouton secondaire pour personnaliser les cookies.
   - Le bouton de personnalisation doit être associé à une modale de gestion des cookies.
 
@@ -66,7 +66,7 @@ Le bandeau de cookies est composé des éléments suivants :
 
 La modale de gestion des cookies est composée des éléments suivants :
 
-- Une modale de taille LG (voir la documentation sur les [modales](../../modale/)) contenant un bouton de fermeture, un titre et un bloc de contenu `fr-consent-manager`. Ce bloc contient :
+- Une modale de taille LG (voir la documentation sur les [modales](../../../../modal/_part/doc/code/index.md)) contenant un bouton de fermeture, un titre et un bloc de contenu `fr-consent-manager`. Ce bloc contient :
   - Une liste de services de cookies, chaque service étant représenté par un élément `<div>` avec la classe `fr-consent-service`.
     - Le premier bloc service permet d'activer ou désactiver tous les services. Nous ajouterons ici une classe `fr-consent-manager__header` pour le style de la légende. Les libellés des boutons radios seront "Tout accepter" et "Tout refuser".
     - Le second élément correspond aux services essentiels, qui ne peuvent pas être désactivés. Le bloc contient fieldset avec une légende, une description et deux boutons radio. Le bouton radio "Accepter" est coché par défaut, et le bouton "Refuser" est désactivé.
@@ -341,7 +341,7 @@ Aucune variation de style n'est possible pour le composant Gestionnaire de conse
 
 ### JavaScript
 
-Le composant Gestionnaire de consentement utilise le JavaScript du composant [Modale](../../modale/), et du core pour le collapse des sous finalité dans la modale de gestion des cookies.
+Le composant Gestionnaire de consentement utilise le JavaScript du composant [Modale](../../../../modal/_part/doc/code/index.md), et du core pour le collapse des sous finalité dans la modale de gestion des cookies.
 
 #### Installation du JavaScript
 

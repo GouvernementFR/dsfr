@@ -44,7 +44,7 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
             - Le **Bouton de fermeture** du mega-menu, obligatoire, est un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--close`.
                 - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
                 - Le bouton dispose d'un attribut `title` et un texte explicite pour indiquer son action.
-            - La **grille** du mega-menu, dont la documentation est disponible dans les fondamentaux (voir [grille](../../../fondamentaux/grille/)) composée d'une ou plusieurs colonnes comprenant :
+            - La **grille** du mega-menu, dont la documentation est disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/index.md)) composée d'une ou plusieurs colonnes comprenant :
                 - Des éléments de contexte (nom de la rubrique, texte de présentation, lien vers la home de rubrique), optionnels, définis par la classe `fr-mega-menu__leader`.
                 - Des noms des sous catégories, optionnels, pouvant être cliquables, dans un niveau de titre hx et définis par la classe `fr-mega-menu__category`.
                 - Une liste de liens directs, obligatoire, dans un élément HTML `<ul>` défini par la classe `fr-mega-menu__list`.

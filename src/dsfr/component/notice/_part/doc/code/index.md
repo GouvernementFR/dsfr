@@ -89,7 +89,7 @@ Le composant Bandeau d'information importante peut comporter un bouton de fermet
 
 #### Variante avec avec icône personnalisée
 
-Le composant Bandeau d'information importante comporte une icone par defaut qui peut être personnalisée avec l'utilisation d'une classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../fondamentaux/icones)) sur le conteneur du titre du bandeau.
+Le composant Bandeau d'information importante comporte une icone par defaut qui peut être personnalisée avec l'utilisation d'une classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/icon/_part/doc/index.md)) sur le conteneur du titre du bandeau.
 
 **Exemple de variante avec icône personnalisée**
 

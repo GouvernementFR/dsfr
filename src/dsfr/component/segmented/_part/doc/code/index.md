@@ -122,7 +122,7 @@ La légende `<legend>` du contrôle segmenté est obligatoire mais peut être po
 
 #### Variante avec icônes
 
-Les libellés des segment du contrôle segmenté peuvent avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../fondamentaux/icones/)).
+Les libellés des segment du contrôle segmenté peuvent avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/icon/_part/doc/index.md)).
 
 **Exemple de variante avec icônes**
 

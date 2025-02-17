@@ -21,7 +21,7 @@ Les composants de formulaire sont conçus pour être accessibles et suivent les 
 #### Interactions clavier
 
 Aucune interaction spécifique n'est associée au formulaire.
-Les interactions clavier du formulaire sont celles liées aux éléments de formulaire qu'il contient : [champs de saisie](../../champ-de-saisie/accessibilite-du-champ-de-saisie), [boutons](../../bouton/accessibilite-du-bouton), [liste déroulante](../../liste-deroulante/accessibilite-de-la-liste-deroulante), [cases à cocher](../../case-a-cocher/accessibilite-de-la-case-a-cocher), [boutons radio](../../bouton-radio/accessibilite-du-bouton-radio), [Ajout de fichier](../../ajout-de-fichier/accessibilite-de-l-ajout-de-fichier), etc.
+Les interactions clavier du formulaire sont celles liées aux éléments de formulaire qu'il contient : [champs de saisie](../../../../input/_part/doc/accessibility/index.md), [boutons](../../../../button/_part/doc/accessibility/index.md), [liste déroulante](../../../../select/_part/doc/accessibility/index.md), [cases à cocher](../../../../checkbox/_part/doc/accessibility/index.md), [boutons radio](../../../../radio/_part/doc/accessibility/index.md), [Ajout de fichier](../../../../upload/_part/doc/accessibility/index.md), etc.
 
 #### Règles d'accessibilité
 

@@ -19,6 +19,7 @@ Le composant **Partage** est conçu pour être accessible et suit les critères 
 #### Interactions clavier
 
 Lorsque le focus est positionné sur un lien de partage :
+
 - `Entrée` : Actionne le Lien.
   - Redirige vers la destination définie par l'attribut `href`.
   - Déplace le focus vers la page de destination.
@@ -31,5 +32,5 @@ Lorsque le focus est positionné sur un lien de partage :
 - Voir les [règles d'accessibilité du composant Lien](../../../../link/_part/doc/accessibility/index.md#regles-d-accessibilite) pour les liens de partage.
 
 ### Références
-- [https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/](https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/)
+
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

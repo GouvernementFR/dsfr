@@ -22,14 +22,14 @@ Le composant **Paramètre d'affichage** est conçu pour être accessible et suit
 
 Il n'y a aucune interaction spécifique au composant **Paramètre d'affichage**.
 
-Les interactions clavier sont celles liées à la [modale](../../modale/accessibilite-de-la-modale), aux [boutons](../../bouton/accessibilite-du-bouton), et aux [boutons radios](../../bouton-radio/accessibilite-du-bouton-radio).
+Les interactions clavier sont celles liées à la [modale](../../../../modal/_part/doc/accessibility/index.md), aux [boutons](../../../../button/_part/doc/accessibility/index.md), et aux [boutons radios](../../../../radio/_part/doc/accessibility/index.md).
 
 #### Règles d'accessibilité
 
 - Privilégier le thème système par défaut pour garantir une expérience utilisateur optimale.
 - Le thème change automatiquement au clic sur un bouton radio.
 - Si l’utilisateur effectue un changement de thème, son choix est conservé (dans le local storage) pour les visites ultérieures.
-- Les règles d'accessibilité des [boutons](../../bouton/accessibilite-du-bouton), de la [modale](../../modale/accessibilite-de-la-modale), et des [boutons radios](../../bouton-radio/accessibilite-du-bouton-radio) doivent être respectées.
+- Les règles d'accessibilité des [boutons]((../../../../button/_part/doc/accessibility/index.md), de la [modale](../../../../modal/_part/doc/accessibility/index.md), et des [boutons radios](../../../../radio/_part/doc/accessibility/index.md) doivent être respectées.
 
 #### Références
 

@@ -115,7 +115,7 @@ Dans le cas d'un groupe de boutons, la taille des boutons peut être généralis
 
 #### Variantes d'icônes
 
-Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../fondamentaux/icones/)).
+Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/icon/_part/doc/index/md)).
 
 Cette classe peut être associée à une classe de positionnement de l'icône :
 
@@ -132,6 +132,7 @@ Le style désactivé du bouton est appliqué par l'ajout de l'attribut `disabled
 #### Variantes du groupe de bouton
 
 Le groupe de bouton vient avec de nombreuses variations, telles que :
+
 - **Taille des boutons** : Les variations de taille sont accessibles au niveau du groupe avec les classes :
   - `fr-btns-group--sm`: Groupe de boutons SM
   - `fr-btns-group--lg`: Groupe de boutons LG
@@ -163,13 +164,16 @@ Le composant bouton nécessite l'utilisation de JavaScript uniquement dans le ca
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/button/button.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -181,6 +185,7 @@ Une fois le JavaScript chargé, la classe `fr-btn--equisized` fonctionne automat
 #### Instances
 
 Sur le bouton, les éléments suivants sont instanciés :
+
 - Le groupe de boutons, via la classe : `btns-group--equisized`
 - Les boutons, dans un groupe "equisized", via la classe : `fr-btn`
 

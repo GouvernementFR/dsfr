@@ -19,7 +19,7 @@ title: Code du pied de page
 Le composant Pied de page est constitué d'un élément `<footer>` de classe `fr-footer`, avec l'attribut `role="contentinfo"`, et un attribut `id` pour le lier au lien d'évitement "pied de page" via une ancre.
 
 - Un premier bloc, optionnel, de navigation permet d'ajouter des liens de navigations. Il s'agit d'un élément `<div>` de classe `fr-footer__top`.
-  - Ce bloc doit contenir un élément `<div>` de classe `fr-container` qui permet de centrer le contenu ainsi qu'une [grille](../../../fondamentaux/grille/) pour structurer les liens en colonnes.
+  - Ce bloc doit contenir un élément `<div>` de classe `fr-container` qui permet de centrer le contenu ainsi qu'une [grille](../../../../../core/_part/doc/index.md) pour structurer les liens en colonnes.
   - Utiliser la grille avec espacement entre les colonnes `fr-grid-row--gutters`. Ajouter autant de colonnes que nécessaire pour structurer les liens.
   - Dans chaque colonne ajouter :
     - Une catégorie de liens, optionnelle, avec un titre `<h3>`, ou autre niveau d'entête, de classe `fr-footer__top-cat`. Le libellé de la catégorie peut être un lien `<a>`.
@@ -27,7 +27,7 @@ Le composant Pied de page est constitué d'un élément `<footer>` de classe `fr
 - Puis les blocs suivant, contenu dans un élément `<div>` de classe `fr-container` pour centrer le contenu.
   - Le **corps du pied de page**, un élément `<div>` de classe `fr-footer__body` contenant :
     - **Un bloc marque** (voir [Marque de l'état](https://www.info.gouv.fr/marque-de-letat)), un élément `<div>` de classes `fr-footer__brand` et `fr-enlarge-link`.
-      - Il contient à minima le bloc-marque, il s'agit du composant [bloc-marque de l'état](../../bloc-marque) de classe `fr-logo`. Celui-ci doit être inséré dans un lien `<a>` pointant vers la page d'accueil et avec un attribut `title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)"`.
+      - Il contient à minima le bloc-marque, il s'agit du composant [bloc-marque de l'état](../../../../logo/_part/doc/code/index.md) de classe `fr-logo`. Celui-ci doit être inséré dans un lien `<a>` pointant vers la page d'accueil et avec un attribut `title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)"`.
       - Il peut aussi contenir un **logo opérateur de l'État**, une image (ou SVG) de classe `fr-footer__logo`.
         - Utiliser un attribut `style="max-width:10rem;"`, avec comme valeur la largeur max du logo en fonction de son format (10rem pour du 16:9).
         - L'attribut `alt` doit être renseigné avec le nom de l'opérateur.

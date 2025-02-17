@@ -21,8 +21,8 @@ Le composant **Pied de page** est conçu pour être accessible et suit les crit�
 #### Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant **Pied de page**.
-Les interactions clavier sont celles des [liens](../../lien/accessibilite-du-lien) contenus dans le pied de page.
-Le footer doit être accessible via un [lien d'évitement](../../liens-d-evitement/) pour y accéder rapidement au clavier.
+Les interactions clavier sont celles des [liens](../../../../link/_part/doc/accessibility/index.md) contenus dans le pied de page.
+Le footer doit être accessible via un [lien d'évitement](../../../../skiplink/_part/doc/accessibility/index.md) pour y accéder rapidement au clavier.
 
 #### Règles d'accessibilité
 
