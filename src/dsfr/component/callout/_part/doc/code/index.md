@@ -1,19 +1,23 @@
 ---
 title: Code de la mise en avant
 ---
-# Mise en avant
+
+## Mise en avant
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
 
 #### Structure du composant
+
 Le composant Mise en avant permet de mettre en évidence des informations importantes. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
 1. Un conteneur principal sous la balise `<div>` :
@@ -39,7 +43,7 @@ Le composant Mise en avant permet de mettre en évidence des informations import
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, le style CSS de la mise en avant et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
 

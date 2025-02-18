@@ -50,7 +50,7 @@ Sa structure est la suivante :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et de l'ajout de fichier doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.

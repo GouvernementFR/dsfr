@@ -1,9 +1,11 @@
 ---
 title: Code du Badge
 ---
-# Badge
+
+## Badge
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -15,8 +17,10 @@ title: Code du Badge
 ### HTML
 
 #### Structure du composant
+
 Le composant Badge est un élément visuel destiné à fournir des informations contextuelles ou des indicateurs d'état.
 Sa structure est la suivante :
+
 - Le Badge est un élément HTML `<p>` avec la classe `fr-badge`.
 - Son contenu est textuel et doit être succinct (exemple : "Label badge").
 
@@ -27,9 +31,10 @@ Sa structure est la suivante :
 ```
 
 ---
+
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et des badges doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
@@ -54,6 +59,7 @@ Le composant Badge propose des déclinaisons visuelles pour exprimer différents
 ##### Variantes systèmes
 
 Les badges systèmes peuvent avoir des styles définis pour différents status. Pour appliquer une variante système, ajoutez une des classes suivantes à l'élément `<p class="fr-badge">` :
+
 - `fr-badge--info` : Indique une information.
 - `fr-badge--warning` : Indique un avertissement.
 - `fr-badge--error` : Indique une erreur.
@@ -95,6 +101,12 @@ Les badges peuvent être affichés dans deux tailles différentes. Par défaut, 
 <p class="fr-badge fr-badge--sm">Petit badge</p>
 <p class="fr-badge">Badge moyen</p>
 ```
+
+---
+
+### JavaScript
+
+Le composant Badge n'a pas de comportement JavaScript spécifique.
 
 ---
 

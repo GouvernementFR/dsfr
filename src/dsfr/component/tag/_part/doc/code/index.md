@@ -242,7 +242,7 @@ Le groupe de tag est disponible en deux variantes de tailles :
 
 ### JavaScript
 
-#### Installation
+#### Installation  du JavaScript
 
 Pour fonctionner, le composant Tag nécessite l'utilisation de JavaScript pour les tags activables supprimables.
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.

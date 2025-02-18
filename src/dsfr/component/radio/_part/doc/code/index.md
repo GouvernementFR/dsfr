@@ -1,14 +1,17 @@
 ---
 title: Code du bouton radio
 ---
-# Bouton radio
+
+## Bouton radio
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -112,7 +115,7 @@ Le regroupement de radios riches se fait de la même manière que pour les radio
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et du bouton radio doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.

@@ -60,7 +60,7 @@ Sa structure est la suivante :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, le style CSS de la citation et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
 

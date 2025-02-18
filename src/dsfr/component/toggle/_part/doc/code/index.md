@@ -288,7 +288,7 @@ Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont défini
 
 ### JavaScript
 
-#### Installation
+#### Installation  du JavaScript
 
 Pour fonctionner le composant interrupteur nécessite l'utilisation de JavaScript uniquement pour la variante avec état affiché.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.

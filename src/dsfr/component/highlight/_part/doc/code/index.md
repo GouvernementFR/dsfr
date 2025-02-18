@@ -1,19 +1,23 @@
 ---
 title: Code de la mise en exergue
 ---
-# Mise en exergue
+
+## Mise en exergue
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
 
 #### Structure du composant
+
 Le composant Mise en exergue permet de mettre en évidence des informations importantes. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
 1. Un conteneur principal sous la balise `<div>` :
@@ -33,7 +37,7 @@ Le composant Mise en exergue permet de mettre en évidence des informations impo
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, le style CSS de la mise en exergue et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
 
@@ -54,6 +58,7 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 #### Styles du composant
 
 ##### Variantes de taille
+
 Le texte de la mise en exergue peut être de différentes tailles :
 - Par défaut en taille md.
 - `fr-text--sm` : Petit texte.
@@ -68,6 +73,7 @@ Le texte de la mise en exergue peut être de différentes tailles :
 ```
 
 ##### Accentuation
+
 Le composant Mise en exergue est accentuable, permettant le changement de la couleur de la bordure latérale. Pour cela, ajouter la classe `fr-highlight--NOM-COULEUR` au même niveau que la classe `fr-highlight`.
 
 **Exemple de structure accentuée**
@@ -81,7 +87,6 @@ Le composant Mise en exergue est accentuable, permettant le changement de la cou
 ### JavaScript
 
 Le composant **Mise en exergue** ne nécessite pas de JavaScript spécifique pour fonctionner.
-
 
 ---
 

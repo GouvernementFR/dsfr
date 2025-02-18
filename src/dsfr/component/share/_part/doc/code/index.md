@@ -76,7 +76,7 @@ Les meta données à placer dans la balise `<head>` de la page, pour gérer les 
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, le style CSS du composant de partage doit être importé.  L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 

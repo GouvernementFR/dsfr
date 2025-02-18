@@ -1,9 +1,11 @@
 ---
 title: Alerte
 ---
-# Alerte
+
+## Alerte
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
@@ -12,5 +14,4 @@ title: Alerte
 
 :::
 
-
-## Présentation
+### Présentation

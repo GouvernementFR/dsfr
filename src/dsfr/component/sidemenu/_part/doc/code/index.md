@@ -126,7 +126,7 @@ Le menu latéral peut contenir jusqu'à trois niveaux d’arborescence et permet
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement le style CSS du menu latéral et du core doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
@@ -185,7 +185,7 @@ On peut également le rendre fixe avec l'utilisation de la classe `fr-sidemenu--
 
 ### JavaScript
 
-#### Installation
+#### Installation  du JavaScript
 
 Pour fonctionner le composant menu latéral nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.

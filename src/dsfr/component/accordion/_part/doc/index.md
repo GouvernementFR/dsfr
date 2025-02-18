@@ -1,9 +1,11 @@
 ---
 title: Accordéon
 ---
-# Accordéon
+
+## Accordéon
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)

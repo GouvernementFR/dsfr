@@ -1,9 +1,11 @@
 ---
 title: Bouton
 ---
-# Bouton
+
+## Bouton
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
@@ -12,5 +14,4 @@ title: Bouton
 
 :::
 
-
-## Présentation
+### Présentation

@@ -61,7 +61,7 @@ Pour appliquer une variante de taille, ajoutez une des classes suivantes à l'é
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et de la barre de recherche doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.

@@ -1,20 +1,25 @@
 ---
 title: Code du lien
 ---
-# Lien
+
+## Lien
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
 
 #### Structure du composant
+
 Le composant Lien est un élément interactif permettant de naviguer vers une autre page ou section. Sa structure est la suivante :
+
 - Le Lien est un élément HTML `<a>` défini par la classe `fr-link`.
 - Son contenu est textuel, il doit indiquer clairement sa destination.
 
@@ -66,7 +71,6 @@ Dans le cas d'un fichier en langue étrangère, l'attribut `hreflang` avec le co
 
 Il est possible de remplir automatiquement le détail en JS grâce à l'attribut `data-fr-assess-file` (Voir section [Javascript](#javascript)).
 
-
 #### Lien au fil du texte
 
 Au sein d'un texte, ne pas utiliser le composant Lien. Préférer l'ajout d'un lien standard sans la classe `fr-link`, celui-ci reprend les caractéristiques typographiques du texte (font, couleur, taille) tout en étant souligné.
@@ -75,7 +79,6 @@ Au sein d'un texte, ne pas utiliser le composant Lien. Préférer l'ajout d'un l
 ```HTML
 <p>Lorem ipsum <a href="#">lien dans le texte</a> dolor sit amet</p>
 ```
-
 
 #### Groupes de liens
 
@@ -98,7 +101,7 @@ Les liens peuvent être regroupés pour former des ensembles de navigation. Le g
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et des liens doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
@@ -115,7 +118,6 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/link/link.legacy.min.css" rel="stylesheet">
 ```
-
 
 #### Variantes de taille
 
@@ -179,6 +181,7 @@ Sur le Lien désactivé, l'attribut `role="link"` et `aria-disabled` seront néc
 #### Variantes du groupe de lien
 
 Le groupe de bouton vient avec de nombreuses variations, telles que :
+
 - **Taille des liens** : Des variations de taille sont accessibles au niveau du groupe avec les classes :
   - `fr-links-group--sm`: Groupe de liens SM
   - `fr-links-group--lg`: Groupe de liens LG
@@ -222,7 +225,7 @@ Pour fonctionner le fichier à télécharger doit être sur le même cross-domai
   <span class="fr-link__detail">CE TEXTE EST REMPlACÉ</span>
 </a>
 
-#### Installation
+#### Installation du Javascript
 
 Pour fonctionner, le **remplissage automatique du détail des liens de téléchargement** nécessite l'utilisation de JavaScript.
 Cette fonctionnalité est disponible dans le core.
@@ -244,9 +247,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 > [!NOTE]
 > L'activation ou la désactivation de la fonction de remplissage automatique du détail des liens de téléchargement (assess-file) n'est pas disponible via l'API JS, elle se fait via l'ajout ou le retrait de l'attribut `data-fr-assess-file` sur le lien.
 
-
 ---
-
 
 ### Note de version
 

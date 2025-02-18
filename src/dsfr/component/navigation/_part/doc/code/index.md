@@ -389,7 +389,7 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement le style CSS de la navigation et du core doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
@@ -409,7 +409,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, peut aussi être i
 
 ### JavaScript
 
-#### Installation
+#### Installation  du JavaScript
 
 Pour fonctionner le composant navigation nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.

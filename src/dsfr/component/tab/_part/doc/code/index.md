@@ -133,7 +133,7 @@ Les onglets peuvent s'afficher em mobile sur la totalité de la largeur du viewp
 
 ### JavaScript
 
-#### Installation
+#### Installation  du JavaScript
 
 Pour fonctionner, le composant onglet nécessite l'utilisation de JavaScript.
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.

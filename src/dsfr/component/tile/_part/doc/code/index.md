@@ -2,14 +2,16 @@
 title: Code de la tuile
 ---
 
-# Tuile
+## Tuile
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -125,7 +127,7 @@ Voir page [grille](../../../../../core/_part/doc/index.md) pour plus d'informati
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et des tuiles doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.

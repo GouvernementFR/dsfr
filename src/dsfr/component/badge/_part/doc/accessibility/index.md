@@ -1,9 +1,11 @@
 ---
 title: Accessibilité du badge
 ---
-# Badge
+
+## Badge
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Anatomie](../design/index.md)
@@ -12,12 +14,15 @@ title: Accessibilité du badge
 
 :::
 
-
-## Accessibilité
+### Accessibilité
 
 Le composant Badge est conçu pour respecter les critères du RGAA et les bonnes pratiques d'accessibilité.
 
-### Règles d'accessibilité
+#### Interactions clavier
+
+Le composant Badge n'est pas un élément interactif. Il n'y a donc pas d'interaction clavier associée.
+
+#### Règles d'accessibilité
 
 - Les badges doivent être utilisés pour fournir des informations complémentaires ou contextuelles sans représenter une information essentielle à elle seule.
 - Le contenu textuel du badge doit être clair, concis et compréhensible.
@@ -27,7 +32,7 @@ Le composant Badge est conçu pour respecter les critères du RGAA et les bonnes
 - Le Badge ne doit pas être utilisé comme élément interactif. Si une action est attendue, un autre composant interactif doit être préféré (exemple : bouton, lien, tag).
 - Si un badge est utilisé pour indiquer un état important ou une alerte, cet état doit être communiqué autrement que visuellement (par exemple, via un texte ou un attribut ARIA dans le contexte environnant).
 
-### Références
+#### Références
 
 - [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

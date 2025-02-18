@@ -97,7 +97,7 @@ Sa structure comprend les éléments suivants :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, le style CSS de la pagination et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
 

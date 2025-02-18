@@ -1,9 +1,11 @@
 ---
 title: Accessibilité du lien
 ---
-# Lien
+
+## Lien
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -12,14 +14,14 @@ title: Accessibilité du lien
 
 :::
 
-
-## Accessibilité
+### Accessibilité
 
 Le composant **Lien** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
 
-### Interactions clavier
+#### Interactions clavier
 
 Lorsque le focus est positionné sur le Lien :
+
 - `Entrée` : Actionne le Lien.
   - Redirige vers la destination définie par l'attribut `href`.
   - Déplace le focus vers la page de destination.
@@ -27,7 +29,7 @@ Lorsque le focus est positionné sur le Lien :
 - `Tab` : Place le focus sur le prochain élément focalisable.
 - `shift + Tab` : Place le focus sur l'élément focalisable précédent.
 
-### Règles d'accessibilité
+#### Règles d'accessibilité
 
 - Le lien doit avoir un attribut `href`. Le lien est un élément de navigation, il doit être utilisé uniquement pour cet usage.
 - Le lien doit avoir un **libellé accessible**.
@@ -45,11 +47,10 @@ Lorsque le focus est positionné sur le Lien :
 - Pour **désactiver** un Lien, retirer le `href` rendra le lien visuellement désactivé, mais il est nécessaire d'ajouter les attributs `role="link"` et `aria-disabled="true"` pour indiquer aux technologies d'assistance qu'il s'agit d'un lien désactivé.
 - Limiter l'usage des **liens avec icône seule**. Ils peuvent être utilisés uniquement pour les actions récurrentes, et facilement identifiables (ex : le symbole chaîne représentant un hyperlink). Ce lien doit contenir un libellé, qui sera ainsi lu par les technologies d'assistance. L'attribut `title` reprenant l'intitulé du lien peut être ajouté pour permettre l'affichage d'une infobulle au survol.
 
-
 > [!NOTE]
 > Un lien est un élément qui permet aux utilisateurs de naviguer vers une autre page ou section. Éviter au maximum l'utilisation du style du Bouton pour déclencher une redirection. Il est important que l'apparence et le rôle d'un composant correspondent à la fonction qu'il fournit. Néanmoins, il arrive qu'un lien `<a href>` ait le style visuel d'un bouton mais effectuent l'action d'un lien. Dans ce cas, le contexte ou le libellé doit être suffisamment clair pour ne pas tromper l'utilisateur sur l'action. Cependant, une meilleure solution consiste souvent à ajuster la conception visuelle afin qu'elle corresponde à la fonction et au rôle ARIA.
 
-### Références
+#### Références
 
 - [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
 - [https://www.w3.org/WAI/ARIA/apg/patterns/link/](https://www.w3.org/WAI/ARIA/apg/patterns/link/)

@@ -2,7 +2,7 @@
 title: Code du Bandeau d'information importante
 ---
 
-# Bandeau d'information importante
+## Bandeau d'information importante
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
@@ -10,6 +10,7 @@ title: Code du Bandeau d'information importante
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -51,7 +52,7 @@ Sa structure comprend les éléments suivants :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour garantir le bon affichage du bandeau et de ses variations, le style CSS de ce composant doit être importé. L'import doit se faire avant le contenu de la page, dans la partie `<head>`, de préférence avec le fichier minifié pour une meilleure performance.
 
@@ -322,6 +323,7 @@ document.querySelector('.fr-notice__close').addEventListener('click', function()
 Dans l'exemple HTML fourni, cette fonction est déjà intégrée directement dans l'attribut `onclick` du bouton de fermeture.
 
 ---
+
 ### Note de version
 
 [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+notice+)

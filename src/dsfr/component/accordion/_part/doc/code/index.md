@@ -68,7 +68,7 @@ Les accordéons sont disposés à la suite dans un conteneur.
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement le style CSS de l'accordéon et du core doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head`, et de préférence avec le fichier minifié, car plus léger.
 
@@ -96,7 +96,7 @@ Quand le JavaScript est activé, le bloc refermable (collapse) reçoit la classe
 
 ### JavaScript
 
-#### Installation
+#### Installation du JavaScript
 
 Pour fonctionner le composant accordéon nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.

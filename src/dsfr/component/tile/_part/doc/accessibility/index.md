@@ -2,7 +2,7 @@
 title: Accessibilité de la tuile
 ---
 
-# Tuile
+## Tuile
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
@@ -12,11 +12,11 @@ title: Accessibilité de la tuile
 - Accessibilité
 :::
 
-## Accessibilité
+### Accessibilité
 
 Le composant **Tuile** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
 
-### Interactions clavier
+#### Interactions clavier
 
 Lorsque le focus est positionné sur la Tuile :
 
@@ -26,7 +26,7 @@ Lorsque le focus est positionné sur la Tuile :
 - `Tab` : Place le focus sur le prochain élément focalisable.
 - `shift + Tab` : Place le focus sur l'élément focalisable précédent.
 
-### Règles d'accessibilité
+#### Règles d'accessibilité
 
 - Le **niveau d'en-tête** du titre dépend du contexte (et ne sera pas toujours un `<h3>`).
 - Il est recommandé d'étendre à toute la tuile la **zone cliquable** du lien du titre pour améliorer l'expérience utilisateur.
@@ -41,7 +41,7 @@ Lorsque le focus est positionné sur la Tuile :
   - Il est conseillé d'ajouter l'attribut `rel="noopener external"` par mesure de sécurité.
 - Pour **désactiver** le lien d'une tuile, retirer le `href` rendra le lien visuellement désactivé, mais il est nécessaire d'ajouter les attributs `role="link"` et `aria-disabled="true"` pour indiquer aux technologies d'assistance qu'il s'agit d'un lien désactivé.
 
-### Références
+#### Références
 
 - [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

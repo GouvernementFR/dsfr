@@ -62,7 +62,7 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et du sélecteur de langue doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.

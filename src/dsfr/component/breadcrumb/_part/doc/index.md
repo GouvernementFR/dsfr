@@ -1,9 +1,11 @@
 ---
 title: Fil d'Ariane
 ---
-# Fil d'Ariane
+
+## Fil d'Ariane
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
@@ -12,5 +14,4 @@ title: Fil d'Ariane
 
 :::
 
-
-## Présentation
+### Présentation

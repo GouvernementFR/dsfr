@@ -1,9 +1,11 @@
 ---
 title: Accessibilité de l'Alerte
 ---
-# Alerte
+
+## Alerte
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)

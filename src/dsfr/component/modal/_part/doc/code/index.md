@@ -77,7 +77,7 @@ Sa structure est la suivante :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et de la modale doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
@@ -186,7 +186,7 @@ Par défaut la modale se referme au clic sur le fond de la page, il est possible
 
 ### JavaScript
 
-#### Installation
+#### Installation  du JavaScript
 
 Pour fonctionner le composant modale nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.

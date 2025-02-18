@@ -1,9 +1,11 @@
 ---
 title: Accessibilité de l'Accordéon
 ---
-# Accordéon
+
+## Accordéon
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -12,9 +14,7 @@ title: Accessibilité de l'Accordéon
 
 :::
 
-
 Le système d'accordéon utilise le motif de conception ARIA WAI "Accordion" et suit les critères du RGAA.
-
 
 ### Interactions clavier
 

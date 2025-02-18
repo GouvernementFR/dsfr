@@ -1,9 +1,11 @@
 ---
 title: Accessibilité du bouton
 ---
-# Bouton
+
+## Bouton
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -12,12 +14,11 @@ title: Accessibilité du bouton
 
 :::
 
-
-## Accessibilité
+### Accessibilité
 
 Le composant **Bouton** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
 
-### Interactions clavier
+#### Interactions clavier
 
 Lorsque le focus est positionné sur le Bouton :
 
@@ -29,7 +30,7 @@ Lorsque le focus est positionné sur le Bouton :
 - `Tab` : Place le focus sur le prochain élément focalisable.
 - `shift + tab` : Place le focus sur l'élément focalisable précédent.
 
-### Règles d'accessibilité
+#### Règles d'accessibilité
 
 - Le bouton doit avoir un attribut `type`, généralement `type=button`. Par défaut, le type est `submit` ce qui peut avoir un comportement non désiré lorsque le bouton est placé dans un formulaire.
 - Le bouton doit avoir un **libellé accessible**. Le nom accessible est calculé à partir de tout contenu textuel à l'intérieur du bouton. Cependant, il peut également être fourni avec les attributs `aria-labelledby` ou `aria-label`.
@@ -41,7 +42,7 @@ Lorsque le focus est positionné sur le Bouton :
 > [!NOTE]
 > Un bouton est un widget qui permet aux utilisateurs de déclencher une action ou un événement, généralement en javascript, ou nativement en fonction du `type` du bouton, pour l'envoi d'un formulaire (submit) ou la suppression du contenu des champs de formulaire (reset). Éviter au maximum l'utilisation du style du Bouton pour rediriger vers une autre page. Il est important que l'apparence et le rôle d'un composant correspondent à la fonction qu'il fournit. Néanmoins, il arrive qu'un lien `<a href>` ait le style visuel d'un Bouton mais effectuent l'action d'un lien. Dans ce cas, le contexte ou le libellé doit être suffisamment clair pour ne pas tromper l'utilisateur sur l'action. Cependant, une meilleure solution consiste souvent à ajuster la conception visuelle afin qu'elle corresponde à la fonction et au rôle ARIA.
 
-### Références
+#### Références
 
 - [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
 - [https://www.w3.org/WAI/ARIA/apg/patterns/button/](https://www.w3.org/WAI/ARIA/apg/patterns/button/)

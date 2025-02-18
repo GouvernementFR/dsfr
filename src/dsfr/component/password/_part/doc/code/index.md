@@ -1,14 +1,17 @@
 ---
 title: Code du mot de passe
 ---
-# Mot de passe
+
+## Mot de passe
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -23,14 +26,14 @@ Sa structure est la suivante :
 - Une **description additionnelle** du mot de passe, optionnelle, peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
 - Le champ de **mot de passe** est contenu dans un élément HTML `<div>` défini par la classe `fr-input-wrap`.
 - Le **mot de passe** est un élément HTML `<input>` de type `password`, obligatoire, défini par la classe `fr-password__input`.
-    - Il dispose d'un attribut `autocomplete` dont la valeur varie selon l'usage du mot de passe entre `new-password` pour la création et `current-password` pour la connexion.
-    - Les attributs `autocapitalize` et `autocorrect` ont pour valeur `false` par défaut.
+  - Il dispose d'un attribut `autocomplete` dont la valeur varie selon l'usage du mot de passe entre `new-password` pour la création et `current-password` pour la connexion.
+  - Les attributs `autocapitalize` et `autocorrect` ont pour valeur `false` par défaut.
 - Un **message** d'information, d'erreur ou de succès peut être associé au mot de passe en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
-    - Son attribut `id` doit être associé à l'attribut `aria-describedby` du mot de passe.
-    - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
+  - Son attribut `id` doit être associé à l'attribut `aria-describedby` du mot de passe.
+  - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
 - Une **Fonctionnalité d’affichage** du mot de passe, obligatoire, est contenue dans un élément `<div>` défini par les classes `fr-password__checkbox`, `fr-checkbox-group`, et `fr-checkbox-group--sm`, contenant :
-    - La **case à cocher** pour révéler ou masquer le mot de passe est un élément `<input>` de type `checkbox`.
-    - Le **libellé** de la case à cocher, obligatoire, doit être un élément HTML `<label>` avec la classe `fr-label` associé à la case à cocher par son attribut `for` dont la valeur est égale à l'attribut `id` de la case à cocher.
+  - La **case à cocher** pour révéler ou masquer le mot de passe est un élément `<input>` de type `checkbox`.
+  - Le **libellé** de la case à cocher, obligatoire, doit être un élément HTML `<label>` avec la classe `fr-label` associé à la case à cocher par son attribut `for` dont la valeur est égale à l'attribut `id` de la case à cocher.
 
 **Exemple de structure HTML**
 
@@ -58,9 +61,11 @@ Sa structure est la suivante :
 </div>
 ```
 
+---
+
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et du mot de passe doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
@@ -86,7 +91,6 @@ Pour ajouter un état de validation à un message, ajoutez une des classes suiva
 - Par défaut le message indique une information.
 - La classe `fr-message--error` : Indique une erreur.
 - La classe `fr-message--valid` : Indique un succès.
-
 
 **Exemple de mot de passe après validation**
 
@@ -153,6 +157,8 @@ Le composant mot de passe peut être utilisé dans un contexte de connexion et p
 
 ### JavaScript
 
+#### Installation du JavaScript
+
 Pour fonctionner, le composant mot de passe nécessite l'utilisation de JavaScript.
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
 
@@ -175,6 +181,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 #### Instances
 
 Sur le mot de passe, les éléments suivants sont instanciés :
+
 - Le conteneur, via la classe : `fr-password`
 - Le champs de mot de passe, via la classe : `password__input`
 - Le libellé, via la classe : `fr-password__label`
@@ -196,7 +203,7 @@ dsfr(elem).passwordInput.isEnabled;
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### password
+##### password
 
 :::dsfr-doc-table{valign=top scroll=false}
 | isEnabled | |
@@ -216,7 +223,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | Exemple | `dsfr(elem).password.node` |
 :::
 
-###### passwordInput
+##### passwordInput
 
 :::dsfr-doc-table{valign=top scroll=false}
 | isEnabled | |
@@ -236,7 +243,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | Exemple | `dsfr(elem).passwordInput.node` |
 :::
 
-###### passwordLabel
+##### passwordLabel
 
 :::dsfr-doc-table{valign=top scroll=false}
 | isEnabled | |
@@ -256,7 +263,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | Exemple | `dsfr(elem).passwordLabel.node` |
 :::
 
-###### passwordToggle
+##### passwordToggle
 
 :::dsfr-doc-table{valign=top scroll=false}
 | isEnabled | |

@@ -1,20 +1,25 @@
 ---
 title: Code du bouton
 ---
-# Bouton
+
+## Bouton
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
 
 #### Structure du composant
+
 Le composant Bouton est un élément interactif permettant de déclencher des actions. Sa structure est la suivante :
+
 - Le Bouton est un élément HTML `<button>` défini par la classe `fr-btn`.
 - Son contenu est textuel, il doit être succinct et indiquer clairement son action.
 
@@ -26,8 +31,8 @@ Le composant Bouton est un élément interactif permettant de déclencher des ac
 </button>
 ```
 
-
 #### Groupes de boutons
+
 Les boutons peuvent être regroupés pour former des ensembles d'actions. Le groupe est formé par la succession de boutons enveloppés par l'élément HTML `<div>` et la classe `fr-btns-group`.
 Un groupe est dit **hiérarchisé** s'il dispose d'un bouton primaire et de boutons secondaires. Sauf cas exceptionnel, n'utiliser qu'un seul bouton primaire dans un groupe. Un groupe **non hiérarchisé** est lui constitué uniquement de boutons secondaires, tertiaires, et/ou tertiaires sans contours.
 
@@ -48,7 +53,7 @@ Un groupe est dit **hiérarchisé** s'il dispose d'un bouton primaire et de bout
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et des boutons doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
@@ -92,6 +97,7 @@ Le bouton peut avoir différents styles définis par les classes :
 ```
 
 #### Variantes de taille
+
 Le Bouton peut avoir différentes tailles qui auront un impacte sur la taille du texte, de l'icône, et des espacements :
 - `fr-btn--sm` : Petit bouton.
 - Par défaut : Bouton moyen.
@@ -159,7 +165,7 @@ Toutes ces classes peuvent être combinées entre elles.
 Le composant bouton nécessite l'utilisation de JavaScript uniquement dans le cas de l'utilisation d'une fonctionnalité avancée : **les groupes de boutons "equisized"**. Cette fonctionnalité permet de d'adapter automatiquement la taille des boutons d'un groupe à celle du bouton le plus large.
 **En dehors de cette fonctionnalité l'inclusion du JS du bouton n'est pas utile.**
 
-#### Installation
+#### Installation du JavaScript
 
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
 
@@ -199,7 +205,7 @@ Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### equisizedsGroup
+##### equisizedsGroup
 
 > [!NOTE]
 > L'activation ou la désactivation de la fonction equisize n'est pas disponible en JS, elle se fait via l'ajout ou le retrait de la classe `fr-btns-group--equisized` sur le groupe.
@@ -213,7 +219,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | Exemple | `dsfr(btnGroup).equisizedsGroup.node` |
 :::
 
-###### equisized
+##### equisized
 
 :::dsfr-doc-table{valign=top scroll=false}
 | node | |
@@ -229,4 +235,3 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 - [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+button+)
 
 ::dsfr-doc-changelog
-

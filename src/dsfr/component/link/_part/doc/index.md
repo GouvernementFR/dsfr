@@ -1,9 +1,11 @@
 ---
 title: Lien
 ---
-# Lien
+
+## Lien
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
@@ -12,5 +14,4 @@ title: Lien
 
 :::
 
-
-## Présentation
+### Présentation

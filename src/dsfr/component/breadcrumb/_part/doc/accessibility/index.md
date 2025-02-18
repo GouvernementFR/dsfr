@@ -1,9 +1,11 @@
 ---
 title: Accessibilité du fil d'Ariane
 ---
-# Fil d'Ariane
+
+## Fil d'Ariane
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -12,17 +14,17 @@ title: Accessibilité du fil d'Ariane
 
 :::
 
-## Accessibilité
+### Accessibilité
 
 Le composant **Fil d’Ariane** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
 
-### Interactions clavier
+#### Interactions clavier
 
 - `Entrée` ou `Espace` : Permet de déplier le fil d’Ariane en mobile.
 - `Tab` : Place le focus sur le prochain lien du fil d’Ariane.
 - `shift + tab` : Place le focus sur liens précédent du fil d’Ariane.
 
-### Règles d'accessibilité
+#### Règles d'accessibilité
 
 - Placer le fil d’Ariane avant le contenu principal `<main>` dans le DOM. Le placer ici permet au lien d'évitement "Aller au contenu" d'éviter tous les liens de navigation.
 - Le conteneur principal du fil d’Ariane utilise l’attribut `role="navigation"` pour indiquer qu'il s'agit d'une zone de navigation.
@@ -34,7 +36,7 @@ Le composant **Fil d’Ariane** est conçu pour être accessible et suit les cri
 - L’ordre des éléments dans le DOM respecte la logique de navigation.
 - S'assurer qu’aucun autre élément interactif ne soit placé trop près des liens du fil d’Ariane pour éviter les erreurs de clic. [WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
 
-### Références
+#### Références
 
 - [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

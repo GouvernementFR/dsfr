@@ -1,9 +1,11 @@
 ---
 title: Code du fil d'Ariane
 ---
-# Fil d'Ariane
+
+## Fil d'Ariane
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -11,9 +13,11 @@ title: Code du fil d'Ariane
 - [Accessibilité](../accessibility/index.md)
 
 :::
+
 ### HTML
 
 #### Structure du composant
+
 Le composant Fil d’Ariane permet aux utilisateurs de comprendre leur position dans la hiérarchie d’un site. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
 1. Un conteneur principal sous la balise `<nav>` :
@@ -59,6 +63,7 @@ Le composant Fil d’Ariane permet aux utilisateurs de comprendre leur position 
 ```
 
 #### Comportement en mobile
+
 - En affichage mobile, seul le bouton avec la classe `fr-breadcrumb__button` est visible par défaut.
 - Lors d’un clic sur ce bouton :
   - L’attribut `aria-expanded` passe de `false` à `true`.
@@ -68,7 +73,7 @@ Le composant Fil d’Ariane permet aux utilisateurs de comprendre leur position 
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, le style CSS du fil d’Ariane et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
 
@@ -95,7 +100,7 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 
 ### JavaScript
 
-#### Installation
+#### Installation du JavaScript
 
 Le composant **Fil d’Ariane** nécessite JavaScript pour gérer son fonctionnement en mode mobile. Il repose sur le core JS du DSFR.
 
@@ -132,7 +137,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 
 ##### Propriétés et méthodes disponibles
 
-##### breadcrumb
+###### breadcrumb
 
 :::dsfr-doc-table{valign=top scroll=false}
 | disclose | |
@@ -153,7 +158,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | Exemple | dsfr(breadcrumb).breadcrumb.node |
 :::
 
-##### collapseButton
+###### collapseButton
 
 :::dsfr-doc-table{valign=top scroll=false}
 | focus | |
@@ -173,8 +178,6 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | Retour | DOMElement |
 | Exemple | dsfr(breadcrumbButton).breadcrumbButton.node |
 :::
-
-
 
 ###### collapse
 

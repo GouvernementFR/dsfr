@@ -1,14 +1,17 @@
 ---
 title: Code du contrôle segmenté
 ---
-# Contrôle segmenté
+
+## Contrôle segmenté
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -31,7 +34,7 @@ Sa structure est la suivante :
 <fieldset class="fr-segmented">
     <legend class="fr-segmented__legend">
         Légende
-        <span class="fr-hint-text">Description additionelle</span>
+        <span class="fr-hint-text">Description additionnelle</span>
     </legend>
     <div class="fr-segmented__elements">
         <div class="fr-segmented__element">
@@ -58,7 +61,7 @@ Sa structure est la suivante :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et du contrôle segmenté doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
@@ -93,7 +96,7 @@ Pour appliquer une variante de taille, ajoutez une des classes suivantes à l'é
 
 #### Variante avec légende en ligne
 
-Le contrôle segmenté par defaut est affiché en dessous de sa legende mais il est possible de les afficher sur une même ligne avec l'utilisation de la classe `fr-segmented__legend--inline` sur l'élément `<legend>`.
+Le contrôle segmenté par défaut est affiché en dessous de sa légende mais il est possible de les afficher sur une même ligne avec l'utilisation de la classe `fr-segmented__legend--inline` sur l'élément `<legend>`.
 
 **Exemple de contrôle segmenté avec légende en ligne**
 

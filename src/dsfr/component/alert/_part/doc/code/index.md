@@ -1,7 +1,8 @@
 ---
 title: Code de l'Alerte
 ---
-# Alerte
+
+## Alerte
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
@@ -80,7 +81,7 @@ Les tailles sont définies par l'ajout des classes :
 ---
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour garantir le bon affichage de l'alerte et de ses variations, le style CSS de ce composant doit être importé. L'import doit se faire avant le contenu de la page, dans la partie `<head>`, de préférence avec le fichier minifié pour une meilleure performance.
 

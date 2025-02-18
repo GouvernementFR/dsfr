@@ -1,9 +1,11 @@
 ---
 title: Démonstration de l'Accordéon
 ---
-# Accordéon
+
+## Accordéon
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - Démo
 - [Design](../design/index.md)
@@ -12,7 +14,6 @@ title: Démonstration de l'Accordéon
 
 :::
 
-
-## Démonstration
+### Démonstration
 
 ::dsfr-doc-storybook{id=accordion--docs}

@@ -1,16 +1,19 @@
 ---
 title: Démonstration de la carte
 ---
-# Carte
+
+## Carte
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - Démo
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
-## Démonstration
+### Démonstration
 
 ::dsfr-doc-storybook{id=card--docs}

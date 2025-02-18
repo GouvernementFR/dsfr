@@ -1,9 +1,11 @@
 ---
 title: Mise en avant
 ---
-# Mise en avant
+
+## Mise en avant
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
@@ -12,5 +14,4 @@ title: Mise en avant
 
 :::
 
-
-## Présentation
+### Présentation

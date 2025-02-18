@@ -1,14 +1,17 @@
 ---
 title: Code de la liste déroulante
 ---
-# Liste déroulante
+
+## Liste déroulante
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -24,8 +27,8 @@ Sa structure est la suivante :
 - Une **description additionnelle** de l'option - optionnelle - peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
 - Chaque option est un élément `<option>` contenu dans le `<select>`.
 - Un **message** d'erreur ou de succès peut être associé à la liste déroulante en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
-    - Son attribut `id` doit être associé à l'attribut `aria-describedby` de la liste déroulante.
-    - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
+  - Son attribut `id` doit être associé à l'attribut `aria-describedby` de la liste déroulante.
+  - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
 
 **Exemple de structure HTML simple**
 
@@ -48,7 +51,7 @@ Sa structure est la suivante :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et de la liste déroulante doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.

@@ -1,9 +1,11 @@
 ---
 title: Badge
 ---
-# Badge
+
+## Badge
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
@@ -11,6 +13,5 @@ title: Badge
 - [Accessibilité](./accessibility/index.md)
 
 :::
-
 
 ## Présentation

@@ -1,14 +1,17 @@
 ---
 title: Code du curseur
 ---
-# Curseur
+
+## Curseur
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -30,8 +33,8 @@ Sa structure est la suivante :
   - Le pas du curseur est défini par l'attribut `step`.
 - Les **Valeurs minimales et maximales** affichées, optionnelles, sont des éléments HTML `<span>` définis par les classes `fr-range__min` et `fr-range__max` et disposant d'un attribut `aria-hidden="true"`.
 - Un **message** d'erreur ou de succès peut être associé au curseur en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
-    - Son attribut `id` doit être associé à l'attribut `aria-describedby` du curseur.
-    - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
+  - Son attribut `id` doit être associé à l'attribut `aria-describedby` du curseur.
+  - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
 
 **Exemple de structure HTML**
 
@@ -54,7 +57,7 @@ Sa structure est la suivante :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core et du curseur doivent être importés.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
@@ -231,6 +234,8 @@ Le curseur double permet de disposer de deux poignées de selection pour les val
 
 ### JavaScript
 
+#### Installation du JavaScript
+
 Pour fonctionner, le composant curseur nécessite l'utilisation de JavaScript.
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
 
@@ -273,7 +278,6 @@ dsfr(elem).range.isEnabled;
 ```
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
-
 
 ###### range
 
