@@ -192,6 +192,18 @@ Il est possible de **changer la valeur du thème dynamiquement**, sans passer pa
 >[!WARNING]
 >La propriété `data-fr-theme` est injectée sur l'élément `<html>` à partir de la valeur du scheme, elle ne doit pas être modifiée directement. Elle prendra automatiquement la valeur `light` ou `dark` en fonction de la valeur du scheme, ou des préférences système de l'utilisateur.
 
+#### Script de chargement du thème
+
+Pour éviter un effet de flash lors du chargement de la page, il est possible d'ajouter un script qui va détecter le thème préféré de l'utilisateur et appliquer le thème correspondant.
+
+Ce script doit **s'exécuter le plus tôt possible dans le `<head>` de la page**, avant le chargement du reste de la page.
+
+```html
+<script>
+    const e="system",t="dark",a="dark",c=()=>{document.documentElement.setAttribute("data-fr-theme",a)},r=()=>{window.matchMedia("(prefers-color-scheme: dark)").matches&&c()};(()=>{if(document.documentElement.matches(":root[data-fr-theme], :root[data-fr-scheme]")){const a=(()=>{try{return"localStorage"in window&&null!==window.localStorage}catch(e){return!1}})()?localStorage.getItem("scheme"):"",o=document.documentElement.getAttribute("data-fr-scheme");switch(!0){case a===t:c();break;case a===e:r();break;case o===t:c();break;case o===e:r()}}})();
+</script>
+```
+
 ---
 
 ### Note de version
