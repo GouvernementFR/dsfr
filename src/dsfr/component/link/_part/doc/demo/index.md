@@ -16,4 +16,6 @@ title: Démonstration du lien
 
 ### Démonstration
 
-::dsfr-doc-storybook{id=callout--docs}
+::dsfr-doc-storybook{id=link--docs}
+
+::dsfr-doc-storybook{id=links-group--docs}

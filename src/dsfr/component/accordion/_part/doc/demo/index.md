@@ -17,3 +17,5 @@ title: Démonstration de l'Accordéon
 ### Démonstration
 
 ::dsfr-doc-storybook{id=accordion--docs}
+
+::dsfr-doc-storybook{id=accordions-group--docs}

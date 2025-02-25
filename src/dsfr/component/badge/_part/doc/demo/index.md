@@ -17,3 +17,5 @@ title: Démonstration du badge
 ### Démonstration
 
 ::dsfr-doc-storybook{id=badge--docs}
+
+::dsfr-doc-storybook{id=badges-group--docs}

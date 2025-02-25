@@ -599,7 +599,7 @@ Le composant en-tête peut être utilisé avec un badge "BETA" accolé au nom du
 Dans le cadre de l'utilisation du DSFR dans un contexte de Single-page application ([SPA](https://developer.mozilla.org/fr/docs/Glossary/SPA)) l'API du DSFR permet de désactiver la recopie Javascript des raccourcis dans la modale de navigation principale en mobile avec l'utilisation des modes mis à disposition à l'instanciation de l'API JS du DSFR (voir [API Javascript du DSFR](lien-à-modifier)).
 
 > [!WARNING]
-> Il faudra dupliquer manuellement les liens et bouton présents dans le bloc d'accès rapide défini par la classe `fr-header__tools-links` dans le conteneur prévu à cet effet dans la modale mobile de la navigation principale défini par la classe `fr-header__menu-links`.
+> Il faudra dupliquer manuellement les liens et boutons présents dans le bloc d'accès rapide défini par la classe `fr-header__tools-links` dans le conteneur prévu à cet effet dans la modale mobile de la navigation principale défini par la classe `fr-header__menu-links`. Pensez à modifier les `id`.
 
 **Exemple de variante avec raccourcis dupliqués, pour Angular, React et Vue**
 
@@ -721,6 +721,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_SOUS_SECTION');
 dsfr(elem).collapse.disclose();
@@ -750,8 +751,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### modal & modalButton
 
-voir [Modale](../../../../modal/_part/doc/code/index.md#javascript
-
+voir [Modale](../../../../modal/_part/doc/code/index.md#javascript)
 
 ---
 
