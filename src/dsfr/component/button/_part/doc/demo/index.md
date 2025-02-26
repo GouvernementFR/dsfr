@@ -1,8 +1,8 @@
 ---
-title: Démonstration de la mise en avant
+title: Démonstration du bouton
 ---
 
-## Mise en avant
+## Bouton
 
 :::dsfr-doc-tab-navigation
 
