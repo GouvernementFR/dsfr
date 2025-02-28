@@ -281,91 +281,91 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### range
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du curseur est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).range.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du curseur est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).range.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).range.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).range.node` |
 :::
 
 ###### rangeInput
 
-:::dsfr-doc-table{valign=top scroll=false}
-| value | |
+:::dsfr-doc-table[value]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Retourne la valeur courante du curseur. |
-| Type | property |
-| Retour | Number |
-| Exemple | `dsfr(elem).rangeInput.value` |
+| **Description** | Retourne la valeur courante du curseur. |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).rangeInput.value` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du curseur est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).rangeInput.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du curseur est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).rangeInput.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).rangeInput.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).rangeInput.node` |
 :::
 
 ###### rangeOutput
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du curseur est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).rangeOutput.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du curseur est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).rangeOutput.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).rangeOutput.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).rangeOutput.node` |
 :::
 
 ###### rangeLimit
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du curseur est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).rangeLimit.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du curseur est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).rangeLimit.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).rangeLimit.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).rangeLimit.node` |
 :::
 
 ---

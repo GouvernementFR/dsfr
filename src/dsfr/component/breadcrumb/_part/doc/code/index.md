@@ -139,130 +139,130 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 
 ###### breadcrumb
 
-:::dsfr-doc-table{valign=top scroll=false}
-| disclose | |
+:::dsfr-doc-table[disclose]{valign=top scroll=false}
+| | |
 |-------|----------------|
-| Description | Ouvre le fil d’Ariane. |
-| Type | function |
-| Arguments | Aucun |
-| Retour | Aucun |
-| Exemple | dsfr(breadcrumb).breadcrumb.disclose() |
+| **Description** | Ouvre le fil d’Ariane. |
+| **Type** | function |
+| **Arguments** | Aucun |
+| **Retour** | Aucun |
+| **Exemple** | dsfr(breadcrumb).breadcrumb.disclose() |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |-------|----------------|
-| Description | Retourne le nœud HTML de l'élément `<nav>`. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | dsfr(breadcrumb).breadcrumb.node |
+| **Description** | Retourne le nœud HTML de l'élément `<nav>`. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | dsfr(breadcrumb).breadcrumb.node |
 :::
 
 ###### collapseButton
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |-------|----------------|
-| Description | Replace le focus sur le bouton. |
-| Type | function |
-| Arguments | Aucun |
-| Retour | Aucun |
-| Exemple | dsfr(breadcrumbButton).breadcrumbButton.focus() |
+| **Description** | Replace le focus sur le bouton. |
+| **Type** | function |
+| **Arguments** | Aucun |
+| **Retour** | Aucun |
+| **Exemple** | dsfr(breadcrumbButton).breadcrumbButton.focus() |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |-------|----------------|
-| Description | Retourne le nœud HTML correspondant au bouton. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | dsfr(breadcrumbButton).breadcrumbButton.node |
+| **Description** | Retourne le nœud HTML correspondant au bouton. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | dsfr(breadcrumbButton).breadcrumbButton.node |
 :::
 
 ###### collapse
 
-:::dsfr-doc-table{valign=top scroll=false}
-| conceal | |
+:::dsfr-doc-table[conceal]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ferme le collapse |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).collapse.conceal()` |
+| **Description** | Ferme le collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).collapse.conceal()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| disclose | |
+:::dsfr-doc-table[disclose]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ouvre le collapse |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).collapse.disclose()` |
+| **Description** | Ouvre le collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).collapse.disclose()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isDisclosed | |
+:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne vrai si le collapse est ouvert |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).collapse.isDisclosed` |
+| **Description** | Retourne vrai si le collapse est ouvert |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du collapse est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).collapse.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du collapse est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| buttons | |
+:::dsfr-doc-table[buttons]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne un tableau de boutons d'ouverture du collapse |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).collapse.buttons` |
+| **Description** | Retourne un tableau de boutons d'ouverture du collapse |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).collapse.buttons` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton du collapse |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).collapse.focus()` |
+| **Description** | Replace le focus sur le bouton du collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parent, ici le breadcrumb |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parent, ici le breadcrumb |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| children | |
+:::dsfr-doc-table[children]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Renvoie un tableau d'instances enfants |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).children` |
+| **Description** | Renvoie un tableau d'instances enfants |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).collapse.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).collapse.node` |
 :::
 
 ---

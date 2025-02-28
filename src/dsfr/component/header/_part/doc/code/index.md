@@ -731,22 +731,22 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### headerModal
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de la modale de navigation principale mobile est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).headerModal.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de la modale de navigation principale mobile est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).headerModal.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).headerModal.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).headerModal.node` |
 :::
 
 ###### modal & modalButton

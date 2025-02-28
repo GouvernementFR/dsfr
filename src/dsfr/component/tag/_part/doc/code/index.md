@@ -287,61 +287,61 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### toggle
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du tag activable est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).toggle.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du tag activable est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).toggle.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| pressed | |
+:::dsfr-doc-table[pressed]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoi l'état du tag activable |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).toggle.pressed = false` |
+| **Description** | Renvoi l'état du tag activable |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).toggle.pressed = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| toggle | |
+:::dsfr-doc-table[toggle]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Fait varier l'état checked/unchecked et la valeur de l'attribut `aria-pressed` du tag activable |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).toggle.toggle()` |
+| **Description** | Fait varier l'état checked/unchecked et la valeur de l'attribut `aria-pressed` du tag activable |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).toggle.toggle()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).toggle.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).toggle.node` |
 :::
 
 ###### tagDismissible
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du tag supprimable est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tagDismissible.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du tag supprimable est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tagDismissible.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).tagDismissible.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tagDismissible.node` |
 :::
 
 ---

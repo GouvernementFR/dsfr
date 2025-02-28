@@ -469,40 +469,40 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### table
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du tableau est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).table.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du tableau est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).table.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parent |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parent |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| children | |
+:::dsfr-doc-table[children]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Renvoie un tableau d'instances enfants |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).children` |
+| **Description** | Renvoie un tableau d'instances enfants |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).table.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).table.node` |
 :::
 
 ---

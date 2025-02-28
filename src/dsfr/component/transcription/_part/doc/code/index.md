@@ -148,263 +148,263 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### transcription
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de la transcription est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).transcription.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de la transcription est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).transcription.isEnabled = false` |
 :::
 
 ###### collapseButton
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).collapseButton.focus()` |
+| **Description** | Replace le focus sur le bouton |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).collapseButton.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parente, ici la transcription |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parente, ici la transcription |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).collapseButton.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).collapseButton.node` |
 :::
 
 ###### collapse
 
-:::dsfr-doc-table{valign=top scroll=false}
-| conceal | |
+:::dsfr-doc-table[conceal]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ferme le collapse |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).collapse.conceal()` |
+| **Description** | Ferme le collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).collapse.conceal()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| disclose | |
+:::dsfr-doc-table[disclose]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ouvre le collapse |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).collapse.disclose()` |
+| **Description** | Ouvre le collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).collapse.disclose()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isDisclosed | |
+:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne vrai si le collapse est ouvert |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).collapse.isDisclosed` |
+| **Description** | Retourne vrai si le collapse est ouvert |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'accordéon est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).collapse.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| group | |
+:::dsfr-doc-table[group]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).collapse.group` |
+| **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).collapse.group` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| buttons | |
+:::dsfr-doc-table[buttons]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne un tableau de boutons d'ouverture du collapse |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).collapse.buttons` |
+| **Description** | Retourne un tableau de boutons d'ouverture du collapse |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).collapse.buttons` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton du collapse |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).collapse.focus()` |
+| **Description** | Replace le focus sur le bouton du collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parent, ici la transcription |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parent, ici la transcription |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| children | |
+:::dsfr-doc-table[children]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Renvoie un tableau d'instances enfants |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).children` |
+| **Description** | Renvoie un tableau d'instances enfants |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).collapse.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).collapse.node` |
 :::
 
 ###### modalButton
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).modalButton.focus()` |
+| **Description** | Replace le focus sur le bouton |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).modalButton.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parente, ici la transcription |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parente, ici la transcription |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).modalButton.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).modalButton.node` |
 :::
 
 ###### modal
 
-:::dsfr-doc-table{valign=top scroll=false}
-| conceal | |
+:::dsfr-doc-table[conceal]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ferme la modale |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).modal.conceal()` |
+| **Description** | Ferme la modale |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).modal.conceal()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| disclose | |
+:::dsfr-doc-table[disclose]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ouvre la modale |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).modal.disclose()` |
+| **Description** | Ouvre la modale |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).modal.disclose()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isDisclosed | |
+:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne vrai si la modale est ouverte |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).modal.isDisclosed` |
+| **Description** | Retourne vrai si la modale est ouverte |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).modal.isDisclosed` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de la modale est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).modal.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de la modale est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).modal.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| group | |
+:::dsfr-doc-table[group]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).modal.group` |
+| **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).modal.group` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| buttons | |
+:::dsfr-doc-table[buttons]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne un tableau de boutons d'ouverture de la modal |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).modal.buttons` |
+| **Description** | Retourne un tableau de boutons d'ouverture de la modal |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).modal.buttons` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton de la modale |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).modal.focus()` |
+| **Description** | Replace le focus sur le bouton de la modale |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).modal.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parent, ici la transcription |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parent, ici la transcription |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| children | |
+:::dsfr-doc-table[children]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Renvoie un tableau d'instances enfants |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).children` |
+| **Description** | Renvoie un tableau d'instances enfants |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).collapse.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).collapse.node` |
 :::
 
 ---

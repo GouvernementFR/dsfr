@@ -136,134 +136,134 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tooltip
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parente |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parente |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| children | |
+:::dsfr-doc-table[children]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Renvoie un tableau d'instances enfants |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).children` |
+| **Description** | Renvoie un tableau d'instances enfants |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).tooltip.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tooltip.node` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'infobulle est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tooltip.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'infobulle est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tooltip.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isShown | |
+:::dsfr-doc-table[isShown]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si l'infobulle est affichée ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tooltip.isShown = false` |
+| **Description** | Défini si l'infobulle est affichée ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tooltip.isShown = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| show | |
+:::dsfr-doc-table[show]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Affiche l'infobulle |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).tooltip.show()` |
+| **Description** | Affiche l'infobulle |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).tooltip.show()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| hide | |
+:::dsfr-doc-table[hide]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Cache l'infobulle |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).tooltip.hide()` |
+| **Description** | Cache l'infobulle |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).tooltip.hide()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| mode | |
+:::dsfr-doc-table[mode]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini le mode de placement de l'infobulle |
-| Type | property |
-| Retour | 'placement_auto' \| 'placement_manual' |
-| Exemple | `dsfr(elem).tooltip.mode = 'placement_manual'` |
+| **Description** | Défini le mode de placement de l'infobulle |
+| **Type** | property |
+| **Retour** | 'placement_auto' \| 'placement_manual' |
+| **Exemple** | `dsfr(elem).tooltip.mode = 'placement_manual'` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| align | |
+:::dsfr-doc-table[align]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini l'alignement vertical de l'infobulle en `mode='placement_manual'` |
-| Type | property |
-| Retour | 'align_start' \| 'align_center' \| 'align_end' |
-| Exemple | `dsfr(elem).tooltip.align = 'align_start'` |
+| **Description** | Défini l'alignement vertical de l'infobulle en `mode='placement_manual'` |
+| **Type** | property |
+| **Retour** | 'align_start' \| 'align_center' \| 'align_end' |
+| **Exemple** | `dsfr(elem).tooltip.align = 'align_start'` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| place | |
+:::dsfr-doc-table[place]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini le placement de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
-| Type | property |
-| Retour | 'placement--top' \| 'placement--bottom' \| 'placement--left' \| 'placement--right' |
-| Exemple | `dsfr(elem).tooltip.place = 'placement--top'` |
+| **Description** | Défini le placement de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
+| **Type** | property |
+| **Retour** | 'placement--top' \| 'placement--bottom' \| 'placement--left' \| 'placement--right' |
+| **Exemple** | `dsfr(elem).tooltip.place = 'placement--top'` |
 :::
 
 ###### tooltipReferent
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parente |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parente |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| children | |
+:::dsfr-doc-table[children]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Renvoie un tableau d'instances enfants |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).children` |
+| **Description** | Renvoie un tableau d'instances enfants |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).tooltipReferent.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tooltipReferent.node` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du déclencheur est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tooltipReferent.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du déclencheur est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tooltipReferent.isEnabled = false` |
 :::
 
 ---

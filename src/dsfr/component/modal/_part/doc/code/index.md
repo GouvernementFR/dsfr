@@ -233,81 +233,81 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### modal
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de la modale est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).modal.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de la modale est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).modal.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| conceal | |
+:::dsfr-doc-table[conceal]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ferme la modale |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).modal.conceal()` |
+| **Description** | Ferme la modale |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).modal.conceal()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| disclose | |
+:::dsfr-doc-table[disclose]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ouvre la modale |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).modal.disclose()` |
+| **Description** | Ouvre la modale |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).modal.disclose()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isDisclosed | |
+:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne vrai si la modale est ouverte |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).modal.isDisclosed` |
+| **Description** | Retourne vrai si la modale est ouverte |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).modal.isDisclosed` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).modal.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).modal.node` |
 :::
 
 ###### modalButton
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).modalButton.focus()` |
+| **Description** | Replace le focus sur le bouton |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).modalButton.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parente, ici la modale |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parente, ici la modale |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).modalButton.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).modalButton.node` |
 :::
 
 ---
