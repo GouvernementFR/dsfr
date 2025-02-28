@@ -150,204 +150,203 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### accordionGroup
 
-:::dsfr-doc-table{valign=top scroll=false}
-| current | |
+:::dsfr-doc-table[current]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Retourne l'API du collapse ouvert. <br/>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).accordionsGroup.current` |
+| **Description** | Retourne l'API du collapse ouvert. <br/>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).accordionsGroup.current` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| hasFocus | |
+:::dsfr-doc-table[hasFocus]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie vrai si le focus est sur un des éléments du groupe. |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).accordionsGroup.hasFocus` |
+| **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).accordionsGroup.hasFocus` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| index | |
+:::dsfr-doc-table[index]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Retourne ou modifie l'index de l'accordéon courant. <br/>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
-| Type | property |
-| Retour | Number |
-| Exemple | `dsfr(elem).accordionsGroup.index` <br/> `dsfr(elem).accordionsGroup.index = 2` |
+| **Description** | Retourne ou modifie l'index de l'accordéon courant. <br/>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).accordionsGroup.index` <br/> `dsfr(elem).accordionsGroup.index = 2` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isGrouped | |
+:::dsfr-doc-table[isGrouped]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si les accordéons du groupe sont liés en eux ou non. <br/>_Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut._|
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).accordionsGroup.isGrouped` <br/> `dsfr(elem).accordionsGroup.isGrouped = true` |
+| **Description** | Défini si les accordéons du groupe sont liés en eux ou non. <br/>_Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut._|
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).accordionsGroup.isGrouped` <br/> `dsfr(elem).accordionsGroup.isGrouped = true` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| length | |
+:::dsfr-doc-table[length]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Retourne le nombre d'accordéons dans le groupe. |
-| Type | property |
-| Retour | Number |
-| Exemple | `dsfr(elem).accordionsGroup.length` |
+| **Description** | Retourne le nombre d'accordéons dans le groupe. |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).accordionsGroup.length` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| members | |
+:::dsfr-doc-table[members]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie un tableau d'objets correspondant aux collapses des accordéons du groupe. |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).accordionsGroup.members` |
+| **Description** | Renvoie un tableau d'objets correspondant aux collapses des accordéons du groupe. |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).accordionsGroup.members` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).accordionsGroup.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).accordionsGroup.node` |
 :::
 
 ###### accordion
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'accordéon est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).accordion.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
 :::
 
 ###### collapseButton
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).collapseButton.focus()` |
+| **Description** | Replace le focus sur le bouton |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).collapseButton.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parente, ici l'accordéon |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parente, ici l'accordéon |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).collapseButton.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).collapseButton.node` |
 :::
-
 
 ###### collapse
 
-:::dsfr-doc-table{valign=top scroll=false}
-| conceal | |
+:::dsfr-doc-table[concea]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ferme le collapse |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).collapse.conceal()` |
+| **Description** | Ferme le collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).collapse.conceal()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| disclose | |
+:::dsfr-doc-table[disclose]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ouvre le collapse |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).collapse.disclose()` |
+| **Description** | Ouvre le collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).collapse.disclose()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isDisclosed | |
+:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne vrai si le collapse est ouvert |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).collapse.isDisclosed` |
+| **Description** | Retourne vrai si le collapse est ouvert |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'accordéon est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).collapse.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| group | |
+:::dsfr-doc-table[group]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).collapse.group` |
+| **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).collapse.group` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| buttons | |
+:::dsfr-doc-table[buttons]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne un tableau de boutons d'ouverture du collapse |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).collapse.buttons` |
+| **Description** | Retourne un tableau de boutons d'ouverture du collapse |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).collapse.buttons` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton du collapse |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).collapse.focus()` |
+| **Description** | Replace le focus sur le bouton du collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| parent | |
+:::dsfr-doc-table[parent]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'instance du dsfr parent, ici l'accordéon |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).parent` |
+| **Description** | Retourne l'instance du dsfr parent, ici l'accordéon |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| children | |
+:::dsfr-doc-table[children]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Renvoie un tableau d'instances enfants |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).children` |
+| **Description** | Renvoie un tableau d'instances enfants |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).collapse.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).collapse.node` |
 :::
 
 ---

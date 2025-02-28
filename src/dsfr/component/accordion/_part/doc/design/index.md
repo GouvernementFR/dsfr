@@ -2,9 +2,10 @@
 title: Anatomie de l'Accordéon
 ---
 
-# Accordéon
+## Accordéon
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
@@ -13,71 +14,135 @@ title: Anatomie de l'Accordéon
 
 :::
 
+### Design
 
+:::dsfr-doc-anatomy{col=12}
 
-[Image d’anatomie]
+![Anatomie de l'accordéon](../_asset/anatomy/anatomy-1.png)
 
-1. Une en-tête, correspondant au titre de la section - obligatoire.
-2. Un chevron orienté vers le bas, indiquant que le panneau peut s'ouvrir. Il est orienté vers le haut quand le panneau peut se refermer - obligatoire.
-3. Un séparateur - obligatoire.
-4. Une zone de contenu, masquée par défaut, pouvant contenir tout type d'élément - obligatoire.
+::dsfr-doc-pin[Un en-tête, correspondant au titre de la section]{required=true}
 
-### **Variations**
+::dsfr-doc-pin[Un chevron orienté vers le bas, indiquant que le panneau peut s'ouvrir. Il est orienté vers le haut quand le panneau peut se refermer]{required=true}
+
+::dsfr-doc-pin[Une zone de contenu libre, masquée par défaut]{required=true}
+
+::dsfr-doc-pin[Un séparateur]{required=true}
+
+:::
+
+#### **Variations**
 
 **Groupe d’accordéons**
 
-[Image d’illustration]
-
 - Par défaut, les accordéons compris dans un groupe d’accordéons sont fermés. Seuls l’en-tête et le chevron sont visibles.
 - La totalité de la barre d’en-tête est cliquable. Au clic, le contenu est révélé, ou caché, et le chevron change d'orientation en conséquence.
-- Par défaut, le groupe d’accordéons ne permet l’ouverture que d’un accordéon à la fois. Au clic sur un accordéon du groupe d’accordéons, cela force la fermeture de l’accordéon précédemment ouvert.
-- L'utilisation d'accordéons non liés entre eux reste toutefois possible, permettant l'ouverture de chaque accordéon indépendamment des autres.
+- Par défaut, le groupe d’accordéons ne permet l’ouverture que d’un accordéon à la fois. Le clic sur un accordéon du groupe entraîne la fermeture de l’accordéon précédemment ouvert.
 
-### **Tailles**
+> [!NOTE]
+> L'utilisation d'accordéons non liés entre eux (seuls et non au sein d’un groupe) reste toutefois possible, permettant l'ouverture de chaque accordéon indépendamment des autres.
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/variation/do-1.png)
+
+Proposer plusieurs accordéons seuls dans une même page permet leur ouverture simultanée.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![À ne pas faire](../_asset/variation/dont-1.png)
+
+Ne pas permettre l’ouverture simultanée de deux accordéons au sein d’un groupe d’accordéons.
+
+:::
+
+::::
+
+#### **Tailles**
 
 La largeur de l’accordéon s’adapte à la taille de son conteneur. Toutefois, il est recommandé de ne pas excéder une largeur de 8 colonnes, s’agissant d’un composant de mise en forme de contenu.
 
-### **États**
+#### **États**
 
-**Etat au clic**
+**État au clic**
 
-L’état au clic correspond au comportement constaté par l’utilisateur une fois le panneau ouvert, après avoir cliqué sur l’accordéon.
+L’état au clic correspond au comportement constaté par l’usager une fois le panneau ouvert, après avoir cliqué sur l’accordéon.
 
-[Image d’illustration]
-
-**Etat au survol**
+**État au survol**
 
 L’état au survol correspond au comportement constaté par l’utilisateur lorsqu’il survol le bouton d'ouverture de l’accordéon avec sa souris. Il existe 2 états au survol :
 
 - Lorsque l’accordéon est non cliqué
-
-[Image d’illustration]
-
 - Lorsque l’accordéon est cliqué
 
-[Image d’illustration]
-
-### **Personnalisation**
+#### **Personnalisation**
 
 Les accordéons ne sont pas personnalisables.
 
-[Do’s : Utiliser uniquement la couleur bleu pour les accordéons]
+::::dsfr-doc-guidelines
 
-[Dont’s : Ne pas personnaliser la couleur des accordéons]
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-[Do’s : Utiliser uniquement le chevron comme icône]
+![À faire](../_asset/custom/do-1.png)
 
-[Dont’s : Ne pas personnaliser l’icône des accordéons]
+Utiliser uniquement la couleur bleu pour les accordéons.
 
-[Do’s : Utiliser uniquement la taille de typographie prévue pour l’en-tête]
+:::
 
-[Dont’s : Ne pas augmenter la taille de typographie de l’en-tête]
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-### Note de version
+![À ne pas faire](../_asset/custom/dont-1.png)
 
-### Maillage
+Ne pas personnaliser la couleur des accordéons.
 
-- [Citation](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/citation)
-- [Contenu média](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/contenu-medias)
-- [Mise en avant](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/mise-en-avant)
-- [Mise en exergue](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/mise-en-exergue)
+:::
+
+::::
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/custom/do-2.png)
+
+Utiliser uniquement le chevron comme icône.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![À ne pas faire](../_asset/custom/dont-2.png)
+
+Ne pas personnaliser l’icône des accordéons.
+
+:::
+
+::::
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/custom/do-3.png)
+
+Utiliser uniquement la taille de typographie prévue pour l’en-tête des accordéons.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![À ne pas faire](../_asset/custom/dont-3.png)
+
+Ne pas augmenter la taille de typographie de l’en-tête des accordéons.
+
+:::
+
+::::
+
+#### Maillage
+
+- [Onglet](../../../../tab/_part/doc/design/index.md)
+- [Modale](../../../../modal/_part/doc/design/index.md)
