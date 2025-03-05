@@ -13,12 +13,30 @@ class Navigation extends api.core.CollapsesGroup {
     this.out = false;
     this.addEmission(api.core.RootEmission.CLICK, this._handleRootClick.bind(this));
     this.listen('mousedown', this.handleMouseDown.bind(this));
+    this.addEmission(api.core.RootEmission.KEYDOWN, this._keydown.bind(this));
     this.listenClick({ capture: true });
     this.isResizing = true;
   }
 
   validate (member) {
     return super.validate(member) && member.element.node.matches(api.internals.legacy.isLegacy ? NavigationSelector.COLLAPSE_LEGACY : NavigationSelector.COLLAPSE);
+  }
+
+  _keydown (keyCode) {
+    switch (keyCode) {
+      case api.core.KeyCodes.ESCAPE:
+        if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1 || !this.current) return;
+        this.index = -1;
+        break;
+
+      case api.core.KeyCodes.TAB:
+        if (!this.isBreakpoint(api.core.Breakpoints.LG) || !this.current) return;
+        this.request(() => {
+          if (this.current.node.contains(document.activeElement)) return;
+          this.index = -1;
+        });
+        break;
+    }
   }
 
   handleMouseDown (e) {
