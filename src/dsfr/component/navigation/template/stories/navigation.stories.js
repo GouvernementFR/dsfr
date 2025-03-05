@@ -13,10 +13,11 @@ export default {
 };
 
 export const NavigationStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 
-export const WithLinkStory = {
+export const LinkStory = {
   tags: ['autodocs', '!dev'],
   args: {
     id: uniqueId('navigation'),

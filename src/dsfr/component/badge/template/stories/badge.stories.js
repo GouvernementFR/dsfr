@@ -14,6 +14,7 @@ export default {
 };
 
 export const BadgeStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 

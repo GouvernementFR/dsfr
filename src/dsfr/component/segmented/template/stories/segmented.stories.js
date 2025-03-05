@@ -12,7 +12,17 @@ export default {
 };
 
 export const SegmentedStory = {
-  args: {}
+  tags: ['!autodocs'],
+  args: {
+    elements: getSegmentedData()
+  }
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    elements: getSegmentedData()
+  }
 };
 
 export const WithIconStory = {

@@ -13,10 +13,16 @@ export default {
 };
 
 export const HeaderStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 
-export const MinStory = {
+export const HeaderWithNavigationStory = {
+  tags: ['autodocs', '!dev'],
+  args: {}
+};
+
+export const HeaderMinimalStory = {
   tags: ['autodocs', '!dev'],
   args: {
     id: uniqueId('header'),

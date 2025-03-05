@@ -13,6 +13,12 @@ export default {
 };
 
 export const PasswordStory = {
+  tags: ['!autodocs'],
+  args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
   args: {}
 };
 

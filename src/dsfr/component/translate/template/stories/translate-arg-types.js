@@ -47,7 +47,9 @@ const translateArgs = {
     getLanguagesArgs(4, 'Deutsch', 'de')
   ],
   id: 'translate-id',
-  collapseId: 'translate-collapse-id'
+  collapseId: 'translate-collapse-id',
+  buttonId: 'button-id',
+  buttonTitle: 'Sélectionner une langue'
 };
 
 const translateProps = (args) => {
@@ -55,8 +57,8 @@ const translateProps = (args) => {
     id: args.id || undefined,
     collapseId: args.collapseId || translateArgs.collapseId,
     button: {
-      id: 'button-id',
-      title: 'Sélectionner une langue',
+      id: args.buttonId || translateArgs.buttonId,
+      title: args.buttonTitle || translateArgs.buttonTitle,
       kind: args.noBorder ? 4 : 3
     },
     languages: args.languages || translateArgs.languages

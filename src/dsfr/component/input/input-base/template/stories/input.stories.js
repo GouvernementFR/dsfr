@@ -1,5 +1,6 @@
 import { inputArgs, inputArgTypes, inputProps } from './input-arg-types';
 import { renderInput } from './input';
+import { uniqueId } from '../../../../../core/template/stories/unique-id';
 
 const render = (args) => renderInput({ input: inputProps(args) });
 
@@ -12,76 +13,96 @@ export default {
 };
 
 export const InputStory = {
-  args: {}
+  tags: ['!autodocs'],
+  args: {
+    id: uniqueId('input')
+  }
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('input')
+  }
 };
 
 export const ErrorStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    status: 'error'
+    status: 'error',
+    id: uniqueId('input')
   }
 };
 
 export const SuccessStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    status: 'valid'
+    status: 'valid',
+    id: uniqueId('input')
   }
 };
 
 export const DisabledStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    disabled: true
+    disabled: true,
+    id: uniqueId('input')
   }
 };
 
 export const TelStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    type: 'tel'
+    type: 'tel',
+    id: uniqueId('input')
   }
 };
 
 export const NumberStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    type: 'number'
+    type: 'number',
+    id: uniqueId('input')
   }
 };
 
 export const PasswordStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    type: 'password'
+    type: 'password',
+    id: uniqueId('input')
   }
 };
 
 export const SearchStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    type: 'search'
+    type: 'search',
+    id: uniqueId('input')
   }
 };
 
 export const DateStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    type: 'date'
+    type: 'date',
+    id: uniqueId('input')
   }
 };
 
 export const ButtonStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    addon: true
+    addon: true,
+    id: uniqueId('input')
   }
 };
 
 export const ActionStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    action: true
+    action: true,
+    id: uniqueId('input')
   }
 };
 
@@ -90,13 +111,15 @@ export const UrlStory = {
   args: {
     label: 'Adresse du site',
     placeholder: 'https://',
-    hint: 'Saisissez une url valide, commençant par https://'
+    hint: 'Saisissez une url valide, commençant par https://',
+    id: uniqueId('input')
   }
 };
 
 export const TextareaStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    type: 'textarea'
+    type: 'textarea',
+    id: uniqueId('input')
   }
 };

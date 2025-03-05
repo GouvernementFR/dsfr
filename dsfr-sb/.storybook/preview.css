@@ -26,7 +26,7 @@
   position: relative;
 }
 
-#story--navigation--navigation-story,
+#story--navigation--navigation-story--primary,
 #story--navigation--mega-menu-story {
   height: 450px;
 }
@@ -67,4 +67,11 @@
 
 #story--consent--consent-banner-story--primary {
   height: 400px;
+}
+
+#anchor--card--no-background-card-story .docs-story {
+  --idle: transparent;
+  --hover: var(--background-alt-orange-terre-battue-hover);
+  --active: var(--background-alt-orange-terre-battue-active);
+  background-color: var(--background-alt-orange-terre-battue);
 }
