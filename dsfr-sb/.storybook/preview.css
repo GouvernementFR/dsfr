@@ -8,6 +8,8 @@
 
 .sbdocs-wrapper {
   padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 #story--modal--modal-story--primary button[data-fr-opened="true"],

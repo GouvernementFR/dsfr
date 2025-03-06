@@ -18,16 +18,16 @@ export const BadgeStory = {
   args: {}
 };
 
-export const SizesStory = {
+export const DefaultStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      size: 'sm'
-    },
-    {
-      size: 'md'
-    }
-  ])
+  args: {}
+};
+
+export const SizeSMStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    size: 'sm'
+  }
 };
 
 export const StatusStory = {
