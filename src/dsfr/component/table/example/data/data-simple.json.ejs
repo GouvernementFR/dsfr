@@ -24,7 +24,7 @@ if (table.selectable) {
       attributes: {
         role: 'columnheader'
       },
-      classes: [`${prefix}-cell--fixed`],
+      classes: [`${prefix}-cell--fixed${table.cellFixedAt ? `@${table.cellFixedAt}` : ''}`],
       content: getSrOnlyCell(getText('data.cell.action.select', 'table'))
     });
   });
@@ -33,7 +33,7 @@ if (table.selectable) {
       row.unshift({
         markup: 'th',
         attributes: {scope: 'row'},
-        classes: [`${prefix}-cell--fixed`],
+        classes: [`${prefix}-cell--fixed${table.cellFixedAt ? `@${table.cellFixedAt}` : ''}`],
         content:  getCheckbox({id: `${uniqueId('table-select-checkbox')}--${index}`, label: `${getText('data.cell.action.selectRow', 'table')} ${index + 1}`, attributes: {[`data-${prefix}-row-select`]: 'true'}})
       });
     });
@@ -46,7 +46,7 @@ if (table.doubleEntry) {
       attributes: {
         role: 'columnheader'
       },
-      classes: [`${prefix}-cell--fixed`],
+      classes: [`${prefix}-cell--fixed${table.cellFixedAt ? `@${table.cellFixedAt}` : ''}`],
       content: getSrOnlyCell(getText('data.cell.doubleEntry', 'table'))
     });
   });
@@ -56,7 +56,7 @@ if (table.doubleEntry) {
       row.unshift({
         markup: 'th',
         attributes: {scope: 'row'},
-        classes: [`${prefix}-cell--fixed`],
+        classes: [`${prefix}-cell--fixed${table.cellFixedAt ? `@${table.cellFixedAt}` : ''}`],
         content: `th${index}`
       });
     });

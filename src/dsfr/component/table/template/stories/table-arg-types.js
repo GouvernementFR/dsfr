@@ -297,6 +297,32 @@ const getSimpleTableArgs = (col = 4, row = 4) => {
   return { thead, tbodies: [tbody] };
 };
 
+const getFixedColTableArgs = (breakpoint = undefined) => {
+  const table = getSimpleTableArgs();
+
+  table.thead.forEach((row) => {
+    row.unshift({
+      attributes: {
+        role: 'columnheader'
+      },
+      classes: [`fr-cell--fixed${breakpoint ? `@${breakpoint}` : ''}`]
+    });
+  });
+
+  table.tbodies.forEach((tbody) => {
+    tbody.forEach((row, index) => {
+      row.unshift({
+        markup: 'th',
+        attributes: { scope: 'row' },
+        classes: [`fr-cell--fixed${breakpoint ? `@${breakpoint}` : ''}`],
+        content: `th${index}`
+      });
+    });
+  });
+
+  return table;
+};
+
 const getSelectableTableArgs = () => {
   const table = getSimpleTableArgs();
 
@@ -582,4 +608,4 @@ const tableProps = (args) => {
   return wrapper;
 };
 
-export { tableArgTypes, tableArgs, tableProps, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs };
+export { tableArgTypes, tableArgs, tableProps, getFixedColTableArgs, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs };
