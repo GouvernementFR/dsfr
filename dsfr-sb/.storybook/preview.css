@@ -71,6 +71,10 @@
   height: 400px;
 }
 
+#story--consent-modal--consent-modal-story--primary {
+  height: 500px;
+}
+
 #anchor--card--no-background-card-story .docs-story {
   --idle: transparent;
   --hover: var(--background-alt-orange-terre-battue-hover);
