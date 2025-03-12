@@ -12,6 +12,7 @@ export default {
 };
 
 export const ContentStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 

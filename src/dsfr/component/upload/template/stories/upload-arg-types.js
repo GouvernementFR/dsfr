@@ -4,11 +4,12 @@ const messageArgTypes = {
       type: 'select',
       labels: {
         default: 'Défaut',
-        error: 'Erreur'
+        error: 'Erreur',
+        valid: 'Succès'
       }
     },
     description: 'Statut du message',
-    options: ['default', 'error'],
+    options: ['default', 'error', 'valid'],
     type: {
       value: 'string'
     },
@@ -18,6 +19,15 @@ const messageArgTypes = {
     if: { arg: 'status', eq: 'error' },
     control: 'text',
     description: 'Texte du message d\'erreur',
+    type: {
+      value: 'string'
+    },
+    table: { category: 'message' }
+  },
+  validMessage: {
+    if: { arg: 'status', eq: 'valid' },
+    control: 'text',
+    description: 'Texte du message de succès',
     type: {
       value: 'string'
     },
@@ -53,7 +63,7 @@ const uploadArgTypes = {
   },
   hint: {
     control: 'text',
-    description: 'Texte additionnel de l\'ajout de fichier',
+    description: 'Texte additionnel de l\'ajout de fichier. Donne des informations sur les formats acceptés, la taille maximale, etc.',
     type: {
       value: 'string',
       required: true
@@ -83,6 +93,7 @@ const uploadArgs = {
   multiple: false,
   status: 'default',
   errorMessage: 'Format de fichier non supporté',
+  validMessage: 'Fichier correctement ajouté',
   id: 'upload-id',
   name: 'upload'
 };
@@ -97,7 +108,8 @@ const uploadProps = (args) => {
     multiple: args.multiple || uploadArgs.multiple,
     inline: args.inline || false,
     status: args.status || uploadArgs.status,
-    error: args.status === 'error' ? args.errorMessage || uploadArgs.errorMessage : undefined
+    error: args.status === 'error' ? args.errorMessage || uploadArgs.errorMessage : undefined,
+    valid: args.status === 'valid' ? args.validMessage || uploadArgs.validMessage : undefined
   };
 
   return upload;

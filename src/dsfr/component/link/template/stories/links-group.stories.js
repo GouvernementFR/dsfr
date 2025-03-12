@@ -15,10 +15,11 @@ export default {
 };
 
 export const LinksGroupStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 
-export const SizesStory = {
+export const SizeSMStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
@@ -34,7 +35,13 @@ export const SizesStory = {
           label: linkArgs.label + ' 3'
         }
       ]
-    },
+    }
+  ])
+};
+
+export const SizeMDStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
     {
       size: 'md',
       links: [
@@ -48,7 +55,13 @@ export const SizesStory = {
           label: linkArgs.label + ' 3'
         }
       ]
-    },
+    }
+  ])
+};
+
+export const SizeLGStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
     {
       size: 'lg',
       links: [

@@ -67,7 +67,7 @@ const modalArgTypes = {
 };
 
 const modalArgs = {
-  id: 'modal',
+  id: 'modal-default',
   markup: 'dialog',
   title: 'Titre de la modale',
   size: 'md',

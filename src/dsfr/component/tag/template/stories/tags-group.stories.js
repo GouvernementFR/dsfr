@@ -12,6 +12,7 @@ export default {
 };
 
 export const TagsGroupStory = {
+  tags: ['!autodocs'],
   args: {
     type: 'default'
   }
@@ -47,7 +48,7 @@ export const TagsGroupPressableStory = {
   tags: ['autodocs', '!dev'],
   args: {
     type: 'pressable',
-    tags: getTagsData()
+    tags: getTagsData().map((tag, index) => { if (index === 1) { tag.pressed = true; } return tag; })
   }
 };
 

@@ -12,6 +12,7 @@ export default {
 };
 
 export const BadgesGroupStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 

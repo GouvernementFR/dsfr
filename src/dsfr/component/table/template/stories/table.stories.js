@@ -13,8 +13,17 @@ export default {
 };
 
 export const TableStory = {
-  tags: ['autodocs'],
-  args: {}
+  tags: ['!autodocs'],
+  args: {
+    id: uniqueId('table')
+  }
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('table')
+  }
 };
 
 export const SizeSMStory = {
