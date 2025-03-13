@@ -138,6 +138,15 @@ Par défaut, les services doivent être désactivés, les boutons sont donc pass
 
 Le composant **Partage** ne nécessite pas d'import de JavaScript spécifique pour fonctionner.
 
+Un script d'exemple dans l'attribut `onclick` de chaque élément est proposé pour le partage via l'API des réseau sociaux et la copie de l'URL de la page dans le presse-papier. Il est possible de le personnaliser selon les besoins.
+
+Les liens ci-dessous vous permettent de tester et prévisualiser l’apparence des partages dans différents réseaux sociaux :
+
+- [Open Graph Check](https://www.opengraph.xyz/)
+- [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- [Twitter Sharing debugger](https://cards-dev.twitter.com/validator)
+- [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
+
 ---
 
 ### Note de version
