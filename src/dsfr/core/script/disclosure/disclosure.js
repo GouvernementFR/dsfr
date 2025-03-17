@@ -122,7 +122,7 @@ class Disclosure extends Instance {
 
   set isDisclosed (value) {
     if (this._isDisclosed === value || (!this.isEnabled && value === true)) return;
-    if (this._isPristine) this.dispatch(value ? DisclosureEvent.DISCLOSE : DisclosureEvent.CONCEAL, this);
+    if (!this._isPristine) this.dispatch(value ? DisclosureEvent.DISCLOSE : DisclosureEvent.CONCEAL, this);
     this._isDisclosed = value;
     if (value) this.addClass(this.modifier);
     else this.removeClass(this.modifier);
