@@ -33,6 +33,7 @@
     @include after('', block) {
       @include absolute(3v, 4v);
       @include size(4v, 4v);
+      pointer-events: none;
     }
 
     @supports selector(::-webkit-calendar-picker-indicator) {
