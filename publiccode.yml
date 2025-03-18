@@ -1,0 +1,41 @@
+publiccodeYmlVersion: "1.0"
+name: DSFR
+url: https://github.com/GouvernementFR/dsfr
+landingURL: https://www.systeme-de-design.gouv.fr/
+creationDate: 2021-04-08
+latestRelease:
+  date: 2024-12-04
+  version: "1.13.0"
+logo:
+usedBy: []
+fundedBy:
+  - name: Service d'Information du Gouvernement
+    url: https://www.info.gouv.fr/organisation/service-d-information-du-gouvernement-sig
+roadmap: ""
+softwareType: "standalone/web"
+packages: []
+description:
+  fr:
+    shortDescription: Système de Design de l'Etat - DSFR
+    documentation: https://www.systeme-de-design.gouv.fr/
+legal:
+  license: MIT License
+  authorsFile: ""
+authors:
+  distinctAuthorsCount: 0
+  distinctOrganizationsCount: 0
+maintenance:
+  type: internal
+  contacts:
+    - name: "Maxime Beaugrand"
+      email: "maxime.beaugrand@pm.gouv.fr"
+metadataFiles:
+  readme: README.md
+  license: LICENSE
+  contributing: CONTRIBUTING.md
+  changelog: CHANGELOG.md
+  codeOfConduct: null
+  governance: null
+lastUpdated: 2024-12-04
+awesomeScore: 5
+awesomeShield: https://img.shields.io/badge/awesome-codegouvfr_5/10-blue
