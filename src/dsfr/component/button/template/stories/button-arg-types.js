@@ -166,7 +166,6 @@ const buttonProps = (args) => {
     };
   }
 
-  console.log('buttonProps', button);
   return button;
 };
 

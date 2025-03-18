@@ -1,6 +1,7 @@
 import { Emitter } from '../../utilities/emitter.js';
 import state from '../../state.js';
 import inspector from '../../inspect/inspector.js';
+import focusManager from './focus-manager';
 import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
 import { dispatch } from '../../utilities/dom/dispatch.js';
@@ -449,6 +450,14 @@ class Instance {
 
   blur () {
     this.node.blur();
+  }
+
+  retainFocus () {
+    this._focusIndex = focusManager.index;
+  }
+
+  focusBack () {
+    focusManager.focus(this._focusIndex);
   }
 
   focusClosest () {
