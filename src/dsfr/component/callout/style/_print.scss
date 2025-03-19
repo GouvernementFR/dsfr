@@ -1,0 +1,12 @@
+////
+/// Callout Print
+/// @group callout
+////
+
+#{ns(callout)} {
+  page-break-inside: avoid;
+  background: transparent;
+  background-image: none;
+  border: 1px solid var(--border-default-grey);
+  border-left: 0.25rem solid var(--border-default-grey);
+}

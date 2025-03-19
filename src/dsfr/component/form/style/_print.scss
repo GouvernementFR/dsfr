@@ -1,4 +1,10 @@
-#{ns(hint-text)},
-#{ns(message)} {
+#{ns(hint-text)} {
   @include text-style(md);
+}
+
+#{ns(message)} {
+  @include before {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }

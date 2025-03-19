@@ -1,0 +1,11 @@
+////
+/// Link Print
+/// @group Link
+////
+
+#{ns(link)} {
+  @include _pseudo(before after) {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

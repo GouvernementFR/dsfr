@@ -1,0 +1,19 @@
+////
+/// Tab Print
+/// @group Tab
+////
+
+#{ns(tabs)} {
+  page-break-inside: avoid;
+
+  &__tab {
+    background-color: transparent;
+    border: 1px solid var(--border-default-grey);
+    background-image: none !important;
+
+    &[aria-selected=true] {
+      border-top: 2px solid var(--border-active-blue-france);
+      border-bottom: none;
+    }
+  }
+}

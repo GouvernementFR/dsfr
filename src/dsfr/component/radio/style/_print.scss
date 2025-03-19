@@ -1,0 +1,19 @@
+////
+/// Radio Print
+/// @group Radio
+////
+
+#{ns(radio-group)} {
+  page-break-inside: avoid;
+
+  input[type=radio]:checked + label,
+  input[type=radio] + label {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #{ns(radio-rich__pictogram)} {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
