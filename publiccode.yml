@@ -16,7 +16,7 @@ softwareType: "standalone/web"
 packages: []
 description:
   fr:
-    shortDescription: Système de Design de l'Etat - DSFR
+    shortDescription: Système de Design de l'État - DSFR
     documentation: https://www.systeme-de-design.gouv.fr/
 legal:
   license: MIT License
