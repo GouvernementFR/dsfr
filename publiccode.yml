@@ -31,7 +31,7 @@ maintenance:
       email: "maxime.beaugrand@pm.gouv.fr"
 metadataFiles:
   readme: README.md
-  license: LICENSE
+  license: LICENSE.md
   contributing: CONTRIBUTING.md
   changelog: CHANGELOG.md
   codeOfConduct: null
