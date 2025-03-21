@@ -299,13 +299,14 @@ const getSimpleTableArgs = (col = 4, row = 4) => {
 
 const getFixedColTableArgs = (breakpoint = undefined) => {
   const table = getSimpleTableArgs();
+  const cellFixedAt = breakpoint ? `@${breakpoint}` : '';
 
   table.thead.forEach((row) => {
     row.unshift({
       attributes: {
         role: 'columnheader'
       },
-      classes: [`fr-cell--fixed${breakpoint ? `@${breakpoint}` : ''}`]
+      classes: [`fr-cell--fixed${cellFixedAt}`]
     });
   });
 
@@ -314,7 +315,7 @@ const getFixedColTableArgs = (breakpoint = undefined) => {
       row.unshift({
         markup: 'th',
         attributes: { scope: 'row' },
-        classes: [`fr-cell--fixed${breakpoint ? `@${breakpoint}` : ''}`],
+        classes: [`fr-cell--fixed${cellFixedAt}`],
         content: `th${index}`
       });
     });
