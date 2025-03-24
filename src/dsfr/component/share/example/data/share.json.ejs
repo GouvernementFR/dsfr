@@ -5,7 +5,7 @@ let data = {};
 data.share = {
   id: uniqueId('share'),
   title: 'Partager la page',
-  text: 'Veuillez <a href=' + contentPlaceholder("url page autorisation cookies") + '>autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter et LinkedIn.',
+  text: 'Veuillez <a href="' + contentPlaceholder("url page autorisation cookies") + '">autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter, Bluesky et LinkedIn.',
   disabled: share.disabled === true,
   buttons: [
     {
@@ -23,6 +23,15 @@ data.share = {
       url: `https://twitter.com/intent/tweet?url=${contentPlaceholder('url de la page')}&text=${contentPlaceholder('titre ou texte descriptif de la page')}&via=${contentPlaceholder('via')}&hashtags=${contentPlaceholder('hashtags')}`,
       width: 600,
       height: 420,
+      comments: !share.disabled ? 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)': undefined
+    },
+    {
+      id: uniqueId('share'),
+      type: 'bluesky',
+      label: 'Partager sur Bluesky',
+      url: `https://bsky.app/intent/compose?text=${contentPlaceholder('titre ou texte descriptif de la page')}+${contentPlaceholder('url de la page')}`,
+      width: 600,
+      height: 430,
       comments: !share.disabled ? 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)': undefined
     },
     {
