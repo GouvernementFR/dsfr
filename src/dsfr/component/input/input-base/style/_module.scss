@@ -27,7 +27,14 @@
   }
 
   &[type=date] {
+    @include relative;
     min-height: 2.5rem;
+
+    @include after('', block) {
+      @include absolute(3v, 4v);
+      @include size(4v, 4v);
+      pointer-events: none;
+    }
 
     @supports selector(::-webkit-calendar-picker-indicator) {
       background-repeat: no-repeat;
@@ -37,9 +44,8 @@
 
       &::-webkit-calendar-picker-indicator {
         display: block;
-        @include padding(4v);
+        @include padding(2v);
         @include margin-right(-10v);
-        opacity: 0;
       }
     }
   }
