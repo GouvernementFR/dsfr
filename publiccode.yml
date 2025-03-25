@@ -13,7 +13,6 @@ fundedBy:
     url: https://www.info.gouv.fr/organisation/service-d-information-du-gouvernement-sig
 roadmap: ""
 softwareType: "standalone/web"
-packages: []
 description:
   fr:
     shortDescription: Système de Design de l'État - DSFR
