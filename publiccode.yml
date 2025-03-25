@@ -23,8 +23,24 @@ legal:
 maintenance:
   type: internal
   contacts:
-    - name: "Maxime Beaugrand"
-      email: "maxime.beaugrand@pm.gouv.fr"
+    - name: Maxime Beaugrand
+      email: maxime.beaugrand@pm.gouv.fr
+intendedAudience:
+  scope:
+    - science-and-technology
+  countries:
+    - fr
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - fr   
+it:
+  conforme:
+    gdpr: true
+contact:
+    - name: Maxime Beaugrand
+      email: maxime.beaugrand@pm.gouv.fr
+      affiliation: Service d'Information du Gouvernement
 metadataFiles:
   readme: README.md
   license: LICENSE.md
