@@ -27,7 +27,7 @@ Son utilisation par les administrations est soumise à une demande d'agrément (
 [Voir la documentation officielle](https://www.systeme-de-design.gouv.fr).
 legal:
   license: MIT
-  repoOwner: Service d'Information du Gouvernement
+  mainCopyrightOwner: Service d'Information du Gouvernement
 maintenance:
   type: internal
   contacts:
