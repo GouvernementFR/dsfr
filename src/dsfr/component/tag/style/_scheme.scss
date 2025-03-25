@@ -37,10 +37,6 @@
   button,
   input[type=button] {
     &#{ns(tag)} {
-      &:disabled {
-        @include color.background(disabled grey, (legacy: $legacy));
-      }
-
       @include pressed-selector(true) {
         &:not(:disabled) {
           @include color.transparent-background((legacy:$legacy));
