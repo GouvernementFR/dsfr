@@ -27,7 +27,7 @@ class AssessFile extends Instance {
     fetch(this.href, { method: 'HEAD', mode: 'cors' }).then(response => {
       if (response.ok) {
         this.length = response.headers.get('content-length') || -1;
-        if (this.length === -1) {
+        if (this.length && this.length === -1) {
           throw new Error('File size unknown' + '\n Unable to get HTTP header: "content-length"');
         }
         this.gather();
