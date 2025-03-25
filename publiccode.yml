@@ -6,7 +6,8 @@ creationDate: 2021-04-08
 latestRelease:
   date: 2025-03-26
   version: "1.13.1"
-logo: ""
+logo: |-
+  https://www.systeme-de-design.gouv.fr/favicon.svg
 usedBy: 
   - https://www.info.gouv.fr/
   - https://beta.gouv.fr/
