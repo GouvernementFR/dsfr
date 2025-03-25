@@ -22,15 +22,19 @@ class Navigation extends api.core.CollapsesGroup {
     return super.validate(member) && member.element.node.matches(api.internals.legacy.isLegacy ? NavigationSelector.COLLAPSE_LEGACY : NavigationSelector.COLLAPSE);
   }
 
+  get hasOpenedMenu () {
+    return this.isBreakpoint(api.core.Breakpoints.LG) && this.index > -1;
+  }
+
   _keydown (keyCode) {
     switch (keyCode) {
       case api.core.KeyCodes.ESCAPE:
-        if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1 || !this.current) return;
+        if (!this.hasOpenedMenu) return;
         this.index = -1;
         break;
 
       case api.core.KeyCodes.TAB:
-        if (!this.isBreakpoint(api.core.Breakpoints.LG) || !this.current) return;
+        if (!this.hasOpenedMenu) return;
         this.request(() => {
           if (this.current.node.contains(document.activeElement)) return;
           this.index = -1;
