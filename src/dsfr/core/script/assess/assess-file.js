@@ -32,7 +32,7 @@ class AssessFile extends Instance {
         }
         this.gather();
       } else {
-        throw new Error('Unable to access the ressource : Status ' + response.status);
+        throw new Error('Unable to access the resource : Status ' + response.status);
       }
     }).catch((error) => {
       this.length = -1;
