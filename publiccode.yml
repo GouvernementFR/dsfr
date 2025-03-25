@@ -20,7 +20,7 @@ description:
     documentation: https://www.systeme-de-design.gouv.fr/
 legal:
   license: MIT
-  authorsFile: ""
+  repoOwner: Service d'Information du Gouvernement
 authors:
   distinctAuthorsCount: 0
   distinctOrganizationsCount: 0
