@@ -14,6 +14,7 @@ export default {
 };
 
 export const ButtonsGroupStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 

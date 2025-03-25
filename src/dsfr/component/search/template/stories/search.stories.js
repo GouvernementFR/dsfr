@@ -12,7 +12,16 @@ export default {
 };
 
 export const SearchStory = {
+  tags: ['!autodocs'],
   args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: 'search-md',
+    inputId: 'search-input-md'
+  }
 };
 
 export const SizeLgStory = {

@@ -14,17 +14,25 @@ export default {
 };
 
 export const ToggleStory = {
-  args: {}
+  tags: ['!autodocs'],
+  args: {
+    id: uniqueId('toggle')
+  }
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('toggle')
+  }
 };
 
 export const AlignLeftStory = {
   tags: ['autodocs', '!dev'],
-  render: () => renders([
-    {
-      hint: '',
-      id: uniqueId('toggle'),
-      groupId: uniqueId('toggle-group'),
-      left: true
-    }
-  ])
+  args: {
+    hint: '',
+    id: uniqueId('toggle'),
+    groupId: uniqueId('toggle-group'),
+    left: true
+  }
 };
