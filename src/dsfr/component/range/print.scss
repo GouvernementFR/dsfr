@@ -1,0 +1,9 @@
+////
+/// Range Print
+/// @group range
+////
+
+@media print {
+  @import 'index';
+  @import 'style/print';
+}

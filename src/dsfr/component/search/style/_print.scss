@@ -1,0 +1,12 @@
+////
+/// Search Print
+/// @group Search
+////
+
+#{ns(search-bar)} {
+  input {
+    background-color: transparent;
+    border-top: 1px solid var(--border-default-grey);
+    border-left: 1px solid var(--border-default-grey);
+  }
+}

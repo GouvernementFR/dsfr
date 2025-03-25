@@ -1,8 +1,13 @@
 #{ns(toggle)} {
+  page-break-inside: avoid;
+
+  @include before {
+    background-color: none !important;
+  }
+
   label {
-    @include before('', block) {
-      @include text-style(md);
-    }
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   #{ns(hint-text)} {

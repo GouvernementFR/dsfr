@@ -1,5 +1,4 @@
 #{ns(logo)} {
-  &::after {
-    background-position: 0 calc(100% + 1.875rem) !important;
-  }
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }

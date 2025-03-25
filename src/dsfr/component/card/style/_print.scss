@@ -1,4 +1,8 @@
 #{ns(card)} {
+  page-break-inside: avoid;
+  border: 1px solid var(--border-default-grey);
+  background-image: none !important;
+
   &__detail,
   &__desc {
     @include text-style(md);
@@ -6,5 +10,10 @@
 
   &__detail {
     line-height: 1rem !important;
+
+    @include before {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
   }
 }
