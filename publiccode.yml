@@ -7,7 +7,10 @@ latestRelease:
   date: 2025-03-26
   version: "1.13.1"
 logo: ""
-usedBy: []
+usedBy: 
+  - https://www.info.gouv.fr/
+  - https://beta.gouv.fr/
+  - https://www.defense.gouv.fr/
 fundedBy:
   - name: Service d'Information du Gouvernement
     url: https://www.info.gouv.fr/organisation/service-d-information-du-gouvernement-sig
