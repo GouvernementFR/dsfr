@@ -60,7 +60,7 @@ export const WarningStory = {
     {
       type: 'warning',
       hasTitle: true,
-      title: 'Titre du message d\'averstissement',
+      title: 'Titre du message d\'avertissement',
       text: 'Texte du message'
     }
   ])
