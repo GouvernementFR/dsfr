@@ -44,7 +44,7 @@ class Navigation extends api.core.CollapsesGroup {
   }
 
   handleMouseDown (e) {
-    if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1 || !this.current) return;
+    if (!this.hasOpenedMenu) return;
     this.position = this.current.node.contains(e.target) ? NavigationMousePosition.INSIDE : NavigationMousePosition.OUTSIDE;
     this.requestPosition();
   }
