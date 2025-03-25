@@ -18,7 +18,9 @@ export const CheckboxStory = {
 
 export const DefaultStory = {
   tags: ['autodocs', '!dev'],
-  args: {}
+  args: {
+    id: 'checkbox-default'
+  }
 };
 
 export const SizeSmStory = {
