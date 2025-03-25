@@ -21,9 +21,6 @@ description:
 legal:
   license: MIT
   repoOwner: Service d'Information du Gouvernement
-authors:
-  distinctAuthorsCount: 0
-  distinctOrganizationsCount: 0
 maintenance:
   type: internal
   contacts:
