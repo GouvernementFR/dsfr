@@ -3,7 +3,6 @@ import { renderToggle } from './toggle';
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 
 const render = (args) => renderToggle({ toggle: toggleProps(args) });
-const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
 
 export default {
   id: 'toggle',
