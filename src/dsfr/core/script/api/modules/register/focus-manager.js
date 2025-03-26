@@ -32,7 +32,7 @@ class FocusManager {
   }
 
   focusOnLogo () {
-    const logo = document.querySelector(api?.header?.HeaderSelector?.BRAND_LINK);
+    const logo = document.querySelector(api.header.HeaderSelector.BRAND_LINK);
     if (logo) logo.focus();
   }
 
@@ -45,7 +45,6 @@ class FocusManager {
     }
     return true;
   }
-
 }
 
 const focusManager = new FocusManager();
