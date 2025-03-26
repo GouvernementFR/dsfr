@@ -1,0 +1,13 @@
+////
+/// Badge Print
+/// @group badge
+////
+
+#{ns(badge)} {
+  border: solid 1px currentColor;
+
+  @include before {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

@@ -19,6 +19,7 @@ export default {
 };
 
 export const NoticeStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 
@@ -49,7 +50,7 @@ export const AlertStory = {
   }
 };
 
-export const OrangeStory = {
+export const WeatherOrangeStory = {
   tags: ['autodocs', '!dev'],
   args: {
     type: 'weather-orange',
@@ -60,7 +61,7 @@ export const OrangeStory = {
   }
 };
 
-export const RedStory = {
+export const WeatherRedStory = {
   tags: ['autodocs', '!dev'],
   args: {
     type: 'weather-red',
@@ -69,7 +70,7 @@ export const RedStory = {
   }
 };
 
-export const PurpleStory = {
+export const WeatherPurpleStory = {
   tags: ['autodocs', '!dev'],
   args: {
     type: 'weather-purple',

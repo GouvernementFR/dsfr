@@ -12,7 +12,144 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.13
 
-### [v1.13.0](https://github.com/GouvernementFR/dsfr/compare/v1.13.0...v1.13.0) - 4 Décembre 2024
+### [v1.13.1](https://github.com/GouvernementFR/dsfr/compare/v1.13.0...v1.13.1) - 25 Mars 2025
+
+#### ⬆️ chore(dependencies): mise à jour des dépendances npm [(#1116)](https://github.com/GouvernementFR/dsfr/pull/1116)
+
+
+#### 🐛 fix(storybook): Ajouts et corrections de stories [DSFR-69, DSFR-70] [(#1089)](https://github.com/GouvernementFR/dsfr/pull/1089)
+- Ajouts de stories
+  - messages de formulaire
+  - variantes esthetiques de la carte
+  - variantes de taille des champs de saisie et formulaire
+  - radio boutons
+  - tags mieux séparées
+  - tuiles avec tag et badge
+  - translate avec bouton sans contour
+  - ajout de fichiers
+- Remplacement de stories de base par la story "default"
+- Correction des duplications d'ids dans les docs storybook
+- Correction du bandeau d'information importante de type attack
+- Correction CSS des fieldset-inline@md et des tailles year, number, postal
+- Correction template upload valid
+
+
+#### ✨ feat(navigation): ajout de la fermeture des menus au clavier [DSFR-23, DSFR-24] [(#1091)](https://github.com/GouvernementFR/dsfr/pull/1091)
+- La touche échap ferme le menu ouvert
+- Lorsque le focus sort du menu au TAB, ferme le menu ouvert
+
+
+#### ✨ feat(core): assess file error detection [DSFR-28] [(#1095)](https://github.com/GouvernementFR/dsfr/pull/1095)
+- Ajouts de messages d'erreurs dans la console en fonction du type d'erreurs retourné par le fetch du fichier à télécharger
+- Si le fichier est inaccessible (erreur 500), la fonction assess-file retourne au moins l'extension du fichier.
+
+
+#### 🐛 fix(tag): bug hover tags sélectionnables désactivés [(#1058)](https://github.com/GouvernementFR/dsfr/pull/1058)
+- Correction du hover des tags sélectionnables désactivés
+
+
+#### ✨ feat: évolution du rendu à l'impression des composants [DSFR-78] [(#1106)](https://github.com/GouvernementFR/dsfr/pull/1106)
+Amélioration du rendu à l'impression des composants du DSFR :
+
+Accordion: tous ouverts, pas de couleur, encadré gris, pas de page break apres le bouton
+bouton : exact
+connect: exact
+callout : bordure grise sans fond, no page break
+card : bordure grise, no page break
+follow: caché
+footer: caché
+header : caché sauf logo / nom service
+highlight: bordure gauche grise
+input: bordure grise, fond transparent
+modal: pleine page, encadrée
+notice: bordure top/bottom + couleur texte
+pagination: page courante encadrée et en noir
+range: sans remplissage bleu
+radio: exact, no page break
+search: border, fond transparent
+select: border, fond transparent
+share: caché
+sidemenu: caché
+navigation: caché
+skiplink: caché
+summary: caché
+tabs: bouton fond blanc, bordure bleu sur l’actif, no page break
+table: exact
+tag: exact
+tile: bordure grise, retrait icone, no page break
+toggle exact, no page break
+tooltip: caché
+transcription : caché
+translate caché
+utilitaire d’icone : exact
+
+
+#### 🐛 fix(publicode): corrige l'image du logo dsfr [DSFR-75] [(#1115)](https://github.com/GouvernementFR/dsfr/pull/1115)
+
+
+#### ✨ feat(table): ajout de breakpoints pour les cellules fixées [DSFR-74] [(#1097)](https://github.com/GouvernementFR/dsfr/pull/1097)
+les colonnes fixées peuvent maintenant être fixées à partir d'un breakpoint (sm, md, lg)
+
+
+#### ✨ feat(publicode): ajoute le DSFR à la liste Awesome code.gouv.fr [DSFR-75] [(#1102)](https://github.com/GouvernementFR/dsfr/pull/1102)
+- Ajout d'un fichier publicode.yml
+
+
+#### 🐛 fix(modal): bouton non requis + correctif [DSFR-17, DSFR-26] [(#1103)](https://github.com/GouvernementFR/dsfr/pull/1103)
+- focusManager gère le retour du focus en cas d'absence d'un bouton primaire.
+- correction du bug focus bloqué sur les menu du header
+
+
+#### ✨ feat(icon): ajouts d'icônes d'éditeur et de partage [(#1110)](https://github.com/GouvernementFR/dsfr/pull/1110)
+system:
+share (line/fill)
+share-forward (line/fill)
+Design:
+eraser (line/fill)
+Editor:
+strikethrough
+code-block
+align-center
+align-justify
+align-left
+align-right
+format-clear
+font-color
+indent-decrease
+indent-increase
+list-check
+text-direction-r
+underline
+
+
+#### 🐛 fix(sidemenu, navigation, header): correctif template ejs [DSFR-44] [(#1073)](https://github.com/GouvernementFR/dsfr/pull/1073)
+- Correctif des variables des templates sidemenu, navigation, header
+
+
+#### 🐛 fix(input): focus date-picker [DSFR-54] [(#1076)](https://github.com/GouvernementFR/dsfr/pull/1076)
+- corrige le placement du focus du date-picker sur les champs type date
+
+
+#### 🐛 fix(toggle): Corrige la taille du focus sur le bouton [DSFR-11] [(#1078)](https://github.com/GouvernementFR/dsfr/pull/1078)
+- Corrige la taille du focus pour que la hauteur du focus corresponde à la hauteur du bouton.
+
+
+#### ✨ build(release): retrait de storybook dans la release [DSFR-58] [(#1088)](https://github.com/GouvernementFR/dsfr/pull/1088)
+- Pour réduire le poids du package @gouvfr/dsfr, storybook n'est plus exporté
+
+
+#### 🐛 fix(select): correction option par défaut & navigation clavier [DSFR-63] [(#1090)](https://github.com/GouvernementFR/dsfr/pull/1090)
+- Retrait de l'attribut hidden sur la première option du select. Cela rend la navigation au clavier impossible sur firefox.
+
+
+#### 🐛 fix(core): disclosure evenement dsfr.conceal [DSFR-71] [(#1092)](https://github.com/GouvernementFR/dsfr/pull/1092)
+
+
+#### ✨ feat(icon, share, follow): ajout icone bluesky [DSFR-72] [(#1096)](https://github.com/GouvernementFR/dsfr/pull/1096)
+
+
+
+### [v1.13.0](https://github.com/GouvernementFR/dsfr/compare/v1.12.1...v1.13.0) - 4 Décembre 2024
 
 #### 🐛 fix: corrections diverses 1.13.0 [(#1054)](https://github.com/GouvernementFR/dsfr/pull/1054)
 - Corrections mineures : legacy, storybook, analytics, ...
@@ -21,9 +158,6 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 #### ✨ feat(analytics): optimisation des créations d'instances [(#1055)](https://github.com/GouvernementFR/dsfr/pull/1055)
 - La propriété `isActionEnabled` peut maintenant prendre la valeur reduce pour limiter la création d'instance de tracking aux éléments comportant l'attribut `data-fr-analytics-action`
 
-
-
-### [v1.13.0](https://github.com/GouvernementFR/dsfr/compare/v1.12.1...v1.13.0) - 26 Novembre 2024
 
 #### ⬆️ chore(dependencies): mise à jour des dépendances npm [(#1052)](https://github.com/GouvernementFR/dsfr/pull/1052)
 - bump cross-spawn from 7.0.3 to 7.0.6

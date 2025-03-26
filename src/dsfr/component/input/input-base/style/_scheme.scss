@@ -30,10 +30,15 @@
     @if not $legacy {
       @supports selector(::-webkit-calendar-picker-indicator) {
         &[type=date] {
-          @include color.data-uri-svg(text action-high grey, (legacy: $legacy), $input-calendar-line);
+          @include after {
+            @include color.background(contrast grey);
+            @include color.data-uri-svg(text action-high grey, (legacy: $legacy), $input-calendar-line);
+          }
 
           @include disabled.selector((legacy: $legacy), (text: true, box-shadow: bottom-2-in)) {
-            @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $input-calendar-line);
+            @include after {
+              @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $input-calendar-line);
+            }
           }
         }
       }

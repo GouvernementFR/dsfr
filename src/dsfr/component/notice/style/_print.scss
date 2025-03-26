@@ -1,0 +1,38 @@
+////
+/// Notice Print
+/// @group Notice
+////
+
+#{ns(notice)} {
+  border-top: 1px solid var(--border-default-grey);
+  border-bottom: 1px solid var(--border-default-grey);
+  margin-bottom: 1rem;
+
+  #{ns(btn--close)} {
+    display: none;
+  }
+
+  &__title {
+    @include before {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+
+  &--weather-red,
+  &--attack {
+    color: var(--text-default-error);
+    background: none;
+  }
+
+  &--witness,
+  &--cyberattack {
+    color: var(--text-default-grey);
+    background: none;
+  }
+
+  &--weather-purple {
+    color: var(--text-label-purple-glycine);
+    background: none;
+  }
+}

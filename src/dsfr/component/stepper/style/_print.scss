@@ -1,4 +1,9 @@
 #{ns(stepper)} {
+  &__steps {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
   &__state,
   &__details {
     @include text-style(md);

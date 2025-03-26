@@ -18,6 +18,7 @@ btnClasses.push(`${prefix}-nav__btn`);
 btnAttrs.id = btn.id;
 btnAttrs['aria-expanded'] = false;
 btnAttrs['aria-controls'] = btn.collapseId;
+btn.type = 'button';
 if (btn.active) btnAttrs['aria-current'] = true;
 %>
 

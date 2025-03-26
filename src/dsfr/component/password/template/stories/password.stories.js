@@ -13,7 +13,18 @@ export default {
 };
 
 export const PasswordStory = {
+  tags: ['!autodocs'],
   args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('password'),
+    checkboxId: uniqueId('password-checkbox'),
+    inputId: uniqueId('password-input'),
+    linkId: uniqueId('password-link')
+  }
 };
 
 export const LoginStory = {

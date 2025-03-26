@@ -41,7 +41,7 @@ groupAttributes.id = upload.groupId || undefined;
 
 if (upload.valid) {
   groupClasses.push(`${prefix}-upload-group--valid`);
-  builder.addError(upload.valid);
+  builder.addValid(upload.valid);
 }
 if (upload.error) {
   groupClasses.push(`${prefix}-upload-group--error`);

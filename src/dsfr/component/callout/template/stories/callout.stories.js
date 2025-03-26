@@ -12,6 +12,12 @@ export default {
 };
 
 export const CalloutStory = {
+  tags: ['!autodocs'],
+  args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
   args: {}
 };
 
@@ -38,5 +44,12 @@ export const IconAndButtonStory = {
     icon: 'info-line',
     hasButton: true,
     buttonLabel: 'En savoir plus'
+  }
+};
+
+export const AccentStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    accent: 'pink-macaron'
   }
 };

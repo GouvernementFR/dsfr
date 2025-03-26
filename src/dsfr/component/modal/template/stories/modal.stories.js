@@ -16,7 +16,10 @@ export default {
 };
 
 export const ModalStory = {
-  args: {}
+  tags: ['!autodocs'],
+  args: {
+    id: uniqueId('modal')
+  }
 };
 
 export const SizeSmStory = {
@@ -43,7 +46,7 @@ export const SizeLgStory = {
   }
 };
 
-export const Footer = {
+export const FooterStory = {
   tags: ['autodocs', '!dev'],
   args: {
     id: uniqueId('modal'),

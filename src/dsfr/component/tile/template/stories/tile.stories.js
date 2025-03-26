@@ -12,10 +12,11 @@ export default {
 };
 
 export const TileStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 
-export const VerticalStory = {
+export const DefaultStory = {
   tags: ['autodocs', '!dev'],
   args: {
     enlarge: true,
@@ -35,12 +36,28 @@ export const SizeSmStory = {
   }
 };
 
+export const WithTagStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    enlarge: true,
+    hasTag: true
+  }
+};
+
+export const WithBadgeStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    enlarge: true,
+    hasBadge: true
+  }
+};
+
 export const HorizontalStory = {
   tags: ['autodocs', '!dev'],
   args: {
     enlarge: true,
+    hasDescription: true,
     horizontal: true,
-    hasTag: true,
     hasDetails: true
   }
 };
@@ -51,7 +68,6 @@ export const SizeSmHorizontalStory = {
     enlarge: true,
     size: 'sm',
     horizontal: true,
-    hasBadge: true,
     hasDetails: true
   }
 };

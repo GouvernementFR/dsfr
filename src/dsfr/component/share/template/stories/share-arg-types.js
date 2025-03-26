@@ -13,10 +13,18 @@ const buttons = (id) => [
     id: 'twitter-' + id,
     type: 'twitter-x',
     label: 'Partager sur X (anciennement Twitter)',
-    url: 'https://twitter.com/intent/tweet?url=[À MODIFIER - url de la page]&text=[À MODIFIER - titre ou texte descriptif de la page]&via=[À MODIFIER - twitter username]&hashtags=[À MODIFIER - hashtags]',
+    url: 'https://twitter.com/intent/tweet?url=&text=[À MODIFIER - titre ou texte descriptif de la page]&via=[À MODIFIER - twitter username]&hashtags=[À MODIFIER - hashtags]',
     width: 600,
     height: 420,
     comments: 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)'
+  },
+  {
+    id: 'bluesky-' + id,
+    type: 'bluesky',
+    label: 'Partager sur Bluesky',
+    url: 'https://bsky.app/intent/compose?text=[À MODIFIER - titre ou texte descriptif de la page]+[À MODIFIER - url de la page]',
+    width: 600,
+    height: 430
   },
   {
     id: 'linkedin-' + id,
@@ -73,7 +81,7 @@ const shareArgTypes = {
 const shareArgs = {
   title: 'Partager la page',
   disabled: false,
-  text: 'Veuillez autoriser le dépôt de cookies pour partager sur Facebook, Twitter et LinkedIn.',
+  text: 'Veuillez <a href="#[À MODIFIER - url page autorisation cookies]">autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter, Bluesky et LinkedIn.',
   buttons: buttons(uniqueId('share'))
 };
 

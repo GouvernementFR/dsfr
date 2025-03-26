@@ -1,4 +1,7 @@
 #{ns(table)} {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
   td,
   th {
     @include text-style(md);

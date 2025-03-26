@@ -1,0 +1,68 @@
+publiccodeYmlVersion: "0.2"
+name: dsfr
+url: https://github.com/GouvernementFR/dsfr
+landingURL: https://www.systeme-de-design.gouv.fr/
+creationDate: 2021-04-08
+latestRelease:
+  date: 2025-03-26
+  version: "1.13.1"
+logo: |-
+  https://www.systeme-de-design.gouv.fr/uploads/banner_img_aaa47076b8.png
+usedBy:
+  - https://www.info.gouv.fr/
+  - https://beta.gouv.fr/
+  - https://www.defense.gouv.fr/
+fundedBy:
+  - name: Service d'Information du Gouvernement
+    url: https://www.info.gouv.fr/organisation/service-d-information-du-gouvernement-sig
+roadmap: "https://www.systeme-de-design.gouv.fr/a-propos/roadmap"
+softwareType: "library"
+description:
+  fr:
+    documentation: https://www.systeme-de-design.gouv.fr/
+    shortDescription: Système de Design de l'État - DSFR
+    longDescription: |
+      Le Système de Design de l’État (ci-après, le **DSFR**) est un ensemble de composants web HTML, CSS et Javascript pour faciliter le travail des équipes projets des sites Internet publics, et créer des interfaces numériques de qualité et accessibles.
+
+      L'outil est développé, maintenu et géré par le [Service d'Information du Gouvernement (SIG)](https://www.gouvernement.fr/service-d-information-du-gouvernement-sig).
+
+      Son utilisation par les administrations est soumise à une demande d'agrément (voir partie 5 des Conditions Générales d'Utilisation).
+
+      [Voir la documentation officielle](https://www.systeme-de-design.gouv.fr).
+legal:
+  license: MIT
+  mainCopyrightOwner: Service d'Information du Gouvernement
+maintenance:
+  type: internal
+  contacts:
+    - name: Maxime Beaugrand
+      email: maxime.beaugrand@pm.gouv.fr
+intendedAudience:
+  scope:
+    - science-and-technology
+  countries:
+    - fr
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - fr
+it:
+  conforme:
+    gdpr: true
+contact:
+    - name: Maxime Beaugrand
+      email: maxime.beaugrand@pm.gouv.fr
+      affiliation: Service d'Information du Gouvernement
+metadataFiles:
+  readme: README.md
+  license: LICENSE.md
+  contributing: CONTRIBUTING.md
+  changelog: CHANGELOG.md
+  codeOfConduct: null
+  governance: null
+lastUpdated: 2025-03-26
+screenshots: |-
+  https://www.systeme-de-design.gouv.fr/uploads/composants_groupe_de_boutons_6db9a05d35.png
+genericName: dsfr
+awesomeScore: 5
+awesomeShield: https://img.shields.io/badge/awesome-codegouvfr_5/10-blue

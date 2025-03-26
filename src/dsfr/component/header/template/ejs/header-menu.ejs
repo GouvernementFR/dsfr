@@ -23,7 +23,7 @@ if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly
     <%- include('../../../button/template/ejs/button-close', {button: { closeId: menu.modalId }}); %>
     <% if (menu.tools) { %>
       <div class="<%= prefix %>-header__menu-links">
-        <% if (menu.tools  && menu.tools.duplicateLinks) { %>
+        <% if (menu.tools  && (menu.tools.links || menu.tools.translate || menu.tools.toolsContent)) { %>
           <% if (menu.tools.links && menu.tools.links.buttons) { %>
             <% if (menu.tools.links.buttons.length > 1) { %>
               <ul class="<%= prefix %>-btns-group">

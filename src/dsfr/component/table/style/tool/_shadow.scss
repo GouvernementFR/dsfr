@@ -5,6 +5,7 @@
 
 @use 'src/module/spacing';
 @use 'src/module/color';
+@use 'src/module/preference';
 
 @function _get-table-shadow($side, $active: true, $theme: light) {
   @if $active == false {
