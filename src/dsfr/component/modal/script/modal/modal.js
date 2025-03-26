@@ -98,6 +98,15 @@ class Modal extends api.core.Disclosure {
     this._isDialog = value;
   }
 
+  get isActive () {
+    return super.isActive;
+  }
+
+  set isActive (value) {
+    super.isActive = value;
+    if (value) this._ensureAccessibleName();
+  }
+
   decorateDialog () {
     if (this._isDecorated) return;
     this._isDecorated = true;
