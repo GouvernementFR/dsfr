@@ -1,17 +1,21 @@
 ---
-title: Démonstration de la mise en avant
+title: Démonstration du bouton
 ---
 
-## Mise en avant
+## Bouton
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - Démo
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### Démonstration
 
-::dsfr-doc-storybook{id=callout--docs}
+::dsfr-doc-storybook{id=button--docs}
+
+::dsfr-doc-storybook{id=buttons-group--docs}

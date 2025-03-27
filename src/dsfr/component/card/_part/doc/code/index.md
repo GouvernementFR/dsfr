@@ -104,7 +104,6 @@ Cette variante reprend la même structure que la carte standard à l'exception d
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../../example/img/placeholder.3x4.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
     </div>
 </div>

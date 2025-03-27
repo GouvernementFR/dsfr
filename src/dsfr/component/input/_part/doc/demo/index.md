@@ -17,3 +17,5 @@ title: Démo du champ de saisie
 ### Démonstration
 
 ::dsfr-doc-storybook{id=input--docs}
+
+::dsfr-doc-storybook{id=inputs-group--docs}
