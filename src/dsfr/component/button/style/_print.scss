@@ -1,11 +1,9 @@
+////
+/// Button Print
+/// @group button
+////
+
 #{ns(btn)} {
-  &--secondary,
-  &--tertiary,
-  &--tertiary-no-outline,
-  &--close,
-  &--display,
-  &--fullscreen,
-  &--tooltip {
-    background-color: transparent;
-  }
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }

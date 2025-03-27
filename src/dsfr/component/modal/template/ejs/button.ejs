@@ -11,7 +11,7 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-    let modalButton = locals.modalButton || {};
+    const modalButton = locals.modalButton || {};
     const attributes = {};
     attributes[`data-${prefix}-opened`] = modalButton.opened === true;
     attributes['aria-controls'] = modalButton.id;
@@ -19,4 +19,4 @@
 
 %>
 
-<%- include("../../../button/template/ejs/button", {button: {label: modalButton.label, attributes: attributes}}) %>
+<%- include('../../../button/template/ejs/button', {button: {label: modalButton.label, attributes: attributes}}) %>

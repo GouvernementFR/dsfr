@@ -146,3 +146,46 @@ export const ActionLinksStory = {
     }
   ])
 };
+
+export const GreyCardStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      variations: 'grey'
+    }
+  ])
+};
+
+export const NoBorderCardStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      variations: 'no-border'
+    }
+  ])
+};
+
+export const NoBackgroundCardStory = {
+  tags: ['autodocs', '!dev'],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Fonctionne avec une classe utilitaire de background sur un parent pour propager la couleur sur le hover et le clic.<br> Exemple : `fr-background--alt-orange-terre-battue`'
+      }
+    }
+  },
+  render: () => renders([
+    {
+      variations: 'no-background'
+    }
+  ])
+};
+
+export const ShadowedCardStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      variations: 'shadow'
+    }
+  ])
+};

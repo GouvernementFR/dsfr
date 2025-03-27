@@ -36,6 +36,7 @@ const mapShareButton = (data) => {
   if (data.id) button.id = data.id;
 
   switch (data.type) {
+    case 'bluesky':
     case 'facebook':
     case 'twitter':
     case 'twitter-x':

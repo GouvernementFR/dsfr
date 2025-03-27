@@ -230,7 +230,7 @@ const tileArgTypes = {
   },
   variations: {
     control: { type: 'select' },
-    description: 'Variations ésthétiques de la carte',
+    description: 'Variations esthétiques de la carte',
     options: ['none', 'grey', 'no-border', 'no-background', 'shadow'],
     table: {
       category: 'variations'
@@ -242,9 +242,9 @@ const tileArgs = {
   title: 'Intitulé de la tuile',
   markup: 'h3',
   hasDescription: false,
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing, incididu',
+  description: 'Description (optionnelle)',
   hasDetails: true,
-  details: 'Détail (optionel)',
+  details: 'Détail (optionnel)',
   hasBadge: false,
   hasTag: false,
   enlarge: true,

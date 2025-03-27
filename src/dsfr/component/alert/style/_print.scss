@@ -1,0 +1,13 @@
+////
+/// Alert Print
+/// @group alert
+////
+
+#{ns(alert)} {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
+  #{ns(btn--close)} {
+    display: none;
+  }
+}

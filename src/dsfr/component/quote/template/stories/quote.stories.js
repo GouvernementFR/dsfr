@@ -12,13 +12,19 @@ export default {
 };
 
 export const QuoteStory = {
+  tags: ['!autodocs'],
+  args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
   args: {}
 };
 
 export const AuthorlessStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    author: null
+    hasAuthor: false
   }
 };
 
@@ -32,7 +38,7 @@ export const SourcelessStory = {
 export const ImagelessStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    image: null
+    hasImage: false
   }
 };
 

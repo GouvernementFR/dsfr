@@ -1,0 +1,10 @@
+////
+/// Table Tool : fixed-cell
+/// @group Table
+////
+
+@mixin fixed-cell() {
+  position: sticky;
+  left: 0;
+  @include z-index(over);
+}

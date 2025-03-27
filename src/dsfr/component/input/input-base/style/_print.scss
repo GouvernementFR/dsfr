@@ -1,0 +1,16 @@
+////
+/// Input Print
+/// @group Input
+////
+
+#{ns(input-group)} {
+  @include before {
+    background-image: none;
+  }
+
+  input,
+  textarea {
+    background-color: transparent;
+    border: 1px solid var(--border-default-grey);
+  }
+}

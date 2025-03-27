@@ -12,15 +12,6 @@ class ModalBody extends api.core.Instance {
     this.listen('scroll', this.divide.bind(this));
   }
 
-  activate () {
-    this.isResizing = true;
-    this.resize();
-  }
-
-  deactivate () {
-    this.isResizing = false;
-  }
-
   divide () {
     if (this.node.scrollHeight > this.node.clientHeight) {
       if (this.node.offsetHeight + this.node.scrollTop >= this.node.scrollHeight) {

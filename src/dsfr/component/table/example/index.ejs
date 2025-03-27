@@ -50,6 +50,10 @@ const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
+  sample(getText('sample.fixedAtMd', 'table'), './sample/table-simple', {table: {table: {id: 'table-selectable', caption: getText('data.caption.default', 'table'), selectable: true, cellFixedAt: 'md'}}}, true);
+%>
+
+<%-
   sample(getText('sample.doubleEntry', 'table'), './sample/table-simple', {table: {table: {id: 'table-double-entry', caption: getText('data.caption.default', 'table'), doubleEntry: true}}}, true);
 %>
 

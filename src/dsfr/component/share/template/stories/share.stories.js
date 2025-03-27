@@ -12,6 +12,12 @@ export default {
 };
 
 export const ShareStory = {
+  tags: ['!autodocs'],
+  args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
   args: {}
 };
 
