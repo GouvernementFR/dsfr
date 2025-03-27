@@ -1,4 +1,7 @@
 #{ns-group(connect)} {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
   p {
     @include text-style(md);
   }

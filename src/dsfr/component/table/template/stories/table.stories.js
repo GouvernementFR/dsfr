@@ -1,6 +1,6 @@
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 import { renderTable } from './table';
-import { tableArgs, tableArgTypes, tableProps, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs } from './table-arg-types';
+import { tableArgs, tableArgTypes, tableProps, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs, getFixedColTableArgs } from './table-arg-types';
 
 const render = (args) => renderTable({ table: tableProps(args) });
 
@@ -13,8 +13,17 @@ export default {
 };
 
 export const TableStory = {
-  tags: ['autodocs'],
-  args: {}
+  tags: ['!autodocs'],
+  args: {
+    id: uniqueId('table')
+  }
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('table')
+  }
 };
 
 export const SizeSMStory = {
@@ -46,6 +55,29 @@ export const NoScrollStory = {
   args: {
     id: uniqueId('table'),
     noScroll: true
+  }
+};
+
+export const FixedColumnStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('table'),
+    table: getFixedColTableArgs()
+  }
+};
+
+export const FixedColumnFromMDStory = {
+  tags: ['autodocs', '!dev'],
+  parameters: {
+    docs: {
+      description: {
+        story: 'La première colonne est fixe à partir du breakpoint `md`. Existe aussi avec les breakpoints `sm` et `lg`'
+      }
+    }
+  },
+  args: {
+    id: uniqueId('table'),
+    table: getFixedColTableArgs('md')
   }
 };
 

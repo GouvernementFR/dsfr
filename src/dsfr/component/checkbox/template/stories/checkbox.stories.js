@@ -12,7 +12,15 @@ export default {
 };
 
 export const CheckboxStory = {
+  tags: ['!autodocs'],
   args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: 'checkbox-default'
+  }
 };
 
 export const SizeSmStory = {

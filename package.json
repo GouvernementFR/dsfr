@@ -33,10 +33,13 @@
     "/i18n",
     "/example",
     "/doc",
-    "/storybook",
     "/.config",
     "SECURITY.md",
-    "CONTRIBUTING.md"
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md",
+    "publiccode.yml"
   ],
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",

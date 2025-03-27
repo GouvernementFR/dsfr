@@ -14,16 +14,16 @@ Paramètres de sidemenu btn
   for (let i = 0; i < sidemenuItems.length; i++) {
     let item = sidemenuItems[i];
     item.href = item.href || sidemenuItems.href;
-    item.classes = [`${prefix}-sidemenu__${item.kind}`];
+    item.classes = [`${prefix}-sidemenu__${item.type}`];
     item.attributes = sidemenuItems[i].attributes || {};
-    item.markup = item.kind === 'button' ? item.kind : 'a';
+    item.markup = item.type === 'button' ? 'button' : 'a';
     let classes = [prefix + '-sidemenu__item'];
   %>
     <li <%- includeClasses(classes); %>>
-      <% if (item.kind === 'menu') { %>
+      <% if (item.type === 'menu') { %>
         <%- include('./sidemenu-menu.ejs', { sidemenuItem : item }); %>
       <% } else {%>
-        <% item.classes = item.kind === 'button' ? [`${prefix}-sidemenu__btn`] : [`${prefix}-sidemenu__link`]; %>
+        <% item.classes = item.type === 'button' ? [`${prefix}-sidemenu__btn`] : [`${prefix}-sidemenu__link`]; %>
         <% if (item.active) item.attributes['aria-current'] = 'page'; %>
         <%- include('../../../../core/template/ejs/action/action', { action: { ...item } }) %>
       <% } %>

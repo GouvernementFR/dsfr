@@ -12,6 +12,12 @@ export default {
 };
 
 export const ConnectStory = {
+  tags: ['!autodocs'],
+  args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
   args: {}
 };
 

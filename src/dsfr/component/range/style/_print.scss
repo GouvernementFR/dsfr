@@ -1,0 +1,19 @@
+////
+/// Range Print
+/// @group Range
+////
+
+#{ns(range-group)} {
+  @include before {
+    background-image: none !important;
+  }
+}
+
+#{ns(range)}[data-fr-js-range] {
+  @include after {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

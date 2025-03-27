@@ -6,7 +6,7 @@ import { consentModalFinalities, consentModal, consentModalButton } from './cons
 const render = (args) => renderButton({ button: consentModalButton }) + renderModal({ modal: { ...consentModal, body: renderConsentManager({ consent: consentModalFinalities }) } });
 
 export default {
-  id: 'consent',
+  id: 'consent-modal',
   title: 'DSFR/Component/Consent/Consent Modal',
   render: render
 };

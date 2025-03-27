@@ -14,7 +14,56 @@ export default {
 };
 
 export const AlertStory = {
+  tags: ['!autodocs'],
   args: {}
+};
+
+export const SuccessStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      type: 'success',
+      hasTitle: true,
+      title: 'Titre du message de succès',
+      text: 'Texte du message'
+    }
+  ])
+};
+
+export const ErrorStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      type: 'error',
+      hasTitle: true,
+      title: 'Titre du message d\'erreur',
+      text: 'Texte du message'
+    }
+  ])
+};
+
+export const InformationStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      type: 'info',
+      hasTitle: true,
+      title: 'Titre du message d\'information',
+      text: 'Texte du message'
+    }
+  ])
+};
+
+export const WarningStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      type: 'warning',
+      hasTitle: true,
+      title: 'Titre du message d\'avertissement',
+      text: 'Texte du message'
+    }
+  ])
 };
 
 export const SizeSmStory = {
@@ -79,6 +128,7 @@ export const DismissibleStory = {
     {
       type: 'info',
       title: 'Information : titre du message',
+      hasTitle: true,
       text: 'Cliquer sur la croix pour fermer l\'alerte',
       dismissible: true
     }
@@ -91,6 +141,7 @@ export const DismissibleNoJsStory = {
     {
       type: 'info',
       title: 'Information : titre du message',
+      hasTitle: true,
       text: 'Cliquer sur la croix pour fermer l\'alerte',
       dismissible: true,
       buttonCloseOnClick: null
@@ -103,6 +154,7 @@ export const IconCustomStory = {
   render: () => renders([
     {
       type: 'default',
+      hasTitle: true,
       icon: 'lock-fill'
     }
   ])

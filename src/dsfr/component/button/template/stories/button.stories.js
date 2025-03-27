@@ -14,6 +14,7 @@ export default {
 };
 
 export const ButtonStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 

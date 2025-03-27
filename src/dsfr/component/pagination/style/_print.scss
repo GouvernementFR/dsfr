@@ -1,0 +1,21 @@
+////
+/// Pagination Print
+/// @group Pagination
+////
+
+#{ns(pagination)} {
+  &__link[aria-current]:not([aria-current=false]) {
+    font-weight: bold;
+    background: none;
+    color: black;
+    border: 1px solid;
+  }
+
+  &__link--prev,
+  &__link--next {
+    @include _pseudo(before after) {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+}

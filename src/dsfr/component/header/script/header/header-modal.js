@@ -17,17 +17,23 @@ class HeaderModal extends api.core.Instance {
 
   activateModal () {
     const modal = this.element.getInstance('Modal');
-    if (!modal) return;
-    modal.isEnabled = true;
+    if (!modal) {
+      this.request(this.activateModal.bind(this));
+      return;
+    }
+    modal.isActive = true;
     this.restoreAria();
     this.listenClick({ capture: true });
   }
 
   deactivateModal () {
     const modal = this.element.getInstance('Modal');
-    if (!modal) return;
+    if (!modal) {
+      this.request(this.deactivateModal.bind(this));
+      return;
+    }
     modal.conceal();
-    modal.isEnabled = false;
+    modal.isActive = false;
     this.storeAria();
     this.unlistenClick({ capture: true });
   }

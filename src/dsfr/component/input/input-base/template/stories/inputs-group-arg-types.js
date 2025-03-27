@@ -89,7 +89,9 @@ const inputsGroupProps = (args) => {
     elements: args.inputs.map((input, index) => {
       const inputProps = {
         type: 'input',
-        inline: args.inline,
+        inline: args.inline || input.inline,
+        grow: input.grow,
+        modifier: input.modifier,
         data: {
           label: input.label,
           id: input.id,

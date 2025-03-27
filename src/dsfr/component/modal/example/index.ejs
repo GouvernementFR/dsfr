@@ -45,3 +45,5 @@ let dataTable = {
 <%- sample('Modale avec zone d\'action et tableau', './sample/modal-default', {modal: { ...dataTable, label: 'Modale tableau'}}, true ); %>
 
 <%- sample('Modale simple non refermable au click sur le fond', './sample/modal-default', {modal: { ...dataText, label: 'Modale simple', concealingBackdrop: false}}, true ); %>
+
+<%- sample('Modale sans bouton lié', './sample/modal-default', {modal: { ...dataText, label: 'Modale simple'}, button: { attributes: { onClick: 'window.dsfr(this.nextElementSibling).modal.disclose()' } }}, true );%>
