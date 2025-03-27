@@ -11,7 +11,7 @@
     "organisation": "@gouvfr"
   },
   "engines": {
-    "node": ">=18.16.1"
+    "node": ">=22.14.0"
   },
   "packageManager": "yarn@1.22.22",
   "scripts": {
@@ -23,7 +23,7 @@
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
     "pictogram-converter": "node tool/tool.js pictogram-converter",
-    "chouquette update": "yarn upgrade @gouvfr/dsfr-nexus @gouvfr/dsfr-forge @gouvfr/dsfr-alchemist @gouvfr/dsfr-roller @gouvfr/dsfr-lore"
+    "chouquette": "yarn upgrade @gouvfr/dsfr-nexus @gouvfr/dsfr-forge @gouvfr/dsfr-alchemist @gouvfr/dsfr-roller @gouvfr/dsfr-lore"
   },
   "files": [
     "/dist",
@@ -61,7 +61,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-standard": "^5.0.0",
     "express": "^4.18.2",
-    "husky": "^7.0.4",
+    "husky": "^9.1.3",
     "jest": "^27.5.1",
     "js-beautify": "^1.14.7",
     "js-yaml": "^4.1.0",
