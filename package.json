@@ -23,7 +23,7 @@
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
     "pictogram-converter": "node tool/tool.js pictogram-converter",
-    "chouquette update": "yarn upgrade @gouvfr/dsfr-nexus @gouvfr/dsfr-forge @gouvfr/dsfr-alchemist @gouvfr/dsfr-roller @gouvfr/dsfr-lore"
+    "chouquette": "yarn upgrade @gouvfr/dsfr-nexus @gouvfr/dsfr-forge @gouvfr/dsfr-alchemist @gouvfr/dsfr-roller @gouvfr/dsfr-lore"
   },
   "files": [
     "/dist",
@@ -44,8 +44,8 @@
     "@gouvfr/dsfr-alchemist": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@alchemist",
     "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@forge",
     "@gouvfr/dsfr-lore": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@lore",
-    "@gouvfr/dsfr-roller": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller",
     "@gouvfr/dsfr-nexus": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@nexus",
+    "@gouvfr/dsfr-roller": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
     "browser-sync": ">=2.27.10",

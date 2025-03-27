@@ -589,33 +589,33 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@gouvfr/dsfr-alchemist@=0.0.70", "@gouvfr/dsfr-alchemist@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@alchemist":
-  version "0.0.70"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#ef7dae250381c742952d666aff89ce75d60cbfb2"
+"@gouvfr/dsfr-alchemist@=0.0.72", "@gouvfr/dsfr-alchemist@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@alchemist":
+  version "0.0.72"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#2b65459785ea7c003204e9e6fa2c01411c864a00"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.70"
+    "@gouvfr/dsfr-forge" "=0.0.72"
     esbuild "^0.24.2"
     lightningcss "^1.29.1"
     sass "^1.79.3"
 
-"@gouvfr/dsfr-forge@=0.0.70", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@forge":
-  version "0.0.70"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#beacf4e286ecce704033377d8dda45664bd81235"
+"@gouvfr/dsfr-forge@=0.0.72", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@forge":
+  version "0.0.72"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#1a9532ff5e8967a49fc801550a41beebd0f18fc7"
 
-"@gouvfr/dsfr-lore@=0.0.70", "@gouvfr/dsfr-lore@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@lore":
-  version "0.0.70"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#b77fdcfe3895c2e818ddd9b821b78a4422fd096e"
+"@gouvfr/dsfr-lore@=0.0.72", "@gouvfr/dsfr-lore@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@lore":
+  version "0.0.72"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#80d8fce9eac89d358fd186c93c2d9c7477be62c3"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.70"
+    "@gouvfr/dsfr-forge" "=0.0.72"
 
 "@gouvfr/dsfr-nexus@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@nexus":
-  version "0.0.70"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#d3e89efe26e35a6de22d11351f2706e2c700c8d2"
+  version "0.0.72"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#56bf5c61314b9b7ac6fc22d155f6520bf4155831"
   dependencies:
-    "@gouvfr/dsfr-alchemist" "=0.0.70"
-    "@gouvfr/dsfr-forge" "=0.0.70"
-    "@gouvfr/dsfr-lore" "=0.0.70"
-    "@gouvfr/dsfr-roller" "=0.0.70"
+    "@gouvfr/dsfr-alchemist" "=0.0.72"
+    "@gouvfr/dsfr-forge" "=0.0.72"
+    "@gouvfr/dsfr-lore" "=0.0.72"
+    "@gouvfr/dsfr-roller" "=0.0.72"
     browser-sync "^3.0.3"
     del "^7.1.0"
     mdast-util-directive "^3.0.0"
@@ -632,17 +632,18 @@
     yaml "^2.4.1"
     yargs "^17.7.2"
 
-"@gouvfr/dsfr-publisher@npm:@gouvfr/dsfr@1.13.0":
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.13.0.tgz#5f9661d3093acea8fd4fa9154ad948f051ad5998"
-  integrity sha512-I6JLYfE63dogk5qOx69gMfW/bKsm+daFgfx2QX75isbKBy5khlJdVxOD0A6ohvywvUJlEcZTmVK8rNHeVvGmgw==
+"@gouvfr/dsfr-publisher@npm:@gouvfr/dsfr@1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.13.1.tgz#97ef3b9b716999ec5cd726a7b426112f37100574"
+  integrity sha512-dCB0YuQ8YczGYT1qPO0nDYYQCq7As58DSPR59bDIsxYRgzq8D0UT8oVgzDCn6vWHzomnB0E/41LZ0mQ2kYi3CQ==
 
-"@gouvfr/dsfr-roller@=0.0.70", "@gouvfr/dsfr-roller@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller":
-  version "0.0.70"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#a952afd8fe0455181575897ddce527c40d6c5f63"
+"@gouvfr/dsfr-roller@=0.0.72", "@gouvfr/dsfr-roller@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller":
+  version "0.0.72"
+  uid "0fb6486b1899b0efaf9fe21d879d095e10728c81"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#0fb6486b1899b0efaf9fe21d879d095e10728c81"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.70"
-    "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.0"
+    "@gouvfr/dsfr-forge" "=0.0.72"
+    "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.1"
     deepmerge "^4.3.1"
     ejs "^3.1.10"
     highlight.js "^11.10.0"
@@ -1233,9 +1234,9 @@
   integrity sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==
 
 "@types/node@*", "@types/node@>=10.0.0":
-  version "22.13.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.1.tgz#a2a3fefbdeb7ba6b89f40371842162fac0934f33"
-  integrity sha512-jK8uzQlrvXqEU91UxiK5J7pKHyzgnI1Qnl0QDHIgVGuolJhRb9EEl28Cj9b3rGR8B2lhFCtvIm5os8lFnO/1Ew==
+  version "22.13.14"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.14.tgz#70d84ec91013dcd2ba2de35532a5a14c2b4cc912"
+  integrity sha512-Zs/Ollc1SJ8nKUAgc7ivOEdIBM8JAKgrqqUYi2J997JuKO7/tpQC+WCetQ1sypiKCQWHdvdg9wBNpUPEWZae7w==
   dependencies:
     undici-types "~6.20.0"
 
@@ -3530,9 +3531,9 @@ fastest-levenshtein@^1.0.12:
   integrity sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==
 
 fastq@^1.6.0:
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.19.0.tgz#a82c6b7c2bb4e44766d865f07997785fecfdcb89"
-  integrity sha512-7SFSRCNjBQIZH/xZR3iy5iQYR8aGBE0h3VG6/cwlbrpdciNYBMotQav8c1XI3HjHH+NikUpP53nPdlZSdWmFzA==
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.19.1.tgz#d50eaba803c8846a883c16492821ebcd2cda55f5"
+  integrity sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==
   dependencies:
     reusify "^1.0.4"
 
@@ -4178,9 +4179,9 @@ immutable@^3:
   integrity sha512-15gZoQ38eYjEjxkorfbcgBKBL6R7T459OuK+CpcWt7O3KF4uPCx2tD0uFETlUDIyo+1789crbMhTvQBSR5yBMg==
 
 immutable@^5.0.2:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-5.0.3.tgz#aa037e2313ea7b5d400cd9298fa14e404c933db1"
-  integrity sha512-P8IdPQHq3lA1xVeBRi5VPqUm5HDgKnx0Ru51wZz5mjxHr5n3RWhjIpOFU7ybkUxfB+5IToy+OLaHYDBIWsv+uw==
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-5.1.1.tgz#d4cb552686f34b076b3dcf23c4384c04424d8354"
+  integrity sha512-3jatXi9ObIsPGr3N5hGw/vWWcTkq6hUYhpQz4k0wLC+owqWi/LiugIw9x0EdNZ2yGedKN/HzePiBvaJRXa0Ujg==
 
 import-fresh@^3.0.0, import-fresh@^3.2.1:
   version "3.3.0"
@@ -7309,9 +7310,9 @@ readable-stream@3, readable-stream@^3.0.0, readable-stream@^3.1.1, readable-stre
     util-deprecate "^1.0.1"
 
 readdirp@^4.0.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.1.1.tgz#bd115327129672dc47f87408f05df9bd9ca3ef55"
-  integrity sha512-h80JrZu/MHUZCyHu5ciuoI0+WxsCxzxJTILn6Fs8rxSnFPh+UVHYfeIxK1nVGugMqkfC4vJcBOYbkfkwYK0+gw==
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.1.2.tgz#eb85801435fbf2a7ee58f19e0921b068fc69948d"
+  integrity sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==
 
 readdirp@~3.6.0:
   version "3.6.0"
@@ -7494,9 +7495,9 @@ resp-modifier@6.0.2:
     minimatch "^3.0.2"
 
 reusify@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
-  integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.1.0.tgz#0fe13b9522e1473f51b558ee796e08f11f9b489f"
+  integrity sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==
 
 rimraf@^3.0.0, rimraf@^3.0.2:
   version "3.0.2"
