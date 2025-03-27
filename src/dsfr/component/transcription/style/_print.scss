@@ -1,3 +1,13 @@
 #{ns(transcription)} {
-  display: none;
+  &__btn {
+    display: none;
+  }
+
+  &__footer {
+    display: none;
+  }
+
+  #{ns(modal)}:not(#{ns(modal--opened)}) {
+    display: none;
+  }
 }

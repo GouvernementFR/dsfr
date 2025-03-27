@@ -5,7 +5,5 @@
 
 @media print {
   @import 'index';
-  @import 'style/scheme';
-
-  @include _select-scheme('print');
+  @import 'style/print';
 }

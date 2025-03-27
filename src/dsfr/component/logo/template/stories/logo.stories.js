@@ -12,6 +12,7 @@ export default {
 };
 
 export const LogoStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 

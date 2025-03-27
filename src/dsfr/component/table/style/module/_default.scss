@@ -25,11 +25,10 @@
 
   &__content {
     #{ns(cell)} {
-      &--fixed {
-        position: sticky;
-        left: 0;
-        @include z-index(over);
-
+      &--fixed,
+      &--fixed\@sm,
+      &--fixed\@md,
+      &--fixed\@lg {
         #{ns(checkbox-group)} {
           & + * {
             @include margin-left(2v);
@@ -56,6 +55,28 @@
 
         @include preference.forced-colors {
           outline: 1px solid;
+        }
+      }
+
+      &--fixed {
+        @include fixed-cell;
+      }
+
+      &--fixed\@sm {
+        @include respond-from(md) {
+          @include fixed-cell;
+        }
+      }
+
+      &--fixed\@md {
+        @include respond-from(md) {
+          @include fixed-cell;
+        }
+      }
+
+      &--fixed\@lg {
+        @include respond-from(lg) {
+          @include fixed-cell;
         }
       }
 

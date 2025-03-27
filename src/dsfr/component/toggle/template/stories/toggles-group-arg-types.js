@@ -36,11 +36,11 @@ const toggleGroupArgTypes = {
   }
 };
 
-const getTogglesData = (count = 3) => {
+const getTogglesData = (id = uniqueId('toggle'), count = 3) => {
   const elements = [];
   for (let i = 1; i <= count; i++) {
     elements.push({
-      id: uniqueId('toggle'),
+      id: `${id}-${i}`,
       label: `${toggleArgs.label} ${i}`,
       checked: i === 1,
       disabled: false,

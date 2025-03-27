@@ -31,10 +31,19 @@ export default {
 };
 
 export const TooltipStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 
-export const TooltipHoverStory = {
+export const TooltipClickButtonStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('tooltip'),
+    type: 'infobulle'
+  }
+};
+
+export const TooltipHoverLinkStory = {
   tags: ['autodocs', '!dev'],
   args: {
     id: uniqueId('tooltip')

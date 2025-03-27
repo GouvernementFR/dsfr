@@ -303,6 +303,13 @@ const followArgs = {
       type: 'twitter-x'
     },
     {
+      id: 'rs-bluesky',
+      label: 'Bluesky',
+      title: 'Suivez-nous sur Bluesky',
+      url: '[Lien vers le bluesky de l\'organisation - à modifier]',
+      type: 'bluesky'
+    },
+    {
       id: 'rs-linkedin',
       label: 'LinkedIn',
       title: 'Suivez-nous sur LinkedIn',

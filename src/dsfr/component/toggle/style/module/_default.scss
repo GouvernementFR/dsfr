@@ -124,7 +124,7 @@
     @include before('', block) {
       flex-shrink: 0;
       height: spacing.space(calc(5v + 1px));
-      @include padding-top(7v);
+      @include padding-top(6v);
       @include text-style(xs);
       border-radius: spacing.space(3v);
       @include margin-right(8v);

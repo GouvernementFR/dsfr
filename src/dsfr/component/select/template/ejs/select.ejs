@@ -80,7 +80,7 @@ if (select.disabled === true) attributes['disabled'] = '';
 
 <select <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> id="<%= select.id %>" name="<%= select.name || select.id %>">
   <% if (select.placeholder != undefined) { %>
-  <option value="" selected disabled hidden><%= select.placeholder %></option>
+  <option value="" selected disabled><%= select.placeholder %></option>
   <% } %>
 
   <% if (select.optionGroups != undefined) { %>

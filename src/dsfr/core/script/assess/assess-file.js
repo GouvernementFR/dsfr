@@ -25,11 +25,19 @@ class AssessFile extends Instance {
     }
 
     fetch(this.href, { method: 'HEAD', mode: 'cors' }).then(response => {
-      this.length = response.headers.get('content-length') || -1;
-      if (this.length === -1) {
-        inspector.warn('File size unknown: ' + this.href + '\nUnable to get HTTP header: "content-length"');
+      if (response.ok) {
+        this.length = response.headers.get('content-length') || -1;
+        if (this.length && this.length === -1) {
+          throw new Error('File size unknown' + '\n Unable to get HTTP header: "content-length"');
+        }
+        this.gather();
+      } else {
+        throw new Error('Unable to access the resource : Status ' + response.status);
       }
+    }).catch((error) => {
+      this.length = -1;
       this.gather();
+      inspector.warn('Fetch error on assess file : ' + this.href + '\n ' + error);
     });
   }
 
@@ -51,7 +59,6 @@ class AssessFile extends Instance {
 
     if (!this.length) {
       this.getFileLength();
-      return;
     }
 
     this.details = [];
@@ -61,7 +68,7 @@ class AssessFile extends Instance {
       if (extension) this.details.push(extension.toUpperCase());
     }
 
-    if (this.length !== -1) {
+    if (this.length && this.length !== -1) {
       this.details.push(this.bytesToSize(this.length));
     }
 
