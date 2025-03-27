@@ -57,12 +57,12 @@ const noticeArgTypes = {
         'weather-purple': 'weather-purple',
         kidnapping: 'kidnapping',
         cyberattack: 'cyberattack',
-        vigipirate: 'vigipirate',
+        attack: 'attack',
         witness: 'witness'
       }
     },
     description: 'Type de bandeau',
-    options: ['info', 'warning', 'alert', 'weather-orange', 'weather-purple', 'kidnapping', 'cyberattack', 'vigipirate', 'witness'],
+    options: ['info', 'warning', 'alert', 'weather-orange', 'weather-purple', 'kidnapping', 'cyberattack', 'attack', 'witness'],
     table: {
       category: 'type'
     }

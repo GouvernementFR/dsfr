@@ -1,3 +1,17 @@
 #{ns(modal)} {
-  display: none;
+  background-color: white;
+  flex-direction: column-reverse;
+
+  &__body {
+    border: 1px solid var(--border-default-grey);
+    margin-bottom: auto;
+    height: max-content;
+    max-height: max-content !important;
+  }
+
+  &__header {
+    #{ns(btn--close)} {
+      display: none;
+    }
+  }
 }

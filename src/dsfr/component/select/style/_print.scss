@@ -1,0 +1,17 @@
+////
+/// Select Print
+/// @group Select
+////
+
+#{ns(select-group)} {
+  @include before {
+    background-image: none !important;
+  }
+}
+
+#{ns(select)} {
+  background-color: transparent;
+  border: 1px solid var(--border-default-grey);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}

@@ -13,6 +13,7 @@ export default {
 };
 
 export const FollowStory = {
+  tags: ['!autodocs'],
   args: {}
 };
 

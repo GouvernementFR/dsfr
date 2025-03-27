@@ -1,6 +1,10 @@
 <%
-  let modal = locals.modal || {};
-  let id = uniqueId('modal');
+  const modal = locals.modal || {};
+  const id = uniqueId('modal');
 %>
-<%- include('../../template/ejs/button.ejs', {modalButton: { ...modal, id: id }}) %>
+<% if (locals.button) { %>
+  <%- include('../../../button/template/ejs/button', { button: { ...locals.button, label: modal.label}})%>
+<% } else { %>
+<%- include('../../template/ejs/button.ejs', {modalButton: { label: modal.label, id: id }}) %>
+<% }  %>
 <%- include('../../template/ejs/modal.ejs', {modal: { ...modal, id: id }}) %>

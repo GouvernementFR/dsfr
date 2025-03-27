@@ -5,9 +5,5 @@
 
 @media print {
   @import 'index';
-  @import 'style/scheme';
-
-  @include _form-scheme('print');
-
   @import 'style/print';
 }

@@ -12,6 +12,13 @@ export default {
 };
 
 export const CheckboxesGroupStory = {
+  tags: ['!autodocs'],
+  args: {
+  }
+};
+
+export const DefaultGroupStory = {
+  tags: ['autodocs', '!dev'],
   args: {
   }
 };

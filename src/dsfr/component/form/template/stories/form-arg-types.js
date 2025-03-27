@@ -35,14 +35,14 @@ const messageArgTypes = {
   }
 };
 
-const fieldsetElementsData = (type) => {
+const fieldsetElementsData = (type, id) => {
   const elements = [];
   for (let i = 1; i < 4; i++) {
     elements.push({
-      id: `${type}-${i}`,
+      id: `${id}-${i}`,
       label: `Element ${i}`,
       name: type,
-      value: i,
+      value: (type === 'radio' || type === 'checkbox') ? i : '',
       ...((type === 'radio' || type === 'checkbox')) && { checked: (type === 'radio' || type === 'checkbox') && i === 2 },
       disabled: false,
       error: undefined,
@@ -146,9 +146,9 @@ const formArgs = {
   legend: 'Légende du formulaire',
   hideLegend: false,
   elementsType: 'checkbox',
-  checkboxesData: fieldsetElementsData('checkbox'),
-  radiosData: fieldsetElementsData('radio'),
-  inputsData: fieldsetElementsData('input'),
+  checkboxesData: fieldsetElementsData('checkbox', 'checkbox-default'),
+  radiosData: fieldsetElementsData('radio', 'radio-default'),
+  inputsData: fieldsetElementsData('input', 'input-default'),
   inline: false,
   disabled: false,
   status: 'default',
@@ -190,7 +190,9 @@ const formProps = (args) => {
   for (const data of dataElements) {
     const element = {};
     element.type = args.elementsType;
-    element.inline = form.inline;
+    element.inline = form.inline || data.inline;
+    element.modifier = data.modifier;
+    element.grow = data.grow;
     element.data = data;
     form.elements.push(element);
   }
@@ -198,4 +200,4 @@ const formProps = (args) => {
   return form;
 };
 
-export { formArgTypes, formArgs, formProps };
+export { formArgTypes, formArgs, formProps, fieldsetElementsData };

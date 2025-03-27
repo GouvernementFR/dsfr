@@ -68,7 +68,7 @@ class DisclosuresGroup extends Instance {
 
   getMembers () {
     const members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.instanceClassName, true);
-    this._members = members.filter(this.validate.bind(this)).filter(member => member.isEnabled);
+    this._members = members.filter(this.validate.bind(this)).filter(member => member.isEnabled && member.isActive);
     const invalids = members.filter(member => !this._members.includes(member));
     invalids.forEach(invalid => invalid.conceal());
   }

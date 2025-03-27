@@ -1,0 +1,21 @@
+////
+/// Card Print
+/// @group card
+////
+
+#{ns(checkbox-group)} {
+  input[type=checkbox] + #{ns(label)} {
+    @include before {
+      border: 1px solid var(--border-default-grey);
+      border-radius: 4px;
+      background-image: none;
+    }
+  }
+
+  input[type=checkbox]:checked + #{ns(label)} {
+    @include before {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+}
