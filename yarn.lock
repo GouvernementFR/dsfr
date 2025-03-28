@@ -671,33 +671,33 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@gouvfr/dsfr-alchemist@=0.0.72", "@gouvfr/dsfr-alchemist@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@alchemist":
-  version "0.0.72"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#2b65459785ea7c003204e9e6fa2c01411c864a00"
+"@gouvfr/dsfr-alchemist@=0.0.73", "@gouvfr/dsfr-alchemist@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@alchemist":
+  version "0.0.73"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#f40fbd57227bd02e21ac618a7550d6939a3b9b34"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.72"
+    "@gouvfr/dsfr-forge" "=0.0.73"
     esbuild "^0.24.2"
     lightningcss "^1.29.1"
     sass "^1.79.3"
 
-"@gouvfr/dsfr-forge@=0.0.72", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@forge":
-  version "0.0.72"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#1a9532ff5e8967a49fc801550a41beebd0f18fc7"
+"@gouvfr/dsfr-forge@=0.0.73", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@forge":
+  version "0.0.73"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#e1b4817c37dceae36f81580353cbc48c2010b473"
 
-"@gouvfr/dsfr-lore@=0.0.72", "@gouvfr/dsfr-lore@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@lore":
-  version "0.0.72"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#80d8fce9eac89d358fd186c93c2d9c7477be62c3"
+"@gouvfr/dsfr-lore@=0.0.73", "@gouvfr/dsfr-lore@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@lore":
+  version "0.0.73"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#71217f65412b8d93da65a3f11dc4b04ff6fc6c29"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.72"
+    "@gouvfr/dsfr-forge" "=0.0.73"
 
 "@gouvfr/dsfr-nexus@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@nexus":
-  version "0.0.72"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#56bf5c61314b9b7ac6fc22d155f6520bf4155831"
+  version "0.0.73"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#d8c6120ea9d6a9f8b0674ed900a14d64cba4de32"
   dependencies:
-    "@gouvfr/dsfr-alchemist" "=0.0.72"
-    "@gouvfr/dsfr-forge" "=0.0.72"
-    "@gouvfr/dsfr-lore" "=0.0.72"
-    "@gouvfr/dsfr-roller" "=0.0.72"
+    "@gouvfr/dsfr-alchemist" "=0.0.73"
+    "@gouvfr/dsfr-forge" "=0.0.73"
+    "@gouvfr/dsfr-lore" "=0.0.73"
+    "@gouvfr/dsfr-roller" "=0.0.73"
     browser-sync "^3.0.3"
     del "^7.1.0"
     mdast-util-directive "^3.0.0"
@@ -719,12 +719,12 @@
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.13.1.tgz#97ef3b9b716999ec5cd726a7b426112f37100574"
   integrity sha512-dCB0YuQ8YczGYT1qPO0nDYYQCq7As58DSPR59bDIsxYRgzq8D0UT8oVgzDCn6vWHzomnB0E/41LZ0mQ2kYi3CQ==
 
-"@gouvfr/dsfr-roller@=0.0.72", "@gouvfr/dsfr-roller@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller":
-  version "0.0.72"
-  uid "0fb6486b1899b0efaf9fe21d879d095e10728c81"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#0fb6486b1899b0efaf9fe21d879d095e10728c81"
+"@gouvfr/dsfr-roller@=0.0.73", "@gouvfr/dsfr-roller@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller":
+  version "0.0.73"
+  uid "047ffe25315e38d69e92ac133068691b03f4c182"
+  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#047ffe25315e38d69e92ac133068691b03f4c182"
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.72"
+    "@gouvfr/dsfr-forge" "=0.0.73"
     "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.1"
     deepmerge "^4.3.1"
     ejs "^3.1.10"
