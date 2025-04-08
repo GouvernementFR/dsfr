@@ -120,8 +120,8 @@ Sur Chrome et Firefox, le changement d’état n’est pas vocalisé lorsque le 
 ### Critères RGAA applicables
 
 - Couleurs&nbsp;: 3.2, 3.3
-- Scripts&nbsp;:7.1, 7.3
-- Éléments obligatoires&nbsp;:8.9,
+- Scripts&nbsp;: 7.1, 7.3
+- Éléments obligatoires&nbsp;: 8.9,
 - Structuration&nbsp;: 9.1,
 - Présentation de l’information&nbsp;: 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.8, 10.11, 10.12
 - Navigation&nbsp;: 12.8
