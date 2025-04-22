@@ -2,7 +2,7 @@
 title: Accessibilité du bouton
 ---
 
-## Bouton
+# Bouton
 
 :::dsfr-doc-tab-navigation
 
@@ -14,20 +14,20 @@ title: Accessibilité du bouton
 
 :::
 
-### Accessibilité
+## Accessibilité
 
 Le composant **Bouton** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Lorsque le focus est positionné sur le composant&nbsp;:
 
 - `Entrée`&nbsp;: actionne le bouton.
 - `Espace`&nbsp;: actionne le bouton.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
-##### Intitulé pertinent : nom accessible
+#### Intitulé pertinent : nom accessible
 
 Un bouton doit avoir un **intitulé pertinent**. On doit en comprendre la fonction sans ambiguïté.
 
@@ -39,19 +39,37 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 
 **Privilégier le contenu textuel** pour nommer le composant Bouton.
 
-[Do] [Don't]
+::::dsfr-doc-guidelines
 
-###### Nom visible et nom accessible
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![Bouton avec intitulé textuel « Afficher les informations](../_asset/accessibility/do-1.png)
+
+Utiliser un intitulé textuel précis.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![Bouton avec intitulé textuel « OK »](../_asset/accessibility/dont-1.png)
+
+Utiliser un intitulé générique et ambigu.
+
+:::
+
+::::
+
+##### Nom visible et nom accessible
 
 En cas d’utilisation des attributs `aria-labelledby` ou `aria-label` sur des boutons textuels, le **nom visible doit être repris dans le nom accessible** afin de répondre aux besoins des personnes qui utilisent la commande vocale.
 
-###### Information complémentaire&nbsp;: description
+##### Information complémentaire&nbsp;: description
 
 Il est possible de compléter et d’expliciter l’intitulé d’un bouton avec une description en utilisant&nbsp;:
 - l’attribut `aria-describedby` avec une valeur d’id qui référence un passage de texte&nbsp;;
 - l’attribut `title`.
 
-##### Bouton avec icône seule
+#### Bouton avec icône seule
 Dans le cas des **boutons avec icône seule**, un attribut `title`, qui reprend l’intitulé du bouton, peut être ajouté afin d’expliciter le sens de l’icône pour les personnes qui en ont besoin.
 
 > [!WARNING]
@@ -59,40 +77,58 @@ Dans le cas des **boutons avec icône seule**, un attribut `title`, qui reprend 
 >
 > **Limiter l’usage des boutons avec icône seule** et les utiliser uniquement pour les actions récurrentes et facilement identifiables (ex. engrenage pour les paramètres ou loupe pour la recherche).
 
-##### État désactivé
+#### État désactivé
 
 > [!CAUTION]
 > **L’état désactivé d’un bouton peut poser des problèmes d’utilisabilité et d’accessibilité pour les personnes handicapées** (personnes aveugles, déficientes visuelles, handicapées motrices qui naviguent au clavier ainsi que les personnes qui ont un handicap cognitif ou mental).
 
-- Le texte des boutons désactivés est insuffisamment contrasté (il ne s’agit pas néanmoins d’une non-conformité au RGAA (cas particulier). 
+- Le texte des boutons désactivés est insuffisamment contrasté. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier). 
 - Lorsqu’un bouton est désactivé avec l’attribut disabled, il ne prend pas le focus au clavier.
 
-[DON'T]
+::::dsfr-doc-guidelines
 
-##### Contrastes de couleur
-Par défaut, le composant Bouton est suffisamment contrasté en thème clair.
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-###### Bouton primaire
+![Bouton désactivé avec une infobulle qui affiche un message d’erreur](../_asset/accessibility/dont-2.png)
 
-:::dsfr-doc-table{valign=top scroll=false}
-| État |  Thème clair | Thème sombre |
-|------|-----|-----|
-|par défaut | 14,9:1 | 4,7:1 |
-| au survol  | 8,2:1| 7,5:1 |
-| désactivé| 2,47:1 | 2,5:1 |
+Ne pas désactiver un bouton avec une infobulle (<span lang="en">tooltip</span>).
+
 :::
 
-###### Bouton secondaire et tertiaire 
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-:::dsfr-doc-table{valign=top scroll=false}
-| État |  Thème clair | Thème sombre |
-|------|-----|-----|
-|par défaut|14,9:1|5,8:1|
-|au survol|13,8:1|4,1:1|
-|désactivé|3,1:1|3,2:1|
+![Formulaire avec un bouton désactivé](../_asset/accessibility/dont-3.png)
+
+Ne pas désactiver un bouton de soumission d’un formulaire.
+
 :::
 
-##### Bouton ou lien&nbsp;?
+::::
+
+#### Contrastes de couleur
+Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le texte des boutons secondaires et tertiaires est insuffisamment contrasté.
+
+##### Bouton primaire
+
+:::dsfr-doc-table[Contrastes du bouton primaire en thème clair et sombre]{valign=top scroll=false caption=false}
+| État |  Thème clair | Thème sombre |
+|------|-----|-----|
+|**par défaut**| 14,9:1 | 4,7:1 |
+|**au survol**| 8,2:1| 7,5:1 |
+|**désactivé**| 2,47:1 | 2,5:1 |
+:::
+
+##### Bouton secondaire et tertiaire 
+
+:::dsfr-doc-table[Contrastes du bouton secondaire et tertiaire en thème clair et sombre]{valign=top scroll=false caption=false}
+| État |  Thème clair | Thème sombre |
+|------|-----|-----|
+|**par défaut**|14,9:1|5,8:1|
+|**au survol**|13,8:1|4,1:1|
+|**désactivé**|3,1:1|3,2:1|
+:::
+
+#### Bouton ou lien&nbsp;?
 
 >[!NOTE]
 >Il est nécessaire de distinguer un bouton d’un lien.
@@ -104,11 +140,11 @@ Par défaut, le composant Bouton est suffisamment contrasté en thème clair.
 >Un lien `<a href>` permet de rediriger vers une autre page ou à un autre endroit dans la page (ancre).
 >  
 
-**Éviter au maximum d’utiliser le style du composant Bouton sur les liens et inversement**.
+**Éviter d’utiliser le style du composant Bouton sur les liens et inversement**.
 
 ---
 
-#### Restitution par les lecteurs d’écran
+### Restitution par les lecteurs d’écran
 
 Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
 
@@ -119,7 +155,7 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 
 ---
 
-#### Critères RGAA applicables
+### Critères RGAA applicables
 - **Couleurs** : 3.2, 3.3
 - **Scripts** : 7.1, 7.3 
 - **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
@@ -129,6 +165,7 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 
 ---
 
-#### Références
+### Références
 
 - [Spécification HTML – élément button](https://html.spec.whatwg.org/#the-button-element)
+- [Référentiel général d’amélioration de l’accessibilité — RGAA 4.1](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
