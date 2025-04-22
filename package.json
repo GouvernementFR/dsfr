@@ -19,11 +19,12 @@
     "build": "node tool/tool.js build",
     "release": "node tool/tool.js release",
     "deploy": "node tool/tool.js deploy",
+    "archive": "node tool/tool.js archive",
     "standalone": "node tool/tool.js standalone",
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
     "pictogram-converter": "node tool/tool.js pictogram-converter",
-    "chouquette": "yarn upgrade @gouvfr/dsfr-nexus @gouvfr/dsfr-forge @gouvfr/dsfr-alchemist @gouvfr/dsfr-roller @gouvfr/dsfr-lore"
+    "upgrade-nexus": "yarn upgrade @gouvfr/dsfr-nexus"
   },
   "files": [
     "/dist",
@@ -44,11 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "@gouvfr/dsfr-alchemist": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@alchemist",
-    "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@forge",
-    "@gouvfr/dsfr-lore": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@lore",
-    "@gouvfr/dsfr-nexus": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@nexus",
-    "@gouvfr/dsfr-roller": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller",
+    "@gouvfr/dsfr-nexus": "^1.0.0",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
     "browser-sync": ">=2.27.10",
@@ -98,11 +95,5 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "resolutions": {
-    "@gouvfr/dsfr-forge": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@forge",
-    "@gouvfr/dsfr-alchemist": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@alchemist",
-    "@gouvfr/dsfr-lore": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@lore",
-    "@gouvfr/dsfr-roller": "git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller"
   }
 }
