@@ -20,14 +20,14 @@ Le composant **Badge** est conçu pour être accessible et respecter les critèr
 
 ### Interactions clavier
 
-Le composant Badge n’est pas interactif. Il n’y a donc pas d'interaction clavier associée.
+Le composant Badge n’est pas interactif. Il n’y a donc pas d'interaction au clavier associée.
 
 ### Règles d’accessibilité
 
 #### Structuration
 
 - Par défaut, utiliser un élément `<p>` lorsque le badge est utilisé seul.
-- Si le badge est utilisé à l’intérieur d’un élément qui possède une sémantique (`<p>`, `li`, `button`…), utiliser un élément `<span>`.
+- Si le badge est utilisé à l’intérieur d’un élément qui possède une sémantique (`<p>`, `li`…), utiliser un élément `<span>`.
 - En cas d’utilisation de plusieurs badges à la suite, les structurer dans une liste.
 
 #### Badge système avec icône
@@ -99,5 +99,4 @@ Aucun test de restitution n’est nécessaire pour le composant Badge.
 
 ### Références
 
-- [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
