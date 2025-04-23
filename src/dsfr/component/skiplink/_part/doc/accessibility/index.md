@@ -14,31 +14,48 @@ title: Accessibilité des Liens d'évitement
 
 ### Accessibilité
 
-Le composant **Liens d'évitement** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Liens d'évitement** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 #### Interactions clavier
 
-Lorsque le focus n'est pas encore positionné dans la page :
+Aucune interaction au clavier spécifique au composant.
 
-- `Tab` : Affiche les liens d'évitement et place le focus sur le premier lien de la liste.
-- `Entrée` : Actionne le lien d'évitement et fait defiler la page jusqu'à l'ancre définie sur le lien.
+#### Règles d’accessibilité
 
-Lorsque le focus est positionné sur les liens d'évitement :
+> [!NOTE]
+> Le RGAA demande qu’**au moins un lien d’accès au contenu principal** soit présent et fonctionnel sur chaque page web sauf cas particulier (site constitué d’une seule page ou accès direct au contenu principal).
+>
+>Cela permet aux personnes handicapées motrices d’éviter les blocs répétés (ex. menu, fil d’Ariane). Les liens d’évitement ou d’accès rapide sont également utilisés dans une moindre mesure par les personnes aveugles.
 
-- `Tab` : Place le focus sur le prochain élément focalisable.
-- `shift + Tab` : Place le focus sur l'élément focalisable précédent.
+##### Structuration
 
-Lorsque le focus est sur le premier élement focusable de la page hors liens d'évitement :
+- Les liens d’évitement / accès rapide doivent être à l’intérieur d’un élément `<nav role="navigation>`.
+- L’attribut `aria-label="Accès rapide"` est utilisé pour nommer et donner un contexte explicite à la navigation.
+- S’il y a plusieurs liens&nbsp;:
+  - les liens doivent être structurés avec une liste `<ul><li>`,
+  - le lien d’accès «&nbsp;Contenu&nbsp;» est le premier de la liste.
 
-- `shift + Tab` : Affiche les liens d'évitement et place le focus sur le dernier lien de la liste.
-- `Entrée` : Actionne le lien d'évitement et fait defiler la page jusqu'à l'ancre définie sur le lien.
+##### Présentation
 
-#### Règles d'accessibilité
+Les liens d’évitement sont positionnés hors écran et apparaissent à la navigation au clavier lors de la prise de focus.
 
-- Les liens d'évitement doivent être les premiers éléments focusables de la page.
-- Les liens d’accès rapide doivent être entourés par une balise `<nav>`.
-- Les liens d’accès rapide doivent être structurés avec une liste `<ul><li>`.
-- Le lien d’accès au contenu devrait toujours être le premier dans la liste.
+#### Contrastes de couleur
+Le composant **Liens d'évitement** est suffisamment contrasté en thème clair (ratio de 12,8:1) et en thème sombre (ratio de 4,9:1).
+
+### Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant.
+
+---
+
+### Critères RGAA applicables
+- **Couleurs** : 3.2
+- **Liens** : 6.1, 6.2
+- **Structuration** : 9.2, 9.3
+- **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Navigation** : 12.2, 12.6, 12.9
+
+---
 
 #### Références
 
