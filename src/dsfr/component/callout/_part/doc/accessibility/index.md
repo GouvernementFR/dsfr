@@ -16,21 +16,54 @@ title: Accessibilité de la mise en avant
 
 ### Accessibilité
 
-Le composant **Mise en avant** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Mise en avant** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 #### Interactions clavier
 
-Aucune interaction clavier n'est liée au composant.
-Lorsque qu'un composant interactif est utilisé à l'intérieur, comme un bouton ou un lien, les interactions clavier correspondent à celles de cet élément.
+Aucune interaction au clavier spécifique au composant.
 
-#### Règles d'accessibilité
+#### Règles d’accessibilité
 
-- Hiérarchisez et sélectionnez votre contenu, afin d’utiliser une ou deux mises en avant maximum par page, sinon elles attireront moins l’œil de l’utilisateur.
-- Le niveau d'en-tête du titre dépend du contexte (et ne sera pas toujours un `<h3>`).
-- La mise en avant est illustrative, toutefois, un attribut `aria-label` peut être utilisé sur le conteneur principal pour indiquer qu'il s'agit d'un texte en avant (ex: information importante).
-- L'icône est illustrative et n'a pas nécessité à être retranscrite sur lecteur d'écran.
+##### Structuration
+
+Il n’y a pas de sémantique spécifique associée à ce composant. La mise en avant n’est donc pas restituée par les lecteurs d’écran, seul son contenu l’est.
+
+L'icône et la bordure sont une mise en avant visuelle et décorative du contenu. **L’information doit être portée uniquement par le texte.**
+
+- Pour insister sur la mise en avant et permettre aux personnes aveugles d’y accéder rapidement, ajouter un titre.
+- Le niveau de titre dépend du contexte de la page et ne sera pas toujours un `<h3>`.
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
+
+![Mise en exergue utilisée pour une citation](../_asset/accessibility/dont-1.png)
+
+Ne pas utiliser la mise en exergue pour une citation.
+
+:::
+
+::::
+
+
+#### Contrastes de couleurs
+
+Par défaut, le texte du composant est suffisamment contrasté avec le fond en thème clair et en thème sombre.
+
+---
+
+### Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant Mise en avant.
+
+---
+
+### Critères RGAA applicables
+- **Couleurs** : 3.2
+- **Éléments obligatoires** : 8.9
+- **Structuration** : 9.1
+- **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
 
 #### Références
 
-- [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
 - [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
