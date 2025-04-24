@@ -11,6 +11,7 @@ const standalone = require('./build/standalone');
 const { generateNewPictogram } = require('./generate/pictogram');
 const log = require('./utilities/log');
 const { upgradeNexus } = require('./utilities/upgrade');
+const { copyFile, copyDir } = require('./utilities/file');
 
 /**
  * Build
@@ -213,6 +214,11 @@ const archiveHandler = async (argv) => {
     legacy: true,
     packages: ['dsfr', 'utility']
   });
+
+  copyFile('./package.json', '.archive/package.json');
+  copyFile('./changelog.yml', '.archive/changelog.yml');
+  copyDir('./src', '.archive/src');
+  copyDir('./storybook', '.archive/storybook');
 };
 
 /**
