@@ -150,8 +150,25 @@ Par défaut, les lecteurs d’écran restituent le **nom, la description, l’é
 
 L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
 - VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
-- NVDA et JAWS&nbsp;: «&nbsp;bouton non disponible&nbsp;»
-- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;» 
+- NVDA et JAWS&nbsp;: «&nbsp;non disponible&nbsp;»
+- Narrateur et Talkback &nbsp;: «&nbsp;désactivé&nbsp;» 
+
+:::fr-accordion[#### Versions navigateurs et lecteurs d’écran]{id=sr-le-desktop}
+Les tests de restitution ont été effectués en ajoutant le lecteur d’écran intégré à Windows 11 (Narrateur) et le navigateur web Chrome à l’environnement de tests du RGAA.
+
+Versions des navigateurs web&nbsp;:
+- Firefox 137
+- Chrome 135
+- Safari 18.4 (sur macOS uniquement)
+- Microsoft Edge 135 (sur Windows 11 uniquement)
+
+Version des lecteurs d’écran&nbsp;:
+- NVDA 2024.4.2
+- JAWS 2024
+- VoiceOver macOS 15.4
+- Narrateur (Windows 11)
+- VoiceOver iOS
+:::
 
 ---
 
@@ -160,12 +177,12 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 - **Scripts** : 7.1, 7.3 
 - **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
 - **Formulaires** : 11.9
-- **Navigation** : 12.9
-
+- **Navigation** : 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
 
 ---
 
 ### Références
 
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Spécification HTML – élément button](https://html.spec.whatwg.org/#the-button-element)
-- [Référentiel général d’amélioration de l’accessibilité — RGAA 4.1](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
