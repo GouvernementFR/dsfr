@@ -98,6 +98,8 @@ Version des lecteurs d’écran&nbsp;:
 - VoiceOver iOS
 :::
 
+---
+
 ### Critères RGAA applicables
 
 - **Couleurs&nbsp;:** 3.2, 3.3
@@ -108,6 +110,8 @@ Version des lecteurs d’écran&nbsp;:
 - **Consultation&nbsp;:** 13.9, 13.11
 
 Consulter le [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+
+---
 
 ### Références
 - [Attribut aria-expanded — spécification ARIA](https://www.w3.org/TR/wai-aria-1.3/#aria-expanded)
