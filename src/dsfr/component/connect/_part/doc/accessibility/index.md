@@ -82,14 +82,15 @@ Version des lecteurs d’écran&nbsp;:
 ---
 
 ### Critères RGAA applicables
-- **Couleurs** : 3.2, 3.3
-- **Liens** : 6.1, 6.2
-- **Scripts** : 7.1, 7.3 
-- **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
-- **Navigation** : 12.9
+
+- **Couleurs&nbsp;:** 3.2, 3.3
+- **Liens&nbsp;:** 6.1, 6.2
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Navigation&nbsp;:** 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
 
 ---
 
 ### Références
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Technique F87 - WCAG](https://www.w3.org/WAI/WCAG21/Techniques/failures/F87)
-- [Référentiel général d’amélioration de l’accessibilité](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
