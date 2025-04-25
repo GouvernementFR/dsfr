@@ -60,10 +60,14 @@ Aucun test de restitution n’est nécessaire pour le composant Mise en avant.
 
 ### Critères RGAA applicables
 - **Couleurs** : 3.2
-- **Éléments obligatoires** : 8.9
-- **Structuration** : 9.1
-- **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Scripts&nbsp;:** 7.1, 7.3
+- **Éléments obligatoires&nbsp;:** 8.9
+- **Structuration&nbsp;:** 9.3
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Consultation&nbsp;:** 13.9, 13.11
+
+---
 
 #### Références
 
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
