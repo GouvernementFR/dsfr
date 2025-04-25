@@ -50,7 +50,7 @@ Le composant **Accordéon** s’appuie sur le motif de conception ARIA <span lan
 
 Le comportement par défaut du «&nbsp;Groupe d’accordéons&nbsp;» (ouverture d’un accordéon à la fois seulement) peut poser des problèmes d’utilisabilité pour certaines personnes handicapées.
 
-L’option «&nbsp;Groupe d’accordéons dissociés&nbsp;» est à privilégier.
+L’option «&nbsp;Groupe d’accordéons dissociés&nbsp;» est à privilégier par défaut.
 
 #### Contrastes de couleur
 
@@ -71,60 +71,43 @@ Le chevron est insuffisamment contrasté au survol uniquement lorsque l’accord
 
 ### Restitution par les lecteurs d’écran
 
-#### Lecteurs d’écran — ordinateur
+L’attribut `aria-expanded` est restitué différemment selon les lecteurs d’écran.
 
-Les tests ont été effectués avec les navigateurs web suivant&nbsp;:
+- Lorsque l’accordéon est fermé (`aria-expanded="false"`)&nbsp;: «&nbsp;réduit&nbsp;» ou «&nbsp;condensé&nbsp;» (VoiceOver macOS)
+- Lorsque l’accordéon est ouvert&nbsp;: «&nbsp;développé&nbsp;» (NVDA, Narrateur, VoiceOver iOS) ou «&nbsp;étendu&nbsp;» (JAWS, VoiceOver macOS, Talkback).
+
+> [!CAUTION]
+> - Selon la version de macOS, un [bug de VoiceOver](https://bugs.webkit.org/show_bug.cgi?id=284804) fait qu’il ne restitue pas le changement d’état lorsque le bouton est actionné.
+> - Narrateur vocalise le changement d’état lorsque le bouton est actionné **uniquement avec Microsoft Edge**. Sur Chrome et Firefox, le changement d’état n’est pas vocalisé lorsque le bouton est actionné.
+> Ce sont des bugs des lecteurs d’écran et non un problème avec le composant.
+
+:::fr-accordion[#### Versions navigateurs et lecteurs d’écran]{id=sr-le-desktop}
+Les tests de restitution ont été effectués en ajoutant le lecteur d’écran intégré à Windows 11 (Narrateur) et le navigateur web Chrome à l’environnement de tests du RGAA.
+
+Versions des navigateurs web&nbsp;:
 - Firefox 137
 - Chrome 135
 - Safari 18.4 (sur macOS uniquement)
 - Microsoft Edge 135 (sur Windows 11 uniquement)
 
-##### NVDA (version 2024.4.2)
-
-- Lorsque l’accordéon est fermé&nbsp;: «&nbsp;réduit&nbsp;».
-- Lorsque l’accordéon est ouvert&nbsp;: «&nbsp;développé&nbsp;».
-
-##### JAWS (2024)
-
-- Lorsque l’accordéon est fermé&nbsp;: «&nbsp;réduit&nbsp;».
-- Lorsque l’accordéon est ouvert&nbsp;: «&nbsp;étendu&nbsp;».
-
-##### VoiceOver (macOS 15.4)
-
-- Lorsque l’accordéon est fermé&nbsp;: «&nbsp;condensé&nbsp;».
-- Lorsque l’accordéon est ouvert&nbsp;: «&nbsp;étendu&nbsp;».
-
-Selon la version de macOS, un [bug de VoiceOver](https://bugs.webkit.org/show_bug.cgi?id=284804) fait qu’il ne restitue pas le changement d’état lorsque le bouton est actionné.
-
-##### Narrateur (Windows 11)
-
-- Lorsque l’accordéon est fermé&nbsp;: «&nbsp;réduit&nbsp;».
-- Lorsque l’accordéon est ouvert&nbsp;: «&nbsp;développé&nbsp;».
-
-Le lecteur d’écran vocalise le changement d’état lorsque le bouton est actionné uniquement avec Microsoft Edge.
-
-Sur Chrome et Firefox, le changement d’état n’est pas vocalisé lorsque le bouton est actionné. 
-
-#### Lecteurs d’écran mobile
-
-##### VoiceOver iOS et Safari
-
-- Lorsque l’accordéon est fermé&nbsp;: «&nbsp;condensé&nbsp;».
-- Lorsque l’accordéon est ouvert&nbsp;: «&nbsp;étiré&nbsp;».
-
-##### Talkback (Android) et Chrome
-
-- Lorsque l’accordéon est fermé&nbsp;: «&nbsp;regroupé&nbsp;».
-- Lorsque l’accordéon est ouvert&nbsp;: «&nbsp;développé&nbsp;».
+Version des lecteurs d’écran&nbsp;:
+- NVDA 2024.4.2
+- JAWS 2024
+- VoiceOver macOS 15.4
+- Narrateur (Windows 11)
+- VoiceOver iOS
+:::
 
 ### Critères RGAA applicables
 
-- Couleurs&nbsp;: 3.2, 3.3
-- Scripts&nbsp;: 7.1, 7.3
-- Éléments obligatoires&nbsp;: 8.9,
-- Structuration&nbsp;: 9.1,
-- Présentation de l’information&nbsp;: 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.8, 10.11, 10.12
-- Navigation&nbsp;: 12.8
+- **Couleurs&nbsp;:** 3.2, 3.3
+- **Scripts&nbsp;:** 7.1, 7.3
+- **Structuration&nbsp;:** 9.1
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.8, 10.11, 10.12
+- **Navigation&nbsp;:** 12.8, 12.9, 12.11
+- **Consultation&nbsp;:** 13.9, 13.11
+
+Consulter le [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 
 ### Références
 - [Attribut aria-expanded — spécification ARIA](https://www.w3.org/TR/wai-aria-1.3/#aria-expanded)
