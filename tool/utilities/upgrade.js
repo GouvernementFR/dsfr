@@ -5,6 +5,7 @@ const upgradeNexus = async () => {
   return new Promise((resolve, reject) => {
   const cp = spawn('yarn', ['upgrade-nexus']);
     cp.stdout.setEncoding('utf8');
+    cp.stderr.setEncoding('utf8');
     cp.stdout.on('data', data => log.info(data));
     cp.stderr.on('data', data => log.error(data));
     cp.on('error', error => reject(error));
