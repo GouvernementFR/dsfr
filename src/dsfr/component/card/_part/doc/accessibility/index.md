@@ -36,6 +36,10 @@ Aucune interaction au clavier spécifique au composant.
 
 Voir les [règles d’accessibilité du composant Lien](../../../../link/_part/doc/accessibility/index.md#regles-d-accessibilite).
 
+### Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant Carte.
+
 ### Critères RGAA applicables
 
 - **Images&nbsp;:** 1.1, 1.2, 1.3
