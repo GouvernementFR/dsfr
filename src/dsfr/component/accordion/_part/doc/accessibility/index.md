@@ -56,6 +56,10 @@ L’option «&nbsp;Groupe d’accordéons dissociés&nbsp;» est à privilégier
 
 Le composant Accordéon est suffisamment contrasté en thème clair.
 
+Au survol du bouton en thème sombre, le ratio de contraste entre le texte et le fond du bouton est insuffisant.
+
+Le chevron est insuffisamment contrasté au survol uniquement lorsque l’accordéon est ouvert.
+
 :::dsfr-doc-table[Contraste du texte et du chevron de l’accordéon]{valign=top scroll=false caption=true}
 | État du bouton |  Thème clair | Thème sombre |
 |------|-----|-----|
@@ -64,10 +68,6 @@ Le composant Accordéon est suffisamment contrasté en thème clair.
 |**ouvert - par défaut**| 11,83:1| 4,55:1 |
 |**ouvert - au survol**| 13,79:1| 2,6:1 |
 :::
-
-Au survol du bouton en thème sombre, le ratio de contraste entre le texte et le fond du bouton est insuffisant.
-
-Le chevron est insuffisamment contrasté au survol uniquement lorsque l’accordéon est ouvert.
 
 ### Restitution par les lecteurs d’écran
 
@@ -79,6 +79,7 @@ L’attribut `aria-expanded` est restitué différemment selon les lecteurs d’
 > [!CAUTION]
 > - Selon la version de macOS, un [bug de VoiceOver](https://bugs.webkit.org/show_bug.cgi?id=284804) fait qu’il ne restitue pas le changement d’état lorsque le bouton est actionné.
 > - Narrateur vocalise le changement d’état lorsque le bouton est actionné **uniquement avec Microsoft Edge**. Sur Chrome et Firefox, le changement d’état n’est pas vocalisé lorsque le bouton est actionné.
+>
 > Ce sont des bugs des lecteurs d’écran et non un problème avec le composant.
 
 :::fr-accordion[#### Versions navigateurs et lecteurs d’écran]{id=sr-le-desktop}
@@ -112,7 +113,7 @@ Version des lecteurs d’écran&nbsp;:
 ---
 
 ### Références
--- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Attribut aria-expanded — spécification ARIA](https://www.w3.org/TR/wai-aria-1.3/#aria-expanded)
 - [Attribut aria-controls — spécification ARIA](https://www.w3.org/TR/wai-aria-1.3/#aria-controls)
 - [Motif de conception WAI-ARIA Accordion](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/)
