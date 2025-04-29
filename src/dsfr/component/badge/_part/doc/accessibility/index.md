@@ -90,10 +90,10 @@ Aucun test de restitution n’est nécessaire pour le composant Badge.
 ---
 
 ### Critères RGAA applicables
-- **Couleurs** : 3.2
-- **Éléments obligatoires** : 8.9
-- **Structuration** : 9.3
-- **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5,10.11, 10.12
+- **Couleurs&nbsp;:** 3.2
+- **Éléments obligatoires&nbsp;** 8.9
+- **Structuration&nbsp;:** 9.3
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.4, 10.5, 10.11, 10.12
 - **Consultation&nbsp;:** 13.9
 
 ---
