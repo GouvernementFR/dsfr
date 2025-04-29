@@ -77,8 +77,10 @@ L’attribut `aria-pressed` est restitué différemment selon les lecteurs d’�
 - **Éléments obligatoires** : 8.9
 - **Structuration** : 9.3
 - **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Navigation** : 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
+
 
 #### Références
 
-- [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
