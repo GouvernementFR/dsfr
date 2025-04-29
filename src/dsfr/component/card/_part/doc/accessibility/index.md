@@ -31,7 +31,7 @@ Aucune interaction au clavier spécifique au composant.
 #### Zone cliquable étendue
 
 - Le lien est placé uniquement sur le titre de la carte qui doit être explicite.
-- Si aucun autre élément cliquable n’est présent dans la carte, il est possible d’étendre la zone cliquable du lien à toute la carte  pour améliorer l’expérience utilisateur.
+- Si aucun autre élément cliquable n’est présent dans la carte, il est possible d’étendre la zone cliquable du lien à toute la carte pour améliorer l’expérience utilisateur.
 - L’indication de prise de focus se positionne alors autour de la carte plutôt qu’autour du lien.
 
 Voir les [règles d’accessibilité du composant Lien](../../../../link/_part/doc/accessibility/index.md#regles-d-accessibilite).
