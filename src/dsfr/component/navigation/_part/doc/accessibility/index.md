@@ -14,9 +14,7 @@ title: Accessibilité de la Navigation principale
 
 ### Accessibilité
 
-Le composant **Navigation principale** est conçu pour être accessible et suit les critères du RGAA.
-
-Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Navigation principale** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 #### Interactions clavier
 
@@ -25,18 +23,42 @@ Voici les points clés d’accessibilité à prendre en compte :
     - Lorsque le focus est placé sur un bouton d'ouverture de sous-section la navigation principale, et que sa sous-section associée est déjà ouverte, referme la sous-section.
     - Lorsque le focus est placé sur un lien direct active l’élément focalisé.
 - `Tab` : Place le focus sur le prochain élément focalisable. Tous les éléments focalisables placés dans la sous-section sont inclus dans la séquence des éléments accessibles au `tab` de la page.
-- `shift` + `Tab` : Place le focus sur l'élément focalisable précédent. Tous les éléments focalisables placés dans la sous-section sont inclus dans la séquence des éléments accessibles au `tab` de la page.
+- `Maj` + `Tab` : Place le focus sur l'élément focalisable précédent. Tous les éléments focalisables placés dans la sous-section sont inclus dans la séquence des éléments accessibles au `tab` de la page.
 
-#### Règles d'accessibilité
+#### Règles d’accessibilité
 
-- Le conteneur principal de la navigation dispose des attributs `role="navigation"` et `aria-label`, dont la valeur doit décrit la fonction de la navigation (ex: "Menu principal").
-- Les boutons d'ouverture et de fermeture des menus déroulants et mega-menus ont l'attribut `aria-controls` défini sur l'ID du bloc refermable associé.
-- Si une sous-section associée à un bouton d'ouverture de la navigation est visible, le bouton a l'attribut `aria-expanded` défini sur "true". Si la sous-section n'est pas visible, `aria-expanded` est défini sur "false".
-- Si une sous-section associée à un bouton d'ouverture de la navigation est active, le bouton a l'attribut `aria-current` défini sur "true".
-- Le lien actif dispose d'un attribut `aria-current="page"`.
-- Sur les sous-menus du mega menu, le lien permettant de replier le sous-menu doit être le premier élément prenant le focus.
+##### Structuration
+
+- La navigation principale est structurée dans un élément `nav role="navigation"`.
+- L’attribut `aria-label="Menu principal"` est utilisé pour nommer et donner un contexte explicite à la navigation.
+- Les éléments de la navigation principales sont structurés dans une liste avec les éléments `ul` et `li `.
+- Le lien actif dispose d’un attribut `aria-current="page"`.
+- Si une sous-section associée à un bouton d'ouverture de la navigation est active, le bouton a un attribut `aria-current` défini sur "true".
+
+###### Entrée de menu
+
+- Les boutons d’ouverture et de fermeture des menus déroulants et mega-menus possèdent&nbsp;:
+  - un attribut `aria-expanded` défini à `true`lorsque le sous-menu est affiché, à `false`lorsque la sous-section est fermée.
+  - un attribut `aria-controls` défini sur l'ID du bloc refermable associé.
+
+##### Responsive
+
+En version mobile, la navigation principale est disponible dans une fenêtre modale à partir du bouton burger «&nbsp;Menu&nbsp;».
+
+#### Contrastes de couleur
+
+La navigation principale est suffisamment contrastée en thème clair.
+
+### Critères RGAA applicables
+- **Couleurs** : 3.1, 3.2, 3.3
+- **Liens** : 6.1, 6.2
+- **Scripts** : 7.1, 7.3 
+- **Structuration** : 9.1, 9.2, 9.3
+- **Présentation de l’information** : 10.1, 10.2, 10.3,10.4, 10.5, 10.7, 10.8, 10.11, 10.12
+- **Navigation** : 12.2, 12.6, 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
 
 ### Références
 
-- [https://www.w3.org/WAI/WCAG21/quickref/](https://www.w3.org/WAI/WCAG21/quickref/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/) 
+- [Élément nav](https://html.spec.whatwg.org/#the-nav-element)
