@@ -52,7 +52,7 @@ Le comportement par défaut du «&nbsp;Groupe d’accordéons&nbsp;» (ouverture
 
 L’option «&nbsp;Groupe d’accordéons dissociés&nbsp;» est à privilégier par défaut.
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 
 Le composant Accordéon est suffisamment contrasté en thème clair.
 
