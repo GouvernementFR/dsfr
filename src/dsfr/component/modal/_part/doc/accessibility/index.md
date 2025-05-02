@@ -14,32 +14,81 @@ title: Accessibilité de la modale
 
 ## Accessibilité
 
-Le composant **Modale** utilise le motif de conception ARIA WAI "Dialog (Modal)" et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Modale** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ### Interactions clavier
 
-Lorsque le focus est positionné sur le bouton de la modale :
+À l’intérieur de la fenêtre modale&nbsp;:
+- `Échap`&nbsp;: referme la modale et place le focus sur le bouton d’ouverture de la modale ou à un endroit approprié si le bouton disparaît.
+- `Tab`&nbsp;: place le focus sur le prochain élément focalisable de la modale.
+- `Maj` + `Tab`&nbsp;: place le focus sur l'élément focalisable précédent.
 
-- `Entrée` ou `Espace` :
-  - Lorsque le focus est placé sur le bouton d'ouverture de la modale, ouvre la modale et place le focus sur le bouton de fermeture de la modale.
-- `Esc` : Lorsque la modale est ouverte, referme la modale et place le focus sur le bouton d'ouverture de la modale.
-- `Tab` :
-  - Lorsque le focus est placé à l'interieur de la modale celui-ci ne peut pas sortir de la modale. Cette dernière doit être fermée afin de reprendre la navigation dans la page courante. À cet effet, le focus est repositionné sur le bouton qui a permis d'ouvrir la modale.
-  - Place le focus sur le prochain élément focalisable de la modale. Tous les éléments focalisables placés dans la modale sont inclus dans la séquence des éléments accessibles au `tab` de la page.
-- `shift` + `Tab` : Place le focus sur l'élément focalisable précédent. Tous les éléments focalisables placés dans la modale sont inclus dans la séquence des éléments accessibles au `tab` de la page.
+**Le focus doit rester dans la fenêtre modale tant qu’elle n’est pas fermée.**
 
-### Règles d'accessibilité
+### Règles d’accessibilité
 
-- Le bouton d'ouverture de la modale est de type="button".
-  - Le bouton d'ouverture de la modale a l'attribut `aria-controls` défini sur l'ID de la modale.
-  - Si la modale est visible, le bouton a l'attribut `data-fr-opened` défini sur true. Si la modale n'est pas visible, `data-fr-opened` est défini sur false.
-- La modale est un élément HTML "dialog" et dispose d'un attribut `aria-modal="true"` pour indiquer aux lecteurs d'écran que l'élément est une modale lorsqu'il est affiché.
-  - La modale dispose d'un attribut `aria-labelledby` défini sur l'ID du titre de la modale.
-- La modale contient un titre de niveau `H1`.
-- La modale contient un bouton de fermeture de type="button".
-  - Le bouton de fermeture de la modale dispose d'un attribut `aria-controls` défini sur l'ID de la modale.
+Le composant **Modale** s’appuie sur le motif de conception ARIA <span lang="en">Dialog</span> de l’<a href="https://www.w3.org/WAI/ARIA/apg/about/introduction/" lang="en">Authoring Practices Guide</a> (APG).
+
+- L’élément qui déclenche l’ouverture de la fenêtre modale doit être un `button`.
+- La modale utilise l’élément HTML `<dialog>`.
+- Elle dispose d’un attribut `aria-modal="true"` pour indiquer aux lecteurs d'écran que l’élément est une modale lorsqu'il est affiché.
+- La modale doit avoir un **nom accessible**. Elle est nommée avec un attribut `aria-labelledby` défini sur l’ID du titre (`hx`) de la fenêtre modale.
+- La modale a un titre de niveau `h1`.
+
+> [!TIP]
+> Le role="dialog" n’est plus nécessaire sur l’élément HTML `<dialog>`.
+>
+>Pour que le focus soit bien capturé à l’intérieur de la modale, utiliser la méthode `showModal()` avec l’élément `<dialog>`.
+
+### Restitution par les lecteurs d’écran
+
+L’élément `<dialog>` est restitué différemment selon les lecteurs d’écran.
+
+Tous les lecteurs d’écran restituent le nom accessible et le rôle de la modale.
+
+- Talkback, Narrateur et Jaws&nbsp;: nom, boîte de dialogue
+- NVDA : nom, dialogue
+- VO iOS / VO macOS : nom, boîte de dialogue web
+
+Note&nbsp;: VoiceOver macOS ne restitue pas du nom de la modale avec Firefox et Chrome.
+
+#### Capture du focus
+
+Note : le focus n’est pas capturé avec les lecteurs d’écran mobiles sur la version actuelle du composant Modale.
+
+:::fr-accordion[#### Versions navigateurs et lecteurs d’écran]{id=sr-le-desktop}
+Les tests de restitution ont été effectués en ajoutant le lecteur d’écran intégré à Windows 11 (Narrateur) et le navigateur web Chrome à l’environnement de tests du RGAA.
+
+Versions des navigateurs web&nbsp;:
+- Firefox 138
+- Chrome 135
+- Safari 18.4 (sur macOS uniquement)
+- Microsoft Edge 135 (sur Windows 11 uniquement)
+
+Version des lecteurs d’écran&nbsp;:
+- NVDA 2024.4.2
+- JAWS 2024
+- VoiceOver macOS 15.4
+- Narrateur (Windows 11)
+- VoiceOver iOS
+:::
+
+---
+
+### Critères RGAA applicables
+- **Couleurs&nbsp;:** 3.2
+- **Scripts&nbsp;:** 7.1, 7.3
+- **Éléments obligatoires&nbsp;:** 8.9
+- **Structuration&nbsp;:** 9.1
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.8, 10.11, 10.12
+- **Navigation&nbsp;:** 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
+
+---
 
 ### Références
 
-- [https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Motif de conception WAI-ARIA Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
+- [L’élément HTML dialog](https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element)
+- [Attribut aria-modal](https://www.w3.org/TR/wai-aria/#aria-modal)
