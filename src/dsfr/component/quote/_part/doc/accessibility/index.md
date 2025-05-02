@@ -30,9 +30,9 @@ Aucune interaction au clavier spécifique au composant.
 
 > [!NOTE]
 > Ne pas confondre l’attribut `cite` qui permet d’ajouter l’URL de la source de la citation si celle-ci provient d’un autre site et l’élément `<cite>` à utiliser pour le titre de l’œuvre citée.
-> L’attribut ou l’élément n’ont pas d’importance pour l’accessibilité.
+> L’attribut et l’élément n’ont pas d’importance pour l’accessibilité.
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 
 Le composant Citation est suffisamment contrasté en thème clair et en thème sombre.
 
@@ -40,20 +40,20 @@ Le composant Citation est suffisamment contrasté en thème clair et en thème s
 
 NVDA et JAWS sont les seuls lecteurs d’écran à restituer correctement la sémantique de l’élément blockquote.
 
----
-
 ### Critères RGAA applicables
 
-- Couleurs&nbsp;: 3.2
-- Liens&nbsp;: 6.1, 6.2
-- Éléments obligatoires&nbsp;: 8.9
-- Structuration&nbsp;: 9.3, 9.4
-- Présentation de l’information&nbsp;: 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.8, 10.11, 10.12
-- Navigation&nbsp;: 12.8
+- **Couleurs&nbsp;:** 3.2
+- **Liens&nbsp;:** 6.1, 6.2
+- **Éléments obligatoires&nbsp;:** 8.9
+- **Structuration&nbsp;:** 9.3, 9.4
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.8, 10.11, 10.12
+- **Navigation&nbsp;:** 12.8, 12.9
+- **Consultation&nbsp;:**: 13.9, 13.11
+
+---
 
 #### Références
 
 - [Élément blockquote](https://html.spec.whatwg.org/#the-blockquote-element)
 - [Élément cite](https://html.spec.whatwg.org/#the-cite-element)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
-
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
