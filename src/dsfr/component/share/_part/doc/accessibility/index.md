@@ -23,7 +23,7 @@ Aucune interaction au clavier spécifique au composant.
 #### Règles d’accessibilité
 
 - Les boutons ou liens de partage sont structurés dans une liste.
-- Le bouton pour copier le lien de la page doit être un élément `button`. Attention à bien implémenter le message de confirmation pour qu’il soit restitué aux technologies d’assistance.
+- Le bouton pour copier le lien de la page doit être un élément `button`.
 
 Voir les [règles d'accessibilité du composant Lien](../../../../link/_part/doc/accessibility/index.md#regles-d-accessibilite) et les [règles d’accessibilité du composant Bouton](../../../../button/_part/doc/accessibility/index.md#regles-d-accessibilite).
 
@@ -42,7 +42,7 @@ Voir les [règles d'accessibilité du composant Lien](../../../../link/_part/doc
 >
 >Un lien `<a href>` permet de rediriger vers une autre page ou à un autre endroit dans la page (ancre).
 
-##### Contrastes de couleur
+##### Contrastes de couleurs
 
 Le composant Partage est suffisamment contrasté en thème clair et en thème sombre.
 
@@ -83,9 +83,24 @@ Version des lecteurs d’écran&nbsp;:
 - VoiceOver iOS
 :::
 
------ 
+---
+
+### Critères RGAA applicables
+- **Couleurs** : 3.2, 3.3
+- **Liens** : 6.1, 6.2
+- **Scripts** : 7.1, 7.3 
+- **Éléments obligatoires** : 8.9
+- **Structuration** : 9.3
+- **Présentation de l’information** : 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Navigation** : 12.9
+- **Consultation** : 13.9, 13.11
+
+---
 
 ### Références
 
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+
+#### Ressources
+
 - [Disabling a link](https://www.scottohara.me/blog/2021/05/28/disabled-links.html)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
