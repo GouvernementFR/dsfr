@@ -34,7 +34,7 @@ Le composant Badge n’est pas interactif. Il n’y a donc pas d'interaction au 
 
 L’information doit être donnée par le texte du badge. L’icône est purement décorative.
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 
 Le composant Badge est suffisamment contrasté en thème clair et en thème sombre dans ses différentes versions.
 
