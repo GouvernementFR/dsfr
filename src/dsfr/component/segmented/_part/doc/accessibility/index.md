@@ -19,9 +19,8 @@ Le composant **Contrôle segmenté** est conçu pour être accessible et respect
 ### Interactions clavier
 
 Lorsque le focus est positionné sur un segment&nbsp;:
-
-- `Flèche droite` ou `Flèche du bas` : sélectionne le segment suivant.
-- `Flèche gauche` ou `Flèche du haut` : sélectionne le segment précédent.
+- `Flèche droite` ou `Flèche du bas`&nbsp;: sélectionne le segment suivant.
+- `Flèche gauche` ou `Flèche du haut`&nbsp;: sélectionne le segment précédent.
 
 ### Règles d’accessibilité
 
