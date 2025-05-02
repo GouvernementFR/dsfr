@@ -22,8 +22,8 @@ Le composant **Navigation principale** est conçu pour être accessible et respe
     - Lorsque le focus est placé sur un bouton d'ouverture de sous-section de la navigation principale, et que sa sous-section associée est fermée, ouvre la sous-section.
     - Lorsque le focus est placé sur un bouton d'ouverture de sous-section la navigation principale, et que sa sous-section associée est déjà ouverte, referme la sous-section.
     - Lorsque le focus est placé sur un lien direct active l’élément focalisé.
-- `Tab` : Place le focus sur le prochain élément focalisable. Tous les éléments focalisables placés dans la sous-section sont inclus dans la séquence des éléments accessibles au `tab` de la page.
-- `Maj` + `Tab` : Place le focus sur l'élément focalisable précédent. Tous les éléments focalisables placés dans la sous-section sont inclus dans la séquence des éléments accessibles au `tab` de la page.
+- `Tab` : place le focus sur le prochain élément focalisable.
+- `Maj` + `Tab` : place le focus sur l'élément focalisable précédent.
 
 #### Règles d’accessibilité
 
@@ -32,10 +32,12 @@ Le composant **Navigation principale** est conçu pour être accessible et respe
 - La navigation principale est structurée dans un élément `nav role="navigation"`.
 - L’attribut `aria-label="Menu principal"` est utilisé pour nommer et donner un contexte explicite à la navigation.
 - Les éléments de la navigation principales sont structurés dans une liste avec les éléments `ul` et `li `.
+
+##### Éléments actifs
 - Le lien actif dispose d’un attribut `aria-current="page"`.
 - Si une sous-section associée à un bouton d'ouverture de la navigation est active, le bouton a un attribut `aria-current` défini sur "true".
 
-###### Entrée de menu
+##### Entrée de menu
 
 - Les boutons d’ouverture et de fermeture des menus déroulants et mega-menus possèdent&nbsp;:
   - un attribut `aria-expanded` défini à `true`lorsque le sous-menu est affiché, à `false`lorsque la sous-section est fermée.
@@ -45,9 +47,17 @@ Le composant **Navigation principale** est conçu pour être accessible et respe
 
 En version mobile, la navigation principale est disponible dans une fenêtre modale à partir du bouton burger «&nbsp;Menu&nbsp;».
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 
 La navigation principale est suffisamment contrastée en thème clair.
+
+---
+
+### Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant Navigation principale.
+
+---
 
 ### Critères RGAA applicables
 - **Couleurs** : 3.1, 3.2, 3.3
