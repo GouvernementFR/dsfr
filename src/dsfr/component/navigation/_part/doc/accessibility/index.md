@@ -31,7 +31,7 @@ Le composant **Navigation principale** est conçu pour être accessible et respe
 
 - La navigation principale est structurée dans un élément `nav role="navigation"`.
 - L’attribut `aria-label="Menu principal"` est utilisé pour nommer et donner un contexte explicite à la navigation.
-- Les éléments de la navigation principales sont structurés dans une liste avec les éléments `ul` et `li `.
+- Les éléments de la navigation principale sont structurés dans une liste avec les éléments `ul` et `li `.
 
 ##### Éléments actifs
 - Le lien actif dispose d’un attribut `aria-current="page"`.

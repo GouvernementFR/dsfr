@@ -30,7 +30,7 @@ Le composant **Menu latéral** est conçu pour être accessible et respecter les
 
 - Le menu latéral est un système de navigation secondaire. Il doit être structuré dans un élément `nav role="navigation"`.
 - Le conteneur principal du menu latéral possède un attribut `aria-labelledby` défini sur l’ID du titre du menu latéral afin de nommer et donner un contexte explicite à la navigation.
-- Les éléments de la navigation principales sont structurés dans une liste avec les éléments `ul` et `li `.
+- Les éléments du menu latéral sont structurés dans une liste avec les éléments `ul` et `li `.
 
 ##### Éléments actifs
 
