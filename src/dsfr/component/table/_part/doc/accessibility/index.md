@@ -11,7 +11,6 @@ title: Accessibilité du tableau
 - Accessibilité
 :::
 
-
 ## Accessibilité
 
 Le composant **Tableau** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
