@@ -35,7 +35,7 @@ Liens de la pagination&nbsp;:
 - Les liens (numéro de page) disposent d’un attribut `title` pour expliciter leur fonction.
 - Les liens désactivés n’ont pas d’attribut `href` et possèdent les attributs `aria-disabled="true"` et `role="link"`.
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 
 Le composant Pagination est suffisamment contrasté en thème clair et en thème sombre.
 
@@ -68,7 +68,7 @@ La page courante est alors indiquée implicitement aux personnes aveugles car ce
 - **Scripts&nbsp;:** 7.1, 7.3
 - **Structuration&nbsp;:** 9,2, 9.3
 - **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.8, 10.11, 10.12
-- **Navigation&nbsp;:** 12.2, 12.6, 12.8
+- **Navigation&nbsp;:** 12.2, 12.6, 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 
 #### Références
