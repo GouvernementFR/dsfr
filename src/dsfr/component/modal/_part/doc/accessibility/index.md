@@ -50,7 +50,7 @@ Tous les lecteurs d’écran restituent le nom accessible et le rôle de la moda
 - NVDA : nom, dialogue
 - VO iOS / VO macOS : nom, boîte de dialogue web
 
-Note&nbsp;: VoiceOver macOS ne restitue pas du nom de la modale avec Firefox et Chrome.
+Note&nbsp;: VoiceOver macOS ne restitue pas le nom de la modale avec Firefox et Chrome.
 
 #### Capture du focus
 
