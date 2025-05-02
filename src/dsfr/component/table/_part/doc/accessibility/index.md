@@ -61,4 +61,4 @@ Aucun test de restitution n’est nécessaire pour le composant Tableau.
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 
 #### Ressources
-([Tableaux de données complexes : comment les intégrer de manière accessible en HTML ?](https://access42.net/tableaux-donnees-complexes-integration-html-accessible-rgaa/)).
+[Tableaux de données complexes : comment les intégrer de manière accessible en HTML ?](https://access42.net/tableaux-donnees-complexes-integration-html-accessible-rgaa/).
