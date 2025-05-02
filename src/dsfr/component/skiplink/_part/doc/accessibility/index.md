@@ -39,7 +39,7 @@ Aucune interaction au clavier spécifique au composant.
 
 Les liens d’évitement sont positionnés hors écran et apparaissent à la navigation au clavier lors de la prise de focus.
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 Le composant **Liens d'évitement** est suffisamment contrasté en thème clair (ratio de 12,8:1) et en thème sombre (ratio de 4,9:1).
 
 ### Restitution par les lecteurs d’écran
@@ -52,12 +52,12 @@ Aucun test de restitution n’est nécessaire pour le composant.
 - **Couleurs** : 3.2
 - **Liens** : 6.1, 6.2
 - **Structuration** : 9.2, 9.3
-- **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
-- **Navigation** : 12.2, 12.6, 12.9
+- **Présentation de l’information** : 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Navigation** : 12.2, 12.6, 12.8, 12.9
+- **Consultation** : 13.9, 13.11
 
 ---
 
 #### Références
 
-- [https://www.w3.org/WAI/WCAG21/quickref/](https://www.w3.org/WAI/WCAG21/quickref/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
