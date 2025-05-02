@@ -45,7 +45,7 @@ En version mobile, l’affichage direct du fil d’Ariane est remplacé par un b
 - La page courante n’est pas structurée dans un lien et n’est pas soulignée.
 - Elle est en plus identifiée explicitement avec un attribut `aria-current="page"` pour les personnes aveugles.
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 Le composant Fil d’Ariane est suffisamment contrasté en thème clair et en thème sombre.
 
 :::dsfr-doc-table[Contrastes des textes — composant Fil d’Ariane]{valign=top scroll=false caption=false}
