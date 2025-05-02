@@ -24,7 +24,7 @@ Aucune interaction au clavier spécifique au composant.
 
 #### Règles d’accessibilité
 
-L’ensembles des règles d'accessibilité des [liens](../../../../input/_part/doc/accessibility/index.md), des [boutons](../../../../button/_part/doc/accessibility/index.md) et des [champs de saisies](../../../../input/_part/doc/accessibility/index.md) doivent être respectées.
+L’ensembles des règles d'accessibilité des [liens](../../../../input/_part/doc/accessibility/index.md), des [boutons](../../../../button/_part/doc/accessibility/index.md) et des [champs de saisie](../../../../input/_part/doc/accessibility/index.md) doivent être respectées.
 
 ##### Liens réseaux sociaux
 
