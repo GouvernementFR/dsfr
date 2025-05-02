@@ -26,7 +26,7 @@ Il n'y a aucune interaction spécifique au composant **Indicateur d’étapes**.
 - Le nom de l’étape suivante est dans un élément `<p>`.
 - La barre de progression ne nécessite aucune alternative ni attribut ARIA (car purement illustrative).
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 
 Le composant Indicateur d’étapes est suffisamment contrasté en thème clair et en thème sombre dans ses différentes versions.
 
