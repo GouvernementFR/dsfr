@@ -105,7 +105,7 @@ Ne pas désactiver un bouton de soumission d’un formulaire.
 
 ::::
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le texte des boutons secondaires et tertiaires est insuffisamment contrasté.
 
 ##### Bouton primaire
