@@ -1,5 +1,5 @@
 ---
-title: Accessibilité de l'ajout de fichier
+title: Accessibilité de l’ajout de fichier
 ---
 
 # Ajout de fichier
@@ -14,23 +14,44 @@ title: Accessibilité de l'ajout de fichier
 
 ## Accessibilité
 
-Le composant **Ajout de fichier** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Ajout de fichier** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ### Interactions clavier
 
-Lorsque le focus est positionné sur le champ d'ajout de fichier :
+Lorsque le focus est positionné sur le champ d’ajout de fichier&nbsp;:
 
-- `Entrée` : Ouvre la boîte de dialogue pour sélectionner un fichier.
-- `Esc` : Referme la boîte de dialogue pour sélectionner un fichier.
-- `Tab` : Place le focus sur le prochain élément focalisable.
-- `shift + Tab` : Place le focus sur l'élément focalisable précédent.
+- `Entrée` ou `Espace`&nbsp;: ouvre la boîte de dialogue d’ajout de fichier.
+- `Échap`&nbsp;: referme la boîte de dialogue d’ajout de fichier.
 
-### Règles d'accessibilité
+### Règles d’accessibilité
 
-- Le **libellé** doit être associé au champ d'ajout de fichier via l'attribut `for` et l'id du champ d'ajout de fichier.
-- Un **message** d'erreur, d'information, ou de succès peut être associé au champ d'ajout de fichier. Son attribut `id` doit être associé à l'attribut `aria-describedby` du champ d'ajout de fichier. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé au technologies d'assistance en utilisant l'attribut `aria-live="polite"`.
+- Le champ d’ajout de fichier possède un nom accessible avec un `label` relié au champ avec une liaison entre l’attribut `for` et l’attribut id du champ d'ajout de fichier.
+- Un **message** d'erreur, d'information, ou de succès peut être associé au champ d'ajout de fichier. Son attribut `id` doit être associé à l'attribut `aria-describedby` du champ d'ajout de fichier.
+
+#### Contrastes de couleurs
+
+Le composant est suffisamment contrasté en thème clair et en thème sombre.
+
+### Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant Ajout de fichier.
+
+> [!NOTE]
+> Avec les lecteurs d’écran mobiles, le focus est repositionné en haut de page au lieu d’être repositionné sur le composant.
+
+---
+
+### Critères RGAA applicables
+
+- **Couleurs&nbsp;:** 3.2
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Formulaires&nbsp;:** 11.1, 11.2, 11.4, 11.10, 11.11
+- **Navigation&nbsp;:** 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
+
+---
 
 ### Références
 
-- [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Input type="file"](https://html.spec.whatwg.org/#file-upload-state-(type=file))
