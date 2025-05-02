@@ -44,7 +44,7 @@ Voir les [règles d'accessibilité du composant Lien](../../../../link/_part/doc
 
 Voir les [règles d’accessibilité du composant Bouton](../../../../button/_part/doc/accessibility/index.md#regles-d-accessibilite).
 
-#### Contrastes de couleur
+#### Contrastes de couleurs
 Le composant Tag est suffisamment contrasté en thème clair. Il l’est également en thème sombre dans sa version par défaut.
 
 :::dsfr-doc-table[Contrastes de couleurs]{valign=top scroll=false caption=false}
