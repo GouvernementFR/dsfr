@@ -671,33 +671,37 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@gouvfr/dsfr-alchemist@=0.0.73", "@gouvfr/dsfr-alchemist@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@alchemist":
-  version "0.0.73"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#f40fbd57227bd02e21ac618a7550d6939a3b9b34"
+"@gouvfr/dsfr-alchemist@=1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-alchemist/-/dsfr-alchemist-1.0.7.tgz#963da49b3b4295ccb9e02302109ec343c0bd14de"
+  integrity sha512-O7xeanhJ8kDWLN0NuCA4t5kEQldeO6dKOSsXEPG5AArFDjarqT8e8aNYZsyLLJU0trs7KYiV/T0sEXhqh6aZ6w==
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.73"
+    "@gouvfr/dsfr-forge" "=1.0.7"
     esbuild "^0.24.2"
     lightningcss "^1.29.1"
     sass "^1.79.3"
 
-"@gouvfr/dsfr-forge@=0.0.73", "@gouvfr/dsfr-forge@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@forge":
-  version "0.0.73"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#e1b4817c37dceae36f81580353cbc48c2010b473"
+"@gouvfr/dsfr-forge@=1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-forge/-/dsfr-forge-1.0.7.tgz#9add0808d4c1b2da156975751b24d5c78e806364"
+  integrity sha512-zOFvyZ63Fsf+ebrV2VkTmJgF6uVuZNDcQipKyvueY20gB0yndJRQHHPKiX5/W8RaPZKy8hf2Q8TEYP2g+7ssdQ==
 
-"@gouvfr/dsfr-lore@=0.0.73", "@gouvfr/dsfr-lore@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@lore":
-  version "0.0.73"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#71217f65412b8d93da65a3f11dc4b04ff6fc6c29"
+"@gouvfr/dsfr-lore@=1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.0.7.tgz#b94fe506d7421e0f21bd6566cf3b45e17b144f07"
+  integrity sha512-mm01vX2IgV57wBPoF9KbIy98A8n1eQAPtKdGbioocD1b1msxkaZASniPJ4vLZwx5OJKOUBVID/SCYuSpBWTPcg==
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.73"
+    "@gouvfr/dsfr-forge" "=1.0.7"
 
-"@gouvfr/dsfr-nexus@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@nexus":
-  version "0.0.73"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#d8c6120ea9d6a9f8b0674ed900a14d64cba4de32"
+"@gouvfr/dsfr-nexus@^1.0.0":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.0.7.tgz#cf4569b59bd135f8d5e61cff89a60c6251850ae1"
+  integrity sha512-wMEJBWmw9tvyuxfriCPQLqYo37OFvlRq7vMxV2FoIyL8HzVCMjYVujaBUCmWsmZqcAExFX0tn3OSWxTwPMpyvA==
   dependencies:
-    "@gouvfr/dsfr-alchemist" "=0.0.73"
-    "@gouvfr/dsfr-forge" "=0.0.73"
-    "@gouvfr/dsfr-lore" "=0.0.73"
-    "@gouvfr/dsfr-roller" "=0.0.73"
+    "@gouvfr/dsfr-alchemist" "=1.0.7"
+    "@gouvfr/dsfr-forge" "=1.0.7"
+    "@gouvfr/dsfr-lore" "=1.0.7"
+    "@gouvfr/dsfr-roller" "=1.0.7"
     browser-sync "^3.0.3"
     del "^7.1.0"
     mdast-util-directive "^3.0.0"
@@ -719,12 +723,12 @@
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.13.1.tgz#97ef3b9b716999ec5cd726a7b426112f37100574"
   integrity sha512-dCB0YuQ8YczGYT1qPO0nDYYQCq7As58DSPR59bDIsxYRgzq8D0UT8oVgzDCn6vWHzomnB0E/41LZ0mQ2kYi3CQ==
 
-"@gouvfr/dsfr-roller@=0.0.73", "@gouvfr/dsfr-roller@git+https://github.com/GouvernementFR/dsfr-cli.git#doc@roller":
-  version "0.0.73"
-  uid "047ffe25315e38d69e92ac133068691b03f4c182"
-  resolved "git+https://github.com/GouvernementFR/dsfr-cli.git#047ffe25315e38d69e92ac133068691b03f4c182"
+"@gouvfr/dsfr-roller@=1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.0.7.tgz#86b19f1761ae0aedb16f9bca06ce5bf5a382f175"
+  integrity sha512-Xd16fzG+AGiyaxQ07QAAqAEbpE8JdBdK8tLv85UeOg+76/VjJPWP83KF5qS6xb9pryx+9Hb/XXOjHYiHyOST1g==
   dependencies:
-    "@gouvfr/dsfr-forge" "=0.0.73"
+    "@gouvfr/dsfr-forge" "=1.0.7"
     "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.1"
     deepmerge "^4.3.1"
     ejs "^3.1.10"
@@ -1316,11 +1320,11 @@
   integrity sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==
 
 "@types/node@*", "@types/node@>=10.0.0":
-  version "22.13.14"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.14.tgz#70d84ec91013dcd2ba2de35532a5a14c2b4cc912"
-  integrity sha512-Zs/Ollc1SJ8nKUAgc7ivOEdIBM8JAKgrqqUYi2J997JuKO7/tpQC+WCetQ1sypiKCQWHdvdg9wBNpUPEWZae7w==
+  version "22.15.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.3.tgz#b7fb9396a8ec5b5dfb1345d8ac2502060e9af68b"
+  integrity sha512-lX7HFZeHf4QG/J7tBZqrCAXwz9J5RD56Y6MpP0eJkka8p+K0RY/yBTW7CYFJ4VGCclxqOLKmiGP5juQc6MKgcw==
   dependencies:
-    undici-types "~6.20.0"
+    undici-types "~6.21.0"
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.4"
@@ -1875,19 +1879,19 @@ browser-process-hrtime@^1.0.0:
   resolved "https://registry.yarnpkg.com/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"
   integrity sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==
 
-browser-sync-client@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/browser-sync-client/-/browser-sync-client-3.0.3.tgz#6805c6cb56762baabe2e0e2ba31b2476a552f665"
-  integrity sha512-TOEXaMgYNjBYIcmX5zDlOdjEqCeCN/d7opf/fuyUD/hhGVCfP54iQIDhENCi012AqzYZm3BvuFl57vbwSTwkSQ==
+browser-sync-client@^3.0.3, browser-sync-client@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/browser-sync-client/-/browser-sync-client-3.0.4.tgz#def7e0bc0a15643188c2a7dcb5664041375c1edb"
+  integrity sha512-+ew5ubXzGRKVjquBL3u6najS40TG7GxCdyBll0qSRc/n+JRV9gb/yDdRL1IAgRHqjnJTdqeBKKIQabjvjRSYRQ==
   dependencies:
     etag "1.8.1"
     fresh "0.5.2"
     mitt "^1.1.3"
 
-browser-sync-ui@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/browser-sync-ui/-/browser-sync-ui-3.0.3.tgz#c15ee62d8e9c91470a760fa360651e7b2ad842b3"
-  integrity sha512-FcGWo5lP5VodPY6O/f4pXQy5FFh4JK0f2/fTBsp0Lx1NtyBWs/IfPPJbW8m1ujTW/2r07oUXKTF2LYZlCZktjw==
+browser-sync-ui@^3.0.3, browser-sync-ui@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/browser-sync-ui/-/browser-sync-ui-3.0.4.tgz#0aa4312a3b7195d1018013ecc15012a8089ae583"
+  integrity sha512-5Po3YARCZ/8yQHFzvrSjn8+hBUF7ZWac39SHsy8Tls+7tE62iq6pYWxpVU6aOOMAGD21RwFQhQeqmJPf70kHEQ==
   dependencies:
     async-each-series "0.1.1"
     chalk "4.1.2"
@@ -1897,7 +1901,7 @@ browser-sync-ui@^3.0.3:
     socket.io-client "^4.4.1"
     stream-throttle "^0.1.3"
 
-browser-sync@>=2.27.10, browser-sync@^3.0.3:
+browser-sync@>=2.27.10:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/browser-sync/-/browser-sync-3.0.3.tgz#e82d7a005b47cbf5e5f990bcbe099457eaee3b9a"
   integrity sha512-91hoBHKk1C4pGeD+oE9Ld222k2GNQEAsI5AElqR8iLLWNrmZR2LPP8B0h8dpld9u7kro5IEUB3pUb0DJ3n1cRQ==
@@ -1912,6 +1916,40 @@ browser-sync@>=2.27.10, browser-sync@^3.0.3:
     dev-ip "^1.0.1"
     easy-extender "^2.3.4"
     eazy-logger "^4.0.1"
+    etag "^1.8.1"
+    fresh "^0.5.2"
+    fs-extra "3.0.1"
+    http-proxy "^1.18.1"
+    immutable "^3"
+    micromatch "^4.0.8"
+    opn "5.3.0"
+    portscanner "2.2.0"
+    raw-body "^2.3.2"
+    resp-modifier "6.0.2"
+    rx "4.1.0"
+    send "^0.19.0"
+    serve-index "^1.9.1"
+    serve-static "^1.16.2"
+    server-destroy "1.0.1"
+    socket.io "^4.4.1"
+    ua-parser-js "^1.0.33"
+    yargs "^17.3.1"
+
+browser-sync@^3.0.3:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/browser-sync/-/browser-sync-3.0.4.tgz#8209f36b7c8ea93118fa2ff5c6ca314c5eb832b7"
+  integrity sha512-mcYOIy4BW6sWSEnTSBjQwWsnbx2btZX78ajTTjdNfyC/EqQVcIe0nQR6894RNAMtvlfAnLaH9L2ka97zpvgenA==
+  dependencies:
+    browser-sync-client "^3.0.4"
+    browser-sync-ui "^3.0.4"
+    bs-recipes "1.3.4"
+    chalk "4.1.2"
+    chokidar "^3.5.1"
+    connect "3.6.6"
+    connect-history-api-fallback "^1"
+    dev-ip "^1.0.1"
+    easy-extender "^2.3.4"
+    eazy-logger "^4.1.0"
     etag "^1.8.1"
     fresh "^0.5.2"
     fs-extra "3.0.1"
@@ -2703,9 +2741,9 @@ detect-libc@^1.0.3:
   integrity sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==
 
 detect-libc@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.3.tgz#f0cd503b40f9939b894697d19ad50895e30cf700"
-  integrity sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.4.tgz#f04715b8ba815e53b4d8109655b6508a6865a7e8"
+  integrity sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==
 
 detect-newline@^3.0.0:
   version "3.1.0"
@@ -2858,10 +2896,10 @@ easy-extender@^2.3.4:
   dependencies:
     lodash "^4.17.10"
 
-eazy-logger@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/eazy-logger/-/eazy-logger-4.0.1.tgz#2e9fe487fb14ed6ac20d5f01d90dff377d403041"
-  integrity sha512-2GSFtnnC6U4IEKhEI7+PvdxrmjJ04mdsj3wHZTFiw0tUtG4HCWzTr13ZYTk8XOGnA1xQMaDljoBOYlk3D/MMSw==
+eazy-logger@^4.0.1, eazy-logger@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eazy-logger/-/eazy-logger-4.1.0.tgz#d4dae8688b0d730ba1ae6065410b7a51df9990b4"
+  integrity sha512-+mn7lRm+Zf1UT/YaH8WXtpU6PIV2iOjzP6jgKoiaq/VNrjYKp+OHZGe2znaLgDeFkw8cL9ffuaUm+nNnzcYyGw==
   dependencies:
     chalk "4.1.2"
 
@@ -7712,10 +7750,21 @@ sass-true@^6.1.0:
     jest-diff "^27.5.1"
     lodash "^4.17.21"
 
-sass@^1.59.2, sass@^1.79.3:
+sass@^1.59.2:
   version "1.86.0"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.86.0.tgz#f49464fb6237a903a93f4e8760ef6e37a5030114"
   integrity sha512-zV8vGUld/+mP4KbMLJMX7TyGCuUp7hnkOScgCMsWuHtns8CWBoz+vmEhoGMXsaJrbUP8gj+F1dLvVe79sK8UdA==
+  dependencies:
+    chokidar "^4.0.0"
+    immutable "^5.0.2"
+    source-map-js ">=0.6.2 <2.0.0"
+  optionalDependencies:
+    "@parcel/watcher" "^2.4.1"
+
+sass@^1.79.3:
+  version "1.87.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.87.0.tgz#8cceb36fa63fb48a8d5d7f2f4c13b49c524b723e"
+  integrity sha512-d0NoFH4v6SjEK7BoX810Jsrhj7IQSYHAHLi/iSpgqKc7LaIDshFRlSg5LOymf9FqQhxEHs2W5ZQXlvy0KD45Uw==
   dependencies:
     chokidar "^4.0.0"
     immutable "^5.0.2"
@@ -8750,10 +8799,10 @@ unbzip2-stream@^1.3.3:
     buffer "^5.2.1"
     through "^2.3.8"
 
-undici-types@~6.20.0:
-  version "6.20.0"
-  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.20.0.tgz#8171bf22c1f588d1554d55bf204bc624af388433"
-  integrity sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==
+undici-types@~6.21.0:
+  version "6.21.0"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
+  integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
@@ -9212,9 +9261,9 @@ yaml@^1.10.0, yaml@^1.10.2:
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
 
 yaml@^2.4.1:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.7.0.tgz#aef9bb617a64c937a9a748803786ad8d3ffe1e98"
-  integrity sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA==
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.7.1.tgz#44a247d1b88523855679ac7fa7cda6ed7e135cf6"
+  integrity sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==
 
 yargs-parser@^20.2.2, yargs-parser@^20.2.3:
   version "20.2.9"
