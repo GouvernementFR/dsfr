@@ -62,7 +62,8 @@ const buildStyle = async (pck, data, dest, minify, map) => {
   let options = {
     outFile: `${dest}.css`,
     style: 'expanded',
-    loadPaths: [`${root('.')}`]
+    loadPaths: [`${root('.')}`],
+    silenceDeprecations: ['global-builtin', 'import', 'mixed-decls']
   };
 
   if (map) {
