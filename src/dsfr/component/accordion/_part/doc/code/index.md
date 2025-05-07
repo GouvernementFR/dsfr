@@ -381,7 +381,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 Exemple :
 
 ```js
-const element = document.getElementById("myAccordion01"); // Reference à l'element du DOM comportant l'attribut 'data-fr-js-[...]'
+const element = document.getElementById("myAccordion01"); // Référence à l’élément du DOM comportant l’attribut 'data-fr-js-[...]'
 
 // Ajoute un listener de l'event de fermeture de l'accordéon
 element.addEventListener('dsfr.conceal', (e) => {
