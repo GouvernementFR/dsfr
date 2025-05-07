@@ -31,7 +31,7 @@ L'accordéon est composé de deux parties : son titre qui contient le bouton d'o
 Sa structure est la suivante :
 
 - Le conteneur de l'accordéon est une balise `<section>` avec la classe `fr-accordion`.
-- Son titre est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
+- Son titre est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hiérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
 - Un `<button>` est placé dans cette balise `<hx>`, et son libellé constitue le titre.
   - Le bouton doit être de type "button".
   - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le collapse est ouvert ou fermé
@@ -164,6 +164,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).accordionsGroup.current` |
+
 :::
 
 :::fr-table[hasFocus]{valign=top scroll=false}
@@ -173,6 +174,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).accordionsGroup.hasFocus` |
+
 :::
 
 :::fr-table[index]{valign=top scroll=false}
@@ -182,6 +184,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).accordionsGroup.index` <br/> `dsfr(elem).accordionsGroup.index = 2` |
+
 :::
 
 :::fr-table[isGrouped]{valign=top scroll=false}
@@ -191,6 +194,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).accordionsGroup.isGrouped` <br/> `dsfr(elem).accordionsGroup.isGrouped = true` |
+
 :::
 
 :::fr-table[length]{valign=top scroll=false}
@@ -200,6 +204,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).accordionsGroup.length` |
+
 :::
 
 :::fr-table[members]{valign=top scroll=false}
@@ -209,26 +214,26 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).accordionsGroup.members` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
-| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Description** | Renvoie le nœud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).accordionsGroup.node` |
+
 :::
 
 ##### accordion
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
-|------|-----|
-| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
-| **Type** | property |
-| **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
+
 :::
 
 ##### collapseButton
@@ -241,6 +246,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
@@ -250,15 +256,17 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
-| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Description** | Renvoie le nœud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapseButton.node` |
+
 :::
 
 ##### collapse
@@ -271,6 +279,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
+
 :::
 
 :::fr-table[disclose]{valign=top scroll=false}
@@ -281,6 +290,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
+
 :::
 
 :::fr-table[isDisclosed]{valign=top scroll=false}
@@ -290,6 +300,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
@@ -299,6 +310,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
+
 :::
 
 :::fr-table[group]{valign=top scroll=false}
@@ -308,6 +320,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).collapse.group` |
+
 :::
 
 :::fr-table[buttons]{valign=top scroll=false}
@@ -317,6 +330,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
+
 :::
 
 :::fr-table[focus]{valign=top scroll=false}
@@ -327,6 +341,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
@@ -336,6 +351,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[children]{valign=top scroll=false}
@@ -345,16 +361,48 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
-| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Description** | Renvoie le nœud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
+
 :::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs.
+
+Exemple :
+
+```js
+const element = document.getElementById("myAccordion01"); // Reference à l'element du DOM comportant l'attribut 'data-fr-js-[...]'
+
+// Ajoute un listener de l'event de fermeture de l'accordéon
+element.addEventListener('dsfr.conceal', (e) => {
+    console.log(e);
+    [...]
+})
+
+// Ajoute un listener de l'event d'ouverture de l'accordéon
+element.addEventListener('dsfr.disclose', (e) => {
+    console.log(e);
+    [...]
+})
+```
+
+Sur l'accordéon, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Attribut | Events |
+|------|-----|
+| `data-fr-js-collapse` | `dsfr.conceal // Fermeture de l'element`<br/>`dsfr.disclose // Ouverture de l'element` |
 
 ---
 
