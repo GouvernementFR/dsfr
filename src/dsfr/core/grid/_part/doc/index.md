@@ -56,7 +56,13 @@ Il est possible d’adapter la grille à votre besoin, en utilisant les différe
 **Mise en page avec marge externe et sans gouttière (par défaut)**
 
 ```HTML
-<div class="fr-container"><div class="fr-grid-row"><div class="fr-col"></div><div class="fr-col-4"></div><div class="fr-col-12 fr-col-lg-4"></div></div></div>
+<div class="fr-container">
+    <div class="fr-grid-row">
+        <div class="fr-col"></div>
+        <div class="fr-col-4"></div>
+        <div class="fr-col-12 fr-col-lg-4"></div>
+    </div>
+</div>
 ```
 
 **Mise en page avec marge externe et avec gouttière**
@@ -64,7 +70,13 @@ Il est possible d’adapter la grille à votre besoin, en utilisant les différe
 Il est possible d’ajouter des gouttières de 16 ou 24px selon votre résolution (voir tableau ci-dessus), à l’aide du modificateur fr-grid-row--gutters .
 
 ```HTML
-<div class="fr-container"><div class="fr-grid-row fr-grid-row--gutters"><div class="fr-col"></div><div class="fr-col-4"></div><div class="fr-col-12 fr-col-lg-4"></div></div></div>
+<div class="fr-container">
+    <div class="fr-grid-row fr-grid-row--gutters">
+        <div class="fr-col"></div>
+        <div class="fr-col-4"></div>
+        <div class="fr-col-12 fr-col-lg-4"></div>
+    </div>
+</div>
 ```
 
 **Mise en page sans marge externe et sans gouttière**
@@ -72,17 +84,27 @@ Il est possible d’ajouter des gouttières de 16 ou 24px selon votre résolutio
 Pour l'utiliser, il suffit d’utiliser la classe fr-container--fluid.
 
 ```HTML
-<div class="fr-container--fluid"><div class="fr-grid-row"><div class="fr-col"></div><div class="fr-col-4"></div><div class="fr-col-12 fr-col-lg-4"></div></div></div>
+<div class="fr-container--fluid">
+    <div class="fr-grid-row">
+        <div class="fr-col"></div>
+        <div class="fr-col-4"></div>
+        <div class="fr-col-12 fr-col-lg-4"></div>
+    </div>
+</div>
 ```
-
-**Copier**
 
 **Mise en page sans marge externe et avec gouttière**
 
 Pour l’utiliser il suffit d’intégrer le modificateur fr-container--fluid et de le combiner avec le modificateurfr-grid-row--gutter.
 
 ```HTML
-<div class="fr-container--fluid"><div class="fr-grid-row fr-grid-row--gutters"><div class="fr-col"></div><div class="fr-col-4"></div><div class="fr-col-12 fr-col-lg-4"></div></div></div>
+<div class="fr-container--fluid">
+    <div class="fr-grid-row fr-grid-row--gutters">
+        <div class="fr-col"></div>
+        <div class="fr-col-4"></div>
+        <div class="fr-col-12 fr-col-lg-4"></div>
+    </div>
+</div>
 ```
 
 **Ajuster la largeur des blocs de contenu**
@@ -106,13 +128,21 @@ Vous pouvez personnaliser l'alignement vertical ou horizontal d’un contenu, en
 - **Alignement horizontal :** fr-grid-row--left, fr-grid-row--right, fr-grid-row--center
 
 ```HTML
-<div class="fr-container"><div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center"><div class="fr-col-4"></div></div></div>
+<div class="fr-container">
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+        <div class="fr-col-4"></div>
+    </div>
+</div>
 ```
 
 - **Alignement vertical :** fr-grid-row--top, fr-grid-row--bottom, fr-grid-row--middle
 
 ```HTML
-<div class="fr-container"><div class="fr-grid-row fr-grid-row--gutters fr-grid-row--bottom"><div class="fr-col-4"></div></div></div>
+<div class="fr-container">
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--bottom">
+        <div class="fr-col-4"></div>
+    </div>
+</div>
 ```
 
 
@@ -131,14 +161,22 @@ Vous pouvez mettre ce décalage à la droite du bloc avec le modificateur fr-col
 **Exemple d’un décalage commun à toutes les mises en page**
 
 ```HTML
-<div class="fr-container"><div class="fr-grid-row fr-grid-row--gutters"><div class="fr-col-offset-4"></div></div></div>
+<div class="fr-container">
+    <div class="fr-grid-row fr-grid-row--gutters">
+        <div class="fr-col-offset-4"></div>
+    </div>
+</div>
 ```
 
 
 **Exemple d’un décalage différent sur chaque mise en page**
 
 ```HTML
-<div class="fr-container"><div class="fr-grid-row fr-grid-row--gutters"><div class="fr-col-offset-1 fr-col-offset-sm-3 fr-col-offset-md-6"></div></div></div>
+<div class="fr-container">
+    <div class="fr-grid-row fr-grid-row--gutters">
+        <div class="fr-col-offset-1 fr-col-offset-sm-3 fr-col-offset-md-6"></div>
+    </div>
+</div>
 ```
 
 

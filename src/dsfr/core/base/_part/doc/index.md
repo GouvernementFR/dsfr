@@ -78,7 +78,7 @@ La grille amenée par le DSFR permet de créer des pages structurées simplement
 
 ### Les contenus médias
 
-Le DSFR encadre l’utilisation des images et vidéos, la liste des formats et ratios possibles est sur [la page dédiée](https://www.systeme-de-design.gouv.fr/fondamentaux/medias). De façon générale, utilisez des images et vidéos qui véhiculent un message clair en veillant à homogénéiser leur style graphique. 
+Le DSFR encadre l’utilisation des images et vidéos, la liste des formats et ratios possibles est sur [la page dédiée]( ../core/media/_part/doc/index.md). De façon générale, utilisez des images et vidéos qui véhiculent un message clair en veillant à homogénéiser leur style graphique. 
 
 **Attention à n’utiliser exclusivement que des images, photos et vidéos libres de droit ou à vous acquitter des droits.**
 
@@ -88,7 +88,8 @@ Pour mieux accompagner l’utilisateur sur votre site ou vos besoins d’illustr
 
 Les icônes, sont des symboles visuels qui font partie prenante de l’interface et de l’expérience utilisateurs. Elles sont en grande partie issues de la librairie [Remix Icons](https://remixicon.com/) dans laquelle vous pouvez allez chercher ce que nous n’aurions pas déjà intégré. 
 
-Les pictogrammes sont des représentations visuelles explicites à portée plus illustrative pour aider l’utilisateur à se repérer. La bibliothèque de pictogramme est entièrement dessinée par l’équipe du DSFR et la communauté, [n’hésitez pas à y contribuer](https://www.systeme-de-design.gouv.fr/fondamentaux/pictogramme) !
+Les pictogrammes sont des représentations visuelles explicites à portée plus illustrative pour aider l’utilisateur à se repérer. La bibliothèque de pictogramme est entièrement dessinée par l’équipe du DSFR et la communauté, [n’hésitez pas à y contribuer]( ../core/pictogram/_part/doc/index.md) !
+
 
 ### **Système d'ombres et d'élévation**
 
