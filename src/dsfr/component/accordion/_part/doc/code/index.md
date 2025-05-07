@@ -5,6 +5,7 @@ title: Code de l'Accordéon
 # Accordéon
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -21,7 +22,7 @@ L'accordéon est composé de deux parties : son titre qui contient le bouton d'o
 Sa structure est la suivante :
 
 - Le conteneur de l'accordéon est une balise `<section>` avec la classe `fr-accordion`.
-- Son titre est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
+- Son titre est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hiérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
 - Un `<button>` est placé dans cette balise `<hx>`, et son libellé constitue le titre.
   - Le bouton doit être de type "button".
   - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le collapse est ouvert ou fermé
@@ -131,7 +132,6 @@ Sur l'accordéon, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
-
 #### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
@@ -139,94 +139,110 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_COLLAPSE');
 dsfr(elem).collapse.disclose();
 ```
 
-
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
-
 
 ###### accordionGroup
 
 :::dsfr-doc-table[current]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne l'API du collapse ouvert. <br/>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).accordionsGroup.current` |
+
 :::
 
 :::dsfr-doc-table[hasFocus]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).accordionsGroup.hasFocus` |
+
 :::
 
 :::dsfr-doc-table[index]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de l'accordéon courant. <br/>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).accordionsGroup.index` <br/> `dsfr(elem).accordionsGroup.index = 2` |
+
 :::
 
 :::dsfr-doc-table[isGrouped]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si les accordéons du groupe sont liés en eux ou non. <br/>_Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut._|
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).accordionsGroup.isGrouped` <br/> `dsfr(elem).accordionsGroup.isGrouped = true` |
+
 :::
 
 :::dsfr-doc-table[length]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne le nombre d'accordéons dans le groupe. |
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).accordionsGroup.length` |
+
 :::
 
 :::dsfr-doc-table[members]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie un tableau d'objets correspondant aux collapses des accordéons du groupe. |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).accordionsGroup.members` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
-| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Description** | Renvoie le nœud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).accordionsGroup.node` |
+
 :::
 
 ###### accordion
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
+
 :::
 
 ###### collapseButton
 
 :::dsfr-doc-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -234,29 +250,35 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
+
 :::
 
 :::dsfr-doc-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici l'accordéon |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
-| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Description** | Renvoie le nœud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapseButton.node` |
+
 :::
 
 ###### collapse
 
-:::dsfr-doc-table[concea]{valign=top scroll=false}
+:::dsfr-doc-table[conceal]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -264,9 +286,11 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
+
 :::
 
 :::dsfr-doc-table[disclose]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -274,45 +298,55 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
+
 :::
 
 :::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
+
 :::
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
+
 :::
 
 :::dsfr-doc-table[group]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).collapse.group` |
+
 :::
 
 :::dsfr-doc-table[buttons]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
+
 :::
 
 :::dsfr-doc-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
@@ -320,34 +354,71 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
+
 :::
 
 :::dsfr-doc-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici l'accordéon |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::dsfr-doc-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
-| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Description** | Renvoie le nœud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
+
 :::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs.
+
+Exemple :
+
+```js
+const element = document.getElementById("myAccordion01"); // Référence à l’élément du DOM comportant l’attribut 'data-fr-js-[...]'
+
+// Ajoute un listener de l'event de fermeture de l'accordéon
+element.addEventListener('dsfr.conceal', (e) => {
+    console.log(e);
+    [...]
+})
+
+// Ajoute un listener de l'event d'ouverture de l'accordéon
+element.addEventListener('dsfr.disclose', (e) => {
+    console.log(e);
+    [...]
+})
+```
+
+Sur l'accordéon, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Attribut | Events |
+|------|-----|
+| `data-fr-js-collapse` | `dsfr.conceal // Fermeture de l'element`<br/>`dsfr.disclose // Ouverture de l'element` |
 
 ---
 
