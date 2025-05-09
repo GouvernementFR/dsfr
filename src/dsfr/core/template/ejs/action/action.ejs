@@ -1,23 +1,23 @@
 <%#
 # paramètres action
 
-* action.kind (string, optional) : type d'action [button/input/link]
+* action.markup (string, optional) : balise HTML de l'action
 valeurs :
   ** button (default) : bouton
-  ** input : input
-  ** link : lien
+  ** input : champ de saisie de type [button, reset, ou submit]
+  ** a : lien
 
 * action.id (string, optional) : id de l'élément d'action
 
 * action.label (string, required) : libellé de l'élément d'action
 
-* action.href (string, optional) : adresse url du lien si action.kind = link
+* action.href (string, optional) : adresse url du lien si action.markup = a
 
-* action.type (string, optional) : attribut type de l'élément d'action si action.kind = input ou button [button/submit/reset]
+* action.type (string, optional) : attribut type de l'élément d'action si action.markup = input ou button [button/submit/reset]
 
-* action.blank (bool, optional) : si true, target prend la valeur _blank, si action.kind = link
+* action.blank (bool, optional) : si true, target prend la valeur _blank, si action.markup = a
 
-* action.self (bool, optional) : si true, target prend la valeur _self, si action.kind = link
+* action.self (bool, optional) : si true, target prend la valeur _self, si action.markup = a
 
 * action.disabled (boolean, optional) : si valeur true, action désactivée
 

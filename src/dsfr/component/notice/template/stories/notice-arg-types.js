@@ -62,7 +62,7 @@ const noticeArgTypes = {
       }
     },
     description: 'Type de bandeau',
-    options: ['info', 'warning', 'alert', 'weather-orange', 'weather-purple', 'kidnapping', 'cyberattack', 'attack', 'witness'],
+    options: ['info', 'warning', 'alert', 'weather-orange', 'weather-red', 'weather-purple', 'kidnapping', 'cyberattack', 'attack', 'witness'],
     table: {
       category: 'type'
     }

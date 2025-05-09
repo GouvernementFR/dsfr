@@ -136,7 +136,7 @@ Consulter la [documentation des paramètres d’affichage](https://www.systeme-d
 
 Afin d’inclure la totalité des composants et des styles du système de design, il est nécessaire d’inclure la feuille de style `dist/dsfr.min.css`.
 
-Les classes utilitaires, notamment les icônes, sont disponibles dans un fichier à part dans `dist/utility/utility.scss`.
+Les classes utilitaires, notamment les icônes, sont disponibles dans un fichier à part dans `dist/utility/utility.css`.
 ```html
 <html>
   <head>

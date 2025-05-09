@@ -42,6 +42,7 @@ function menu(level, active, isCollapsible) {
   return {
     type: 'menu',
     active: active === true,
+    isExpanded: active === true,
     label: active === true ? 'Entrée menu active' : 'Niveau ' + level,
     collapseId: uniqueId('sidemenu'),
     isCollapsible: isCollapsible === true,
