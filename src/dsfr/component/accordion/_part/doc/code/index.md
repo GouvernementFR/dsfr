@@ -220,7 +220,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
-| **Description** | Renvoie le nœud HTML de l'élément. |
+| **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).accordionsGroup.node` |
@@ -262,7 +262,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
-| **Description** | Renvoie le nœud HTML de l'élément. |
+| **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapseButton.node` |
@@ -367,7 +367,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
-| **Description** | Renvoie le nœud HTML de l'élément. |
+| **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
@@ -376,33 +376,18 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs.
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
 
-Exemple :
-
-```js
-const element = document.getElementById("myAccordion01"); // Référence à l’élément du DOM comportant l’attribut 'data-fr-js-[...]'
-
-// Ajoute un listener de l'event de fermeture de l'accordéon
-element.addEventListener('dsfr.conceal', (e) => {
-    console.log(e);
-    [...]
-})
-
-// Ajoute un listener de l'event d'ouverture de l'accordéon
-element.addEventListener('dsfr.disclose', (e) => {
-    console.log(e);
-    [...]
-})
-```
-
-Sur l'accordéon, les événements suivants sont disponibles :
+Sur l'accordéon et le groupe d'accordéons, les événements suivants sont disponibles :
 
 :::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
 
-| Attribut | Events |
-|------|-----|
-| `data-fr-js-collapse` | `dsfr.conceal // Fermeture de l'element`<br/>`dsfr.disclose // Ouverture de l'element` |
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de l'élément | collapse | `data-fr-js-collapse` |
+| `dsfr.disclose` | Ouverture de l'élément | collapse | `data-fr-js-collapse` |
+
+:::
 
 ---
 

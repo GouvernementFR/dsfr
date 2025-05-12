@@ -148,6 +148,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_TOOLTIP');
 dsfr(elem).tooltip.show();
@@ -164,6 +165,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[children]{valign=top scroll=false}
@@ -173,6 +175,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -182,6 +185,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tooltip.node` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
@@ -191,6 +195,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tooltip.isEnabled = false` |
+
 :::
 
 :::fr-table[isShown]{valign=top scroll=false}
@@ -200,6 +205,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tooltip.isShown = false` |
+
 :::
 
 :::fr-table[show]{valign=top scroll=false}
@@ -210,6 +216,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).tooltip.show()` |
+
 :::
 
 :::fr-table[hide]{valign=top scroll=false}
@@ -220,6 +227,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).tooltip.hide()` |
+
 :::
 
 :::fr-table[mode]{valign=top scroll=false}
@@ -229,6 +237,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | 'placement_auto' \| 'placement_manual' |
 | **Exemple** | `dsfr(elem).tooltip.mode = 'placement_manual'` |
+
 :::
 
 :::fr-table[align]{valign=top scroll=false}
@@ -238,6 +247,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | 'align_start' \| 'align_center' \| 'align_end' |
 | **Exemple** | `dsfr(elem).tooltip.align = 'align_start'` |
+
 :::
 
 :::fr-table[place]{valign=top scroll=false}
@@ -247,6 +257,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | 'placement--top' \| 'placement--bottom' \| 'placement--left' \| 'placement--right' |
 | **Exemple** | `dsfr(elem).tooltip.place = 'placement--top'` |
+
 :::
 
 ###### tooltipReferent
@@ -258,6 +269,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[children]{valign=top scroll=false}
@@ -267,6 +279,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -276,6 +289,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tooltipReferent.node` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
@@ -285,6 +299,22 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tooltipReferent.isEnabled = false` |
+
+:::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur l’infobulle, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.show` | Affichage de l’infobulle | tooltip | `data-fr-js-tab-tooltip` |
+| `dsfr.hide` | Masquage de l’infobulle | tooltip | `data-fr-js-tab-tooltip` |
+
 :::
 
 ---

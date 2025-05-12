@@ -238,6 +238,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_SOUS_SECTION');
 dsfr(elem).collapse.disclose();
@@ -254,6 +255,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).sidemenuList.current` |
+
 :::
 
 :::fr-table[hasFocus]{valign=top scroll=false}
@@ -263,6 +265,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).sidemenuList.hasFocus` |
+
 :::
 
 :::fr-table[index]{valign=top scroll=false}
@@ -272,6 +275,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).sidemenuList.index` <br/> `dsfr(elem).sidemenuList.index = 2` |
+
 :::
 
 :::fr-table[isGrouped]{valign=top scroll=false}
@@ -281,6 +285,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).sidemenuList.isGrouped` <br/> `dsfr(elem).sidemenuList.isGrouped = true` |
+
 :::
 
 :::fr-table[length]{valign=top scroll=false}
@@ -290,6 +295,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).sidemenuList.length` |
+
 :::
 
 :::fr-table[members]{valign=top scroll=false}
@@ -299,6 +305,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).sidemenuList.members` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -308,6 +315,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).sidemenuList.node` |
+
 :::
 
 ###### sidemenuItem
@@ -319,6 +327,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).sidemenuItem.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -328,6 +337,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).sidemenuItem.node` |
+
 :::
 
 ###### collapseButton
@@ -340,6 +350,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
@@ -349,6 +360,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapseButton.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -358,6 +370,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapseButton.node` |
+
 :::
 
 ###### collapse
@@ -370,6 +383,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
+
 :::
 
 :::fr-table[disclose]{valign=top scroll=false}
@@ -380,6 +394,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
+
 :::
 
 :::fr-table[isDisclosed]{valign=top scroll=false}
@@ -389,6 +404,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
@@ -398,6 +414,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
+
 :::
 
 :::fr-table[group]{valign=top scroll=false}
@@ -407,6 +424,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).collapse.group` |
+
 :::
 
 :::fr-table[buttons]{valign=top scroll=false}
@@ -416,6 +434,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
+
 :::
 
 :::fr-table[focus]{valign=top scroll=false}
@@ -426,6 +445,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
@@ -435,6 +455,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[children]{valign=top scroll=false}
@@ -444,6 +465,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -453,6 +475,22 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
+
+:::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur chaque menu déroulant du menu latéral, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de l'élément | collapse | `data-fr-js-collapse` |
+| `dsfr.disclose` | Ouverture de l'élément | collapse | `data-fr-js-collapse` |
+
 :::
 
 ---

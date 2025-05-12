@@ -749,6 +749,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).headerModal.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -758,11 +759,27 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).headerModal.node` |
+
 :::
 
 ###### modal & modalButton
 
 voir [Modale](../../../../modal/_part/doc/code/index.md#javascript)
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+En version mobile, sur la modale de navigation principale, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de la modale | modal | `data-fr-js-modal` |
+| `dsfr.disclose` | Ouverture de la modale | modal | `data-fr-js-modal` |
+
+:::
 
 ---
 

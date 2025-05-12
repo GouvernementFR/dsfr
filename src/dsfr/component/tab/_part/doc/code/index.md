@@ -150,13 +150,16 @@ Pour fonctionner, le composant onglet nécessite l'utilisation de JavaScript.
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/tab/tab.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -183,6 +186,7 @@ Il est possible d'interagir avec les instances du composant en JavaScript via un
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_TAB');
 dsfr(elem).tabsGroup.isEnabled;
@@ -199,6 +203,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).tabsGroup.current` |
+
 :::
 
 :::fr-table[hasFocus]{valign=top scroll=false}
@@ -208,6 +213,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabsGroup.hasFocus` |
+
 :::
 
 :::fr-table[index]{valign=top scroll=false}
@@ -217,6 +223,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).tabsGroup.index` <br/> `dsfr(elem).tabsGroup.index = 2` |
+
 :::
 
 :::fr-table[isGrouped]{valign=top scroll=false}
@@ -226,6 +233,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabsGroup.isGrouped` <br/> `dsfr(elem).tabsGroup.isGrouped = true` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
@@ -235,6 +243,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tabsGroup.isEnabled = false` |
+
 :::
 
 :::fr-table[length]{valign=top scroll=false}
@@ -244,6 +253,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).tabsGroup.length` |
+
 :::
 
 :::fr-table[members]{valign=top scroll=false}
@@ -253,6 +263,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).tabsGroup.members` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -262,6 +273,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tabsGroup.node` |
+
 :::
 
 ###### tabsList
@@ -273,6 +285,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tabsList.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -282,6 +295,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tabsList.node` |
+
 :::
 
 ###### tabButton
@@ -294,6 +308,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tabButton.focus()` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
@@ -303,6 +318,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tabButton.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -312,6 +328,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tabButton.node` |
+
 :::
 
 ###### tabPanel
@@ -324,6 +341,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).tabPanel.disclose()` |
+
 :::
 
 :::fr-table[isDisclosed]{valign=top scroll=false}
@@ -333,6 +351,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabPanel.isDisclosed` |
+
 :::
 
 :::fr-table[group]{valign=top scroll=false}
@@ -342,6 +361,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).tabPanel.group` |
+
 :::
 
 :::fr-table[buttons]{valign=top scroll=false}
@@ -351,6 +371,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).tabPanel.buttons` |
+
 :::
 
 :::fr-table[focus]{valign=top scroll=false}
@@ -361,6 +382,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tabPanel.focus()` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
@@ -370,6 +392,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tabPanel.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -379,6 +402,22 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tabPanel.node` |
+
+:::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur les onglets, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de l'onglet | tab panel | `data-fr-js-tab-panel` |
+| `dsfr.disclose` | Ouverture de l'onglet | tab panel | `data-fr-js-tab-panel` |
+
 :::
 
 ---

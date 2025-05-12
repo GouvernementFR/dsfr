@@ -378,6 +378,21 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
 Le composant Gestionnaire de consentement est proposé de manière **statique**. Il convient d'utiliser l'API de la plateforme de gestion du consentement (CMP) de votre choix pour l'intégrer au sein de la structure du composant DSFR.
 
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur la modale de gestion des cookies, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de la modale | modal | `data-fr-js-modal` |
+| `dsfr.disclose` | Ouverture de la modale | modal | `data-fr-js-modal` |
+
+:::
+
 ---
 
 ### Thème DSFR pour Tarteaucitron
