@@ -1977,7 +1977,7 @@ Exemples d’implémentation :
 
 <a href="#"><span aria-hidden="true" class="fr-icon-file-pdf-line"></span>Télécharger le document PDF (397Ko)</a>
 
-<!-- ::fr-button[[Label bouton MD](#)]{kind='secondary' icon='checkbox-circle-line' icon-place='left'} -->
+::fr-button[[Label bouton MD](#)]{icon='checkbox-circle-line' icon-place='left'}
 
 ```html
 <a href="#"><span aria-hidden="true" class="fr-icon-file-pdf-line"></span>Télécharger le document PDF (397Ko)</a>
@@ -1994,7 +1994,7 @@ S'il est impossible d’associer un texte visuellement alors il faut masquer l�
 
 > [!NOTE]
 > **Besoin d'aide ?**<br>
-> L'équipe du DSFR est là pour vous aider.<br>
+> L'équipe du Système de Design de l'État est là pour vous aider.<br>
 > Retrouvez-la sur :<br>
 > - [la communauté Slack](https://gouvfr.slack.com/) pour poser vos questions, et échanger avec d'autres utilisateurs. Vous êtes agents de l'État et souhaitez accéder au Slack ? [Rejoignez la communauté](https://gouvfr.atlassian.net/servicedesk/customer/portal/1/group/1/create/9) dès maintenant !<br>
 > - [le centre de support](https://gouvfr.atlassian.net/servicedesk/customer/portals) pour envoyer vos demandes de correctifs et d'évolutions

@@ -122,8 +122,8 @@ Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et 
 
 <div class="dsfr-doc-preview">
     <svg class="fr-artwork" aria-hidden="true" viewBox="0 0 80 80" width="80px" height="80px">
-        <use class="fr-artwork-decorative" xlink:href="/img/artwork/pictograms/city-hall.svg#artwork-decorative"></use>
-        <use class="fr-artwork-minor" xlink:href="/img/artwork/pictograms/city-hall.svg#artwork-minor"></use>
+        <use class="fr-artwork-decorative" xlink:href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative"></use>
+        <use class="fr-artwork-minor" xlink:href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor"></use>
         <use class="fr-artwork-major" xlink:href="/img/artwork/pictograms/city-hall.svg#artwork-major"></use>
     </svg>
 </div>
@@ -131,9 +131,9 @@ Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et 
 :::fr-accordion[Extrait de code]{id='pictogram-accordion'}
 ```HTML
 <svg class="fr-artwork" aria-hidden="true" viewBox="0 0 80 80" width="80px" height="80px">
-  <use class="fr-artwork-decorative" xlink:href="/img/artwork/pictograms/city-hall.svg#artwork-decorative"></use>
-  <use class="fr-artwork-minor" xlink:href="/img/artwork/pictograms/city-hall.svg#artwork-minor"></use>
-  <use class="fr-artwork-major" xlink:href="/img/artwork/pictograms/city-hall.svg#artwork-major"></use>
+  <use class="fr-artwork-decorative" xlink:href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative"></use>
+  <use class="fr-artwork-minor" xlink:href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor"></use>
+  <use class="fr-artwork-major" xlink:href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-major"></use>
 </svg>
 ```
 :::
