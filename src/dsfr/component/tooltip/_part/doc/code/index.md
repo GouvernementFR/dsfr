@@ -4,19 +4,23 @@ title: Code de l'Infobulle
 # Infobulle
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
 
 #### Structure du composant
+
 Il existe deux types d’infobulles suivant son déclenchement.
 
 ##### Déclenchement au survol
+
 L’infobulle au survol se compose des éléments suivants :
 
 1. Une zone de déclenchement :
@@ -40,6 +44,7 @@ L’infobulle au survol se compose des éléments suivants :
 ```
 
 ##### Déclenchement au clic
+
 L’infobulle au clic se compose des éléments suivants :
 
 1. Une zone de déclenchement :
@@ -115,6 +120,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 #### Instances
 
 Sur le tooltip, les éléments suivants sont instanciés :
+
 - Le conteneur, via la classe : `fr-tooltip`
 - Le déclencheur, via l'attribut : `aria-describedby` lié à l'`id` du conteneur
 
@@ -127,6 +133,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_TOOLTIP');
 dsfr(elem).tooltip.show();
@@ -137,51 +144,62 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ###### tooltip
 
 :::dsfr-doc-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::dsfr-doc-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tooltip.node` |
+
 :::
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'infobulle est activé ou non |
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tooltip.isEnabled = false` |
+
 :::
 
 :::dsfr-doc-table[isShown]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si l'infobulle est affichée ou non |
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tooltip.isShown = false` |
+
 :::
 
 :::dsfr-doc-table[show]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Affiche l'infobulle |
@@ -189,9 +207,11 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).tooltip.show()` |
+
 :::
 
 :::dsfr-doc-table[hide]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Cache l'infobulle |
@@ -199,71 +219,101 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).tooltip.hide()` |
+
 :::
 
 :::dsfr-doc-table[mode]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini le mode de placement de l'infobulle |
 | **Type** | property |
 | **Retour** | 'placement_auto' \| 'placement_manual' |
 | **Exemple** | `dsfr(elem).tooltip.mode = 'placement_manual'` |
+
 :::
 
 :::dsfr-doc-table[align]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini l'alignement vertical de l'infobulle en `mode='placement_manual'` |
 | **Type** | property |
 | **Retour** | 'align_start' \| 'align_center' \| 'align_end' |
 | **Exemple** | `dsfr(elem).tooltip.align = 'align_start'` |
+
 :::
 
 :::dsfr-doc-table[place]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini le placement de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
 | **Type** | property |
 | **Retour** | 'placement--top' \| 'placement--bottom' \| 'placement--left' \| 'placement--right' |
 | **Exemple** | `dsfr(elem).tooltip.place = 'placement--top'` |
+
 :::
 
 ###### tooltipReferent
 
 :::dsfr-doc-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::dsfr-doc-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tooltipReferent.node` |
+
 :::
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du déclencheur est activé ou non |
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tooltipReferent.isEnabled = false` |
+
+:::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur l’infobulle, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.show` | Affichage de l’infobulle | tooltip | `data-fr-js-tab-tooltip` |
+| `dsfr.hide` | Masquage de l’infobulle | tooltip | `data-fr-js-tab-tooltip` |
+
 :::
 
 ---

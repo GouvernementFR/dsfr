@@ -5,11 +5,13 @@ title: Code de l'en-tête
 ## En-tête
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -21,37 +23,37 @@ Le composant **En-tête** permet aux utilisateurs d’identifier sur quel site i
 Il est constitué d'un élément HTML `<header>` de classe `fr-header`, avec l'attribut `role="banner"` contenant :
 
 - Un premier conteneur du **Corps de l'en-tête**, est un élément HTML `<div>` défini par la classe `fr-header__body`.
-    - Ce bloc doit contenir un élément HTML `<div>` de classe `fr-container` qui permet de centrer le contenu.
-    - Un bloc de **Ligne de corps de l'en-tête**, un élément HTML `<div>` défini par la classe `fr-header__body-row`, contenant :
-        - Un conteneur du **bloc marque** (voir [Marque de l'état](https://www.info.gouv.fr/marque-de-letat)), un élément HTML `<div>` de classes `fr-header__brand` et `fr-enlarge-link` pour étendre le lien à l’ensemble du bloc-marque et pouvant comporter deux sous-conteneurs :
-            - Un **Conteneur de la partie supérieure**, obligatoire, un élément HTML `<div>` de classes `fr-header__brand-top` contenant :
-                - À minima le **Bloc marque** dans un élément HTML `<div>` de classes `fr-header__logo`, il s'agit du composant [Bloc-marque de l'état](../../../../logo/_part/doc/code/index.md) de classe `fr-logo`.
-                - Il peut aussi contenir un **Logo opérateur de l'État**, une image (ou SVG) contenue dans un élément HTML `<div>` de classe `fr-header__operator`.
-                    - Utiliser un attribut `style="max-width:10rem;"`, avec comme valeur la largeur max du logo en fonction de son format (10rem pour du 16:9).
-                    - L'attribut `alt` doit être renseigné avec le nom de l'opérateur.
-                    - Le lien pointant vers l'accueil est alors positionné au niveau du logo de l'opérateur, il est automatiquement étendu à toute la zone du bloc marque.
-                    - L'attribut `title` du lien doit être renseigné sous la forme "Retour à l’accueil du site - [texte alternatif de l’image (nom de l'opérateur ou du site serviciel)] - République Française".
-            - Et un bloc **Nom de service et description**, optionnel, dans un élément HTML `<div>` de classe `fr-header__service`.
-                - Le lien `<a>` dont l'attribut `title` doit être renseigné sous la forme "Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)" est alors placé sur le paragraphe `<p>` defini par la classe `fr-header__service-title` contenant le "nom de service".
-                - Une description, optionnelle, dans un paragraphe `<p>` défini par la classe `fr-header__service-tagline`.
-        - Un bloc d'**Accès rapides**, optionnel, dans un élément HTML `<div>` de classes `fr-header__tools` et pouvant contenir :
-            - La **liste de liens d'accès rapides**, optionnelle, est placée dans un élément HTML `<div>` de classes `fr-header__tools-links`, il s'agit d'un élément HTML `<ul>` de classes `fr-btns-group` (voir [Groupes de boutons](../../../../button/_part/doc/code/index.md#groupes-de-boutons)) contenant des liens, comme par exemple la connexion à un espace sécurisé et limité à 3 accès rapides maximum.
-            - La **Barre de recherche**, optionnelle, est placée dans un élément HTML `<div>` de classes `fr-header__search` (voir [Barre de recherche](../../../../search/_part/doc/code/index.md)) et `fr-modal` pour s'afficher dans une modale en mobile (voir [Modale](../../../../modal/_part/doc/code/index.md)).
-            - Le **Sélecteur de langue**, optionnel, est placé à la suite des liens d'accès rapides (voir [Sélecteur de langue](../../../../translate/_part/doc/code/index.md)).
-            - Le bouton des **Paramètres d'affichage**, optionnels, est placé à la suite des liens d'accès rapides et avant le sélecteur de langue (voir [Paramètre d'affichage](../../../../display/_part/doc/code/index.md)).
-        - Le conteneur de la **Navigation principale mobile**, dans un élément HTML `<div>` de classes `fr-header__navbar` pouvant contenir :
-            - Le **Bouton d'ouverture**, obligatoire, du menu principale en mobile, un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--menu`.
-                - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si le bloc refermable de la navigation est ouvert ou fermé.
-                - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
-            - Le **Bouton d'ouverture du menu principale en mobile**, optionnel, un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--menu`.
-                - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si le bloc refermable de la navigation est ouvert ou fermé.
-                - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
-            - Le **Bouton d'ouverture de la modale de recherche en mobile**, optionnel, un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--search`.
-                - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si la modale de recherche est ouverte ou fermée.
-                - Le bouton est lié à la modale de recherche via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale de recherche.
+  - Ce bloc doit contenir un élément HTML `<div>` de classe `fr-container` qui permet de centrer le contenu.
+  - Un bloc de **Ligne de corps de l'en-tête**, un élément HTML `<div>` défini par la classe `fr-header__body-row`, contenant :
+    - Un conteneur du **bloc marque** (voir [Marque de l'état](https://www.info.gouv.fr/marque-de-letat)), un élément HTML `<div>` de classes `fr-header__brand` et `fr-enlarge-link` pour étendre le lien à l’ensemble du bloc-marque et pouvant comporter deux sous-conteneurs :
+      - Un **Conteneur de la partie supérieure**, obligatoire, un élément HTML `<div>` de classes `fr-header__brand-top` contenant :
+        - À minima le **Bloc marque** dans un élément HTML `<div>` de classes `fr-header__logo`, il s'agit du composant [Bloc-marque de l'état](../../../../logo/_part/doc/code/index.md) de classe `fr-logo`.
+        - Il peut aussi contenir un **Logo opérateur de l'État**, une image (ou SVG) contenue dans un élément HTML `<div>` de classe `fr-header__operator`.
+          - Utiliser un attribut `style="max-width:10rem;"`, avec comme valeur la largeur max du logo en fonction de son format (10rem pour du 16:9).
+          - L'attribut `alt` doit être renseigné avec le nom de l'opérateur.
+          - Le lien pointant vers l'accueil est alors positionné au niveau du logo de l'opérateur, il est automatiquement étendu à toute la zone du bloc marque.
+          - L'attribut `title` du lien doit être renseigné sous la forme "Retour à l’accueil du site - [texte alternatif de l’image (nom de l'opérateur ou du site serviciel)] - République Française".
+      - Et un bloc **Nom de service et description**, optionnel, dans un élément HTML `<div>` de classe `fr-header__service`.
+        - Le lien `<a>` dont l'attribut `title` doit être renseigné sous la forme "Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)" est alors placé sur le paragraphe `<p>` defini par la classe `fr-header__service-title` contenant le "nom de service".
+        - Une description, optionnelle, dans un paragraphe `<p>` défini par la classe `fr-header__service-tagline`.
+    - Un bloc d'**Accès rapides**, optionnel, dans un élément HTML `<div>` de classes `fr-header__tools` et pouvant contenir :
+      - La **liste de liens d'accès rapides**, optionnelle, est placée dans un élément HTML `<div>` de classes `fr-header__tools-links`, il s'agit d'un élément HTML `<ul>` de classes `fr-btns-group` (voir [Groupes de boutons](../../../../button/_part/doc/code/index.md#groupes-de-boutons)) contenant des liens, comme par exemple la connexion à un espace sécurisé et limité à 3 accès rapides maximum.
+      - La **Barre de recherche**, optionnelle, est placée dans un élément HTML `<div>` de classes `fr-header__search` (voir [Barre de recherche](../../../../search/_part/doc/code/index.md)) et `fr-modal` pour s'afficher dans une modale en mobile (voir [Modale](../../../../modal/_part/doc/code/index.md)).
+      - Le **Sélecteur de langue**, optionnel, est placé à la suite des liens d'accès rapides (voir [Sélecteur de langue](../../../../translate/_part/doc/code/index.md)).
+      - Le bouton des **Paramètres d'affichage**, optionnels, est placé à la suite des liens d'accès rapides et avant le sélecteur de langue (voir [Paramètre d'affichage](../../../../display/_part/doc/code/index.md)).
+    - Le conteneur de la **Navigation principale mobile**, dans un élément HTML `<div>` de classes `fr-header__navbar` pouvant contenir :
+      - Le **Bouton d'ouverture**, obligatoire, du menu principale en mobile, un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--menu`.
+        - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si le bloc refermable de la navigation est ouvert ou fermé.
+        - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
+      - Le **Bouton d'ouverture du menu principale en mobile**, optionnel, un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--menu`.
+        - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si le bloc refermable de la navigation est ouvert ou fermé.
+        - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
+      - Le **Bouton d'ouverture de la modale de recherche en mobile**, optionnel, un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--search`.
+        - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si la modale de recherche est ouverte ou fermée.
+        - Le bouton est lié à la modale de recherche via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale de recherche.
 - Un second conteneur, de la **Navigation principale de l'en-tête** dans un élément HTML `<div>` défini par les classes `fr-header__menu` et `fr-modal`, pour s'afficher dans une modale en mobile (voir [Modale](../../../../modal/_part/doc/code/index.md)).
-    - La modale de la navigation principale de l'en-tête contient un premier **Conteneur des liens d'accès rapides**, un élément HTML `<div>` défini par la classe `fr-header__menu-links`, laissée vide et servant à dupliquer en Javascript pour le mobile les liens contenus dans la balise définie par la classe `fr-header__tools-links`.
-    - La **Navigation principale de l'en-tête** est contenue dans un élément HTML `<nav>` défini par la classe `fr-nav` (voir [Navigation principale](../../../../navigation/_part/doc/code/index.md)).
+  - La modale de la navigation principale de l'en-tête contient un premier **Conteneur des liens d'accès rapides**, un élément HTML `<div>` défini par la classe `fr-header__menu-links`, laissée vide et servant à dupliquer en Javascript pour le mobile les liens contenus dans la balise définie par la classe `fr-header__tools-links`.
+  - La **Navigation principale de l'en-tête** est contenue dans un élément HTML `<nav>` défini par la classe `fr-nav` (voir [Navigation principale](../../../../navigation/_part/doc/code/index.md)).
 
 **Exemple de structure minimale**
 
@@ -732,26 +734,45 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ###### headerModal
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la modale de navigation principale mobile est activé ou non |
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).headerModal.isEnabled = false` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).headerModal.node` |
+
 :::
 
 ###### modal & modalButton
 
 voir [Modale](../../../../modal/_part/doc/code/index.md#javascript)
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+En version mobile, sur la modale de navigation principale, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de la modale | modal | `data-fr-js-modal` |
+| `dsfr.disclose` | Ouverture de la modale | modal | `data-fr-js-modal` |
+
+:::
 
 ---
 

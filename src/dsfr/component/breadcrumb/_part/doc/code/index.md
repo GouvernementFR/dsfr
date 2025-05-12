@@ -140,6 +140,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 ###### breadcrumb
 
 :::dsfr-doc-table[disclose]{valign=top scroll=false}
+
 | | |
 |-------|----------------|
 | **Description** | Ouvre le fil d’Ariane. |
@@ -147,20 +148,24 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Arguments** | Aucun |
 | **Retour** | Aucun |
 | **Exemple** | dsfr(breadcrumb).breadcrumb.disclose() |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |-------|----------------|
-| **Description** | Retourne le nœud HTML de l'élément `<nav>`. |
+| **Description** | Retourne le noeud HTML de l'élément `<nav>`. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | dsfr(breadcrumb).breadcrumb.node |
+
 :::
 
 ###### collapseButton
 
 :::dsfr-doc-table[focus]{valign=top scroll=false}
+
 | | |
 |-------|----------------|
 | **Description** | Replace le focus sur le bouton. |
@@ -168,20 +173,24 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Arguments** | Aucun |
 | **Retour** | Aucun |
 | **Exemple** | dsfr(breadcrumbButton).breadcrumbButton.focus() |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |-------|----------------|
-| **Description** | Retourne le nœud HTML correspondant au bouton. |
+| **Description** | Retourne le noeud HTML correspondant au bouton. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | dsfr(breadcrumbButton).breadcrumbButton.node |
+
 :::
 
 ###### collapse
 
 :::dsfr-doc-table[conceal]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -189,9 +198,11 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
+
 :::
 
 :::dsfr-doc-table[disclose]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -199,36 +210,44 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
+
 :::
 
 :::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
+
 :::
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du collapse est activé ou non |
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
+
 :::
 
 :::dsfr-doc-table[buttons]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
+
 :::
 
 :::dsfr-doc-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
@@ -236,33 +255,55 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
+
 :::
 
 :::dsfr-doc-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici le breadcrumb |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::dsfr-doc-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
+
+:::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur le Fil d’Ariane, en mode mobile les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de l'élément | collapse | `data-fr-js-collapse` |
+| `dsfr.disclose` | Ouverture de l'élément | collapse | `data-fr-js-collapse` |
+
 :::
 
 ---
