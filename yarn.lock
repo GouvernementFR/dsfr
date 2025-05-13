@@ -707,37 +707,37 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@gouvfr/dsfr-alchemist@=1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-alchemist/-/dsfr-alchemist-1.0.9.tgz#bab66033875de2bb05aa2c5d0abbb7662c7592a2"
-  integrity sha512-5Thx2Nzup078cfRUYx1sLAV9Relcx+GW7qfAcsmCUel5SD+vtfsgBGuHd5J2R8cUWDa7zF8baxjVAB+2/OoLUw==
+"@gouvfr/dsfr-alchemist@=1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-alchemist/-/dsfr-alchemist-1.0.14.tgz#1e09080b4a221e744e7de11e70474b29342923e9"
+  integrity sha512-tdBoq5Ghp8hZ/znIa2Jej4VJepRm+HuGBK14re1XWmQgUzVF0zjkGXBoQPkLJ9b/yVQmBSpjy5GJZVbdZge7Yg==
   dependencies:
-    "@gouvfr/dsfr-forge" "=1.0.9"
+    "@gouvfr/dsfr-forge" "=1.0.14"
     esbuild "^0.24.2"
     lightningcss "^1.29.1"
     sass "^1.79.3"
 
-"@gouvfr/dsfr-forge@=1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-forge/-/dsfr-forge-1.0.9.tgz#94596d138929d62b9a07890f8912a30340f44cdf"
-  integrity sha512-Kk+mEQoIMNkDjH4zgWi4mVD99fG6BZZxARd9DhWZXKhLCM0P0l0npWyJB8ZE2udWhlKcH9+tluIRJx2vH3fzkA==
+"@gouvfr/dsfr-forge@=1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-forge/-/dsfr-forge-1.0.14.tgz#5e5c9d9a27a40c136c92fbbae37a26cba259ac21"
+  integrity sha512-yqgrxzMD3GT+IilQzW4NqNgpPFnOF6EcOK4d0fhNPlDbRsRC1jb1C0dL4HJU3/gvfn/5vCDYoA+HokHWI2it4Q==
 
-"@gouvfr/dsfr-lore@=1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.0.9.tgz#613300f040fe20a7bb2498a74c8d1609847c3c32"
-  integrity sha512-+C9jpPkA1cArnwlbs3KGC4xqCYg8LZXjU329g7jnYGqsAFKs5c9NlZ5aJ365X2faEJK1EabRfAilWNyXom6eUA==
+"@gouvfr/dsfr-lore@=1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.0.14.tgz#b4f286da088960152f7fae924aed36e9cdbf47a5"
+  integrity sha512-kCihGAG73ESqPk7NYEObTXFKVYtZYr0OiBfih2JQidZa3makQt1fPFzcu62aoMxsC4KYth7Y3+mwKSw7LY512Q==
   dependencies:
-    "@gouvfr/dsfr-forge" "=1.0.9"
+    "@gouvfr/dsfr-forge" "=1.0.14"
 
 "@gouvfr/dsfr-nexus@^1.0.0":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.0.9.tgz#fa4743382e4d0fb073e03e9f5a5260146e644276"
-  integrity sha512-zcCxRP32ORE4PIXQw3dlwvvzBD2tQ2lTE/kL48+xwgslGAPwDLVC2qO9c2hqYz3CLwuYWpyl0/aKrRx0E7ouAw==
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.0.14.tgz#18c3d568fe6e072439399e6470ed0fb0fcddafae"
+  integrity sha512-BgdI6+ZBULRE9bewH5dYxA6HJ1UWGjjbHrgwbD+QjGQaL21ypHmkjup4GyHwoeW8cAA7krt3w1UOpW/AleyuEA==
   dependencies:
-    "@gouvfr/dsfr-alchemist" "=1.0.9"
-    "@gouvfr/dsfr-forge" "=1.0.9"
-    "@gouvfr/dsfr-lore" "=1.0.9"
-    "@gouvfr/dsfr-roller" "=1.0.9"
+    "@gouvfr/dsfr-alchemist" "=1.0.14"
+    "@gouvfr/dsfr-forge" "=1.0.14"
+    "@gouvfr/dsfr-lore" "=1.0.14"
+    "@gouvfr/dsfr-roller" "=1.0.14"
     browser-sync "^3.0.3"
     del "^7.1.0"
     mdast-util-directive "^3.0.0"
@@ -759,12 +759,12 @@
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.13.1.tgz#97ef3b9b716999ec5cd726a7b426112f37100574"
   integrity sha512-dCB0YuQ8YczGYT1qPO0nDYYQCq7As58DSPR59bDIsxYRgzq8D0UT8oVgzDCn6vWHzomnB0E/41LZ0mQ2kYi3CQ==
 
-"@gouvfr/dsfr-roller@=1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.0.9.tgz#849d3e44f59547b11917201f243520fac70da314"
-  integrity sha512-GiQ6mt696w9qUFG7X4L7EeUPIWGUooKkQ03aY3kVg/reu+TaCgod+1P9LCShNRcOsw6tR8YopTvmccHiODs/DQ==
+"@gouvfr/dsfr-roller@=1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.0.14.tgz#57daba23bd9feb1491acd14c5cf9fe179594c8de"
+  integrity sha512-wownSd0SFRNWrVV2wwCjadTrHD75vSlhHdDwXVJE8Sd+fBPYzK2Urytu7PXSNgbrRkZu13ukLYU1NFA8w/k1lQ==
   dependencies:
-    "@gouvfr/dsfr-forge" "=1.0.9"
+    "@gouvfr/dsfr-forge" "=1.0.14"
     "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.1"
     deepmerge "^4.3.1"
     ejs "^3.1.10"
@@ -1270,9 +1270,9 @@
     magic-string "^0.25.0"
 
 "@types/cors@^2.8.12":
-  version "2.8.19"
-  resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.19.tgz#d93ea2673fd8c9f697367f5eeefc2bbfa94f0342"
-  integrity sha512-mFNylyeyqN93lfe/9CSxOGREz8cpzAhH+E93xJ4xWQf62V8sQ/24reV2nyzUWM6H6Xji+GGHpkbLe7pVoUEskg==
+  version "2.8.18"
+  resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.18.tgz#101e033b3ca06695f3d73c587cd7f9eb348135d1"
+  integrity sha512-nX3d0sxJW41CqQvfOzVG1NCTXfFDrDWIghCZncpHeWlVFd81zxB/DLhg7avFg6eHLCRX7ckBmoIIcqa++upvJA==
   dependencies:
     "@types/node" "*"
 
@@ -1356,9 +1356,9 @@
   integrity sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==
 
 "@types/node@*", "@types/node@>=10.0.0":
-  version "22.15.15"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.15.tgz#8877c05c18e552e738438e477d7ba22c5d73a57c"
-  integrity sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==
+  version "22.15.17"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.17.tgz#355ccec95f705b664e4332bb64a7f07db30b7055"
+  integrity sha512-wIX2aSZL5FE+MR0JlvF87BNVrtFWf6AE6rxSE9X7OwnVvoyCQjpzSRJ+M87se/4QCkCiebQAqrJ0y6fwIyi7nw==
   dependencies:
     undici-types "~6.21.0"
 
@@ -5432,73 +5432,73 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-lightningcss-darwin-arm64@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.30.1.tgz#3d47ce5e221b9567c703950edf2529ca4a3700ae"
-  integrity sha512-c8JK7hyE65X1MHMN+Viq9n11RRC7hgin3HhYKhrMyaXflk5GVplZ60IxyoVtzILeKr+xAJwg6zK6sjTBJ0FKYQ==
+lightningcss-darwin-arm64@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.30.0.tgz#2e8925fc86a6f8568351680524cade9406b0c6c8"
+  integrity sha512-L9lhvW4rTHL6vaG1WU3Itj0ivtdBuwu7ufrKEbijRCPhS1pt1haXEXI8h9g73qCQsOaYs1GCc9chvSgxPmhpRA==
 
-lightningcss-darwin-x64@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.30.1.tgz#e81105d3fd6330860c15fe860f64d39cff5fbd22"
-  integrity sha512-k1EvjakfumAQoTfcXUcHQZhSpLlkAuEkdMBsI/ivWw9hL+7FtilQc0Cy3hrx0AAQrVtQAbMI7YjCgYgvn37PzA==
+lightningcss-darwin-x64@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.30.0.tgz#c10aa1c1238d5f260b0ee5f17e86809dbc24fe3f"
+  integrity sha512-+qNst+L3GGwG5LypEFTmDUOtNarQVh717Enk4AfmKfwlTrKCSe9kAiPyK7ces269a+f0jNSa8Uww8WwGFXzt8w==
 
-lightningcss-freebsd-x64@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.30.1.tgz#a0e732031083ff9d625c5db021d09eb085af8be4"
-  integrity sha512-kmW6UGCGg2PcyUE59K5r0kWfKPAVy4SltVeut+umLCFoJ53RdCUWxcRDzO1eTaxf/7Q2H7LTquFHPL5R+Gjyig==
+lightningcss-freebsd-x64@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.30.0.tgz#bd2da9045c294158902811ca60863bd6367ec464"
+  integrity sha512-/sfAWALScgggjjk5ZlmGdpFELwGPIwzAdfcBJcT6UTgQoDHzQ4aP41XTq3N4LL01U9dsJp6uAvCvmHX7snqTdg==
 
-lightningcss-linux-arm-gnueabihf@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.30.1.tgz#1f5ecca6095528ddb649f9304ba2560c72474908"
-  integrity sha512-MjxUShl1v8pit+6D/zSPq9S9dQ2NPFSQwGvxBCYaBYLPlCWuPh9/t1MRS8iUaR8i+a6w7aps+B4N0S1TYP/R+Q==
+lightningcss-linux-arm-gnueabihf@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.30.0.tgz#f3ebc3f3a8937db19d3cb1ea4a5c34651ca57059"
+  integrity sha512-3B5val/f61unLgfZHEfkZGzunlyyL76l8xRoxFx+G0uwxK7rvaFcnkyf6k4Zto2STVj05FsLs+aTZoTqslPaug==
 
-lightningcss-linux-arm64-gnu@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.30.1.tgz#eee7799726103bffff1e88993df726f6911ec009"
-  integrity sha512-gB72maP8rmrKsnKYy8XUuXi/4OctJiuQjcuqWNlJQ6jZiWqtPvqFziskH3hnajfvKB27ynbVCucKSm2rkQp4Bw==
+lightningcss-linux-arm64-gnu@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.30.0.tgz#725c307493c4bb741f922b81a9319fd322c8f94e"
+  integrity sha512-Q45+fvm7eAAmorsEzc1ZBwajGnXDocB/nRaSldpHQa36QbP93GrzmBqfSdi2pEks2yXMxST4yznio24Q6en7Sg==
 
-lightningcss-linux-arm64-musl@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.30.1.tgz#f2e4b53f42892feeef8f620cbb889f7c064a7dfe"
-  integrity sha512-jmUQVx4331m6LIX+0wUhBbmMX7TCfjF5FoOH6SD1CttzuYlGNVpA7QnrmLxrsub43ClTINfGSYyHe2HWeLl5CQ==
+lightningcss-linux-arm64-musl@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.30.0.tgz#7a043124e2446df54b0800ebee99a6f2e728892c"
+  integrity sha512-RNZNW/AyKax8wWR4xMKoyAb40dqhzOtnAw4knjbyxJUUEL0wzBEXO3k44AS3UFRjxTyd/s46adVQXxE/vOaSgg==
 
-lightningcss-linux-x64-gnu@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.30.1.tgz#2fc7096224bc000ebb97eea94aea248c5b0eb157"
-  integrity sha512-piWx3z4wN8J8z3+O5kO74+yr6ze/dKmPnI7vLqfSqI8bccaTGY5xiSGVIJBDd5K5BHlvVLpUB3S2YCfelyJ1bw==
+lightningcss-linux-x64-gnu@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.30.0.tgz#a28e60bc6d6e5d5e7ae64eec41a31fbe992cdef9"
+  integrity sha512-ExVnSepsAyQb547i7SvPhS0SrgIDUjA1dYTT0DNFt/YsqfKhkxg405VDtMoV2MQGAyoEQIub+YK5NQo9Lw7IzQ==
 
-lightningcss-linux-x64-musl@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.30.1.tgz#66dca2b159fd819ea832c44895d07e5b31d75f26"
-  integrity sha512-rRomAK7eIkL+tHY0YPxbc5Dra2gXlI63HL+v1Pdi1a3sC+tJTcFrHX+E86sulgAXeI7rSzDYhPSeHHjqFhqfeQ==
+lightningcss-linux-x64-musl@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.30.0.tgz#7ab47aca4c339f701a6e6461cb15684707b8d41b"
+  integrity sha512-e/nHeX5SAEcfAzyLob5H1Jhm8uHLKwpOIHzcURKnXTMFdBqIDOsETMhmcB5AGDqsr6Q5D9u0QVswDdRo+btSgg==
 
-lightningcss-win32-arm64-msvc@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.30.1.tgz#7d8110a19d7c2d22bfdf2f2bb8be68e7d1b69039"
-  integrity sha512-mSL4rqPi4iXq5YVqzSsJgMVFENoa4nGTT/GjO2c0Yl9OuQfPsIfncvLrEW6RbbB24WtZ3xP/2CCmI3tNkNV4oA==
+lightningcss-win32-arm64-msvc@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.30.0.tgz#acce833215d51b0e13b1c34a8b109e79ee26dee5"
+  integrity sha512-Fd9XejM6GPHx5rv7I8aqsc8mBHs+TpHEVDalP5PVP986tF6rmiVfwQzM2Ic4Cn0rXbS3z95Ru8x50hnzfR2GDA==
 
-lightningcss-win32-x64-msvc@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.30.1.tgz#fd7dd008ea98494b85d24b4bea016793f2e0e352"
-  integrity sha512-PVqXh48wh4T53F/1CCu8PIPCxLzWyCnn/9T5W1Jpmdy5h9Cwd+0YQS6/LwhHXSafuc61/xg9Lv5OrCby6a++jg==
+lightningcss-win32-x64-msvc@1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.30.0.tgz#12e7941edcaf5abdf73647d1e15a27428f59237d"
+  integrity sha512-2BhpVDbNa+HpXPu63EYfcsL2TCBKLeuMckx4d6UZCzaj1KVuSRXi6r7H3rUeaADuX5NB/BT2smP4HI3s6I1/Ag==
 
 lightningcss@^1.29.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/lightningcss/-/lightningcss-1.30.1.tgz#78e979c2d595bfcb90d2a8c0eb632fe6c5bfed5d"
-  integrity sha512-xi6IyHML+c9+Q3W0S4fCQJOym42pyurFiJUHEcEyHS0CeKzia4yZDEsLlqOFykxOdHpNy0NmvVO31vcSqAxJCg==
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/lightningcss/-/lightningcss-1.30.0.tgz#aa12c41502c3c8c80d1bed6829930e5d7218a812"
+  integrity sha512-uuurN2onfoNwQtaWnX9UYLz6DlZHnUd88SceOXDAQzQ5+FJ+ELPgcC/EVtRJoFOveXe44zRE+foh2KMD/vQxqQ==
   dependencies:
     detect-libc "^2.0.3"
   optionalDependencies:
-    lightningcss-darwin-arm64 "1.30.1"
-    lightningcss-darwin-x64 "1.30.1"
-    lightningcss-freebsd-x64 "1.30.1"
-    lightningcss-linux-arm-gnueabihf "1.30.1"
-    lightningcss-linux-arm64-gnu "1.30.1"
-    lightningcss-linux-arm64-musl "1.30.1"
-    lightningcss-linux-x64-gnu "1.30.1"
-    lightningcss-linux-x64-musl "1.30.1"
-    lightningcss-win32-arm64-msvc "1.30.1"
-    lightningcss-win32-x64-msvc "1.30.1"
+    lightningcss-darwin-arm64 "1.30.0"
+    lightningcss-darwin-x64 "1.30.0"
+    lightningcss-freebsd-x64 "1.30.0"
+    lightningcss-linux-arm-gnueabihf "1.30.0"
+    lightningcss-linux-arm64-gnu "1.30.0"
+    lightningcss-linux-arm64-musl "1.30.0"
+    lightningcss-linux-x64-gnu "1.30.0"
+    lightningcss-linux-x64-musl "1.30.0"
+    lightningcss-win32-arm64-msvc "1.30.0"
+    lightningcss-win32-x64-msvc "1.30.0"
 
 lilconfig@^2.0.3:
   version "2.1.0"
@@ -7805,9 +7805,9 @@ sass@^1.59.2:
     "@parcel/watcher" "^2.4.1"
 
 sass@^1.79.3:
-  version "1.89.2"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.89.2.tgz#a771716aeae774e2b529f72c0ff2dfd46c9de10e"
-  integrity sha512-xCmtksBKd/jdJ9Bt9p7nPKiuqrlBMBuuGkQlkhZjjQk3Ty48lv93k5Dq6OPkKt4XwxDJ7tvlfrTa1MPA9bf+QA==
+  version "1.88.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.88.0.tgz#cd1495749bebd9e4aca86e93ee60b3904a107789"
+  integrity sha512-sF6TWQqjFvr4JILXzG4ucGOLELkESHL+I5QJhh7CNaE+Yge0SI+ehCatsXhJ7ymU1hAFcIS3/PBpjdIbXoyVbg==
   dependencies:
     chokidar "^4.0.0"
     immutable "^5.0.2"
