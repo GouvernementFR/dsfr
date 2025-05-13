@@ -223,8 +223,9 @@ Sur la modale du paramètre d'affichage, les événements suivants sont disponib
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
-| `dsfr.conceal` | Fermeture de la modale | modal | `data-fr-js-modal` |
-| `dsfr.disclose` | Ouverture de la modale | modal | `data-fr-js-modal` |
+| `dsfr.conceal` | Fermeture de la modale | Modal | `data-fr-js-modal` |
+| `dsfr.disclose` | Ouverture de la modale | Modal | `data-fr-js-modal` |
+| `dsfr.click` | Click sur le bouton d'ouverture | ModalButton | `data-fr-js-modal-button` |
 
 :::
 

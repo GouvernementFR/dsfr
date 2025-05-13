@@ -417,6 +417,7 @@ Sur les onglets, les événements suivants sont disponibles :
 |------|------|------|------|
 | `dsfr.conceal` | Fermeture de l'onglet | tab panel | `data-fr-js-tab-panel` |
 | `dsfr.disclose` | Ouverture de l'onglet | tab panel | `data-fr-js-tab-panel` |
+| `dsfr.click` | Click sur le bouton d'ouverture | TabButton | `data-fr-js-tab-button` |
 
 :::
 

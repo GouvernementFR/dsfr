@@ -712,8 +712,9 @@ Sur chaque menu déroulant de la navigation principale, les événements suivant
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
-| `dsfr.conceal` | Fermeture de l'élément | collapse | `data-fr-js-collapse` |
-| `dsfr.disclose` | Ouverture de l'élément | collapse | `data-fr-js-collapse` |
+| `dsfr.conceal` | Fermeture de l'élément | Collapse | `data-fr-js-collapse` |
+| `dsfr.disclose` | Ouverture de l'élément | Collapse | `data-fr-js-collapse` |
+| `dsfr.click` | Click sur le bouton d'ouverture | CollapseButton | `data-fr-js-collapse-button` |
 
 :::
 
