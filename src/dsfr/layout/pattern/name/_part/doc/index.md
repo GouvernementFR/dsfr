@@ -1,5 +1,5 @@
 ---
-title: Date unique
-description: Modèle de champ date unique
-keywords: date, unique, champ, formulaire
+title: Nom et prénom
+description: Modèle de champs nom et prénom
+keywords: nom, prénom, name, champ, formulaire
 ---
