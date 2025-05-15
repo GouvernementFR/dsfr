@@ -17,16 +17,15 @@ Ce modèle est à utiliser lorsque vous souhaitez que l’utilisateur se crée u
 
 ## Structure
 
-Ce modèle est une page de référence prête à l’emploi et directement réutilisable.
+Ce modèle propose une page de référence prête à l’emploi et directement réutilisable.
 
-La page de connexion est composée des éléments suivants :
+La page de création de compte est composée des éléments suivants :
 - Un header et un footer par défaut - obligatoires (à remplacer par le header et footer réels de votre site).
 - Un titre et un chapô - obligatoires (à ajuster en fonction du contexte pour présenter et contextualiser la procédure de création de compte et les éventuelles pièces à fournir).
 - Le formulaire de création de compte :
-    - La création de compte avec “France connect” - obligatoire.
-    - La création de compte “avec identifiants” - obligatoire.
-    - Les actions : cases à cocher mentions CNIL + bouton “créer un compte” - obligatoires.
-- Un accès à la connexion - obligatoire (textes à ajuster en fonction du contexte).
+    - La création de compte avec FranceConnect - obligatoire.
+    - La création de compte avec identifiants - obligatoire.
+- Les actions : cases à cocher mentions CNIL + bouton “Créer un compte” - obligatoires.
 
 ![](/_asset/Capture_d_ecran_2022_06_13_a_13_05_38_9514fb8925.png)
 
@@ -153,34 +152,34 @@ La page de connexion est composée des éléments suivants :
 
 **Structure du formulaire de création de compte :**
 
-- L’ordre et la structure des modalités de création de compte sont à respecter comme présentées dans le modèle :
-- \1\) Le formulaire de création de compte avec :
+L’ordre et la structure des modalités de création de compte sont à respecter comme présentées dans le modèle :
+- 1\) Le formulaire de création de compte avec :
     - La création de compte avec FranceConnect en premier
     - Le “ou”
     - La création de compte avec identifiants en second
-- \2\) L’accès à la connexion
+- 2\) L’accès à la création de compte
 
 **Création de compte avec FranceConnect :**
 
-La connexion avec FranceConnect est un impératif pour tous les service de l’Etat. C’est la première modalité de connexion qui doit présenté à l’utilisation. Les éléments de connexion FranceConnect (textes, bouton, lien) sont à reprendre en l'état. La mise en place de l’identification FranceConnect doit suivre une implantation technique précise à mener directement avec le service FranceConnect via [leur plateforme ici](https://franceconnect.gouv.fr/partenaires)
+La connexion avec FranceConnect est un impératif pour tous les service de l’Etat. C’est la première modalité de connexion qui doit être présentée à l’utilisateur. Les éléments de connexion FranceConnect (textes, bouton, lien) sont à reprendre en l'état. La mise en place de l’identification FranceConnect doit suivre une implantation technique précise à mener directement avec le service FranceConnect via [leur plateforme ici](https://franceconnect.gouv.fr/partenaires)
 
-- La création de compte avec identifiants est proposée une structure minimale avec la demande du couple “adresse électronique” et “mot de passe”, et reprend le “modèle de demande d’adresse mail” et le “modèle de demande de mot passe”
-- Si votre service nécessite de demander d’autres information des champs peuvent être ajoutés/remplacés les champs proposés.
+- La création de compte avec identifiants est proposée dans une structure minimale avec la demande du couple “adresse électronique” et “mot de passe”, et reprend le “modèle de demande d’adresse mail” et le “modèle de demande de mot passe”.
+- Si votre service nécessite de demander d’autres informations, des champs peuvent être ajoutés/remplacés les champs proposés.
 - De manière générale, limiter le nombre d’informations demandées lors de la création de compte en les réduisant au strict nécessaire pour l’utilisation du service.
 
 **Mentions CNIL**
 
 Les mentions CNIL permettent de :
 
-- préciser comment seront utiliser les données recueillies auprès de l’utilisateur
-- demander le consentement de l’utilisateur
+- Préciser comment seront utilisées les données recueillies auprès de l’utilisateur.
+- Demander le consentement de l’utilisateur.
 
 **Message d'erreur**
 
-- Dans le cas d’erreur de saisie, afficher les erreur directement au niveau de chaque champ input en reprenant le style de message d’erreur associé au champs input text
+- Dans le cas d’erreur de saisie, afficher les erreurs directement au niveau de chaque champ input en reprenant le style de message d’erreur associé au champ input text.
 
 **Étapes**
-Si vous souhaitez demander des informations supplémentaires sur l’utilisateur dès la phase de création de compte, lors d’une phase de validation de compte, ou bien dans un espace connecté, vous pouvez “découper” le formulaire en plusieurs étapes, en utilisant l’indicateur d'étapes ainsi que des boutons de validations en bas de formulaire. Limitez vos demandes aux champs strictement nécessaires à vos traitements.
+Si vous souhaitez demander des informations supplémentaires sur l’utilisateur dès la phase de création de compte, lors d’une phase de validation de compte, ou bien dans un espace connecté, vous pouvez “découper” le formulaire en plusieurs étapes, en utilisant l’indicateur d'étapes ainsi que des boutons de validation en bas de formulaire. Limitez vos demandes aux champs strictement nécessaires à vos traitements.
 
 ### Étape 1 - Identifiant
 
@@ -584,11 +583,11 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 Un modèle de confirmation de création et d’activation de compte est aussi mis à disposition.
 
-Le modèle composé des composants suivant :
+Le modèle est composé des composants suivant :
 
-- Un header et un footer par défaut : à remplacer par les headers et footer réels du site
-- Un titre et chapô - obligatoire
-- un bloc gris contenant une alerte et un texte additionnel
+- Un header et un footer par défaut - obligatoires (à remplacer par les header et footer réels de votre site).
+- Un titre et chapô - obligatoires.
+- Un bloc gris contenant une alerte et un texte additionnel.
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-creation-activation-confirmation’}
 ```html

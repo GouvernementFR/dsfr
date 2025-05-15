@@ -23,11 +23,10 @@ Ce modèle propose une page de référence prête à l’emploi et directement r
 
 La page de connexion est composée des éléments suivants :
 - Un header et un footer par défaut - obligatoires (à remplacer par le header et footer réels de votre site).
-- Un titre et un chapô - obligatoires (à ajuster en fonction du contexte pour présenter et contextualiser la procédure de création de compte et les éventuelles pièces à fournir).
-- Le formulaire de création de compte :
-    - La création de compte avec “France connect” - obligatoire.
-    - La création de compte “avec identifiants” - obligatoire.
-    - Les actions : cases à cocher mentions CNIL + bouton “créer un compte” - obligatoires.
+- Un titre et un chapô - obligatoires (à ajuster en fonction du contexte pour présenter et contextualiser ce à quoi permet d'accéder la session connectée).
+- Le formulaire de connexion :
+    - La connexion avec FranceConnect - obligatoire.
+    - La connexion avec identifiants - obligatoire.
 - Un accès à la connexion - obligatoire (textes à ajuster en fonction du contexte).
 
 ![](/_asset/Capture_d_ecran_2022_06_13_a_13_04_29_51b20969a5.png)
@@ -36,12 +35,12 @@ La page de connexion est composée des éléments suivants :
 
 ### Structure du formulaire de connexion
 
-- L’ordre et la structure des modalités de connexion sont à respecter comme présenter dans le modèle : 1) Le formulaire de connexion avec : La connexion avec FranceConnect en premierle “ou”La connexion avec identifiants en second2) L’accès à la création de compte
-- 1) Le formulaire de connexion avec : La connexion avec FranceConnect en premierle “ou”La connexion avec identifiants en second
-- La connexion avec FranceConnect en premier
-- le “ou”
-- La connexion avec identifiants en second
-- 2) L’accès à la création de compte
+L’ordre et la structure des modalités de connexion sont à respecter comme présenter dans le modèle :
+- 1\) Le formulaire de connexion avec :
+    - La connexion avec FranceConnect en premier
+    - Le "ou"
+    - La connexion avec identifiants en second
+- 2\) L’accès à la connexion
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-connexion’}
 ```html
@@ -163,26 +162,25 @@ La page de connexion est composée des éléments suivants :
 
 #### Bloc de connexion FranceConnect
 
-La connexion avec FranceConnect est un impératif pour tous les service de l’Etat. C’est la première modalité de connexion qui doit présenté à l’utilisation. Les éléments de connexion FranceConnect (textes, bouton, lien) sont à reprendre en l'état. La mise en place de l’identification FranceConnect doit suivre une implantation technique précise à mener directement avec le service FranceConnect via [leur plateforme ici](https://franceconnect.gouv.fr/partenaires)
+La connexion avec FranceConnect est un impératif pour tous les service de l’Etat. C’est la première modalité de connexion qui doit être présentée à l’utilisateur. Les éléments de connexion FranceConnect (textes, bouton, lien) sont à reprendre en l'état. La mise en place de l’identification FranceConnect doit suivre une implantation technique précise à mener directement avec le service FranceConnect via [leur plateforme ici](https://franceconnect.gouv.fr/partenaires)
 
 #### Bloc de connexion par identifiants
 
 - La connexion avec identifiants est proposée avec une structure minimale avec la demande du couple “adresse électronique” et “mot de passe”, et reprend le “modèle de demande d’adresse mail” et le “modèle de demande de mot passe”
-- Si votre service nécessite de demander d’autres information des champs peuvent être ajoutés/remplacés les champs proposés.
-- De manière générale, limiter le nombre d’information demandées lors de la connexion
-- Mot de passe oublié : Le lien “mot de passe oublié” doit rediriger vers le système de récupération de mot de passe de votre service. La récupération de mot de passe ne doit pas se faire par l’envoi en clair du mot de passe, mais par un système de réinitialisation.Eviter les questions secrètes pour récupérer le mot de passe.
+- Si votre service nécessite de demander d’autres informations, des champs peuvent être ajoutés/remplacés les champs proposés.
+- De manière générale, limiter le nombre d’information demandées lors de la connexion.
 - Le lien “mot de passe oublié” doit rediriger vers le système de récupération de mot de passe de votre service.
 - La récupération de mot de passe ne doit pas se faire par l’envoi en clair du mot de passe, mais par un système de réinitialisation.
 - Éviter les questions secrètes pour récupérer le mot de passe.
 
 #### Messages d'erreurs
 
-- Dans le cas d’erreur de saisie, ne pas reprendre l’affichage d’erreur du champ input. En effet, le message d’erreur ne doit pas préciser directement si le mot de pass a été mal saisi.
+- Dans le cas d’erreur de saisie, ne pas reprendre l’affichage d’erreur du champ input. En effet, le message d’erreur ne doit pas préciser directement si le mot de passe a été mal saisi.
 - Il faut utiliser dans ce cas le bloc alerte et mettre un message spécifiant une erreur pour “le couple mot de passe/identifiant”.
 
-### Bonne pratiques
+### Bonnes pratiques
 
-- Privilégier la demande d’adresse email plutôt qu’un identifiant pour la connexion avec identifiant. Les utilisateurs se rappelle plus facilement de leur email qu’un identifiant unique.
+- Privilégier la demande d’adresse email plutôt qu’un identifiant pour la connexion avec identifiants. Les utilisateurs se rappellent plus facilement de leur email que d’un identifiant unique.
 - Mettre en place un système de double authentification quand cela est nécessaire.
 
 ### Accessibilité
