@@ -40,9 +40,9 @@ window.dsfr.analytics.page
 ```
 
 ### PROPRIÉTÉS
-> **Note**
-> Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
+> [!NOTE]
+> Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
 ##### path
 

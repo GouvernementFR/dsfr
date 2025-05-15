@@ -109,7 +109,7 @@ Getter qui retourne le mode de récolte des données de la page. Défini dans la
 
 * `full` : Les données sont envoyées à chaque changement de path dans l’URL, permettant le support des “Single-page
   application” (par défaut si dsfr en mode ‘vue’, ‘react’ ou ‘angular’)
-  
+
 * `hash` : Les données sont envoyées à chaque changement de hash dans l'URL
 
 * * *
@@ -184,11 +184,10 @@ Envoie au collector le datalayer constitué par l’ensemble des données consol
 
 ### USAGE
 
-> **Note**
+> [!NOTE]
 > Le package Analytics repose sur 2 principes de fonctionnement pour traquer les pages :
 > * Par le biais de la configuration, il est possible de définir toutes les données qui seront envoyées au chargement de la page (via le mode automatique)
 > * Par le biais de l’API, on peut définir toutes les données propriété par propriété pour ensuite envoyer l’ensemble grâce à la méthode **collect**
-
 
 ```javascript
 dsfr.analytics.readiness.then(() => { // l'API analytics est prête à l'utilisation
