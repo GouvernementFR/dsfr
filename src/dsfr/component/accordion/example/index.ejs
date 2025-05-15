@@ -4,4 +4,8 @@
 
 <%- sample('Groupe d‘accordéons', './sample/accordions-group', {}, true); %>
 
+<%- sample('Groupe d‘accordéons ouvert au chargement', './sample/accordions-group', {accordionsGroup: {isExpanded: true}}, true); %>
+
 <%- sample('Groupe d‘accordéons dissociés', './sample/accordions-group', {accordionsGroup: {group: false}}, true); %>
+
+<%- sample('Groupe d‘accordéons dissociés ouvert au chargement', './sample/accordions-group', {accordionsGroup: {group: false, isExpanded: true}}, true); %>

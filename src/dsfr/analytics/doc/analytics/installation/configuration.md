@@ -1,6 +1,6 @@
-## Configuration {#Configuration}
+## Configuration
 
-Il est nécessaire de configurer le package Analytics au sein de [la configuration de l’API DSFR](https://www.systeme-de-design.gouv.fr/comment-utiliser-le-dsfr/developpeurs/api-javascript)
+Il est nécessaire de configurer le package Analytics au sein de [la configuration de l’API DSFR](https://www.systeme-de-design.gouv.fr/prise-en-main-et-perimetre/developpeurs/api-javascript)
 
 La configuration doit être placée **avant** les fichiers `patch.module.js`, `dsfr.module.js` et `analytics.module.js`.
 
@@ -8,7 +8,7 @@ La configuration doit être placée **avant** les fichiers `patch.module.js`, `d
 <script>
     window.dsfr = {
         analytics: {
-            domain: ' mon.domainedetracking.com',
+            domain: 'mon.domainedetracking.com',
             // collection: 'manual',
             // isActionEnabled: true,
             page: {

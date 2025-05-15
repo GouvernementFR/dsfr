@@ -27,9 +27,8 @@ window.dsfr.analytics.user
 
 ### PROPRIÉTÉS
 
-> **Note**
+> [!NOTE]
 > Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
-
 
 ##### uid
 
@@ -39,7 +38,7 @@ _String_ (EA: uid)
 
 getter permettant de lire la valeur de l’uid
 
-Voir la méthode [connect](#connect)
+Voir la méthode [connect](#connect-uid-email-isnew--false)
 
 * * *
 
@@ -51,7 +50,7 @@ _String_ (EA: email)
 
 getter permettant de lire la valeur de l’email
 
-Voir la méthode [connect](#connect)
+Voir la méthode [connect](#connect-uid-email-isnew--false)
 
 * * *
 
@@ -63,7 +62,7 @@ _Boolean_ (EA: newcustomer)
 
 getter permettant de savoir s’il s’agit d’un nouvel utilisateur
 
-Voir la méthode [connect](#connect)
+Voir la méthode [connect](#connect-uid-email-isnew--false)
 
 * * *
 
@@ -81,7 +80,7 @@ propriété définissant l'état de l’utilisateur entre ces différents status
 
 Les différentes valeurs sont énumérées dans l’objet `window.dsfr.analytics.user.constructor.Status`
 
-Voir la méthode [connect](#connect)
+Voir la méthode [connect](#connect-uid-email-isnew--false)
 
 * * *
 

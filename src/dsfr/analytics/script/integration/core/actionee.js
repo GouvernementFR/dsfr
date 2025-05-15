@@ -49,6 +49,9 @@ class Actionee extends api.core.Instance {
       },
       get node () {
         return scope.node; // TODO: remove in v2
+      },
+      get act () {
+        return scope.act.bind(scope);
       }
     };
 

@@ -89,8 +89,7 @@ Vous trouverez pour chaque composant une colonne :
 
 <sup>7</sup> extensions des fichiers ajoutés au téléversement
 
-
 * * *
 
-> **Note**
-> Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires `data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions](component-actions.md)).
+> [!NOTE]
+> Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires `data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions d’interaction hors composant](custom-actions.md)).

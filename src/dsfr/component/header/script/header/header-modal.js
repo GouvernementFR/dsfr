@@ -21,8 +21,8 @@ class HeaderModal extends api.core.Instance {
       this.request(this.activateModal.bind(this));
       return;
     }
-    modal.isActive = true;
     this.restoreAria();
+    modal.isActive = true;
     this.listenClick({ capture: true });
   }
 
