@@ -14,7 +14,7 @@ Fonctionnalités disponibles :
 
 Le script d’Eulerian est automatiquement chargé au sein du package, attention à ne pas l’insérer dans la page afin d'éviter les doublons.
 
-> **⚠️ Important :** 
+> [!IMPORTANT]
 > Pour les versions du dsfr inférieures à dsfr-1.9.0 (minimum 1.3.0), il est nécessaire d’ajouter le fichier : `/dist/patch/patch.module.js` **avant** `dsfr.module.js`
 
 Il est préférable d'utiliser l'api dans ses dernières versions pour profiter des optimisations et correctifs
@@ -35,7 +35,7 @@ Fonctionnalités disponibles :
 
 Cette version permet d’effectuer la mesure d'audience sans dépendance au DSFR et peut fonctionner de manière autonome.
 
-> **⚠️ Important :**
+> [!IMPORTANT]
 > La mesure des actions n'est pas disponible dans cette version
 
 #### Pour aller plus loin
