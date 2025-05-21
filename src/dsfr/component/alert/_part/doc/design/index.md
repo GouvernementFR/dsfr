@@ -1,5 +1,6 @@
 ---
 title: Anatomie de l'Alerte
+cover: ../_asset/cover/cover.png
 ---
 
 ## Alerte
