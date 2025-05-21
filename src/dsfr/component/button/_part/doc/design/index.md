@@ -1,8 +1,17 @@
 ---
 title: Design du bouton
+shortTitle: Design du Bouton
+description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
+shortDescription: Déclenchement d’une action dans l’interface
+keywords: bouton, interaction, action, DSFR, design système, accessibilité, formulaire, navigation
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Bouton permet de déclencher une action dans la page, comme soumettre un formulaire ou naviguer vers un contenu. Il se décline en versions primaire, secondaire et tertiaire.
+summary: Le bouton est un composant central d’interaction dans les interfaces numériques. Il est utilisé pour initier une action précise selon un niveau de priorité - bouton primaire pour l’action principale, secondaire pour les actions secondaires et tertiaire pour les interactions contextuelles. Il respecte des règles d’écriture éditoriale claires, n’est pas personnalisable graphiquement et s’intègre de manière cohérente dans une interface respectueuse des standards d’accessibilité.
 ---
 
 ## Bouton
+
+Le bouton est un élément d’interaction avec l’interface permettant à l’usager d’effectuer une action.
 
 :::dsfr-doc-tab-navigation
 
@@ -22,11 +31,11 @@ title: Design du bouton
 
 ::dsfr-doc-pin[Un libellé]{required=true}
 
-::dsfr-doc-pin[Une icône, pouvant être modifiée (voir [les icônes disponibles](../../../../../core/icon/_part/doc/index.md))]
+::dsfr-doc-pin[Une icône]{add='pouvant être modifiée'}
 
 :::
 
-#### **Variations**
+#### Variations
 
 **Bouton primaire**
 
@@ -42,7 +51,7 @@ title: Design du bouton
 
 Le bouton tertiaire est caractérisé par un fond transparent.
 
-Il peut également comporter un contour $border-default-grey, non obligatoire.
+Il peut également comporter un contour `$border-default-grey`, non obligatoire.
 
 **Bouton avec icône**
 
@@ -62,10 +71,10 @@ Trois déclinaisons sont possibles :
 
 [Image d’illustration]
 
->[!WARNING]
->Limiter l’usage de ces boutons sans libellé. Ils doivent uniquement être utilisés pour les actions récurrentes, facilement identifiables de l’usager (exemple : engrenage pour les paramètres ou loupe pour la recherche).
+> [!WARNING]
+> Limiter l’usage de ces boutons sans libellé. Ils doivent uniquement être utilisés pour les actions récurrentes, facilement identifiables de l’usager (exemple : engrenage pour les paramètres ou loupe pour la recherche).
 
-#### **Tailles**
+#### Tailles
 
 Les boutons sont disponibles en 3 tailles :
 
@@ -84,7 +93,7 @@ Les boutons sont disponibles en 3 tailles :
 - **Utiliser en priorité les formats MD et LG**. Le format SM pourra quant à lui être utilisé à l’intérieur d'autres composants.
 - **Conserver une unité** dans la taille des boutons au sein d’une même page.
 
-#### **États**
+#### États
 
 **État désactivé**
 
@@ -92,7 +101,8 @@ L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
 [Image d’illustration]
 
-**Attention !** N’utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
+> [!WARNING]
+> N’utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
 
 **État au survol**
 
@@ -106,11 +116,11 @@ L’état au clic correspond au comportement constaté par l’usager lorsqu’i
 
 [Image d’illustration]
 
-#### **Personnalisation**
+#### Personnalisation
 
 Les boutons ne sont pas personnalisables.
 
-Toutefois, certains éléments sont optionnels et les icônes peuvent être changées - voir [la structure du composant](#design).
+Toutefois, certains éléments sont optionnels et les icônes peuvent être changées - voir [la structure du composant](#bouton).
 
 ::::dsfr-doc-guidelines
 

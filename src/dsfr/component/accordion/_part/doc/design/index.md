@@ -1,5 +1,5 @@
 ---
-title: Anatomie de l'Accordéon
+title: Design de l'Accordéon
 ---
 
 ## Accordéon

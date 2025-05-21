@@ -1,5 +1,6 @@
 ---
 title: Alerte
+cover: ./_asset/cover/cover.png
 ---
 
 ## Alerte
