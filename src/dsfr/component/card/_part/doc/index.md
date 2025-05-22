@@ -1,5 +1,6 @@
 ---
 title: Carte
+boost: 10
 ---
 
 ## Carte

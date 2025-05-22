@@ -1,5 +1,6 @@
 ---
 title: Case à cocher
+boost: 10
 ---
 
 ## Case à cocher

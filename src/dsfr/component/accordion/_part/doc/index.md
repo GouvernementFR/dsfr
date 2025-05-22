@@ -1,5 +1,6 @@
 ---
 title: Accordéon
+boost: 10
 ---
 
 ## Accordéon
