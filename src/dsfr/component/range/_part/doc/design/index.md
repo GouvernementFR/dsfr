@@ -107,7 +107,7 @@ Toutefois, certains éléments sont optionnels - [voir la structure du composan
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/custom/dont-1.png)
+![À ne pas faire](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur de la piste.
 
@@ -115,7 +115,7 @@ Ne pas personnaliser la couleur de la piste.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/custom/dont-2.png)
+![À ne pas faire](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser la forme de la poignée.
 

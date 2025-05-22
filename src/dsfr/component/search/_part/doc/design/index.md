@@ -76,7 +76,7 @@ La barre de recherche n’est pas personnalisable.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/custom/dont-1.png)
+![À ne pas faire](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur du bouton de recherche
 
@@ -84,7 +84,7 @@ Ne pas personnaliser la couleur du bouton de recherche
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/custom/dont-2.png)
+![À ne pas faire](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser la couleur du liseré de la barre de recherche.
 
@@ -97,7 +97,7 @@ Ne pas personnaliser la couleur du liseré de la barre de recherche.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/custom/dont-3.png)
+![À ne pas faire](../_asset/custom/dont-3.png)
 
 Ne pas personnaliser le pictogramme du bouton de recherche.
 
