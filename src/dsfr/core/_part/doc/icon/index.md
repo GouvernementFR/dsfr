@@ -9,7 +9,7 @@ excerpt: Les icônes fonctionnelles permettent d’accompagner les actions de l�
 summary: Cette page détaille l’utilisation des icônes fonctionnelles dans les projets utilisant le DSFR avec une sélection issue de Remix Icons. Elle précise où retrouver les icônes dans les outils de design (Sketch et Figma) et comment les intégrer en développement via les classes CSS. Elle documente également la nouvelle organisation par catégories et les bonnes pratiques d’import pour optimiser les performances. Des extraits de code et des aperçus visuels facilitent l’intégration
 ---
 
-Les icônes fonctionnelles sont des symboles visuels qui accompagnent l’utilisateur dans ses actions et qui aident à sa compréhension de l’interface. 
+Les icônes fonctionnelles sont des symboles visuels qui accompagnent l’utilisateur dans ses actions et qui aident à sa compréhension de l’interface.
 
 ## Utilisation des icônes
 
@@ -21,11 +21,12 @@ Les icônes sont disponibles dans la section Fondamentaux des librairies Sketch 
 
 ### Pour les développeurs
 
-Les icônes placées dans **src/core/icon** sont exportées dans dist/icons. Les icônes sont utilisées directement en CSS via leur chemin relatif. Il est de ce fait possible d’utiliser des icônes en utilisant directement la classe CSS associée, reprenant le nom de l’icône SVG, précédée du préfixe fr-icon ou fr-fi (déprécié).  
+Les icônes placées dans **src/core/icon** sont exportées dans dist/icons. Les icônes sont utilisées directement en CSS via leur chemin relatif. Il est de ce fait possible d’utiliser des icônes en utilisant directement la classe CSS associée, reprenant le nom de l’icône SVG, précédée du préfixe fr-icon ou fr-fi (déprécié).
 Exemple : `.fr-icon-error-fill`, `.fr-fi-account-fill`.
 
 > [!NOTE]
-> **A noter**<br>
+> **A noter**
+>
 > Avec la version 1.5.0, les icônes ne sont plus chargées via une police d’icônes dans la css. De plus, les classes utilitaires d’icones ne sont plus dans core mais, à part, dans un nouveau dossier dist/utility. Il est donc nécéssaire d’importer le nouveau fichier d’icônes pour conserver leurs fonctionnement.
 
 Les icônes sont maintenant rangées en catégories (system, business, map…), avec un fichier css pour chacune. Il est donc possible d’importer uniquement les catégories d’icônes désirées pour alléger la CSS.
@@ -35,14 +36,15 @@ Le chargement des icônes se fait directement via l’ajout du fichier CSS.
 Il est possible d'utiliser plusieurs fichiers : dist/utility/icons/icons.css, dist/utility/utility.css ou plus spécifiquement par catégorie, ex: dist/utility/icons/icons-buildings/icon-buildings.css.
 
 > [!NOTE]
-> **Pour les développeurs**<br>
+> **Pour les développeurs**
+>
 > L’utilisation des utility.css et icons.css peuvent remonter des erreurs dans webpack (Maximum call stack size exceeded). Afin de contourner le problème, utilisez les fichiers de catégories.
 
-Il est ensuite possible d’utiliser les classes d’icônes correspondantes,  
-**directement sur un composant** qui permet d’ajouter une icône, par exemple un bouton :  
+Il est ensuite possible d’utiliser les classes d’icônes correspondantes,
+**directement sur un composant** qui permet d’ajouter une icône, par exemple un bouton :
 
 ```HTML
-<button class="fr-btn fr-icon-checkbox-circle-line fr-btn--icon-left"> 
+<button class="fr-btn fr-icon-checkbox-circle-line fr-btn--icon-left">
   Label bouton MD
 </button>
 ```
@@ -51,9 +53,9 @@ ou bien de manière autonome, en utilisant de préférence une balise span.
 
 ## Sélection d’icônes
 
-Les icônes doivent être utilisées pour attirer l'attention sur les actions, les ensembles de contenus importants ou les zones clés, il faut éviter d’en utiliser trop sur une même page pour ne pas créer de confusion. Un concept doit être représenté par la même icône sur l'ensemble du site et de l'écosystème numérique de l'État.  
-Les icônes ci-dessous sont pour la plupart issues de la librairie Remixicon.  
-Les icônes classées dans dsfr sont soit des icônes créées spécialement, soit des icônes issues de Remixicon ayant été renommées afin de plus coller à l’usage. 
+Les icônes doivent être utilisées pour attirer l'attention sur les actions, les ensembles de contenus importants ou les zones clés, il faut éviter d’en utiliser trop sur une même page pour ne pas créer de confusion. Un concept doit être représenté par la même icône sur l'ensemble du site et de l'écosystème numérique de l'État.
+Les icônes ci-dessous sont pour la plupart issues de la librairie Remixicon.
+Les icônes classées dans dsfr sont soit des icônes créées spécialement, soit des icônes issues de Remixicon ayant été renommées afin de plus coller à l’usage.
 
 L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dépréciée mais toujours fonctionnelle.
 
@@ -84,7 +86,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::fr-accordion[### Extrait de code]{id='icons-building-accordion'}
 
-```HTML 
+```HTML
 <span class="fr-icon-ancient-gate-fill" aria-hidden="true"></span>
 <span class="fr-icon-ancient-gate-line" aria-hidden="true"></span>
 
@@ -179,7 +181,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::fr-accordion[### Extrait de code]{id='icons-business-accordion'}
 
-```HTML 
+```HTML
 <span class="fr-icon-archive-fill" aria-hidden="true"></span>
 <span class="fr-icon-archive-line" aria-hidden="true"></span>
 
@@ -293,7 +295,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::fr-accordion[### Extrait de code]{id='icons-communication-accordion'}
 
-```HTML 
+```HTML
 <span class="fr-icon-chat-2-fill" aria-hidden="true"></span>
 <span class="fr-icon-chat-2-line" aria-hidden="true"></span>
 
@@ -379,11 +381,11 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-table-line" aria-hidden="true"></span>
   <span class="fr-icon-eraser-fill" aria-hidden="true"></span>
   <span class="fr-icon-eraser-line" aria-hidden="true"></span>
-  </div>
+</div>
 
 :::fr-accordion[### Extrait de code]{id='icons-design-accordion'}
 
-```HTML 
+```HTML
 <span class="fr-icon-ball-pen-fill" aria-hidden="true"></span>
 <span class="fr-icon-ball-pen-line" aria-hidden="true"></span>
 
@@ -570,7 +572,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-wifi-fill" aria-hidden="true"></span>
   <span class="fr-icon-wifi-line" aria-hidden="true"></span>
 </div>
- 
+
  :::fr-accordion[### Extrait de code]{id='icons-device-accordion'}
 
 ```HTML
@@ -660,7 +662,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-todo-fill" aria-hidden="true"></span>
   <span class="fr-icon-todo-line" aria-hidden="true"></span>
 </div>
- 
+
 :::fr-accordion[### Extrait de code]{id='icons-document-accordion'}
 
 ```HTML
@@ -771,7 +773,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-text-direction-r" aria-hidden="true"></span>
   <span class="fr-icon-underline" aria-hidden="true"></span>
 </div>
-  
+
 :::fr-accordion[### Extrait de code]{id='icons-remixicon-accordion'}
 
 ```HTML
@@ -865,7 +867,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-trophy-fill" aria-hidden="true"></span>
   <span class="fr-icon-trophy-line" aria-hidden="true"></span>
 </div>
- 
+
 :::fr-accordion[### Extrait de code]{id='icons-finance-accordion'}
 
 ```HTML
@@ -942,7 +944,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-virus-fill" aria-hidden="true"></span>
   <span class="fr-icon-virus-line" aria-hidden="true"></span>
 </div>
- 
+
  :::fr-accordion[### Extrait de code]{id='icons-health-accordion'}
 
 ```HTML
@@ -1018,7 +1020,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-tiktok-fill" aria-hidden="true"></span>
   <span class="fr-icon-tiktok-line" aria-hidden="true"></span>
 </div>
-  
+
 :::fr-accordion[### Extrait de code]{id='logos-dsfr-accordion'}
 
 ```HTML
@@ -1945,7 +1947,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 ## Tailles
 
-Les icônes sont disponibles en quatre tailles. Il est possible de modifier la taille des icônes à l'aide de modifiers spécifiques 
+Les icônes sont disponibles en quatre tailles. Il est possible de modifier la taille des icônes à l'aide de modifiers spécifiques
 
 :::dsfr-doc-table[Tailles]{valign=top scroll=false}
 | **Taille** | **Token** | **Classe** | **Dimension** | **Contexte d’utilisation** |

@@ -27,26 +27,25 @@ COULEUR- NOM - VARIANTE - INDICE - ÉTAT
 
 À chaque token est rattaché une valeur hexadécimale, une valeur RGB et une valeur HSL. Par exemple, la couleur de référence pour le vert “Tilleul Verveine” :
 
-
 <div class="array-sample">
-      <div class="box-sample" style="--color-box:#B7A73F">
-        <div class="color-box-sample"></div>
-        <p><b>green-tilleul-verveine-main-707</b></p>
-        <p>#B7A73F<br>rgb(183,167,63)<br>hsl(52deg 48.8% 48.2%)<br><br></p>
-        <div class="box-children-sample">
-          <div>
-            <div class="color-box-sample--sm" style="--color-box:#a19237"></div>
-            <p><b>hover</b><br>#a19237<br>rgb(161,146,55)</p>
-          </div>
-          <div>
-            <div class="color-box-sample--sm" style="--color-box:#908331"></div>
-            <p><b>active</b><br>#908331<br>rgb(144,131,49)</p>
-          </div>
-        </div>
+  <div class="box-sample" style="--color-box:#B7A73F">
+    <div class="color-box-sample"></div>
+    <p><b>green-tilleul-verveine-main-707</b></p>
+    <p>#B7A73F<br>rgb(183,167,63)<br>hsl(52deg 48.8% 48.2%)<br><br></p>
+    <div class="box-children-sample">
+      <div>
+        <div class="color-box-sample--sm" style="--color-box:#a19237"></div>
+        <p><b>hover</b><br>#a19237<br>rgb(161,146,55)</p>
       </div>
+      <div>
+        <div class="color-box-sample--sm" style="--color-box:#908331"></div>
+        <p><b>active</b><br>#908331<br>rgb(144,131,49)</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-L’utilisation de la palette de couleurs est obligatoire pour l’ensemble des sites. Il est en conséquence prohibé d’utiliser d’autres couleurs que celles proposées.  
+L’utilisation de la palette de couleurs est obligatoire pour l’ensemble des sites. Il est en conséquence prohibé d’utiliser d’autres couleurs que celles proposées.
 
 La palette de couleur du Système de Design de l’État comprend deux parties : la palette “thème clair” et la palette “thème sombre”. Chacune de ces parties se décompose en catégories :
 - [couleurs primaires](#primaire)
@@ -62,7 +61,7 @@ Construites à partir des deux grandes couleurs de la marque de l'État (bleu et
 
 ### Couleurs neutres
 
-Couleurs de base utilisées dans les typographies, fonds, contours et séparateurs dans la majorité des composants. Elles sont notamment utilisées dans les éléments non cliquables et pour représenter les états inactifs. 
+Couleurs de base utilisées dans les typographies, fonds, contours et séparateurs dans la majorité des composants. Elles sont notamment utilisées dans les éléments non cliquables et pour représenter les états inactifs.
 
 <iframe id="neutral-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs neutres" src="/uploads/palette_couleurs_neutres_6ec420a693.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 2103px;"> </iframe>
 
@@ -76,7 +75,7 @@ Couleurs utilisées exclusivement pour représenter des états et des statuts.
 
 Couleurs complémentaires de la charte de l'État, pouvant servir à la composition d’illustration. Dans le contexte du Système de Design de l'État, ces couleurs sont également utilisables pour accentuer des composants, c’est-à-dire varier la couleur de certains éléments (texte, fonds, bordures) pour apporter de la diversité ou une hiérarchie visuelle.
 
-L’utilisation des couleurs illustratives est possible sur certains composants : 
+L’utilisation des couleurs illustratives est possible sur certains composants :
 Voir la liste des composants accentuables.
 
 <iframe id="accent-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs illustratives" src="/uploads/palette_couleurs_accent_fd07bc7cf1.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 24341px;"> </iframe>
@@ -186,7 +185,7 @@ Au sein de l’existant, des tokens de décision sont systématiquement appliqu�
 
 Il n’est pas permis de remplacer un token de décision au sein d’un composant si cela n’est pas indiqué dans la documentation (section “Accentuation” dans les pages de composants).
 
-### Accentuation 
+### Accentuation
 
 L’accentuation des composants est réglementée : un tableau récapitulatif des éléments qu’il est possible d’accentuer sur chaque composant est détaillé dans la page de documentation (paragraphe ‘Personnalisation > Couleurs d’accent’).
 
@@ -208,7 +207,7 @@ Si vous êtes amenés à créer des pages uniques ou des composants inédits, pr
 
 ### Hors des composants
 
-La couleur est utile en dehors des composants : 
+La couleur est utile en dehors des composants :
 - Pour les fonds de page, il existe des tokens de décision dédiés.
 - Pour les pictogrammes illustratifs, utiliser les tokens appropriés.
 - Pour les illustrations, il est important en premier lieu de sélectionner des couleurs harmonieuses et correspondant à la thématique. Éviter un nombre de teintes trop important (moins de 5) qui compliqueront la conception et la force de l’illustration.
@@ -216,9 +215,9 @@ La couleur est utile en dehors des composants :
 ## Accessibilité
 
 Vos interfaces doivent être conformes aux exigences du [Référentiel Général d’Amélioration de l’Accessibilité - RGAA dans sa version 4](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/) :
-- Toute information visuelle (exemple couleur ou illustration) doit être accompagnée d’une information textuelle dans le code (exemple classe, titre, description ou modificateur). Ces règles sont détaillées au cas par cas dans la section Accessibilité de chaque composant ; 
+- Toute information visuelle (exemple couleur ou illustration) doit être accompagnée d’une information textuelle dans le code (exemple classe, titre, description ou modificateur). Ces règles sont détaillées au cas par cas dans la section Accessibilité de chaque composant ;
 - Vous devez respecter des ratios de contraste accessibles ;
 - L’ensemble des composants proposés respecte les normes exigées par le RGAA, mais lors de vos modifications de couleurs, vous devrez vérifier vos propres contrastes. Vous pouvez utiliser des outils en ligne ou des plugins comme [Stark](https://www.getstark.co/) ou [Cluse](https://cluse.cc/).
 
-Pour connaître la réglementation, vous pouvez vous rendre sur ce site : 
+Pour connaître la réglementation, vous pouvez vous rendre sur ce site :
 [Critères et tests - RGAA](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#topic3)
