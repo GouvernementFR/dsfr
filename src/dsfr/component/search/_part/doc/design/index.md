@@ -24,7 +24,7 @@ La barre de recherche est un système de navigation permettant à l'usager d’a
 
 :::dsfr-doc-anatomy{col=12}
 
-![Anatomie de l'onglet](../_asset/anatomy/anatomy-1.png)
+![Anatomie de la barre de recherche](../_asset/anatomy/anatomy-1.png)
 
 ::dsfr-doc-pin[Un champ]{required=true}
 
