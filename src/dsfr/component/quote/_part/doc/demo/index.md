@@ -21,6 +21,6 @@ La citation est un élément éditorial permettant de mettre en forme du contenu
 - [Accessibilité](../accessibility/index.md)
 :::
 
-## Démonstration
+### Démonstration
 
 ::dsfr-doc-storybook{id=quote--docs}

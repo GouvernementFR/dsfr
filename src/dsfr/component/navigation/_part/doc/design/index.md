@@ -109,7 +109,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composan
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=100 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![À faire](../_asset/custom/do-1.png)
 
@@ -125,7 +125,7 @@ Ne pas personnaliser la couleur des entrées de la navigation principale
 
 :::
 
-:::dsfr-doc-guideline[✅ À faire]{col=100 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![À faire](../_asset/custom/do-2.png)
 
@@ -141,7 +141,7 @@ Ne pas personnaliser la couleur des entrées menu déroulant ou mega menu lorsqu
 
 :::
 
-:::dsfr-doc-guideline[✅ À faire]{col=100 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![À faire](../_asset/custom/do-3.png)
 
@@ -157,7 +157,7 @@ Ne pas personnaliser ou retirer la couleur de fond du mega menu.
 
 :::
 
-:::dsfr-doc-guideline[✅ À faire]{col=100 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![À faire](../_asset/custom/do-4.png)
 
