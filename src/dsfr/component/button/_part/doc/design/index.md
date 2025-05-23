@@ -1,8 +1,17 @@
 ---
 title: Design du bouton
+shortTitle: Design du Bouton
+description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
+shortDescription: Déclenchement d’une action dans l’interface
+keywords: bouton, interaction, action, DSFR, design système, accessibilité, formulaire, navigation
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Bouton permet de déclencher une action dans la page, comme soumettre un formulaire ou naviguer vers un contenu. Il se décline en versions primaire, secondaire et tertiaire.
+summary: Le bouton est un composant central d’interaction dans les interfaces numériques. Il est utilisé pour initier une action précise selon un niveau de priorité - bouton primaire pour l’action principale, secondaire pour les actions secondaires et tertiaire pour les interactions contextuelles. Il respecte des règles d’écriture éditoriale claires, n’est pas personnalisable graphiquement et s’intègre de manière cohérente dans une interface respectueuse des standards d’accessibilité.
 ---
 
 ## Bouton
+
+Le bouton est un élément d’interaction avec l’interface permettant à l’usager d’effectuer une action.
 
 :::dsfr-doc-tab-navigation
 
@@ -14,85 +23,193 @@ title: Design du bouton
 
 :::
 
-### Design
-
 :::dsfr-doc-anatomy{col=12}
 
 ![Anatomie du bouton](../_asset/anatomy/anatomy-1.png)
 
 ::dsfr-doc-pin[Un libellé]{required=true}
 
-::dsfr-doc-pin[Une icône, pouvant être modifiée (voir [les icônes disponibles](../../../../../core/icon/_part/doc/index.md))]
+::dsfr-doc-pin[Une icône]{add='pouvant être modifiée'}
 
 :::
 
-#### **Variations**
+### Variations
 
 **Bouton primaire**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=button--primary}
 
 **Bouton secondaire**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=button--secondary}
 
 **Bouton tertiaire**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=button--tertiary}
 
 Le bouton tertiaire est caractérisé par un fond transparent.
 
-Il peut également comporter un contour $border-default-grey, non obligatoire.
+**Bouton tertiaire sans contour**
+
+::dsfr-doc-storybook{id=button--tertiary args="kind:4"}
+
+Le bouton tertiaire peut aussi être proposé sans bordure.
 
 **Bouton avec icône**
 
-Pour permettre une meilleure compréhension de l’action engendrée par votre bouton, il est possible d'y ajouter une icône. Pour cela, il suffit d’utiliser la classe CSS de l’icône ([voir la documentation des icônes](../../../../../core/icon/_part/doc/index.md)).
+Pour permettre une meilleure compréhension de l’action engendrée par votre bouton, il est possible d'y ajouter une icône ([voir la documentation des icônes](../../../../../core/_part/doc/icon/index.md)).
 
 Trois déclinaisons sont possibles :
 
 - Bouton avec icône à droite du libellé
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=button--icon-right}
 
 - Bouton avec icône à gauche du libellé
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=button--icon-left}
 
 - Bouton sans libellé avec icône seule
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=button--icon-only}
 
->[!WARNING]
->Limiter l’usage de ces boutons sans libellé. Ils doivent uniquement être utilisés pour les actions récurrentes, facilement identifiables de l’usager (exemple : engrenage pour les paramètres ou loupe pour la recherche).
+> [!NOTE]
+> Limiter l’usage de ces boutons sans libellé. Ils doivent uniquement être utilisés pour les actions récurrentes, facilement identifiables de l’usager (exemple : engrenage pour les paramètres ou loupe pour la recherche).
 
-#### **Tailles**
+**Responsive design**
+
+En mobile, le bouton prend automatiquement toute la largeur.
+
+**Groupe de boutons**
+
+Le groupe de boutons permet à l’usager de réaliser plusieurs actions au sein d’un bloc.
+
+Il comporte ses propres règles d’usage :
+
+- **Utiliser un seul bouton primaire** pour l'action principale, les autres boutons doivent être secondaires ou tertiaires.
+- **Limiter le nombre de boutons** au sein d’un groupe à 3 maximum.
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/variation/do-1.png)
+
+Limiter le nombre de boutons utiliser au sein d’un groupe.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![À ne pas faire](../_asset/variation/dont-1.png)
+
+Ne pas excéder plus de 3 boutons au sein d’un groupe.
+
+:::
+
+::::
+
+- **Positionner le bouton primaire avant les boutons secondaires** ou tertiaires quand le groupe est ferré à gauche ou centré.
+- **Positionner le bouton primaire après les boutons secondaires** ou tertiaires quand le groupe est ferré à droite.
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/variation/do-2.png)
+
+Positionner le bouton primaire avant les boutons secondaires ou tertiaires quand le groupe est ferré à gauche ou centré.
+
+:::
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/variation/do-3.png)
+
+Positionner le bouton primaire après les boutons secondaires ou tertiaires quand le groupe est ferré à droite.
+
+:::
+
+::::
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
+
+![À ne pas faire](../_asset/variation/dont-2.png)
+
+Ne pas encadrer un bouton primaire d’autres boutons secondaires ou tertiaires.
+
+:::
+
+::::
+
+- **Conserver une unité** en utilisant la même taille (SM, MD ou LG) pour tous les boutons du groupe.
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/variation/do-4.png)
+
+Utiliser la même taille pour tous les boutons du groupe.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![À ne pas faire](../_asset/variation/dont-3.png)
+
+Ne pas mélanger différentes tailles de boutons au sein d’un groupe.
+
+:::
+
+::::
+
+**Groupe de boutons vertical**
+
+Le groupe de boutons vertical, option par défaut, permet d’associer plusieurs boutons d’action les uns en-dessous des autres.
+
+::dsfr-doc-storybook{id=buttons-group--vertical}
+
+- Aligner les boutons en colonne avec un espacement de 16px.
+- Par défaut, la largeur des boutons prend 100% de la largeur du container (« full width »).
+
+**Groupe de boutons horizontal**
+
+Le groupe de boutons horizontal permet d’associer plusieurs boutons d’action les uns à côté des autres.
+
+::dsfr-doc-storybook{id=buttons-group--horizontal}
+
+- Appliquer un espacement de 16px à droite de chaque bouton excepté le dernier (en savoir plus sur les [espacements du DSFR](../../../../../core/_part/doc/spacing/index.md)).
+- Appliquer un espacement de 16px en dessous de chaque bouton.
+- Forcer un retour à la ligne dès lors que la juxtaposition des boutons dépasse la taille du conteneur.
+
+### Tailles
 
 Les boutons sont disponibles en 3 tailles :
 
 - SM pour small
-
-[Image d’illustration]
-
 - MD pour medium - taille par défaut
-
-[Image d’illustration]
-
 - LG pour large
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=button--sizes}
 
 - **Utiliser en priorité les formats MD et LG**. Le format SM pourra quant à lui être utilisé à l’intérieur d'autres composants.
 - **Conserver une unité** dans la taille des boutons au sein d’une même page.
 
-#### **États**
+**A noter :** Dans un groupe de boutons, la taille se définit au niveau du groupe.
+
+### États
 
 **État désactivé**
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=button--disabled}
 
-**Attention !** N’utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
+> [!NOTE]
+> L’état désactivé est **fortement déconseillé** car il n’est pas accessible au clavier et il est source d’erreur pour les utilisateurs.
 
 **État au survol**
 
@@ -106,11 +223,11 @@ L’état au clic correspond au comportement constaté par l’usager lorsqu’i
 
 [Image d’illustration]
 
-#### **Personnalisation**
+### Personnalisation
 
 Les boutons ne sont pas personnalisables.
 
-Toutefois, certains éléments sont optionnels et les icônes peuvent être changées - voir [la structure du composant](#design).
+Toutefois, certains éléments sont optionnels et les icônes peuvent être changées - voir [la structure du composant](#bouton).
 
 ::::dsfr-doc-guidelines
 
@@ -172,7 +289,7 @@ Ne pas appliquer un fond aux boutons tertiaires.
 
 ::::
 
-#### Maillage
+### Maillage
 
 - [Bouton France Connect](../../../../connect/_part/doc/index.md)
-- [Icône](../../../../../core/icon/_part/doc/index.md)
+- [Icône](../../../../../core/_part/doc/icon/index.md)

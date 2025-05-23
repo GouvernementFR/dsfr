@@ -1,5 +1,5 @@
 ---
-title: Démo de la lettre d'information et des réseaux sociaux
+title: Démonstration de la lettre d'information et des réseaux sociaux
 ---
 
 ## Lettre d'information et Réseaux Sociaux

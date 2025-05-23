@@ -1,8 +1,17 @@
 ---
 title: Accordéon
+shortTitle: Accordéon
+description: Présentation du composant Accordéon permettant à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
+shortDescription: Masquer ou révéler du contenu textuel
+keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant
+cover: ./_asset/cover/cover.png
+excerpt: Le composant Accordéon permet à l’usager d’ouvrir ou fermer une section de contenu dans une page, pour en faciliter la lecture et alléger la structure globale.
+summary: Utilisé pour structurer et hiérarchiser du contenu éditorial, l’accordéon masque par défaut les informations secondaires pour ne révéler que ce que l’usager souhaite consulter. Il est particulièrement utile dans les longues pages de contenu. Il permet des interactions simples, peut être utilisé seul ou en groupe, et respecte des règles strictes de lisibilité et d’accessibilité.
 ---
 
 ## Accordéon
+
+L’accordéon est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer une section de contenu présentée dans une page.
 
 :::dsfr-doc-tab-navigation
 
@@ -14,18 +23,14 @@ title: Accordéon
 
 :::
 
-### Présentation
-
-L’accordéon est un élément d’interaction avec l’interface permettant à l’utilisateur d'afficher ou de masquer une section de contenu présentée dans une page.
-
-#### Quand utiliser ce composant ?
+### Quand utiliser ce composant ?
 
 L’accordéon est utilisé pour mettre en forme du contenu dans une page.
 
 > [!WARNING]
 > Son objectif principal étant d’économiser de l’espace, il doit principalement être utilisé au sein de longues pages de contenu.
 
-#### Comment utiliser ce composant ?
+### Comment utiliser ce composant ?
 
 - **Alléger des pages de contenus denses** en permettant à l’utilisateur de consulter uniquement ce dont il a besoin.
 
@@ -67,7 +72,7 @@ Ne pas intégrer des composants trop complexes aux accordéons.
 
 ::::
 
-#### Règles éditoriales
+### Règles éditoriales
 
 - **Rédiger un titre d’en-tête clair, explicite et précis**. L’utilisateur doit comprendre facilement le contenu proposé par l’accordéon.
 
