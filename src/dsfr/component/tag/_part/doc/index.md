@@ -29,7 +29,7 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 - **Utiliser le tag en l’associant à un contenu** (carte, en-tête etc.) pour le catégoriser (par thème, sujet, type de contenu etc). Dans ce contexte, le tag peut être cliquable ou non cliquable.
 
-> [!NOTE] 
+> [!NOTE]
 > Bien différencier le tag du [badge](../../../badge/_part/doc/index.md). Le tag ne sert pas à donner le statut du contenu auquel il est associé.<br>
 > Il ne sert pas non plus à donner des informations de complément à la catégorisation (auteur, date, lieu par exemple). Pour ce faire, utiliser l’élément « détail » prévu sur [les cartes](../../../card/_part/doc/index.md), et la typo XS « mention » pour les page de contenu.
 
