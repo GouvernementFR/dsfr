@@ -16,7 +16,7 @@ La palette de couleurs du Système de Design de l'État n’est pas utilisée à
 > [!NOTE]
 > On distingue deux typologies de “design token” que nous utilisons pour les couleurs : option et décision. Les “options” sont les tokens de couleurs hors contexte, la palette brute à votre disposition. En pratique, les “décisions” recensent les usages contextuels de ces options dans le Système de Design (par exemple, sur un fond, une bordure, un texte).
 
-![](../_asset/color/Couleurs_model_483484ec62.png)
+![ ](../_asset/color/Couleurs_model_483484ec62.png)
 
 ## Convention de nommage des tokens
 
@@ -58,7 +58,6 @@ Chaque token fait référence à deux couleurs de la palette d’options : une p
 | Fond de composant en état d’information<br> Exemple : alerte | `$background-flat-info` | `$info-425` | `$info-625` |
 | Fonds de page et de composant par défaut<br> Exemples : pied de page, modale, onglet | `$background-default-grey` | `$grey-1000` | `$grey-50` |
 
-
 :::
 
 ### Les couleurs de texte
@@ -85,7 +84,6 @@ Chaque token fait référence à deux couleurs de la palette d’options : une p
 | Texte ou icône en état d’erreur<br> Exemples : champ de saisie, élément de formulaire | `$text-default-error` | `$error-425` | `$error-625` |
 | Texte ou icône en état de succès<br> Exemples : champ de saisie, élément de formulaire | `$text-default-success` | `$success-425` | `$success-625` |
 
-
 :::
 
 ### Les couleurs d’illustrations
@@ -98,7 +96,6 @@ Chaque token fait référence à deux couleurs de la palette d’options : une p
 | Icône portant l’identité de l’État ou couleur mineure d’illustration (30%)<br> Exemple : citation | `$artwork-minor-blue-france` | `$blue-france-main-525` | `$blue-france-main-525` |
 
 :::
-
 
 ## Les usages
 

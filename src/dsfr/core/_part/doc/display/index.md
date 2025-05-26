@@ -25,7 +25,13 @@ Cette classe cache visuellement l'élément mais il reste présent pour les lect
 
 ### fr-sr-only-[breakpoint]
 
-Cette classe cache visuellement l'élément mais il reste présent pour les lecteurs d'écran, uniquement à partir du breakpoint souhaité (sm, md, lg, xl).
+Cette classe cache visuellement l'élément, uniquement à partir du breakpoint souhaité (sm, md, lg, xl), mais il reste présent pour les lecteurs d'écran.
+
+```html
+<div class="fr-sr-only-lg">
+    <p>Lorem [...] elit ut.</p>
+</div>
+```
 
 ### fr-hidden
 
@@ -39,7 +45,7 @@ Cette classe cache complètement l'élément, à la fois visuellement et aussi p
 
 ## fr-hidden-[breakpoint]
 
-Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au display-none) à partir du breakpoint souhaité. Exemple en LG :
+Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au display-none) à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
 
 ```html
 <div class="fr-hidden-lg">
@@ -49,7 +55,7 @@ Cette classe cache complètement l'élément, à la fois visuellement et aussi p
 
 ## fr-unhidden-[breakpoint]
 
-Cette classe, associée à la classe fr-hidden permet de ré-afficher l'élément caché à partir du breakpoint souhaité. Exemple en LG :
+Cette classe, associée à la classe fr-hidden permet de ré-afficher l'élément caché à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
 
 ```html
 <div class="fr-hidden fr-unhidden-lg">

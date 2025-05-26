@@ -29,7 +29,7 @@ La page de connexion est composée des éléments suivants :
     - La connexion avec identifiants - obligatoire.
 - Un accès à la connexion - obligatoire (textes à ajuster en fonction du contexte).
 
-![](/_asset/Capture_d_ecran_2022_06_13_a_13_04_29_51b20969a5.png)
+![ ](/_asset/Capture_d_ecran_2022_06_13_a_13_04_29_51b20969a5.png)
 
 ## Règles d’utilisation
 

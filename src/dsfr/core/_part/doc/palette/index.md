@@ -11,7 +11,7 @@ summary: La palette de couleurs du DSFR repose sur la charte graphique de l’É
 
 # Couleurs - Palette
 
-La palette de couleurs du système de design de l’État est définie par[la charte graphique de l'État](https://www.gouvernement.fr/marque-Etat). Elle permet de créer une cohérence entre les interfaces et d’offrir une expérience optimale à l’utilisateur. Leur respect renforce la reconnaissance de la parole de l’État. Chaque couleur est représentée par un “design token”, c’est-à-dire un nom transverse au design (à travers les bibliothèques Sketch et Figma) et au code.
+La palette de couleurs du système de design de l’État est définie par[la charte graphique de l'État](https://www.info.gouv.fr/marque-de-letat). Elle permet de créer une cohérence entre les interfaces et d’offrir une expérience optimale à l’utilisateur. Leur respect renforce la reconnaissance de la parole de l’État. Chaque couleur est représentée par un “design token”, c’est-à-dire un nom transverse au design (à travers les bibliothèques Sketch et Figma) et au code.
 
 ## Convention de nommage des tokens
 
@@ -27,28 +27,28 @@ COULEUR- NOM - VARIANTE - INDICE - ÉTAT
 
 À chaque token est rattaché une valeur hexadécimale, une valeur RGB et une valeur HSL. Par exemple, la couleur de référence pour le vert “Tilleul Verveine” :
 
-
 <div class="array-sample">
-      <div class="box-sample" style="--color-box:#B7A73F">
-        <div class="color-box-sample"></div>
-        <p><b>green-tilleul-verveine-main-707</b></p>
-        <p>#B7A73F<br>rgb(183,167,63)<br>hsl(52deg 48.8% 48.2%)<br><br></p>
-        <div class="box-children-sample">
-          <div>
-            <div class="color-box-sample--sm" style="--color-box:#a19237"></div>
-            <p><b>hover</b><br>#a19237<br>rgb(161,146,55)</p>
-          </div>
-          <div>
-            <div class="color-box-sample--sm" style="--color-box:#908331"></div>
-            <p><b>active</b><br>#908331<br>rgb(144,131,49)</p>
-          </div>
-        </div>
+  <div class="box-sample" style="--color-box:#B7A73F">
+    <div class="color-box-sample"></div>
+    <p><b>green-tilleul-verveine-main-707</b></p>
+    <p>#B7A73F<br>rgb(183,167,63)<br>hsl(52deg 48.8% 48.2%)<br><br></p>
+    <div class="box-children-sample">
+      <div>
+        <div class="color-box-sample--sm" style="--color-box:#a19237"></div>
+        <p><b>hover</b><br>#a19237<br>rgb(161,146,55)</p>
       </div>
+      <div>
+        <div class="color-box-sample--sm" style="--color-box:#908331"></div>
+        <p><b>active</b><br>#908331<br>rgb(144,131,49)</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-L’utilisation de la palette de couleurs est obligatoire pour l’ensemble des sites. Il est en conséquence prohibé d’utiliser d’autres couleurs que celles proposées.  
+L’utilisation de la palette de couleurs est obligatoire pour l’ensemble des sites. Il est en conséquence prohibé d’utiliser d’autres couleurs que celles proposées.
 
 La palette de couleur du Système de Design de l’État comprend deux parties : la palette “thème clair” et la palette “thème sombre”. Chacune de ces parties se décompose en catégories :
+
 - [couleurs primaires](#primaire)
 - [couleurs neutres (“neutral”)](#neutre)
 - [couleurs fonctionnelles](#systeme)
@@ -62,7 +62,7 @@ Construites à partir des deux grandes couleurs de la marque de l'État (bleu et
 
 ### Couleurs neutres
 
-Couleurs de base utilisées dans les typographies, fonds, contours et séparateurs dans la majorité des composants. Elles sont notamment utilisées dans les éléments non cliquables et pour représenter les états inactifs. 
+Couleurs de base utilisées dans les typographies, fonds, contours et séparateurs dans la majorité des composants. Elles sont notamment utilisées dans les éléments non cliquables et pour représenter les états inactifs.
 
 <iframe id="neutral-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs neutres" src="/uploads/palette_couleurs_neutres_6ec420a693.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 2103px;"> </iframe>
 
@@ -76,12 +76,13 @@ Couleurs utilisées exclusivement pour représenter des états et des statuts.
 
 Couleurs complémentaires de la charte de l'État, pouvant servir à la composition d’illustration. Dans le contexte du Système de Design de l'État, ces couleurs sont également utilisables pour accentuer des composants, c’est-à-dire varier la couleur de certains éléments (texte, fonds, bordures) pour apporter de la diversité ou une hiérarchie visuelle.
 
-L’utilisation des couleurs illustratives est possible sur certains composants : 
+L’utilisation des couleurs illustratives est possible sur certains composants :
 Voir la liste des composants accentuables.
 
 <iframe id="accent-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs illustratives" src="/uploads/palette_couleurs_accent_fd07bc7cf1.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 24341px;"> </iframe>
 
 Le Système de Design de l'État propose des composants adaptés à deux modes de couleurs :
+
 - Le thème clair : pour être accessible sur fond clair.
 - Le thème sombre : pour être accessible sur fond foncé.
 
@@ -90,24 +91,26 @@ L’utilisation du thème sombre est notamment recommandé pour réduire la cons
 > [!NOTE]
 > Il n'est pas autorisé de mélanger les couleurs du thème clair et celles du thème sombre.
 
-
 Les correspondances suivantes sont intégrées en code, en tant que sous-couche technique. Pour appliquer une couleur à un contexte, préférer l’utilisation des tokens de décision, qui intègrent la correspondance thème clair / thème sombre.
 
 ### Couleurs primaires
 
-::::dsfr-doc-table[Bleu France]{valign=top scroll=false vheaders=vertical caption=false}
+::::dsfr-doc-table[Bleu France]{valign=top vheaders=vertical caption=false}
+
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
 | **strong**     | `$blue-france-sun-113` | `$blue-france-625` |
 | **softest**    | `$blue-france-850` | `$blue-france-200` |
 | **light**      | `$blue-france-925` | `$blue-france-125` |
-| **lighter**    | `$blue-france-950` | $blue-france-100 |
+| **lighter**    | `$blue-france-950` | `$blue-france-100` |
 | **lightest**   | `$blue-france-975` | `$blue-france-75` |
 | **main**       | `$blue-france-main-525` | `$blue-france-main-525` |
 | **inverted**    | `$blue-france-975` | `$blue-france-113` |
+
 ::::
 
-::::dsfr-doc-table[Rouge Marianne]{valign=top scroll=false vheaders=vertical caption=false}
+::::dsfr-doc-table[Rouge Marianne]{valign=top vheaders=vertical caption=false}
+
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
 | **strong**     | `$red-marianne-425` | `$red-marianne-625` |
@@ -117,11 +120,13 @@ Les correspondances suivantes sont intégrées en code, en tant que sous-couche 
 | **lightest**   | `$red-marianne-975` | `$red-marianne-75` |
 | **main**       | `$red-marianne-main-472` | `$red-marianne-main-472` |
 | **inverted**    | `$blue-france-975` | `$blue-france-113` |
+
 ::::
 
 ### Couleur neutre
 
-::::dsfr-doc-table[Gris]{valign=top scroll=false vheaders=vertical caption=false}
+::::dsfr-doc-table[Gris]{valign=top vheaders=vertical caption=false}
+
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
 | **absolute-black** | `$grey-0` | `$grey-1000` |
@@ -145,13 +150,15 @@ Les correspondances suivantes sont intégrées en code, en tant que sous-couche 
 | **alt-overlap** | `$grey-975` | `$grey-125` |
 | **contrast-raised** | `$grey-950` | `$grey-125` |
 | **contrast-overlap** | `$grey-950` | `$grey-150` |
+
 ::::
 
 ### Couleurs système
 
 Les couleurs systèmes sont : Info, warning, error, success.
 
-::::dsfr-doc-table[Exemple avec la couleur Info]{valign=top scroll=false vheaders=vertical caption=false}
+::::dsfr-doc-table[Exemple avec la couleur Info]{valign=top vheaders=vertical caption=false}
+
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
 | **strong**     | `$info-425` | `$info-625` |
@@ -160,13 +167,15 @@ Les couleurs systèmes sont : Info, warning, error, success.
 | **lighter**    | `$info-950` | `$info-100` |
 | **lightest**   | `$info-975` | `$info-75` |
 | **main**       | `$info-main-525` | `$info-main-525` |
+
 ::::
 
 ### Couleurs illustratives
 
 Les couleurs illustratives sont : green-tilleul-verveine, green-bourgeon, green-emeraude, green-menthe, green-archipel, blue-ecume, blue-cumulus, purple-glycine, pink-macaron, pink-tuile, yellow-tournesol, yellow-moutarde, orange-terre-battue, brown-cafe-creme, brown-caramel, brown-opera, beige-gris-galet.
 
-::::dsfr-doc-table[Déclinaisons des couleurs illustratives]{valign=top scroll=false vheaders=vertical caption=false}
+::::dsfr-doc-table[Déclinaisons des couleurs illustratives]{valign=top vheaders=vertical caption=false}
+
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
 | **strong**     | /couleur sun/ | /couleur moon/ |
@@ -175,6 +184,7 @@ Les couleurs illustratives sont : green-tilleul-verveine, green-bourgeon, green-
 | **lighter**    | `$xx-950` | `$xx-100` |
 | **lightest**   | `$xx-975` | `$xx-75` |
 | **main**       | /couleur main/ | /couleur main/ |
+
 ::::
 
 ## Règles d’usage
@@ -183,14 +193,14 @@ Les couleurs illustratives sont : green-tilleul-verveine, green-bourgeon, green-
 
 Au sein de l’existant, des tokens de décision sont systématiquement appliqués, en vue d’optimiser l’affichage des composants mais également la compréhension des interfaces. Pour comprendre le rôle et le fonctionnement des tokens de décisions, [consultez la page dédiée](../color/index.md).
 
-
 Il n’est pas permis de remplacer un token de décision au sein d’un composant si cela n’est pas indiqué dans la documentation (section “Accentuation” dans les pages de composants).
 
-### Accentuation 
+### Accentuation
 
 L’accentuation des composants est réglementée : un tableau récapitulatif des éléments qu’il est possible d’accentuer sur chaque composant est détaillé dans la page de documentation (paragraphe ‘Personnalisation > Couleurs d’accent’).
 
 À l’heure actuelle, seuls les composants suivants sont ouverts à l’accentuation :
+
 - [Badge](../../../../component/badge/_part/doc/index.md) (Fond, texte)
 - [Carte](../../../../component/card/_part/doc/index.md)  (Fond blanc ou gris)
 - [Citation](../../../../component/quote/_part/doc/index.md) (Icône)
@@ -208,7 +218,8 @@ Si vous êtes amenés à créer des pages uniques ou des composants inédits, pr
 
 ### Hors des composants
 
-La couleur est utile en dehors des composants : 
+La couleur est utile en dehors des composants :
+
 - Pour les fonds de page, il existe des tokens de décision dédiés.
 - Pour les pictogrammes illustratifs, utiliser les tokens appropriés.
 - Pour les illustrations, il est important en premier lieu de sélectionner des couleurs harmonieuses et correspondant à la thématique. Éviter un nombre de teintes trop important (moins de 5) qui compliqueront la conception et la force de l’illustration.
@@ -216,9 +227,10 @@ La couleur est utile en dehors des composants :
 ## Accessibilité
 
 Vos interfaces doivent être conformes aux exigences du [Référentiel Général d’Amélioration de l’Accessibilité - RGAA dans sa version 4](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/) :
-- Toute information visuelle (exemple couleur ou illustration) doit être accompagnée d’une information textuelle dans le code (exemple classe, titre, description ou modificateur). Ces règles sont détaillées au cas par cas dans la section Accessibilité de chaque composant ; 
+
+- Toute information visuelle (exemple couleur ou illustration) doit être accompagnée d’une information textuelle dans le code (exemple classe, titre, description ou modificateur). Ces règles sont détaillées au cas par cas dans la section Accessibilité de chaque composant ;
 - Vous devez respecter des ratios de contraste accessibles ;
 - L’ensemble des composants proposés respecte les normes exigées par le RGAA, mais lors de vos modifications de couleurs, vous devrez vérifier vos propres contrastes. Vous pouvez utiliser des outils en ligne ou des plugins comme [Stark](https://www.getstark.co/) ou [Cluse](https://cluse.cc/).
 
-Pour connaître la réglementation, vous pouvez vous rendre sur ce site : 
+Pour connaître la réglementation, vous pouvez vous rendre sur ce site :
 [Critères et tests - RGAA](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#topic3)

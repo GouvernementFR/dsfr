@@ -9,7 +9,7 @@ excerpt: Tout ce qu’il faut savoir sur la grille du DSFR, breakpoints, colonne
 summary: Cette page détaille le fonctionnement de la grille du Design Système de l’État (DSFR), ses points de rupture, les valeurs à utiliser pour le design et le développement, et les classes CSS associées. Elle précise comment structurer les interfaces selon les tailles d’écran, ajuster les alignements, ajouter des gouttières ou des marges, et utiliser des décalages. Ces règles garantissent des interfaces cohérentes, accessibles et adaptables sur tous les supports.
 ---
 
-# **Grille et points de rupture**
+# Grille et points de rupture
 
 :::dsfr-doc-table[Caractéristiques de la grille]{valign=top scroll=false}
 | Mise en page | Valeurs en px | Résolution maquette en px | Token | Largeur max. du contenu | Tailles des gouttières (optionnelles) |
@@ -21,7 +21,7 @@ summary: Cette page détaille le fonctionnement de la grille du Design Système 
 | XL | ≥ 1248 | 1440 | $bp-xl | 1200 | 24 px |
 :::
 
-## **Points de rupture**
+## Points de rupture
 
 Les points de rupture sont :
 
@@ -47,7 +47,7 @@ Par défaut la grille est proposée sans gouttière, et avec des marges externes
 - supprimer les marges externes
 - adapter la largeur et l’affichage de vos blocs de contenu
 
-## **Affichages et alignements**
+## Affichages et alignements
 
 Il est possible d’adapter la grille à votre besoin, en utilisant les différentes classes à votre disposition.
 
@@ -114,11 +114,13 @@ Les blocs de contenu peuvent s’afficher selon vos besoins, sur une ou plusieur
 Nous formulons cependant des recommandations pour la majorité des composants afin de vous guider (exemple : 8 colonnes max. pour le corps de texte)
 
 :::dsfr-doc-table[Détail sur l’utilisation de `fr-col`]{valign=top scroll=false}
+
 | Classe | Description | Exemple |
 | --- | --- | --- |
 | `fr-col` | Calculé automatiquement en fonction du nombre `fr-col` intégré dans le code | Si vous utilisez 4 classes `fr-col` votre interface affichera 4 colonnes de même taille. |
 | `fr-col-n` | La largeur de la colonne est définie par n/12 | Si n=8. La largeur de la celulle sera équivalente à 8/12 soit 66,6666% |
 | `fr-col-layout-n` | Identique à `fr-col-n` mais appliqué à un layout. ( SM, MD, LG et/ou XL) | `fr-col-12` `fr-col-sm-8` `fr-col-md-6` `fr-col-lg-4` `fr-col-xl-2` appliquera 100% de largeur de 0 à 575px (`fr-col-12` : `fr-col-xx` est la valeur mobile par défaut) 66.6666% de largeur de 576px à 767px, 50% de largeur de 768px à 991px, 33.3333% de largeur de 992px à 1199px, 16.6666% de largeur au delà de 1200px |
+
 :::
 
 **Ajuster l’alignement des contenus**
@@ -145,7 +147,6 @@ Vous pouvez personnaliser l'alignement vertical ou horizontal d’un contenu, en
 </div>
 ```
 
-
 Vous pouvez créer des décalages dans la grille en utilisant la classe `fr-col-offset-n`. La valeur N représente le nombre de colonnes que vous souhaitez laisser vides à gauche du bloc.
 
 - `fr-col-offset-1` : laissera 1 colonne vide
@@ -168,7 +169,6 @@ Vous pouvez mettre ce décalage à la droite du bloc avec le modificateur `fr-co
 </div>
 ```
 
-
 **Exemple d’un décalage différent sur chaque mise en page**
 
 ```HTML
@@ -179,9 +179,6 @@ Vous pouvez mettre ce décalage à la droite du bloc avec le modificateur `fr-co
 </div>
 ```
 
-
-## **Règles d’utilisation**
-
-**Usage**
+## Règles d’utilisation
 
 Pour que la grille s’affiche correctement, il faut respecter la structure : `fr-container` ou `fr-container--fluid` contenant `fr-grid-row` qui lui même contient vos différentes colonnes (`fr-col` etc.).

@@ -35,7 +35,7 @@ La page d’erreur 404 est composée de :
 - Page d’accueil (redirection vers la page d’accueil)
 - Contactez-nous : ouverture de la solution de contact si cette dernière existe.
 
-![](/_asset/Capture_d_ecran_2022_04_21_a_11_14_32_788e56fe35.png)
+![ ](/_asset/Capture_d_ecran_2022_04_21_a_11_14_32_788e56fe35.png)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-404-error’}
 
@@ -99,7 +99,7 @@ La page d’erreur 500 est composée de :
 - Si avec solution de contact ajouter : “Si vous avez besoin d’une aide immédiate, merci de nous contacter directement.”
 - Si solution de contact, un bouton “Contact” permettant l'ouverture de la solution de contact
 
-![](/_asset/Capture_d_ecran_2022_04_21_a_11_12_00_dbdb823fbc.png)
+![ ](/_asset/Capture_d_ecran_2022_04_21_a_11_12_00_dbdb823fbc.png)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-500-error’}
 
@@ -153,7 +153,7 @@ La page 503 est composée de :
 
 Puisque cette page s'affiche en cas d'erreur serveur et que le DSFR ne peut être chargé dans ce cas de figure, cette page doit être une page statique : son contenu est disponible dans le dossier "standalone" à la racine du DSFR.
 
-![](/_asset/service_indisponible_d303158ecb.jpg)
+![ ](/_asset/service_indisponible_d303158ecb.jpg)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-503-error’}
 

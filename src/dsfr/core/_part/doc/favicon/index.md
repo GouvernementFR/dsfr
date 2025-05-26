@@ -10,7 +10,6 @@ excerpt: Intégrer correctement une icône de favoris dans un site DSFR, avec le
 summary: Le favicon permet d’identifier un site de l’État dans les onglets et favoris. Retrouvez les formats, balises HTML et bonnes pratiques à respecter.
 ---
 
-
 # Icône de favoris - Favicon
 
 L’icône de favoris est un petit icône associé à un site web.
@@ -19,7 +18,7 @@ L’icône de favoris est un petit icône associé à un site web.
 
 Il permet à l’utilisateur de repérer qu’il se trouve sur un site de l'état. Cela dans différents contextes au sein de son navigateur (dans l’onglet, la liste de favoris ou encore l’historique).
 
-![](../_asset/favicon/apple_touch_icon_8ffa1fa80c.png)
+![ ](../_asset/favicon/apple_touch_icon_8ffa1fa80c.png)
 
 ### Pour les développeurs
 
@@ -35,7 +34,6 @@ En fonction de la structure de votre projet, vous pouvez conserver les chemin re
 <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
 ```
 
-
 ## Règles d’utilisation
 
 ### Contenus
@@ -49,10 +47,3 @@ En fonction de la structure de votre projet, vous pouvez conserver les chemin re
 ### Personnalisation
 
 Ce composant n’est pas personnalisable.
-
-> [!NOTE]
-> ### Besoin d'aide ?
-> L'équipe du Système de Design est là pour vous aider.<br><br>
-> Retrouvez-la sur :<br>
-> - [La communauté Slack](https://gouvfr.slack.com/) pour poser vos questions, et échanger avec d’autres utilisateurs. Vous êtes agent de l’État et souhaitez accéder au slack ? [Rejoignez la communauté](https://gouvfr.atlassian.net/servicedesk/customer/portal/1/group/1/create/9) dès maintenant !<br>
-> - [Le centre de support](https://gouvfr.atlassian.net/servicedesk/customer/portals) pour envoyer vos demandes de correctifs et d'évolution.

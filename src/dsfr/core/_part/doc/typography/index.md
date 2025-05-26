@@ -11,35 +11,27 @@ summary: Le DSFR repose sur les polices Marianne et Spectral pour assurer la coh
 
 # Typographie
 
-Les typographies Marianne® et Spectral sont [les typographies officielles de la charte de l'État](https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/la-typographie). Leur usage crée une cohérence entre les interfaces et offre une expérience positive à l’utilisateur. Leur respect renforce également la reconnaissance de la parole de l’État.
+Les typographies Marianne® et Spectral sont [les typographies officielles de la charte de l'État](https://www.info.gouv.fr/marque-de-letat/la-typographie). Leur usage crée une cohérence entre les interfaces et offre une expérience positive à l’utilisateur. Leur respect renforce également la reconnaissance de la parole de l’État.
 
 ## Les typographies Marianne et Spectral
 
-Les typographies à utiliser dans le cadre du DSFR sont : 
+Les typographies à utiliser dans le cadre du DSFR sont :
 
 - la police Marianne® (light, regular et bold), ainsi que les versions italiques (light italic, regular italic et bold italic) ;
 - la police Spectral (regular et extra-bold).
 
-Les typographies de substitution sont : 
+Les typographies de substitution sont :
 
 - l’Arial, pour la Marianne ;
 - la Georgia, pour la Spectral.
 
-### Utilisation des typographies 
+### Utilisation des typographies
 
-Pour commencer à utiliser le DSFR, il faut télécharger et installer les typographies :
+Les typographies en format web sont inclues dans le DSFR. Vous retrouverez les différentes versions (desktop et pdf) de la Marianne et la spectral sur : [https://www.info.gouv.fr/marque-de-letat/la-typographie](https://www.info.gouv.fr/marque-de-letat/la-typographie)
 
-::fr-button[[Téléchargez la typographie Marianne](/static/fonts/Marianne_fd0ba9c190.zip)]{kind='primary'}
+Chaque taille de typographie est convertie en rem dans le code à partir d’une valeur fixée à 16px. 1rem est donc égal à 16px.
 
-<br>
-
-::fr-button[[Téléchargez la typographie Spectral](/static/fonts/Spectral_2a059d2f08.zip)]{kind='secondary'}
-
-<br>
-
-Chaque taille de typographie est convertie en rem dans le code à partir d’une valeur fixée à 16px. 1rem est donc égal à 16px. 
-
-Les différents styles de police sont proposés en version mobile jusqu’au point de rupture MD, au-delà ils passent en version desktop (en savoir plus sur [les points de ruptures](../grid/index.md).
+Les différents styles de police sont proposés en version mobile jusqu’au point de rupture MD, au-delà ils passent en version desktop (en savoir plus sur [les points de ruptures](../grid/index.md)).
 
 #### Pour les designers
 
@@ -79,15 +71,15 @@ Pour donner une plus grande liberté éditoriale et graphique, sans nuire à la 
 
 Les titres alternatifs peuvent être associés selon votre besoin à un h1, un h2, un h3 ou un h4.
 
-### Personnalisation des titres  
+### Personnalisation des titres
 
-Cette grande modularité permet de répondre aux différents cas de figure que vous pouvez rencontrer. Il faut cependant créer son jeu typographique et la hiérarchisation de l’information en créant des récurrences sur un même site, afin de faciliter le confort de lecture et les repères. 
+Cette grande modularité permet de répondre aux différents cas de figure que vous pouvez rencontrer. Il faut cependant créer son jeu typographique et la hiérarchisation de l’information en créant des récurrences sur un même site, afin de faciliter le confort de lecture et les repères.
 
-Pour garder une interface claire et lisible, il est préférable de ne pas utiliser plus de 4 niveaux de titres. 
+Pour garder une interface claire et lisible, il est préférable de ne pas utiliser plus de 4 niveaux de titres.
 
 Pour les développeurs afin de personnaliser la taille de vos titres vous pouvez également utiliser les classes fr-h1, fr-h2, fr-h3, fr-h4, fr-h5, fr-h6. Par exemple : `<h3 class="fr-h1>` aura pour effet de donner à votre titre h3, les caractéristiques graphiques du h1, tout en préservant votre architecture de l’information.
 
-### Corps de texte - Body 
+### Corps de texte - Body
 
 Les styles de texte sont là pour vous aider à concevoir vos interfaces efficacement et assurer l’homogénéité entre les différents sites.
 
@@ -116,7 +108,7 @@ Les listes vous permettent de traiter différemment une série d’information e
 | Liste | Liste d'éléments non ordonnée | <ul><li>Item list<ul><li>Item list<ul><li>Item list</li><li>Item list</li><li>Item list</li></ul></li></ul><br></li></ul> |
 ::::
 
-#### Liens 
+#### Liens
 
 Les liens contextualisés héritent du style du texte, ils sont présentés sur la page du [lien](/elements-d-interface/composants/lien).
 
@@ -129,7 +121,7 @@ Les liens contextualisés héritent du style du texte, ils sont présentés sur 
 - Les titres, graisses et tailles sont fondamentaux pour permettre une hiérarchisation de l’information. Il faut cependant en avoir un usage équilibré et uniforme au sein du site (taille de corps de texte, taille de titre).
 - Pour la hiérarchisation de la lecture vous pouvez également utiliser la [mise en exergue](../../../../component/highlight/_part/doc/index.md), la [mise en avant](../../../../component/callout/_part/doc/index.md), le [tableau](../../../../component/table/_part/doc/index.mdu).
 
-#### Longueur du texte courant 
+#### Longueur du texte courant
 
 - Il est recommandé de veiller à limiter le nombre de caractères par ligne. Nous vous recommandons d’utiliser un conteneur de maximum 8 colonnes pour les contenus.
 - Pour les tailles de typographies S et XS, il est recommandé d’utiliser un conteneur moins large : en effet des études montrent qu’entre 45 et 75 caractères la lecture est satisfaisante pour le desktop, 35 à 40 caractères pour le mobile.

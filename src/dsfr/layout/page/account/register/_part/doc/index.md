@@ -27,7 +27,7 @@ La page de création de compte est composée des éléments suivants :
     - La création de compte avec identifiants - obligatoire.
 - Les actions : cases à cocher mentions CNIL + bouton “Créer un compte” - obligatoires.
 
-![](/_asset/Capture_d_ecran_2022_06_13_a_13_05_38_9514fb8925.png)
+![ ](/_asset/Capture_d_ecran_2022_06_13_a_13_05_38_9514fb8925.png)
 
 :::fr-accordion[### Extrait de code]{id='accordion-account-creation'}
 ```html
@@ -183,7 +183,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 1 - Identifiant
 
-![](/_asset/Creation_de_compte_Etape_1_c50061d592.jpg)
+![ ](/_asset/Creation_de_compte_Etape_1_c50061d592.jpg)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-login’}
 ```html
@@ -318,7 +318,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 2 - Identité
 
-![](/_asset/Creation_de_compte_Etape_2_e9f5822d0e.jpg)
+![ ](/_asset/Creation_de_compte_Etape_2_e9f5822d0e.jpg)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-identify’}
 ```html
@@ -461,7 +461,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 3 - Coordonnées
 
-![](/_asset/Creation_de_compte_Etape_3_af6a8ad77a.jpg)
+![ ](/_asset/Creation_de_compte_Etape_3_af6a8ad77a.jpg)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-contact-details’}
 ```html
