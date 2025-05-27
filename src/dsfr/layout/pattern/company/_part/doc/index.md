@@ -47,7 +47,7 @@ Numéro de SIRET[Annuaire des entreprises](https://annuaire-entreprises.data.gou
     <div class="fr-messages-group" id="siret-1632-fieldset-messages" aria-live="assertive">
     </div>
 </fieldset>
-<div>
+</div>
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-siret’}
 
@@ -181,7 +181,7 @@ Ce bloc se compose de :
     <div class="fr-messages-group" id="address-1649-fieldset-messages" aria-live="assertive">
     </div>
 </fieldset>
-<div>
+</div>
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-office’}
 ```html
@@ -313,7 +313,7 @@ Ce bloc se compose de :
     <div class="fr-messages-group" id="company-structure-1652-fieldset-messages" aria-live="assertive">
     </div>
 </fieldset>
-<div>
+</div>
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-society’}
 
@@ -402,7 +402,7 @@ Ce bloc se compose de :
     <div class="fr-messages-group" id="representative-1661-fieldset-messages" aria-live="assertive">
     </div>
 </fieldset>
-<div>
+</div>
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-society’}
 ```html

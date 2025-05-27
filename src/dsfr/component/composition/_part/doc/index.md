@@ -1,10 +1,10 @@
 ---
-title: Liste déroulante riche
+title: Zonde d'expression visuelle
 cover: ./_asset/cover/cover.png
 beta: true
 ---
 
-## Liste déroulante riche
+## Zonde d'expression visuelle
 
 :::dsfr-doc-tab-navigation
 
