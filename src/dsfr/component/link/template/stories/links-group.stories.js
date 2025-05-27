@@ -79,6 +79,34 @@ export const SizeLGStory = {
   ])
 };
 
+export const DownloadStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      links: [
+        {
+          label: linkArgs.label + ' 1',
+          href: 'https://www.example.com/document.pdf',
+          download: true,
+          detail: 'PDF – 1,2 Mo'
+        },
+        {
+          label: linkArgs.label + ' 2',
+          href: 'https://www.example.com/document.docx',
+          download: true,
+          detail: 'DOCX – 500 ko'
+        },
+        {
+          label: linkArgs.label + ' 3',
+          href: 'https://www.example.com/document.zip',
+          download: true,
+          detail: 'ZIP – 2,5 Mo'
+        }
+      ]
+    }
+  ])
+};
+
 export const HorizontalStory = {
   tags: ['autodocs', '!dev'],
   args: {

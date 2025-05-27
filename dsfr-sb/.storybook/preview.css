@@ -59,6 +59,11 @@
   margin-bottom: calc(100vh - 40px);
 }
 
+[data-fr-scrolling="false"] #story--display--header-display-story,
+[data-fr-scrolling="false"] #story--display--footer-display-story {
+  height: 760px;
+}
+
 #story--header--header-story--primary {
   height: 300px;
 }

@@ -319,6 +319,14 @@ const headerArgTypes = {
     },
     table: { category: 'Attributes' }
   },
+  isMourning: {
+    control: 'boolean',
+    description: 'Passe le header en mode deuil',
+    type: {
+      value: 'boolean'
+    },
+    table: { category: 'Config' }
+  },
   ...toolsArgTypes,
   ...brandArgTypes,
   ...navigationArgTypes
@@ -500,7 +508,8 @@ const headerArgs = {
       href: '/de/',
       locale: 'de'
     }
-  ]
+  ],
+  isMourning: false
 };
 
 const headerProps = (args) => {
@@ -593,6 +602,12 @@ const headerProps = (args) => {
       },
       languages: args.translateLanguage || headerArgs.translateLanguages
     };
+  }
+
+  if (args.isMourning) {
+    document.documentElement.setAttribute('data-fr-mourning', '');
+  } else {
+    document.documentElement.removeAttribute('data-fr-mourning');
   }
 
   return header;
