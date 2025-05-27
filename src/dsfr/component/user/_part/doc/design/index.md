@@ -27,7 +27,7 @@ Un texte de description est présent dans le conteneur, indiquant les nom, prén
 
 :::dsfr-doc-anatomy{col=12}
 
-![Anatomie de l'onglet](../_asset/anatomy/anatomy-1.png)
+![Anatomie de l'entête connectée](../_asset/anatomy/anatomy-1.png)
 
 ::dsfr-doc-pin[Un bouton tertiaire]{required=true add="en taille SM uniquement, avec ou sans contour"}
 
@@ -44,7 +44,6 @@ Un texte de description est présent dans le conteneur, indiquant les nom, prén
 ::dsfr-doc-pin[Un bouton de déconnexion]
 
 :::
-
 
 Le menu déroulant n’a pas vocation à remplacer ou refléter l’intégralité du contenu lié au compte ou aux informations personnelles. Veillez à respecter les catégories déjà présentes et ne pas dépasser 6 entrées.
 
