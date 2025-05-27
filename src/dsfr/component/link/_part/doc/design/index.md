@@ -37,7 +37,7 @@ Le lien est un système de navigation secondaire qui permet à l’usager de se 
 
 **Lien au fil du texte**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=link--text-link}
 
 - **Utiliser ce lien au sein d’un texte**. Il reprend les caractéristiques typographiques de celui-ci (font, couleur, taille) tout en étant souligné. Il peut également être suivi d’une icône (par exemple : lien externe).
 
@@ -47,39 +47,33 @@ Le lien simple se décline en différentes variations :
 
 - Texte seul
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=link--link}
 
 - Avec une icône à droite
-
-[Image d’illustration]
-
 - Avec une icône à gauche
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=link--icon}
 
 - Icône seule
-
-[Image d’illustration]
-
 - **Utiliser le lien simple en dehors de tout contenu**.
 - **Ajouter une icône pour rendre l’action à venir ou la destination plus explicite** pour l’usager. L’icône n’est pas à vocation décorative.
 - **Préférer les liens avec libellé.** L’icône seule n’est à utiliser que très rarement, pour des actions facilement identifiables par l’usager.
 
 **Lien interne**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=link--link}
 
 - **Utiliser le lien interne pour pointer vers d’autres pages d’un même site**.
 
 **Lien externe**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=link--external}
 
 - **Utiliser le lien externe pour pointer vers un autre site**, en ouvrant un nouvel onglet ou une nouvelle page dans le navigateur. Le lien externe est matérialisé par une icône obligatoire placée à droite du lien.
 
 **Lien de téléchargement**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=link--download}
 
 - **Utiliser le lien de téléchargement pour permettre à l’usager de télécharger un fichier** depuis votre site.
 - **Précéder le nom du document de la mention “Télécharger”.** L’usager doit comprendre l’action qu’il réalise.
@@ -114,7 +108,7 @@ Préciser la langue du document si elle est différente de la langue de la page 
 
 **Lien de retour en haut de page**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=link--back-to-top}
 
 - **Utiliser le retour en haut de page dans les pages de contenu longues** pour éviter à l’usager de trop scroller.
 - **Placer le retour en haut de page à la fin du contenu de la page**, avant le pied de page. Si il y a des blocs de poursuite de lecture (exemple : liens vers d’autres articles), il est conseillé de placer le retour en haut de page avant ces blocs.
@@ -157,15 +151,15 @@ Choisir l’un des trois emplacements ci-dessus pour le retour en haut de page. 
 
 - Liste de liens
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=links-group--size-md}
 
 - Liste de liens de téléchargement
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=links-group--download}
 
 - Groupe de liens en ligne
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=links-group--horizontal}
 
 - **Utiliser un groupe de liens afin de mettre à disposition plusieurs liens consécutivement**, qu’ils soient complémentaires ou substituables.
 
@@ -175,15 +169,15 @@ Le lien est disponible en trois tailles :
 
 - SM pour small
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=links-group--size-sm}
 
 - MD pour medium - taille par défaut
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=links-group--size-md}
 
 - LG pour large
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=links-group--size-lg}
 
 - **Adapter la taille de votre lien à votre besoin**.
 
@@ -193,7 +187,7 @@ Le lien est disponible en trois tailles :
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le lien.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=links—disabled}
 
 > [!WARNING]
 > N’utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
@@ -201,8 +195,6 @@ L’état désactivé indique que l'usager ne peut pas interagir avec le lien.
 **État au survol**
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole le lien avec sa souris.
-
-[Image d’illustration]
 
 ### Personnalisation
 

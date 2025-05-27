@@ -61,7 +61,7 @@ Le pied de page est un élément de navigation secondaire mis à disposition de 
 
 **Pied de page en berne**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=footer--footer args="{ isMourning: true }"}
 
 Lors des périodes de deuil national, il est possible d’utiliser la version en berne du footer. La Marianne s’affichera alors dans sa version en berne.
 

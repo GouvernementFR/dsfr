@@ -42,7 +42,7 @@ La pagination est un système de navigation qui permet à l’usager de naviguer
 
 **Responsive**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=pagination--pagination width=375}
 
 - Conserver le même fonctionnel que sur desktop.
 - Limiter le nombre de pages visibles pour pouvoir idéalement afficher l’ensemble des éléments de la pagination sur une seule ligne.
@@ -58,7 +58,7 @@ La largeur de la pagination s’adapte à la taille de son conteneur.
 
 L’état désactivé indique que l'usager ne peut pas interagir avec un lien.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=pagination--last-page}
 
 - Appliquer cet état au lien “Précédent” et “Suivant”, uniquement lorsque l’usager se trouve sur la première page ou la dernière page.
 
@@ -66,13 +66,11 @@ L’état désactivé indique que l'usager ne peut pas interagir avec un lien.
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole un des liens avec sa souris.
 
-[Image d’illustration]
-
 **État courant**
 
 L’état courant permet d’indiquer à l’usager la page active, soit celle sur laquelle il se situe.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=pagination--pagination}
 
 ### Personnalisation
 
