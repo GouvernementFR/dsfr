@@ -49,25 +49,25 @@ La tuile est un élément d’interaction avec l’interface permettant de redir
 
 - Cliquable
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--horizontal}
 
 - Non cliquable
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--no-link}
 
 **Tuile verticale**
 
 - Cliquable
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--default}
 
 - Non cliquable
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--horizontal-no-link}
 
 **Tuile de téléchargement**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--download}
 
 - Utiliser la tuile de téléchargement pour mettre à disposition de l’usager un fichier en téléchargement.
 - Le titre de la tuile de téléchargement reprend le nom du fichier et doit systématiquement être précédé de la mention “Télécharger”.
@@ -80,13 +80,13 @@ La tuile est disponible en 2 tailles :
 
 - SM pour small
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--size-sm}
 
 En desktop, elle occupe un maximum de 3 à 4 colonnes de large.
 
 - MD pour medium
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--default}
 
 En desktop, elle occupe entre 4 et 6 colonnes de large.
 
@@ -100,13 +100,11 @@ Par ailleurs, la hauteur de la tuile s’adapte à son contenu.
 
 L’état désactivé indique que l'usager ne peut pas interagir avec la tuile.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--default-story args="{ disabled: true }"}
 
 **État au survol**
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole la tuile avec sa souris.
-
-[Image d’illustration]
 
 ### Personnalisation
 

@@ -45,13 +45,13 @@ L’en-tête est un élément de navigation permettant aux usagers d’identifie
 
 **En-tête en berne**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=header--header-minimal args="{ isMourning: true }"}
 
 Lors des périodes de deuil national, il est possible d’utiliser la version en berne du header. La Marianne s’affichera alors dans sa version en berne.
 
 **Responsive**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=header--tool-links-search width=375}
 
 En version mobile, l’en-tête se compose d’une zone haute intégrant les éléments obligatoires liés au bloc marque. Le bloc marque suit les mêmes règle de composition que pour le desktop et doit respecter [la charte de marque de l'État](https://www.gouvernement.fr/marque-Etat).
 
