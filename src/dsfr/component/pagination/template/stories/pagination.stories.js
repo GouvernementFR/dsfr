@@ -13,5 +13,14 @@ export default {
 
 export const PaginationStory = {
   tags: ['autodocs'],
-  args: {}
+  args: {
+    currentPage: 'first'
+  }
+};
+
+export const LastPageStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    currentPage: 'last'
+  }
 };

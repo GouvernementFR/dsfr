@@ -101,7 +101,8 @@ const paginationArgs = {
   next: getNavData('Page suivante'),
   PrevAndNextDisplayedLg: false,
   PrevAndNextHasLgLabel: true,
-  pages: getPages()
+  pages: getPages(),
+  currentPage: ''
 };
 
 const paginationProps = (args) => {
@@ -110,7 +111,15 @@ const paginationProps = (args) => {
     pages: args.pages || paginationArgs.pages
   };
 
-  pagination.pages[1].active = true;
+  switch (args.currentPage) {
+    case 'first':
+      pagination.pages[0].active = true;
+      break;
+    case 'last':
+      pagination.pages[0].active = false;
+      pagination.pages[pagination.pages.length - 1].active = true;
+      break;
+  }
 
   if (args.hasFirstAndLast) {
     pagination.first = args.first || paginationArgs.first;
