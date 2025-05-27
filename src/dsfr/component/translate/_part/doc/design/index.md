@@ -61,19 +61,13 @@ Le sélecteur de langues propose une taille unique, non personnalisable.
 
 L’état au clic correspond au comportement constaté par l’usager une fois la liste déroulante ouverte, après avoir cliqué sur le bouton.
 
-[Image d’illustration]
-
 **Etat au survol**
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole le bouton avec sa souris. Il existe 2 états au survol :
 
 - Lorsque le bouton est non cliqué
 
-[Image d’illustration]
-
 - Lorsque le bouton est cliqué
-
-[Image d’illustration]
 
 ### Personnalisation
 

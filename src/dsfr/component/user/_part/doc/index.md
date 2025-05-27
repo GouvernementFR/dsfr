@@ -25,6 +25,8 @@ Un texte de description est présent dans le conteneur, indiquant les nom, prén
 
 :::
 
+![](./_asset/presentation/presentation-1.png)
+
 ### Quand utiliser ce composant ?
 
 Utiliser l’en-tête connectée pour permettre à l’usager d’avoir des informations sur son compte, pour grouper des actions ou des liens de navigation.
