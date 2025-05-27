@@ -63,6 +63,10 @@ const paginationArgTypes = {
     control: 'boolean',
     description: 'Affiche les libellés des boutons page Précédente et Suivante à partir du breakpoint LG',
     table: { category: 'prev and next' }
+  },
+  currentPageIndex: {
+    control: { type: 'number', min: 1, max: 7 },
+    description: 'Page courante'
   }
 };
 
@@ -102,24 +106,20 @@ const paginationArgs = {
   PrevAndNextDisplayedLg: false,
   PrevAndNextHasLgLabel: true,
   pages: getPages(),
-  currentPage: ''
+  currentPageIndex: 2
 };
 
 const paginationProps = (args) => {
   const pagination = {
     id: args.id || undefined,
-    pages: args.pages || paginationArgs.pages
+    pages: args.pages || paginationArgs.pages,
+    currentPageIndex: args.currentPageIndex || paginationArgs.currentPageIndex
   };
 
-  switch (args.currentPage) {
-    case 'first':
-      pagination.pages[0].active = true;
-      break;
-    case 'last':
-      pagination.pages[0].active = false;
-      pagination.pages[pagination.pages.length - 1].active = true;
-      break;
-  }
+  const currentPageIndex = pagination.currentPageIndex - 1;
+  pagination.pages.forEach((page, index) => {
+    page.active = index === currentPageIndex && page.markup !== 'span';
+  });
 
   if (args.hasFirstAndLast) {
     pagination.first = args.first || paginationArgs.first;
