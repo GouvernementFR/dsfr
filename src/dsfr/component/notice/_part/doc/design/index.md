@@ -47,19 +47,19 @@ Le bandeau d’information importante est un élément éditorial permettant d�
 
 - Bandeau d'information importante - par défaut.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--notice}
 
 Utiliser le bandeau d’information importante pour afficher une information exceptionnelle, mais non critique pour la santé ou la sécurité de l’utilisateur.
 
 - Bandeau d’avertissement
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--warning}
 
 Utiliser le bandeau d’avertissement pour afficher une information qui peut affecter l’usager dans son usage du service (indisponibilité majeure du site ou d’une démarche importante par exemple) ou pour avertir d’un risque de sécurité lié au site ou au service (risque de phishing, usurpations etc.)
 
 - Bandeau d’alerte
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--alert}
 
 Utiliser le bandeau d’alerte pour afficher une information critique pour la santé ou la sécurité de l’utilisateur.
 
@@ -67,25 +67,27 @@ Utiliser le bandeau d’alerte pour afficher une information critique pour la sa
 
 Ces bandeaux servent à relayer des informations sur les niveaux de vigilance et risques météorologiques communiqués par Météo France.
 
+::dsfr-doc-video{provider="youtube" videoId="pT98qCs58h4"}
+
 Le Système de Design de l’État prévoit que ces bandeaux soient affichés à partir du niveau de vigilance orange. Les niveaux de vigilance vert et jaune ne justifiant pas d’afficher un bandeau d’information sur les sites de l’État.
 
 Les niveaux de vigilance étant revus quotidiennement par Météo France, il est demandé de ne plus afficher ces bandeaux dès lors que le niveau de vigilance revient à la normale.
 
 - Vigilance orange
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--weather-orange}
 
 Utiliser ce niveau de vigilance lorsque des phénomènes dangereux sont prévus. Son rôle est d’inciter l’usager à suivre l'évolution de la situation ainsi que les conseils de sécurité émis par les pouvoirs publics.
 
 - Vigilance rouge
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--weather-red}
 
 Utiliser ce niveau de vigilance lorsque des phénomènes dangereux, d'intensité exceptionnelle, sont prévus. Il doit inciter l’usager à suivre la situation et à impérativement respecter les consignes de sécurité émises par les pouvoirs publics.
 
 - Vigilance violette
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--weather-purple}
 
 Réserver ce niveau de vigilance aux territoires ultra-marins où les phénomènes météorologiques liés aux cyclones y font l’objet de dispositifs d’alertes spécifiques à chaque territoire ou région, donnant lieu à une couleur d’alerte violette figurant le niveau d’alerte maximale.
 
@@ -97,7 +99,7 @@ Les bandeaux d’alerte sont conçus pour relayer des alertes relatifs aux risqu
 
 - Alerte attentat
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--attack}
 
 Afficher ce bandeau uniquement lorsqu'un attentat est en cours. Cette information étant émise par le Ministère de l’Intérieur, les intitulés officiels doivent être respectés.
 
@@ -106,13 +108,13 @@ Afficher ce bandeau uniquement lorsqu'un attentat est en cours. Cette informatio
 
 - Appel à témoins
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--witness}
 
 Afficher ce bandeau uniquement lorsqu'un appel à témoins est émis par le Ministère de l’Intérieur ou une préfecture. Les intitulés officiels doivent être respectés.
 
 - Alerte technologique
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=notice--cyberattack}
 
 Afficher ce bandeau uniquement en cas de cyber-attaque d’ampleur nationale ou d’alerte technologique émise par le Ministère de l’Intérieur. Les intitulés officiels doivent être respectés.
 

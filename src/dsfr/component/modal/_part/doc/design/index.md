@@ -45,13 +45,13 @@ La modale est un élément de mise en forme de contenu permettant de concentrer 
 
 **Modale avec zone d’action**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=modal--footer}
 
 La modale avec une zone d’action permet de guider l’utilisateur vers des actions attendues. Elle reprend les éléments de la modale simple, auxquels s’ajoute une zone d’action composée soit d’un bouton primaire, soit d’un [groupe de boutons hiérarchisé](../../../../button/_part/doc/design/index.md#variations).
 
 **Modale alignée en haut en mobile**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=modal--modal args="top:true" width=375}
 
 Une variation permet à la modale d’être alignée en haut de l’écran en mobile plutôt qu’en bas.
 
@@ -61,15 +61,15 @@ La modale est disponible en trois tailles :
 
 - SM pour small
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=modal--size-sm}
 
 - MD pour medium - taille par défaut
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=modal--size-md}
 
 - LG pour large
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=modal--size-lg}
 
 - **Adapter la taille de la modale au volume de votre contenu.**
 
@@ -80,7 +80,7 @@ En version mobile, la modale s’affiche sur la quasi totalité de l'écran :
 - 100% de largeur.
 - La hauteur minimale dépend du contenu. 32px de marge laissée en haut de l'écran (ou en bas pour la variante avec modale alignée en haut).
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=modal--modal width=375}
 
 ### États
 
