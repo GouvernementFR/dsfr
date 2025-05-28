@@ -60,7 +60,7 @@ La taille du bouton FranceConnect n’est pas personnalisable. Elle s’ajuste �
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton FranceConnect.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=”connect--default&args=disabled%3A!true”}
 
 > [!NOTE]
 > Utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
@@ -68,8 +68,6 @@ L’état désactivé indique que l'usager ne peut pas interagir avec le bouton 
 **État au survol**
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole le bouton FranceConnect avec sa souris.
-
-[Image d’illustration]
 
 ### Personnalisation
 

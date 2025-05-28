@@ -19,7 +19,7 @@ Les médias sont des images ou des vidéos présents au sein des pages du site. 
 
 Les ratios d’images suivants peuvent être mis en place dans le respect de la grille responsive : 32:9, 16:9, 3:2, 4:3, 1:1, 3:4, 2:3.
 
-![ ](../_asset/media/Capture_d_ecran_2020_05_19_a_08_41_37_93c2aa38d0.png)
+![ ](../_asset/media/image-ratios-exemple.png)
 
 Afin que votre image soit responsive, utilisez la classe `.fr-responsive-img`.
 

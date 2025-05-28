@@ -43,13 +43,13 @@ La case à cocher est un élément d’interaction avec l’interface permettant
 
 **Liste verticale**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--default-group}
 
 La variation verticale d’une liste de cases à cocher est la plus courante et la plus facile à lire pour l’utilisateur.
 
 **Liste horizontale**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--default-group args="{ inline: true }"}
 
 La variation horizontale d’une liste de cases à cocher est à utiliser uniquement lorsqu’il n’y a 2 options ou que les libellés des entrées sont courts.
 
@@ -59,22 +59,22 @@ Il est recommandé d’ajouter un texte d’aide qui accompagne les cases à coc
 
 - Par l’ajout d’un texte sous le titre du groupe de cases à cocher, afin d’apporter une précision à l’intitulé du groupe.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--default-group args="{ hint: Texte de description additionnel }"}
 
 - Par l’ajout d’un texte sous le libellé de chaque case à cocher, afin d’apporter une précision à chaque élément.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--hint-group}
 
 
 ### Tailles
 
 La case à cocher est proposée en taille MD par défaut (24px) afin d’optimiser son ergonomie et son accessibilité en ayant une zone cliquable confortable.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--default-group}
 
 Il existe également une version en taille SM (16 px) correspondant à la taille standard proposée par les navigateurs.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--default-group args="{ size: sm }"}
 
 ### États
 
@@ -82,19 +82,19 @@ Il existe également une version en taille SM (16 px) correspondant à la taille
 
 L'état d’erreur est signalé par un changement de couleur ainsi que l’affichage d’une ligne rouge (cf. couleurs fonctionnelles : le rouge est la couleur de l’état erreur) et d’un message d’erreur en-dessous du composant.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--default-group args="{ status: error }"}
 
 **État de succès**
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs fonctionnelles : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--default-group args="{ status: valid }"}
 
 **État désactivé**
 
 L'état désactivé indique que l’utilisateur ne peut pas interagir avec la case à cocher.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=checkboxes-group--default-group args="{ disabled: true }"}
 
 > [!NOTE]
 > L'état “Indeterminate” n’est pas géré actuellement par le Système de Design de l'Etat.

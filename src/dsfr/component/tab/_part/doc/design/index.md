@@ -43,7 +43,7 @@ Le système d’onglets permet de structurer et de présenter plusieurs sections
 
 **Responsive**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tabs--tabs width=375}
 
 En mobile, les onglets affichent un scroll horizontal qui permet d’accéder à l’ensemble des sections.
 
@@ -51,7 +51,7 @@ En mobile, les onglets affichent un scroll horizontal qui permet d’accéder à
 
 La largeur du composant s’adapte à la taille de son conteneur. Si le nombre d’onglets dépasse la largeur du conteneur, un scroll horizontal permet de naviguer entre les différents onglets.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tabs--tabs width=576}
 
 Il est toutefois recommandé de ne pas excéder une largeur de 8 colonnes, s’agissant d’un composant à intégrer au sein de pages de contenu.
 
@@ -63,13 +63,9 @@ Par ailleurs, la largeur des onglets eux-mêmes s’adapte à la taille de leur 
 
 L’état au clic correspond au comportement constaté par l’usager une fois un onglet sélectionné, après avoir cliqué dessus.
 
-[Image d’illustration]
-
 **État au survol**
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole les onglets.
-
-[Image d’illustration]
 
 ### Personnalisation
 

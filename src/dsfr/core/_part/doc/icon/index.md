@@ -1963,7 +1963,7 @@ Les icônes fonctionnelles sont des symboles visuels utilisés pour représenter
 
 La couleur choisie pour vos icônes doit être issue [des couleurs du DSFR](../color/index.md) . Lorsqu’une icône est rattachée à un label, elle prend automatiquement la couleur de ce label.
 
-![ ](../_asset/icon/Capture_d_ecran_2020_05_07_a_20_13_24_728713f36e.png)
+![ ](../_asset/icon/icon-color-example.png)
 
 **Alignement et marge**
 

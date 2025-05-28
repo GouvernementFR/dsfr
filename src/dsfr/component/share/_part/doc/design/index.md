@@ -51,7 +51,7 @@ La largeur du partage s’adapte à son contenu.
 
 L’état désactivé indique que l'usager ne peut pas interagir avec les boutons.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=share--disabled}
 
 > [!NOTE]
 > Le code d’intégration des boutons et liens de partage proposé ici correspond à de simples liens externes vers les services de partage.<br>

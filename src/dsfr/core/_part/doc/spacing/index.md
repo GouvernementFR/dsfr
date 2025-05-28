@@ -20,11 +20,11 @@ Nous utilisons des multiples de 4px pour définir les marges, auxquels s’ajout
 
 ## Espacement horizontaux
 
-![Modélisation des espacements horizontaux](../_asset/spacing/Capture_d_ecran_2020_11_13_a_14_44_16_e9dd56700e.png)
+![Modélisation des espacements horizontaux](../_asset/spacing/spacing-horizontal-example.png)
 
 ## Espacement verticaux
 
-![modélisation des espacements verticaux](../_asset/spacing/Capture_d_ecran_2020_11_13_a_14_34_47_3ff46fcc72.png)
+![modélisation des espacements verticaux](../_asset/spacing/spacing-vertical-example.png)
 
 Dans le code, les espacements sont exprimés en Rem. Voici la correspondance des pixels en Rem.
 
