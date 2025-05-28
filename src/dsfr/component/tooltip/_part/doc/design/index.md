@@ -43,14 +43,14 @@ L’infobulle compte deux variations, suivant le type de déclenchement.
 
 **Déclenchement au clic (ou information contextuelle)**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tooltip--tooltip-click-button}
 
 - Privilégier cette variation si le contexte le permet.
 - Adosser l’icône représentant le point d’interrogation et permettant de déclencher l’infobulle à l’élément auquel elle se rapporte.
 
 **Déclenchement au survol (ou au focus)**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tooltip--tooltip}
 
 - Réserver son usage aux cas où il n’est pas possible d’afficher l’information autrement ou qu’il n’y a pas la place d’intégrer une zone de déclenchement, et aux parcours majoritairement en desktop car elle ne s’affiche pas en mobile.
 

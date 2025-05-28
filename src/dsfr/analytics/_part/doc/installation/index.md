@@ -10,6 +10,7 @@ Pour installer le système d’analytics, il suffit d’importer le fichier java
 `/dist/analytics/analytics.module.js` **après** `dsfr.module.js`
 
 Fonctionnalités disponibles :
+
 - Intégration CMP
 - Optout
 - Collecte de pages
@@ -31,6 +32,7 @@ Pour installer la version standalone du système d’analytics, il suffit d’im
 `/standalone/analytics/analytics.module.standalone.js`
 
 Fonctionnalités disponibles :
+
 - Intégration CMP
 - Optout
 - Collecte de pages

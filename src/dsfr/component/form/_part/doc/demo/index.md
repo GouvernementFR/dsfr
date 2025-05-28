@@ -14,6 +14,4 @@ title: Démo du formulaire
 
 :::
 
-### Démonstration
-
 ::dsfr-doc-storybook{id=form--docs}

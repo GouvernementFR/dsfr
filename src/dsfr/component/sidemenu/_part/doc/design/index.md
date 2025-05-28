@@ -41,19 +41,19 @@ Le menu latéral est un système de navigation secondaire présentant une liste 
 
 **Menu latéral avec un seul niveau d’arborescence (accès direct)**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=sidemenu--link}
 
 Il est composé d’une liste de liens vers les pages de la rubrique courante.
 
 **Menu latéral avec deux niveaux d’arborescence**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=sidemenu--sidemenu}
 
 Il permet d’afficher les niveaux secondaires d’une rubrique. Le clic sur le premier niveau fait apparaitre la liste des liens lui étant rattachée.
 
 **Menu latéral avec trois niveaux d’arborescence**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=sidemenu--submenu-sidemenu}
 
 Il permet d’afficher les niveaux 1, 2 et 3 imbriqués d’une rubrique.
 
@@ -67,7 +67,7 @@ Enfin vous pouvez afficher un menu latéral fixe sur 100% de la hauteur de votre
 
 **Responsive**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=sidemenu--sidemenu width=375}
 
 En version mobile, le menu latéral est masqué par défaut et est remplacé par le bouton ‘Dans cette rubrique'. Au clic sur ce dernier, le menu se déplie et affiche l’ensemble de la liste de liens.
 
@@ -81,25 +81,17 @@ Le menu latéral prend une largeur fixe de 3 colonnes.
 
 L’état au clic correspond au comportement constaté par l’usager une fois une section du menu latéral ouverte, après avoir cliqué sur le premier niveau de navigation.
 
-[Image d’illustration]
-
 **État au survol**
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole une section ou un lien du menu latéral avec sa souris. Il existe 2 états au survol :
 
 - Lorsque la section est fermée ou qu’il s’agit d’un lien direct
 
-[Image d’illustration]
-
 - Lorsque la section est ouverte
-
-[Image d’illustration]
 
 **État actif**
 
 L’état actif correspond au comportement constaté par l’usager après avoir cliqué sur un des liens du menu latéral. Il renseigne sur la page courante en cours de consultation.
-
-[Image d’illustration]
 
 ### Personnalisation
 

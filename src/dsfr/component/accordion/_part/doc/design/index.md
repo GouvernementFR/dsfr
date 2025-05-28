@@ -1,8 +1,17 @@
 ---
-title: Anatomie de l'Accordéon
+title: Design de l'Accordéon
+shortTitle: Design de l'Accordéon
+description: Présentation du composant Accordéon permettant à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
+shortDescription: Masquer ou révéler du contenu textuel
+keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Accordéon permet à l’usager d’ouvrir ou fermer une section de contenu dans une page, pour en faciliter la lecture et alléger la structure globale.
+summary: Utilisé pour structurer et hiérarchiser du contenu éditorial, l’accordéon masque par défaut les informations secondaires pour ne révéler que ce que l’usager souhaite consulter. Il est particulièrement utile dans les longues pages de contenu. Il permet des interactions simples, peut être utilisé seul ou en groupe, et respecte des règles strictes de lisibilité et d’accessibilité.
 ---
 
 ## Accordéon
+
+L’accordéon est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer une section de contenu présentée dans une page.
 
 :::dsfr-doc-tab-navigation
 
@@ -14,23 +23,21 @@ title: Anatomie de l'Accordéon
 
 :::
 
-### Design
-
 :::dsfr-doc-anatomy{col=12}
 
 ![Anatomie de l'accordéon](../_asset/anatomy/anatomy-1.png)
 
-::dsfr-doc-pin[Un en-tête, correspondant au titre de la section]{required=true}
+::dsfr-doc-pin[Un en-tête]{required=true add='correspondant au titre de la section'}
 
-::dsfr-doc-pin[Un chevron orienté vers le bas, indiquant que le panneau peut s'ouvrir. Il est orienté vers le haut quand le panneau peut se refermer]{required=true}
+::dsfr-doc-pin[Un chevron orienté vers le bas]{required=true add="indiquant que le panneau peut s'ouvrir. Il est orienté vers le haut quand le panneau peut se refermer"}
 
-::dsfr-doc-pin[Une zone de contenu libre, masquée par défaut]{required=true}
+::dsfr-doc-pin[Une zone de contenu libre]{required=true add='masquée par défaut'}
 
 ::dsfr-doc-pin[Un séparateur]{required=true}
 
 :::
 
-#### **Variations**
+### Variations
 
 **Groupe d’accordéons**
 
@@ -61,11 +68,11 @@ Ne pas permettre l’ouverture simultanée de deux accordéons au sein d’un gr
 
 ::::
 
-#### **Tailles**
+#### Tailles
 
 La largeur de l’accordéon s’adapte à la taille de son conteneur. Toutefois, il est recommandé de ne pas excéder une largeur de 8 colonnes, s’agissant d’un composant de mise en forme de contenu.
 
-#### **États**
+#### États
 
 **État au clic**
 
@@ -78,7 +85,7 @@ L’état au survol correspond au comportement constaté par l’utilisateur lor
 - Lorsque l’accordéon est non cliqué
 - Lorsque l’accordéon est cliqué
 
-#### **Personnalisation**
+#### Personnalisation
 
 Les accordéons ne sont pas personnalisables.
 
@@ -142,7 +149,7 @@ Ne pas augmenter la taille de typographie de l’en-tête des accordéons.
 
 ::::
 
-#### Maillage
+### Maillage
 
 - [Onglet](../../../../tab/_part/doc/design/index.md)
 - [Modale](../../../../modal/_part/doc/design/index.md)

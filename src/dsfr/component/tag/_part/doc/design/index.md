@@ -41,26 +41,26 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 **Tag non cliquable**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tag--size-md}
 
 **Tag cliquable**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tag--tag-clickable}
 
 **Tag sélectionnable**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tag--tag-pressable}
 
 **Tag supprimable**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tag--tag-dismissible}
 
 > [!NOTE]
 > Cette variation n’autorise pas l’utilisation d’icône, autre que la croix de suppression présente par défaut.
 
 **Groupe de tags**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tags-group--size-md}
 
 Tous les tags peuvent être utilisés à plusieurs dans des groupes de tags. Dans ce cas-là ils appliquent des espacement préalablement définis par le DSFR.
 
@@ -70,11 +70,11 @@ Toutes les variations de tags sont disponibles en 2 tailles, pour pouvoir s’ad
 
 - SM pour small
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tag--size-sm}
 
 - MD pour medium - taille par défaut
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=tag--size-md}
 
 À noter que pour le groupe de tags en taille SM, le padding autour du tag est plus important que lorsqu’il est utilisé seul pour faciliter le clic en mobile.
 
@@ -88,15 +88,9 @@ L’état au survol correspond au comportement constaté par l’usager lorsqu�
 
 - Tag cliquable
 
-[Image d’illustration]
-
 - Tag sélectionnable
 
-[Image d’illustration]
-
 - Tag supprimable
-
-[Image d’illustration]
 
 **Etat cliqué**
 
@@ -104,13 +98,11 @@ L’état au clic correspond au comportement constaté par l’usager une fois u
 
 - Tag sélectionnable
 
-[Image d’illustration]
-
 ### Personnalisation
 
 Seule la couleur des tags cliquables peut être personnalisée, parmi les couleurs illustratives autorisées uniquement.
 
-:::dsfr-doc-table[Titre du tableau]{valign=top scroll=false caption=false}
+:::dsfr-doc-table[Tableau personnalisation design]{valign=top scroll=false caption=false}
 |  Éléments | Indice thème clair | Indice thème clair |
 |:-----|:-----|:-----|
 | **Fond** | Indice **925**<br> exemple : `$pink-tuile-925` | Indice **125**<br> exemple : `$pink-tuile-125` |

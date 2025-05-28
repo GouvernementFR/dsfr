@@ -1,8 +1,17 @@
 ---
-title: Code du bouton radio
+title: Code du Bouton radio
+shortTitle: Code du Bouton radio
+description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
+shortDescription: Sélection d’une option unique
+keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Bouton radio permet de proposer à l’usager un choix unique parmi plusieurs options. Il est recommandé pour les listes de 2 à 5 éléments maximum.
+summary: Ce composant est conçu pour faciliter le choix unique dans une interface, en particulier dans les formulaires. Il offre différentes dispositions et variations, y compris des versions enrichies avec pictogrammes. Il s’utilise en groupe, avec des libellés clairs et une hiérarchie visuelle cohérente. L’intégration respecte des règles d’ergonomie, d’accessibilité et d’uniformité éditoriale.
 ---
 
 ## Bouton radio
+
+Le bouton radio est un élément d’interaction avec l’interface permettant à l’usager de réaliser un choix unique parmi plusieurs options.
 
 :::dsfr-doc-tab-navigation
 
@@ -141,7 +150,7 @@ Le composant Bouton radio propose une variante de taille pour s'adapter à diff�
 
 #### Variantes du radio bouton riche
 
-La variante de bouton radio riche est définie par la classe `fr-radio-rich`. Pour ajouter un pictogramme, ajoutez un élément `<div>` de classe `fr-radio-rich__pictogram` contenant un pictogramme SVG. Le pictogramme doit être ajouté avec ses 3 parties : `fr-artwork-decorative`, `fr-artwork-minor` et `fr-artwork-major`. La partie mineur peut être accentuée via les classes utilitaires d'artwork `fr-artwork--NOM-COULEUR`, ex : fr-artwork--green-emeraude. Voir la [documentation des pictogrammes](../../../../../core/asset/artwork/_part/index.md) pour plus d'informations.
+La variante de bouton radio riche est définie par la classe `fr-radio-rich`. Pour ajouter un pictogramme, ajoutez un élément `<div>` de classe `fr-radio-rich__pictogram` contenant un pictogramme SVG. Le pictogramme doit être ajouté avec ses 3 parties : `fr-artwork-decorative`, `fr-artwork-minor` et `fr-artwork-major`. La partie mineur peut être accentuée via les classes utilitaires d'artwork `fr-artwork--NOM-COULEUR`, ex : fr-artwork--green-emeraude. Voir la [documentation des pictogrammes](../../../../../core/_part/doc/pictogram/index.md) pour plus d'informations.
 
 Il est aussi possible d'utiliser cette variante **sans pictogramme**. Il suffit pour cela de ne pas ajouter l'élément `<div>` de classe `fr-radio-rich__pictogram`.
 

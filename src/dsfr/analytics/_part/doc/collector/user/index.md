@@ -34,7 +34,6 @@ window.dsfr.analytics.user
 > [!NOTE]
 > Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
-
 ##### uid
 
 _String_ (EA: uid)

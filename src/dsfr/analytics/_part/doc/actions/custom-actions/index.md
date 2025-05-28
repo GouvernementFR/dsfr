@@ -27,7 +27,7 @@ Envoyez un événement lors du clic sur
 
 #### ActionType
 
-Les différents types d’action sont définis dans : src/dsfr/analytics/script/analytics/action/type.js
+Les différents types d’action sont définis dans : `src/dsfr/analytics/script/analytics/action/type.js`
 
 Il existe les types d'actions suivants :
 

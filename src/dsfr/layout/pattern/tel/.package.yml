@@ -1,0 +1,11 @@
+id: tel
+title: Bloc fonctionnel de téléphone
+description: La demande de numéro de téléphone est un bloc fonctionnel qui permet de saisir un numéro de téléphone.
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/blocs-fonctionnels/tel
+wrapper: container
+style:
+  - core
+example:
+  style:
+    - input
+

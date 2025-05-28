@@ -97,4 +97,4 @@ Vous trouverez pour chaque composant une colonne :
 * * *
 
 > [!NOTE]
-> Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires `data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions](../custom-actions/index.md)).
+> Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires `data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions d’interaction hors composant](../custom-actions/index.md)).

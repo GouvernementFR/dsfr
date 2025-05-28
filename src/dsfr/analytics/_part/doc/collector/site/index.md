@@ -34,7 +34,6 @@ window.dsfr.analytics.site
 > [!NOTE]
 > Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
-
 ##### environment
 
 _String_ (EA: site\_environment)

@@ -39,7 +39,7 @@ La liste déroulante est un élément d’interaction avec l’interface permett
 
 **Liste déroulante avec texte d’aide**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=select--select args="hint:Texte de description additionnel"}
 
 Il est recommandé d’ajouter un texte d’aide sous le libellé de la liste déroulante afin de faciliter le choix de l’usager.
 
@@ -53,19 +53,19 @@ La largeur de la liste déroulante s’adapte à la taille de son conteneur.
 
 L'état d’erreur est signalé par un changement de couleur ainsi que l’affichage d’une ligne rouge (cf. couleurs fonctionnelles : le rouge est la couleur de l’état erreur) et d’un message d’erreur en-dessous du composant.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=select--select args="status:error"}
 
 **Etat de succès**
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs fonctionnelles : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=select--select args="status:valid"}
 
 **Etat désactivé**
 
 L'état désactivé indique que l’usager ne peux pas interagir avec la liste déroulante.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=select--select args="disabled:true"}
 
 Cet état peut être utilisé pour empêcher l'utilisateur d'interagir avec la liste jusqu'à ce qu'une autre action soit terminée.
 

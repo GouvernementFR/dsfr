@@ -45,8 +45,6 @@ La largeur des liens d’évitement s’adapte à leur contenu, tout en étant d
 
 L’état au focus correspond au comportement constaté par l’usager lorsqu’il sélectionne un lien via la navigation au clavier.
 
-[Image d’illustration]
-
 ### Personnalisation
 
 Les liens d’évitement ne sont pas personnalisables.

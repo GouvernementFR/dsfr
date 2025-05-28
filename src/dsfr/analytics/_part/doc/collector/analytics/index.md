@@ -38,7 +38,6 @@ Getter qui retourne l’instance de [User](../user/index.md)
 
 * * *
 
-
 ##### search
 
 _Search_
@@ -49,7 +48,7 @@ Getter qui retourne l’instance de [Search](../search/index.md)
 
 * * *
 
-##### funnel :
+##### funnel
 
 _Funnel_
 
@@ -95,7 +94,14 @@ _Promise_
 
 Getter qui retourne une Promise permettant de se synchroniser sur l'API, lorsque celle-ci est prête à être utilisée.
 
-    window.dsfr.analytics.readiness.then(() => { // start }, () => { // error } );
+```javascript
+  window.dsfr.analytics.readiness.then(() => {
+    // start
+  }, () => {
+    // error
+  }
+ );
+```
 
 * * *
 
@@ -168,7 +174,7 @@ Si le paramètre `clear = true` => toutes les données sont remises en état ind
 
 * * *
 
-###### collect {#collect}
+###### collect
 
 `window.dsfr.analytics.collect()`
 
@@ -192,7 +198,6 @@ Envoie au collector le datalayer constitué par l’ensemble des données consol
 > Le package Analytics repose sur 2 principes de fonctionnement pour traquer les pages :
 > * Par le biais de la configuration, il est possible de définir toutes les données qui seront envoyées au chargement de la page (via le mode automatique)
 > * Par le biais de l’API, on peut définir toutes les données propriété par propriété pour ensuite envoyer l’ensemble grâce à la méthode **collect**
-
 
 ```javascript
 dsfr.analytics.readiness.then(() => { // l'API analytics est prête à l'utilisation
