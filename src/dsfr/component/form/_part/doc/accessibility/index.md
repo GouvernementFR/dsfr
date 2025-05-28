@@ -20,15 +20,32 @@ Les composants de formulaire sont conçus pour être accessibles et respecter le
 
 #### Interactions clavier
 
-Aucune interaction spécifique n'est associée au formulaire.
+Aucune interaction spécifique n’est associée au formulaire.
 
-Les interactions clavier du formulaire sont celles liées aux éléments de formulaire qu'il contient : [champs de saisie](../../../../input/_part/doc/accessibility/index.md), [boutons](../../../../button/_part/doc/accessibility/index.md), [liste déroulante](../../../../select/_part/doc/accessibility/index.md), [cases à cocher](../../../../checkbox/_part/doc/accessibility/index.md), [boutons radio](../../../../radio/_part/doc/accessibility/index.md), [Ajout de fichier](../../../../upload/_part/doc/accessibility/index.md), etc.
+Les interactions clavier du formulaire sont celles liées aux éléments de formulaire qu’il contient&nbsp;: 
+- [champs de saisie](../../../../input/_part/doc/accessibility/index.md),
+- [boutons](../../../../button/_part/doc/accessibility/index.md),
+- [liste déroulante](../../../../select/_part/doc/accessibility/index.md), 
+- [cases à cocher](../../../../checkbox/_part/doc/accessibility/index.md),
+- [boutons radio](../../../../radio/_part/doc/accessibility/index.md), 
+- [ajout de fichier](../../../../upload/_part/doc/accessibility/index.md), etc.
 
 #### Règles d’accessibilité
 
-- Utiliser la balise sémantique `<fieldset>` pour structurer un ensemble d'élément de formulaire.
-- Utiliser la balise sémantique `<legend>` pour décrire le groupe d'éléments de formulaire.
-- Lorsque qu’un message d'information/erreur/avertissement/succès est ajouté à la fin du formulaire, utiliser l'attribut `role="group"` et l'attribut `aria-labelledby` pour associer la légende **et** le message au `<fieldset>`.
+##### Regroupement de champs
+
+- Utiliser un élément `<fieldset>` accompagné d’un élément `<legend>` pour regrouper un ensemble de champs de formulaire de même nature lorsque les étiquettes des champs ne sont pas suffisamment explicites.
+- La légende du regroupement doit être pertinente.
+
+##### Message d’information, d’avertissement ou d’erreur
+
+Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
+
+Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+- dans l’étiquette du champ,
+- dans un passage de texte avant le formulaire,
+- dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
+- avec une <span lang="en">live region</span> ()`role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
 
 ### Critères RGAA applicables
 
@@ -44,3 +61,4 @@ Les interactions clavier du formulaire sont celles liées aux éléments de form
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Tutoriel WAI - Formulaires](https://www.w3.org/WAI/tutorials/forms/)
+- [Live regions ARIA&nbsp;:bonnes et mauvaises pratiques](https://access42.net/quand-utiliser-live-regions-aria/)
