@@ -1,8 +1,7 @@
 ---
-title: Les composants
+title: Composants
 nav: 3
+list: true
 ---
 
 # Composants
-
-::dsfr-doc-page-item-list{fields=description,cover sort=order}

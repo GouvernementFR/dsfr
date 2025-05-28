@@ -26,7 +26,7 @@ L’indicateur d'étapes est un élément éditorial permettant d’accompagner 
 **Utiliser l’indicateur d’étapes dans le cadre d’un processus linéaire**, tel un formulaire ou une démarche en ligne, pour indiquer à l’usager où il se trouve dans le parcours.
 
 > [!NOTE]
-> L’indicateur d’étapes ne permet pas de naviguer d’une étape à l’autre. Pour cela, préférer l’usage des [boutons](../../../../button/_part/doc/index.md).
+> L’indicateur d’étapes ne permet pas de naviguer d’une étape à l’autre. Pour cela, préférer l’usage des [boutons](../../../button/_part/doc/index.md).
 
 ### Comment utiliser ce composant ?
 

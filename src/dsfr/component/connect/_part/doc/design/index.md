@@ -114,9 +114,8 @@ Ne pas modifier le libellé du bouton.
 
 ::::
 
-
 ### Maillage
 
 - [Bouton](../../../../button/_part/doc/index.md)
-- [Page de création de compte](../../../../layout/pattern/account/register/_part/doc/index.md)
-- [Page de connexion](../../../../layout/pattern/account/register/_part/doc/index.md)
+- [Page de création de compte](../../../../../layout/pattern/register/_part/doc/index.md)
+- [Page de connexion](../../../../../layout/pattern/login/_part/doc/index.md)

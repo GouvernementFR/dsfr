@@ -1,7 +1,8 @@
 ---
 title: Fondamentaux
+list: true
+
 ---
 
 ## Fondamentaux
 
-::dsfr-doc-page-item-list{fields=shortDescription,cover sort=order}

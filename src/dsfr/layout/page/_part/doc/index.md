@@ -1,6 +1,8 @@
 ---
 title: Pages types
 shortDescription: Modèles de pages types
+order: 2
+list: true
 ---
 
-::dsfr-doc-page-item-list{fields=shortDescription,cover sort=order}
+## Pages types
