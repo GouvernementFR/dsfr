@@ -47,6 +47,10 @@ Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nb
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
 - avec une <span lang="en">live region</span> ()`role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
 
+##### Champs obligatoires
+
+Ajouter une mention visible pour tout le monde au début du formulaire et utiliser l’attribut `required` pour indiquer que le champ est obligatoire.
+
 ### Critères RGAA applicables
 
 - **Couleurs&nbsp;:** 3.2, 3.3
