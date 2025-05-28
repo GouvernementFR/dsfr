@@ -1,6 +1,6 @@
 ---
-title: téchargement des fichiers
+title: Téléchargement des fichiers
 cover: ./_asset/cover/cover.png
 ---
 
-## téléchargement des fichiers
+## Téléchargement des fichiers

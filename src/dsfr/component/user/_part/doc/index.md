@@ -10,7 +10,7 @@ summary: L’en-tête connectée est une extension de l’en-tête classique, pe
 beta: true
 ---
 
-## En-tête connectée bêta
+## En-tête connectée
 
 > [!NOTE]
 > **Ce composant est en version bêta.** Il n'existe pas en code et son design ou ses fonctionnalités peuvent encore être amenés à évoluer. N'hésitez pas à nous partager vos cas d'usage ou retours qui le concerne via notre formulaire de contact ou notre Tchap pour que nous puissions les étudier.
@@ -38,6 +38,27 @@ Le menu déroulant dans l’en-tête est présent lorsque l’usager s’est con
 
 - **Utiliser l’en-tête connectée pour grouper des liens de navigation** vers des pages internes de l’usager.
 - **Utiliser l’en-tête connectée uniquement si la place disponible permet d’accueillir le bouton du menu déroulant**. Il est recommandé de ne pas la cumuler avec un grand nombre de liens d’accès rapide ou en présence du bouton des paramètres d’affichage.
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](./_asset/use/do-1.png)
+
+Positionner l’en-tête connectée à l’emplacement d’un des accès rapide.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![À ne pas faire](./_asset/use/dont-1.png)
+
+Ne pas proposer l’en-tête connectée en dehors des accès rapides
+
+:::
+
+::::
+
 - **Conserver un fonctionnement simple**. N'imbriquer pas de menus déroulants, par exemple.
 
 ### Règles éditoriales

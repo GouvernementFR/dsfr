@@ -10,7 +10,7 @@ summary: L’en-tête connectée est une extension de l’en-tête classique, pe
 beta: true
 ---
 
-## En-tête connectée bêta
+## En-tête connectée
 
 > [!NOTE]
 > **Ce composant est en version bêta.** Il n'existe pas en code et son design ou ses fonctionnalités peuvent encore être amenés à évoluer. N'hésitez pas à nous partager vos cas d'usage ou retours qui le concerne via notre formulaire de contact ou notre Tchap pour que nous puissions les étudier.
