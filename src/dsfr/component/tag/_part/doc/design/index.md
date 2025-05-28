@@ -88,23 +88,15 @@ L’état au survol correspond au comportement constaté par l’usager lorsqu�
 
 - Tag cliquable
 
-[Image d’illustration]
-
 - Tag sélectionnable
 
-[Image d’illustration]
-
 - Tag supprimable
-
-[Image d’illustration]
 
 **Etat cliqué**
 
 L’état au clic correspond au comportement constaté par l’usager une fois un tag sélectionné, après avoir cliqué dessus.
 
 - Tag sélectionnable
-
-[Image d’illustration]
 
 ### Personnalisation
 

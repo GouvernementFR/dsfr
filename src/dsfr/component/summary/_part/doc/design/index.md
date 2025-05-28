@@ -52,8 +52,6 @@ Toutefois, il est recommandé de ne pas excéder une largeur de 8 colonnes, s’
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole une ancre du sommaire avec sa souris.
 
-[Image d’illustration]
-
 ### Personnalisation
 
 Le sommaire n’est pas personnalisable.
