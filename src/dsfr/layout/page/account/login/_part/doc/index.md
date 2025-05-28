@@ -4,7 +4,7 @@ shortTitle: Page de connexion
 description: Cette page présente le modèle standardisé de page de connexion à utiliser pour l’accès à un espace personnel d’un service public, incluant FranceConnect, identifiants et recommandations d’accessibilité.
 shortDescription: Modèle de page de connexion à un service
 keywords: connexion, FranceConnect, identifiants, mot de passe, formulaire, DSFR, accessibilité, sécurité, espace privé
-cover: /_asset/cover/elements_beta_page_connexion_360a43b397.png
+cover: ./_asset/cover/cover.png
 excerpt: Modèle de page de connexion intégrant FranceConnect, identifiants, mot de passe et bonnes pratiques d’accessibilité.
 summary: Cette page documente la structure type d’une page de connexion pour les services numériques de l’État. Elle propose une implémentation compatible DSFR avec priorité à FranceConnect, puis à la connexion par identifiants. Des recommandations sont fournies pour l’accessibilité, la sécurité (mot de passe oublié, double authentification) et la clarté des messages d’erreur. Le modèle vise à minimiser les frictions tout en garantissant la conformité technique et réglementaire.
 ---

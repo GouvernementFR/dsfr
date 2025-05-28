@@ -4,7 +4,7 @@ shortTitle: Page de création de compte
 description: Cette page décrit le modèle de création de compte à utiliser dans les services numériques de l’État en précisant les composants obligatoires, les règles d’intégration, les bonnes pratiques d’accessibilité et les étapes recommandées.
 shortDescription: Modèle et règles pour une page de création de compte
 keywords: création de compte, FranceConnect, DSFR, formulaire, CNIL, accessibilité, modèle, étapes, formulaire utilisateur
-cover: /_asset/cover/elements_beta_page_connexion_360a43b397.png
+cover: ./_asset/cover/cover.png
 excerpt: Modèle de page prêt à l’emploi pour la création de compte incluant FranceConnect, identifiants et mentions CNIL.
 summary: Cette page présente un modèle standardisé de page de création de compte à intégrer dans les services publics numériques. Elle détaille la structure obligatoire avec FranceConnect, identifiants et mentions CNIL, fournit des exemples d’étapes pour collecter des informations complémentaires, et insiste sur les recommandations en matière d’accessibilité. Le modèle est conçu pour limiter les frictions tout en garantissant la conformité réglementaire.
 ---

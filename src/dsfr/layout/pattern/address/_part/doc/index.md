@@ -4,7 +4,7 @@ shortTitle: Adresse électronique
 description: Cette page présente le bloc fonctionnel destiné à la saisie d’une adresse électronique dans un formulaire avec les règles d’utilisation, les bonnes pratiques et les recommandations d’accessibilité associées.
 shortDescription: Champ de saisie pour adresse électronique
 keywords: adresse électronique, email, champ de saisie, formulaire, DSFR, accessibilité, autocomplete, validation, création de compte, connexion
-cover: /_asset/cover/bloc_demande_adresse_electronique_005df6c8de.png
+cover: ./_asset/cover/cover.png
 excerpt: Bloc de formulaire pour saisir une adresse électronique avec aide à la saisie, messages d’erreur et recommandations d’usage.
 summary: Cette page décrit le modèle de champ destiné à la collecte d’une adresse électronique dans les services en ligne. Elle précise la structure attendue, les attributs HTML à utiliser, les règles d’écriture du label et de la description, ainsi que les messages d’erreur appropriés. Des recommandations sont fournies pour éviter les doublons de saisie et assurer la cohérence du terme utilisé. L’accessibilité est également prise en compte grâce aux bonnes pratiques de configuration technique.
 ---

@@ -4,7 +4,7 @@ shortTitle: Civilité
 description: Cette page présente le bloc fonctionnel permettant de recueillir des informations liées à la civilité comme le sexe, la situation familiale ou le titre d’appel tout en respectant les bonnes pratiques d’inclusivité et d’accessibilité.
 shortDescription: Bloc de demande de civilité avec options de personnalisation
 keywords: civilité, sexe, titre d’appel, situation familiale, formulaire, accessibilité, boutons radio, select, DSFR, bonnes pratiques
-cover: /_asset/cover/bloc_demande_de_civilite_17fafc18f5
+cover: ./_asset/cover/cover.png
 excerpt: Bloc de formulaire pour recueillir des informations sur la civilité avec recommandations d’usage et d’accessibilité.
 summary: Ce bloc fonctionnel permet de recueillir des données relatives à la civilité de l’utilisateur comme le sexe, la situation familiale ou un titre d’appel, via boutons radio ou listes déroulantes. Il intègre des consignes claires sur le choix du bon composant selon le contexte, ainsi que des recommandations pour un usage respectueux et non intrusif. Des bonnes pratiques d’accessibilité sont précisées afin d’assurer une expérience inclusive et conforme aux standards.
 ---

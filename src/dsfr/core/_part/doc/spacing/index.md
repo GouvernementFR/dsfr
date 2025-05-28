@@ -3,7 +3,7 @@ title: Espacement
 description: Cette page détaille le système d’espacement du DSFR fondé sur la grille en multiples de 8 pixels et son usage pour assurer la cohérence des interfaces.
 shortDescription: Système d’espacement fondé sur la grille 8 points
 keywords: espacement, marge, padding, 8px, design system, DSFR, grille, rem, classes utilitaires, cohérence UI
-cover: ../_asset/spacing/cover/fondamentaux_techniques_espacements_710714639b.png
+cover: ../_asset/spacing/cover/cover.png
 excerpt: Comprendre les règles d’espacement du DSFR et leur application dans la conception d’interfaces cohérentes.
 summary: Le DSFR repose sur un système d’espacement en multiples de 8 pixels afin d’uniformiser les marges et paddings dans les interfaces. Cette page présente les règles de base, les exceptions prévues (4px, 12px, 20px), la nomenclature utilisée, et les classes CSS associées. Elle aborde également les bonnes pratiques pour concevoir des interfaces lisibles et hiérarchisées.
 ---

@@ -4,7 +4,7 @@ shortTitle: Grille et points de rupture
 description: Comprendre et maîtriser la grille du DSFR pour structurer les interfaces web de l’État selon les résolutions cibles, avec ou sans gouttières, en respectant les points de rupture et les bonnes pratiques d’alignement et de mise en page.
 shortDescription: Structure responsive, points de rupture, alignements et classes CSS du DSFR.
 keywords: grille, responsive, DSFR, points de rupture, breakpoints, layout, gouttières, fr-container, fr-grid-row, fr-col, fr-col-offset, alignements, design système
-cover: ../_asset/grid/cover/fondamentaux_techniques_grilles_5934b9770f.png
+cover: ../_asset/grid/cover/cover.png
 excerpt: Tout ce qu’il faut savoir sur la grille du DSFR, breakpoints, colonnes, gouttières, marges, alignements… pour une mise en page homogène et responsive à travers tous les services numériques de l’État.
 summary: Cette page détaille le fonctionnement de la grille du Design Système de l’État (DSFR), ses points de rupture, les valeurs à utiliser pour le design et le développement, et les classes CSS associées. Elle précise comment structurer les interfaces selon les tailles d’écran, ajuster les alignements, ajouter des gouttières ou des marges, et utiliser des décalages. Ces règles garantissent des interfaces cohérentes, accessibles et adaptables sur tous les supports.
 ---

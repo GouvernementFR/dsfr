@@ -4,7 +4,7 @@ shortTitle: Système d'ombres et d'élévation
 description: Description des niveaux d’élévation utilisés dans le DSFR pour mettre en valeur les composants via ombrages et fonds adaptés.
 shortDescription: Présentation des niveaux d’élévation et des ombres dans le DSFR.
 keywords: élévation, ombres, z-index, fond, thème clair, thème sombre, DSFR, composant, design tokens
-cover: ../_asset/elevation/cover/placeholder.16x9.png
+cover: ../_asset/elevation/cover/cover.png
 excerpt: Le DSFR définit quatre niveaux d’élévation pour structurer visuellement l’interface, améliorer l’accessibilité et la hiérarchie des contenus.
 summary: Le Système de Design de l’État définit un système cohérent d’ombres et de fonds selon le niveau d’élévation de chaque composant. Base, Surélevé, Superposé et Détaché guident la construction d’interfaces lisibles et accessibles en thème clair comme en sombre.
 ---

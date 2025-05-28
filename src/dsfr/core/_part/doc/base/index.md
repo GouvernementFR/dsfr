@@ -4,7 +4,7 @@ shortTitle: Les principes à respecter
 description: Découvrez les principes essentiels qui régissent le Design Système de l’État (DSFR), clarté, inclusion, cohérence et respect de l’identité institutionnelle. Une base indispensable pour concevoir des services numériques accessibles et efficaces.
 shortDescription: Les règles fondamentales pour créer des interfaces conformes au DSFR.
 keywords: design système, DSFR, accessibilité, RGAA, cohérence, identité visuelle, typographie Marianne, mode sombre, couleurs, grille, pictogrammes, composants, État français
-cover: ../_asset/base/cover/placeholder.16x9.png
+cover: ../_asset/base/cover/cover.png
 excerpt: Les interfaces des services publics doivent respecter un ensemble de règles qui garantissent clarté, accessibilité et cohérence dans tous les contextes. Voici les principes de base à intégrer dans tous vos projets.
 summary: Cette page présente les principes fondateurs du Design Système de l’État français (DSFR), conçus pour structurer des interfaces inclusives, cohérentes et alignées avec l’image de marque de l’État. Elle rappelle l’obligation d’utiliser les composants existants, d’appliquer les fondamentaux (couleurs, typographies, grilles, etc.) et souligne les spécificités liées à l’accessibilité et à la compatibilité avec le mode sombre. Ce socle commun vise à garantir une expérience utilisateur de qualité sur l’ensemble des services publics numériques.
 ---

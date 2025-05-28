@@ -4,7 +4,7 @@ shortTitle: Pictogramme
 description: Comprendre le rôle des pictogrammes dans le DSFR, leur construction, leurs usages et les modalités de contribution à la librairie officielle.
 shortDescription: Principes, style, couleurs et intégration des pictogrammes dans le DSFR.
 keywords: pictogramme, DSFR, icônes, svg, artwork, contribution, design système, accessibilité, grille, style filaire, fr-artwork
-cover: ../_asset/pictogram/cover/placeholder.16x9.png
+cover: ../_asset/pictogram/cover/cover.png
 excerpt: Les pictogrammes du DSFR sont des représentations visuelles explicites et normalisées qui facilitent la compréhension, la navigation et la cohérence graphique dans les services publics numériques.
 summary: Cette page présente les principes de conception et d’utilisation des pictogrammes dans le Système de Design de l'État. Elle décrit leur construction selon une grille précise, leur style filaire, les règles d’usage des couleurs et les méthodes d’intégration pour designers et développeurs. Elle détaille également le processus de contribution à la librairie officielle, les formats attendus et les spécifications techniques à respecter pour proposer un pictogramme compatible.
 ---

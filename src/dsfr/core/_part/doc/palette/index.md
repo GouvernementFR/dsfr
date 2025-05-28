@@ -4,7 +4,7 @@ shortTitle: Couleurs - Palette
 description: Cette page présente la palette de couleurs du DSFR issue de la charte graphique de l’État et décrit son usage selon les thématiques et états des composants.
 shortDescription: Palette de couleurs officielle du DSFR
 keywords: couleurs, palette, design token, bleu france, rouge marianne, thème clair, thème sombre, accessibilité, accentuation, DSFR
-cover: ../_asset/palette/cover/fondamentaux_etat_couleurs_2050ebe24f
+cover: ../_asset/palette/cover/cover.png
 excerpt: Découvrez la palette de couleurs du DSFR et ses règles d’usage dans les composants selon le thème clair ou sombre.
 summary: La palette de couleurs du DSFR repose sur la charte graphique de l’État et est divisée entre thèmes clair et sombre. Cette page détaille les conventions de nommage des tokens, les différentes catégories de couleurs (primaires, neutres, système, illustratives), leur usage dans les composants ainsi que les règles d’accessibilité à respecter. Elle précise les bonnes pratiques d’accentuation et les cas d’usage hors composant.
 ---

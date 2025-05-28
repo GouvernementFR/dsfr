@@ -4,7 +4,7 @@ shortTitle: Date unique
 description: Ce bloc permet de recueillir une date unique dans la vie de l'usager ou d'un proche via un champ structuré adapté aux formulaires administratifs.
 shortDescription: Bloc pour la saisie d'une date unique dans un formulaire
 keywords: date, formulaire, champ de date, date unique, interface, accessibilité, UX, Design Système, champ structuré
-cover: /_asset/cover/bloc_demande_date_unique_0e804b6020.png
+cover: ./_asset/cover/cover.png
 excerpt: Ce bloc permet d'ajouter un champ de date unique structuré dans un formulaire. Il est conçu pour les cas de dates importantes comme une naissance ou un mariage.
 summary: Le bloc "date unique" est utilisé pour collecter une date importante au sein d'un formulaire en demandant séparément le jour le mois et l'année. Il comprend des libellés clairs, des exemples contextualisés et peut inclure des placeholders. La page détaille sa structure, un exemple de code HTML, les bonnes pratiques d'implémentation ainsi que les recommandations d'accessibilité pour garantir une saisie conforme et inclusive.
 ---

@@ -5,7 +5,7 @@ shortTitle: Icône de favori
 description: Intégration et bonnes pratiques de l’icône de favoris dans le Système de Design de l’État.
 shortDescription: Guide d’intégration du favicon dans vos projets.
 keywords: favicon, icône, apple-touch-icon, manifest, DSFR, accessibilité, navigateur
-cover: ../_asset/favicon/cover/composants_icone_de_favoris_13b32de2d9.png
+cover: ../_asset/favicon/cover/cover.png
 excerpt: Intégrer correctement une icône de favoris dans un site DSFR, avec les bonnes tailles, formats et règles d’accessibilité.
 summary: Le favicon permet d’identifier un site de l’État dans les onglets et favoris. Retrouvez les formats, balises HTML et bonnes pratiques à respecter.
 ---

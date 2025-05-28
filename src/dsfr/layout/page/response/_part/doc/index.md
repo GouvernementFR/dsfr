@@ -4,7 +4,7 @@ shortTitle: Page d’erreurs
 description: Cette page fournit trois modèles de pages d’erreurs types (404, 500 et 503) avec leur structure, leurs règles d’utilisation et leurs recommandations en matière d’accessibilité pour informer les usagers en cas de dysfonctionnement.
 shortDescription: Modèles standardisés de pages d’erreurs 404, 500 et 503
 keywords: page d’erreur, erreur 404, erreur 500, erreur 503, DSFR, accessibilité, navigation, service indisponible, message utilisateur
-cover: /_asset/cover/elements_beta_page_erreur_ad3793c511.png
+cover: ./_asset/cover/cover.png
 excerpt: Modèles de pages d’erreurs personnalisables pour informer les utilisateurs en cas de page introuvable, d’erreur serveur ou de maintenance.
 summary: Cette page présente les modèles types de pages d’erreurs à utiliser dans les sites publics utilisant le Design Système de l’État. Elle décrit les structures adaptées pour les erreurs 404 (page non trouvée), 500 (erreur serveur) et 503 (service indisponible), avec des contenus réutilisables. Elle inclut aussi des recommandations pour aider les utilisateurs à comprendre l’erreur rencontrée et les orienter vers des solutions. L’accessibilité et la cohérence de navigation sont également prises en compte.
 ---
