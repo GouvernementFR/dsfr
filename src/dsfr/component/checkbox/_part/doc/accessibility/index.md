@@ -62,13 +62,13 @@ La bordure, la coche et l’étiquette de la case à cocher désactivée sont in
 
 #### Message d’erreur / de succès
 
-Un **message** d'erreur, d'information, ou de succès peut être associé à la checkbox. Son attribut `id` doit être associé à l'attribut `aria-describedby` de la checkbox.
+Un **message** d'erreur, d'information, ou de succès peut être associé à la case à cocher. Son attribut `id` doit être associé à l'attribut `aria-describedby` de la case à cocher.
 
 #### Groupe de cases à cocher
 
-- Utiliser des groupes de checkboxes pour des options liées, en les regroupant dans un élément `<fieldset>` avec une légende `<legend>`.
-  - La **légende** doit être explicite et décrire le groupe d'options. Elle ne doit pas être en gras puisqu'elle n'est pas considérée ici comme le titre d'un regroupement de champs mais comme le libellé de l'ensemble d'options.
-  - Si le **fieldset contient des messages** d'erreur, d'informations ou de succès, il doit être associé à un attribut `aria-labelledby` pour lier la légende et les messages. Les id des éléments doivent être séparés par un espace. Il faudra également ajouter l'attribut `role="group"` à l'élément `<fieldset>` pour améliorer le rendu des technologies d'assistance.
+- Utiliser des groupes de cases à cocher pour des options liées, en les regroupant dans un élément `<fieldset>` avec une légende `<legend>`.
+  - La **légende** doit être explicite et décrire le groupe d'options. Elle ne doit pas être en gras puisqu’elle n’est pas considérée ici comme le titre d’un regroupement de champs mais comme le libellé de l'ensemble d'options.
+  - Si le **fieldset contient des messages** d’erreur, d'informations ou de succès, il doit être associé à un attribut `aria-labelledby` pour lier la légende et les messages. Les id des éléments doivent être séparés par un espace. Il faudra également ajouter l’attribut `role="group"` à l’élément `<fieldset>` pour améliorer le rendu des technologies d’assistance.
 
 #### Contrastes de couleurs
 
@@ -101,6 +101,7 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 - **Couleurs&nbsp;:** 3.1, 3.2, 3.3
 - **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
 - **Formulaires&nbsp;:** 11.1, 11.2, 11.4, 11.5, 11.6, 11.7, 11.8, 11.10, 11.11
+- **Navigation&nbsp;:** 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 
 ---
