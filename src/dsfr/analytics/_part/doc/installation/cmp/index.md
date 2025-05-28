@@ -4,9 +4,11 @@ title: Consent Manager Platform
 
 ## class ConsentManagerPlatform
 
-L’instance de ConsentManagerPlatform est accessible depuis
+L’instance de ConsentManagerPlatform est accessible depuis :
 
+```javascript
 window.dsfr.analytics.cmp
+```
 
 ### CONFIGURATION
 
@@ -26,7 +28,7 @@ la configuration d’une CMP permet d’automatiser son lancement
 
 ### MÉTHODES
 
-##### integrateTarteAuCitron ()
+##### integrateTarteAuCitron
 
 `window.dsfr.analytics.cmp.integrateTarteAuCitron()`
 

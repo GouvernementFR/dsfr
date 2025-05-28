@@ -46,7 +46,6 @@ window.dsfr.analytics.page
 > [!NOTE]
 > Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
-
 ##### path
 
 _String_ (EA: path)
@@ -118,8 +117,6 @@ _Date_ (EA: page_date)
 * Défini la date de publication de la page restituée au format de date calendaire [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) [YYYY-MM-DD]
 
 * * *
-
-
 
 ##### labels
 
