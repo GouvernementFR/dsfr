@@ -56,10 +56,15 @@ L’étiquette est visible et accolée au champ de saisie.
 
 La bordure et l’étiquette du champ de saisie désactivé sont insuffisamment contrastées. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier).
 
-#### Message d’erreur, d’information ou de succès
+#### Message d’information, d’avertissement ou d’erreur
 
-Un **message** d’erreur, d’information ou de succès peut être associé à la case à cocher. Son attribut `id` doit être associé à l’attribut `aria-describedby` du champ de saisie.
+Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
+Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+- dans l’étiquette du champ,
+- dans un passage de texte avant le formulaire,
+- dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
+- avec une <span lang="en">live region</span>&nbsp;: `role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
 
 #### Champs obligatoires, format attendu et contrôle de saisie
 
@@ -102,4 +107,4 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Spécification HTML – élément input](https://html.spec.whatwg.org/#the-input-element)
-
+- [Live regions ARIA&nbsp;:bonnes et mauvaises pratiques](https://access42.net/quand-utiliser-live-regions-aria/)

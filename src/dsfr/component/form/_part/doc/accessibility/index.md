@@ -45,7 +45,7 @@ Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nb
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
-- avec une <span lang="en">live region</span> ()`role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
+- avec une <span lang="en">live region</span>&nbsp;: `role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
 
 ##### Champs obligatoires
 
