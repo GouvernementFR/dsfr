@@ -4,7 +4,7 @@ title: Configuration
 
 ## Configuration
 
-Il est nécessaire de configurer le package Analytics au sein de [la configuration de l’API DSFR](https://www.systeme-de-design.gouv.fr/prise-en-main-et-perimetre/developpeurs/api-javascript)
+Il est nécessaire de configurer le package Analytics au sein de [la configuration de l’API DSFR](path:/getting-started/developer/javascript/)
 
 La configuration doit être placée **avant** les fichiers `patch.module.js`, `dsfr.module.js` et `analytics.module.js`.
 
@@ -12,7 +12,7 @@ La configuration doit être placée **avant** les fichiers `patch.module.js`, `d
 <script>
     window.dsfr = {
         analytics: {
-            domain: ' mon.domainedetracking.com',
+            domain: 'mon.domainedetracking.com',
             // collection: 'manual',
             // isActionEnabled: true,
             page: {
@@ -30,4 +30,4 @@ La configuration doit être placée **avant** les fichiers `patch.module.js`, `d
 ```
 
 Les résultats de la fonction collect(), montrant les informations envoyées à Eulerian, sont affichés dans la console.
-En mode production, les logs n'apparaissent pas dans la console. Il est alors possible de surcharger la configuration via le paramètre dans l'url : `?production=false`
+En mode production, les logs n'apparaissent pas dans la console. Il est alors possible de surcharger la configuration via le paramètre dans l'url : `?production=false`.

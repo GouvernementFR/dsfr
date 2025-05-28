@@ -38,7 +38,6 @@ L’instance de Search est accessible depuis :
 > L'ajout de cette nouvelle variable nécessite l'implémentation d'un couple de paramètres isearchkey et isearchdata, isearchkey contenant le nom du paramètre et isearchdata la valeur.
 > On retrouve en sortie dans le datalayer 4 valeurs ['isearchkey', ‘PARAMETER\_NAME', ‘isearchdata’, 'PARAMETER\_VALUE’\]
 
-
 ##### engine
 
 _String_ (EA: isearchengine)

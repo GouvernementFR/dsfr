@@ -23,20 +23,24 @@ Les actions correspondent aux évènements et aux interactions que l’on souhai
 
 Lorsqu’une action est émise, un actionName est envoyé à Eulérian.
 Ce nom d’action est constitué de 3 éléments :
-```
+
+```JavaScript
 (type)_title_[id]
 ```
+
 * Type : type d'action. (voir [types d'actions](custom-actions/index.md#ActionType) et [types d'actions sur les composants DSFR](component-actions/index.md))
 * Title : la hiérarchie des intitulés des éléments ou la valeur de l'attribut `data-fr-analytics-action`
 * Id : l'id de l'élément (correspondant à l'attribut `id`sur l'élément) - obligatoire.
 
 > [!IMPORTANT]
 > **Un id est obligatoire sur tous les éléments traqués** (retrouvez les éléments du dsfr nécessitant un id dans la colonne “element” du [tableau d'actions des composants du dsfr](component-actions/index.md)).
+>
 >Il est nécessaire que l’id soit :
->  * unique : L’id doit être unique au site, par exemple:
->    * Deux boutons différents ne doivent pas avoir le même id, même sur des pages différentes
->    * Le header peut avoir le même id sur toute les pages s’il est identique
->  * pérenne : L’id doit être le même pour tous les utilisateurs et figé dans le temps.
+>
+> * unique : L’id doit être unique au site, par exemple:
+>   * Deux boutons différents ne doivent pas avoir le même id, même sur des pages différentes
+>   * Le header peut avoir le même id sur toute les pages s’il est identique
+> * pérenne : L’id doit être le même pour tous les utilisateurs et figé dans le temps.
 
 exemple d’actionName : `(click)_titre_niveau_2_›_titre_niveau_3_›_label_de_l_element_[button-id-1]`
 

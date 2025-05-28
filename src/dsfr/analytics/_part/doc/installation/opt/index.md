@@ -3,8 +3,12 @@ title: Opt
 ---
 
 ## Opt
-L’instance de Opt est accessible depuis
-`window.dsfr.analytics.opt`
+
+L’instance de Opt est accessible depuis :
+
+```javascript
+window.dsfr.analytics.opt
+```
 
 Elle permet de gérer l’Opt-out lorsque l’utilisateur ne consent pas à la collecte de données.
 
