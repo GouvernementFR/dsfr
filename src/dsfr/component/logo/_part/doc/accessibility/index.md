@@ -29,7 +29,7 @@ Les logos doivent être accessibles pour tous les utilisateurs, y compris ceux u
 - Utiliser l'élément HTML `<p>` ou un niveau de titre `<h1>` à `<h6>` pour décrire l'intitulé officiel.
 - Un lien est généralement ajouté autour du bloc marque pour permettre à l'utilisateur de naviguer vers la page d'accueil du site.
   - Dans ce cas, l'attribut `title` doit être utilisé pour décrire la destination du lien.
-  - Lorsqu'un logo opérateur est présent à côté du bloc marque, le lien doit être placé autour du logo opérateur et étendu, avec la classe `fr-enlarge-link`, à toute la zone contenant le logo opérateur et le bloc marque.
+  - Lorsqu’un logo opérateur est présent à côté du bloc marque, le lien doit être placé autour du logo opérateur et étendu, avec la classe `fr-enlarge-link`, à toute la zone contenant le logo opérateur et le bloc marque.
 
 ---
 
