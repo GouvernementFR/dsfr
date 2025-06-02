@@ -1,0 +1,11 @@
+<%
+let tel = locals.tel || {};
+const data = {
+  label: tel.label || getText('label', 'tel'),
+  hint: tel.hint || getText('hint.format', 'tel'),
+  error: tel.error ? getText('error', 'tel') : undefined,
+  autocomplete: tel.autocomplete || 'tel',
+}
+%>
+
+<%- include('../../template/ejs/tel', {tel: data}); %>

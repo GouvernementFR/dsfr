@@ -1,0 +1,7 @@
+<%
+const segment = locals.segment || {};
+const data = segment.data || {};
+const markup = data.markup || 'h1';
+const classes = data.classes || [`${prefix}-h4`];
+ %>
+<<%= markup %> <%- includeClasses(classes); %>><%- data.title %></<%= markup %>>

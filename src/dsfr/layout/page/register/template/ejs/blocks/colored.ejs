@@ -1,0 +1,56 @@
+<%
+const COLS = {
+  4: {
+    outer: {
+      md: 8,
+      lg: 6
+    },
+    inner: {
+      md: 9,
+      lg: 8
+    }
+  },
+  6: {
+    outer: {
+      md: 10,
+      lg: 8
+    },
+    inner: {
+      md: 10,
+      lg: 9
+    }
+  }
+}
+const block = locals.block || {};
+const color = block.color || 'grey';
+const col = COLS[block.col] || COLS[6];
+const classes = {
+  outer: {
+    container: [`${prefix}-container`, `${prefix}-container--fluid`, `${prefix}-mb-md-14v`],
+    grid: [`${prefix}-grid-row`, `${prefix}-grid-row--gutters`, `${prefix}-grid-row--center`],
+    col: [`${prefix}-col-12`, `${prefix}-col-md-${col.outer.md}`, `${prefix}-col-lg-${col.outer.lg}`]
+  },
+  inner: {
+    container: [`${prefix}-container`, `${prefix}-background-alt--${color}`, `${prefix}-px-md-0`, `${prefix}-pt-10v`, `${prefix}-pt-md-14v`, `${prefix}-pb-6v`, `${prefix}-pb-md-10v`],
+    grid: [`${prefix}-grid-row`, `${prefix}-grid-row--gutters`, `${prefix}-grid-row--center`],
+    col: [`${prefix}-col-12`, `${prefix}-col-md-${col.inner.md}`, `${prefix}-col-lg-${col.inner.lg}`]
+  }
+}
+
+%>
+
+<div <%- includeClasses(classes.outer.container); %> >
+  <div <%- includeClasses(classes.outer.grid); %> >
+    <div <%- includeClasses(classes.outer.col); %> >
+      <div <%- includeClasses(classes.inner.container); %> >
+        <div <%- includeClasses(classes.inner.grid); %> >
+          <div <%- includeClasses(classes.inner.col); %> >
+            <% if (block.segments) { %>
+            <%- include('../segments/segments', { segments: block.segments }); %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

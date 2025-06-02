@@ -16,7 +16,7 @@ import { footerPartials } from './component/footer/template/stories/partials';
 import { formPartials } from './component/form/template/stories/partials';
 import { headerPartials } from './component/header/template/stories/partials';
 import { highlightPartials } from './component/highlight/template/stories/partials';
-import { inputPartials } from './component/input/input-base/template/stories/partials';
+import { inputPartials } from './component/input/template/stories/partials';
 import { linkPartials } from './component/link/template/stories/partials';
 import { logoPartials } from './component/logo/template/stories/partials';
 import { modalPartials } from './component/modal/template/stories/partials';

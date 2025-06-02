@@ -1,0 +1,19 @@
+<%
+ const heading = locals.heading || {};
+ const markup = heading.markup || 'h1';
+ const classes = heading.classes || [`${prefix}-h2`];
+ %>
+
+<div class="<%= prefix %>-container <%= prefix %>-mt-8v <%= prefix %>-mt-md-14v <%= prefix %>-mb-2v <%= prefix %>-mb-md-8v">
+  <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+    <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+      <% if (heading.title) { %>
+        <<%= markup %> <%- includeClasses(classes); %>><%= heading.title %></<%= markup %>>
+      <% } %>
+
+      <% if (heading.chapo) { %>
+        <p class="<%= prefix %>-text--lead"><%= heading.chapo %></p>
+      <% } %>
+    </div>
+  </div>
+</div>

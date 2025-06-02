@@ -3,4 +3,7 @@
 /// @group input
 ////
 
-@import 'input-base/print';
+@media print {
+  @import 'index';
+  @import 'style/print';
+}
