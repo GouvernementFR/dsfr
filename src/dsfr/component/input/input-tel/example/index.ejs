@@ -1,7 +1,0 @@
-<%
-const sample = getSample(include);
-%>
-
-<%- sample(getText('sample', 'input-tel'), './sample/tel-default', {}, true); %>
-
-<%- sample(`${getText('sample', 'input-tel')} - ${getText('error.short', 'global')}` , './sample/tel-default', {tel: {error: true}}, true); %>
