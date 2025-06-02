@@ -5,15 +5,13 @@ const { Changelog } = require('./classes/changelog/changelog');
 const yargs = require('yargs');
 const build = require('./build/build');
 const buildRouting = require('./generate/routing');
-const { deployFavicons, deployFiles, deployRobots, deployStorybook,
-  deployDocs
-} = require('./build/copy');
+const { deployFavicons, deployFiles, deployRobots, deployStorybook, deployDocs } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
 const { generateNewPictogram } = require('./generate/pictogram');
-const { spawn} = require('child_process');
 const log = require('./utilities/log');
-const { updateChouquette } = require('./utilities/update')
+const { upgradeNexus } = require('./utilities/upgrade');
+const { copyFile, copyDir } = require('./utilities/file');
 
 /**
  * Build
@@ -81,6 +79,11 @@ const buildBuilder = (yargs) => {
       alias: 'loc',
       describe: 'Locale',
       type: 'string'
+    })
+    .option('storybook', {
+      alias: 'sb',
+      describe: 'Storybook',
+      type: 'boolean'
     });
 };
 
@@ -99,7 +102,8 @@ const buildHandler = async (argv) => {
     config: argv.config,
     test: argv.test,
     markdowns: argv.markdowns,
-    locale: argv.locale
+    locale: argv.locale,
+    storybook: argv.storybook
   };
 
   await build(settings);
@@ -158,7 +162,7 @@ const deployBuilder = (yargs) => {
 
 const deployHandler = async (argv) => {
   log.section('DEPLOY');
-  await updateChouquette();
+  await upgradeNexus();
   await build({
     styles: true,
     scripts: true,
@@ -184,6 +188,37 @@ const deployHandler = async (argv) => {
   deployRobots();
   deployStorybook();
   deployDocs();
+};
+
+/**
+ * Archive
+ */
+const archiveBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0')
+    .example(
+      '$0',
+      ''
+    );
+};
+
+const archiveHandler = async (argv) => {
+  log.section('ARCHIVE');
+  await build({
+    styles: true,
+    scripts: true,
+    examples: false,
+    storybook: true,
+    clean: true,
+    minify: true,
+    legacy: true,
+    packages: ['dsfr', 'utility']
+  });
+
+  copyFile('./package.json', '.archive/package.json');
+  copyFile('./changelog.yml', '.archive/changelog.yml');
+  copyDir('./src', '.archive/src');
+  copyDir('./storybook', '.archive/storybook');
 };
 
 /**
@@ -361,6 +396,12 @@ yargs
     'compilation pour déploiement sur netlify',
     deployBuilder,
     deployHandler
+  )
+  .command(
+    'archive',
+    'compilation pour la création de l\'archive',
+    archiveBuilder,
+    archiveHandler
   )
   .command(
     'test',

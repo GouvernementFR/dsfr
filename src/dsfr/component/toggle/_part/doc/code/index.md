@@ -337,52 +337,52 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### toggleInput
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'interrupteur est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).toggleInput.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'interrupteur est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).toggleInput.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).toggleInput.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).toggleInput.node` |
 :::
 
 ##### toggleStatusLabel
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'interrupteur est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).toggleStatusLabel.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'interrupteur est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).toggleStatusLabel.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).toggleStatusLabel.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).toggleStatusLabel.node` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| update | |
+:::dsfr-doc-table[update]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Met a jour la taille de l'emplacement de l'état de l'interrupteur |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).toggleStatusLabel.update()` |
+| **Description** | Met a jour la taille de l'emplacement de l'état de l'interrupteur |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).toggleStatusLabel.update()` |
 :::
 
 ---

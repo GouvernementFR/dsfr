@@ -1,8 +1,17 @@
 ---
 title: Code du Tag
+shortTitle: Code du Tag
+description: Présentation complète du composant Tag destiné à la catégorisation ou au filtrage de contenus dans une interface.
+shortDescription: Le tag sert à classer ou filtrer les contenus.
+keywords: tag, composant, design system, catégorisation, filtre, accessibilité, UI, UX, badge, interface, contenu
+cover: ../_asset/cover/cover.png
+excerpt: Le tag est un composant utilisé pour classer ou filtrer des contenus à l'aide de mots clés. Il s'adapte selon le contexte d'utilisation et respecte des règles éditoriales précises.
+summary: Ce contenu présente le composant Tag dans un design system. Il explique ses usages principaux, notamment pour la catégorisation de contenus ou comme filtre interactif dans les interfaces. Des conseils pratiques et règles éditoriales y sont fournis pour garantir une intégration cohérente et accessible. Ce guide s’adresse aux designers et développeurs travaillant sur des interfaces nécessitant une organisation claire et intuitive de l’information.
 ---
 
 ## Tag
+
+Le tag est un élément d’indication ou d’interaction (selon les contextes) permettant de catégoriser, classer, organiser les contenus d’un site à l’aide de mots clés. Il aide les usagers à rechercher et à trouver facilement une information.
 
 :::dsfr-doc-tab-navigation
 - [Présentation](../index.md)
@@ -287,61 +296,61 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### toggle
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du tag activable est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).toggle.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du tag activable est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).toggle.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| pressed | |
+:::dsfr-doc-table[pressed]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoi l'état du tag activable |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).toggle.pressed = false` |
+| **Description** | Renvoi l'état du tag activable |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).toggle.pressed = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| toggle | |
+:::dsfr-doc-table[toggle]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Fait varier l'état checked/unchecked et la valeur de l'attribut `aria-pressed` du tag activable |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).toggle.toggle()` |
+| **Description** | Fait varier l'état checked/unchecked et la valeur de l'attribut `aria-pressed` du tag activable |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).toggle.toggle()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).toggle.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).toggle.node` |
 :::
 
 ###### tagDismissible
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement du tag supprimable est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tagDismissible.isEnabled = false` |
+| **Description** | Défini si le fonctionnement du tag supprimable est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tagDismissible.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).tagDismissible.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tagDismissible.node` |
 :::
 
 ---

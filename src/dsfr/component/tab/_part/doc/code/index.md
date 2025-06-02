@@ -180,193 +180,193 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabsGroup
 
-:::dsfr-doc-table{valign=top scroll=false}
-| current | |
+:::dsfr-doc-table[current]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Retourne l'API de l'onglet ouvert. |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).tabsGroup.current` |
+| **Description** | Retourne l'API de l'onglet ouvert. |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).tabsGroup.current` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| hasFocus | |
+:::dsfr-doc-table[hasFocus]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie vrai si le focus est sur un des éléments du groupe. |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).tabsGroup.hasFocus` |
+| **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabsGroup.hasFocus` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| index | |
+:::dsfr-doc-table[index]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Retourne ou modifie l'index de l'onglet courant. |
-| Type | property |
-| Retour | Number |
-| Exemple | `dsfr(elem).tabsGroup.index` <br/> `dsfr(elem).tabsGroup.index = 2` |
+| **Description** | Retourne ou modifie l'index de l'onglet courant. |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).tabsGroup.index` <br/> `dsfr(elem).tabsGroup.index = 2` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isGrouped | |
+:::dsfr-doc-table[isGrouped]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si les onglets du groupe sont liés entre eux ou non. |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).tabsGroup.isGrouped` <br/> `dsfr(elem).tabsGroup.isGrouped = true` |
+| **Description** | Défini si les onglets du groupe sont liés entre eux ou non. |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabsGroup.isGrouped` <br/> `dsfr(elem).tabsGroup.isGrouped = true` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement des onglets est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tabsGroup.isEnabled = false` |
+| **Description** | Défini si le fonctionnement des onglets est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tabsGroup.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| length | |
+:::dsfr-doc-table[length]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Retourne le nombre d'onglets dans le groupe. |
-| Type | property |
-| Retour | Number |
-| Exemple | `dsfr(elem).tabsGroup.length` |
+| **Description** | Retourne le nombre d'onglets dans le groupe. |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).tabsGroup.length` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| members | |
+:::dsfr-doc-table[members]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie un tableau d'objets correspondant aux discloses des onglets du groupe. |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).tabsGroup.members` |
+| **Description** | Renvoie un tableau d'objets correspondant aux discloses des onglets du groupe. |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).tabsGroup.members` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).tabsGroup.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tabsGroup.node` |
 :::
 
 ###### tabsList
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'onglet est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tabsList.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tabsList.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).tabsList.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tabsList.node` |
 :::
 
 ###### tabButton
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tabButton.focus()` |
+| **Description** | Replace le focus sur le bouton |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tabButton.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'onglet est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tabButton.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tabButton.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).tabButton.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tabButton.node` |
 :::
 
 ###### tabPanel
 
-:::dsfr-doc-table{valign=top scroll=false}
-| disclose | |
+:::dsfr-doc-table[disclose]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Ouvre le panneau |
-| Type | function |
-| Arguments | none |
-| Retour | none |
-| Exemple | `dsfr(elem).tabPanel.disclose()` |
+| **Description** | Ouvre le panneau |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).tabPanel.disclose()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isDisclosed | |
+:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne vrai si le panneau est ouvert |
-| Type | property |
-| Retour | Boolean |
-| Exemple | `dsfr(elem).tabPanel.isDisclosed` |
+| **Description** | Retourne vrai si le panneau est ouvert |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabPanel.isDisclosed` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| group | |
+:::dsfr-doc-table[group]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
-| Type | property |
-| Retour | object \| null |
-| Exemple | `dsfr(elem).tabPanel.group` |
+| **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).tabPanel.group` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| buttons | |
+:::dsfr-doc-table[buttons]{valign=top scroll=false}
+| | |
 |:-----|:-----|
-| Description | Retourne un tableau de boutons d'ouverture du panneau |
-| Type | property |
-| Retour | Array |
-| Exemple | `dsfr(elem).tabPanel.buttons` |
+| **Description** | Retourne un tableau de boutons d'ouverture du panneau |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).tabPanel.buttons` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| focus | |
+:::dsfr-doc-table[focus]{valign=top scroll=false}
+| | |
 |:------|:-----|
-| Description | Replace le focus sur le bouton du panneau |
-| Type | function |
-| Arguments | none |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tabPanel.focus()` |
+| **Description** | Replace le focus sur le bouton du panneau |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tabPanel.focus()` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| isEnabled | |
+:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Défini si le fonctionnement de l'onglet est activé ou non |
-| Type | property |
-| Retour | true \| false |
-| Exemple | `dsfr(elem).tabPanel.isEnabled = false` |
+| **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).tabPanel.isEnabled = false` |
 :::
 
-:::dsfr-doc-table{valign=top scroll=false}
-| node | |
+:::dsfr-doc-table[node]{valign=top scroll=false}
+| | |
 |------|-----|
-| Description | Renvoie le noeud HTML de l'élément. |
-| Type | property |
-| Retour | DOMElement |
-| Exemple | `dsfr(elem).tabPanel.node` |
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tabPanel.node` |
 :::
 
 ---
