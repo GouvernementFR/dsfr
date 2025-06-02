@@ -122,3 +122,4 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Spécification HTML – élément input](https://html.spec.whatwg.org/#the-input-element)
 - [Spécification HTML – type="radio"](https://html.spec.whatwg.org/#checkbox-state-(type=radio))
+- [Live regions ARIA&nbsp;:bonnes et mauvaises pratiques](https://access42.net/quand-utiliser-live-regions-aria/)
