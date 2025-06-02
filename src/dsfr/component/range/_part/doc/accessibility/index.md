@@ -46,7 +46,6 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 - l’attribut `title` en l’absence d’une autre méthode de nommage.
 
 ##### Curseur simple
-
 Dans le cas du curseur simple, utiliser l’élément `<label>` avec une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id`.
 
 Préciser les valeurs minimum et maximale dans le texte de description additionnel.
@@ -77,7 +76,6 @@ Les éléments du curseur désactivé sont insuffisamment contrastés. Il ne s�
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
-
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,

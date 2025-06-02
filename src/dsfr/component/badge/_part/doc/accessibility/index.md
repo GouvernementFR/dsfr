@@ -9,7 +9,7 @@ excerpt: Le composant Badge permet de mettre en avant une information courte li�
 summary: Utilisé pour signaler un état ou un statut dans une interface, le composant Badge apporte une information rapide à lire, positionnée au plus près de l’élément concerné. Il peut apparaître dans des menus, des tuiles, des tableaux ou des pages. Les badges système suivent des règles strictes de design et d’accessibilité, tandis que les badges standards autorisent une personnalisation encadrée.
 ---
 
-## Badge
+# Badge
 
 Le badge est un élément d’indication permettant de valoriser une information liée à un élément précis du site.
 
@@ -97,7 +97,6 @@ Aucun test de restitution n’est nécessaire pour le composant Badge.
 ---
 
 ### Critères RGAA applicables
-
 - **Couleurs&nbsp;:** 3.2
 - **Éléments obligatoires&nbsp;** 8.9
 - **Structuration&nbsp;:** 9.3

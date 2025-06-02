@@ -9,7 +9,7 @@ excerpt: Le composant Bouton permet de déclencher une action dans la page, comm
 summary: Le bouton est un composant central d’interaction dans les interfaces numériques. Il est utilisé pour initier une action précise selon un niveau de priorité - bouton primaire pour l’action principale, secondaire pour les actions secondaires et tertiaire pour les interactions contextuelles. Il respecte des règles d’écriture éditoriale claires, n’est pas personnalisable graphiquement et s’intègre de manière cohérente dans une interface respectueuse des standards d’accessibilité.
 ---
 
-## Bouton
+# Bouton
 
 Le bouton est un élément d’interaction avec l’interface permettant à l’usager d’effectuer une action.
 
@@ -74,12 +74,10 @@ En cas d’utilisation des attributs `aria-labelledby` ou `aria-label` sur des b
 ##### Information complémentaire&nbsp;: description
 
 Il est possible de compléter et d’expliciter l’intitulé d’un bouton avec une description en utilisant&nbsp;:
-
 - l’attribut `aria-describedby` avec une valeur d’id qui référence un passage de texte&nbsp;;
 - l’attribut `title`.
 
 #### Bouton avec icône seule
-
 Dans le cas des **boutons avec icône seule**, un attribut `title`, qui reprend l’intitulé du bouton, peut être ajouté afin d’expliciter le sens de l’icône pour les personnes qui en ont besoin.
 
 > [!WARNING]
@@ -116,7 +114,6 @@ Ne pas désactiver un bouton de soumission d’un formulaire.
 ::::
 
 #### Contrastes de couleurs
-
 Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le texte des boutons secondaires et tertiaires est insuffisamment contrasté.
 
 ##### Bouton primaire
@@ -177,13 +174,11 @@ Versions des navigateurs web&nbsp;:
 - Microsoft Edge 135 (sur Windows 11 uniquement)
 
 Version des lecteurs d’écran&nbsp;:
-
 - NVDA 2024.4.2
 - JAWS 2024
 - VoiceOver macOS 15.4
 - Narrateur (Windows 11)
 - VoiceOver iOS
-
 :::
 
 ---

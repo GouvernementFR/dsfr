@@ -23,9 +23,9 @@ La modale est un élément de mise en forme de contenu permettant de concentrer 
 
 :::
 
-### HTML
+## HTML
 
-#### Structure du composant
+### Structure du composant
 
 Le composant Modale permet d'afficher du contenu en plein écran.
 
