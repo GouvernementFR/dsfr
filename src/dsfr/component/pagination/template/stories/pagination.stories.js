@@ -15,3 +15,10 @@ export const PaginationStory = {
   tags: ['autodocs'],
   args: {}
 };
+
+export const LastPageStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    currentPageIndex: paginationArgs.pages.length
+  }
+};

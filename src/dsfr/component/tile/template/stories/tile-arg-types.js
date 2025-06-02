@@ -108,7 +108,7 @@ const tileArgTypes = {
   actionMarkup: {
     control: { type: 'select' },
     description: 'balise de l\'actionneur du composant (a, button)',
-    options: ['a', 'button'],
+    options: ['a', 'button', false],
     table: {
       category: 'action'
     }
