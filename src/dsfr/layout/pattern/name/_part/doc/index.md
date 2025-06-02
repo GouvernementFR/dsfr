@@ -163,5 +163,5 @@ Le bloc fonctionnel de nom et prénom aide à la saisie :
 ## Accessibilité
 
 - Reprendre les recommandations [du composant champ de saisie](../../../../../component/input/_part/doc/index.md)
-- Utiliser l’attribut spellcheck="false" sur les champs relatifs au nom et aux prénoms afin de désactiver la correction orthographique.
-- Utiliser l’attribut autocomplete="family-name" sur les champs “nom de famille”, et autocomplete="given-name" sur les champs “prénom”.
+- Utiliser l’attribut `spellcheck="false"` sur les champs relatifs au nom et aux prénoms afin de désactiver la correction orthographique.
+- Utiliser l’attribut `autocomplete="family-name"` sur les champs “nom de famille”, et `autocomplete="given-name"` sur les champs “prénom”.

@@ -51,11 +51,11 @@ La carte existe en deux formats (horizontal et vertical) déclinés sur deux sup
 
 **Carte verticale**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--vertical}
 
 **Carte horizontale**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--horizontal}
 
 Aucun ratio n’est imposé dans une carte horizontale.
 
@@ -68,7 +68,7 @@ Le ratio par défaut est de 40% pour l’image et 60% pour le contenu.
 
 **Carte de téléchargement**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--download}
 
 - Utiliser la carte de téléchargement pour mettre à disposition de l’usager un fichier en téléchargement.
 - Le titre de la carte de téléchargement reprend le nom du fichier et doit systématiquement être précédé de la mention “Télécharger”. Préciser la langue du document dans le libellé si elle est différente de celle de la page courante.
@@ -109,15 +109,15 @@ Pour une carte verticale, en desktop :
 
 - SM : 3 à 4 colonnes
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--card args="{ size: sm }"}
 
 - MD : 4 à 6 colonnes
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--card}
 
 - LG : 6 à 8 colonnes
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--card args="{ size: lg }"}
 
 En mobile, peu importe la taille d’origine, la carte verticale prend systématiquement 12 colonnes de large.
 
@@ -125,15 +125,15 @@ Pour une carte horizontale, en desktop uniquement :
 
 - SM : 4 à 6 colonnes
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--card args="{ size: sm, horizontal: true }"}
 
 - MD : 6 à 8 colonnes
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--card args="{ horizontal: true }"}
 
 - LG : 8 à 12 colonnes
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--card args="{ size: lg, horizontal: true }"}
 
 En mobile, seule la carte de téléchargement conserve un format horizontal. Dans ce cas, elle prend systématiquement 12 colonnes de large.
 
@@ -146,13 +146,11 @@ En mobile, seule la carte de téléchargement conserve un format horizontal. Dan
 
 L’état désactivé indique que l'usager ne peut pas interagir avec la carte.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=card--card args="{ disabled: true }"}
 
 **État au survol**
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole la carte avec sa souris.
-
-[Image d’illustration]
 
 ### Personnalisation
 
