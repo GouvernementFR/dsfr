@@ -322,9 +322,6 @@ const headerArgTypes = {
   isMourning: {
     control: 'boolean',
     description: 'Passe le header en mode deuil',
-    type: {
-      value: 'boolean'
-    },
     table: { category: 'Config' }
   },
   ...toolsArgTypes,
