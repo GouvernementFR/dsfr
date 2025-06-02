@@ -272,7 +272,7 @@ La demande de civilité peut être un sujet sensible pour les utilisateurs, elle
 
 ## Accessibilité
 
-- Il est obligatoire d’avoir soit une légende, soit un attribut aria-label sur le fieldset
-- Le fieldset doit être lié à la légende, si elle existe, et au groupe de messages via l’attribut aria-describedby (dans l’ordre : id-legend puis id-messages), ajouter un role=”group” s’il y a plus d’un id dans l'aria-describedby
-- Les messages d’erreur ou de validation doivent être placés dans le bloc vide fr-messages-group. Celui-ci possède l’attribut aria-live="assertive" pour annoncer les messages ajoutés à la volée aux lecteurs d'écrans.
+- Il est obligatoire d’avoir soit une légende, soit un attribut `aria-label` sur le `fieldset`
+- Le `fieldset` doit être lié à la légende, si elle existe, et au groupe de messages via l’attribut `aria-describedby` (dans l’ordre : `id-legend` puis `id-messages`), ajouter un `role=”group”` s’il y a plus d’un id dans l'`aria-describedby`
+- Les messages d’erreur ou de validation doivent être placés dans le bloc vide `fr-messages-group`. Celui-ci possède l’attribut `aria-live="assertive"` pour annoncer les messages ajoutés à la volée aux lecteurs d'écrans.
 - Reprendre les éléments liés aux [boutons radios](../../../../../component/radio/_part/doc/index.md)
