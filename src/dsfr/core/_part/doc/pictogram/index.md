@@ -64,22 +64,22 @@ Aussi, l’utilisation de radius est restreint. Néanmoins la fin des lignes et 
 Sur les trois couleurs présentes dans les pictogrammes, seule une demeure personnalisable avec la palette de couleurs d’illustration :
 
 - **Couleur dominante** : couleur primaire marquant l’identité de l'État. Elle véhicule l’image de marque et attire l’attention de l’utilisateur sur un élément particulier. Occupant environ 60% de la surface du pictogramme, la personnalisation de cette couleur n’est pas autorisée.
-Token de décision : $artwork-major-blue-france
-Thème clair : $blue-france-113 / Thème sombre : $blue-france-625
-- **Couleur subsidiaire** : couleur primaire marquant l’identité de l'État. À l’image du $blue-france-113, elle véhicule l’image de marque et attire l’attention de l’utilisateur sur un élément particulier. Toutefois, en raison de sa ressemblance à une des couleurs systèmes ($error-main-525), son utilisation notamment dans les composants doit demeurer discrète. Occupant quand à elle 30% de la surface, la personnalisation de cette couleur est autorisée en conservant l’indice -main utilisé.
-Token de décision : $artwork-minor-red-marianne
-Thème clair et sombre : $red-marianne-main-472
-- **Couleur décorative** : couleur primaire marquant l’identité de l'État. À l’image du $blue-france-113, elle véhicule l’image de marque. Occupant quand à elle 10% de la surface, cette couleur est optionnelle et non personnalisable.
-Token de décision : $artwork-decorative-blue-france
-Thème clair : $blue-france-950 / Thème sombre : $blue-france-100
+Token de décision : `$artwork-major-blue-france`
+Thème clair : `$blue-france-113` / Thème sombre : `$blue-france-625`
+- **Couleur subsidiaire** : couleur primaire marquant l’identité de l'État. À l’image du `$blue-france-113`, elle véhicule l’image de marque et attire l’attention de l’utilisateur sur un élément particulier. Toutefois, en raison de sa ressemblance à une des couleurs systèmes (`$error-main-525`), son utilisation notamment dans les composants doit demeurer discrète. Occupant quand à elle 30% de la surface, la personnalisation de cette couleur est autorisée en conservant l’indice -main utilisé.
+Token de décision : `$artwork-minor-red-marianne`
+Thème clair et sombre : `$red-marianne-main-472`
+- **Couleur décorative** : couleur primaire marquant l’identité de l'État. À l’image du `$blue-france-113`, elle véhicule l’image de marque. Occupant quand à elle 10% de la surface, cette couleur est optionnelle et non personnalisable.
+Token de décision : `$artwork-decorative-blue-france`
+Thème clair : `$blue-france-950` / Thème sombre : `$blue-france-100`
 
 ::::dsfr-doc-table[La personnalisation]{valign=top vheaders=vertical caption=false}
 
 | Description de l’usage | Token | Valeur(s) autorisée(s) |
 |-----------------------|-------|-----------------------|
-| Couleur dominante (60%) | $artwork-major-blue-france | Non personnalisable |
-| Couleur subsidiaire (30%) | $artwork-minor-red-marianne | $[couleur]-main (thèmes clair / sombre). Exemples : $green-emeraude-main-632 $brown-caramel-main-648 |
-| Couleur décorative (10%) | $artwork-decorative-blue-france | Non personnalisable, Optionnelle |
+| Couleur dominante (60%) | `$artwork-major-blue-france` | Non personnalisable |
+| Couleur subsidiaire (30%) | `$artwork-minor-red-marianne` | `$[couleur]-main` (thèmes clair / sombre).<br>Exemples : `$green-emeraude-main-632 `<br>`$brown-caramel-main-648` |
+| Couleur décorative (10%) | `$artwork-decorative-blue-france` | Non personnalisable,<br>Optionnelle |
 
 ::::
 
@@ -115,7 +115,7 @@ Sur Figma, les pictogrammes sont disponibles [dans un fichier à part du Communi
 Pour les utiliser, dupliquez le fichier puis publiez-le dans votre espace de travail. Vous pouvez ensuite insérer directement les pictogrammes dans vos designs. Leur personnalisation est possible via les “Selection colors” :
 
 - Passage en thème sombre : remplacez les tokens par leur version “dark”
-- Accentuation : remplacez la couleur du calque “🎨 Mineure (indice -main)” par une couleur illustrative d’indice main (par exemple : $purple-glycine-main-494)
+- Accentuation : remplacez la couleur du calque “🎨 Mineure (indice -main)” par une couleur illustrative d’indice main (par exemple : `$purple-glycine-main-494`)
 
 > [!NOTE]
 > De manière optionnelle, vous pouvez une fois le fichier “Pictogrammes” publié dans votre espace restaurer les liens existant entre les Composants et celui-ci (des pictogrammes sont utilisés par exemple pour le composant “Paramètres d’affichage”). Pour cela, la marche à suivre et la même que lors d’une mise à jour du DSFR 🔗.
@@ -147,11 +147,11 @@ Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et 
 </svg>
 ```
 
-- Le `<svg>` doit porter la classe fr-artwork et l’attribut aria-hidden="true".
-- La taille du pictogramme est défini par les attributs width, height, et viewBox (viewBox = 0 0 width height).
-- chaque `<use>` doit faire correspondre sa couleur, définie par sa classe (ex: fr-artwork-major), et son “path” importé via l’attribut xlink:href avec une valeur du type :
+- Le `<svg>` doit porter la classe `fr-artwork` et l’attribut `aria-hidden="true"`.
+- La taille du pictogramme est défini par les attributs `width`, `height`, et `viewBox` (viewBox = 0 0 width height).
+- chaque `<use>` doit faire correspondre sa couleur, définie par sa classe (ex: `fr-artwork-major`), et son “path” importé via l’attribut `xlink:href` avec une valeur du type :
 -> chemin-relatif-vers/dist/artwork/pictograms/category/nom-picto.svg#artwork-id-de-la-couleur
-- La couleur mineure (par défaut en red-marianne) peut être modifiée par une couleur d’accentuation en ajoutant un modificateur au niveau de fr-artwork (ex: “fr-artwork fr-artwork--green-emeraude”).
+- La couleur mineure (par défaut en red-marianne) peut être modifiée par une couleur d’accentuation en ajoutant un modificateur au niveau de `fr-artwork `(ex: “`fr-artwork fr-artwork--green-emeraude`”).
 
 ##### Ajout de pictogrammes dans la librairie
 
@@ -204,14 +204,14 @@ Ainsi le svg d’un pictogramme doit correspondre à ce gabarit :
 
 #### La couleur de fond
 
-Dans le cas où l’on souhaiterait ajouter un élément en fond (background) sous un pictogramme. Il existe deux autres token $artwork-background et $artwork-motif permettant de créer des pictogrammes entièrement gris.
+Dans le cas où l’on souhaiterait ajouter un élément en fond (background) sous un pictogramme. Il existe deux autres token `$artwork-background` et `$artwork-motif` permettant de créer des pictogrammes entièrement gris.
 
 ::::dsfr-doc-table[La personnalisation]{valign=top vheaders=vertical caption=false}
 
 | Description de l’usage | Token | Valeur(s) autorisée(s) |
 |-----------------------|-------|-----------------------|
-| Couleur de fond (80%) | $artwork-background | Non personnalisable, $grey-975 $grey-75 |
-| Couleur de motif (20%) | $artwork-motif | Non personnalisable, Optionnelle, $grey-925 $grey-125 |
+| Couleur de fond (80%) | `$artwork-background` | Non personnalisable,<br> `$grey-975` `$grey-75` |
+| Couleur de motif (20%) | `$artwork-motif` | Non personnalisable,<br>Optionnelle,<br> `$grey-925` `$grey-125` |
 
 ::::
 
@@ -244,7 +244,7 @@ En tant qu’utilisateur, vous pouvez contribuer à la création de la librairie
 
 ![ ](../_asset/pictogram/specifications-export.jpg)
 
-- Utiliser les tokens de décisions adaptés issus du Système de Design de l'État ($artwork-major-blue-france, $artwork-minor-red-marianne et $artwork-decorative-blue-france)
+- Utiliser les tokens de décisions adaptés issus du Système de Design de l'État (`$artwork-major-blue-france`, `$artwork-minor-red-marianne` et `$artwork-decorative-blue-france`)
 
 #### L’envoi du fichier
 

@@ -71,8 +71,8 @@ Pour intégrer une vidéo au sein d’une page de contenu, voir [le composant c
 
 #### Traitement des alternatives
 
-- Si l'image n'apporte pas d'information essentielle à la compréhension du contenu, utiliser une alternative vide (alt="").
-- Si l'image apporte une information essentielle à la compréhension du contenu, renseigner l'alternative avec l'information nécessaire (alt="alternative de l'image").
+- Si l'image n'apporte pas d'information essentielle à la compréhension du contenu, utiliser une alternative vide (`alt=""`).
+- Si l'image apporte une information essentielle à la compréhension du contenu, renseigner l'alternative avec l'information nécessaire (`alt="alternative de l'image"`).
 
 ### Accessibilité
 

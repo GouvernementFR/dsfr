@@ -24,7 +24,7 @@ Les modèles de formulaires présentés dans cette section et les règles de con
 La section formulaire présente donc :
 
 - Des règles de conception à respecter dans la création de vos formulaires
-- La liste des blocs fonctionnels de formulaire à réutiliser :
+- La liste des blocs fonctionnels de formulaire à réutiliser
 - La liste modèles de pages prêts à l’emploi intégrant des blocs fonctionnels de formulaire
 
 ## Règles de création d’un formulaire

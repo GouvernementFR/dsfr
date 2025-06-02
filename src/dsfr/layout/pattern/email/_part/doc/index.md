@@ -82,4 +82,4 @@ Le bloc de demande d’adresse électronique aide à la saisie de l’adresse é
 
 ## Accessibilité
 
-Utiliser l’attribut autocomplete="email" sur l’input
+Utiliser l’attribut `autocomplete="email"` sur l’`input`

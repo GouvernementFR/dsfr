@@ -1950,9 +1950,9 @@ Les icônes sont disponibles en quatre tailles. Il est possible de modifier la t
 :::dsfr-doc-table[Tailles]{valign=top scroll=false}
 | **Taille** | **Token** | **Classe** | **Dimension** | **Contexte d’utilisation** |
 | --- | --- | --- | --- | --- |
-| XS | $xs | .fr-icon--sm | 16x16px - 1rem | À utiliser avec la typographie Extra Small (XS), et Small (SM) |
-| MD | $md | .fr-icon | 24x24px - 1.5rem | À utiliser avec la typographie Medium (MD)Taille par défaut, aucun modifiers |
-| LG | $lg | .fr-icon--lg | 32x32px - 2rem | À utiliser avec la typographie Large (LG) |
+| XS | `$xs` | `.fr-icon--sm` | 16x16px - 1rem | À utiliser avec la typographie Extra Small (XS), et Small (SM) |
+| MD | `$md `| `.fr-icon` | 24x24px - 1.5rem | À utiliser avec la typographie Medium (MD)Taille par défaut, aucun modifiers |
+| LG | `$lg` | `.fr-icon--lg` | 32x32px - 2rem | À utiliser avec la typographie Large (LG) |
 :::
 
 ## Règles d’utilisation

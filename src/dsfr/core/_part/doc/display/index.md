@@ -35,7 +35,7 @@ Cette classe cache visuellement l'élément, uniquement à partir du breakpoint 
 
 ### fr-hidden
 
-Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au display-none).
+Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au `display-none`).
 
 ```html
 <div class="fr-hidden">
@@ -45,7 +45,7 @@ Cette classe cache complètement l'élément, à la fois visuellement et aussi p
 
 ## fr-hidden-[breakpoint]
 
-Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au display-none) à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
+Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au `display-none`) à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
 
 ```html
 <div class="fr-hidden-lg">
@@ -55,7 +55,7 @@ Cette classe cache complètement l'élément, à la fois visuellement et aussi p
 
 ## fr-unhidden-[breakpoint]
 
-Cette classe, associée à la classe fr-hidden permet de ré-afficher l'élément caché à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
+Cette classe, associée à la classe `fr-hidden` permet de ré-afficher l'élément caché à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
 
 ```html
 <div class="fr-hidden fr-unhidden-lg">

@@ -456,4 +456,4 @@ Ce bloc se compose de :
 ### Accessibilité
 
 - [Suivre les recommandations d’accessibilité d’un champ de saisie](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/champ-de-saisie)
-- Utiliser l’attribut aria-required="true" sur les input des champs obligatoires
+- Utiliser l’attribut `aria-required="true"` sur les input des champs obligatoires

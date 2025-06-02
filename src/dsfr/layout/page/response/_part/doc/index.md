@@ -31,7 +31,7 @@ La page d’erreur 404 est composée de :
 - Un texte qui aide l’utilisateur à trouver des solutions pour trouver la page initialement recherché et qui lui propose des portes de sortie . Le texte proposé dans le modèle à réutiliser par défaut.Si pas de moteur de recherche : supprimer la mention “ou effectuer une recherche avec notre moteur de recherche en haut de page”Si pas de solution de contact : supprimer la mention “Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information.”
 - Si pas de moteur de recherche : supprimer la mention “ou effectuer une recherche avec notre moteur de recherche en haut de page”
 - Si pas de solution de contact : supprimer la mention “Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information.”
-- Des boutons d’action qui mettent en avant les actions de sortie.Page d’accueil (redirection vers la page d’accueil)Contactez-nous : ouverture de la solution de contact si cette dernière existe.
+- Des boutons d’action qui mettent en avant les actions de sortie.
 - Page d’accueil (redirection vers la page d’accueil)
 - Contactez-nous : ouverture de la solution de contact si cette dernière existe.
 

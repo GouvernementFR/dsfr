@@ -81,7 +81,7 @@ Le champ téléphone est composé :
 
 - Veillez à préciser le format attendu en donnant un exemple de numéro de téléphone explicite
 - Le message d’erreur doit proposer un exemple de format différent de celui dans le label.
-- Utiliser l’attribut `autocomplete="tel"` sur l'input si la demande concerne un numéro international (avec indicateur).
+- Utiliser l’attribut `autocomplete="tel"` sur l'`input` si la demande concerne un numéro international (avec indicateur).
 
 ## Accessibilité
 

@@ -105,7 +105,7 @@ Le bloc fonctionnel est composé de :
 ## Bonnes pratiques
 
 - Préciser le format attendu dans la description de chaque champ de saisie
-- Les messages d'erreurs/succès spécifiques à chaque champs (ex : jour invalide) doivent être liés indépendamment via un attribut aria-describedby sur chaque input. Si l'erreur est général (ex : date invalide), la liaison se fait au niveau du fieldset.
+- Les messages d'erreurs/succès spécifiques à chaque champs (ex : jour invalide) doivent être liés indépendamment via un attribut `aria-describedby` sur chaque `input`. Si l'erreur est général (ex : date invalide), la liaison se fait au niveau du `fieldset`.
 
 ### Accessibilité
 
