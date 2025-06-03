@@ -21,5 +21,4 @@ La pagination est un système de navigation qui permet à l’usager de naviguer
 - [Accessibilité](../accessibility/index.md)
 :::
 
-
 ::dsfr-doc-storybook{id=pagination--docs}

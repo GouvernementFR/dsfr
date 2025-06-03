@@ -23,7 +23,7 @@ La navigation tertiaire est un système de navigation permettant un troisième n
 
 :::dsfr-doc-anatomy{col=12}
 
-![Anatomie de l'onglet](../_asset/anatomy/anatomy-1.png)
+![Anatomie de la navigation tertiaire](../_asset/anatomy/anatomy-1.png)
 
 ::dsfr-doc-pin[Un libellé du lien direct]{required=true}
 

@@ -26,7 +26,7 @@ Le menu déroulant présente une liste d'actions ou de choix parmi lesquels un u
 
 :::dsfr-doc-anatomy{col=12}
 
-![Anatomie de l'onglet](../_asset/anatomy/anatomy-1.png)
+![Anatomie du menu déroulant](../_asset/anatomy/anatomy-1.png)
 
 ::dsfr-doc-pin[Un bouton tertiaire]{required=true}
 

@@ -25,7 +25,7 @@ La carte est un élément d’interaction avec l’interface permettant de redir
 
 :::dsfr-doc-anatomy{col=12}
 
-![Anatomie de l'onglet](../_asset/anatomy/anatomy-1.png)
+![Anatomie de la carte](../_asset/anatomy/anatomy-1.png)
 
 ::dsfr-doc-pin[Un badge]{add="placé dans la zone de média"}
 
