@@ -482,7 +482,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
 
-Sur chaque menu déroulant du menu latéral, les événements suivants sont disponibles :
+Dans la version mobile du menu latéral et sur chaque menu déroulant du menu latéral, les événements suivants sont disponibles :
 
 :::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
 
