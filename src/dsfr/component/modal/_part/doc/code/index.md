@@ -5,11 +5,13 @@ title: Code de la modale
 # Modale
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ## HTML
@@ -19,6 +21,7 @@ title: Code de la modale
 Le composant Modale permet d'afficher du contenu en plein écran.
 
 Sa structure est la suivante :
+
 - Le **bouton d'ouverture** de la modale est défini par la classe `fr-btn` et l'attribut `aria-controls` lié à l'ID de la modale.
   - Le bouton doit être de type "button".
   - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si la modale est ouverte ou fermée.
@@ -31,9 +34,9 @@ Sa structure est la suivante :
   - D'un **bloc de colonne** définie par les classes `fr-col-12 fr-col-md-8 fr-col-lg-6` pouvant varier en fonction de la taille de la modale désirée.
   - Le **corps** de la modale défini par la classe `fr-modal__body`, contenant :
     - **L'entête** de la modale, obligatoire, défini par la classe `fr-modal__header`, contenant :
-       - Le **bouton de fermeture** de la modale, obligatoire, est un élément HTML `<button>`, défini par les classes `fr-btn` et `fr-btn--close`, dont le titre est "Fermer".
-        - Le bouton doit être de type "button".
-        - Le bouton est lié à la modale via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale.
+      - Le **bouton de fermeture** de la modale, obligatoire, est un élément HTML `<button>`, défini par les classes `fr-btn` et `fr-btn--close`, dont le titre est "Fermer".
+      - Le bouton doit être de type "button".
+      - Le bouton est lié à la modale via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale.
     - D'un **bloc de contenu**, obligatoire, défini par la classe `fr-modal__content`, contenant :
       - Le **titre** de la modale, obligatoire, dans un niveau d'entête `<h1>` et défini par la classe `fr-modal__title`.
       - Le **contenu** de la modale, obligatoire et libre, mais nécessitant l'utilisation de balises adéquates, il n'est pas correcte par exemple de placer du texte directement dans une `<div>`.
@@ -192,13 +195,16 @@ Pour fonctionner le composant modale nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -207,15 +213,14 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-
 #### Instances
 
 Sur la modale, les éléments suivants sont instanciés :
+
 - La modale, via la classe : `fr-modal`
 - Le bouton d'ouverture de la modale, via l'attribut `aria-controls`
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
-
 
 #### API
 
@@ -224,6 +229,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('modal');
 dsfr(elem).modal.disclose();
@@ -234,15 +240,18 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ##### modal
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la modale est activé ou non |
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).modal.isEnabled = false` |
+
 :::
 
 :::dsfr-doc-table[conceal]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ferme la modale |
@@ -250,9 +259,11 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.conceal()` |
+
 :::
 
 :::dsfr-doc-table[disclose]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ouvre la modale |
@@ -260,29 +271,35 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.disclose()` |
+
 :::
 
 :::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si la modale est ouverte |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modal.isDisclosed` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).modal.node` |
+
 :::
 
 ###### modalButton
 
 :::dsfr-doc-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -290,24 +307,45 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).modalButton.focus()` |
+
 :::
 
 :::dsfr-doc-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici la modale |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::dsfr-doc-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).modalButton.node` |
+
+:::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur la modale, les événements suivants sont disponibles :
+
+:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de la modale | Modal | `data-fr-js-modal` |
+| `dsfr.disclose` | Ouverture de la modale | Modal | `data-fr-js-modal` |
+| `dsfr.click` | Click sur le bouton d'ouverture | ModalButton | `data-fr-js-modal-button` |
+
 :::
 
 ---
