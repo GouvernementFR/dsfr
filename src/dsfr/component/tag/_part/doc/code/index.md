@@ -380,7 +380,7 @@ Sur le tag, les événements suivants sont disponibles :
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
-| `dsfr.dismiss` | Suppression du tag | TagDismissible | `data-fr-js-tag-dismissible` |
+| `dsfr.dismiss` | Suppression du tag supprimable | TagDismissible | `data-fr-js-tag-dismissible` |
 | `dsfr.click` | Click sur le tag de suppression | TagDismissible | `data-fr-js-tag-dismissible` |
 
 :::
