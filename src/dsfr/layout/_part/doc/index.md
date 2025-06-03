@@ -1,3 +1,3 @@
 ---
-title: Modèles
+title: Modèles et exemples
 ---

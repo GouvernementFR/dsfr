@@ -14,9 +14,9 @@ title: Code de la modale
 
 :::
 
-### HTML
+## HTML
 
-#### Structure du composant
+### Structure du composant
 
 Le composant Modale permet d'afficher du contenu en plein écran.
 
@@ -237,7 +237,7 @@ dsfr(elem).modal.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### modal
+##### modal
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
 

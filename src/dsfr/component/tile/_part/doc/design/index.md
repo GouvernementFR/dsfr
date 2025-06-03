@@ -1,8 +1,17 @@
 ---
 title: Design de la tuile
+shortTitle: Design de la tuile
+description: Le composant Tuile permet de créer des points d’entrée vers des pages de contenu au sein d’interfaces organisées.
+shortDescription: Rediriger l’usager vers du contenu via des tuiles.
+keywords: tuile, composant, design system, interface, navigation, contenu, accessibilité, UX, UI, carte
+cover: ../_asset/cover/cover.png
+excerpt: Ce guide présente le composant Tuile comme un élément de navigation vers des contenus, avec des recommandations d’usage et des règles éditoriales pour assurer cohérence et clarté.
+summary: Ce contenu décrit l’usage du composant Tuile dans un design system. Il précise son rôle dans la navigation vers des pages de contenu, ses différences avec le composant Carte, et les bonnes pratiques à adopter pour garantir une présentation cohérente dans les listes ou collections. Ce guide s’adresse aux concepteurs et développeurs souhaitant structurer visuellement des ensembles de liens tout en assurant une expérience utilisateur fluide et accessible.
 ---
 
 ## Tuile
+
+La tuile est un élément d’interaction avec l’interface permettant de rediriger l’usager vers des pages de contenu.
 
 :::dsfr-doc-tab-navigation
 
@@ -14,4 +23,156 @@ title: Design de la tuile
 
 :::
 
-### Design
+:::dsfr-doc-anatomy{col=12}
+
+![Anatomie de la tuile](../_asset/anatomy/anatomy-1.png)
+
+::dsfr-doc-pin[Un pictogramme]
+
+::dsfr-doc-pin[Une première zone de détail]{add="composée d’une précision sous forme de tags (cliquables ou non) ou de badges (jusqu'à 4 éléments)"}
+
+::dsfr-doc-pin[Un titre reprenant celui de l’objet visé]{add='(page de destination, action réalisée, site etc.)' required=true}
+
+::dsfr-doc-pin[Une description]
+
+::dsfr-doc-pin[Une deuxième zone de détail]{add='composée d’un texte'}
+
+::dsfr-doc-pin[Une icône illustrative]{add='(par défaut, une flèche)'}
+
+::dsfr-doc-pin[Une bordure]{add='bleue lorsque la tuile est cliquable et noire lorsqu’elle est non cliquable' required=true}
+
+:::
+
+### Variations
+
+**Tuile horizontale**
+
+- Cliquable
+
+[Image d’illustration]
+
+- Non cliquable
+
+[Image d’illustration]
+
+**Tuile verticale**
+
+- Cliquable
+
+[Image d’illustration]
+
+- Non cliquable
+
+[Image d’illustration]
+
+**Tuile de téléchargement**
+
+[Image d’illustration]
+
+- Utiliser la tuile de téléchargement pour mettre à disposition de l’usager un fichier en téléchargement.
+- Le titre de la tuile de téléchargement reprend le nom du fichier et doit systématiquement être précédé de la mention “Télécharger”.
+- La seconde zone de détail affiche obligatoirement le format et le poids du fichier.
+- L’icône de téléchargement est ici obligatoire.
+
+### Tailles
+
+La tuile est disponible en 2 tailles :
+
+- SM pour small
+
+[Image d’illustration]
+
+En desktop, elle occupe un maximum de 3 à 4 colonnes de large.
+
+- MD pour medium
+
+[Image d’illustration]
+
+En desktop, elle occupe entre 4 et 6 colonnes de large.
+
+En version mobile, les deux tailles SM et MD occupent l’intégralité de la largeur de la grille.
+
+Par ailleurs, la hauteur de la tuile s’adapte à son contenu.
+
+### États
+
+**État désactivé**
+
+L’état désactivé indique que l'usager ne peut pas interagir avec la tuile.
+
+[Image d’illustration]
+
+**État au survol**
+
+L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole la tuile avec sa souris.
+
+[Image d’illustration]
+
+### Personnalisation
+
+Le fond, le contour et le pictogramme de la tuile peuvent être personnalisés, parmi les options listées ci-dessous uniquement :
+
+:::dsfr-doc-table[Titre du tableau]{valign=top scroll=false caption=false}
+|  Éléments | Indice thème clair | Indice thème sombre |
+|:-----|:-----|:-----|
+| **Couleur subsidiaire (30%) `$artwork-minor-red-marianne`**| Indice **main**<br> exemple : `$brown-caramel-main-648` | Indice **main**<br> exemple : `$brown-caramel-main-648` |
+:::
+
+Également, certains éléments sont optionnels - voir [la structure du composant](#tuile).
+
+::::dsfr-doc-guidelines
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/custom/do-1.png)
+
+Proposer une tuile avec un fond par défaut.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![À ne pas faire](../_asset/custom/dont-1.png)
+
+Ne pas personnaliser le fond de la tuile avec une autre couleur illustrative.
+
+:::
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/custom/do-2.png)
+
+Choisir la couleur secondaire du pictogramme parmi celles disponibles dans les couleurs illustratives.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![À ne pas faire](../_asset/custom/dont-2.png)
+
+Ne pas personnaliser la couleur primaire du pictogramme.
+
+:::
+
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+![À faire](../_asset/custom/do-3.png)
+
+S’affranchir du contour de la tuile.
+
+:::
+
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+![À ne pas faire](../_asset/custom/dont-3.png)
+
+Ne pas supprimer ou personnaliser la couleur de la bordure qui traduit le caractère cliquable ou non cliquable de la tuile.
+
+:::
+
+::::
+
+### Maillage
+
+- [Badge](../../../../badge/_part/doc/index.md)
+- [Carte](../../../../card/_part/doc/index.md)
+- [Tag](../../../../tag/_part/doc/index.md)

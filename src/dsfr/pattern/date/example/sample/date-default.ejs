@@ -1,6 +1,0 @@
-<%
-const date = locals.date || {};
-const data = JSON.parse(include('../data/date.json.ejs', {date: date}))
-%>
-
-<%- include('../../../../component/form/template/ejs/fieldset/fieldset', { fieldset: data }); %>
