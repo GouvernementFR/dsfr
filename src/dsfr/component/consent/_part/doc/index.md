@@ -27,7 +27,7 @@ Le gestionnaire de consentement permet à l'usager de définir ses préférences
 
 **Intégrer un gestionnaire de consentement est une obligation** pour l’ensemble des sites dès lors qu’ils déposent ou lisent des cookies non essentiels.
 
-Toutefois, le DSFR ne contraint pas l’utilisation de son composant natif. Il est par exemple possible d’intégrer l’extension Tarte au Citron, référencée dans [les extensions du DSFR](path:/community/addons).
+Toutefois, le DSFR ne contraint pas l’utilisation de son composant natif. Il est par exemple possible d’intégrer l’extension Tarte au Citron, référencée dans [les extensions du DSFR](path:/community/extension).
 
 ### Comment utiliser ce composant ?
 
