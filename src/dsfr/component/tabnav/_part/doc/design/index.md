@@ -12,6 +12,11 @@ beta: true
 
 ## Navigation Tertiaire bêta
 
+> [!NOTE]
+> **Ce composant est en version bêta.** Il n'existe pas en code et son design ou ses fonctionnalités peuvent encore être amenés à évoluer. N'hésitez pas à nous partager vos cas d'usage ou retours qui le concerne via notre formulaire de contact ou notre Tchap pour que nous puissions les étudier.
+
+Retrouvez ces composants sur Figma [dans un fichier dédié bêta disponible sur Community](https://www.figma.com/community/file/1096003483468520396).
+
 La navigation tertiaire est un système de navigation permettant un troisième niveau de navigation au sein d’une section de contenu.
 
 :::dsfr-doc-tab-navigation
