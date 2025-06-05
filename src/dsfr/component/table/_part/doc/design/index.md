@@ -49,17 +49,17 @@ Le tableau permet de présenter une liste structurée de données textuelles et/
 
 **Tableau non scrollable**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=table--no-scroll}
 
 **Variantes esthétiques**
 
 - Bordures horizontales (par défaut)
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=table--default}
 
 - Bordures horizontales et verticales
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=table--vertical-borders}
 
 ### Tailles
 
@@ -73,15 +73,15 @@ Par défaut, la largeur des cellules s’adapte automatiquement à leur contenu.
 
 - SM pour small
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=table--size-sm}
 
 - MD pour medium
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=table--default}
 
 - LG pour large
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=table--size-lg}
 
 Ainsi si la taille des composants intégrés dans les cellules ne change pas, cela vous permet toutefois de varier la densité d’affichage de votre tableau en fonction de son contenu.
 
@@ -89,11 +89,11 @@ Ainsi si la taille des composants intégrés dans les cellules ne change pas, ce
 
 **Etat par défaut**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=table--selectable-table}
 
 **Ligne sélectionnée**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=table--miscellaneous-table}
 
 > [!NOTE]
 > Les états désactivé, focus et cliqué sont propres aux composants intégrés au sein des cellules.
