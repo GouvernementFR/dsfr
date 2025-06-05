@@ -14,12 +14,16 @@ summary: Le tableau est conçu pour présenter des données de manière claire e
 Le tableau permet de présenter une liste structurée de données textuelles et/ou numériques dans le but de simplifier l’analyse et la comparaison d’informations pour l’usager.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=table--table}
 
 ### Quand utiliser ce composant ?
 

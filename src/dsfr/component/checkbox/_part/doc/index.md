@@ -23,6 +23,8 @@ La case à cocher est un élément d’interaction avec l’interface permettant
 
 :::
 
+::dsfr-doc-storybook{storyId=checkbox--checkbox}
+
 ### Quand utiliser ce composant ?
 
 Utiliser les cases à cocher pour permettre à l’utilisateur de sélectionner une ou plusieurs options dans une liste. 

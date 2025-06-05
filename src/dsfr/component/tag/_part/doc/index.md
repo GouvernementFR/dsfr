@@ -23,6 +23,8 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 :::
 
+::dsfr-doc-storybook{storyId=tag--tag}
+
 ### Quand utiliser ce composant ?
 
 - **Utiliser le tag en l’associant à un contenu** (carte, en-tête etc.) pour le catégoriser (par thème, sujet, type de contenu etc). Dans ce contexte, le tag peut être cliquable ou non cliquable.

@@ -14,12 +14,16 @@ summary: Ce composant permet de diviser une liste importante d’éléments en p
 La pagination est un système de navigation qui permet à l’usager de naviguer entre les différentes pages d’une liste d’éléments.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=pagination--pagination}
 
 ### Quand utiliser ce composant ?
 

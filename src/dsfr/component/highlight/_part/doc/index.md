@@ -23,6 +23,8 @@ La mise en exergue est un élément éditorial permettant de mettre en forme du 
 
 :::
 
+::dsfr-doc-storybook{storyId=highlight--highlight}
+
 ### Quand utiliser ce composant ?
 
 Utiliser la mise en exergue pour distinguer une information importante au sein du contenu principal d’une page (par exemple, une reformulation ou une reprise de texte).

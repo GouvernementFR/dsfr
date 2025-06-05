@@ -14,12 +14,16 @@ summary: Ce contenu présente le menu latéral comme un composant de navigation 
 Le menu latéral est un système de navigation secondaire présentant une liste verticale de liens placée à côté du contenu.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=sidemenu--sidemenu}
 
 ### Quand utiliser ce composant ?
 

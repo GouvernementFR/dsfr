@@ -23,6 +23,8 @@ La mise en avant est un élément éditorial permettant de mettre en forme du co
 
 :::
 
+::dsfr-doc-storybook{storyId=callout--callout}
+
 ### Quand utiliser ce composant ?
 
 Utiliser la mise en avant pour mettre l’accent sur une information complémentaire au contenu principal.

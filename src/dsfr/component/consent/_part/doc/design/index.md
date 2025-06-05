@@ -37,15 +37,23 @@ Le gestionnaire de consentement permet à l'usager de définir ses préférences
 
 ::dsfr-doc-pin[Un titre de modale]{required=true}
 
+::dsfr-doc-pin[Des boutons radio “Tout accepter” et “Tout refuser”]{required=true}
+
 ::dsfr-doc-pin[Un libellé]{required=true add="pour chacune des finalités listée"}
 
 ::dsfr-doc-pin[Une description]{add="recommandée pour apporter des précisions sur la finalité"}
+
+::dsfr-doc-pin[Des boutons radio “Accepter” et “Refuser”]{required=true}
+
+::dsfr-doc-pin[Un séparateur]{required=true}
 
 ::dsfr-doc-pin[Un bouton “Voir plus de détails”]{required=true add="permettant d’afficher les sous-finalités associées"}
 
 ::dsfr-doc-pin[Un libellé]{required=true add="pour chacune des sous-finalités listée"}
 
 ::dsfr-doc-pin[Une description]{add="recommandée pour apporter des précisions sur la sous-finalité"}
+
+::dsfr-doc-pin[Un bouton de confirmation]{required=true}
 
 :::
 

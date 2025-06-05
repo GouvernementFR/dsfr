@@ -23,6 +23,8 @@ L’accordéon est un élément d’interaction avec l’interface permettant à
 
 :::
 
+::dsfr-doc-storybook{storyId=accordion--accordion}
+
 ### Quand utiliser ce composant ?
 
 L’accordéon est utilisé pour mettre en forme du contenu dans une page.

@@ -23,6 +23,8 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 :::
 
+::dsfr-doc-storybook{storyId=badge--badge}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le badge pour mettre en avant une information de type “statut” ou “état” sur un élément du site.

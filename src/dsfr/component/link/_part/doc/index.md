@@ -23,6 +23,8 @@ Le lien est un système de navigation secondaire qui permet à l’usager de se 
 
 :::
 
+::dsfr-doc-storybook{storyId=link--link}
+
 ### Quand utiliser ce composant ?
 
 Proposer le lien pour permettre à l’usager de naviguer au sein d’un site, en complément de la [navigation principale](../../../navigation/_part/doc/index.md).

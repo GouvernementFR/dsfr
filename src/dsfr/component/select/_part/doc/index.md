@@ -14,12 +14,16 @@ summary: Ce contenu décrit l’usage du composant liste déroulante, conçu pou
 La liste déroulante est un élément d’interaction avec l’interface permettant à l’usager de choisir un élément dans une liste donnée.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=select—select}
 
 ### Quand utiliser ce composant ?
 

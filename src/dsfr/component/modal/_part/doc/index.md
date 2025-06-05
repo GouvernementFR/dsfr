@@ -23,6 +23,8 @@ La modale est un élément de mise en forme de contenu permettant de concentrer 
 
 :::
 
+::dsfr-doc-storybook{storyId=modal--modal}
+
 ### Quand utiliser ce composant ?
 
 Utiliser la modale pour hiérarchiser l’information au sein d’une page ou afficher un contenu à part. Elle permet de mettre en évidence une information importante, à la suite du clic sur un bouton.

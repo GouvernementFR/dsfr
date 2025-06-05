@@ -23,6 +23,8 @@ L’ajout de fichier est un élément d’interaction avec l’interface qui per
 
 :::
 
+::dsfr-doc-storybook{storyId=upload--upload}
+
 ### Quand utiliser ce composant ?
 
 Proposer l’ajout de fichier uniquement si l’envoi d’un ou plusieurs fichier est essentiel à votre service.

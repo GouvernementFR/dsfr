@@ -14,12 +14,16 @@ summary: Le curseur est utile lorsque la saisie d’une valeur approximative est
 Le curseur est un élément d’interaction avec l’interface permettant à l’usager de délimiter manuellement une sélection par rapport à une valeur minimale et maximale.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=range--range}
 
 ### Quand utiliser ce composant ?
 

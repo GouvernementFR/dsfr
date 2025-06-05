@@ -20,12 +20,16 @@ Il est primordial dans l’usage du service FranceConnect et garantit sa reconna
 Retrouver le fonctionnement en détail ici : [https://franceconnect.gouv.fr/partenaires](https://franceconnect.gouv.fr/partenaires)
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=connect--connect}
 
 ### Quand utiliser ce composant ?
 

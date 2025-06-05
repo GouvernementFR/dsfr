@@ -23,6 +23,8 @@ Le système d’onglets permet de structurer et de présenter plusieurs sections
 
 :::
 
+::dsfr-doc-storybook{storyId=tabs--tabs}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le système d'onglets pour regrouper du contenu lié dans un espace limité ou diviser un contenu dense en sections accessibles individuellement, afin de faciliter la lecture pour l’usager.

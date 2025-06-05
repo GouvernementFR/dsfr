@@ -14,12 +14,16 @@ summary: Ce document présente les bonnes pratiques d’usage du bandeau d’inf
 Le bandeau d’information importante est un élément éditorial permettant d’attirer l’attention des usagers sur une information importante et temporaire.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=notice--notice}
 
 ### Quand utiliser ce composant ?
 

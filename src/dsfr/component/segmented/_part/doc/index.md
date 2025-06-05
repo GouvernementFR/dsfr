@@ -14,12 +14,16 @@ summary: Ce contenu décrit l’usage du contrôle segmenté dans les interfaces
 Le contrôle segmenté est un élément d’interaction avec l’interface permettant à l'usager de choisir un type de vue parmi plusieurs options d'affichage disponibles.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=segmented--segmented}
 
 ### Quand utiliser ce composant ?
 

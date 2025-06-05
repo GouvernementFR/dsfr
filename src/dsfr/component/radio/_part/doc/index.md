@@ -23,6 +23,8 @@ Le bouton radio est un élément d’interaction avec l’interface permettant �
 
 :::
 
+::dsfr-doc-storybook{storyId=radio--radio}
+
 ### Quand utiliser ce composant ?
 
 Utiliser les boutons radio pour permettre à l’utilisateur de sélectionner une option unique dans une liste.

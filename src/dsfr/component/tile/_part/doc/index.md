@@ -23,6 +23,8 @@ La tuile est un élément d’interaction avec l’interface permettant de redir
 
 :::
 
+::dsfr-doc-storybook{storyId=tile--tile}
+
 ### Quand utiliser ce composant ?
 
 Utiliser la tuile pour créer un raccourci ou un point d’entrée vers des pages de contenu.

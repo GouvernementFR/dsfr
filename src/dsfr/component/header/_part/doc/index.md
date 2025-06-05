@@ -20,7 +20,10 @@ L’en-tête est un élément de navigation permettant aux usagers d’identifie
 - [Design](design/index.md)
 - [Code](code/index.md)
 - [Accessibilité](accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=header--header}
 
 ### Quand utiliser ce composant ?
 
