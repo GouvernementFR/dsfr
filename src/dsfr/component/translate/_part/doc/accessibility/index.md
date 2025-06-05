@@ -23,28 +23,41 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 
 ## Accessibilité
 
-Le composant **Sélecteur de langue** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Sélecteur de langue** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ### Interactions clavier
 
-Lorsque le focus est positionné sur le Sélecteur de langue :
+Aucune interaction au clavier spécifique au composant.
 
-- `Entrée` : Ouvre ou ferme le menu de sélection de langue.
-- `Tab` : Place le focus sur le prochain élément focalisable.
-- `shift + Tab` : Place le focus sur l'élément focalisable précédent.
+### Règles d’accessibilité
 
-### Règles d'accessibilité
+#### Structuration
 
-- Le sélecteur de langue dispose d'un `role="navigation"`.
-- Le sélecteur de langue contient un bouton d'ouverture avec le `type="button"`.
-- Si le collapse associé au bouton d'ouverture du sélecteur de langue est visible, le bouton a l'attribut `aria-expanded` défini sur `true`. Si le collapse n'est pas visible, `aria-expanded` est défini sur `false`.
-- Le bouton d'ouverture du sélecteur de langue a l'attribut `aria-controls` défini sur l'ID du collapse.
-- L'élément actif de la liste de langue porte un attribut `aria-current=”true”`.
-- Chaque élément de la liste de langue disposent d'un attribut `hreflang` et un attribut `lang`, dont les valeurs spécifient la langue cible.
-- Une langue est indiquée par son code [ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1), puis son nom en toute lettres et dans la langue cible.
-  Par exemple, on écrira "EN - English", et pas "EN - Anglais".
+##### Bouton d’ouverture
+- Le bouton d’ouverture du sélecteur de langue possède deux attributs ARIA&nbsp;:
+  - `aria-expanded` défini à :
+    - `true` lorsque la liste déroulante des autres langues est affichée,
+    - `false` lorsque la liste déroulante des autres langues est masquée.
+  - `aria-controls` qui relie le bouton à la zone contrôlée et dont la valeur doit correspondre à l’attribut `id` de la zone de contenu.
+
+##### Liste de langues
+- La liste de langues est structurée dans une liste `ul` `li`.
+- Le lien actif de la liste de langues porte un attribut `aria-current=”true”`.
+- Chaque lien de la liste de langues disposent d'un attribut `hreflang` et un attribut `lang`, dont les valeurs spécifient la langue cible.
+- Une langue est indiquée par son code [ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1), puis son nom en toute lettres et dans la langue cible. Par exemple, on écrira "EN - English", et pas "EN - Anglais".
+
+#### Contrastes de couleurs
+
+Le composant Sélecteur de langue est suffisamment contrasté en thème clair.
+
+En thème sombre, le bouton d’ouverture est insuffisamment contrasté au survol.
+
+### Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant Sélecteur de langue.
+
+---
 
 ### Références
 
-- [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

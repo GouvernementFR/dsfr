@@ -23,27 +23,90 @@ La liste déroulante est un élément d’interaction avec l’interface permett
 
 ### Accessibilité
 
-Le composant **Liste déroulante** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Liste déroulante** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ### Interactions clavier
 
-Lorsque le focus est positionné sur la liste déroulante :
+Lorsque le focus est positionné sur la liste déroulante&nbsp;:
 
-- `Flèche bas` : Ouvre la liste déroulante et permet de naviguer entre les options.
-- `Flèche haut` : Ouvre la liste déroulante et permet de naviguer entre les options.
-- `Espace` : Ouvre la liste déroulante et sélectionne l'option mise en surbrillance.
-- `Tab` : Place le focus sur le prochain élément focalisable.
-- `shift + Tab` : Place le focus sur l'élément focalisable précédent.
+- `Flèche bas`&nbsp;: ouvre la liste déroulante et permet de naviguer entre les options.
+- `Flèche haut`&nbsp;: ouvre la liste déroulante et permet de naviguer entre les options.
+- `Espace`&nbsp;: ouvre la liste déroulante et sélectionne l’option mise en surbrillance.
 
-### Règles d'accessibilité
+### Règles d’accessibilité
 
-- La liste déroulante doit être utilisée pour permettre à l'utilisateur de sélectionner **une seule option** parmi une liste d'options.
-- Chaque liste déroulante doit être associée à un `<label>` pour indiquer son libellé. L'attribut `for` du `<label>` doit correspondre à l'attribut `id` du `<select>`. Ainsi, le clic sur le label place le focus sur la liste déroulante.
-- Le **libellé des options** doit être explicite et décrire clairement l'option que la liste déroulante représente.
-- Pour sélectionner une option par défaut, ajoutez l'attribut `selected` à l'`<option>`. Une seule option peut être sélectionnée par défaut.
-- Un **message** d'erreur ou de succès peut être associé à la liste déroulante. Son attribut `id` doit être associé à l'attribut `aria-describedby` de la liste déroulante. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé au technologies d'assistance en utilisant l'attribut `aria-live="polite"`.
+#### Intitulé pertinent : nom accessible
+
+Une liste déroulante doit avoir une **étiquette pertinente**. On doit en comprendre la fonction sans ambiguïté.
+
+Son nom accessible est calculé par ordre de priorité à partir de&nbsp;: 
+- l’attribut `aria-labelledby`,
+- l’attribut `aria-label`,
+- l’élément `<label>`,
+- l’attribut `title` en l’absence d’une autre méthode de nommage.
+
+**Privilégier l’élément `<label>`** pour nommer le composant.
+
+>[!CAUTION]
+>Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` de la liste déroulante.  
+>
+>L’attribut `for` du label doit correspondre à l'attribut `id` de la liste déroulante. La valeur de l’attribut `id` doit être unique dans la page.
+
+La liaison explicite `for`/`id` permet d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal).
+
+#### Étiquette visible et accolée
+
+L’étiquette est visible et accolée à la liste déroulante.
+
+#### État désactivé
+
+> [!WARNING]
+> **L’état désactivé d’une liste déroulante peut poser des problèmes d’utilisabilité et d’accessibilité pour les personnes handicapées** (personnes déficientes visuelles ainsi que les personnes qui ont un handicap cognitif ou mental).
+
+La bordure, la coche et l’étiquette de la liste déroulante désactivée sont insuffisamment contrastées. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier). 
+
+#### Message d’information, d’avertissement ou d’erreur
+
+Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
+
+Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+- dans l’étiquette du champ,
+- dans un passage de texte avant le formulaire,
+- dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
+- avec une <span lang="en">live region</span>&nbsp;: `role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
+
+#### Champ obligatoire
+
+Ajouter une mention visible pour tout le monde au début du formulaire et utiliser l’attribut `required` pour indiquer que sélectionner une option est obligatoire.
+
+#### Contrastes de couleurs
+
+Par défaut, le composant Liste déroulante est suffisamment contrasté en thème clair et en thème sombre.
+
+---
+
+### Restitution par les lecteurs d’écran
+
+Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
+
+L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
+- VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
+- NVDA et JAWS&nbsp;: «&nbsp;bouton non disponible&nbsp;»
+- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;» 
+
+---
+
+### Critères RGAA applicables
+
+- **Couleurs&nbsp;:** 3.1, 3.2, 3.3
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Formulaires&nbsp;:** 11.1, 11.2, 11.4, 11.5, 11.6, 11.7, 11.8, 11.10, 11.11
+- **Navigation&nbsp;:** 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
+
+---
 
 ### Références
 
-- [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Spécification HTML – élément input](https://html.spec.whatwg.org/#the-input-element)

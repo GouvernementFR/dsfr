@@ -23,27 +23,43 @@ La barre de recherche est un système de navigation permettant à l'usager d’a
 
 ## Accessibilité
 
-Le composant **Barre de recherche** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Barre de recherche** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ### Interactions clavier
 
-Lorsque le focus est positionné sur le champ de recherche :
+Aucune interaction au clavier spécifique au composant.
 
-- `Tab` : Place le focus sur le bouton de recherche.
-- `shift + Tab` : Place le focus sur l'élément focalisable précédent.
+### Règles d’accessibilité
 
-Lorsque le focus est positionné sur le bouton de recherche :
+L’ensemble des règles d’accessibilité du [champs de saisie](../../../../input/_part/doc/accessibility/index.md) doivent être respectées.
 
-- `Entrée` : Lance la recherche.
-- `Tab` : Place le focus sur l'élément focalisable suivant.
-- `shift + Tab` : Place le focus sur le champ de recherche.
+- Le conteneur de la barre de recherche possède un `role="search"`.
+- Le champ de recherche est de type `search`.
+- Le champ de recherche a une étiquette positionnée hors écran. Le bouton de recherche adjacent permet de comprendre la nature et fonction du champ.
+- Le bouton de recherche a un intitulé et un attribut title explicite.
 
-### Règles d'accessibilité
+### Contrastes de couleurs
 
-- Le champ de recherche `<input>` de type `search` doit être associé à un `<label>` pour indiquer son libellé. L'attribut `for` du `<label>` doit correspondre à l'attribut `id` de l'`<input>`.
-- Le bouton de recherche `<button>` doit avoir un attribut `title` et un texte explicite pour indiquer son action.
+Le composant Barre de recherche est suffisamment contrasté en thème clair et en thème sombre.
+
+### Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant Barre de recherche.
+
+---
+
+### Critères RGAA applicables
+
+- **Couleurs&nbsp;:** 3.2, 3.3
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Formulaires&nbsp;:** 11.1, 11.2, 11.9
+- **Navigation&nbsp;:** 12.1, 12.5, 12.6, 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
+
+---
 
 ### Références
 
-- [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- <a href="https://www.w3.org/TR/wai-aria/#search">Rôle <span lang="en">search</span></a>
+- [Technique G167 WCAG](https://www.w3.org/WAI/WCAG21/Techniques/general/G167)&nbsp;: labelliser un champ avec un bouton adjacent explicite.

@@ -23,24 +23,15 @@ La transcription est un élément d’interaction avec l’interface permettant 
 
 ## Accessibilité
 
-Le composant **Transcription** est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
+Le composant **Transcription** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ### Interactions clavier
 
-Lorsque le focus est positionné sur le bouton de transcription :
+Aucune interaction au clavier spécifique au composant.
 
-- `Entrée` ou `Espace` :
-  - Lorsque le focus est placé sur le bouton d'ouverture de l'accordéon de la transcription, et que son "collapse" associé est fermé, ouvre le collapse.
-  - Lorsque le focus est placé sur le bouton d'ouverture de l'accordéon de la transcription, et que son "collapse" associé est déjà ouvert, referme le collapse.
-- `Tab` : Place le focus sur le bouton d'ouverture de la modale de la transcription.
-  - `Entrée` ou `Espace` : Lorsque le focus est placé sur le bouton d'ouverture de la modale ouvre la modale de la transcription et place le focus sur le bouton de fermeture de la modale.
-  - `Esc` : Lorsque la modale est ouverte, referme la modale et place le focus sur le bouton d'ouverture de la modale.
-  - `Entrée` ou `Espace` : Lorsque le focus est placé sur le bouton de fermeture de la modale referme la modale de la transcription et place le focus sur le bouton d'ouverture de la modale.
-  - `Tab` : Place le focus sur le prochain élément focalisable. Tous les éléments focalisables placés dans la modale sont inclus dans la séquence des éléments accessibles au `tab` de la page.
-  - `shift` + `Tab` : Place le focus sur l'élément focalisable précédent. Tous les éléments focalisables placés dans le collapse sont inclus dans la séquence des éléments accessibles au `tab` de la page.
-- `shift + Tab` : Place le focus sur l'élément focalisable précédent.
+Voir les interactions au clavier pour le [composant Accordéon](../../../../accordion/_part/doc/accessibility/index.md#regles-d-accessibilite) et le [composant Modale](../../../../modal/_part/doc/accessibility/index.md#regles-d-accessibilite).
 
-### Règles d'accessibilité
+### Règles d’accessibilité
 
 - La transcription contient un bouton d'ouverture d'accordéon avec le type="button".
   - Le bouton d'ouverture de l'accordéon a l'attribut `aria-controls` défini sur l'ID du collapse.
@@ -55,7 +46,26 @@ Lorsque le focus est positionné sur le bouton de transcription :
 - La modale de transcription contient un bouton de fermeture de type="button".
   - Le bouton de fermeture de la modale dispose d'un attribut `aria-controls` défini sur l'ID de la modale.
 
+#### Contrastes de couleurs
+
+Le composant Transcription est suffisamment contrasté en thème clair.
+
+### Restitution par les lecteurs d’écran
+
+Voir les tests de restitution pour le [composant Accordéon](../../../../accordion/_part/doc/accessibility/index.md#regles-d-accessibilite) et le [composant Modale](../../../../modal/_part/doc/accessibility/index.md#regles-d-accessibilite).
+
+---
+
+### Critères RGAA applicables
+- **Couleurs** : 3.2
+- **Liens** : 6.1, 6.2
+- **Scripts** : 7.1, 7.3 
+- **Présentation de l’information** : 10.1, 10.2, 10.3,10.4, 10.5, 10.7, 10.8, 10.11, 10.12
+- **Navigation** : 12.8, 12.9
+- **Consultation&nbsp;:** 13.9, 13.11
+
+--- 
+
 ### Références
 
-- [https://www.w3.org/WAI/WCAG22/quickref/](https://www.w3.org/WAI/WCAG22/quickref/)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
