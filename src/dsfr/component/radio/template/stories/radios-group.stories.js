@@ -23,6 +23,13 @@ export const DefaultGroupStory = {
   }
 };
 
+export const HintGroupStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    elements: getRadiosGroupData(3, true)
+  }
+};
+
 export const SizeSMGroupStory = {
   tags: ['autodocs', '!dev'],
   args: {

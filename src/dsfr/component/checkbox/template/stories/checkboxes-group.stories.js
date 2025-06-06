@@ -23,6 +23,13 @@ export const DefaultGroupStory = {
   }
 };
 
+export const HintGroupStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    checkboxes: getCheckboxesData(3, true)
+  }
+};
+
 export const SizeSmStory = {
   tags: ['autodocs', '!dev'],
   args: {

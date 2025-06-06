@@ -40,7 +40,7 @@ const checkboxesGroupArgTypes = {
   }
 };
 
-const getCheckboxesData = (count = 3) => {
+const getCheckboxesData = (count = 3, hint = false) => {
   const checkboxes = [];
   for (let i = 1; i <= count; i++) {
     checkboxes.push(
@@ -48,7 +48,7 @@ const getCheckboxesData = (count = 3) => {
         label: `Checkbox ${i}`,
         id: uniqueId('checkbox'),
         name: `checkbox${i}`,
-        hint: '',
+        hint: hint ? 'Texte additionnel' : '',
         disabled: false
       }
     );

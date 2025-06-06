@@ -31,6 +31,7 @@ switch (sidemenuItem.isCollapsible) {
         action.attributes['aria-expanded'] = sidemenuItem.isExpanded === true;
         action.attributes['aria-controls'] = sidemenuItem.collapseId;
         sidemenuClasses.push(`${prefix}-collapse`);
+        if (sidemenuItem.isExpanded) sidemenuClasses.push(`${prefix}-collapse--expanded`);
         sidemenuAttrs.id = sidemenuItem.collapseId;
         break;
     default:

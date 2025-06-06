@@ -93,7 +93,6 @@ Vous trouverez pour chaque composant une colonne :
 
 <sup>7</sup> extensions des fichiers ajoutés au téléversement
 
-
 * * *
 
 > [!NOTE]
