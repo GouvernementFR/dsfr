@@ -1,8 +1,17 @@
 ---
 title: Accessibilité du contenu médias
+shortTitle: Accessibilité du Contenu médias
+description: Le contenu média permet d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.
+shortDescription: Structurer visuellement une page avec des contenus média.
+keywords: contenu média, image, vidéo, audio, design system, accessibilité, UX, UI, droits d’auteur, visuel, éditorial
+cover: ../_asset/cover/cover.png
+excerpt: Ce document explique comment intégrer des contenus média dans une page de manière cohérente et responsable, tout en respectant les droits et les bonnes pratiques éditoriales.
+summary: Ce guide présente le composant contenu média, destiné à l’intégration d’éléments visuels ou sonores comme des images, vidéos ou fichiers audio dans les pages d’un site. Il précise les conditions d’usage, notamment en matière de droits, et rappelle les règles éditoriales à suivre pour assurer la clarté du message, l’unité graphique et l’accessibilité. Il s’adresse aux équipes éditoriales et de conception souhaitant enrichir leurs pages sans compromettre la cohérence visuelle ni l’expérience utilisateur.
 ---
 
 ## Contenu médias
+
+Le composant **Contenu médias** permet d'intégrer des contenus multimédias tels que des vidéos, des images de manière accessible et responsive.
 
 :::dsfr-doc-tab-navigation
 
@@ -14,15 +23,13 @@ title: Accessibilité du contenu médias
 
 :::
 
-### Accessibilité
+Le composant **Contenu médias** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-Le composant **Contenu médias**, est conçu pour être accessible et suit les critères du RGAA. Voici les points clés d’accessibilité à prendre en compte :
-
-#### Interactions clavier
+### Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant **Contenu médias**.
 
-#### Règles d'accessibilité
+### Règles d’accessibilité
 
 - Utiliser des balises sémantiques pour structurer le contenu multimédia.
   - Utiliser la balise `<figure>` pour encapsuler les contenus multimédias.
@@ -38,13 +45,30 @@ Il n'y a aucune interaction spécifique au composant **Contenu médias**.
   - Utiliser la classe `fr-responsive-img` pour les images.
   - Utiliser la classe `fr-responsive-vid` pour les vidéos.
 - Pour les vidéos :
-  - Les contrôle de lecture sont présents. Utiliser l'attribut `controls` pour les balises `<video>`.
+  - Les contrôles de lecture sont présents. Utiliser l'attribut `controls` pour les balises `<video>`.
   - La lecture ne commence pas sans le contrôle de l’utilisateur.
   - Le lecteur est utilisable au clavier selon un ordre logique.
   - Les vidéos (hors direct) sont sous-titrées.
 
-#### Références
+### Contrastes de couleurs
 
-- [https://www.w3.org/WAI/tutorials/images/decision-tree/](https://www.w3.org/WAI/tutorials/images/decision-tree/)
-- [https://www.w3.org/Translations/WCAG22-fr/#perceivable](https://www.w3.org/Translations/WCAG22-fr/#perceivable)
-- [https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+Le composant Contenu médias est suffisamment contrasté en thème clair.
+
+### Critères RGAA applicables
+
+- **Images&nbsp;:** 1.1, 1.2, 1.3, 1.6, 1.7, 1.8, 1.9
+- **Couleurs&nbsp;:** 3.1, 3.2, 3.3
+- **Multimédia&nbsp;:** 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.10, 4.11, 4.12, 4.13
+- **Liens&nbsp;:** 6.1, 6.2
+- **Scripts&nbsp;:** 7.1, 7.3
+- **Éléments obligatoires&nbsp;:** 8.9
+- **Structuration&nbsp;:** 9.1, 9.3
+- **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
+- **Consultation&nbsp;:** 13.9, 13.11
+
+---
+
+### Références
+
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Arbre de décision - alternative d’image (WAI)](https://www.w3.org/WAI/tutorials/images/decision-tree/)

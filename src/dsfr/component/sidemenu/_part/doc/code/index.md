@@ -1,15 +1,26 @@
 ---
 title: Code du Menu latéral
+shortTitle: Code du Menu latéral
+description: Le menu latéral est un composant de navigation secondaire qui organise des liens verticaux pour guider l’usager entre différentes pages d’une même rubrique.
+shortDescription: Naviguer entre pages liées avec un menu latéral.
+keywords: menu latéral, navigation, composant, design system, interface, UX, accessibilité, hiérarchie, rubrique, sommaire
+cover: ./_asset/cover/cover.png
+excerpt: Le menu latéral permet de structurer la navigation entre les pages d’une même rubrique ou d’un thème. Il s’utilise en complément de la navigation principale, notamment pour les sites à profondeur élevée.
+summary: Ce contenu présente le menu latéral comme un composant de navigation secondaire destiné à faciliter la circulation entre les pages d’une rubrique. Il détaille ses cas d’usage, ses comportements interactifs, ses variations selon la profondeur de navigation, et les règles éditoriales à respecter. Il précise également les contraintes de structure, les bonnes pratiques en responsive, et rappelle les distinctions avec le sommaire. Ce guide est conçu pour les équipes souhaitant implémenter une navigation hiérarchique claire et accessible dans des interfaces complexes.
 ---
 
 ## Menu latéral
 
+Le menu latéral est un système de navigation secondaire présentant une liste verticale de liens placée à côté du contenu.
+
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -21,20 +32,20 @@ Le composant **Menu latéral** permet aux utilisateurs de naviguer entre les dif
 Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
 - Le **conteneur principal**, obligatoire, du menu latéral est un élément HTML `<nav>` défini par la classe `fr-sidemenu`.
-    - Il dispose d'attribut `aria-labelledby`, dont la valeur doit correspondre à l'attribut `id` du titre du menu latéral.
+  - Il dispose d'attribut `aria-labelledby`, dont la valeur doit correspondre à l'attribut `id` du titre du menu latéral.
 - Le **conteneur intérieur**, obligatoire, du menu latéral est un élément HTML `<div>` défini par la classe `fr-sidemenu__inner`, contenant :
-    - Le **bouton d'ouverture**, obligatoire, affiché uniquement en mobile est un élément HTML `<button>` de type `button` défini par la classe `fr-sidemenu__btn`.
-        - Le libellé du bouton indique l'action d'ouverture du menu latéral en vue mobile.
-        - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le bloc refermable du menu latéral est ouvert ou fermé.
-        - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
-    - Le **bloc refermable**, obligatoire, défini par la classe `fr-collapse`, est un élément HTML `<div>` placé après le bouton. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que la navigation ou l'accordéon.
-        - Il dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
-        - Le bloc refermable contient :
-            - Le **titre**, optionnel, du menu latéral est un élément HTML `<div>` défini par la classe `fr-sidemenu__title`.
-            - La **liste de liens ou de sous-sections**, obligatoire, est un élément HTML `<ul>` placé après le titre et défini par la classe `fr-sidemenu__list`.
-                - Chaque élément `<li>` défini par la classe `fr-sidemenu__item` de la liste contient :
-                    - Un **lien**, un élément HTML `<a>` défini par la classe `fr-sidemenu__link`.
-                    - L'élément actif de la liste est défini par la classe `fr-sidemenu__item--active` et le lien contenu dispose d'un attribut `aria-current="page"`.
+  - Le **bouton d'ouverture**, obligatoire, affiché uniquement en mobile est un élément HTML `<button>` de type `button` défini par la classe `fr-sidemenu__btn`.
+    - Le libellé du bouton indique l'action d'ouverture du menu latéral en vue mobile.
+    - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le bloc refermable du menu latéral est ouvert ou fermé.
+    - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
+  - Le **bloc refermable**, obligatoire, défini par la classe `fr-collapse`, est un élément HTML `<div>` placé après le bouton. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que la navigation ou l'accordéon.
+    - Il dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
+    - Le bloc refermable contient :
+      - Le **titre**, optionnel, du menu latéral est un élément HTML `<div>` défini par la classe `fr-sidemenu__title`.
+      - La **liste de liens ou de sous-sections**, obligatoire, est un élément HTML `<ul>` placé après le titre et défini par la classe `fr-sidemenu__list`.
+        - Chaque élément `<li>` défini par la classe `fr-sidemenu__item` de la liste contient :
+          - Un **lien**, un élément HTML `<a>` défini par la classe `fr-sidemenu__link`.
+          - L'élément actif de la liste est défini par la classe `fr-sidemenu__item--active` et le lien contenu dispose d'un attribut `aria-current="page"`.
 
 **Exemple de structure HTML simple**
 
@@ -68,14 +79,14 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
 Le menu latéral peut contenir jusqu'à trois niveaux d’arborescence et permettent d’afficher les niveaux 1, 2 et 3 imbriqués d’une rubrique.
 
 - Le **conteneur d'une sous-section** est un élément de la liste de liens `<li>` défini par la classe `fr-sidemenu__item` contenant :
-    - Le **bouton d'ouverture** de la sous-section, un élément HTML `<button>` de type `button` défini par la classe `fr-sidemenu__btn`.
-        - Le libellé du bouton indique le nom de la sous-section.
-        - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le bloc refermable de la sous-section est ouvert ou fermé.
-        - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
-        - Le bouton dispose d'un attribut `aria-current`, sa valeur [true|false] défini si le bouton est actif.
-    - Le **bloc refermable**, défini par la classe `fr-collapse`, est un élément HTML `<div>` placé après le bouton.
-        - Il dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
-        - Le bloc refermable contient une liste de liens pouvant contenir un troisième niveau d'imbrication du menu latéral basé sur la même structure de sous-section.
+  - Le **bouton d'ouverture** de la sous-section, un élément HTML `<button>` de type `button` défini par la classe `fr-sidemenu__btn`.
+    - Le libellé du bouton indique le nom de la sous-section.
+    - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le bloc refermable de la sous-section est ouvert ou fermé.
+    - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
+    - Le bouton dispose d'un attribut `aria-current`, sa valeur [true|false] défini si le bouton est actif.
+  - Le **bloc refermable**, défini par la classe `fr-collapse`, est un élément HTML `<div>` placé après le bouton.
+    - Il dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
+    - Le bloc refermable contient une liste de liens pouvant contenir un troisième niveau d'imbrication du menu latéral basé sur la même structure de sous-section.
 
 **Exemple de structure HTML**
 
@@ -185,7 +196,7 @@ On peut également le rendre fixe avec l'utilisation de la classe `fr-sidemenu--
 
 ### JavaScript
 
-#### Installation  du JavaScript
+#### Installation du JavaScript
 
 Pour fonctionner le composant menu latéral nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.

@@ -14,7 +14,7 @@ title: Code des formulaires
 
 :::
 
-### Code
+### HTML
 
 Un **formulaire** permet de collecter des informations de l'utilisateur. Il est composé d'un ou plusieurs champs, et ces informations sont envoyées à un serveur au clic sur un bouton de soumission ou dynamiquement au changement de valeur d'un champ.
 Le DSFR propose des styles pour structurer des ensembles de champs de formulaire, la gestion des erreurs, des messages d'aide et des messages de succès.
@@ -96,6 +96,8 @@ La structure d'un ensemble de champs de formulaire, dans un `<form>` est la suiv
     </button>
 </form>
 ```
+
+---
 
 ### CSS
 

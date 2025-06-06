@@ -1,15 +1,26 @@
 ---
 title: Code de la modale
+shortTitle: Code de la Modale
+description: Présentation du composant Modale permettant de focaliser l’attention de l’usager sur une tâche ou une information sans quitter la page.
+shortDescription: Affichage focalisé d’un contenu secondaire
+keywords: modale, fenêtre, focus, interaction, DSFR, accessibilité, interface, contenu secondaire
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Modale permet d’afficher un contenu ou une interaction dans une fenêtre superposée à la page, bloquant le fond et recentrant l’attention de l’usager.
+summary: La modale s’utilise pour présenter un contenu complémentaire ou une action simple sans sortir de la page en cours. Elle est conçue pour isoler une information importante tout en permettant de revenir au contexte initial en un clic. Non personnalisable, elle existe en plusieurs tailles, avec ou sans zone d’action, et respecte les standards d’accessibilité en figant l’arrière-plan lors de son affichage.
 ---
 
-# Modale
+## Modale
+
+La modale est un élément de mise en forme de contenu permettant de concentrer l’attention de l’usager exclusivement sur une tâche ou un élément d’information, sans perdre le contexte de la page en cours.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -19,6 +30,7 @@ title: Code de la modale
 Le composant Modale permet d'afficher du contenu en plein écran.
 
 Sa structure est la suivante :
+
 - Le **bouton d'ouverture** de la modale est défini par la classe `fr-btn` et l'attribut `aria-controls` lié à l'ID de la modale.
   - Le bouton doit être de type "button".
   - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si la modale est ouverte ou fermée.
@@ -31,9 +43,9 @@ Sa structure est la suivante :
   - D'un **bloc de colonne** définie par les classes `fr-col-12 fr-col-md-8 fr-col-lg-6` pouvant varier en fonction de la taille de la modale désirée.
   - Le **corps** de la modale défini par la classe `fr-modal__body`, contenant :
     - **L'entête** de la modale, obligatoire, défini par la classe `fr-modal__header`, contenant :
-       - Le **bouton de fermeture** de la modale, obligatoire, est un élément HTML `<button>`, défini par les classes `fr-btn` et `fr-btn--close`, dont le titre est "Fermer".
-        - Le bouton doit être de type "button".
-        - Le bouton est lié à la modale via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale.
+      - Le **bouton de fermeture** de la modale, obligatoire, est un élément HTML `<button>`, défini par les classes `fr-btn` et `fr-btn--close`, dont le titre est "Fermer".
+      - Le bouton doit être de type "button".
+      - Le bouton est lié à la modale via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale.
     - D'un **bloc de contenu**, obligatoire, défini par la classe `fr-modal__content`, contenant :
       - Le **titre** de la modale, obligatoire, dans un niveau d'entête `<h1>` et défini par la classe `fr-modal__title`.
       - Le **contenu** de la modale, obligatoire et libre, mais nécessitant l'utilisation de balises adéquates, il n'est pas correcte par exemple de placer du texte directement dans une `<div>`.
@@ -186,7 +198,7 @@ Par défaut la modale se referme au clic sur le fond de la page, il est possible
 
 ### JavaScript
 
-#### Installation  du JavaScript
+#### Installation du JavaScript
 
 Pour fonctionner le composant modale nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
@@ -207,15 +219,14 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-
 #### Instances
 
 Sur la modale, les éléments suivants sont instanciés :
+
 - La modale, via la classe : `fr-modal`
 - Le bouton d'ouverture de la modale, via l'attribut `aria-controls`
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
-
 
 #### API
 
@@ -231,7 +242,7 @@ dsfr(elem).modal.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### modal
+##### modal
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
 | | |
