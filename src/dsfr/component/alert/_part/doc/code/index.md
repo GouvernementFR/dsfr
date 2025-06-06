@@ -1,10 +1,20 @@
 ---
 title: Code de l'Alerte
+shortTitle: Code de l'Alerte
+description: Présentation du composant Alerte utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.
+shortDescription: Relayer une information importante
+keywords: alerte, message, erreur, succès, information, attention, DSFR, accessibilité, interface
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Alerte informe l’usager d’un événement ou d’un état du système, comme une erreur, une confirmation ou une information complémentaire, de manière non bloquante.
+summary: Ce composant permet de transmettre à l’usager un message important en lien avec une action ou un état du système, sans interrompre sa tâche. Il est utilisé dans des contextes variés, comme un formulaire ou un événement technique. Il propose plusieurs variations (succès, erreur, information, attention), deux tailles, et des règles éditoriales strictes pour garantir une communication claire, courtoise et accessible.
 ---
 
 ## Alerte
 
+L’alerte est un élément d’indication poussé par l’interface pour relayer une information à l’usager.
+
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -16,7 +26,9 @@ title: Code de l'Alerte
 ### HTML
 
 #### Structure du composant
+
 Le composant Alerte est utilisé pour afficher des messages contextuels comme des informations, avertissements, erreurs ou succès. Il est composé de trois éléments principaux :
+
 - Un conteneur principal de type `<div>` avec la classe `fr-alert`, représentant l'alerte elle-même.
 - Un titre facultatif contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hérarchie dans la page (par défaut h3), avec la classe `fr-alert__title`, qui décrit la nature du message.
 - Un paragraphe `<p>` qui contient le texte du message.
@@ -34,16 +46,17 @@ Le composant Alerte utilise des classes spécifiques pour définir son type (inf
 </div>
 ```
 
-
 #### Déclinaisons d'alertes
 
 Le composant "Alerte" propose plusieurs variations en fonction du type de message :
+
 - **info** : pour les messages d'information
 - **warning** : pour les messages d'avertissement
 - **error** : pour les messages d'erreur
 - **success** : pour les messages de succès
 
 Ces variations sont définies par l'ajout de classes correspondantes sur le conteneur principal :
+
 - `fr-alert--info`
 - `fr-alert--warning`
 - `fr-alert--error`
@@ -62,10 +75,12 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 #### Taille des alertes
 
 Le composant Alerte peut être utilisé avec différentes tailles :
+
 - **SM** (small) : pour les alertes petites
 - **MD** (medium) : pour les alertes de taille normale (par défaut)
 
 Les tailles sont définies par l'ajout des classes :
+
 - Par défaut, les alertes sont de taille moyenne
 - `fr-alert--sm` pour les alertes petites
 
@@ -79,6 +94,7 @@ Les tailles sont définies par l'ajout des classes :
 ```
 
 ---
+
 ### CSS
 
 #### Installation du CSS
@@ -96,11 +112,12 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 ```HTML
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/alert/alert.legacy.min.css" rel="stylesheet">
-````
+```
 
 #### Styles du composant
 
 L'alerte dispose des variations visuelles suivantes en fonction du type de message :
+
 - `fr-alert--info` : pour un message informatif (bleu)
 - `fr-alert--warning` : pour un message d'avertissement (jaune)
 - `fr-alert--error` : pour un message d'erreur (rouge)
@@ -109,10 +126,12 @@ L'alerte dispose des variations visuelles suivantes en fonction du type de messa
 Chaque type d'alerte se distingue par une couleur de fond et une icône spécifique.
 
 Les tailles d'alerte sont définies par :
+
 - `fr-alert--sm` pour les alertes petites, qui ont une hauteur réduite et un espacement intérieur plus petit.
 - La taille est médium par défaut.
 
 ---
+
 ### JavaScript
 
 Le composant "Alerte" nécessite un JavaScript minimal pour la gestion de la fermeture de l'alerte. En cliquant sur le bouton de fermeture, l'alerte est retirée du DOM grâce à un événement JavaScript. Le DSFR ne gère pas cette fonctionnalité car trop dépendant de la technologie utilisée.
@@ -121,14 +140,13 @@ Le composant "Alerte" nécessite un JavaScript minimal pour la gestion de la fer
 
 Le bouton de fermeture doit être lié à une fonction JavaScript pour supprimer l'alerte du DOM. Voici un exemple de code en javascript vanilla pour gérer la suppression de l'alerte :
 
-```HTML
+```javascript
 document.querySelector('.fr-alert__close').addEventListener('click', function() {
   this.closest('.fr-alert').remove();
 });
 ```
 
 Dans l'exemple HTML fourni, cette fonction est déjà intégrée directement dans l'attribut `onclick` du bouton de fermeture.
-
 
 ---
 

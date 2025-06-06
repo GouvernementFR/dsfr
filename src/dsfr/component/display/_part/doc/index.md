@@ -23,6 +23,8 @@ Les paramètres d’affichage représentent un parcours simple permettant à l�
 
 :::
 
+::dsfr-doc-storybook{storyId=display--display}
+
 ### Quand utiliser ce composant ?
 
 Utiliser les paramètres d’affichage pour donner la possibilité à l’usager de choisir d’afficher le site en thème clair ou en thème sombre (pour en savoir plus sur ces deux thèmes, consultez [la page relative aux couleurs](../../../../core/_part/doc/color/index.md)).

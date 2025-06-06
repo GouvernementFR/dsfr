@@ -16,19 +16,23 @@ L’infobulle (ou bulle d’aide, aide contextuelle) est un élément d’indica
 Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors du survol ou au clic de l’élément associé.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
 
 #### Structure du composant
+
 Il existe deux types d’infobulles suivant son déclenchement.
 
 ##### Déclenchement au survol
+
 L’infobulle au survol se compose des éléments suivants :
 
 1. Une zone de déclenchement :
@@ -52,6 +56,7 @@ L’infobulle au survol se compose des éléments suivants :
 ```
 
 ##### Déclenchement au clic
+
 L’infobulle au clic se compose des éléments suivants :
 
 1. Une zone de déclenchement :
@@ -80,7 +85,7 @@ L’infobulle au clic se compose des éléments suivants :
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, le style CSS de l'infobulle et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
 
@@ -102,7 +107,10 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 
 ### JavaScript
 
-Pour fonctionner le composant infobulle nécessite l'utilisation de JavaScript.
+L'infobulle est un composant qui nécessite l'importation de fichiers JavaScript spécifiques pour son fonctionnement de base.
+
+#### Installation du JavaScript
+
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
@@ -127,6 +135,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 #### Instances
 
 Sur le tooltip, les éléments suivants sont instanciés :
+
 - Le conteneur, via la classe : `fr-tooltip`
 - Le déclencheur, via l'attribut : `aria-describedby` lié à l'`id` du conteneur
 

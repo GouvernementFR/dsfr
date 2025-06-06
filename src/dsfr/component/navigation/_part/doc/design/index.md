@@ -14,11 +14,13 @@ summary: Ce document décrit la navigation principale comme un composant central
 La navigation principale est le système central de navigation au sein d’un site. Elle permet d’orienter l’usager à travers les rubriques principales et secondaires du site.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -51,27 +53,27 @@ La navigation principale est le système central de navigation au sein d’un si
 
 **Liens directs**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=navigation--link}
 
 - Utiliser les liens directs vers des pages destination pour les sites ou les rubriques qui n’ont pas ou peu de second niveau d’arborescence, en les combinant par exemple avec un [menu latéral](../../../../sidemenu/_part/doc/index.md).
 
 **Menu déroulant**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=navigation--menu}
 
 - Utiliser les menus déroulant dans le cadre d’une architecture de l’information peu profonde, pour afficher les niveaux secondaires d’une rubrique.
 - Proposer un maximum de 8 liens au sein d’un menu déroulant.
 
 **Mega menu**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=navigation--mega-menu}
 
 - Utiliser le mega menu lorsqu’une arborescence est profonde. Il s’agit d’un menu de navigation plus complexe qui donne accès à plusieurs niveaux de profondeur.
 - Proposer un maximum de 8 liens au sein de chaque sous catégorie.
 
 **Responsive**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=navigation--menu width=375}
 
 En version mobile, la navigation principale est accessible depuis le pictogramme “burger”. Le clic sur le pictogramme déclenche l’affichage d’un overlay présentant les éléments de la navigation et les liens directs de l’en-tête, si présents.
 
@@ -87,19 +89,13 @@ La largeur de la navigation principale est de taille fixe et prend les 12 colonn
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole une entrée de la navigation principale.
 
-[Image d’illustration]
-
 **État au clic**
 
 L’état au clic correspond au comportement constaté par l’usager après avoir cliqué sur une entrée de la navigation principale. Il existe 2 états au clic, selon la variation choisie :
 
 - Lien direct
 
-[Image d’illustration]
-
 - Menu déroulant ou mega menu
-
-[Image d’illustration]
 
 ### Personnalisation
 

@@ -23,6 +23,8 @@ Le composant **Contenu médias** permet d'intégrer des contenus multimédias te
 
 :::
 
+::dsfr-doc-storybook{storyId=content--content}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le contenu média pour intégrer des images, vidéos ou fichiers audio aux pages de contenu d’un site.

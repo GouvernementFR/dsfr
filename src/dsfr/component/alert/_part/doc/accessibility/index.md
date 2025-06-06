@@ -1,8 +1,17 @@
 ---
-title: Accessibilité de l’Alerte
+title: Accessibilité de l'Alerte
+shortTitle: Accessibilité de l'Alerte
+description: Présentation du composant Alerte utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.
+shortDescription: Relayer une information importante
+keywords: alerte, message, erreur, succès, information, attention, DSFR, accessibilité, interface
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Alerte informe l’usager d’un événement ou d’un état du système, comme une erreur, une confirmation ou une information complémentaire, de manière non bloquante.
+summary: Ce composant permet de transmettre à l’usager un message important en lien avec une action ou un état du système, sans interrompre sa tâche. Il est utilisé dans des contextes variés, comme un formulaire ou un événement technique. Il propose plusieurs variations (succès, erreur, information, attention), deux tailles, et des règles éditoriales strictes pour garantir une communication claire, courtoise et accessible.
 ---
 
 ## Alerte
+
+L’alerte est un élément d’indication poussé par l’interface pour relayer une information à l’usager.
 
 :::dsfr-doc-tab-navigation
 
@@ -37,6 +46,7 @@ Aucune interaction au clavier spécifique au composant.
 Une alerte ajoutée après le chargement de la page doit être perçue par tous les utilisateurs.
 
 Pour les alertes simples, ajouter sur le conteneur de l’alerte&nbsp;:
+
 - un `role="alert"` pour les messages d’erreur ou les avertissements
 - un `role="status"` pour les messages de succès ou d’information.
 
@@ -64,14 +74,15 @@ En cas de problème de restitution avec le `role="status"`, il peut également �
 ---
 
 ### Références
+
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
-- <a href="https://www.w3.org/TR/wai-aria-1.1/#live_region_roles">Spécification ARIA - <span lang="en">Live regions</span></a>
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#live_region_roles"  target="_blank" rel="noopener external" title="W3C - nouvelle fenêtre">Spécification ARIA - <span lang="en">Live regions</span></a>
 - [Rôle alert](https://www.w3.org/TR/wai-aria-1.1/#alert)
 - [Rôle status](https://www.w3.org/TR/wai-aria-1.1/#status)
 
 #### Ressources
 
-- <a href="https://access42.net/live-regions-aria-live-analogues-alert-log-status/" target="_blank" rel="noopener external"><span lang="en">Live regions</span> ARIA : aria-live et ses analogues alert, log, status</a>
-- <a href="https://access42.net/live-regions-aria-restitution-lecteurs-ecran/" target="_blank" rel="noopener external"><span lang="en">Live regions</span> ARIA : comment garantir leur restitution par les lecteurs d’écran</a>
-- <a href="https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-1/" target="_blank" rel="noopener external" lang="en">Accessible notifications with ARIA Live Regions (Part 1)<a/>
-- <a href="https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-2/" target="_blank" rel="noopener external" lang="en">Accessible notifications with ARIA Live Regions (Part 2)<a/>
+- <a href="https://access42.net/live-regions-aria-live-analogues-alert-log-status/" title="access42 - nouvelle fenêtre" target="_blank" rel="noopener external"><span lang="en">Live regions</span> ARIA : aria-live et ses analogues alert, log, status</a>
+- <a href="https://access42.net/live-regions-aria-restitution-lecteurs-ecran/" title="access42 - nouvelle fenêtre" target="_blank" rel="noopener external"><span lang="en">Live regions</span> ARIA : comment garantir leur restitution par les lecteurs d’écran</a>
+- <a href="https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-1/" title="sarasoueidan - nouvelle fenêtre" target="_blank" rel="noopener external" lang="en">Accessible notifications with ARIA Live Regions (Part 1)</a>
+- <a href="https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-2/" title="sarasoueidan - nouvelle fenêtre" target="_blank" rel="noopener external" lang="en">Accessible notifications with ARIA Live Regions (Part 2)</a>

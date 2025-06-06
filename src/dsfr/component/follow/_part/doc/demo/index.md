@@ -23,6 +23,4 @@ La lettre d’information et réseaux sociaux est un ensemble d’éléments d�
 
 :::
 
-### Démonstration
-
 ::dsfr-doc-storybook{id=follow--docs}

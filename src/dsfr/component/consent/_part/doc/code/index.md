@@ -1,8 +1,17 @@
 ---
 title: Code du Gestionnaire de consentement
+shortTitle: DesCodeign du Gestionnaire de consentement
+description: Le gestionnaire de consentement permet de recueillir et gérer les préférences des usagers concernant le dépôt de cookies non essentiels, en conformité avec les exigences de la CNIL.
+shortDescription: Gérer le consentement des usagers sur les cookies et données personnelles.
+keywords: consentement, cookies, données personnelles, CNIL, confidentialité, bandeau, modale, finalités, RGPD, accessibilité
+cover: ../_asset/cover/cover.png
+excerpt: Le gestionnaire de consentement permet d’informer les usagers et de recueillir leur accord sur l’utilisation de cookies non essentiels via un bandeau et une modale accessible à tout moment.
+summary: Ce composant propose une interface conforme aux recommandations de la CNIL pour recueillir le consentement des usagers concernant l’utilisation de cookies non fonctionnels. Il affiche un bandeau au chargement du site, permet une gestion fine des finalités et sous-finalités via une modale dédiée, et garantit l’accessibilité permanente au réglage des préférences depuis le pied de page. Le gestionnaire de consentement n’est pas personnalisable, sauf pour les textes affichés.
 ---
 
 ## Gestionnaire de consentement
+
+Le gestionnaire de consentement permet à l'usager de définir ses préférences sur l'utilisation de ses données personnelles, notamment le dépôt de cookies non fonctionnels dans son navigateur.
 
 :::dsfr-doc-tab-navigation
 
@@ -374,7 +383,7 @@ Le composant Gestionnaire de consentement est proposé de manière **statique**.
 ### Thème DSFR pour Tarteaucitron
 
 Il existe un thème DSFR pour le gestionnaire de consentement Tarteaucitron. Il s'agit d'une surcouche CSS pour adapter le gestionnaire de consentement de Tarteaucitron au design du DSFR.
-Vous pouvez trouvez ce projet sur le dépôt GIT  <a target="_blank" rel="noopener external" href="https://github.com/GouvernementFR/dsfr-theme-tarteaucitron">GouvernementFR/dsfr-theme-tarteaucitron</a>
+Vous pouvez trouvez ce projet sur le dépôt GIT [GouvernementFR/dsfr-theme-tarteaucitron](https://github.com/GouvernementFR/dsfr-theme-tarteaucitron)
 
 > [!NOTE]
 > Il n’y a aucune dépendance au DSFR - le thème propose sa propre CSS pour simuler le design du composant DSFR. Le code HTML et JS sont ceux de tarteaucitron. Le thème a été testé sur les versions 1.9.1, 1.8.4 et 1.8.3 de tarteaucitron, avec les libellés de boutons présent dans le bandeaux de consentement ci-dessus ('Personnaliser', ‘Tout refuser’, ‘Tout accepter’).

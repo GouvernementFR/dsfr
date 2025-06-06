@@ -1,15 +1,26 @@
 ---
-title: Accessibilité du bouton radio
+title: Accessibilité du Bouton radio
+shortTitle: Accessibilité du Bouton radio
+description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
+shortDescription: Sélection d’une option unique
+keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Bouton radio permet de proposer à l’usager un choix unique parmi plusieurs options. Il est recommandé pour les listes de 2 à 5 éléments maximum.
+summary: Ce composant est conçu pour faciliter le choix unique dans une interface, en particulier dans les formulaires. Il offre différentes dispositions et variations, y compris des versions enrichies avec pictogrammes. Il s’utilise en groupe, avec des libellés clairs et une hiérarchie visuelle cohérente. L’intégration respecte des règles d’ergonomie, d’accessibilité et d’uniformité éditoriale.
 ---
 
-# Bouton radio
+## Bouton radio
+
+Le bouton radio est un élément d’interaction avec l’interface permettant à l’usager de réaliser un choix unique parmi plusieurs options.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
+
 :::
 
 ## Accessibilité
@@ -30,7 +41,8 @@ Au passage du focus, le bouton radio actif reçoit le focus. Si aucun radio du g
 
 Un bouton radio doit avoir une **étiquette pertinente**. On doit comprendre l’option sans ambiguïté.
 
-Son nom accessible est calculé par ordre de priorité à partir de&nbsp;: 
+Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
+
 - l’attribut `aria-labelledby`,
 - l’attribut `aria-label`,
 - l’élément `<label>`,
@@ -39,11 +51,12 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 **Privilégier l’élément `<label>`** pour nommer le composant.
 
 >[!CAUTION]
->Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` du bouton radio.  
+>Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` du bouton radio.
 >
 >L’attribut `for` du label doit correspondre à l'attribut `id` de la case à cocher. La valeur de l’attribut `id` doit être unique dans la page.
 
 La liaison explicite `for`/`id` permet :
+
 - d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal),
 - de cocher ou décocher le bouton radio en cliquant sur l’étiquette et ainsi d’étendre la zone de clic.
 
@@ -63,6 +76,7 @@ La bordure et l’étiquette du bouton radio désactivé sont insuffisamment con
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
@@ -103,13 +117,15 @@ En cas de succès ou d’erreur, le ratio de contraste de la bordure et celui de
 Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
 
 L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
+
 - VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
 - NVDA et JAWS&nbsp;: «&nbsp;bouton non disponible&nbsp;»
-- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;» 
+- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;»
 
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs** : 3.2, 3.3
 - **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12
 - **Formulaires** : 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.9
@@ -122,4 +138,4 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Spécification HTML – élément input](https://html.spec.whatwg.org/#the-input-element)
 - [Spécification HTML – type="radio"](https://html.spec.whatwg.org/#checkbox-state-(type=radio))
-- [Live regions ARIA&nbsp;:bonnes et mauvaises pratiques](https://access42.net/quand-utiliser-live-regions-aria/)
+- [Live regions ARIA&nbsp;: bonnes et mauvaises pratiques](https://access42.net/quand-utiliser-live-regions-aria/)

@@ -14,11 +14,13 @@ summary: Ce document présente le composant Lien d’évitement, un outil fondam
 Les liens d’évitement sont un système de navigation secondaire permettant à l’usager naviguant au clavier, ou équipé d’un lecteur d'écran, d’accéder plus rapidement à des zones précises de la page.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -44,8 +46,6 @@ La largeur des liens d’évitement s’adapte à leur contenu, tout en étant d
 **Etat au focus**
 
 L’état au focus correspond au comportement constaté par l’usager lorsqu’il sélectionne un lien via la navigation au clavier.
-
-[Image d’illustration]
 
 ### Personnalisation
 

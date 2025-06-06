@@ -14,12 +14,16 @@ summary: Ce document présente les bonnes pratiques d’usage du bandeau d’inf
 Le bandeau d’information importante est un élément éditorial permettant d’attirer l’attention des usagers sur une information importante et temporaire.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=notice--notice}
 
 ### Quand utiliser ce composant ?
 
@@ -134,20 +138,19 @@ Ne pas se contenter de simplement alerter sur le phénomène météorologique at
 ::::
 
 - **Respecter les termes définis par la [circulaire interministérielle](https://www.legifrance.gouv.fr/download/pdf/circ?id=45225) et les icônes leur étant associées** en ce qui concerne les 8 phénomènes couverts par les bandeaux de vigilance météo.
-    <!-- Icônes à intégrer-->
 
-    Vent - [Icône]
-    
-    Orages - [Icône]
-    
-    Pluie-Inondation - [Icône]
-    
-    Vagues-submersion - [Icône]
-    
-    Grand froid - [Icône]
-    
-    Canicule - [Icône]
-    
-    Avalanches - [Icône]
-    
-    Neige-Verglas - [Icône]
+Vent - <span class="fr-icon-windy-fill" aria-hidden="true"></span>
+
+Orages - <span class="fr-icon-thunderstorms-fill" aria-hidden="true"></span>
+
+Pluie-Inondation - <span class="fr-icon-heavy-showers-fill" aria-hidden="true"></span>
+
+Vagues-submersion - <span class="fr-icon-flood-fill" aria-hidden="true"></span>
+
+Grand froid - <span class="fr-icon-temp-cold-fill" aria-hidden="true"></span>
+
+Canicule - <span class="fr-icon-sun-fill" aria-hidden="true"></span>
+
+Avalanches - <span class="fr-icon-avalanches-fill" aria-hidden="true"></span>
+
+Neige-Verglas - <span class="fr-icon-snowy-fill" aria-hidden="true"></span>

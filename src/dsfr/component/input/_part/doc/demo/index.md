@@ -23,8 +23,6 @@ Le champ de saisie est un élément d’interaction avec l’interface permettan
 
 :::
 
-### Démonstration
-
 ::dsfr-doc-storybook{id=input--docs}
 
 ::dsfr-doc-storybook{id=inputs-group--docs}

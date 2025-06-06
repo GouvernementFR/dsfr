@@ -1,8 +1,17 @@
 ---
-title: Code du lien
+title: Code du Lien
+shortTitle: Code du Lien
+description: Élément de navigation secondaire permettant à l’usager d’accéder à un autre contenu, sur la même page ou sur une autre page, interne ou externe.
+shortDescription: Navigation secondaire vers d’autres contenus
+keywords: lien, navigation, ancre, téléchargement, retour, DSFR, accessibilité
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Lien facilite la navigation de l’usager dans une même page, vers une autre page du site ou vers un site tiers, en complément de la navigation principale.
+summary: Le lien est un composant essentiel pour structurer la navigation au sein des interfaces numériques. Il se décline en différentes formes selon son usage - dans un texte, hors contenu, vers une page externe ou pour un téléchargement. Non personnalisable, il suit des règles d’usage strictes afin de préserver la lisibilité, l’accessibilité et l’uniformité graphique. Son usage s’inscrit dans une hiérarchie d’interaction bien définie, distincte de celle du bouton.
 ---
 
 ## Lien
+
+Le lien est un système de navigation secondaire qui permet à l’usager de se déplacer au sein d’une même page, entre deux pages d’un même site ou vers un site externe.
 
 :::dsfr-doc-tab-navigation
 
@@ -47,12 +56,14 @@ L'ajout d'un attribut `rel="noopener external"` sera aussi recommandé pour des 
 #### Lien de téléchargement
 
 La variante lien de téléchargement permet de télécharger un fichier.
+
 - Il est formé par un élément HTML `<a>` défini par la classe `fr-link` et la classe `fr-link--download`.
 - Son contenu est constitué de :
   - un texte commençant par "Télécharger ..."
   - les détails du fichier : un élément HTML `<span>` avec la classe `fr-link__detail` et décrivant le type, le poids, et la langue du fichier (si différente).
 
 **Exemples de lien de téléchargement**
+
 ```HTML
 <a download="true" href="image.jpg" class="fr-link fr-link--download">
   Télécharger le document lorem ipsum
@@ -76,6 +87,7 @@ Il est possible de remplir automatiquement le détail en JS grâce à l'attribut
 Au sein d'un texte, ne pas utiliser le composant Lien. Préférer l'ajout d'un lien standard sans la classe `fr-link`, celui-ci reprend les caractéristiques typographiques du texte (font, couleur, taille) tout en étant souligné.
 
 **Exemples de liens au fil du texte**
+
 ```HTML
 <p>Lorem ipsum <a href="#">lien dans le texte</a> dolor sit amet</p>
 ```
@@ -122,6 +134,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 #### Variantes de taille
 
 Le lien peut avoir différentes tailles qui auront un impact sur la taille du texte et des icônes :
+
 - `fr-link--xs` : Très petit lien.
 - `fr-link--sm` : Petit lien.
 - Par défaut : Lien moyen.
@@ -220,6 +233,7 @@ Si la page est en Anglais, l'attribut `data-fr-assess-file` doit prendre la vale
 Pour fonctionner le fichier à télécharger doit être sur le même cross-domain que le site.
 
 **Exemple**
+
 <a data-fr-assess-file download="true" href="image.jpg" class="fr-link fr-link--download">
   Télécharger le document lorem ipsum
   <span class="fr-link__detail">CE TEXTE EST REMPlACÉ</span>

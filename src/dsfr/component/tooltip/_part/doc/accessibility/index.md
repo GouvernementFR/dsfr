@@ -16,14 +16,14 @@ L’infobulle (ou bulle d’aide, aide contextuelle) est un élément d’indica
 Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors du survol ou au clic de l’élément associé.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Infobulle** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
@@ -60,27 +60,31 @@ Seul le Narrateur ne restitue pas l’infobulle déclenchée au survol.
 
 #### Infobulle déclenchée au clic
 
-Tous les lecteurs d’écran restituent le contenu de l’infobulle déclenchée au clic. 
+Tous les lecteurs d’écran restituent le contenu de l’infobulle déclenchée au clic.
 
 > [!NOTE]
 > Avec NVDA, en mode revue, la liaison aria-describedby n’est pas restituée sur l’infobulle déclenchée au clic. Il est nécessaire de naviguer sur le lien à la tabulation.
 > Il s’agit d’un comportement référencé par NVDA. Voir [commentaire Github](https://github.com/nvaccess/nvda/issues/9153#issuecomment-578381262).
 
 :::fr-accordion[#### Versions navigateurs et lecteurs d’écran]{id=sr-le-desktop}
+
 Les tests de restitution ont été effectués en ajoutant le lecteur d’écran intégré à Windows 11 (Narrateur) et le navigateur web Chrome à l’environnement de tests du RGAA.
 
 Versions des navigateurs web&nbsp;:
+
 - Firefox 137
 - Chrome 135
 - Safari 18.4 (sur macOS uniquement)
 - Microsoft Edge 135 (sur Windows 11 uniquement)
 
 Version des lecteurs d’écran&nbsp;:
+
 - NVDA 2024.4.2
 - JAWS 2024
 - VoiceOver macOS 15.4
 - Narrateur (Windows 11)
 - VoiceOver iOS
+
 :::
 
 ---

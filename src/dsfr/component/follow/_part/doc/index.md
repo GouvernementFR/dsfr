@@ -16,12 +16,14 @@ La lettre d’information et réseaux sociaux est un ensemble d’éléments d�
 :::dsfr-doc-tab-navigation
 
 - Présentation
-- [Démo](demo/index.md)
-- [Design](design/index.md)
-- [Code](code/index.md)
-- [Accessibilité](accessibility/index.md)
+- [Démo](./demo/index.md)
+- [Design](./design/index.md)
+- [Code](./code/index.md)
+- [Accessibilité](./accessibility/index.md) 
 
 :::
+
+::dsfr-doc-storybook{storyId=follow--follow}
 
 ### Quand utiliser ce composant ?
 

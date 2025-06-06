@@ -39,11 +39,11 @@ Le composant **Contenu médias** permet d'intégrer des contenus multimédias te
 
 **Ratio 16:9**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=content--content}
 
 Il s’agit du format conseillé par défaut pour les images et vidéos lorsqu’elles sont intégrées dans un contenu éditorial.
 
-> [!NOTE] 
+> [!NOTE]
 > L’iFrame générée par l’hébergeur de la vidéo peut être différent du ratio par défaut de 16:9.
 
 **Autres ratios**
@@ -60,19 +60,19 @@ Le contenu média est disponible en trois tailles :
 
 - SM pour small (75%)
 
-[Image d’anatomie]
+::dsfr-doc-storybook{id=content--size-sm}
 
 La largeur du contenu média est inférieure à celle de la zone de texte.
 
 - MD pour medium (100%)
 
-[Image d’anatomie]
+::dsfr-doc-storybook{id=content--size-md}
 
 La largeur du contenu média correspond à celle de la zone de texte.
 
 - LG pour large (125%)
 
-[Image d’anatomie]
+::dsfr-doc-storybook{id=content--size-lg}
 
 La largeur du contenu média est supérieure à celle de la zone de texte.
 

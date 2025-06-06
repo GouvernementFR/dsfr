@@ -14,11 +14,13 @@ summary: Ce contenu décrit l’usage du contrôle segmenté dans les interfaces
 Le contrôle segmenté est un élément d’interaction avec l’interface permettant à l'usager de choisir un type de vue parmi plusieurs options d'affichage disponibles.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -41,19 +43,19 @@ Par défaut, le contrôle segmenté s’affiche horizontalement, en desktop comm
 
 **Contrôle segmenté avec icônes**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=segmented--with-icon}
 
 **Contrôlé segmenté avec légende**
 
 - Placée au-dessus du composant (par défaut)
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=segmented--default}
 
 - Placée sur la même ligne que le composant
 
 **Contrôlé segmenté avec légende et texte de description**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=segmented--default args="hint:Texte de description additionnel"}
 
 ### Tailles
 
@@ -61,11 +63,11 @@ Le contrôle segmenté est disponible en 2 tailles :
 
 - SM pour small
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=segmented--default args="size:sm"}
 
 - MD pour medium
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=segmented--default}
 
 > [!NOTE]
 > Afin de garder une harmonie visuelle, en présence d’autres composants (type bouton, champs de saisie etc.), il est important de choisir la même taille que ces derniers (exemple : un bouton SM et un contrôle segmenté SM, côte à côte).
@@ -75,8 +77,6 @@ Le contrôle segmenté est disponible en 2 tailles :
 **État actif**
 
 L'état actif est signalé par un contour bleu.
-
-[Image d’illustration]
 
 **État désactivé**
 

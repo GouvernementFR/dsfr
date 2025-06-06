@@ -14,11 +14,13 @@ summary: Ce document décrit les usages du composant Citation, destiné à inté
 La citation est un élément éditorial permettant de mettre en forme du contenu dans une page.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -43,7 +45,7 @@ La citation est un élément éditorial permettant de mettre en forme du contenu
 
 **Citation sans illustration**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=quote--imageless}
 
 - Utiliser la citation sans illustration lorsqu’il n’est pas nécessaire ou possible d’incarner l’auteur de la citation.
 
@@ -51,7 +53,7 @@ En version mobile, le séparateur passe en dessous de la zone de détails.
 
 **Citation avec illustration**
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=quote--default}
 
 - Utiliser la citation avec illustration pour incarner l’auteur.
 
@@ -67,15 +69,15 @@ Le texte de la citation est quant à lui disponible en 3 tailles :
 
 - MD pour medium - taille par défaut.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=quote--default}
 
 - LG pour large.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=quote--default args="size:lg"}
 
 - XL pour extra large.
 
-[Image d’illustration]
+::dsfr-doc-storybook{id=quote--default args="size:xl"}
 
 ### États
 

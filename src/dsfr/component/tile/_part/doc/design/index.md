@@ -49,30 +49,37 @@ La tuile est un élément d’interaction avec l’interface permettant de redir
 
 - Cliquable
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--horizontal}
 
 - Non cliquable
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--no-link}
 
 **Tuile verticale**
 
 - Cliquable
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--default}
 
 - Non cliquable
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--horizontal-no-link}
 
 **Tuile de téléchargement**
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--download}
 
 - Utiliser la tuile de téléchargement pour mettre à disposition de l’usager un fichier en téléchargement.
 - Le titre de la tuile de téléchargement reprend le nom du fichier et doit systématiquement être précédé de la mention “Télécharger”.
 - La seconde zone de détail affiche obligatoirement le format et le poids du fichier.
 - L’icône de téléchargement est ici obligatoire.
+
+**Variantes esthétiques**
+
+- Tuile avec fond gris
+- Tuile avec ombre portée
+- Tuile sans bordure
+- Tuile sans fond
 
 ### Tailles
 
@@ -80,13 +87,13 @@ La tuile est disponible en 2 tailles :
 
 - SM pour small
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--size-sm}
 
 En desktop, elle occupe un maximum de 3 à 4 colonnes de large.
 
 - MD pour medium
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--default}
 
 En desktop, elle occupe entre 4 et 6 colonnes de large.
 
@@ -100,25 +107,19 @@ Par ailleurs, la hauteur de la tuile s’adapte à son contenu.
 
 L’état désactivé indique que l'usager ne peut pas interagir avec la tuile.
 
-[Image d’illustration]
+::dsfr-doc-storybook{storyId=tile--default-story args="{ disabled: true }"}
 
 **État au survol**
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole la tuile avec sa souris.
 
-[Image d’illustration]
-
 ### Personnalisation
 
-Le fond, le contour et le pictogramme de la tuile peuvent être personnalisés, parmi les options listées ci-dessous uniquement :
+La tuile comporte des variantes esthétiques (voir section “Variations”).
 
-:::dsfr-doc-table[Titre du tableau]{valign=top scroll=false caption=false}
-|  Éléments | Indice thème clair | Indice thème sombre |
-|:-----|:-----|:-----|
-| **Couleur subsidiaire (30%) `$artwork-minor-red-marianne`**| Indice **main**<br> exemple : `$brown-caramel-main-648` | Indice **main**<br> exemple : `$brown-caramel-main-648` |
-:::
+L’ensemble des composants imbriqués ([pictogramme](../../../../../core/_part/doc/pictogram/index.md) et [badge](../../../../badge/_part/doc/index.md)) peuvent également être personnalisés selon leurs propres règles de personnalisation.
 
-Également, certains éléments sont optionnels - voir [la structure du composant](#tuile).
+Par ailleurs, certains éléments sont optionnels - voir [la structure du composant](#tuile).
 
 ::::dsfr-doc-guidelines
 

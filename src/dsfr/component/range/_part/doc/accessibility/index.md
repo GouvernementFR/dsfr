@@ -1,18 +1,27 @@
 ---
-title: Accessibilité du curseur
+title: Accessibilité du Curseur
+shortTitle: Accessibilité du Curseur
+description: Présentation du composant Curseur permettant à l’usager de sélectionner une valeur entre un minimum et un maximum de manière intuitive.
+shortDescription: Sélection d’une valeur sur une échelle
+keywords: curseur, range, sélection, valeur, interface, DSFR, accessibilité, filtre, composant
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Curseur permet à l’usager de définir une valeur dans une plage donnée, souvent utilisée pour ajuster un paramètre de façon dynamique et visuelle.
+summary: Le curseur est utile lorsque la saisie d’une valeur approximative est suffisante, comme pour filtrer des contenus ou ajuster des préférences. Il propose différentes variantes - simple, double ou cranté, avec ou sans affichage des bornes. Non personnalisable, il est conçu pour un usage fluide et accessible, avec retour visuel en temps réel sur les valeurs sélectionnées.
 ---
 
-# Curseur
+## Curseur
+
+Le curseur est un élément d’interaction avec l’interface permettant à l’usager de délimiter manuellement une sélection par rapport à une valeur minimale et maximale.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Curseur** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
@@ -29,13 +38,15 @@ Lorsque le focus est positionné sur le curseur&nbsp;:
 
 Un curseur doit avoir une **étiquette pertinente**. On doit en comprendre la fonction sans ambiguïté.
 
-Son nom accessible est calculé par ordre de priorité à partir de&nbsp;: 
+Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
+
 - l’attribut `aria-labelledby`,
 - l’attribut `aria-label`,
 - l’élément `<label>`,
 - l’attribut `title` en l’absence d’une autre méthode de nommage.
 
 ##### Curseur simple
+
 Dans le cas du curseur simple, utiliser l’élément `<label>` avec une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id`.
 
 Préciser les valeurs minimum et maximale dans le texte de description additionnel.
@@ -66,6 +77,7 @@ Les éléments du curseur désactivé sont insuffisamment contrastés. Il ne s�
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
@@ -85,12 +97,15 @@ Il est vocalisé «&nbsp;curseur&nbsp;» (VoiceOver, TalkBack), «&nbsp;potentio
 
 Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
 
-#### État désactivé
+#### Restitution de l'état désactivé
 
 L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
+
 - VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
 - NVDA et JAWS&nbsp;: «&nbsp;bouton non disponible&nbsp;»
-- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;» 
+- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;»
+
+---
 
 ### Références
 

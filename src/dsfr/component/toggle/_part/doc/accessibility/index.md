@@ -1,18 +1,27 @@
 ---
 title: Accessibilité de l'interrupteur
+shortTitle: Accessibilité de l'Interrupteur
+description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.
+shortDescription: Basculer entre deux états opposés
+keywords: interrupteur, switch, interface, interaction, accessibilité, design système, DSFR, état activé, état désactivé
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Interrupteur permet à l’usager de choisir entre deux états opposés, comme activer ou désactiver une fonctionnalité, avec effet immédiat.
+summary: Ce composant est conçu pour gérer rapidement des actions binaires dans une interface, notamment pour paramétrer des fonctionnalités comme les notifications. Il permet un usage fluide grâce à un affichage clair, des libellés explicites et une structure accessible. Il peut être utilisé seul ou en groupe et s’adapte visuellement aux contraintes d’affichage sans nécessiter de validation supplémentaire.
 ---
 
-# Interrupteur
+## Interrupteur
+
+L’interrupteur est un élément d’interaction avec l’interface qui permet à l’usager de faire un choix entre deux états opposés (activé / désactivé).
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Interrupteur**, est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
@@ -32,7 +41,7 @@ Dans un groupe d’interrupteurs&nbsp;:
 
 Un interrupteur doit avoir une **étiquette pertinente**. On doit en comprendre la fonction sans ambiguïté.
 
-Son nom accessible est calculé par ordre de priorité à partir de&nbsp;: 
+Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 - l’attribut `aria-labelledby`,
 - l’attribut `aria-label`,
 - l’élément `<label>`,
@@ -41,7 +50,7 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 **Privilégier l’élément `<label>`** pour nommer le composant.
 
 >[!CAUTION]
->Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` de l’interrupteur.  
+>Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` de l’interrupteur.
 >
 >L’attribut `for` du label doit correspondre à l'attribut `id` de l’interrupteur. La valeur de l’attribut `id` doit être unique dans la page.
 
@@ -58,13 +67,14 @@ L’étiquette est visible et doit être accolée à la case à cocher.
 > [!WARNING]
 > **L’état désactivé de l’interrupteur peut poser des problèmes d’utilisabilité et d’accessibilité pour les personnes handicapées** (personnes déficientes visuelles ainsi que les personnes qui ont un handicap cognitif ou mental).
 
-La bordure, la coche et l’étiquette de l’interrupteur désactivé sont insuffisamment contrastées. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier). 
+La bordure, la coche et l’étiquette de l’interrupteur désactivé sont insuffisamment contrastées. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier).
 
 #### Message d’information, d’avertissement ou d’erreur
 
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
@@ -93,9 +103,10 @@ Par défaut, le composant Interrupteur est suffisamment contrasté en thème cla
 Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
 
 L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
+
 - VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
 - NVDA et JAWS&nbsp;: «&nbsp;bouton non disponible&nbsp;»
-- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;» 
+- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;»
 
 ---
 

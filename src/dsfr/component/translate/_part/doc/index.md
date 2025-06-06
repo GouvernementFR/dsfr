@@ -23,6 +23,8 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 
 :::
 
+::dsfr-doc-storybook{storyId=translate--translate}
+
 ### Quand utiliser ce composant ?
 
 **Utiliser le sélecteur de langues dès lors qu’un site est disponible en plusieurs langues.**

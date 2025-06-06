@@ -33,7 +33,7 @@ Le composant Tuile est un élément interactif permettant de donner des aperçus
 - Les Tuiles sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/index.md)).
 - Son contenu est structuré en plusieurs parties :
   - Le **header de la tuile** `fr-tile__header`, optionnel, pouvant contenir :
-    - Un **pictogramme** dans un élément `fr-tile__pictogram` (voir [Pictogramme](../../../../../core/asset/artwork/_part/doc/index.md)).
+    - Un **pictogramme** dans un élément `fr-tile__pictogram` (voir [Pictogramme](../../../../../core/_part/doc/pictogram/index.md)).
   - Le **corps de la tuile** `fr-tile__body`, obligatoire, il contient le contenu de la tuile :
     - Un **titre**, obligatoire, un élément HTML avec un niveau d'entête `<hx>` et la classe `fr-tile__title` pouvant contenir un lien ou un simple texte.
     - Une **description**, optionnelle, `fr-tile__desc`, un élément HTML de type `<p>`.
@@ -254,7 +254,7 @@ Si la page est en Anglais, l'attribut `data-fr-assess-file` doit prendre la vale
 
 Pour fonctionner le fichier à télécharger doit être sur le même cross-domain que le site.
 
-#### Installation
+#### Installation du JavaScript
 
 Pour fonctionner, le **remplissage automatique du détail des Tuiles de téléchargement** nécessite l'utilisation de JavaScript.
 Cette fonctionnalité est disponible dans le core.

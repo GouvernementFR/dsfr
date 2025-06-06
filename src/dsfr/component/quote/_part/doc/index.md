@@ -14,18 +14,22 @@ summary: Ce document décrit les usages du composant Citation, destiné à inté
 La citation est un élément éditorial permettant de mettre en forme du contenu dans une page.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
+
+::dsfr-doc-storybook{storyId=quote--quote}
 
 ### Quand utiliser ce composant ?
 
 Insérer la citation dans une page éditoriale pour citer un texte. La citation peut provenir d'un extrait d’un discours oral ou d’un texte écrit.
 
-> [!WARNING] 
+> [!WARNING]
 > Bien différencier la citation de la mise en avant ou mise en exergue.
 
 [La mise en avant](../../../callout/_part/doc/index.md) est utilisée pour mettre l’accent sur une information importante, venant compléter le contenu principal.

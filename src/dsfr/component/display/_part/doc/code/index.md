@@ -208,8 +208,8 @@ Pour éviter un effet de flash lors du chargement de la page, il est possible d'
 Ce script doit **s'exécuter le plus tôt possible dans le `<head>` de la page**, avant le chargement du reste de la page.
 
 ```html
-<script>
-    const e="system",t="dark",a="dark",c=()=>{document.documentElement.setAttribute("data-fr-theme",a)},r=()=>{window.matchMedia("(prefers-color-scheme: dark)").matches&&c()};(()=>{if(document.documentElement.matches(":root[data-fr-theme], :root[data-fr-scheme]")){const a=(()=>{try{return"localStorage"in window&&null!==window.localStorage}catch(e){return!1}})()?localStorage.getItem("scheme"):"",o=document.documentElement.getAttribute("data-fr-scheme");switch(!0){case a===t:c();break;case a===e:r();break;case o===t:c();break;case o===e:r()}}})();
+<script type="module">
+    const e="system",t="dark",c="dark",o="data-fr-theme",a="data-fr-scheme",r=`:root[${o}], :root[${a}]`,m=()=>{document.documentElement.setAttribute(o,c),document.documentElement.style.colorScheme="dark"},n=()=>{window.matchMedia("(prefers-color-scheme: dark)").matches&&m()};(()=>{if(document.documentElement.matches(r)){const c=(()=>{try{return"localStorage"in window&&null!==window.localStorage}catch(e){return!1}})()?localStorage.getItem("scheme"):"",o=document.documentElement.getAttribute(a);switch(!0){case c===t:m();break;case c===e:n();break;case o===t:m();break;case o===e:n()}}})();
 </script>
 ```
 

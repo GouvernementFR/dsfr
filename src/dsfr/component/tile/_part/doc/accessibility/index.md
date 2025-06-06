@@ -14,22 +14,22 @@ summary: Ce contenu décrit l’usage du composant Tuile dans un design system. 
 La tuile est un élément d’interaction avec l’interface permettant de rediriger l’usager vers des pages de contenu.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-### Accessibilité
+:::
 
 Le composant **Tuile** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Aucune interaction au clavier spécifique au composant.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 #### Structuration
 

@@ -14,42 +14,44 @@ title: Accessibilité des formulaires
 
 :::
 
-### Accessibilité
-
 Les composants de formulaire sont conçus pour être accessibles et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Aucune interaction spécifique n’est associée au formulaire.
 
-Les interactions clavier du formulaire sont celles liées aux éléments de formulaire qu’il contient&nbsp;: 
+Les interactions clavier du formulaire sont celles liées aux éléments de formulaire qu’il contient&nbsp;:
+
 - [champs de saisie](../../../../input/_part/doc/accessibility/index.md),
 - [boutons](../../../../button/_part/doc/accessibility/index.md),
-- [liste déroulante](../../../../select/_part/doc/accessibility/index.md), 
+- [liste déroulante](../../../../select/_part/doc/accessibility/index.md),
 - [cases à cocher](../../../../checkbox/_part/doc/accessibility/index.md),
-- [boutons radio](../../../../radio/_part/doc/accessibility/index.md), 
+- [boutons radio](../../../../radio/_part/doc/accessibility/index.md),
 - [ajout de fichier](../../../../upload/_part/doc/accessibility/index.md), etc.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
-##### Regroupement de champs
+#### Regroupement de champs
 
 - Utiliser un élément `<fieldset>` accompagné d’un élément `<legend>` pour regrouper un ensemble de champs de formulaire de même nature lorsque les étiquettes des champs ne sont pas suffisamment explicites.
 - La légende du regroupement doit être pertinente.
 
-##### Message d’information, d’avertissement ou d’erreur
+#### Message d’information, d’avertissement ou d’erreur
 
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
 - avec une <span lang="en">live region</span>&nbsp;: `role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
 
-##### Champs obligatoires
+#### Champs obligatoires
 
 Ajouter une mention visible pour tout le monde au début du formulaire et utiliser l’attribut `required` pour indiquer que le champ est obligatoire.
+
+---
 
 ### Critères RGAA applicables
 
@@ -61,7 +63,7 @@ Ajouter une mention visible pour tout le monde au début du formulaire et utilis
 
 ---
 
-#### Références
+### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Tutoriel WAI - Formulaires](https://www.w3.org/WAI/tutorials/forms/)

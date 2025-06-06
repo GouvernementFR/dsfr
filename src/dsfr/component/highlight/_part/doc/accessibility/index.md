@@ -9,7 +9,7 @@ excerpt: Le composant Mise en exergue permet de faire ressortir une information 
 summary: Ce contenu décrit le composant Mise en exergue comme un outil d’identification rapide d’informations clés au sein d’un texte. Il précise ses usages, le distingue de la mise en avant, et détaille les bonnes pratiques de mise en forme pour assurer sa visibilité. L’alignement, la position dans la page et la nature du contenu sont essentiels à son efficacité. Ce guide est destiné aux créateurs de contenu et designers cherchant à hiérarchiser l’information de manière claire et accessible.
 ---
 
-# Mise en exergue
+## Mise en exergue
 
 La mise en exergue est un élément éditorial permettant de mettre en forme du contenu dans une page.
 
@@ -22,8 +22,6 @@ La mise en exergue est un élément éditorial permettant de mettre en forme du 
 - Accessibilité
 
 :::
-
-## Accessibilité
 
 Le composant **Mise en exergue** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
@@ -54,7 +52,7 @@ Ne pas utiliser la mise en exergue pour une citation.
 #### Contrastes de couleurs
 
 Le texte du composant est suffisamment contrasté avec le fond en thème clair (11,4:1) et en thème sombre (11:1).
-La bordure est perceptible en thème clair (4,2) et en thème sombre (4,3:1). 
+La bordure est perceptible en thème clair (4,2) et en thème sombre (4,3:1).
 
 > [!NOTE]
 > La bordure est décorative et n’a pas besoin d’être suffisamment contrastée.
@@ -68,6 +66,7 @@ Aucun test de restitution n’est nécessaire pour le composant Mise en exergue.
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs** : 3.2
 - **Éléments obligatoires** : 8.9
 - **Présentation de l’information** : 10.1, 10.2, 10.4, 10.5, 10.7, 10.11, 10.12

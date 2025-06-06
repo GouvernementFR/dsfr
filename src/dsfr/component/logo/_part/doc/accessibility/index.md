@@ -14,15 +14,13 @@ title: Accessibilité du bloc marque
 
 :::
 
-### Accessibilité
-
 Le bloc marque est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Aucune interaction spécifique n’est associée au bloc marque.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 Les logos doivent être accessibles pour tous les utilisateurs, y compris ceux utilisant des technologies d'assistance. Voici quelques recommandations&nbsp;:
 
@@ -40,6 +38,7 @@ Aucun test de restitution n’est nécessaire pour le composant Bloc marque.
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs :** 3.2
 - **Liens :** 6.1, 6.2
 - **Éléments obligatoires :** 8.9
@@ -50,8 +49,7 @@ Aucun test de restitution n’est nécessaire pour le composant Bloc marque.
 
 ---
 
-#### Références
+### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Le bloc-marque](https://www.info.gouv.fr/marque-de-letat/le-bloc-marque)
-

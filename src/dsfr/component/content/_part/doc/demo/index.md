@@ -23,6 +23,4 @@ Le composant **Contenu médias** permet d'intégrer des contenus multimédias te
 
 :::
 
-### Démonstration
-
 ::dsfr-doc-storybook{id=content--docs}

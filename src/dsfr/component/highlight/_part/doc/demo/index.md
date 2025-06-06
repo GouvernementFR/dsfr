@@ -23,6 +23,4 @@ La mise en exergue est un élément éditorial permettant de mettre en forme du 
 
 :::
 
-### Démonstration
-
 ::dsfr-doc-storybook{id=highlight--docs}

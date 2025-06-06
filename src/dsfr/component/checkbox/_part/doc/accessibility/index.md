@@ -1,18 +1,27 @@
 ---
 title: Accessibilité de la case à cocher
+shortTitle: Accessibilité de la Case à cocher
+description: Présentation du composant Case à cocher permettant à l’usager de sélectionner une ou plusieurs options dans une liste de manière indépendante.
+shortDescription: Sélection multiple dans une liste
+keywords: case à cocher, checkbox, sélection multiple, formulaire, DSFR, design système, accessibilité, interface
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Case à cocher permet à l’usager de sélectionner librement une ou plusieurs options dans un ensemble de choix. Il est utilisé seul ou en groupe, avec ou sans texte d’aide.
+summary: Ce composant permet une sélection multiple ou binaire dans les interfaces, particulièrement dans les formulaires. Il peut être utilisé seul pour un choix isolé, ou en liste pour plusieurs options. Des variantes avec texte d’aide sont proposées pour améliorer la compréhension. Il respecte les contraintes d’ergonomie, d’accessibilité et de cohérence éditoriale, sans personnalisation graphique.
 ---
 
-# Case à cocher
+## Case à cocher
+
+La case à cocher est un élément d’interaction avec l’interface permettant à l’usager de sélectionner une ou plusieurs options dans une liste.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Case à cocher** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
@@ -23,6 +32,7 @@ Lorsque le focus est positionné sur le composant&nbsp;:
 - `Espace`&nbsp;: coche ou décoche la case à cocher.
 
 Dans un groupe de cases à cocher&nbsp;:
+
 - `Tab`&nbsp;: déplace le focus sur le prochain élément focalisable.
 - `Maj + Tab`&nbsp;: déplace le focus sur l'élément focalisable précédent.
 
@@ -32,7 +42,8 @@ Dans un groupe de cases à cocher&nbsp;:
 
 Une case à cocher doit avoir une **étiquette pertinente**. On doit en comprendre la fonction sans ambiguïté.
 
-Son nom accessible est calculé par ordre de priorité à partir de&nbsp;: 
+Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
+
 - l’attribut `aria-labelledby`,
 - l’attribut `aria-label`,
 - l’élément `<label>`,
@@ -41,11 +52,12 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 **Privilégier l’élément `<label>`** pour nommer le composant.
 
 >[!CAUTION]
->Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` de la case à cocher.  
+>Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` de la case à cocher.
 >
 >L’attribut `for` du label doit correspondre à l'attribut `id` de la case à cocher. La valeur de l’attribut `id` doit être unique dans la page.
 
 La liaison explicite `for`/`id` permet&nbsp;:
+
 - d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal),
 - de cocher ou décocher la case à cocher en cliquant sur l’étiquette et ainsi d’étendre la zone de clic.
 
@@ -58,13 +70,14 @@ L’étiquette est visible et accolée à la case à cocher.
 > [!WARNING]
 > **L’état désactivé d’une case à cocher peut poser des problèmes d’utilisabilité et d’accessibilité pour les personnes handicapées** (personnes déficientes visuelles ainsi que les personnes qui ont un handicap cognitif ou mental).
 
-La bordure, la coche et l’étiquette de la case à cocher désactivée sont insuffisamment contrastées. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier). 
+La bordure, la coche et l’étiquette de la case à cocher désactivée sont insuffisamment contrastées. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier).
 
 #### Message d’information, d’avertissement ou d’erreur
 
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
@@ -100,9 +113,10 @@ En cas de succès ou d’erreur, le ratio de contraste de la bordure et celui de
 Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
 
 L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
+
 - VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
 - NVDA et JAWS&nbsp;: «&nbsp;bouton non disponible&nbsp;»
-- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;» 
+- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;»
 
 ---
 

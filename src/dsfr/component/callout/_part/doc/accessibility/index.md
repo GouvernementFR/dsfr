@@ -23,17 +23,15 @@ La mise en avant est un élément éditorial permettant de mettre en forme du co
 
 :::
 
-### Accessibilité
-
 Le composant **Mise en avant** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Aucune interaction au clavier spécifique au composant.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
-##### Structuration
+#### Structuration
 
 Il n’y a pas de sémantique spécifique associée à ce composant. La mise en avant n’est donc pas restituée par les lecteurs d’écran, seul son contenu l’est.
 
@@ -54,8 +52,7 @@ Ne pas utiliser la mise en exergue pour une citation.
 
 ::::
 
-
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 Par défaut, le texte du composant est suffisamment contrasté avec le fond en thème clair et en thème sombre.
 
@@ -68,6 +65,7 @@ Aucun test de restitution n’est nécessaire pour le composant Mise en avant.
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs** : 3.2
 - **Scripts&nbsp;:** 7.1, 7.3
 - **Éléments obligatoires&nbsp;:** 8.9
@@ -77,6 +75,6 @@ Aucun test de restitution n’est nécessaire pour le composant Mise en avant.
 
 ---
 
-#### Références
+### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

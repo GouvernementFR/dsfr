@@ -1,8 +1,17 @@
 ---
 title: Code du bouton
+shortTitle: Code du Bouton
+description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
+shortDescription: Déclenchement d’une action dans l’interface
+keywords: bouton, interaction, action, DSFR, design système, accessibilité, formulaire, navigation
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Bouton permet de déclencher une action dans la page, comme soumettre un formulaire ou naviguer vers un contenu. Il se décline en versions primaire, secondaire et tertiaire.
+summary: Le bouton est un composant central d’interaction dans les interfaces numériques. Il est utilisé pour initier une action précise selon un niveau de priorité - bouton primaire pour l’action principale, secondaire pour les actions secondaires et tertiaire pour les interactions contextuelles. Il respecte des règles d’écriture éditoriale claires, n’est pas personnalisable graphiquement et s’intègre de manière cohérente dans une interface respectueuse des standards d’accessibilité.
 ---
 
 ## Bouton
+
+Le bouton est un élément d’interaction avec l’interface permettant à l’usager d’effectuer une action.
 
 :::dsfr-doc-tab-navigation
 
@@ -74,6 +83,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 #### Variantes de style
 
 Le bouton peut avoir différents styles définis par les classes :
+
 - Par défaut : Bouton primaire.
 - `fr-btn--secondary` : Bouton secondaire.
 - `fr-btn--tertiary` : Bouton tertiaire.
@@ -99,6 +109,7 @@ Le bouton peut avoir différents styles définis par les classes :
 #### Variantes de taille
 
 Le Bouton peut avoir différentes tailles qui auront un impacte sur la taille du texte, de l'icône, et des espacements :
+
 - `fr-btn--sm` : Petit bouton.
 - Par défaut : Bouton moyen.
 - `fr-btn--lg` : Grand bouton.

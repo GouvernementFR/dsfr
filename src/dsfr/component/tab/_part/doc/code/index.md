@@ -1,15 +1,26 @@
 ---
 title: Code de l'Onglet
+shortTitle: Code de l'Onglet
+description: Présentation du composant Onglets pour structurer du contenu lié dans un espace restreint avec des recommandations d’usage et d’accessibilité.
+shortDescription: Structuration de contenu avec des onglets
+keywords: onglets, composant, interface, navigation, accessibilité, design système, UX, DSFR
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Onglets permet de regrouper plusieurs sections de contenu dans un espace réduit en affichant une seule section à la fois. Il est utile pour simplifier la lecture et améliorer l’expérience utilisateur.
+summary: Cette fiche détaille le fonctionnement du composant Onglets du design système de l’État. Elle décrit ses usages recommandés, ses règles d’intégration et d’accessibilité, ainsi que son comportement responsive. Le contenu est destiné aux équipes design et développement souhaitant structurer des interfaces avec plusieurs sections de contenu apparentées tout en maintenant une expérience claire et fluide.
 ---
 
 ## Onglet
 
+Le système d’onglets permet de structurer et de présenter plusieurs sections de contenu liées, en affichant une seule section à la fois dans un espace limité.
+
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -22,17 +33,17 @@ Sa structure est la suivante :
 
 - Le conteneur des onglets est une balise `<div>` avec la classe `fr-tabs`.
 - Les onglets sont contenus dans une liste `<ul>` avec la classe `fr-tabs__list`.
-    - La liste possède un rôle `tablist` et attribut `aria-label` précisant le nom du système d'onglets.
+  - La liste possède un rôle `tablist` et attribut `aria-label` précisant le nom du système d'onglets.
 - Chaque onglet est un élément `<li>` avec le rôle `presentation` contenant :
-    - Un élément `<button>` avec la classe `fr-tabs__tab` et le rôle `tab`.
-        - Le bouton doit être de type "button".
-        - Le bouton dispose d'un attribut `aria-selected`, sa valeur [true|false] défini si l'onglet est actif.
-        - Le bouton dispose d'un attribut `tabindex`, sa valeur [0|-1] défini si l'onglet est actif [0] ou inactif [-1].
-        - Le bouton est lié au panneau de contenu via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du panneau.
+  - Un élément `<button>` avec la classe `fr-tabs__tab` et le rôle `tab`.
+    - Le bouton doit être de type "button".
+    - Le bouton dispose d'un attribut `aria-selected`, sa valeur [true|false] défini si l'onglet est actif.
+    - Le bouton dispose d'un attribut `tabindex`, sa valeur [0|-1] défini si l'onglet est actif [0] ou inactif [-1].
+    - Le bouton est lié au panneau de contenu via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du panneau.
 - Chaque contenu d'onglet est un élément `<div>` avec la classe `fr-tabs__panel` et le rôle `tabpanel`.
-    - Le panneau actif possède la classe `fr-tabs__panel--selected`.
-    - Le panneau est lié au bouton de l'onglet via l'attribut `aria-labelledby`, sa valeur doit correspondre à l'attribut `id` du bouton.
-    - Son contenu est libre, mais nécessite l'utilisation des balises adéquates, il n'est pas correcte de placer du texte directement dans une `<div>`.
+  - Le panneau actif possède la classe `fr-tabs__panel--selected`.
+  - Le panneau est lié au bouton de l'onglet via l'attribut `aria-labelledby`, sa valeur doit correspondre à l'attribut `id` du bouton.
+  - Son contenu est libre, mais nécessite l'utilisation des balises adéquates, il n'est pas correcte de placer du texte directement dans une `<div>`.
 
 **Exemple de structure HTML**
 
@@ -133,7 +144,7 @@ Les onglets peuvent s'afficher em mobile sur la totalité de la largeur du viewp
 
 ### JavaScript
 
-#### Installation  du JavaScript
+#### Installation du JavaScript
 
 Pour fonctionner, le composant onglet nécessite l'utilisation de JavaScript.
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
@@ -157,6 +168,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 #### Instances
 
 Sur l'Onglet, les éléments suivants sont instanciés :
+
 - Le conteneur, via la classe : `fr-tabs`
 - La liste des onglets, via la classe : `fr-tabs__list`
 - L'onglet, via la classe : `fr-tabs__tab`
@@ -178,7 +190,7 @@ dsfr(elem).tabsGroup.isEnabled;
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### tabsGroup
+##### tabsGroup
 
 :::dsfr-doc-table[current]{valign=top scroll=false}
 | | |

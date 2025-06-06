@@ -1,24 +1,34 @@
 ---
 title: Accessibilité de la modale
+shortTitle: Accessibilité de la Modale
+description: Présentation du composant Modale permettant de focaliser l’attention de l’usager sur une tâche ou une information sans quitter la page.
+shortDescription: Affichage focalisé d’un contenu secondaire
+keywords: modale, fenêtre, focus, interaction, DSFR, accessibilité, interface, contenu secondaire
+cover: ../_asset/cover/cover.png
+excerpt: Le composant Modale permet d’afficher un contenu ou une interaction dans une fenêtre superposée à la page, bloquant le fond et recentrant l’attention de l’usager.
+summary: La modale s’utilise pour présenter un contenu complémentaire ou une action simple sans sortir de la page en cours. Elle est conçue pour isoler une information importante tout en permettant de revenir au contexte initial en un clic. Non personnalisable, elle existe en plusieurs tailles, avec ou sans zone d’action, et respecte les standards d’accessibilité en figant l’arrière-plan lors de son affichage.
 ---
 
-# Modale
+## Modale
+
+La modale est un élément de mise en forme de contenu permettant de concentrer l’attention de l’usager exclusivement sur une tâche ou un élément d’information, sans perdre le contexte de la page en cours.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Modale** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ### Interactions clavier
 
 À l’intérieur de la fenêtre modale&nbsp;:
+
 - `Échap`&nbsp;: referme la modale et place le focus sur le bouton d’ouverture de la modale ou à un endroit approprié si le bouton disparaît.
 - `Tab`&nbsp;: place le focus sur le prochain élément focalisable de la modale.
 - `Maj` + `Tab`&nbsp;: place le focus sur l'élément focalisable précédent.
@@ -57,25 +67,30 @@ Note&nbsp;: VoiceOver macOS ne restitue pas le nom de la modale avec Firefox et 
 Note : le focus n’est pas capturé avec les lecteurs d’écran mobiles sur la version actuelle du composant Modale.
 
 :::fr-accordion[#### Versions navigateurs et lecteurs d’écran]{id=sr-le-desktop}
+
 Les tests de restitution ont été effectués en ajoutant le lecteur d’écran intégré à Windows 11 (Narrateur) et le navigateur web Chrome à l’environnement de tests du RGAA.
 
 Versions des navigateurs web&nbsp;:
+
 - Firefox 138
 - Chrome 135
 - Safari 18.4 (sur macOS uniquement)
 - Microsoft Edge 135 (sur Windows 11 uniquement)
 
 Version des lecteurs d’écran&nbsp;:
+
 - NVDA 2024.4.2
 - JAWS 2024
 - VoiceOver macOS 15.4
 - Narrateur (Windows 11)
 - VoiceOver iOS
+
 :::
 
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs&nbsp;:** 3.2
 - **Scripts&nbsp;:** 7.1, 7.3
 - **Éléments obligatoires&nbsp;:** 8.9
