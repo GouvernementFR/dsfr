@@ -23,6 +23,8 @@ Le partage est un groupe d’éléments d’interaction avec l’interface perme
 
 :::
 
+::dsfr-doc-storybook{storyId=share--share}
+
 ### Quand utiliser ce composant ?
 
 **Utiliser le partage pour permettre à l’usager de partager facilement le contenu qu’il consulte** à d’autres usagers, via les réseaux sociaux, par le biais d’un envoi par mail ou en copiant simplement le lien de la page.

@@ -23,6 +23,8 @@ La carte est un élément d’interaction avec l’interface permettant de redir
 
 :::
 
+::dsfr-doc-storybook{storyId=card--card}
+
 ### Quand utiliser ce composant ?
 
 Proposer la carte pour créer un raccourci ou un point d’entrée vers des pages de contenu, en permettant un aperçu.

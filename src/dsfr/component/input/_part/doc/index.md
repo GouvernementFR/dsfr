@@ -23,6 +23,8 @@ Le champ de saisie est un élément d’interaction avec l’interface permettan
 
 :::
 
+::dsfr-doc-storybook{storyId=input--input}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le champ de saisie pour permettre à un usager de saisir du contenu et/ou des données.

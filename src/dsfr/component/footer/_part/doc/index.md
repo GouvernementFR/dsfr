@@ -16,12 +16,14 @@ Le pied de page est un élément de navigation secondaire mis à disposition de 
 :::dsfr-doc-tab-navigation
 
 - Présentation
-- [Démo](demo/index.md)
-- [Design](design/index.md)
-- [Code](code/index.md)
-- [Accessibilité](accessibility/index.md)
+- [Démo](./demo/index.md)
+- [Design](./design/index.md)
+- [Code](./code/index.md)
+- [Accessibilité](./accessibility/index.md)
 
 :::
+
+::dsfr-doc-storybook{storyId=footer--footer}
 
 ### Quand utiliser ce composant ?
 

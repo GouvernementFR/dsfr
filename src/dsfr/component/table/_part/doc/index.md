@@ -23,6 +23,8 @@ Le tableau permet de présenter une liste structurée de données textuelles et/
 
 :::
 
+::dsfr-doc-storybook{storyId=table--table}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le tableau pour présenter des données. À titre d’exemple, il peut :

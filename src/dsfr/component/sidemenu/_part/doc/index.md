@@ -23,6 +23,8 @@ Le menu latéral est un système de navigation secondaire présentant une liste 
 
 :::
 
+::dsfr-doc-storybook{storyId=sidemenu--sidemenu}
+
 ### Quand utiliser ce composant ?
 
 Proposer le menu latéral pour permettre à l’usager de naviguer entre les différentes pages d’une rubrique ou d’un même thème.

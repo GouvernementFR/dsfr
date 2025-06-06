@@ -23,6 +23,8 @@ Le sommaire est un système de navigation secondaire présentant une liste d’a
 
 :::
 
+::dsfr-doc-storybook{storyId=summary—summary}
+
 ### Quand utiliser ce composant ?
 
 Proposer le sommaire pour permettre à l’usager d’avoir un aperçu du contenu consulté et de naviguer entre les différentes sections d’une page.

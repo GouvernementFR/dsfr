@@ -23,6 +23,8 @@ La citation est un élément éditorial permettant de mettre en forme du contenu
 
 :::
 
+::dsfr-doc-storybook{storyId=quote--quote}
+
 ### Quand utiliser ce composant ?
 
 Insérer la citation dans une page éditoriale pour citer un texte. La citation peut provenir d'un extrait d’un discours oral ou d’un texte écrit.

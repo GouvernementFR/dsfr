@@ -23,6 +23,8 @@ Le gestionnaire de consentement permet à l'usager de définir ses préférences
 
 :::
 
+::dsfr-doc-storybook{storyId=consent--consent-banner}
+
 ### Quand utiliser ce composant ?
 
 **Intégrer un gestionnaire de consentement est une obligation** pour l’ensemble des sites dès lors qu’ils déposent ou lisent des cookies non essentiels.

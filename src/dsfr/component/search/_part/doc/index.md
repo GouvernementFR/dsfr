@@ -23,6 +23,8 @@ La barre de recherche est un système de navigation permettant à l'usager d’a
 
 :::
 
+::dsfr-doc-storybook{storyId=search--search}
+
 ### Quand utiliser ce composant
 
 Utiliser la barre de recherche pour proposer une recherche globale (au sein d’un site) ou une recherche contextuelle (au sein d’une page, d’un composant dédié etc.).

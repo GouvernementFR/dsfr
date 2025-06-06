@@ -23,6 +23,8 @@ La navigation principale est le système central de navigation au sein d’un si
 
 :::
 
+::dsfr-doc-storybook{storyId=navigation--navigation}
+
 ### Quand utiliser ce composant ?
 
 **Utiliser la navigation principale pour orienter l’usager à travers les grandes sections du site**, éventuellement sur plusieurs niveaux de profondeur.

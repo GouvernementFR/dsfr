@@ -24,6 +24,8 @@ Les liens d’évitement sont un système de navigation secondaire permettant à
 
 :::
 
+::dsfr-doc-storybook{storyId=skiplink--skiplink}
+
 ### Quand utiliser ce composant ?
 
 **Intégrer des liens d’évitement est une obligation** pour l’ensemble des sites.

@@ -23,6 +23,8 @@ Le curseur est un élément d’interaction avec l’interface permettant à l�
 
 :::
 
+::dsfr-doc-storybook{storyId=range--range}
+
 ### Quand utiliser ce composant ?
 
 **Utiliser un curseur lorsque la valeur saisie est imprécise ou à déterminer**, par exemple, la luminosité d’un écran. Il sert à montrer en temps réel l’impact des options choisies et à éclairer la prise de décision.

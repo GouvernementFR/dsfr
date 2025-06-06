@@ -27,23 +27,27 @@ Le tableau permet de présenter une liste structurée de données textuelles et/
 
 ![Anatomie du tableau](../_asset/anatomy/anatomy-1.png)
 
-::dsfr-doc-pin[Un titre]{required=true add="qui peut être positionné en haut (par défaut), en bas ou hors écran"}
+::dsfr-doc-pin[Un titre]{required=true add="qui peut être positionné en haut (par défaut), en bas ou hors écran (balise caption)"}
 
-::dsfr-doc-pin[Une ligne d’en-tête de colonne]{required=true}
+::dsfr-doc-pin[Un bouton de tri par colonne]
 
-::dsfr-doc-pin[Plusieurs ligne de corps]{required=true}
+::dsfr-doc-pin[Une case à cocher de sélection de colonne]
 
-::dsfr-doc-pin[Des bordures horizontales entre les lignes]{required=true}
-
-::dsfr-doc-pin[Des bordure verticales entre les colonnes]{add="uniquement obligatoire dans le cas d’un tableau complexe"}
-
-::dsfr-doc-pin[Une colonne d’en-tête de ligne]{add="à gauche du tableau"}
-
-::dsfr-doc-pin[Une colonne de sélection de ligne]{add="toujours ferrée à gauche"}
+::dsfr-doc-pin[Une ou plusieurs données]{add="par cellule"}
 
 ::dsfr-doc-pin[Une barre d’actions haute]{add="pouvant contenir (uniquement et dans cet ordre) - le nombre de lignes sélectionnées, une barre de recherche, des boutons d’actions liés à la sélection de lignes et un contrôle segmenté"}
 
+::dsfr-doc-pin[Une ligne d’en-tête de colonne]{required=true}
+
+::dsfr-doc-pin[Plusieurs lignes de corps]{required=true}
+
+::dsfr-doc-pin[Des bordures horizontales entre les lignes]{required=true}
+
 ::dsfr-doc-pin[Une barre d’actions basse]{add="pouvant contenir (uniquement et dans cet ordre) - le nombre total de lignes du tableau, une liste déroulante, une pagination et des boutons d’actions agissants sur tout le tableau"}
+
+::dsfr-doc-pin[Une colonne de sélection de ligne]{add="toujours ferrée à gauche"}
+
+::dsfr-doc-pin[Des bordure verticales entre les colonnes]{add="uniquement obligatoire dans le cas d’un tableau complexe"}
 
 :::
 

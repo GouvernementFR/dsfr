@@ -23,6 +23,8 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 :::
 
+::dsfr-doc-storybook{storyId=toggle—toggle}
+
 ### Quand utiliser ce composant ?
 
 Privilégier l’usage des interrupteurs pour paramétrer des fonctionnalités transverses (exemple : activation / désactivation des notifications), d’autant que le changement d'état de l’interrupteur a un effet immédiat et ne nécessite pas de validation.

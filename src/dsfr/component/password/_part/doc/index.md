@@ -23,6 +23,8 @@ Le mot de passe est un élément d’interaction avec l’interface permettant d
 
 :::
 
+::dsfr-doc-storybook{storyId=password--password}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le mot de passe lorsque votre service nécessite de demander à l’usager de créer ou saisir un mot de passe, notamment dans les cas de création de compte ou de connexion.

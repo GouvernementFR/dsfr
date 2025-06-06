@@ -23,6 +23,8 @@ La pagination est un système de navigation qui permet à l’usager de naviguer
 
 :::
 
+::dsfr-doc-storybook{storyId=pagination--pagination}
+
 ### Quand utiliser ce composant ?
 
 **Utiliser la pagination lorsqu’une liste d'éléments est trop importante pour être affichée sur une seule page** (plus de 20 éléments). Il est dès lors préférable de la diviser en plusieurs pages, afin de simplifier le parcours de l’usager au sein de cette liste.

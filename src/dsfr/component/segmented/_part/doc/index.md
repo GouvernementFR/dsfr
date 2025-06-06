@@ -23,6 +23,8 @@ Le contrôle segmenté est un élément d’interaction avec l’interface perme
 
 :::
 
+::dsfr-doc-storybook{storyId=segmented--segmented}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le contrôle segmenté pour proposer différents types d’affichage d’une même vue (exemple : liste versus carte).

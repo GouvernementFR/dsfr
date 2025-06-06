@@ -23,6 +23,8 @@ La transcription est un élément d’interaction avec l’interface permettant 
 
 :::
 
+::dsfr-doc-storybook{storyId=transcription--transcription}
+
 ### Quand utiliser ce composant ?
 
 Proposer une transcription pour accompagnée un [contenu média](../../../content/_part/doc/index.md), en la plaçant directement sous ce dernier, dans une zone à déployer au clic.

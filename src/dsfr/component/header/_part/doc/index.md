@@ -23,6 +23,8 @@ L’en-tête est un élément de navigation permettant aux usagers d’identifie
 
 :::
 
+::dsfr-doc-storybook{storyId=header--header}
+
 ### Quand utiliser ce composant ?
 
 **Intégrer l’en-tête sur l’ensemble des sites de la sphère gouvernementale**. Au sein d’un site, l’en-tête doit être affiché en haut de chacune des pages.

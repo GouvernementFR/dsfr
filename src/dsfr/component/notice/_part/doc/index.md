@@ -23,6 +23,8 @@ Le bandeau d’information importante est un élément éditorial permettant d�
 
 :::
 
+::dsfr-doc-storybook{storyId=notice--notice}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le bandeau d’information importante pour permettre aux usagers d’être informés ou d’accéder à une information primordiale ou urgente, de façon temporaire.

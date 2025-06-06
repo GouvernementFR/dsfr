@@ -23,6 +23,8 @@ Le bouton est un élément d’interaction avec l’interface permettant à l’
 
 :::
 
+::dsfr-doc-storybook{storyId=button--button}
+
 ### Quand utiliser ce composant ?
 
 **Utiliser le bouton pour déclencher une action dans la page.**

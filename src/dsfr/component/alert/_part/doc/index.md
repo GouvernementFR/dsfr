@@ -23,6 +23,8 @@ L’alerte est un élément d’indication poussé par l’interface pour relaye
 
 :::
 
+::dsfr-doc-storybook{storyId=alert--alert}
+
 ### Quand utiliser ce composant ?
 
 **Intégrer des alertes pour attirer l’attention de l’usager** sur une information sans interrompre sa tâche en cours.

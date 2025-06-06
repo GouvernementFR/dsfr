@@ -23,6 +23,8 @@ L’indicateur d'étapes est un élément éditorial permettant d’accompagner 
 
 :::
 
+::dsfr-doc-storybook{storyId=stepper--stepper}
+
 ### Quand utiliser ce composant ?
 
 **Utiliser l’indicateur d’étapes dans le cadre d’un processus linéaire**, tel un formulaire ou une démarche en ligne, pour indiquer à l’usager où il se trouve dans le parcours.

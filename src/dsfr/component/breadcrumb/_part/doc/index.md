@@ -23,6 +23,8 @@ Le fil d’Ariane est un système de navigation secondaire qui permet à l’usa
 
 :::
 
+::dsfr-doc-storybook{storyId=breadcrumb--breadrumb}
+
 ### Quand utiliser ce composant ?
 
 **Proposer un fil d'Ariane est fortement recommandé sur l’ensemble des sites**, particulièrement lorsque l’arborescence possède plus de 2 niveaux. Il permet à l’usager de revenir à une page de niveau supérieur en l’utilisant à la place du bouton « Retour » du navigateur ou de [la navigation principale.](../../../navigation/_part/doc/index.md)

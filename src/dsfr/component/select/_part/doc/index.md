@@ -23,6 +23,8 @@ La liste déroulante est un élément d’interaction avec l’interface permett
 
 :::
 
+::dsfr-doc-storybook{storyId=select—select}
+
 ### Quand utiliser ce composant ?
 
 Utiliser la liste déroulante pour permettre à l’usager de sélectionner une unique option dans une liste.

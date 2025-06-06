@@ -24,6 +24,8 @@ Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors 
 
 :::
 
+::dsfr-doc-storybook{storyId=tooltip--tooltip}
+
 ### Quand utiliser ce composant ?
 
 **Utiliser l’infobulle uniquement lorsqu’il n’est pas possible d’afficher l’information directement dans le contenu de la page**, sans la cacher dans une bulle. L’information contenue dans l’infobulle ne doit pas être essentielle à la bonne compréhension du parcours par l’usager.

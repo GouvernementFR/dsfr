@@ -29,6 +29,8 @@ Retrouver le fonctionnement en détail ici : [https://franceconnect.gouv.fr/par
 
 :::
 
+::dsfr-doc-storybook{storyId=connect--connect}
+
 ### Quand utiliser ce composant ?
 
 Utiliser le bouton FranceConnect pour proposer une connexion ou une création de compte simplifiée à l’usager.
