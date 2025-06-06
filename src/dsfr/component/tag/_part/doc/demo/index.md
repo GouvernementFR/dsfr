@@ -14,11 +14,13 @@ summary: Ce contenu présente le composant Tag dans un design system. Il expliqu
 Le tag est un élément d’indication ou d’interaction (selon les contextes) permettant de catégoriser, classer, organiser les contenus d’un site à l’aide de mots clés. Il aide les usagers à rechercher et à trouver facilement une information.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - Démo
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ::dsfr-doc-storybook{id=tag--docs}

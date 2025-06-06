@@ -20,6 +20,7 @@ L’en-tête est un élément de navigation permettant aux usagers d’identifie
 - [Design](design/index.md)
 - [Code](code/index.md)
 - [Accessibilité](accessibility/index.md)
+
 :::
 
 ### Quand utiliser ce composant ?

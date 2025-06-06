@@ -14,11 +14,13 @@ summary: Ce document décrit les usages du composant Citation, destiné à inté
 La citation est un élément éditorial permettant de mettre en forme du contenu dans une page.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}

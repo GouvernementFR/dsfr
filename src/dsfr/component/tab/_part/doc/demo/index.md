@@ -14,12 +14,13 @@ summary: Cette fiche détaille le fonctionnement du composant Onglets du design 
 Le système d’onglets permet de structurer et de présenter plusieurs sections de contenu liées, en affichant une seule section à la fois dans un espace limité.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - Démo
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
-:::
 
+:::
 
 ::dsfr-doc-storybook{id=tabs--docs}

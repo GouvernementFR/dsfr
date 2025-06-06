@@ -1,6 +1,6 @@
 ---
-title: Design de la Navigation Tertiaire bêta
-shortTitle: Design de la Navigation Tertiaire bêta
+title: Design de la Navigation Tertiaire
+shortTitle: Design de la Navigation Tertiaire
 description: Composant de navigation en version bêta, destiné à offrir un troisième niveau de navigation complémentaire à la navigation secondaire.
 shortDescription: Composant de navigation de 3e niveau en complément du menu latéral
 keywords: navigation, tertiaire, DSFR, menu, accessibilité, hiérarchie, bêta
@@ -10,7 +10,7 @@ summary: La navigation tertiaire est un composant en bêta permettant d’ajoute
 beta: true
 ---
 
-## Navigation Tertiaire bêta
+## Navigation Tertiaire
 
 > [!NOTE]
 > **Ce composant est en version bêta.** Il n'existe pas en code et son design ou ses fonctionnalités peuvent encore être amenés à évoluer. N'hésitez pas à nous partager vos cas d'usage ou retours qui le concerne via notre formulaire de contact ou notre Tchap pour que nous puissions les étudier.

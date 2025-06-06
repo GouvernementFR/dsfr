@@ -14,14 +14,14 @@ summary: Le composant mot de passe est conçu pour les cas d’usage de créatio
 Le mot de passe est un élément d’interaction avec l’interface permettant d’aider l’usager à créer ou saisir un mot de passe.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Mot de passe** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
@@ -34,6 +34,7 @@ Aucune interaction au clavier spécifique au composant.
 Reprendre les éléments d'accessibilité liés au composant [champ de saisie](../../../../input/_part/doc/accessibility/index.md)
 
 #### Structuration
+
 - Le champ de mot de passe doit avoir :
   - un type `password`.
   - un attribut `autocomplete="new-password"` pour la création ou `autocomplete="current-password"` pour la connexion.
@@ -52,6 +53,7 @@ Aucun test de restitution n’est nécessaire pour le composant Mot de passe.
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs&nbsp;:** 3.2, 3.3
 - **Liens&nbsp;:** 6.1, 6.2
 - **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3,10.4, 10.5, 10.7, 10.8, 10.11, 10.12

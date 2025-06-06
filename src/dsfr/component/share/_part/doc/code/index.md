@@ -14,11 +14,13 @@ summary: Ce composant facilite la diffusion de contenus numériques en permettan
 Le partage est un groupe d’éléments d’interaction avec l’interface permettant à l’usager de partager le contenu consulté via différents canaux.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -29,10 +31,10 @@ Les boutons de partage permettent aux utilisateurs de partager facilement un con
 Sa structure est la suivante :
 
 - Le **conteneur principal**, obligatoire, du menu latéral est un élément HTML `<div>` défini par la classe `fr-share` et contenant :
-    - Le **titre**, obligatoire, des boutons de partage est un élément HTML `<p>` défini par la classe `fr-share__title` dont le libellé est "Partager la page".
-    - La **liste de liens ou boutons de partage**, obligatoire, est un élément HTML `<ul>` placé après le titre et défini par la classe `fr-btns-group`.
-        - Chaque élément `<li>` de la liste contient :
-            - Un **lien ou bouton** de partage, un élément HTML `<a>` ou `<button>` défini par la classe `fr-btn` associée à la classe utilitaire du reseau social ou de l'action de partage correspondante (ex: `fr-btn--facebook`).
+  - Le **titre**, obligatoire, des boutons de partage est un élément HTML `<p>` défini par la classe `fr-share__title` dont le libellé est "Partager la page".
+  - La **liste de liens ou boutons de partage**, obligatoire, est un élément HTML `<ul>` placé après le titre et défini par la classe `fr-btns-group`.
+    - Chaque élément `<li>` de la liste contient :
+      - Un **lien ou bouton** de partage, un élément HTML `<a>` ou `<button>` défini par la classe `fr-btn` associée à la classe utilitaire du reseau social ou de l'action de partage correspondante (ex: `fr-btn--facebook`).
 
 **Exemple de structure HTML**
 

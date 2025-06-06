@@ -40,7 +40,7 @@ Numéro de SIRET[Annuaire des entreprises](https://annuaire-entreprises.data.gou
         </div>
     </div>
     <div class="fr-mt-n1v fr-fieldset__element">
-        <a class="fr-link" target="_blank" rel="noopener" href="https://annuaire-entreprises.data.gouv.fr/">
+        <a class="fr-link" target="_blank" rel="noopener" title="Annuaire des entreprises - nouvelle fenêtre" href="https://annuaire-entreprises.data.gouv.fr/">
             Annuaire des entreprises
         </a>
     </div>
@@ -64,7 +64,7 @@ Numéro de SIRET[Annuaire des entreprises](https://annuaire-entreprises.data.gou
         </div>
     </div>
     <div class="fr-mt-n1v fr-fieldset__element">
-        <a class="fr-link" target="_blank" rel="noopener" href="https://annuaire-entreprises.data.gouv.fr/">
+        <a class="fr-link" target="_blank" rel="noopener" title="Annuaire des entreprises - nouvelle fenêtre" href="https://annuaire-entreprises.data.gouv.fr/">
             Annuaire des entreprises
         </a>
     </div>

@@ -254,7 +254,7 @@ Si la page est en Anglais, l'attribut `data-fr-assess-file` doit prendre la vale
 
 Pour fonctionner le fichier à télécharger doit être sur le même cross-domain que le site.
 
-#### Installation
+#### Installation du JavaScript
 
 Pour fonctionner, le **remplissage automatique du détail des Tuiles de téléchargement** nécessite l'utilisation de JavaScript.
 Cette fonctionnalité est disponible dans le core.

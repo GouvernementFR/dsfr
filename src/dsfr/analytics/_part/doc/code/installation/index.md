@@ -4,7 +4,7 @@ title: Installation
 
 ## Installation
 
-#### Au sein du DSFR
+### Au sein du DSFR
 
 Pour installer le système d’analytics, il suffit d’importer le fichier javascript :
 `/dist/analytics/analytics.module.js` **après** `dsfr.module.js`
@@ -26,7 +26,7 @@ Il est préférable d'utiliser l'api dans ses dernières versions pour profiter 
 
 Analytics est un package à part, il n’est pas compris dans le fichier js global du DSFR. Il n'est cependant pas totalement autonome et est dépendant du core du DSFR (compris dans le fichier global du DSFR)
 
-#### Version standalone
+### Version standalone
 
 Pour installer la version standalone du système d’analytics, il suffit d’importer le fichier javascript :
 `/standalone/analytics/analytics.module.standalone.js`
@@ -44,7 +44,7 @@ Cette version permet d’effectuer la mesure d'audience sans dépendance au DSFR
 > [!IMPORTANT]
 > La mesure des actions n'est pas disponible dans cette version
 
-#### Pour aller plus loin
+### Pour aller plus loin
 
 Pour le fonctionnement du package Analytics, une configuration particulière du dsfr est nécessaire :
 [Configuration](configuration/index.md)

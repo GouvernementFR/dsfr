@@ -14,26 +14,27 @@ summary: Ce composant propose une interface conforme aux recommandations de la C
 Le gestionnaire de consentement permet à l'usager de définir ses préférences sur l'utilisation de ses données personnelles, notamment le dépôt de cookies non fonctionnels dans son navigateur.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-### Accessibilité
+:::
 
 Le composant **Gestionnaire de consentement** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 - Le bandeau de consentement doit être le premier élément du DOM.
 
 Voir les règles d’accessibilité pour&nbsp;:
+
 - les [boutons](../../../../button/_part/doc/accessibility/index.md),
 - la [modale](../../../../modal/_part/doc/accessibility/index.md),
 - les [boutons radio](../../../../radio/_part/doc/accessibility/index.md).
@@ -56,6 +57,6 @@ Aucun test de restitution supplémentaire n’est nécessaire pour le composant 
 
 ---
 
-#### Références
+### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

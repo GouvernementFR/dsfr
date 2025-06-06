@@ -23,15 +23,13 @@ La citation est un élément éditorial permettant de mettre en forme du contenu
 
 :::
 
-### Accessibilité
-
 Le composant **Citation** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Aucune interaction au clavier spécifique au composant.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 - Le texte cité est contenu dans un élément `<blockquote>` inséré dans un bloc `<figure>` et les informations complémentaires (image, auteur, ouvrage… ) dans l'élément `<figcaption>`.
 - L’ouvrage cité doit être placé dans une balise `<cite>` et ainsi apparaitre en italique.
@@ -41,13 +39,15 @@ Aucune interaction au clavier spécifique au composant.
 > Ne pas confondre l’attribut `cite` qui permet d’ajouter l’URL de la source de la citation si celle-ci provient d’un autre site et l’élément `<cite>` à utiliser pour le titre de l’œuvre citée.
 > L’attribut et l’élément n’ont pas d’importance pour l’accessibilité.
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 Le composant Citation est suffisamment contrasté en thème clair et en thème sombre.
 
 ### Restitution par les lecteurs d’écran
 
 NVDA et JAWS sont les seuls lecteurs d’écran à restituer correctement la sémantique de l’élément blockquote.
+
+---
 
 ### Critères RGAA applicables
 
@@ -61,7 +61,7 @@ NVDA et JAWS sont les seuls lecteurs d’écran à restituer correctement la sé
 
 ---
 
-#### Références
+### Références
 
 - [Élément blockquote](https://html.spec.whatwg.org/#the-blockquote-element)
 - [Élément cite](https://html.spec.whatwg.org/#the-cite-element)

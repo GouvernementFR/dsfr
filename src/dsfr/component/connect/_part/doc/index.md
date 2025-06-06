@@ -20,11 +20,13 @@ Il est primordial dans l’usage du service FranceConnect et garantit sa reconna
 Retrouver le fonctionnement en détail ici : [https://franceconnect.gouv.fr/partenaires](https://franceconnect.gouv.fr/partenaires)
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
 
 ### Quand utiliser ce composant ?
@@ -47,4 +49,3 @@ Utiliser le bouton FranceConnect pour proposer une connexion ou une création de
 
 - **Garantir la compréhension de l’utilisateur** en accompagnant le bouton FranceConnect de la phrase : « FranceConnect est la solution proposée par l’État pour sécuriser et simplifier la connexion à vos services en ligne ».
 - **Faire attention à l’écriture du terme « FranceConnect »** en accolant les deux mots France et Connect partout où « FranceConnect » est mentionné.
-

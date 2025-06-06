@@ -23,15 +23,13 @@ Le composant **Contenu médias** permet d'intégrer des contenus multimédias te
 
 :::
 
-### Accessibilité
-
 Le composant **Contenu médias** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant **Contenu médias**.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 - Utiliser des balises sémantiques pour structurer le contenu multimédia.
   - Utiliser la balise `<figure>` pour encapsuler les contenus multimédias.
@@ -52,7 +50,7 @@ Il n'y a aucune interaction spécifique au composant **Contenu médias**.
   - Le lecteur est utilisable au clavier selon un ordre logique.
   - Les vidéos (hors direct) sont sous-titrées.
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 Le composant Contenu médias est suffisamment contrasté en thème clair.
 
@@ -70,8 +68,7 @@ Le composant Contenu médias est suffisamment contrasté en thème clair.
 
 ---
 
-#### Références
+### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Arbre de décision - alternative d’image (WAI)](https://www.w3.org/WAI/tutorials/images/decision-tree/)
-

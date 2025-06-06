@@ -17,7 +17,7 @@ beta: true
 
 Retrouvez ces composants sur Figma [dans un fichier dédié bêta disponible sur Community](https://www.figma.com/community/file/1096003483468520396).
 
-La liste déroulante riche est un élément d’interaction avec l’interface permettant à l’usager de choisir une ou plusieurs options dans une liste donnée. 
+La liste déroulante riche est un élément d’interaction avec l’interface permettant à l’usager de choisir une ou plusieurs options dans une liste donnée.
 
 :::dsfr-doc-tab-navigation
 
@@ -26,7 +26,7 @@ La liste déroulante riche est un élément d’interaction avec l’interface p
 
 :::
 
-![](./_asset/presentation/presentation-1.png)
+![ ](./_asset/presentation/presentation-1.png)
 
 ### Quand utiliser ce composant ?
 

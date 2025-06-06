@@ -23,29 +23,27 @@ La lettre d’information et réseaux sociaux est un ensemble d’éléments d�
 
 :::
 
-### Accessibilité
-
 Le composant **Lettre d’information et Réseaux Sociaux** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Aucune interaction au clavier spécifique au composant.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 L’ensembles des règles d'accessibilité des [liens](../../../../input/_part/doc/accessibility/index.md), des [boutons](../../../../button/_part/doc/accessibility/index.md) et des [champs de saisie](../../../../input/_part/doc/accessibility/index.md) doivent être respectées.
 
-##### Liens réseaux sociaux
+#### Liens réseaux sociaux
 
 - Les liens des réseaux sociaux doivent être structurés dans une liste.
 - Pour expliciter les liens-icônes, ajouter un attribut `title` sur le lien.
 
-##### Lettre d’information
+#### Lettre d’information
 
 - Le `<label>` du champ de saisie de la <span lang="en">newsletter</span> doit être présent, même s'il est masqué visuellement.
 - Un attribut `title` sur l'`<input>` explicite la fonction du champ.
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 Le composant est suffisamment contrasté en thème clair et en thème sombre.
 
@@ -56,6 +54,7 @@ Aucun test de restitution n’est nécessaire pour le composant Lettre d’infor
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs&nbsp;:** 3.2, 3.3
 - **Liens&nbsp;:** 6.1, 6.2
 - **Scripts&nbsp;:** 7.1, 7.3, 7.5
@@ -68,6 +67,6 @@ Aucun test de restitution n’est nécessaire pour le composant Lettre d’infor
 
 ---
 
-#### Références
+### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

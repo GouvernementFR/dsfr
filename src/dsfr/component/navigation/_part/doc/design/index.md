@@ -14,11 +14,13 @@ summary: Ce document décrit la navigation principale comme un composant central
 La navigation principale est le système central de navigation au sein d’un site. Elle permet d’orienter l’usager à travers les rubriques principales et secondaires du site.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}

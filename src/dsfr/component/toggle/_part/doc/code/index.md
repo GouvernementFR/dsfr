@@ -14,11 +14,13 @@ summary: Ce composant est conçu pour gérer rapidement des actions binaires dan
 L’interrupteur est un élément d’interaction avec l’interface qui permet à l’usager de faire un choix entre deux états opposés (activé / désactivé).
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -297,7 +299,7 @@ Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont défini
 
 ### JavaScript
 
-#### Installation  du JavaScript
+#### Installation du JavaScript
 
 Pour fonctionner le composant interrupteur nécessite l'utilisation de JavaScript uniquement pour la variante avec état affiché.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.

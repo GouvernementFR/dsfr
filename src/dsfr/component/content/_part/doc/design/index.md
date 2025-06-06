@@ -43,7 +43,7 @@ Le composant **Contenu médias** permet d'intégrer des contenus multimédias te
 
 Il s’agit du format conseillé par défaut pour les images et vidéos lorsqu’elles sont intégrées dans un contenu éditorial.
 
-> [!NOTE] 
+> [!NOTE]
 > L’iFrame générée par l’hébergeur de la vidéo peut être différent du ratio par défaut de 16:9.
 
 **Autres ratios**

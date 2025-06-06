@@ -14,13 +14,13 @@ summary: Ce document décrit les usages du composant Paramètres d’affichage, 
 Les paramètres d’affichage représentent un parcours simple permettant à l’usager d’interagir avec l’interface afin de modifier le thème d’un site.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - Démo
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
-:::
 
-### Démonstration
+:::
 
 ::dsfr-doc-storybook{id=display--docs}

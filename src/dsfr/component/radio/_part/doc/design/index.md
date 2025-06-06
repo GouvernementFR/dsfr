@@ -14,11 +14,13 @@ summary: Ce composant est conçu pour faciliter le choix unique dans une interfa
 Le bouton radio est un élément d’interaction avec l’interface permettant à l’usager de réaliser un choix unique parmi plusieurs options.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -36,7 +38,6 @@ Le bouton radio est un élément d’interaction avec l’interface permettant �
 ::dsfr-doc-pin[Un texte additionnel]{add='accompagnant chaque bouton / libellé'}
 
 :::
-
 
 ### Variations
 
@@ -60,7 +61,7 @@ Il est recommandé d’ajouter un texte d’aide qui accompagne les boutons radi
 
 ::dsfr-doc-storybook{storyId=radios-group--hint-group}
 
-**Boutons radio riches** 
+**Boutons radio riches**
 
 Utiliser les boutons radio riches pour permettre à l’usager de sélectionner une option unique dans une liste d’options illustrées.
 

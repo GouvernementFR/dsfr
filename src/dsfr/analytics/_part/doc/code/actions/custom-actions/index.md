@@ -19,8 +19,7 @@ HTML concernée.
 ```
 
 ```html
-<p>
-Envoyez un événement lors du clic sur
+<p>Envoyez un événement lors du clic sur
 <a href="http://url-externe" data-fr-analytics-click>ce lien externe</span>.
 </p>
 ```
@@ -40,6 +39,7 @@ Mode : [out] | type : _interaction_
 Interaction générique du clic.
 
 De manière automatique, le type de l'action approprié sera sélectionné :
+
 * `DOWNLOAD` s'il s'agit d'un anchor avec href et attribut download
 * `INTERNAL` s'il s'agit d'un anchor avec href qui pointe sur le même domaine
 * `EXTERNAL` s'il s'agit d'un anchor avec href qui pointe sur un domaine différent

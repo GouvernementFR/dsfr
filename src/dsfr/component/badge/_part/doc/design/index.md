@@ -143,7 +143,6 @@ Ne pas utiliser une couleur système pour un badge standard.
 
 ::::
 
-
 ### Maillage
 
 - [Tag](../../../../tag/_part/doc/index.md)

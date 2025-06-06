@@ -25,7 +25,7 @@ La case à cocher est un élément d’interaction avec l’interface permettant
 
 ### Quand utiliser ce composant ?
 
-Utiliser les cases à cocher pour permettre à l’utilisateur de sélectionner une ou plusieurs options dans une liste. 
+Utiliser les cases à cocher pour permettre à l’utilisateur de sélectionner une ou plusieurs options dans une liste.
 
 > [!NOTE]
 > Bien différencier les cases à cocher des boutons radio ou liste déroulante. Les cases à cocher sont recommandées lorsque l’utilisateur doit effectuer une sélection multiple (de 0 à N éléments) dans une liste ou pour permettre un choix binaire (lorsque l’utilisateur peut sélectionner ou désélectionner une seule option).

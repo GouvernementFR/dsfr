@@ -14,11 +14,13 @@ summary: Ce contenu présente en détail le design du composant Tag, utilisé po
 Le tag est un élément d’indication ou d’interaction (selon les contextes) permettant de catégoriser, classer, organiser les contenus d’un site à l’aide de mots clés. Il aide les usagers à rechercher et à trouver facilement une information.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -111,7 +113,7 @@ Seule la couleur des tags cliquables peut être personnalisée, parmi les couleu
 
 La personnalisation des tags doit se faire avec parcimonie et avec un objectif précis (permettre d'en faire ressortir un type ou le sens, par exemple).
 
-> [!NOTE] 
+> [!NOTE]
 > Si vous personnalisez la couleur illustrative des badges, attention à la couleur d’arrière-plan sur laquelle ils sont positionnés à travers l’ensemble du site.
 
 ::::dsfr-doc-guidelines

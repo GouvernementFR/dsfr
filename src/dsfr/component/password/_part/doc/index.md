@@ -14,11 +14,13 @@ summary: Le composant mot de passe est conçu pour les cas d’usage de créatio
 Le mot de passe est un élément d’interaction avec l’interface permettant d’aider l’usager à créer ou saisir un mot de passe.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
 
 ### Quand utiliser ce composant ?

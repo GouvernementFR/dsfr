@@ -14,11 +14,13 @@ summary: Ce composant est conçu pour gérer rapidement des actions binaires dan
 L’interrupteur est un élément d’interaction avec l’interface qui permet à l’usager de faire un choix entre deux états opposés (activé / désactivé).
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - Démo
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ::dsfr-doc-storybook{id=toggle--docs}

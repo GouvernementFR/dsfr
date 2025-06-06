@@ -13,7 +13,6 @@ summary: La modale s’utilise pour présenter un contenu complémentaire ou une
 
 La modale est un élément de mise en forme de contenu permettant de concentrer l’attention de l’usager exclusivement sur une tâche ou un élément d’information, sans perdre le contexte de la page en cours.
 
-
 :::dsfr-doc-tab-navigation
 
 - [Présentation](../index.md)

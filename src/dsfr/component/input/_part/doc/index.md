@@ -25,11 +25,12 @@ Le champ de saisie est un élément d’interaction avec l’interface permettan
 
 ### Quand utiliser ce composant ?
 
-Utiliser le champ de saisie pour permettre à un usager de saisir du contenu et/ou des données. 
+Utiliser le champ de saisie pour permettre à un usager de saisir du contenu et/ou des données.
 
-> [!NOTE] 
-> N’utiliser pas un champ de saisie pour des **choix fermés.**  Préférer plutôt une [liste déroulante](../../../select/_part/doc/index.md), des [boutons radio](../../../radio/_part/doc/index.md) ou des [cases à cocher](../../../checkbox/_part/doc/index.md).<br>
-Pour les champs de recherche spécifiquement, utiliser la [barre de recherche](../../../search/_part/doc/index.md).
+> [!NOTE]
+> N’utiliser pas un champ de saisie pour des **choix fermés**. Préférer plutôt une [liste déroulante](../../../select/_part/doc/index.md), des [boutons radio](../../../radio/_part/doc/index.md) ou des [cases à cocher](../../../checkbox/_part/doc/index.md).
+>
+> Pour les champs de recherche spécifiquement, utiliser la [barre de recherche](../../../search/_part/doc/index.md).
 
 ### Comment utiliser ce composant ?
 

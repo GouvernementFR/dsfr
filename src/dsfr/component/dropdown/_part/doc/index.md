@@ -26,7 +26,7 @@ Le menu déroulant présente une liste d'actions ou de choix parmi lesquels un u
 
 :::
 
-![](./_asset/presentation/presentation-1.png)
+![ ](./_asset/presentation/presentation-1.png)
 
 ### Quand utiliser ce composant ?
 

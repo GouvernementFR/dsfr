@@ -14,11 +14,13 @@ summary: Ce composant permet une sélection multiple ou binaire dans les interfa
 La case à cocher est un élément d’interaction avec l’interface permettant à l’usager de sélectionner une ou plusieurs options dans une liste.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - Démo
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ::dsfr-doc-storybook{id=checkbox--docs}

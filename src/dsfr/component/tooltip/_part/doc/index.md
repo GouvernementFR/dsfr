@@ -15,6 +15,7 @@ L’infobulle (ou bulle d’aide, aide contextuelle) est un élément d’indica
 Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors du survol ou au clic de l’élément associé.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)

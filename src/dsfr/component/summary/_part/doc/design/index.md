@@ -14,11 +14,13 @@ summary: Ce composant permet d’améliorer l’expérience utilisateur dans les
 Le sommaire est un système de navigation secondaire présentant une liste d’ancres placée au-dessus du contenu correspondant.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -34,7 +36,6 @@ Le sommaire est un système de navigation secondaire présentant une liste d’a
 ::dsfr-doc-pin[Un fond gris]{required=true}
 
 :::
-
 
 ### Variations
 
@@ -76,7 +77,6 @@ Ne pas personnaliser la couleur de fond du sommaire.
 
 ::::
 
-
 ::::dsfr-doc-guidelines
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
@@ -96,7 +96,6 @@ Ne pas personnaliser la couleur ou la typographie des ancres.
 :::
 
 ::::
-
 
 ### Maillage
 

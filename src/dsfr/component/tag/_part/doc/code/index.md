@@ -14,11 +14,13 @@ summary: Ce contenu présente le composant Tag dans un design system. Il expliqu
 Le tag est un élément d’indication ou d’interaction (selon les contextes) permettant de catégoriser, classer, organiser les contenus d’un site à l’aide de mots clés. Il aide les usagers à rechercher et à trouver facilement une information.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -251,7 +253,7 @@ Le groupe de tag est disponible en deux variantes de tailles :
 
 ### JavaScript
 
-#### Installation  du JavaScript
+#### Installation du JavaScript
 
 Pour fonctionner, le composant Tag nécessite l'utilisation de JavaScript pour les tags activables supprimables.
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.

@@ -14,6 +14,7 @@ summary: Ce document présente les bonnes pratiques d’usage du bandeau d’inf
 Le bandeau d’information importante est un élément éditorial permettant d’attirer l’attention des usagers sur une information importante et temporaire.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -34,11 +35,11 @@ Sa structure comprend les éléments suivants :
 - Un **conteneur** est un élément HTML `<div>` défini par la classe `fr-container`.
 - Le **corps du bandeau** est un élément HTML `<div>` défini par la classe `fr-notice__body`.
 - Un paragraphe `<p>` qui contient le texte du message dont :
-    - Le **titre du bandeau** d’information importante, obligatoire, dans un élément HTML `<span>` défini par la classe `fr-notice__title`.
-    - Le **texte du bandeau**, optionnel, dans un élément HTML `<span>` défini par la classe `fr-notice__desc`.
-    - Un **lien**, optionnel, dans un élément HTML `<a>` défini par la classe `fr-notice__link`.
+  - Le **titre du bandeau** d’information importante, obligatoire, dans un élément HTML `<span>` défini par la classe `fr-notice__title`.
+  - Le **texte du bandeau**, optionnel, dans un élément HTML `<span>` défini par la classe `fr-notice__desc`.
+  - Un **lien**, optionnel, dans un élément HTML `<a>` défini par la classe `fr-notice__link`.
 - Un bouton de fermeture, optionnel, dans un élément HTML `<button>` de type `button` et défini par les classes `fr-btn--close` et `fr-btn` pour permettre à l'utilisateur de fermer le bandeau.
-    - Il doit être lié à une fonction JavaScript pour supprimer le bandeau du DOM lorsque celui-ci est cliqué.
+  - Il doit être lié à une fonction JavaScript pour supprimer le bandeau du DOM lorsque celui-ci est cliqué.
 
 **Exemple de structure HTML**
 
@@ -126,6 +127,7 @@ L'icône peut être modifiée et seul le titre est obligatoire :
 - **Bandeau d'alerte**
 
 Ces variations sont définies par l'ajout de classes correspondantes sur le conteneur principal :
+
 - `fr-notice--info`
 - `fr-notice--warning`
 - `fr-notice--alert`
@@ -192,6 +194,7 @@ L'icône peut être modifiée et seul le titre est obligatoire :
 - **Vigilance météo violette**
 
 Ces variations sont définies par l'ajout de classes correspondantes sur le conteneur principal :
+
 - `fr-notice--weather-orange`
 - `fr-notice--weather-red`
 - `fr-notice--weather-purple`
@@ -258,6 +261,7 @@ L'icône ne peut pas être modifiée et les intitulés officiels doivent être u
 - **Alerte technologique**
 
 Ces variations sont définies par l'ajout de classes correspondantes sur le conteneur principal :
+
 - `fr-notice--attack`
 - `fr-notice--witness`
 - `fr-notice--cyberattack`
@@ -323,7 +327,7 @@ Le composant **Bandeau d'information importante** nécessite un JavaScript minim
 
 Le bouton de fermeture doit être lié à une fonction JavaScript pour supprimer le bandeau du DOM. Voici un exemple de code en javascript vanilla pour gérer la suppression du bandeau :
 
-```HTML
+```javascript
 document.querySelector('.fr-notice__close').addEventListener('click', function() {
   this.closest('.fr-notice').remove();
 });

@@ -9,19 +9,19 @@ excerpt: Le composant Tableau permet d’organiser des données sous forme de li
 summary: Le tableau est conçu pour présenter des données de manière claire et structurée. Il prend en charge les fonctionnalités de tri, pagination, sélection de lignes et intégration de composants variés (boutons, liens, champs de saisie…). Il propose plusieurs états (par défaut, sélectionné) et tailles d’affichage (SM, MD, LG) selon le contexte. Bien que non personnalisable dans son ensemble, il permet de personnaliser les composants qu’il intègre. Son usage est recommandé pour des données complexes ou nombreuses, tout en restant attentif à la lisibilité sur tous les formats d’écran.
 ---
 
-# Tableau
+## Tableau
 
 Le tableau permet de présenter une liste structurée de données textuelles et/ou numériques dans le but de simplifier l’analyse et la comparaison d’informations pour l’usager.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Tableau** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
@@ -32,6 +32,7 @@ Aucune interaction clavier n'est liée au composant.
 ### Règles d’accessibilité
 
 #### Structuration
+
 - Le tableau propose une balise caption contenant un titre pertinent.
 - Les en-têtes de lignes et de colonnes doivent être des `<th>`.
 - Associer les en-têtes de lignes et de colonnes avec&nbsp;:
@@ -59,6 +60,7 @@ Aucun test de restitution n’est nécessaire pour le composant Tableau.
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs** : 3.2
 - **Tableaux&nbsp;:** 5.1, 5.2, 5.4, 5.5, 5.6, 5.7
 - **Présentation de l’information** : 10.1, 10.2, 10.3,10.4, 10.5, 10.7, 10.11, 10.12
@@ -71,4 +73,5 @@ Aucun test de restitution n’est nécessaire pour le composant Tableau.
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 
 #### Ressources
+
 [Tableaux de données complexes : comment les intégrer de manière accessible en HTML ?](https://access42.net/tableaux-donnees-complexes-integration-html-accessible-rgaa/).

@@ -23,22 +23,20 @@ Le fil d’Ariane est un système de navigation secondaire qui permet à l’usa
 
 :::
 
-### Accessibilité
-
 Le composant **Fil d’Ariane** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Aucune interaction au clavier spécifique au composant.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 > [!NOTE]
 > Le fil d’Ariane n’est pas obligatoire dans le cadre du respect du RGAA. Il s’agit d’un critère d’accessibilité de niveau AAA de WCAG.
 >
 > Son usage est néanmoins fortement recommandé pour aider les personnes avec un handicap cognitif notamment à mieux se repérer sur le site.
 
-##### Structuration
+#### Structuration
 
 - Le fil d’Ariane est un système de navigation secondaire. Il doit être structuré dans un élément `nav role="navigation"`.
 - L’attribut `aria-label="vous êtes ici :"` est utilisé pour nommer et donner un contexte explicite à la navigation.
@@ -54,7 +52,8 @@ En version mobile, l’affichage direct du fil d’Ariane est remplacé par un b
 - La page courante n’est pas structurée dans un lien et n’est pas soulignée.
 - Elle est en plus identifiée explicitement avec un attribut `aria-current="page"` pour les personnes aveugles.
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
+
 Le composant Fil d’Ariane est suffisamment contrasté en thème clair et en thème sombre.
 
 :::dsfr-doc-table[Contrastes des textes — composant Fil d’Ariane]{valign=top scroll=false caption=false}
@@ -72,18 +71,19 @@ L’attribut `aria-current="page"` peut être restitué différemment selon les 
 
 - VoiceOver macOS, Narrateur&nbsp;: «&nbsp;page actuelle&nbsp;»
 - NVDA, JAWS&nbsp;: «&nbsp;page courante&nbsp;»
-- Talkback, VoiceOver iOS&nbsp;: «&nbsp;page active&nbsp;» 
+- Talkback, VoiceOver iOS&nbsp;: «&nbsp;page active&nbsp;»
 
-À noter&nbsp;: VoiceOver iOS et Narrateur ne restituent pas `aria-current` sur un élément `a` sans attribut `href`. 
+À noter&nbsp;: VoiceOver iOS et Narrateur ne restituent pas `aria-current` sur un élément `a` sans attribut `href`.
 
 La page courante est alors indiquée implicitement aux personnes aveugles car celle-ci n’est pas structurée dans un lien, contrairement aux autres pages.
 
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs** : 3.1, 3.2
 - **Liens** : 6.1, 6.2
-- **Scripts** : 7.1, 7.3 
+- **Scripts** : 7.1, 7.3
 - **Structuration** : 9.2, 9.3
 - **Présentation de l’information** : 10.1, 10.2, 10.3,10.4, 10.5, 10.7, 10.8, 10.11, 10.12
 - **Navigation** : 12.2, 12.6, 12.8, 12.9
@@ -91,7 +91,8 @@ La page courante est alors indiquée implicitement aux personnes aveugles car ce
 
 ---
 
-#### Références
+### Références
+
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Attribut aria-current](https://www.w3.org/TR/wai-aria-1.1/#aria-current)
 - [Critère de succès WCAG 2.4.8 AAA — Localisation](https://www.w3.org/Translations/WCAG21-fr/#location)

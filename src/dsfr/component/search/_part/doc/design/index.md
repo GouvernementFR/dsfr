@@ -14,13 +14,14 @@ summary: Ce composant propose un champ de saisie avec bouton pour rechercher un 
 La barre de recherche est un système de navigation permettant à l'usager d’accéder rapidement à un contenu en lançant une recherche sur un mot clé ou une phrase.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
-:::
 
+:::
 
 :::dsfr-doc-anatomy{col=12}
 
@@ -33,7 +34,6 @@ La barre de recherche est un système de navigation permettant à l'usager d’a
 ::dsfr-doc-pin[Un texte d’exemple]{required=true}
 
 :::
-
 
 ### Variations
 
@@ -104,7 +104,6 @@ Ne pas personnaliser le pictogramme du bouton de recherche.
 :::
 
 ::::
-
 
 ### Maillage
 

@@ -14,11 +14,13 @@ summary: Ce composant facilite la diffusion de contenus numériques en permettan
 Le partage est un groupe d’éléments d’interaction avec l’interface permettant à l’usager de partager le contenu consulté via différents canaux.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
 
 ### Quand utiliser ce composant ?
@@ -61,7 +63,6 @@ Positionner le partage en bas de page.
 :::
 
 ::::
-
 
 - **Rationaliser le nombre d’éléments proposés** afin que le partage reste sur une même ligne et ne prenne pas trop de place. Il est recommandé de ne pas excéder 5 boutons (3 liens pour les réseaux sociaux et les deux boutons de partage, par exemple).
 

@@ -59,7 +59,7 @@ La carte existe en deux formats (horizontal et vertical) déclinés sur deux sup
 
 Aucun ratio n’est imposé dans une carte horizontale.
 
-La taille de l’image est déduite : 
+La taille de l’image est déduite :
 
 - En hauteur, par la hauteur du contenu.
 - En largeur, par les proportions choisies de la carte parmi celles proposées : 33%, 40% et 50%.

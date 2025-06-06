@@ -15,11 +15,13 @@ summary: Ce composant facilite la diffusion de contenus numériques en permettan
 Le partage est un groupe d’éléments d’interaction avec l’interface permettant à l’usager de partager le contenu consulté via différents canaux.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -35,7 +37,6 @@ Le partage est un groupe d’éléments d’interaction avec l’interface perme
 ::dsfr-doc-pin[Un bouton pour copier le lien de la page]{required=true}
 
 :::
-
 
 ### Variations
 
@@ -54,8 +55,10 @@ L’état désactivé indique que l'usager ne peut pas interagir avec les bouton
 ::dsfr-doc-storybook{id=share--disabled}
 
 > [!NOTE]
-> Le code d’intégration des boutons et liens de partage proposé ici correspond à de simples liens externes vers les services de partage.<br>
-> Si vous souhaitez utiliser les différentes intégrations (javascript) proposées par les différents réseaux sociaux, vous devrez très probablement les intégrer à votre gestionnaire de consentement afin que l’usager puisse accepter ou non les cookies déposés.<br>
+> Le code d’intégration des boutons et liens de partage proposé ici correspond à de simples liens externes vers les services de partage.
+>
+> Si vous souhaitez utiliser les différentes intégrations (javascript) proposées par les différents réseaux sociaux, vous devrez très probablement les intégrer à votre gestionnaire de consentement afin que l’usager puisse accepter ou non les cookies déposés.
+>
 > Par défaut, les services devant être désactivés, les boutons sont donc passés en inactif et une mention d’information s’affiche pour rediriger l’usager vers la modale de consentement.
 
 ### Personnalisation
@@ -75,7 +78,6 @@ Ne pas personnaliser les icônes des réseaux sociaux.
 :::
 
 ::::
-
 
 ### Maillage
 

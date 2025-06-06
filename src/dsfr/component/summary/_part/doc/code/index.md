@@ -14,11 +14,13 @@ summary: Ce composant permet d’améliorer l’expérience utilisateur dans les
 Le sommaire est un système de navigation secondaire présentant une liste d’ancres placée au-dessus du contenu correspondant.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -30,10 +32,10 @@ Le composant **Sommaire** est un élément interactif permettant de naviguer ent
 Sa structure est la suivante :
 
 - Le **conteneur du sommaire** est une balise `<div>` avec la classe `fr-summary` et le rôle `navigation`.
-    - Le sommaire dispose d'un attribut `aria-labelledby` défini sur l'ID du titre du sommaire.
+  - Le sommaire dispose d'un attribut `aria-labelledby` défini sur l'ID du titre du sommaire.
 - Le **titre du sommaire**, obligatoire, est defini par la classe `fr-summary__title`.
 - Les éléments de la **liste d'ancre**, obligatoire, sont contenus dans une balise `<ol>`.
-    - Chaque élément de la liste `<li>` contient un lien `<a>` défini par la classe `fr-summary__link`.
+  - Chaque élément de la liste `<li>` contient un lien `<a>` défini par la classe `fr-summary__link`.
 
 **Exemple de structure HTML**
 

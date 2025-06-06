@@ -16,7 +16,7 @@ summary: Le composant téléchargement de fichier n’est plus maintenu dans le 
 
 Pour permettre à l’usager de télécharger un ou plusieurs fichiers depuis votre interface, le DSFR met désormais à disposition des variations adaptées des composants lien, carte et tuile.
 
-Suivez les liens ci-dessous pour consulter leur documentation respective (onglet “Design” - section “Variations”)
+Suivez les liens ci-dessous pour consulter leur documentation respective.
 
 - **Carte de téléchargement**
 

@@ -9,20 +9,24 @@ excerpt: Le composant Tableau permet d’organiser des données sous forme de li
 summary: Le tableau est conçu pour présenter des données de manière claire et structurée. Il prend en charge les fonctionnalités de tri, pagination, sélection de lignes et intégration de composants variés (boutons, liens, champs de saisie…). Il propose plusieurs états (par défaut, sélectionné) et tailles d’affichage (SM, MD, LG) selon le contexte. Bien que non personnalisable dans son ensemble, il permet de personnaliser les composants qu’il intègre. Son usage est recommandé pour des données complexes ou nombreuses, tout en restant attentif à la lisibilité sur tous les formats d’écran.
 ---
 
-# Tableau
+## Tableau
 
 Le tableau permet de présenter une liste structurée de données textuelles et/ou numériques dans le but de simplifier l’analyse et la comparaison d’informations pour l’usager.
+
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
 
 #### Structure du composant
+
 Le composant Tableau permet de présenter des données tabulaires. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
 1. Un conteneur principal sous la balise `<div>` :
@@ -141,7 +145,7 @@ Le composant Tableau permet de présenter des données tabulaires. Sa structure 
 
 ### CSS
 
-#### Installation
+#### Installation du CSS
 
 Pour fonctionner correctement, le style CSS du tableau et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
 
@@ -165,6 +169,7 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 
 Le tableau peut être de différentes tailles, si la taille des composants intégrés dans les cellules ne change pas, cela vous permet de varier la densité d’affichage de votre tableau en fonction de son contenu.
 Il existe 3 tailles pour les cellules du tableau :
+
 - `fr-table--sm` : Petit tableau.
 - Par défaut en taille md.
 - `fr-table--lg` : Grand tableau.
@@ -210,6 +215,7 @@ Le conteneur est responsive par défaut mais vous avez la possibilité de rendre
 ##### Variantes de placement du titre
 
 Le titre (`<caption>`) du tableau est obligatoire mais peut être positionné à différents emplacements :
+
 - Par défaut en haut.
 - `fr-table--caption-bottom` : en bas.
 - `fr-table--no-caption` : hors écran.
@@ -231,13 +237,14 @@ Le titre (`<caption>`) du tableau est obligatoire mais peut être positionné à
 ##### Variantes de tableau avec lignes sélectionnables
 
 Le tableau peut contenir des en-têtes de ligne contenant des cases à cocher permettant de selectionner la ligne entière :
-  - L'en-tête du tableau `<thead>` doit contenir :
-    - dans sa première colonne une en-tête de ligne `<th>` avec la classe `fr-cell--fixed` contenant :
-      - un texte hors écran avec la classe `fr-sr-only` annonçant l'action de "Sélectionner".
-  - Chaque ligne du corps du tableau `<tr>` doit avoir un attribut `aria-selected` et contenir :
-    - dans sa première colonne une en-tête de ligne `<th>` avec la classe `fr-cell--fixed` contenant :
-      - une case à cocher `<input type="checkbox">` avec les attributs `data-fr-row-select="true"` et `id` obligatoires, pour être liée au libellé.
-      - un libellé `<label>`, avec la classe `fr-label`, lié à la case à cocher via l'attribut `for`, sa valeur doit correspondre à l'attribut `id` de la case à cocher et son texte doit annonçer l'action de selection par exemple "Sélectionner la ligne 1".
+
+- L'en-tête du tableau `<thead>` doit contenir :
+  - dans sa première colonne une en-tête de ligne `<th>` avec la classe `fr-cell--fixed` contenant :
+    - un texte hors écran avec la classe `fr-sr-only` annonçant l'action de "Sélectionner".
+- Chaque ligne du corps du tableau `<tr>` doit avoir un attribut `aria-selected` et contenir :
+  - dans sa première colonne une en-tête de ligne `<th>` avec la classe `fr-cell--fixed` contenant :
+    - une case à cocher `<input type="checkbox">` avec les attributs `data-fr-row-select="true"` et `id` obligatoires, pour être liée au libellé.
+    - un libellé `<label>`, avec la classe `fr-label`, lié à la case à cocher via l'attribut `for`, sa valeur doit correspondre à l'attribut `id` de la case à cocher et son texte doit annonçer l'action de selection par exemple "Sélectionner la ligne 1".
 
 **Exemple de tableau avec lignes sélectionnables**
 
@@ -354,11 +361,13 @@ Le tableau peut présenter des en-têtes de ligne `<th>` fixes au scroll horizon
 Par défaut, le contenu des cellules est aligné à gauche et centré verticalement.
 
 Vous avez à votre disposition des classes CSS pour modifier l’**alignement vertical** des cellules de contenu :
+
 - `fr-cell--top` : Alignement vertical en haut.
 - Alignement vertical au centre par défaut.
 - `fr-cell--bottom` : Alignement vertical en bas.
 
 Vous avez à votre disposition des classes CSS pour modifier l’**alignement horizontal** des cellules de contenu :
+
 - Alignement horizontal à gauche par défaut.
 - `fr-cell--center` : Alignement horizontal au centre.
 - `fr-cell--right` : Alignement horizontal à droite.
@@ -440,7 +449,7 @@ Ce comportement peut être désactivé en ajoutant la classe `fr-cell--multiline
 
 ### JavaScript
 
-#### Installation
+#### Installation du JavaScript
 
 Pour fonctionner le composant tableau nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
@@ -468,15 +477,15 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
-```js
+
+```javascript
 const elem = document.getElementById('ID_TABLE');
 dsfr(elem).table.isEnabled;
 ```
 
-
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### table
+##### table
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
 | | |

@@ -14,12 +14,16 @@ summary: Le composant carte est un point d’entrée vers une page éditoriale o
 La carte est un élément d’interaction avec l’interface permettant de rediriger l’usager vers une page éditoriale donc elle donne un aperçu.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
+
+### HTML
 
 #### Structure du composant
 
@@ -283,7 +287,7 @@ Si la page est en Anglais, l'attribut `data-fr-assess-file` doit prendre la vale
 
 Pour fonctionner le fichier à télécharger doit être sur le même cross-domain que le site.
 
-#### Installation
+#### Installation du JavaScript
 
 Pour fonctionner, le **remplissage automatique du détail des cartes de téléchargement** nécessite l'utilisation de JavaScript.
 Cette fonctionnalité est disponible dans le core.

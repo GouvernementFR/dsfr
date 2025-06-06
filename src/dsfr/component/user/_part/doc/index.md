@@ -28,7 +28,7 @@ Un texte de description est présent dans le conteneur, indiquant les nom, prén
 
 :::
 
-![](./_asset/presentation/presentation-1.png)
+![ ](./_asset/presentation/presentation-1.png)
 
 ### Quand utiliser ce composant ?
 

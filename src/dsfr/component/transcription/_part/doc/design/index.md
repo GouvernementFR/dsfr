@@ -23,7 +23,6 @@ La transcription est un élément d’interaction avec l’interface permettant 
 
 :::
 
-
 :::dsfr-doc-anatomy{col=12}
 
 ![Anatomie de la transcription](../_asset/anatomy/anatomy-1.png)
@@ -41,7 +40,6 @@ La transcription est un élément d’interaction avec l’interface permettant 
 ::dsfr-doc-pin[Un titre de modale]{add='avec ou sans icône'}
 
 :::
-
 
 ### Variations
 

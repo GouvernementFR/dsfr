@@ -10,4 +10,4 @@ nav: 3
 list: true
 ---
 
-# Composants
+## Composants

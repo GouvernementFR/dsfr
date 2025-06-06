@@ -9,19 +9,19 @@ excerpt: Le composant Transcription permet de proposer un texte associé à un c
 summary: Ce composant facilite l’accès au texte d’une vidéo ou d’un média pour les usagers qui en ont besoin, en l’affichant sur la même page dans une zone repliable ou via une modale. Il est conçu pour garantir une lecture simultanée fluide et accessible, avec une structure claire et des règles d’intégration strictes.
 ---
 
-# Transcription
+## Transcription
 
 La transcription est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer le texte traduisant un contenu média au sein d’une page.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Transcription** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
@@ -57,14 +57,15 @@ Voir les tests de restitution pour le [composant Accordéon](../../../../accordi
 ---
 
 ### Critères RGAA applicables
+
 - **Couleurs** : 3.2
 - **Liens** : 6.1, 6.2
-- **Scripts** : 7.1, 7.3 
+- **Scripts** : 7.1, 7.3
 - **Présentation de l’information** : 10.1, 10.2, 10.3,10.4, 10.5, 10.7, 10.8, 10.11, 10.12
 - **Navigation** : 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 
---- 
+---
 
 ### Références
 

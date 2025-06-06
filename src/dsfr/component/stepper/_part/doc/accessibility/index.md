@@ -14,40 +14,37 @@ summary: Ce composant s’intègre dans les parcours à étapes pour aider l’u
 L’indicateur d'étapes est un élément éditorial permettant d’accompagner l’usager au sein d’un formulaire ou une démarche en plusieurs étapes.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-### Accessibilité
+:::
 
 Le composant **Indicateur d'étapes** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant **Indicateur d’étapes**.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 - Le titre de l’étape en cours est contenu dans un élément `<hx>`.
 - Le nom de l’étape suivante est dans un élément `<p>`.
 - La barre de progression ne nécessite aucune alternative ni attribut ARIA (car purement illustrative).
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 Le composant Indicateur d’étapes est suffisamment contrasté en thème clair et en thème sombre dans ses différentes versions.
-
----
 
 ### Restitution par les lecteurs d’écran
 
 Aucun test de restitution n’est nécessaire pour le composant Indicateur d’étapes.
 
----
-
 ### Critères RGAA applicables
+
 - **Couleurs&nbsp;:** 3.2
 - **Éléments obligatoires&nbsp;** 8.9
 - **Structuration&nbsp;:** 9.1

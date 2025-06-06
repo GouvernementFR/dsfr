@@ -23,7 +23,7 @@ Le champ de saisie est un élément d’interaction avec l’interface permettan
 
 :::
 
-### Code
+### HTML
 
 Un **champ de saisie** permet à l'utilisateur de saisir des données. Il existe plusieurs types de champs de saisie en fonction du type de données à saisir.
 

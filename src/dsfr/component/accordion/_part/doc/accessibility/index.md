@@ -28,10 +28,12 @@ Le composant Accordéon est conçu pour être accessible et respecter les critè
 ### Interactions clavier
 
 Lorsque le focus est sur le bouton d’ouverture de l’accordéon&nbsp;:
+
 - `Entrée`&nbsp;: ouvre ou ferme la zone de contenu associée.
 - `Espace`&nbsp;: ouvre ou ferme la zone de contenu associée.
 
 Navigation entre les accordéons&nbsp;:
+
 - `Tab`&nbsp;: déplace le focus sur le bouton suivant.
 - `Maj` + `Tab`&nbsp;: déplace le focus sur le bouton précédent.
 
@@ -39,7 +41,7 @@ Si une zone de contenu de l’accordéon est ouverte, tous les éléments intera
 
 ### Règles d’accessibilité
 
-Le composant **Accordéon** s’appuie sur le motif de conception ARIA <span lang="en">Accordion</span> de l’<a href="https://www.w3.org/WAI/ARIA/apg/about/introduction/" lang="en">Authoring Practices Guide</a> (APG).
+Le composant **Accordéon** s’appuie sur le motif de conception ARIA <span lang="en">Accordion</span> de l’<a href="https://www.w3.org/WAI/ARIA/apg/about/introduction/" target="_blank" rel="noopener external" title="Authoring Practices Guide - nouvelle fenêtre" lang="en">Authoring Practices Guide</a> (APG).
 
 #### Titre de l’accordéon
 
@@ -92,20 +94,24 @@ L’attribut `aria-expanded` est restitué différemment selon les lecteurs d’
 > Ce sont des bugs des lecteurs d’écran et non un problème avec le composant.
 
 :::fr-accordion[#### Versions navigateurs et lecteurs d’écran]{id=sr-le-desktop}
+
 Les tests de restitution ont été effectués en ajoutant le lecteur d’écran intégré à Windows 11 (Narrateur) et le navigateur web Chrome à l’environnement de tests du RGAA.
 
 Versions des navigateurs web&nbsp;:
+
 - Firefox 137
 - Chrome 135
 - Safari 18.4 (sur macOS uniquement)
 - Microsoft Edge 135 (sur Windows 11 uniquement)
 
 Version des lecteurs d’écran&nbsp;:
+
 - NVDA 2024.4.2
 - JAWS 2024
 - VoiceOver macOS 15.4
 - Narrateur (Windows 11)
 - VoiceOver iOS
+
 :::
 
 ---
@@ -122,6 +128,7 @@ Version des lecteurs d’écran&nbsp;:
 ---
 
 ### Références
+
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Attribut aria-expanded — spécification ARIA](https://www.w3.org/TR/wai-aria-1.3/#aria-expanded)
 - [Attribut aria-controls — spécification ARIA](https://www.w3.org/TR/wai-aria-1.3/#aria-controls)

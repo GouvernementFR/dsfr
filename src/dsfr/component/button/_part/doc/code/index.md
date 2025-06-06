@@ -83,6 +83,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 #### Variantes de style
 
 Le bouton peut avoir différents styles définis par les classes :
+
 - Par défaut : Bouton primaire.
 - `fr-btn--secondary` : Bouton secondaire.
 - `fr-btn--tertiary` : Bouton tertiaire.
@@ -108,6 +109,7 @@ Le bouton peut avoir différents styles définis par les classes :
 #### Variantes de taille
 
 Le Bouton peut avoir différentes tailles qui auront un impacte sur la taille du texte, de l'icône, et des espacements :
+
 - `fr-btn--sm` : Petit bouton.
 - Par défaut : Bouton moyen.
 - `fr-btn--lg` : Grand bouton.

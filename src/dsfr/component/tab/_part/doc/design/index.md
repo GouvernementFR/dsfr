@@ -14,13 +14,14 @@ summary: Cette fiche détaille le fonctionnement du composant Onglets du design 
 Le système d’onglets permet de structurer et de présenter plusieurs sections de contenu liées, en affichant une seule section à la fois dans un espace limité.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
-:::
 
+:::
 
 :::dsfr-doc-anatomy{col=12}
 
@@ -37,7 +38,6 @@ Le système d’onglets permet de structurer et de présenter plusieurs sections
 ::dsfr-doc-pin[Une zone de contenu]{required=true}
 
 :::
-
 
 ### Variations
 
@@ -73,7 +73,6 @@ Les onglets ne sont pas personnalisables.
 
 Toutefois, certains éléments sont optionnels et les icônes peuvent être changées - voir la [structure du composant](../../../../tab/_part/doc/index.md).
 
-
 ::::dsfr-doc-guidelines
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
@@ -94,7 +93,6 @@ Ne pas personnaliser la couleur de fond des onglets.
 
 ::::
 
-
 ::::dsfr-doc-guidelines
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
@@ -114,7 +112,6 @@ Ne pas augmenter la taille de typographie du titre des onglets.
 :::
 
 ::::
-
 
 #### Maillage
 

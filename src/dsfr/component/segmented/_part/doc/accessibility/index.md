@@ -9,25 +9,26 @@ excerpt: Ce document présente le contrôle segmenté comme un moyen de basculer
 summary: Ce contenu décrit l’usage du contrôle segmenté dans les interfaces pour permettre à l’usager de basculer entre plusieurs types d’affichage d’un même contenu, comme une vue en liste ou en carte. Il insiste sur les bonnes pratiques à respecter telles que la limitation du nombre de segments, la nécessité d’un libellé clair pour chaque option et l’obligation d’une valeur par défaut. Ce guide s’adresse aux concepteurs et développeurs souhaitant garantir une navigation fluide, explicite et accessible.
 ---
 
-# Contrôle segmenté
+## Contrôle segmenté
 
 Le contrôle segmenté est un élément d’interaction avec l’interface permettant à l'usager de choisir un type de vue parmi plusieurs options d'affichage disponibles.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-## Accessibilité
+:::
 
 Le composant **Contrôle segmenté** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ### Interactions clavier
 
 Lorsque le focus est positionné sur un segment&nbsp;:
+
 - `Flèche droite` ou `Flèche du bas`&nbsp;: sélectionne le segment suivant.
 - `Flèche gauche` ou `Flèche du haut`&nbsp;: sélectionne le segment précédent.
 

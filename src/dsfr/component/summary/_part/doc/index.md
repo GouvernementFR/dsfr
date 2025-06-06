@@ -14,11 +14,13 @@ summary: Ce composant permet d’améliorer l’expérience utilisateur dans les
 Le sommaire est un système de navigation secondaire présentant une liste d’ancres placée au-dessus du contenu correspondant.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
 
 ### Quand utiliser ce composant ?

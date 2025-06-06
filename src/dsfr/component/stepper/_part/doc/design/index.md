@@ -14,11 +14,13 @@ summary: Ce composant s’intègre dans les parcours à étapes pour aider l’u
 L’indicateur d'étapes est un élément éditorial permettant d’accompagner l’usager au sein d’un formulaire ou une démarche en plusieurs étapes.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - Design
 - [Code](../code/index.md)
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 :::dsfr-doc-anatomy{col=12}
@@ -73,7 +75,6 @@ Ne pas personnaliser la couleur ou le design de la barre de progression.
 :::
 
 ::::
-
 
 ### Maillage
 

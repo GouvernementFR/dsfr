@@ -23,21 +23,20 @@ Le champ de saisie est un élément d’interaction avec l’interface permettan
 
 :::
 
-### Accessibilité
-
 Les champs de saisie sont conçus pour être accessibles et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Il n’y a aucune interaction spécifique au composant **Champ de saisie**.
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 #### Intitulé pertinent&nbsp;: nom accessible
 
 Un champ de saisie doit avoir une **étiquette pertinente**. On doit en comprendre la fonction sans ambiguïté.
 
-Son nom accessible est calculé par ordre de priorité à partir de&nbsp;: 
+Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
+
 - l’attribut `aria-labelledby`,
 - l’attribut `aria-label`,
 - l’élément `<label>`,
@@ -46,11 +45,12 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 **Privilégier l’élément `<label>`** pour nommer le composant.
 
 >[!CAUTION]
->Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` de la case à cocher.  
+>Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` de la case à cocher.
 >
 >L’attribut `for` du label doit correspondre à l'attribut `id` de la case à cocher. La valeur de l’attribut `id` doit être unique dans la page.
 
 La liaison explicite `for`/`id` permet&nbsp;:
+
 - d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal),
 - de mettre le focus dans le champ en cliquant sur l’étiquette et ainsi d’étendre la zone de clic.
 
@@ -70,6 +70,7 @@ La bordure et l’étiquette du champ de saisie désactivé sont insuffisamment 
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
@@ -98,9 +99,10 @@ Par défaut, le composant Champ de saisie est suffisamment contrasté en thème 
 Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
 
 L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
+
 - VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
 - NVDA et JAWS&nbsp;: «&nbsp;bouton non disponible&nbsp;»
-- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;» 
+- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;»
 
 ---
 
@@ -108,7 +110,7 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 
 - **Couleurs&nbsp;:** 3.1, 3.2, 3.3
 - **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
-- **Formulaires&nbsp;:** 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 11.10, 11.11, 11.12, 11.13, 
+- **Formulaires&nbsp;:** 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 11.10, 11.11, 11.12, 11.13,
 - **Navigation&nbsp;:** 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 

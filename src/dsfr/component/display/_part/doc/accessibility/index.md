@@ -23,30 +23,30 @@ Les paramètres d’affichage représentent un parcours simple permettant à l�
 
 :::
 
-### Accessibilité
-
-Le composant **Paramètres d’affichage** est conçu pour être accessible et respecter les critères du RGAA. 
+Le composant **Paramètres d’affichage** est conçu pour être accessible et respecter les critères du RGAA.
 
 Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant **Paramètre d'affichage**.
 
 Les interactions clavier sont celles liées à la [modale](../../../../modal/_part/doc/accessibility/index.md), aux [boutons](../../../../button/_part/doc/accessibility/index.md), et aux [boutons radios](../../../../radio/_part/doc/accessibility/index.md).
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 - Si la gestion du thème est activée, toujours intégrer le composant Paramètre d'affichage pour laisser la possibilité à l’utilisateur de choisir l’affichage qui lui convient le mieux.
 - Privilégier le thème système par défaut pour garantir une expérience utilisateur optimale.
 - Si l’utilisateur effectue un changement de thème, son choix est conservé (dans le local storage) pour les visites ultérieures.
 
 Respecter les règles d’accessibilité pour&nbsp;:
-- les [boutons](../../../../button/_part/doc/accessibility/index.md), 
+
+- les [boutons](../../../../button/_part/doc/accessibility/index.md),
 - la [modale](../../../../modal/_part/doc/accessibility/index.md),
 - les [boutons radio](../../../../radio/_part/doc/accessibility/index.md).
 
 ### Critères RGAA applicables
+
 - **Couleurs&nbsp;:** 3.2, 3.3
 - **Scripts&nbsp;:** 7.1, 7.3
 - **Structuration&nbsp;:** 9.1
@@ -57,10 +57,10 @@ Respecter les règles d’accessibilité pour&nbsp;:
 
 ---
 
-#### Références
+### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 
-##### Ressources
+#### Ressources
 
 - [Thème sombre et accessibilité](https://stephaniewalter.design/fr/blog/theme-sombre-dark-mode-et-mythe-daccessibilite/)

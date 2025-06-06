@@ -14,11 +14,13 @@ summary: Ce document décrit les usages du composant Citation, destiné à inté
 La citation est un élément éditorial permettant de mettre en forme du contenu dans une page.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - Code
 - [Accessibilité](../accessibility/index.md)
+
 :::
 
 ### HTML
@@ -30,12 +32,12 @@ La citation permet de citer un texte dans une page éditoriale. La citation peut
 Sa structure est la suivante :
 
 - Le **conteneur principal**, obligatoire, est un élément HTML `<figure>` défini par la classe `fr-quote` et contenant :
-    - Le **Texte de la citation**, obligatoire, est un élément HTML `<blockquote>` disposant d'un attribut `cite` doit la valeur est la source de la citation.
-    - Les **Informations complémentaires** de la citation, sont dans un élément HTML `<figcaption>` contenant :
-        - Un premier paragraphe `<p>`, optionnel, afin de préciser quand nécessaire l’**Auteur de la citation**, défini par la classe `fr-quote__author`.
-        - Une liste `<ul>`, optionnelle, afin de préciser l’**Origine du texte cité**, définie par la classe `fr-quote__source`.
-            - Les éléments `<li>` de la liste des informations complémentaires peuvent contenir un élément `<cite>` ou un lien `<a>` afin de préciser l'ouvrage cité ou la source de la citation.
-        - Une **Image illustrative** de la citation, optionnelle, dans un élément HTML `<div>` défini par la classe `fr-quote__image` et contenant un élément HTML `<img>` défini par la classe `fr-responsive-img`.
+  - Le **Texte de la citation**, obligatoire, est un élément HTML `<blockquote>` disposant d'un attribut `cite` doit la valeur est la source de la citation.
+  - Les **Informations complémentaires** de la citation, sont dans un élément HTML `<figcaption>` contenant :
+    - Un premier paragraphe `<p>`, optionnel, afin de préciser quand nécessaire l’**Auteur de la citation**, défini par la classe `fr-quote__author`.
+    - Une liste `<ul>`, optionnelle, afin de préciser l’**Origine du texte cité**, définie par la classe `fr-quote__source`.
+      - Les éléments `<li>` de la liste des informations complémentaires peuvent contenir un élément `<cite>` ou un lien `<a>` afin de préciser l'ouvrage cité ou la source de la citation.
+    - Une **Image illustrative** de la citation, optionnelle, dans un élément HTML `<div>` défini par la classe `fr-quote__image` et contenant un élément HTML `<img>` défini par la classe `fr-responsive-img`.
 
 **Exemple de structure HTML**
 

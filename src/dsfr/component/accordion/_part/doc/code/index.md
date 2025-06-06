@@ -14,6 +14,7 @@ summary: Utilisé pour structurer et hiérarchiser du contenu éditorial, l’ac
 L’accordéon est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer une section de contenu présentée dans une page.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
@@ -140,7 +141,6 @@ Sur l'accordéon, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
-
 #### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
@@ -148,16 +148,14 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
-```js
+```javascript
 const elem = document.getElementById('ID_COLLAPSE');
 dsfr(elem).collapse.disclose();
 ```
 
-
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-
-###### accordionGroup
+##### accordionGroup
 
 :::dsfr-doc-table[current]{valign=top scroll=false}
 | | |
@@ -222,7 +220,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).accordionsGroup.node` |
 :::
 
-###### accordion
+##### accordion
 
 :::dsfr-doc-table[isEnabled]{valign=top scroll=false}
 | | |
@@ -233,7 +231,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
 :::
 
-###### collapseButton
+##### collapseButton
 
 :::dsfr-doc-table[focus]{valign=top scroll=false}
 | | |
@@ -263,7 +261,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapseButton.node` |
 :::
 
-###### collapse
+##### collapse
 
 :::dsfr-doc-table[concea]{valign=top scroll=false}
 | | |

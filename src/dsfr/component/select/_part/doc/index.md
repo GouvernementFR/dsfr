@@ -14,18 +14,20 @@ summary: Ce contenu décrit l’usage du composant liste déroulante, conçu pou
 La liste déroulante est un élément d’interaction avec l’interface permettant à l’usager de choisir un élément dans une liste donnée.
 
 :::dsfr-doc-tab-navigation
+
 - Présentation
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
 - [Accessibilité](./accessibility/index.md)
+
 :::
 
 ### Quand utiliser ce composant ?
 
 Utiliser la liste déroulante pour permettre à l’usager de sélectionner une unique option dans une liste.
 
-> [!NOTE] 
+> [!NOTE]
 > Bien différencier les listes déroulantes des boutons radio ou cases à cocher. Les listes déroulantes sont à privilégier lorsque l’usager doit choisir un seul élément parmi 6 à 15 choix possibles et que l’espace d’affichage des options est limité.
 
 Évitez l’usage de listes déroulantes lorsqu’elles comportent peu de propositions. Dans ce cas, optez pour [des boutons radio](../../../radio/_part/doc/index.md), dont la compréhension est plus simple pour les usagers.

@@ -14,22 +14,23 @@ summary: Ce composant structure la zone supérieure de chaque page d’un site p
 L’en-tête est un élément de navigation permettant aux usagers d’identifier sur quel site ils se trouvent et de leur donner un accès simplifié au moteur de recherche et à certaines pages ou fonctionnalités clés du site.
 
 :::dsfr-doc-tab-navigation
+
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
 - [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
-:::
 
-### Accessibilité
+:::
 
 Le composant **En-tête** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-#### Interactions clavier
+### Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant **En-tête**.
 
 Les interactions clavier sont celles des composants qui la compose :
+
 - voir [Bloc marque](../../../../logo/_part/doc/accessibility/index.md).
 - voir [Lien](../../../../link/_part/doc/accessibility/index.md).
 - voir [Bouton](../../../../button/_part/doc/accessibility/index.md).
@@ -39,7 +40,7 @@ Les interactions clavier sont celles des composants qui la compose :
 - voir [Sélecteur de langue](../../../../translate/_part/doc/accessibility/index.md).
 - voir [Paramètres d’affichage](../../../../display/_part/doc/accessibility/index.md).
 
-#### Règles d’accessibilité
+### Règles d’accessibilité
 
 Les règles d’accessibilité du composant d'en-tête découlent de celles des composants qui la compose (cf liste ci-dessus).
 
@@ -48,7 +49,7 @@ Les règles d’accessibilité du composant d'en-tête découlent de celles des 
 - Le title du lien doit contenir le terme Accueil, suivi du nom du site (ex: `title="Accueil - [À MODIFIER | Nom du site / service]”`).
 - Si l'en-tête est complexe et que le bloc marque n’est pas "République Française", mais une autre entité, cette dernière doit également être ajoutée (voir les exemples du [Bloc marque](../../../../logo/_part/doc/code/index.md)).
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 L’entête est suffisamment contrasté en thème clair et en thème sombre.
 
@@ -61,6 +62,7 @@ Aucun test de restitution n’est nécessaire pour le composant En-tête.
 ---
 
 ### Critères RGAA applicables
+
 - **Images&nbsp;:** 1.1, 1.2, 1.3
 - **Couleurs&nbsp;:** 3.2, 3.3
 - **Liens&nbsp;:** 6.1, 6.2
@@ -74,7 +76,7 @@ Aucun test de restitution n’est nécessaire pour le composant En-tête.
 
 ---
 
-#### Références
+### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Élément header](https://html.spec.whatwg.org/#the-header-element)
