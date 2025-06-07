@@ -35,41 +35,44 @@ jobs:
           echo "BRANCH=${{ github.event.release.target_commitish }}" >> $GITHUB_ENV
           echo "TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
 
-        # Set up environment variables based on the manual dispatch
+      # Set up environment variables based on the manual dispatch
       - name: Set env for manual/test
         if: github.event_name == 'workflow_dispatch'
         run: |
           echo "TYPE=${{ github.event.inputs.type }}" >> $GITHUB_ENV
           echo "BRANCH=${{ github.event.inputs.branch }}" >> $GITHUB_ENV
           echo "TAG=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
-          if ! git ls-remote --exit-code --heads origin "$BRANCH"; then
-            echo "Branch '$BRANCH' does not exist."
-            exit 1
-          fi
 
-      # Check if the tag is set, if not, checkout the branch name
-      - name: checkout branch
-        if: github.event_name == 'workflow_dispatch' && env.TAG == ''
+      # Checkout the repository
+      - name: checkout repository
+        if: github.event_name == 'workflow_dispatch'
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.BRANCH }}
+          ref: main
+          fetch-depth: 0
 
-      # Read the tag from package.json
-      - name: Read version from package.json
-        if: github.event_name == 'workflow_dispatch' && env.TAG == ''
+      # Check given remote branch existence and dynamically sets the tag from package.json if not provided
+      - name: Check if branch exists and set TAG if empty
+        if: github.event_name == 'workflow_dispatch'
         run: |
-          VERSION=$(jq -r .version package.json)
-          echo "TAG=$VERSION" >> $GITHUB_ENV
+          if ! git ls-remote --exit-code --heads origin "${{ env.BRANCH }}"; then
+            echo "Branch '${{ env.BRANCH }}' does not exist on remote."
+            exit 1
+          fi
+          if [ -z "${{ env.TAG }}" ]; then
+            echo "TAG is empty, checkout branch."
+            git checkout "${{ env.BRANCH }}"
+            VERSION=$(jq -r .version package.json)
+            echo "TAG=v${VERSION}" >> $GITHUB_ENV
+          fi
 
-      # send data to dsfr-archive
+      # Sends a POST request to trigger archive workflow
       - name: Send data to archive
-        env:
-          DSFR_ARCHIVE_PAT: ${{ secrets.DSFR_ARCHIVE_PAT }}
         run: |
           curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $DSFR_ARCHIVE_PAT" \
+            -H "Authorization: Bearer ${{ secrets.DSFR_ARCHIVE_PAT }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/GouvernementFR/dsfr-archive/actions/workflows/collect.yml/dispatches \
-            -d "{\"ref\":\"main\",\"inputs\":{\"type\":\"$TYPE\",\"branch\":\"$BRANCH\",\"tag\":\"$TAG\"}}"
+            -d "{\"ref\":\"main\",\"inputs\":{\"type\":\"${{ env.TYPE }}\",\"branch\":\"${{ env.BRANCH }}\",\"tag\":\"${{ env.TAG }}\"}}"
