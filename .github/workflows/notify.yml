@@ -27,32 +27,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Set up environment variables based on the event type
       - name: Set env for release
         if: github.event_name == 'release'
         run: |
-          echo "TYPE=release" >> $GITHUB_ENV
-          echo "BRANCH=${{ github.event.release.target_commitish }}" >> $GITHUB_ENV
-          echo "TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+          echo "type=release" >> $GITHUB_ENV
+          echo "branch=${{ github.event.release.target_commitish }}" >> $GITHUB_ENV
+          echo "tag=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
 
+        # Set up environment variables based on the manual dispatch
       - name: Set env for manual/test
         if: github.event_name == 'workflow_dispatch'
         run: |
-          echo "TYPE=${{ github.event.inputs.type }}" >> $GITHUB_ENV
-          echo "BRANCH=${{ github.event.inputs.branch }}" >> $GITHUB_ENV
-          echo "TAG=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
-          if ! git ls-remote --exit-code --heads origin "$BRANCH"; then
-            echo "Branch '$BRANCH' does not exist."
+          echo "type=${{ github.event.inputs.type }}" >> $GITHUB_ENV
+          echo "branch=${{ github.event.inputs.branch }}" >> $GITHUB_ENV
+          echo "tag=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          if ! git ls-remote --exit-code --heads origin "$branch"; then
+            echo "Branch '$branch' does not exist."
             exit 1
           fi
 
-      - name: Get tag from package.json if empty (manual)
-        if: github.event_name == 'workflow_dispatch' && env.TAG == ''
-        run: |
-          git fetch origin $BRANCH
-          git checkout origin/$BRANCH
-          VERSION=$(jq -r .version package.json)
-          echo "TAG=$VERSION" >> $GITHUB_ENV
+      # Check if the tag is set, if not, checkout the branch name
+      - name: checkout branch
+        if: github.event_name == 'workflow_dispatch' && env.tag == ''
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.branch }}
 
+      # Read the tag from package.json
+      - name: Read version from package.json
+        if: github.event_name == 'workflow_dispatch' && env.tag == ''
+        run: |
+          version=$(jq -r .version package.json)
+          echo "tag=$version" >> $GITHUB_ENV
+
+      # send data to dsfr-archive
       - name: Send data to archive
         env:
           DSFR_ARCHIVE_PAT: ${{ secrets.DSFR_ARCHIVE_PAT }}
@@ -63,4 +72,4 @@ jobs:
             -H "Authorization: Bearer $DSFR_ARCHIVE_PAT" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/GouvernementFR/dsfr-archive/actions/workflows/collect.yml/dispatches \
-            -d "{\"ref\":\"main\",\"inputs\":{\"type\":\"$TYPE\",\"branch\":\"$BRANCH\",\"tag\":\"$TAG\"}}"
+            -d "{\"ref\":\"main\",\"inputs\":{\"type\":\"$type\",\"branch\":\"$branch\",\"tag\":\"$tag\"}}"
