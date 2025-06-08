@@ -14,10 +14,6 @@ on:
         type: choice
         options:
           - test
-      branch:
-        description: 'Branch to publish'
-        required: true
-        default: 'main'
       tag:
         description: 'Tag name (optional, leave empty except if you know what you’re doing)'
         required: false
@@ -31,17 +27,22 @@ jobs:
       - name: Set env for release
         if: github.event_name == 'release'
         run: |
+          export BRANCH=${{ github.event.release.target_commitish }}
+          export TAG=${{ github.event.release.tag_name }}
           echo "TYPE=release" >> $GITHUB_ENV
-          echo "BRANCH=${{ github.event.release.target_commitish }}" >> $GITHUB_ENV
-          echo "TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+          echo "TAG=$TAG" >> $GITHUB_ENV
 
       # Set up environment variables based on the manual dispatch
       - name: Set env for manual/test
         if: github.event_name == 'workflow_dispatch'
         run: |
-          echo "TYPE=${{ github.event.inputs.type }}" >> $GITHUB_ENV
-          echo "BRANCH=${{ github.event.inputs.branch }}" >> $GITHUB_ENV
-          echo "TAG=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          export TYPE=${{ github.event.inputs.type }}
+          export BRANCH=${{ github.ref_name }}
+          export TAG=${{ github.event.inputs.tag }}
+          echo "TYPE=$TYPE" >> $GITHUB_ENV
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+          echo "TAG=$TAG" >> $GITHUB_ENV
 
       # Checkout the repository
       - name: checkout repository
@@ -62,8 +63,9 @@ jobs:
           if [ -z "${{ env.TAG }}" ]; then
             echo "TAG is empty, checkout branch."
             git checkout "${{ env.BRANCH }}"
-            VERSION=$(jq -r .version package.json)
-            echo "TAG=v${VERSION}" >> $GITHUB_ENV
+            export VERSION=$(jq -r .version package.json)
+            export TAG="v${VERSION}"
+            echo "TAG=$TAG" >> $GITHUB_ENV
           fi
 
       # Sends a POST request to trigger archive workflow
