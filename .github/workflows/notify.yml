@@ -44,6 +44,12 @@ jobs:
           echo "BRANCH=$BRANCH" >> $GITHUB_ENV
           echo "TAG=$TAG" >> $GITHUB_ENV
 
+      - name: exit if type or branch are not defined
+        if: ${{ !env.TYPE || !env.BRANCH }}
+        run: |
+          echo "Error: TYPE or BRANCH is not defined. Please provide valid inputs."
+          exit 1
+
       # Checkout the repository
       - name: checkout repository
         if: github.event_name == 'workflow_dispatch'
