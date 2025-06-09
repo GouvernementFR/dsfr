@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Set up environment variables based on the event type
-      - name: Set env for release
+      # Set up environment variables based on the release event type
+      - name: Set release env variables
         if: github.event_name == 'release'
         run: |
           export BRANCH=${{ github.event.release.target_commitish }}
@@ -34,7 +34,7 @@ jobs:
           echo "TAG=$TAG" >> $GITHUB_ENV
 
       # Set up environment variables based on the manual dispatch
-      - name: Set env for manual/test
+      - name: Set manual env variables
         if: github.event_name == 'workflow_dispatch'
         run: |
           export TYPE=${{ github.event.inputs.type }}
@@ -44,8 +44,9 @@ jobs:
           echo "BRANCH=$BRANCH" >> $GITHUB_ENV
           echo "TAG=$TAG" >> $GITHUB_ENV
 
+      # Ensure TYPE and BRANCH are defined
       - name: exit if type or branch are not defined
-        if: ${{ env.TYPE == '' || !env.TYPE || env.BRANCH == '' || !env.BRANCH }}
+        if: ${{ env.TYPE == '' || env.BRANCH == '' }}
         run: |
           echo "Error: TYPE or BRANCH is not defined. Please provide valid inputs."
           exit 1
