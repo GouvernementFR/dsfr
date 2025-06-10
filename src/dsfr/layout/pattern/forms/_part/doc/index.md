@@ -4,7 +4,7 @@ shortTitle: Formulaires
 description: Cette page présente les règles de conception des formulaires et met à disposition des blocs fonctionnels réutilisables pour structurer efficacement les démarches en ligne tout en assurant accessibilité et conformité réglementaire.
 shortDescription: Règles et modèles pour la création de formulaires
 keywords: formulaires, champs, blocs fonctionnels, accessibilité, RGPD, DSFR, ergonomie, bonnes pratiques, validation, structure
-cover: ../_asset/icon/cover/cover.png
+cover: ../_asset/cover/cover.png
 excerpt: Règles de conception et modèles prêts à l’emploi pour structurer des formulaires accessibles et conformes au Design Système de l’État.
 summary: Cette page fournit des recommandations pour concevoir des formulaires clairs, efficaces et accessibles. Elle décrit la structure idéale, les principes d’alignement, d’espacement, de gestion des erreurs et d’utilisation des champs. Elle présente également les bonnes pratiques RGPD et les exigences d’accessibilité. Des blocs fonctionnels et modèles de pages sont mis à disposition pour guider la mise en œuvre dans les démarches numériques.
 ---
@@ -31,9 +31,9 @@ La section formulaire présente donc :
 
 Les formulaires sont des interfaces souvent utilisés par les citoyens, mais pour s’assurer de leur bonne utilisation et réduire au maximum les contraintes, des règles et des bonnes pratiques de conception doivent être respectées lors de la conception de vos formulaires.
 
-### Structure du formulaire :
+### Structure du formulaire
 
-#### Structure type :
+#### Structure type
 
 Un formulaire doit généralement respecter la structure suivante :
 
@@ -42,17 +42,17 @@ Un formulaire doit généralement respecter la structure suivante :
 - N Champs,
 - Boutons
 
-#### Regroupement :
+#### Regroupement
 
 Pour guider les utilisateurs dans la compréhension du formulaire et les informations demandées, il faut grouper les champs en lien avec un titre de groupe.
 
 Pour les formulaires très longs (démarches...), séquencer en plusieurs étapes en utilisant le stepper (modèle à venir). Éviter les accordéons pour regrouper les sections.
 
-#### Alignement des champs et labels :
+#### Alignement des champs et labels
 
 Les labels doivent être placés en haut des champs et alignés à gauche, cela facilite le plus la lecture et assure un bon taux de complétion. De plus, cette disposition, ne prenant pas beaucoup de place, fonctionne bien en mobile.
 
-#### Colonage :
+#### Colonage
 
 Utiliser un layout d’une colonne pour favoriser la lecture de l’utilisateur.
 
@@ -72,7 +72,7 @@ Etant donnée qu’il faut limiter le nombre d’information à demander aux uti
 
 Une mention explicative doit se trouver au dessus du formulaire afin d’en informer l’utilisateur : “Sauf mention contraire “(optionnel)” dans le label, tous les champs sont obligatoires“
 
-#### Boutons :
+#### Boutons
 
 Présenter en fin de formulaire, les boutons peuvent être alignés :
 
@@ -88,7 +88,7 @@ Formuler clairement le texte du bouton en spécifiant les conséquences de l’a
 
 Passer le bouton en état “disabled” une fois le formulaire soumis afin d'empêcher de soumettre plusieurs fois le formulaire et pour indiquer que la demande a bien été prise en compte, ou bien utiliser un indicateur de chargement en ligne dans le bouton afin de notifier que l’envoie est en cours.
 
-### Structure des champs :
+### Structure des champs
 
 #### Label
 
@@ -100,7 +100,7 @@ Passer le bouton en état “disabled” une fois le formulaire soumis afin d'em
 
 La largeur du champ doit être adapté au contenu attendu.
 
-#### Etats
+#### États
 
 Faire varier les différents états du champs en fonction des interactions utilisateurs : inactif, survol, actif/focus, erreur, disabled, validé
 
@@ -109,7 +109,7 @@ Faire varier les différents états du champs en fonction des interactions utili
 - Afficher les erreurs champ par champ (in line validation).
 - Des alertes globales au dessus du formulaire peuvent être complétées d’un message transverse qui résume les erreurs rencontrée en intégrant le bloc alerte “erreur” en haut du formulaire. Des liens avec ancres vers chaque erreur peuvent être associé au détail dans le cas de formulaire assez long.
 
-### Choix des champs :
+### Choix des champs
 
 Ces règles de construction de formulaire doivent être accompagnées d’une réflexion sur le choix des champs à récupérer. Pour cela, il est important de choisir le bon input par rapport au besoin et donc répondre à la question : quelle information a-t-on besoin de récupérer ?
 
@@ -117,7 +117,7 @@ Chaque composant répond à un cas d’usage. Utilisez donc des champs de saisie
 
 Pour les champs de saisie, utilisez le type attendu afin de faciliter la saisie sur les claviers virtuels (nombres, téléphone, email, etc.)
 
-### Bonne pratique RGPD :
+### Bonne pratique RGPD
 
 Les formulaires permettent de recueillir des données utilisateur. A ce titre vous devez respecter de manière rigoureuse le RGPD, ainsi que les lignes directrices émises par CNIL, notamment:
 
