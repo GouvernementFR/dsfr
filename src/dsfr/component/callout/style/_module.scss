@@ -39,6 +39,7 @@
 
   @include title() {
     @include title-style(h4);
+    @include margin(var(--title-spacing));
   }
 
   &__text {
