@@ -23,4 +23,4 @@ L’indicateur d'étapes est un élément éditorial permettant d’accompagner 
 
 :::
 
-::dsfr-doc-storybook{id=stepper--docs}
+::dsfr-doc-storybook{storyId=stepper--docs}

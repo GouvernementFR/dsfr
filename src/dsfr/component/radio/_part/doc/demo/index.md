@@ -23,6 +23,6 @@ Le bouton radio est un élément d’interaction avec l’interface permettant �
 
 :::
 
-::dsfr-doc-storybook{id=radio--docs}
+::dsfr-doc-storybook{storyId=radio--docs}
 
-::dsfr-doc-storybook{id=radios-group--docs}
+::dsfr-doc-storybook{storyId=radios-group--docs}

@@ -23,4 +23,4 @@ L’alerte est un élément d’indication poussé par l’interface pour relaye
 
 :::
 
-::dsfr-doc-storybook{id=alert--docs}
+::dsfr-doc-storybook{storyId=alert--docs}

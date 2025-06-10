@@ -41,11 +41,11 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 
 **Bouton avec bordure**
 
-::dsfr-doc-storybook{id=translate--button-tertiary}
+::dsfr-doc-storybook{storyId=translate--button-tertiary}
 
 **Bouton sans bordure**
 
-::dsfr-doc-storybook{id=translate--button-tertiary-no-outline}
+::dsfr-doc-storybook{storyId=translate--button-tertiary-no-outline}
 
 En desktop, la langue active est affichée dans le bouton sans son nom en toutes lettres (dans un souci de place) puis la liste déroulante reprend la langue active avant d’afficher les options.
 

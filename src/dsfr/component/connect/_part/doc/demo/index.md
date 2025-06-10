@@ -29,4 +29,4 @@ Retrouver le fonctionnement en détail ici : [https://franceconnect.gouv.fr/par
 
 :::
 
-::dsfr-doc-storybook{id=connect--docs}
+::dsfr-doc-storybook{storyId=connect--docs}

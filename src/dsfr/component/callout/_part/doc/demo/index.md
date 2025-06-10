@@ -23,4 +23,4 @@ La mise en avant est un élément éditorial permettant de mettre en forme du co
 
 :::
 
-::dsfr-doc-storybook{id=callout--docs}
+::dsfr-doc-storybook{storyId=callout--docs}

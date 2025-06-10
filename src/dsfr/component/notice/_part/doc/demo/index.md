@@ -23,4 +23,4 @@ Le bandeau d’information importante est un élément éditorial permettant d�
 
 :::
 
-::dsfr-doc-storybook{id=notice--docs}
+::dsfr-doc-storybook{storyId=notice--docs}

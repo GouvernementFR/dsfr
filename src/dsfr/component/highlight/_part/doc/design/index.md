@@ -43,15 +43,15 @@ La mise en exergue est disponible en trois tailles :
 
 - SM pour small
 
-::dsfr-doc-storybook{id=highlight--size-sm}
+::dsfr-doc-storybook{storyId=highlight--size-sm}
 
 - MD pour medium - taille par défaut.
 
-::dsfr-doc-storybook{id=highlight--default}
+::dsfr-doc-storybook{storyId=highlight--default}
 
 - LG pour large.
 
-::dsfr-doc-storybook{id=highlight--size-lg}
+::dsfr-doc-storybook{storyId=highlight--size-lg}
 
 ### États
 

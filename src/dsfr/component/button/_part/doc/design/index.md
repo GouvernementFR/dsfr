@@ -37,21 +37,21 @@ Le bouton est un élément d’interaction avec l’interface permettant à l’
 
 **Bouton primaire**
 
-::dsfr-doc-storybook{id=button--primary}
+::dsfr-doc-storybook{storyId=button--primary}
 
 **Bouton secondaire**
 
-::dsfr-doc-storybook{id=button--secondary}
+::dsfr-doc-storybook{storyId=button--secondary}
 
 **Bouton tertiaire**
 
-::dsfr-doc-storybook{id=button--tertiary}
+::dsfr-doc-storybook{storyId=button--tertiary}
 
 Le bouton tertiaire est caractérisé par un fond transparent.
 
 **Bouton tertiaire sans contour**
 
-::dsfr-doc-storybook{id=button--tertiary args="kind:4"}
+::dsfr-doc-storybook{storyId=button--tertiary args="{ kind: 4 }"}
 
 Le bouton tertiaire peut aussi être proposé sans bordure.
 
@@ -63,15 +63,15 @@ Trois déclinaisons sont possibles :
 
 - Bouton avec icône à droite du libellé
 
-::dsfr-doc-storybook{id=button--icon-right}
+::dsfr-doc-storybook{storyId=button--icon-right}
 
 - Bouton avec icône à gauche du libellé
 
-::dsfr-doc-storybook{id=button--icon-left}
+::dsfr-doc-storybook{storyId=button--icon-left}
 
 - Bouton sans libellé avec icône seule
 
-::dsfr-doc-storybook{id=button--icon-only}
+::dsfr-doc-storybook{storyId=button--icon-only}
 
 > [!NOTE]
 > Limiter l’usage de ces boutons sans libellé. Ils doivent uniquement être utilisés pour les actions récurrentes, facilement identifiables de l’usager (exemple : engrenage pour les paramètres ou loupe pour la recherche).
@@ -170,7 +170,7 @@ Ne pas mélanger différentes tailles de boutons au sein d’un groupe.
 
 Le groupe de boutons vertical, option par défaut, permet d’associer plusieurs boutons d’action les uns en-dessous des autres.
 
-::dsfr-doc-storybook{id=buttons-group--vertical}
+::dsfr-doc-storybook{storyId=buttons-group--vertical}
 
 - Aligner les boutons en colonne avec un espacement de 16px.
 - Par défaut, la largeur des boutons prend 100% de la largeur du container (« full width »).
@@ -179,7 +179,7 @@ Le groupe de boutons vertical, option par défaut, permet d’associer plusieurs
 
 Le groupe de boutons horizontal permet d’associer plusieurs boutons d’action les uns à côté des autres.
 
-::dsfr-doc-storybook{id=buttons-group--horizontal}
+::dsfr-doc-storybook{storyId=buttons-group--horizontal}
 
 - Appliquer un espacement de 16px à droite de chaque bouton excepté le dernier (en savoir plus sur les [espacements du DSFR](../../../../../core/_part/doc/spacing/index.md)).
 - Appliquer un espacement de 16px en dessous de chaque bouton.
@@ -193,7 +193,7 @@ Les boutons sont disponibles en 3 tailles :
 - MD pour medium - taille par défaut
 - LG pour large
 
-::dsfr-doc-storybook{id=button--sizes}
+::dsfr-doc-storybook{storyId=button--sizes}
 
 - **Utiliser en priorité les formats MD et LG**. Le format SM pourra quant à lui être utilisé à l’intérieur d'autres composants.
 - **Conserver une unité** dans la taille des boutons au sein d’une même page.
@@ -206,7 +206,7 @@ Les boutons sont disponibles en 3 tailles :
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
-::dsfr-doc-storybook{id=button--disabled}
+::dsfr-doc-storybook{storyId=button--disabled}
 
 > [!NOTE]
 > L’état désactivé est **fortement déconseillé** car il n’est pas accessible au clavier et il est source d’erreur pour les utilisateurs.

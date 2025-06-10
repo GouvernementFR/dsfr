@@ -23,4 +23,4 @@ Le mot de passe est un élément d’interaction avec l’interface permettant d
 
 :::
 
-::dsfr-doc-storybook{id=password--docs}
+::dsfr-doc-storybook{storyId=password--docs}

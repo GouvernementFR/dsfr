@@ -25,4 +25,4 @@ La transcription est un élément d’interaction avec l’interface permettant 
 
 ### Démonstration
 
-::dsfr-doc-storybook{id=transcription--docs}
+::dsfr-doc-storybook{storyId=transcription--docs}

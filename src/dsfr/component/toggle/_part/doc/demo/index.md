@@ -23,6 +23,6 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 :::
 
-::dsfr-doc-storybook{id=toggle--docs}
+::dsfr-doc-storybook{storyId=toggle--docs}
 
-::dsfr-doc-storybook{id=toggle-group--docs}
+::dsfr-doc-storybook{storyId=toggle-group--docs}

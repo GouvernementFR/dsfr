@@ -24,4 +24,4 @@ Le curseur est un élément d’interaction avec l’interface permettant à l�
 :::
 
 
-::dsfr-doc-storybook{id=range--docs}
+::dsfr-doc-storybook{storyId=range--docs}

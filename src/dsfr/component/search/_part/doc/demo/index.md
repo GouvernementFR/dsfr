@@ -23,4 +23,4 @@ La barre de recherche est un système de navigation permettant à l'usager d’a
 
 :::
 
-::dsfr-doc-storybook{id=search--docs}
+::dsfr-doc-storybook{storyId=search--docs}

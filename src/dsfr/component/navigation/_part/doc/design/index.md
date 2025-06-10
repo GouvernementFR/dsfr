@@ -53,27 +53,27 @@ La navigation principale est le système central de navigation au sein d’un si
 
 **Liens directs**
 
-::dsfr-doc-storybook{id=navigation--link}
+::dsfr-doc-storybook{storyId=navigation--link}
 
 - Utiliser les liens directs vers des pages destination pour les sites ou les rubriques qui n’ont pas ou peu de second niveau d’arborescence, en les combinant par exemple avec un [menu latéral](../../../../sidemenu/_part/doc/index.md).
 
 **Menu déroulant**
 
-::dsfr-doc-storybook{id=navigation--menu}
+::dsfr-doc-storybook{storyId=navigation--menu}
 
 - Utiliser les menus déroulant dans le cadre d’une architecture de l’information peu profonde, pour afficher les niveaux secondaires d’une rubrique.
 - Proposer un maximum de 8 liens au sein d’un menu déroulant.
 
 **Mega menu**
 
-::dsfr-doc-storybook{id=navigation--mega-menu}
+::dsfr-doc-storybook{storyId=navigation--mega-menu}
 
 - Utiliser le mega menu lorsqu’une arborescence est profonde. Il s’agit d’un menu de navigation plus complexe qui donne accès à plusieurs niveaux de profondeur.
 - Proposer un maximum de 8 liens au sein de chaque sous catégorie.
 
 **Responsive**
 
-::dsfr-doc-storybook{id=navigation--menu width=375}
+::dsfr-doc-storybook{storyId=navigation--menu width=375}
 
 En version mobile, la navigation principale est accessible depuis le pictogramme “burger”. Le clic sur le pictogramme déclenche l’affichage d’un overlay présentant les éléments de la navigation et les liens directs de l’en-tête, si présents.
 

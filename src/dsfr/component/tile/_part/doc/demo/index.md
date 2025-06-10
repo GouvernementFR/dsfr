@@ -25,4 +25,4 @@ La tuile est un élément d’interaction avec l’interface permettant de redir
 
 ### Démonstration
 
-::dsfr-doc-storybook{id=tile--docs}
+::dsfr-doc-storybook{storyId=tile--docs}
