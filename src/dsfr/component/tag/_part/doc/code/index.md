@@ -138,7 +138,7 @@ Le tag est disponible en deux variantes de tailles :
 
 #### Variante avec icône
 
-Le tag peut avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/icon/_part/doc/index.md)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
+Le tag peut avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/_part/doc/icon/index.md)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
 
 **Exemples de variantes avec icône**
 

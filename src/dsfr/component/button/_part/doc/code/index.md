@@ -132,7 +132,7 @@ Dans le cas d'un groupe de boutons, la taille des boutons peut être généralis
 
 #### Variantes d'icônes
 
-Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/icon/_part/doc/index/md)).
+Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/_part/doc/icon/index.md)).
 
 Cette classe peut être associée à une classe de positionnement de l'icône :
 
