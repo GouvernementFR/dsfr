@@ -348,7 +348,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### toggleInput
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'interrupteur est activé ou non |
@@ -357,7 +357,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).toggleInput.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -368,7 +368,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### toggleStatusLabel
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'interrupteur est activé ou non |
@@ -377,7 +377,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).toggleStatusLabel.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -386,7 +386,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).toggleStatusLabel.node` |
 :::
 
-:::dsfr-doc-table[update]{valign=top scroll=false}
+:::fr-table[update]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Met a jour la taille de l'emplacement de l'état de l'interrupteur |

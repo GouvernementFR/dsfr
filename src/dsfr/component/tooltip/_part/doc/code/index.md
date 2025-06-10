@@ -157,7 +157,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tooltip
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente |
@@ -166,7 +166,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -175,7 +175,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -184,7 +184,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tooltip.node` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'infobulle est activé ou non |
@@ -193,7 +193,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tooltip.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[isShown]{valign=top scroll=false}
+:::fr-table[isShown]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si l'infobulle est affichée ou non |
@@ -202,7 +202,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tooltip.isShown = false` |
 :::
 
-:::dsfr-doc-table[show]{valign=top scroll=false}
+:::fr-table[show]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Affiche l'infobulle |
@@ -212,7 +212,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tooltip.show()` |
 :::
 
-:::dsfr-doc-table[hide]{valign=top scroll=false}
+:::fr-table[hide]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Cache l'infobulle |
@@ -222,7 +222,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tooltip.hide()` |
 :::
 
-:::dsfr-doc-table[mode]{valign=top scroll=false}
+:::fr-table[mode]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini le mode de placement de l'infobulle |
@@ -231,7 +231,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tooltip.mode = 'placement_manual'` |
 :::
 
-:::dsfr-doc-table[align]{valign=top scroll=false}
+:::fr-table[align]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini l'alignement vertical de l'infobulle en `mode='placement_manual'` |
@@ -240,7 +240,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tooltip.align = 'align_start'` |
 :::
 
-:::dsfr-doc-table[place]{valign=top scroll=false}
+:::fr-table[place]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini le placement de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
@@ -251,7 +251,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tooltipReferent
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente |
@@ -260,7 +260,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -269,7 +269,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -278,7 +278,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tooltipReferent.node` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du déclencheur est activé ou non |

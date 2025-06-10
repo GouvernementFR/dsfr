@@ -95,7 +95,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 #### Variante avec icônes
 
-Les onglets peuvent avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/icon/_part/doc/index.md)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
+Les onglets peuvent avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/_part/doc/icon/index.md)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
 
 **Exemple de variante avec icônes**
 
@@ -192,7 +192,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### tabsGroup
 
-:::dsfr-doc-table[current]{valign=top scroll=false}
+:::fr-table[current]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Retourne l'API de l'onglet ouvert. |
@@ -201,7 +201,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabsGroup.current` |
 :::
 
-:::dsfr-doc-table[hasFocus]{valign=top scroll=false}
+:::fr-table[hasFocus]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
@@ -210,7 +210,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabsGroup.hasFocus` |
 :::
 
-:::dsfr-doc-table[index]{valign=top scroll=false}
+:::fr-table[index]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de l'onglet courant. |
@@ -219,7 +219,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabsGroup.index` <br/> `dsfr(elem).tabsGroup.index = 2` |
 :::
 
-:::dsfr-doc-table[isGrouped]{valign=top scroll=false}
+:::fr-table[isGrouped]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si les onglets du groupe sont liés entre eux ou non. |
@@ -228,7 +228,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabsGroup.isGrouped` <br/> `dsfr(elem).tabsGroup.isGrouped = true` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement des onglets est activé ou non |
@@ -237,7 +237,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabsGroup.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[length]{valign=top scroll=false}
+:::fr-table[length]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Retourne le nombre d'onglets dans le groupe. |
@@ -246,7 +246,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabsGroup.length` |
 :::
 
-:::dsfr-doc-table[members]{valign=top scroll=false}
+:::fr-table[members]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie un tableau d'objets correspondant aux discloses des onglets du groupe. |
@@ -255,7 +255,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabsGroup.members` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -266,7 +266,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabsList
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -275,7 +275,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabsList.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -286,7 +286,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabButton
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -296,7 +296,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabButton.focus()` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -305,7 +305,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabButton.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -316,7 +316,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabPanel
 
-:::dsfr-doc-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le panneau |
@@ -326,7 +326,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabPanel.disclose()` |
 :::
 
-:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le panneau est ouvert |
@@ -335,7 +335,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabPanel.isDisclosed` |
 :::
 
-:::dsfr-doc-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -344,7 +344,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabPanel.group` |
 :::
 
-:::dsfr-doc-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du panneau |
@@ -353,7 +353,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabPanel.buttons` |
 :::
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du panneau |
@@ -363,7 +363,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabPanel.focus()` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -372,7 +372,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tabPanel.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

@@ -97,7 +97,7 @@ Ajouter une mention visible pour tout le monde au début du formulaire et utilis
 
 Par défaut, le composant Case à cocher est suffisamment contrasté en thème clair et en thème sombre.
 
-:::dsfr-doc-table[Contrastes par défaut]{valign=top scroll=false}
+:::fr-table[Contrastes par défaut]{valign=top scroll=false}
 | Thème |  Bordure | Coche | Étiquette |
 |------|-----|-----|-----|
 |**Thème clair**| 14,9:1 | 14,9:1 | 18,1:1 |

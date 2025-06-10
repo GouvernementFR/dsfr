@@ -138,7 +138,7 @@ Le tag est disponible en deux variantes de tailles :
 
 #### Variante avec icône
 
-Le tag peut avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/icon/_part/doc/index.md)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
+Le tag peut avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/_part/doc/icon/index.md)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
 
 **Exemples de variantes avec icône**
 
@@ -298,7 +298,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### toggle
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du tag activable est activé ou non |
@@ -307,7 +307,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).toggle.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[pressed]{valign=top scroll=false}
+:::fr-table[pressed]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoi l'état du tag activable |
@@ -316,7 +316,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).toggle.pressed = false` |
 :::
 
-:::dsfr-doc-table[toggle]{valign=top scroll=false}
+:::fr-table[toggle]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Fait varier l'état checked/unchecked et la valeur de l'attribut `aria-pressed` du tag activable |
@@ -326,7 +326,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).toggle.toggle()` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -337,7 +337,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tagDismissible
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du tag supprimable est activé ou non |
@@ -346,7 +346,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).tagDismissible.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

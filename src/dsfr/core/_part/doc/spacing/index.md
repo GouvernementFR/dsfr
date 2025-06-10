@@ -32,7 +32,7 @@ La nomenclature “v” indique un multiple de 4 et “w” un multiple de 8 (la
 
 La nomenclature “n” indique un espacement négatif, et la valeur “0” ne requiert pas d'unité.
 
-:::dsfr-doc-table[Correspondance des espacements]{valign=top scroll=false vheaders=vertical caption=false}
+:::fr-table[Correspondance des espacements]{valign=top scroll=false vheaders=vertical caption=false}
 
 | Nom (token) | Espace en rem | Espace en pixel  |
 |-------------|---------------|------------------|
@@ -88,7 +88,7 @@ La nomenclature “n” indique un espacement négatif, et la valeur “0” ne 
 
 Les espacements sous les titres et les paragraphes de texte - margin-bottom - sont :
 
-:::dsfr-doc-table[espacements des titres et paragraphes]{valign=top scroll=false vheaders=vertical caption=false}
+:::fr-table[espacements des titres et paragraphes]{valign=top scroll=false vheaders=vertical caption=false}
 
 | éléments                   | Token / px / rem     |
 |---------------------------|----------------------|
@@ -123,7 +123,7 @@ Ces classes existent pour les propriétés de padding et de margin, pour les dir
 
 #### Propriété de padding et margin
 
-:::dsfr-doc-table[nomenclature des marges]{valign=top scroll=false vheaders=vertical caption=false}
+:::fr-table[nomenclature des marges]{valign=top scroll=false vheaders=vertical caption=false}
 
 | Valeur possible | Diminutif de la valeur | Exemple |
 |----------------|------------------------|---------|
@@ -134,7 +134,7 @@ Ces classes existent pour les propriétés de padding et de margin, pour les dir
 
 #### Propriété de direction : top, bottom, right, left
 
-:::dsfr-doc-table[nomenclature des directions]{valign=top scroll=false vheaders=vertical caption=false}
+:::fr-table[nomenclature des directions]{valign=top scroll=false vheaders=vertical caption=false}
 
 | Valeur possible | Diminutif de la valeur | Exemple |
 |----------------|------------------------|---------|
@@ -150,7 +150,7 @@ Ces classes existent pour les propriétés de padding et de margin, pour les dir
 
 #### Propriété de point de rupture : md
 
-:::dsfr-doc-table[]{valign=top scroll=false vheaders=vertical caption=false}
+:::fr-table[nomenclature du point de rupture]{valign=top scroll=false vheaders=vertical caption=false}
 
 | Valeur possible | Diminutif de la valeur | Exemple |
 |----------------|------------------------|---------|
@@ -160,7 +160,7 @@ Ces classes existent pour les propriétés de padding et de margin, pour les dir
 
 #### Valeurs spéciales
 
-::::dsfr-doc-table[nomenclature des valeurs spéciales]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[nomenclature des valeurs spéciales]{valign=top scroll=false vheaders=vertical caption=false}
 
 | Valeur possible | Diminutif de la valeur | Exemple |
 |----------------|------------------------|---------|

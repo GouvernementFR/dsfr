@@ -202,7 +202,7 @@ Les variantes d'icônes de réseaux sociaux sont intégrées dans le composant. 
 La liste des variantes de boutons réseaux-sociaux est définie dans le fichier : `src/component/share/style/_setting.scss`
 
 >[!NOTE]
-> Ces classes sont des raccourcis, il est aussi possible d'utiliser les [classes utilitaires d'icônes](../../../../../core/icon/_part/doc/index.md). Préférez l'utilisation des formats "fill" dans les boutons. Par exemple : `fr-icon-rss-fill` pour un flux RSS.
+> Ces classes sont des raccourcis, il est aussi possible d'utiliser les [classes utilitaires d'icônes](../../../../../core/_part/doc/icon/index.md). Préférez l'utilisation des formats "fill" dans les boutons. Par exemple : `fr-icon-rss-fill` pour un flux RSS.
 
 ---
 

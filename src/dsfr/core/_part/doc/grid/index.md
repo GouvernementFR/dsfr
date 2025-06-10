@@ -11,7 +11,7 @@ summary: Cette page détaille le fonctionnement de la grille du Design Système 
 
 # Grille et points de rupture
 
-:::dsfr-doc-table[Caractéristiques de la grille]{valign=top scroll=false}
+:::fr-table[Caractéristiques de la grille]{valign=top scroll=false}
 | Mise en page | Valeurs en px | Résolution maquette en px | Token | Largeur max. du contenu | Tailles des gouttières (optionnelles) |
 | --- | --- | --- | --- | --- | --- |
 | XS | de 0 à 575 | 320 |  | / | 16 px |
@@ -113,7 +113,7 @@ Les blocs de contenu peuvent s’afficher selon vos besoins, sur une ou plusieur
 
 Nous formulons cependant des recommandations pour la majorité des composants afin de vous guider (exemple : 8 colonnes max. pour le corps de texte)
 
-:::dsfr-doc-table[Détail sur l’utilisation de `fr-col`]{valign=top scroll=false}
+:::fr-table[Détail sur l’utilisation de `fr-col`]{valign=top scroll=false}
 
 | Classe | Description | Exemple |
 | --- | --- | --- |

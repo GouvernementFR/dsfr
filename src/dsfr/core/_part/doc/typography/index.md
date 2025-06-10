@@ -27,7 +27,7 @@ Les typographies de substitution sont :
 
 ### Utilisation des typographies
 
-Les typographies en format web sont inclues dans le DSFR. Vous retrouverez les différentes versions (desktop et pdf) de la Marianne et la spectral sur : [https://www.info.gouv.fr/marque-de-letat/la-typographie](https://www.info.gouv.fr/marque-de-letat/la-typographie)
+Les typographies en format web sont incluses dans le DSFR. Vous retrouverez les différentes versions (desktop et pdf) de la Marianne et la spectral sur : [https://www.info.gouv.fr/marque-de-letat/la-typographie](https://www.info.gouv.fr/marque-de-letat/la-typographie)
 
 Chaque taille de typographie est convertie en rem dans le code à partir d’une valeur fixée à 16px. 1rem est donc égal à 16px.
 
@@ -46,7 +46,7 @@ Les différents styles de police sont proposés en version mobile jusqu’au poi
 
 Les titres sont utilisés pour créer une hiérarchie visuelle dans la page, et permettent de trouver facilement une information. Cette hiérarchisation est également importante pour le référencement naturel de la page.
 
-::::dsfr-doc-table[Titres - heading]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[Titres - heading]{valign=top scroll=false vheaders=vertical caption=false}
 | Niveau | Usages | Aperçu HTML | Balise associée | Attributs desktop | Attributs mobile |
 |--------|--------|-------------|-----------------|------------------|------------------|
 | H1 | Titre principal de la page : il ne peut y en avoir qu’un par page. | <p class="fr-h1">Titre h1</p> | `<h1>` | Taille : 40 px<br>Line-height : 48 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 32 px<br>Line-height : 40 px<br>Margin-bottom : 24px<br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
@@ -59,7 +59,7 @@ Les titres sont utilisés pour créer une hiérarchie visuelle dans la page, et 
 
 Pour donner une plus grande liberté éditoriale et graphique, sans nuire à la hiérarchie de l’information et au référencement nous vous proposons plusieurs niveaux de titres alternatifs (display). Vous pourrez les utiliser pour les mises en avant, les bannières, etc.
 
-::::dsfr-doc-table[Titres alternatifs - Display]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[Titres alternatifs - Display]{valign=top scroll=false vheaders=vertical caption=false}
 | Niveau | Aperçu HTML | Classe associée | Attributs desktop | Attributs mobile |
 |--------|-------------|-----------------|------------------|------------------|
 | Titre alternatif XL | <p class="fr-display--xl"> Titre alternatif XL </p> | fr-display--xl | Taille : 80 px<br>Line-height : 88 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 72 px<br>Line-height : 80 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
@@ -83,7 +83,7 @@ Pour les développeurs afin de personnaliser la taille de vos titres vous pouvez
 
 Les styles de texte sont là pour vous aider à concevoir vos interfaces efficacement et assurer l’homogénéité entre les différents sites.
 
-::::dsfr-doc-table[Style de texte]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[Style de texte]{valign=top scroll=false vheaders=vertical caption=false}
 | Niveau | Usage | Aperçu HTML | Classe associée | Attributs desktop et mobile |
 |--------|-------|-------------|-----------------|---------------------------|
 | XL - Texte chapô | Chapô à utiliser pour les introductions ou accroches. | <p class="fr-text--lead">XL - Chapo </p> | fr-text--lead | Taille : 20 px<br>Line-height: 32 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
@@ -101,7 +101,7 @@ Les styles de textes LG, MD, SM, et XS sont également disponibles avec la typog
 
 Les listes vous permettent de traiter différemment une série d’information et de la faire apparaître clairement au lecteur.
 
-::::dsfr-doc-table[]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[types de listes]{valign=top scroll=false vheaders=vertical caption=false}
 | Niveau | Usage | Aperçu HTML |
 |--------|-------|-------------|
 | Liste ordonnée | Liste d'éléments ordonnée | <ol><li>Item list<ol><li>Item list<ol><li>Item list</li><li>Item list</li><li>Item list</li></ol></li></ol><br></li></ol> |

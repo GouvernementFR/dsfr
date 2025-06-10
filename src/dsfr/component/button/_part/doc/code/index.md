@@ -132,7 +132,7 @@ Dans le cas d'un groupe de boutons, la taille des boutons peut être généralis
 
 #### Variantes d'icônes
 
-Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/icon/_part/doc/index/md)).
+Le Bouton peut avoir une icône à l'intérieur, elle est ajoutée via la classe utilitaire d'icône `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/_part/doc/icon/index.md)).
 
 Cette classe peut être associée à une classe de positionnement de l'icône :
 
@@ -221,7 +221,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 > [!NOTE]
 > L'activation ou la désactivation de la fonction equisize n'est pas disponible en JS, elle se fait via l'ajout ou le retrait de la classe `fr-btns-group--equisized` sur le groupe.
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -232,7 +232,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### equisized
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

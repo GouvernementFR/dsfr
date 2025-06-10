@@ -148,7 +148,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 
 ###### breadcrumb
 
-:::dsfr-doc-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top scroll=false}
 | | |
 |-------|----------------|
 | **Description** | Ouvre le fil d’Ariane. |
@@ -158,7 +158,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | dsfr(breadcrumb).breadcrumb.disclose() |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |-------|----------------|
 | **Description** | Retourne le nœud HTML de l'élément `<nav>`. |
@@ -169,7 +169,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 
 ###### collapseButton
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |-------|----------------|
 | **Description** | Replace le focus sur le bouton. |
@@ -179,7 +179,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | dsfr(breadcrumbButton).breadcrumbButton.focus() |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |-------|----------------|
 | **Description** | Retourne le nœud HTML correspondant au bouton. |
@@ -190,7 +190,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 
 ###### collapse
 
-:::dsfr-doc-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -200,7 +200,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
 :::
 
-:::dsfr-doc-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -210,7 +210,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
 :::
 
-:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
@@ -219,7 +219,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du collapse est activé ou non |
@@ -228,7 +228,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
@@ -237,7 +237,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | `dsfr(elem).collapse.buttons` |
 :::
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
@@ -247,7 +247,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici le breadcrumb |
@@ -256,7 +256,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -265,7 +265,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
