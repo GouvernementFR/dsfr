@@ -41,7 +41,7 @@ Le fil d’Ariane est un système de navigation secondaire qui permet à l’usa
 
 Le fil d’Ariane doit être maintenu sur mobile et apparaître de la manière suivante :
 
-::dsfr-doc-storybook{id=breadcrumb--breadrumb width=375}
+::dsfr-doc-storybook{storyId=breadcrumb--breadrumb width=375}
 
 - Afficher par défaut un bouton “Voir le fil d’Ariane”.
 - Faire apparaître le fil d’Ariane au clic sur le bouton, sur plusieurs lignes si nécessaire.

@@ -61,7 +61,7 @@ La taille du bouton FranceConnect n’est pas personnalisable. Elle s’ajuste �
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton FranceConnect.
 
-::dsfr-doc-storybook{id=”connect--default&args=disabled%3A!true”}
+::dsfr-doc-storybook{storyId="connect--default" args="{ disabled: true }"}
 
 > [!NOTE]
 > Utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.

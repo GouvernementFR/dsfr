@@ -23,4 +23,4 @@ Les liens d’évitement sont un système de navigation secondaire permettant à
 
 :::
 
-::dsfr-doc-storybook{id=skiplink--docs}
+::dsfr-doc-storybook{storyId=skiplink--docs}

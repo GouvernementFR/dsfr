@@ -23,4 +23,4 @@ Les paramètres d’affichage représentent un parcours simple permettant à l�
 
 :::
 
-::dsfr-doc-storybook{id=display--docs}
+::dsfr-doc-storybook{storyId=display--docs}

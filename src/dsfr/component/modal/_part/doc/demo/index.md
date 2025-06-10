@@ -23,4 +23,4 @@ La modale est un élément de mise en forme de contenu permettant de concentrer 
 
 :::
 
-::dsfr-doc-storybook{id=modal--docs}
+::dsfr-doc-storybook{storyId=modal--docs}

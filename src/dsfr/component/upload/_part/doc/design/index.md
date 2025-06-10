@@ -46,7 +46,7 @@ Au clic sur “Parcourir”, la boite de dialogue de sélection de fichier s’a
 
 Utiliser l’ajout multiple dès lors que l’usager doit sélectionner plus d’un fichier.
 
-::dsfr-doc-storybook{id=upload--multiple}
+::dsfr-doc-storybook{storyId=upload--multiple}
 
 ### Tailles
 
@@ -58,13 +58,13 @@ L’ajout de fichier est disponible dans une seule taille. Sa largeur n’est pa
 
 L'état d’erreur est signalé par un changement de couleur (cf. couleurs système : le rouge est la couleur de l’état erreur) et l’affichage d’un message d’erreur en-dessous du composant.
 
-::dsfr-doc-storybook{id=upload--multiple}
+::dsfr-doc-storybook{storyId=upload--multiple}
 
 **Etat désactivé**
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
-::dsfr-doc-storybook{id=upload--error}
+::dsfr-doc-storybook{storyId=upload--error}
 
 > [!NOTE]
 > **N’utiliser cet état que très ponctuellement**, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.

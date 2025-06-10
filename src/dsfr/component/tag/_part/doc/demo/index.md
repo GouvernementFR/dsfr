@@ -23,6 +23,6 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 :::
 
-::dsfr-doc-storybook{id=tag--docs}
+::dsfr-doc-storybook{storyId=tag--docs}
 
-::dsfr-doc-storybook{id=tags-group--docs}
+::dsfr-doc-storybook{storyId=tags-group--docs}

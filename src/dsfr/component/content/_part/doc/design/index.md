@@ -39,7 +39,7 @@ Le composant **Contenu médias** permet d'intégrer des contenus multimédias te
 
 **Ratio 16:9**
 
-::dsfr-doc-storybook{id=content--content}
+::dsfr-doc-storybook{storyId=content--content}
 
 Il s’agit du format conseillé par défaut pour les images et vidéos lorsqu’elles sont intégrées dans un contenu éditorial.
 
@@ -60,19 +60,19 @@ Le contenu média est disponible en trois tailles :
 
 - SM pour small (75%)
 
-::dsfr-doc-storybook{id=content--size-sm}
+::dsfr-doc-storybook{storyId=content--size-sm}
 
 La largeur du contenu média est inférieure à celle de la zone de texte.
 
 - MD pour medium (100%)
 
-::dsfr-doc-storybook{id=content--size-md}
+::dsfr-doc-storybook{storyId=content--size-md}
 
 La largeur du contenu média correspond à celle de la zone de texte.
 
 - LG pour large (125%)
 
-::dsfr-doc-storybook{id=content--size-lg}
+::dsfr-doc-storybook{storyId=content--size-lg}
 
 La largeur du contenu média est supérieure à celle de la zone de texte.
 

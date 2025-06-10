@@ -23,4 +23,4 @@ La citation est un élément éditorial permettant de mettre en forme du contenu
 
 :::
 
-::dsfr-doc-storybook{id=quote--docs}
+::dsfr-doc-storybook{storyId=quote--docs}

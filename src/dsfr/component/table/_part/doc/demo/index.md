@@ -23,4 +23,4 @@ Le tableau permet de présenter une liste structurée de données textuelles et/
 
 :::
 
-::dsfr-doc-storybook{id=table--docs}
+::dsfr-doc-storybook{storyId=table--docs}

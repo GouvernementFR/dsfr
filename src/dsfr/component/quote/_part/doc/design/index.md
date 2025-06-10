@@ -45,7 +45,7 @@ La citation est un élément éditorial permettant de mettre en forme du contenu
 
 **Citation sans illustration**
 
-::dsfr-doc-storybook{id=quote--imageless}
+::dsfr-doc-storybook{storyId=quote--imageless}
 
 - Utiliser la citation sans illustration lorsqu’il n’est pas nécessaire ou possible d’incarner l’auteur de la citation.
 
@@ -53,7 +53,7 @@ En version mobile, le séparateur passe en dessous de la zone de détails.
 
 **Citation avec illustration**
 
-::dsfr-doc-storybook{id=quote--default}
+::dsfr-doc-storybook{storyId=quote--default}
 
 - Utiliser la citation avec illustration pour incarner l’auteur.
 
@@ -69,15 +69,15 @@ Le texte de la citation est quant à lui disponible en 3 tailles :
 
 - MD pour medium - taille par défaut.
 
-::dsfr-doc-storybook{id=quote--default}
+::dsfr-doc-storybook{storyId=quote--default}
 
 - LG pour large.
 
-::dsfr-doc-storybook{id=quote--default args="size:lg"}
+::dsfr-doc-storybook{storyId=quote--default args="{ size: lg }"}
 
 - XL pour extra large.
 
-::dsfr-doc-storybook{id=quote--default args="size:xl"}
+::dsfr-doc-storybook{storyId=quote--default args="{ size: xl }"}
 
 ### États
 

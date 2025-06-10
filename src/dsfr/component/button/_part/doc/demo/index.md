@@ -23,6 +23,6 @@ Le bouton est un élément d’interaction avec l’interface permettant à l’
 
 :::
 
-::dsfr-doc-storybook{id=button--docs}
+::dsfr-doc-storybook{storyId=button--docs}
 
-::dsfr-doc-storybook{id=buttons-group--docs}
+::dsfr-doc-storybook{storyId=buttons-group--docs}

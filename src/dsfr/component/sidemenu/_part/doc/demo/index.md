@@ -23,4 +23,4 @@ Le menu latéral est un système de navigation secondaire présentant une liste 
 
 :::
 
-::dsfr-doc-storybook{id=sidemenu--docs}
+::dsfr-doc-storybook{storyId=sidemenu--docs}

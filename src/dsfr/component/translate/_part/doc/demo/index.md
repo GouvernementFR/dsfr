@@ -25,4 +25,4 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 
 ### Démonstration
 
-::dsfr-doc-storybook{id=translate--docs}
+::dsfr-doc-storybook{storyId=translate--docs}

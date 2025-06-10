@@ -24,4 +24,4 @@ L’ajout de fichier est un élément d’interaction avec l’interface qui per
 :::
 
 
-::dsfr-doc-storybook{id=upload--docs}
+::dsfr-doc-storybook{storyId=upload--docs}

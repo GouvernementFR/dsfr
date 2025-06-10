@@ -43,26 +43,26 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 **Tag non cliquable**
 
-::dsfr-doc-storybook{id=tag--size-md}
+::dsfr-doc-storybook{storyId=tag--size-md}
 
 **Tag cliquable**
 
-::dsfr-doc-storybook{id=tag--tag-clickable}
+::dsfr-doc-storybook{storyId=tag--tag-clickable}
 
 **Tag sélectionnable**
 
-::dsfr-doc-storybook{id=tag--tag-pressable}
+::dsfr-doc-storybook{storyId=tag--tag-pressable}
 
 **Tag supprimable**
 
-::dsfr-doc-storybook{id=tag--tag-dismissible}
+::dsfr-doc-storybook{storyId=tag--tag-dismissible}
 
 > [!NOTE]
 > Cette variation n’autorise pas l’utilisation d’icône, autre que la croix de suppression présente par défaut.
 
 **Groupe de tags**
 
-::dsfr-doc-storybook{id=tags-group--size-md}
+::dsfr-doc-storybook{storyId=tags-group--size-md}
 
 Tous les tags peuvent être utilisés à plusieurs dans des groupes de tags. Dans ce cas-là ils appliquent des espacement préalablement définis par le DSFR.
 
@@ -72,11 +72,11 @@ Toutes les variations de tags sont disponibles en 2 tailles, pour pouvoir s’ad
 
 - SM pour small
 
-::dsfr-doc-storybook{id=tag--size-sm}
+::dsfr-doc-storybook{storyId=tag--size-sm}
 
 - MD pour medium - taille par défaut
 
-::dsfr-doc-storybook{id=tag--size-md}
+::dsfr-doc-storybook{storyId=tag--size-md}
 
 À noter que pour le groupe de tags en taille SM, le padding autour du tag est plus important que lorsqu’il est utilisé seul pour faciliter le clic en mobile.
 

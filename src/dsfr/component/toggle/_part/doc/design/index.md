@@ -55,13 +55,13 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 **Interrupteur avec libellé à droite**
 
-::dsfr-doc-storybook{id=toggle--toggle}
+::dsfr-doc-storybook{storyId=toggle--toggle}
 
 **Groupe d’interrupteurs**
 
 Utiliser l’interrupteur en groupe pour constituer une liste d’actions de même nature.
 
-::dsfr-doc-storybook{id=toggle-group--toggle-group}
+::dsfr-doc-storybook{storyId=toggle-group--toggle-group}
 
 Lorsqu’il est utilisé en groupe, l’interrupteur doit toujours respecter le même format. Si le premier interrupteur affiche le label à gauche, l'état ou le séparateur optionnel, alors l’ensemble des interrupteurs du groupe devront également afficher ces éléments.
 
@@ -75,19 +75,19 @@ La largeur de l’interrupteur s’adapte à la taille de son conteneur. Si l’
 
 L'état d’erreur est signalé par un changement de couleur ainsi que l’affichage d’une ligne rouge (cf. couleurs système : le rouge est la couleur de l’état erreur) et d’un message d’erreur en-dessous du composant.
 
-::dsfr-doc-storybook{id=toggle--toggle args="status:error"}
+::dsfr-doc-storybook{storyId=toggle--toggle args="{ status: error }"}
 
 **Etat de succès**
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs système : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-::dsfr-doc-storybook{id=toggle--toggle args="status:valid"}
+::dsfr-doc-storybook{storyId=toggle--toggle args="{ status: valid }"}
 
 **État désactivé**
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
-::dsfr-doc-storybook{id=toggle--toggle args="disabled:true"}
+::dsfr-doc-storybook{storyId=toggle--toggle args="{ disabled: true }"}
 
 Dans le cas d’un interrupteur, il permet d’afficher un choix déjà effectué et/ou ne pouvant être modifié par l’usager.
 

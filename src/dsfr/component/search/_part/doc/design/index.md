@@ -45,11 +45,11 @@ La barre de recherche est disponible en 2 tailles :
 
 - MD pour medium
 
-::dsfr-doc-storybook{id=search--default}
+::dsfr-doc-storybook{storyId=search--default}
 
 - LG pour large
 
-::dsfr-doc-storybook{id=search--size-lg}
+::dsfr-doc-storybook{storyId=search--size-lg}
 
 La largeur de la barre de recherche s’adapte à la taille de son conteneur.
 

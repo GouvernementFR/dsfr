@@ -43,19 +43,19 @@ Par défaut, le contrôle segmenté s’affiche horizontalement, en desktop comm
 
 **Contrôle segmenté avec icônes**
 
-::dsfr-doc-storybook{id=segmented--with-icon}
+::dsfr-doc-storybook{storyId=segmented--with-icon}
 
 **Contrôlé segmenté avec légende**
 
 - Placée au-dessus du composant (par défaut)
 
-::dsfr-doc-storybook{id=segmented--default}
+::dsfr-doc-storybook{storyId=segmented--default}
 
 - Placée sur la même ligne que le composant
 
 **Contrôlé segmenté avec légende et texte de description**
 
-::dsfr-doc-storybook{id=segmented--default args="hint:Texte de description additionnel"}
+::dsfr-doc-storybook{storyId=segmented--default args="{ hint: Texte de description additionnel }"}
 
 ### Tailles
 
@@ -63,11 +63,11 @@ Le contrôle segmenté est disponible en 2 tailles :
 
 - SM pour small
 
-::dsfr-doc-storybook{id=segmented--default args="size:sm"}
+::dsfr-doc-storybook{storyId=segmented--default args="{ size: sm }"}
 
 - MD pour medium
 
-::dsfr-doc-storybook{id=segmented--default}
+::dsfr-doc-storybook{storyId=segmented--default}
 
 > [!NOTE]
 > Afin de garder une harmonie visuelle, en présence d’autres composants (type bouton, champs de saisie etc.), il est important de choisir la même taille que ces derniers (exemple : un bouton SM et un contrôle segmenté SM, côte à côte).
