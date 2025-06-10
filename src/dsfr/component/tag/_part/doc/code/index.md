@@ -381,7 +381,8 @@ Sur le tag, les événements suivants sont disponibles :
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
 | `dsfr.dismiss` | Suppression du tag supprimable | TagDismissible | `data-fr-js-tag-dismissible` |
-| `dsfr.click` | Click sur le tag de suppression | TagDismissible | `data-fr-js-tag-dismissible` |
+| `dsfr.click` | Click sur le tag supprimable | TagDismissible | `data-fr-js-tag-dismissible` |
+| `dsfr.click` | Click sur le tag sélectionnable | Toggle | `data-fr-js-toggle` |
 
 :::
 
