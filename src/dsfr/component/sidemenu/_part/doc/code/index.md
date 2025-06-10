@@ -484,7 +484,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Dans la version mobile du menu latéral et sur chaque menu déroulant du menu latéral, les événements suivants sont disponibles :
 
-:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top scroll=false caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

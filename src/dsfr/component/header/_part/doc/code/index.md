@@ -772,7 +772,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 En version mobile, sur la modale de navigation principale, les événements suivants sont disponibles :
 
-:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top scroll=false caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

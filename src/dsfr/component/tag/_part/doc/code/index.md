@@ -376,7 +376,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur le tag, les événements suivants sont disponibles :
 
-:::dsfr-doc-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top scroll=false caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
