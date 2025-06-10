@@ -60,7 +60,6 @@ Aucun test de restitution n’est nécessaire pour le composant Tableau.
 ---
 
 ### Critères RGAA applicables
-
 - **Couleurs** : 3.2
 - **Tableaux&nbsp;:** 5.1, 5.2, 5.4, 5.5, 5.6, 5.7
 - **Présentation de l’information** : 10.1, 10.2, 10.3,10.4, 10.5, 10.7, 10.11, 10.12
@@ -73,5 +72,4 @@ Aucun test de restitution n’est nécessaire pour le composant Tableau.
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 
 #### Ressources
-
 [Tableaux de données complexes : comment les intégrer de manière accessible en HTML ?](https://access42.net/tableaux-donnees-complexes-integration-html-accessible-rgaa/).

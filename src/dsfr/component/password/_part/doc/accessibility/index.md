@@ -53,7 +53,6 @@ Aucun test de restitution n’est nécessaire pour le composant Mot de passe.
 ---
 
 ### Critères RGAA applicables
-
 - **Couleurs&nbsp;:** 3.2, 3.3
 - **Liens&nbsp;:** 6.1, 6.2
 - **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3,10.4, 10.5, 10.7, 10.8, 10.11, 10.12

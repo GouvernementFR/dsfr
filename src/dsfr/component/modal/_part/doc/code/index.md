@@ -23,9 +23,9 @@ La modale est un élément de mise en forme de contenu permettant de concentrer 
 
 :::
 
-### HTML
+## HTML
 
-#### Structure du composant
+### Structure du composant
 
 Le composant Modale permet d'afficher du contenu en plein écran.
 
@@ -204,13 +204,16 @@ Pour fonctionner le composant modale nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -235,6 +238,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('modal');
 dsfr(elem).modal.disclose();
@@ -251,6 +255,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).modal.isEnabled = false` |
+
 :::
 
 :::fr-table[conceal]{valign=top scroll=false}
@@ -261,6 +266,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.conceal()` |
+
 :::
 
 :::fr-table[disclose]{valign=top scroll=false}
@@ -271,6 +277,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.disclose()` |
+
 :::
 
 :::fr-table[isDisclosed]{valign=top scroll=false}
@@ -280,6 +287,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modal.isDisclosed` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -289,6 +297,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).modal.node` |
+
 :::
 
 ###### modalButton
@@ -301,6 +310,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).modalButton.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
@@ -310,6 +320,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -319,6 +330,23 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).modalButton.node` |
+
+:::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur la modale, les événements suivants sont disponibles :
+
+:::fr-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de la modale | Modal | `data-fr-js-modal` |
+| `dsfr.disclose` | Ouverture de la modale | Modal | `data-fr-js-modal` |
+| `dsfr.click` | Click sur le bouton d'ouverture | ModalButton | `data-fr-js-modal-button` |
+
 :::
 
 ---

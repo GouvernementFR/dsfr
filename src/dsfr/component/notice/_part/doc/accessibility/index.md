@@ -49,7 +49,6 @@ Aucun test de restitution n’est nécessaire pour le composant Bandeau d’info
 ---
 
 ### Critères RGAA applicables
-
 - **Couleurs&nbsp;:** 3.2, 3.3
 - **Liens&nbsp;:** 6.1, 6.2
 - **Scripts&nbsp;:** 7.1, 7.

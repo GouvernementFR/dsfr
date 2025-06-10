@@ -78,19 +78,16 @@ Versions des navigateurs web&nbsp;:
 - Microsoft Edge 135 (sur Windows 11 uniquement)
 
 Version des lecteurs d’écran&nbsp;:
-
 - NVDA 2024.4.2
 - JAWS 2024
 - VoiceOver macOS 15.4
 - Narrateur (Windows 11)
 - VoiceOver iOS
-
 :::
 
 ---
 
 ### Critères RGAA applicables
-
 - **Couleurs&nbsp;:** 3.2
 - **Scripts&nbsp;:** 7.1, 7.3
 - **Éléments obligatoires&nbsp;:** 8.9

@@ -37,6 +37,7 @@ Le composant **Tag** est un élément permettant de marquer ou de catégoriser d
 ##### Tag non cliquable
 
 Sa structure est la suivante :
+
 - Le **Tag** est un élément HTML `<p>` défini par la classe `fr-tag`.
 
 **Exemple de Tag non cliquable**
@@ -48,6 +49,7 @@ Sa structure est la suivante :
 ##### Tag cliquable
 
 Sa structure est la suivante :
+
 - Le **Tag cliquable** est un élément HTML `<a>` ou `<button>` avec la classe `fr-tag`.
 
 **Exemple de Tag cliquable**
@@ -60,6 +62,7 @@ Sa structure est la suivante :
 ##### Tag activable
 
 Sa structure est la suivante :
+
 - Le **Tag activable** est un élément HTML `<button>` avec la classe `fr-tag` et l'attribut `aria-pressed`, sa valeur [true|false] défini si le tag est activé.
 
 **Exemple de Tag activable**
@@ -71,6 +74,7 @@ Sa structure est la suivante :
 ##### Tag supprimable
 
 Sa structure est la suivante :
+
 - Le **Tag activable** est un élément HTML `<button>` avec les classes `fr-tag` et `fr-tag--dismiss`.
 
 **Exemple de Tag supprimable**
@@ -259,13 +263,16 @@ Pour fonctionner, le composant Tag nécessite l'utilisation de JavaScript pour l
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/tag/tag.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -277,6 +284,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 #### Instances
 
 Sur le Tag, les éléments suivants sont instanciés :
+
 - Le Tag activable, via la classe : `fr-tag` et l'attribut `aria-pressed`.
 - Le Tag supprimable, via la classe `fr-tag--dismiss`.
 
@@ -289,6 +297,7 @@ Il est possible d'interagir avec les instances du composant en JavaScript via un
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_TAG');
 dsfr(elem).tagDismissible.isEnabled;
@@ -305,6 +314,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).toggle.isEnabled = false` |
+
 :::
 
 :::fr-table[pressed]{valign=top scroll=false}
@@ -314,6 +324,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).toggle.pressed = false` |
+
 :::
 
 :::fr-table[toggle]{valign=top scroll=false}
@@ -324,6 +335,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).toggle.toggle()` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -333,6 +345,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).toggle.node` |
+
 :::
 
 ###### tagDismissible
@@ -344,6 +357,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).tagDismissible.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
@@ -353,6 +367,23 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).tagDismissible.node` |
+
+:::
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+
+Sur le tag, les événements suivants sont disponibles :
+
+:::fr-table[événements]{valign=top scroll=false caption=false}
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.dismiss` | Suppression du tag supprimable | TagDismissible | `data-fr-js-tag-dismissible` |
+| `dsfr.click` | Click sur le tag supprimable | TagDismissible | `data-fr-js-tag-dismissible` |
+| `dsfr.click` | Click sur le tag sélectionnable | Toggle | `data-fr-js-toggle` |
+
 :::
 
 ---

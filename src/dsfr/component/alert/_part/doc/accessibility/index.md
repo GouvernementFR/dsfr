@@ -46,7 +46,6 @@ Aucune interaction au clavier spécifique au composant.
 Une alerte ajoutée après le chargement de la page doit être perçue par tous les utilisateurs.
 
 Pour les alertes simples, ajouter sur le conteneur de l’alerte&nbsp;:
-
 - un `role="alert"` pour les messages d’erreur ou les avertissements
 - un `role="status"` pour les messages de succès ou d’information.
 

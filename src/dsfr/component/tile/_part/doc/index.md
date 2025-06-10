@@ -53,7 +53,7 @@ Contraindre toutes les tuiles d’une même ligne à la même hauteur.
 
 ![À ne pas faire](./_asset/use/dont-1.png)
 
-Ne pas créer de disparité dans la hauteur des tuiles d’une même ligne. 
+Ne pas créer de disparité dans la hauteur des tuiles d’une même ligne.
 
 :::
 

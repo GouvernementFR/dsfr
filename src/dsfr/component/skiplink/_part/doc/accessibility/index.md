@@ -59,7 +59,6 @@ Aucun test de restitution n’est nécessaire pour le composant.
 ---
 
 ### Critères RGAA applicables
-
 - **Couleurs** : 3.2
 - **Liens** : 6.1, 6.2
 - **Structuration** : 9.2, 9.3
