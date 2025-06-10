@@ -153,7 +153,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### navigation
 
-:::dsfr-doc-table[current]{valign=top scroll=false}
+:::fr-table[current]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Retourne l'API du collapse ouvert. <br/>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
@@ -162,7 +162,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).navigation.current` |
 :::
 
-:::dsfr-doc-table[index]{valign=top scroll=false}
+:::fr-table[index]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de l'accordéon courant. <br/>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
@@ -171,7 +171,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).navigation.index` <br/> `dsfr(elem).navigation.index = -1` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du sélecteur de langue est activé ou non |
@@ -180,7 +180,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).navigation.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[hasFocus]{valign=top scroll=false}
+:::fr-table[hasFocus]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
@@ -191,7 +191,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### navigationItem
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la navigation est activé ou non |
@@ -202,7 +202,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapseButton
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -212,7 +212,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici le sélecteur de langue |
@@ -221,7 +221,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -232,7 +232,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapse
 
-:::dsfr-doc-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -242,7 +242,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
 :::
 
-:::dsfr-doc-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -252,7 +252,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
 :::
 
-:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
@@ -261,7 +261,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du sélecteur de langue est activé ou non |
@@ -270,7 +270,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -279,7 +279,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.group` |
 :::
 
-:::dsfr-doc-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
@@ -288,7 +288,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.buttons` |
 :::
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
@@ -298,7 +298,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici le sélecteur de langue |
@@ -307,7 +307,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -316,7 +316,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

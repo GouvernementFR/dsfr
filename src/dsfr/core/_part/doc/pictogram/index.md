@@ -73,7 +73,7 @@ Thème clair et sombre : `$red-marianne-main-472`
 Token de décision : `$artwork-decorative-blue-france`
 Thème clair : `$blue-france-950` / Thème sombre : `$blue-france-100`
 
-::::dsfr-doc-table[La personnalisation]{valign=top vheaders=vertical caption=false}
+::::fr-table[La personnalisation]{valign=top vheaders=vertical caption=false}
 
 | Description de l’usage | Token | Valeur(s) autorisée(s) |
 |-----------------------|-------|-----------------------|
@@ -206,7 +206,7 @@ Ainsi le svg d’un pictogramme doit correspondre à ce gabarit :
 
 Dans le cas où l’on souhaiterait ajouter un élément en fond (background) sous un pictogramme. Il existe deux autres token `$artwork-background` et `$artwork-motif` permettant de créer des pictogrammes entièrement gris.
 
-::::dsfr-doc-table[La personnalisation]{valign=top vheaders=vertical caption=false}
+::::fr-table[La personnalisation]{valign=top vheaders=vertical caption=false}
 
 | Description de l’usage | Token | Valeur(s) autorisée(s) |
 |-----------------------|-------|-----------------------|

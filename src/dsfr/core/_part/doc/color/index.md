@@ -39,7 +39,7 @@ Chaque token fait référence à deux couleurs de la palette d’options : une p
 
 ### Les couleurs de fond
 
-:::dsfr-doc-table[Les couleurs de fond]{valign=top scroll=false caption=false}
+:::fr-table[Les couleurs de fond]{valign=top scroll=false caption=false}
 
 | Description de l’usage | Token | Thème clair | Thème sombre |
 | :----- | :-----| :-----| :----- |
@@ -65,7 +65,7 @@ Chaque token fait référence à deux couleurs de la palette d’options : une p
 > [!NOTE]
 > Quand elles sont associées à du texte, les icônes sont assimilées à celui-ci.
 
-:::dsfr-doc-table[Les couleurs de texte]{valign=top scroll=false caption=false}
+:::fr-table[Les couleurs de texte]{valign=top scroll=false caption=false}
 
 | Description de l’usage | Token | Thème clair | Thème sombre |
 | :----- | :----- | :----- | :----- |
@@ -88,7 +88,7 @@ Chaque token fait référence à deux couleurs de la palette d’options : une p
 
 ### Les couleurs d’illustrations
 
-:::dsfr-doc-table[Les couleurs d'illustrations]{valign=top scroll=false caption=false}
+:::fr-table[Les couleurs d'illustrations]{valign=top scroll=false caption=false}
 
 | Description de l’usage | Token | Thème clair | Thème sombre |
 | :----- | :----- | :----- | :----- |

@@ -244,7 +244,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### modal
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la modale est activé ou non |
@@ -253,7 +253,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ferme la modale |
@@ -263,7 +263,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.conceal()` |
 :::
 
-:::dsfr-doc-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre la modale |
@@ -273,7 +273,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.disclose()` |
 :::
 
-:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si la modale est ouverte |
@@ -282,7 +282,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.isDisclosed` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -293,7 +293,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### modalButton
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -303,7 +303,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modalButton.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici la modale |
@@ -312,7 +312,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

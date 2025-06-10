@@ -95,7 +95,7 @@ Les correspondances suivantes sont intégrées en code, en tant que sous-couche 
 
 ### Couleurs primaires
 
-::::dsfr-doc-table[Bleu France]{valign=top vheaders=vertical caption=false}
+::::fr-table[Bleu France]{valign=top vheaders=vertical caption=false}
 
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
@@ -109,7 +109,7 @@ Les correspondances suivantes sont intégrées en code, en tant que sous-couche 
 
 ::::
 
-::::dsfr-doc-table[Rouge Marianne]{valign=top vheaders=vertical caption=false}
+::::fr-table[Rouge Marianne]{valign=top vheaders=vertical caption=false}
 
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
@@ -125,7 +125,7 @@ Les correspondances suivantes sont intégrées en code, en tant que sous-couche 
 
 ### Couleur neutre
 
-::::dsfr-doc-table[Gris]{valign=top vheaders=vertical caption=false}
+::::fr-table[Gris]{valign=top vheaders=vertical caption=false}
 
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
@@ -157,7 +157,7 @@ Les correspondances suivantes sont intégrées en code, en tant que sous-couche 
 
 Les couleurs systèmes sont : Info, warning, error, success.
 
-::::dsfr-doc-table[Exemple avec la couleur Info]{valign=top vheaders=vertical caption=false}
+::::fr-table[Exemple avec la couleur Info]{valign=top vheaders=vertical caption=false}
 
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|
@@ -174,7 +174,7 @@ Les couleurs systèmes sont : Info, warning, error, success.
 
 Les couleurs illustratives sont : green-tilleul-verveine, green-bourgeon, green-emeraude, green-menthe, green-archipel, blue-ecume, blue-cumulus, purple-glycine, pink-macaron, pink-tuile, yellow-tournesol, yellow-moutarde, orange-terre-battue, brown-cafe-creme, brown-caramel, brown-opera, beige-gris-galet.
 
-::::dsfr-doc-table[Déclinaisons des couleurs illustratives]{valign=top vheaders=vertical caption=false}
+::::fr-table[Déclinaisons des couleurs illustratives]{valign=top vheaders=vertical caption=false}
 
 | Correspondance | Thème clair | Thème sombre |
 |----------------|-------------|--------------|

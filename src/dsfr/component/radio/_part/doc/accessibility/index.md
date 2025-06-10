@@ -101,7 +101,7 @@ Les images des boutons radio riches doivent être décoratives.
 
 Par défaut, le composant Bouton radio est suffisamment contrasté en thème clair et en thème sombre.
 
-:::dsfr-doc-table[Contrastes par défaut]{valign=top scroll=false}
+:::fr-table[Contrastes par défaut]{valign=top scroll=false}
 | Thème |  Bordure | Point | Étiquette |
 |------|-----|-----|-----|
 |**Thème clair**| 14,9:1 | 14,9:1 | 18,1:1 |

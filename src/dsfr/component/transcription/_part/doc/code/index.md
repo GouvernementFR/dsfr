@@ -159,7 +159,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### transcription
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la transcription est activé ou non |
@@ -170,7 +170,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapseButton
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -180,7 +180,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici la transcription |
@@ -189,7 +189,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -200,7 +200,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapse
 
-:::dsfr-doc-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -210,7 +210,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
 :::
 
-:::dsfr-doc-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -220,7 +220,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
 :::
 
-:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
@@ -229,7 +229,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
@@ -238,7 +238,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -247,7 +247,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.group` |
 :::
 
-:::dsfr-doc-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
@@ -256,7 +256,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.buttons` |
 :::
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
@@ -266,7 +266,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici la transcription |
@@ -275,7 +275,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -284,7 +284,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -295,7 +295,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### modalButton
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -305,7 +305,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modalButton.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici la transcription |
@@ -314,7 +314,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -325,7 +325,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### modal
 
-:::dsfr-doc-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ferme la modale |
@@ -335,7 +335,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.conceal()` |
 :::
 
-:::dsfr-doc-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre la modale |
@@ -345,7 +345,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.disclose()` |
 :::
 
-:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si la modale est ouverte |
@@ -354,7 +354,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.isDisclosed` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la modale est activé ou non |
@@ -363,7 +363,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -372,7 +372,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.group` |
 :::
 
-:::dsfr-doc-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture de la modal |
@@ -381,7 +381,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.buttons` |
 :::
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton de la modale |
@@ -391,7 +391,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).modal.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici la transcription |
@@ -400,7 +400,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -409,7 +409,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

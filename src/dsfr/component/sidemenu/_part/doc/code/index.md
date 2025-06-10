@@ -247,7 +247,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### sidemenuList
 
-:::dsfr-doc-table[current]{valign=top scroll=false}
+:::fr-table[current]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Retourne l'API de la sous-section ouverte. <br/>_Si aucune sous-section n'est ouverte, ou si plusieurs sous-sections sont ouvertes, renvoie `null`._|
@@ -256,7 +256,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).sidemenuList.current` |
 :::
 
-:::dsfr-doc-table[hasFocus]{valign=top scroll=false}
+:::fr-table[hasFocus]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
@@ -265,7 +265,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).sidemenuList.hasFocus` |
 :::
 
-:::dsfr-doc-table[index]{valign=top scroll=false}
+:::fr-table[index]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de la sous-section courante. <br/>_Si aucune sous-section n'est ouverte, l'index vaut 0._ |
@@ -274,7 +274,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).sidemenuList.index` <br/> `dsfr(elem).sidemenuList.index = 2` |
 :::
 
-:::dsfr-doc-table[isGrouped]{valign=top scroll=false}
+:::fr-table[isGrouped]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si les sous-sections du groupe sont liées en eux ou non. <br/>_Si `true`, lorsqu'une sous-section est ouverte les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les sous-sections sont groupées par défaut._|
@@ -283,7 +283,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).sidemenuList.isGrouped` <br/> `dsfr(elem).sidemenuList.isGrouped = true` |
 :::
 
-:::dsfr-doc-table[length]{valign=top scroll=false}
+:::fr-table[length]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Retourne le nombre de sous-sections dans le groupe. |
@@ -292,7 +292,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).sidemenuList.length` |
 :::
 
-:::dsfr-doc-table[members]{valign=top scroll=false}
+:::fr-table[members]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie un tableau d'objets correspondant aux sous-sections du groupe. |
@@ -301,7 +301,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).sidemenuList.members` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -312,7 +312,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### sidemenuItem
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du menu latéral est activé ou non |
@@ -321,7 +321,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).sidemenuItem.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -332,7 +332,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapseButton
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -342,7 +342,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du bouton du menu latéral est activé ou non |
@@ -351,7 +351,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapseButton.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -362,7 +362,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapse
 
-:::dsfr-doc-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ferme la sous-section |
@@ -372,7 +372,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
 :::
 
-:::dsfr-doc-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre la sous-section |
@@ -382,7 +382,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
 :::
 
-:::dsfr-doc-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si la sous-section est ouverte |
@@ -391,7 +391,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 :::
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du menu latéral est activé ou non |
@@ -400,7 +400,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -409,7 +409,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.group` |
 :::
 
-:::dsfr-doc-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture de la sous-section |
@@ -418,7 +418,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.buttons` |
 :::
 
-:::dsfr-doc-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top scroll=false}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton de la sous-section |
@@ -428,7 +428,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici le menu latéral |
@@ -437,7 +437,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -446,7 +446,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

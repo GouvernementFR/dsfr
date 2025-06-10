@@ -487,7 +487,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### table
 
-:::dsfr-doc-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du tableau est activé ou non |
@@ -496,7 +496,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).table.isEnabled = false` |
 :::
 
-:::dsfr-doc-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent |
@@ -505,7 +505,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).parent` |
 :::
 
-:::dsfr-doc-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top scroll=false}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -514,7 +514,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).children` |
 :::
 
-:::dsfr-doc-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top scroll=false}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
