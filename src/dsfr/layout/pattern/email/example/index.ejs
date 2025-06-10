@@ -1,0 +1,12 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- sample(getText('sample', 'email'), './sample/email-default', {}, true); %>
+
+<%- sample(`${getText('sample', 'email')} - ${getText('error.short', 'global')}` , './sample/email-default', {email: {error: true}}, true); %>
+
+<%- sample(getText('sample.indication', 'email'), './sample/email-default', {email: {hint: [getText('hint.indication', 'email'), getText('hint.format', 'email')]}}, true); %>
+
+<%- sample(`${getText('sample.indication', 'email')} - ${getText('error.short', 'global')}`, './sample/email-default', {email: { error: true, hint: [getText('hint.indication', 'email'), getText('hint.format', 'email')] } }, true); %>
+

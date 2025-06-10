@@ -9,4 +9,8 @@
 @include path.to-dist(2);
 @include media-query.order;
 
-@import 'input-base/legacy';
+@import 'index';
+@import 'style/scheme';
+@import 'style/legacy';
+
+@include _input-scheme(true);
