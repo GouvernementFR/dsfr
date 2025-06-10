@@ -71,7 +71,6 @@ La bordure, la coche et l’étiquette de la liste déroulante désactivée sont
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
-
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,

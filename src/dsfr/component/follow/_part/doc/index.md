@@ -19,7 +19,7 @@ La lettre d’information et réseaux sociaux est un ensemble d’éléments d�
 - [Démo](./demo/index.md)
 - [Design](./design/index.md)
 - [Code](./code/index.md)
-- [Accessibilité](./accessibility/index.md) 
+- [Accessibilité](./accessibility/index.md)
 
 :::
 

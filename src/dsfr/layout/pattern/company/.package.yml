@@ -7,6 +7,6 @@ style:
   - core
 example:
   style:
-    - input-base
+    - input
     - select
     - link

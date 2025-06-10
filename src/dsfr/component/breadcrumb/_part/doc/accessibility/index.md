@@ -13,6 +13,8 @@ summary: Ce document présente le fil d’Ariane comme un composant fondamental 
 
 Le fil d’Ariane est un système de navigation secondaire qui permet à l’usager de se situer sur le site qu’il consulte.
 
+Le fil d’Ariane est un système de navigation secondaire qui permet à l’usager de se situer sur le site qu’il consulte.
+
 :::dsfr-doc-tab-navigation
 
 - [Présentation](../index.md)
