@@ -211,6 +211,14 @@ const footerArgTypes = {
     },
     table: { category: 'attributes' }
   },
+  isMourning: {
+    control: 'boolean',
+    description: 'Passe le footer en mode deuil',
+    type: {
+      value: 'boolean'
+    },
+    table: { category: 'Config' }
+  },
   ...topArgTypes,
   ...brandArgTypes,
   ...contentArgTypes,
@@ -263,7 +271,8 @@ const footerArgs = {
     { label: 'Gestion des cookies', href: '#', markup: 'a' }
   ],
   bottomCopyright: 'Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="Licence etalab - nouvelle fenêtre">licence etalab-2.0</a>',
-  id: 'footer'
+  id: 'footer',
+  isMourning: false
 };
 
 const footerProps = (args) => {
@@ -318,6 +327,12 @@ const footerProps = (args) => {
     footer.top = {
       categories: args.topFooterCategories || footerArgs.topFooterCategories
     };
+  }
+
+  if (args.isMourning) {
+    document.documentElement.setAttribute('data-fr-mourning', '');
+  } else {
+    document.documentElement.removeAttribute('data-fr-mourning');
   }
 
   return footer;

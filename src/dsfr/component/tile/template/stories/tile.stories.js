@@ -106,3 +106,20 @@ export const HorizontalVerticalFromMdStory = {
     hasDescription: true
   }
 };
+
+export const NoLinkStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    actionMarkup: false,
+    noLink: true
+  }
+};
+
+export const HorizontalNoLinkStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    actionMarkup: false,
+    noLink: true,
+    horizontal: true
+  }
+};
