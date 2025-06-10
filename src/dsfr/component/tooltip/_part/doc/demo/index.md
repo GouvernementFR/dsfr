@@ -25,4 +25,4 @@ Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors 
 
 :::
 
-::dsfr-doc-storybook{id=tooltip--docs}
+::dsfr-doc-storybook{storyId=tooltip--docs}

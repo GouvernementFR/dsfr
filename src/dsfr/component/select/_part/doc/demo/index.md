@@ -23,4 +23,4 @@ La liste déroulante est un élément d’interaction avec l’interface permett
 
 :::
 
-::dsfr-doc-storybook{id=select--docs}
+::dsfr-doc-storybook{storyId=select--docs}

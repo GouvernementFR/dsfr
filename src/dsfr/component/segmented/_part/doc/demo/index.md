@@ -23,4 +23,4 @@ Le contrôle segmenté est un élément d’interaction avec l’interface perme
 
 :::
 
-::dsfr-doc-storybook{id=segmented--docs}
+::dsfr-doc-storybook{storyId=segmented--docs}

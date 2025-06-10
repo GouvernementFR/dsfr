@@ -23,6 +23,6 @@ Le lien est un système de navigation secondaire qui permet à l’usager de se 
 
 :::
 
-::dsfr-doc-storybook{id=link--docs}
+::dsfr-doc-storybook{storyId=link--docs}
 
-::dsfr-doc-storybook{id=links-group--docs}
+::dsfr-doc-storybook{storyId=links-group--docs}

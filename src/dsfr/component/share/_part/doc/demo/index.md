@@ -23,4 +23,4 @@ Le partage est un groupe d’éléments d’interaction avec l’interface perme
 
 :::
 
-::dsfr-doc-storybook{id=share--docs}
+::dsfr-doc-storybook{storyId=share--docs}

@@ -23,4 +23,4 @@ Le pied de page est un élément de navigation secondaire mis à disposition de 
 
 :::
 
-::dsfr-doc-storybook{id=footer--docs}
+::dsfr-doc-storybook{storyId=footer--docs}

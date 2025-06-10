@@ -29,7 +29,7 @@ Le mot de passe est un élément d’interaction avec l’interface permettant d
 
 Utiliser le mot de passe lorsque votre service nécessite de demander à l’usager de créer ou saisir un mot de passe, notamment dans les cas de création de compte ou de connexion.
 
-Pour ces deux usages, des modèles de pages sont à disposition : [page de création de compte](../../../../layout/page/account/register/_part/doc/index.md) et [page de connexion](../../../../layout/page/account/login/_part/doc/index.md).
+Pour ces deux usages, des modèles de pages sont à disposition : [page de création de compte](../../../../layout/page/register/_part/doc/index.md) et [page de connexion](../../../../layout/page/login/_part/doc/index.md).
 
 ### Comment utiliser ce composant ?
 

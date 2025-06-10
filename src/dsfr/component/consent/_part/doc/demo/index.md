@@ -23,8 +23,8 @@ Le gestionnaire de consentement permet à l'usager de définir ses préférences
 
 :::
 
-::dsfr-doc-storybook{id=consent--docs}
+::dsfr-doc-storybook{storyId=consent--docs}
 
-::dsfr-doc-storybook{id=consent-modal--docs}
+::dsfr-doc-storybook{storyId=consent-modal--docs}
 
-::dsfr-doc-storybook{id=placeholder--docs}
+::dsfr-doc-storybook{storyId=placeholder--docs}

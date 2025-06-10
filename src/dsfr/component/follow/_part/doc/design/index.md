@@ -51,7 +51,7 @@ Elle est déclinée selon deux variantes :
 
 - **Une mise en avant** avec un bouton redirigeant vers un formulaire d’inscription riche.
 
-::dsfr-doc-storybook{id=follow--newsletter-button}
+::dsfr-doc-storybook{storyId=follow--newsletter-button}
 
 Utiliser la mise en avant pour les lettres d’information plus complexes qui nécessitent de recueillir plusieurs informations.
 
@@ -59,7 +59,7 @@ La description qui accompagne le titre du bloc sert à présenter la newsletter 
 
 - **Un formulaire d’inscription** qui intègre directement un champ de saisie d’e-mail pour s’inscrire depuis le pied de page.
 
-::dsfr-doc-storybook{id=follow--newsletter-form}
+::dsfr-doc-storybook{storyId=follow--newsletter-form}
 
 Utiliser le formulaire d’inscription pour les lettres d’information simples qui nécessitent de recueillir uniquement l’adresse mail et le consentement de l’usager.
 
@@ -71,7 +71,7 @@ Cette variante peut également servir à pré-saisir l’adresse mail de l’uti
 
 **Réseaux sociaux seuls**
 
-::dsfr-doc-storybook{id=follow--socials}
+::dsfr-doc-storybook{storyId=follow--socials}
 
 Les réseaux sociaux seuls permettent à l’usager d’accéder aux comptes de vos réseaux sociaux.
 
@@ -83,11 +83,11 @@ Il est possible d’utiliser les différentes déclinaisons de la lettre d’inf
 
 - Formulaire d’inscription à la lettre d’information et réseaux sociaux
 
-::dsfr-doc-storybook{id=follow--socials-newsletter-form}
+::dsfr-doc-storybook{storyId=follow--socials-newsletter-form}
 
 - Mise en avant de la lettre d’information et réseaux sociaux
 
-::dsfr-doc-storybook{id=follow--socials-newsletter-button}
+::dsfr-doc-storybook{storyId=follow--socials-newsletter-button}
 
 ### Tailles
 

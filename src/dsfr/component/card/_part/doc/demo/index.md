@@ -23,4 +23,4 @@ La carte est un élément d’interaction avec l’interface permettant de redir
 
 :::
 
-::dsfr-doc-storybook{id=card--docs}
+::dsfr-doc-storybook{storyId=card--docs}

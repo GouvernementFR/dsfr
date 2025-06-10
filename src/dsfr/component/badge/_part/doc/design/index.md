@@ -40,7 +40,7 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 **Badge standard**
 
-::dsfr-doc-storybook{id=badge--default}
+::dsfr-doc-storybook{storyId=badge--default}
 
 **Badge système sans icône**
 
@@ -50,11 +50,11 @@ Le badge est un élément d’indication permettant de valoriser une information
 - Information
 - Nouveauté
 
-::dsfr-doc-storybook{id=badge--status-no-icon}
+::dsfr-doc-storybook{storyId=badge--status-no-icon}
 
 **Badge système avec icône**
 
-::dsfr-doc-storybook{id=badge--status}
+::dsfr-doc-storybook{storyId=badge--status}
 
 Utiliser cette variation pour préciser l’information donnée par le texte du badge avec l’icône correspondante.
 
@@ -66,11 +66,11 @@ Le badge est disponible en 2 tailles :
 
 - SM pour small
 
-::dsfr-doc-storybook{id=badge--size-sm}
+::dsfr-doc-storybook{storyId=badge--size-sm}
 
 - MD pour medium - taille par défaut
 
-::dsfr-doc-storybook{id=badge--default}
+::dsfr-doc-storybook{storyId=badge--default}
 
 ### États
 

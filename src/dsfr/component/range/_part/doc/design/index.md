@@ -41,29 +41,29 @@ Le curseur est un élément d’interaction avec l’interface permettant à l�
 
 **Curseur simple**
 
-::dsfr-doc-storybook{id=range--range}
+::dsfr-doc-storybook{storyId=range--range}
 
 - Utiliser le curseur simple pour permettre à l’usager de choisir une plage, en partant d’un minimum fixe prédéfini.
 
 **Curseur double**
 
-::dsfr-doc-storybook{id=range--range args="isDouble:true"}
+::dsfr-doc-storybook{storyId=range--range args="{ isDouble: true }"}
 
 - Utiliser le curseur double pour permettre à l’usager de choisir une plage, sans valeur prédéfinie.
 
 **Curseur cranté**
 
-::dsfr-doc-storybook{id=range--range args="isStep:true"}
+::dsfr-doc-storybook{storyId=range--range args="{ isStep: true }"}
 
 - Utiliser le curseur cranté pour permettre à l’usager de choisir une plage, en contraignant les valeurs possibles.
 
 **Sans indicateurs minimum et maximum**
 
-::dsfr-doc-storybook{id=range--range args="indicators:false"}
+::dsfr-doc-storybook{storyId=range--range args="{ indicators: false }"}
 
 **Avec préfixe et suffixe**
 
-::dsfr-doc-storybook{id=range--range args="prefix:prefix, suffix:suffix"}
+::dsfr-doc-storybook{storyId=range--range args="{ prefix: prefix, suffix: suffix }"}
 
 ### Tailles
 
@@ -82,7 +82,7 @@ En mobile, la taille minimum est de 136 px et la taille maximum est de 288 px ma
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le curseur.
 
-::dsfr-doc-storybook{id=range--range args="disabled:true"}
+::dsfr-doc-storybook{storyId=range--range args="{ disabled: true }"}
 
 > [!WARNING]
 > N’utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
@@ -91,7 +91,7 @@ L’état désactivé indique que l'usager ne peut pas interagir avec le curseur
 
 L'état d’erreur est signalé par un changement de couleur du libellé ainsi que l’affichage d’une ligne rouge (cf. couleurs fonctionnelles : le rouge est la couleur de l’état erreur) et d’un message d’erreur en-dessous du composant.
 
-::dsfr-doc-storybook{id=range--range args="status:error"}
+::dsfr-doc-storybook{storyId=range--range args="{ status: error }"}
 
 **Etat de succès**
 

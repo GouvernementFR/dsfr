@@ -23,4 +23,4 @@ Le système d’onglets permet de structurer et de présenter plusieurs sections
 
 :::
 
-::dsfr-doc-storybook{id=tabs--docs}
+::dsfr-doc-storybook{storyId=tabs--docs}

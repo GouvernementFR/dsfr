@@ -23,6 +23,6 @@ La case à cocher est un élément d’interaction avec l’interface permettant
 
 :::
 
-::dsfr-doc-storybook{id=checkbox--docs}
+::dsfr-doc-storybook{storyId=checkbox--docs}
 
-::dsfr-doc-storybook{id=checkboxes-group--docs}
+::dsfr-doc-storybook{storyId=checkboxes-group--docs}

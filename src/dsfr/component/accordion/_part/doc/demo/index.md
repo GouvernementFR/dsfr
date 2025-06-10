@@ -23,6 +23,6 @@ L’accordéon est un élément d’interaction avec l’interface permettant à
 
 :::
 
-::dsfr-doc-storybook{id=accordion--docs}
+::dsfr-doc-storybook{storyId=accordion--docs}
 
-::dsfr-doc-storybook{id=accordions-group--docs}
+::dsfr-doc-storybook{storyId=accordions-group--docs}

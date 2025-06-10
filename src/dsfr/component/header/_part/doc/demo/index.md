@@ -23,4 +23,4 @@ L’en-tête est un élément de navigation permettant aux usagers d’identifie
 
 :::
 
-::dsfr-doc-storybook{id=header--docs}
+::dsfr-doc-storybook{storyId=header--docs}

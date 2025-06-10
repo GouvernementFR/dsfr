@@ -23,6 +23,6 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 :::
 
-::dsfr-doc-storybook{id=badge--docs}
+::dsfr-doc-storybook{storyId=badge--docs}
 
-::dsfr-doc-storybook{id=badges-group--docs}
+::dsfr-doc-storybook{storyId=badges-group--docs}

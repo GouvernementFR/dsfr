@@ -23,7 +23,7 @@ Le fil d’Ariane est un système de navigation secondaire qui permet à l’usa
 
 :::
 
-::dsfr-doc-storybook{storyId=breadcrumb--breadrumb}
+::dsfr-doc-storybook{storyId=breadcrumb--breadcrumb}
 
 ### Quand utiliser ce composant ?
 

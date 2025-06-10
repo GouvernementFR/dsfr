@@ -14,4 +14,4 @@ title: Démo du bloc marque
 
 :::
 
-::dsfr-doc-storybook{id=logo--docs}
+::dsfr-doc-storybook{storyId=logo--docs}

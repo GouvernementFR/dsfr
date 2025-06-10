@@ -23,4 +23,4 @@ La navigation principale est le système central de navigation au sein d’un si
 
 :::
 
-::dsfr-doc-storybook{id=navigation--docs}
+::dsfr-doc-storybook{storyId=navigation--docs}
