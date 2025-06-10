@@ -63,4 +63,4 @@ Aucun test de restitution n’est nécessaire pour le composant Ajout de fichier
 ### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
-- [Input type=\"file\"](https://html.spec.whatwg.org/#file-upload-state-(type=file))
+- [Input type file](https://html.spec.whatwg.org/#file-upload-state-(type=file))

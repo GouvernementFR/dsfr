@@ -111,4 +111,4 @@ L’attribut `disabled` est restitué différemment selon les lecteurs d’écra
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Spécification HTML – élément input](https://html.spec.whatwg.org/#the-input-element)
-- [Spécification HTML – type="range"](https://html.spec.whatwg.org/#range-state-(type=range))
+- [Spécification HTML – type range](https://html.spec.whatwg.org/#range-state-(type=range))

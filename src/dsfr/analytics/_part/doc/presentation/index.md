@@ -38,7 +38,7 @@ Cette API embarque nativement les marqueurs de suivi de la performance, ce qui p
 
 Une documentation de prise en main est disponible pour vous aider à comprendre la gestion du marquage présent dans le Système de Design de l'Etat.
 
-[Consulter la documentation technique](./code/index.md)
+[Consulter la documentation technique](../code/index.md)
 
 ### À propos du marché interministériel Eulerian
 
