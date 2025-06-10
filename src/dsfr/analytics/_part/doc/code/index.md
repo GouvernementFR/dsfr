@@ -6,9 +6,10 @@ shortDescription: Guide d’intégration technique de l’outil analytics DSFR.
 keywords: analytics, documentation technique, DSFR, Eulerian, configuration, tracking, compatibilité, isActionEnabled, data-fr-analytics, patch, standalone
 excerpt: Découvrez comment intégrer et configurer l’outil de mesure d’audience fourni avec le DSFR, incluant les options avancées de tracking et les recommandations de compatibilité.
 summary: Cette documentation détaille l’intégration technique de la solution de mesure d’audience embarquée dans le Système de Design de l’État. Basée sur Eulerian, elle permet un suivi des interactions utilisateurs via des attributs `data-fr-analytics`. Elle présente également les évolutions de configuration, comme la dépréciation de `enableRating`, la nouvelle propriété `isActionEnabled`, et les fichiers patch à utiliser pour garantir une compatibilité avec les versions antérieures du DSFR.
+order: 2
 ---
 
-# Documentation technique
+## Documentation technique
 
 > [!NOTE]
 > Ajout de la propriété `isActionEnabled` dans la configuration et sur l'objet `window.dsfr.analytics` permettant d'activer l'envoi de l'ensemble des données d'actions des composants. Pour activer l'envoi d'action sur des éléments spécifiques au cas par cas, il est possible d'ajouter l'attribut `data-fr-analytics-action` sur l'élément. À l'inverse, lorsque l'envoi d'action est activé au global, l'attribut avec la valeur `data-fr-analytics-action="false"` permet de désactiver l'envoi sur un élément.
