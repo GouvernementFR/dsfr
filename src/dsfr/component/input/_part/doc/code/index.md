@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code du champ de saisie
 shortTitle: Code du champ de saisie
 description: Le champ de saisie permet à l’usager d’entrer des données dans une interface en respectant des règles de clarté et d’accessibilité.

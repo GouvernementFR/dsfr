@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Accessibilité du Tag
 shortTitle: Accessibilité du Tag
 description: Présentation complète du composant Tag destiné à la catégorisation ou au filtrage de contenus dans une interface.

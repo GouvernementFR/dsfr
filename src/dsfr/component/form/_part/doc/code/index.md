@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code des formulaires
 ---
 

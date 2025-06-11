@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Accessibilité de l'En-tête
 shortTitle: Accessibilité de l'En-tête
 description: Présentation du composant En-tête utilisé pour identifier le site consulté et donner accès à des fonctionnalités clés comme la recherche ou la connexion.

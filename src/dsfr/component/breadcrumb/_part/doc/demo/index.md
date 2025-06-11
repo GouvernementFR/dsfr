@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration du fil d'Ariane
 shorTitle: Démonstration du fil d’Ariane
 description: Le fil d’Ariane est un composant de navigation secondaire permettant à l’usager de se repérer dans l’arborescence d’un site et de revenir à un niveau supérieur.

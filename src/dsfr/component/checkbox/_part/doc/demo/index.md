@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration de la case à cocher
 shortTitle: Démonstration de la Case à cocher
 description: Présentation du composant Case à cocher permettant à l’usager de sélectionner une ou plusieurs options dans une liste de manière indépendante.

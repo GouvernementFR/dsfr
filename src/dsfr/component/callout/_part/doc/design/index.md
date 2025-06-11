@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design de la mise en avant
 shortTitle: Design de la mise en avant
 description: La mise en avant est un élément éditorial servant à valoriser une information complémentaire dans une page de contenu.

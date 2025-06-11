@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration du tableau
 shortTitle: Démonstration du Tableau
 description: Présentez des données organisées en lignes et colonnes avec le composant Tableau, pensé pour faciliter la lisibilité, la comparaison et la manipulation de contenus structurés dans vos interfaces.

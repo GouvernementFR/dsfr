@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Accessibilité du contrôle segmenté
 shortTitle: Accessibilité du contrôle segmenté
 description: Le contrôle segmenté permet à l’usager de choisir une vue parmi plusieurs options d’affichage disponibles dans une interface.

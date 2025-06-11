@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code du contrôle segmenté
 shortTitle: Code du contrôle segmenté
 description: Le contrôle segmenté permet à l’usager de choisir une vue parmi plusieurs options d’affichage disponibles dans une interface.

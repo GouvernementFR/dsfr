@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration des Liens d'évitement
 shortTitle: Démonstration des liens d'évitement
 description: Les liens d’évitement permettent aux usagers utilisant un clavier ou un lecteur d’écran d’accéder rapidement aux zones principales d’une page.

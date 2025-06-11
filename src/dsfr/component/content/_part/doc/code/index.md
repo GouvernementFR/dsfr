@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code du Contenu médias
 shortTitle: Code du Contenu médias
 description: Le contenu média permet d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.

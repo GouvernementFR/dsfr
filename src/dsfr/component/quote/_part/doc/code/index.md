@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code de la citation
 shortTitle: Code de la citation
 description: La citation permet d’intégrer un extrait de discours ou de texte au sein d’un contenu éditorial, en respectant des règles précises de forme.

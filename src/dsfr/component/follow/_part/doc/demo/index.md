@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration de la lettre d'information et des réseaux sociaux
 shortTitle: Démonstration de la lettre d'information et réseaux sociaux
 description: Ce composant permet de proposer l’inscription à une lettre d’information et de diriger vers les réseaux sociaux de l’entité.

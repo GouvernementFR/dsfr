@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Accessibilité du bouton
 shortTitle: Accessibilité du Bouton
 description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
