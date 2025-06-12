@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design du du Lien
 shortTitle: Design du Lien
 description: Élément de navigation secondaire permettant à l’usager d’accéder à un autre contenu, sur la même page ou sur une autre page, interne ou externe.

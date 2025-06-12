@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration de l'Ajout de fichier
 shortTitle: Démonstration de l'Ajout de fichier
 description: Présentation du composant Ajout de fichier permettant à l’usager de sélectionner et envoyer un ou plusieurs fichiers via une interface.

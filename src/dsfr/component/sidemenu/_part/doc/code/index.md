@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code du Menu latéral
 shortTitle: Code du Menu latéral
 description: Le menu latéral est un composant de navigation secondaire qui organise des liens verticaux pour guider l’usager entre différentes pages d’une même rubrique.

@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design du Bouton radio
 shortTitle: Design du Bouton radio
 description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.

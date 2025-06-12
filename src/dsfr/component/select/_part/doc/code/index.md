@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code de la liste déroulante
 shortTitle: Code de la liste déroulante
 description: La liste déroulante permet à l’usager de sélectionner une option unique parmi un ensemble de choix dans un espace limité.

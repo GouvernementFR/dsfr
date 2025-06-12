@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design du Sommaire
 shortTitle: Design du Sommaire
 description: Présentation du composant Sommaire permettant à l’usager de naviguer facilement entre les sections d’une page longue à l’aide de liens ancrés.

@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration du bandeau d'information importante
 shortTitle: Démonstration du bandeau d'information importante
 description: Le bandeau d’information importante permet de signaler temporairement une information urgente ou prioritaire en tête de page.

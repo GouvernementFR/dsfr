@@ -1,6 +1,7 @@
 ---
+boost: 0
 title: Design du fil d'Ariane
-shorTitle: Design du fil d’Ariane
+shortTitle: Design du fil d’Ariane
 description: Le fil d’Ariane est un composant de navigation secondaire permettant à l’usager de se repérer dans l’arborescence d’un site et de revenir à un niveau supérieur.
 shortDescription: Se repérer dans l’arborescence avec le fil d’Ariane.
 keywords: fil d’Ariane, navigation, arborescence, hiérarchie, composant, UX, design system, position, retour, accessibilité

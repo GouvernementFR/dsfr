@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design du Bouton FranceConnect
 shortTitle: Design du Bouton FranceConnect
 description: Présentation du bouton FranceConnect permettant à l’usager de s’authentifier via un fournisseur d’identité officiel reconnu par l’État.
@@ -118,5 +119,5 @@ Ne pas modifier le libellé du bouton.
 ### Maillage
 
 - [Bouton](../../../../button/_part/doc/index.md)
-- [Page de création de compte](../../../../../layout/pattern/register/_part/doc/index.md)
-- [Page de connexion](../../../../../layout/pattern/login/_part/doc/index.md)
+- [Page de création de compte](../../../../../layout/page/register/_part/doc/index.md)
+- [Page de connexion](../../../../../layout/page/login/_part/doc/index.md)

@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Accessibilité de la liste déroulante
 shortTitle: Accessibilité de la liste déroulante
 description: La liste déroulante permet à l’usager de sélectionner une option unique parmi un ensemble de choix dans un espace limité.

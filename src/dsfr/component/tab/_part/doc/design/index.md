@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design de l'Onglet
 shortTitle: Design de l'Onglet
 description: Présentation du composant Onglets pour structurer du contenu lié dans un espace restreint avec des recommandations d’usage et d’accessibilité.

@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code de l'infobulle
 shortTitle: Code de l'infobulle
 description: L’infobulle est un composant d’aide contextuelle permettant d’afficher une information complémentaire lors du survol ou du clic sur un élément de l’interface.

@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design de la Navigation principale
 shortTitle: Design de la Navigation principale
 description: La navigation principale organise les grandes rubriques d’un site et permet à l’usager de s’orienter dans son arborescence.

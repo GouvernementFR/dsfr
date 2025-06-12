@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design du Menu déroulant
 beta: true
 shortTitle: Design du Menu déroulant
