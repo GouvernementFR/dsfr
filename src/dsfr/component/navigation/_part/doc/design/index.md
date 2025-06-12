@@ -73,8 +73,6 @@ La navigation principale est le système central de navigation au sein d’un si
 
 **Responsive**
 
-::dsfr-doc-storybook{storyId=navigation--menu width=375}
-
 En version mobile, la navigation principale est accessible depuis le pictogramme “burger”. Le clic sur le pictogramme déclenche l’affichage d’un overlay présentant les éléments de la navigation et les liens directs de l’en-tête, si présents.
 
 Le système d’overlay permet l’affichage du contenu des différentes variations de menu, précédemment décrites.
