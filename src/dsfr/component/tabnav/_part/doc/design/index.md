@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design de la Navigation Tertiaire
 shortTitle: Design de la Navigation Tertiaire
 description: Composant de navigation en version bêta, destiné à offrir un troisième niveau de navigation complémentaire à la navigation secondaire.
@@ -7,7 +8,7 @@ keywords: navigation, tertiaire, DSFR, menu, accessibilité, hiérarchie, bêta
 cover: ../_asset/cover/cover.png
 excerpt: Système de navigation destiné aux sites à structure complexe, la navigation tertiaire permet d’accéder à des pages liées à une sous-rubrique en complément d’un menu latéral.
 summary: La navigation tertiaire est un composant en bêta permettant d’ajouter un troisième niveau de navigation pour les sites structurés avec des rubriques profondes. Elle ne peut être utilisée qu’en complément d’une navigation secondaire (comme un menu latéral), et vient structurer l’accès à des pages qui ne sont pas couvertes par les navigations principales. L’état actif, le positionnement sous le titre de rubrique et l’uniformité des styles sont essentiels à sa bonne intégration.
-beta: true
+badge: beta
 ---
 
 ## Navigation Tertiaire

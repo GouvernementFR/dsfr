@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration de l'Alerte
 shortTitle: Démonstration de l'Alerte
 description: Présentation du composant Alerte utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.

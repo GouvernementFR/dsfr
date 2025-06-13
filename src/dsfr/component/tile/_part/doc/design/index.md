@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design de la tuile
 shortTitle: Design de la tuile
 description: Le composant Tuile permet de créer des points d’entrée vers des pages de contenu au sein d’interfaces organisées.

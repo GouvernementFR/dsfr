@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration du Curseur
 shortTitle: Démonstration du Curseur
 description: Présentation du composant Curseur permettant à l’usager de sélectionner une valeur entre un minimum et un maximum de manière intuitive.

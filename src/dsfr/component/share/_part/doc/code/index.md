@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code du Partage
 shortTitle: Code du Partage
 description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.

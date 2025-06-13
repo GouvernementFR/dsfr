@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Accessibilité du Bouton FranceConnect
 shortTitle: Accessibilité du Bouton FranceConnect
 description: Présentation du bouton FranceConnect permettant à l’usager de s’authentifier via un fournisseur d’identité officiel reconnu par l’État.

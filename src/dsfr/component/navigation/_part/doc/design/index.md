@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design de la Navigation principale
 shortTitle: Design de la Navigation principale
 description: La navigation principale organise les grandes rubriques d’un site et permet à l’usager de s’orienter dans son arborescence.
@@ -72,8 +73,6 @@ La navigation principale est le système central de navigation au sein d’un si
 - Proposer un maximum de 8 liens au sein de chaque sous catégorie.
 
 **Responsive**
-
-::dsfr-doc-storybook{storyId=navigation--menu width=375}
 
 En version mobile, la navigation principale est accessible depuis le pictogramme “burger”. Le clic sur le pictogramme déclenche l’affichage d’un overlay présentant les éléments de la navigation et les liens directs de l’en-tête, si présents.
 

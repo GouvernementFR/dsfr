@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Accessibilité du sélecteur de langue
 shortTitle: Accessibilité du sélecteur de langue
 description: Le sélecteur de langues permet à l’usager de choisir la langue d’affichage du site dans un environnement multilingue.

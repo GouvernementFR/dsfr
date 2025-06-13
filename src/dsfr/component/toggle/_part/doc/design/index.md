@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design de l'interrupteur
 shortTitle: Design de l'Interrupteur
 description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.

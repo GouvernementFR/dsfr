@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Démonstration de la citation
 shortTitle: Démonstration de la citation
 description: La citation permet d’intégrer un extrait de discours ou de texte au sein d’un contenu éditorial, en respectant des règles précises de forme.

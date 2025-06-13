@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Code de la Pagination
 shortTitle: Code de la Pagination
 description: Présentation du composant Pagination permettant à l’usager de naviguer facilement entre les pages d’une liste d’éléments trop longue pour être affichée en une seule fois.

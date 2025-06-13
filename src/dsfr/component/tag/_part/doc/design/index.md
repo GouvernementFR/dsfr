@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design du Tag
 shortTitle: Design du Tag
 description: Détails du design du composant Tag incluant ses variations, tailles, états et options de personnalisation.

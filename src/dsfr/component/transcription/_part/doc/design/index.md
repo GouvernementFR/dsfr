@@ -1,4 +1,5 @@
 ---
+boost: 0
 title: Design de la transcription
 shortTitle: Design de la Transcription
 description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
