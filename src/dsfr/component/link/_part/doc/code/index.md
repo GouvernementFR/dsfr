@@ -223,7 +223,7 @@ Le groupe de bouton vient avec de nombreuses variations, telles que :
 
 ### JavaScript
 
-Le composant lien **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+Le composant Lien **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 Une fonctionnalité disponible dans le core, permet de remplir automatiquement le détail des **liens de téléchargement**.
 Pour instancier le javascript de remplissage automatique du détail sur le lien de téléchargement, ajouter l'attribut `data-fr-assess-file` sur le lien.

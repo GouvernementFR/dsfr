@@ -1,6 +1,6 @@
 ---
 title: Code du fil d'Ariane
-shorTitle: Code du fil d’Ariane
+shortTitle: Code du fil d’Ariane
 description: Le fil d’Ariane est un composant de navigation secondaire permettant à l’usager de se repérer dans l’arborescence d’un site et de revenir à un niveau supérieur.
 shortDescription: Se repérer dans l’arborescence avec le fil d’Ariane.
 keywords: fil d’Ariane, navigation, arborescence, hiérarchie, composant, UX, design system, position, retour, accessibilité
@@ -27,7 +27,7 @@ Le fil d’Ariane est un système de navigation secondaire qui permet à l’usa
 
 #### Structure du composant
 
-Le composant Fil d’Ariane permet aux utilisateurs de comprendre leur position dans la hiérarchie d’un site. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
+Le composant **Fil d’Ariane** permet aux utilisateurs de comprendre leur position dans la hiérarchie d’un site. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
 1. Un conteneur principal sous la balise `<nav>` :
     - Doit avoir l’attribut `role="navigation"` pour indiquer sa fonction.
@@ -39,11 +39,10 @@ Le composant Fil d’Ariane permet aux utilisateurs de comprendre leur position 
       - `aria-controls` pour relier le bouton à l’élément `<div>` qui contient le fil d’Ariane.
 3. Une zone de contenu avec le fil d’Ariane :
     - Représentée par une `<div>` avec la classe `fr-collapse`.
-    - Doit inclure un identifiant unique (ex. `id="breadcrumb-1"`) pour être lié au bouton.
-4. Une liste ordonnée `<ol>` avec la classe `fr-breadcrumb__list`, contenant les éléments du fil d’Ariane :
-    - Chaque segment est un élément `<li>` :
-      - Les segments avec des liens utilisent une balise `<a>` avec la classe `fr-breadcrumb__link`.
-      - Le segment actuel utilise `aria-current="page"` pour indiquer la page courante.
+    - Doit inclure un identifiant unique (ex. `id="breadcrumb-1"`) pour être liée au bouton.
+4. Une liste ordonnée `<ol>` avec la classe `fr-breadcrumb__list`, contenant les éléments du fil d’Ariane dont chaque segment est un élément `<li>` :
+    - Les segments avec des liens utilisent une balise `<a>` avec la classe `fr-breadcrumb__link`.
+    - Le segment actuel utilise `aria-current="page"` pour indiquer la page courante.
 
 **Exemple de structure HTML**
 
@@ -100,7 +99,7 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 <link href="dist/component/breadcrumb/breadcrumb.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
+#### Variantes de style
 
 - **Affichage par défaut** : Le fil d’Ariane est masqué sur mobile, seul le bouton est visible.
 - **Affichage étendu** : Lorsque l’attribut `aria-expanded` du bouton est à `true`, la classe `fr-collapse--expanded` est ajoutée au conteneur `<div>` pour le rendre visible.
@@ -109,20 +108,22 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 
 ### JavaScript
 
+Pour fonctionner le composant fil d’Ariane nécessite l'utilisation de JavaScript.
+
 #### Installation du JavaScript
 
-Le composant **Fil d’Ariane** nécessite JavaScript pour gérer son fonctionnement en mode mobile. Il repose sur le core JS du DSFR.
+Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
-Les fichiers nécessaires doivent être inclus avant la balise de fermeture `</body>` :
+Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/breadcrumb/breadcrumb.module.min.js"></script>
 ```
 
-<small>NB : Pour un import global, vous pouvez utiliser le fichier `dsfr.module.js`.</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
-Pour la compatibilité avec Internet Explorer 11, les versions legacy en ES5 peuvent être ajoutées :
+Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
 <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
@@ -130,21 +131,31 @@ Pour la compatibilité avec Internet Explorer 11, les versions legacy en ES5 peu
 <script type="text/javascript" nomodule src="dist/component/breadcrumb/breadcrumb.nomodule.min.js"></script>
 ```
 
-#### Fonctionnement
+Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-1. **Initialisation automatique** : Une fois le JavaScript chargé, le composant fonctionne sans configuration supplémentaire.
-2. **Interaction mobile** :
-   - Lorsqu’un utilisateur clique sur le bouton du fil d’Ariane :
-     - L’attribut `aria-expanded` du bouton est mis à jour.
-     - Le conteneur avec la classe `fr-collapse` passe à l’état visible (ajout de la classe `fr-collapse--expanded`).
-3. **Attributs ajoutés** :
-   - Chaque élément du composant est marqué avec un attribut `data-fr-js-*` pour indiquer son instanciation par le JavaScript DSFR.
+#### Instances
+
+Sur le fil d’Ariane, les éléments suivants sont instanciés :
+
+- Le bouton d'ouverture, via la classe `fr-breadcrumb__button`
+- Le collapse, via la classe `fr-collapse`
+
+Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
 #### API
 
-L’API du composant **Fil d’Ariane** permet de manipuler ses comportements via JavaScript. Elle est accessible par la méthode `window.dsfr(instance)`.
+Il est possible d'interagir avec les instances du composants en JavaScript via une API.
 
-##### Propriétés et méthodes disponibles
+Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
+
+Exemple :
+
+```javascript
+const elem = document.getElementById('ID_COLLAPSE');
+dsfr(elem).collapse.disclose();
+```
+
+L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### breadcrumb
 
@@ -231,7 +242,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 |------|-----|
 | **Description** | Défini si le fonctionnement du collapse est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 
 :::
@@ -252,7 +263,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 | **Description** | Replace le focus sur le bouton du collapse |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 
 :::
@@ -289,7 +300,7 @@ L’API du composant **Fil d’Ariane** permet de manipuler ses comportements vi
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Sur le Fil d’Ariane, en mode mobile les événements suivants sont disponibles :
 

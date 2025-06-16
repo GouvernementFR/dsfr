@@ -140,9 +140,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/input/input.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
-
-##### Variantes de types
+#### Variantes de types
 
 Le type de champ de saisie est défini par l'attribut `type` de l'élément `<input>`. Les types de champs de saisie disponibles sont les suivants :
 
@@ -161,7 +159,7 @@ Suivant le type de champ de saisie, des styles spécifiques peuvent être appliq
 - Le type `date` ajoute un bouton de sélection de date à droite dans champ de saisie. Cette icône est redéfinie par le DSFR pour utiliser les icônes du DSFR.
 - Le type `search` ajoute un bouton de réinitialisation à droite dans champ de saisie lorsque du texte a été renseigné.
 
-##### Variante de champ avec icône
+#### Variante de champ avec icône
 
 Une icône peut être ajoutée dans le champ de saisie pour apporter une information visuelle supplémentaire. La structure HTML est la suivante :
 

@@ -130,7 +130,7 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 
 ### JavaScript
 
-Le composant **Pagination** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Pagination **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

@@ -31,11 +31,11 @@ Le composant **Liens d'évitement** permet aux utilisateurs de naviguer rapideme
 
 **Toujours placé en haut de la page**, sa structure est la suivante :
 
-- Le **conteneur des liens d'évitement** est un élément HTML `<div>` défini par la classe `fr-skiplinks`.
+- Le conteneur des liens d'évitement est un élément HTML `<div>` défini par la classe `fr-skiplinks`.
 - Les liens d'évitement sont entourés par un élément HTML `<nav>` défini par la classe `fr-container` avec le rôle `navigation` et comportant un attribut `aria-label` dont la valeur est "Accès rapide".
-- La **liste des liens d'évitement** est un élément HTML `<ul>` défini par la classe `fr-skiplinks__list`.
+- La liste des liens d'évitement est un élément HTML `<ul>` défini par la classe `fr-skiplinks__list`.
 - Chaque élément `<li>` de la liste contient :
-  - Un **lien d'évitement**, un élément HTML `<a>` défini par la classe `fr-link`.
+  - Un lien d'évitement, un élément HTML `<a>` défini par la classe `fr-link`.
 
 > [!WARNING]
 > Les liens d'évitement pointent vers des ancres (`#intitulé`), qui doivent être présentes dans la page.
@@ -89,13 +89,13 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 #### Variantes de style
 
-Le composant **Liens d'évitement** ne possède pas de variantes de style.
+Le composant Liens d'évitement ne possède pas de variantes de style.
 
 ---
 
 ### JavaScript
 
-Le composant **Liens d'évitement** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Liens d'évitement **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

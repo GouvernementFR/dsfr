@@ -50,9 +50,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/logo/logo.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
-
-##### Variantes de taille
+#### Variantes de taille
 
 Le composant Bloc marque (logo) est disponible en 3 tailles différentes via les classes suivantes :
 

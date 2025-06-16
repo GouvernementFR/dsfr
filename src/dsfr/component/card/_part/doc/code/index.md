@@ -1,6 +1,6 @@
 ---
 title: Code de la Carte
-shortTitle: Codede la Carte
+shortTitle: Code de la Carte
 description: Le composant carte permet de rediriger l’usager vers une page éditoriale, en lui donnant un aperçu. Elle peut intégrer des médias, actions, tags ou boutons et se décline en différents formats.
 shortDescription: Carte cliquable redirigeant vers une page éditoriale avec aperçu.
 keywords: carte, composant, aperçu, lien, redirection, contenu, média, badge, tag, bouton, DSFR, tuile
@@ -27,11 +27,11 @@ La carte est un élément d’interaction avec l’interface permettant de redir
 
 #### Structure du composant
 
-Le composant Carte est un élément interactif permettant de donner des aperçus cliquables d’une page de contenu. Elle fait généralement partie d'une collection ou liste d’aperçus de contenus similaires.
+Le composant **Carte** est un élément interactif permettant de donner des aperçus cliquables d’une page de contenu. Elle fait généralement partie d'une collection ou liste d’aperçus de contenus similaires.
 Sa structure est la suivante :
 
 - La **Carte** est un élément HTML `<div>` défini par la classe `fr-card`.
-- Les cartes sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/index.md)).
+- Les cartes sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/grid/index.md)).
 - Son contenu est structuré en deux parties :
   - Le **corps de la carte** `fr-card__body` est obligatoire, il contient le contenu de la carte :
     - Un **bloc de contenu** `fr-card__content`, obligatoire, qui contient les informations propres à la carte :
@@ -71,7 +71,7 @@ Sa structure est la suivante :
 
 #### Carte de téléchargement
 
-Une variante carte de téléchargement existe, comme pour les composants Lien et Tuile, pour proposer le téléchargement d'un fichier. La carte de téléchargement est toujours en format horizontale en desktop.
+Une variante carte de téléchargement existe, comme pour les composants [Lien](../../../../link/_part/doc/code/index.md) et [Tuile](../../../../tile/_part/doc/code/index.md), pour proposer le téléchargement d'un fichier. La carte de téléchargement est toujours en format horizontale en desktop.
 Cette variante reprend la même structure que la carte standard à l'exception de certains éléments :
 
 - La Carte doit avoir la classe `fr-card--download`.
@@ -123,8 +123,7 @@ Cette variante reprend la même structure que la carte standard à l'exception d
 #### Groupe de cartes
 
 Il n'existe pas à proprement parlé de groupe de carte. Néanmoins, les cartes sont généralement utilisées sous forme d'un ensemble d'élément. Elles peuvent être disposées côte à côte grâce à la **grille** disponible dans les fondamentaux.
-La grille permet de définir un nombre de colonne pour chaque carte, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint).
-Voir page [grille](../../../../../core/_part/doc/index.md) pour plus d'information.
+La grille permet de définir un nombre de colonne pour chaque carte, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint) (Voir [grille](../../../../../core/_part/doc/grid/index.md)).
 
 **Exemple de grille de carte**
 
@@ -173,7 +172,7 @@ La carte peut avoir différentes tailles qui auront un impact sur la taille du t
 - Par défaut : Carte moyenne.
 - `fr-card--lg` : Grande carte.
 
-Par défaut, la carte prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des cartes peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../../../../core/_part/doc/index.md)).
+Par défaut, la carte prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des cartes peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../../../../core/_part/doc/grid/index.md)).
 
 Utiliser une taille de carte adaptée à la largeur de son conteneur :
 
@@ -195,7 +194,7 @@ Utiliser une taille de carte adaptée à la largeur de son conteneur :
 </div>
 ```
 
-#### Variantes de styles
+#### Variantes de style
 
 La carte est disponible en plusieurs autres variantes :
 
@@ -247,7 +246,7 @@ Le **ratio image/contenu** de la carte horizontale est par défaut de 40% de la 
 #### Ratio d'images
 
 L'image placée dans la partie "header" de la carte doit avoir la classe `fr-responsive-img` pour s'adapter à la largeur de la carte. Sa hauteur dépend de son ratio largeur/hauteur.
-Le ratio de l'image est par défaut en 16/9ème. Celui-ci peut être modifier en fonction du besoin grâce aux [classes utilitaires de ratio](../../../../../core/_part/doc/index.md) disponibles dans le core :
+Le ratio de l'image est par défaut en 16/9ème. Celui-ci peut être modifier en fonction du besoin grâce aux [classes utilitaires de ratio](../../../../../core/_part/doc/media/index.md) disponibles dans le core :
 
 - `fr-ratio-32x9` : pour un ratio largeur/hauteur de 32/9.
 - `fr-ratio-3x2` : pour un ratio largeur/hauteur de 3/2.
@@ -278,7 +277,7 @@ Si le lien est un **lien externe**, l'icône "external-link" reste obligatoire.
 
 ### JavaScript
 
-Le composant carte **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+Le composant Carte **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 Une fonctionnalité disponible dans le core, permet de remplir automatiquement le détail des **cartes de téléchargement**.
 Pour instancier le javascript de remplissage automatique du détail sur la carte de téléchargement, ajouter l'attribut `data-fr-assess-file` sur le lien du titre.

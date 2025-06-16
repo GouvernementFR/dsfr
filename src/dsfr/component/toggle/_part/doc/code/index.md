@@ -353,7 +353,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'interrupteur est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).toggleInput.isEnabled = false` |
 :::
 
@@ -373,7 +373,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'interrupteur est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).toggleStatusLabel.isEnabled = false` |
 :::
 

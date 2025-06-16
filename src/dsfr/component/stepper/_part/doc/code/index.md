@@ -79,7 +79,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 ### JavaScript
 
-Le composant **Indicateur d'étapes** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Indicateur d'étapes **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

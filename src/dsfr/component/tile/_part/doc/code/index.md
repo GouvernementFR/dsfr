@@ -180,7 +180,7 @@ Utiliser une taille de Tuile adaptée à la largeur de son conteneur :
 </div>
 ```
 
-#### Variantes de styles
+#### Variantes de style
 
 La tuile est disponible en plusieurs autres variantes :
 

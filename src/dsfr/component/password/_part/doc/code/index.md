@@ -219,7 +219,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du mot de passe est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).password.isEnabled = false` |
 :::
 
@@ -239,7 +239,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du mot de passe est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).passwordInput.isEnabled = false` |
 :::
 
@@ -259,7 +259,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du libellé du mot de passe est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).passwordLabel.isEnabled = false` |
 :::
 
@@ -279,7 +279,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement d'affichage du mot de passe est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).passwordToggle.isEnabled = false` |
 :::
 

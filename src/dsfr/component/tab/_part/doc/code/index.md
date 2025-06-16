@@ -210,7 +210,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
-| **Type** | property |
+| **Type** | propertRenvoie `true`
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabsGroup.hasFocus` |
 
@@ -241,7 +241,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement des onglets est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabsGroup.isEnabled = false` |
 
 :::
@@ -283,7 +283,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabsList.isEnabled = false` |
 
 :::
@@ -306,7 +306,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabButton.focus()` |
 
 :::
@@ -316,7 +316,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabButton.isEnabled = false` |
 
 :::
@@ -380,7 +380,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton du panneau |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabPanel.focus()` |
 
 :::
@@ -390,7 +390,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabPanel.isEnabled = false` |
 
 :::
@@ -407,7 +407,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Sur les onglets, les événements suivants sont disponibles :
 

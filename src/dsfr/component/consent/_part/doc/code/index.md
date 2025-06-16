@@ -25,7 +25,7 @@ Le gestionnaire de consentement permet à l'usager de définir ses préférences
 
 ### HTML
 
-Le composant Gestionnaire de consentement est composé de trois éléments principaux :
+Le composant **Gestionnaire de consentement** est composé de trois éléments principaux :
 
 - Un bandeau de cookies.
 - Une modale de gestion des cookies.
@@ -36,7 +36,7 @@ Le composant Gestionnaire de consentement est composé de trois éléments princ
 Le bandeau de cookies est composé des éléments suivants :
 
 - Un élément `<div>` avec la classe `fr-consent-banner` pour le conteneur du bandeau.
-- Un **titre** contenu dans un élément `<h2>`, ou autre en fonction du contexte, avec la classe `.fr-h6`.
+- Un titre contenu dans un élément `<h2>`, ou autre en fonction du contexte, avec la classe `.fr-h6`.
 - Un bloc de contenu `fr-consent-banner__content`. Le texte doit être contenu dans un élément `<p>`. L'utilisation de la classe utilitaire `.fr-text--sm` permet de réduire la taille du texte.
 - Un groupe de boutons `fr-consent-banner__buttons`.
   - Nous préconisons l'utilisation d'un groupe de bouton "inline" à partir du breakpoint SM, aligné à droite, et inversé à partir du breakpoint SM. Voir la documentation sur les [boutons](../../../../button/_part/doc/code/index.md) pour plus d'informations.
@@ -317,7 +317,7 @@ Le placeholder est composé des éléments suivants :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du gestionnaire de consentement doivent être importés. Le composant a aussi des dépendances avec le composant **modale**, **bouton**, **formulaire**, et **checkbox**. Il sera aussi nécessaire d'importer les styles de ces composants.
+Pour fonctionner correctement, les styles CSS du core et du gestionnaire de consentement doivent être importés. Le composant a aussi des dépendances avec le composant **modale (modal)**, **bouton (button)**, **formulaire (form)**, et **case à cocher (checkbox)**. Il sera aussi nécessaire d'importer les styles de ces composants.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
 ```HTML
@@ -380,7 +380,7 @@ Le composant Gestionnaire de consentement est proposé de manière **statique**.
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Sur la modale de gestion des cookies, les événements suivants sont disponibles :
 

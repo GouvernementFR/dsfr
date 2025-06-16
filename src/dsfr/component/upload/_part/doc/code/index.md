@@ -30,7 +30,7 @@ L’ajout de fichier est un élément d’interaction avec l’interface qui per
 Le composant Ajout de fichier permet aux utilisateurs de sélectionner et envoyer un ou plusieurs fichiers.
 
 Sa structure est la suivante :
-- Le composant **ajout de fichier** est un élément HTML `<div>` défini par la classe `fr-upload-group` et contenant :
+- Le composant **Ajout de fichier** est un élément HTML `<div>` défini par la classe `fr-upload-group` et contenant :
   - Le **libellé** est un élément HTML de type `<label>`, obligatoire :
     - Défini par la classe `fr-label`.
     - Il dispose de l'attribut `for` dont la valeur est égale à l'ID du champ de fichier.

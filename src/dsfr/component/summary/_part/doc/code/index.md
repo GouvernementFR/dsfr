@@ -89,7 +89,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 ### JavaScript
 
-Le composant **Sommaire** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Sommaire **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

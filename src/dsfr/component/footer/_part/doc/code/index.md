@@ -25,7 +25,7 @@ Le pied de page est un élément de navigation secondaire mis à disposition de 
 
 ### HTML
 
-Le composant Pied de page est constitué d'un élément `<footer>` de classe `fr-footer`, avec l'attribut `role="contentinfo"`, et un attribut `id` pour le lier au lien d'évitement "pied de page" via une ancre.
+Le composant **Pied de page** est constitué d'un élément `<footer>` de classe `fr-footer`, avec l'attribut `role="contentinfo"`, et un attribut `id` pour le lier au lien d'évitement "pied de page" via une ancre.
 
 - Un premier bloc, optionnel, de navigation permet d'ajouter des liens de navigations. Il s'agit d'un élément `<div>` de classe `fr-footer__top`.
   - Ce bloc doit contenir un élément `<div>` de classe `fr-container` qui permet de centrer le contenu ainsi qu'une [grille](../../../../../core/_part/doc/index.md) pour structurer les liens en colonnes.
@@ -34,36 +34,36 @@ Le composant Pied de page est constitué d'un élément `<footer>` de classe `fr
     - Une catégorie de liens, optionnelle, avec un titre `<h3>`, ou autre niveau d'entête, de classe `fr-footer__top-cat`. Le libellé de la catégorie peut être un lien `<a>`.
     - Une liste de liens, `<ul>` de classe `fr-footer__top-list`, avec des liens `<a>` de classe `fr-footer__top-link`.
 - Puis les blocs suivant, contenu dans un élément `<div>` de classe `fr-container` pour centrer le contenu.
-  - Le **corps du pied de page**, un élément `<div>` de classe `fr-footer__body` contenant :
-    - **Un bloc marque** (voir [Marque de l'état](https://www.info.gouv.fr/marque-de-letat)), un élément `<div>` de classes `fr-footer__brand` et `fr-enlarge-link`.
+  - Le corps du pied de page, un élément `<div>` de classe `fr-footer__body` contenant :
+    - Un bloc marque (voir [Marque de l'état](https://www.info.gouv.fr/marque-de-letat)), un élément `<div>` de classes `fr-footer__brand` et `fr-enlarge-link`.
       - Il contient à minima le bloc-marque, il s'agit du composant [bloc-marque de l'état](../../../../logo/_part/doc/code/index.md) de classe `fr-logo`. Celui-ci doit être inséré dans un lien `<a>` pointant vers la page d'accueil et avec un attribut `title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)"`.
-      - Il peut aussi contenir un **logo opérateur de l'État**, une image (ou SVG) de classe `fr-footer__logo`.
+      - Il peut aussi contenir un logo opérateur de l'État, une image (ou SVG) de classe `fr-footer__logo`.
         - Utiliser un attribut `style="max-width:10rem;"`, avec comme valeur la largeur max du logo en fonction de son format (10rem pour du 16:9).
         - L'attribut `alt` doit être renseigné avec le nom de l'opérateur.
         - Le lien pointant vers l'accueil est alors positionné au niveau du logo de l'opérateur, il est automatiquement étendu à toute la zone du bloc marque.
         - L'attribut `title` du lien doit être renseigné sous la forme "Retour à l’accueil du site - [texte alternatif de l’image (nom de l'opérateur ou du site serviciel)] - République Française".
-    - **Un bloc de contenu**, un élément `<div>` de classe `fr-footer__content` contenant :
-      - Une **description du site**, optionnelle, un élément `<p>` de classe `fr-footer__content-desc`. La description doit être concise et informative, ne pas dépasser 3 lignes.
-      - Une **liste de liens**, **obligatoire et non modifiable**, `<ul>` de classe `fr-footer__content-list`, avec des `<li>` de classe `fr-footer__content-item`, et des liens `<a>` de classe `fr-footer__content-link`.
+    - Un bloc de contenu, un élément `<div>` de classe `fr-footer__content` contenant :
+      - Une description du site, optionnelle, un élément `<p>` de classe `fr-footer__content-desc`. La description doit être concise et informative, ne pas dépasser 3 lignes.
+      - Une liste de liens, **obligatoire et non modifiable**, `<ul>` de classe `fr-footer__content-list`, avec des `<li>` de classe `fr-footer__content-item`, et des liens `<a>` de classe `fr-footer__content-link`.
         - Les liens doivent être ordonnés dans cet ordre : info.gouv.fr, service-public.fr, legifrance.gouv.fr, data.gouv.fr
         - Les liens doivent pointer vers les sites respectifs en s'ouvrant dans une nouvelle fenêtre.
-  - Le **bloc logos partenaires**, optionnel, une `<div>`de classe `fr-footer__partners`. Ce bloc contient :
+  - Le bloc logos partenaires, optionnel, une `<div>`de classe `fr-footer__partners`. Ce bloc contient :
     - Un titre `<h2>`, ou autre niveau d'entête, de classe `fr-footer__partners-title`.
     - Un conteneur `fr-footer__partners-logos` permettant de positionner un bloc de logo principal `<div>` de classe `fr-footer__partners-main` et/ou un bloc de logos secondaires `<div>` de classe `fr-footer__partners-sub` (utiliser une liste `<ul><li>` s'il y en a plusieurs).
       - Chaque logo est formé d'une image (ou SVG) de classe `fr-footer__logo`.
         - Utiliser un attribut `style="height: 5.625rem"`, avec comme valeur la hauteur max désirée. Uniformiser la hauteur des logos pour une meilleure lisibilité.
         - L'attribut `alt` doit être renseigné avec le nom du partenaire.
         - Un lien pointant vers le site du partenaire peut englober l'image du logo partenaire.
-  - Le **bas du pied de page**, obligatoire, un élément `<div>` de classe `fr-footer__bottom` contenant :
-    - Une **liste de liens liés aux obligations légales**, `<ul>` de classe `fr-footer__bottom-list`, `<li>` de classe `fr-footer__bottom-item`, et des liens `<a>` de classe `fr-footer__bottom-link`. Cette liste doit être définie en fonction du site, toutefois les liens & contenus suivants sont obligatoires : “accessibilité : non/partiellement/totalement conforme”, mentions légales, données personnelles et gestion des cookies.
-    - Une **mention de la licence**, contenu dans une `<div>` de classe `fr-footer__bottom-copy`, sous forme d'un paragraphe avec l'intitulé : “Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous licence etalab-2.0” (ajouter un lien vers la licence)
+  - Le bas du pied de page, obligatoire, un élément `<div>` de classe `fr-footer__bottom` contenant :
+    - Une liste de liens liés aux obligations légales, `<ul>` de classe `fr-footer__bottom-list`, `<li>` de classe `fr-footer__bottom-item`, et des liens `<a>` de classe `fr-footer__bottom-link`. Cette liste doit être définie en fonction du site, toutefois les liens & contenus suivants sont obligatoires : “accessibilité : non/partiellement/totalement conforme”, mentions légales, données personnelles et gestion des cookies.
+    - Une mention de la licence, contenu dans une `<div>` de classe `fr-footer__bottom-copy`, sous forme d'un paragraphe avec l'intitulé : “Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous licence etalab-2.0” (ajouter un lien vers la licence)
 
 **Exemple de structure minimale**
 
 :::fr-accordion[Déplier pour voir le code]{id=footer-structure-minimale}
 
 ```html
-<footer class="fr-footer" role="contentinfo" id="footer">
+<footer class="fr-footer" role="contentinfo">
     <div class="fr-container">
         <div class="fr-footer__body">
             <div class="fr-footer__brand fr-enlarge-link">
@@ -127,7 +127,7 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
 :::fr-accordion[Déplier pour voir le code]{id=footer-structure-complete}
 
 ```html
-<footer class="fr-footer" role="contentinfo" id="footer">
+<footer class="fr-footer" role="contentinfo">
     <div class="fr-footer__top">
         <div class="fr-container">
             <div class="fr-grid-row fr-grid-row--start fr-grid-row--gutters">
@@ -378,7 +378,7 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
 #### Installation du CSS
 
 Pour fonctionner correctement, les styles CSS du core du pied de page doivent être importés.
-Il faudra aussi importer les styles du composant Bloc-marque (logo).
+Il faudra aussi importer les styles du composant **Bloc-marque (logo)**.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
 ```html
@@ -399,13 +399,13 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 #### Variantes de style
 
-Le composant **Pied de page** ne possède pas de variantes de style.
+Le composant Pied de page ne possède pas de variantes de style.
 
 ---
 
 ### JavaScript
 
-Le composant **Pied de page** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Pied de page **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

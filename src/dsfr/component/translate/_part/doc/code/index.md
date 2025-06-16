@@ -176,7 +176,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du sélecteur de langue est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigation.isEnabled = false` |
 :::
 
@@ -184,7 +184,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
-| **Type** | property |
+| **Type** | propertRenvoie `true`
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigation.hasFocus` |
 :::
@@ -196,7 +196,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de la navigation est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigationItem.isEnabled = false` |
 :::
 
@@ -208,7 +208,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 :::
 
@@ -266,7 +266,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du sélecteur de langue est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
@@ -294,7 +294,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton du collapse |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 

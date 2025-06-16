@@ -163,9 +163,7 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 <link href="dist/component/table/table.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
-
-##### Variantes de taille
+#### Variantes de taille
 
 Le tableau peut être de différentes tailles, si la taille des composants intégrés dans les cellules ne change pas, cela vous permet de varier la densité d’affichage de votre tableau en fonction de son contenu.
 Il existe 3 tailles pour les cellules du tableau :
@@ -188,7 +186,7 @@ Il existe 3 tailles pour les cellules du tableau :
 </div>
 ```
 
-##### Variante de tableau avec séparateurs verticaux
+#### Variante de tableau avec séparateurs verticaux
 
 Vous avez la possibilité d'afficher des séparateurs de colonnes verticaux (obligatoires en cas de tableaux complexes) grâce à l'ajout de la classe `fr-table--bordered`.
 
@@ -200,7 +198,7 @@ Vous avez la possibilité d'afficher des séparateurs de colonnes verticaux (obl
 </div>
 ```
 
-##### Variante de tableau non scrollable
+#### Variante de tableau non scrollable
 
 Le conteneur est responsive par défaut mais vous avez la possibilité de rendre le tableau non scrollable grâce à la classe `fr-table--no-scroll`.
 
@@ -212,7 +210,7 @@ Le conteneur est responsive par défaut mais vous avez la possibilité de rendre
 </div>
 ```
 
-##### Variantes de placement du titre
+#### Variantes de placement du titre
 
 Le titre (`<caption>`) du tableau est obligatoire mais peut être positionné à différents emplacements :
 
@@ -234,7 +232,7 @@ Le titre (`<caption>`) du tableau est obligatoire mais peut être positionné à
 </div>
 ```
 
-##### Variantes de tableau avec lignes sélectionnables
+#### Variantes de tableau avec lignes sélectionnables
 
 Le tableau peut contenir des en-têtes de ligne contenant des cases à cocher permettant de selectionner la ligne entière :
 
@@ -296,7 +294,7 @@ Le tableau peut contenir des en-têtes de ligne contenant des cases à cocher pe
 </div>
 ```
 
-##### Variantes de tableau à double entrée avec colonne d'en-tête fixe
+#### Variantes de tableau à double entrée avec colonne d'en-tête fixe
 
 Le tableau peut présenter des en-têtes de ligne `<th>` fixes au scroll horizontal avec la classe `fr-cell--fixed`.
 
@@ -492,7 +490,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du tableau est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).table.isEnabled = false` |
 :::
 

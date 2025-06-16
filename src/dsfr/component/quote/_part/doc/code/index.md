@@ -124,7 +124,7 @@ La citation est accentuable, permettant le changement de la couleur de l'icône 
 
 ### JavaScript
 
-Le composant **Citation** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Citation **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

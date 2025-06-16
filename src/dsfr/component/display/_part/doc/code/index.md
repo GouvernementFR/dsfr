@@ -35,7 +35,9 @@ Voici un exemple de code pour utiliser le composant **Paramètre d'affichage** 
 **Exemple de bouton d'ouverture**
 
 ```HTML
-<button aria-controls="fr-theme-modal" data-fr-opened="false" title="Paramètres d'affichage" type="button" class="fr-btn--display fr-btn">Paramètres d'affichage</button>
+<button aria-controls="fr-theme-modal" data-fr-opened="false" title="Paramètres d'affichage" type="button" class="fr-btn--display fr-btn">
+    Paramètres d'affichage
+</button>
 ```
 
 **Exemple de modale de paramètre d'affichage**
@@ -141,7 +143,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/display/display.legacy.min.css" rel="stylesheet">
 ```
 
-### Variantes de bouton d'ouverture
+#### Variantes de bouton d'ouverture
 
 - Lorsque le lien paramètres d’affichage est mis en avant dans l’en-tête de la page, il prend la forme d’un lien accès rapide, dans le bloc `fr-header__tools-links`.
 - Lorsque le lien paramètres d’affichage est mis en avant dans le pied de page, il est intégré au niveau des mentions légales, il prend la forme d'un lien du pied de page, dans un `<li>` de classe `fr-footer__bottom-item`.
@@ -215,7 +217,7 @@ Ce script doit **s'exécuter le plus tôt possible dans le `<head>` de la page**
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Sur la modale du paramètre d'affichage, les événements suivants sont disponibles :
 

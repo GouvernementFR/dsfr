@@ -164,7 +164,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de la transcription est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).transcription.isEnabled = false` |
 :::
 
@@ -176,7 +176,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 :::
 
@@ -234,7 +234,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 :::
 
@@ -262,7 +262,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton du collapse |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 :::
 
@@ -301,7 +301,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modalButton.focus()` |
 :::
 
@@ -359,7 +359,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de la modale est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modal.isEnabled = false` |
 :::
 

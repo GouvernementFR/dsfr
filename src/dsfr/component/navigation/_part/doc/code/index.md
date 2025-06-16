@@ -486,7 +486,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
-| **Type** | property |
+| **Type** | propertRenvoie `true`
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigation.hasFocus` |
 
@@ -549,7 +549,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de la navigation est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigationItem.isEnabled = false` |
 
 :::
@@ -572,7 +572,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 
 :::
@@ -582,7 +582,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du bouton de la navigation est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.isEnabled = false` |
 
 :::
@@ -636,7 +636,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de la navigation est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 
 :::
@@ -667,7 +667,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton de la sous-section |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 
 :::
@@ -704,7 +704,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Sur chaque menu déroulant de la navigation principale, les événements suivants sont disponibles :
 
