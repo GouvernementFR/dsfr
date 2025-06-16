@@ -49,26 +49,6 @@ L’accordéon est un élément d’interaction avec l’interface permettant à
 > [!NOTE]
 > L'utilisation d'accordéons non liés entre eux (seuls et non au sein d’un groupe) reste toutefois possible, permettant l'ouverture de chaque accordéon indépendamment des autres.
 
-::::dsfr-doc-guidelines
-
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
-
-![À faire](../_asset/variation/do-1.png)
-
-Proposer plusieurs accordéons seuls dans une même page permet leur ouverture simultanée.
-
-:::
-
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
-
-![À ne pas faire](../_asset/variation/dont-1.png)
-
-Ne pas permettre l’ouverture simultanée de deux accordéons au sein d’un groupe d’accordéons.
-
-:::
-
-::::
-
 #### Tailles
 
 La largeur de l’accordéon s’adapte à la taille de son conteneur. Toutefois, il est recommandé de ne pas excéder une largeur de 8 colonnes, s’agissant d’un composant de mise en forme de contenu.
@@ -116,33 +96,13 @@ Ne pas personnaliser la couleur des accordéons.
 
 ![À faire](../_asset/custom/do-2.png)
 
-Utiliser uniquement le chevron comme icône.
-
-:::
-
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
-
-![À ne pas faire](../_asset/custom/dont-2.png)
-
-Ne pas personnaliser l’icône des accordéons.
-
-:::
-
-::::
-
-::::dsfr-doc-guidelines
-
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
-
-![À faire](../_asset/custom/do-3.png)
-
 Utiliser uniquement la taille de typographie prévue pour l’en-tête des accordéons.
 
 :::
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-3.png)
+![À ne pas faire](../_asset/custom/dont-2.png)
 
 Ne pas augmenter la taille de typographie de l’en-tête des accordéons.
 
