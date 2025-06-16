@@ -46,7 +46,7 @@ La [mise en exergue](../../../highlight/_part/doc/index.md) est utilisée pour d
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1)
+![À faire](./_asset/use/do-1.png)
 
 Utiliser la mise en avant pour valoriser une information importante.
 
@@ -54,7 +54,7 @@ Utiliser la mise en avant pour valoriser une information importante.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1)
+![À ne pas faire](./_asset/use/dont-1.png)
 
 Ne pas utiliser la mise en avant pour indiquer une erreur, par exemple.
 

@@ -29,7 +29,7 @@ Le bouton est un élément d’interaction avec l’interface permettant à l’
 
 **Utiliser le bouton pour déclencher une action dans la page.**
 
-> [!NOTE] 
+> [!NOTE]
 > Bien différencier les boutons des liens.
 
 Le [lien](../../../link/_part/doc/index.md) est utilisé pour naviguer à l’intérieur (ou à l’extérieur) de votre site.
@@ -102,7 +102,7 @@ Ne pas tromper l’usager. Fournir le contexte que l’usager sache quelle actio
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
 ![À ne pas faire](./_asset/edit/dont-2.png)
 

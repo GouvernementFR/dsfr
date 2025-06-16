@@ -4,7 +4,7 @@ shortTitle: Formulaires
 description: Cette page présente les règles de conception des formulaires et met à disposition des blocs fonctionnels réutilisables pour structurer efficacement les démarches en ligne tout en assurant accessibilité et conformité réglementaire.
 shortDescription: Règles et modèles pour la création de formulaires
 keywords: formulaires, champs, blocs fonctionnels, accessibilité, RGPD, DSFR, ergonomie, bonnes pratiques, validation, structure
-cover: ../_asset/cover/cover.png
+cover: ./_asset/cover/cover.png
 excerpt: Règles de conception et modèles prêts à l’emploi pour structurer des formulaires accessibles et conformes au Design Système de l’État.
 summary: Cette page fournit des recommandations pour concevoir des formulaires clairs, efficaces et accessibles. Elle décrit la structure idéale, les principes d’alignement, d’espacement, de gestion des erreurs et d’utilisation des champs. Elle présente également les bonnes pratiques RGPD et les exigences d’accessibilité. Des blocs fonctionnels et modèles de pages sont mis à disposition pour guider la mise en œuvre dans les démarches numériques.
 ---

@@ -714,37 +714,37 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@gouvfr/dsfr-alchemist@=1.0.30":
-  version "1.0.30"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-alchemist/-/dsfr-alchemist-1.0.30.tgz#f33c97e234289f83d89bbf3231e8bd4105415eba"
-  integrity sha512-yvHWHJJLWSLHTMo4BteIa0K4v8NQETVwSUuEhGLEENFSXNo/TDziFRl8s4oXML3Ng0+ERtt9CZ0vJa5zoat94w==
+"@gouvfr/dsfr-alchemist@=1.0.32":
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-alchemist/-/dsfr-alchemist-1.0.32.tgz#5ba45eaabb40e74273cc28fe907b880764b80f8b"
+  integrity sha512-BKQVGiXSZs/L+bD0lbhStWywLJa4NGotF0WU2EAJ+FImkl8lcCc/vv7gzGfcQBGcFfNr3uxvj4+yFRia3gKBKw==
   dependencies:
-    "@gouvfr/dsfr-forge" "=1.0.30"
+    "@gouvfr/dsfr-forge" "=1.0.32"
     esbuild "^0.24.2"
     lightningcss "^1.29.1"
     sass "^1.79.3"
 
-"@gouvfr/dsfr-forge@=1.0.30":
-  version "1.0.30"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-forge/-/dsfr-forge-1.0.30.tgz#45bd7dd625838eff2fa9439061c12621d1a9b4a3"
-  integrity sha512-FuJRXhCY9bOuubpdfpvydmE2f+q8qFCcJTz1d7JgxYoWi0k8aUvNnQ5oHSQXPW8kOhdE4SrL4I2zaY89bp0QWQ==
+"@gouvfr/dsfr-forge@=1.0.32":
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-forge/-/dsfr-forge-1.0.32.tgz#25c13f98cfae626b033b79aa10c8aa03f897b187"
+  integrity sha512-YoLWOkQubetAKY7gV8PA4yyhalx9LKQ4/SimQF3Z/LtO+8u7LKqEO2FEz0sdHogETXAoJLhNizqYKUx3WhBkpw==
 
-"@gouvfr/dsfr-lore@=1.0.30":
-  version "1.0.30"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.0.30.tgz#b6fde50cb7e73d585010adff2397b4e10c746b99"
-  integrity sha512-JDH43GKkpnZxDlpsuwoy7uwlzLAaIpX6+W/QxC3bpDls50bpiFxnUOvwf+C14QwHUIPC6BQquM0S8XSNaB2u6w==
+"@gouvfr/dsfr-lore@=1.0.32":
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.0.32.tgz#879f45412021688e6c4b2728804dfe2a9a736ad4"
+  integrity sha512-1DtkPKLLLMu6bdmEGbAE3rkFxB/brfcUaU/gx5cuICT+L4T4Mu2/q+nG7FjlDwCcfnWSlMv09ud69z1x5vszxg==
   dependencies:
-    "@gouvfr/dsfr-forge" "=1.0.30"
+    "@gouvfr/dsfr-forge" "=1.0.32"
 
 "@gouvfr/dsfr-nexus@^1.0.0":
-  version "1.0.30"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.0.30.tgz#e3078192a9740b51d70f7b2fe5604b65236a2dc1"
-  integrity sha512-VT0UwiVoZXy8/S52ReZHsGgJjyyCB3FmVWjCORflgoVMdCS9r1fFaigW7ne0hlEJ16opaz6PEK1WNV+Bw39EiQ==
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.0.32.tgz#46de672ffef36d43da58adf5cdf511df38e8e3f3"
+  integrity sha512-r82d2ClpcSNGNX8r38n5/RC/Z2x1dxJ7I7UZ4GHo/yTh3Kc/zJeXlglvinFdmIQIziSFytrxvTLxs9JG1msfcw==
   dependencies:
-    "@gouvfr/dsfr-alchemist" "=1.0.30"
-    "@gouvfr/dsfr-forge" "=1.0.30"
-    "@gouvfr/dsfr-lore" "=1.0.30"
-    "@gouvfr/dsfr-roller" "=1.0.30"
+    "@gouvfr/dsfr-alchemist" "=1.0.32"
+    "@gouvfr/dsfr-forge" "=1.0.32"
+    "@gouvfr/dsfr-lore" "=1.0.32"
+    "@gouvfr/dsfr-roller" "=1.0.32"
     browser-sync "^3.0.3"
     del "^7.1.0"
     mdast-util-directive "^3.0.0"
@@ -762,18 +762,18 @@
     yaml "^2.4.1"
     yargs "^17.7.2"
 
-"@gouvfr/dsfr-publisher@npm:@gouvfr/dsfr@1.13.1":
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.13.1.tgz#97ef3b9b716999ec5cd726a7b426112f37100574"
-  integrity sha512-dCB0YuQ8YczGYT1qPO0nDYYQCq7As58DSPR59bDIsxYRgzq8D0UT8oVgzDCn6vWHzomnB0E/41LZ0mQ2kYi3CQ==
+"@gouvfr/dsfr-publisher@npm:@gouvfr/dsfr@1.13.2":
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.13.2.tgz#ef789c35dd73cc5e406253f31bf4892892c2c285"
+  integrity sha512-4Q9ggFFzwD/KFr37sJO1hFH9PcqlZ7F3jMiFJXnBLJfkH1+s28vnQp/oXoY8TosWsLMSjdhNCrxvrUdm5XzBlg==
 
-"@gouvfr/dsfr-roller@=1.0.30":
-  version "1.0.30"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.0.30.tgz#095c7cf9de3ac608db2adb74aba85304cd1f89b0"
-  integrity sha512-Z0WxoYzXp1uYHe4jyXZbkri5B+lFVwty3yd6QrpqsDgz5cJ86XYmQyse5h0b6VjKAsB288ViZ7KKwLTFhfjK6w==
+"@gouvfr/dsfr-roller@=1.0.32":
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.0.32.tgz#748fa18dbb91ab2c5b7dd8bf366e55eb74df0891"
+  integrity sha512-g7vVlWzWdletOaW85qn7m6lX4Zncj8uMn8MCMVD9Y5I1PPejcRwXO+piTlcCezS+4UpJA5cvpLhilc6079/6LA==
   dependencies:
-    "@gouvfr/dsfr-forge" "=1.0.30"
-    "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.1"
+    "@gouvfr/dsfr-forge" "=1.0.32"
+    "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.13.2"
     deepmerge "^4.3.1"
     ejs "^3.1.10"
     highlight.js "^11.10.0"
@@ -1487,9 +1487,9 @@
   integrity sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==
 
 "@types/node@*", "@types/node@>=10.0.0":
-  version "24.0.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.1.tgz#e9bfcb1c35547437c294403b7bec497772a88b0a"
-  integrity sha512-MX4Zioh39chHlDJbKmEgydJDS3tspMP/lnQC67G3SWsTnb9NeYVWOjkxpOSy4oMfPs4StcWHwBrvUb4ybfnuaw==
+  version "24.0.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.3.tgz#f935910f3eece3a3a2f8be86b96ba833dc286cab"
+  integrity sha512-R4I/kzCYAdRLzfiCabn9hxWfbuHS573x+r0dJMkkzThEa7pbrcDWK+9zu3e7aBOouf+rQAciqPFMnxwr0aWgKg==
   dependencies:
     undici-types "~7.8.0"
 
@@ -2828,9 +2828,9 @@ decimal.js@^10.2.1:
   integrity sha512-8vDa8Qxvr/+d94hSh5P3IJwI5t8/c0KsMp+g8bNw9cY2icONa5aPfvKeieW1WlG0WQYwwhJ7mjui2xtiePQSXw==
 
 decode-named-character-reference@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/decode-named-character-reference/-/decode-named-character-reference-1.1.0.tgz#5d6ce68792808901210dac42a8e9853511e2b8bf"
-  integrity sha512-Wy+JTSbFThEOXQIR2L6mxJvEs+veIzpmqD7ynWxMXGpnk3smkHQOp6forLdHsKpAMW9iJpaBBIxz285t1n1C3w==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/decode-named-character-reference/-/decode-named-character-reference-1.2.0.tgz#25c32ae6dd5e21889549d40f676030e9514cc0ed"
+  integrity sha512-c6fcElNV6ShtZXmsgNgFFV5tVX2PaV4g+MOAkb8eXHvn6sryJBrZa9r0zV6+dtTyoCKxtDy5tyQ5ZwQuidtd+Q==
   dependencies:
     character-entities "^2.0.0"
 
