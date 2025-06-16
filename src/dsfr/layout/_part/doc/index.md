@@ -8,10 +8,8 @@ excerpt: Explorez les modèles de pages et blocs fonctionnels du Design Système
 summary: La section « Modèles et exemples » du Design Système de l’État fournit des gabarits prêts à l’emploi, couvrant les besoins fréquents des sites publics - pages de compte, formulaires, messages d’erreur ou de confirmation. Elle propose également des blocs fonctionnels (adresse, nom, téléphone, etc.) facilitant la création de formulaires standardisés et accessibles. Ces ressources sont conçues pour garantir l’homogénéité des services numériques publics tout en réduisant les temps de développement.
 sort: order
 list:
-  depth: 2
-  name: dsfr-doc-page-item-heading, dsfr-doc-page-item-card
-  horizontal: true, false
-  noCover: true, false
+  horizontal: true
+  noCover: true
 ---
 
 # Modèles et exemples
