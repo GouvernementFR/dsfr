@@ -100,6 +100,6 @@ Ne pas proposer plusieurs champs d’ajout de fichier si les fichiers à sélect
 
 Il est à noter que le navigateur ajoute automatiquement un message à coté du bouton d’ajout de fichier. Ce message n’est pas modifiable et dépend du navigateur utilisé.
 
-Ce message indique le nom du fichier ajouté ou le nombre de fichiers ajoutés lorsqu’il y en a plusieurs. 
+Ce message indique le nom du fichier ajouté ou le nombre de fichiers ajoutés lorsqu’il y en a plusieurs.
 
 La langue de ce texte dépend de la langue configurée sur le navigateur de l’utilisateur.

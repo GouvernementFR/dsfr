@@ -92,7 +92,7 @@ Ne pas proposer un fil d’Ariane non cliquable.
 
 - **Mettre en place un fil d’Ariane basé sur la position courante de la page dans la hiérarchie principale du site** et non sur l’historique de navigation de l’usager, ce qui est susceptible de créer de la confusion. Si plusieurs chemins sont possibles pour une même page, le fil d’Ariane doit en présenter un seul afin de conserver une hiérarchie cohérente entre les pages.
 
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![À faire](./_asset/use/do-4.png)
 
