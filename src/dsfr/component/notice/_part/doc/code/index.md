@@ -27,17 +27,17 @@ Le bandeau d’information importante est un élément éditorial permettant d�
 
 #### Structure du composant
 
-Le bandeau d’information importante permet aux utilisateurs de voir ou d’accéder à une information importante et temporaire.
+Le **bandeau d’information importante** permet aux utilisateurs de voir ou d’accéder à une information importante et temporaire.
 
 Sa structure comprend les éléments suivants :
 
-- Un **conteneur principal** est un élément HTML `<div>` défini par les classe `fr-notice` et `fr-notice--info`, représentant le bandeau lui-même.
-- Un **conteneur** est un élément HTML `<div>` défini par la classe `fr-container`.
-- Le **corps du bandeau** est un élément HTML `<div>` défini par la classe `fr-notice__body`.
+- Un conteneur principal est un élément HTML `<div>` défini par les classe `fr-notice` et `fr-notice--info`, représentant le bandeau lui-même.
+- Un conteneur est un élément HTML `<div>` défini par la classe `fr-container`.
+- Le corps du bandeau est un élément HTML `<div>` défini par la classe `fr-notice__body`.
 - Un paragraphe `<p>` qui contient le texte du message dont :
-  - Le **titre du bandeau** d’information importante, obligatoire, dans un élément HTML `<span>` défini par la classe `fr-notice__title`.
-  - Le **texte du bandeau**, optionnel, dans un élément HTML `<span>` défini par la classe `fr-notice__desc`.
-  - Un **lien**, optionnel, dans un élément HTML `<a>` défini par la classe `fr-notice__link`.
+  - Le titre du bandeau d’information importante, obligatoire, dans un élément HTML `<span>` défini par la classe `fr-notice__title`.
+  - Le texte du bandeau, optionnel, dans un élément HTML `<span>` défini par la classe `fr-notice__desc`.
+  - Un lien, optionnel, dans un élément HTML `<a>` défini par la classe `fr-notice__link`.
 - Un bouton de fermeture, optionnel, dans un élément HTML `<button>` de type `button` et défini par les classes `fr-btn--close` et `fr-btn` pour permettre à l'utilisateur de fermer le bandeau.
   - Il doit être lié à une fonction JavaScript pour supprimer le bandeau du DOM lorsque celui-ci est cliqué.
 
@@ -74,6 +74,7 @@ Pour garantir le bon affichage du bandeau et de ses variations, le style CSS de 
 <small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
+
 ```HTML
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/notice/notice.legacy.min.css" rel="stylesheet">
@@ -118,7 +119,7 @@ Le composant Bandeau d'information importante comporte une icone par defaut qui 
 
 #### Déclinaisons de bandeaux génériques
 
-Le composant "Bandeau d'information importante" propose 3 variations de bandeaux génériques utilisables en fonction du niveau de gravité de l'information.
+Le composant Bandeau d'information importante propose 3 variations de bandeaux génériques utilisables en fonction du niveau de gravité de l'information.
 
 L'icône peut être modifiée et seul le titre est obligatoire :
 
@@ -185,7 +186,7 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 
 #### Déclinaisons de bandeaux vigilance météo
 
-Le composant "Bandeau d'information importante" propose 3 variations de bandeaux météo utilisables en fonction du niveau d'alerte météo.
+Le composant Bandeau d'information importante propose 3 variations de bandeaux météo utilisables en fonction du niveau d'alerte météo.
 
 L'icône peut être modifiée et seul le titre est obligatoire :
 
@@ -252,7 +253,7 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 
 #### Déclinaisons de bandeaux d'alertes
 
-Le composant "Bandeau d'information importante" propose 3 variations de bandeaux d'alertes utilisables en fonction du type d'alerte.
+Le composant Bandeau d'information importante propose 3 variations de bandeaux d'alertes utilisables en fonction du type d'alerte.
 
 L'icône ne peut pas être modifiée et les intitulés officiels doivent être utilisés :
 

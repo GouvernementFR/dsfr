@@ -27,18 +27,18 @@ La tuile est un élément d’interaction avec l’interface permettant de redir
 
 #### Structure du composant
 
-Le composant Tuile est un élément interactif permettant de donner des aperçus cliquables d’une page de contenu. Sa structure est la suivante :
+Le composant **Tuile** est un élément interactif permettant de donner des aperçus cliquables d’une page de contenu. Sa structure est la suivante :
 
-- La **Tuile** est un élément HTML `<div>` défini par la classe `fr-tile`.
-- Les Tuiles sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/index.md)).
+- La tuile est un élément HTML `<div>` défini par la classe `fr-tile`.
+- Les Tuiles sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/grid/index.md)).
 - Son contenu est structuré en plusieurs parties :
-  - Le **header de la tuile** `fr-tile__header`, optionnel, pouvant contenir :
-    - Un **pictogramme** dans un élément `fr-tile__pictogram` (voir [Pictogramme](../../../../../core/_part/doc/pictogram/index.md)).
-  - Le **corps de la tuile** `fr-tile__body`, obligatoire, il contient le contenu de la tuile :
-    - Un **titre**, obligatoire, un élément HTML avec un niveau d'entête `<hx>` et la classe `fr-tile__title` pouvant contenir un lien ou un simple texte.
-    - Une **description**, optionnelle, `fr-tile__desc`, un élément HTML de type `<p>`.
-    - Un texte de **détail**, optionnel, `fr-tile__detail`, un élément HTML de type `<p>`.
-    - Une zone se plaçant **avant** le contenu `fr-tile__start` qui peut accueillir :
+  - L'en-tête de la tuile `fr-tile__header`, optionnel, pouvant contenir :
+    - Un pictogramme dans un élément `fr-tile__pictogram` (voir [Pictogramme](../../../../../core/_part/doc/pictogram/index.md)).
+  - Le corps de la tuile `fr-tile__body`, obligatoire, il contient le contenu de la tuile :
+    - Un titre, obligatoire, un élément HTML avec un niveau d'entête `<hx>` et la classe `fr-tile__title` pouvant contenir un lien ou un simple texte.
+    - Une description, optionnelle, `fr-tile__desc`, un élément HTML de type `<p>`.
+    - Un texte de détail, optionnel, `fr-tile__detail`, un élément HTML de type `<p>`.
+    - Une zone se plaçant avant le contenu `fr-tile__start` qui peut accueillir :
       - Un badge ou un tag, optionnels, (voir composants [Badge](../../../../badge/_part/doc/code/index.md) et [Tag](../../../../tag/_part/doc/code/index.md)).
       - Un texte de détail `fr-tile__detail`, optionnel, auquel on peut associer une icône.
 
@@ -77,7 +77,7 @@ Cette variante reprend la même structure que la tuile standard à l'exception d
 
 - La Tuile doit avoir la classe `fr-card--download`.
 - L'intitulé du titre doit avoir ce format : **Télécharger le/la [Typologie de document] « [Nom du document] »**.
-- Le **lien** du titre doit avoir :
+- Le lien du titre doit avoir :
   - L'attribut `download`. Ajouter une valeur à l'attribut permet de renommer le fichier au moment du téléchargement.
   - L'attribut `hreflang`, si le fichier est dans une autre langue, avec comme valeur le code langue du document à télécharger.
 - **Étendre le clic** à toute la tuile est obligatoire.
@@ -162,7 +162,7 @@ La tuile peut avoir différentes tailles qui auront un impact sur la taille du t
 - `fr-tile--sm` : Petite tuile.
 - Par défaut : Tuile moyenne.
 
-Par défaut, la tuile prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des Tuiles peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../../../../core/_part/doc/index.md)).
+Par défaut, la tuile prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des Tuiles peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../../../../core/_part/doc/grid/index.md)).
 
 Utiliser une taille de Tuile adaptée à la largeur de son conteneur :
 
@@ -260,12 +260,15 @@ Pour fonctionner, le **remplissage automatique du détail des Tuiles de téléch
 Cette fonctionnalité est disponible dans le core.
 
 Il est donc nécessaire d'importer les fichiers js du core à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>

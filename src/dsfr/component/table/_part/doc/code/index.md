@@ -27,29 +27,31 @@ Le tableau permet de présenter une liste structurée de données textuelles et/
 
 #### Structure du composant
 
-Le composant Tableau permet de présenter des données tabulaires. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
+Le composant **Tableau** permet de présenter des données tabulaires. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
-1. Un conteneur principal sous la balise `<div>` :
-    - Doit avoir la classe `fr-table`.
-2. Un premier sous-conteneur sous la balise `<div>` :
-    - Doit avoir la classe `fr-table__wrapper`.
-3. Un deuxième sous-conteneur sous la balise `<div>` :
-    - Doit avoir la classe `fr-table__container`.
-3. Un troisième sous-conteneur sous la balise `<div>` :
-    - Doit avoir la classe `fr-table__content`.
-4. Une zone de contenu pour le tableau :
-    - Représentée par un élément `<table>`.
-5. Un titre, obligatoire, qui peut être positionné en haut (par défaut), en bas ou hors écran :
-    - Représenté par un élément `<caption>`.
-6. Une ligne d’en-tête de colonne, obligatoire :
-    - Représentée par un élément `<thead>`.
-7. Plusieurs ligne de corps, obligatoires :
-    - Regroupées dans un ou plusieurs éléments `<tbody>`.
-    - Représentées par un élément `<tr>`.
-8. Plusieurs cellules de contenu, obligatoires :
-    - Représentées par un élément `<th>` ou `<td>`.
+- Un conteneur principal sous la balise `<div>` :
+  - Doit avoir la classe `fr-table`.
+- Un premier sous-conteneur sous la balise `<div>` :
+  - Doit avoir la classe `fr-table__wrapper`.
+- Un deuxième sous-conteneur sous la balise `<div>` :
+  - Doit avoir la classe `fr-table__container`.
+- Un troisième sous-conteneur sous la balise `<div>` :
+  - Doit avoir la classe `fr-table__content`.
+- Une zone de contenu pour le tableau :
+  - Représentée par un élément `<table>`.
+- Un titre, obligatoire, qui peut être positionné en haut (par défaut), en bas ou hors écran :
+  - Représenté par un élément `<caption>`.
+- Une ligne d’en-tête de colonne, obligatoire :
+  - Représentée par un élément `<thead>`.
+- Plusieurs ligne de corps, obligatoires :
+  - Regroupées dans un ou plusieurs éléments `<tbody>`.
+  - Représentées par un élément `<tr>`.
+- Plusieurs cellules de contenu, obligatoires :
+  - Représentées par un élément `<th>` ou `<td>`.
 
 **Exemple de structure HTML**
+
+:::fr-accordion[Déplier pour voir le code]{id=code-tableau}
 
 ```HTML
 <div class="fr-table">
@@ -140,6 +142,8 @@ Le composant Tableau permet de présenter des données tabulaires. Sa structure 
     </div>
 </div>
 ```
+
+:::
 
 ---
 
@@ -246,6 +250,8 @@ Le tableau peut contenir des en-têtes de ligne contenant des cases à cocher pe
 
 **Exemple de tableau avec lignes sélectionnables**
 
+:::fr-accordion[Déplier pour voir le code]{id=code-tableau-selectionnable}
+
 ```HTML
 <div class="fr-table">
     <div class="fr-table__wrapper">
@@ -294,11 +300,15 @@ Le tableau peut contenir des en-têtes de ligne contenant des cases à cocher pe
 </div>
 ```
 
+:::
+
 #### Variantes de tableau à double entrée avec colonne d'en-tête fixe
 
 Le tableau peut présenter des en-têtes de ligne `<th>` fixes au scroll horizontal avec la classe `fr-cell--fixed`.
 
 **Exemple de tableau à double entrée avec colonne d'en-tête fixe**
+
+:::fr-accordion[Déplier pour voir le code]{id=code-tableau-en-tete-fixe}
 
 ```HTML
 <div class="fr-table">
@@ -354,6 +364,8 @@ Le tableau peut présenter des en-têtes de ligne `<th>` fixes au scroll horizon
 </div>
 ```
 
+:::
+
 ##### Alignement
 
 Par défaut, le contenu des cellules est aligné à gauche et centré verticalement.
@@ -371,6 +383,8 @@ Vous avez à votre disposition des classes CSS pour modifier l’**alignement ho
 - `fr-cell--right` : Alignement horizontal à droite.
 
 **Exemple de tableau avec des alignements de cellules différents**
+
+:::fr-accordion[Déplier pour voir le code]{id=code-tableau-alignement}
 
 ```HTML
 <div class="fr-table fr-table--bordered">
@@ -422,6 +436,8 @@ Vous avez à votre disposition des classes CSS pour modifier l’**alignement ho
 </div>
 ```
 
+::::::fr-accordion[Déplier pour voir le code]{id=code-tableau-alignement}
+
 ##### Retour à la ligne automatique
 
 Le contenu en ligne des cellules est par défaut affiché sur une seule ligne grâce à la propriété CSS `white-space: nowrap;` qui empêche les retours à la ligne.
@@ -453,13 +469,16 @@ Pour fonctionner le composant tableau nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/table/table.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -486,39 +505,47 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ##### table
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du tableau est activé ou non |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).table.isEnabled = false` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).table.node` |
+
 :::
 
 ---

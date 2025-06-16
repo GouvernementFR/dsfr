@@ -295,7 +295,7 @@ Lorsqu'un contenu est masqué, un placeholder doit être affiché pour informer 
 Le placeholder est composé des éléments suivants :
 
 - Un élément `<div>` avec la classe `fr-consent-placeholder` pour le conteneur du placeholder.
-- Un **titre** "[Nom du service] est désactivé" contenu dans un élément `<hx>`, en fonction du contexte, avec la classe `.fr-h6`. Vous pouvez utiliser une classe utilitaire pour ajouter une marge en bas en fonction du besoin, ex : `.fr-mb-2v`.
+- Un titre "[Nom du service] est désactivé" contenu dans un élément `<hx>`, en fonction du contexte, avec la classe `.fr-h6`. Vous pouvez utiliser une classe utilitaire pour ajouter une marge en bas en fonction du besoin, ex : `.fr-mb-2v`.
 - Un bloc de texte `<p>` décrivant pourquoi le contenu est masqué. Vous pouvez utiliser une classe utilitaire pour ajouter une marge en bas en fonction du besoin, ex : `.fr-mb-6v`.
 - Un bouton primaire pour autoriser le dépôt de cookies et accéder au contenu.
 

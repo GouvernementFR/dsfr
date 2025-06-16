@@ -29,10 +29,10 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 Le composant **Tag** est un élément permettant de marquer ou de catégoriser des éléments et peut être utilisé dans deux contextes :
 
-1. Dans le contenu (carte, en-tête, liste) : il catégorise le contenu auquel il est apposé. Il peut être cliquable ou non cliquable.
-2. En tant que filtre (dans une page de résultats de recherche par exemple). Dans ce cas il peut-être :
-    - activable comme filtre en place à sélectionner/désélectionner,
-    - supprimable, il sert de rappel à un filtre qui a été coché dans une sidebar ou une liste déroulante.
+- Dans le contenu (carte, en-tête, liste) : il catégorise le contenu auquel il est apposé. Il peut être cliquable ou non cliquable.
+- En tant que filtre (dans une page de résultats de recherche par exemple). Dans ce cas il peut-être :
+  - activable comme filtre en place à sélectionner/désélectionner,
+  - supprimable, il sert de rappel à un filtre qui a été coché dans une sidebar ou une liste déroulante.
 
 ##### Tag non cliquable
 
@@ -308,6 +308,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ###### toggle
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du tag activable est activé ou non |
@@ -318,6 +319,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[pressed]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoi l'état du tag activable |
@@ -328,6 +330,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[toggle]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Fait varier l'état checked/unchecked et la valeur de l'attribut `aria-pressed` du tag activable |
@@ -339,6 +342,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -351,6 +355,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ###### tagDismissible
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du tag supprimable est activé ou non |
@@ -361,6 +366,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

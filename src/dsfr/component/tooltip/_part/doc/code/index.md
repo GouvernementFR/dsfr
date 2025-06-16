@@ -29,7 +29,7 @@ Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors 
 
 #### Structure du composant
 
-Il existe deux types d’infobulles suivant son déclenchement.
+Il existe deux types d’**Infobulles** suivant son déclenchement.
 
 ##### Déclenchement au survol
 
@@ -63,7 +63,6 @@ L’infobulle au clic se compose des éléments suivants :
     - La zone de déclenchement est une balise `<button type="button">`.
     - Elle est liée au conteneur via l'attribut `aria-describedby`, sa valeur doit correspondre à l'attribut `id` du conteneur.
     - Doit avoir les classes `fr-btn--tooltip fr-btn`.
-
 2. Un conteneur pour le texte de l'infobulle :
     - Représenté par un élément `<span>`.
     - Doit avoir un attribut `id` obligatoire, pour être lié à la zone de déclenchement.

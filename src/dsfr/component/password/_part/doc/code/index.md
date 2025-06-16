@@ -30,19 +30,19 @@ Le mot de passe est un élément d’interaction avec l’interface permettant d
 Le composant **Mot de passe** permet à l'utilisateur de masquer ou révéler le texte du mot de passe.
 Sa structure est la suivante :
 
-- Le **Conteneur** du mot de passe, obligatoire, est un élément HTML `<div>` défini par la classe `fr-password`.
-- Le **libellé** du mot de passe, obligatoire, doit être un élément HTML `<label>` avec les classe `fr-label` et `fr-password__label`, associé au mot de passe par son attribut `for` dont la valeur est égale à l'attribut `id` du mot de passe.
-- Une **description additionnelle** du mot de passe, optionnelle, peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
-- Le champ de **mot de passe** est contenu dans un élément HTML `<div>` défini par la classe `fr-input-wrap`.
-- Le **mot de passe** est un élément HTML `<input>` de type `password`, obligatoire, défini par la classe `fr-password__input`.
+- Le Conteneur du mot de passe, obligatoire, est un élément HTML `<div>` défini par la classe `fr-password`.
+- Le libellé du mot de passe, obligatoire, doit être un élément HTML `<label>` avec les classe `fr-label` et `fr-password__label`, associé au mot de passe par son attribut `for` dont la valeur est égale à l'attribut `id` du mot de passe.
+- Une description additionnelle du mot de passe, optionnelle, peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
+- Le champ de mot de passe est contenu dans un élément HTML `<div>` défini par la classe `fr-input-wrap`.
+- Le mot de passe est un élément HTML `<input>` de type `password`, obligatoire, défini par la classe `fr-password__input`.
   - Il dispose d'un attribut `autocomplete` dont la valeur varie selon l'usage du mot de passe entre `new-password` pour la création et `current-password` pour la connexion.
   - Les attributs `autocapitalize` et `autocorrect` ont pour valeur `false` par défaut.
-- Un **message** d'information, d'erreur ou de succès peut être associé au mot de passe en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
+- Un message d'information, d'erreur ou de succès peut être associé au mot de passe en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
   - Son attribut `id` doit être associé à l'attribut `aria-describedby` du mot de passe.
   - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
-- Une **Fonctionnalité d’affichage** du mot de passe, obligatoire, est contenue dans un élément `<div>` défini par les classes `fr-password__checkbox`, `fr-checkbox-group`, et `fr-checkbox-group--sm`, contenant :
-  - La **case à cocher** pour révéler ou masquer le mot de passe est un élément `<input>` de type `checkbox`.
-  - Le **libellé** de la case à cocher, obligatoire, doit être un élément HTML `<label>` avec la classe `fr-label` associé à la case à cocher par son attribut `for` dont la valeur est égale à l'attribut `id` de la case à cocher.
+- Une Fonctionnalité d’affichage du mot de passe, obligatoire, est contenue dans un élément `<div>` défini par les classes `fr-password__checkbox`, `fr-checkbox-group`, et `fr-checkbox-group--sm`, contenant :
+  - La case à cocher pour révéler ou masquer le mot de passe est un élément `<input>` de type `checkbox`.
+  - Le libellé de la case à cocher, obligatoire, doit être un élément HTML `<label>` avec la classe `fr-label` associé à la case à cocher par son attribut `for` dont la valeur est égale à l'attribut `id` de la case à cocher.
 
 **Exemple de structure HTML**
 

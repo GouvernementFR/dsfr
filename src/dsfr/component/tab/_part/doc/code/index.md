@@ -210,7 +210,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
-| **Type** | propertRenvoie `true`
+| **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tabsGroup.hasFocus` |
 

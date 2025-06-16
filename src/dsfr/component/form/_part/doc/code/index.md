@@ -208,8 +208,9 @@ Dans le cas d'un groupe de champs en état d'erreur ou de succès, un message d'
 
 ### JavaScript
 
-Le DSFR ne propose pas de JavaScript pour les formulaires. Cependant, il est possible d'utiliser des bibliothèques JavaScript tierces pour ajouter des fonctionnalités supplémentaires, comme la validation des champs, l'envoi dynamique des données, etc.
+Les formulaires **ne nécessitent pas l'utilisation de JavaScript** pour leur fonctionnement de base dans le DSFR.
 
+Cependant, il est possible d'utiliser des bibliothèques JavaScript tierces pour ajouter des fonctionnalités supplémentaires, comme la validation des champs, l'envoi dynamique des données, etc.<br>
 Il est recommandé d'utiliser des bibliothèques JavaScript qui respectent les principes d'accessibilité et de performance.
 
 ---

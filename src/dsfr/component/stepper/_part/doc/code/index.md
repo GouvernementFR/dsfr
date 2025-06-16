@@ -31,13 +31,13 @@ Le composant **Indicateur d'étapes** est un élément permettant de visualiser 
 
 Sa structure est la suivante :
 
-- Le **conteneur du stepper** est un élément HTML `<div>` défini par la classe `fr-stepper`.
-- Le **titre de l'étape en cours**, obligatoire, est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hérarchie dans la page (par défaut h2), et possède la classe `fr-stepper__title`.
+- Le conteneur du stepper est un élément HTML `<div>` défini par la classe `fr-stepper`.
+- Le titre de l'étape en cours, obligatoire, est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hiérarchie dans la page (par défaut h2), et possède la classe `fr-stepper__title`.
   - Le numéro de l'étape et le nombre d'étapes total, obligatoires, sont précisés à l'intérieur du titre dans un élément HTML `<span>` défini par la classe `fr-stepper__state`.
-- La **barre de progression**, obligatoire, un élément HTML `<div>` défini par la classe `fr-stepper__steps`.
+- La barre de progression, obligatoire, un élément HTML `<div>` défini par la classe `fr-stepper__steps`.
   - La balise possède des attributs `data-fr-steps` et `data-fr-current-step` pour définir le nombre total d'étapes et l'étape actuelle.
 - Les détails de l'étape sont un élément HTML `<p>` défini par la classe `fr-stepper__details` et contiennent :
-  - Le **titre de l'étape suivante**, obligatoire, dans un élément HTML `<span>`.
+  - Le titre de l'étape suivante, obligatoire, dans un élément HTML `<span>`.
 
 **Exemple de structure HTML**
 

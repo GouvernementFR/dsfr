@@ -152,7 +152,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 ### JavaScript
 
-Pour fonctionner le composant paramètre d'affichage **nécessite** l'utilisation de JavaScript.
+Pour fonctionner le composant paramètre d'affichage nécessite l'utilisation de JavaScript.
 Ce composant est aussi dépendant du **core** et de la **modale**.
 
 #### Installation du JavaScript

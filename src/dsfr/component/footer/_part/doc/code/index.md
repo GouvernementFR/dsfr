@@ -397,10 +397,6 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/logo/logo.legacy.min.css" rel="stylesheet">
 ```
 
-#### Variantes de style
-
-Le composant Pied de page ne possède pas de variantes de style.
-
 ---
 
 ### JavaScript

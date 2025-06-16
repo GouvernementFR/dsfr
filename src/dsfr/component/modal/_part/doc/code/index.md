@@ -27,30 +27,30 @@ La modale est un élément de mise en forme de contenu permettant de concentrer 
 
 ### Structure du composant
 
-Le composant Modale permet d'afficher du contenu en plein écran.
+Le composant **Modale** permet d'afficher du contenu en plein écran.
 
 Sa structure est la suivante :
 
-- Le **bouton d'ouverture** de la modale est défini par la classe `fr-btn` et l'attribut `aria-controls` lié à l'ID de la modale.
+- Le bouton d'ouverture de la modale est défini par la classe `fr-btn` et l'attribut `aria-controls` lié à l'ID de la modale.
   - Le bouton doit être de type "button".
   - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si la modale est ouverte ou fermée.
-- La **modale**, définie par la classe `fr-modal`, est un élément HTML `<dialog>`.
+- La modale, définie par la classe `fr-modal`, est un élément HTML `<dialog>`.
   - Elle dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
   - La modale est liée à son titre via l'attribut `aria-labelledby`, dont la valeur doit correspondre à l'attribut `id` du titre.
 - Son contenu est structuré :
-  - D'un premier **conteneur** défini par la classe `fr-container`.
-  - D'une **grille** définie par les classes `fr-grid-row` et `fr-grid-row--center`.
-  - D'un **bloc de colonne** définie par les classes `fr-col-12 fr-col-md-8 fr-col-lg-6` pouvant varier en fonction de la taille de la modale désirée.
-  - Le **corps** de la modale défini par la classe `fr-modal__body`, contenant :
-    - **L'entête** de la modale, obligatoire, défini par la classe `fr-modal__header`, contenant :
-      - Le **bouton de fermeture** de la modale, obligatoire, est un élément HTML `<button>`, défini par les classes `fr-btn` et `fr-btn--close`, dont le titre est "Fermer".
+  - D'un premier conteneur défini par la classe `fr-container`.
+  - D'une grille définie par les classes `fr-grid-row` et `fr-grid-row--center`.
+  - D'un bloc de colonne définie par les classes `fr-col-12 fr-col-md-8 fr-col-lg-6` pouvant varier en fonction de la taille de la modale désirée.
+  - Le corps de la modale défini par la classe `fr-modal__body`, contenant :
+    - L'entête de la modale, obligatoire, défini par la classe `fr-modal__header`, contenant :
+      - Le bouton de fermeture de la modale, obligatoire, est un élément HTML `<button>`, défini par les classes `fr-btn` et `fr-btn--close`, dont le titre est "Fermer".
       - Le bouton doit être de type "button".
       - Le bouton est lié à la modale via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale.
-    - D'un **bloc de contenu**, obligatoire, défini par la classe `fr-modal__content`, contenant :
-      - Le **titre** de la modale, obligatoire, dans un niveau d'entête `<h1>` et défini par la classe `fr-modal__title`.
-      - Le **contenu** de la modale, obligatoire et libre, mais nécessitant l'utilisation de balises adéquates, il n'est pas correcte par exemple de placer du texte directement dans une `<div>`.
-    - **Le pied de page** de la modale, optionnel défini par la classe `fr-modal__footer`, contenant :
-      - Un **groupe de boutons d'action** défini par les classes `fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-lg fr-btns-group--icon-left` pouvant varier en fonction de l'affichage désiré des boutons, contenant :
+    - D'un bloc de contenu, obligatoire, défini par la classe `fr-modal__content`, contenant :
+      - Le titre de la modale, obligatoire, dans un niveau d'entête `<h1>` et défini par la classe `fr-modal__title`.
+      - Le contenu de la modale, obligatoire et libre, mais nécessitant l'utilisation de balises adéquates, il n'est pas correcte par exemple de placer du texte directement dans une `<div>`.
+    - Le pied de page de la modale, optionnel défini par la classe `fr-modal__footer`, contenant :
+      - Un groupe de boutons d'action défini par les classes `fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-lg fr-btns-group--icon-left` pouvant varier en fonction de l'affichage désiré des boutons, contenant :
         - Soit un bouton primaire ([Bouton](../../../../button/_part/doc/code/index.md)).
         - Soit un groupe de boutons hiérarchisé.
 
@@ -110,7 +110,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 #### Variantes de taille
 
-La modale peut avoir différentes tailles en fonction du nombre de colonnes de la grille qui la compose (Voir [grille](../../../../../core/_part/doc/index.md)), sur mobile la modale sera toujours sur 12 colonnes :
+La modale peut avoir différentes tailles en fonction du nombre de colonnes de la grille qui la compose (Voir [grille](../../../../../core/_part/doc/grid/index.md)), sur mobile la modale sera toujours sur 12 colonnes :
 
 - 4 colonnes en LG et 6 colonnes en MD pour une modale SM.
 - Par défaut : 6 colonnes en LG et 8 colonnes en MD pour une modale MD.
@@ -200,8 +200,7 @@ Par défaut la modale se referme au clic sur le fond de la page, il est possible
 
 #### Installation du JavaScript
 
-Pour fonctionner le composant modale nécessite l'utilisation de JavaScript.
-Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
+Pour fonctionner le composant modale nécessite l'utilisation de JavaScript. Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 

@@ -31,31 +31,31 @@ Le composant **Navigation principale** est l'élément central de la navigation 
 
 Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
-- Le **conteneur principal**, obligatoire, de la navigation est un élément HTML `<nav>` avec le rôle `navigation` défini par la classe `fr-nav`.
+- Le conteneur principal, obligatoire, de la navigation est un élément HTML `<nav>` avec le rôle `navigation` défini par la classe `fr-nav`.
   - Il dispose d'attribut `aria-label`, dont la valeur doit décrit la fonction de la navigation (ex: "Menu principal").
-- La **liste de liens ou de sous-sections**, obligatoire, de la navigation est un élément HTML `<ul>` défini par la classe `fr-nav__list`.
+- La liste de liens ou de sous-sections, obligatoire, de la navigation est un élément HTML `<ul>` défini par la classe `fr-nav__list`.
   - Chaque élément `<li>` défini par la classe `fr-nav__item` de la liste peut contenir un lien direct, un menu déroulant ou un mega-menu.
-- Un **Lien direct** est un élément HTML `<a>` de type `link` défini par la classe `fr-nav__link`.
+- Un Lien direct est un élément HTML `<a>` de type `link` défini par la classe `fr-nav__link`.
   - Le lien actif dispose d'un attribut `aria-current="page"`.
-- Un **Menu déroulant** est composé :
-  - D'un **Bouton d'ouverture**, obligatoire, du menu déroulant, un élément HTML `<button>` de type `button` défini par la classe `fr-nav__btn`.
+- Un Menu déroulant est composé :
+  - D'un Bouton d'ouverture, obligatoire, du menu déroulant, un élément HTML `<button>` de type `button` défini par la classe `fr-nav__btn`.
     - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le bloc refermable de la navigation est ouvert ou fermé.
     - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
     - Le bouton actif dispose d'un attribut `aria-current="true"`.
-  - D'un **bloc refermable**, obligatoire, défini par les classes `fr-collapse` et `fr-menu`, est un élément HTML `<div>` placé après le bouton d'ouverture. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que le menu latéral  ou l'accordéon.
+  - D'un bloc refermable, obligatoire, défini par les classes `fr-collapse` et `fr-menu`, est un élément HTML `<div>` placé après le bouton d'ouverture. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que le menu latéral  ou l'accordéon.
     - Le bloc refermable contient une liste de liens directs, un élément HTML `<ul>` défini par la classe `fr-menu__list`.
       - Chaque élément `<li>` de la liste contient un lien direct défini par la classe `fr-nav__link`.
-- Un **Mega-menu** est composé :
-  - D'un **bouton d'ouverture**, obligatoire, est un élément HTML `<button>` de type `button` défini par la classe `fr-nav__btn`.
+- Un Mega-menu est composé :
+  - D'un bouton d'ouverture, obligatoire, est un élément HTML `<button>` de type `button` défini par la classe `fr-nav__btn`.
     - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le bloc refermable de la navigation est ouvert ou fermé.
     - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
     - Le bouton actif dispose d'un attribut `aria-current="true"`.
-  - D'un **bloc refermable**, obligatoire, défini par les classes `fr-collapse` et `fr-mega-menu`, est un élément HTML `<div>` placé après le bouton d'ouverture. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que le menu latéral  ou l'accordéon.
-    - Le bloc refermable contient le **conteneur du mega-menu**, un élément HTML `<div>` défini par les classes `fr-container`, `fr-container--fluid` et `fr-container-lg` et contenant :
-      - Le **Bouton de fermeture** du mega-menu, obligatoire, est un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--close`.
+  - D'un bloc refermable, obligatoire, défini par les classes `fr-collapse` et `fr-mega-menu`, est un élément HTML `<div>` placé après le bouton d'ouverture. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que le menu latéral  ou l'accordéon.
+    - Le bloc refermable contient le conteneur du mega-menu, un élément HTML `<div>` défini par les classes `fr-container`, `fr-container--fluid` et `fr-container-lg` et contenant :
+      - Le bouton de fermeture du mega-menu, obligatoire, est un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--close`.
         - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
         - Le bouton dispose d'un attribut `title` et un texte explicite pour indiquer son action.
-      - La **grille** du mega-menu, dont la documentation est disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/index.md)) composée d'une ou plusieurs colonnes comprenant :
+      - La grille du mega-menu, dont la documentation est disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/grid/index.md)) composée d'une ou plusieurs colonnes comprenant :
         - Des éléments de contexte (nom de la rubrique, texte de présentation, lien vers la home de rubrique), optionnels, définis par la classe `fr-mega-menu__leader`.
         - Des noms des sous catégories, optionnels, pouvant être cliquables, dans un niveau de titre hx et définis par la classe `fr-mega-menu__category`.
         - Une liste de liens directs, obligatoire, dans un élément HTML `<ul>` défini par la classe `fr-mega-menu__list`.
@@ -486,7 +486,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
-| **Type** | propertRenvoie `true`
+| **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigation.hasFocus` |
 

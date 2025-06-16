@@ -31,12 +31,12 @@ Le composant **Interrupteur**, est un élément interactif permettant de bascule
 
 Sa structure est la suivante :
 
-- L'Interrupteur doit être **contenu** dans un élément HTML `<div>` défini par la classe `fr-toggle`.
-- L'**Interrupteur** est un élément HTML `<input>` de type `checkbox` défini par la classe `fr-toggle__input`.
-- L'interrupteur doit être associé à un **libellé** `<label>` avec la classe `fr-toggle__label`.
+- L'Interrupteur doit être contenu dans un élément HTML `<div>` défini par la classe `fr-toggle`.
+- L'interrupteur est un élément HTML `<input>` de type `checkbox` défini par la classe `fr-toggle__input`.
+- L'interrupteur doit être associé à un libellé `<label>` avec la classe `fr-toggle__label`.
   - L'interrupteur peut afficher de manière optionnelle un état par l'utilisation des attributs `data-fr-checked-label` et `data-fr-unchecked-label` dont les valeurs seront affichées si l'interrupteur est coché ou non.
-- Une **description additionnelle** de l'option - optionnelle - peut être ajoutée après le libellé, elle est définie par un élément `<p>` et la classe utilitaire `fr-hint-text`.
-- Un **message** d'erreur ou de succès peut être associé à l'interrupteur en utilisant un élément `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`. Son attribut `id` doit être associé à l'attribut `aria-describedby` de l'interrupteur. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
+- Une description additionnelle de l'option - optionnelle - peut être ajoutée après le libellé, elle est définie par un élément `<p>` et la classe utilitaire `fr-hint-text`.
+- Un message d'erreur ou de succès peut être associé à l'interrupteur en utilisant un élément `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`. Son attribut `id` doit être associé à l'attribut `aria-describedby` de l'interrupteur. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
 
 **Exemple de structure HTML simple**
 
@@ -326,6 +326,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 #### Instances
 
 Sur l'interrupteur, les éléments suivants sont instanciés :
+
 - L'interrupteur, via la classe : `fr-toggle__input`.
 - Le libellé, via la classe `fr-toggle__label` et les attributs `checked-label` ou `unchecked-label`.
 
@@ -349,44 +350,53 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ##### toggleInput
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'interrupteur est activé ou non |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).toggleInput.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).toggleInput.node` |
+
 :::
 
 ##### toggleStatusLabel
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'interrupteur est activé ou non |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).toggleStatusLabel.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).toggleStatusLabel.node` |
+
 :::
 
 :::fr-table[update]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Met a jour la taille de l'emplacement de l'état de l'interrupteur |
@@ -394,6 +404,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).toggleStatusLabel.update()` |
+
 :::
 
 ---

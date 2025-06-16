@@ -114,7 +114,7 @@ Les badges peuvent être affichés dans deux tailles différentes. Par défaut, 
 
 ### JavaScript
 
-Le composant Badge n'a pas de comportement JavaScript spécifique.
+Le composant Badge **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

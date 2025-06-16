@@ -170,10 +170,6 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/follow/follow.legacy.min.css" rel="stylesheet">
 ```
 
-#### Variantes de style
-
-Le composant Lettre d'information et Réseaux Sociaux ne possède pas de variantes de style.
-
 #### Icônes des réseaux sociaux
 
 Les variantes d'icônes de réseaux sociaux sont intégrées dans le composant. Les classes suivantes sont disponibles :
@@ -204,7 +200,8 @@ La liste des variantes de boutons réseaux-sociaux est définie dans le fichier 
 
 ### JavaScript
 
-Aucun JavaScript n'est nécessaire pour le composant Lettre d'information et Réseaux Sociaux.
+Le composant Lettre d'information et Réseaux Sociaux **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+
 La souscription à la Lettre d'information doit être gérée par le développeur.
 
 ---

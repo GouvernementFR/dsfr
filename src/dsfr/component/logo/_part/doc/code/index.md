@@ -74,7 +74,7 @@ Le composant Bloc marque (logo) est disponible en 3 tailles différentes via les
 
 ### JavaScript
 
-Le composant Bloc marque (logo) n'a pas de comportement JavaScript spécifique.
+Le composant Bloc marque **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 Un Javascript disponible dans le **core** permet de gérer le passage **en berne** des blocs marque lors des périodes de deuil national. Le fond bleu et rouge du bloc Marianne est alors remplacé par un fond noir.
 
