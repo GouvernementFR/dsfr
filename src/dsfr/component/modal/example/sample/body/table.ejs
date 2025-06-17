@@ -2,8 +2,10 @@
   const tableData = JSON.parse(include('../../../../table/example/data/data-simple.json.ejs', {table: {id: 'modal-table', table: { col: 2, row: 16 }}})) || [];
 
   if (tableData.table && tableData.table.tbodies.length) {
+    const tooltipHover = include('../../../../tooltip/example/sample/tooltip-hover.ejs');
     const tooltipBtn = include('../../../../tooltip/example/sample/tooltip-button.ejs');
-    tableData.table.tbodies[0][1][1].content = tooltipBtn;
+    tableData.table.tbodies[0][1][1].content = tooltipHover;
+    tableData.table.tbodies[0][4][1].content = tooltipBtn;
   }
 %>
 
