@@ -211,7 +211,7 @@ Le **DSFR** est constitué de différents composants, que vous pouvez utiliser i
 
 Une documentation spécifique est prévue pour chaque composant, précisant ses principes d’utilisation, ainsi que les snippets de code HTML à utiliser pour votre projet.
 
-🙌 Vous êtes maintenant prêt(e) à utiliser le **DSFR**.
+🙌 Vous êtes maintenant prêt·e à utiliser le **DSFR**.
 
 ## Contribution
 
@@ -219,4 +219,4 @@ Le processus de contribution est détaillé sur la [page CONTRIBUTING.md](CONTRI
 
 ## Documentation
 
-[Documentation développeurs](https://www.systeme-de-design.gouv.fr/utilisation-et-organisation/developpeurs/)
+[Documentation développeur·se](https://www.systeme-de-design.gouv.fr/utilisation-et-organisation/developpeurs/)
