@@ -26,7 +26,7 @@ La liste déroulante riche est un élément d’interaction avec l’interface p
 
 :::
 
-![ ](./_asset/presentation/presentation-1.png)
+![](./_asset/presentation/presentation-1.png)
 
 ### Quand utiliser ce composant ?
 
