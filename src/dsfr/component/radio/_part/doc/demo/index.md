@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Démonstration du Bouton radio
 shortTitle: Démonstration du Bouton radio
 description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.

@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code de l'Accordéon
 shortTitle: Code de l'Accordéon
 description: Présentation du composant Accordéon permettant à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.

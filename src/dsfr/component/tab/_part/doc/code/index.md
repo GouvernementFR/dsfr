@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code de l'Onglet
 shortTitle: Code de l'Onglet
 description: Présentation du composant Onglets pour structurer du contenu lié dans un espace restreint avec des recommandations d’usage et d’accessibilité.

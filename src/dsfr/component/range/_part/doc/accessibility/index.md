@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Accessibilité du Curseur
 shortTitle: Accessibilité du Curseur
 description: Présentation du composant Curseur permettant à l’usager de sélectionner une valeur entre un minimum et un maximum de manière intuitive.

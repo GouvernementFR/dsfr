@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de l'En-tête connectée
 shortTitle: Design de l'En-tête connectée
 description: Déclinaison de l’en-tête standard permettant à l’usager connecté d’accéder à son menu de navigation personnel.

@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code des paramètres d'affichage
 shortTitle: Code des paramètres d'affichage
 description: Le composant Paramètres d’affichage permet à l’usager de modifier le thème visuel d’un site entre mode clair et mode sombre.

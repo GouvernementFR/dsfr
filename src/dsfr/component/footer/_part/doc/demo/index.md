@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Démonstration du pied de page
 shortTitle: Démonstration du Pied de page
 description: Présentation du composant Pied de page destiné à structurer les informations complémentaires et les liens secondaires en bas de page.

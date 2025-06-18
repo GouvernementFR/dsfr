@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code de la mise en exergue
 shortTitle: Code de la mise en exergue
 description: La mise en exergue est un composant éditorial destiné à distinguer une information importante au sein du contenu principal d’une page.

@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code de l'interrupteur
 shortTitle: Code de l'Interrupteur
 description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.
