@@ -12,6 +12,10 @@
   padding-right: 0 !important;
 }
 
+.sb-show-main.sb-main-padded {
+  border: 1px solid var(--border-default-grey);
+}
+
 #modal--modal button[data-fr-opened="true"],
 #story--modal--modal-story--primary button[data-fr-opened="true"],
 #story--modal--modal-story button[data-fr-opened="true"],

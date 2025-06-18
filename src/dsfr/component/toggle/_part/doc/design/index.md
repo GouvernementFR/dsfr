@@ -28,27 +28,19 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 ![Anatomie de l'interrupteur](../_asset/anatomy/anatomy-1.png)
 
-::dsfr-doc-pin[Un titre]{required=true add="qui peut être positionné en haut (par défaut), en bas ou hors écran (balise caption)"}
+::dsfr-doc-pin[Une légende décrivant le contexte]{required=true add="uniquement dans le cadre d'un groupe d'interrupteurs"}
 
-::dsfr-doc-pin[Un bouton de tri par colonne]
+::dsfr-doc-pin[Une description additionnelle pour la légende]
 
-::dsfr-doc-pin[Une case à cocher de sélection de colonne]
+::dsfr-doc-pin[Un interrupteur]{required=true}
 
-::dsfr-doc-pin[Une ou plusieurs données]{add="par cellule"}
+::dsfr-doc-pin[Un libellé]{required=true add="associé à l'interrupteur"}
 
-::dsfr-doc-pin[Une barre d’actions haute]{add="pouvant contenir (uniquement et dans cet ordre) &#58; le nombre de lignes sélectionnées, une barre de recherche, des boutons d’actions liés à la sélection de lignes et un contrôle segmenté"}
+::dsfr-doc-pin[Un texte "état" décrivant l'état de l'interrupteur (activé / désactivé)]{add="placé en dessous du bouton et conseillé afin de faciliter la compréhension de l'usager"}
 
-::dsfr-doc-pin[Une ligne d’en-tête de colonne]{required=true}
+::dsfr-doc-pin[Un séparateur]
 
-::dsfr-doc-pin[Plusieurs lignes de corps]{required=true}
-
-::dsfr-doc-pin[Des bordures horizontales entre les lignes]{required=true}
-
-::dsfr-doc-pin[Une barre d’actions basse]{add="pouvant contenir (uniquement et dans cet ordre) &#58; le nombre total de lignes du tableau, une liste déroulante, une pagination et des boutons d’actions agissants sur tout le tableau"}
-
-::dsfr-doc-pin[Une colonne de sélection de ligne]{add="toujours ferrée à gauche"}
-
-::dsfr-doc-pin[Des bordure verticales entre les colonnes]{add="uniquement obligatoire dans le cas d’un tableau complexe"}
+::dsfr-doc-pin[Un texte additionnel]{add="accompagnant chaque interrupteur / libellé"}
 
 :::
 

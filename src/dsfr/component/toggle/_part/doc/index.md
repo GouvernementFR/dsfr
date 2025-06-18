@@ -23,7 +23,7 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 :::
 
-::dsfr-doc-storybook{storyId=toggle—toggle}
+::dsfr-doc-storybook{storyId=toggle--toggle}
 
 ### Quand utiliser ce composant ?
 

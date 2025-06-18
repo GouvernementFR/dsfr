@@ -11,4 +11,4 @@ order: 2
 list: true
 ---
 
-## Pages types
+# Pages types

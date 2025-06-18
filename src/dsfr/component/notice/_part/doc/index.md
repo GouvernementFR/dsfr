@@ -59,7 +59,7 @@ Ne pas forcer l’usager à devoir consulter une source complémentaire pour com
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/export/notice/use/do-2.png)
+![À faire](./_asset/use/do-2.png)
 
 Utiliser les bandeaux d’information importante selon les cas d’usage définis.
 
