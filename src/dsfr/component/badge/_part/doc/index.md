@@ -41,7 +41,7 @@ Utiliser le badge pour mettre en avant une information de type “statut” ou �
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Associer un badge à du texte ou un lien, en haut d’une page article par exemple.
 
@@ -49,7 +49,7 @@ Associer un badge à du texte ou un lien, en haut d’une page article par exemp
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Placer un badge au sein d’un élément de navigation, par exemple le menu latéral, pour apporter des précisions.
 
@@ -61,7 +61,7 @@ Placer un badge au sein d’un élément de navigation, par exemple le menu lat�
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Intégrer un badge au sein de cartes ou de tuiles.e.
 
@@ -69,7 +69,7 @@ Intégrer un badge au sein de cartes ou de tuiles.e.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-4.png)
+![](./_asset/use/do-4.png)
 
 Utiliser un badge au sein d’une cellule d’un tableau.
 
@@ -86,7 +86,7 @@ Utiliser un badge au sein d’une cellule d’un tableau.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Proposer un libellé court et explicite.
 
@@ -94,7 +94,7 @@ Proposer un libellé court et explicite.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas rédiger des libellés trop longs. La taille du badge doit rester raisonnable.
 
@@ -109,7 +109,7 @@ Ne pas rédiger des libellés trop longs. La taille du badge doit rester raisonn
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-2.png)
+![](./_asset/edit/do-2.png)
 
 Utiliser des badges identiques pour indiquer une information similaire à travers le site.
 
@@ -117,7 +117,7 @@ Utiliser des badges identiques pour indiquer une information similaire à traver
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-2.png)
+![](./_asset/edit/dont-2.png)
 
 Ne pas utiliser le même badge pour traduire des informations distinctes.
 

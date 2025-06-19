@@ -44,7 +44,7 @@ Au-delà de 5 choix ou lorsque l’espace est restreint, utilisez pour une liste
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Utiliser les boutons radios pour permettre à l’usager de faire un choix entre différentes options.
 
@@ -52,7 +52,7 @@ Utiliser les boutons radios pour permettre à l’usager de faire un choix entre
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas proposer de bouton radio seul.
 
@@ -68,7 +68,7 @@ Ne pas proposer de bouton radio seul.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Proposer des choix sans sélectionner une option par défaut.
 
@@ -76,7 +76,7 @@ Proposer des choix sans sélectionner une option par défaut.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas pousser une option par défaut afin de laisser l’usager faire son choix en conscience.
 
@@ -95,7 +95,7 @@ Ne pas pousser une option par défaut afin de laisser l’usager faire son choix
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Accompagner les boutons radio d’un texte d’aide pour clarifier la nature du contenu attendu.
 
@@ -103,7 +103,7 @@ Accompagner les boutons radio d’un texte d’aide pour clarifier la nature du 
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas masquer le texte d’aide dans une infobulle.
 

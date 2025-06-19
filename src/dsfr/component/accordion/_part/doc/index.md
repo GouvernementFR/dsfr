@@ -40,7 +40,7 @@ L’accordéon est utilisé pour mettre en forme du contenu dans une page.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas utiliser les accordéons au sein d’une modale. Ils servent à mettre en forme du contenu au sein de longues pages.
 
@@ -58,7 +58,7 @@ Ne pas utiliser les accordéons au sein d’une modale. Ils servent à mettre en
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Privilégier des interactions simples (bouton ou lien, par exemple) au sein des accordéons.
 
@@ -66,7 +66,7 @@ Privilégier des interactions simples (bouton ou lien, par exemple) au sein des 
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas intégrer des composants trop complexes aux accordéons.
 
@@ -84,7 +84,7 @@ Ne pas intégrer des composants trop complexes aux accordéons.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Privilégier l’usage de texte ou de liste à puces si le contenu de l’accordéon est trop succinct.
 
@@ -92,7 +92,7 @@ Privilégier l’usage de texte ou de liste à puces si le contenu de l’accord
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas utiliser les accordéons pour mettre en forme des contenus très courts.
 

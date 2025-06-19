@@ -42,7 +42,7 @@ Dans ce cas, plutôt qu’une infobulle, il est possible d’utiliser une [alert
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Utiliser une infobulle pour préciser un libellé dans un formulaire, par exemple.
 
@@ -50,7 +50,7 @@ Utiliser une infobulle pour préciser un libellé dans un formulaire, par exempl
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas répéter des éléments déjà visibles dans une infobulle.
 
@@ -60,7 +60,7 @@ Ne pas répéter des éléments déjà visibles dans une infobulle.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas inclure de graisse ou d’italique au texte de l’infobulle.
 
@@ -70,7 +70,7 @@ Ne pas inclure de graisse ou d’italique au texte de l’infobulle.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas ajouter de lien au sein de l’infobulle.
 
@@ -81,7 +81,7 @@ Ne pas ajouter de lien au sein de l’infobulle.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Permettre l’ouverture d’une seule infobulle à la fois.
 
@@ -89,7 +89,7 @@ Permettre l’ouverture d’une seule infobulle à la fois.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-4.png)
+![](./_asset/use/dont-4.png)
 
 Ne pas permettre l’ouverture de plusieurs infobulles en simultanée.
 
@@ -99,7 +99,7 @@ Ne pas permettre l’ouverture de plusieurs infobulles en simultanée.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Utiliser une flèche pour lier la zone de texte à l’élément associé. L’usager doit comprendre à quoi l’infobulle se réfère.
 
@@ -107,7 +107,7 @@ Utiliser une flèche pour lier la zone de texte à l’élément associé. L’u
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-5.png)
+![](./_asset/use/dont-5.png)
 
 Ne pas dissocier la zone de texte à l’élément associé.
 
@@ -124,7 +124,7 @@ Ne pas dissocier la zone de texte à l’élément associé.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Proposer un texte court afin que la taille de l’infobulle reste équilibrée.
 
@@ -132,7 +132,7 @@ Proposer un texte court afin que la taille de l’infobulle reste équilibrée.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas proposer de texte trop long, qui déformerait l’infobulle.
 

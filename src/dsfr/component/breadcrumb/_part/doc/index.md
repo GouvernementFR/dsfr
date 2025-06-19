@@ -40,7 +40,7 @@ Le fil d’Ariane est un système de navigation secondaire qui permet à l’usa
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Positionner le fil d’Ariane sous le header
 
@@ -48,7 +48,7 @@ Positionner le fil d’Ariane sous le header
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas positionner le fil d’Ariane ailleurs que sous le header
 
@@ -58,7 +58,7 @@ Ne pas positionner le fil d’Ariane ailleurs que sous le header
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Appliquer le fil d’Ariane sur fond blanc avant le haut de page s’il propose un fond de couleur ou un motif.
 
@@ -66,7 +66,7 @@ Appliquer le fil d’Ariane sur fond blanc avant le haut de page s’il propose 
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas superposer le fil d’Ariane à un fond de couleur ou un motif.
 
@@ -76,7 +76,7 @@ Ne pas superposer le fil d’Ariane à un fond de couleur ou un motif.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Rendre chacun des éléments cliquable, à l’exception de la page consultée.
 
@@ -84,7 +84,7 @@ Rendre chacun des éléments cliquable, à l’exception de la page consultée.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas proposer un fil d’Ariane non cliquable.
 
@@ -94,7 +94,7 @@ Ne pas proposer un fil d’Ariane non cliquable.
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-4.png)
+![](./_asset/use/do-4.png)
 
 Adapter le positionnement du fil d’Ariane lorsqu’il est accompagné d’un menu latéral.
 
@@ -110,7 +110,7 @@ Adapter le positionnement du fil d’Ariane lorsqu’il est accompagné d’un m
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Tronquer le libellé de la page lorsque le titre est trop long.
 
@@ -118,7 +118,7 @@ Tronquer le libellé de la page lorsque le titre est trop long.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas proposer un titre long sur deux lignes.
 

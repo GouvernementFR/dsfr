@@ -11,4 +11,4 @@ list:
   sort: shortTitle
 ---
 
-## Composants
+# Composants

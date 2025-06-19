@@ -37,7 +37,7 @@ Utiliser les paramètres d’affichage pour donner la possibilité à l’usager
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Intégrer les paramètres d’affichage au sein de l’en-tête, à l’emplacement de l’un des accès rapides.
 
@@ -45,7 +45,7 @@ Intégrer les paramètres d’affichage au sein de l’en-tête, à l’emplacem
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas proposer les paramètres d’affichage en dehors des accès rapides.
 
@@ -53,7 +53,7 @@ Ne pas proposer les paramètres d’affichage en dehors des accès rapides.
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Intégrer les paramètres d’affichage au sein du pied de page.
 

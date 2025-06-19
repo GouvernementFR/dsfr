@@ -26,11 +26,11 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du badge](../_asset/anatomy/anatomy-1.png)
 
-::dsfr-doc-pin[Une icône]{required=true add='uniquement pour les badges système'}
+::dsfr-doc-pin[Une icône]{add='uniquement pour les badges système'}
 
 ::dsfr-doc-pin[Un libellé]{required=true add='en majuscule'}
 
@@ -38,14 +38,13 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 :::
 
-
 ### Variations
 
 **Badge standard**
 
 ::dsfr-doc-storybook{storyId=badge--default}
 
-**Badge système sans icône**
+**Badge système avec icône**
 
 - Succès
 - Avertissement
@@ -53,15 +52,17 @@ Le badge est un élément d’indication permettant de valoriser une information
 - Information
 - Nouveauté
 
-::dsfr-doc-storybook{storyId=badge--status-no-icon}
-
-**Badge système avec icône**
-
 ::dsfr-doc-storybook{storyId=badge--status}
 
 Utiliser cette variation pour préciser l’information donnée par le texte du badge avec l’icône correspondante.
 
-L’ajout d’une icône est autorisée uniquement pour les badges système.
+L’ajout d’une icône est autorisée, et automatique en code, uniquement pour les badges système.
+
+**Badge système sans icône**
+
+Il est possible d’utiliser un badge système sans icône.
+
+::dsfr-doc-storybook{storyId=badge--status-no-icon}
 
 ### Tailles
 
@@ -87,7 +88,7 @@ Les badges systèmes ne sont pas personnalisables.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser l’icône et la couleur système correspondantes à l’information fournie.
 
@@ -95,7 +96,7 @@ Utiliser l’icône et la couleur système correspondantes à l’information fo
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas changer l’icône et la couleur d’un badge système.
 
@@ -118,7 +119,7 @@ La couleur des badges standard peut être personnalisée, parmi les couleurs ill
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Utiliser une couleur illustrative sur un badge standard (exemple : `$Pink-tuile`).
 
@@ -126,7 +127,7 @@ Utiliser une couleur illustrative sur un badge standard (exemple : `$Pink-tuile`
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas utiliser une icône dans un badge standard.
 
@@ -138,7 +139,7 @@ Ne pas utiliser une icône dans un badge standard.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-3.png)
+![](../_asset/custom/dont-3.png)
 
 Ne pas utiliser une couleur système pour un badge standard.
 

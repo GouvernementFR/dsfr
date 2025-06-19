@@ -37,7 +37,7 @@ Utiliser la barre de recherche pour proposer une recherche globale (au sein d’
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Proposer une barre de recherche de largeur correcte permettant d’afficher 27 caractères minimum.
 
@@ -45,7 +45,7 @@ Proposer une barre de recherche de largeur correcte permettant d’afficher 27 c
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas utiliser de barre de recherche trop étroite où les 27 caractères ne sont pas lisibles.
 
@@ -59,7 +59,7 @@ Ne pas utiliser de barre de recherche trop étroite où les 27 caractères ne so
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Intégrer la barre de recherche globale à l’en-tête du site.
 
@@ -67,7 +67,7 @@ Intégrer la barre de recherche globale à l’en-tête du site.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas placer la barre de recherche globale ailleurs que dans l’en-tête ou modifier son positionnement au sein de l’en-tête.
 
@@ -86,7 +86,7 @@ Ne pas placer la barre de recherche globale ailleurs que dans l’en-tête ou mo
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Rédiger un libellé de champ de saisie clair permettant à l’usager de comprendre le contexte de la recherche.
 

@@ -26,7 +26,7 @@ Le mot de passe est un élément d’interaction avec l’interface permettant d
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du mot de passe](../_asset/anatomy/anatomy-1.png)
 

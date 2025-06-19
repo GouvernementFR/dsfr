@@ -38,8 +38,6 @@ Le bandeau d’information importante est un élément éditorial permettant d�
 
 ::dsfr-doc-pin[Une description]{add="recommandée pour apporter du contexte"}
 
-::dsfr-doc-pin[Une description]{add="recommandée pour apporter du contexte"}
-
 ::dsfr-doc-pin[Un lien]{add="obligatoire et normé pour les bandeaux de vigilance météo et les bandeaux d’alertes"}
 
 ::dsfr-doc-pin[Un fond]{required=true}
@@ -74,7 +72,9 @@ Utiliser le bandeau d’alerte pour afficher une information critique pour la sa
 
 Ces bandeaux servent à relayer des informations sur les niveaux de vigilance et risques météorologiques communiqués par Météo France.
 
-::dsfr-doc-video{provider="youtube" videoId="pT98qCs58h4"}
+Une vidéo présentant les niveaux de vigilance est disponible sur la chaîne YouTube du Système de Météo France :
+
+[Voir la vidéo sur YouTube](https://www.youtube.com/watch?v=pT98qCs58h4)
 
 Le Système de Design de l’État prévoit que ces bandeaux soient affichés à partir du niveau de vigilance orange. Les niveaux de vigilance vert et jaune ne justifiant pas d’afficher un bandeau d’information sur les sites de l’État.
 
@@ -143,7 +143,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composant
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Conserver les icônes et couleurs de fond proposées par défaut, chacune étant liée à un cas d’usage spécifique.
 
@@ -151,7 +151,7 @@ Conserver les icônes et couleurs de fond proposées par défaut, chacune étant
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser les icônes et couleurs de fond, au risque de compromettre le message transmis et sa bonne compréhension par l’usager.
 

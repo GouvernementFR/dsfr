@@ -44,7 +44,7 @@ Le curseur n’a pas vocation à communiquer un état d’avancement quelconque.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Proposer une fourchette de valeurs exclusivement en nombre.
 
@@ -52,7 +52,7 @@ Proposer une fourchette de valeurs exclusivement en nombre.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas proposer des valeurs littérales et approximatives.
 
@@ -67,7 +67,7 @@ Ne pas proposer des valeurs littérales et approximatives.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Utiliser des cases à cocher ou des boutons radios, en cas d’échelle de valeur trop petite.
 
@@ -75,7 +75,7 @@ Utiliser des cases à cocher ou des boutons radios, en cas d’échelle de valeu
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas proposer une échelle de valeur non-adaptée, ici trop petite.
 
@@ -87,7 +87,7 @@ Ne pas proposer une échelle de valeur non-adaptée, ici trop petite.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Proposer des échelles de valeur adaptées, ni trop petites ni trop larges.
 
@@ -95,7 +95,7 @@ Proposer des échelles de valeur adaptées, ni trop petites ni trop larges.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas proposer une échelle de valeur non-adaptée, ici trop grande.
 
@@ -109,7 +109,7 @@ Ne pas proposer une échelle de valeur non-adaptée, ici trop grande.
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-4.png)
+![](./_asset/use/do-4.png)
 
 Utiliser un champ de saisie est certainement un meilleur choix lorsque l’échelle de valeur est large et l’espace limité.
 

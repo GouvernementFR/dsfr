@@ -42,7 +42,7 @@ Utiliser la modale pour hiérarchiser l’information au sein d’une page ou af
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Proposer uniquement des interactions simples et limités au sein de la modale.
 
@@ -50,7 +50,7 @@ Proposer uniquement des interactions simples et limités au sein de la modale.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas insérer de composants complexes, inadaptés à l’usage de la modale.
 

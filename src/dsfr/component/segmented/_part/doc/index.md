@@ -41,7 +41,7 @@ Utiliser le contrôle segmenté pour proposer différents types d’affichage d�
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Sélectionner une valeur par défaut lorsque vous proposez le contrôle segmenté.
 
@@ -49,7 +49,7 @@ Sélectionner une valeur par défaut lorsque vous proposez le contrôle segment�
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas proposer le contrôle segmenté sans valeur par défaut. Il faut obligatoirement une vue pré-sélectionnée pour l’usager.
 
@@ -59,7 +59,7 @@ Ne pas proposer le contrôle segmenté sans valeur par défaut. Il faut obligato
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Conserver le libellé pour chaque segment. L’action réalisée par l’usager doit être explicite.
 
@@ -67,7 +67,7 @@ Conserver le libellé pour chaque segment. L’action réalisée par l’usager 
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas proposer de segments sans libellé, avec icône seule.
 
@@ -77,7 +77,7 @@ Ne pas proposer de segments sans libellé, avec icône seule.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Harmoniser les segments en utilisant le même format pour tous.
 
@@ -85,7 +85,7 @@ Harmoniser les segments en utilisant le même format pour tous.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas mélanger des segments de formats différents.
 

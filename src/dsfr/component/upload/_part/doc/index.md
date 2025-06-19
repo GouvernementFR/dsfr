@@ -37,7 +37,7 @@ Proposer l’ajout de fichier uniquement si l’envoi d’un ou plusieurs fichie
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Cas d’usage au sein d’un formulaire.
 
@@ -52,7 +52,7 @@ Cas d’usage au sein d’un formulaire.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Traduire précisément l’erreur pour qu’elle soit clairement identifiable.
 
@@ -66,7 +66,7 @@ Traduire précisément l’erreur pour qu’elle soit clairement identifiable.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Utiliser l’ajout multiple de fichiers si les fichiers à sélectionner sont de mêmes natures et/ou respectent les mêmes contraintes.
 
@@ -80,7 +80,7 @@ Utiliser l’ajout multiple de fichiers si les fichiers à sélectionner sont d
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-4.png)
+![](./_asset/use/do-4.png)
 
 Préférer plusieurs champs d’ajout de fichier si les fichiers à sélectionner sont de différentes natures et/ou ont des contraintes spécifiques.
 
@@ -88,7 +88,7 @@ Préférer plusieurs champs d’ajout de fichier si les fichiers à sélectionne
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas proposer plusieurs champs d’ajout de fichier si les fichiers à sélectionner sont de mêmes natures et/ou respectent les mêmes contraintes.
 

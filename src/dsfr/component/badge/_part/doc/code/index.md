@@ -35,12 +35,27 @@ Le composant **Badge** est un élément visuel destiné à fournir des informati
 Sa structure est la suivante :
 
 - Le Badge est un élément HTML `<p>` avec la classe `fr-badge`.
-- Son contenu est textuel et doit être succinct (exemple : "Label badge").
+- Son contenu est textuel et doit être succinct (exemple : "Libellé badge").
 
 **Exemple de structure HTML**
 
 ```HTML
-<p class="fr-badge">Label badge</p>
+<p class="fr-badge">Libellé badge</p>
+```
+
+#### Groupe de badges
+
+Lorsque plusieurs badges sont utilisés ensemble, ils doivent être regroupés dans un conteneur, de classe `fr-badges-group`, afin de maintenir une cohérence visuelle et fonctionnelle.
+
+```HTML
+<ul class="fr-badges-group">
+  <li>
+      <p class="fr-badge">Badge 1</p>
+  </li>
+  <li>
+      <p class="fr-badge">Badge 2</p>
+  </li>
+</ul>
 ```
 
 ---
@@ -76,7 +91,7 @@ Les badges systèmes peuvent avoir des styles définis pour différents status. 
 - `fr-badge--success` : Indique un succès.
 - `fr-badge--new` : Indique une nouveauté
 
-Les badges système sont liés à une icône, celle-ci n'est pas modifiable mais peut être retirée, pour cela utilisez la classe : `fr-badge--no-icon`
+Les badges système sont liés à une icône, celle-ci n'est pas modifiable mais peut être retirée. Pour cela utilisez la classe : `fr-badge--no-icon`
 
 **Exemples de badges systèmes**
 

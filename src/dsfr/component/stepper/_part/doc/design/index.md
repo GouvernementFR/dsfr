@@ -63,7 +63,7 @@ L’indicateur d’étapes n’est pas personnalisable.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Conserver la barre de progression en l’état.
 
@@ -71,7 +71,7 @@ Conserver la barre de progression en l’état.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur ou le design de la barre de progression.
 

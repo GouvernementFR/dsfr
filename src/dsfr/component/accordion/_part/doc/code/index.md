@@ -263,6 +263,19 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
+##### accordion
+
+:::fr-table[isEnabled]{valign=top scroll=false}
+
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
+
+:::
+
 ##### collapseButton
 
 :::fr-table[focus]{valign=top scroll=false}

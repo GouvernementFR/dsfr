@@ -61,13 +61,13 @@ L’ajout de fichier est disponible dans une seule taille. Sa largeur n’est pa
 
 L'état d’erreur est signalé par un changement de couleur (cf. couleurs système : le rouge est la couleur de l’état erreur) et l’affichage d’un message d’erreur en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=upload--multiple}
+::dsfr-doc-storybook{storyId=upload--error}
 
 **Etat désactivé**
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
-::dsfr-doc-storybook{storyId=upload--error}
+::dsfr-doc-storybook{storyId=upload--disabled}
 
 > [!NOTE]
 > **N’utiliser cet état que très ponctuellement**, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
@@ -80,7 +80,7 @@ L’ajout de fichier n’est pas personnalisable.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/use/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur du bouton par défaut.
 
@@ -88,7 +88,7 @@ Ne pas personnaliser la couleur du bouton par défaut.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/use/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser la couleur des textes d’accompagnement.
 

@@ -8,6 +8,7 @@ keywords: médias, image, vidéo, responsive, accessibilité, iframe, alt, ratio
 cover: ../_asset/media/cover/cover.png
 excerpt: Utilisez les classes appropriées pour intégrer des images et vidéos dans vos pages, avec les bonnes pratiques d’accessibilité.
 summary: Découvrez comment intégrer correctement des médias (images et vidéos) dans le respect des standards du DSFR et des exigences RGAA - ratios, alternatives textuelles, vidéos responsives.
+order: 7
 ---
 
 

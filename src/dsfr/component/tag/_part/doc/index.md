@@ -48,7 +48,7 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Utiliser des tags supprimables associés à une liste déroulante dès lors qu’il y a plus de 6 options possibles.
 
@@ -56,7 +56,7 @@ Utiliser des tags supprimables associés à une liste déroulante dès lors qu�
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas utiliser plus de 6 tags sélectionnables pour un même filtre.
 
@@ -68,7 +68,7 @@ Ne pas utiliser plus de 6 tags sélectionnables pour un même filtre.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas utiliser un tag pour mettre en forme du contenu.
 
@@ -85,7 +85,7 @@ Ne pas utiliser un tag pour mettre en forme du contenu.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Penser des libellés pertinents, qui vont à l’essentiel.
 
@@ -93,7 +93,7 @@ Penser des libellés pertinents, qui vont à l’essentiel.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas proposer des libellés longs et complexes.
 

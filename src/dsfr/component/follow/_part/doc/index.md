@@ -37,7 +37,7 @@ Proposer la lettre d’information et réseaux sociaux pour permettre à l’usa
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Mise en situation juste au dessus du pied de page.
 

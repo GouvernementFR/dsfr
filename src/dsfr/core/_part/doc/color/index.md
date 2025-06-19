@@ -7,6 +7,7 @@ keywords: couleurs, design tokens, thème clair, thème sombre, DSFR, accessibil
 cover: ../_asset/color/cover/cover.png
 excerpt: Référentiel des couleurs utilisées dans le DSFR via des tokens de décision adaptés aux différents contextes graphiques.
 summary: Cette page présente la logique d’utilisation des couleurs dans le Design Système de l’État. Elle explique la distinction entre tokens de couleur “option” et “décision”, les conventions de nommage et l’application dans les composants selon leur état ou fonction. Un tableau répertorie les couleurs de fond, de texte et d’illustration avec correspondance entre les thèmes clair et sombre. Elle aborde aussi les possibilités d’accentuation pour certains composants selon des règles précises.
+order: 3
 ---
 
 # Couleurs - Utilisation dans le DSFR

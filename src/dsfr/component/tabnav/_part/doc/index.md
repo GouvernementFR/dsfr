@@ -46,7 +46,7 @@ Le [système d’onglets](../../../tab/_part/doc/index.md) n’est pas une navig
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Proposer la navigation tertiaire en complément d’une navigation secondaire telle que le menu latéral.
 
@@ -54,7 +54,7 @@ Proposer la navigation tertiaire en complément d’une navigation secondaire te
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas utiliser la navigation tertiaire en l’absence d’une navigation secondaire.
 

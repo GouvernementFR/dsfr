@@ -80,7 +80,7 @@ Toutefois, certains éléments sont optionnels et les icônes peuvent être chan
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser uniquement la couleur de fond par défaut des onglets.
 
@@ -88,7 +88,7 @@ Utiliser uniquement la couleur de fond par défaut des onglets.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur de fond des onglets.
 
@@ -100,7 +100,7 @@ Ne pas personnaliser la couleur de fond des onglets.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Utiliser uniquement la taille de typographie prévue pour le titre des onglets.
 
@@ -108,7 +108,7 @@ Utiliser uniquement la taille de typographie prévue pour le titre des onglets.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas augmenter la taille de typographie du titre des onglets.
 

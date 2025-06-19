@@ -86,7 +86,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composant
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Considérer que chaque élément du pied de page a une place définie.
 
@@ -98,7 +98,7 @@ Considérer que chaque élément du pied de page a une place définie.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas modifier le positionnement des éléments du pied de page.
 
@@ -110,7 +110,7 @@ Ne pas modifier le positionnement des éléments du pied de page.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas modifier les liens obligatoires de l’écosystème de l’Etat.
 

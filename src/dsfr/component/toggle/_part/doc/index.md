@@ -23,7 +23,7 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 :::
 
-::dsfr-doc-storybook{storyId=toggle—toggle}
+::dsfr-doc-storybook{storyId=toggle--toggle}
 
 ### Quand utiliser ce composant ?
 
@@ -39,7 +39,7 @@ Privilégier l’usage des interrupteurs pour paramétrer des fonctionnalités t
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Utiliser l’interrupteur en groupe pour constituer une liste d’actions de même nature.
 
@@ -47,7 +47,7 @@ Utiliser l’interrupteur en groupe pour constituer une liste d’actions de m�
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas regrouper des interrupteurs qui n’ont rien à voir.
 
@@ -62,7 +62,7 @@ Ne pas regrouper des interrupteurs qui n’ont rien à voir.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Respecter un format unique pour tous les interrupteurs d’un même groupe.
 
@@ -70,7 +70,7 @@ Respecter un format unique pour tous les interrupteurs d’un même groupe.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas proposer des formats différents entre les interrupteurs d’un même groupe.
 
@@ -88,7 +88,7 @@ Ne pas proposer des formats différents entre les interrupteurs d’un même gro
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Accompagner le libellé d’une description lorsqu’il ne permet pas, à lui seul, de comprendre l’action requise par l’usager.
 
@@ -102,7 +102,7 @@ Accompagner le libellé d’une description lorsqu’il ne permet pas, à lui s
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/edit/do-2.png)
+![](./_asset/edit/do-2.png)
 
 Ajouter un titre au composant pour clarifier le cadre dans lequel il est utilisé.
 

@@ -64,7 +64,7 @@ Les éléments fond et bordure de la mise en avant sont personnalisables et peuv
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Personnaliser la mise en avant avec l’ensemble des couleurs illustratives d’indice $main pour la bordure et $950 pour le fond.
 
@@ -72,7 +72,7 @@ Personnaliser la mise en avant avec l’ensemble des couleurs illustratives d’
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas utiliser une couleur illustrative ou des indices autre que ceux autorisés.
 

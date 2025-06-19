@@ -31,7 +31,7 @@ Un texte de description est présent dans le conteneur, indiquant les nom, prén
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de l'entête connectée](../_asset/anatomy/anatomy-1.png)
 

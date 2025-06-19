@@ -42,7 +42,7 @@ Le [lien](../../../link/_part/doc/index.md) est utilisé pour naviguer à l’in
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Aligner un bouton primaire avec un bouton secondaire ou un lien.
 
@@ -50,7 +50,7 @@ Aligner un bouton primaire avec un bouton secondaire ou un lien.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas utiliser deux boutons primaires côte à côte.
 
@@ -65,7 +65,7 @@ Ne pas utiliser deux boutons primaires côte à côte.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas indiquer une hiérarchie entre 2 boutons tertiaires via la présence ou non de contour.
 
@@ -84,7 +84,7 @@ Ne pas indiquer une hiérarchie entre 2 boutons tertiaires via la présence ou n
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Rédiger un texte clair, explicite et prévisible. L’usager doit savoir ce qui va se passer.
 
@@ -92,7 +92,7 @@ Rédiger un texte clair, explicite et prévisible. L’usager doit savoir ce qui
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas tromper l’usager. Fournir le contexte que l’usager sache quelle action va être réalisée.
 
@@ -104,7 +104,7 @@ Ne pas tromper l’usager. Fournir le contexte que l’usager sache quelle actio
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-2.png)
+![](./_asset/edit/dont-2.png)
 
 Ne pas rédiger des libellés trop longs pour éviter le passage du bouton sur 2 lignes.
 
@@ -118,7 +118,7 @@ Ne pas rédiger des libellés trop longs pour éviter le passage du bouton sur 2
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-2.png)
+![](./_asset/edit/do-2.png)
 
 Se concentrer sur l’action principale, en restant concis et clair.
 
@@ -126,7 +126,7 @@ Se concentrer sur l’action principale, en restant concis et clair.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-3.png)
+![](./_asset/edit/dont-3.png)
 
 Ne pas mentionner le composant bouton, ni sa localisation.
 
@@ -140,7 +140,7 @@ Ne pas mentionner le composant bouton, ni sa localisation.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-3.png)
+![](./_asset/edit/do-3.png)
 
 Commencer les textes des boutons avec un verbe d’action à l’infinitif.
 
@@ -148,7 +148,7 @@ Commencer les textes des boutons avec un verbe d’action à l’infinitif.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-4.png)
+![](./_asset/edit/dont-4.png)
 
 Ne pas utiliser  “Je” ou ne pas conjuguer le verbe.
 
@@ -162,7 +162,7 @@ Ne pas utiliser  “Je” ou ne pas conjuguer le verbe.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-4.png)
+![](./_asset/edit/do-4.png)
 
 Mettre des majuscules en début de phrase.
 
@@ -170,7 +170,7 @@ Mettre des majuscules en début de phrase.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-5.png)
+![](./_asset/edit/dont-5.png)
 
 Ne pas rédiger les libellés de vos boutons en lettres capitales.
 
@@ -184,7 +184,7 @@ Ne pas rédiger les libellés de vos boutons en lettres capitales.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-5.png)
+![](./_asset/edit/do-5.png)
 
 Accompagner vos boutons d’instructions pour garantir la bonne compréhension de l’usager, lorsque nécessaire.
 
@@ -192,7 +192,7 @@ Accompagner vos boutons d’instructions pour garantir la bonne compréhension d
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-6.png)
+![](./_asset/edit/dont-6.png)
 
 Ne pas créer de redondances entre instructions et boutons. Ces éléments sont complémentaires.
 

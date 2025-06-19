@@ -7,6 +7,7 @@ keywords: typographie, marianne, spectral, police, styles de texte, titres, corp
 cover: ../_asset/typography/cover/cover.png
 excerpt: Présentation des typographies officielles de l’État et des styles de texte proposés dans le DSFR pour garantir lisibilité et cohérence.
 summary: Le DSFR repose sur les polices Marianne et Spectral pour assurer la cohérence des interfaces de l’État. Cette page décrit les usages typographiques côté design et développement, les hiérarchies de titres et les styles de texte selon les contextes. Elle précise également les classes disponibles, les tailles en rem, et les bonnes pratiques de hiérarchisation et de lisibilité.
+order: 4
 ---
 
 # Typographie

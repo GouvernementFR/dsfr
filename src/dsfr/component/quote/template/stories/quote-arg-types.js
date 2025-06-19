@@ -120,7 +120,7 @@ const quoteArgs = {
   hasAuthor: true,
   author: 'Auteur',
   hasImage: true,
-  src: 'https://main--ds-gouv.netlify.app/example/img/placeholder.1x1.png',
+  src: 'img/placeholder.1x1.png',
   alt: '',
   hasDetails: true,
   sources: ['<cite>Ouvrage</cite>', 'Détail 1', 'Détail 2', 'Détail 3', '<a target="_blank" rel="noopener external" title="[À MODIFIER - Intitulé] - nouvelle fenêtre" href="[À MODIFIER | Lien vers la sources ou des infos complémentaires]">Détail 4</a>'],

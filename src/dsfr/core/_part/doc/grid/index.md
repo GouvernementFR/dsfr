@@ -7,6 +7,7 @@ keywords: grille, responsive, DSFR, points de rupture, breakpoints, layout, gout
 cover: ../_asset/grid/cover/cover.png
 excerpt: Tout ce qu’il faut savoir sur la grille du DSFR, breakpoints, colonnes, gouttières, marges, alignements… pour une mise en page homogène et responsive à travers tous les services numériques de l’État.
 summary: Cette page détaille le fonctionnement de la grille du Design Système de l’État (DSFR), ses points de rupture, les valeurs à utiliser pour le design et le développement, et les classes CSS associées. Elle précise comment structurer les interfaces selon les tailles d’écran, ajuster les alignements, ajouter des gouttières ou des marges, et utiliser des décalages. Ces règles garantissent des interfaces cohérentes, accessibles et adaptables sur tous les supports.
+order: 6
 ---
 
 # Grille et points de rupture
