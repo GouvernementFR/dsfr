@@ -126,7 +126,7 @@ Par ailleurs, certains éléments sont optionnels - voir [la structure du compo
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Proposer une tuile avec un fond par défaut.
 
@@ -134,7 +134,7 @@ Proposer une tuile avec un fond par défaut.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser le fond de la tuile avec une autre couleur illustrative.
 
@@ -142,7 +142,7 @@ Ne pas personnaliser le fond de la tuile avec une autre couleur illustrative.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Choisir la couleur secondaire du pictogramme parmi celles disponibles dans les couleurs illustratives.
 
@@ -150,7 +150,7 @@ Choisir la couleur secondaire du pictogramme parmi celles disponibles dans les c
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser la couleur primaire du pictogramme.
 
@@ -158,14 +158,14 @@ Ne pas personnaliser la couleur primaire du pictogramme.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-3.png)
+![](../_asset/custom/do-3.png)
 
 S’affranchir du contour de la tuile.
 
 :::
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
-![À ne pas faire](../_asset/custom/dont-3.png)
+![](../_asset/custom/dont-3.png)
 
 Ne pas supprimer ou personnaliser la couleur de la bordure qui traduit le caractère cliquable ou non cliquable de la tuile.
 

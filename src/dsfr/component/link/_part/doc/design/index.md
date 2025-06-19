@@ -83,7 +83,7 @@ Le lien simple se décline en différentes variations :
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/variation/do-1.png)
+![](../_asset/variation/do-1.png)
 
 Précéder le nom du document de la mention “Télécharger”.
 
@@ -99,7 +99,7 @@ Précéder le nom du document de la mention “Télécharger”.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/variation/do-2.png)
+![](../_asset/variation/do-2.png)
 
 Préciser la langue du document si elle est différente de la langue de la page courante.
 
@@ -118,7 +118,7 @@ Préciser la langue du document si elle est différente de la langue de la page 
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/variation/do-3.png)
+![](../_asset/variation/do-3.png)
 
 Positionner le retour en haut de page avant le maillage.
 
@@ -126,7 +126,7 @@ Positionner le retour en haut de page avant le maillage.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/variation/dont-1.png)
+![](../_asset/variation/dont-1.png)
 
 Ne pas positionner le retour en haut de page après le maillage.
 
@@ -140,7 +140,7 @@ Ne pas positionner le retour en haut de page après le maillage.
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-4.png)
+![](../_asset/variation/do-4.png)
 
 Choisir l’un des trois emplacements ci-dessus pour le retour en haut de page. Il doit être harmoniser à travers l’ensemble des pages du site.
 
@@ -207,7 +207,7 @@ Toutefois, certains éléments sont optionnels et les icônes peuvent être chan
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas changer la couleur du lien.
 
@@ -215,7 +215,7 @@ Ne pas changer la couleur du lien.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas supprimer le soulignement du lien.
 

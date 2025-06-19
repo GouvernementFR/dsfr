@@ -72,7 +72,7 @@ N’hésitez pas à [contacter l’équipe DSFR](path:/help) si vous avez besoin
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser les icônes des réseaux sociaux.
 

@@ -80,7 +80,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composan
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Garder un fond transparent pour le sélecteur de langues.
 
@@ -88,7 +88,7 @@ Garder un fond transparent pour le sélecteur de langues.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas appliquer de fond au sélecteur de langues.
 
@@ -96,7 +96,7 @@ Ne pas appliquer de fond au sélecteur de langues.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Personnaliser le sélecteur de langues en y ajoutant une bordure.
 
@@ -104,7 +104,7 @@ Personnaliser le sélecteur de langues en y ajoutant une bordure.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas proposer une autre variation de bouton pour le sélecteur de langues.
 

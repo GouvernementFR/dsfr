@@ -39,7 +39,7 @@ Les alertes s’affichent de manière contextuelle dans une page ou un formulai
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Adapter l’alerte à la nature de l’information relayée.
 
@@ -51,7 +51,7 @@ Adapter l’alerte à la nature de l’information relayée.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas proposer une variation de l’alerte ne correspondant pas à la nature de l’information relayée.
 
@@ -65,7 +65,7 @@ Ne pas proposer une variation de l’alerte ne correspondant pas à la nature de
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Placer l’alerte de succès en haut de page suite à la soumission d’un formulaire, par exemple.
 
@@ -73,7 +73,7 @@ Placer l’alerte de succès en haut de page suite à la soumission d’un formu
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas placer l’alerte de succès en bas de page suite à la soumission d’un formulaire.
 
@@ -87,7 +87,7 @@ Ne pas placer l’alerte de succès en bas de page suite à la soumission d’un
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Préciser à l’usager l’action attendue suite à l’apparition de l’alerte.
 
@@ -95,7 +95,7 @@ Préciser à l’usager l’action attendue suite à l’apparition de l’alert
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas laisser l’usager supposer du problème rencontré. La marche à suivre doit être claire.
 
@@ -113,7 +113,7 @@ Ne pas laisser l’usager supposer du problème rencontré. La marche à suivre 
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Employer un ton courtois, l’objectif étant d’accompagner l’usager au sein de son parcours.
 
@@ -121,7 +121,7 @@ Employer un ton courtois, l’objectif étant d’accompagner l’usager au sein
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas employer un ton laissant suggérer que l’on blâme l’usager pour son erreur.
 
@@ -135,7 +135,7 @@ Ne pas employer un ton laissant suggérer que l’on blâme l’usager pour son 
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-2.png)
+![](./_asset/edit/do-2.png)
 
 S’affranchir de tout terme technique pour permettre la compréhension par un plus grand nombre.
 
@@ -143,7 +143,7 @@ S’affranchir de tout terme technique pour permettre la compréhension par un p
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-2.png)
+![](./_asset/edit/dont-2.png)
 
 Ne pas inclure de termes techniques à une alerte, au risque d’altérer la bonne compréhension des usagers.
 
@@ -157,7 +157,7 @@ Ne pas inclure de termes techniques à une alerte, au risque d’altérer la bon
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-3.png)
+![](./_asset/edit/do-3.png)
 
 Préciser la nature du message porté par l’alerte dans son titre.
 
@@ -165,7 +165,7 @@ Préciser la nature du message porté par l’alerte dans son titre.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-2.png)
+![](./_asset/edit/dont-2.png)
 
 Ne pas s’appuyer uniquement sur l’icône et la couleur de l’alerte pour restituer la nature du message.
 

@@ -45,7 +45,7 @@ Elle permet une identification rapide et facile par l’usager.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Intégrer une mise en exergue au sein d’un contenu en conservant l’alinéa prévu. L’objectif étant d’opérer une distinction.
 
@@ -53,7 +53,7 @@ Intégrer une mise en exergue au sein d’un contenu en conservant l’alinéa p
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas minimiser la mise en exergue au sein du contenu en alignant la bordure au corps du texte.
 

@@ -78,7 +78,7 @@ Les paramètres d’affichage ne sont pas personnalisables, à l’exception du 
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Personnaliser le texte de description des paramètres d’affichage.
 
@@ -86,7 +86,7 @@ Personnaliser le texte de description des paramètres d’affichage.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser les pictogrammes par défaut des boutons riches.
 

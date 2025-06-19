@@ -141,7 +141,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composant
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Conserver les icônes et couleurs de fond proposées par défaut, chacune étant liée à un cas d’usage spécifique.
 
@@ -149,7 +149,7 @@ Conserver les icônes et couleurs de fond proposées par défaut, chacune étant
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser les icônes et couleurs de fond, au risque de compromettre le message transmis et sa bonne compréhension par l’usager.
 

@@ -68,7 +68,7 @@ Elle peut utiliser l’ensemble des couleurs illustratives.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Personnaliser la bordure de la mise en exergue avec l’ensemble des couleurs illustratives d’indice $main.
 
@@ -76,7 +76,7 @@ Personnaliser la bordure de la mise en exergue avec l’ensemble des couleurs il
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas utiliser une couleur illustrative ou des indices autre que ceux autorisés.
 

@@ -43,7 +43,7 @@ La carte n’a pas d’usage imposé mais elle fait généralement partie d'une 
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Contraindre toutes les cartes d’une même ligne à la même hauteur.
 
@@ -55,7 +55,7 @@ Contraindre toutes les cartes d’une même ligne à la même hauteur.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas créer de disparité dans la hauteur des cartes d’une même ligne.
 
@@ -69,7 +69,7 @@ Ne pas créer de disparité dans la hauteur des cartes d’une même ligne.
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Conserver un contenu commun au sein des cartes qui forment un même ensemble.
 
@@ -81,7 +81,7 @@ Conserver un contenu commun au sein des cartes qui forment un même ensemble.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas proposer des contenus différents entre chacune des cartes d’un même ensemble.
 
@@ -95,7 +95,7 @@ Ne pas proposer des contenus différents entre chacune des cartes d’un même e
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Proposer un titre sans soulignement et une zone d’action pour signifier que le lien est étendu à toute la carte.
 
@@ -103,7 +103,7 @@ Proposer un titre sans soulignement et une zone d’action pour signifier que le
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas souligner le titre si le lien est étendu à toute la carte. Cela apporte de la confusion pour l’usager.
 
@@ -117,7 +117,7 @@ Ne pas souligner le titre si le lien est étendu à toute la carte. Cela apporte
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-4.png)
+![](./_asset/use/do-4.png)
 
 Proposer les liens et actions dans la zone d’action, prévue à cet effet.
 
@@ -125,7 +125,7 @@ Proposer les liens et actions dans la zone d’action, prévue à cet effet.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-4.png)
+![](./_asset/use/dont-4.png)
 
 Ne pas mettre de liens ou actions dans la zone de détail.
 

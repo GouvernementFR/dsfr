@@ -82,7 +82,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composan
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser uniquement une typographie noire.
 
@@ -90,7 +90,7 @@ Utiliser uniquement une typographie noire.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur des textes.
 

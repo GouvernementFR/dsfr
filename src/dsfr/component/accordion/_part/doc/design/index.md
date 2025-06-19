@@ -74,7 +74,7 @@ Les accordéons ne sont pas personnalisables.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser uniquement la couleur bleu pour les accordéons.
 
@@ -82,7 +82,7 @@ Utiliser uniquement la couleur bleu pour les accordéons.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur des accordéons.
 
@@ -94,7 +94,7 @@ Ne pas personnaliser la couleur des accordéons.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Utiliser uniquement la taille de typographie prévue pour l’en-tête des accordéons.
 
@@ -102,7 +102,7 @@ Utiliser uniquement la taille de typographie prévue pour l’en-tête des accor
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas augmenter la taille de typographie de l’en-tête des accordéons.
 

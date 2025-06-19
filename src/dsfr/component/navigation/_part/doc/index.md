@@ -44,7 +44,7 @@ La navigation principale est le système central de navigation au sein d’un si
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Proposer des liens directs et des menus déroulants au sein d’une même navigation selon le besoin identifié.
 
@@ -52,7 +52,7 @@ Proposer des liens directs et des menus déroulants au sein d’une même naviga
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas mélanger menus déroulants et mega menus pour ne pas apporter de la confusion à la navigation.
 

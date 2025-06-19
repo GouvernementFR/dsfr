@@ -79,7 +79,7 @@ Le bouton FranceConnect n’est pas personnalisable.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser le bouton en l’état.
 
@@ -87,7 +87,7 @@ Utiliser le bouton en l’état.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur du bouton.
 
@@ -100,7 +100,7 @@ Ne pas personnaliser la couleur du bouton.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser la typographie du bouton.
 
@@ -108,7 +108,7 @@ Ne pas personnaliser la typographie du bouton.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-3.png)
+![](../_asset/custom/dont-3.png)
 
 Ne pas modifier le libellé du bouton.
 

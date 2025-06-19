@@ -121,7 +121,7 @@ La personnalisation des tags doit se faire avec parcimonie et avec un objectif p
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Personnaliser uniquement la couleur des tags cliquables.
 
@@ -129,7 +129,7 @@ Personnaliser uniquement la couleur des tags cliquables.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas proposer les autres variations de tags en couleur.
 
@@ -137,7 +137,7 @@ Ne pas proposer les autres variations de tags en couleur.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Associer le tag cliquable à une couleur pour valoriser l’information transmise, ici le type de support.
 
@@ -145,7 +145,7 @@ Associer le tag cliquable à une couleur pour valoriser l’information transmis
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas dépasser une ou deux couleurs de tags par page.
 
@@ -153,7 +153,7 @@ Ne pas dépasser une ou deux couleurs de tags par page.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-3.png)
+![](../_asset/custom/do-3.png)
 
 Ajouter une icône au tag au besoin.
 
@@ -161,7 +161,7 @@ Ajouter une icône au tag au besoin.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-3.png)
+![](../_asset/custom/dont-3.png)
 
 Ne pas cumuler la croix du tag supprimable (icône par défaut) avec une seconde icône.
 

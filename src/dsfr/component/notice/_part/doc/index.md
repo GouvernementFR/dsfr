@@ -41,7 +41,7 @@ Utiliser le bandeau d’information importante pour permettre aux usagers d’ê
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Permettre à l’usager d’obtenir l’information principale à la seule lecture du bandeau d’information importante.
 
@@ -49,7 +49,7 @@ Permettre à l’usager d’obtenir l’information principale à la seule lectu
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas forcer l’usager à devoir consulter une source complémentaire pour comprendre l’information relayée.
 
@@ -59,7 +59,7 @@ Ne pas forcer l’usager à devoir consulter une source complémentaire pour com
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Utiliser les bandeaux d’information importante selon les cas d’usage définis.
 
@@ -67,7 +67,7 @@ Utiliser les bandeaux d’information importante selon les cas d’usage défini
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas utiliser un bandeau d’information importante dans un autre contexte que celui qui lui est strictement réservé.
 
@@ -77,7 +77,7 @@ Ne pas utiliser un bandeau d’information importante dans un autre contexte que
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Afficher un bandeau de vigilance météo sur un site ciblant un département ou une région particulière concerné par l’alerte.
 
@@ -85,7 +85,7 @@ Afficher un bandeau de vigilance météo sur un site ciblant un département ou 
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas généraliser un bandeau de vigilance météo à des sites en dehors de la zone géographique concernée par l’alerte.
 
@@ -103,7 +103,7 @@ Ne pas généraliser un bandeau de vigilance météo à des sites en dehors de l
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Préciser le phénomène météorologique en plus du niveau de vigilance dans le titre du bandeau.
 
@@ -111,7 +111,7 @@ Préciser le phénomène météorologique en plus du niveau de vigilance dans le
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas indiquer uniquement le niveau de vigilance au sein du bandeau d’information importante. Il ne se suffit pas à lui-même.
 
@@ -121,7 +121,7 @@ Ne pas indiquer uniquement le niveau de vigilance au sein du bandeau d’informa
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-2.png)
+![](./_asset/edit/do-2.png)
 
 Utiliser le texte d’accompagnement pour donner des précisions géographiques et temporelles liées au phénomène météorologique.
 
@@ -129,7 +129,7 @@ Utiliser le texte d’accompagnement pour donner des précisions géographiques 
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-2.png)
+![](./_asset/edit/dont-2.png)
 
 Ne pas se contenter de simplement alerter sur le phénomène météorologique attendu.
 

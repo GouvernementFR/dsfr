@@ -63,7 +63,7 @@ Le fil d’Ariane n’est pas personnalisable.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas changer la structure du fil d’Ariane.
 
@@ -71,7 +71,7 @@ Ne pas changer la structure du fil d’Ariane.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas changer la couleur du texte du fil d’Ariane.
 

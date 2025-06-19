@@ -37,7 +37,7 @@ Le partage est un groupe d’éléments d’interaction avec l’interface perme
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas ajouter le nom du réseau en libellé du bouton, en plus de l’icône.
 
@@ -51,7 +51,7 @@ Ne pas ajouter le nom du réseau en libellé du bouton, en plus de l’icône.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Positionner le partage en haut de page.
 
@@ -59,7 +59,7 @@ Positionner le partage en haut de page.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Positionner le partage en bas de page.
 :::

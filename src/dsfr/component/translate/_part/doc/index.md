@@ -41,7 +41,7 @@ Cependant, en vertu de [la loi n° 94-665 du 4 août 1994 relative à l'emploi 
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Proposer le sélecteur de langues en remplacement d’un des accès rapides parmi les trois disponibles.
 
@@ -49,7 +49,7 @@ Proposer le sélecteur de langues en remplacement d’un des accès rapides parm
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas ajouter un accès rapide en plus pour y intégrer le sélecteur de langues.
 
@@ -57,7 +57,7 @@ Ne pas ajouter un accès rapide en plus pour y intégrer le sélecteur de langue
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Placer systématiquement le sélecteur de langues sur l’emplacement le plus à droite des accès rapides.
 
@@ -65,7 +65,7 @@ Placer systématiquement le sélecteur de langues sur l’emplacement le plus à
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas proposer le sélecteur de langues sur un emplacement autre que celui le plus à droite des accès rapides.
 
@@ -83,7 +83,7 @@ Ne pas proposer le sélecteur de langues sur un emplacement autre que celui le p
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Indiquer chaque langue par son code ISO et son nom en toutes lettres, dans la langue cible.
 
@@ -91,6 +91,6 @@ Indiquer chaque langue par son code ISO et son nom en toutes lettres, dans la la
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas dissocier le nom indiqué de la langue cible.

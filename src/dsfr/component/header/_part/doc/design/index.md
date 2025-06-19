@@ -87,7 +87,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composan
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Considérer que chaque élément de l’en-tête à une place définie et conserver leur design en l’état, sans personnalisation.
 
@@ -99,7 +99,7 @@ Considérer que chaque élément de l’en-tête à une place définie et conser
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas modifier le positionnement des éléments de l’en-tête.
 
@@ -111,7 +111,7 @@ Ne pas modifier le positionnement des éléments de l’en-tête.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas modifier les tailles et types de typographie du nom du site et de la baseline.
 
@@ -123,7 +123,7 @@ Ne pas modifier les tailles et types de typographie du nom du site et de la base
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-3.png)
+![](../_asset/custom/dont-3.png)
 
 Ne pas personnaliser le type de bouton des accès rapides.
 
@@ -135,7 +135,7 @@ Ne pas personnaliser le type de bouton des accès rapides.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-4.png)
+![](../_asset/custom/dont-4.png)
 
 Ne pas proposer de contour aux boutons tertiaires, hormis s’il s’agit de celui positionner le plus à droite.
 

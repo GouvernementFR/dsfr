@@ -73,7 +73,7 @@ L’infobulle n'est pas personnalisable.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur de fond de l’infobulle.
 
@@ -81,7 +81,7 @@ Ne pas personnaliser la couleur de fond de l’infobulle.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser l’icône de l’infobulle.
 

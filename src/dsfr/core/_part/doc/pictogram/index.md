@@ -18,7 +18,7 @@ Porteur d’une signification, sa nature représentative même insinue qu’il �
 
 Il aide l’utilisateur à se repérer et à comprendre l’action, l’objet ou le message rapporté. La reconnaissance qu’offrent les pictogrammes permet aux utilisateurs de trouver l’information souhaitée sans perte de temps.
 
-![ ](../_asset/pictogram/exemple-pictogrammes.jpg)
+![](../_asset/pictogram/exemple-pictogrammes.jpg)
 
 ### Les grands principes
 
@@ -36,7 +36,7 @@ Un pictogrammes se doit d'être :
 
 La grille est le support de création des pictogrammes. Elle permet de les équilibrer dans leurs masses et leurs détails, qu’ils aient des formes rondes, carrées, triangulaires ou rectangulaires. Par défaut, le symbole fait 80 x 80 pixels, mais la taille peut s’adapter sur la base des multiples de 8.
 
-![ ](../_asset/pictogram/grille-construction.jpg)
+![](../_asset/pictogram/grille-construction.jpg)
 
 Sur un site, un pictogramme n’excède rarement 180 × 180 pixels en grande taille. Il doit également rester lisible en petite taille 40 × 40 pixels. Ils ont des formats dont la largeur est égale à la hauteur (ratio 1:1). Celle-ci est construite sur une base de 2 pixels pour un carré.
 
@@ -44,17 +44,17 @@ Sur un site, un pictogramme n’excède rarement 180 × 180 pixels en grande 
 
 Les pictogrammes s’appuie sur des formes de bases issues de la géométrie (carré, rectangle, triangle, cercle…) alignées sur la grille. L’aération présente dans les pictogrammes fait partie intégrante de leur identité. Elle permet d’apporter de la lisibilité dans des représentations complexes de sorte à les rendre égales à celles comportants moins de détails.
 
-![ ](../_asset/pictogram/formes-geometriques.jpg)
+![](../_asset/pictogram/formes-geometriques.jpg)
 
 L’espacement minimal à mettre en place est de 2 pixels, soit un carré. Dans la mesure du possible, il est recommandé de rester sur des multiples de 4 ou 8.
 
-![ ](../_asset/pictogram/espacement-pictogrammes.jpg)
+![](../_asset/pictogram/espacement-pictogrammes.jpg)
 
 #### ✏️ Le style
 
 Les pictogrammes du Système de Design de l'État est filaire et aérien. Ceux-ci sont dessinés sur une ligne de 2 pixels centrée.
 
-![ ](../_asset/pictogram/style-filaire.png)
+![](../_asset/pictogram/style-filaire.png)
 
 Aussi, l’utilisation de radius est restreint. Néanmoins la fin des lignes et les jonctions sont rondes. Les éléments de détails peuvent avoir une forme remplie avec une taille définie en multiples de 4px. D’un pictogrammes à l’autre, il est fortement recommandé de garantir un niveau de détails identiques.
 
@@ -91,9 +91,9 @@ Les pictogrammes s’utilisent :
 - dans les composants “Tuiles” et “Paramètre d’affichage”,
 - dans un environnement illustratif (ex. Modèles de pages d’erreurs, Carte…).
 
-![ ](../_asset/pictogram/usage-theme-clair-tuiles.jpg)
+![](../_asset/pictogram/usage-theme-clair-tuiles.jpg)
 
-![ ](../_asset/pictogram/usage-page-erreur-theme-sombre.jpg)
+![](../_asset/pictogram/usage-page-erreur-theme-sombre.jpg)
 
 ### La prise en main
 
@@ -243,7 +243,7 @@ En tant qu’utilisateur, vous pouvez contribuer à la création de la librairie
 
 - Conserver les traits de conception de sorte à ne pas vectoriser le pictogramme (par exemple sur Sketch, la fonctionnalité se nomme “Convert to Outlines”)
 
-![ ](../_asset/pictogram/specifications-export.jpg)
+![](../_asset/pictogram/specifications-export.jpg)
 
 - Utiliser les tokens de décisions adaptés issus du Système de Design de l'État (`$artwork-major-blue-france`, `$artwork-minor-red-marianne` et `$artwork-decorative-blue-france`)
 

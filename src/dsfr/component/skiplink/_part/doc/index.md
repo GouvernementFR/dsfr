@@ -40,7 +40,7 @@ Ils garantissent la navigation au clavier ou par un lecteur d’écran et aident
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Positionner les liens d’évitement au dessus du header.
 
@@ -48,7 +48,7 @@ Positionner les liens d’évitement au dessus du header.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas positionner les liens d’évitement ailleurs qu’au dessus du header.
 
@@ -61,7 +61,7 @@ Ne pas positionner les liens d’évitement ailleurs qu’au dessus du header.
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas proposer des liens d’évitement avec icônes.
 
@@ -72,7 +72,7 @@ Ne pas proposer des liens d’évitement avec icônes.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas proposer un nombre trop important de liens d’évitement.
 

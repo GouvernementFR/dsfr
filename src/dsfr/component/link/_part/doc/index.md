@@ -42,7 +42,7 @@ Le lien a vocation à faciliter la navigation vers d’autres contenus. Pour les
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Proposer un lien pour consulter plus d’actualités.
 
@@ -50,7 +50,7 @@ Proposer un lien pour consulter plus d’actualités.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas utiliser un bouton pour renvoyer vers davantage de contenus.
 

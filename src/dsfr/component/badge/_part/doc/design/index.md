@@ -86,7 +86,7 @@ Les badges systèmes ne sont pas personnalisables.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser l’icône et la couleur système correspondantes à l’information fournie.
 
@@ -94,7 +94,7 @@ Utiliser l’icône et la couleur système correspondantes à l’information fo
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas changer l’icône et la couleur d’un badge système.
 
@@ -117,7 +117,7 @@ La couleur des badges standard peut être personnalisée, parmi les couleurs ill
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Utiliser une couleur illustrative sur un badge standard (exemple : `$Pink-tuile`).
 
@@ -125,7 +125,7 @@ Utiliser une couleur illustrative sur un badge standard (exemple : `$Pink-tuile`
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas utiliser une icône dans un badge standard.
 
@@ -137,7 +137,7 @@ Ne pas utiliser une icône dans un badge standard.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-3.png)
+![](../_asset/custom/dont-3.png)
 
 Ne pas utiliser une couleur système pour un badge standard.
 

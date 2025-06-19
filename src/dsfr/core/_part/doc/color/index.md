@@ -17,7 +17,7 @@ La palette de couleurs du Système de Design de l'État n’est pas utilisée à
 > [!NOTE]
 > On distingue deux typologies de “design token” que nous utilisons pour les couleurs : option et décision. Les “options” sont les tokens de couleurs hors contexte, la palette brute à votre disposition. En pratique, les “décisions” recensent les usages contextuels de ces options dans le Système de Design (par exemple, sur un fond, une bordure, un texte).
 
-![ ](../_asset/color/Couleurs_model_483484ec62.png)
+![](../_asset/color/Couleurs_model_483484ec62.png)
 
 ## Convention de nommage des tokens
 
