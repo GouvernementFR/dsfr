@@ -30,7 +30,7 @@ L’accordéon est un élément d’interaction avec l’interface permettant à
 
 #### Structure du composant
 
-L'accordéon est composé de deux parties : son titre qui contient le bouton d'ouverture, et un bloc de contenu libre refermable, dit "collapse".
+Le composant **Accordéon** est composé de deux parties : son titre qui contient le bouton d'ouverture, et un bloc de contenu libre refermable, dit "collapse".
 Sa structure est la suivante :
 
 - Le conteneur de l'accordéon est une balise `<section>` avec la classe `fr-accordion`.
@@ -99,7 +99,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, peut aussi être i
 <link href="dist/component/accordion/accordion.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
+#### Variante de style
 
 Sur l'accordéon, aucune variation ni accentuation n'est possible.
 
@@ -109,9 +109,10 @@ Quand le JavaScript est activé, le bloc refermable (collapse) reçoit la classe
 
 ### JavaScript
 
+Pour fonctionner le composant accordéon nécessite l'utilisation de JavaScript.
+
 #### Installation du JavaScript
 
-Pour fonctionner le composant accordéon nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
@@ -151,6 +152,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```javascript
 const elem = document.getElementById('ID_COLLAPSE');
 dsfr(elem).collapse.disclose();
@@ -158,9 +160,34 @@ dsfr(elem).collapse.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
+##### accordion
+
+:::fr-table[node]{valign=top scroll=false}
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).accordion.node` |
+
+:::
+
+:::fr-table[isEnabled]{valign=top scroll=false}
+
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
+
+:::
+
 ##### accordionGroup
 
 :::fr-table[current]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne l'API du collapse ouvert. <br/>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
@@ -171,9 +198,10 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[hasFocus]{valign=top scroll=false}
+
 | | |
 |------|-----|
-| **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
+| **Description** | Renvoie `true` si le focus est sur un des éléments du groupe. |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).accordionsGroup.hasFocus` |
@@ -181,6 +209,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[index]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de l'accordéon courant. <br/>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
@@ -191,6 +220,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[isGrouped]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si les accordéons du groupe sont liés en eux ou non. <br/>_Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut._|
@@ -201,6 +231,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[length]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne le nombre d'accordéons dans le groupe. |
@@ -211,6 +242,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[members]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie un tableau d'objets correspondant aux collapses des accordéons du groupe. |
@@ -221,6 +253,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -230,29 +263,22 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-##### accordion
-
-:::fr-table[isEnabled]{valign=top scroll=false}
-
-| | |
-| **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
-
-:::
-
 ##### collapseButton
 
 :::fr-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici l'accordéon |
@@ -263,6 +289,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -275,6 +302,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ##### collapse
 
 :::fr-table[concea]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -286,6 +314,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[disclose]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -297,6 +326,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[isDisclosed]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
@@ -307,16 +337,18 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 
 :::
 
 :::fr-table[group]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -327,6 +359,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[buttons]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
@@ -337,17 +370,19 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici l'accordéon |
@@ -358,6 +393,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -368,6 +404,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -379,7 +416,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Sur l'accordéon et le groupe d'accordéons, les événements suivants sont disponibles :
 

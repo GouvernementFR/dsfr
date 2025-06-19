@@ -33,12 +33,12 @@ La liste déroulante est un élément d’interaction avec l’interface permett
 Le composant **Liste déroulante** permet à l'utilisateur de choisir une option parmi une liste déroulante.
 Sa structure est la suivante :
 
-- La liste déroulante doit être **contenu** dans un élément HTML `<div>` défini par la classe `fr-select-group`.
-- La **Liste déroulante** est un élément HTML `<select>` défini par la classe `fr-select`.
-- La liste déroulante doit être associée à un **libellé** `<label>` avec la classe `fr-label`.
-- Une **description additionnelle** de l'option - optionnelle - peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
+- La liste déroulante doit être contenue dans un élément HTML `<div>` défini par la classe `fr-select-group`.
+- La liste déroulante est un élément HTML `<select>` défini par la classe `fr-select`.
+- La liste déroulante doit être associée à un libellé `<label>` avec la classe `fr-label`.
+- Une description additionnelle de l'option - optionnelle - peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
 - Chaque option est un élément `<option>` contenu dans le `<select>`.
-- Un **message** d'erreur ou de succès peut être associé à la liste déroulante en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
+- Un message d'erreur ou de succès peut être associé à la liste déroulante en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
   - Son attribut `id` doit être associé à l'attribut `aria-describedby` de la liste déroulante.
   - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
 

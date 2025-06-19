@@ -20,17 +20,21 @@ title: Code des formulaires
 ### HTML
 
 Un **formulaire** permet de collecter des informations de l'utilisateur. Il est composé d'un ou plusieurs champs, et ces informations sont envoyées à un serveur au clic sur un bouton de soumission ou dynamiquement au changement de valeur d'un champ.
+
 Le DSFR propose des styles pour structurer des ensembles de champs de formulaire, la gestion des erreurs, des messages d'aide et des messages de succès.
+
 De la même manière que pour les champs de formulaire unitaires, des états d'erreur et succès ainsi que des messages d'erreur/succès/avertissement/information peuvent être ajoutés à un **ensemble d'éléments** de formulaire (fieldset).
 
 La structure d'un ensemble de champs de formulaire, dans un `<form>` est la suivante :
 
-- Un **ensemble de champs de formulaire** est défini par un élément `<fieldset>`.
+- Un ensemble de champs de formulaire est défini par un élément `<fieldset>`.
   - Celui-ci doit contenir une légende `<legend>`, obligatoire.
   - Chaque champ de formulaire est contenu dans un élément `<div>` défini par la classe `fr-fieldset__element`. C'est ces éléments qui permettront d'agencer les champs et de gérer les espacements. Ces éléments peuvent être placés en ligne avec la classe `fr-fieldset__element--inline`.
   - Comme pour chaque champ de formulaire, le groupe de champs, représenté par un fieldset, peut contenir un message d'erreur/information/avertissement/succès via un bloc `fr-messages-group`.
 
 **Exemple de structure de formulaire simple**
+
+:::fr-accordion[Déplier pour voir le code]{id=formulaire-structure-simple}
 
 ```html
 <form action="" method="post">
@@ -65,7 +69,11 @@ La structure d'un ensemble de champs de formulaire, dans un `<form>` est la suiv
 </form>
 ```
 
+:::
+
 **Exemple de structure de formulaire en erreur**
+
+:::fr-accordion[Déplier pour voir le code]{id=formulaire-erreur}
 
 ```html
 <form action="" method="post">
@@ -99,6 +107,8 @@ La structure d'un ensemble de champs de formulaire, dans un `<form>` est la suiv
     </button>
 </form>
 ```
+
+:::
 
 ---
 
@@ -201,8 +211,9 @@ Dans le cas d'un groupe de champs en état d'erreur ou de succès, un message d'
 
 ### JavaScript
 
-Le DSFR ne propose pas de JavaScript pour les formulaires. Cependant, il est possible d'utiliser des bibliothèques JavaScript tierces pour ajouter des fonctionnalités supplémentaires, comme la validation des champs, l'envoi dynamique des données, etc.
+Les formulaires **ne nécessitent pas l'utilisation de JavaScript** pour leur fonctionnement de base dans le DSFR.
 
+Cependant, il est possible d'utiliser des bibliothèques JavaScript tierces pour ajouter des fonctionnalités supplémentaires, comme la validation des champs, l'envoi dynamique des données, etc.<br>
 Il est recommandé d'utiliser des bibliothèques JavaScript qui respectent les principes d'accessibilité et de performance.
 
 ---

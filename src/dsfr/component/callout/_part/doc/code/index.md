@@ -30,7 +30,7 @@ La mise en avant est un élément éditorial permettant de mettre en forme du co
 
 #### Structure du composant
 
-Le composant Mise en avant permet de mettre en évidence des informations importantes. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
+Le composant **Mise en avant** permet de mettre en évidence des informations importantes. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
 1. Un conteneur principal sous la balise `<div>` :
     - Doit avoir la classe `fr-callout`.
@@ -73,17 +73,20 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 <link href="dist/component/callout/callout.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
+#### Variantes de style
 
 - **Ajout d'icône** : Le composant Mise en avant peut intégrer une icône, il suffit pour cela d'ajouter la classe `fr-icon-NOM-ICON` au même niveau que la classe `fr-callout`.
-- **Accentuation** : Le composant est accentuable, permettant le changement de la couleur de fond et de la bordure latérale. Pour cela, ajouter la classe `fr-callout-NOM-COULEUR` au même niveau que la classe `fr-callout`. ex:
-  ```HTML
-  <div class="fr-callout fr-callout--green-emeraude">
-  ```
+- **Accentuation** : Le composant est accentuable, permettant le changement de la couleur de fond et de la bordure latérale. Pour cela, ajouter la classe `fr-callout-NOM-COULEUR` au même niveau que la classe `fr-callout`.
+
+**Exemple de variante de style**
+
+```HTML
+<div class="fr-callout fr-callout--green-emeraude">
+```
 
 ### JavaScript
 
-Le composant **Mise en avant** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Mise en avant **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

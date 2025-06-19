@@ -33,18 +33,18 @@ Le curseur est un élément d’interaction avec l’interface permettant à l�
 Le composant **Curseur** permet à l'utilisateur de sélectionner une valeur dans une plage définie.
 Sa structure est la suivante :
 
-- Le **Conteneur global** du composant curseur doit être un élément HTML `<div>` défini par la classe `fr-range-group`.
-- Le **libellé** du curseur, obligatoire, doit être un élément HTML `<label>` avec la classe `fr-label`.
+- Le conteneur global du composant curseur doit être un élément HTML `<div>` défini par la classe `fr-range-group`.
+- Le libellé du curseur, obligatoire, doit être un élément HTML `<label>` avec la classe `fr-label`.
   - Son attribut `id` doit être associé à l'attribut `aria-labelledby` du curseur.
-- Une **description additionnelle** du curseur, optionnelle, peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
-- L'élément **Curseur** est contenu dans un élément HTML `<div>` défini par la classe `fr-range`.
-- La **Valeur courante affichée** du curseur est un élément HTML `<span>` défini par la classe `fr-range__output`.
-- Le **Curseur** est un élément HTML `<input>` de type `range` défini par la classe `fr-range__input`.
+- Une description additionnelle du curseur, optionnelle, peut être ajoutée dans le libellé, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
+- L'élément curseur est contenu dans un élément HTML `<div>` défini par la classe `fr-range`.
+- La valeur courante affichée du curseur est un élément HTML `<span>` défini par la classe `fr-range__output`.
+- Le curseur est un élément HTML `<input>` de type `range` défini par la classe `fr-range__input`.
   - La valeur par défaut du curseur est définie par l'attribut `value`.
   - Les valeurs minimales et maximale du curseur autorisées sont définies par les attribut `min` et `max` du curseur.
   - Le pas du curseur est défini par l'attribut `step`.
-- Les **Valeurs minimales et maximales** affichées, optionnelles, sont des éléments HTML `<span>` définis par les classes `fr-range__min` et `fr-range__max` et disposant d'un attribut `aria-hidden="true"`.
-- Un **message** d'erreur ou de succès peut être associé au curseur en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
+- Les valeurs minimales et maximales affichées, optionnelles, sont des éléments HTML `<span>` définis par les classes `fr-range__min` et `fr-range__max` et disposant d'un attribut `aria-hidden="true"`.
+- Un message d'erreur ou de succès peut être associé au curseur en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
   - Son attribut `id` doit être associé à l'attribut `aria-describedby` du curseur.
   - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
 
@@ -252,13 +252,16 @@ Pour fonctionner, le composant curseur nécessite l'utilisation de JavaScript.
 Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/range/range.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -270,6 +273,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 #### Instances
 
 Sur le curseur, les éléments suivants sont instanciés :
+
 - Le conteneur, via la classe : `fr-range`
 - Le ou les curseurs dans leur conteneur, via la classe : `fr-range` et les éléments `<input>` de type `<range>`
 - La valeur courante, via la classe : `fr-range__output`
@@ -284,6 +288,7 @@ Il est possible d'interagir avec les instances du composant en JavaScript via un
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_TAB');
 dsfr(elem).range.isEnabled;
@@ -294,90 +299,108 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ###### range
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du curseur est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).range.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).range.node` |
+
 :::
 
 ###### rangeInput
 
 :::fr-table[value]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne la valeur courante du curseur. |
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).rangeInput.value` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du curseur est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).rangeInput.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).rangeInput.node` |
+
 :::
 
 ###### rangeOutput
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du curseur est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).rangeOutput.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).rangeOutput.node` |
+
 :::
 
 ###### rangeLimit
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du curseur est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).rangeLimit.isEnabled = false` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).rangeLimit.node` |
+
 :::
 
 ---

@@ -30,20 +30,20 @@ La pagination est un système de navigation qui permet à l’usager de naviguer
 
 #### Structure du composant
 
-Le composant Pagination permet aux utilisateurs de naviguer entre les différentes pages d’une liste d'éléments.
+Le composant **Pagination** permet aux utilisateurs de naviguer entre les différentes pages d’une liste d'éléments.
 
 Sa structure comprend les éléments suivants :
 
-1. Un **conteneur principal** sous la balise `<nav>` :
+1. Un conteneur principal sous la balise `<nav>` :
     - Doit avoir l’attribut `role="navigation"` pour indiquer sa fonction.
     - Utilise l’attribut `aria-label` pour fournir une description contextuelle, par exemple `aria-label="pagination"`.
-2. Une **liste** `<ul>` avec la classe `fr-pagination__list`, contenant les éléments de pagination :
+2. Une liste `<ul>` avec la classe `fr-pagination__list`, contenant les éléments de pagination :
     - Chaque segment est un élément `<li>` :
       - Les segments avec des liens utilisent une balise `<a>` avec la classe `fr-pagination__link` et disposent d'un attribut `title` de façon à ce qu’ils indiquent explicitement leur fonction.
       - Le lien de la page actuelle utilise l'attribut `aria-current="page"` pour indiquer la page courante.
-      - Les liens vers la première page ou la dernière page sont definis par les classes `fr-pagination__link--first` et `fr-pagination__link--last`.
-      - Les liens vers la page précédente ou la page suivante sont definis par les classes `fr-pagination__link--prev` et `fr-pagination__link--next`, ils disposent d'un libellé caché par défaut qui peut être affiché avec l'utilisation de la classe `fr-pagination__link--label` ou uniquement à partir du breakpoint LG avec la classe `fr-pagination__link--lg-label`.
-      - L'utilisation des classes utilitaires `fr-hidden` et `fr-unhidden-lg` peut permettre de n'afficher qu'un nombre reduit de résultats en dessous du breakpoint LG dans un soucis de gain d'espace.
+      - Les liens vers la première page ou la dernière page sont définis par les classes `fr-pagination__link--first` et `fr-pagination__link--last`.
+      - Les liens vers la page précédente ou la page suivante sont définis par les classes `fr-pagination__link--prev` et `fr-pagination__link--next`, ils disposent d'un libellé caché par défaut qui peut être affiché avec l'utilisation de la classe `fr-pagination__link--label` ou uniquement à partir du breakpoint LG avec la classe `fr-pagination__link--lg-label`.
+      - L'utilisation des classes utilitaires `fr-hidden` et `fr-unhidden-lg` peut permettre de n'afficher qu'un nombre réduit de résultats en dessous du breakpoint LG dans un soucis de gain d'espace.
 
 **Exemple de structure HTML**
 
@@ -133,7 +133,7 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 
 ### JavaScript
 
-Le composant **Pagination** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Pagination **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

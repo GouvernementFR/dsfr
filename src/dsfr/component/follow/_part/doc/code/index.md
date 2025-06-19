@@ -108,7 +108,6 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
 :::fr-accordion[Déplier pour voir le code]{id=follow-bouton}
 
 ```HTML
-(...)
 <div class="fr-follow__newsletter">
     <div>
         <h2 class="fr-h5">Abonnez-vous à notre lettre d’information</h2>
@@ -120,7 +119,6 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
         </div>
     </div>
 </div>
-(...)
 ```
 
 :::
@@ -130,7 +128,6 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
 :::fr-accordion[Déplier pour voir le code]{id=follow-succes}
 
 ```HTML
-(...)
 <div class="fr-follow__newsletter">
     <div>
         <h2 class="fr-h5">Abonnez-vous à notre lettre d’information</h2>
@@ -142,7 +139,6 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
         </div>
     </div>
 </div>
-(...)
 ```
 
 :::
@@ -156,7 +152,7 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du composant Lettre d'information et Réseaux Sociaux doivent être importés. En fonction de l'utilisation du composant il faudra importer le CSS du composant **bouton**, du **champ de saisie**, de l'**alerte**, et des messages de **formulaire**.
+Pour fonctionner correctement, les styles CSS du core et du composant Lettre d'information et Réseaux Sociaux doivent être importés. En fonction de l'utilisation du composant il faudra importer le CSS du composant **bouton (button)**, du **champ de saisie (input)**, de l'**alerte (alert)**, et des messages de **formulaire (form)**.
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
 ```HTML
@@ -176,10 +172,6 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/follow/follow.legacy.min.css" rel="stylesheet">
 ```
-
-#### Variantes de style
-
-Aucune variante de style n'est disponible pour le composant Lettre d'information et Réseaux Sociaux.
 
 #### Icônes des réseaux sociaux
 
@@ -211,7 +203,8 @@ La liste des variantes de boutons réseaux-sociaux est définie dans le fichier 
 
 ### JavaScript
 
-Aucun JavaScript n'est nécessaire pour le composant Lettre d'information et Réseaux Sociaux.
+Le composant Lettre d'information et Réseaux Sociaux **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+
 La souscription à la Lettre d'information doit être gérée par le développeur.
 
 ---

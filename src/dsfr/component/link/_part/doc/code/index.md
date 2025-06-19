@@ -30,7 +30,7 @@ Le lien est un système de navigation secondaire qui permet à l’usager de se 
 
 #### Structure du composant
 
-Le composant Lien est un élément interactif permettant de naviguer vers une autre page ou section. Sa structure est la suivante :
+Le composant **Lien** est un élément interactif permettant de naviguer vers une autre page ou section. Sa structure est la suivante :
 
 - Le Lien est un élément HTML `<a>` défini par la classe `fr-link`.
 - Son contenu est textuel, il doit indiquer clairement sa destination.
@@ -129,6 +129,7 @@ L'import doit se faire avant le contenu de la page dans la partie `<head>`, et d
 <small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
+
 ```HTML
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/link/link.legacy.min.css" rel="stylesheet">
@@ -165,9 +166,10 @@ Le lien peut avoir différentes tailles qui auront un impact sur la taille du te
 Le Lien peut avoir une icône juxtaposé, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/_part/doc/icon/index.md)).
 
 Cette classe peut être associée à une **classe de positionnement** de l'icône :
+
 - Par défaut : Icône seule, le libellé est caché.
-- `fr-link--icon-left`: L'icône apparaît à gauche du libellé.
-- `fr-link--icon-right`: L'icône apparaît à droite du libellé.
+- `fr-link--icon-left` : L'icône apparaît à gauche du libellé.
+- `fr-link--icon-right` : L'icône apparaît à droite du libellé.
 
 Dans le cas d'un groupe de boutons, le positionnement de l'icône des boutons peut être généralisé au niveau du groupe avec les classes `fr-links-group--icon-left` ou `fr-links-group--icon-right`.
 
@@ -199,8 +201,8 @@ Sur le Lien désactivé, l'attribut `role="link"` et `aria-disabled` seront néc
 Le groupe de bouton vient avec de nombreuses variations, telles que :
 
 - **Taille des liens** : Des variations de taille sont accessibles au niveau du groupe avec les classes :
-  - `fr-links-group--sm`: Groupe de liens SM
-  - `fr-links-group--lg`: Groupe de liens LG
+  - `fr-links-group--sm` : Groupe de liens SM
+  - `fr-links-group--lg` : Groupe de liens LG
 - **Positionnement des icônes des liens** : Les variations de position de l'icône des liens sont accessibles au niveau du groupe avec les classes :
   - `fr-links-group--icon-left` : Icône des liens à gauche
   - `fr-links-group--icon-right` : Icône des liens à droite
@@ -226,7 +228,7 @@ Le groupe de bouton vient avec de nombreuses variations, telles que :
 
 ### JavaScript
 
-Le composant lien **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+Le composant Lien **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 Une fonctionnalité disponible dans le core, permet de remplir automatiquement le détail des **liens de téléchargement**.
 Pour instancier le javascript de remplissage automatique du détail sur le lien de téléchargement, ajouter l'attribut `data-fr-assess-file` sur le lien.
@@ -235,12 +237,14 @@ Si la page est en Anglais, l'attribut `data-fr-assess-file` doit prendre la vale
 
 Pour fonctionner le fichier à télécharger doit être sur le même cross-domain que le site.
 
-**Exemple**
+**Exemple des details du lien de téléchargement automatiques**
 
+```HTML
 <a data-fr-assess-file download="true" href="image.jpg" class="fr-link fr-link--download">
   Télécharger le document lorem ipsum
   <span class="fr-link__detail">CE TEXTE EST REMPlACÉ</span>
 </a>
+```
 
 #### Installation du Javascript
 
@@ -248,12 +252,15 @@ Pour fonctionner, le **remplissage automatique du détail des liens de télécha
 Cette fonctionnalité est disponible dans le core.
 
 Il est donc nécessaire d'importer les fichiers js du core à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>

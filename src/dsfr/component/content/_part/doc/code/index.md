@@ -30,18 +30,18 @@ Le composant **Contenu médias** permet d'intégrer des contenus multimédias te
 
 #### Structure du composant
 
-Le composant Contenu médias permet d'intégrer des images ou des vidéos de manière accessible et responsive. Sa structure est la suivante :
+Le composant **Contenu médias** permet d'intégrer des images ou des vidéos de manière accessible et responsive. Sa structure est la suivante :
 
 - Un élément `<figure>` de classe `fr-content-media` contient le média et ses informations associées.
   - Dans le cas d'une image :
     - Un élément `<div>` de classe `fr-content-media__img` contient l'image.
     - L'image est un élément `<img>` avec la classe `fr-responsive-img`, ou un `<svg>`.
-    - L’**alternative de l’image**, attribut `alt`, doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte.
+    - L’alternative de l’image, attribut `alt`, doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte.
   - Dans le cas d'une vidéo :
     - Un élément `<video>` avec l'attribut `controls`, ou une `<iframe>`, et la classe `fr-responsive-vid`.
-    - L'**alternative de la vidéo** doit être présente dans un paragraphe <p> au sein de la balise `<video>` ou au niveau de l'attribut `title` de l'`<iframe>`.
+    - L'alternative de la vidéo doit être présente dans un paragraphe `<p>` au sein de la balise `<video>` ou au niveau de l'attribut `title` de l'`<iframe>`.
   - Un élément `<figcaption>` de classe `fr-content-media__caption` contenant :
-    - La **description** et/ou la **source** du média.
+    - La description et/ou la source du média.
     - Un lien `<a class="fr-link">` vers la source du média.
 
 Les informations visuelles ou auditives doivent être accessibles pour les utilisateurs qui ne peuvent pas voir ou entendre le contenu multimédia. Pour cela, il est recommandé d'ajouter une **description** ou une **transcription** du contenu multimédia.
@@ -161,7 +161,7 @@ LG :
 
 #### Variantes de ratios
 
-Les classes utilitaires de ratios, disponibles dans le core, permettent de définir le ratio de l'image ou de la vidéo.
+Les [classes utilitaires de ratios](../../../../../core/_part/doc/media/index.md), disponibles dans le core, permettent de définir le ratio de l'image ou de la vidéo.
 
 Pour les images, les classes suivantes sont disponibles :
 
@@ -179,8 +179,6 @@ Pour les vidéos, les classes suivantes sont disponibles :
 - `fr-ratio-16x9` : par défaut, pour forcer le ratio 16:9
 - `fr-ratio-4x3` : ratio 4:3
 - `fr-ratio-1x1` : ratio 1:1
-
-Voir la section [Ratios dans les fondamentaux](../../../../../core/_part/doc/index.md) pour plus d'informations.
 
 ---
 

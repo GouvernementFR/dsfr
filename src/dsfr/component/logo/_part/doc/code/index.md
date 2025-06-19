@@ -53,9 +53,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/logo/logo.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
-
-##### Variantes de taille
+#### Variantes de taille
 
 Le composant Bloc marque (logo) est disponible en 3 tailles différentes via les classes suivantes :
 
@@ -79,7 +77,7 @@ Le composant Bloc marque (logo) est disponible en 3 tailles différentes via les
 
 ### JavaScript
 
-Le composant Bloc marque (logo) n'a pas de comportement JavaScript spécifique.
+Le composant Bloc marque **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 Un Javascript disponible dans le **core** permet de gérer le passage **en berne** des blocs marque lors des périodes de deuil national. Le fond bleu et rouge du bloc Marianne est alors remplacé par un fond noir.
 

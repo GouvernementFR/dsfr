@@ -30,10 +30,10 @@ La case à cocher est un élément d’interaction avec l’interface permettant
 
 #### Structure du composant
 
-Le composant Case à cocher, ci-après nommée **Checkbox**, est un élément interactif permettant de sélectionner une ou plusieurs options. Sa structure est la suivante :
+Le composant **Case à cocher**, ci-après nommée **Checkbox**, est un élément interactif permettant de sélectionner une ou plusieurs options. Sa structure est la suivante :
 
-- La Checkbox doit être **contenu** dans un élément HTML `<div>` défini par la classe `fr-checkbox-group`.
-- La **Checkbox** est un élément HTML `<input>` de type `checkbox` défini par la classe `fr-checkbox`.
+- La checkbox doit être **contenu** dans un élément HTML `<div>` défini par la classe `fr-checkbox-group`.
+- La checkbox est un élément HTML `<input>` de type `checkbox` défini par la classe `fr-checkbox`.
 - La checkbox doit être associée à un **label** `<label>` avec la classe `fr-label`.
 - Une **description additionnelle** de l'option - optionnelle - peut être ajoutée dans le label, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
 - Un **message** d'erreur ou de succès peut être associé à la checkbox en utilisant un élément `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`. Son attribut`id` doit être associé à l'attribut `aria-describedby` de la checkbox. Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
@@ -148,9 +148,9 @@ La checkbox est disponible en deux variantes de tailles :
 
 La checkbox est disponible en plusieurs variantes d'états :
 
-- La Checkbox avec **erreur** : définie par la classe `fr-checkbox-group--error`.
-- La Checkbox avec **succès** : définie par la classe `fr-checkbox-group--valid`.
-- La Checkbox **désactivée** : définie par l'attribut `disabled` sur l'élément `<input>`.
+- La checkbox avec **erreur** : définie par la classe `fr-checkbox-group--error`.
+- La checkbox avec **succès** : définie par la classe `fr-checkbox-group--valid`.
+- La checkbox **désactivée** : définie par l'attribut `disabled` sur l'élément `<input>`.
 
 Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis sur le groupe (le fieldset), et non sur chaque checkbox.
 
