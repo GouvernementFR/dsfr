@@ -8,8 +8,9 @@
     const sbRoot = document.querySelector('#storybook-root');
     const sbDocs = document.querySelector('#storybook-docs');
     const hasPadding = document.querySelector('.sb-main-padded');
+    const paddingValue = 32;
     const height = (sbRoot ? sbRoot.getBoundingClientRect().height : 0) +
-      (sbDocs ? sbDocs.getBoundingClientRect().height : 0) + (hasPadding ? 32 : 0);
+      (sbDocs ? sbDocs.getBoundingClientRect().height : 0) + (hasPadding ? paddingValue : 0);
       window.requestAnimationFrame(() => {
         changeHeight(height);
       });
@@ -19,7 +20,7 @@
       type: 'storybook-height-change',
       height: height,
       iframeId: document.documentElement.id
-    });
+    }, window.location.origin);
   }
 
   function addIdToBody() {
