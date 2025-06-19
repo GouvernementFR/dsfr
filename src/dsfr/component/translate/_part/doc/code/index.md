@@ -1,7 +1,9 @@
 ---
 boost: 0
-title: Code du sélecteur de langue
-shortTitle: Code du sélecteur de langue
+sitemap:
+  noindex: true
+title: Code du sélecteur de langues
+shortTitle: Code du sélecteur de langues
 description: Le sélecteur de langues permet à l’usager de choisir la langue d’affichage du site dans un environnement multilingue.
 shortDescription: Choisir la langue d’affichage du site.
 keywords: sélecteur de langues, multilingue, accessibilité, langue, interface, UX, design system, en-tête, code ISO, traduction
@@ -10,7 +12,7 @@ excerpt: Le sélecteur de langues est un composant essentiel dans les sites mult
 summary: Ce contenu présente les usages du sélecteur de langues dans un site disponible en plusieurs langues. Il précise son positionnement recommandé dans l’interface, généralement dans l’en-tête en tant qu’accès rapide, ainsi que les règles éditoriales à respecter pour nommer les langues avec clarté. Il rappelle également les recommandations juridiques liées à l’affichage du français. Ce guide est destiné aux concepteurs de sites publics ou multilingues qui souhaitent garantir une navigation fluide, cohérente et conforme aux bonnes pratiques.
 ---
 
-## Sélecteur de langue
+## Sélecteur de langues
 
 Le sélecteur de langues est un élément d’interaction avec l’interface permettant à l’usager de choisir la langue dans laquelle est affiché le contenu du site.
 
@@ -28,10 +30,10 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 
 #### Structure du composant
 
-Le composant Sélecteur de langue permet de choisir la langue de l'interface.
+Le composant **Sélecteur de langue** permet de choisir la langue de l'interface.
 Sa structure, reposant sur le modèle du composant **Navigation principale** est la suivante :
 
-- Le **Sélecteur de langue** est un élément HTML `<nav>` :
+- Le sélecteur de langue est un élément HTML `<nav>` :
   - Défini par les classes `fr-translate` et `fr-nav`.
   - Doit comporter l'attribut `role="navigation"`.
 - Il doit contenir un élément HTML `<div>` défini par la classe `fr-nav__item`, contenant :
@@ -113,16 +115,19 @@ Le sélecteur de langue peut être utilisé avec un bouton sans bordure avec l'u
 
 ### JavaScript
 
-Pour fonctionner le composant **Sélecteur de langue**, nécessite l'utilisation de JavaScript.
+Pour fonctionner le composant Sélecteur de langue nécessite l'utilisation de JavaScript.
 Cette fonctionnalité est disponible dans le core.
 
 Il est donc nécessaire d'importer les fichiers js du core à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -131,6 +136,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 #### Instances
 
 Sur le sélecteur de langue, les éléments suivants sont instanciés :
+
 - La navigation, via la classe : `fr-nav`
 - L'element de navigation, via la classe : `fr-nav__item`
 - Le bouton d'ouverture, via la classe `fr-translate__btn`
@@ -145,6 +151,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_COLLAPSE');
 dsfr(elem).collapse.disclose();
@@ -155,85 +162,102 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ###### navigation
 
 :::fr-table[current]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne l'API du collapse ouvert. <br/>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).navigation.current` |
+
 :::
 
 :::fr-table[index]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de l'accordéon courant. <br/>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
 | **Type** | property |
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).navigation.index` <br/> `dsfr(elem).navigation.index = -1` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du sélecteur de langue est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigation.isEnabled = false` |
+
 :::
 
 :::fr-table[hasFocus]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigation.hasFocus` |
+
 :::
 
 ###### navigationItem
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la navigation est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigationItem.isEnabled = false` |
+
 :::
 
 ###### collapseButton
 
 :::fr-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici le sélecteur de langue |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapseButton.node` |
+
 :::
 
 ###### collapse
 
 :::fr-table[conceal]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -241,9 +265,11 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
+
 :::
 
 :::fr-table[disclose]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -251,79 +277,96 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
+
 :::
 
 :::fr-table[isDisclosed]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du sélecteur de langue est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
+
 :::
 
 :::fr-table[group]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).collapse.group` |
+
 :::
 
 :::fr-table[buttons]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
+
 :::
 
 :::fr-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici le sélecteur de langue |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
+
 :::
 
 ---

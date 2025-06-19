@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de l'infobulle
 shortTitle: Design de l'infobulle
 description: L’infobulle est un composant d’aide contextuelle permettant d’afficher une information complémentaire lors du survol ou du clic sur un élément de l’interface.
@@ -26,7 +28,7 @@ Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors 
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de l'infobulle](../_asset/anatomy/anatomy-1.png)
 
@@ -73,7 +75,7 @@ L’infobulle n'est pas personnalisable.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur de fond de l’infobulle.
 
@@ -81,7 +83,7 @@ Ne pas personnaliser la couleur de fond de l’infobulle.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser l’icône de l’infobulle.
 

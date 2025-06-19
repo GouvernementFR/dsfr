@@ -1,7 +1,9 @@
 ---
 boost: 0
-title: Design du sélecteur de langue
-shortTitle: Design du sélecteur de langue
+sitemap:
+  noindex: true
+title: Design du sélecteur de langues
+shortTitle: Design du sélecteur de langues
 description: Le sélecteur de langues permet à l’usager de choisir la langue d’affichage du site dans un environnement multilingue.
 shortDescription: Choisir la langue d’affichage du site.
 keywords: sélecteur de langues, multilingue, accessibilité, langue, interface, UX, design system, en-tête, code ISO, traduction
@@ -10,7 +12,7 @@ excerpt: Le sélecteur de langues est un composant essentiel dans les sites mult
 summary: Ce contenu présente les usages du sélecteur de langues dans un site disponible en plusieurs langues. Il précise son positionnement recommandé dans l’interface, généralement dans l’en-tête en tant qu’accès rapide, ainsi que les règles éditoriales à respecter pour nommer les langues avec clarté. Il rappelle également les recommandations juridiques liées à l’affichage du français. Ce guide est destiné aux concepteurs de sites publics ou multilingues qui souhaitent garantir une navigation fluide, cohérente et conforme aux bonnes pratiques.
 ---
 
-## Sélecteur de langue
+## Sélecteur de langues
 
 Le sélecteur de langues est un élément d’interaction avec l’interface permettant à l’usager de choisir la langue dans laquelle est affiché le contenu du site.
 
@@ -80,7 +82,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composan
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Garder un fond transparent pour le sélecteur de langues.
 
@@ -88,7 +90,7 @@ Garder un fond transparent pour le sélecteur de langues.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas appliquer de fond au sélecteur de langues.
 
@@ -96,7 +98,7 @@ Ne pas appliquer de fond au sélecteur de langues.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Personnaliser le sélecteur de langues en y ajoutant une bordure.
 
@@ -104,7 +106,7 @@ Personnaliser le sélecteur de langues en y ajoutant une bordure.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas proposer une autre variation de bouton pour le sélecteur de langues.
 

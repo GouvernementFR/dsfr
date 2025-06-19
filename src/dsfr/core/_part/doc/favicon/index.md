@@ -8,6 +8,7 @@ keywords: favicon, icône, apple-touch-icon, manifest, DSFR, accessibilité, nav
 cover: ../_asset/favicon/cover/cover.png
 excerpt: Intégrer correctement une icône de favoris dans un site DSFR, avec les bonnes tailles, formats et règles d’accessibilité.
 summary: Le favicon permet d’identifier un site de l’État dans les onglets et favoris. Retrouvez les formats, balises HTML et bonnes pratiques à respecter.
+order: 9
 ---
 
 # Icône de favoris - Favicon
@@ -18,7 +19,7 @@ L’icône de favoris est un petit icône associé à un site web.
 
 Il permet à l’utilisateur de repérer qu’il se trouve sur un site de l'état. Cela dans différents contextes au sein de son navigateur (dans l’onglet, la liste de favoris ou encore l’historique).
 
-![ ](../_asset/favicon/apple_touch_icon_8ffa1fa80c.png)
+![](../_asset/favicon/apple_touch_icon_8ffa1fa80c.png)
 
 ### Pour les développeurs
 

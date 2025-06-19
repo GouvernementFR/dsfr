@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code de la transcription
 shortTitle: Code de la transcription
 description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
@@ -28,24 +30,25 @@ La transcription est un élément d’interaction avec l’interface permettant 
 
 #### Structure du composant
 
-Le composant Transcription permet d'afficher et de masquer du contenu textuel.
+Le composant **Transcription** permet d'afficher et de masquer du contenu textuel.
 
 Sa structure est la suivante :
-- Le **conteneur** de la transcription est un élément HTML `<div>` défini par la classe `fr-transcription`.
-- Le **bouton** pour afficher/masquer le contenu est défini par la classe `fr-transcription__btn`, et son libellé constitue le titre.
+
+- Le conteneur de la transcription est un élément HTML `<div>` défini par la classe `fr-transcription`.
+- Le bouton pour afficher/masquer le contenu est défini par la classe `fr-transcription__btn`, et son libellé constitue le titre.
   - Le bouton doit être de type "button".
   - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le collapse est ouvert ou fermé
   - Le bouton est lié au collapse via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du collapse.
-- Le **bloc refermable**, défini par la classe `fr-collapse`, est une `<div>` placée après le bouton. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que la navigation ou l'accordéon.
+- Le bloc refermable, défini par la classe `fr-collapse`, est une `<div>` placée après le bouton. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que la navigation ou l'accordéon.
   - Il dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
-  - Le bloc refermable contient le **pied de page** de la transcription, élément HTML `<div>`, défini par la classe `fr-transcription__footer`.
-    - Le pied de page contient un **conteneur**, élément HTML `<div>`, défini par la classe `fr-transcription__actions-group` pour inclure les boutons d'action.
-      - Le **bouton** d'ouverture de la modale est un élément HTML `<button>`, défini par les classes `fr-btn` et `fr-btn--fullscreen`, et son titre est "Agrandir".
+  - Le bloc refermable contient le pied de page de la transcription, élément HTML `<div>`, défini par la classe `fr-transcription__footer`.
+    - Le pied de page contient un conteneur, élément HTML `<div>`, défini par la classe `fr-transcription__actions-group` pour inclure les boutons d'action.
+      - Le bouton d'ouverture de la modale est un élément HTML `<button>`, défini par les classes `fr-btn` et `fr-btn--fullscreen`, et son titre est "Agrandir".
         - Le bouton doit être de type "button".
         - Le bouton dispose d'un attribut `aria-label`, dont la valeur est "Agrandir la transcription".
         - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si le collapse est ouvert ou fermé
         - Le bouton est lié à la modale via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale.
-  - Le bloc refermable contient une **modale**, élément HTML `<dialog>` pour afficher le contenu en plein écran, définie par la classe `fr-modal`.
+  - Le bloc refermable contient une modale, élément HTML `<dialog>` pour afficher le contenu en plein écran, définie par la classe `fr-modal`.
     - Elle dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
     - la modale est lié à son titre via l'attribut `aria-labelledby`, dont la valeur doit correspondre à l'attribut `id` du titre.
     - Le contenu de la modale reprend la structure du composant [Modale](../../../../modal/_part/doc/index.md) et son contenu est libre, mais nécessite l'utilisation des balises adéquates, il n'est pas correcte de placer du texte directement dans une `<div>`.
@@ -117,13 +120,16 @@ Pour fonctionner le composant transcription nécessite l'utilisation de JavaScri
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/transcription/transcription.module.min.js"></script>
 ```
+
 <small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
 ```HTML
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
@@ -135,6 +141,7 @@ Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 #### Instances
 
 Sur la transcription, les éléments suivants sont instanciés :
+
 - La transcription, via la classe : `fr-transcription`
 - Le bouton d'ouverture de l'accordéon, via la classe `fr-transcription__btn`
 - Le collapse, via la classe `fr-collapse`
@@ -143,7 +150,6 @@ Sur la transcription, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
-
 #### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
@@ -151,6 +157,7 @@ Il est possible d'interagir avec les instances du composants en JavaScript via u
 Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
 
 Exemple :
+
 ```js
 const elem = document.getElementById('ID_COLLAPSE');
 dsfr(elem).collapse.disclose();
@@ -161,47 +168,56 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 ###### transcription
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la transcription est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).transcription.isEnabled = false` |
+
 :::
 
 ###### collapseButton
 
 :::fr-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici la transcription |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapseButton.node` |
+
 :::
 
 ###### collapse
 
 :::fr-table[conceal]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -209,9 +225,11 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
+
 :::
 
 :::fr-table[disclose]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -219,114 +237,138 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
+
 :::
 
 :::fr-table[isDisclosed]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
+
 :::
 
 :::fr-table[group]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).collapse.group` |
+
 :::
 
 :::fr-table[buttons]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
+
 :::
 
 :::fr-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici la transcription |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
+
 :::
 
 ###### modalButton
 
 :::fr-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modalButton.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici la transcription |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).modalButton.node` |
+
 :::
 
 ###### modal
 
 :::fr-table[conceal]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ferme la modale |
@@ -334,9 +376,11 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.conceal()` |
+
 :::
 
 :::fr-table[disclose]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Ouvre la modale |
@@ -344,45 +388,55 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.disclose()` |
+
 :::
 
 :::fr-table[isDisclosed]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si la modale est ouverte |
 | **Type** | property |
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modal.isDisclosed` |
+
 :::
 
 :::fr-table[isEnabled]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la modale est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modal.isEnabled = false` |
+
 :::
 
 :::fr-table[group]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).modal.group` |
+
 :::
 
 :::fr-table[buttons]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture de la modal |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).modal.buttons` |
+
 :::
 
 :::fr-table[focus]{valign=top scroll=false}
+
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton de la modale |
@@ -390,33 +444,40 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Arguments** | none |
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.focus()` |
+
 :::
 
 :::fr-table[parent]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici la transcription |
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
+
 :::
 
 :::fr-table[children]{valign=top scroll=false}
+
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
 | **Type** | property |
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
+
 :::
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
+
 :::
 
 ---

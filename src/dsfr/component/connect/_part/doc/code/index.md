@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du Bouton FranceConnect
 shortTitle: Code du Bouton FranceConnect
 description: Présentation du bouton FranceConnect permettant à l’usager de s’authentifier via un fournisseur d’identité officiel reconnu par l’État.
@@ -34,10 +36,10 @@ Retrouver le fonctionnement en détail ici : [https://franceconnect.gouv.fr/par
 
 #### Structure du composant
 
-Le composant Bouton FranceConnect permet de proposer une connexion via le service FranceConnect. Sa structure est la suivante :
+Le composant **Bouton FranceConnect** permet de proposer une connexion via le service FranceConnect. Sa structure est la suivante :
 
 - Un élément `<div>` de classe `fr-connect-group` contient le bouton FranceConnect et un lien d'information.
-  - Le **Bouton FranceConnect** est un élément HTML `<button>` défini par la classe `fr-connect`. Il doit contenir deux éléments `<span>` :
+  - Le bouton FranceConnect est un élément HTML `<button>` défini par la classe `fr-connect`. Il doit contenir deux éléments `<span>` :
     - Un texte de connexion "S'identifier avec", un `<span>` avec la classe `fr-connect__login`. Ce texte peut être traduit mais ne doit pas être modifié.
     - L'intitulé du service "FranceConnect", un `<span>` avec la classe `fr-connect__brand`.
   - Le bouton doit être accompagné d'un lien d'information sur FranceConnect. Il s'agit d'un élément `<p>` contenant un lien `<a>` vers la page d'information de FranceConnect.
@@ -98,7 +100,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/connect/connect.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
+#### Variantes de style
 
 Le composant Bouton FranceConnect est stylisé par les classes CSS suivantes :
 

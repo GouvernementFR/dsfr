@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du fil d'Ariane
 shortTitle: Design du fil d’Ariane
 description: Le fil d’Ariane est un composant de navigation secondaire permettant à l’usager de se repérer dans l’arborescence d’un site et de revenir à un niveau supérieur.
@@ -24,7 +26,7 @@ Le fil d’Ariane est un système de navigation secondaire qui permet à l’usa
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du fil d'Ariane](../_asset/anatomy/anatomy-1.png)
 
@@ -63,7 +65,7 @@ Le fil d’Ariane n’est pas personnalisable.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas changer la structure du fil d’Ariane.
 
@@ -71,7 +73,7 @@ Ne pas changer la structure du fil d’Ariane.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas changer la couleur du texte du fil d’Ariane.
 

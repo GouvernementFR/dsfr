@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du Menu latéral
 shortTitle: Design du Menu latéral
 description: Le menu latéral est un composant de navigation secondaire qui organise des liens verticaux pour guider l’usager entre différentes pages d’une même rubrique.
@@ -106,7 +108,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composan
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser uniquement la couleur bleu pour la page active du menu latéral.
 
@@ -114,7 +116,7 @@ Utiliser uniquement la couleur bleu pour la page active du menu latéral.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur de la page active du menu latéral.
 

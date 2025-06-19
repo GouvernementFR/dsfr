@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de la citation
 shortTitle: Design de la citation
 description: La citation permet d’intégrer un extrait de discours ou de texte au sein d’un contenu éditorial, en respectant des règles précises de forme.
@@ -92,7 +94,7 @@ Seule la couleur de l’icône de la citation est personnalisable. Elle peut uti
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Personnaliser la couleur de l’icône de la citation parmi les couleurs illustratives, en indice $main.
 
@@ -100,7 +102,7 @@ Personnaliser la couleur de l’icône de la citation parmi les couleurs illustr
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas utiliser une couleur illustrative d’un indice autre que $main.
 

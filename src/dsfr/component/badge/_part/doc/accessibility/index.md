@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Accessibilité du badge
 shortTitle: Accessibilité du Badge
 description: Présentation du composant Badge utilisé pour afficher une information de type statut ou état liée à un élément de l’interface.

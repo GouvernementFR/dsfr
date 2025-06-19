@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de la mise en exergue
 shortTitle: Design de la mise en exergue
 description: La mise en exergue est un composant éditorial destiné à distinguer une information importante au sein du contenu principal d’une page.
@@ -68,7 +70,7 @@ Elle peut utiliser l’ensemble des couleurs illustratives.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Personnaliser la bordure de la mise en exergue avec l’ensemble des couleurs illustratives d’indice $main.
 
@@ -76,7 +78,7 @@ Personnaliser la bordure de la mise en exergue avec l’ensemble des couleurs il
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas utiliser une couleur illustrative ou des indices autre que ceux autorisés.
 

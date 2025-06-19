@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de la Carte
 shortTitle: Design de la Carte
 description: Le composant carte permet de rediriger l’usager vers une page éditoriale, en lui donnant un aperçu. Elle peut intégrer des médias, actions, tags ou boutons et se décline en différents formats.
@@ -81,7 +83,7 @@ Le ratio par défaut est de 40% pour l’image et 60% pour le contenu.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/variation/dont-1.png)
+![](../_asset/variation/dont-1.png)
 
 Ne pas cumuler plus de 4 cartes de téléchargement.
 

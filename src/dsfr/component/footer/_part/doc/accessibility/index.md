@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Accessibilité du Pied de page
 shortTitle: Accessibilité du Pied de page
 description: Présentation du composant Pied de page destiné à structurer les informations complémentaires et les liens secondaires en bas de page.

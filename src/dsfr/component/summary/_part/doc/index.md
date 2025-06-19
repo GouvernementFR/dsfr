@@ -42,7 +42,7 @@ Il est recommandé d’utiliser le sommaire dans une page de contenu longue ou �
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Placer le sommaire en haut de page, avant le corps de texte.
 
@@ -50,7 +50,7 @@ Placer le sommaire en haut de page, avant le corps de texte.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas intégrer le sommaire au sein du contenu éditorial lui-même.
 
@@ -66,7 +66,7 @@ Ne pas intégrer le sommaire au sein du contenu éditorial lui-même.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Garantir une distinction visuelle entre sommaire et le contenu éditorial.
 
@@ -74,7 +74,7 @@ Garantir une distinction visuelle entre sommaire et le contenu éditorial.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-2.png)
+![](./_asset/use/dont-2.png)
 
 Ne pas supprimer le fond de couleur, au risque d’altérer la bonne compréhension de l’usager.
 
@@ -88,7 +88,7 @@ Ne pas supprimer le fond de couleur, au risque d’altérer la bonne compréhens
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-3.png)
+![](./_asset/use/do-3.png)
 
 Conserver le sommaire en haut de page.
 
@@ -96,7 +96,7 @@ Conserver le sommaire en haut de page.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-3.png)
+![](./_asset/use/dont-3.png)
 
 Ne pas rendre le sommaire sticky.
 
@@ -112,7 +112,7 @@ Ne pas rendre le sommaire sticky.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Nommer les ancres du sommaire comme les titres des sections de la page vers lesquelles elles renvoient.
 
@@ -120,7 +120,7 @@ Nommer les ancres du sommaire comme les titres des sections de la page vers lesq
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas proposer des titres différents entre les ancres du sommaire et les sections de la page.
 

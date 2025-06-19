@@ -47,7 +47,7 @@ L’indicateur d'étapes est un élément éditorial permettant d’accompagner 
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Aiguiller l’usager sur les différentes étapes composant la démarche en proposant des titres explicites.
 
@@ -55,7 +55,7 @@ Aiguiller l’usager sur les différentes étapes composant la démarche en prop
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas répéter des titres d’étapes ou indiquer le numéro de l’étape dans le titre, celui-ci étant déjà indiquer dans un champ spécifique.
 

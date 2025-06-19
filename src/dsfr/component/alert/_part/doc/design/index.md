@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de l'Alerte
 shortTitle: Design de l'Alerte
 description: Présentation du composant Alerte utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.
@@ -114,7 +116,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composan
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas changer la couleur d’une alerte car elle est directement liée au message qu’elle porte.
 
@@ -122,7 +124,7 @@ Ne pas changer la couleur d’une alerte car elle est directement liée au messa
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas changer le pictogramme d’une alerte car il est directement lié au message qu’elle porte.
 

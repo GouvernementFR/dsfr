@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de l'En-tête connectée
 shortTitle: Design de l'En-tête connectée
 description: Déclinaison de l’en-tête standard permettant à l’usager connecté d’accéder à son menu de navigation personnel.
@@ -29,7 +31,7 @@ Un texte de description est présent dans le conteneur, indiquant les nom, prén
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de l'entête connectée](../_asset/anatomy/anatomy-1.png)
 

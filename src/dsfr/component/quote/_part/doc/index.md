@@ -44,7 +44,7 @@ La [mise en exergue](../../../highlight/_part/doc/index.md) quant à elle permet
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Préciser les informations complémentaires à la citation au sein des champs de détails.
 
@@ -54,7 +54,7 @@ Préciser les informations complémentaires à la citation au sein des champs de
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-2.png)
+![](./_asset/use/do-2.png)
 
 Veiller à ce que deux citations ne se suivent pas directement au sein d’un contenu éditorial.
 
@@ -62,7 +62,7 @@ Veiller à ce que deux citations ne se suivent pas directement au sein d’un co
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas positionner deux citations à la suite au sein d’un même contenu éditorial.
 
@@ -79,7 +79,7 @@ Ne pas positionner deux citations à la suite au sein d’un même contenu édit
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Indiquer le nom d’un ouvrage en italique lorsqu’il est mentionné dans la source.
 
@@ -87,7 +87,7 @@ Indiquer le nom d’un ouvrage en italique lorsqu’il est mentionné dans la so
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas indiquer un nom d’un ouvrage sans italique lorsqu’il est mentionné dans la source.
 
@@ -97,7 +97,7 @@ Ne pas indiquer un nom d’un ouvrage sans italique lorsqu’il est mentionné d
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/edit/do-2.png)
+![](./_asset/edit/do-2.png)
 
 Limiter les citations à une longueur raisonnable.
 
@@ -105,7 +105,7 @@ Limiter les citations à une longueur raisonnable.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-2.png)
+![](./_asset/edit/dont-2.png)
 
 Ne pas proposer des citations trop longues, pour qu’elles ne prennent pas trop de place, notamment en mobile.
 

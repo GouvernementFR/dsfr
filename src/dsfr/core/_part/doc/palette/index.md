@@ -7,6 +7,7 @@ keywords: couleurs, palette, design token, bleu france, rouge marianne, thème c
 cover: ../_asset/palette/cover/cover.png
 excerpt: Découvrez la palette de couleurs du DSFR et ses règles d’usage dans les composants selon le thème clair ou sombre.
 summary: La palette de couleurs du DSFR repose sur la charte graphique de l’État et est divisée entre thèmes clair et sombre. Cette page détaille les conventions de nommage des tokens, les différentes catégories de couleurs (primaires, neutres, système, illustratives), leur usage dans les composants ainsi que les règles d’accessibilité à respecter. Elle précise les bonnes pratiques d’accentuation et les cas d’usage hors composant.
+order: 2
 ---
 
 # Couleurs - Palette
@@ -58,19 +59,19 @@ La palette de couleur du Système de Design de l’État comprend deux parties :
 
 Construites à partir des deux grandes couleurs de la marque de l'État (bleu et rouge, le blanc étant intégrés aux neutres), elles sont utilisées pour marquer l’identité de l’État dans des composants qui véhiculent l’image de la marque (comme le bloc marque), ou sur lesquels il est nécessaire d’attirer l’attention de l’utilisateur, tels que les éléments cliquables ou les états actifs.
 
-<iframe id="primaire-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs primaires" src="/uploads/palette_couleurs_primaires_9a0b8783a3.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 2877px;"></iframe>
+<iframe id="primaire-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs primaires" src="/static/html/v1.14/palette/primaire.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 2877px;"></iframe>
 
 ### Couleurs neutres
 
 Couleurs de base utilisées dans les typographies, fonds, contours et séparateurs dans la majorité des composants. Elles sont notamment utilisées dans les éléments non cliquables et pour représenter les états inactifs.
 
-<iframe id="neutral-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs neutres" src="/uploads/palette_couleurs_neutres_6ec420a693.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 2103px;"> </iframe>
+<iframe id="neutral-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs neutres" src="/static/html/v1.14/palette/neutre.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 2103px;"> </iframe>
 
 ### Couleurs système
 
 Couleurs utilisées exclusivement pour représenter des états et des statuts.
 
-<iframe class="fr-mb-3w fr-responsive-img" id="system-frame" title="Palette de couleurs système" src="/uploads/palette_couleurs_systeme_f298773785.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 5737px;"> </iframe>
+<iframe class="fr-mb-3w fr-responsive-img" id="system-frame" title="Palette de couleurs système" src="/static/html/v1.14/palette/systeme.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 5737px;"> </iframe>
 
 ### Couleurs illustratives
 
@@ -79,7 +80,7 @@ Couleurs complémentaires de la charte de l'État, pouvant servir à la composit
 L’utilisation des couleurs illustratives est possible sur certains composants :
 Voir la liste des composants accentuables.
 
-<iframe id="accent-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs illustratives" src="/uploads/palette_couleurs_accent_fd07bc7cf1.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 24341px;"> </iframe>
+<iframe id="accent-frame" class="fr-mb-3w fr-responsive-img" title="Palette de couleurs illustratives" src="/static/html/v1.14/palette/accent.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" data-fr-js-ratio="true" style="height: 24341px;"> </iframe>
 
 Le Système de Design de l'État propose des composants adaptés à deux modes de couleurs :
 

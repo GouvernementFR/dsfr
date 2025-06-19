@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de la Navigation principale
 shortTitle: Design de la Navigation principale
 description: La navigation principale organise les grandes rubriques d’un site et permet à l’usager de s’orienter dans son arborescence.
@@ -106,7 +108,7 @@ Toutefois, certains éléments sont optionnels - voir [la structure du composan
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Conserver un fond de couleur blanc derrière les entrées de la navigation principale.
 
@@ -114,7 +116,7 @@ Conserver un fond de couleur blanc derrière les entrées de la navigation princ
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur des entrées de la navigation principale
 
@@ -122,7 +124,7 @@ Ne pas personnaliser la couleur des entrées de la navigation principale
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Utiliser uniquement la couleur bleu pour les entrées de menu déroulant ou mega menu dans leur état cliqué.
 
@@ -130,7 +132,7 @@ Utiliser uniquement la couleur bleu pour les entrées de menu déroulant ou mega
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser la couleur des entrées menu déroulant ou mega menu lorsqu’elles sont cliquées.
 
@@ -138,7 +140,7 @@ Ne pas personnaliser la couleur des entrées menu déroulant ou mega menu lorsqu
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/custom/do-3.png)
+![](../_asset/custom/do-3.png)
 
 Conserver le fond de couleur blanc du mega menu.
 
@@ -146,7 +148,7 @@ Conserver le fond de couleur blanc du mega menu.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-3.png)
+![](../_asset/custom/dont-3.png)
 
 Ne pas personnaliser ou retirer la couleur de fond du mega menu.
 
@@ -154,7 +156,7 @@ Ne pas personnaliser ou retirer la couleur de fond du mega menu.
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/custom/do-4.png)
+![](../_asset/custom/do-4.png)
 
 Conserver les tailles, types et couleurs de typographie des différents libellés en l’état.
 
@@ -162,7 +164,7 @@ Conserver les tailles, types et couleurs de typographie des différents libellé
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-4.png)
+![](../_asset/custom/dont-4.png)
 
 Ne pas modifier les tailles, types et couleurs de typographie des différents libellés.
 

@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code de la mise en exergue
 shortTitle: Code de la mise en exergue
 description: La mise en exergue est un composant éditorial destiné à distinguer une information importante au sein du contenu principal d’une page.
@@ -28,7 +30,7 @@ La mise en exergue est un élément éditorial permettant de mettre en forme du 
 
 #### Structure du composant
 
-Le composant Mise en exergue permet de mettre en évidence des informations importantes. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
+Le composant **Mise en exergue** permet de mettre en évidence des informations importantes. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
 1. Un conteneur principal sous la balise `<div>` :
     - Doit avoir la classe `fr-highlight`.
@@ -65,11 +67,10 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 <link href="dist/component/highlight/highlight.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
-
-##### Variantes de taille
+#### Variantes de taille
 
 Le texte de la mise en exergue peut être de différentes tailles :
+
 - Par défaut en taille md.
 - `fr-text--sm` : Petit texte.
 - `fr-text--lg` : Grand texte.
@@ -82,7 +83,7 @@ Le texte de la mise en exergue peut être de différentes tailles :
 </div>
 ```
 
-##### Accentuation
+#### Variantes d'accentuation
 
 Le composant Mise en exergue est accentuable, permettant le changement de la couleur de la bordure latérale. Pour cela, ajouter la classe `fr-highlight--NOM-COULEUR` au même niveau que la classe `fr-highlight`.
 
@@ -96,7 +97,7 @@ Le composant Mise en exergue est accentuable, permettant le changement de la cou
 
 ### JavaScript
 
-Le composant **Mise en exergue** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Mise en exergue **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

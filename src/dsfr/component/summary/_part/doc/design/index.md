@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du Sommaire
 shortTitle: Design du Sommaire
 description: Présentation du composant Sommaire permettant à l’usager de naviguer facilement entre les sections d’une page longue à l’aide de liens ancrés.
@@ -62,7 +64,7 @@ Le sommaire n’est pas personnalisable.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser uniquement le fond de couleur grise.
 
@@ -70,7 +72,7 @@ Utiliser uniquement le fond de couleur grise.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur de fond du sommaire.
 
@@ -82,7 +84,7 @@ Ne pas personnaliser la couleur de fond du sommaire.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Conserver l’apparence des ancres en l’état.
 
@@ -90,7 +92,7 @@ Conserver l’apparence des ancres en l’état.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser la couleur ou la typographie des ancres.
 

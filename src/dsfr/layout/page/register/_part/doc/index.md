@@ -20,14 +20,15 @@ Ce modèle est à utiliser lorsque vous souhaitez que l’utilisateur se crée u
 Ce modèle propose une page de référence prête à l’emploi et directement réutilisable.
 
 La page de création de compte est composée des éléments suivants :
+
 - Un header et un footer par défaut - obligatoires (à remplacer par le header et footer réels de votre site).
 - Un titre et un chapô - obligatoires (à ajuster en fonction du contexte pour présenter et contextualiser la procédure de création de compte et les éventuelles pièces à fournir).
 - Le formulaire de création de compte :
-    - La création de compte avec FranceConnect - obligatoire.
-    - La création de compte avec identifiants - obligatoire.
+  - La création de compte avec FranceConnect - obligatoire.
+  - La création de compte avec identifiants - obligatoire.
 - Les actions : cases à cocher mentions CNIL + bouton “Créer un compte” - obligatoires.
 
-![ ](./_asset/page-creation-compte-modele.png)
+![](./_asset/page-creation-compte-modele.png)
 
 :::fr-accordion[### Extrait de code]{id='accordion-account-creation'}
 ```html
@@ -153,10 +154,11 @@ La page de création de compte est composée des éléments suivants :
 **Structure du formulaire de création de compte :**
 
 L’ordre et la structure des modalités de création de compte sont à respecter comme présentées dans le modèle :
+
 - 1\) Le formulaire de création de compte avec :
-    - La création de compte avec FranceConnect en premier
-    - Le “ou”
-    - La création de compte avec identifiants en second
+  - La création de compte avec FranceConnect en premier
+  - Le “ou”
+  - La création de compte avec identifiants en second
 - 2\) L’accès à la création de compte
 
 **Création de compte avec FranceConnect :**
@@ -183,7 +185,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 1 - Identifiant
 
-![ ](./_asset/creation-compte-etape-identifiant.jpg)
+![](./_asset/creation-compte-etape-identifiant.jpg)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-login’}
 ```html
@@ -318,7 +320,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 2 - Identité
 
-![ ](./_asset/creation-compte-etape-identite.jpg)
+![](./_asset/creation-compte-etape-identite.jpg)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-identify’}
 ```html
@@ -461,7 +463,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 3 - Coordonnées
 
-![ ](./_asset/creation-compte-etape-coordonnees.jpg)
+![](./_asset/creation-compte-etape-coordonnees.jpg)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-contact-details’}
 ```html
@@ -579,7 +581,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 ```
 :::
 
-### Confirmation de création et d’activation :
+### Confirmation de création et d’activation
 
 Un modèle de confirmation de création et d’activation de compte est aussi mis à disposition.
 

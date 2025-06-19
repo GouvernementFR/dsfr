@@ -39,7 +39,7 @@ Proposer une transcription pour accompagnée un [contenu média](../../../conten
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Ajouter la transcription directement sous le contenu média associé, accessible simultanément.
 
@@ -47,7 +47,7 @@ Ajouter la transcription directement sous le contenu média associé, accessible
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/use/dont-1.png)
+![](./_asset/use/dont-1.png)
 
 Ne pas positionner la transcription avant le contenu média ou trop loin, pour que les deux soient consultés en même temps.
 :::

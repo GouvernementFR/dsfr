@@ -44,7 +44,7 @@ Si plusieurs choix sont possibles, optez pour [des cases à cocher](../../../che
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Contextualiser l’usage de la liste déroulante afin de permettre à l’usager de comprendre l’action proposée.
 

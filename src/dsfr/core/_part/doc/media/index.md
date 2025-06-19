@@ -8,6 +8,7 @@ keywords: médias, image, vidéo, responsive, accessibilité, iframe, alt, ratio
 cover: ../_asset/media/cover/cover.png
 excerpt: Utilisez les classes appropriées pour intégrer des images et vidéos dans vos pages, avec les bonnes pratiques d’accessibilité.
 summary: Découvrez comment intégrer correctement des médias (images et vidéos) dans le respect des standards du DSFR et des exigences RGAA - ratios, alternatives textuelles, vidéos responsives.
+order: 7
 ---
 
 
@@ -19,7 +20,7 @@ Les médias sont des images ou des vidéos présents au sein des pages du site. 
 
 Les ratios d’images suivants peuvent être mis en place dans le respect de la grille responsive : 32:9, 16:9, 3:2, 4:3, 1:1, 3:4, 2:3.
 
-![ ](../_asset/media/image-ratios-exemple.png)
+![](../_asset/media/image-ratios-exemple.png)
 
 Afin que votre image soit responsive, utilisez la classe `.fr-responsive-img`.
 

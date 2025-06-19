@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du Partage
 shortTitle: Design du Partage
 description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
@@ -25,7 +27,7 @@ Le partage est un groupe d’éléments d’interaction avec l’interface perme
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du partage](../_asset/anatomy/anatomy-1.png)
 
@@ -72,7 +74,7 @@ N’hésitez pas à [contacter l’équipe DSFR](path:/help) si vous avez besoin
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser les icônes des réseaux sociaux.
 

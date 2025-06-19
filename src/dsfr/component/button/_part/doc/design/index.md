@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du bouton
 shortTitle: Design du Bouton
 description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
@@ -24,7 +26,7 @@ Le bouton est un élément d’interaction avec l’interface permettant à l’
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du bouton](../_asset/anatomy/anatomy-1.png)
 
@@ -94,7 +96,7 @@ Il comporte ses propres règles d’usage :
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/variation/do-1.png)
+![](../_asset/variation/do-1.png)
 
 Limiter le nombre de boutons utiliser au sein d’un groupe.
 
@@ -102,7 +104,7 @@ Limiter le nombre de boutons utiliser au sein d’un groupe.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/variation/dont-1.png)
+![](../_asset/variation/dont-1.png)
 
 Ne pas excéder plus de 3 boutons au sein d’un groupe.
 
@@ -117,7 +119,7 @@ Ne pas excéder plus de 3 boutons au sein d’un groupe.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/variation/do-2.png)
+![](../_asset/variation/do-2.png)
 
 Positionner le bouton primaire avant les boutons secondaires ou tertiaires quand le groupe est ferré à gauche ou centré.
 
@@ -125,7 +127,7 @@ Positionner le bouton primaire avant les boutons secondaires ou tertiaires quand
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/variation/do-3.png)
+![](../_asset/variation/do-3.png)
 
 Positionner le bouton primaire après les boutons secondaires ou tertiaires quand le groupe est ferré à droite.
 
@@ -137,7 +139,7 @@ Positionner le bouton primaire après les boutons secondaires ou tertiaires quan
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/variation/dont-2.png)
+![](../_asset/variation/dont-2.png)
 
 Ne pas encadrer un bouton primaire d’autres boutons secondaires ou tertiaires.
 
@@ -151,7 +153,7 @@ Ne pas encadrer un bouton primaire d’autres boutons secondaires ou tertiaires.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/variation/do-4.png)
+![](../_asset/variation/do-4.png)
 
 Utiliser la même taille pour tous les boutons du groupe.
 
@@ -159,7 +161,7 @@ Utiliser la même taille pour tous les boutons du groupe.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/variation/dont-3.png)
+![](../_asset/variation/dont-3.png)
 
 Ne pas mélanger différentes tailles de boutons au sein d’un groupe.
 
@@ -234,7 +236,7 @@ Toutefois, certains éléments sont optionnels et les icônes peuvent être chan
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![](../_asset/custom/do-1.png)
 
 Utiliser uniquement la couleur bleu pour les boutons primaires.
 
@@ -242,7 +244,7 @@ Utiliser uniquement la couleur bleu pour les boutons primaires.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur des boutons primaires.
 
@@ -254,7 +256,7 @@ Ne pas personnaliser la couleur des boutons primaires.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-2.png)
+![](../_asset/custom/do-2.png)
 
 Utiliser uniquement une typographie bleue pour les boutons secondaires.
 
@@ -262,7 +264,7 @@ Utiliser uniquement une typographie bleue pour les boutons secondaires.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-2.png)
+![](../_asset/custom/dont-2.png)
 
 Ne pas personnaliser la couleur du libellé des boutons secondaires.
 
@@ -274,7 +276,7 @@ Ne pas personnaliser la couleur du libellé des boutons secondaires.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-3.png)
+![](../_asset/custom/do-3.png)
 
 Conserver un fond transparent pour les boutons tertiaires.
 
@@ -282,7 +284,7 @@ Conserver un fond transparent pour les boutons tertiaires.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-3.png)
+![](../_asset/custom/dont-3.png)
 
 Ne pas appliquer un fond aux boutons tertiaires.
 

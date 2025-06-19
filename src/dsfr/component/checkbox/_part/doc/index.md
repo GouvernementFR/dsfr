@@ -42,7 +42,7 @@ Si vous souhaitez contraindre le choix de l’utilisateur à une seule option, c
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](./_asset/use/do-1.png)
+![](./_asset/use/do-1.png)
 
 Utiliser la case à cocher au sein d’un formulaire.
 
@@ -61,7 +61,7 @@ Utiliser la case à cocher au sein d’un formulaire.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](./_asset/edit/do-1.png)
+![](./_asset/edit/do-1.png)
 
 Accompagner les cases à cocher d’un texte d’aide pour clarifier la nature du contenu attendu.
 
@@ -69,7 +69,7 @@ Accompagner les cases à cocher d’un texte d’aide pour clarifier la nature d
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](./_asset/edit/dont-1.png)
+![](./_asset/edit/dont-1.png)
 
 Ne pas masquer le texte d’aide dans une infobulle.
 

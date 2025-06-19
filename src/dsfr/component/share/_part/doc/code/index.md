@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du Partage
 shortTitle: Code du Partage
 description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
@@ -28,14 +30,14 @@ Le partage est un groupe d’éléments d’interaction avec l’interface perme
 
 #### Structure du composant
 
-Les boutons de partage permettent aux utilisateurs de partager facilement un contenu qu’il consulte à d’autres utilisateur.
+Les **boutons de partage** permettent aux utilisateurs de partager facilement un contenu qu’il consulte à d’autres utilisateur.
 Sa structure est la suivante :
 
-- Le **conteneur principal**, obligatoire, du menu latéral est un élément HTML `<div>` défini par la classe `fr-share` et contenant :
-  - Le **titre**, obligatoire, des boutons de partage est un élément HTML `<p>` défini par la classe `fr-share__title` dont le libellé est "Partager la page".
-  - La **liste de liens ou boutons de partage**, obligatoire, est un élément HTML `<ul>` placé après le titre et défini par la classe `fr-btns-group`.
+- Le conteneur principal, obligatoire, du menu latéral est un élément HTML `<div>` défini par la classe `fr-share` et contenant :
+  - Le titre, obligatoire, des boutons de partage est un élément HTML `<p>` défini par la classe `fr-share__title` dont le libellé est "Partager la page".
+  - La liste de liens ou boutons de partage, obligatoire, est un élément HTML `<ul>` placé après le titre et défini par la classe `fr-btns-group`.
     - Chaque élément `<li>` de la liste contient :
-      - Un **lien ou bouton** de partage, un élément HTML `<a>` ou `<button>` défini par la classe `fr-btn` associée à la classe utilitaire du reseau social ou de l'action de partage correspondante (ex: `fr-btn--facebook`).
+      - Un lien ou bouton de partage, un élément HTML `<a>` ou `<button>` défini par la classe `fr-btn` associée à la classe utilitaire du reseau social ou de l'action de partage correspondante (ex: `fr-btn--facebook`).
 
 **Exemple de structure HTML**
 

@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de la Liste déroulante riche
 shortTitle: Design de la Liste déroulante riche
 description: Composant interactif permettant à l’usager de choisir une ou plusieurs options dans une liste étendue, incluant recherche, sélection multiple et options par défaut.
@@ -27,7 +29,7 @@ La liste déroulante riche est un élément d’interaction avec l’interface p
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de la liste déroulante riche](../_asset/anatomy/anatomy-1.png)
 

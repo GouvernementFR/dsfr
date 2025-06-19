@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design de la Zone d'expression visuelle
 shortTitle: Design de la Zone d’expression visuelle
 description: La zone d’expression visuelle est une section de page permettant des compositions créatives pour maximiser l’impact d’un message ou d’une action sur certaines pages clés.
@@ -36,7 +38,7 @@ Dans cette combinaison, vous pouvez associer une image et une forme de couleur �
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-1.png)
+![](../_asset/variation/do-1.png)
 
 :::
 
@@ -47,7 +49,7 @@ Dans cette combinaison, vous pouvez associer une image et une forme de couleur �
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-2.png)
+![](../_asset/variation/do-2.png)
 
 :::
 
@@ -59,7 +61,7 @@ Dans cette combinaison, vous pouvez associer une image et une forme de couleur �
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-3.png)
+![](../_asset/variation/do-3.png)
 
 :::
 
@@ -69,7 +71,7 @@ Dans cette combinaison, vous pouvez associer une image et une forme de couleur �
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-4.png)
+![](../_asset/variation/do-4.png)
 
 :::
 
@@ -81,7 +83,7 @@ Dans cette combinaison, la forme de couleur qui accompagne l’image peut être 
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-5.png)
+![](../_asset/variation/do-5.png)
 
 :::
 
@@ -97,7 +99,7 @@ Dans cette combinaison, vous pouvez associer un bloc de texte sur fond blanc sup
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-6.png)
+![](../_asset/variation/do-6.png)
 
 :::
 
@@ -107,7 +109,7 @@ Dans cette combinaison, vous pouvez associer un bloc de texte sur fond blanc sup
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-7.png)
+![](../_asset/variation/do-7.png)
 
 :::
 
@@ -117,7 +119,7 @@ Dans cette combinaison, vous pouvez associer un bloc de texte sur fond blanc sup
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/variation/dont-1.png)
+![](../_asset/variation/dont-1.png)
 
 Ne pas couvrir 2 bords (ou plus) de l’image avec un bloc de texte, quelque soit l’écran sur lequel il est affiché.
 
@@ -130,7 +132,7 @@ Ne pas couvrir 2 bords (ou plus) de l’image avec un bloc de texte, quelque soi
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/variation/dont-2.png)
+![](../_asset/variation/dont-2.png)
 
 Ne pas sortir le bloc de texte de la zone d’expression visuel ou créer de décalage visuel.
 
@@ -145,7 +147,7 @@ Ne pas sortir le bloc de texte de la zone d’expression visuel ou créer de dé
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-8.png)
+![](../_asset/variation/do-8.png)
 
 :::
 
@@ -157,7 +159,7 @@ Ne pas sortir le bloc de texte de la zone d’expression visuel ou créer de dé
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/variation/do-9.png)
+![](../_asset/variation/do-9.png)
 
 :::
 
@@ -167,7 +169,7 @@ Ne pas sortir le bloc de texte de la zone d’expression visuel ou créer de dé
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/variation/dont-3.png)
+![](../_asset/variation/dont-3.png)
 
 Ne pas superposer plusieurs images les unes sur les autres pour conserver la lisibilité de la composition.
 
