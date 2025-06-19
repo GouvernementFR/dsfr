@@ -9,7 +9,8 @@ excerpt: Explorez les blocs fonctionnels du Design Système de l’État, pensé
 summary: Les blocs fonctionnels regroupent les éléments standards permettant de structurer les formulaires et de recueillir les données usagers dans le respect des exigences d’accessibilité et de cohérence. Chaque bloc (nom, adresse, téléphone, date de naissance, etc.) est conçu pour être directement réutilisable ou intégré dans des formulaires complexes. Cette section facilite l’implémentation de parcours utilisateurs clairs et standardisés dans les services publics numériques.
 sort: shortTitle
 order: 1
-list: true
+list:
+  sort: shortTitle
 ---
 
 # Blocs fonctionnels
