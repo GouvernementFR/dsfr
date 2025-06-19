@@ -4,7 +4,7 @@ title: Configuration
 
 ## Configuration
 
-Il est nécessaire de configurer le package Analytics au sein de [la configuration de l’API DSFR](path:/getting-started/developer/javascript/)
+Il est nécessaire de configurer le package Analytics au sein de [la configuration de l’API DSFR](path:/getting-started/developer/javascript)
 
 La configuration doit être placée **avant** les fichiers `patch.module.js`, `dsfr.module.js` et `analytics.module.js`.
 

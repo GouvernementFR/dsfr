@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du Bouton radio
 shortTitle: Code du Bouton radio
 description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
@@ -32,10 +34,10 @@ Le composant Bouton radio, ci-après nommé **Radio**, est un élément interact
 
 Sa structure est la suivante :
 
-- Le Radio doit être **contenu** dans un élément HTML `<div>` défini par la classe `fr-radio-group`.
-- Le **Radio** est un élément HTML `<input>` de type `radio` défini par la classe `fr-radio`.
-- Le radio doit être associé à un **label** `<label>` avec la classe `fr-label`.
-- Une **description additionnelle** de l'option - optionnelle - peut être ajoutée dans le label, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
+- Le Radio doit être contenu dans un élément HTML `<div>` défini par la classe `fr-radio-group`.
+- Le Radio est un élément HTML `<input>` de type `radio` défini par la classe `fr-radio`.
+- Le radio doit être associé à un libellé `<label>` avec la classe `fr-label`.
+- Une description additionnelle de l'option, optionnelle, peut être ajoutée dans le label, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
 
 **Exemple de structure HTML simple**
 

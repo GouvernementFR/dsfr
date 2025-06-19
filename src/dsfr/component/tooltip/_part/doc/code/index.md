@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code de l'infobulle
 shortTitle: Code de l'infobulle
 description: L’infobulle est un composant d’aide contextuelle permettant d’afficher une information complémentaire lors du survol ou du clic sur un élément de l’interface.
@@ -30,7 +32,7 @@ Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors 
 
 #### Structure du composant
 
-Il existe deux types d’infobulles suivant son déclenchement.
+Il existe deux types d’**Infobulles** suivant son déclenchement.
 
 ##### Déclenchement au survol
 
@@ -64,7 +66,6 @@ L’infobulle au clic se compose des éléments suivants :
     - La zone de déclenchement est une balise `<button type="button">`.
     - Elle est liée au conteneur via l'attribut `aria-describedby`, sa valeur doit correspondre à l'attribut `id` du conteneur.
     - Doit avoir les classes `fr-btn--tooltip fr-btn`.
-
 2. Un conteneur pour le texte de l'infobulle :
     - Représenté par un élément `<span>`.
     - Doit avoir un attribut `id` obligatoire, pour être lié à la zone de déclenchement.
@@ -194,7 +195,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'infobulle est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tooltip.isEnabled = false` |
 
 :::
@@ -204,7 +205,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si l'infobulle est affichée ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tooltip.isShown = false` |
 
 :::
@@ -298,14 +299,14 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du déclencheur est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).tooltipReferent.isEnabled = false` |
 
 :::
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Sur l’infobulle, les événements suivants sont disponibles :
 

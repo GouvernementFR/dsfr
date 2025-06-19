@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du Menu latéral
 shortTitle: Code du Menu latéral
 description: Le menu latéral est un composant de navigation secondaire qui organise des liens verticaux pour guider l’usager entre différentes pages d’une même rubrique.
@@ -32,20 +34,20 @@ Le composant **Menu latéral** permet aux utilisateurs de naviguer entre les dif
 
 Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
-- Le **conteneur principal**, obligatoire, du menu latéral est un élément HTML `<nav>` défini par la classe `fr-sidemenu`.
+- Le conteneur principal, obligatoire, du menu latéral est un élément HTML `<nav>` défini par la classe `fr-sidemenu`.
   - Il dispose d'attribut `aria-labelledby`, dont la valeur doit correspondre à l'attribut `id` du titre du menu latéral.
-- Le **conteneur intérieur**, obligatoire, du menu latéral est un élément HTML `<div>` défini par la classe `fr-sidemenu__inner`, contenant :
-  - Le **bouton d'ouverture**, obligatoire, affiché uniquement en mobile est un élément HTML `<button>` de type `button` défini par la classe `fr-sidemenu__btn`.
+- Le conteneur intérieur, obligatoire, du menu latéral est un élément HTML `<div>` défini par la classe `fr-sidemenu__inner`, contenant :
+  - Le bouton d'ouverture, obligatoire, affiché uniquement en mobile est un élément HTML `<button>` de type `button` défini par la classe `fr-sidemenu__btn`.
     - Le libellé du bouton indique l'action d'ouverture du menu latéral en vue mobile.
     - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le bloc refermable du menu latéral est ouvert ou fermé.
     - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
-  - Le **bloc refermable**, obligatoire, défini par la classe `fr-collapse`, est un élément HTML `<div>` placé après le bouton. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que la navigation ou l'accordéon.
+  - Le bloc refermable, obligatoire, défini par la classe `fr-collapse`, est un élément HTML `<div>` placé après le bouton. Il s'agit d'un élément générique du core utilisé par d'autres composants tels que la navigation ou l'accordéon.
     - Il dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
     - Le bloc refermable contient :
-      - Le **titre**, optionnel, du menu latéral est un élément HTML `<div>` défini par la classe `fr-sidemenu__title`.
-      - La **liste de liens ou de sous-sections**, obligatoire, est un élément HTML `<ul>` placé après le titre et défini par la classe `fr-sidemenu__list`.
+      - Le titre, optionnel, du menu latéral est un élément HTML `<div>` défini par la classe `fr-sidemenu__title`.
+      - La liste de liens ou de sous-sections, obligatoire, est un élément HTML `<ul>` placé après le titre et défini par la classe `fr-sidemenu__list`.
         - Chaque élément `<li>` défini par la classe `fr-sidemenu__item` de la liste contient :
-          - Un **lien**, un élément HTML `<a>` défini par la classe `fr-sidemenu__link`.
+          - Un lien, un élément HTML `<a>` défini par la classe `fr-sidemenu__link`.
           - L'élément actif de la liste est défini par la classe `fr-sidemenu__item--active` et le lien contenu dispose d'un attribut `aria-current="page"`.
 
 **Exemple de structure HTML simple**
@@ -79,13 +81,13 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
 
 Le menu latéral peut contenir jusqu'à trois niveaux d’arborescence et permettent d’afficher les niveaux 1, 2 et 3 imbriqués d’une rubrique.
 
-- Le **conteneur d'une sous-section** est un élément de la liste de liens `<li>` défini par la classe `fr-sidemenu__item` contenant :
-  - Le **bouton d'ouverture** de la sous-section, un élément HTML `<button>` de type `button` défini par la classe `fr-sidemenu__btn`.
+- Le conteneur d'une sous-section est un élément de la liste de liens `<li>` défini par la classe `fr-sidemenu__item` contenant :
+  - Le bouton d'ouverture de la sous-section, un élément HTML `<button>` de type `button` défini par la classe `fr-sidemenu__btn`.
     - Le libellé du bouton indique le nom de la sous-section.
     - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le bloc refermable de la sous-section est ouvert ou fermé.
     - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
     - Le bouton dispose d'un attribut `aria-current`, sa valeur [true|false] défini si le bouton est actif.
-  - Le **bloc refermable**, défini par la classe `fr-collapse`, est un élément HTML `<div>` placé après le bouton.
+  - Le bloc refermable, défini par la classe `fr-collapse`, est un élément HTML `<div>` placé après le bouton.
     - Il dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
     - Le bloc refermable contient une liste de liens pouvant contenir un troisième niveau d'imbrication du menu latéral basé sur la même structure de sous-section.
 
@@ -326,7 +328,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du menu latéral est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).sidemenuItem.isEnabled = false` |
 
 :::
@@ -349,7 +351,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 
 :::
@@ -359,7 +361,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du bouton du menu latéral est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.isEnabled = false` |
 
 :::
@@ -413,7 +415,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 |------|-----|
 | **Description** | Défini si le fonctionnement du menu latéral est activé ou non |
 | **Type** | property |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 
 :::
@@ -444,7 +446,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Description** | Replace le focus sur le bouton de la sous-section |
 | **Type** | function |
 | **Arguments** | none |
-| **Retour** | true \| false |
+| **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 
 :::
@@ -481,7 +483,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 #### Événements
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](./scope/developers/javascript#evenements).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Dans la version mobile du menu latéral et sur chaque menu déroulant du menu latéral, les événements suivants sont disponibles :
 

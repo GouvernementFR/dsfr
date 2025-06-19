@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du Sommaire
 shortTitle: Code du Sommaire
 description: Présentation du composant Sommaire permettant à l’usager de naviguer facilement entre les sections d’une page longue à l’aide de liens ancrés.
@@ -32,10 +34,10 @@ Le composant **Sommaire** est un élément interactif permettant de naviguer ent
 
 Sa structure est la suivante :
 
-- Le **conteneur du sommaire** est une balise `<div>` avec la classe `fr-summary` et le rôle `navigation`.
+- Le conteneur du sommaire est une balise `<div>` avec la classe `fr-summary` et le rôle `navigation`.
   - Le sommaire dispose d'un attribut `aria-labelledby` défini sur l'ID du titre du sommaire.
-- Le **titre du sommaire**, obligatoire, est defini par la classe `fr-summary__title`.
-- Les éléments de la **liste d'ancre**, obligatoire, sont contenus dans une balise `<ol>`.
+- Le titre du sommaire, obligatoire, est défini par la classe `fr-summary__title`.
+- Les éléments de la liste d'ancre, obligatoire, sont contenus dans une balise `<ol>`.
   - Chaque élément de la liste `<li>` contient un lien `<a>` défini par la classe `fr-summary__link`.
 
 **Exemple de structure HTML**
@@ -90,7 +92,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 ### JavaScript
 
-Le composant **Sommaire** ne nécessite pas de JavaScript spécifique pour fonctionner.
+Le composant Sommaire **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

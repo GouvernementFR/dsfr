@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du bloc marque
 shortDescription: Le bloc marque est un élément de la charte graphique de l'État français. Il est utilisé pour représenter l'identité visuelle de l'État.
 cover: ../_asset/cover/cover.png

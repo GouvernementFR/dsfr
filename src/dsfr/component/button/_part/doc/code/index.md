@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du bouton
 shortTitle: Code du Bouton
 description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
@@ -28,15 +30,15 @@ Le bouton est un élément d’interaction avec l’interface permettant à l’
 
 #### Structure du composant
 
-Le composant Bouton est un élément interactif permettant de déclencher des actions. Sa structure est la suivante :
+Le composant **Bouton** est un élément interactif permettant de déclencher des actions. Sa structure est la suivante :
 
-- Le Bouton est un élément HTML `<button>` défini par la classe `fr-btn`.
+- Le Bouton est un élément HTML `<button>` de type "button" défini par la classe `fr-btn`.
 - Son contenu est textuel, il doit être succinct et indiquer clairement son action.
 
 **Exemple de structure HTML**
 
 ```HTML
-<button class="fr-btn">
+<button class="fr-btn" type="button">
     Libellé bouton
 </button>
 ```
@@ -50,10 +52,10 @@ Un groupe est dit **hiérarchisé** s'il dispose d'un bouton primaire et de bout
 
 ```HTML
 <div class="fr-btns-group">
-    <button class="fr-btn">
+    <button class="fr-btn" type="button">
         Bouton 1
     </button>
-    <button class="fr-btn fr-btn--secondary">
+    <button class="fr-btn fr-btn--secondary" type="button">
         Bouton 2
     </button>
 </div>
@@ -76,6 +78,7 @@ L'import doit se faire avant le contenu de la page dans la partie `<head>`, et d
 <small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
+
 ```HTML
 <link href="dist/core/core.legacy.min.css" rel="stylesheet">
 <link href="dist/component/button/button.legacy.min.css" rel="stylesheet">
@@ -93,16 +96,16 @@ Le bouton peut avoir différents styles définis par les classes :
 **Exemples de variantes de style**
 
 ```HTML
-<button class="fr-btn">
+<button class="fr-btn" type="button">
     Bouton primaire
 </button>
-<button class="fr-btn fr-btn--secondary">
+<button class="fr-btn fr-btn--secondary" type="button">
     Bouton secondaire
 </button>
-<button class="fr-btn fr-btn--tertiary">
+<button class="fr-btn fr-btn--tertiary" type="button">
     Bouton tertiaire
 </button>
-<button class="fr-btn fr-btn--tertiary-no-outline">
+<button class="fr-btn fr-btn--tertiary-no-outline" type="button">
     Bouton tertiaire sans contour
 </button>
 ```
@@ -120,13 +123,13 @@ Dans le cas d'un groupe de boutons, la taille des boutons peut être généralis
 **Exemples de variantes de taille**
 
 ```HTML
-<button class="fr-btn fr-btn--sm">
+<button class="fr-btn fr-btn--sm" type="button">
     Petit bouton
 </button>
-<button class="fr-btn">
+<button class="fr-btn" type="button">
     Bouton moyen
 </button>
-<button class="fr-btn fr-btn--lg">
+<button class="fr-btn fr-btn--lg" type="button">
     Grand bouton
 </button>
 ```
@@ -142,6 +145,12 @@ Cette classe peut être associée à une classe de positionnement de l'icône :
 - `fr-btn--icon-right`: L'icône apparaît à droite du libellé.
 
 Dans le cas d'un groupe de boutons, le positionnement de l'icône des boutons peut être généralisé au niveau du groupe avec les classes `fr-btns-group--icon-left` ou `fr-btns-group--icon-right`.
+
+**Exemples de variantes d'icônes**
+
+```HTML
+<button type="button" class="fr-btn fr-icon-checkbox-circle-line fr-btn--icon-left">Bouton avec icône</button>
+```
 
 #### Variante désactivé
 
@@ -174,7 +183,8 @@ Toutes ces classes peuvent être combinées entre elles.
 
 ### JavaScript
 
-Le composant bouton nécessite l'utilisation de JavaScript uniquement dans le cas de l'utilisation d'une fonctionnalité avancée : **les groupes de boutons "equisized"**. Cette fonctionnalité permet de d'adapter automatiquement la taille des boutons d'un groupe à celle du bouton le plus large.
+Le composant Bouton nécessite l'utilisation de JavaScript uniquement dans le cas de l'utilisation d'une fonctionnalité avancée : **les groupes de boutons "equisized"**.<br>
+Cette fonctionnalité permet de d'adapter automatiquement la taille des boutons d'un groupe à celle du bouton le plus large.<br>
 **En dehors de cette fonctionnalité l'inclusion du JS du bouton n'est pas utile.**
 
 #### Installation du JavaScript
@@ -223,23 +233,27 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 > L'activation ou la désactivation de la fonction equisize n'est pas disponible en JS, elle se fait via l'ajout ou le retrait de la classe `fr-btns-group--equisized` sur le groupe.
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(btnGroup).equisizedsGroup.node` |
+
 :::
 
 ##### equisized
 
 :::fr-table[node]{valign=top scroll=false}
+
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(btn).equisized.node` |
+
 :::
 
 ### Note de version

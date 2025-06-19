@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code de l'Ajout de fichier
 shortTitle: Code de l'Ajout de fichier
 description: Présentation du composant Ajout de fichier permettant à l’usager de sélectionner et envoyer un ou plusieurs fichiers via une interface.
@@ -28,22 +30,23 @@ L’ajout de fichier est un élément d’interaction avec l’interface qui per
 
 #### Structure du composant
 
-Le composant Ajout de fichier permet aux utilisateurs de sélectionner et envoyer un ou plusieurs fichiers.
+Le composant **Ajout de fichier** permet aux utilisateurs de sélectionner et envoyer un ou plusieurs fichiers.
 
 Sa structure est la suivante :
-- Le composant **ajout de fichier** est un élément HTML `<div>` défini par la classe `fr-upload-group` et contenant :
-  - Le **libellé** est un élément HTML de type `<label>`, obligatoire :
+
+- Le composant ajout de fichier est un élément HTML `<div>` défini par la classe `fr-upload-group` et contenant :
+  - Le libellé est un élément HTML de type `<label>`, obligatoire :
     - Défini par la classe `fr-label`.
     - Il dispose de l'attribut `for` dont la valeur est égale à l'ID du champ de fichier.
     - Il doit inclure un texte explicatif, obligatoire, dans un élément HTML `<span>` défini par la classe `fr-hint-text`.
-  - Le **champ de fichier** est un élément HTML `<input>` de type `file`, obligatoire :
+  - Le champ de fichier est un élément HTML `<input>` de type `file`, obligatoire :
     - Défini par la classe `fr-upload`.
     - Il dispose d'un attribut `id` obligatoire, pour être lié au libellé et d'un attribut `name` dont la valeur est libre.
     - Il peut disposer d'un attribut `aria-describedby` dont la valeur est égale à l'ID du groupe de messages.
     - Il peut disposer d'un attribut `multiple` dans le cas d'un composant ajout de fichiers multiples.
-  - Le **groupe de messages** est un élément HTML `<div>` défini par la classe `fr-messages-group`.
+  - Le groupe de messages est un élément HTML `<div>` défini par la classe `fr-messages-group`.
     - Il dispose d'un attribut `id` pour être lié au champ de fichier et d'un attribut `aria-live="polite"`.
-    - Le groupe de messages peut contenir un message d'erreur de type `<p>` défini par les classes `fr-message` et ` fr-message--error`.
+    - Le groupe de messages peut contenir un message d'erreur de type `<p>` défini par les classes `fr-message` et `fr-message--error`.
 
 **Exemple de structure HTML**
 

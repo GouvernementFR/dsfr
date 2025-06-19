@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du champ de saisie
 shortTitle: Code du champ de saisie
 description: Le champ de saisie permet à l’usager d’entrer des données dans une interface en respectant des règles de clarté et d’accessibilité.
@@ -32,11 +34,11 @@ Un **champ de saisie** permet à l'utilisateur de saisir des données. Il existe
 
 La structure HTML d'un champ de saisie de base est la suivante :
 
-- Un **conteneur** `<div>` de classe `fr-input-group`, contenant :
-  - Un **intitulé**, obligatoire, dans un élément `<label>` de classe `fr-label` et lié au champ via un attribut `for` pour décrire le champ de saisie
-  - Une **description additionnelle**, optionnelle, dans un élément `<span>` de classe `fr-hint-text` à placer dans le `<label>`. Cette description peut être utilisée pour donner des indications sur le format attendu.
-  - Un **champ** `<input>` de classe `fr-input` pour saisir les données. Pour une plus grande zone de saisie, il est possible d'utiliser un élément `<textarea>`.
-  - Un **message** d'erreur/information/avertissement/succès, optionnel, dans un bloc `fr-messages-group`, lié au `aria-describedby` du champ de saisie
+- Un conteneur `<div>` de classe `fr-input-group`, contenant :
+  - Un intitulé, obligatoire, dans un élément `<label>` de classe `fr-label` et lié au champ via un attribut `for` pour décrire le champ de saisie
+  - Une description additionnelle, optionnelle, dans un élément `<span>` de classe `fr-hint-text` à placer dans le `<label>`. Cette description peut être utilisée pour donner des indications sur le format attendu.
+  - Un champ `<input>` de classe `fr-input` pour saisir les données. Pour une plus grande zone de saisie, il est possible d'utiliser un élément `<textarea>`.
+  - Un message d'erreur/information/avertissement/succès, optionnel, dans un bloc `fr-messages-group`, lié au `aria-describedby` du champ de saisie
 
 **Exemple de structure simple**
 
@@ -57,7 +59,7 @@ La structure HTML d'un champ de saisie de base est la suivante :
 Un champ de saisie peut être associé à un bouton pour déclencher une action. La structure HTML est la suivante :
 
 - La structure du champ de saisie avec bouton est identique à celle du champ de saisie simple.
-- La différence réside dans l'ajout d'un **bouton** `<button>` de classe `fr-btn` à la suite du champ de saisie `<input>`. Le champ de saisie et le bouton doivent être enveloppé dans un élément `<div>` de classe `fr-input-wrap` et une des classes suivantes :
+- La différence réside dans l'ajout d'un bouton `<button>` de classe `fr-btn` à la suite du champ de saisie `<input>`. Le champ de saisie et le bouton doivent être enveloppé dans un élément `<div>` de classe `fr-input-wrap` et une des classes suivantes :
   - `fr-input-wrap--addon` : Pour accoler un bouton d'envoi et ajouter une bordure bleue sous le champ de saisie (s'utilise avec un bouton primaire).
   - `fr-input-wrap--action` : Pour placer un bouton d'action à coté (s'utilise avec un bouton secondaire).
 
@@ -141,9 +143,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 <link href="dist/component/input/input.legacy.min.css" rel="stylesheet">
 ```
 
-#### Styles du composant
-
-##### Variantes de types
+#### Variantes de types
 
 Le type de champ de saisie est défini par l'attribut `type` de l'élément `<input>`. Les types de champs de saisie disponibles sont les suivants :
 
@@ -162,7 +162,7 @@ Suivant le type de champ de saisie, des styles spécifiques peuvent être appliq
 - Le type `date` ajoute un bouton de sélection de date à droite dans champ de saisie. Cette icône est redéfinie par le DSFR pour utiliser les icônes du DSFR.
 - Le type `search` ajoute un bouton de réinitialisation à droite dans champ de saisie lorsque du texte a été renseigné.
 
-##### Variante de champ avec icône
+#### Variante de champ avec icône
 
 Une icône peut être ajoutée dans le champ de saisie pour apporter une information visuelle supplémentaire. La structure HTML est la suivante :
 
@@ -238,7 +238,7 @@ Le champ de saisie est disponible en plusieurs variantes d'états :
 
 ### JavaScript
 
-Le composant **champ de saisie** est statique et ne nécessite pas de JavaScript pour fonctionner.
+Le composant Champ de saisie **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
 ---
 

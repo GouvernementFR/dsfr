@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du contrôle segmenté
 shortTitle: Code du contrôle segmenté
 description: Le contrôle segmenté permet à l’usager de choisir une vue parmi plusieurs options d’affichage disponibles dans une interface.
@@ -31,12 +33,12 @@ Le contrôle segmenté est un élément d’interaction avec l’interface perme
 Le composant **Contrôle segmenté** permet à l'utilisateur de choisir une option parmi plusieurs segments.
 Sa structure est la suivante :
 
-- Le **Conteneur** du contrôle segmenté doit être un élément HTML `<fieldset>` défini par la classe `fr-segmented`.
-- La **Légende** du contrôle segmenté est un élément HTML `<legend>` défini par la classe `fr-segmented__legend`.
-- La **Liste des segments** est un élément HTML `<div>` défini par la classe `fr-segmented__elements`.
-- Chaque **segment** est contenu dans un élément HTML `<div>` défini par la classe `fr-segmented__element`.
-- Chaque **segment** est un élément `<input>` de type `radio` associé à un `<label>` avec la classe `fr-label`.
-- Une **description additionnelle**, optionnelle, peut être ajoutée dans la légende, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
+- Le conteneur du contrôle segmenté doit être un élément HTML `<fieldset>` défini par la classe `fr-segmented`.
+- La légende du contrôle segmenté est un élément HTML `<legend>` défini par la classe `fr-segmented__legend`.
+- La liste des segments est un élément HTML `<div>` défini par la classe `fr-segmented__elements`.
+- Chaque segment est contenu dans un élément HTML `<div>` défini par la classe `fr-segmented__element`.
+- Chaque segment est un élément `<input>` de type `radio` associé à un `<label>` avec la classe `fr-label`.
+- Une description additionnelle, optionnelle, peut être ajoutée dans la légende, elle est définie par un élément `<span>` et la classe utilitaire `fr-hint-text`.
 
 **Exemple de structure HTML simple**
 

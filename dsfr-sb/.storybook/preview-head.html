@@ -5,16 +5,22 @@
 
 <script>
   function changeHeight(lastHeight) {
-    const height = document.documentElement.offsetHeight;
-    window.requestAnimationFrame(() => {
-      changeHeight(height);
-    });
+    const sbRoot = document.querySelector('#storybook-root');
+    const sbDocs = document.querySelector('#storybook-docs');
+    const hasPadding = document.querySelector('.sb-main-padded');
+    const paddingValue = 32;
+    const height = (sbRoot ? sbRoot.getBoundingClientRect().height : 0) +
+      (sbDocs ? sbDocs.getBoundingClientRect().height : 0) + (hasPadding ? paddingValue : 0);
+      window.requestAnimationFrame(() => {
+        changeHeight(height);
+      });
     if (height === lastHeight) return;
 
     window.parent.postMessage({
       type: 'storybook-height-change',
-      height: height
-    });
+      height: height,
+      iframeId: document.documentElement.id
+    }, window.location.origin);
   }
 
   function addIdToBody() {

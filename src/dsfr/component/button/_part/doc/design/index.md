@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du bouton
 shortTitle: Design du Bouton
 description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
