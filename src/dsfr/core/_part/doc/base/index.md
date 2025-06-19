@@ -56,7 +56,7 @@ Le fond de votre site doit être blanc par défaut. Il est possible de créer de
 
 Vous pouvez délimiter des sections de votre site par des fonds de couleurs. Dans ce cas, l’entièreté des éléments contenus dans la section doit y être clairement inclue.
 
-![ ](../_asset/base/image1-dsfr.png)
+![](../_asset/base/image1-dsfr.png)
 
 Pour préserver la structure du site, les fonds alternatifs doivent être entourés de blanc, deux fonds alternatifs ne peuvent pas se suivre.
 
@@ -64,7 +64,7 @@ Pour préserver la structure du site, les fonds alternatifs doivent être entour
 
 Pour conserver l’affordance des composants et leur bonne compréhension par tous les utilisateurs, ils doivent rester sur un fond uni. Une rupture dans la couleur de fond pourrait compromettre leur aspect ou perturber leur compréhension.
 
-![ ](../_asset/base/image2-dsfr.png)
+![](../_asset/base/image2-dsfr.png)
 
 ### La typographie
 

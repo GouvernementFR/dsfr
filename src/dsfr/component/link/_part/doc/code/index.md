@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Code du Lien
 shortTitle: Code du Lien
 description: Élément de navigation secondaire permettant à l’usager d’accéder à un autre contenu, sur la même page ou sur une autre page, interne ou externe.

@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du Menu déroulant
 badge: beta
 shortTitle: Design du Menu déroulant

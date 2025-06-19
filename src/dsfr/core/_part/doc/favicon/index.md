@@ -18,7 +18,7 @@ L’icône de favoris est un petit icône associé à un site web.
 
 Il permet à l’utilisateur de repérer qu’il se trouve sur un site de l'état. Cela dans différents contextes au sein de son navigateur (dans l’onglet, la liste de favoris ou encore l’historique).
 
-![ ](../_asset/favicon/apple_touch_icon_8ffa1fa80c.png)
+![](../_asset/favicon/apple_touch_icon_8ffa1fa80c.png)
 
 ### Pour les développeurs
 

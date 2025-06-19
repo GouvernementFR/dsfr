@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Accessibilité de la transcription
 shortTitle: Accessibilité de la transcription
 description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.

@@ -26,7 +26,7 @@ La navigation tertiaire est un système de navigation permettant un troisième n
 
 :::
 
-![ ](./_asset/presentation/presentation-1.png)
+![](./_asset/presentation/presentation-1.png)
 
 ### Quand utiliser ce composant ?
 

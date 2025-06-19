@@ -1,5 +1,7 @@
 ---
 boost: 0
+sitemap:
+  noindex: true
 title: Design du bandeau d'information importante
 shortTitle: Design du bandeau d'information importante
 description: Le bandeau d’information importante permet de signaler temporairement une information urgente ou prioritaire en tête de page.
