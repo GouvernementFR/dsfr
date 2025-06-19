@@ -28,7 +28,7 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 ![Anatomie du badge](../_asset/anatomy/anatomy-1.png)
 
-::dsfr-doc-pin[Une icône]{required=true add='uniquement pour les badges système'}
+::dsfr-doc-pin[Une icône]{add='uniquement pour les badges système'}
 
 ::dsfr-doc-pin[Un libellé]{required=true add='en majuscule'}
 
@@ -36,14 +36,13 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 :::
 
-
 ### Variations
 
 **Badge standard**
 
 ::dsfr-doc-storybook{storyId=badge--default}
 
-**Badge système sans icône**
+**Badge système avec icône**
 
 - Succès
 - Avertissement
@@ -51,15 +50,17 @@ Le badge est un élément d’indication permettant de valoriser une information
 - Information
 - Nouveauté
 
-::dsfr-doc-storybook{storyId=badge--status-no-icon}
-
-**Badge système avec icône**
-
 ::dsfr-doc-storybook{storyId=badge--status}
 
 Utiliser cette variation pour préciser l’information donnée par le texte du badge avec l’icône correspondante.
 
-L’ajout d’une icône est autorisée uniquement pour les badges système.
+L’ajout d’une icône est autorisée, et automatique en code, uniquement pour les badges système.
+
+**Badge système sans icône**
+
+Il est possible d’utiliser un badge système sans icône.
+
+::dsfr-doc-storybook{storyId=badge--status-no-icon}
 
 ### Tailles
 

@@ -47,25 +47,25 @@ Dans le DSFR ces couleurs sont réparties en 4 familles : primaires, neutres, sy
 
 Le respect de la palette et de leur application amène de la cohérence entre les interfaces et permet d’offrir une expérience optimale à l’utilisateur. Les principes importants à retenir sont :
 
-1. **Le fond du site doit être blanc**
+1. **Le fond du site doit être blanc**<br><br>
 
-Spécificité légale : La loi du 29 juillet 1881, indique dans son article 15, chapitre III (modifié par la loi n° 2004-1343 du 9 décembre 2004) que seules les affiches des actes émanant de l’autorité administrative peuvent être imprimées sur papier blanc.
+    Spécificité légale : La loi du 29 juillet 1881, indique dans son article 15, chapitre III (modifié par la loi n° 2004-1343 du 9 décembre 2004) que seules les affiches des actes émanant de l’autorité administrative peuvent être imprimées sur papier blanc.
 
-Le fond de votre site doit être blanc par défaut. Il est possible de créer des ruptures avec des fonds de couleurs alternatives mais cette notion est importante à respecter pour la clarté, l’accessibilité et la facilité d’usage de votre interface.
+    Le fond de votre site doit être blanc par défaut. Il est possible de créer des ruptures avec des fonds de couleurs alternatives mais cette notion est importante à respecter pour la clarté, l’accessibilité et la facilité d’usage de votre interface.<br><br>
 
-1. **L’utilisation de fonds de couleur alternatifs**
+2. **L’utilisation de fonds de couleur alternatifs**<br><br>
 
-Vous pouvez délimiter des sections de votre site par des fonds de couleurs. Dans ce cas, l’entièreté des éléments contenus dans la section doit y être clairement inclue.
+    Vous pouvez délimiter des sections de votre site par des fonds de couleurs. Dans ce cas, l’entièreté des éléments contenus dans la section doit y être clairement inclue.
 
-![ ](../_asset/base/image1-dsfr.png)
+    ![ ](../_asset/base/image1-dsfr.png)
 
-Pour préserver la structure du site, les fonds alternatifs doivent être entourés de blanc, deux fonds alternatifs ne peuvent pas se suivre.
+    Pour préserver la structure du site, les fonds alternatifs doivent être entourés de blanc, deux fonds alternatifs ne peuvent pas se suivre.<br><br>
 
-1. **Pas de composants interactifs à cheval sur des fonds de couleurs**
+3. **Pas de composants interactifs à cheval sur des fonds de couleurs**<br><br>
 
-Pour conserver l’affordance des composants et leur bonne compréhension par tous les utilisateurs, ils doivent rester sur un fond uni. Une rupture dans la couleur de fond pourrait compromettre leur aspect ou perturber leur compréhension.
+    Pour conserver l’affordance des composants et leur bonne compréhension par tous les utilisateurs, ils doivent rester sur un fond uni. Une rupture dans la couleur de fond pourrait compromettre leur aspect ou perturber leur compréhension.
 
-![ ](../_asset/base/image2-dsfr.png)
+    ![ ](../_asset/base/image2-dsfr.png)
 
 ### La typographie
 

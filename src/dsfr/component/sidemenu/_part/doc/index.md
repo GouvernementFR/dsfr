@@ -51,7 +51,7 @@ Indiquer la page active au sein du menu latéral pour que l’usager sache où i
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/use/dont-1.png)
+![À ne pas faire](./_asset/use/dont-1.png)
 
 Ne pas laisser l’usager déduire sa position au sein du menu latéral.
 
@@ -61,7 +61,7 @@ Ne pas laisser l’usager déduire sa position au sein du menu latéral.
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/use/do-2.png)
+![À faire](./_asset/use/do-2.png)
 
 Positionner le menu latéral à gauche ou à droite du contenu, sur une largeur de 3 colonnes, sur toute la hauteur de la page.
 
@@ -69,7 +69,7 @@ Positionner le menu latéral à gauche ou à droite du contenu, sur une largeur 
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/use/dont-2.png)
+![À ne pas faire](./_asset/use/dont-2.png)
 
 Ne pas repasser le contenu de la page sur une grille de 12 colonnes en présence d’un menu latéral.
 
@@ -83,7 +83,7 @@ Ne pas repasser le contenu de la page sur une grille de 12 colonnes en présence
 
 :::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
-![À faire](../_asset/edit/do-1.png)
+![À faire](./_asset/edit/do-1.png)
 
 Avoir le même nom de rubrique dans le contenu et au sein du menu latéral.
 
@@ -91,7 +91,7 @@ Avoir le même nom de rubrique dans le contenu et au sein du menu latéral.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
-![À ne pas faire](../_asset/edit/dont-1.png)
+![À ne pas faire](./_asset/edit/dont-1.png)
 
 Ne pas changer le nom de la rubrique au sein du menu latéral pour ne pas perdre l’usager.
 

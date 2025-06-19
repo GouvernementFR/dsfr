@@ -114,7 +114,7 @@ Ne pas personnaliser la couleur des interrupteurs.
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![À faire](../_asset/custom/do-1.png)
+![À faire](../_asset/custom/do-2.png)
 
 Conserver la coche lorsque l’interrupteur est activé.
 
@@ -122,7 +122,7 @@ Conserver la coche lorsque l’interrupteur est activé.
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
-![À ne pas faire](../_asset/custom/dont-1.png)
+![À ne pas faire](../_asset/custom/dont-2.png)
 
 Ne pas supprimer ou personnaliser l’icône de l’interrupteur.
 
