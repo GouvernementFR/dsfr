@@ -27,7 +27,7 @@ La liste déroulante riche est un élément d’interaction avec l’interface p
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de la liste déroulante riche](../_asset/anatomy/anatomy-1.png)
 

@@ -24,7 +24,7 @@ La tuile est un élément d’interaction avec l’interface permettant de redir
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de la tuile](../_asset/anatomy/anatomy-1.png)
 

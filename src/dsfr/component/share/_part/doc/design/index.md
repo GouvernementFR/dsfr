@@ -25,7 +25,7 @@ Le partage est un groupe d’éléments d’interaction avec l’interface perme
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du partage](../_asset/anatomy/anatomy-1.png)
 

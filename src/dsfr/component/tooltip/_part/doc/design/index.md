@@ -26,7 +26,7 @@ Elle est cachée par défaut et s’affiche par-dessus le reste de la page lors 
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de l'infobulle](../_asset/anatomy/anatomy-1.png)
 

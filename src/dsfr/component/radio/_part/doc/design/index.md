@@ -24,7 +24,7 @@ Le bouton radio est un élément d’interaction avec l’interface permettant �
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du bouton](../_asset/anatomy/anatomy-1.png)
 

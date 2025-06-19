@@ -24,7 +24,7 @@ La case à cocher est un élément d’interaction avec l’interface permettant
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de la case à cocher](../_asset/anatomy/anatomy-1.png)
 

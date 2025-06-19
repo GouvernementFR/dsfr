@@ -24,7 +24,7 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du badge](../_asset/anatomy/anatomy-1.png)
 

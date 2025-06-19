@@ -24,7 +24,7 @@ Le fil d’Ariane est un système de navigation secondaire qui permet à l’usa
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du fil d'Ariane](../_asset/anatomy/anatomy-1.png)
 

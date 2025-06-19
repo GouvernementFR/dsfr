@@ -30,7 +30,7 @@ Retrouver le fonctionnement en détail ici : [https://franceconnect.gouv.fr/par
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du bouton FranceConnect](../_asset/anatomy/anatomy-1.png)
 

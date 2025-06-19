@@ -24,7 +24,7 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du tag](../_asset/anatomy/anatomy-1.png)
 

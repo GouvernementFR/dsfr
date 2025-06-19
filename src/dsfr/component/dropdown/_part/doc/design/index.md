@@ -27,7 +27,7 @@ Le menu déroulant présente une liste d'actions ou de choix parmi lesquels un u
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du menu déroulant](../_asset/anatomy/anatomy-1.png)
 
