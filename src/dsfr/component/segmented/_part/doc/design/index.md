@@ -26,7 +26,7 @@ Le contrôle segmenté est un élément d’interaction avec l’interface perme
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du contrôle segmenté](../_asset/anatomy/anatomy-1.png)
 
