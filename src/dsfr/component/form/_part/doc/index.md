@@ -1,8 +1,9 @@
 ---
 title: Formulaire
+shortTitle: Formulaire - Form
 ---
 
-## Formulaire
+## Formulaire - Form
 
 :::dsfr-doc-tab-navigation
 

@@ -12,7 +12,7 @@ excerpt: Le composant Sommaire affiche des liens ancrés vers les différentes s
 summary: Ce composant permet d’améliorer l’expérience utilisateur dans les pages à forte densité de contenu. Il affiche en haut de page une liste d’ancres reprenant fidèlement les titres des sections éditoriales, dans un bloc distinct visuellement. Le sommaire n’est pas sticky, ne se personnalise pas, et garantit une navigation fluide et cohérente au sein d’un même contenu.
 ---
 
-## Sommaire
+## Sommaire - Summary
 
 Le sommaire est un système de navigation secondaire présentant une liste d’ancres placée au-dessus du contenu correspondant.
 

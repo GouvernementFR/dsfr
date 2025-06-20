@@ -13,7 +13,7 @@ summary: Ce composant facilite l’envoi de documents par l’usager, en l’int
 ---
 
 
-## Ajout de fichier
+## Ajout de fichier - Upload
 
 L’ajout de fichier est un élément d’interaction avec l’interface qui permet à l’usager de sélectionner et d’envoyer un ou plusieurs fichiers.
 

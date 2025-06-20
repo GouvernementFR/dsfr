@@ -13,7 +13,7 @@ excerpt: Le menu déroulant du DSFR permet de proposer des options d’action, d
 summary: Le menu déroulant est un composant d’interface permettant de regrouper des actions, liens ou contrôles dans une zone compacte, accessible au clic. Il ne doit pas être utilisé pour la saisie de données en formulaire, où la liste déroulante est préférable. Ce composant est en version bêta et peut encore évoluer - ses cas d’usage sont nombreux, allant du filtre contextuel à l’action rapide, sans modification de libellé du bouton déclencheur. Il existe en trois tailles (SM, MD, LG) et respecte les bonnes pratiques d’accessibilité du Design Système de l’État.
 ---
 
-## Menu déroulant
+## Menu déroulant - Dropdown
 
 > [!NOTE]
 > **Ce composant est en version bêta.** Il n'existe pas en code et son design ou ses fonctionnalités peuvent encore être amenés à évoluer. N'hésitez pas à nous partager vos cas d'usage ou retours qui le concerne via notre formulaire de contact ou notre Tchap pour que nous puissions les étudier.

@@ -1,6 +1,6 @@
 ---
 title: Bouton
-shortTitle: Bouton
+shortTitle: Bouton - Button
 description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
 shortDescription: Déclenchement d’une action dans l’interface
 keywords: bouton, interaction, action, DSFR, design système, accessibilité, formulaire, navigation
@@ -9,7 +9,7 @@ excerpt: Le composant Bouton permet de déclencher une action dans la page, comm
 summary: Le bouton est un composant central d’interaction dans les interfaces numériques. Il est utilisé pour initier une action précise selon un niveau de priorité - bouton primaire pour l’action principale, secondaire pour les actions secondaires et tertiaire pour les interactions contextuelles. Il respecte des règles d’écriture éditoriale claires, n’est pas personnalisable graphiquement et s’intègre de manière cohérente dans une interface respectueuse des standards d’accessibilité.
 ---
 
-## Bouton
+## Bouton - Button
 
 Le bouton est un élément d’interaction avec l’interface permettant à l’usager d’effectuer une action.
 

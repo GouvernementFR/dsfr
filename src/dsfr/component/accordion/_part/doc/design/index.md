@@ -12,7 +12,7 @@ excerpt: Le composant Accordéon permet à l’usager d’ouvrir ou fermer une s
 summary: Utilisé pour structurer et hiérarchiser du contenu éditorial, l’accordéon masque par défaut les informations secondaires pour ne révéler que ce que l’usager souhaite consulter. Il est particulièrement utile dans les longues pages de contenu. Il permet des interactions simples, peut être utilisé seul ou en groupe, et respecte des règles strictes de lisibilité et d’accessibilité.
 ---
 
-## Accordéon
+## Accordéon - Accordion
 
 L’accordéon est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer une section de contenu présentée dans une page.
 

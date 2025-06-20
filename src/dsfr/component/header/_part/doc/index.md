@@ -1,6 +1,6 @@
 ---
 title: En-tête
-shortTitle: En-tête
+shortTitle: En-tête - Header
 description: Présentation du composant En-tête utilisé pour identifier le site consulté et donner accès à des fonctionnalités clés comme la recherche ou la connexion.
 shortDescription: Identification du site et accès rapides
 keywords: en-tête, header, marque, recherche, navigation, DSFR, accessibilité, interface
@@ -9,7 +9,7 @@ excerpt: Le composant En-tête est positionné en haut de chaque page et permet 
 summary: Ce composant structure la zone supérieure de chaque page d’un site public. Il intègre les éléments d’identité visuelle de l’État, les éventuels accès rapides à des fonctions essentielles, et le moteur de recherche. Non personnalisable, l’en-tête garantit cohérence, lisibilité et conformité avec la charte de l’État, en version desktop comme mobile. Il peut être enrichi ou simplifié selon les besoins du site.
 ---
 
-## En-tête
+## En-tête - Header
 
 L’en-tête est un élément de navigation permettant aux usagers d’identifier sur quel site ils se trouvent et de leur donner un accès simplifié au moteur de recherche et à certaines pages ou fonctionnalités clés du site.
 

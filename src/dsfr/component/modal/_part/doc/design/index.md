@@ -12,7 +12,7 @@ excerpt: Le composant Modale permet d’afficher un contenu ou une interaction d
 summary: La modale s’utilise pour présenter un contenu complémentaire ou une action simple sans sortir de la page en cours. Elle est conçue pour isoler une information importante tout en permettant de revenir au contexte initial en un clic. Non personnalisable, elle existe en plusieurs tailles, avec ou sans zone d’action, et respecte les standards d’accessibilité en figant l’arrière-plan lors de son affichage.
 ---
 
-## Modale
+## Modale - Modal
 
 La modale est un élément de mise en forme de contenu permettant de concentrer l’attention de l’usager exclusivement sur une tâche ou un élément d’information, sans perdre le contexte de la page en cours.
 

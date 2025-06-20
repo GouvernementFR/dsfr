@@ -7,7 +7,7 @@ shortDescription: Le bloc marque est un élément de la charte graphique de l'É
 cover: ../_asset/cover/cover.png
 ---
 
-## Bloc marque
+## Bloc marque - Logo
 
 :::dsfr-doc-tab-navigation
 

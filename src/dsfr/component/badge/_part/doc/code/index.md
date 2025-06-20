@@ -13,7 +13,7 @@ summary: Utilisé pour signaler un état ou un statut dans une interface, le com
 
 ---
 
-## Badge
+## Badge - Badge
 
 Le badge est un élément d’indication permettant de valoriser une information liée à un élément précis du site.
 

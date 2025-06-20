@@ -13,7 +13,7 @@ summary: Ce composant permet de composer des sections visuelles riches pour les 
 badge: beta
 ---
 
-## Zone d'expression visuelle
+## Zone d'expression visuelle - Composition
 
 La zone d’expression visuelle est une section de page à l’intérieur de laquelle il est possible de faire des compositions créativement plus riches que généralement autorisé par le DSFR.
 

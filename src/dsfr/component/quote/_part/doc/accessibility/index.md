@@ -12,7 +12,7 @@ excerpt: Le composant Citation permet d’intégrer un extrait textuel dans une 
 summary: Ce document décrit les usages du composant Citation, destiné à intégrer des extraits de textes ou de discours dans un contenu éditorial. Il explique comment distinguer la citation des composants de mise en avant ou de mise en exergue, précise les règles typographiques à appliquer, comme l’usage de guillemets et de l’italique, et recommande d’éviter les citations trop longues pour préserver la lisibilité. Il fournit également des indications sur la structuration, l’usage des champs de détails, et les règles de propriété intellectuelle à respecter.
 ---
 
-## Citation
+## Citation - Quote
 
 La citation est un élément éditorial permettant de mettre en forme du contenu dans une page.
 

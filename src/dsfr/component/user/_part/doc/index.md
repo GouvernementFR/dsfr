@@ -1,6 +1,6 @@
 ---
 title: En-tête connectée
-shortTitle: En-tête connectée
+shortTitle: En-tête connectée - User
 description: Déclinaison de l’en-tête standard permettant à l’usager connecté d’accéder à son menu de navigation personnel.
 shortDescription: Variante de l’en-tête dédiée aux usagers connectés
 keywords: en-tête, menu utilisateur, connexion, compte, connecté, navigation, DSFR, bêta
@@ -10,7 +10,7 @@ summary: L’en-tête connectée est une extension de l’en-tête classique, pe
 badge: beta
 ---
 
-## En-tête connectée
+## En-tête connectée - User
 
 > [!NOTE]
 > **Ce composant est en version bêta.** Il n'existe pas en code et son design ou ses fonctionnalités peuvent encore être amenés à évoluer. N'hésitez pas à nous partager vos cas d'usage ou retours qui le concerne via notre formulaire de contact ou notre Tchap pour que nous puissions les étudier.

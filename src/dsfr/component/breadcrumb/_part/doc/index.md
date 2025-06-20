@@ -1,6 +1,6 @@
 ---
 title: Fil d'Ariane
-shortTitle: Fil d'Ariane
+shortTitle: Fil d'Ariane - Breadcrumb
 description: Le fil d’Ariane est un composant de navigation secondaire permettant à l’usager de se repérer dans l’arborescence d’un site et de revenir à un niveau supérieur.
 shortDescription: Se repérer dans l’arborescence avec le fil d’Ariane.
 keywords: fil d’Ariane, navigation, arborescence, hiérarchie, composant, UX, design system, position, retour, accessibilité
@@ -9,7 +9,7 @@ excerpt: Le fil d’Ariane est un outil de navigation essentiel pour guider l’
 summary: Ce document présente le fil d’Ariane comme un composant fondamental de navigation secondaire. Il explique quand l’utiliser, comment le positionner correctement dans la page, les règles de cliquabilité, les restrictions liées au fond et les principes éditoriaux à respecter. Le fil d’Ariane renforce l’orientation de l’usager en lui offrant un repère visuel clair dans l’architecture du site. Ce guide s’adresse aux designers et intégrateurs souhaitant garantir une navigation fluide et cohérente dans des environnements complexes.
 ---
 
-## Fil d'Ariane
+## Fil d'Ariane - Breadcrumb
 
 Le fil d’Ariane est un système de navigation secondaire qui permet à l’usager de se situer sur le site qu’il consulte.
 

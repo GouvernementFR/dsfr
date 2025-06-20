@@ -5,7 +5,7 @@ sitemap:
 title: Accessibilité du bloc marque
 ---
 
-## Bloc marque
+## Bloc marque - Logo
 
 :::dsfr-doc-tab-navigation
 

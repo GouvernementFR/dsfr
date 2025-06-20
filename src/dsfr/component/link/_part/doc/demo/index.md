@@ -12,7 +12,7 @@ excerpt: Le composant Lien facilite la navigation de l’usager dans une même p
 summary: Le lien est un composant essentiel pour structurer la navigation au sein des interfaces numériques. Il se décline en différentes formes selon son usage - dans un texte, hors contenu, vers une page externe ou pour un téléchargement. Non personnalisable, il suit des règles d’usage strictes afin de préserver la lisibilité, l’accessibilité et l’uniformité graphique. Son usage s’inscrit dans une hiérarchie d’interaction bien définie, distincte de celle du bouton.
 ---
 
-## Lien
+## Lien - Link
 
 Le lien est un système de navigation secondaire qui permet à l’usager de se déplacer au sein d’une même page, entre deux pages d’un même site ou vers un site externe.
 

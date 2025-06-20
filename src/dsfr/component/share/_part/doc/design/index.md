@@ -13,7 +13,7 @@ summary: Ce composant facilite la diffusion de contenus numériques en permettan
 ---
 
 
-## Partage
+## Partage - Share
 
 Le partage est un groupe d’éléments d’interaction avec l’interface permettant à l’usager de partager le contenu consulté via différents canaux.
 

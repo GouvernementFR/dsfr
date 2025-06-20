@@ -13,7 +13,7 @@ summary: La liste déroulante riche est un composant en version bêta qui facili
 badge: beta
 ---
 
-## Liste déroulante riche
+## Liste déroulante riche - Combobox
 
 > [!NOTE]
 > **Ce composant est en version bêta.** Il n'existe pas en code et son design ou ses fonctionnalités peuvent encore être amenés à évoluer. N'hésitez pas à nous partager vos cas d'usage ou retours qui le concerne via notre formulaire de contact ou notre Tchap pour que nous puissions les étudier.

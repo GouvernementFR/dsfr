@@ -12,7 +12,7 @@ excerpt: Ce document décrit la structure visuelle et interactive du composant T
 summary: Ce contenu présente en détail le design du composant Tag, utilisé pour catégoriser ou filtrer des contenus. Il couvre les éléments constitutifs du tag, ses différentes variations (cliquable, sélectionnable, supprimable), les tailles disponibles, les états interactifs (survol, cliqué) et les règles de personnalisation. Ce guide s’adresse aux designers UI souhaitant intégrer le composant dans des interfaces cohérentes et accessibles, tout en respectant les standards du système de design.
 ---
 
-## Tag
+## Tag - Tag
 
 Le tag est un élément d’indication ou d’interaction (selon les contextes) permettant de catégoriser, classer, organiser les contenus d’un site à l’aide de mots clés. Il aide les usagers à rechercher et à trouver facilement une information.
 

@@ -12,7 +12,7 @@ excerpt: Le composant Alerte informe l’usager d’un événement ou d’un ét
 summary: Ce composant permet de transmettre à l’usager un message important en lien avec une action ou un état du système, sans interrompre sa tâche. Il est utilisé dans des contextes variés, comme un formulaire ou un événement technique. Il propose plusieurs variations (succès, erreur, information, attention), deux tailles, et des règles éditoriales strictes pour garantir une communication claire, courtoise et accessible.
 ---
 
-## Alerte
+## Alerte - Alert
 
 L’alerte est un élément d’indication poussé par l’interface pour relayer une information à l’usager.
 
@@ -39,12 +39,12 @@ Aucune interaction au clavier spécifique au composant.
 - Le niveau de titre dépend du contexte de la page et ne sera pas toujours un `<h3>`.
 - Le type d’alerte (info, error, success, warning) doit être indiqué textuellement dans le contenu de l'alerte par les termes : «&nbsp;information&nbsp;», «&nbsp;erreur&nbsp;», «&nbsp;succès&nbsp;», ou «&nbsp;attention&nbsp;».
 
-#### Alertes avec bouton de fermeture
+#### Alerte - Alerts avec bouton de fermeture
 
 - Les alertes refermables ont un bouton de fermeture avec un intitulé explicite («&nbsp;Masquer le message&nbsp;»).
 - À la fermeture de l’alerte, le focus doit être repositionné à un endroit pertinent pour l’utilisateur
 
-#### Alertes ajoutées dynamiquement
+#### Alerte - Alerts ajoutées dynamiquement
 
 Une alerte ajoutée après le chargement de la page doit être perçue par tous les utilisateurs.
 

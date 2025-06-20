@@ -12,7 +12,7 @@ excerpt: Le menu latéral permet de structurer la navigation entre les pages d�
 summary: Ce contenu présente le menu latéral comme un composant de navigation secondaire destiné à faciliter la circulation entre les pages d’une rubrique. Il détaille ses cas d’usage, ses comportements interactifs, ses variations selon la profondeur de navigation, et les règles éditoriales à respecter. Il précise également les contraintes de structure, les bonnes pratiques en responsive, et rappelle les distinctions avec le sommaire. Ce guide est conçu pour les équipes souhaitant implémenter une navigation hiérarchique claire et accessible dans des interfaces complexes.
 ---
 
-## Menu latéral
+## Menu latéral - Sidemenu
 
 Le menu latéral est un système de navigation secondaire présentant une liste verticale de liens placée à côté du contenu.
 

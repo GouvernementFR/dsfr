@@ -1,6 +1,6 @@
 ---
 title: Liste déroulante riche
-shortTitle: Liste déroulante riche
+shortTitle: Liste déroulante riche - Combobox
 description: Composant interactif permettant à l’usager de choisir une ou plusieurs options dans une liste étendue, incluant recherche, sélection multiple et options par défaut.
 shortDescription: Composant de sélection multiple enrichi avec fonctions de recherche.
 keywords: bêta, liste déroulante, sélection multiple, formulaire, combobox, recherche, accessibilité, UX, options, DSFR
@@ -10,7 +10,7 @@ summary: La liste déroulante riche est un composant en version bêta qui facili
 badge: beta
 ---
 
-## Liste déroulante riche
+## Liste déroulante riche - Combobox
 
 > [!NOTE]
 > **Ce composant est en version bêta.** Il n'existe pas en code et son design ou ses fonctionnalités peuvent encore être amenés à évoluer. N'hésitez pas à nous partager vos cas d'usage ou retours qui le concerne via notre formulaire de contact ou notre Tchap pour que nous puissions les étudier.

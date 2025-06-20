@@ -5,7 +5,7 @@ sitemap:
 title: Code du bloc marque
 ---
 
-## Bloc marque
+## Bloc marque - Logo
 
 :::dsfr-doc-tab-navigation
 

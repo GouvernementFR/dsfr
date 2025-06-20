@@ -1,6 +1,6 @@
 ---
 title: Liens d'évitement
-shortTitle: Liens d'évitement
+shortTitle: Liens d'évitement - Skiplink
 description: Les liens d’évitement permettent aux usagers utilisant un clavier ou un lecteur d’écran d’accéder rapidement aux zones principales d’une page.
 shortDescription: Accéder rapidement au contenu avec le clavier.
 keywords: lien d’évitement, accessibilité, navigation clavier, lecteur d’écran, UX, interface, design system, contenu, header, composant
@@ -10,7 +10,7 @@ summary: Ce document présente le composant Lien d’évitement, un outil fondam
 
 ---
 
-## Liens d'évitement
+## Liens d'évitement - Skiplink
 
 Les liens d’évitement sont un système de navigation secondaire permettant à l’usager naviguant au clavier, ou équipé d’un lecteur d'écran, d’accéder plus rapidement à des zones précises de la page.
 

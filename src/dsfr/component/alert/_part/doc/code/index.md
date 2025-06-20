@@ -12,7 +12,7 @@ excerpt: Le composant Alerte informe l’usager d’un événement ou d’un ét
 summary: Ce composant permet de transmettre à l’usager un message important en lien avec une action ou un état du système, sans interrompre sa tâche. Il est utilisé dans des contextes variés, comme un formulaire ou un événement technique. Il propose plusieurs variations (succès, erreur, information, attention), deux tailles, et des règles éditoriales strictes pour garantir une communication claire, courtoise et accessible.
 ---
 
-## Alerte
+## Alerte - Alert
 
 L’alerte est un élément d’indication poussé par l’interface pour relayer une information à l’usager.
 
