@@ -27,6 +27,17 @@ export const SizeSmStory = {
   ])
 };
 
+export const SizeLgStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      enlarge: true,
+      size: 'lg',
+      description: 'Description (optionnelle)'
+    }
+  ])
+};
+
 export const VerticalStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
@@ -186,6 +197,16 @@ export const ShadowedCardStory = {
   render: () => renders([
     {
       variations: 'shadow'
+    }
+  ])
+};
+
+export const DisabledStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      disabled: true,
+      description: 'Description (optionnelle)'
     }
   ])
 };

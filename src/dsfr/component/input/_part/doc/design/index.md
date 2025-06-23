@@ -71,7 +71,7 @@ La zone de texte est un champ de saisie libre qui accepte plus d’une ligne de 
 
 ::dsfr-doc-storybook{storyId=input--action}
 
-À partir des éléments présentés ci-dessus, il est possible de décliner les champs selon vos besoins. Pour certains champs, il sera nécessaire d’ajouter une icône au sein du champ (voir [les icônes disponibles](../../../../../core/_part/doc/icon/index.md)).
+L'ajout d'icône n'a qu'un but illustratif (voir [les icônes disponibles](../../../../../core/_part/doc/icon/index.md)).
 
 ### Tailles
 
@@ -85,19 +85,19 @@ Toutefois, il est important de l’ajuster en fonction de la quantité de conten
 
 L'état d’erreur est signalé par un changement de couleur ainsi que l’affichage d’une ligne rouge (cf. couleurs système : le rouge est la couleur de l’état erreur) et d’un message d’erreur en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=input--default args="{ status: error }"}
+::dsfr-doc-storybook{storyId=input--error}
 
 **État de succès**
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs système : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=input--default args="{ status: valid }"}
+::dsfr-doc-storybook{storyId=input--valid}
 
 **État désactivé**
 
 L'état désactivé indique que l’usager ne peut pas interagir avec le champ.
 
-::dsfr-doc-storybook{storyId=input--default args="{ disabled: true }"}
+::dsfr-doc-storybook{storyId=input--disabled}
 
 Dans le cas d’un champ de saisie, il indique à l’usager qu’il ne peut pas saisir de contenu jusqu'à ce qu'une autre action soit terminée, par exemple.
 
