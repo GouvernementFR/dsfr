@@ -25,7 +25,7 @@ Le champ de saisie est un élément d’interaction avec l’interface permettan
 
 ### Design
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du champ de saisie](../_asset/anatomy/anatomy-1.png)
 

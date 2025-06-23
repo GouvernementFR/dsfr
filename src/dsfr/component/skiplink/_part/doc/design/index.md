@@ -26,7 +26,7 @@ Les liens d’évitement sont un système de navigation secondaire permettant à
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie des liens d'évitement](../_asset/anatomy/anatomy-1.png)
 

@@ -26,7 +26,7 @@ Le sommaire est un système de navigation secondaire présentant une liste d’a
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du bouton](../_asset/anatomy/anatomy-1.png)
 
