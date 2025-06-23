@@ -44,7 +44,7 @@ La liste déroulante est un élément d’interaction avec l’interface permett
 
 **Liste déroulante avec texte d’aide**
 
-::dsfr-doc-storybook{storyId=select--select args="{ hint: Texte de description additionnel }"}
+::dsfr-doc-storybook{storyId=select--hint}
 
 Il est recommandé d’ajouter un texte d’aide sous le libellé de la liste déroulante afin de faciliter le choix de l’usager.
 
