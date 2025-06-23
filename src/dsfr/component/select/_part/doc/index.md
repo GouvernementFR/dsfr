@@ -23,7 +23,7 @@ La liste déroulante est un élément d’interaction avec l’interface permett
 
 :::
 
-::dsfr-doc-storybook{storyId=select—select}
+::dsfr-doc-storybook{storyId=select--select}
 
 ### Quand utiliser ce composant ?
 

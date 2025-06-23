@@ -58,7 +58,7 @@ Par défaut, le contrôle segmenté s’affiche horizontalement, en desktop comm
 
 **Contrôlé segmenté avec légende et texte de description**
 
-::dsfr-doc-storybook{storyId=segmented--default args="{ hint: Texte de description additionnel }"}
+::dsfr-doc-storybook{storyId=segmented--legend-inline}
 
 ### Tailles
 

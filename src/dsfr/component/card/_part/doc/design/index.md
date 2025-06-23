@@ -112,7 +112,7 @@ Pour une carte verticale, en desktop :
 
 - SM : 3 à 4 colonnes
 
-::dsfr-doc-storybook{storyId=card--card args="{ size: sm }"}
+::dsfr-doc-storybook{storyId=card--size-sm}
 
 - MD : 4 à 6 colonnes
 
@@ -120,7 +120,7 @@ Pour une carte verticale, en desktop :
 
 - LG : 6 à 8 colonnes
 
-::dsfr-doc-storybook{storyId=card--card args="{ size: lg }"}
+::dsfr-doc-storybook{storyId=card--size-lg}
 
 En mobile, peu importe la taille d’origine, la carte verticale prend systématiquement 12 colonnes de large.
 
@@ -149,7 +149,7 @@ En mobile, seule la carte de téléchargement conserve un format horizontal. Dan
 
 L’état désactivé indique que l'usager ne peut pas interagir avec la carte.
 
-::dsfr-doc-storybook{storyId=card--card args="{ disabled: true }"}
+::dsfr-doc-storybook{storyId=card--disabled}
 
 **État au survol**
 
