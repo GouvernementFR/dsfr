@@ -23,12 +23,7 @@
 }
 
 #modal--modal button[data-fr-opened='true'],
-#story--modal--modal-story--primary button[data-fr-opened='true'],
-#story--modal--modal-story button[data-fr-opened='true'],
-#story--modal--size-sm-story button[data-fr-opened='true'],
-#story--modal--size-md-story button[data-fr-opened='true'],
-#story--modal--size-lg-story button[data-fr-opened='true'],
-#story--modal--footer button[data-fr-opened='true'] {
+[id^="story--modal"] button[data-fr-opened='true'] {
   margin-bottom: calc(100vh - 40px);
 }
 
