@@ -23,7 +23,7 @@ COULEUR- NOM - VARIANTE - INDICE - ÉTAT
 - La couleur indique la nuance (sur l’arc en ciel) : bleu, vert, rouge, gris…
 - Le nom est celui hérité de la charte de l'État, le cas échéant.
 - La variante indique si la couleur est une couleur de référence (“main”), une variante pour thème clair (“sun”) ou thème sombre (“moon”). La plupart des couleurs n’ont pas de variante.
-- L’indice est le niveau de luminosité de la couleur, et sert à vérifier l’accessibilité des associations de couleurs. Consultez [l’article de présentation détaillée du système de couleurs](/a-propos/articles/refonte-du-systeme-de-couleur) pour en savoir plus.
+- L’indice est le niveau de luminosité de la couleur, et sert à vérifier l’accessibilité des associations de couleurs. Consultez [l’article de présentation détaillée du système de couleurs](path:/about/posts/post-colors) pour en savoir plus.
 - L'état indique, le cas échéant, la variation de la couleur au survol ou en état actif.
 
 À chaque token est rattaché une valeur hexadécimale, une valeur RGB et une valeur HSL. Par exemple, la couleur de référence pour le vert “Tilleul Verveine” :

@@ -111,7 +111,7 @@ Les listes vous permettent de traiter différemment une série d’information e
 
 #### Liens
 
-Les liens contextualisés héritent du style du texte, ils sont présentés sur la page du [lien](/elements-d-interface/composants/lien).
+Les liens contextualisés héritent du style du texte, ils sont présentés sur la page du [lien](../../../../component/link/_part/doc/index.md).
 
 ## Règles d’utilisation
 
