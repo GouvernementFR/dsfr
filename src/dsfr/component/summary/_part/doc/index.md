@@ -1,6 +1,7 @@
 ---
 title: Sommaire
 shortTitle: Sommaire
+titleId: Summary
 description: Présentation du composant Sommaire permettant à l’usager de naviguer facilement entre les sections d’une page longue à l’aide de liens ancrés.
 shortDescription: Navigation entre les sections d’une page
 keywords: sommaire, navigation, ancre, contenu long, DSFR, accessibilité, design système, interface

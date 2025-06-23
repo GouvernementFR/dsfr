@@ -1,6 +1,7 @@
 ---
 title: Bouton radio
 shortTitle: Bouton radio
+titleId: Radio
 description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
 shortDescription: Sélection d’une option unique
 keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique

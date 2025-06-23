@@ -1,6 +1,7 @@
 ---
 title: Ajout de fichier
 shortTitle: Ajout de fichier
+titleId: Upload
 description: Présentation du composant Ajout de fichier permettant à l’usager de sélectionner et envoyer un ou plusieurs fichiers via une interface.
 shortDescription: Sélection et envoi de fichiers
 keywords: ajout de fichier, upload, formulaire, interaction, accessibilité, design système, DSFR, sélection, fichier multiple

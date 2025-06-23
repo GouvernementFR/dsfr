@@ -1,6 +1,7 @@
 ---
 title: Navigation Tertiaire
 shortTitle: Navigation Tertiaire
+titleId: Tabnav
 description: Composant de navigation en version bêta, destiné à offrir un troisième niveau de navigation complémentaire à la navigation secondaire.
 shortDescription: Composant de navigation de 3e niveau en complément du menu latéral
 keywords: navigation, tertiaire, DSFR, menu, tabnav, accessibilité, hiérarchie, bêta

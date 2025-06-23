@@ -1,6 +1,7 @@
 ---
 title: En-tête connectée
 shortTitle: En-tête connectée
+titleId: User
 description: Déclinaison de l’en-tête standard permettant à l’usager connecté d’accéder à son menu de navigation personnel.
 shortDescription: Variante de l’en-tête dédiée aux usagers connectés
 keywords: en-tête, menu utilisateur, connexion, compte, connecté, navigation, DSFR, bêta

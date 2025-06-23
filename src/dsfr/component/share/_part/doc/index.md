@@ -1,6 +1,7 @@
 ---
 title: Partage
 shortTitle: Partage
+titleId: Share
 description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
 shortDescription: Partager un contenu via différents canaux
 keywords: partage, réseaux sociaux, interaction, DSFR, accessibilité, design système, bouton, lien

@@ -1,6 +1,7 @@
 ---
 title: Gestionnaire de consentement
 shortTitle: Gestionnaire de consentement
+titleId: Consent
 description: Le gestionnaire de consentement permet de recueillir et gérer les préférences des usagers concernant le dépôt de cookies non essentiels, en conformité avec les exigences de la CNIL.
 shortDescription: Gérer le consentement des usagers sur les cookies et données personnelles.
 keywords: consentement, cookies, données personnelles, CNIL, confidentialité, bandeau, modale, finalités, RGPD, accessibilité

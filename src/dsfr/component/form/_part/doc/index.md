@@ -1,5 +1,7 @@
 ---
 title: Formulaire
+shortTitle: Formulaire
+titleId: Form
 ---
 
 ## Formulaire

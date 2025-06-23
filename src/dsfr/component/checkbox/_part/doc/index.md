@@ -1,6 +1,7 @@
 ---
 title: Case à cocher
 shortTitle: Case à cocher
+titleId: Checkbox
 description: Présentation du composant Case à cocher permettant à l’usager de sélectionner une ou plusieurs options dans une liste de manière indépendante.
 shortDescription: Sélection multiple dans une liste
 keywords: case à cocher, checkbox, sélection multiple, formulaire, DSFR, design système, accessibilité, interface

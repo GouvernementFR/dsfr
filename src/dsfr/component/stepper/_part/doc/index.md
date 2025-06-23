@@ -1,6 +1,7 @@
 ---
 title: Indicateur d’étapes
 shortTitle: Indicateur d’étapes
+titleId: Stepper
 description: Présentation du composant Indicateur d’étapes destiné à guider l’usager au sein d’un parcours en plusieurs étapes comme un formulaire ou une démarche en ligne.
 shortDescription: Suivi d’un parcours en plusieurs étapes
 keywords: indicateur d’étapes, formulaire, démarche, progression, design système, DSFR, navigation, accessibilité
