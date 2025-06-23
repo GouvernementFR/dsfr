@@ -59,11 +59,15 @@ Le champ simple est un champ de saisie libre qui accepte une courte ligne de con
 
 La zone de texte est un champ de saisie libre qui accepte plus d’une ligne de contenu (texte ou/et nombre). Il reprend le style du champ simple, seule sa hauteur augmente.
 
-**Autres types de champs**
+**Champ de saisie avec icône et texte de description additionnel**
 
-::dsfr-doc-storybook{storyId=input--default args="{ hint: Texte de description additionnel, icon: alert-line }"}
+::dsfr-doc-storybook{storyId=input--hint-icon}
+
+**Champ de saisie de type `search`**
 
 ::dsfr-doc-storybook{storyId=input--search}
+
+**Champ de saisie de type `number`**
 
 ::dsfr-doc-storybook{storyId=input--number}
 
