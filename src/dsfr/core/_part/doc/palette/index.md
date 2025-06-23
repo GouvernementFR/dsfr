@@ -28,19 +28,19 @@ COULEUR- NOM - VARIANTE - INDICE - ÉTAT
 
 À chaque token est rattaché une valeur hexadécimale, une valeur RGB et une valeur HSL. Par exemple, la couleur de référence pour le vert “Tilleul Verveine” :
 
-<div class="array-sample">
-  <div class="box-sample" style="--color-box:#B7A73F">
-    <div class="color-box-sample"></div>
-    <p><b>green-tilleul-verveine-main-707</b></p>
-    <p>#B7A73F<br>rgb(183,167,63)<br>hsl(52deg 48.8% 48.2%)<br><br></p>
-    <div class="box-children-sample">
-      <div>
-        <div class="color-box-sample--sm" style="--color-box:#a19237"></div>
-        <p><b>hover</b><br>#a19237<br>rgb(161,146,55)</p>
+<div class="array-sample" style="display: flex; flex-wrap: wrap; margin: 0px -10px 2rem -10px;font-family: arial, sans-serif;">
+  <div class="box-sample" style="width: 220px; padding: 10px; margin: 10px; box-shadow: 0 0 0 1px lightgray; text-align: center; --color-box:#B7A73F">
+    <div class="color-box-sample" style="width: auto; height: 100px; box-shadow: inset 0 0 0 1px lightgray; background-color: var(--color-box); margin: auto;"></div>
+    <p style="font-size: 14px;margin: 10px 0 0;line-height: 1.25;"><b>green-tilleul-verveine-main-707</b></p>
+    <p style="font-size: 14px;margin: 10px 0 0;line-height: 1.25;">#B7A73F<br>rgb(183,167,63)<br>hsl(52deg 48.8% 48.2%)<br><br></p>
+    <div class="box-children-sample" style="display: flex;">
+      <div style="width: 100%;">
+        <div class="color-box-sample--sm" style="width: 100%; height: 30px; box-shadow: inset 0 0 0 1px lightgray; background-color: var(--color-box); margin: auto; --color-box:#a19237"></div>
+        <p style="font-size: 14px;margin: 10px 0 0;line-height: 1.25;"><b>hover</b><br>#a19237<br>rgb(161,146,55)</p>
       </div>
-      <div>
-        <div class="color-box-sample--sm" style="--color-box:#908331"></div>
-        <p><b>active</b><br>#908331<br>rgb(144,131,49)</p>
+      <div style="width: 100%;">
+        <div class="color-box-sample--sm" style="width: 100%; height: 30px; box-shadow: inset 0 0 0 1px lightgray; background-color: var(--color-box); margin: auto; --color-box:#908331"></div>
+        <p style="font-size: 14px;margin: 10px 0 0;line-height: 1.25;"><b>active</b><br>#908331<br>rgb(144,131,49)</p>
       </div>
     </div>
   </div>

@@ -35,11 +35,11 @@ Le menu déroulant présente une liste d'actions ou de choix parmi lesquels un u
 
 ::dsfr-doc-pin[Un bouton tertiaire]{required=true}
 
+::dsfr-doc-pin[Une icône]{add="placée à gauche du libellé"}
+
 ::dsfr-doc-pin[Un libellé de bouton]{required=true}
 
 ::dsfr-doc-pin[Un chevron]{required=true add="placé à droite du libellé"}
-
-::dsfr-doc-pin[Une icône]{add="placée à gauche du libellé"}
 
 ::dsfr-doc-pin[Une liste d’options]{required=true}
 

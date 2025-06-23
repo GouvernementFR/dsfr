@@ -61,11 +61,15 @@ La zone de texte est un champ de saisie libre qui accepte plus d’une ligne de 
 
 **Autres types de champs**
 
-::dsfr-doc-storybook{storyId=input--default args="{ hint: Texte de description additionnel, icon: alert-line }"}
+::dsfr-doc-storybook{storyId=input--icon}
 
-::dsfr-doc-storybook{storyId=input--search}
+::dsfr-doc-storybook{storyId=input--date}
 
 ::dsfr-doc-storybook{storyId=input--number}
+
+::dsfr-doc-storybook{storyId=input--button}
+
+::dsfr-doc-storybook{storyId=input--action}
 
 À partir des éléments présentés ci-dessus, il est possible de décliner les champs selon vos besoins. Pour certains champs, il sera nécessaire d’ajouter une icône au sein du champ (voir [les icônes disponibles](../../../../../core/_part/doc/icon/index.md)).
 

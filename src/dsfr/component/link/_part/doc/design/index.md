@@ -190,7 +190,7 @@ Le lien est disponible en trois tailles :
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le lien.
 
-::dsfr-doc-storybook{storyId=links—disabled}
+::dsfr-doc-storybook{storyId=link--disabled-story}
 
 > [!WARNING]
 > N’utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
