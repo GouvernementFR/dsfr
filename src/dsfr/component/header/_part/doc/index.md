@@ -1,6 +1,7 @@
 ---
 title: En-tête
 shortTitle: En-tête
+titleId: Header
 description: Présentation du composant En-tête utilisé pour identifier le site consulté et donner accès à des fonctionnalités clés comme la recherche ou la connexion.
 shortDescription: Identification du site et accès rapides
 keywords: en-tête, header, marque, recherche, navigation, DSFR, accessibilité, interface

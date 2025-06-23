@@ -1,6 +1,7 @@
 ---
 title: Alerte
 shortTitle: Alerte
+titleId: Alert
 description: Présentation du composant Alerte utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.
 shortDescription: Relayer une information importante
 keywords: alerte, message, erreur, succès, information, attention, DSFR, accessibilité, interface

@@ -1,6 +1,7 @@
 ---
 title: Liste déroulante riche
 shortTitle: Liste déroulante riche
+titleId: Combobox
 description: Composant interactif permettant à l’usager de choisir une ou plusieurs options dans une liste étendue, incluant recherche, sélection multiple et options par défaut.
 shortDescription: Composant de sélection multiple enrichi avec fonctions de recherche.
 keywords: bêta, liste déroulante, sélection multiple, formulaire, combobox, recherche, accessibilité, UX, options, DSFR

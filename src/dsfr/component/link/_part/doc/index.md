@@ -1,6 +1,7 @@
 ---
 title: Lien
 shortTitle: Lien
+titleId: Link
 description: Élément de navigation secondaire permettant à l’usager d’accéder à un autre contenu, sur la même page ou sur une autre page, interne ou externe.
 shortDescription: Navigation secondaire vers d’autres contenus
 keywords: lien, navigation, ancre, téléchargement, retour, DSFR, accessibilité

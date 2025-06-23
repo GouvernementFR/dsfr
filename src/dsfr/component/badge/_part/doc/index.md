@@ -1,6 +1,7 @@
 ---
 title: Badge
 shortTitle: Badge
+titleId: Badge
 description: Présentation du composant Badge utilisé pour afficher une information de type statut ou état liée à un élément de l’interface.
 shortDescription: Affichage d’un statut informatif
 keywords: badge, statut, état, information, design système, DSFR, accessibilité, non cliquable, interface

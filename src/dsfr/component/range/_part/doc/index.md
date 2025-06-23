@@ -1,6 +1,7 @@
 ---
 title: Curseur
 shortTitle: Curseur
+titleId: Range
 description: Présentation du composant Curseur permettant à l’usager de sélectionner une valeur entre un minimum et un maximum de manière intuitive.
 shortDescription: Sélection d’une valeur sur une échelle
 keywords: curseur, range, sélection, valeur, interface, DSFR, accessibilité, filtre, composant

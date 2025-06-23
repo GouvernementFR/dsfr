@@ -1,6 +1,7 @@
 ---
 title: Interrupteur
 shortTitle: Interrupteur
+titleId: Toggle
 description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.
 shortDescription: Basculer entre deux états opposés
 keywords: interrupteur, switch, interface, interaction, accessibilité, design système, DSFR, état activé, état désactivé

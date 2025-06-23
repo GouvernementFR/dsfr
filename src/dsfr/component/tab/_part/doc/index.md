@@ -1,6 +1,7 @@
 ---
 title: Onglet
 shortTitle: Onglet
+titleId: Tab
 description: Présentation du composant Onglets pour structurer du contenu lié dans un espace restreint avec des recommandations d’usage et d’accessibilité.
 shortDescription: Structuration de contenu avec des onglets
 keywords: onglets, composant, interface, navigation, accessibilité, design système, UX, DSFR
