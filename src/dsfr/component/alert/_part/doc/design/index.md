@@ -44,19 +44,19 @@ L’alerte est un élément d’indication poussé par l’interface pour relaye
 
 **Alerte simple**
 
-::dsfr-doc-storybook{storyId=alert--alert}
+::dsfr-doc-storybook{storyId=alert--title}
 
 Utiliser l’alerte simple lorsqu’un titre seul permet de donner l’information à l’usager.
 
 **Alerte avec description**
 
-::dsfr-doc-storybook{storyId=alert--alert}
+::dsfr-doc-storybook{storyId=alert--description}
 
 Préférer l’alerte avec description pour donner des informations complémentaires et nécessaire à l’usager, en plus du titre.
 
 **Alerte avec bouton de fermeture**
 
-::dsfr-doc-storybook{storyId=alert--alert args="{ dismissible: true }"}
+::dsfr-doc-storybook{storyId=alert--dismissible}
 
 Ajouter un bouton de fermeture à l’alerte pour permettre à l’usager de la masquer une fois consultée.
 

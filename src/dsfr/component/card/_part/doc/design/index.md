@@ -116,7 +116,7 @@ Pour une carte verticale, en desktop :
 
 - MD : 4 à 6 colonnes
 
-::dsfr-doc-storybook{storyId=card--card}
+::dsfr-doc-storybook{storyId=card--size-md}
 
 - LG : 6 à 8 colonnes
 
@@ -128,15 +128,15 @@ Pour une carte horizontale, en desktop uniquement :
 
 - SM : 4 à 6 colonnes
 
-::dsfr-doc-storybook{storyId=card--card args="{ size: sm, horizontal: true }"}
+::dsfr-doc-storybook{storyId=card--horizontal-sm}
 
 - MD : 6 à 8 colonnes
 
-::dsfr-doc-storybook{storyId=card--card args="{ horizontal: true }"}
+::dsfr-doc-storybook{storyId=card--horizontal-md}
 
 - LG : 8 à 12 colonnes
 
-::dsfr-doc-storybook{storyId=card--card args="{ size: lg, horizontal: true }"}
+::dsfr-doc-storybook{storyId=card--horizontal-lg}
 
 En mobile, seule la carte de téléchargement conserve un format horizontal. Dans ce cas, elle prend systématiquement 12 colonnes de large.
 
