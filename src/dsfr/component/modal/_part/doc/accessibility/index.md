@@ -45,8 +45,8 @@ Le composant **Modale** s’appuie sur le motif de conception ARIA <span lang="e
 - L’élément qui déclenche l’ouverture de la fenêtre modale doit être un `button`.
 - La modale utilise l’élément HTML `<dialog>`.
 - Elle dispose d’un attribut `aria-modal="true"` pour indiquer aux lecteurs d'écran que l’élément est une modale lorsqu'il est affiché.
-- La modale doit avoir un **nom accessible**. Elle est nommée avec un attribut `aria-labelledby` défini sur l’ID du titre (`hx`) de la fenêtre modale.
-- La modale a un titre de niveau `h1`.
+- La modale doit avoir un **nom accessible**. Elle est nommée avec un attribut `aria-labelledby` défini sur l’ID du titre de la fenêtre modale.
+- La modale a un titre de niveau `h2` à `h6`, en fonction de son positionnement dans le DOM, ou sous forme de balise `<p>`.
 
 > [!TIP]
 > Le role="dialog" n’est plus nécessaire sur l’élément HTML `<dialog>`.

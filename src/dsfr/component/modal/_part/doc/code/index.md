@@ -73,10 +73,10 @@ Sa structure est la suivante :
                         <button aria-controls="modal" title="Fermer" type="button" class="fr-btn--close fr-btn">Fermer</button>
                     </div>
                     <div class="fr-modal__content">
-                        <h1 id="modal-title" class="fr-modal__title">
+                        <h2 id="modal-title" class="fr-modal__title">
                             <span class="fr-icon-arrow-right-line fr-icon--lg" aria-hidden="true"></span>
                             Titre de la modale
-                        </h1>
+                        </h2>
                         <p>
                           <!-- contenu de la modale -->
                         </p>
@@ -153,10 +153,10 @@ La modale avec une **zone d’action** permet de guider l’utilisateur vers des
                         <button aria-controls="modal-action" title="Fermer" type="button" class="fr-btn--close fr-btn">Fermer</button>
                     </div>
                     <div class="fr-modal__content">
-                        <h1 id="modal-action-title" class="fr-modal__title">
+                        <h2 id="modal-action-title" class="fr-modal__title">
                             <span class="fr-icon-arrow-right-line fr-icon--lg" aria-hidden="true"></span>
                             Titre de la modale
-                        </h1>
+                        </h2>
                         <p><!-- contenu de la modale --></p>
                     </div>
                     <!-- Zone d'action de la modale -->
