@@ -33,6 +33,9 @@ class Modal extends api.core.Disclosure {
   // TODO v2 : passer les tagName d'action en constante
   _escape () {
     const tagName = document.activeElement ? document.activeElement.tagName : undefined;
+    const isTooltipReferent = document.activeElement ? document.activeElement.hasAttribute('data-fr-js-tooltip-referent') : false;
+
+    if (isTooltipReferent) return;
 
     switch (tagName) {
       case 'INPUT':
