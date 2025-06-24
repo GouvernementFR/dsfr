@@ -1,6 +1,7 @@
 ---
 title: Bandeau d'information importante
 shortTitle: Bandeau d'information importante
+titleId: Notice
 description: Le bandeau d’information importante permet de signaler temporairement une information urgente ou prioritaire en tête de page.
 shortDescription: Afficher une alerte temporaire prioritaire.
 keywords: bandeau, alerte, information importante, vigilance météo, composant éditorial, interface, UX, design system, accessibilité, urgence

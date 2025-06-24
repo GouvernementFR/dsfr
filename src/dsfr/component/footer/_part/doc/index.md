@@ -1,6 +1,7 @@
 ---
 title: Pied de page
 shortTitle: Pied de page
+titleId: Footer
 description: Présentation du composant Pied de page destiné à structurer les informations complémentaires et les liens secondaires en bas de page.
 shortDescription: Informations complémentaires en bas de page
 keywords: pied de page, footer, navigation secondaire, DSFR, accessibilité, informations légales, design système

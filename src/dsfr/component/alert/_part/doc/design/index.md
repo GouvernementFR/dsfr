@@ -26,7 +26,7 @@ L’alerte est un élément d’indication poussé par l’interface pour relaye
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie de l'alerte](../_asset/anatomy/anatomy-1.png)
 

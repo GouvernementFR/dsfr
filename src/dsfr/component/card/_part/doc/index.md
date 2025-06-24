@@ -1,6 +1,7 @@
 ---
 title: Carte
 shortTitle: Carte
+titleId: Card
 description: Le composant carte permet de rediriger l’usager vers une page éditoriale, en lui donnant un aperçu. Elle peut intégrer des médias, actions, tags ou boutons et se décline en différents formats.
 shortDescription: Carte cliquable redirigeant vers une page éditoriale avec aperçu.
 keywords: carte, composant, aperçu, lien, redirection, contenu, média, badge, tag, bouton, DSFR, tuile

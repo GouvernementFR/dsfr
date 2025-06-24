@@ -1,6 +1,7 @@
 ---
 title: Accordéon
 shortTitle: Accordéon
+titleId: Accordion
 description: Présentation du composant Accordéon permettant à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
 shortDescription: Masquer ou révéler du contenu textuel
 keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant

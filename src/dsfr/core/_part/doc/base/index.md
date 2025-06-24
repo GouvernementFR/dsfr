@@ -55,21 +55,77 @@ Le respect de la palette et de leur application amène de la cohérence entre le
 
 2. **L’utilisation de fonds de couleur alternatifs**<br><br>
 
-    Vous pouvez délimiter des sections de votre site par des fonds de couleurs. Dans ce cas, l’entièreté des éléments contenus dans la section doit y être clairement inclue.
+    Vous pouvez délimiter des sections de votre site par des fonds de couleurs. Dans ce cas, l’entièreté des éléments contenus dans la section doit y être clairement inclue.<br><br>
 
-    ![](../_asset/base/image1-dsfr.png)
+    ::::dsfr-doc-guidelines
+
+    :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+    ![](../_asset/base/guideline/do-1.png)
+
+    Proposer un fond de couleur en pleine largeur, englobant l’entièreté des éléments de la section.
+
+    :::
+
+    :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+    ![](../_asset/base/guideline/dont-1.png)
+
+    Ne pas appliquer un fond de couleur partiel sur une section.
+
+    :::
+
+    ::::
+
+    ::::dsfr-doc-guidelines
+
+    :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+    ![](../_asset/base/guideline/do-2.png)
+
+    Proposer un fond de couleur sur 12 colonnes, englobant l’entièreté des éléments de la section.
+
+    :::
+
+    :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+    ![](../_asset/base/guideline/dont-2.png)
+
+    Ne pas positionner certains éléments de la section en dehors du fond de couleur.
+
+    :::
+
+    ::::
 
     Pour préserver la structure du site, les fonds alternatifs doivent être entourés de blanc, deux fonds alternatifs ne peuvent pas se suivre.<br><br>
 
 3. **Pas de composants interactifs à cheval sur des fonds de couleurs**<br><br>
 
-    Pour conserver l’affordance des composants et leur bonne compréhension par tous les utilisateurs, ils doivent rester sur un fond uni. Une rupture dans la couleur de fond pourrait compromettre leur aspect ou perturber leur compréhension.
+    Pour conserver l’affordance des composants et leur bonne compréhension par tous les utilisateurs, ils doivent rester sur un fond uni. Une rupture dans la couleur de fond pourrait compromettre leur aspect ou perturber leur compréhension.<br><br>
 
-    ![](../_asset/base/image2-dsfr.png)
+    ::::dsfr-doc-guidelines
+
+    :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+
+    ![](../_asset/base/guideline/do-3.png)
+
+    Proposer un fond de couleur qui englobe les composants interactifs d’une section.
+
+    :::
+
+    :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+    ![](../_asset/base/guideline/dont-3.png)
+
+    Ne pas positionner des composants interactifs à cheval sur un fond de couleur, au risque d’altérer leur bonne compréhension.
+
+    :::
+
+    ::::
 
 ### La typographie
 
-Les typographies Marianne® et Spectral sont [les typographies officielles de la charte de l'État](https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/la-typographie). Leur usage crée une cohérence entre les interfaces et offre une expérience rassurante à l’utilisateur. Les styles et usages sont détaillés [sur cette page](../typography/index.md).
+Les typographies Marianne® et Spectral sont [les typographies officielles de la charte de l'État](https://www.info.gouv.fr/marque-de-letat/la-typographie). Leur usage crée une cohérence entre les interfaces et offre une expérience rassurante à l’utilisateur. Les styles et usages sont détaillés [sur cette page](../typography/index.md).
 
 **Tout usage d’autres typographies est interdit.**
 

@@ -26,7 +26,7 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du sélecteur de langue](../_asset/anatomy/anatomy-1.png)
 

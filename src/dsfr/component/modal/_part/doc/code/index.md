@@ -50,7 +50,7 @@ Sa structure est la suivante :
       - Le bouton doit être de type "button".
       - Le bouton est lié à la modale via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale.
     - D'un bloc de contenu, obligatoire, défini par la classe `fr-modal__content`, contenant :
-      - Le titre de la modale, obligatoire, dans un niveau d'entête `<h1>` et défini par la classe `fr-modal__title`.
+      - Le titre de la modale, obligatoire, dans un niveau d'entête `<hx>` ou un paragraphe `<p>` et défini par la classe `fr-modal__title`.
       - Le contenu de la modale, obligatoire et libre, mais nécessitant l'utilisation de balises adéquates, il n'est pas correcte par exemple de placer du texte directement dans une `<div>`.
     - Le pied de page de la modale, optionnel défini par la classe `fr-modal__footer`, contenant :
       - Un groupe de boutons d'action défini par les classes `fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-lg fr-btns-group--icon-left` pouvant varier en fonction de l'affichage désiré des boutons, contenant :
@@ -73,10 +73,10 @@ Sa structure est la suivante :
                         <button aria-controls="modal" title="Fermer" type="button" class="fr-btn--close fr-btn">Fermer</button>
                     </div>
                     <div class="fr-modal__content">
-                        <h1 id="modal-title" class="fr-modal__title">
+                        <h2 id="modal-title" class="fr-modal__title">
                             <span class="fr-icon-arrow-right-line fr-icon--lg" aria-hidden="true"></span>
                             Titre de la modale
-                        </h1>
+                        </h2>
                         <p>
                           <!-- contenu de la modale -->
                         </p>
@@ -153,10 +153,10 @@ La modale avec une **zone d’action** permet de guider l’utilisateur vers des
                         <button aria-controls="modal-action" title="Fermer" type="button" class="fr-btn--close fr-btn">Fermer</button>
                     </div>
                     <div class="fr-modal__content">
-                        <h1 id="modal-action-title" class="fr-modal__title">
+                        <h2 id="modal-action-title" class="fr-modal__title">
                             <span class="fr-icon-arrow-right-line fr-icon--lg" aria-hidden="true"></span>
                             Titre de la modale
-                        </h1>
+                        </h2>
                         <p><!-- contenu de la modale --></p>
                     </div>
                     <!-- Zone d'action de la modale -->

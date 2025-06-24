@@ -1,6 +1,7 @@
 ---
 title: Sélecteur de langues
 shortTitle: Sélecteur de langues
+titleId: Translate
 description: Le sélecteur de langues permet à l’usager de choisir la langue d’affichage du site dans un environnement multilingue.
 shortDescription: Choisir la langue d’affichage du site.
 keywords: sélecteur de langues, multilingue, accessibilité, langue, interface, UX, design system, en-tête, code ISO, traduction

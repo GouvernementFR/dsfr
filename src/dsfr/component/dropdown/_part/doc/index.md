@@ -2,6 +2,7 @@
 title: Menu déroulant
 badge: beta
 shortTitle: Menu déroulant
+titleId: Dropdown
 description: Le menu déroulant permet d’afficher une liste d’actions, de liens ou de contrôles dans une interface sans encombrer l’écran. Il s’utilise hors formulaire.
 shortDescription: Afficher des actions contextuelles sans encombrer l’interface
 keywords: menu déroulant, dropdown, actions, filtre, bouton, options, accessibilité, interface, DSFR

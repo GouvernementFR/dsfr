@@ -1,6 +1,7 @@
 ---
 title: Transcription
 shortTitle: Transcription
+titleId: Transcription
 description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
 shortDescription: Affichage de texte lié à un contenu média
 keywords: transcription, composant, contenu média, accessibilité, modale, accordéon, design système, DSFR

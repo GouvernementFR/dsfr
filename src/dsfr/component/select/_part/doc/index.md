@@ -1,6 +1,7 @@
 ---
 title: Liste déroulante
 shortTitle: Liste déroulante
+titleId: Select
 description: La liste déroulante permet à l’usager de sélectionner une option unique parmi un ensemble de choix dans un espace limité.
 shortDescription: Sélectionner une option dans une liste.
 keywords: liste déroulante, formulaire, interface, sélection, interaction, design system, UX, UI, accessibilité, boutons radio, cases à cocher
@@ -23,7 +24,7 @@ La liste déroulante est un élément d’interaction avec l’interface permett
 
 :::
 
-::dsfr-doc-storybook{storyId=select—select}
+::dsfr-doc-storybook{storyId=select--select}
 
 ### Quand utiliser ce composant ?
 

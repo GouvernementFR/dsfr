@@ -1,6 +1,7 @@
 ---
 title: Modale
 shortTitle: Modale
+titleId: Modal
 description: Présentation du composant Modale permettant de focaliser l’attention de l’usager sur une tâche ou une information sans quitter la page.
 shortDescription: Affichage focalisé d’un contenu secondaire
 keywords: modale, fenêtre, focus, interaction, DSFR, accessibilité, interface, contenu secondaire

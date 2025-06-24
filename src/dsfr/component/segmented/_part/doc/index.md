@@ -1,6 +1,7 @@
 ---
 title: Contrôle segmenté
 shortTitle: Contrôle segmenté
+titleId: Segmented
 description: Le contrôle segmenté permet à l’usager de choisir une vue parmi plusieurs options d’affichage disponibles dans une interface.
 shortDescription: Sélection de vues avec un contrôle segmenté.
 keywords: contrôle segmenté, vue, affichage, interface, UX, UI, design system, libellé, navigation, accessibilité

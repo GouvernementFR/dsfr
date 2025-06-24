@@ -1,6 +1,7 @@
 ---
 title: Pagination
 shortTitle: Pagination
+titleId: Pagination
 description: Présentation du composant Pagination permettant à l’usager de naviguer facilement entre les pages d’une liste d’éléments trop longue pour être affichée en une seule fois.
 shortDescription: Navigation entre plusieurs pages d’une liste
 keywords: pagination, navigation, pages, liste, interface, design système, DSFR, accessibilité

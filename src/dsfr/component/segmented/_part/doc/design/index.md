@@ -26,7 +26,7 @@ Le contrôle segmenté est un élément d’interaction avec l’interface perme
 
 :::
 
-:::dsfr-doc-anatomy{col=12}
+:::dsfr-doc-anatomy{imageWidth=384 col=12}
 
 ![Anatomie du contrôle segmenté](../_asset/anatomy/anatomy-1.png)
 
@@ -58,7 +58,7 @@ Par défaut, le contrôle segmenté s’affiche horizontalement, en desktop comm
 
 **Contrôlé segmenté avec légende et texte de description**
 
-::dsfr-doc-storybook{storyId=segmented--default args="{ hint: Texte de description additionnel }"}
+::dsfr-doc-storybook{storyId=segmented--legend-inline}
 
 ### Tailles
 

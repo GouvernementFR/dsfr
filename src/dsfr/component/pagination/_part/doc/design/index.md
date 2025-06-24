@@ -46,9 +46,10 @@ La pagination est un système de navigation qui permet à l’usager de naviguer
 
 **Responsive**
 
-::dsfr-doc-storybook{storyId=pagination--pagination width=375}
+::dsfr-doc-storybook{storyId=pagination--pagination}
 
-- Conserver le même fonctionnel que sur desktop.
+- Conserver le même fonctionnel sur les différentes tailles d'écran.
+- Cacher certains numéros de page pour alléger l'affichage sur les écrans mobiles.
 - Limiter le nombre de pages visibles pour pouvoir idéalement afficher l’ensemble des éléments de la pagination sur une seule ligne.
 - Privilégier les icônes “<“ et “>” pour les actions “Précédent” et “Suivant”.
 
@@ -64,7 +65,7 @@ L’état désactivé indique que l'usager ne peut pas interagir avec un lien.
 
 ::dsfr-doc-storybook{storyId=pagination--last-page}
 
-- Appliquer cet état au lien “Précédent” et “Suivant”, uniquement lorsque l’usager se trouve sur la première page ou la dernière page.
+- Appliquer cet état aux liens “Précédent” et "première page" lorsque vous êtes sur la première page et sur les liens “Suivant” et "dernière page" lorsque vous êtes sur la dernière page.
 
 **État au survol**
 

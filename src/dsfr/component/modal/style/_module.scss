@@ -149,6 +149,7 @@
     @include set-title-margin(0 0 4v 0);
     @include title-style('h4');
     @include font-weight('bold');
+    @include margin(var(--title-spacing));
 
     @include has-icon {
       @include margin-right(2v);

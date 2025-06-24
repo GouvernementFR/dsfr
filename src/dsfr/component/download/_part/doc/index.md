@@ -1,6 +1,7 @@
 ---
 title: Téléchargement de fichier
 shortTitle: Téléchargement de fichier
+titleId: Download
 description: Ce composant est déprécié et n’est plus maintenu. Il est remplacé par des variations spécifiques des composants carte, lien et tuile pour gérer les téléchargements de fichiers.
 shortDescription: Composant obsolète remplacé par les variations des composants carte, lien et tuile.
 keywords: téléchargement, fichier, composant obsolète, lien, carte, tuile, DSFR, variation

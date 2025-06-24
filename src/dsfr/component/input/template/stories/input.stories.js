@@ -50,9 +50,20 @@ export const DisabledStory = {
   }
 };
 
+export const IconStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    label: 'Champ avec une icône',
+    id: uniqueId('input'),
+    icon: 'warning-line'
+  }
+};
+
 export const TelStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    label: 'Numéro de téléphone',
+    hint: 'Exemple: 0123456789',
     type: 'tel',
     id: uniqueId('input')
   }
@@ -61,6 +72,8 @@ export const TelStory = {
 export const NumberStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    label: 'Champ de saisie de nombre',
+    hint: 'Saisissez un nombre entier',
     type: 'number',
     id: uniqueId('input')
   }
@@ -68,7 +81,15 @@ export const NumberStory = {
 
 export const PasswordStory = {
   tags: ['autodocs', '!dev'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Préférez l\'utilisation du composant Mot de passe pour les champs de saisie de mot de passe. Il inclut un bouton pour afficher ou masquer le mot de passe saisi.'
+      }
+    }
+  },
   args: {
+    label: 'Champ type mot de passe',
     type: 'password',
     id: uniqueId('input')
   }
@@ -76,7 +97,15 @@ export const PasswordStory = {
 
 export const SearchStory = {
   tags: ['autodocs', '!dev'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Préférez l\'utilisation du composant Barre de recherche pour les champs de recherche. Il inclut un bouton d\'envoi avec une icône loupe et un libellé en desktop.'
+      }
+    }
+  },
   args: {
+    label: 'Champ type recherche',
     type: 'search',
     id: uniqueId('input')
   }
@@ -84,7 +113,15 @@ export const SearchStory = {
 
 export const DateStory = {
   tags: ['autodocs', '!dev'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Voir le bloc fonctionnel Date unique pour les champs de saisie de date avec jour, mois, et années séparés.'
+      }
+    }
+  },
   args: {
+    label: 'Date simple',
     type: 'date',
     id: uniqueId('input')
   }
@@ -93,6 +130,7 @@ export const DateStory = {
 export const ButtonStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    label: 'Champ avec bouton d\'envoi associé',
     addon: true,
     id: uniqueId('input')
   }
@@ -101,6 +139,7 @@ export const ButtonStory = {
 export const ActionStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    label: 'Champ avec bouton d\'action associé',
     action: true,
     id: uniqueId('input')
   }
@@ -119,6 +158,7 @@ export const UrlStory = {
 export const TextareaStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    label: 'Champ de saisie de texte long',
     type: 'textarea',
     id: uniqueId('input')
   }
