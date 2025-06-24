@@ -17,15 +17,13 @@ Il doit être utilisé votre services nécessite de demander à un utilisateur d
 
 ## Structure
 
-- **Demande d’un numéro de SIRET**
+**Demande d’un numéro de SIRET**
 
 Ce bloc se compose de :
 
 - un label “numéro de SIRET” - obligatoire
 - d’un champ de saisie - obligatoire
 - d’un lien vers l’annuaire des entreprises - obligatoire
-
-Numéro de SIRET[Annuaire des entreprises](https://annuaire-entreprises.data.gouv.fr/)
 
 <div class="dsfr-doc-preview">
 <fieldset class="fr-fieldset" aria-label="SIRET de l'entreprise" id="siret-1632-fieldset" aria-labelledby="siret-1632-fieldset-messages">
@@ -74,7 +72,7 @@ Numéro de SIRET[Annuaire des entreprises](https://annuaire-entreprises.data.gou
 ```
 :::
 
-- **Demande d’une adresse de siège social**
+**Demande d’une adresse de siège social**
 
 Ce bloc se compose de :
 
@@ -281,7 +279,7 @@ Ce bloc se compose de :
 ```
 :::
 
-- **Demande d’un type de société**
+**Demande d’un type de société**
 
 Ce bloc se compose de :
 
@@ -346,7 +344,7 @@ Ce bloc se compose de :
 ```
 :::
 
-- **Demande d’un représentant moral**
+**Demande d’un représentant moral**
 
 Ce bloc se compose de :
 

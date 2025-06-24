@@ -34,8 +34,7 @@ Elle permet une identification rapide et facile par l’usager.
 
 > [!WARNING]
 > Bien différencier la mise en exergue de la mise en avant.
-
-[La mise en avant](../../../callout/_part/doc/index.md) est utilisée pour mettre l’accent sur une information complémentaire au contenu principal.
+> La [mise en avant](../../../callout/_part/doc/index.md) est utilisée pour mettre l’accent sur une information complémentaire au contenu principal.
 
 ### Comment utiliser ce composant ?
 

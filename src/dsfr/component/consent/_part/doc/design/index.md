@@ -52,7 +52,7 @@ Le gestionnaire de consentement permet à l'usager de définir ses préférences
 
 ::dsfr-doc-pin[Un séparateur]{required=true}
 
-::dsfr-doc-pin[Un bouton “Voir plus de détails”]{required=true add="permettant d’afficher les sous-finalités associées"}
+::dsfr-doc-pin[Un dépliant “Voir plus de détails”]{required=true add="permettant d’afficher les sous-finalités associées"}
 
 ::dsfr-doc-pin[Un libellé]{required=true add="pour chacune des sous-finalités listée"}
 

@@ -58,7 +58,7 @@ Ne pas utiliser de barre de recherche trop étroite où les 27 caractères ne so
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![](./_asset/use/do-2.png)
 
@@ -66,7 +66,7 @@ Intégrer la barre de recherche globale à l’en-tête du site.
 
 :::
 
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
 ![](./_asset/use/dont-2.png)
 
