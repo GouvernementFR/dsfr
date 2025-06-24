@@ -23,14 +23,6 @@ export const DefaultGroupStory = {
   }
 };
 
-export const HintGroupStory = {
-  tags: ['autodocs', '!dev'],
-  args: {
-    hint: 'Texte de description additionnel',
-    elements: getRadiosGroupData(3, true)
-  }
-};
-
 export const HintStory = {
   tags: ['autodocs', '!dev'],
   args: {

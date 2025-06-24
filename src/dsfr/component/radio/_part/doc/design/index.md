@@ -60,10 +60,6 @@ Il est recommandé d’ajouter un texte d’aide qui accompagne les boutons radi
 
 ::dsfr-doc-storybook{storyId=radios-group--hint}
 
-- Par l’ajout d’un texte sous le libellé de chaque bouton radio, afin d’apporter une précision à chaque élément.
-
-::dsfr-doc-storybook{storyId=radios-group--hint-group}
-
 **Boutons radio riches**
 
 Utiliser les boutons radio riches pour permettre à l’usager de sélectionner une option unique dans une liste d’options illustrées.
