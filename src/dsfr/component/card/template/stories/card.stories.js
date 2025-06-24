@@ -27,6 +27,17 @@ export const SizeSmStory = {
   ])
 };
 
+export const SizeMdStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      enlarge: true,
+      size: 'md',
+      description: 'Description (optionnelle)'
+    }
+  ])
+};
+
 export const SizeLgStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
@@ -53,6 +64,42 @@ export const HorizontalStory = {
   render: () => renders([
     {
       enlarge: true,
+      horizontal: true,
+      hasTag: true
+    }
+  ])
+};
+
+export const HorizontalSmStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      enlarge: true,
+      size: 'sm',
+      horizontal: true,
+      hasTag: true
+    }
+  ])
+};
+
+export const HorizontalMdStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      enlarge: true,
+      size: 'md',
+      horizontal: true,
+      hasTag: true
+    }
+  ])
+};
+
+export const HorizontalLgStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renders([
+    {
+      enlarge: true,
+      size: 'lg',
       horizontal: true,
       hasTag: true
     }
