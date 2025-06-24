@@ -41,9 +41,9 @@ Le menu déroulant présente une liste d'actions ou de choix parmi lesquels un u
 
 ::dsfr-doc-pin[Un chevron]{required=true add="placé à droite du libellé"}
 
-::dsfr-doc-pin[Une liste d’options]{required=true}
-
 ::dsfr-doc-pin[Un séparateur]
+
+::dsfr-doc-pin[Une liste d’options]{required=true}
 
 :::
 
