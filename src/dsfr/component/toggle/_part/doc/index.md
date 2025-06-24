@@ -56,7 +56,6 @@ Ne pas regrouper des interrupteurs qui n’ont rien à voir.
 
 ::::
 
-
 - **Respecter un format unique pour tous les interrupteurs d’un même groupe** (bouton à gauche et libellé à droite, ajout d’une description,statut etc.) ****
 
 ::::dsfr-doc-guidelines
@@ -79,7 +78,6 @@ Ne pas proposer des formats différents entre les interrupteurs d’un même gro
 
 ::::
 
-
 ### Règles éditoriales
 
 - **Rédiger un libellé clair, explicite et concis** pour faciliter la compréhension de l’usager.
@@ -87,7 +85,7 @@ Ne pas proposer des formats différents entre les interrupteurs d’un même gro
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
 ![](./_asset/edit/do-1.png)
 
@@ -101,7 +99,7 @@ Accompagner le libellé d’une description lorsqu’il ne permet pas, à lui s
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
 ![](./_asset/edit/do-2.png)
 

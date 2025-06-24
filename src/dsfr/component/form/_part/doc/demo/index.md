@@ -1,4 +1,7 @@
 ---
+boost: 0
+sitemap:
+  noindex: true
 title: Démo du formulaire
 ---
 

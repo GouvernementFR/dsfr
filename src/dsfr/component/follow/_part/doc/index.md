@@ -36,7 +36,7 @@ Proposer la lettre d’information et réseaux sociaux pour permettre à l’usa
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![](./_asset/use/do-1.png)
 

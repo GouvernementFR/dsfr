@@ -114,7 +114,7 @@ Les blocs de contenu peuvent s’afficher selon vos besoins, sur une ou plusieur
 
 Nous formulons cependant des recommandations pour la majorité des composants afin de vous guider (exemple : 8 colonnes max. pour le corps de texte)
 
-:::fr-table[Détail sur l’utilisation de `fr-col`]{valign=top scroll=false}
+:::fr-table[Détail sur l’utilisation de "fr-col"]{valign=top scroll=false}
 
 | Classe | Description | Exemple |
 | --- | --- | --- |

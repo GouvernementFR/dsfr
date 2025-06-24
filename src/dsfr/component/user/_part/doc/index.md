@@ -44,7 +44,7 @@ Le menu déroulant dans l’en-tête est présent lorsque l’usager s’est con
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![](./_asset/use/do-1.png)
 
@@ -52,7 +52,7 @@ Positionner l’en-tête connectée à l’emplacement d’un des accès rapide.
 
 :::
 
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
 ![](./_asset/use/dont-1.png)
 

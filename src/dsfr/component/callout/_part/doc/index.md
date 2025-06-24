@@ -34,8 +34,7 @@ Elle permet une distinction rapide et facile par l’usager.
 
 > [!WARNING]
 > Bien différencier la mise en avant de la mise en exergue.
-
-La [mise en exergue](../../../highlight/_part/doc/index.md) est utilisée pour distinguer une information importante au sein du contenu principal d’une page.
+> La [mise en exergue](../../../highlight/_part/doc/index.md) est utilisée pour distinguer une information importante au sein du contenu principal d’une page.
 
 ### Comment utiliser ce composant ?
 
