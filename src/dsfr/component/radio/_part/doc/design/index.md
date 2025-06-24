@@ -58,7 +58,7 @@ Il est recommandé d’ajouter un texte d’aide qui accompagne les boutons radi
 
 - Par l’ajout d’un texte sous le titre du groupe de boutons radio, afin d’apporter une précision à l’intitulé du groupe.
 
-::dsfr-doc-storybook{storyId=radios-group--radios-group args="{ hint: Texte de description additionnel }"}
+::dsfr-doc-storybook{storyId=radios-group--hint}
 
 - Par l’ajout d’un texte sous le libellé de chaque bouton radio, afin d’apporter une précision à chaque élément.
 
@@ -76,27 +76,27 @@ Celui-ci est personnalisable.
 
 - Avec description
 
-::dsfr-doc-storybook{storyId=radios-group--radios-group args="{ hint:Texte de description additionnel, rich: true, inline: true }"}
+::dsfr-doc-storybook{storyId=radios-group--radios-rich-inline-hint-group}
 
 - Sans description
 
-::dsfr-doc-storybook{storyId=radios-group--radios-group args="{ rich: true, inline: true }"}
+::dsfr-doc-storybook{storyId=radios-group--radios-rich-inline-group}
 
 **Liste verticale**
 
 - Avec description
 
-::dsfr-doc-storybook{storyId=radios-group--radios-group args="{ hint: Texte de description additionnel, rich: true }"}
+::dsfr-doc-storybook{storyId=radios-group--radios-rich-hint-group}
 
 - Sans description
 
-::dsfr-doc-storybook{storyId=radios-group--radios-group args="{ rich: true }"}
+::dsfr-doc-storybook{storyId=radios-group--radios-rich-group}
 
 ### Tailles
 
 Le bouton radio est proposé en taille MD par défaut (24px) afin d’optimiser son ergonomie et son accessibilité en ayant une zone cliquable confortable.
 
-::dsfr-doc-storybook{storyId=radios-group--default}
+::dsfr-doc-storybook{storyId=radios-group--size-md}
 
 Il existe également une version en taille SM (16 px) correspondant à la taille standard proposée par les navigateurs.
 
@@ -108,19 +108,19 @@ Il existe également une version en taille SM (16 px) correspondant à la taille
 
 L'état d’erreur est signalé par un changement de couleur ainsi que l’affichage d’une ligne rouge (cf. couleurs fonctionnelles : le rouge est la couleur de l’état erreur) et d’un message d’erreur en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=radios-group--radios-group args="{ status: error }"}
+::dsfr-doc-storybook{storyId=radios-group--status-error}
 
 **Etat de succès**
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs fonctionnelles : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=radios-group--radios-group args="{ status: valid }"}
+::dsfr-doc-storybook{storyId=radios-group--status-valid}
 
 **Etat désactivé**
 
 L'état désactivé indique que l’utilisateur ne peux pas interagir avec le bouton radio.
 
-::dsfr-doc-storybook{storyId=radios-group--radios-group args="{ disabled: true }"}
+::dsfr-doc-storybook{storyId=radios-group--disabled}
 
 ### **Personnalisation**
 

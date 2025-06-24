@@ -102,22 +102,22 @@ export const SizeMdStory = {
     {
       hasTitle: true,
       type: 'success',
-      title: 'Succès : Lorem ipsum dolor sit amet'
+      title: 'Succès : Description détaillée du message...'
     },
     {
       hasTitle: true,
       type: 'error',
-      title: 'Erreur : Lorem ipsum dolor sit amet'
+      title: 'Erreur : Description détaillée du message...'
     },
     {
       hasTitle: true,
       type: 'info',
-      title: 'Information : Lorem ipsum dolor sit amet'
+      title: 'Information : Description détaillée du message...'
     },
     {
       hasTitle: true,
       type: 'warning',
-      title: 'Attention : Lorem ipsum dolor sit amet'
+      title: 'Attention : Description détaillée du message...'
     }
   ])
 };
