@@ -33,6 +33,9 @@ class Modal extends api.core.Disclosure {
   // TODO v2 : passer les tagName d'action en constante
   _escape () {
     const tagName = document.activeElement ? document.activeElement.tagName : undefined;
+    const isTooltipReferent = document.activeElement ? document.activeElement.hasAttribute('data-fr-js-tooltip-referent') : false;
+
+    if (isTooltipReferent) return;
 
     switch (tagName) {
       case 'INPUT':
@@ -98,6 +101,15 @@ class Modal extends api.core.Disclosure {
     this._isDialog = value;
   }
 
+  get isActive () {
+    return super.isActive;
+  }
+
+  set isActive (value) {
+    super.isActive = value;
+    if (value) this._ensureAccessibleName();
+  }
+
   decorateDialog () {
     if (this._isDecorated) return;
     this._isDecorated = true;
@@ -118,7 +130,7 @@ class Modal extends api.core.Disclosure {
   }
 
   _ensureAccessibleName () {
-    if (!this.isEnabled || (this.isEnabled && (this.hasAttribute('aria-labelledby') || this.hasAttribute('aria-label')))) return;
+    if (!this.isActive || !this.isEnabled || (this.isEnabled && (this.hasAttribute('aria-labelledby') || this.hasAttribute('aria-label')))) return;
     this.warn('missing accessible name');
     const title = this.node.querySelector(ModalSelector.TITLE);
     const primary = this.primaryButtons[0];

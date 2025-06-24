@@ -147,7 +147,7 @@ const buttonProps = (args) => {
     title: args.title || undefined,
     disabled: args.disabled,
     markup: args.markup || buttonArgs.markup,
-    type: args.type || buttonArgs.type,
+    type: args.markup !== 'a' ? args.type : undefined,
     href: args.href || undefined,
     blank: args.target === 'blank',
     self: args.target === 'self',

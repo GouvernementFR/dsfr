@@ -12,7 +12,63 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.13
 
-### [v1.13.1](https://github.com/GouvernementFR/dsfr/compare/v1.13.0...v1.13.1) - 25 Mars 2025
+### [1.13.2](https://github.com/GouvernementFR/dsfr/compare/v1.13.1...1.13.2) - 14 Mai 2025
+
+#### ⬆️ chore(dependencies): mise à jour des dépendances npm [(#1156)](https://github.com/GouvernementFR/dsfr/pull/1156)
+- github action de notification (#1132)
+- Bumps vite from 5.4.15 to 5.4.19.
+- Bumps [eazy-logger](https://github.com/shakyshane/easy-logger) from 4.0.1 to 4.1.0.
+- Bumps [tar-fs](https://github.com/mafintosh/tar-fs) from 2.1.1 to 2.1.2.
+
+
+#### ✨ feat(analytics): ajout proxy actionee act [DSFR-95] [(#1144)](https://github.com/GouvernementFR/dsfr/pull/1144)
+- Ajout de la possibilité d'envoyer l'action d'un élément actionee en js via la méthode act(). Exemple :
+`dsfr(element).buttonActionnee.act();`
+`dsfr(element).buttonActionnee.act({objet de données supplémentaires});`
+
+
+#### 🐛 fix(modal): correction warning console header [(#1154)](https://github.com/GouvernementFR/dsfr/pull/1154)
+Lorsque le header est désactivé en desktop, le js de header retire l'aria-label de la modal car inutile. Le message d'avertissement dans la console indique alors que la modal ne contient pas d'attribut aria. Cette vérification ne doit être faite que si la modale est active. #1120
+
+
+#### 🐛 fix(storybook): propriété type du bouton et retrait blocage scroll modal [DSFR-85] [(#1143)](https://github.com/GouvernementFR/dsfr/pull/1143)
+- Correction de la propriété "type" sur le composant bouton
+- Correction de la hauteur de l'exemple modal avec footer
+- Retrait du blocage du scroll à l'ouverture d'une modale
+
+
+#### 📝 docs(analytics): corrige liens en 404 [DSFR-99] [(#1142)](https://github.com/GouvernementFR/dsfr/pull/1142)
+- Correction url dans la doc analytics
+
+
+#### 📝 docs(readme): Coquille dans le README utility.scss => utility.css [(#1141)](https://github.com/GouvernementFR/dsfr/pull/1141)
+
+
+#### 🐛 fix(sidemenu, accordion): collapses ouverts au chargement [DSFR-96] [(#1140)](https://github.com/GouvernementFR/dsfr/pull/1140)
+- Ajout de la classe `fr-collapse--expanded` en html, sur les collapse ouverts par défaut, pour éviter l'ouverture après le chargement du js.
+- Ajout d'exemples d'accordéon et sidemenu avec collapses ouverts au chargement
+
+
+#### 🐛 fix(core): enlarge link background hover [(#1139)](https://github.com/GouvernementFR/dsfr/pull/1139)
+- Correction du background d'un élément d'action étendu au hover. Permet de surcharger le background du a ou button.
+
+
+#### 🐛 fix(storybook): ajout bandeau alerte météo rouge dans le storybook [(#1129)](https://github.com/GouvernementFR/dsfr/pull/1129)
+- Ajout du type de bandeau d’alerte "weather-red" dans storybook
+
+
+#### 🐛 fix(fieldset): aligne les inputs inline
+- Corrige l'alignement des champs en ligne lorsque le nombre de lignes des labels est différent.
+
+
+
+### [v1.13.1](https://github.com/GouvernementFR/dsfr/compare/v1.13.0...v1.13.1) - 26 Mars 2025
+
+#### fix: lint & es5 export [(#1119)](https://github.com/GouvernementFR/dsfr/pull/1119)
+
+
+#### ✨ feat(package.json): ajout des fichiers markdown et publiccode
+
 
 #### ⬆️ chore(dependencies): mise à jour des dépendances npm [(#1116)](https://github.com/GouvernementFR/dsfr/pull/1116)
 

@@ -111,6 +111,15 @@ export const SearchStory = {
   }
 };
 
+export const HintIconStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('input'),
+    icon: 'alert-line',
+    hint: 'Texte de description additionnel'
+  }
+};
+
 export const DateStory = {
   tags: ['autodocs', '!dev'],
   parameters: {

@@ -12,6 +12,16 @@
   background-color: var(--background-default-grey);
 }
 
+#storybook-preview-wrapper {
+  padding-top: 2rem;
+}
+
+[data-fr-scrolling] body.sb-show-main {
+  overflow: auto;
+  position: relative;
+  top: auto !important;
+}
+
 .hide-src-toggle .docblock-code-toggle {
   display: none !important;
 }
