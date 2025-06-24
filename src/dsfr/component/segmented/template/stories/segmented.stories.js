@@ -49,6 +49,14 @@ export const LegendInlineStory = {
   }
 };
 
+export const HintStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    hint: 'Texte de description additionnel',
+    elements: getSegmentedData()
+  }
+};
+
 export const NoLegendStory = {
   tags: ['autodocs', '!dev'],
   args: {

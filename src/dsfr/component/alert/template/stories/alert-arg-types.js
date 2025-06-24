@@ -84,6 +84,7 @@ const alertArgTypes = {
 
 const alertArgs = {
   hasTitle: true,
+  hasDescription: true,
   title: 'Lorem ipsum dolor',
   text: 'sit amet, consectetur adipiscing elit. Nullam id purus nec purus ultricies lacinia. Nullam nec purus nec purus ultricies lacinia.',
   type: 'default',
@@ -97,12 +98,15 @@ const alertArgs = {
 
 const alertProps = (args) => {
   const alert = {
-    text: args.text || alertArgs.text,
     size: args.size || alertArgs.size,
     icon: args.icon || alertArgs.icon,
     dismissible: args.dismissible || alertArgs.dismissible,
     id: args.id || undefined
   };
+
+  if (args.hasDescription) {
+    alert.text = args.text;
+  }
 
   if (args.hasTitle) {
     alert.title = args.title || alertArgs.title;
