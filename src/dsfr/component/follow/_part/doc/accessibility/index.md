@@ -16,8 +16,6 @@ summary: Ce contenu décrit le composant Lettre d’information et réseaux soci
 
 La lettre d’information et réseaux sociaux est un ensemble d’éléments d’interaction avec l’interface permettant à l’usager de s’inscrire à (aux) lettre(s) d’information proposée(s), ainsi que des liens vers les réseaux sociaux de l’entité.
 
-La lettre d’information et réseaux sociaux est un ensemble d’éléments d’interaction avec l’interface permettant à l’usager de s’inscrire à (aux) lettre(s) d’information proposée(s), ainsi que des liens vers les réseaux sociaux de l’entité.
-
 :::dsfr-doc-tab-navigation
 
 - [Présentation](../index.md)
