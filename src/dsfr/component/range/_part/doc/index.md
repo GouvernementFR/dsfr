@@ -108,7 +108,7 @@ Ne pas proposer une échelle de valeur non-adaptée, ici trop grande.
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
 ![](./_asset/use/do-4.png)
 

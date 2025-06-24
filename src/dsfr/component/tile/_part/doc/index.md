@@ -42,7 +42,7 @@ La tuile n’a pas vocation à être utilisée pour mettre en avant l’action p
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![](./_asset/use/do-1.png)
 
@@ -50,7 +50,7 @@ Contraindre toutes les tuiles d’une même ligne à la même hauteur.
 
 :::
 
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
 ![](./_asset/use/dont-1.png)
 
@@ -64,7 +64,7 @@ Ne pas créer de disparité dans la hauteur des tuiles d’une même ligne.
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![](./_asset/use/do-2.png)
 
@@ -72,7 +72,7 @@ Conserver un contenu commun au sein des tuiles qui forment un même ensemble.
 
 :::
 
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
 ![](./_asset/use/dont-2.png)
 

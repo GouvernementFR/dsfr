@@ -82,7 +82,7 @@ La modale de gestion des cookies est composée des éléments suivants :
   - Une liste de services de cookies, chaque service étant représenté par un élément `<div>` avec la classe `fr-consent-service`.
     - Le premier bloc service permet d'activer ou désactiver tous les services. Nous ajouterons ici une classe `fr-consent-manager__header` pour le style de la légende. Les libellés des boutons radios seront "Tout accepter" et "Tout refuser".
     - Le second élément correspond aux services essentiels, qui ne peuvent pas être désactivés. Le bloc contient fieldset avec une légende, une description et deux boutons radio. Le bouton radio "Accepter" est coché par défaut, et le bouton "Refuser" est désactivé.
-    - Pour chaque services non essentiels, un fieldset `fr-fieldset` avec une légende `fr-consent-service__title`, deux boutons radio dans un conteneur `fr-consent-service__radios`, une description `fr-consent-service__desc` et un bouton "Voir plus de détails" permettant d'ouvrir un collapse.
+    - Pour chaque services non essentiels, un fieldset `fr-fieldset` avec une légende `fr-consent-service__title`, deux boutons radio dans un conteneur `fr-consent-service__radios`, une description `fr-consent-service__desc` et un dépliant "Voir plus de détails" permettant d'ouvrir un collapse.
       - A l'intérieur de ce collapse, on retrouve une liste de sous finalités du service, avec pour chacune un bouton "Accepter" et un bouton "Refuser", et optionnellement une description.
   - Un groupe de boutons `fr-consent-manager__buttons` alignés à droite et en ligne à partir du breakpoint SM :
     - Ce groupe ne contient qu'un seul bouton, primaire, pour enregistrer les préférences. On utilise le groupe pour ces fonctionnalités de positionnement.

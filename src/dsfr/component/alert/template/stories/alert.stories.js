@@ -18,6 +18,25 @@ export const AlertStory = {
   args: {}
 };
 
+export const TitleStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    hasTitle: true,
+    title: 'Titre de l\'alerte contenant l\'intitulé de son type',
+    hasDescription: false
+  }
+};
+
+export const DescriptionStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    hasTitle: true,
+    title: 'Titre de l\'alerte contenant l\'intitulé de son type',
+    hasDescription: true,
+    text: 'Texte de description de l\'alerte'
+  }
+};
+
 export const SuccessStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
@@ -73,24 +92,28 @@ export const SizeSmStory = {
       size: 'sm',
       type: 'success',
       hasTitle: false,
+      hasDescription: true,
       text: 'Succès : Description détaillée du message...'
     },
     {
       size: 'sm',
       type: 'error',
       hasTitle: false,
+      hasDescription: true,
       text: 'Erreur : Description détaillée du message...'
     },
     {
       size: 'sm',
       type: 'info',
       hasTitle: false,
+      hasDescription: true,
       text: 'Information : Description détaillée du message...'
     },
     {
       size: 'sm',
       type: 'warning',
       hasTitle: false,
+      hasDescription: true,
       text: 'Attention : Description détaillée du message...'
     }
   ])
@@ -102,22 +125,22 @@ export const SizeMdStory = {
     {
       hasTitle: true,
       type: 'success',
-      title: 'Succès : Lorem ipsum dolor sit amet'
+      title: 'Succès : Description détaillée du message...'
     },
     {
       hasTitle: true,
       type: 'error',
-      title: 'Erreur : Lorem ipsum dolor sit amet'
+      title: 'Erreur : Description détaillée du message...'
     },
     {
       hasTitle: true,
       type: 'info',
-      title: 'Information : Lorem ipsum dolor sit amet'
+      title: 'Information : Description détaillée du message...'
     },
     {
       hasTitle: true,
       type: 'warning',
-      title: 'Attention : Lorem ipsum dolor sit amet'
+      title: 'Attention : Description détaillée du message...'
     }
   ])
 };
@@ -126,9 +149,9 @@ export const DismissibleStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
-      type: 'info',
-      title: 'Information : titre du message',
+      title: 'Titre du message',
       hasTitle: true,
+      hasDescription: true,
       text: 'Cliquer sur la croix pour fermer l\'alerte',
       dismissible: true
     }
@@ -139,8 +162,7 @@ export const DismissibleNoJsStory = {
   tags: ['autodocs', '!dev'],
   render: () => renders([
     {
-      type: 'info',
-      title: 'Information : titre du message',
+      title: 'Titre du message',
       hasTitle: true,
       text: 'Cliquer sur la croix pour fermer l\'alerte',
       dismissible: true,

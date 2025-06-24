@@ -218,13 +218,9 @@ L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole le bouton avec sa souris.
 
-[Image d’illustration]
-
 **État au clic**
 
 L’état au clic correspond au comportement constaté par l’usager lorsqu’il clique sur le bouton.
-
-[Image d’illustration]
 
 ### Personnalisation
 

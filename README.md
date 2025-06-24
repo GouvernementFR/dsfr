@@ -4,7 +4,7 @@
 
 Le Système de Design de l’État (ci-après, le **DSFR**) est un ensemble de composants web HTML, CSS et Javascript pour faciliter le travail des équipes projets des sites Internet publics, et créer des interfaces numériques de qualité et accessibles.
 
-L'outil est développé, maintenu et géré par le [Service d'Information du Gouvernement (SIG)](https://www.gouvernement.fr/service-d-information-du-gouvernement-sig).
+L'outil est développé, maintenu et géré par le [Service d'Information du Gouvernement (SIG)](https://www.info.gouv.fr/organisation/service-d-information-du-gouvernement-sig).
 
 Son utilisation par les administrations est soumise à une demande d'agrément (voir partie 5 des Conditions Générales d'Utilisation).
 
@@ -96,7 +96,7 @@ Le point de départ de l’utilisation du DSFR  est la création de fichiers HTM
 
 L’ajout de l’attribut **data-fr-scheme** sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont `system`, `light`, `dark`. La valeur “system” permet d’utiliser la configuration définie sur le système d’exploitation de l’utilisateur.
 
-Consulter la [documentation des paramètres d’affichage](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametre-d-affichage) afin d’en savoir plus.
+Consulter la [documentation des paramètres d’affichage](./src/dsfr/component/display/_part/doc/index.md) afin d’en savoir plus.
 
 ```html
 <!doctype html>
@@ -132,7 +132,7 @@ Consulter la [documentation des paramètres d’affichage](https://www.systeme-d
 </html>
 ```
 
-**Les CSS**
+## Les CSS
 
 Afin d’inclure la totalité des composants et des styles du système de design, il est nécessaire d’inclure la feuille de style `dist/dsfr.min.css`.
 
@@ -153,11 +153,9 @@ Il est aussi possible d’importer uniquement ce que l’on souhaite utiliser. E
     <link rel="stylesheet" href="button.min.css">
 ```
 
-
-**Le Javascript**
+### Le Javascript
 
 L’ensemble du code javascript nécessaire au bon fonctionnement du DS se trouve dans deux fichiers `dist/dsfr.module.min.js` et `dist/dsfr.nomodule.min.js`.
-
 
 Le fichier dsfr.module.min.js utilise les modules javascript natifs - sa balise script d’appel doit avoir l’attribut **type=”module”**.
 
@@ -171,7 +169,7 @@ Il est **impératif** d’appeler les **deux fichiers** javascript afin que le c
 </html>
 ```
 
-> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://github.com/GouvernementFR/dsfr/blob/main/src/dsfr/analytics/doc/analytics.md)
+> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://www.systeme-de-design.gouv.fr/version-courante/fr/mesure-d-audience/documentation-technique-de-la-mesure-d-audience/)
 
 De la même façon que le CSS il est possible d’importer uniquement le JS des composants utilisés (et leurs dépendances).
 
@@ -187,11 +185,11 @@ Ces classes sont disponibles dans `utility` qui importe `dist/utility/icons/icon
 
 Il est aussi possible d’importer uniquement certaines catégories d’icônes afin d’optimiser le poids. Par ex. :  `dist/utility/icons/system/system.css` pour les icônes “system”.
 
-Pour plus d’informations : [Voir la documentation des icônes](https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones).
+Pour plus d’informations : [Voir la documentation des icônes](https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/icone/).
 
 ### Favicon
 
-[La documentation des favicons](https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icone-de-favoris) détaille la façon de les implémenter dans vos pages.
+[La documentation des favicons](https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/icone-de-favori/) détaille la façon de les implémenter dans vos pages.
 
 ## Fonctionnement
 
@@ -211,7 +209,7 @@ Le **DSFR** est constitué de différents composants, que vous pouvez utiliser i
 
 Une documentation spécifique est prévue pour chaque composant, précisant ses principes d’utilisation, ainsi que les snippets de code HTML à utiliser pour votre projet.
 
-🙌 Vous êtes maintenant prêt(e) à utiliser le **DSFR**.
+🙌 Vous êtes maintenant prêt·e à utiliser le **DSFR**.
 
 ## Contribution
 
@@ -219,4 +217,4 @@ Le processus de contribution est détaillé sur la [page CONTRIBUTING.md](CONTRI
 
 ## Documentation
 
-[Documentation développeurs](https://www.systeme-de-design.gouv.fr/utilisation-et-organisation/developpeurs/)
+[Documentation développeur·se](https://www.systeme-de-design.gouv.fr/version-courante/fr/prise-en-main-et-perimetre/vous-etes-developpeur/)

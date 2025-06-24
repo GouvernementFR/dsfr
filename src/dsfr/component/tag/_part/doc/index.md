@@ -47,7 +47,7 @@ Le tag est un élément d’indication ou d’interaction (selon les contextes) 
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![](./_asset/use/do-1.png)
 
@@ -55,7 +55,7 @@ Utiliser des tags supprimables associés à une liste déroulante dès lors qu�
 
 :::
 
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
 ![](./_asset/use/dont-1.png)
 
@@ -84,7 +84,7 @@ Ne pas utiliser un tag pour mettre en forme du contenu.
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
+:::dsfr-doc-guideline[✅ À faire]{col=12 valid=true}
 
 ![](./_asset/edit/do-1.png)
 
@@ -92,7 +92,7 @@ Penser des libellés pertinents, qui vont à l’essentiel.
 
 :::
 
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
 ![](./_asset/edit/dont-1.png)
 
