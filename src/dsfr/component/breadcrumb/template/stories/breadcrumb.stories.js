@@ -11,7 +11,7 @@ export default {
   args: breadcrumbArgs
 };
 
-export const BreadrumbStory = {
+export const BreadcrumbStory = {
   tags: ['autodocs'],
   args: {}
 };

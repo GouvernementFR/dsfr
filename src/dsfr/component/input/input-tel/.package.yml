@@ -1,9 +1,0 @@
-id: input-tel
-title: Bloc fonctionnel de numéro de téléphone
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/blocs-fonctionnels/numero-de-telephone
-wrapper: col-8
-style:
-  - core
-  - input-base
-  - form
-

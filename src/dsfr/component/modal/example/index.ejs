@@ -44,6 +44,8 @@ let dataTable = {
 
 <%- sample('Modale avec zone d\'action, tableau et tooltip', './sample/modal-default', {modal: { ...dataTable, label: 'Modale tableau et tooltip'}}, true ); %>
 
+<%- sample('Modale avec titre sans niveau d\'en-tête', './sample/modal-default', {modal: { ...dataText, label: 'Modale avec titre en p', titleMarkup: 'p'}}, true ); %>
+
 <%- sample('Modale simple non refermable au click sur le fond', './sample/modal-default', {modal: { ...dataText, label: 'Modale simple', concealingBackdrop: false}}, true ); %>
 
 <%- sample('Modale sans bouton lié', './sample/modal-default', {modal: { ...dataText, label: 'Modale simple'}, button: { attributes: { onClick: 'window.dsfr(this.nextElementSibling).modal.disclose()' } }}, true );%>

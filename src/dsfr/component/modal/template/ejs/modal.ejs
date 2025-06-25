@@ -5,6 +5,8 @@
 
 * modal.markup (string, optional) : balise de la modale (dialog, div>)
 
+* modal.titleMarkup (string, optional) : balise du titre de la modale (h1, h2, h3, p, etc.), par défaut h1
+
 * modal.label (string, required) : Libellé du bouton de la modale
 
 * modal.title (string, required) : titre de la modale
@@ -38,6 +40,7 @@
 <%
 let modal = locals.modal || {};
 let modalMarkup = modal.markup || 'dialog';
+const titleMarkup = modal.titleMarkup || 'h2';
 const isDialog = modalMarkup === 'dialog';
 let modalClasses = modal.classes || [];
 modalClasses.push(`${prefix}-modal`);
@@ -101,12 +104,12 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
           </div>
           <div class="<%= prefix %>-modal__content">
             <% if(modal.title !== undefined) { %>
-            <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
+            <<%= titleMarkup %> id="<%= titleId %>" class="<%= prefix %>-modal__title">
               <% if (modal.icon !== undefined) { %>
               <span class="<%= prefix %>-icon-<%= modal.icon %> <%= prefix %>-icon--lg" aria-hidden="true"></span>
               <% } %>
               <%= modal.title %>
-            </h1>
+            </<%= titleMarkup %>>
             <% } %>
             <%- modal.body %>
           </div>

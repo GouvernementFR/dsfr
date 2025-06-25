@@ -23,10 +23,43 @@ export const DefaultGroupStory = {
   }
 };
 
-export const HintGroupStory = {
+export const HintStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    elements: getRadiosGroupData(3, true)
+    hint: 'Texte de description additionnel',
+    elements: getRadiosGroupData()
+  }
+};
+
+export const DisabledStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    disabled: true,
+    elements: getRadiosGroupData()
+  }
+};
+
+export const StatusValidStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    status: 'valid',
+    elements: getRadiosGroupData()
+  }
+};
+
+export const StatusErrorStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    status: 'error',
+    elements: getRadiosGroupData()
+  }
+};
+
+export const SizeMDGroupStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    size: 'md',
+    elements: getRadiosGroupData()
   }
 };
 
@@ -50,6 +83,34 @@ export const RadiosRichGroupStory = {
   tags: ['autodocs', '!dev'],
   args: {
     rich: true,
+    elements: getRadiosGroupData()
+  }
+};
+
+export const RadiosRichHintGroupStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    rich: true,
+    hint: 'Texte de description additionnel',
+    elements: getRadiosGroupData()
+  }
+};
+
+export const RadiosRichInlineGroupStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    rich: true,
+    inline: true,
+    elements: getRadiosGroupData()
+  }
+};
+
+export const RadiosRichInlineHintGroupStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    rich: true,
+    inline: true,
+    hint: 'Texte de description additionnel',
     elements: getRadiosGroupData()
   }
 };

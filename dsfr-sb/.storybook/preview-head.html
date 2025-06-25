@@ -1,3 +1,34 @@
 <link rel="stylesheet" href="dist/dsfr.min.css">
 <link rel="stylesheet" href="dist/utility/utility.min.css">
 <script type="module" src="dist/dsfr.module.min.js"></script>
+
+
+<script>
+  function changeHeight(lastHeight) {
+    const sbRoot = document.querySelector('#storybook-root');
+    const sbDocs = document.querySelector('#storybook-docs');
+    const hasPadding = document.querySelector('.sb-main-padded');
+    const paddingValue = 32;
+    const height = (sbRoot ? sbRoot.getBoundingClientRect().height : 0) +
+      (sbDocs ? sbDocs.getBoundingClientRect().height : 0) + (hasPadding ? paddingValue : 0);
+      window.requestAnimationFrame(() => {
+        changeHeight(height);
+      });
+    if (height === lastHeight) return;
+
+    window.parent.postMessage({
+      type: 'storybook-height-change',
+      height: height,
+      iframeId: document.documentElement.id
+    }, window.location.origin);
+  }
+
+  function addIdToBody() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    if (id) document.documentElement.setAttribute('id', id);
+  }
+
+  changeHeight(document.documentElement.offsetHeight);
+  addIdToBody();
+</script>
