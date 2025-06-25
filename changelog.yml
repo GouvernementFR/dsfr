@@ -1,19 +1,253 @@
 - id: v1.14.0
-  date: 2025-04-22
+  date: 2025-06-25
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.14.0
   commits:
-    - id: "1135"
-      type: chore
+    - id: "1069"
+      type: docs
+      scopes: []
+      description: >-
+        - Ajout de fichiers markdown dans un dossier `_part/doc/` de chaque
+        composant, du core, et des modèles.
+
+        - Réorganisation des dossiers :
+          - le dossier `src` ne contient maintenant que les dossiers `dsfr`, `i18n`, et `module`, le reste est descendu dans `dsfr`
+          - les dossiers `page` et `pattern` sont placés dans un dossier `layout`
+          - `input-tel` et `input-email` sont déplacés dans les pattern, et le contenu de `input-base` est remonté dans `input`
+      isBreaking: false
+      tickets:
+        - DSFR-13
+      gitmojis:
+        - 📝
+      tag: v1.14.0
+      title: ajout de documentation pour le site de doc v2
+      pull: https://github.com/GouvernementFR/dsfr/pull/1069
+    - id: "1160"
+      type: feat
       scopes:
-        - "*"
-      description: |
-        (cherry picked from commit 5d2cc5629b2b1ffdb518309aaece83ceeaf7d05f)
+        - artworks
+      description: |-
+        Ajout des pictogrammes :
+        - digital/ecosystem
+        - digital/seft-trading
+        - digital/innovation
+        - accessibility/accessibility
+        - leisure/art
+      isBreaking: false
+      tickets:
+        - DSFR-105
+      gitmojis:
+        - ✨
+      tag: v1.14.0
+      title: ajout nouveaux pictogrammes
+      pull: https://github.com/GouvernementFR/dsfr/pull/1160
+    - id: "1166"
+      type: feat
+      scopes:
+        - storybook
+      description: |-
+        Ajout de stories sur :
+        - Alerte
+        - Bouton radio
+        - Case à cocher
+        - Champ de saisie
+        - En-tête
+        - Lien
+        - Menu latéral
+        - Pagination :
+        - Paramètre d'affichage
+        - Pied de page
+        - Tuile
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.14.0
+      title: ajout de nouvelles stories
+      pull: https://github.com/GouvernementFR/dsfr/pull/1166
+    - id: "1173"
+      type: feat
+      scopes:
+        - callout
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.14.0
+      title: ajoute espacement sur la classe de titre
+      pull: https://github.com/GouvernementFR/dsfr/pull/1173
+    - id: "1174"
+      type: feat
+      scopes:
+        - modal
+        - tooltip
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.14.0
+      title: fermeture du tooltip avant la fermeture de la modale
+      pull: https://github.com/GouvernementFR/dsfr/pull/1174
+    - id: "1179"
+      type: feat
+      scopes: []
+      description: ""
       isBreaking: false
       gitmojis:
         - 👷
       tag: v1.14.0
-      title: action de notification
-      pull: https://github.com/GouvernementFR/dsfr/pull/1135
+      title: publication de test
+      pull: https://github.com/GouvernementFR/dsfr/pull/1179
+- id: v1.13.2
+  date: 2025-05-15
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.13.2
+  commits:
+    - id: "1158"
+      type: docs
+      scopes: []
+      description: |-
+        - correction d'un lien
+        - amélioration du rendu des mises en avant
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.13.2
+      title: mise en forme doc analytics
+      pull: https://github.com/GouvernementFR/dsfr/pull/1158
+    - id: "1156"
+      type: chore
+      scopes:
+        - dependencies
+      description: >-
+        - github action de notification (#1132)
+
+        - Bumps vite from 5.4.15 to 5.4.19.
+
+        - Bumps [eazy-logger](https://github.com/shakyshane/easy-logger) from
+        4.0.1 to 4.1.0.
+
+        - Bumps [tar-fs](https://github.com/mafintosh/tar-fs) from 2.1.1 to
+        2.1.2.
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.13.2
+      title: mise à jour des dépendances npm
+      pull: https://github.com/GouvernementFR/dsfr/pull/1156
+    - id: "1144"
+      type: feat
+      scopes:
+        - analytics
+      description: >-
+        - Ajout de la possibilité d'envoyer l'action d'un élément actionee en js
+        via la méthode act(). Exemple :
+
+        `dsfr(element).buttonActionnee.act();`
+
+        `dsfr(element).buttonActionnee.act({objet de données supplémentaires});`
+      isBreaking: false
+      tickets:
+        - DSFR-95
+      gitmojis:
+        - ✨
+      tag: v1.13.2
+      title: ajout proxy actionee act
+      pull: https://github.com/GouvernementFR/dsfr/pull/1144
+    - id: "1154"
+      type: fix
+      scopes:
+        - modal
+      description: "Lorsque le header est désactivé en desktop, le js de header retire
+        l'aria-label de la modal car inutile. Le message d'avertissement dans la
+        console indique alors que la modal ne contient pas d'attribut aria.
+        Cette vérification ne doit être faite que si la modale est active.
+        #1120"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.13.2
+      title: correction warning console header
+      pull: https://github.com/GouvernementFR/dsfr/pull/1154
+    - id: "1143"
+      type: fix
+      scopes:
+        - storybook
+      description: |-
+        - Correction de la propriété "type" sur le composant bouton
+        - Correction de la hauteur de l'exemple modal avec footer
+        - Retrait du blocage du scroll à l'ouverture d'une modale
+      isBreaking: false
+      tickets:
+        - DSFR-85
+      gitmojis:
+        - 🐛
+      tag: v1.13.2
+      title: propriété type du bouton et retrait blocage scroll modal
+      pull: https://github.com/GouvernementFR/dsfr/pull/1143
+    - id: "1142"
+      type: docs
+      scopes:
+        - analytics
+      description: "- Correction url dans la doc analytics"
+      isBreaking: false
+      tickets:
+        - DSFR-99
+      gitmojis:
+        - 📝
+      tag: v1.13.2
+      title: corrige liens en 404
+      pull: https://github.com/GouvernementFR/dsfr/pull/1142
+    - id: "1141"
+      type: docs
+      scopes:
+        - readme
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.13.2
+      title: Coquille dans le README utility.scss => utility.css
+      pull: https://github.com/GouvernementFR/dsfr/pull/1141
+    - id: "1140"
+      type: fix
+      scopes:
+        - sidemenu
+        - accordion
+      description: >-
+        - Ajout de la classe `fr-collapse--expanded` en html, sur les collapse
+        ouverts par défaut, pour éviter l'ouverture après le chargement du js.
+
+        - Ajout d'exemples d'accordéon et sidemenu avec collapses ouverts au
+        chargement
+      isBreaking: false
+      tickets:
+        - DSFR-96
+      gitmojis:
+        - 🐛
+      tag: v1.13.2
+      title: collapses ouverts au chargement
+      pull: https://github.com/GouvernementFR/dsfr/pull/1140
+    - id: "1139"
+      type: fix
+      scopes:
+        - core
+      description: "- Correction du background d'un élément d'action étendu au hover.
+        Permet de surcharger le background du a ou button."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.13.2
+      title: enlarge link background hover
+      pull: https://github.com/GouvernementFR/dsfr/pull/1139
+    - id: "1129"
+      type: fix
+      scopes:
+        - storybook
+      description: '- Ajout du type de bandeau d’alerte "weather-red" dans storybook'
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.13.2
+      title: ajout bandeau alerte météo rouge dans le storybook
+      pull: https://github.com/GouvernementFR/dsfr/pull/1129
 - id: v1.13.1
   date: 2025-03-26
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.13.1
@@ -379,26 +613,6 @@
       tag: v1.13.1
       title: ajout icone bluesky
       pull: https://github.com/GouvernementFR/dsfr/pull/1096
-    - id: "1070"
-      type: docs
-      scopes:
-        - tooltip
-      description: ""
-      isBreaking: false
-      gitmojis: []
-      tag: v1.13.1
-      title: ajout de documentation tooltip
-      pull: https://github.com/GouvernementFR/dsfr/pull/1070
-    - id: "1072"
-      type: docs
-      scopes:
-        - table
-      description: ""
-      isBreaking: false
-      gitmojis: []
-      tag: v1.13.1
-      title: ajout de documentation
-      pull: https://github.com/GouvernementFR/dsfr/pull/1072
 - id: v1.13.0
   date: 2024-12-04
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.13.0
