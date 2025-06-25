@@ -37,7 +37,12 @@ const alertArgTypes = {
       value: 'string'
     }
   },
+  hasDescription: {
+    control: 'boolean',
+    description: 'L\'alerte a une description (obligatoire en taille sm)'
+  },
   text: {
+    if: { arg: 'hasDescription', eq: true },
     control: 'text',
     description: 'Description de l\'alerte',
     type: {
@@ -84,6 +89,7 @@ const alertArgTypes = {
 
 const alertArgs = {
   hasTitle: true,
+  hasDescription: true,
   title: 'Lorem ipsum dolor',
   text: 'sit amet, consectetur adipiscing elit. Nullam id purus nec purus ultricies lacinia. Nullam nec purus nec purus ultricies lacinia.',
   type: 'default',
@@ -97,15 +103,22 @@ const alertArgs = {
 
 const alertProps = (args) => {
   const alert = {
-    text: args.text || alertArgs.text,
     size: args.size || alertArgs.size,
     icon: args.icon || alertArgs.icon,
     dismissible: args.dismissible || alertArgs.dismissible,
     id: args.id || undefined
   };
 
+  if (args.hasDescription) {
+    alert.text = args.text;
+  }
+
   if (args.hasTitle) {
     alert.title = args.title || alertArgs.title;
+  }
+
+  if (args.hasDescription) {
+    alert.text = args.text || alertArgs.text;
   }
 
   if (args.type !== 'default') {

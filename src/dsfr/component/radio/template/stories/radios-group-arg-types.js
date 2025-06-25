@@ -76,16 +76,16 @@ const radiosGroupArgTypes = {
   ...messageArgTypes
 };
 
-const getRadiosGroupData = (count = 3) => {
+const getRadiosGroupData = (count = 3, hint = false) => {
   const radios = [];
   const radioName = uniqueId('radios-group-name');
   for (let i = 1; i <= count; i++) {
     radios.push(
       {
-        label: `Checkbox ${i}`,
+        label: `Radio ${i}`,
         id: uniqueId('radio'),
         name: radioName,
-        hint: '',
+        hint: hint ? 'Texte additionnel' : '',
         disabled: false,
         rich: false,
         pictogramName: 'city-hall',

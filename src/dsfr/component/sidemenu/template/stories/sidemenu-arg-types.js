@@ -40,16 +40,16 @@ const sidemenuArgTypes = {
   }
 };
 
-const getItemArgs = (id, kind = 'link', isActive = false) => {
+const getItemArgs = (id, type = 'link', isActive = false) => {
   const item = {};
 
-  item.id = kind === 'link' ? `sidemenu-item-${id}` : `sidemenu-${id}`;
+  item.id = type === 'link' ? `sidemenu-item-${id}` : `sidemenu-${id}`;
   item.label = `Titre du lien ${id}`;
-  item.href = kind === 'link' && '#';
-  item.kind = kind;
+  item.href = type === 'link' && '#';
+  item.type = type;
   item.active = isActive;
-  item.collapsable = kind === 'menu';
-  item.collapseId = kind === 'menu' ? `sidemenu-${id}` : undefined;
+  item.isCollapsible = type === 'menu';
+  item.collapseId = type === 'menu' ? `sidemenu-${id}` : undefined;
 
   return item;
 };
@@ -103,4 +103,4 @@ const sidemenuProps = (args) => {
   return sidemenu;
 };
 
-export { sidemenuArgTypes, sidemenuArgs, sidemenuProps };
+export { sidemenuArgTypes, sidemenuArgs, sidemenuProps, getItemArgs };

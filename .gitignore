@@ -1,11 +1,15 @@
-node_modules/
-public/
-.config/
-.vscode/
-/dist/
-/example/
-/standalone/
-/storybook/
+node_modules
+/public
+/dist
+/example
+/standalone
+/storybook
+.archive
+.config
+.dsfr
+.doc
+.env
+.vscode
 
 dsfr-sb/*storybook.log
 dsfr-sb/storybook-static/

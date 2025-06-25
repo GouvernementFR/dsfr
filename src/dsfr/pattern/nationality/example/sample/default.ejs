@@ -1,6 +1,0 @@
-<%
-const nationality = locals.nationality || {};
-const data = JSON.parse(include('../data/nationality.json.ejs', { nationality: nationality }));
-%>
-
-<%- include('../../../../component/form/template/ejs/fieldset/fieldset', { fieldset: data }); %>

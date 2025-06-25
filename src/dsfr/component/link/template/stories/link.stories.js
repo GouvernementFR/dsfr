@@ -3,6 +3,10 @@ import { linkArgs, linkArgTypes, linkProps } from './link-arg-types';
 
 const render = (args) => renderLink({ link: linkProps(args) });
 
+const renderTextWithLink = (args) => {
+  return `<p>Lorem [...] elit, ${renderLink({ link: linkProps(args) })} incididunt [...] morbi.</p>`;
+};
+
 const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
 
 export default {
@@ -15,6 +19,14 @@ export default {
 
 export const LinkStory = {
   args: {}
+};
+
+export const TextLinkStory = {
+  tags: ['autodocs', '!dev'],
+  render: () => renderTextWithLink({
+    label: 'lien interne',
+    href: '#'
+  })
 };
 
 export const IconStory = {

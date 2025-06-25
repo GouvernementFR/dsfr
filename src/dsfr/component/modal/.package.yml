@@ -14,5 +14,7 @@ example:
     - form
     - input
     - table
+    - tooltip
   script:
     - table
+    - tooltip
