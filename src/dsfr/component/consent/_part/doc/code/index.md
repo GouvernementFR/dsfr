@@ -3,7 +3,7 @@ boost: 0
 sitemap:
   noindex: true
 title: Code du Gestionnaire de consentement
-shortTitle: DesCodeign du Gestionnaire de consentement
+shortTitle: Code du Gestionnaire de consentement
 description: Le gestionnaire de consentement permet de recueillir et gérer les préférences des usagers concernant le dépôt de cookies non essentiels, en conformité avec les exigences de la CNIL.
 shortDescription: Gérer le consentement des usagers sur les cookies et données personnelles.
 keywords: consentement, cookies, données personnelles, CNIL, confidentialité, bandeau, modale, finalités, RGPD, accessibilité
