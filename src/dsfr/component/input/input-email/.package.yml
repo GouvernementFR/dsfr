@@ -1,9 +1,0 @@
-id: input-email
-title: Bloc fonctionnel d'adresse électronique
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/blocs-fonctionnels/adresse-electronique
-wrapper: col-8
-style:
-  - core
-  - input-base
-  - form
-

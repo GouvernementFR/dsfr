@@ -1,0 +1,12 @@
+<%
+let email = locals.email || {};
+const data = {
+  label: email.label || getText('label', 'email'),
+  hint: email.hint || getText('hint.format', 'email'),
+  error: email.error ? getText('error', 'email') : undefined,
+  autocomplete: email.autocomplete || 'email',
+  attributes: {'spellcheck': false}
+}
+%>
+
+<%- include('../../template/ejs/email', {email: data}); %>

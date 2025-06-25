@@ -82,7 +82,7 @@ const getRadiosGroupData = (count = 3, hint = false) => {
   for (let i = 1; i <= count; i++) {
     radios.push(
       {
-        label: `Checkbox ${i}`,
+        label: `Radio ${i}`,
         id: uniqueId('radio'),
         name: radioName,
         hint: hint ? 'Texte additionnel' : '',
