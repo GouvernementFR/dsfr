@@ -91,7 +91,6 @@ const alertArgs = {
   hasTitle: true,
   hasDescription: true,
   title: 'Lorem ipsum dolor',
-  hasDescription: true,
   text: 'sit amet, consectetur adipiscing elit. Nullam id purus nec purus ultricies lacinia. Nullam nec purus nec purus ultricies lacinia.',
   type: 'default',
   size: 'md',

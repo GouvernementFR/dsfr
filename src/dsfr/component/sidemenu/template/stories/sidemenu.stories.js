@@ -33,6 +33,6 @@ export const SubmenuSidemenuStory = {
       },
       getItemArgs('sous-niveau 02'),
       getItemArgs('sous-niveau 03')
-    ],
-  },
+    ]
+  }
 };
