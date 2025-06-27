@@ -101,7 +101,7 @@ Ne pas personnaliser la couleur du liseré de la barre de recherche.
 
 ![](../_asset/custom/dont-3.png)
 
-Ne pas personnaliser le pictogramme du bouton de recherche.
+Ne pas personnaliser l’icône du bouton de recherche.
 
 :::
 
