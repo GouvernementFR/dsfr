@@ -77,13 +77,17 @@ La barre de recherche n’est pas personnalisable.
 
 ::::dsfr-doc-guidelines
 
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
 
 ![](../_asset/custom/dont-1.png)
 
 Ne pas personnaliser la couleur du bouton de recherche
 
 :::
+
+::::
+
+::::dsfr-doc-guidelines
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
@@ -93,12 +97,7 @@ Ne pas personnaliser la couleur du liseré de la barre de recherche.
 
 :::
 
-::::
-
-
-::::dsfr-doc-guidelines
-
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
 
 ![](../_asset/custom/dont-3.png)
 
