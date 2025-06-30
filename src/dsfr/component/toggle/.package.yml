@@ -1,7 +1,7 @@
 id: toggle
 title: Interrupteur
 description: Le composant “Interrupteur” permet à l’utilisateur de faire un choix entre deux états opposés (activé / désactivé).
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/interrupteur
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/interrupteur
 wrapper: container
 style:
   - core

@@ -1,7 +1,7 @@
 id: quote
 title: Citation
 description: La citation permet de citer un texte dans une page éditoriale. La citation peut provenir d'un extrait d’un discours oral formulé par une tierce personne ou d’un texte écrit.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/citation
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/citation
 wrapper: col-8
 style:
   - core

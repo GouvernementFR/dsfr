@@ -2,7 +2,7 @@ id: civility
 title: Bloc fonctionnel de civilité
 description: La demande de civilité permet à un utilisateur de donner sa civilité (sexe, situation familière, titre d’appel).
 wrapper: container
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/blocs-fonctionnels/civilite
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/blocs-fonctionnels/civilite
 style:
   - core
 example:

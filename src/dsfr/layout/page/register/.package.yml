@@ -1,7 +1,7 @@
 id: register
 title: Pages de création de compte
 description: Modèles de pages de création de compte
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/modeles/page-de-creation-de-compte
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/pages-types/page-de-connexion/page-de-creation-de-compte
 no-heading: true
 style:
   - core
