@@ -73,6 +73,7 @@
   &__link,
   &__btn {
     @include display-flex(row, center, space-between);
+    @include enable-tint;
     font-weight: bold;
     @include padding(3v 4v);
     @include margin(0);
@@ -85,7 +86,6 @@
       @include padding(4v);
       @include text-style(sm);
       font-weight: normal;
-      @include enable-tint;
 
       @include selector.current {
         @include relative;
