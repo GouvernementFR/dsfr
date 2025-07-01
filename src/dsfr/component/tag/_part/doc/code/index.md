@@ -59,7 +59,7 @@ Sa structure est la suivante :
 
 ```HTML
 <a href="#" class="fr-tag">Tag cliquable lien</a>
-<button type="button" class="fr-tag">Libellé tag cliquable bouton</a>
+<button type="button" class="fr-tag">Libellé tag cliquable bouton</button>
 ```
 
 ##### Tag activable

@@ -107,15 +107,15 @@ Dans la librairie Sketch, les pictogrammes sont disponibles dans la libraire «�
 - Couleur mineure [Indice -main] (Personnalisable en utilisant l’indice -main des couleurs d’illustrations)
 - Couleur décorative (Non personnalisable mais optionnelle)
 
-Pour passer les pictogrammes en thème sombre, il vous suffit d’utiliser les tokens portant le même nom dans la palette dédiée (Chemin d’accès : Dark > Decisions > Artwork).
+Pour passer les pictogrammes en thème sombre, il vous suffit d’utiliser les tokens portant le même nom dans la palette dédiée (Chemin d’accès : <span lang="en">Dark > Decisions > Artwork</span>).
 
 ##### ➡️  La librairie Figma
 
 Sur Figma, les pictogrammes sont disponibles [dans un fichier à part du Community](https://www.figma.com/community/file/1098654384051611363).
 
-Pour les utiliser, dupliquez le fichier puis publiez-le dans votre espace de travail. Vous pouvez ensuite insérer directement les pictogrammes dans vos designs. Leur personnalisation est possible via les “Selection colors” :
+Pour les utiliser, dupliquez le fichier puis publiez-le dans votre espace de travail. Vous pouvez ensuite insérer directement les pictogrammes dans vos designs. Leur personnalisation est possible via les <span lang="en">“Selection colors”</span> :
 
-- Passage en thème sombre : remplacez les tokens par leur version “dark”
+- Passage en thème sombre : remplacez les tokens par leur version <span lang="en">“dark”</span>
 - Accentuation : remplacez la couleur du calque “🎨 Mineure (indice -main)” par une couleur illustrative d’indice main (par exemple : `$purple-glycine-main-494`)
 
 > [!NOTE]
@@ -125,7 +125,7 @@ Pour les utiliser, dupliquez le fichier puis publiez-le dans votre espace de tra
 
 #### Les développeurs
 
-Les pictogrammes sont des fichiers .svg structurés de façon à permettre l’utilisation des couleurs du dsfr et du mode sombre. Ils sont notamment divisés en 3 groupes de "path" (decorative, minor, major) permettant d’insérer indépendamment chaque couleur.
+Les pictogrammes sont des fichiers .svg structurés de façon à permettre l’utilisation des couleurs du dsfr et du mode sombre. Ils sont notamment divisés en 3 groupes de <span lang="en">"path"</span> (decorative, minor, major) permettant d’insérer indépendamment chaque couleur.
 
 La librairie de SVG se trouve dans **dist/artwork/pictograms**.
 
@@ -138,7 +138,7 @@ La librairie de SVG se trouve dans **dist/artwork/pictograms**.
 
 ##### Utilisation des pictogrammes
 
-Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et d’importer à l’intérieur les 3 parties du svg. Chaque partie doit être insérée, à la manière des spritesheet, via une balise `<use>` et l’attribut href :
+Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et d’importer à l’intérieur les 3 parties du svg. Chaque partie doit être insérée, à la manière des <span>spritesheet</span>, via une balise `<use>` et l’attribut href :
 
 ```HTML
 <svg class="fr-artwork" aria-hidden="true" viewBox="0 0 80 80" width="80px" height="80px">
@@ -158,7 +158,7 @@ Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et 
 
 Les pictogrammes doivent d’abord passer l'étape de validation UI avant d'être ajoutés en code.
 
-Les nouveau pictogrammes sont ajoutés dans src/core/asset/artwork/ avant d'être exportés au build dans dist/artwork/.
+Les nouveau pictogrammes sont ajoutés dans `src/core/asset/artwork/` avant d'être exportés au <span lang="en">build</span> dans `dist/artwork/`.
 
 Il est nécessaire de retoucher le code des svg afin de les formater :
 
@@ -205,7 +205,7 @@ Ainsi le svg d’un pictogramme doit correspondre à ce gabarit :
 
 #### La couleur de fond
 
-Dans le cas où l’on souhaiterait ajouter un élément en fond (background) sous un pictogramme. Il existe deux autres token `$artwork-background` et `$artwork-motif` permettant de créer des pictogrammes entièrement gris.
+Dans le cas où l’on souhaiterait ajouter un élément en fond (<span lang="en">background</span>) sous un pictogramme. Il existe deux autres token `$artwork-background` et `$artwork-motif` permettant de créer des pictogrammes entièrement gris.
 
 ::::fr-table[La personnalisation]{valign=top vheaders=vertical caption=false}
 
@@ -220,8 +220,8 @@ Dans le cas où l’on souhaiterait ajouter un élément en fond (background) so
 
 L’intégration des pictogrammes de fond se fait de la même manière que les pictogrammes. Il est possible de combiner les deux en un seul élément appelant, via des `<use>`, les différents calques de couleurs.
 
-Utiliser les valeurs de width, height, et viewbox du pictogramme le plus grand (généralement le fond).
-Il est possible d’ajouter la classe fr-responsive-img sur l'élément pour que le pictogramme s'adapte à la taille de son conteneur.
+Utiliser les valeurs de <span lang="en">width</span>, <span lang="en">height</span>, et <span lang="en">viewbox</span> du pictogramme le plus grand (généralement le fond).
+Il est possible d’ajouter la classe `fr-responsive-img` sur l'élément pour que le pictogramme s'adapte à la taille de son conteneur.
 
 Pour déplacer le pictogramme à l’intérieur de son fond plus grand, ajouter un groupe `<g>` avec l’attribut transform=”translate(x,y)”
 Pour centrer un pictogramme de 80x80 dans un fond de 160x200 :
