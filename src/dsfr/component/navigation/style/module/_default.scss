@@ -46,6 +46,12 @@
       pointer-events: none;
     }
 
+    &:first-child:last-child {
+      @include before {
+        box-shadow: none;
+      }
+    }
+
     #{ns(btn)},
     #{ns(link)} {
       @include min-height(12v);
