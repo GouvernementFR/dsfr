@@ -34,7 +34,7 @@ class TooltipReferent extends api.core.PlacementReferent {
   }
 
   _click () {
-    this.focus();
+    this.focusIn();
   }
 
   _clickOut (target) {
@@ -44,7 +44,6 @@ class TooltipReferent extends api.core.PlacementReferent {
   _keydown (keyCode) {
     switch (keyCode) {
       case api.core.KeyCodes.ESCAPE:
-        this.blur();
         this.close();
         break;
     }
