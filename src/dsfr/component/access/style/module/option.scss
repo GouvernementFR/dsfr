@@ -1,0 +1,24 @@
+////
+/// Access Module : Options
+/// @group access
+////
+
+@use 'src/module/preference';
+@use 'src/module/selector';
+@use 'src/module/color';
+
+#{ns(option)} {
+  @include display-flex(column);
+  @include margin(0);
+  @include padding(4v);
+
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+
+  &__btn {
+    @include nest-btn(sm, left, null, null, false);
+    @include size(calc(100% - 4v));
+    justify-content: center;
+  }
+}

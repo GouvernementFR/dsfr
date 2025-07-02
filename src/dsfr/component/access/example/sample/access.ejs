@@ -1,0 +1,55 @@
+<%
+let access = locals.access || {};
+const href = access.href || '#';
+
+const getLink = (icon = true) => {
+  const id = uniqueId('access');
+  const classes = icon ? [`${prefix}-icon-settings-5-line`, `${prefix}-link--icon-left`] : [];
+  const label = icon ? '' : ' (sans icône)';
+  return {
+    label: `Libellé lien${label}`,
+    id: id,
+    href: href,
+    classes: classes
+  }
+}
+
+const getItems = () => {
+  return [
+    getLink(),
+    getLink(),
+    getLink(false),
+    getLink(),
+    getLink(),
+    getLink(false),
+    getLink(),
+    getLink()
+  ];
+}
+
+let links = access.links || [];
+
+if (links.length) {
+  links.forEach(element => {
+    element.id = uniqueId('access');
+  });
+}
+
+if (access.links && access.links === true) {
+  links = getItems()
+}
+
+const data = {
+  collapseId: access.collapseId || uniqueId('access'),
+  button: access.button || {
+    label: 'Label',
+    kind:4,
+    title: 'Label',
+  },
+  links: links,
+  description: access.description,
+  option: access.option,
+}
+%>
+
+<%- include('../../template/ejs/access', {access: data}); %>

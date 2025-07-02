@@ -1,0 +1,17 @@
+////
+/// access Scheme
+/// @group access
+////
+
+@use 'src/module/color';
+@use 'src/module/elevation';
+@use 'src/module/media-query';
+
+@mixin _access-scheme($legacy: false) {
+
+  #{ns(access__btn)} {
+    &[aria-expanded='true'] {
+      @include color.background(open blue-france, (legacy: $legacy));
+    }
+  }
+}

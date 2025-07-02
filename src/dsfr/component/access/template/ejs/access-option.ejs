@@ -1,0 +1,29 @@
+<%#
+# paramètres accès rapide option
+
+* option.id (string, required) : id de l'option
+
+* option.button (object, required) : Option du bouton (voir: button)
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let option = locals.option || {};
+const button = option.button;
+const minBtnClasses = [`${prefix}-option__btn`];
+const minBtnAttrs = {
+  title: button.title
+};
+
+minBtnAttrs.id = option.id || uniqueId('option');
+
+button.classes = button.classes !== undefined ? button.classes.concat(minBtnClasses) : minBtnClasses;
+button.attributes = button.attributes !== undefined ? {...minBtnAttrs, ...button.attributes} : minBtnAttrs;
+button.size = 'sm';
+button.markup = 'a';
+%>
+
+<div class="<%= prefix %>-option">
+  <%- include('../../../button/template/ejs/button', {button:button}); %>
+</div>

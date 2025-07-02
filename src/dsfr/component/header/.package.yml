@@ -12,6 +12,7 @@ style:
   - search
   - badge
   - translate
+  - access
 script:
   - core
   - navigation

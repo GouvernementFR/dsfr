@@ -1,0 +1,30 @@
+////
+/// Access Module : Description
+/// @group access
+////
+
+@use 'src/module/preference';
+@use 'src/module/selector';
+@use 'src/module/color';
+@use 'src/dsfr/core/style/typography/tool/font-size' as fs;
+
+#{ns(description)} {
+  @include display-flex(column);
+  @include margin(0);
+  @include padding(4v);
+
+  @include respond-from(lg) {
+    flex-direction: column;
+    flex-wrap: flex-start;
+    gap: space(1v);
+    pointer-events: auto;
+
+    &:hover,
+    &:hover + * {
+      &,
+      & #{ns(nav__link)} {
+        @include color.box-shadow(default grey, (legacy: false), 0 calc(-4v - 1px) 0 -4v color.$constant);
+      }
+    }
+  }
+}

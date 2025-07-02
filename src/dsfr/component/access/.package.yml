@@ -1,0 +1,14 @@
+id: access
+title: Bouton d'accès rapide
+description: Bouton permettant d'afficher des éléments spécifiques à des accès rapide
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bouton-connecte
+wrapper: col-8
+style:
+  - core
+  - link
+  - logo
+  - navigation
+  - button
+script:
+  - core
+  - navigation

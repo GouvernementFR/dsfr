@@ -1,0 +1,102 @@
+<%#
+# paramètres access
+
+* access (object, required) : Paramètres du template
+  ** access.id (String, required) : attribut id du access
+  ** access.body (object, required) : Paramètres du template body
+  ** access.menu (object, optional) : Paramètres du template menu
+
+Exemple complet :
+
+access = {
+  id: '',
+  body: {
+    brand: {
+      logo: { voir logo },
+      operator: {
+        src: 'url de l'img',
+        alt: 'texte alternatif',
+        style: ''
+      },
+      service: {
+        title: '',
+        tagline: ''
+      },
+    },
+    tools: {
+      links: {
+        items: [
+          { voir buttonsGroup dans button }
+        ]
+      },
+      translate: { voir translate }
+      search: {
+        id: '',
+        modalId: '',
+        btnId: '',
+        sample: '',
+      }
+    },
+  }
+  menu: {
+    id: '', // id du bouton du menu
+    modalId: '', // id de la modale de menu
+    navigation: {
+      id: '', // id de la navigation
+      + voir composant navigation
+    },
+    tools: {
+      links: [],
+      duplicateLinks: false
+    }
+  }
+}
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const access = locals.access || {};
+const attributes = access.attributes || {};
+attributes.id = access.id || uniqueId('access');
+const collapseId = access.collapseId || uniqueId('access');
+%>
+
+<nav role="navigation" class="<%= prefix %>-access <%= prefix %>-nav" <%- includeAttrs(attributes) %>>
+  <div class="<%= prefix %>-nav__item">
+    <%
+    const accessBtn = access.button || {};
+    const minBtnClasses = [`${prefix}-access__btn`];
+    const minBtnAttrs = {
+      'aria-controls': collapseId,
+      'aria-expanded': false,
+      title: accessBtn.title
+    };
+    accessBtn.classes = accessBtn.classes !== undefined ? accessBtn.classes.concat(minBtnClasses) : minBtnClasses;
+    accessBtn.attributes = accessBtn.attributes !== undefined ? {...minBtnAttrs, ...accessBtn.attributes} : minBtnAttrs;
+    accessBtn.size = 'sm';
+    %>
+
+    <%- include('../../../button/template/ejs/button', {button:accessBtn}); %>
+     <div class="<%= prefix %>-collapse <%= prefix %>-access__menu <%= prefix %>-menu" id="<%= collapseId %>">
+
+        <ul class="<%= prefix %>-menu__list">
+
+        <% if (access.description) { %>
+        <%- include('./access-description', { description: access.description }); %>
+        <% } %>
+          <% for( let i = 0; i < access.links.length; i++ ) { 
+             %>
+            <li>
+              <%- include('./access-link', { link: access.links[i] }); %>
+            </li>
+          <% } %>
+        
+        <% if (access.option) { %>
+        <%- include('./access-option', { option: access.option }); %>
+        <% } %>
+        </ul>
+
+      </div>
+  </div>
+</nav>

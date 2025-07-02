@@ -1,0 +1,26 @@
+<%#
+# paramètres accès rapide description
+
+* description.id (string, required) : id de la description
+
+* description.label (string, required) : Information principale de la description (ex: nom d'utilisateur)
+
+* description.info (string, required) : Informations additionnels de la description (ex: email utilisateur)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let description = locals.description || {};
+const label = description.label || '';
+const info = description.info || '';
+const descriptionClasses = description.classes || [];
+const descriptionAttrs = description.attributes || {};
+descriptionClasses.push(`${prefix}-access__description`);
+descriptionAttrs.id = description.id || uniqueId('description');
+%>
+
+<div class="<%= prefix %>-description" <%- includeAttrs(descriptionAttrs) %>>
+  <div class="<%= prefix %>-description__label <%= prefix %>-text--bold <%= prefix %>-text--sm <%= prefix %>-text-action-high--grey"><%- label %></div>
+  <div class="<%= prefix %>-description__info <%= prefix %>-text--xs <%= prefix %>-text-mention--grey"><%- info %></div>
+</div>
