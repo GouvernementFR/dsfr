@@ -1948,7 +1948,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 Les icônes sont disponibles en quatre tailles. Il est possible de modifier la taille des icônes à l'aide de modifiers spécifiques
 
-:::fr-table[Tailles]{valign=top scroll=false}
+:::fr-table[Tailles]{valign=top multiline=true}
 | **Taille** | **Token** | **Classe** | **Dimension** | **Contexte d’utilisation** |
 | --- | --- | --- | --- | --- |
 | XS | `$xs` | `.fr-icon--sm` | 16x16px - 1rem | À utiliser avec la typographie Extra Small (XS), et Small (SM) |

@@ -12,7 +12,7 @@ order: 6
 
 # Grille et points de rupture
 
-:::fr-table[Caractéristiques de la grille]{valign=top scroll=false}
+:::fr-table[Caractéristiques de la grille]{valign=top multiline=true}
 | Mise en page | Valeurs en px | Résolution maquette en px | Token | Largeur max. du contenu | Tailles des gouttières (optionnelles) |
 | --- | --- | --- | --- | --- | --- |
 | XS | de 0 à 575 | 320 |  | / | 16 px |
@@ -114,7 +114,7 @@ Les blocs de contenu peuvent s’afficher selon vos besoins, sur une ou plusieur
 
 Nous formulons cependant des recommandations pour la majorité des composants afin de vous guider (exemple : 8 colonnes max. pour le corps de texte)
 
-:::fr-table[Détail sur l’utilisation de "fr-col"]{valign=top scroll=false}
+:::fr-table[Détail sur l’utilisation de "fr-col"]{valign=top multiline=true}
 
 | Classe | Description | Exemple |
 | --- | --- | --- |

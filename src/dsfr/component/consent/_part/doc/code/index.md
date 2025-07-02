@@ -387,7 +387,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur la modale de gestion des cookies, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

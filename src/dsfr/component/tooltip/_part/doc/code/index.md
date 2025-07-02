@@ -160,7 +160,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tooltip
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente |
@@ -170,7 +170,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -180,7 +180,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -190,7 +190,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'infobulle est activé ou non |
@@ -200,7 +200,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isShown]{valign=top scroll=false}
+:::fr-table[isShown]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si l'infobulle est affichée ou non |
@@ -210,7 +210,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[show]{valign=top scroll=false}
+:::fr-table[show]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Affiche l'infobulle |
@@ -221,7 +221,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[hide]{valign=top scroll=false}
+:::fr-table[hide]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Cache l'infobulle |
@@ -232,7 +232,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[mode]{valign=top scroll=false}
+:::fr-table[mode]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini le mode de placement de l'infobulle |
@@ -242,7 +242,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[align]{valign=top scroll=false}
+:::fr-table[align]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini l'alignement vertical de l'infobulle en `mode='placement_manual'` |
@@ -252,7 +252,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[place]{valign=top scroll=false}
+:::fr-table[place]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini le placement de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
@@ -264,7 +264,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tooltipReferent
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente |
@@ -274,7 +274,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -284,7 +284,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -294,7 +294,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du déclencheur est activé ou non |
@@ -310,7 +310,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur l’infobulle, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

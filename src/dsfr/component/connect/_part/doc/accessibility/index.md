@@ -67,7 +67,7 @@ Selon les navigateurs, le contenu ne peut pas être recherché, sélectionné, c
 
 Le composant est suffisament contrasté en thème clair et en thème sombre.
 
-:::fr-table[Contrastes des textes]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes des textes]{valign=top multiline=true caption=false}
 | Texte |  Thème clair | Thème sombre |
 |------|-----|-----|
 |Bouton|14,9:1|4,7:1|

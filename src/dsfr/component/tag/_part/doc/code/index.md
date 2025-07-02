@@ -310,7 +310,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### toggle
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -321,7 +321,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[pressed]{valign=top scroll=false}
+:::fr-table[pressed]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -332,7 +332,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[toggle]{valign=top scroll=false}
+:::fr-table[toggle]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -344,7 +344,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -357,7 +357,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tagDismissible
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -368,7 +368,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -385,7 +385,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur le tag, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

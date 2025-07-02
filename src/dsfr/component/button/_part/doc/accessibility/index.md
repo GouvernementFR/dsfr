@@ -123,7 +123,7 @@ Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le t
 
 ##### Bouton primaire
 
-:::fr-table[Contrastes du bouton primaire en thème clair et sombre]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes du bouton primaire en thème clair et sombre]{valign=top multiline=true caption=false}
 | État |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**par défaut**| 14,9:1 | 4,7:1 |
@@ -133,7 +133,7 @@ Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le t
 
 ##### Bouton secondaire et tertiaire
 
-:::fr-table[Contrastes du bouton secondaire et tertiaire en thème clair et sombre]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes du bouton secondaire et tertiaire en thème clair et sombre]{valign=top multiline=true caption=false}
 | État |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**par défaut**|14,9:1|5,8:1|

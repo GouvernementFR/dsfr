@@ -61,7 +61,7 @@ En version mobile, l’affichage direct du fil d’Ariane est remplacé par un b
 
 Le composant Fil d’Ariane est suffisamment contrasté en thème clair et en thème sombre.
 
-:::fr-table[Contrastes des textes — composant Fil d’Ariane]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes des textes — composant Fil d’Ariane]{valign=top multiline=true caption=false}
 | Élément |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**lien / bouton**| 5,74:1 | 5,82:1 |
