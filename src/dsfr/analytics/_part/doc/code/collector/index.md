@@ -1,5 +1,7 @@
 ---
 title: Collector
+sitemap:
+  noindex: true
 ---
 
 ## Collector

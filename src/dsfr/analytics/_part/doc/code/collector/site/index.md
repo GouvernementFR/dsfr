@@ -1,5 +1,7 @@
 ---
 title: Class Site
+sitemap:
+  noindex: true
 ---
 
 ## class Site
