@@ -67,7 +67,8 @@ Un groupe est dit **hiérarchisé** s'il dispose d'un bouton primaire et de bout
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des boutons doivent être importés.
+Bonjour le webinaire 
+Pour fonctionner correctement, les styles CSS du core et des boutons doivent être importés. 
 L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
 
 ```HTML
