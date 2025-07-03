@@ -28,7 +28,7 @@ L’accordéon est un élément d’interaction avec l’interface permettant à
 
 ### Quand utiliser ce composant ?
 
-L’accordéon est utilisé pour mettre en forme du contenu dans une page.
+L’accordéon est utilisé pour mettre en forme du contenu dans une page !
 
 > [!WARNING]
 > Son objectif principal étant d’économiser de l’espace, il doit principalement être utilisé au sein de longues pages de contenu.
