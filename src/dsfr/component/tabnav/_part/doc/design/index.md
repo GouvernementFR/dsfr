@@ -11,6 +11,9 @@ cover: ../_asset/cover/cover.png
 excerpt: Système de navigation destiné aux sites à structure complexe, la navigation tertiaire permet d’accéder à des pages liées à une sous-rubrique en complément d’un menu latéral.
 summary: La navigation tertiaire est un composant en bêta permettant d’ajouter un troisième niveau de navigation pour les sites structurés avec des rubriques profondes. Elle ne peut être utilisée qu’en complément d’une navigation secondaire (comme un menu latéral), et vient structurer l’accès à des pages qui ne sont pas couvertes par les navigations principales. L’état actif, le positionnement sous le titre de rubrique et l’uniformité des styles sont essentiels à sa bonne intégration.
 badge: beta
+mesh:
+  - component/sidemenu
+  - component/navigation
 ---
 
 ## Navigation tertiaire
@@ -71,8 +74,3 @@ La navigation tertiaire n’est pas personnalisable.
 - Ne pas personnaliser la couleur des sections de la navigation tertiaire.
 - Utiliser le soulignement prévu à cet effet pour indiquer la page active au sein de la navigation tertiaire.
 - Ne pas personnaliser l’état actif de la page courante.
-
-### Maillage
-
-- [Menu latéral](../../../../sidemenu/_part/doc/index.md)
-- [Navigation principale](../../../../navigation/_part/doc/index.md)

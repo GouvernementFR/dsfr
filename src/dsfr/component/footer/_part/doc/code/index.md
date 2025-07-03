@@ -10,6 +10,10 @@ keywords: pied de page, footer, navigation secondaire, DSFR, accessibilité, inf
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Pied de page structure les informations secondaires d’un site, comme les mentions légales, les liens institutionnels et les coordonnées, tout en facilitant la navigation de fin de parcours.
 summary: Ce composant permet de clore chaque page avec un ensemble structuré d’informations complémentaires, de liens obligatoires et de repères institutionnels. Il peut inclure des blocs de liens, une description du service, un bloc marque, et une mention légale normalisée. Le pied de page est non personnalisable, s’intègre sur l’ensemble des pages d’un site public, et respecte les exigences d’accessibilité et de cohérence éditoriale.
+mesh:
+  - component/header
+  - component/navigation
+  - component/follow
 ---
 
 ## Pied de page

@@ -8,6 +8,9 @@ keywords: modale, fenêtre, focus, interaction, DSFR, accessibilité, interface,
 cover: ./_asset/cover/cover.png
 excerpt: Le composant Modale permet d’afficher un contenu ou une interaction dans une fenêtre superposée à la page, bloquant le fond et recentrant l’attention de l’usager.
 summary: La modale s’utilise pour présenter un contenu complémentaire ou une action simple sans sortir de la page en cours. Elle est conçue pour isoler une information importante tout en permettant de revenir au contexte initial en un clic. Non personnalisable, elle existe en plusieurs tailles, avec ou sans zone d’action, et respecte les standards d’accessibilité en figant l’arrière-plan lors de son affichage.
+mesh:
+  - component/button
+  - component/display
 ---
 
 ## Modale

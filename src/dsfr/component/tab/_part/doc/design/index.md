@@ -10,6 +10,9 @@ keywords: onglets, composant, interface, navigation, accessibilité, design syst
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Onglets permet de regrouper plusieurs sections de contenu dans un espace réduit en affichant une seule section à la fois. Il est utile pour simplifier la lecture et améliorer l’expérience utilisateur.
 summary: Cette fiche détaille le fonctionnement du composant Onglets du design système de l’État. Elle décrit ses usages recommandés, ses règles d’intégration et d’accessibilité, ainsi que son comportement responsive. Le contenu est destiné aux équipes design et développement souhaitant structurer des interfaces avec plusieurs sections de contenu apparentées tout en maintenant une expérience claire et fluide.
+mesh:
+  - component/accordion
+  - component/modal
 ---
 
 ## Onglet
@@ -115,8 +118,3 @@ Ne pas augmenter la taille de typographie du titre des onglets.
 :::
 
 ::::
-
-#### Maillage
-
-- [Accordéon](../../../../accordion/_part/doc/index.md)
-- [Modale](../../../../modal/_part/doc/index.md)

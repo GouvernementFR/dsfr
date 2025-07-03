@@ -10,6 +10,10 @@ keywords: FranceConnect, authentification, identité numérique, connexion, bout
 cover: ../_asset/cover/cover.png
 excerpt: Le bouton FranceConnect permet de proposer une méthode de connexion sécurisée en utilisant l’identité numérique d’un fournisseur agréé. Il s’intègre dans les interfaces comme premier choix d’authentification.
 summary: Ce composant permet à l’usager de se connecter à un service public en ligne via FranceConnect, solution officielle d’identification. Il garantit la fiabilité de l’identité transmise et s’intègre comme option d’authentification prioritaire. Le bouton suit des règles d’intégration strictes pour assurer sa clarté, éviter toute confusion avec d’autres services et maintenir la confiance dans la marque FranceConnect.
+mesh:
+  - component/button
+  - layout/page/register
+  - layout/page/login
 ---
 
 ## Bouton FranceConnect
@@ -117,9 +121,3 @@ Ne pas modifier le libellé du bouton.
 :::
 
 ::::
-
-### Maillage
-
-- [Bouton](../../../../button/_part/doc/index.md)
-- [Page de création de compte](../../../../../layout/page/register/_part/doc/index.md)
-- [Page de connexion](../../../../../layout/page/login/_part/doc/index.md)
