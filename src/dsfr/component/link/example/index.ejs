@@ -12,7 +12,7 @@
 
 <%- sample('Lien seul désactivé', './sample/link-default', {link: {disabled: true}}, true); %>
 
-<%- sample('Lien externe', './sample/link-default', {link: {blank: true}}, true); %>
+<%- sample('Lien externe', './sample/link-default', {link: { title: getBlankTitle(’[À MODIFIER - Intitulé] - nouvelle fenêtre’), blank: true}}, true); %>
 
 <%- section('Groupe de liens', 'Lorsque que l\'on a plus d\'un lien, il convient d\'utiliser un groupe de liens. <br>La taille de tous les liens peut être définie au niveau du groupe.') %>
 
