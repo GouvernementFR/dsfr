@@ -92,14 +92,6 @@ const toggleArgTypes = {
     },
     table: { category: 'variant' }
   },
-  left: {
-    control: 'boolean',
-    description: 'Place le libellé sur la gauche',
-    type: {
-      value: 'boolean'
-    },
-    table: { category: 'variant' }
-  },
   state: {
     control: 'boolean',
     description: 'Ajoute les libellés "activé"/"désactivé" sous le champ',
@@ -116,7 +108,6 @@ const toggleArgs = {
   disabled: false,
   checked: false,
   border: false,
-  left: false,
   state: false,
   status: 'default',
   errorMessage: 'Texte d’erreur',
@@ -134,7 +125,6 @@ const toggleProps = (args) => {
     disabled: args.disabled || toggleArgs.disabled,
     checked: args.checked || false,
     border: args.border || false,
-    left: args.left || false,
     state: args.state || false,
     status: args.status || toggleArgs.status,
     error: args.status === 'error' ? args.errorMessage || toggleArgs.errorMessage : undefined,

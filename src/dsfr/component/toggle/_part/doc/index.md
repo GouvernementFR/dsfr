@@ -28,12 +28,11 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 ### Quand utiliser ce composant ?
 
-Privilégier l’usage des interrupteurs pour paramétrer des fonctionnalités transverses (exemple : activation / désactivation des notifications), d’autant que le changement d'état de l’interrupteur a un effet immédiat et ne nécessite pas de validation.
+Privilégier l’usage des interrupteurs pour paramétrer des fonctionnalités transverses (exemple : activation / désactivation des notifications). Le changement d'état de l’interrupteur doit avoir un effet immédiat et ne nécessite pas de validation.
 
 ### Comment utiliser ce composant ?
 
-- **Veiller à ce que l’interrupteur et son libellé soient visuellement proches** afin d’en simplifier la compréhension et l’accessibilité (notamment pour les usagers naviguant avec une loupe d’écran).
-- **Prioriser la composition interrupteur à gauche et libellé à droite** qui est la plus commune et la plus intelligible.
+- **Prioriser la composition interrupteur avec statut Activé/désactivé** qui est la plus accessible et la plus intelligible.
 - **Utiliser l’interrupteur en groupe** pour constituer une liste d’actions de même nature.
 
 ::::dsfr-doc-guidelines
@@ -56,7 +55,7 @@ Ne pas regrouper des interrupteurs qui n’ont rien à voir.
 
 ::::
 
-- **Respecter un format unique pour tous les interrupteurs d’un même groupe** (bouton à gauche et libellé à droite, ajout d’une description,statut etc.) ****
+- **Respecter un format unique pour tous les interrupteurs d’un même groupe** (ajout d’une description, d'un statut etc.) ****
 
 ::::dsfr-doc-guidelines
 
