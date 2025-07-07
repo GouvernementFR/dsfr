@@ -48,6 +48,7 @@ if (header.links !== undefined || header.search) {
     tools.translate = {
       collapseId: header.translate.collapseId || uniqueId('translate'),
       button: header.translate.button,
+      markup: 'div',
       languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
     }
   }

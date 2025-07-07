@@ -33,9 +33,9 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 Le composant **Sélecteur de langue** permet de choisir la langue de l'interface.
 Sa structure, reposant sur le modèle du composant **Navigation principale** est la suivante :
 
-- Le sélecteur de langue est un élément HTML `<nav>` :
+- Le sélecteur de langue est un élément HTML `<nav>` ou `<div>`, selon s'il est utilisé comme élément de navigation ou non :
   - Défini par les classes `fr-translate` et `fr-nav`.
-  - Doit comporter l'attribut `role="navigation"`.
+  - Dans sa version `<nav>` il doit comporter l'attribut `role="navigation"`.
 - Il doit contenir un élément HTML `<div>` défini par la classe `fr-nav__item`, contenant :
   - Un `<button>` de type "button".
     - Il est défini par les classes `fr-translate__btn`, `fr-btn` et `fr-btn--tertiary`.
@@ -51,14 +51,14 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
       - Les liens disposent d'un attribut `hreflang` et un attribut `lang`, dont les valeurs spécifient la langue cible.
       - La langue active dispose d'un attribut `aria-current="true"`.
 
-**Exemple de structure HTML**
+**Exemple de structure HTML avec balisage `<nav>`**
 
 ```HTML
 <nav role="navigation" class="fr-translate fr-nav">
     <div class="fr-nav__item">
-        <button aria-controls="translate" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
+        <button aria-controls="translate-nav" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
         </button>
-        <div class="fr-collapse fr-translate__menu fr-menu" id="translate">
+        <div class="fr-collapse fr-translate__menu fr-menu" id="translate-nav">
             <ul class="fr-menu__list">
                 <li>
                     <a class="fr-translate__language fr-nav__link" hreflang="fr" lang="fr" href="/fr/" aria-current="true">FR - Français</a>
@@ -70,6 +70,27 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
         </div>
     </div>
 </nav>
+```
+
+**Exemple de structure HTML avec balisage `<div>`**
+
+```HTML
+<div class="fr-translate fr-nav">
+    <div class="fr-nav__item">
+        <button aria-controls="translate-div" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
+        </button>
+        <div class="fr-collapse fr-translate__menu fr-menu" id="translate-div">
+            <ul class="fr-menu__list">
+                <li>
+                    <a class="fr-translate__language fr-nav__link" hreflang="fr" lang="fr" href="/fr/" aria-current="true">FR - Français</a>
+                </li>
+                <li>
+                    <a class="fr-translate__language fr-nav__link" hreflang="en" lang="en" href="/en/">EN - English</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 ```
 
 ---

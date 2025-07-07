@@ -3,6 +3,7 @@
 
 * translate (object, optional) : Paramètres du sélecteur de langue
   ** translate.id (string) : id de l'élément
+  ** translate.markup (string, optional) : Balise du sélecteur de langue (nav, div), par défaut 'nav'
   ** translate.button (object, optional) : Paramètres du bouton du sélecteur de langue (ex: {kind:3} pour un btn tertiary)
   ** translate.collapseId (string, required) : Id du menu à controler
   ** translate.languages (array, required) : Tableau d'objets langues
@@ -15,11 +16,16 @@
 <%
 const translate = locals.translate || {};
 const attributes = translate.attributes || {};
+const markup = translate.markup || 'nav';
+
+if (markup === 'nav') {
+  attributes.role = 'navigation';
+}
 attributes.id = translate.id || uniqueId('translate');
 const collapseId = translate.collapseId || uniqueId('translate');
 %>
 
-<nav role="navigation" class="<%= prefix %>-translate <%= prefix %>-nav" <%- includeAttrs(attributes) %>>
+<<%= markup %> <%- includeAttrs(attributes) %> class="<%= prefix %>-translate <%= prefix %>-nav">
   <div class="<%= prefix %>-nav__item">
     <%
     const translateBtn = translate.button || {};
@@ -45,4 +51,4 @@ const collapseId = translate.collapseId || uniqueId('translate');
       </div>
     <% } %>
   </div>
-</nav>
+</<%= markup %>>

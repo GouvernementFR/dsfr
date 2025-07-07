@@ -17,6 +17,11 @@ const translateArgTypes = {
     },
     table: { category: 'attributes' }
   },
+  markup: {
+    control: 'select',
+    description: 'Balise du sélecteur de langue (nav: default, div)',
+    options: ['nav', 'div']
+  },
   noBorder: {
     control: 'boolean',
     description: 'Version sans bordure sur le bouton',
@@ -40,6 +45,7 @@ const getLanguagesArgs = (id, name, locale) => {
 
 const translateArgs = {
   noBorder: false,
+  markup: 'nav',
   languages: [
     getLanguagesArgs(1, 'Français', 'fr'),
     getLanguagesArgs(2, 'English', 'en'),
@@ -56,6 +62,7 @@ const translateProps = (args) => {
   const translate = {
     id: args.id || undefined,
     collapseId: args.collapseId || translateArgs.collapseId,
+    markup: args.markup || translateArgs.markup,
     button: {
       id: args.buttonId || translateArgs.buttonId,
       title: args.buttonTitle || translateArgs.buttonTitle,

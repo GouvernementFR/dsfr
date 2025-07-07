@@ -5,6 +5,7 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/selec
 button:
   title: Sélectionner une langue
 sample:
-  default: Sélecteur de langue
+  default: Sélecteur de langue avec balise <nav>
+  markup-div: Sélecteur de langue avec balise <div>
   no-outline: Sélecteur de langue sans bordure
   column: Sélecteur de langue sur plusieurs colones
