@@ -33,7 +33,7 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 Le composant **Sélecteur de langue** permet de choisir la langue de l'interface.
 Sa structure, reposant sur le modèle du composant **Navigation principale** est la suivante :
 
-- Le sélecteur de langue est un élément HTML `<nav>` ou `<div>`, selon s'il est utilisé comme élément de navigation ou non :
+- Le sélecteur de langue est un élément HTML `<div>` défini par les classes `fr-translate` et `fr-nav`.
   - Défini par les classes `fr-translate` et `fr-nav`.
   - Dans sa version `<nav>` il doit comporter l'attribut `role="navigation"`.
 - Il doit contenir un élément HTML `<div>` défini par la classe `fr-nav__item`, contenant :
