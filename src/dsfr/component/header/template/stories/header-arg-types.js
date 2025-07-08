@@ -593,7 +593,6 @@ const headerProps = (args) => {
     header.body.tools.translate = {
       id: args.translateId || headerArgs.translateId,
       collapseId: args.translateCollapseId || headerArgs.translateCollapseId,
-      markup: 'div',
       button: {
         title: args.translateButtonTitle || headerArgs.translateButtonTitle,
         kind: args.translateButtonKind || headerArgs.translateButtonKind
