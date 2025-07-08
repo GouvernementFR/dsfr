@@ -17,15 +17,6 @@ export const TranslateStory = {
   args: {}
 };
 
-export const MarkupDivStory = {
-  tags: ['autodocs', '!dev'],
-  args: {
-    collapseId: uniqueId('collapse'),
-    buttonId: uniqueId('collapse-button'),
-    markup: 'div'
-  }
-};
-
 export const ButtonTertiaryStory = {
   tags: ['autodocs', '!dev'],
   args: {
