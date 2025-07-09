@@ -10,17 +10,27 @@
 
 #{ns(header)} {
   &--compact {
+
+    #{ns(container--fluid)} {
+      overflow-x: clip;
+      overflow-y: inherit;
+    }
+
     #{ns(header)} {
 
       @include body {
         &-row {
           @include padding(2v 4v);
-          @include size(auto, 14v);
+          @include size(null, 13v);
         }
       }
 
       &__navbar {
-        @include margin-top(0);
+        @include margin-y(1v);
+      }
+
+      &__logo {
+        @include padding(3.5v);
       }
 
       &__service {
