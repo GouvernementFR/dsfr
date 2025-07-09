@@ -14,7 +14,7 @@
 
       @include body {
         &-row {
-          @include padding(2v 4v, lg);
+          @include padding(2v 4v);
           @include size(auto, 14v);
         }
       }

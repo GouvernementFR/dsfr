@@ -1,6 +1,6 @@
 {
-  "name": "@ignf/dsfr",
-  "version": "1.14.0",
+  "name": "@gouvfr/dsfr",
+  "version": "1.14.1",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:MatRouillard/dsfr.git",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr> / Mathis ROUILLARD <mathis.rouillard@ign.fr>",
@@ -8,7 +8,7 @@
   "config": {
     "prefix": "fr",
     "namespace": "dsfr",
-    "organisation": "@ignf"
+    "organisation": "@gouvfr"
   },
   "engines": {
     "node": ">=22.14.0"
