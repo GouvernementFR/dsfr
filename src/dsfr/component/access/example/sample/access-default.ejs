@@ -27,28 +27,22 @@ const getItems = () => {
   ];
 }
 
-let links = access.links || [];
-
-if (links.length) {
-  links.forEach(element => {
-    element.id = uniqueId('access__link');
-  });
-}
-
-if (access.links && access.links === true) {
-  links = getItems()
-}
+let links = getItems();
+let description = {label:'Texte d\'information', info:'Détails'};
+let option = {button:{label: 'Libellé', kind:3, title: 'Libellé', icon: 'settings-5-line', href:'#', iconPlace:'left'}};
 
 const data = {
-  collapseId: access.collapseId || uniqueId('collapse'),
+  collapseId: access.collapseId || uniqueId('access'),
   button: access.button || {
     label: 'Label',
-    kind:4,
+    kind: 4,
     title: 'Label',
+    icon: 'checkbox-circle-line',
+    iconPlace:'left',
   },
   links: links,
-  description: access.description,
-  option: access.option,
+  description: description,
+  option: option,
 }
 %>
 

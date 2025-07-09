@@ -11,8 +11,8 @@ style:
   - modal
   - search
   - badge
-  - translate
   - access
+  - translate
 script:
   - core
   - navigation

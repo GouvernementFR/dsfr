@@ -8,10 +8,41 @@
 @use 'src/module/media-query';
 
 @mixin _access-scheme($legacy: false) {
-
   #{ns(access__btn)} {
+    @include btn-kind-scheme(4, $legacy);
+
     &[aria-expanded='true'] {
       @include color.background(open blue-france, (legacy: $legacy));
+    }
+  }
+
+  #{ns(description)} {
+    &:hover,
+    &:hover + * {
+      & #{ns(menu__item)} {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
+      }
+    }
+  }
+
+  #{ns(menu)} {
+    @include respond-from(lg) {
+      #{ns(nav__link)} {
+        @include color.no-box-shadow((legacy:$legacy));
+      }
+    }
+
+    @include list-item {
+
+      @include color.box-shadow(default grey, (legacy:$legacy), top-1-out);
+
+      &:first-child {
+        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+      }
+    }
+
+    &__option {
+      @include color.no-box-shadow((legacy:$legacy));
     }
   }
 }

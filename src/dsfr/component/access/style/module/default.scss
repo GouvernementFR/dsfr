@@ -1,0 +1,79 @@
+////
+/// Access Module : default
+/// @group access
+////
+
+@use 'src/module/animate';
+@use 'src/module/preference';
+
+#{ns(access)} {
+  position: relative;
+
+  #{ns(access__btn)} {
+    @include nest-btn(sm, left, null, null, false);
+    @include font-weight(medium);
+    @include min-height(12v);
+    @include min-height(auto, lg);
+    @include width(100%);
+    @include width(auto, lg);
+    @include padding(3v 4v);
+    @include animate.caret();
+    @include icon-forced-color(buttontext, true);
+
+    @include icon(arrow-down-s-line, sm, after) {
+      @include margin-left(auto);
+      @include margin-left(1v, lg);
+      @include margin-right(-1v, lg);
+
+      @include preference.reduce-motion {
+        transition: none;
+      }
+    }
+
+    @include respond-from(lg) {
+      @include text-style(sm);
+      @include icon-size(sm, before);
+      @include padding(1v 3v);
+    }
+  }
+
+  &__link {
+    justify-content: flex-start;
+  }
+
+  &__menu {
+    @include margin(-1v -4v, lg);
+    @include size();
+
+    @include preference.reduce-motion {
+      transition: none;
+    }
+
+    #{ns(menu)} {
+      @include list {
+        @include padding(0);
+      }
+    }
+  }
+
+  #{ns(nav)} {
+    &__item {
+      @include before(none);
+    }
+  }
+
+  // Si width du menu à modifier, c'est ici
+  // #{ns(menu)} {
+  //   &__list {
+  //     @include padding(0);
+
+  //     @include respond-from(lg) {
+  //       display: block;
+
+  //       @include preference.forced-colors {
+  //         border-top: 1px solid;
+  //       }
+  //     }
+  //   }
+  // }
+}

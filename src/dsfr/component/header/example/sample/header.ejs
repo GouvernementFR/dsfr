@@ -8,7 +8,7 @@ let hasMenu = false;
 
 data.body.brand = brandData('header', header.logo, header.service, header.operator, header.beta === true, '/');
 
-if (header.links !== undefined || header.search) {
+if (header.links !== undefined || header.search || header.access) {
   hasNavbar = true;
   const tools = {};
   data.body.tools = tools;
@@ -63,6 +63,22 @@ if (header.links !== undefined || header.search) {
     tools.search.modalId = tools.search.modalId || uniqueId('modal'),
     tools.search.btnId = tools.search.btnId || uniqueId('button')
   }
+
+  if (header.access) {
+    hasMenu = true;
+    tools.access = header.access === true ? 
+    [
+      {
+        sample: '../../../access/example/sample/access-default'
+      },
+      {
+        sample: '../../../access/example/sample/access-default'
+      },
+      {
+        sample: '../../../access/example/sample/access-default'
+      },
+    ] : header.access;
+  }
 }
 
 switch (true) {
@@ -103,6 +119,8 @@ if (hasNavbar) data.body.brand.navbar = navbar;
 if (header.duplicateLinks !== undefined) data.menu.tools.duplicateLinks = header.duplicateLinks;
 
 if (header.id) data.id = header.id;
+
+if (header.compact) data.compact = header.compact;
 %>
 
 <%- include('../../template/ejs/header', {header: data}); %>

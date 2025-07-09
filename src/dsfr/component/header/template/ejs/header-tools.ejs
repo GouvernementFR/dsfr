@@ -3,6 +3,7 @@
 
 * tools (object, required) : Paramètres du template
   ** tools.links (object, optional) : Paramètres des liens d'accès direct - voir links
+  ** tools.access (object, optional) : Paramètres des boutons d'accès rapide - voir access
   ** tools.translate (object, optional) : Paramètres du sélecteur de langue - voir translate
   ** tools.toolsContent (string, optional) : Permet d'ajouter du contenu custom dans le bloc tools
   ** tools.search (object, optional) : Paramètres du bloc de recherche (voir compoosant search)
@@ -16,9 +17,14 @@
 <% let tools = locals.tools || {}; %>
 
 <div class="<%= prefix %>-header__tools">
-  <% if (tools.links !== undefined || tools.translate !== undefined) { %>
+  <% if (tools.links !== undefined || tools.translate !== undefined || tools.access !== undefined) { %>
     <div class="<%= prefix %>-header__tools-links">
-      <% if (tools.links.buttons) { %>
+      <% if (tools.access) { %>
+        <% for (let i=0; i < tools.access.length; i++) { %>
+          <%- include(tools.access[i].sample !==undefined ? tools.access[i].sample : '../../../access/example/sample/access' , {access:tools.access[i]}); %>
+        <% } %>
+      <% } %>
+      <% if (tools.links !== undefined && tools.links.buttons) { %>
         <% if (tools.links.buttons.length > 1) { %>
           <ul class="<%= prefix %>-btns-group">
             <% for (let i = 0; i < tools.links.buttons.length; i++) { %>

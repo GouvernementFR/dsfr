@@ -2,85 +2,8 @@
 /// Access Module
 /// @group access
 ////
-@use 'src/module/animate';
-@use 'src/module/selector';
-@use 'src/module/preference';
-@use 'src/module/color';
 
+@import 'module/default';
 @import 'module/description';
+@import 'module/group';
 @import 'module/option';
-
-#{ns(access)} {
-  position: relative;
-
-  #{ns(access__btn)} {
-    @include nest-btn(sm, left, null, null, false);
-    @include font-weight(medium);
-    @include min-height(12v);
-    @include min-height(auto, lg);
-    @include width(100%);
-    @include width(auto, lg);
-    @include animate.caret();
-    @include icon-forced-color(buttontext, true);
-
-    @include icon(arrow-down-s-line, sm, after) {
-      @include margin-left(auto);
-      @include margin-left(1v, lg);
-      @include margin-right(-1v, lg);
-
-      @include preference.reduce-motion {
-        transition: none;
-      }
-    }
-
-    @include respond-from(lg) {
-      @include text-style(sm);
-      @include icon-size(sm, before);
-      @include padding(1v 3v);
-    }
-  }
-
-  &__link {
-    justify-content: flex-start;
-  }
-
-  &__menu {
-    @include margin(-1v 0);
-    @include margin(-1v -4v, lg);
-    @include size();
-
-    @include preference.reduce-motion {
-      transition: none;
-    }
-  }
-
-  #{ns(nav)} {
-    &__item {
-
-      @include before(none);
-    }
-  }
-
-  // Si width du menu à modifier, c'est ici
-  // #{ns(menu)} {
-  //   &__list {
-  //     @include padding(0);
-
-  //     @include respond-from(lg) {
-  //       display: block;
-
-  //       @include preference.forced-colors {
-  //         border-top: 1px solid;
-  //       }
-  //     }
-  //   }
-  // }
-}
-
-#{ns-group(btns)} {
-  #{ns(access)} {
-    &__menu {
-      @include margin(-5v -3v 0, lg);
-    }
-  }
-}

@@ -5,6 +5,7 @@
   ** header.id (String, required) : attribut id du header
   ** header.body (object, required) : Paramètres du template body
   ** header.menu (object, optional) : Paramètres du template menu
+  ** header.menu (boolean, optional) : Header compact si vrai
 
 Exemple complet :
 
@@ -27,6 +28,11 @@ header = {
       links: {
         items: [
           { voir buttonsGroup dans button }
+        ]
+      },
+      access: {
+        items: [
+          { voir access }
         ]
       },
       translate: { voir translate }
@@ -72,8 +78,8 @@ if (header.menu && header.menu.navigation && header.menu.modalId) {
 }
 %>
 
-<header role="banner" class="<%= prefix %>-header" <%- includeAttrs(attributes) %>>
-  <%- include('./header-body', {body: header.body});%>
+<header role="banner" class="<%= prefix %>-header<%= header.compact ? ' fr-header--compact' : '' %>" <%-includeAttrs(attributes) %>>
+  <%- include('./header-body', {body: header.body, compact: header.compact});%>
   <% if ((header.menu && header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
     <%- include('./header-menu', {menu: header.menu});%>
   <% } %>

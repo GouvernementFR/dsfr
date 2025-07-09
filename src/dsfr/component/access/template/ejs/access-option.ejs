@@ -3,7 +3,16 @@
 
 * option.id (string, required) : id de l'option
 
-* option.button (object, required) : Option du bouton (voir: button)
+* option.button (object, required) : Option du bouton (voir composant button)
+
+Certaines valeurs par défaut sont outrepassées :
+
+* option.button.kind : Type du bouton : 3 (au lieu de 1)
+
+* option.button.size : Taille du bouton : 'sm' (aucune valeur par défaut normalement)
+
+* option.button.markup : tag html du bouton : 'a' (au lieu de 'button')
+
 %>
 
 <% eval(include('../../../../core/index.ejs')); %>
@@ -20,8 +29,9 @@ minBtnAttrs.id = option.id || uniqueId('option');
 
 button.classes = button.classes !== undefined ? button.classes.concat(minBtnClasses) : minBtnClasses;
 button.attributes = button.attributes !== undefined ? {...minBtnAttrs, ...button.attributes} : minBtnAttrs;
-button.size = 'sm';
-button.markup = 'a';
+button.kind = button.kind ? button.kind : 3;
+button.size = button.size ? button.size : 'sm';
+button.markup = button.markup ? button.markup : 'a';
 %>
 
 <div class="<%= prefix %>-option">

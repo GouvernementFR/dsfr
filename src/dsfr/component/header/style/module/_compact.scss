@@ -1,0 +1,48 @@
+////
+/// Header Module : compact header
+/// @group header
+////
+
+@use 'src/module/media-query';
+@use 'src/module/preference';
+@use 'src/dsfr/core/style/typography/tool/font-size' as fs;
+@use 'src/dsfr/core/style/typography/tool/line-height' as lh;
+
+#{ns(header)} {
+  &--compact {
+    #{ns(header)} {
+
+      @include body {
+        &-row {
+          @include padding(2v 4v, lg);
+          @include size(auto, 14v);
+        }
+      }
+
+      &__navbar {
+        @include margin-top(0);
+      }
+
+      &__service {
+        @include padding(2v);
+        @include before(none);
+        order: 2;
+
+        &-tagline {
+          display: none;
+        }
+      }
+    }
+
+    @include media-query.respond-from(lg) {
+      outline: none;
+    }
+
+    #{ns(logo)} {
+      @include fs.font-size(0);
+      @include lh.line-height(0);
+
+      @include after(none);
+    }
+  }
+}

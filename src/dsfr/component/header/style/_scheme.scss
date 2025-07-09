@@ -42,6 +42,10 @@
         @include btn-kind-scheme(4, $legacy);
         @include color.no-box-shadow((legacy: $legacy));
       }
+
+      #{ns(option__btn)} {
+        @include btn-kind-scheme(3, $legacy);
+      }
     }
 
     &__tools-links {

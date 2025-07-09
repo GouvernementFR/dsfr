@@ -1,14 +1,209 @@
 <% const sample = getSample(include); %>
 
 <style>
-    @media (min-width: 62em) {
-        .relative-sample\@lg {
-            position: relative;
-        }
-    }
+	@media(min-width: 62em) {
+		.relative-sample\@lg {
+			position: relative;
+		}
+	}
 </style>
 
+
+<% function getServiceAccess() {
+  const data = {
+    button: {
+      label: 'Services',
+      kind: 4,
+      title: 'Services',
+      icon: 'menu-fill',
+      iconPlace: 'left'
+    },
+    links: [
+      {
+        label: 'Explorer les cartes',
+        href: '#',
+        classes: ['fr-icon-road-map-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Rechercher une donnée',
+        href: '#',
+        classes: ['fr-icon-search-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Diffuser une donnée',
+        href: '#',
+        classes: ['fr-icon-upload-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Créer une carte',
+        href: '#',
+        classes: ['fr-icon-pen-nib-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Contribuer',
+        href: '#',
+        classes: ['fr-icon-message-2-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Géocoder',
+        href: '#',
+        classes: ['fr-icon-code-s-slash-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Documentation',
+        href: '#',
+        classes: ['fr-icon-file-text-line', 'fr-link--icon-left'
+        ]
+      },
+    ],
+    option: {
+      button: {
+        label: 'Découvrir cartes.gouv',
+        kind: 3,
+        title: 'Découvrir cartes.gouv',
+        icon: 'external-link-line',
+        href: '#',
+        iconPlace: 'right'
+      }
+    }
+  };
+  return data;
+} %>
+
+<% function getHelpAccess() {
+  const data = {
+    button: {
+      label: 'Aide',
+      kind: 4,
+      title: 'Aide',
+      icon: 'question-fill',
+      iconPlace: 'left'
+    },
+    links: [
+      {
+        label: 'Questions fréquentes',
+        href: '#',
+        classes: ['fr-icon-question-mark', 'fr-link--icon-left']
+      },
+      {
+        label: 'Documentation',
+        href: '#',
+        classes: ['fr-icon-file-text-line', 'fr-link--icon-left']
+      },
+      {
+        label: 'Nous contacter',
+        href: '#',
+        classes: ['fr-icon-mail-line', 'fr-link--icon-left']
+      },
+    ]
+  };
+  return data;
+} %>
+
+<% function getConnectedAccess () {
+  const data = {
+    button: {
+      label: 'Mon espace',
+      kind: 4,
+      title: 'Mon espace',
+      icon: 'account-fill',
+      iconPlace: 'left'
+    },
+    description: {
+      label: 'Nom utilisateur',
+      info: 'adresseutilisateur@email.com'
+    },
+    links: [
+      {
+        label: 'Tableau de bord',
+        href: '#',
+        classes: ['fr-icon-dashboard-3-line',
+          'fr-link--icon-left']
+      },
+      {
+        label: 'Mon compte',
+        href: '#',
+        classes: ['fr-icon-user-line',
+          'fr-link--icon-left']
+      },
+    ],
+    option: {
+      button: {
+        label: 'Se déconnecter',
+        kind: 3,
+        title: 'Se déconnecter',
+        icon: 'logout-box-r-line',
+        href: '#',
+        iconPlace: 'left'
+      }
+    }
+
+  }
+  return data;
+} %>
+
+<% function getAccesses() {
+  let accesses = [
+    getHelpAccess(),
+    getServiceAccess(),
+    getConnectedAccess(),
+  ];
+  return accesses
+}
+%>
+
+<% function getAccessesNotConnected() {
+  let accesses = [
+    getHelpAccess(),
+    getServiceAccess(),
+  ];
+	return accesses;
+}
+%>
+
+<%- section('Header référence') %>
+
+<%- sample('Header cartes.gouv compte non connecté', './sample/header.ejs' , {header: {compact:true, service:{title:"Cartes.gouv.fr", beta:true},beta:true, access:getAccessesNotConnected(), links: { buttons: [{ url: '[url - à modifier]', label: 'Se connecter', markup: 'a', classes: [`${prefix}-btn--account`]}] }}}, true, './layout' ); %>
+
+<%- sample('Header cartes.gouv compte connecté', './sample/header.ejs' , {header: {compact:true, service:{title:"Cartes.gouv.fr", beta:true},beta:true, access:getAccesses()}}, true, './layout' ); %>
+
+<%- section('Header compact') %>
+
+<%- sample('Header compact minimal', './sample/header.ejs' , {header: {compact:true}}, true, './layout' ); %>
+
+<%- sample('Header compact avec service', './sample/header.ejs' , {header: {compact:true, service:true}}, true, './layout' ); %>
+
+<%- sample('Header compact avec bandeau BETA', './sample/header.ejs' , {header: {compact:true, beta: true}}, true, './layout' ); %>
+
+<%- sample('Header compact avec service et bandeau BETA', './sample/header.ejs' , {header: {compact:true, service:true, beta: true}}, true, './layout' ); %>
+
+<%- sample('Header compact avec service et un accès rapide', './sample/header.ejs' , {header: {compact:true, service:true, access:[{ sample: '../../../access/example/sample/access-default'}]}}, true, './layout' ); %>
+
+<%- sample('Header compact avec service et trois accès rapide', './sample/header.ejs' , {header: {compact:true, service:true, access:getAccesses()}}, true, './layout' ); %>
+
+<%- sample('Header compact avec service, bandeau BETA et trois accès rapide', './sample/header.ejs' , {header: {compact:true, service:true, beta: true, access:getAccesses()}}, true, './layout' ); %>
+
+<%- sample('Header compact avec service, deux accès rapide et raccourci', './sample/header.ejs' , {header: {compact:true, service:true, access:getAccessesNotConnected(), links: { buttons: [{ url: '[url - à modifier]', label: 'Se connecter', markup: 'a', classes: [`${prefix}-btn--account`]}] } }}, true, './layout' ); %>
+
+<%- sample('Header compact avec service, un accès rapide, un raccourci et selecteur de langues', './sample/header.ejs' , {header: {compact:true, service:true, access:[{ sample: '../../../access/example/sample/access-default'}], links: { buttons: [{ url: '[url - à modifier]', label: 'Se connecter', markup: 'a', kind:4, icon: 'account-fill', iconPlace: 'left'}]}, translate: true}}, true, './layout' ); %>
+
+<%- sample('Header compact avec service et list de raccourcis', './sample/header.ejs', {header: { compact:true, links:true, service: true}}, true, './layout');  %>
+
+<%- sample('Header compact avec services, selecteur de langues et paramètre d\'affichage', './sample/header.ejs', {header: { compact:true, links:{ buttons: [{ label: 'Paramètres d\'affichage', classes: [`${prefix}-icon-theme-fill`, `${prefix}-btn--icon-left`], attributes: {'aria-controls': `${prefix}-theme-modal`, 'data-fr-opened': false}}]}, translate: true, service: true}}, true, './layout');  %>
+
+<%- section('Header normal') %>
+
 <%- sample('Header minimal', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header avec un accès rapide', './sample/header.ejs' , {header: {logo:{ title: 'Intitulé<br>officiel' }, access:[{ sample: '../../../access/example/sample/access-default'}], links: { buttons: [{ url: '[url - à modifier]', label: 'Espace particulier', markup: 'a', classes: [`${prefix}-btn--account`]}] }, navigation: 'min' }}, true, './layout' ); %>
+
+<%- sample('Header avec trois accès rapide', './sample/header.ejs' , {header: {logo:{ title: 'Intitulé<br>officiel' }, access:true, navigation: 'min' }}, true, './layout' ); %>
 
 <%- sample('Header sans navigation', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service: true }}, true, './layout');  %>
 

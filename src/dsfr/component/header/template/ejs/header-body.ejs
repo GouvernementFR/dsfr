@@ -8,7 +8,9 @@
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
-<% let body = locals.body || {}; %>
+<% let body = locals.body || {};
+let compact = locals.compact;
+%>
 
 <div class="<%= prefix %>-header__body">
   <div class="<%= prefix %>-container" >

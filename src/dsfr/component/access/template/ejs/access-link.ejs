@@ -9,11 +9,7 @@
 
 * link.blank (boolean, optional) [default: false] : si true, target '_blank'
 
-* link.active (boolean, optional) : si true l'élément est actif
-
 * link.disabled (boolean, optional) : si true l'élément est désactivé
-
-* link.isPage (boolean, optional) : si true aria-current: 'page', sinon aria-current: 'true'
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -25,8 +21,6 @@ const linkAttrs = link.attributes || {};
 linkClasses.push(`${prefix}-access__link`);
 linkClasses.push(`${prefix}-nav__link`);
 linkAttrs.id = link.id;
-
-if (link.active) linkAttrs['aria-current'] = link.isPage ? 'page' : 'true';
 
 %>
 

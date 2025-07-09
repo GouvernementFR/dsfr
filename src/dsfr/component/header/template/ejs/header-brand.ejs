@@ -55,12 +55,29 @@ let brand = locals.brand || {};
       </div>
     <% } %>
 
+    <% if (brand.service !== undefined && header.compact) { %>
+    <div class="<%= prefix %>-header__service" >
+      <% if (linkInfos.position === 'service') { %><%- link %><% } %>
+        <% if (brand.service && (brand.service.title || brand.service.beta)) { %>
+          <p class="<%= prefix %>-header__service-title">
+            <% if (brand.service.title) { %>
+              <%- brand.service.title %>
+            <% } %>
+            <% if (brand.service.beta) { %>
+              <%- include('../../../badge/template/ejs/badge.ejs', {badge: {markup: 'span', label: "BETA", size: 'sm', accent: 'green-emeraude'} }) %>
+            <% } %>
+          </p>
+        <% } %>
+      <% if (linkInfos.position === 'service') { %><%- '</a>' %><% } %>
+    </div>
+  <% } %>
+
     <% if (brand.navbar) { %>
       <%- include('./header-navbar', {navbar: brand.navbar}); %>
     <% } %>
   </div>
 
-  <% if (brand.service !== undefined) { %>
+  <% if (brand.service !== undefined && !header.compact) { %>
     <div class="<%= prefix %>-header__service" >
       <% if (linkInfos.position === 'service') { %><%- link %><% } %>
         <% if (brand.service && (brand.service.title || brand.service.beta)) { %>

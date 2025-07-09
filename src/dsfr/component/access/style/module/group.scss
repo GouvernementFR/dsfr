@@ -1,0 +1,11 @@
+////
+/// Access Module : Group
+/// @group access
+////
+
+#{ns-group(accesses)} {
+  @include respond-from('lg') {
+    @include display-flex(row, null, flex-start);
+    gap: space(2v);
+  }
+}

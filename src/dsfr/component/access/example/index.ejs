@@ -1,5 +1,155 @@
 <% const sample = getSample(include); %>
 
+
+<% function getServiceAccess() {
+  const data = {
+    button: {
+      label: 'Services',
+      kind: 4,
+      title: 'Services',
+      icon: 'menu-fill',
+      iconPlace: 'left'
+    },
+    links: [
+      {
+        label: 'Explorer les cartes',
+        href: '#',
+        classes: ['fr-icon-road-map-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Rechercher une donnée',
+        href: '#',
+        classes: ['fr-icon-search-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Diffuser une donnée',
+        href: '#',
+        classes: ['fr-icon-upload-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Créer une carte',
+        href: '#',
+        classes: ['fr-icon-pen-nib-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Contribuer',
+        href: '#',
+        classes: ['fr-icon-message-2-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Géocoder',
+        href: '#',
+        classes: ['fr-icon-code-s-slash-line', 'fr-link--icon-left'
+        ]
+      },
+      {
+        label: 'Documentation',
+        href: '#',
+        classes: ['fr-icon-file-text-line', 'fr-link--icon-left'
+        ]
+      },
+    ],
+    option: {
+      button: {
+        label: 'Découvrir cartes.gouv',
+        kind: 3,
+        title: 'Découvrir cartes.gouv',
+        icon: 'external-link-line',
+        href: '#',
+        iconPlace: 'right'
+      }
+    }
+  };
+  return data;
+} %>
+
+<% function getHelpAccess() {
+  const data = {
+    button: {
+      label: 'Aide',
+      kind: 4,
+      title: 'Aide',
+      icon: 'question-fill',
+      iconPlace: 'left'
+    },
+    links: [
+      {
+        label: 'Questions fréquentes',
+        href: '#',
+        classes: ['fr-icon-question-mark', 'fr-link--icon-left']
+      },
+      {
+        label: 'Documentation',
+        href: '#',
+        classes: ['fr-icon-file-text-line', 'fr-link--icon-left']
+      },
+      {
+        label: 'Nous contacter',
+        href: '#',
+        classes: ['fr-icon-mail-line', 'fr-link--icon-left']
+      },
+    ]
+  };
+  return data;
+} %>
+
+<% function getConnectedAccess () {
+  const data = {
+    button: {
+      label: 'Mon espace',
+      kind: 4,
+      title: 'Mon espace',
+      icon: 'account-fill',
+      iconPlace: 'left'
+    },
+    description: {
+      label: 'Nom utilisateur',
+      info: 'adresseutilisateur@email.com'
+    },
+    links: [
+      {
+        label: 'Tableau de bord',
+        href: '#',
+        classes: ['fr-icon-dashboard-3-line',
+          'fr-link--icon-left']
+      },
+      {
+        label: 'Mon compte',
+        href: '#',
+        classes: ['fr-icon-user-line',
+          'fr-link--icon-left']
+      },
+    ],
+    option: {
+      button: {
+        label: 'Se déconnecter',
+        kind: 3,
+        title: 'Se déconnecter',
+        icon: 'logout-box-r-line',
+        href: '#',
+        iconPlace: 'left'
+      }
+    }
+
+  }
+  return data;
+} %>
+
+<% function getAccesses() {
+  let accesses = [
+    getHelpAccess(),
+    getServiceAccess(),
+    getConnectedAccess(),
+  ];
+  return accesses
+}
+%>
+
 <%- sample('Accès rapide minimal', './sample/access.ejs' , {access: {links: true}}, true); %>
 
 <%- sample('Accès rapide avec infos sans bouton externe', './sample/access.ejs' , {access: {button: {label: 'Label', kind:4, title: 'Label', icon: 'checkbox-circle-line', iconPlace:'left'}, links: true, description: {label:'Texte d\'information', info:'Détails'}}}, true); %>
@@ -12,71 +162,8 @@
 
 <%- section('Exemples', 'Exemples pour des services externes', 0) %>
 
-<%- sample('Accès rapide spécial bouton connecté', './sample/access.ejs' , {access: {button:{label: 'Mon espace', kind:3, title: 'Mon espace', icon: 'account-fill', iconPlace:'left'}, description: {label:'Nom utilisateur', info:'adresseutilisateur@email.com'}, links: [
-  {
-    label: 'Tableau de bord',
-    href: '#',
-    classes: [ 'fr-icon-dashboard-3-line', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Mon compte',
-    href: '#',
-    classes: [ 'fr-icon-user-line', 'fr-link--icon-left' ]
-  },
-], option: {button:{label: 'Se déconnecter', kind:3, title: 'Se déconnecter', icon: 'logout-box-r-line', href:'#', iconPlace:'left'}}}}, true); %>
+<%- sample('Accès rapide spécial bouton connecté', './sample/access.ejs' , {access: getConnectedAccess()}, true); %>
 
-<%- sample('Accès rapide spécial services', './sample/access.ejs' , {access: {button:{label: 'Services', kind:4, title: 'Services', icon: 'menu-fill', iconPlace:'left'}, links: [
-  {
-    label: 'Explorer les cartes',
-    href: '#',
-    classes: [ 'fr-icon-road-map-line', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Rechercher une donnée',
-    href: '#',
-    classes: [ 'fr-icon-search-line', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Diffuser une donnée',
-    href: '#',
-    classes: [ 'fr-icon-upload-line', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Créer une carte',
-    href: '#',
-    classes: [ 'fr-icon-pen-nib-line', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Contribuer',
-    href: '#',
-    classes: [ 'fr-icon-message-2-line', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Géocoder',
-    href: '#',
-    classes: [ 'fr-icon-code-s-slash-line', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Documentation',
-    href: '#',
-    classes: [ 'fr-icon-file-text-line', 'fr-link--icon-left' ]
-  },
-], option: {button:{label: 'Découvrir cartes.gouv', kind:3, title: 'Découvrir cartes.gouv', icon: 'external-link-line', href:'#', iconPlace:'right'}}}}, true); %>
+<%- sample('Accès rapide spécial services', './sample/access.ejs' , {access: getServiceAccess()}, true); %>
 
-<%- sample('Accès rapide spécial bouton aide', './sample/access.ejs' , {access: {button:{label: 'Aide', kind:4, title: 'Aide', icon: 'question-fill', iconPlace:'left'}, links: [
-  {
-    label: 'Questions fréquentes',
-    href: '#',
-    classes: [ 'fr-icon-question-mark', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Documentation',
-    href: '#',
-    classes: [ 'fr-icon-file-text-line', 'fr-link--icon-left' ]
-  },
-  {
-    label: 'Nous contacter',
-    href: '#',
-    classes: [ 'fr-icon-mail-line', 'fr-link--icon-left' ]
-  },
-]}}, true); %>
+<%- sample('Accès rapide spécial bouton aide', './sample/access.ejs' , {access: getHelpAccess()}, true); %>
