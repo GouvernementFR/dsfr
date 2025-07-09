@@ -25,3 +25,5 @@ sample:
   double-disabled: Curseur double désactivé
   prefix-suffix: Curseur avec préfixe et suffixe
   error: Curseur avec erreur
+  label-min: valeur minimale
+  label-max: valeur maximale
