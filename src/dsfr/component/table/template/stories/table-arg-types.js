@@ -140,10 +140,10 @@ const tableFooterButtons = `
 
 const srOnlyCellSelect = '<span class="fr-sr-only">Sélectionner</span>';
 
-const getCheckbox = (id) => {
+const getCheckbox = (id, checked = false) => {
   return `
     <div class='fr-checkbox-group fr-checkbox-group--sm'>
-        <input name='row-select' id='table-select-checkbox--${id}' type='checkbox'>
+        <input name='row-select' id='table-select-checkbox--${id}' type='checkbox' ${checked ? 'checked' : ''}>
         <label class='fr-label' for='table-select-checkbox--${id}'>
             Sélectionner la ligne ${id + 1}
         </label>
@@ -198,6 +198,13 @@ const tableArgTypes = {
   noScroll: {
     control: 'boolean',
     description: 'Désactive le scroll horizontal',
+    table: {
+      category: 'variant'
+    }
+  },
+  multiline: {
+    control: 'boolean',
+    description: 'Active le mode multi-lignes pour les cellules du tableau',
     table: {
       category: 'variant'
     }
@@ -324,6 +331,31 @@ const getFixedColTableArgs = (breakpoint = undefined) => {
   return table;
 };
 
+const getColSizeTableArgs = () => {
+  const table = getSimpleTableArgs();
+  const colSizes = ['xs', 'sm', 'md', 'lg'];
+
+  table.thead.forEach((row) => {
+    row.forEach((cell, index) => {
+      const colClass = `fr-col--${colSizes[index]}`;
+      cell.content = colClass;
+      cell.attributes = {
+        class: colClass
+      };
+    });
+  });
+
+  table.tbodies.forEach((tbody) => {
+    tbody.forEach((row) => {
+      row.forEach((cell) => {
+        cell.content = 'Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua.';
+      });
+    });
+  });
+
+  return table;
+};
+
 const getSelectableTableArgs = () => {
   const table = getSimpleTableArgs();
 
@@ -347,7 +379,34 @@ const getSelectableTableArgs = () => {
       });
     });
   });
+  return table;
+};
 
+const getSelectableTableSelectedLineArgs = () => {
+  const table = getSimpleTableArgs();
+
+  table.thead.forEach((row) => {
+    row.unshift({
+      attributes: {
+        role: 'columnheader'
+      },
+      classes: ['fr-cell--fixed'],
+      content: srOnlyCellSelect
+    });
+  });
+
+  table.tbodies.forEach((tbody) => {
+    tbody.forEach((row, index) => {
+      row.unshift({
+        markup: 'th',
+        attributes: { scope: 'row' },
+        classes: ['fr-cell--fixed'],
+        content: getCheckbox(index)
+      });
+    });
+  });
+
+  table.tbodies[0][1][0].content = getCheckbox(1, true);
   return table;
 };
 
@@ -530,6 +589,7 @@ const tableArgs = {
   captionBottom: false,
   bordered: false,
   noScroll: false,
+  multiline: false,
   hasHeader: false,
   hasHeaderSegmented: true,
   hasHeaderDetails: true,
@@ -568,6 +628,10 @@ const tableProps = (args) => {
 
   if (args.noScroll === true) {
     wrapper.noScroll = args.noScroll;
+  }
+
+  if (args.multiline === true) {
+    wrapper.multiline = args.multiline;
   }
 
   if (args.hasHeader === true) {
@@ -609,4 +673,4 @@ const tableProps = (args) => {
   return wrapper;
 };
 
-export { tableArgTypes, tableArgs, tableProps, getFixedColTableArgs, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs };
+export { tableArgTypes, tableArgs, tableProps, getFixedColTableArgs, getColSizeTableArgs, getSelectableTableArgs, getSelectableTableSelectedLineArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs };

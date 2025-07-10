@@ -1,7 +1,13 @@
 
 <%
 const sample = getSample(include);
-let loremData = JSON.parse(include('./data/data-lorem.json.ejs'));
+const cellMultilineData = JSON.parse(include('./data/data-lorem.json.ejs'));
+cellMultilineData.tbodies[0][1][1] = {
+  content: `<b>${lorem(null, 200)}</b>`,
+  attributes: {
+    class: `${prefix}-cell--multiline`
+  }
+};
 const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
@@ -34,7 +40,11 @@ const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
-  sample({title: getText('sample.multiline.title', 'table'), subtitle: getText('sample.multiline.subtitle', 'table')}, './sample/table-simple', {table: {table: {id: 'table-multiline', classes: [`${prefix}-cell--multiline`], caption: getText('data.caption.default', 'table')}}}, true);
+  sample({title: getText('sample.tableMultiline.title', 'table'), subtitle: getText('sample.tableMultiline.subtitle', 'table')}, './sample/table-simple', {table: {multiline: true, table: {id: 'table-multiline', caption: getText('data.caption.default', 'table'), loremLength: 100}}}, true);
+%>
+
+<%-
+  sample({title: getText('sample.cellMultiline.title', 'table'), subtitle: getText('sample.cellMultiline.subtitle', 'table')}, './sample/table-default', {table: {table: {id: 'table-multiline', caption: getText('data.caption.default', 'table'), ...cellMultilineData}}}, true);
 %>
 
 <%-

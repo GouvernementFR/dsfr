@@ -170,16 +170,122 @@ Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent �
 <link href="dist/component/table/table.legacy.min.css" rel="stylesheet">
 ```
 
-#### Variantes de taille
+#### Comportement du tableau
+
+Le tableau par défaut scrollable prend toujours 100% de la largeur de son conteneur et le contenu des cellules est affiché sur une seule ligne.
+
+La largeur d’une colonne s’adapte à la largeur de la cellule dont le contenu est le plus long.
+
+Nous mettons à disposition les variations multiline à travers l’utilisation des classes `fr-table--multiline` sur le composant ou  `fr-cell--multiline` au niveau des cellules (`<th>` ou `<td>`) pour permettre le retour à la ligne à l’intérieur des cellules. C'est alors le navigateur qui décidera de faire des passages à la ligne pour éviter au maximum le scroll.
+
+Nous mettons aussi à disposition des classes `fr-col--xs` (et sm, md, lg) pour fixer la largeur minimale d'une colonne. Associées à la classe `fr-table--multiline` elles permettent de fixer la largeur des colonnes du tableau (hors césure de mots).
+
+#### Variantes de tableau avec retour à la ligne automatique dans les cellules
+
+Le tableau met à disposition des classes CSS pour permettre le retour à la ligne à l’intérieur des cellules :
+
+- `fr-table--multiline` sur le composant `fr-table` applique le retour à la ligne sur toutes les cellules du tableau
+- `fr-cell--multiline` au niveau des cellules (`<th>` ou `<td>`) applique le retour à la ligne sur la cellule
+
+**Exemple de tableau avec retour à la ligne automatique dans les cellules**
+
+```HTML
+<div class="fr-table fr-table--multiline">
+    <!-- Contenu de tableau avec retour à la ligne automatique dans les cellules -->
+</div>
+```
+
+#### Variantes de tableau avec largeur de colonnes minimales
+
+Vous avez à votre disposition des classes CSS pour permettre de fixer la largeur minimale des colonnes :
+
+- `fr-col--xs` pour fixer une colonne minimale à 4rem (64px),
+- `fr-col--sm` pour fixer une colonne minimale à 5rem (80px),
+- `fr-col--md` pour fixer une colonne minimale à 12.5rem (200px),
+- `fr-col--lg` pour fixer une colonne minimale à 25 rem (400px).
+
+Ces classes doivent être utilisées au niveau des en-têtes de colonne `<th>`.
+
+Combinées avec la classe `fr-table--multiline` au niveau du composant elles permettent de fixer la largeur des colonnes du tableau (hors césure de mots).
+
+**Exemple de tableau avec retour à la ligne automatique dans les cellules et largeur de colonnes minimales**
+
+:::fr-accordion[Déplier pour voir le code]{id=code-tableau-colonne-largeur}
+
+```HTML
+<div class="fr-table fr-table--multiline">
+    <div class="fr-table__wrapper">
+        <div class="fr-table__container">
+            <div class="fr-table__content">
+                <table>
+                    <caption>
+                        Titre du tableau (caption)
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th class="fr-col--xs">
+                                xs
+                            </th>
+                            <th class="fr-col--sm">
+                                sm
+                            </th>
+                            <th class="fr-col--md">
+                                md
+                            </th>
+                            <th class="fr-col--lg">
+                                lg
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Lorem
+                            </td>
+                            <td>
+                                Lorem [...
+                            </td>
+                            <td>
+                                Lorem [...] eli
+                            </td>
+                            <td>
+                                Lorem [...] elit ut.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Lorem
+                            </td>
+                            <td>
+                                Lorem [...
+                            </td>
+                            <td>
+                                Lorem [...] eli
+                            </td>
+                            <td>
+                                Lorem [...] elit ut.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+:::
+
+#### Variantes de densité
 
 Le tableau peut être de différentes tailles, si la taille des composants intégrés dans les cellules ne change pas, cela vous permet de varier la densité d’affichage de votre tableau en fonction de son contenu.
-Il existe 3 tailles pour les cellules du tableau :
+Il existe 3 niveaux de densité pour les cellules du tableau :
 
-- `fr-table--sm` : Petit tableau.
-- Par défaut en taille md.
-- `fr-table--lg` : Grand tableau.
+- `fr-table--sm` : densité SM,
+- Par défaut en densité MD,
+- `fr-table--lg` : densité LG.
 
-**Exemple de tableau de différentes tailles**
+**Exemple de tableau de différentes densité**
 
 ```HTML
 <div class="fr-table fr-table--sm">
