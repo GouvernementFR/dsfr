@@ -71,19 +71,24 @@ Sa structure est la suivante :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du curseur doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Range      | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/range/range.min.css" rel="stylesheet">
-```
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/range/range.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante de taille
@@ -263,7 +268,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/range/range.nomodule.min.js"></script>
 ```

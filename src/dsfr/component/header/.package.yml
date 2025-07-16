@@ -10,9 +10,12 @@ style:
   - navigation
   - modal
   - search
-  - badge
   - translate
 script:
   - core
   - navigation
   - modal
+example:
+  style:
+    - badge
+

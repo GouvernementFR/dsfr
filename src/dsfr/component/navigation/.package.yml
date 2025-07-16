@@ -4,7 +4,6 @@ description: La navigation principale est l'élément central de la navigation a
 doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/navigation-principale
 style:
   - core
-  - link
   - button
 script:
   - core

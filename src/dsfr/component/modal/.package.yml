@@ -5,12 +5,12 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/modal
 wrapper: col-8
 style:
   - core
-  - link
   - button
 script:
   - core
 example:
   style:
+    - link
     - form
     - input
     - table

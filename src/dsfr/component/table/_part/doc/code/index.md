@@ -154,20 +154,30 @@ Le composant **Tableau** permet de présenter des données tabulaires. Sa struct
 
 #### Installation du CSS
 
-Pour fonctionner correctement, le style CSS du tableau et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Table      | Oui         |          |
+| Checkbox   | Non         | Uniquement pour la version avec sélection de lignes |
+| Button     | Non         | Uniquement pour les boutons de trie ou l'ajout d'actions dans le header ou footer du tableau |
+| Select     | Non         | Uniquement pour la selection du nombre de ligne par page dans footer du tableau |
+| Pagination | Non         | Uniquement pour ajouter une pagination dans le footer du tableau |
+| Segmented  | Non         | Uniquement pour ajouter un contrôle segmenté dans le header du tableau |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/table/table.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent également être ajoutés :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/table/table.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de taille
@@ -466,6 +476,8 @@ Ce comportement peut être désactivé en ajoutant la classe `fr-cell--multiline
 
 ### JavaScript
 
+Un script est disponible pour ajouter des fonctionnalités interactives au tableau, comme le placement du caption, la gestion de ombres sur la version dépréciée, et la sélection de lignes via les checkbox.
+
 #### Installation du JavaScript
 
 Pour fonctionner le composant tableau nécessite l'utilisation de JavaScript.
@@ -475,6 +487,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/checkbox/checkbox.module.min.js"></script>
 <script type="module" src="dist/component/table/table.module.min.js"></script>
 ```
 
@@ -483,12 +496,24 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/checkbox/checkbox.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/table/table.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
+
+#### Instances
+
+Sur le tableau, les éléments suivants sont instanciés :
+
+- Le composant "table", via la classe : `fr-table`
+- L'élément `<table` du composant, via le sélecteur : `fr-table table` (pour la version dépréciée)
+- Les lignes du tableau, via le sélecteur : `fr-table tr` (pour la version avec lignes sélectionnables)
+- Les checkboxes du tableau, via le sélecteur : `fr-table td` (pour la version avec lignes sélectionnables)
+
+Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
 #### API
 
@@ -548,6 +573,19 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Type** | property |
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).table.node` |
+
+:::
+
+##### tableCaption
+
+:::fr-table[resize]{valign=top scroll=false}
+
+| | |
+|------|-----|
+| **Description** | Permet de mettre à jour la taille du caption après un changement de libellé. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(tableCaption).tableCaption.resize()` |
 
 :::
 

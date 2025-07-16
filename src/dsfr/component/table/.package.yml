@@ -5,6 +5,8 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/table
 wrapper: container
 style:
   - core
+  - button
+  - checkbox
 script:
   - core
   - checkbox
@@ -12,8 +14,6 @@ example:
   style:
     - alert
     - badge
-    - button
-    - checkbox
     - input
     - link
     - pagination
