@@ -118,6 +118,11 @@ Consulter la [documentation des paramètres d’affichage](./src/dsfr/component/
     <link rel="stylesheet" href="utility/utility.min.css">
 
     <title>Titre de la page - Nom du site</title>
+
+    <!--- Script pour corriger l'effet de flash au chargement du mode sombre -->
+    <script type="module">
+      const e="system",t="dark",c="dark",o="data-fr-theme",a="data-fr-scheme",r=`:root[${o}], :root[${a}]`,m=()=>{document.documentElement.setAttribute(o,c),document.documentElement.style.colorScheme="dark"},n=()=>{window.matchMedia("(prefers-color-scheme: dark)").matches&&m()};(()=>{if(document.documentElement.matches(r)){const c=(()=>{try{return"localStorage"in window&&null!==window.localStorage}catch(e){return!1}})()?localStorage.getItem("scheme"):"",o=document.documentElement.getAttribute(a);switch(!0){case c===t:m();break;case c===e:n();break;case o===t:m();break;case o===e:n()}}})();
+    </script>
   </head>
   <body>
 
