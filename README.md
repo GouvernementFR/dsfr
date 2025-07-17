@@ -96,7 +96,7 @@ Le point de départ de l’utilisation du DSFR  est la création de fichiers HTM
 
 L’ajout de l’attribut **data-fr-scheme** sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont `system`, `light`, `dark`. La valeur “system” permet d’utiliser la configuration définie sur le système d’exploitation de l’utilisateur.
 
-Consulter la [documentation des paramètres d’affichage](./src/dsfr/component/display/_part/doc/index.md) afin d’en savoir plus.
+Consulter la [documentation des paramètres d’affichage](https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/parametres-d-affichage) afin d’en savoir plus.
 
 ```html
 <!doctype html>
@@ -222,4 +222,4 @@ Le processus de contribution est détaillé sur la [page CONTRIBUTING.md](CONTRI
 
 ## Documentation
 
-[Documentation développeur·se](https://www.systeme-de-design.gouv.fr/version-courante/fr/prise-en-main-et-perimetre/vous-etes-developpeur/)
+[Documentation développeur·se](https://www.systeme-de-design.gouv.fr/version-courante/fr/premiers-pas/vous-etes-developpeur)
