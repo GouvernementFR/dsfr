@@ -53,6 +53,7 @@ ou bien de manière autonome, en utilisant de préférence une balise span.
 ## Sélection d’icônes
 
 Les icônes doivent être utilisées pour attirer l'attention sur les actions, les ensembles de contenus importants ou les zones clés, il faut éviter d’en utiliser trop sur une même page pour ne pas créer de confusion. Un concept doit être représenté par la même icône sur l'ensemble du site et de l'écosystème numérique de l'État.
+
 Les icônes ci-dessous sont pour la plupart issues de la librairie Remixicon.
 Les icônes classées dans dsfr sont soit des icônes créées spécialement, soit des icônes issues de Remixicon ayant été renommées afin de plus coller à l’usage.
 
@@ -60,7 +61,34 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 ### Arrows
 
+#### Icônes créées par l'équipe DSFR
+
 <div class="dsfr-doc-preview">
+  <span class="fr-icon-arrow-left-s-first-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-s-last-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-s-line-double" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-s-line-double" aria-hidden="true"></span>
+</div>
+
+:::fr-accordion[### Extrait de code]{id='icons-system-dsfr-accordion'}
+
+```HTML
+<span class="fr-icon-arrow-left-s-first-line" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-s-last-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-left-s-line-double" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-s-line-double" aria-hidden="true"></span>
+```
+
+:::
+
+#### Icônes proposées par RemixIcon
+
+<div class="dsfr-doc-preview">
+  <span class="fr-icon-arrow-left-s-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-s-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-s-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-s-line" aria-hidden="true"></span>
   <span class="fr-icon-arrow-down-fill" aria-hidden="true"></span>
   <span class="fr-icon-arrow-down-line" aria-hidden="true"></span>
   <span class="fr-icon-arrow-down-s-fill" aria-hidden="true"></span>
@@ -78,93 +106,79 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-arrow-right-s-last-line" aria-hidden="true"></span>
   <span class="fr-icon-arrow-right-s-line-double" aria-hidden="true"></span>
   <span class="fr-icon-arrow-right-up-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-down-line" aria-hidden="true"></span>
   <span class="fr-icon-arrow-up-fill" aria-hidden="true"></span>
   <span class="fr-icon-arrow-up-line" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-up-down-line" aria-hidden="true"></span>
   <span class="fr-icon-arrow-up-s-fill" aria-hidden="true"></span>
   <span class="fr-icon-arrow-up-s-line" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-down-circle-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-down-circle-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-left-circle-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-left-circle-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-left-down-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-left-down-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-left-right-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-left-right-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-right-circle-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-right-circle-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-right-down-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-right-down-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-right-up-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-right-up-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-turn-back-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-turn-back-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-turn-forward-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-turn-forward-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-up-circle-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-up-circle-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-up-down-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-left-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-left-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-left-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-left-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-left-right-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-left-right-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-left-right-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-left-right-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-right-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-right-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-right-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-right-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-up-down-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-up-down-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-up-down-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-contract-up-down-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-down-left-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-down-left-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-down-right-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-down-right-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-left-down-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-left-down-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-left-up-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-left-up-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-right-down-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-right-down-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-right-up-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-right-up-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-up-left-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-up-left-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-up-left-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-up-left-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-up-right-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-up-right-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-up-right-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-corner-up-right-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-left-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-left-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-left-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-left-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-left-right-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-left-right-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-left-right-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-left-right-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-right-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-right-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-right-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-right-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-up-down-fill-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-up-down-line-1.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-up-down-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-expand-up-down-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-skip-down-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-skip-down-line.svg" aria-hidden="true"></span>
-  <span class="fr-icon-skip-up-fill.svg" aria-hidden="true"></span>
-  <span class="fr-icon-skip-up-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-down-circle-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-down-circle-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-circle-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-circle-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-circle-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-circle-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-up-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-up-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-turn-back-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-turn-back-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-turn-forward-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-turn-forward-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-circle-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-circle-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-fill" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-line" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-contract-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-contract-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-contract-up-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-contract-up-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-corner-down-left-fill" aria-hidden="true"></span>
+  <span class="fr-icon-corner-down-left-line" aria-hidden="true"></span>
+  <span class="fr-icon-corner-down-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-corner-down-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-corner-left-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-corner-left-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-corner-left-up-fill" aria-hidden="true"></span>
+  <span class="fr-icon-corner-left-up-line" aria-hidden="true"></span>
+  <span class="fr-icon-corner-right-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-corner-right-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-corner-right-up-fill" aria-hidden="true"></span>
+  <span class="fr-icon-corner-right-up-line" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-left-fill" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-left-line" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-fill" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-line" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-expand-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-expand-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-expand-up-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-expand-up-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-skip-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-skip-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-skip-up-fill" aria-hidden="true"></span>
+  <span class="fr-icon-skip-up-line" aria-hidden="true"></span>
 </div>
 
 :::fr-accordion[### Extrait de code]{id='icons-building-accordion'}
 
 ```HTML
+<span class="fr-icon-arrow-left-s-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-s-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-right-s-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-s-line" aria-hidden="true"></span>
+
 <span class="fr-icon-arrow-down-fill" aria-hidden="true"></span>
 <span class="fr-icon-arrow-down-line" aria-hidden="true"></span>
 
@@ -198,121 +212,91 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 <span class="fr-icon-arrow-up-s-fill" aria-hidden="true"></span>
 <span class="fr-icon-arrow-up-s-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-down-circle-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-down-circle-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-down-circle-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-down-circle-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-left-circle-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-left-circle-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-circle-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-circle-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-left-down-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-left-down-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-down-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-left-right-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-left-right-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-right-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-right-circle-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-right-circle-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-circle-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-circle-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-right-down-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-right-down-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-down-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-right-up-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-right-up-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-up-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-up-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-turn-back-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-turn-back-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-turn-back-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-turn-back-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-turn-forward-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-turn-forward-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-turn-forward-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-turn-forward-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-up-circle-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-arrow-up-circle-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-up-circle-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-up-circle-line" aria-hidden="true"></span>
 
-<span class="fr-icon-arrow-up-down-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-up-down-fill" aria-hidden="true"></span>
 
-<span class="fr-icon-contract-left-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-contract-left-line-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-left-fill" aria-hidden="true"></span>
+<span class="fr-icon-contract-left-line" aria-hidden="true"></span>
 
-<span class="fr-icon-contract-left-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-contract-left-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-left-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-contract-left-right-line" aria-hidden="true"></span>
 
-<span class="fr-icon-contract-left-right-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-contract-left-right-line-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-contract-right-line" aria-hidden="true"></span>
 
-<span class="fr-icon-contract-left-right-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-contract-left-right-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-up-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-contract-up-down-line" aria-hidden="true"></span>
 
-<span class="fr-icon-contract-right-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-contract-right-line-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-down-left-fill" aria-hidden="true"></span>
+<span class="fr-icon-corner-down-left-line" aria-hidden="true"></span>
 
-<span class="fr-icon-contract-right-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-contract-right-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-down-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-corner-down-right-line" aria-hidden="true"></span>
 
-<span class="fr-icon-contract-up-down-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-contract-up-down-line-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-left-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-corner-left-down-line" aria-hidden="true"></span>
 
-<span class="fr-icon-contract-up-down-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-contract-up-down-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-left-up-fill" aria-hidden="true"></span>
+<span class="fr-icon-corner-left-up-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-down-left-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-down-left-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-right-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-corner-right-down-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-down-right-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-down-right-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-right-up-fill" aria-hidden="true"></span>
+<span class="fr-icon-corner-right-up-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-left-down-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-left-down-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-up-left-fill" aria-hidden="true"></span>
+<span class="fr-icon-corner-up-left-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-left-up-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-left-up-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-up-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-corner-up-right-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-right-down-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-right-down-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-left-fill" aria-hidden="true"></span>
+<span class="fr-icon-expand-left-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-right-up-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-right-up-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-left-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-expand-left-right-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-up-left-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-up-left-line-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-expand-right-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-up-left-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-up-left-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-up-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-expand-up-down-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-up-right-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-up-right-line-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-skip-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-skip-down-line" aria-hidden="true"></span>
 
-<span class="fr-icon-corner-up-right-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-corner-up-right-line.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-expand-left-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-expand-left-line-1.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-expand-left-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-expand-left-line.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-expand-left-right-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-expand-left-right-line-1.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-expand-left-right-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-expand-left-right-line.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-expand-right-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-expand-right-line-1.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-expand-right-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-expand-right-line.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-expand-up-down-fill-1.svg" aria-hidden="true"></span>
-<span class="fr-icon-expand-up-down-line-1.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-expand-up-down-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-expand-up-down-line.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-skip-down-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-skip-down-line.svg" aria-hidden="true"></span>
-
-<span class="fr-icon-skip-up-fill.svg" aria-hidden="true"></span>
-<span class="fr-icon-skip-up-line.svg" aria-hidden="true"></span>
+<span class="fr-icon-skip-up-fill" aria-hidden="true"></span>
+<span class="fr-icon-skip-up-line" aria-hidden="true"></span>
 ```
 
 :::
@@ -340,6 +324,14 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-hotel-line" aria-hidden="true"></span>
   <span class="fr-icon-store-fill" aria-hidden="true"></span>
   <span class="fr-icon-store-line" aria-hidden="true"></span>
+  <span class="fr-icon-building-4-fill" aria-hidden="true"></span>
+  <span class="fr-icon-building-4-line" aria-hidden="true"></span>
+  <span class="fr-icon-home-office-fill" aria-hidden="true"></span>
+  <span class="fr-icon-home-office-line" aria-hidden="true"></span>
+  <span class="fr-icon-school-fill" aria-hidden="true"></span>
+  <span class="fr-icon-school-line" aria-hidden="true"></span>
+  <span class="fr-icon-tent-fill" aria-hidden="true"></span>
+  <span class="fr-icon-tent-line" aria-hidden="true"></span>
 </div>
 
 :::fr-accordion[### Extrait de code]{id='icons-building-accordion'}
@@ -374,6 +366,18 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 <span class="fr-icon-store-fill" aria-hidden="true"></span>
 <span class="fr-icon-store-line" aria-hidden="true"></span>
+
+<span class="fr-icon-building-4-fill" aria-hidden="true"></span>
+<span class="fr-icon-building-4-line" aria-hidden="true"></span>
+
+<span class="fr-icon-home-office-fill" aria-hidden="true"></span>
+<span class="fr-icon-home-office-line" aria-hidden="true"></span>
+
+<span class="fr-icon-school-fill" aria-hidden="true"></span>
+<span class="fr-icon-school-line" aria-hidden="true"></span>
+
+<span class="fr-icon-tent-fill" aria-hidden="true"></span>
+<span class="fr-icon-tent-line" aria-hidden="true"></span>
 ```
 
 :::
@@ -435,6 +439,92 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-slideshow-line" aria-hidden="true"></span>
   <span class="fr-icon-window-fill" aria-hidden="true"></span>
   <span class="fr-icon-window-line" aria-hidden="true"></span>
+  <span class="fr-icon-archive-drawer-fill" aria-hidden="true"></span>
+  <span class="fr-icon-archive-drawer-line" aria-hidden="true"></span>
+  <span class="fr-icon-at-fill" aria-hidden="true"></span>
+  <span class="fr-icon-at-line" aria-hidden="true"></span>
+  <span class="fr-icon-bar-chart-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-bar-chart-2-line" aria-hidden="true"></span>
+  <span class="fr-icon-bar-chart-fill" aria-hidden="true"></span>
+  <span class="fr-icon-bar-chart-horizontal-fill" aria-hidden="true"></span>
+  <span class="fr-icon-bar-chart-horizontal-line" aria-hidden="true"></span>
+  <span class="fr-icon-bar-chart-line" aria-hidden="true"></span>
+  <span class="fr-icon-bubble-chart-fill" aria-hidden="true"></span>
+  <span class="fr-icon-bubble-chart-line" aria-hidden="true"></span>
+  <span class="fr-icon-calculator-fill" aria-hidden="true"></span>
+  <span class="fr-icon-calculator-line" aria-hidden="true"></span>
+  <span class="fr-icon-calendar-check-fill" aria-hidden="true"></span>
+  <span class="fr-icon-calendar-check-line" aria-hidden="true"></span>
+  <span class="fr-icon-calendar-close-fill" aria-hidden="true"></span>
+  <span class="fr-icon-calendar-close-line" aria-hidden="true"></span>
+  <span class="fr-icon-calendar-todo-fill" aria-hidden="true"></span>
+  <span class="fr-icon-calendar-todo-line" aria-hidden="true"></span>
+  <span class="fr-icon-cloud-off-fill" aria-hidden="true"></span>
+  <span class="fr-icon-cloud-off-line" aria-hidden="true"></span>
+  <span class="fr-icon-donut-chart-fill" aria-hidden="true"></span>
+  <span class="fr-icon-donut-chart-line" aria-hidden="true"></span>
+  <span class="fr-icon-honour-fill" aria-hidden="true"></span>
+  <span class="fr-icon-honour-line" aria-hidden="true"></span>
+  <span class="fr-icon-inbox-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-inbox-2-line" aria-hidden="true"></span>
+  <span class="fr-icon-inbox-archive-fill" aria-hidden="true"></span>
+  <span class="fr-icon-inbox-archive-line" aria-hidden="true"></span>
+  <span class="fr-icon-inbox-fill" aria-hidden="true"></span>
+  <span class="fr-icon-inbox-line" aria-hidden="true"></span>
+  <span class="fr-icon-inbox-unarchive-fill" aria-hidden="true"></span>
+  <span class="fr-icon-inbox-unarchive-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-add-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-add-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-check-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-check-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-close-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-close-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-download-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-download-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-forbid-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-forbid-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-lock-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-lock-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-send-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-send-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-settings-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-settings-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-star-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-star-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-unread-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-unread-line" aria-hidden="true"></span>
+  <span class="fr-icon-mail-volume-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mail-volume-line" aria-hidden="true"></span>
+  <span class="fr-icon-megaphone-fill" aria-hidden="true"></span>
+  <span class="fr-icon-megaphone-line" aria-hidden="true"></span>
+  <span class="fr-icon-pass-expired-fill" aria-hidden="true"></span>
+  <span class="fr-icon-pass-expired-line" aria-hidden="true"></span>
+  <span class="fr-icon-pass-pending-fill" aria-hidden="true"></span>
+  <span class="fr-icon-pass-pending-line" aria-hidden="true"></span>
+  <span class="fr-icon-pass-valid-fill" aria-hidden="true"></span>
+  <span class="fr-icon-pass-valid-line" aria-hidden="true"></span>
+  <span class="fr-icon-pie-chart-fill" aria-hidden="true"></span>
+  <span class="fr-icon-pie-chart-line" aria-hidden="true"></span>
+  <span class="fr-icon-presentation-fill" aria-hidden="true"></span>
+  <span class="fr-icon-presentation-line" aria-hidden="true"></span>
+  <span class="fr-icon-printer-cloud-fill" aria-hidden="true"></span>
+  <span class="fr-icon-printer-cloud-line" aria-hidden="true"></span>
+  <span class="fr-icon-record-mail-fill" aria-hidden="true"></span>
+  <span class="fr-icon-record-mail-line" aria-hidden="true"></span>
+  <span class="fr-icon-reply-all-fill" aria-hidden="true"></span>
+  <span class="fr-icon-reply-all-line" aria-hidden="true"></span>
+  <span class="fr-icon-reply-fill" aria-hidden="true"></span>
+  <span class="fr-icon-reply-line" aria-hidden="true"></span>
+  <span class="fr-icon-seo-fill" aria-hidden="true"></span>
+  <span class="fr-icon-seo-line" aria-hidden="true"></span>
+  <span class="fr-icon-service-fill" aria-hidden="true"></span>
+  <span class="fr-icon-service-line" aria-hidden="true"></span>
+  <span class="fr-icon-shake-hands-fill" aria-hidden="true"></span>
+  <span class="fr-icon-shake-hands-line" aria-hidden="true"></span>
+  <span class="fr-icon-stack-fill" aria-hidden="true"></span>
+  <span class="fr-icon-stack-line" aria-hidden="true"></span>
+  <span class="fr-icon-window-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-window-2-line" aria-hidden="true"></span>
 </div>
 
 :::fr-accordion[### Extrait de code]{id='icons-business-accordion'}
@@ -520,6 +610,135 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 <span class="fr-icon-window-fill" aria-hidden="true"></span>
 <span class="fr-icon-window-line" aria-hidden="true"></span>
+
+<span class="fr-icon-archive-drawer-fill" aria-hidden="true"></span>
+<span class="fr-icon-archive-drawer-line" aria-hidden="true"></span>
+
+<span class="fr-icon-at-fill" aria-hidden="true"></span>
+<span class="fr-icon-at-line" aria-hidden="true"></span>
+
+<span class="fr-icon-bar-chart-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-bar-chart-2-line" aria-hidden="true"></span>
+
+<span class="fr-icon-bar-chart-fill" aria-hidden="true"></span>
+<span class="fr-icon-bar-chart-line" aria-hidden="true"></span>
+
+<span class="fr-icon-bar-chart-horizontal-fill" aria-hidden="true"></span>
+<span class="fr-icon-bar-chart-horizontal-line" aria-hidden="true"></span>
+
+<span class="fr-icon-bubble-chart-fill" aria-hidden="true"></span>
+<span class="fr-icon-bubble-chart-line" aria-hidden="true"></span>
+
+<span class="fr-icon-calculator-fill" aria-hidden="true"></span>
+<span class="fr-icon-calculator-line" aria-hidden="true"></span>
+
+<span class="fr-icon-calendar-check-fill" aria-hidden="true"></span>
+<span class="fr-icon-calendar-check-line" aria-hidden="true"></span>
+
+<span class="fr-icon-calendar-close-fill" aria-hidden="true"></span>
+<span class="fr-icon-calendar-close-line" aria-hidden="true"></span>
+
+<span class="fr-icon-calendar-todo-fill" aria-hidden="true"></span>
+<span class="fr-icon-calendar-todo-line" aria-hidden="true"></span>
+
+<span class="fr-icon-cloud-off-fill" aria-hidden="true"></span>
+<span class="fr-icon-cloud-off-line" aria-hidden="true"></span>
+
+<span class="fr-icon-donut-chart-fill" aria-hidden="true"></span>
+<span class="fr-icon-donut-chart-line" aria-hidden="true"></span>
+
+<span class="fr-icon-honour-fill" aria-hidden="true"></span>
+<span class="fr-icon-honour-line" aria-hidden="true"></span>
+
+<span class="fr-icon-inbox-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-inbox-2-line" aria-hidden="true"></span>
+
+<span class="fr-icon-inbox-archive-fill" aria-hidden="true"></span>
+<span class="fr-icon-inbox-archive-line" aria-hidden="true"></span>
+
+<span class="fr-icon-inbox-fill" aria-hidden="true"></span>
+<span class="fr-icon-inbox-line" aria-hidden="true"></span>
+
+<span class="fr-icon-inbox-unarchive-fill" aria-hidden="true"></span>
+<span class="fr-icon-inbox-unarchive-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-add-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-add-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-check-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-check-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-close-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-close-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-download-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-download-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-forbid-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-forbid-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-lock-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-lock-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-send-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-send-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-settings-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-settings-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-star-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-star-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-unread-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-unread-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mail-volume-fill" aria-hidden="true"></span>
+<span class="fr-icon-mail-volume-line" aria-hidden="true"></span>
+
+<span class="fr-icon-megaphone-fill" aria-hidden="true"></span>
+<span class="fr-icon-megaphone-line" aria-hidden="true"></span>
+
+<span class="fr-icon-pass-expired-fill" aria-hidden="true"></span>
+<span class="fr-icon-pass-expired-line" aria-hidden="true"></span>
+
+<span class="fr-icon-pass-pending-fill" aria-hidden="true"></span>
+<span class="fr-icon-pass-pending-line" aria-hidden="true"></span>
+
+<span class="fr-icon-pass-valid-fill" aria-hidden="true"></span>
+<span class="fr-icon-pass-valid-line" aria-hidden="true"></span>
+
+<span class="fr-icon-pie-chart-fill" aria-hidden="true"></span>
+<span class="fr-icon-pie-chart-line" aria-hidden="true"></span>
+
+<span class="fr-icon-presentation-fill" aria-hidden="true"></span>
+<span class="fr-icon-presentation-line" aria-hidden="true"></span>
+
+<span class="fr-icon-printer-cloud-fill" aria-hidden="true"></span>
+<span class="fr-icon-printer-cloud-line" aria-hidden="true"></span>
+
+<span class="fr-icon-record-mail-fill" aria-hidden="true"></span>
+<span class="fr-icon-record-mail-line" aria-hidden="true"></span>
+
+<span class="fr-icon-reply-all-fill" aria-hidden="true"></span>
+<span class="fr-icon-reply-all-line" aria-hidden="true"></span>
+
+<span class="fr-icon-reply-fill" aria-hidden="true"></span>
+<span class="fr-icon-reply-line" aria-hidden="true"></span>
+
+<span class="fr-icon-seo-fill" aria-hidden="true"></span>
+<span class="fr-icon-seo-line" aria-hidden="true"></span>
+
+<span class="fr-icon-service-fill" aria-hidden="true"></span>
+<span class="fr-icon-service-line" aria-hidden="true"></span>
+
+<span class="fr-icon-shake-hands-fill" aria-hidden="true"></span>
+<span class="fr-icon-shake-hands-line" aria-hidden="true"></span>
+
+<span class="fr-icon-stack-fill" aria-hidden="true"></span>
+<span class="fr-icon-stack-line" aria-hidden="true"></span>
+
+<span class="fr-icon-window-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-window-2-line" aria-hidden="true"></span>
 ```
 
 :::
@@ -549,6 +768,34 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-questionnaire-line" aria-hidden="true"></span>
   <span class="fr-icon-video-chat-fill" aria-hidden="true"></span>
   <span class="fr-icon-video-chat-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-download-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-download-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-follow-up-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-follow-up-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-forward-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-forward-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-history-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-history-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-new-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-new-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-off-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-off-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-private-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-private-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-quote-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-quote-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-settings-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-settings-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-upload-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-upload-line" aria-hidden="true"></span>
+  <span class="fr-icon-chat-voice-fill" aria-hidden="true"></span>
+  <span class="fr-icon-chat-voice-line" aria-hidden="true"></span>
+  <span class="fr-icon-emoji-sticker-fill" aria-hidden="true"></span>
+  <span class="fr-icon-emoji-sticker-line" aria-hidden="true"></span>
+  <span class="fr-icon-message-3-fill" aria-hidden="true"></span>
+  <span class="fr-icon-message-3-line" aria-hidden="true"></span>
+  <span class="fr-icon-speak-fill" aria-hidden="true"></span>
+  <span class="fr-icon-speak-line" aria-hidden="true"></span>
 </div>
 
 :::fr-accordion[### Extrait de code]{id='icons-communication-accordion'}
@@ -586,6 +833,48 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 <span class="fr-icon-video-chat-fill" aria-hidden="true"></span>
 <span class="fr-icon-video-chat-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-download-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-download-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-follow-up-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-follow-up-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-forward-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-forward-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-history-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-history-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-new-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-new-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-off-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-off-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-private-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-private-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-quote-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-quote-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-settings-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-settings-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-upload-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-upload-line" aria-hidden="true"></span>
+
+<span class="fr-icon-chat-voice-fill" aria-hidden="true"></span>
+<span class="fr-icon-chat-voice-line" aria-hidden="true"></span>
+
+<span class="fr-icon-emoji-sticker-fill" aria-hidden="true"></span>
+<span class="fr-icon-emoji-sticker-line" aria-hidden="true"></span>
+
+<span class="fr-icon-message-3-fill" aria-hidden="true"></span>
+<span class="fr-icon-message-3-line" aria-hidden="true"></span>
+
+<span class="fr-icon-speak-fill" aria-hidden="true"></span>
+<span class="fr-icon-speak-line" aria-hidden="true"></span>
 ```
 
 :::
@@ -639,6 +928,86 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-table-line" aria-hidden="true"></span>
   <span class="fr-icon-eraser-fill" aria-hidden="true"></span>
   <span class="fr-icon-eraser-line" aria-hidden="true"></span>
+  <span class="fr-icon-anticlockwise-fill" aria-hidden="true"></span>
+  <span class="fr-icon-anticlockwise-line" aria-hidden="true"></span>
+  <span class="fr-icon-artboard-fill" aria-hidden="true"></span>
+  <span class="fr-icon-artboard-line" aria-hidden="true"></span>
+  <span class="fr-icon-blur-off-fill" aria-hidden="true"></span>
+  <span class="fr-icon-blur-off-line" aria-hidden="true"></span>
+  <span class="fr-icon-circle-fill" aria-hidden="true"></span>
+  <span class="fr-icon-circle-line" aria-hidden="true"></span>
+  <span class="fr-icon-clockwise-fill" aria-hidden="true"></span>
+  <span class="fr-icon-clockwise-line" aria-hidden="true"></span>
+  <span class="fr-icon-collage-fill" aria-hidden="true"></span>
+  <span class="fr-icon-collage-line" aria-hidden="true"></span>
+  <span class="fr-icon-compasses-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-compasses-2-line" aria-hidden="true"></span>
+  <span class="fr-icon-contrast-drop-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-contrast-drop-2-line" aria-hidden="true"></span>
+  <span class="fr-icon-crosshair-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-crosshair-2-line" aria-hidden="true"></span>
+  <span class="fr-icon-drag-drop-fill" aria-hidden="true"></span>
+  <span class="fr-icon-drag-drop-line" aria-hidden="true"></span>
+  <span class="fr-icon-edit-circle-fill" aria-hidden="true"></span>
+  <span class="fr-icon-edit-circle-line" aria-hidden="true"></span>
+  <span class="fr-icon-eraser-fill-1" aria-hidden="true"></span>
+  <span class="fr-icon-eraser-line-1" aria-hidden="true"></span>
+  <span class="fr-icon-focus-3-fill" aria-hidden="true"></span>
+  <span class="fr-icon-focus-3-line" aria-hidden="true"></span>
+  <span class="fr-icon-grid-fill" aria-hidden="true"></span>
+  <span class="fr-icon-grid-line" aria-hidden="true"></span>
+  <span class="fr-icon-hammer-fill" aria-hidden="true"></span>
+  <span class="fr-icon-hammer-line" aria-hidden="true"></span>
+  <span class="fr-icon-hexagon-fill" aria-hidden="true"></span>
+  <span class="fr-icon-hexagon-line" aria-hidden="true"></span>
+  <span class="fr-icon-layout-bottom-fill" aria-hidden="true"></span>
+  <span class="fr-icon-layout-bottom-line" aria-hidden="true"></span>
+  <span class="fr-icon-layout-column-fill" aria-hidden="true"></span>
+  <span class="fr-icon-layout-column-line" aria-hidden="true"></span>
+  <span class="fr-icon-layout-fill" aria-hidden="true"></span>
+  <span class="fr-icon-layout-left-fill" aria-hidden="true"></span>
+  <span class="fr-icon-layout-left-line" aria-hidden="true"></span>
+  <span class="fr-icon-layout-line" aria-hidden="true"></span>
+  <span class="fr-icon-layout-masonry-fill" aria-hidden="true"></span>
+  <span class="fr-icon-layout-masonry-line" aria-hidden="true"></span>
+  <span class="fr-icon-layout-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-layout-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-layout-row-fill" aria-hidden="true"></span>
+  <span class="fr-icon-layout-row-line" aria-hidden="true"></span>
+  <span class="fr-icon-layout-top-fill" aria-hidden="true"></span>
+  <span class="fr-icon-layout-top-line" aria-hidden="true"></span>
+  <span class="fr-icon-magic-fill" aria-hidden="true"></span>
+  <span class="fr-icon-magic-line" aria-hidden="true"></span>
+  <span class="fr-icon-markup-fill" aria-hidden="true"></span>
+  <span class="fr-icon-markup-line" aria-hidden="true"></span>
+  <span class="fr-icon-octagon-fill" aria-hidden="true"></span>
+  <span class="fr-icon-octagon-line" aria-hidden="true"></span>
+  <span class="fr-icon-pentagon-fill" aria-hidden="true"></span>
+  <span class="fr-icon-pentagon-line" aria-hidden="true"></span>
+  <span class="fr-icon-quill-pen-fill" aria-hidden="true"></span>
+  <span class="fr-icon-quill-pen-line" aria-hidden="true"></span>
+  <span class="fr-icon-rectangle-fill" aria-hidden="true"></span>
+  <span class="fr-icon-rectangle-line" aria-hidden="true"></span>
+  <span class="fr-icon-ruler-fill" aria-hidden="true"></span>
+  <span class="fr-icon-ruler-line" aria-hidden="true"></span>
+  <span class="fr-icon-scissors-cut-fill" aria-hidden="true"></span>
+  <span class="fr-icon-scissors-cut-line" aria-hidden="true"></span>
+  <span class="fr-icon-scissors-fill" aria-hidden="true"></span>
+  <span class="fr-icon-scissors-line" aria-hidden="true"></span>
+  <span class="fr-icon-screenshot-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-screenshot-2-line" aria-hidden="true"></span>
+  <span class="fr-icon-shape-fill" aria-hidden="true"></span>
+  <span class="fr-icon-shape-line" aria-hidden="true"></span>
+  <span class="fr-icon-slice-fill" aria-hidden="true"></span>
+  <span class="fr-icon-slice-line" aria-hidden="true"></span>
+  <span class="fr-icon-square-fill" aria-hidden="true"></span>
+  <span class="fr-icon-square-line" aria-hidden="true"></span>
+  <span class="fr-icon-table-alt-fill" aria-hidden="true"></span>
+  <span class="fr-icon-table-alt-line" aria-hidden="true"></span>
+  <span class="fr-icon-tools-fill" aria-hidden="true"></span>
+  <span class="fr-icon-tools-line" aria-hidden="true"></span>
+  <span class="fr-icon-triangle-fill" aria-hidden="true"></span>
+  <span class="fr-icon-triangle-line" aria-hidden="true"></span>
   </div>
 
 :::fr-accordion[### Extrait de code]{id='icons-design-accordion'}
@@ -712,6 +1081,126 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 <span class="fr-icon-eraser-fill" aria-hidden="true"></span>
 <span class="fr-icon-eraser-line" aria-hidden="true"></span>
+
+<span class="fr-icon-anticlockwise-fill" aria-hidden="true"></span>
+<span class="fr-icon-anticlockwise-line" aria-hidden="true"></span>
+
+<span class="fr-icon-artboard-fill" aria-hidden="true"></span>
+<span class="fr-icon-artboard-line" aria-hidden="true"></span>
+
+<span class="fr-icon-blur-off-fill" aria-hidden="true"></span>
+<span class="fr-icon-blur-off-line" aria-hidden="true"></span>
+
+<span class="fr-icon-circle-fill" aria-hidden="true"></span>
+<span class="fr-icon-circle-line" aria-hidden="true"></span>
+
+<span class="fr-icon-clockwise-fill" aria-hidden="true"></span>
+<span class="fr-icon-clockwise-line" aria-hidden="true"></span>
+
+<span class="fr-icon-collage-fill" aria-hidden="true"></span>
+<span class="fr-icon-collage-line" aria-hidden="true"></span>
+
+<span class="fr-icon-compasses-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-compasses-2-line" aria-hidden="true"></span>
+
+<span class="fr-icon-contrast-drop-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-contrast-drop-2-line" aria-hidden="true"></span>
+
+<span class="fr-icon-crosshair-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-crosshair-2-line" aria-hidden="true"></span>
+
+<span class="fr-icon-drag-drop-fill" aria-hidden="true"></span>
+<span class="fr-icon-drag-drop-line" aria-hidden="true"></span>
+
+<span class="fr-icon-edit-circle-fill" aria-hidden="true"></span>
+<span class="fr-icon-edit-circle-line" aria-hidden="true"></span>
+
+<span class="fr-icon-eraser-fill-1" aria-hidden="true"></span>
+<span class="fr-icon-eraser-line-1" aria-hidden="true"></span>
+
+<span class="fr-icon-focus-3-fill" aria-hidden="true"></span>
+<span class="fr-icon-focus-3-line" aria-hidden="true"></span>
+
+<span class="fr-icon-grid-fill" aria-hidden="true"></span>
+<span class="fr-icon-grid-line" aria-hidden="true"></span>
+
+<span class="fr-icon-hammer-fill" aria-hidden="true"></span>
+<span class="fr-icon-hammer-line" aria-hidden="true"></span>
+
+<span class="fr-icon-hexagon-fill" aria-hidden="true"></span>
+<span class="fr-icon-hexagon-line" aria-hidden="true"></span>
+
+<span class="fr-icon-layout-bottom-fill" aria-hidden="true"></span>
+<span class="fr-icon-layout-bottom-line" aria-hidden="true"></span>
+
+<span class="fr-icon-layout-column-fill" aria-hidden="true"></span>
+<span class="fr-icon-layout-column-line" aria-hidden="true"></span>
+
+<span class="fr-icon-layout-fill" aria-hidden="true"></span>
+<span class="fr-icon-layout-line" aria-hidden="true"></span>
+
+<span class="fr-icon-layout-left-fill" aria-hidden="true"></span>
+<span class="fr-icon-layout-left-line" aria-hidden="true"></span>
+
+<span class="fr-icon-layout-masonry-fill" aria-hidden="true"></span>
+<span class="fr-icon-layout-masonry-line" aria-hidden="true"></span>
+
+<span class="fr-icon-layout-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-layout-right-line" aria-hidden="true"></span>
+
+<span class="fr-icon-layout-row-fill" aria-hidden="true"></span>
+<span class="fr-icon-layout-row-line" aria-hidden="true"></span>
+
+<span class="fr-icon-layout-top-fill" aria-hidden="true"></span>
+<span class="fr-icon-layout-top-line" aria-hidden="true"></span>
+
+<span class="fr-icon-magic-fill" aria-hidden="true"></span>
+<span class="fr-icon-magic-line" aria-hidden="true"></span>
+
+<span class="fr-icon-markup-fill" aria-hidden="true"></span>
+<span class="fr-icon-markup-line" aria-hidden="true"></span>
+
+<span class="fr-icon-octagon-fill" aria-hidden="true"></span>
+<span class="fr-icon-octagon-line" aria-hidden="true"></span>
+
+<span class="fr-icon-pentagon-fill" aria-hidden="true"></span>
+<span class="fr-icon-pentagon-line" aria-hidden="true"></span>
+
+<span class="fr-icon-quill-pen-fill" aria-hidden="true"></span>
+<span class="fr-icon-quill-pen-line" aria-hidden="true"></span>
+
+<span class="fr-icon-rectangle-fill" aria-hidden="true"></span>
+<span class="fr-icon-rectangle-line" aria-hidden="true"></span>
+
+<span class="fr-icon-ruler-fill" aria-hidden="true"></span>
+<span class="fr-icon-ruler-line" aria-hidden="true"></span>
+
+<span class="fr-icon-scissors-cut-fill" aria-hidden="true"></span>
+<span class="fr-icon-scissors-cut-line" aria-hidden="true"></span>
+
+<span class="fr-icon-scissors-fill" aria-hidden="true"></span>
+<span class="fr-icon-scissors-line" aria-hidden="true"></span>
+
+<span class="fr-icon-screenshot-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-screenshot-2-line" aria-hidden="true"></span>
+
+<span class="fr-icon-shape-fill" aria-hidden="true"></span>
+<span class="fr-icon-shape-line" aria-hidden="true"></span>
+
+<span class="fr-icon-slice-fill" aria-hidden="true"></span>
+<span class="fr-icon-slice-line" aria-hidden="true"></span>
+
+<span class="fr-icon-square-fill" aria-hidden="true"></span>
+<span class="fr-icon-square-line" aria-hidden="true"></span>
+
+<span class="fr-icon-table-alt-fill" aria-hidden="true"></span>
+<span class="fr-icon-table-alt-line" aria-hidden="true"></span>
+
+<span class="fr-icon-tools-fill" aria-hidden="true"></span>
+<span class="fr-icon-tools-line" aria-hidden="true"></span>
+
+<span class="fr-icon-triangle-fill" aria-hidden="true"></span>
+<span class="fr-icon-triangle-line" aria-hidden="true"></span>
 ```
 
 :::
@@ -745,6 +1234,26 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-terminal-line" aria-hidden="true"></span>
   <span class="fr-icon-terminal-window-fill" aria-hidden="true"></span>
   <span class="fr-icon-terminal-window-line" aria-hidden="true"></span>
+  <span class="fr-icon-braces-fill" aria-hidden="true"></span>
+  <span class="fr-icon-braces-line" aria-hidden="true"></span>
+  <span class="fr-icon-brackets-fill" aria-hidden="true"></span>
+  <span class="fr-icon-brackets-line" aria-hidden="true"></span>
+  <span class="fr-icon-code-fill" aria-hidden="true"></span>
+  <span class="fr-icon-code-line" aria-hidden="true"></span>
+  <span class="fr-icon-code-s-slash-fill" aria-hidden="true"></span>
+  <span class="fr-icon-command-fill" aria-hidden="true"></span>
+  <span class="fr-icon-command-line" aria-hidden="true"></span>
+  <span class="fr-icon-css3-fill" aria-hidden="true"></span>
+  <span class="fr-icon-css3-line" aria-hidden="true"></span>
+  <span class="fr-icon-git-close-pull-request-fill" aria-hidden="true"></span>
+  <span class="fr-icon-git-close-pull-request-line" aria-hidden="true"></span>
+  <span class="fr-icon-html5-fill" aria-hidden="true"></span>
+  <span class="fr-icon-html5-line" aria-hidden="true"></span>
+  <span class="fr-icon-javascript-fill" aria-hidden="true"></span>
+  <span class="fr-icon-javascript-line" aria-hidden="true"></span>
+  <span class="fr-icon-parentheses-fill" aria-hidden="true"></span>
+  <span class="fr-icon-parentheses-line" aria-hidden="true"></span>
+  <span class="fr-icon-terminal-fill" aria-hidden="true"></span>
 </div>
 
 :::fr-accordion[### Extrait de code]{id='icons-development-accordion'}
@@ -788,6 +1297,37 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 <span class="fr-icon-terminal-window-fill" aria-hidden="true"></span>
 <span class="fr-icon-terminal-window-line" aria-hidden="true"></span>
+
+<span class="fr-icon-braces-fill" aria-hidden="true"></span>
+<span class="fr-icon-braces-line" aria-hidden="true"></span>
+
+<span class="fr-icon-brackets-fill" aria-hidden="true"></span>
+<span class="fr-icon-brackets-line" aria-hidden="true"></span>
+
+<span class="fr-icon-code-fill" aria-hidden="true"></span>
+<span class="fr-icon-code-line" aria-hidden="true"></span>
+
+<span class="fr-icon-code-s-slash-fill" aria-hidden="true"></span>
+
+<span class="fr-icon-command-fill" aria-hidden="true"></span>
+<span class="fr-icon-command-line" aria-hidden="true"></span>
+
+<span class="fr-icon-css3-fill" aria-hidden="true"></span>
+<span class="fr-icon-css3-line" aria-hidden="true"></span>
+
+<span class="fr-icon-git-close-pull-request-fill" aria-hidden="true"></span>
+<span class="fr-icon-git-close-pull-request-line" aria-hidden="true"></span>
+
+<span class="fr-icon-html5-fill" aria-hidden="true"></span>
+<span class="fr-icon-html5-line" aria-hidden="true"></span>
+
+<span class="fr-icon-javascript-fill" aria-hidden="true"></span>
+<span class="fr-icon-javascript-line" aria-hidden="true"></span>
+
+<span class="fr-icon-parentheses-fill" aria-hidden="true"></span>
+<span class="fr-icon-parentheses-line" aria-hidden="true"></span>
+
+<span class="fr-icon-terminal-fill" aria-hidden="true"></span>
 ```
 
 :::
@@ -829,6 +1369,98 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-tv-line" aria-hidden="true"></span>
   <span class="fr-icon-wifi-fill" aria-hidden="true"></span>
   <span class="fr-icon-wifi-line" aria-hidden="true"></span>
+  <span class="fr-icon-airplay-fill" aria-hidden="true"></span>
+  <span class="fr-icon-airplay-line" aria-hidden="true"></span>
+  <span class="fr-icon-barcode-box-fill" aria-hidden="true"></span>
+  <span class="fr-icon-barcode-box-line" aria-hidden="true"></span>
+  <span class="fr-icon-barcode-fill" aria-hidden="true"></span>
+  <span class="fr-icon-barcode-line" aria-hidden="true"></span>
+  <span class="fr-icon-base-station-fill" aria-hidden="true"></span>
+  <span class="fr-icon-base-station-line" aria-hidden="true"></span>
+  <span class="fr-icon-battery-charge-fill" aria-hidden="true"></span>
+  <span class="fr-icon-battery-charge-line" aria-hidden="true"></span>
+  <span class="fr-icon-battery-fill" aria-hidden="true"></span>
+  <span class="fr-icon-battery-line" aria-hidden="true"></span>
+  <span class="fr-icon-battery-low-fill" aria-hidden="true"></span>
+  <span class="fr-icon-battery-low-line" aria-hidden="true"></span>
+  <span class="fr-icon-bluetooth-connect-fill" aria-hidden="true"></span>
+  <span class="fr-icon-bluetooth-connect-line" aria-hidden="true"></span>
+  <span class="fr-icon-cast-fill" aria-hidden="true"></span>
+  <span class="fr-icon-cast-line" aria-hidden="true"></span>
+  <span class="fr-icon-cellphone-fill" aria-hidden="true"></span>
+  <span class="fr-icon-cellphone-line" aria-hidden="true"></span>
+  <span class="fr-icon-cpu-fill" aria-hidden="true"></span>
+  <span class="fr-icon-cpu-line" aria-hidden="true"></span>
+  <span class="fr-icon-device-recover-fill" aria-hidden="true"></span>
+  <span class="fr-icon-device-recover-line" aria-hidden="true"></span>
+  <span class="fr-icon-fingerprint-fill" aria-hidden="true"></span>
+  <span class="fr-icon-fingerprint-line" aria-hidden="true"></span>
+  <span class="fr-icon-gamepad-fill" aria-hidden="true"></span>
+  <span class="fr-icon-gamepad-line" aria-hidden="true"></span>
+  <span class="fr-icon-gps-fill" aria-hidden="true"></span>
+  <span class="fr-icon-gps-line" aria-hidden="true"></span>
+  <span class="fr-icon-gradienter-fill" aria-hidden="true"></span>
+  <span class="fr-icon-gradienter-line" aria-hidden="true"></span>
+  <span class="fr-icon-hotspot-fill" aria-hidden="true"></span>
+  <span class="fr-icon-hotspot-line" aria-hidden="true"></span>
+  <span class="fr-icon-install-fill" aria-hidden="true"></span>
+  <span class="fr-icon-install-line" aria-hidden="true"></span>
+  <span class="fr-icon-instance-fill" aria-hidden="true"></span>
+  <span class="fr-icon-instance-line" aria-hidden="true"></span>
+  <span class="fr-icon-keyboard-fill" aria-hidden="true"></span>
+  <span class="fr-icon-keyboard-line" aria-hidden="true"></span>
+  <span class="fr-icon-macbook-fill" aria-hidden="true"></span>
+  <span class="fr-icon-macbook-line" aria-hidden="true"></span>
+  <span class="fr-icon-mouse-fill" aria-hidden="true"></span>
+  <span class="fr-icon-mouse-line" aria-hidden="true"></span>
+  <span class="fr-icon-phone-find-fill" aria-hidden="true"></span>
+  <span class="fr-icon-phone-find-line" aria-hidden="true"></span>
+  <span class="fr-icon-phone-lock-fill" aria-hidden="true"></span>
+  <span class="fr-icon-phone-lock-line" aria-hidden="true"></span>
+  <span class="fr-icon-qr-scan-fill" aria-hidden="true"></span>
+  <span class="fr-icon-qr-scan-line" aria-hidden="true"></span>
+  <span class="fr-icon-radar-fill" aria-hidden="true"></span>
+  <span class="fr-icon-radar-line" aria-hidden="true"></span>
+  <span class="fr-icon-remote-control-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-remote-control-2-line" aria-hidden="true"></span>
+  <span class="fr-icon-remote-control-fill" aria-hidden="true"></span>
+  <span class="fr-icon-remote-control-line" aria-hidden="true"></span>
+  <span class="fr-icon-restart-fill" aria-hidden="true"></span>
+  <span class="fr-icon-restart-line" aria-hidden="true"></span>
+  <span class="fr-icon-rfid-fill" aria-hidden="true"></span>
+  <span class="fr-icon-rfid-line" aria-hidden="true"></span>
+  <span class="fr-icon-rotate-lock-fill" aria-hidden="true"></span>
+  <span class="fr-icon-rotate-lock-line" aria-hidden="true"></span>
+  <span class="fr-icon-router-fill" aria-hidden="true"></span>
+  <span class="fr-icon-router-line" aria-hidden="true"></span>
+  <span class="fr-icon-scan-fill" aria-hidden="true"></span>
+  <span class="fr-icon-scan-line" aria-hidden="true"></span>
+  <span class="fr-icon-sd-card-fill" aria-hidden="true"></span>
+  <span class="fr-icon-sd-card-line" aria-hidden="true"></span>
+  <span class="fr-icon-sd-card-mini-fill" aria-hidden="true"></span>
+  <span class="fr-icon-sd-card-mini-line" aria-hidden="true"></span>
+  <span class="fr-icon-sensor-fill" aria-hidden="true"></span>
+  <span class="fr-icon-sensor-line" aria-hidden="true"></span>
+  <span class="fr-icon-shut-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-shut-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-signal-wifi-error-fill" aria-hidden="true"></span>
+  <span class="fr-icon-signal-wifi-error-line" aria-hidden="true"></span>
+  <span class="fr-icon-signal-wifi-fill" aria-hidden="true"></span>
+  <span class="fr-icon-signal-wifi-line" aria-hidden="true"></span>
+  <span class="fr-icon-signal-wifi-off-fill" aria-hidden="true"></span>
+  <span class="fr-icon-signal-wifi-off-line" aria-hidden="true"></span>
+  <span class="fr-icon-sim-card-2-fill" aria-hidden="true"></span>
+  <span class="fr-icon-sim-card-2-line" aria-hidden="true"></span>
+  <span class="fr-icon-u-disk-fill" aria-hidden="true"></span>
+  <span class="fr-icon-u-disk-line" aria-hidden="true"></span>
+  <span class="fr-icon-uninstall-fill" aria-hidden="true"></span>
+  <span class="fr-icon-uninstall-line" aria-hidden="true"></span>
+  <span class="fr-icon-usb-fill" aria-hidden="true"></span>
+  <span class="fr-icon-usb-line" aria-hidden="true"></span>
+  <span class="fr-icon-wifi-off-fill" aria-hidden="true"></span>
+  <span class="fr-icon-wifi-off-line" aria-hidden="true"></span>
+  <span class="fr-icon-wireless-charging-fill" aria-hidden="true"></span>
+  <span class="fr-icon-wireless-charging-line" aria-hidden="true"></span>
 </div>
 
  :::fr-accordion[### Extrait de code]{id='icons-device-accordion'}
@@ -884,6 +1516,144 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 <span class="fr-icon-wifi-fill" aria-hidden="true"></span>
 <span class="fr-icon-wifi-line" aria-hidden="true"></span>
+
+<span class="fr-icon-airplay-fill" aria-hidden="true"></span>
+<span class="fr-icon-airplay-line" aria-hidden="true"></span>
+
+<span class="fr-icon-barcode-box-fill" aria-hidden="true"></span>
+<span class="fr-icon-barcode-box-line" aria-hidden="true"></span>
+
+<span class="fr-icon-barcode-fill" aria-hidden="true"></span>
+<span class="fr-icon-barcode-line" aria-hidden="true"></span>
+
+<span class="fr-icon-base-station-fill" aria-hidden="true"></span>
+<span class="fr-icon-base-station-line" aria-hidden="true"></span>
+
+<span class="fr-icon-battery-charge-fill" aria-hidden="true"></span>
+<span class="fr-icon-battery-charge-line" aria-hidden="true"></span>
+
+<span class="fr-icon-battery-fill" aria-hidden="true"></span>
+<span class="fr-icon-battery-line" aria-hidden="true"></span>
+
+<span class="fr-icon-battery-low-fill" aria-hidden="true"></span>
+<span class="fr-icon-battery-low-line" aria-hidden="true"></span>
+
+<span class="fr-icon-bluetooth-connect-fill" aria-hidden="true"></span>
+<span class="fr-icon-bluetooth-connect-line" aria-hidden="true"></span>
+
+<span class="fr-icon-cast-fill" aria-hidden="true"></span>
+<span class="fr-icon-cast-line" aria-hidden="true"></span>
+
+<span class="fr-icon-cellphone-fill" aria-hidden="true"></span>
+<span class="fr-icon-cellphone-line" aria-hidden="true"></span>
+
+<span class="fr-icon-cpu-fill" aria-hidden="true"></span>
+<span class="fr-icon-cpu-line" aria-hidden="true"></span>
+
+<span class="fr-icon-device-recover-fill" aria-hidden="true"></span>
+<span class="fr-icon-device-recover-line" aria-hidden="true"></span>
+
+<span class="fr-icon-fingerprint-fill" aria-hidden="true"></span>
+<span class="fr-icon-fingerprint-line" aria-hidden="true"></span>
+
+<span class="fr-icon-gamepad-fill" aria-hidden="true"></span>
+<span class="fr-icon-gamepad-line" aria-hidden="true"></span>
+
+<span class="fr-icon-gps-fill" aria-hidden="true"></span>
+<span class="fr-icon-gps-line" aria-hidden="true"></span>
+
+<span class="fr-icon-gradienter-fill" aria-hidden="true"></span>
+<span class="fr-icon-gradienter-line" aria-hidden="true"></span>
+
+<span class="fr-icon-hotspot-fill" aria-hidden="true"></span>
+<span class="fr-icon-hotspot-line" aria-hidden="true"></span>
+
+<span class="fr-icon-install-fill" aria-hidden="true"></span>
+<span class="fr-icon-install-line" aria-hidden="true"></span>
+
+<span class="fr-icon-instance-fill" aria-hidden="true"></span>
+<span class="fr-icon-instance-line" aria-hidden="true"></span>
+
+<span class="fr-icon-keyboard-fill" aria-hidden="true"></span>
+<span class="fr-icon-keyboard-line" aria-hidden="true"></span>
+
+<span class="fr-icon-macbook-fill" aria-hidden="true"></span>
+<span class="fr-icon-macbook-line" aria-hidden="true"></span>
+
+<span class="fr-icon-mouse-fill" aria-hidden="true"></span>
+<span class="fr-icon-mouse-line" aria-hidden="true"></span>
+
+<span class="fr-icon-phone-find-fill" aria-hidden="true"></span>
+<span class="fr-icon-phone-find-line" aria-hidden="true"></span>
+
+<span class="fr-icon-phone-lock-fill" aria-hidden="true"></span>
+<span class="fr-icon-phone-lock-line" aria-hidden="true"></span>
+
+<span class="fr-icon-qr-scan-fill" aria-hidden="true"></span>
+<span class="fr-icon-qr-scan-line" aria-hidden="true"></span>
+
+<span class="fr-icon-radar-fill" aria-hidden="true"></span>
+<span class="fr-icon-radar-line" aria-hidden="true"></span>
+
+<span class="fr-icon-remote-control-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-remote-control-2-line" aria-hidden="true"></span>
+
+<span class="fr-icon-remote-control-fill" aria-hidden="true"></span>
+<span class="fr-icon-remote-control-line" aria-hidden="true"></span>
+
+<span class="fr-icon-restart-fill" aria-hidden="true"></span>
+<span class="fr-icon-restart-line" aria-hidden="true"></span>
+
+<span class="fr-icon-rfid-fill" aria-hidden="true"></span>
+<span class="fr-icon-rfid-line" aria-hidden="true"></span>
+
+<span class="fr-icon-rotate-lock-fill" aria-hidden="true"></span>
+<span class="fr-icon-rotate-lock-line" aria-hidden="true"></span>
+
+<span class="fr-icon-router-fill" aria-hidden="true"></span>
+<span class="fr-icon-router-line" aria-hidden="true"></span>
+
+<span class="fr-icon-scan-fill" aria-hidden="true"></span>
+<span class="fr-icon-scan-line" aria-hidden="true"></span>
+
+<span class="fr-icon-sd-card-fill" aria-hidden="true"></span>
+<span class="fr-icon-sd-card-line" aria-hidden="true"></span>
+
+<span class="fr-icon-sd-card-mini-fill" aria-hidden="true"></span>
+<span class="fr-icon-sd-card-mini-line" aria-hidden="true"></span>
+
+<span class="fr-icon-sensor-fill" aria-hidden="true"></span>
+<span class="fr-icon-sensor-line" aria-hidden="true"></span>
+
+<span class="fr-icon-shut-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-shut-down-line" aria-hidden="true"></span>
+
+<span class="fr-icon-signal-wifi-error-fill" aria-hidden="true"></span>
+<span class="fr-icon-signal-wifi-error-line" aria-hidden="true"></span>
+
+<span class="fr-icon-signal-wifi-fill" aria-hidden="true"></span>
+<span class="fr-icon-signal-wifi-line" aria-hidden="true"></span>
+
+<span class="fr-icon-signal-wifi-off-fill" aria-hidden="true"></span>
+<span class="fr-icon-signal-wifi-off-line" aria-hidden="true"></span>
+
+<span class="fr-icon-sim-card-2-fill" aria-hidden="true"></span>
+<span class="fr-icon-sim-card-2-line" aria-hidden="true"></span>
+
+<span class="fr-icon-u-disk-fill" aria-hidden="true"></span>
+<span class="fr-icon-u-disk-line" aria-hidden="true"></span>
+
+<span class="fr-icon-uninstall-fill" aria-hidden="true"></span>
+<span class="fr-icon-uninstall-line" aria-hidden="true"></span>
+
+<span class="fr-icon-usb-fill" aria-hidden="true"></span>
+<span class="fr-icon-usb-line" aria-hidden="true"></span>
+
+<span class="fr-icon-wifi-off-fill" aria-hidden="true"></span>
+<span class="fr-icon-wifi-off-line" aria-hidden="true"></span>
+
+<span class="fr-icon-wireless-charging-fill" aria-hidden="true"></span>
+<span class="fr-icon-wireless-charging-line" aria-hidden="true"></span>
 ```
 
 :::
@@ -1030,6 +1800,8 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-indent-increase" aria-hidden="true"></span>
   <span class="fr-icon-text-direction-r" aria-hidden="true"></span>
   <span class="fr-icon-underline" aria-hidden="true"></span>
+  <span class="fr-icon-sort-asc" aria-hidden="true"></span>
+  <span class="fr-icon-sort-desc" aria-hidden="true"></span>
 </div>
 
 :::fr-accordion[### Extrait de code]{id='icons-remixicon-accordion'}
@@ -1100,6 +1872,10 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 <span class="fr-icon-text-direction-r" aria-hidden="true"></span>
 
 <span class="fr-icon-underline" aria-hidden="true"></span>
+
+<span class="fr-icon-sort-asc" aria-hidden="true"></span>
+
+<span class="fr-icon-sort-desc" aria-hidden="true"></span>
 ```
 
 :::
@@ -1157,7 +1933,6 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 ```
 
 :::
-
 
 ### Health
 
@@ -1427,7 +2202,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::
 
-#### Map
+### Map
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-anchor-fill" aria-hidden="true"></span>
@@ -1479,7 +2254,6 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-train-fill" aria-hidden="true"></span>
   <span class="fr-icon-train-line" aria-hidden="true"></span>
 </div>
-
 
 :::fr-accordion[### Extrait de code]{id='icons-map-accordion'}
 
@@ -1559,7 +2333,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::
 
-#### Media
+### Media
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-camera-fill" aria-hidden="true"></span>
@@ -1665,7 +2439,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::
 
-#### Other
+### Other
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-leaf-fill" aria-hidden="true"></span>
@@ -1736,16 +2510,11 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::
 
+### System
 
-#### System
-
-##### Icônes créées par l'équipe DSFR
+#### Icônes créées par l'équipe DSFR
 
 <div class="dsfr-doc-preview">
-  <span class="fr-icon-arrow-left-s-fill" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-left-s-line" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-right-s-fill" aria-hidden="true"></span>
-  <span class="fr-icon-arrow-right-s-line" aria-hidden="true"></span>
   <span class="fr-icon-error-fill" aria-hidden="true"></span>
   <span class="fr-icon-error-line" aria-hidden="true"></span>
   <span class="fr-icon-info-fill" aria-hidden="true"></span>
@@ -1760,12 +2529,6 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 :::fr-accordion[### Extrait de code]{id='icons-system-dsfr-accordion'}
 
 ```HTML
-<span class="fr-icon-arrow-left-s-fill" aria-hidden="true"></span>
-<span class="fr-icon-arrow-left-s-line" aria-hidden="true"></span>
-
-<span class="fr-icon-arrow-right-s-fill" aria-hidden="true"></span>
-<span class="fr-icon-arrow-right-s-line" aria-hidden="true"></span>
-
 <span class="fr-icon-error-fill" aria-hidden="true"></span>
 <span class="fr-icon-error-line" aria-hidden="true"></span>
 
@@ -1783,8 +2546,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::
 
-
-##### Icônes proposées par RemixIcon
+#### Icônes proposées par RemixIcon
 
 <div class="dsfr-doc-preview">
   <span aria-hidden="true" class="fr-icon-add-line"></span>
@@ -1993,7 +2755,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::
 
-#### User
+### User
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-account-circle-fill" aria-hidden="true"></span>
@@ -2069,7 +2831,7 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 :::
 
-#### Weather
+### Weather
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-cloudy-2-fill" aria-hidden="true"></span>
@@ -2083,7 +2845,9 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-flood-line" aria-hidden="true"></span>
   <span class="fr-icon-flood-fill" aria-hidden="true"></span>
   <span class="fr-icon-avalanches-fill" aria-hidden="true"></span>
+  <span class="fr-icon-avalanches-line" aria-hidden="true"></span>
   <span class="fr-icon-submersion-fill" aria-hidden="true"></span>
+  <span class="fr-icon-submersion-line" aria-hidden="true"></span>
   <span class="fr-icon-heavy-showers-fill" aria-hidden="true"></span>
   <span class="fr-icon-heavy-showers-line" aria-hidden="true"></span>
   <span class="fr-icon-snowy-fill" aria-hidden="true"></span>
@@ -2099,7 +2863,6 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span class="fr-icon-windy-fill" aria-hidden="true"></span>
   <span class="fr-icon-windy-line" aria-hidden="true"></span>
 </div>
-
 
 :::fr-accordion[### Extrait de code]{id='icons-weather-accordion'}
 
@@ -2120,8 +2883,10 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 <span class="fr-icon-flood-fill" aria-hidden="true"></span>
 
 <span class="fr-icon-avalanches-fill" aria-hidden="true"></span>
+<span class="fr-icon-avalanches-line" aria-hidden="true"></span>
 
 <span class="fr-icon-submersion-fill" aria-hidden="true"></span>
+<span class="fr-icon-submersion-line" aria-hidden="true"></span>
 
 <span class="fr-icon-heavy-showers-fill" aria-hidden="true"></span>
 <span class="fr-icon-heavy-showers-line" aria-hidden="true"></span>
@@ -2152,28 +2917,30 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 Les icônes sont disponibles en quatre tailles. Il est possible de modifier la taille des icônes à l'aide de modifiers spécifiques
 
 :::fr-table[Tailles]{valign=top scroll=false}
+
 | **Taille** | **Token** | **Classe** | **Dimension** | **Contexte d’utilisation** |
 | --- | --- | --- | --- | --- |
 | XS | `$xs` | `.fr-icon--sm` | 16x16px - 1rem | À utiliser avec la typographie Extra Small (XS), et Small (SM) |
-| MD | `$md `| `.fr-icon` | 24x24px - 1.5rem | À utiliser avec la typographie Medium (MD)Taille par défaut, aucun modifiers |
+| MD | `$md`| `.fr-icon` | 24x24px - 1.5rem | À utiliser avec la typographie Medium (MD)Taille par défaut, aucun modifiers |
 | LG | `$lg` | `.fr-icon--lg` | 32x32px - 2rem | À utiliser avec la typographie Large (LG) |
+
 :::
 
 ## Règles d’utilisation
 
 Les icônes fonctionnelles sont des symboles visuels utilisés pour représenter des idées, des objets ou des actions. Ils communiquent un message direct et attirent l'attention sur des informations importantes.
 
-**Couleurs**
+### Couleur
 
 La couleur choisie pour vos icônes doit être issue [des couleurs du DSFR](../color/index.md) . Lorsqu’une icône est rattachée à un label, elle prend automatiquement la couleur de ce label.
 
 ![](../_asset/icon/icon-color-example.png)
 
-**Alignement et marge**
+### Alignement et marge
 
 L’icône doit être alignée en hauteur par rapport au libellé qui l’accompagne. Pour les marges externes, vous pouvez consulter la documentation [espacements](../spacing/index.md).
 
-**Accessibilité**
+### Accessibilité
 
 Il est fortement déconseillé d’utiliser une icône seule mais de systématiquement l’accompagner d’un libellé explicite.
 
