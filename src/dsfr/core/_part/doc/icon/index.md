@@ -58,6 +58,265 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dépréciée mais toujours fonctionnelle.
 
+### Arrows
+
+<div class="dsfr-doc-preview">
+  <span class="fr-icon-arrow-down-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-down-s-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-down-s-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-go-back-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-go-back-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-go-forward-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-go-forward-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-s-first-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-s-line-double" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-s-last-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-s-line-double" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-up-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-down-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-s-fill" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-s-line" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-down-circle-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-down-circle-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-circle-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-circle-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-down-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-down-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-right-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-left-right-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-circle-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-circle-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-down-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-down-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-up-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-right-up-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-turn-back-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-turn-back-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-turn-forward-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-turn-forward-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-circle-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-circle-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-arrow-up-down-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-right-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-right-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-right-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-left-right-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-right-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-right-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-right-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-right-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-up-down-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-up-down-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-up-down-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-contract-up-down-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-down-left-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-down-left-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-down-right-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-down-right-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-left-down-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-left-down-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-left-up-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-left-up-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-right-down-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-right-down-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-right-up-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-right-up-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-left-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-left-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-left-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-left-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-right-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-right-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-right-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-corner-up-right-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-right-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-right-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-right-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-left-right-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-right-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-right-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-right-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-right-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-up-down-fill-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-up-down-line-1.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-up-down-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-expand-up-down-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-skip-down-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-skip-down-line.svg" aria-hidden="true"></span>
+  <span class="fr-icon-skip-up-fill.svg" aria-hidden="true"></span>
+  <span class="fr-icon-skip-up-line.svg" aria-hidden="true"></span>
+</div>
+
+:::fr-accordion[### Extrait de code]{id='icons-building-accordion'}
+
+```HTML
+<span class="fr-icon-arrow-down-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-down-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-down-s-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-down-s-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-go-back-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-go-back-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-go-forward-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-go-forward-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-left-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-left-s-first-line" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-s-line-double" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-right-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-right-s-last-line" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-s-line-double" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-right-up-line" aria-hidden="true"></span>
+<span class="fr-icon-arrow-up-down-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-up-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-up-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-up-s-fill" aria-hidden="true"></span>
+<span class="fr-icon-arrow-up-s-line" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-down-circle-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-down-circle-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-left-circle-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-circle-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-left-down-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-down-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-left-right-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-left-right-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-right-circle-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-circle-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-right-down-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-down-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-right-up-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-right-up-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-turn-back-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-turn-back-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-turn-forward-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-turn-forward-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-up-circle-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-arrow-up-circle-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-arrow-up-down-fill.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-contract-left-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-left-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-contract-left-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-left-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-contract-left-right-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-left-right-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-contract-left-right-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-left-right-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-contract-right-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-right-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-contract-right-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-right-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-contract-up-down-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-up-down-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-contract-up-down-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-contract-up-down-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-down-left-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-down-left-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-down-right-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-down-right-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-left-down-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-left-down-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-left-up-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-left-up-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-right-down-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-right-down-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-right-up-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-right-up-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-up-left-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-up-left-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-up-left-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-up-left-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-up-right-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-up-right-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-corner-up-right-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-corner-up-right-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-expand-left-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-left-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-expand-left-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-left-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-expand-left-right-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-left-right-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-expand-left-right-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-left-right-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-expand-right-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-right-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-expand-right-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-right-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-expand-up-down-fill-1.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-up-down-line-1.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-expand-up-down-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-expand-up-down-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-skip-down-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-skip-down-line.svg" aria-hidden="true"></span>
+
+<span class="fr-icon-skip-up-fill.svg" aria-hidden="true"></span>
+<span class="fr-icon-skip-up-line.svg" aria-hidden="true"></span>
+```
+
+:::
+
 ### Building
 
 <div class="dsfr-doc-preview">
@@ -1535,28 +1794,6 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
   <span aria-hidden="true" class="fr-icon-alarm-warning-line"></span>
   <span aria-hidden="true" class="fr-icon-alert-fill"></span>
   <span aria-hidden="true" class="fr-icon-alert-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-down-fill"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-down-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-down-s-fill"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-down-s-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-go-back-fill"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-go-back-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-go-forward-fill"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-go-forward-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-left-fill"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-left-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-left-s-first-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-left-s-line-double"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-right-fill"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-right-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-right-s-last-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-right-s-line-double"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-right-up-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-up-fill"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-up-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-up-down-line"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-up-s-fill"></span>
-  <span aria-hidden="true" class="fr-icon-arrow-up-s-line"></span>
   <span aria-hidden="true" class="fr-icon-check-line"></span>
   <span aria-hidden="true" class="fr-icon-checkbox-fill"></span>
   <span aria-hidden="true" class="fr-icon-checkbox-line"></span>
@@ -1643,40 +1880,6 @@ L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dép
 
 <span aria-hidden="true" class="fr-icon-alert-fill"></span>
 <span aria-hidden="true" class="fr-icon-alert-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-down-fill"></span>
-<span aria-hidden="true" class="fr-icon-arrow-down-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-down-s-fill"></span>
-<span aria-hidden="true" class="fr-icon-arrow-down-s-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-go-back-fill"></span>
-<span aria-hidden="true" class="fr-icon-arrow-go-back-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-go-forward-fill"></span>
-<span aria-hidden="true" class="fr-icon-arrow-go-forward-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-left-fill"></span>
-<span aria-hidden="true" class="fr-icon-arrow-left-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-left-s-first-line"></span>
-<span aria-hidden="true" class="fr-icon-arrow-left-s-line-double"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-right-fill"></span>
-<span aria-hidden="true" class="fr-icon-arrow-right-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-right-s-last-line"></span>
-<span aria-hidden="true" class="fr-icon-arrow-right-s-line-double"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-right-up-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-up-fill"></span>
-<span aria-hidden="true" class="fr-icon-arrow-up-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-up-down-line"></span>
-
-<span aria-hidden="true" class="fr-icon-arrow-up-s-fill"></span>
-<span aria-hidden="true" class="fr-icon-arrow-up-s-line"></span>
 
 <span aria-hidden="true" class="fr-icon-check-line"></span>
 
