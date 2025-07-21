@@ -1,5 +1,4 @@
 import api from '../../api.js';
-import patch from '../../../patch/script/patch';
 import Collection from './engine/collection';
 import { Init } from './facade/init';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
@@ -25,11 +24,6 @@ class Analytics {
 
   _configure () {
     switch (true) {
-      case window[patch.namespace] !== undefined:
-        this._config = window[patch.namespace].configuration.analytics;
-        window[patch.namespace].promise.then(this._build.bind(this), () => {});
-        break;
-
       case api.internals !== undefined && api.internals.configuration !== undefined && api.internals.configuration.analytics !== undefined && api.internals.configuration.analytics.domain !== undefined:
         this._config = api.internals.configuration.analytics;
         this._build();
