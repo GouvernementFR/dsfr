@@ -230,7 +230,7 @@ Les composants du DSFR sont conçus pour être instanciés automatiquement par l
 
 ### BEM
 
-Le DSFR utilise la méthodologie **BEM** (Block - Element - Modifier) comme convention de nommage des classes CSS. Elle permet aux développeurs une meilleure compréhension de la relation entre HTML et CSS dans un projet donné.
+Le DSFR utilise la méthodologie [BEM](http://getbem.com/naming/) (Block - Element - Modifier) comme convention de nommage des classes CSS. Elle permet aux développeurs une meilleure compréhension de la relation entre HTML et CSS dans un projet donné.
 
 Selon cette méthodologie, un block représente le plus haut niveau d'abstraction d'un nouveau composant, par exemple ***.parent***. Des éléments (ou enfants), peuvent être placés à l'intérieur de ces blocks, et sont désignés par deux underscore précédés du nom du block : ***.parent__element***. Les modifiers quant à eux, servent à manipuler les blocs, de manière à les styliser de manière indépendante en s'assurant de ne pas induire de changement à des blocks sans aucun rapport avec celui-ci. Ils sont notés à l'aide de deux tirets précédés du nom du block comme suit : ***.parent--modifier***.
 
