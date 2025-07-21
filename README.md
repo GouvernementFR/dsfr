@@ -91,12 +91,12 @@ Une structure minimale serait :
 └── favicon/
 └── fonts/
 └── utility/
-  └── utilities.min.css
+  └── utility.min.css
 ```
 
 Les polices de caractères utilisées sur le DS, à savoir la Marianne et la Spectral, sont des fichiers .woff et .woff2, ils doivent se trouver dans le répertoire ***fonts***.
 
-Les dossiers ***fonts*** et ***favicon*** doivent être placés au même niveau que le dossier contenant le CSS du core du dsfr (ou au même niveau que le css ***dsfr.min.css*** à la racine de dist, qui contient le core). Le fichier ***utilities.min.css*** doit être placé un niveau plus bas que le dossier ***icons***, dans dossier utility par exemple, pour respecter les chemins d'accès vers les icônes.
+Les dossiers ***fonts*** et ***favicon*** doivent être placés au même niveau que le dossier contenant le CSS du core du dsfr (ou au même niveau que le css ***dsfr.min.css*** à la racine de dist, qui contient le core). Le fichier ***utility.min.css*** doit être placé un niveau plus bas que le dossier ***icons***, dans dossier utility par exemple, pour respecter les chemins d'accès vers les icônes.
 
 ### Le HTML
 
@@ -112,7 +112,8 @@ Le point de départ de l’utilisation du DSFR est la création de fichiers HTML
 
     <meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
     <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"><!-- 180×180 -->
-    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml"><link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
     <link rel="manifest" href="favicon/manifest.webmanifest" crossorigin="use-credentials">
     <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
     <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
