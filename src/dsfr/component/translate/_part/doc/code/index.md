@@ -54,9 +54,9 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
 ```HTML
 <div class="fr-translate fr-nav">
     <div class="fr-nav__item">
-        <button aria-controls="translate-div" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
+        <button aria-controls="translate-menu" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
         </button>
-        <div class="fr-collapse fr-translate__menu fr-menu" id="translate-div">
+        <div class="fr-collapse fr-translate__menu fr-menu" id="translate-menu">
             <ul class="fr-menu__list">
                 <li>
                     <a class="fr-translate__language fr-nav__link" hreflang="fr" lang="fr" href="/fr/" aria-current="true">FR - Français</a>
