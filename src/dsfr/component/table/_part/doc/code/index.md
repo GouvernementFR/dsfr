@@ -476,14 +476,25 @@ Ce comportement peut être désactivé en ajoutant la classe `fr-cell--multiline
 
 ### JavaScript
 
-Un script est disponible pour ajouter des fonctionnalités interactives au tableau, comme le placement du caption, la gestion de ombres sur la version dépréciée, et la sélection de lignes via les checkbox.
+Un script est disponible pour ajouter des fonctionnalités interactives au tableau, comme le placement du caption, la gestion des ombres sur la version dépréciée, et la sélection de lignes via les checkbox.
 
 #### Installation du JavaScript
 
 Pour fonctionner le composant tableau nécessite l'utilisation de JavaScript.
-Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le JavaScript du composant et de ses dépendances doivent être importés. L'import doit se faire à la fin de la page, avant la balise `</body>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+:::fr-table[Dépendances JS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------|----------|
+| Core       | Oui         |          |
+| checkbox   | Non         | Uniquement pour la version avec lignes sélectionnables |
+| Table      | Oui         |          |
+
+:::
+
+**Exemple d'imports JS**
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
@@ -491,7 +502,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/table/table.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 

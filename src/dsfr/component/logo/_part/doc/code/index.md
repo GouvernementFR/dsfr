@@ -98,6 +98,7 @@ Pour faire fonctionner la fonction de passage des blocs marque en berne, le scri
 Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
 
 ```html
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 ```
 

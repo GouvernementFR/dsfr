@@ -306,7 +306,7 @@ Il est donc nécessaire d'importer les fichiers js du core à la fin de la page 
 <script type="module" src="dist/core/core.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 

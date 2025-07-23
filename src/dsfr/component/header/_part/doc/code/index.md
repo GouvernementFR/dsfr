@@ -704,7 +704,17 @@ Lors des périodes de deuil national, il est possible d’utiliser la version en
 ### JavaScript
 
 En dehors de la version minimal, les versions avec navigation, avec liens d'accès rapides, avec barre de recherche, ou avec sélecteur de langues, nécessitent l'utilisation de JavaScript pour l'ouverture de modales en mobile.
-Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
+
+:::fr-table[Dépendances JS]{valign=top scroll=true}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Navigation | Oui         |
+| Modal      | Oui         |
+| Header     | Oui         |
+
+:::
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 
@@ -715,9 +725,9 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/header/header.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+Pour fonctionner sur Internet Explorer 11, des fichiers legacy, en version nomodule ES5, peuvent aussi être importés :
 
 ```HTML
 <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>

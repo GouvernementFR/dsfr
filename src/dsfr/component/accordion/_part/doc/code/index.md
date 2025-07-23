@@ -126,7 +126,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/accordion/accordion.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
