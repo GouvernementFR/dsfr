@@ -102,7 +102,7 @@
     max-height: var(--modal-max-height);
 
     @include respond-from(md) {
-      max-height: 80%;
+      max-height: 80vh;
     }
   }
 
