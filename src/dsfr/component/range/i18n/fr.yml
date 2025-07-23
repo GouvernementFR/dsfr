@@ -4,6 +4,8 @@ subdir:
 
 label:
   default: Libellé
+  min-value: Valeur minimale
+  max-value: Valeur maximale
 hint:
   default: Texte de description additionnel, valeur de 0 à 100.
 error:
@@ -25,5 +27,3 @@ sample:
   double-disabled: Curseur double désactivé
   prefix-suffix: Curseur avec préfixe et suffixe
   error: Curseur avec erreur
-  label-min: valeur minimale
-  label-max: valeur maximale

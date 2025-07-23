@@ -76,7 +76,7 @@ inputAttributes.name = range.name;
 inputAttributes.type = 'range';
 inputAttributes['aria-labelledby'] = label.attributes.id;
 if (range.isDouble) {
-  inputAttributes['aria-label'] = getText('sample.label-min', 'range');
+  inputAttributes['aria-label'] = getText('label.min-value', 'range');
   inputAttributes['aria-labelledby'] = `${range.id} ${label.attributes.id} `;
 }
 if (range.min) inputAttributes.min = range.min;
@@ -89,7 +89,7 @@ const input2Attributes = {
   value: range.value2,
   id: `${range.id}-2`,
   name: `${range.name}-2`,
-  'aria-label': getText('sample.label-max', 'range'),
+  'aria-label': getText('label.max-value', 'range'),
   'aria-labelledby': `${range.id}-2 ${label.attributes.id}`
 }
 
