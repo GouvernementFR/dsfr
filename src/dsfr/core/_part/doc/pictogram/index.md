@@ -282,4 +282,4 @@ Après la validation du formulaire, vous recevrez un email vous confirmant que v
 Dans les 48h ouvrées, vous recevrez un deuxième message électronique vous informant que votre demande a été prise en compte. Une fois que celle-ci a été prise en compte, le pictogramme peut être ajusté en vue de son intégration dans la librairie Design.
 
 **Étape 5 (facultative)**<br>
-Afin d'accélérer le processus d'intégration dans la librairie Dev, vous pouvez nous fournir le SVG formaté tel que décrit précédemment. Pour cela, il vous suffit de proposer une Pull Request sur le [dépôt GitHub](https://github.com/GouvernementFR/dsfr) du Système de Design de l'État. Le SVG doit être placé dans un dossier adéquate de `src/dsfr/utility/pictograms`.
+Afin d'accélérer le processus d'intégration dans la librairie Dev, vous pouvez nous fournir le SVG formaté tel que décrit précédemment. Pour cela, il vous suffit de proposer une Pull Request sur le [dépôt GitHub](https://github.com/GouvernementFR/dsfr) du Système de Design de l'État. Le SVG doit être placé dans un dossier adéquat de `src/dsfr/utility/pictograms`.
