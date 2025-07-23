@@ -1,7 +1,7 @@
 id: table
 title: Tableaux
 description: Les tableaux sont utilisés pour organiser et afficher les informations d'un jeu de données.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tableau
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/tableau
 wrapper: container
 style:
   - core

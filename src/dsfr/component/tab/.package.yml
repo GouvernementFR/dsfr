@@ -1,7 +1,7 @@
 id: tab
 title: Onglets
 description: Le composant onglet permet aux utilisateurs de naviguer dans différentes sections de contenu au sein d’une même page.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/onglet
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/onglet
 wrapper: col-8
 style:
   - core

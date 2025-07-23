@@ -1,7 +1,7 @@
 id: alert
 title: Alerte
 description: L'alerte permet d’attirer l’attention de l’utilisateur sur une information sans interrompre sa tâche.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/alerte
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/alerte
 wrapper: col-8
 style:
   - core

@@ -1,7 +1,7 @@
 id: download
 title: Téléchargement de fichier
 description: Ce composant est déprécié. La fonctionnalité "téléchargement de fichier" est maintenant disponible directement sur le composant carte et le composant lien.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/telechargement-de-fichier
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/telechargement-de-fichier
 wrapper: container
 style:
   - core

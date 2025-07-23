@@ -1,7 +1,7 @@
 id: search
 title: Barre de recherche
 description: La barre de recherche est un système de navigation qui permet à l'utilisateur d’accéder rapidement à un contenu en lançant une recherche sur un mot clé ou une expression.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/barre-de-recherche
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/barre-de-recherche
 wrapper: col-8
 style:
   - core
