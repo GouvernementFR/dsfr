@@ -79,7 +79,6 @@
         #{ns('container' + $mod + '--fluid')} {
           @include padding-x(0);
           @include max-size(none);
-          overflow: hidden;
         }
       }
 
