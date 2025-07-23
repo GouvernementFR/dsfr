@@ -125,7 +125,19 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 
 Le composant Transcription nécessite l'utilisation de JavaScript pour fonctionner correctement. Son comportement de déplié le contenu utilise le fonctionnement du collapse du core, et il utilise le composant [Modal](../../../../modal/_part/doc/index.md) pour ouvrir le contenu en grand.
 
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Son import doit se faire à la fin de la page, avant la fermeture de la balise `</body>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+::fr-table[Dépendances JS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Modal      | Oui         |
+| Transcription | Oui         |
+
+:::
+
+**Exemple d'imports JavaScript**
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>

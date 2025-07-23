@@ -705,7 +705,11 @@ Lors des périodes de deuil national, il est possible d’utiliser la version en
 
 En dehors de la version minimal, les versions avec navigation, avec liens d'accès rapides, avec barre de recherche, ou avec sélecteur de langues, nécessitent l'utilisation de JavaScript pour l'ouverture de modales en mobile.
 
-:::fr-table[Dépendances JS]{valign=top scroll=true}
+#### Installation du JavaScript
+
+Pour fonctionner correctement, le JavaScript du composant et de ses dépendances doivent être importés. L'import doit se faire à la fin de la page, avant la balise `</body>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+:::fr-table[Dépendances JS]{valign=top scroll=false}
 
 | Dépendance | Obligatoire |
 |------------|-------------|
@@ -716,7 +720,7 @@ En dehors de la version minimal, les versions avec navigation, avec liens d'acc�
 
 :::
 
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+**Exemple d'imports JavaScript**
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
