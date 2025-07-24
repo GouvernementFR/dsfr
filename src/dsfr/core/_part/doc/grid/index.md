@@ -114,13 +114,13 @@ Les blocs de contenu peuvent s’afficher selon vos besoins, sur une ou plusieur
 
 Nous formulons cependant des recommandations pour la majorité des composants afin de vous guider (exemple : 8 colonnes max. pour le corps de texte)
 
-:::fr-table[Détail sur l’utilisation de "fr-col"]{valign=top scroll=false}
+:::fr-table[Détail sur l’utilisation de "fr-col"]{valign=top multiline=true}
 
 | Classe | Description | Exemple |
 | --- | --- | --- |
 | `fr-col` | Calculé automatiquement en fonction du nombre `fr-col` intégré dans le code | Si vous utilisez 4 classes `fr-col` votre interface affichera 4 colonnes de même taille. |
 | `fr-col-n` | La largeur de la colonne est définie par n/12 | Si n=8. La largeur de la celulle sera équivalente à 8/12 soit 66,6666% |
-| `fr-col-layout-n` | Identique à `fr-col-n` mais appliqué à un layout. ( SM, MD, LG et/ou XL) | `fr-col-12` `fr-col-sm-8` `fr-col-md-6` `fr-col-lg-4` `fr-col-xl-2` appliquera 100% de largeur de 0 à 575px (`fr-col-12` : `fr-col-xx` est la valeur mobile par défaut) 66.6666% de largeur de 576px à 767px, 50% de largeur de 768px à 991px, 33.3333% de largeur de 992px à 1199px, 16.6666% de largeur au delà de 1200px |
+| `fr-col-[breakpoint]-n` | Identique à `fr-col-n` mais appliqué à partir d'un breakpoint. ( SM, MD, LG, XL) | `fr-col-12` `fr-col-sm-8` `fr-col-md-6` `fr-col-lg-4` `fr-col-xl-2` appliquera 100% de largeur de 0 à 575px, puis 66.6666% de largeur de 576px à 767px, 50% de largeur de 768px à 991px, 33.3333% de largeur de 992px à 1199px, et 16.6666% de largeur au delà de 1200px |
 
 :::
 
@@ -154,11 +154,11 @@ Vous pouvez créer des décalages dans la grille en utilisant la classe `fr-col-
 - `fr-col-offset-2` : laissera 2 colonnes vides
 - etc
 
-Ce décalage peut être identique sur toutes les mises en page, ou s’adapter à chaque mise en page.
+La gestion des breakpoints fonctionne de la même manière ici.
 
-- `fr-col-offset-3` associé à `fr-col-offset-sm-4` : laissera 3 colonnes vides en XS et 4 à partir de SM
+- `fr-col-offset-3` associé à `fr-col-offset-sm-4` : laissera 3 colonnes vides en XS, puis 4 à partir de SM
 
-Vous pouvez mettre ce décalage à la droite du bloc avec le modificateur `fr-col-offset-3--right`
+Vous pouvez mettre ce décalage à la droite du bloc avec le modificateur `--right`, exemple : `fr-col-offset-3--right`
 
 **Exemple d’un décalage commun à toutes les mises en page**
 
@@ -182,4 +182,4 @@ Vous pouvez mettre ce décalage à la droite du bloc avec le modificateur `fr-co
 
 ## Règles d’utilisation
 
-Pour que la grille s’affiche correctement, il faut respecter la structure : `fr-container` ou `fr-container--fluid` contenant `fr-grid-row` qui lui même contient vos différentes colonnes (`fr-col` etc.).
+Pour que la grille s’affiche correctement, il faut respecter la structure : `fr-container` (ou `fr-container--fluid`) contenant un `fr-grid-row`, qui lui-même contient vos différentes colonnes (`fr-col` etc.).

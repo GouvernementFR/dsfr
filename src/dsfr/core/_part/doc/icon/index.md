@@ -14,33 +14,21 @@ Les icônes fonctionnelles sont des symboles visuels qui accompagnent l’utilis
 
 ## Utilisation des icônes
 
-Nous mettons à votre disposition une sélection d’icônes issue de la librairie Remix Icons (libre de droits). Il s’agit, pour l’essentiel, des icônes utilisées par les composants du DSFR. Si l’icône recherchée est absente de notre sélection, vous pouvez compléter en recherchant d’abord dans [Remix Icons](https://remixicon.com/).
+Nous mettons à votre disposition une sélection d’icônes, en grande partie issues de la librairie [Remix Icons](https://remixicon.com/) (libre de droits). Il s’agit, pour l’essentiel, des icônes utilisées par les composants du DSFR. Si l’icône recherchée est absente de notre sélection, vous pouvez compléter en recherchant d’abord dans [Remix Icons](https://remixicon.com/).
 
 ### Pour les designers
 
-Les icônes sont disponibles dans la section Fondamentaux des librairies Sketch et Figma.
+Les icônes sont disponibles dans les Fondamentaux des librairies Sketch et Figma (section icônes fonctionnelles).
 
 ### Pour les développeurs
 
-Les icônes placées dans **src/core/icon** sont exportées dans dist/icons. Les icônes sont utilisées directement en CSS via leur chemin relatif. Il est de ce fait possible d’utiliser des icônes en utilisant directement la classe CSS associée, reprenant le nom de l’icône SVG, précédée du préfixe fr-icon ou fr-fi (déprécié).
-Exemple : `.fr-icon-error-fill`, `.fr-fi-account-fill`.
+Les icônes, placées dans **dist/icons**, sont utilisées via des classes CSS disponibles dans `utility/icons/icons.min.css`. Il est de ce fait possible d’utiliser des icônes en utilisant directement la classe CSS associée, reprenant le nom de l’icône SVG, précédée du préfixe `fr-icon`. Exemple : `.fr-icon-error-fill`.
 
-> [!NOTE]
-> Avec la version 1.5.0, les icônes ne sont plus chargées via une police d’icônes dans la css. De plus, les classes utilitaires d’icones ne sont plus dans core mais, à part, dans un nouveau dossier dist/utility. Il est donc nécéssaire d’importer le nouveau fichier d’icônes pour conserver leurs fonctionnement.
+Les icônes sont rangées en catégories (system, business, map…), avec un fichier css pour chacune. Il est donc possible d’importer uniquement les catégories d’icônes désirées pour alléger la CSS.
 
-Les icônes sont maintenant rangées en catégories (system, business, map…), avec un fichier css pour chacune. Il est donc possible d’importer uniquement les catégories d’icônes désirées pour alléger la CSS.
+Le chargement des icônes se fait directement via l’ajout du fichier CSS. Ce fichier contient un chemin relatif vers les icônes SVG, qui sont placées dans le dossier `dist/icons`. Il conviendra de respecter cette structure de dossier pour que les icônes soient correctement chargées.
 
-Le chargement des icônes se fait directement via l’ajout du fichier CSS.
-
-Il est possible d'utiliser plusieurs fichiers : dist/utility/icons/icons.css, dist/utility/utility.css ou plus spécifiquement par catégorie, ex: dist/utility/icons/icons-buildings/icon-buildings.css.
-
-> [!NOTE]
-> **Pour les développeurs**
->
-> L’utilisation des utility.css et icons.css peuvent remonter des erreurs dans webpack (Maximum call stack size exceeded). Afin de contourner le problème, utilisez les fichiers de catégories.
-
-Il est ensuite possible d’utiliser les classes d’icônes correspondantes,
-**directement sur un composant** qui permet d’ajouter une icône, par exemple un bouton :
+Il est ensuite possible d’utiliser les classes d’icônes correspondantes, **directement sur un composant** qui permet d’ajouter une icône, par exemple un bouton :
 
 ```HTML
 <button class="fr-btn fr-icon-checkbox-circle-line fr-btn--icon-left">
@@ -48,7 +36,27 @@ Il est ensuite possible d’utiliser les classes d’icônes correspondantes,
 </button>
 ```
 
-ou bien de manière autonome, en utilisant de préférence une balise span.
+Il est aussi possible de les utiliser de manière autonome, au sein d'un texte, en utilisant de préférence une balise `<span>`. Exemple :
+
+```HTML
+<span class="fr-icon-error-fill" aria-hidden="true"></span>
+```
+
+L’ancienne nomenclature des classes en `fr-fi` (remplacée par `fr-icon`) est dépréciée mais toujours fonctionnelle.
+
+**Ajout d'icônes personnalisées**
+
+Pour ajouter une icône qui ne serait pas présente dans le DSFR, il est possible de créer un fichier SVG ou de l’importer depuis la librairie Remixicon. Il faudra ensuite créer un fichier CSS pour associé une classe à cette icône, en suivant la nomenclature `fr-icon-[nom-de-l'icône]`. Par exemple, pour une icône nommée `custom-icon`, le fichier CSS contiendra :
+
+```CSS
+.fr-icon-custom-icon::before,
+.fr-icon-custom-icon::after {
+  -webkit-mask-image: url("../icons/custom-icon.svg");
+  mask-image: url("../icons/custom-icon.svg");
+}
+```
+
+Ne pas modifier directement les fichiers CSS du DSFR, mais plutôt créer un fichier CSS personnalisé pour vos icônes. De cette manière, vous pourrez monter de version du DSFR sans perdre vos modifications.
 
 ## Sélection d’icônes
 
@@ -56,8 +64,6 @@ Les icônes doivent être utilisées pour attirer l'attention sur les actions, l
 
 Les icônes ci-dessous sont pour la plupart issues de la librairie Remixicon.
 Les icônes classées dans dsfr sont soit des icônes créées spécialement, soit des icônes issues de Remixicon ayant été renommées afin de plus coller à l’usage.
-
-L’ancienne nomenclature des classes en fr-fi (remplacée par fr-icon) est dépréciée mais toujours fonctionnelle.
 
 ### Arrows
 
