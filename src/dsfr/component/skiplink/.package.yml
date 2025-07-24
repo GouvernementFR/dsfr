@@ -1,7 +1,7 @@
 id: skiplink
 title: Liens d'évitement
 description: Les liens d’évitement permettent aux utilisateurs naviguant au clavier, ou équipés de lecteurs d'écran, d’accéder plus rapidement à des zones précises de la page.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/lien-d-evitement
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/lien-d-evitement
 prepend: true
 style:
   - core

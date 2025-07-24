@@ -18,13 +18,11 @@ mesh:
 
 ## Bouton FranceConnect
 
-Le bouton FranceConnect est un élément d’interaction avec l’interface proposant à l’usager d’utiliser ses identifiants de connexion à l’un des fournisseurs d’identités ([impots.gouv.fr](http://impots.gouv.fr/), [ameli.fr](http://ameli.fr/), [l’Identité Numérique La Poste](https://lidentitenumerique.laposte.fr/), [MobileConnect et moi](https://www.yris.eu/fr/) ou [msa.fr](http://msa.fr/)) pour se connecter à un autre site.
+Le bouton FranceConnect est un élément d’interaction avec l’interface proposant à l’usager d’utiliser ses identifiants de connexion à l’un des fournisseurs d’identités ([impots.gouv.fr](http://impots.gouv.fr/), [ameli.fr](http://ameli.fr/), [l’Identité Numérique La Poste](https://lidentitenumerique.laposte.fr/), etc.) pour se connecter à un autre site.
 
-Le fournisseur de service récupère auprès de FranceConnect un identifiant unique et une identité vérifiée par l’INSEE.
+Le fournisseur de service récupère auprès de FranceConnect un identifiant unique et une identité vérifiée par l’INSEE. Il est primordial dans l’usage du service FranceConnect et garantit sa reconnaissance et la confiance en la marque.
 
-Il est primordial dans l’usage du service FranceConnect et garantit sa reconnaissance et la confiance en la marque.
-
-Retrouver le fonctionnement en détail ici : [https://franceconnect.gouv.fr/partenaires](https://franceconnect.gouv.fr/partenaires)
+Retrouver le fonctionnement en détail ici : [https://docs.partenaires.franceconnect.gouv.fr/](https://docs.partenaires.franceconnect.gouv.fr/)
 
 :::dsfr-doc-tab-navigation
 

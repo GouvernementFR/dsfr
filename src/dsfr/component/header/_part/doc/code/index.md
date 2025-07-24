@@ -128,20 +128,32 @@ Il est constitué d'un élément HTML `<header>` de classe `fr-header`, avec l'a
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core de l'en-tête doivent être importés.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Logo       | Oui         |          |
+| Header     | Oui         |          |
+| Button     | Non         | Si utilisation de boutons, ou d'une barre de recherche |
+| Navigation | Non         | Si utilisation d'une navigation principale |
+| Search     | Non         | Si utilisation d'une barre de recherche |
+| Link       | Non         | Si utilisation de liens d'accès rapide |
+| Translate  | Non         | Si utilisation d'un sélecteur de langue |
+| Modal      | Non         | Si utilisation d'un des 4 éléments précédents, qui s'ouvrent dans une modale en mobile |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/logo/logo.min.css" rel="stylesheet">
 <link href="dist/component/header/header.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```html
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/header/header.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante sans navigation
@@ -694,27 +706,51 @@ Lors des périodes de deuil national, il est possible d’utiliser la version en
 
 ### JavaScript
 
-Pour fonctionner le composant en-tête nécessite l'utilisation de JavaScript.
-Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
+En dehors de la version minimal, les versions avec navigation, avec liens d'accès rapides, avec barre de recherche, ou avec sélecteur de langues, nécessitent l'utilisation de JavaScript pour l'ouverture de modales en mobile.
 
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+#### Installation du JavaScript
+
+Pour fonctionner correctement, le JavaScript du composant et de ses dépendances doivent être importés. L'import doit se faire à la fin de la page, avant la balise `</body>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+:::fr-table[Dépendances JS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Navigation | Oui         |
+| Modal      | Oui         |
+| Header     | Oui         |
+
+:::
+
+**Exemple d'imports JavaScript**
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/navigation/navigation.module.min.js"></script>
+<script type="module" src="dist/component/modal/modal.module.min.js"></script>
 <script type="module" src="dist/component/header/header.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+Pour fonctionner sur Internet Explorer 11, des fichiers legacy, en version nomodule ES5, peuvent aussi être importés :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/navigation/navigation.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.min.js"></
 <script type="text/javascript" nomodule src="dist/component/header/header.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
+
+#### SPA
+
+Afin d'éviter une duplication du code HTML et d'alourdir les snippets de code, le DSFR duplique et injecte automatiquement en JavaScript les éléments d'accès rapide présents dans le conteneur `fr-header__tools-links` vers le conteneur `fr-header__menu-links` de la modale de navigation principale en mobile.
+
+Dans le cadre de l'utilisation du DSFR dans un contexte de Single-page application (Angular, Vue, React, etc..), il peut être nécessaire d'effectuer la recopie des éléments placés dans `fr-header__tools-links` au sein de la modale de navigation principale en mobile **avant** d’exécuter les scripts du DSFR, afin que ces éléments soient pris en compte par votre Framework. Les modes `vue`, `angular`, `react` de [l'API Javascript du DSFR](path:/getting-started/developer/javascript#mode) permettent de désactiver les manipulation du DOM par le DSFR et de lancer manuellement le script du DSFR après le chargement de la SPA avec `dsfr.start()`.
 
 #### Instances
 
@@ -745,7 +781,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### headerModal
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -756,7 +792,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -777,7 +813,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 En version mobile, sur la modale de navigation principale, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

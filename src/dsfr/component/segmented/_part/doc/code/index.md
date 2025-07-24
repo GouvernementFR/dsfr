@@ -77,19 +77,27 @@ Sa structure est la suivante :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du contrôle segmenté doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------|----------|
+| Core       | Oui         |          |
+| Form       | Oui         |          |
+| Segmented  | Oui         |          |
+| Utility    | Non         | Uniquement pour l'ajout d'icône |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/form/form.min.css" rel="stylesheet">
 <link href="dist/component/segmented/segmented.min.css" rel="stylesheet">
-```
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/segmented/segmented.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante de taille
@@ -179,7 +187,84 @@ Les libellés des segment du contrôle segmenté peuvent avoir une icône juxtap
 
 ### JavaScript
 
-Le composant Contrôle segmenté **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+Le composant Contrôle segmenté nécessite l'utilisation de JavaScript pour son fonctionnement de base, notamment pour gérer le passage à la ligne des éléments lorsque l'espace disponible est insuffisant. La classe `fr-segmented--vertical` est ainsi ajoutée par le JavaScript lorsqu'il est nécessaire de passer en mode vertical.
+
+#### Installation du JavaScript
+
+Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
+
+Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
+```HTML
+<script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/segmented/segmented.module.min.js"></script>
+```
+
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
+
+Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
+```HTML
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/segmented/segmented.nomodule.min.js"></script>
+```
+
+Une fois le JavaScript chargé, le comportement fonctionne automatiquement.
+
+#### Instances
+
+Sur le contrôle segmenté, l'élément suivant est instancié :
+
+- Le composant "segmented", via la classe : `fr-segmented`
+- Chaque "segmentedElement" du composant, via le sélecteur : `fr-segmented__element input`
+
+Une fois chargé, le JS ajoute l'attribut `data-fr-js-segmented="true"` sur les éléments instanciés.
+
+#### API
+
+Il est possible d'interagir avec les instances du composant en JavaScript via une API.
+
+Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
+
+L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
+
+##### segmented
+
+:::fr-table[resize]{valign=top scroll=false}
+
+| | |
+|------|-----|
+| **Description** | Permet de mettre à jour le composant après un changement de libellé. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(segmented).segmented.resize()` |
+
+:::
+
+:::fr-table[node]{valign=top scroll=false}
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(segmented).segmented.node` |
+
+:::
+
+##### segmentedElement
+
+:::fr-table[node]{valign=top scroll=false}
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(segmentedElement).segmentedElement.node` |
+
+:::
 
 ---
 

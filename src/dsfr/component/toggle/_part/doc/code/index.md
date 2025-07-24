@@ -117,34 +117,39 @@ Pour **regrouper plusieurs interrupteurs liées**, utilisez un élément `<field
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des interrupteurs doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Form       | Oui         |
+| Toggle     | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/form/form.min.css" rel="stylesheet">
 <link href="dist/component/toggle/toggle.min.css" rel="stylesheet">
 ```
 
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
+#### Variante d’interrupteurs avec statut
 
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
+Il est conseillé d’afficher un statut sous l'interrupteur pour signifier textuellement l'activation et la désactivation du champ. Des attributs placés sur le `label` permettent d'ajouter ces textes, de cette manière ils peuvent être traduits. Utiliser l'attribut `data-fr-checked-label` pour le status "Activer" et `data-fr-unchecked-label` pour le status "Désactivé".
 
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/toggle/toggle.legacy.min.css" rel="stylesheet">
-```
-
-#### Variante d’interrupteurs avec libellé à gauche
-
-Il est possible d’afficher le libellé à gauche de l’interrupteur, avec l'utilisation de la classe `fr-toggle--label-left`.
-
-**Exemples de variantes d’interrupteurs avec libellé à gauche**
+**Exemple de variante d’interrupteur avec statut**
 
 ```HTML
-<div class="fr-toggle fr-toggle--label-left">
-    <input type="checkbox" class="fr-toggle__input" id="toggle-label-left" aria-describedby="toggle-label-left-messages">
-    <label class="fr-toggle__label" for="toggle-label-left">Libellé de l'interrupteur</label>
-    <div class="fr-messages-group" id="toggle-label-left-messages" aria-live="polite">
+<div class="fr-toggle">
+    <input type="checkbox" class="fr-toggle__input" id="toggle-status" aria-describedby="toggle-status-messages">
+    <label class="fr-toggle__label" for="toggle-status" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
+    <div class="fr-messages-group" id="toggle-status-messages" aria-live="polite">
     </div>
 </div>
 ```
@@ -153,7 +158,7 @@ Il est possible d’afficher le libellé à gauche de l’interrupteur, avec l'u
 
 Il est possible d’afficher un séparateur horizontal sous l’interrupteur, avec l'utilisation de la classe `fr-toggle--border-bottom`.
 
-**Exemples de variantes d’interrupteurs avec séparateur**
+**Exemple de variante d’interrupteur avec séparateur**
 
 ```HTML
 <div class="fr-toggle fr-toggle--border-bottom">
@@ -318,12 +323,12 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/toggle/toggle.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/toggle/toggle.nomodule.min.js"></script>
 ```
@@ -356,7 +361,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### toggleInput
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -367,7 +372,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -380,7 +385,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### toggleStatusLabel
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -391,7 +396,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -402,7 +407,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[update]{valign=top scroll=false}
+:::fr-table[update]{valign=top multiline=true}
 
 | | |
 |:------|:-----|

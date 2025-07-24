@@ -63,7 +63,7 @@ Voir les [règles d’accessibilité du composant Bouton](../../../../button/_pa
 
 Le composant Tag est suffisamment contrasté en thème clair. Il l’est également en thème sombre dans sa version par défaut.
 
-:::fr-table[Contrastes de couleurs]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes de couleurs]{valign=top multiline=true caption=false}
 | Élément|  Thème clair | Thème sombre |
 |------|-----|-----|
 |**Tag par défaut**| 15,6:1 | 15,52:1 |

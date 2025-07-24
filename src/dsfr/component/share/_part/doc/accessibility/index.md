@@ -61,7 +61,7 @@ Voir les [règles d'accessibilité du composant Lien](../../../../link/_part/doc
 
 Le composant Partage est suffisamment contrasté en thème clair et en thème sombre.
 
-:::fr-table[Contraste des textes et des icônes]{valign=top scroll=false caption=true}
+:::fr-table[Contraste des textes et des icônes]{valign=top multiline=true caption=true}
 | Élément |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**Texte Partager**| 11,4:1| 5,7:1 |

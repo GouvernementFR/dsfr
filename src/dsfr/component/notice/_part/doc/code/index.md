@@ -70,20 +70,25 @@ Sa structure comprend les éléments suivants :
 
 #### Installation du CSS
 
-Pour garantir le bon affichage du bandeau et de ses variations, le style CSS de ce composant doit être importé. L'import doit se faire avant le contenu de la page, dans la partie `<head>`, de préférence avec le fichier minifié pour une meilleure performance.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| notice     | Oui         |          |
+| Button     | Non         | Uniquement sur la variation refermable |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/notice/notice.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/notice/notice.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante avec bouton de fermeture

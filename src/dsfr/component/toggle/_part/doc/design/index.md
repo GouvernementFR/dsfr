@@ -52,9 +52,17 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 ### Variations
 
-**Interrupteur avec libellé à droite**
+**Interrupteur simple**
 
 ::dsfr-doc-storybook{storyId=toggle--toggle}
+
+**Interrupteur avec description**
+
+::dsfr-doc-storybook{storyId=toggle--description}
+
+**Interrupteur avec état**
+
+::dsfr-doc-storybook{storyId=toggle--state}
 
 **Groupe d’interrupteurs**
 
@@ -62,7 +70,11 @@ Utiliser l’interrupteur en groupe pour constituer une liste d’actions de mê
 
 ::dsfr-doc-storybook{storyId=toggle-group--toggle-group}
 
-Lorsqu’il est utilisé en groupe, l’interrupteur doit toujours respecter le même format. Si le premier interrupteur affiche le label à gauche, l'état ou le séparateur optionnel, alors l’ensemble des interrupteurs du groupe devront également afficher ces éléments.
+Lorsqu’il est utilisé en groupe, l’interrupteur doit toujours respecter le même format. Si le premier interrupteur affiche l'état, une description, ou le séparateur optionnel, alors l’ensemble des interrupteurs du groupe devront également afficher ces éléments.
+
+**Groupe d’interrupteurs avec séparateurs**
+
+::dsfr-doc-storybook{storyId=toggle-group--border-group}
 
 ### Tailles
 
@@ -74,19 +86,19 @@ La largeur de l’interrupteur s’adapte à la taille de son conteneur. Si l’
 
 L'état d’erreur est signalé par un changement de couleur ainsi que l’affichage d’une ligne rouge (cf. couleurs système : le rouge est la couleur de l’état erreur) et d’un message d’erreur en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=toggle--toggle args="{ status: error }"}
+::dsfr-doc-storybook{storyId=toggle--error}
 
 **Etat de succès**
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs système : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=toggle--toggle args="{ status: valid }"}
+::dsfr-doc-storybook{storyId=toggle--valid}
 
 **État désactivé**
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
-::dsfr-doc-storybook{storyId=toggle--toggle args="{ disabled: true }"}
+::dsfr-doc-storybook{storyId=toggle--disabled}
 
 Dans le cas d’un interrupteur, il permet d’afficher un choix déjà effectué et/ou ne pouvant être modifié par l’usager.
 

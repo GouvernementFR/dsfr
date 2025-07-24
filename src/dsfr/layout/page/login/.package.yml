@@ -1,7 +1,7 @@
 id: login
 title: Pages de connexion
 description: Modèles de pages de connexion
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/modeles/page-de-connexion
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/pages-types/page-de-connexion
 no-heading: true
 style:
   - core

@@ -83,7 +83,7 @@ Ne pas utiliser une couleur illustrative ou des indices autre que ceux autorisé
 
 ::::
 
-:::fr-table[Titre du tableau]{valign=top scroll=false caption=false}
+:::fr-table[Titre du tableau]{valign=top multiline=true caption=false}
 |  Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Bordure `$border-default-blue-france`** | Indice **main**<br> exemple : `$green-emeraude-main-632` | Indice **main**<br> exemple : `$green-emeraude-main-632` |

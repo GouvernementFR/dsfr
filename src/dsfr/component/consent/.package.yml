@@ -1,7 +1,7 @@
 id: consent
 title: Gestionnaire de consentement
 description: Le gestionnaire de consentement permet à l'utilisateur de définir ses préférences sur l'utilisation de ses données personnelles.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/gestionnaire-de-consentement
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/gestionnaire-de-consentement
 wrapper: col-8
 style:
   - core
@@ -10,10 +10,10 @@ style:
   - form
   - radio
   - modal
-  - transcription
 script:
   - core
   - modal
 example:
   style:
     - content
+    - transcription

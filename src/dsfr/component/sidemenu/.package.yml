@@ -1,7 +1,7 @@
 id: sidemenu
 title: Menu latéral
 description: Le menu latéral permet aux utilisateurs de naviguer entre les différentes pages d’une rubrique ou d’un même thème.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/menu-lateral
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/menu-lateral
 style:
   - core
 script:

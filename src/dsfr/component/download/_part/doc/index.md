@@ -29,4 +29,4 @@ Suivez les liens ci-dessous pour consulter leur documentation respective.
 
 - **Tuile de téléchargement**
 
-[Voir la documentation du composant “Tuile”](../../../tile/_part/doc/index.md)
+[Voir la documentation complète du composant "Tuile"](../../../tile/_part/doc/index.md)

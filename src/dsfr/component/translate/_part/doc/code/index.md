@@ -35,9 +35,7 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 Le composant **Sélecteur de langue** permet de choisir la langue de l'interface.
 Sa structure, reposant sur le modèle du composant **Navigation principale** est la suivante :
 
-- Le sélecteur de langue est un élément HTML `<nav>` :
-  - Défini par les classes `fr-translate` et `fr-nav`.
-  - Doit comporter l'attribut `role="navigation"`.
+- Le sélecteur de langue est un élément HTML `<div>` défini par les classes `fr-translate` et `fr-nav`.
 - Il doit contenir un élément HTML `<div>` défini par la classe `fr-nav__item`, contenant :
   - Un `<button>` de type "button".
     - Il est défini par les classes `fr-translate__btn`, `fr-btn` et `fr-btn--tertiary`.
@@ -56,11 +54,11 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
 **Exemple de structure HTML**
 
 ```HTML
-<nav role="navigation" class="fr-translate fr-nav">
+<div class="fr-translate fr-nav">
     <div class="fr-nav__item">
-        <button aria-controls="translate" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
+        <button aria-controls="translate-menu" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
         </button>
-        <div class="fr-collapse fr-translate__menu fr-menu" id="translate">
+        <div class="fr-collapse fr-translate__menu fr-menu" id="translate-menu">
             <ul class="fr-menu__list">
                 <li>
                     <a class="fr-translate__language fr-nav__link" hreflang="fr" lang="fr" href="/fr/" aria-current="true">FR - Français</a>
@@ -71,7 +69,7 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
             </ul>
         </div>
     </div>
-</nav>
+</div>
 ```
 
 ---
@@ -80,21 +78,28 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du sélecteur de langue doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Button     | Oui         |
+| Navigation | Oui         |
+| Translate  | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/button/button.min.css" rel="stylesheet">
+<link href="dist/component/navigation/navigation.min.css" rel="stylesheet">
 <link href="dist/component/translate/translate.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/translate/translate.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de sélecteur de langue sans bordure
@@ -118,21 +123,23 @@ Le sélecteur de langue peut être utilisé avec un bouton sans bordure avec l'u
 ### JavaScript
 
 Pour fonctionner le composant Sélecteur de langue nécessite l'utilisation de JavaScript.
-Cette fonctionnalité est disponible dans le core.
+Ses fonctionnalités sont disponibles dans le core et le composant [Navigation](../../../../navigation/_part/doc/code/index.md).
 
-Il est donc nécessaire d'importer les fichiers js du core à la fin de la page (avant `</body>`) :
+Il est donc nécessaire d'importer ces fichiers js à la fin de la page (avant `</body>`) :
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/navigation/navigation.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/navigation/navigation.nomodule.min.js"></script>
 ```
 
 #### Instances
@@ -161,31 +168,31 @@ dsfr(elem).collapse.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### navigation
+##### navigation
 
-:::fr-table[current]{valign=top scroll=false}
+:::fr-table[current]{valign=top multiline=true}
 
 | | |
 |------|-----|
-| **Description** | Retourne l'API du collapse ouvert. <br/>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
+| **Description** | Retourne l'API du collapse ouvert. <br>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).navigation.current` |
 
 :::
 
-:::fr-table[index]{valign=top scroll=false}
+:::fr-table[index]{valign=top multiline=true}
 
 | | |
 |------|-----|
-| **Description** | Retourne ou modifie l'index de l'accordéon courant. <br/>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
+| **Description** | Retourne ou modifie l'index de l'accordéon courant. <br>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
 | **Type** | property |
 | **Retour** | Number |
-| **Exemple** | `dsfr(elem).navigation.index` <br/> `dsfr(elem).navigation.index = -1` |
+| **Exemple** | `dsfr(elem).navigation.index` <br> `dsfr(elem).navigation.index = -1` |
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -196,7 +203,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[hasFocus]{valign=top scroll=false}
+:::fr-table[hasFocus]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -207,9 +214,9 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-###### navigationItem
+##### navigationItem
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -220,9 +227,9 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-###### collapseButton
+##### collapseButton
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -234,7 +241,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -245,7 +252,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -256,9 +263,9 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-###### collapse
+##### collapse
 
-:::fr-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -270,7 +277,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -282,7 +289,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -293,7 +300,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -304,7 +311,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -315,7 +322,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -326,7 +333,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -338,7 +345,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -349,7 +356,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -360,7 +367,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|

@@ -1,6 +1,6 @@
 title: Champ de saisie
 description: Les champ permettent à un utilisateur d'entrer du contenu et données.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/champ-de-saisie
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/champ-de-saisie
 
 sample:
   text: Champ de type "text"

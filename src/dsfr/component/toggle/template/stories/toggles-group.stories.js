@@ -45,12 +45,3 @@ export const borderGroupStory = {
     border: true
   }
 };
-
-export const AlignLeftStory = {
-  tags: ['autodocs', '!dev'],
-  args: {
-    id: uniqueId('toggle-group-id'),
-    elements: getTogglesData(uniqueId('toggle')),
-    left: true
-  }
-};

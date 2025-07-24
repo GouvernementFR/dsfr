@@ -113,7 +113,7 @@ Ne pas utiliser une couleur illustrative d’un indice autre que $main.
 
 ::::
 
-:::fr-table[Titre du tableau]{valign=top scroll=false caption=false}
+:::fr-table[Titre du tableau]{valign=top multiline=true caption=false}
 |  Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Icône `$artwork-minor-blue-france`** | Indice **main**<br> exemple : `$pink-tuile-main-556` | Indice **main**<br> exemple : `$pink-tuile-main-556` |

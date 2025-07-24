@@ -1,0 +1,6 @@
+////
+/// Icon Arrows Module
+/// @group icon-arrows
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('arrows'));

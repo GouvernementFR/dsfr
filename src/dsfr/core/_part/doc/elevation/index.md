@@ -23,7 +23,7 @@ On distingue 4 niveaux ou étages différents sur l’ensemble des composants du
 - **Superposé** (overlap) : les éléments concernés passent par-dessus les niveaux précédents (par exemple, lors d’un défilement ou l’ouverture d’un menu) ; pour autant, les niveaux précédents ne sont pas ignorés et partiellement visibles. En code, on trouve `$overlap-over` et `$overlap-above` pour gérer les cas où des éléments $overlap sont affichés en même temps sur l’écran (exemple : bandeau consent et menu déroulant).
 - **Détaché** (lifted) : les éléments concernés passent par-dessus les niveaux précédents, et ces derniers sont retirés du champ d’attention de l’utilisateur (par exemple via l’utilisation d’une surcouche assombrissante).
 
-:::fr-table[Élévation]{valign=top scroll=false}
+:::fr-table[Élévation]{valign=top multiline=true}
 | Niveau | Fond (Bg) | Valeurs thème clair | Valeurs thème sombre | Tokens sketch | Tokens Figma | Composants |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Base (default) |  | Fond : `$grey-1000` | Fond : `$grey-50` | `$background-default-grey` | Background :`$background/default-grey` |  |

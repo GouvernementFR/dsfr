@@ -28,7 +28,15 @@ La tuile est un élément d’interaction avec l’interface permettant de redir
 
 :::
 
+::::fr-grid
+
+:::fr-col{col=12 colMd=6}
+
 ::dsfr-doc-storybook{storyId=tile--tile}
+
+:::
+
+::::
 
 ### Quand utiliser ce composant ?
 

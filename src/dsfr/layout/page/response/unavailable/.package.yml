@@ -1,4 +1,5 @@
 id: unavailable
 title: Modèle de page service indisponible
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/pages-types/page-d-erreurs
 description:
 inject: true

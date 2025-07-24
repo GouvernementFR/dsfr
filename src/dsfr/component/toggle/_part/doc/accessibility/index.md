@@ -39,6 +39,7 @@ Lorsque le focus est positionné sur l’interrupteur&nbsp;:
 - `Espace`&nbsp;: active ou désactive l’interrupteur.
 
 Dans un groupe d’interrupteurs&nbsp;:
+
 - `Tab`&nbsp;: déplace le focus sur le prochain élément focalisable.
 - `Maj + Tab`&nbsp;: déplace le focus sur l'élément focalisable précédent.
 
@@ -49,6 +50,7 @@ Dans un groupe d’interrupteurs&nbsp;:
 Un interrupteur doit avoir une **étiquette pertinente**. On doit en comprendre la fonction sans ambiguïté.
 
 Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
+
 - l’attribut `aria-labelledby`,
 - l’attribut `aria-label`,
 - l’élément `<label>`,
@@ -62,6 +64,7 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 >L’attribut `for` du label doit correspondre à l'attribut `id` de l’interrupteur. La valeur de l’attribut `id` doit être unique dans la page.
 
 La liaison explicite `for`/`id` permet&nbsp;:
+
 - d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal),
 - de cocher ou décocher l’interrupteur en cliquant sur l’étiquette et ainsi d’étendre la zone de clic.
 
@@ -81,6 +84,7 @@ La bordure, la coche et l’étiquette de l’interrupteur désactivé sont insu
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
 Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nbsp;:
+
 - dans l’étiquette du champ,
 - dans un passage de texte avant le formulaire,
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
@@ -95,7 +99,7 @@ Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nb
 
 Par défaut, le composant Interrupteur est suffisamment contrasté en thème clair et en thème sombre.
 
-:::fr-table[Contrastes par défaut]{valign=top scroll=false}
+:::fr-table[Contrastes par défaut]{valign=top multiline=true}
 | Thème |  Bordure | Coche | Étiquette |
 |------|-----|-----|-----|
 |**Thème clair**| 14,9:1 | 14,9:1 | 18,1:1 |

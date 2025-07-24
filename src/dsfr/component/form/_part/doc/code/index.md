@@ -126,21 +126,24 @@ La structure d'un ensemble de champs de formulaire, dans un `<form>` est la suiv
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des formulaires doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Form       | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/form/form.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```html
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/form/form.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de fieldset-element

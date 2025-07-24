@@ -1,7 +1,7 @@
 id: display
 title: Paramètre d'affichage
 description: Le pattern paramètre d'affichage permet de définir ses préférences de thème
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametre-d-affichage
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/parametre-d-affichage
 style:
   - core
   - form

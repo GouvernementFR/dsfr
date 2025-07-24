@@ -113,21 +113,26 @@ Pour **regrouper plusieurs checkboxes liées**, utilisez un élément `<fieldset
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des checkboxes doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Form       | Oui         |
+| Checkbox   | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/form/form.min.css" rel="stylesheet">
 <link href="dist/component/checkbox/checkbox.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/checkbox/checkbox.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de tailles
@@ -274,6 +279,9 @@ Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis su
 ### JavaScript
 
 Le composant Case à cocher **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+
+Un script est disponible pour faire remonter les évènements de changement d'état des checkboxes, mais il n'est pas nécessaire pour le fonctionnement du composant.
+Ce script est notamment utilisé pour gérer la selection des lignes d'un tableau.
 
 ---
 

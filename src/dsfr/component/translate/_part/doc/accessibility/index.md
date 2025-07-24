@@ -18,8 +18,6 @@ mesh:
 
 Le sélecteur de langues est un élément d’interaction avec l’interface permettant à l’usager de choisir la langue dans laquelle est affiché le contenu du site.
 
-Le sélecteur de langues est un élément d’interaction avec l’interface permettant à l’usager de choisir la langue dans laquelle est affiché le contenu du site.
-
 :::dsfr-doc-tab-navigation
 
 - [Présentation](../index.md)
@@ -41,6 +39,7 @@ Aucune interaction au clavier spécifique au composant.
 #### Structuration
 
 ##### Bouton d’ouverture
+
 - Le bouton d’ouverture du sélecteur de langue possède deux attributs ARIA&nbsp;:
   - `aria-expanded` défini à :
     - `true` lorsque la liste déroulante des autres langues est affichée,
@@ -48,6 +47,7 @@ Aucune interaction au clavier spécifique au composant.
   - `aria-controls` qui relie le bouton à la zone contrôlée et dont la valeur doit correspondre à l’attribut `id` de la zone de contenu.
 
 ##### Liste de langues
+
 - La liste de langues est structurée dans une liste `ul` `li`.
 - Le lien actif de la liste de langues porte un attribut `aria-current=”true”`.
 - Chaque lien de la liste de langues disposent d'un attribut `hreflang` et un attribut `lang`, dont les valeurs spécifient la langue cible.

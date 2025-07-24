@@ -1,5 +1,7 @@
 ---
 title: Opt
+sitemap:
+  noindex: true
 ---
 
 ## Opt

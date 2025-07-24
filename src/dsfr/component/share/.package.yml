@@ -1,7 +1,7 @@
 id: share
 title: Partage
 description: Les boutons de partage permettent aux utilisateurs de partager facilement un contenu, via les réseaux sociaux, par envoi de mail ou en copiant l’URL du contenu dans le presse-papier.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/partage
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/partage
 wrapper: col-8
 style:
   - core

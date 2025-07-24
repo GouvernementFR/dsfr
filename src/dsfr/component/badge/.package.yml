@@ -1,7 +1,7 @@
 id: badge
 title: Badge
 description: Le composant badge permet de mettre en avant une information de type “statut” ou “état” sur un élément du site.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/badge
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/badge
 wrapper: col-8
 style:
   - core

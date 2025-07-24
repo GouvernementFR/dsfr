@@ -7,6 +7,7 @@ keywords: mesure d’audience, analytics, Eulerian, statistiques, API DSFR, traf
 excerpt: Le DSFR propose un système de mesure d’audience basé sur Eulerian pour comprendre et améliorer l’expérience usager sur les sites publics.
 summary: La mesure d’audience permet d’analyser le comportement des usagers sur les sites publics, pour orienter les décisions de design et de contenu. Le DSFR intègre une API de collecte basée sur Eulerian, facilitant le suivi des performances sans plan de marquage complexe. Ce dispositif, issu du marché interministériel porté par le SIG, vise à standardiser les pratiques, renforcer l’efficacité des services publics et améliorer la lisibilité des données sur l’usage du design de l’État.
 sort: order
+order: 5
 list:
   noCover: true
   horizontal: true

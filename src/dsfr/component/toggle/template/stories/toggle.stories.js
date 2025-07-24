@@ -26,12 +26,42 @@ export const DefaultStory = {
   }
 };
 
-export const AlignLeftStory = {
+export const DescriptionStory = {
   tags: ['autodocs', '!dev'],
   args: {
-    hint: '',
     id: uniqueId('toggle'),
-    groupId: uniqueId('toggle-group'),
-    left: true
+    hint: 'Texte additionnel de l’interrupteur'
+  }
+};
+
+export const StateStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('toggle'),
+    state: true
+  }
+};
+
+export const ErrorStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('toggle'),
+    status: 'error'
+  }
+};
+
+export const ValidStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('toggle'),
+    status: 'valid'
+  }
+};
+
+export const DisabledStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('toggle'),
+    disabled: true
   }
 };

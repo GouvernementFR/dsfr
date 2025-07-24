@@ -1,11 +1,7 @@
 id: radio
 title: Bouton radio
 description: Le bouton radio permettent à l’utilisateur de sélectionner une seule option dans une liste.
-doc:
-  - url: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bouton-radio
-    title: Bouton radio
-  - url: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bouton-radio-riche
-    title: Bouton radio riche
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/bouton-radio
 wrapper: col-8
 style:
   - core
