@@ -1,7 +1,7 @@
 id: link
 title: Lien
 description: Le lien permet la navigation entre une page et un autre contenu au sein de la même page, du même site ou externe. Pour les actions d’un autre type - comme la soumission d’un formulaire - il faut utiliser le composant bouton.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/lien
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/lien
 wrapper: col-8
 style:
   - core

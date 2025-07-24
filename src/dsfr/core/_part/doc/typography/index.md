@@ -129,4 +129,4 @@ Les liens contextualisés héritent du style du texte, ils sont présentés sur 
 
 #### Personnalisation
 
-- L’utilisation du `$bleu` France sur un titre n’est pas autorisée en raison de la confusion qu'il peut y avoir entre un élément cliquable (ex. Bouton ou lien) et un élément non cliquable.
+- L’utilisation du `$bleu-france` sur un titre n’est pas autorisée en raison de la confusion qu'il peut y avoir entre un élément cliquable (ex. Bouton ou lien) et un élément non cliquable.

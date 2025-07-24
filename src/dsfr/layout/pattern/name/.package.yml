@@ -1,7 +1,7 @@
 id: name
 title: Bloc fonctionnel de nom et prénom
 description: La demande de nom et prénom permet d’aider un utilisateur à saisir son nom et son prénom.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/blocs-fonctionnels/nom-et-prenom
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/blocs-fonctionnels/nom-et-prenom
 wrapper: container
 style:
   - core
