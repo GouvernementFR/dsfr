@@ -7,6 +7,8 @@ keywords: nom, prénom, champ de saisie, formulaire, accessibilité, autocomplet
 cover: ./_asset/cover/cover.png
 excerpt: Modèle de champ de saisie pour nom et prénom avec options de personnalisation et bonnes pratiques d’accessibilité.
 summary: Le bloc fonctionnel “Nom et prénom” permet d’implémenter des champs de saisie conformes aux standards d’accessibilité pour collecter les informations d’identité. La page présente plusieurs variantes dont l’ajout de prénom, la gestion de l’absence de prénom ou du nom d’usage, ainsi qu’une déclinaison internationale. Des recommandations de bonnes pratiques sont fournies pour améliorer l’inclusivité et éviter les biais culturels dans la conception des formulaires.
+scripts:
+  - pattern
 ---
 
 # Nom et prénom
@@ -78,52 +80,49 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
 
 <div class="dsfr-doc-preview">
   <fieldset class="fr-fieldset" aria-label="Demande de nom et prénom" id="name-1510-fieldset" aria-labelledby="name-1510-fieldset-messages">
-      <div class="fr-fieldset__element">
-          <div class="fr-input-group">
-              <label class="fr-label" for="input-family-name-1512">
-                  Nom
-              </label>
-              <input class="fr-input" spellcheck="false" autocomplete="family-name" aria-describedby="input-family-name-1512-messages" name="family-name" id="input-family-name-1512" type="text">
-              <div class="fr-messages-group" id="input-family-name-1512-messages" aria-live="assertive">
-              </div>
-          </div>
-      </div>
-      <div class="fr-fieldset__element">
-          <fieldset class="fr-fieldset" id="firstname-fieldset-1517" aria-labelledby="firstname-fieldset-1517-messages">
-              <div class="fr-fieldset__element">
-                  <div class="fr-input-group">
-                      <label class="fr-label" for="input-firstname-1516">
-                          Prénom
-                      </label>
-                      <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1516-messages" name="given-name" id="input-firstname-1516" type="text">
-                      <div class="fr-messages-group" id="input-firstname-1516-messages" aria-live="assertive">
-                      </div>
-                  </div>
-              </div>
-              <div class="fr-fieldset__element">
-                  <button class="fr-btn fr-btn--sm fr-btn--secondary" onclick="" type="button">
-                      Ajouter un prénom
-                  </button>
-              </div>
-              <div class="fr-messages-group" id="firstname-fieldset-1517-messages" aria-live="assertive">
-              </div>
-          </fieldset>
-      </div>
-      <div class="fr-fieldset__element">
-          <div class="fr-checkbox-group fr-checkbox-group--sm">
-              <input onclick="const fieldset = document.getElementById('firstname-fieldset-1517');
-  if (this.checked) fieldset.setAttribute('disabled', '');
-  else fieldset.removeAttribute('disabled');
-  " name="firstname-disabled" id="checkbox-name-1518" type="checkbox" aria-describedby="checkbox-name-1518-messages">
-              <label class="fr-label" for="checkbox-name-1518">
-                  Je n'ai pas de prénom
-              </label>
-              <div class="fr-messages-group" id="checkbox-name-1518-messages" aria-live="assertive">
-              </div>
-          </div>
-      </div>
-      <div class="fr-messages-group" id="name-1510-fieldset-messages" aria-live="assertive">
-      </div>
+    <div class="fr-fieldset__element">
+        <div class="fr-input-group">
+            <label class="fr-label" for="input-family-name-1512">
+                Nom
+            </label>
+            <input class="fr-input" spellcheck="false" autocomplete="family-name" aria-describedby="input-family-name-1512-messages" name="family-name" id="input-family-name-1512" type="text">
+            <div class="fr-messages-group" id="input-family-name-1512-messages" aria-live="assertive">
+            </div>
+        </div>
+    </div>
+    <div class="fr-fieldset__element">
+        <fieldset class="fr-fieldset" id="firstname-fieldset-1517" aria-labelledby="firstname-fieldset-1517-messages">
+            <div class="fr-fieldset__element">
+                <div class="fr-input-group">
+                    <label class="fr-label" for="input-firstname-1516">
+                        Prénom
+                    </label>
+                    <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1516-messages" name="given-name" id="input-firstname-1516" type="text">
+                    <div class="fr-messages-group" id="input-firstname-1516-messages" aria-live="assertive">
+                    </div>
+                </div>
+            </div>
+            <div class="fr-fieldset__element">
+                <button class="fr-btn fr-btn--sm fr-btn--secondary" onclick="addFirstname(this, 'input-firstname-1516')" type="button">
+                    Ajouter un prénom
+                </button>
+            </div>
+            <div class="fr-messages-group" id="firstname-fieldset-1517-messages" aria-live="assertive">
+            </div>
+        </fieldset>
+    </div>
+    <div class="fr-fieldset__element">
+        <div class="fr-checkbox-group fr-checkbox-group--sm">
+            <input onclick="toggleDisabled(this, 'firstname-fieldset-1517')" name="firstname-disabled" id="checkbox-name-1518" type="checkbox" aria-describedby="checkbox-name-1518-messages">
+            <label class="fr-label" for="checkbox-name-1518">
+                Je n'ai pas de prénom
+            </label>
+            <div class="fr-messages-group" id="checkbox-name-1518-messages" aria-live="assertive">
+            </div>
+        </div>
+    </div>
+    <div class="fr-messages-group" id="name-1510-fieldset-messages" aria-live="assertive">
+    </div>
   </fieldset>
 </div>
 
