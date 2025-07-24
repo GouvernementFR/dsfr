@@ -229,7 +229,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### password
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du mot de passe est activé ou non |
@@ -238,7 +238,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).password.isEnabled = false` |
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -249,7 +249,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### passwordInput
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du mot de passe est activé ou non |
@@ -258,7 +258,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).passwordInput.isEnabled = false` |
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -269,7 +269,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### passwordLabel
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du libellé du mot de passe est activé ou non |
@@ -278,7 +278,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).passwordLabel.isEnabled = false` |
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -289,7 +289,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### passwordToggle
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement d'affichage du mot de passe est activé ou non |
@@ -298,7 +298,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).passwordToggle.isEnabled = false` |
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

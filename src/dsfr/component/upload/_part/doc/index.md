@@ -73,6 +73,14 @@ Utiliser l’ajout multiple de fichiers si les fichiers à sélectionner sont d
 
 :::
 
+:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
+
+![](./_asset/use/dont-1.png)
+
+Ne pas proposer plusieurs champs d’ajout de fichier si les fichiers à sélectionner sont de mêmes natures et/ou respectent les mêmes contraintes.
+
+:::
+
 ::::
 
 - **Préférer plusieurs champs d’ajout de fichier unique** lorsque l’usager doit sélectionner des fichiers de différentes natures, avec des contraintes spécifiques.
@@ -84,14 +92,6 @@ Utiliser l’ajout multiple de fichiers si les fichiers à sélectionner sont d
 ![](./_asset/use/do-4.png)
 
 Préférer plusieurs champs d’ajout de fichier si les fichiers à sélectionner sont de différentes natures et/ou ont des contraintes spécifiques.
-
-:::
-
-:::dsfr-doc-guideline[❌ À ne pas faire]{col=6 valid=false}
-
-![](./_asset/use/dont-1.png)
-
-Ne pas proposer plusieurs champs d’ajout de fichier si les fichiers à sélectionner sont de mêmes natures et/ou respectent les mêmes contraintes.
 
 :::
 

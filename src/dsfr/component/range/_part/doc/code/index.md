@@ -303,7 +303,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### range
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -314,7 +314,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -327,7 +327,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### rangeInput
 
-:::fr-table[value]{valign=top scroll=false}
+:::fr-table[value]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -338,7 +338,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -349,7 +349,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -362,7 +362,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### rangeOutput
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -373,7 +373,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -386,7 +386,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### rangeLimit
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -397,7 +397,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|

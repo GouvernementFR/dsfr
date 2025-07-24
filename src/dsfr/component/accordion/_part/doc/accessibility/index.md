@@ -74,7 +74,7 @@ Au survol du bouton en thème sombre, le ratio de contraste entre le texte et le
 
 Le chevron est insuffisamment contrasté au survol uniquement lorsque l’accordéon est ouvert.
 
-:::fr-table[Contraste du texte et du chevron de l’accordéon]{valign=top scroll=false caption=true}
+:::fr-table[Contraste du texte et du chevron de l’accordéon]{valign=top multiline=true caption=true}
 | État du bouton |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**fermé - par défaut**| 14,9:1 | 5,76:1 |

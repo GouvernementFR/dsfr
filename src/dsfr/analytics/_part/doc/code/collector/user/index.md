@@ -1,5 +1,7 @@
 ---
 title: Class User
+sitemap:
+  noindex: true
 ---
 
 ## class User

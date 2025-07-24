@@ -2922,7 +2922,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 Les icônes sont disponibles en quatre tailles. Il est possible de modifier la taille des icônes à l'aide de modifiers spécifiques
 
-:::fr-table[Tailles]{valign=top scroll=false}
+:::fr-table[Tailles]{valign=top multiline=true}
 
 | **Taille** | **Token** | **Classe** | **Dimension** | **Contexte d’utilisation** |
 | --- | --- | --- | --- | --- |

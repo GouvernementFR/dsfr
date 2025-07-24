@@ -203,7 +203,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### tabsGroup
 
-:::fr-table[current]{valign=top scroll=false}
+:::fr-table[current]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Retourne l'API de l'onglet ouvert. |
@@ -213,7 +213,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[hasFocus]{valign=top scroll=false}
+:::fr-table[hasFocus]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
@@ -223,27 +223,27 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[index]{valign=top scroll=false}
+:::fr-table[index]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de l'onglet courant. |
 | **Type** | property |
 | **Retour** | Number |
-| **Exemple** | `dsfr(elem).tabsGroup.index` <br/> `dsfr(elem).tabsGroup.index = 2` |
+| **Exemple** | `dsfr(elem).tabsGroup.index` <br> `dsfr(elem).tabsGroup.index = 2` |
 
 :::
 
-:::fr-table[isGrouped]{valign=top scroll=false}
+:::fr-table[isGrouped]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si les onglets du groupe sont liés entre eux ou non. |
 | **Type** | property |
 | **Retour** | Boolean |
-| **Exemple** | `dsfr(elem).tabsGroup.isGrouped` <br/> `dsfr(elem).tabsGroup.isGrouped = true` |
+| **Exemple** | `dsfr(elem).tabsGroup.isGrouped` <br> `dsfr(elem).tabsGroup.isGrouped = true` |
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement des onglets est activé ou non |
@@ -253,7 +253,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[length]{valign=top scroll=false}
+:::fr-table[length]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Retourne le nombre d'onglets dans le groupe. |
@@ -263,7 +263,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[members]{valign=top scroll=false}
+:::fr-table[members]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie un tableau d'objets correspondant aux discloses des onglets du groupe. |
@@ -273,7 +273,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -285,7 +285,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabsList
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -295,7 +295,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -307,7 +307,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabButton
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -318,7 +318,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -328,7 +328,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -340,7 +340,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabPanel
 
-:::fr-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le panneau |
@@ -351,7 +351,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le panneau est ouvert |
@@ -361,7 +361,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -371,7 +371,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du panneau |
@@ -381,7 +381,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du panneau |
@@ -392,7 +392,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -402,7 +402,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -418,7 +418,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur les onglets, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

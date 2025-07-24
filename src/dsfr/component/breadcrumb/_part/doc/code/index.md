@@ -166,7 +166,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### breadcrumb
 
-:::fr-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top multiline=true}
 | | |
 |-------|----------------|
 | **Description** | Ouvre le fil d’Ariane. |
@@ -177,7 +177,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |-------|----------------|
 | **Description** | Retourne le noeud HTML de l'élément `<nav>`. |
@@ -189,7 +189,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapseButton
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 | | |
 |-------|----------------|
 | **Description** | Replace le focus sur le bouton. |
@@ -200,7 +200,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |-------|----------------|
 | **Description** | Retourne le noeud HTML correspondant au bouton. |
@@ -212,7 +212,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapse
 
-:::fr-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -223,7 +223,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -234,7 +234,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
@@ -244,7 +244,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du collapse est activé ou non |
@@ -254,7 +254,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
@@ -264,7 +264,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
@@ -275,7 +275,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici le breadcrumb |
@@ -285,7 +285,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -295,7 +295,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -311,7 +311,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur le Fil d’Ariane, en mode mobile les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

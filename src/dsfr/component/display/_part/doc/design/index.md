@@ -52,9 +52,7 @@ Les paramètres d’affichage représentent un parcours simple permettant à l�
 
 Lorsque le bouton “paramètres d’affichage” est mis en avant dans l’en-tête de la page, il prend la forme d’un lien d’accès rapide.
 
-::dsfr-doc-storybook{storyId=display--header-display width=375}
-
-En version mobile, comme dans la version mobile du [header](../../../../header/_part/doc/index.md), l’accès rapide au bouton “paramètres d’affichage” se trouve dans le menu.
+En version mobile, l’accès rapide au bouton “paramètres d’affichage” se trouve dans le menu.
 
 **Paramètres d’affichage intégrés dans le pied de page**
 

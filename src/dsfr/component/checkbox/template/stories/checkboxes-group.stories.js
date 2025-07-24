@@ -23,10 +23,34 @@ export const DefaultGroupStory = {
   }
 };
 
+export const HintStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    hint: 'Texte de description additionnel',
+    checkboxes: getCheckboxesData()
+  }
+};
+
 export const HintGroupStory = {
   tags: ['autodocs', '!dev'],
   args: {
     checkboxes: getCheckboxesData(3, true)
+  }
+};
+
+export const InlineStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    inline: true,
+    checkboxes: getCheckboxesData(2)
+  }
+};
+
+export const SizeMdStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    size: 'md',
+    checkboxes: getCheckboxesData()
   }
 };
 

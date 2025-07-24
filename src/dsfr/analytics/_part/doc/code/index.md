@@ -1,5 +1,7 @@
 ---
 title: Documentation technique de la mesure d’audience
+sitemap:
+  noindex: true
 shortTitle: Documentation technique
 description: Intégration et configuration de l’outil de mesure d’audience du DSFR basé sur Eulerian.
 shortDescription: Guide d’intégration technique de l’outil analytics DSFR.

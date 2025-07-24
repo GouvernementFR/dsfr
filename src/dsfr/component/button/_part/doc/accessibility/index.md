@@ -54,7 +54,7 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 
 :::dsfr-doc-guideline[✅ À faire]{col=6 valid=true}
 
-![Bouton avec intitulé textuel « Afficher les informations](../_asset/accessibility/do-1.png)
+![Bouton avec intitulé textuel « Afficher les informations »](../_asset/accessibility/do-1.png)
 
 Utiliser un intitulé textuel précis.
 
@@ -77,10 +77,12 @@ En cas d’utilisation des attributs `aria-labelledby` ou `aria-label` sur des b
 ##### Information complémentaire&nbsp;: description
 
 Il est possible de compléter et d’expliciter l’intitulé d’un bouton avec une description en utilisant&nbsp;:
+
 - l’attribut `aria-describedby` avec une valeur d’id qui référence un passage de texte&nbsp;;
 - l’attribut `title`.
 
 #### Bouton avec icône seule
+
 Dans le cas des **boutons avec icône seule**, un attribut `title`, qui reprend l’intitulé du bouton, peut être ajouté afin d’expliciter le sens de l’icône pour les personnes qui en ont besoin.
 
 > [!WARNING]
@@ -121,7 +123,7 @@ Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le t
 
 ##### Bouton primaire
 
-:::fr-table[Contrastes du bouton primaire en thème clair et sombre]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes du bouton primaire en thème clair et sombre]{valign=top multiline=true caption=false}
 | État |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**par défaut**| 14,9:1 | 4,7:1 |
@@ -131,7 +133,7 @@ Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le t
 
 ##### Bouton secondaire et tertiaire
 
-:::fr-table[Contrastes du bouton secondaire et tertiaire en thème clair et sombre]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes du bouton secondaire et tertiaire en thème clair et sombre]{valign=top multiline=true caption=false}
 | État |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**par défaut**|14,9:1|5,8:1|

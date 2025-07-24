@@ -1,5 +1,7 @@
 ---
 title: Consent Manager Platform
+sitemap:
+  noindex: true
 ---
 
 ## class ConsentManagerPlatform

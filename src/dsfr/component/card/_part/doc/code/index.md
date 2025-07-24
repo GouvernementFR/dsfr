@@ -255,7 +255,7 @@ Le **ratio image/contenu** de la carte horizontale est par défaut de 40% de la 
 #### Ratio d'images
 
 L'image placée dans la partie "header" de la carte doit avoir la classe `fr-responsive-img` pour s'adapter à la largeur de la carte. Sa hauteur dépend de son ratio largeur/hauteur.
-Le ratio de l'image est par défaut en 16/9ème. Celui-ci peut être modifier en fonction du besoin grâce aux [classes utilitaires de ratio](../../../../../core/_part/doc/media/index.md) disponibles dans le core :
+Le ratio de l'image est par défaut en 16/9ème. Celui-ci peut être modifié en fonction du besoin grâce aux [classes utilitaires de ratio](../../../../../core/_part/doc/media/index.md) disponibles dans le core :
 
 - `fr-ratio-32x9` : pour un ratio largeur/hauteur de 32/9.
 - `fr-ratio-3x2` : pour un ratio largeur/hauteur de 3/2.

@@ -228,7 +228,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur la modale du paramètre d'affichage, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

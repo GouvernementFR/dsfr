@@ -82,6 +82,10 @@ Celui-ci est personnalisable.
 
 ::dsfr-doc-storybook{storyId=radios-group--radios-rich-inline-group}
 
+- Sans pictogramme
+
+::dsfr-doc-storybook{storyId=radios-group--radios-rich-no-image-inline-group}
+
 **Liste verticale**
 
 - Avec description
@@ -91,6 +95,10 @@ Celui-ci est personnalisable.
 - Sans description
 
 ::dsfr-doc-storybook{storyId=radios-group--radios-rich-group}
+
+- Sans pictogramme
+
+::dsfr-doc-storybook{storyId=radios-group--radios-rich-no-image-group}
 
 ### Tailles
 

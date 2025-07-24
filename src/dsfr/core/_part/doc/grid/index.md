@@ -12,7 +12,7 @@ order: 6
 
 # Grille et points de rupture
 
-:::fr-table[Caractéristiques de la grille]{valign=top scroll=false}
+:::fr-table[Caractéristiques de la grille]{valign=top multiline=true}
 | Mise en page | Valeurs en px | Résolution maquette en px | Token | Largeur max. du contenu | Tailles des gouttières (optionnelles) |
 | --- | --- | --- | --- | --- | --- |
 | XS | de 0 à 575 | 320 |  | / | 16 px |

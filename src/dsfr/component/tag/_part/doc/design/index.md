@@ -107,7 +107,7 @@ L’état au clic correspond au comportement constaté par l’usager une fois u
 
 Seule la couleur des tags cliquables peut être personnalisée, parmi les couleurs illustratives autorisées uniquement.
 
-:::fr-table[Tableau personnalisation design]{valign=top scroll=false caption=false}
+:::fr-table[Tableau personnalisation design]{valign=top multiline=true caption=false}
 |  Éléments | Indice thème clair | Indice thème clair |
 |:-----|:-----|:-----|
 | **Fond** | Indice **925**<br> exemple : `$pink-tuile-925` | Indice **125**<br> exemple : `$pink-tuile-125` |
