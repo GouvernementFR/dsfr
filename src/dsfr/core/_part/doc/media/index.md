@@ -86,12 +86,14 @@ Pour intégrer une vidéo au sein d’une page de contenu, voir [le composant c
 
 #### Image décorative
 
-- Alternative vide `<img alt=”” />`
+- Utiliser une alternative vide `<img alt=”” />` pour les images.
+- Utiliser l'attribut `aria-hidden="true"` pour les SVG.
 
 #### Image porteuse d’information (infographie, graphique, affiche, …)
 
-- Chaque image possède un attribut alt qui contient l'information essentielle à la compréhension du contenu.
-- Chaque image complexe a si nécessaire une description détaillée adjacente ([https://www.vie-publique.fr/bd/272944-simone-veil-la-loi-sur-lavortement-episode-2)](https://www.vie-publique.fr/bd/272944-simone-veil-la-loi-sur-lavortement-episode-2))
+- Chaque image possède un attribut `alt` qui contient l'information essentielle à la compréhension du contenu.
+- Chaque image complexe a, si nécessaire, une description détaillée adjacente, via une transcription par exemple ([Voir exemple](https://www.vie-publique.fr/bd/272944-simone-veil-la-loi-sur-lavortement-episode-2))
+- Dans le cas d'un SVG, utiliser l'attribut `aria-label` pour fournir une alternative textuelle.
 
 Plus d’informations sur [http://pidila.gitlab.io/checklist-pidila/?Thématique=Contenus non textuels&Référentiel=RGAA](http://pidila.gitlab.io/checklist-pidila/?Th%C3%A9matique=Contenus%20non%20textuels&R%C3%A9f%C3%A9rentiel=RGAA)
 
