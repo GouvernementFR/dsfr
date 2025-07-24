@@ -33,9 +33,7 @@ Le sélecteur de langues est un élément d’interaction avec l’interface per
 Le composant **Sélecteur de langue** permet de choisir la langue de l'interface.
 Sa structure, reposant sur le modèle du composant **Navigation principale** est la suivante :
 
-- Le sélecteur de langue est un élément HTML `<nav>` :
-  - Défini par les classes `fr-translate` et `fr-nav`.
-  - Doit comporter l'attribut `role="navigation"`.
+- Le sélecteur de langue est un élément HTML `<div>` défini par les classes `fr-translate` et `fr-nav`.
 - Il doit contenir un élément HTML `<div>` défini par la classe `fr-nav__item`, contenant :
   - Un `<button>` de type "button".
     - Il est défini par les classes `fr-translate__btn`, `fr-btn` et `fr-btn--tertiary`.
@@ -54,11 +52,11 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
 **Exemple de structure HTML**
 
 ```HTML
-<nav role="navigation" class="fr-translate fr-nav">
+<div class="fr-translate fr-nav">
     <div class="fr-nav__item">
-        <button aria-controls="translate" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
+        <button aria-controls="translate-menu" aria-expanded="false" title="Sélectionner une langue" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
         </button>
-        <div class="fr-collapse fr-translate__menu fr-menu" id="translate">
+        <div class="fr-collapse fr-translate__menu fr-menu" id="translate-menu">
             <ul class="fr-menu__list">
                 <li>
                     <a class="fr-translate__language fr-nav__link" hreflang="fr" lang="fr" href="/fr/" aria-current="true">FR - Français</a>
@@ -69,7 +67,7 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
             </ul>
         </div>
     </div>
-</nav>
+</div>
 ```
 
 ---
