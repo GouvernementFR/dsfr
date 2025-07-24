@@ -1,7 +1,7 @@
 id: upload
 title: Ajout de fichier
 description: Ce composant permet aux utilisateurs de sélectionner et envoyer un ou plusieurs fichiers.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/ajout-de-fichier
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/ajout-de-fichier
 wrapper: col-8
 styles:
   - core

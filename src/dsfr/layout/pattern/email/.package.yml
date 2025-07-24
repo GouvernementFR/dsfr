@@ -1,7 +1,7 @@
 id: email
 title: Bloc fonctionnel de demande d'email
 description: La demande d'email est un bloc fonctionnel qui permet de saisir un email.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/blocs-fonctionnels/email
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/blocs-fonctionnels/email
 wrapper: container
 style:
   - core

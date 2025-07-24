@@ -106,3 +106,4 @@ Ne pas personnaliser la couleur des textes.
 - [Bouton radio](../../../../radio/_part/doc/index.md)
 - [Case à cocher](../../../../checkbox/_part/doc/index.md)
 - [Champ de saisie](../../../../input/_part/doc/index.md)
+- [Liste déroulante riche](../../../../combobox/_part/doc/index.md)

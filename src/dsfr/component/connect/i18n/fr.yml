@@ -2,7 +2,7 @@ title: Bouton FranceConnect
 description: |
   Le bouton FranceConnect est un bouton spécifique permettant d'interagir avec l'API FranceConnect.
   https://franceconnect.gouv.fr/
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bouton-franceconnect
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/bouton-franceconnect
 default:
   login: S’identifier avec
   brand: FranceConnect

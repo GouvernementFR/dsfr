@@ -1,7 +1,7 @@
 id: unexpected
 title: Modèle de page erreur inattendue
 description:
-doc:
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/pages-types/page-d-erreurs
 no-heading: true
 style:
   - core

@@ -23,6 +23,15 @@
     @include padding-top(var(--table-offset));
   }
 
+  &--multiline {
+    #{ns(table__content)} {
+      th,
+      td {
+        white-space: normal;
+      }
+    }
+  }
+
   &__content {
     #{ns(cell)} {
       &--fixed,
@@ -48,7 +57,7 @@
             }
           }
 
-          input[type="checkbox"] {
+          input[type='checkbox'] {
             left: spacing.space(1v);
           }
         }
@@ -163,7 +172,7 @@
         position: relative;
 
         @include before('', block) {
-          @include absolute(inherit, 0, 0 , 0, 100%, 1px);
+          @include absolute(inherit, 0, 0, 0, 100%, 1px);
           pointer-events: none;
           @include z-index(over);
         }
@@ -172,18 +181,26 @@
           @include font-weight(bold);
 
           &[role='columnheader'] {
-            background-size: 100% 1px, 1px 100%;
+            background-size:
+              100% 1px,
+              1px 100%;
             background-repeat: no-repeat, no-repeat;
-            background-position: 0 100%, 100% 0;
+            background-position:
+              0 100%,
+              100% 0;
           }
         }
       }
 
       tbody {
         th {
-          background-size: 100% 1px, 1px 100%;
+          background-size:
+            100% 1px,
+            1px 100%;
           background-repeat: no-repeat, no-repeat;
-          background-position: 0 100%, 100% 0;
+          background-position:
+            0 100%,
+            100% 0;
         }
 
         tr {
@@ -193,41 +210,61 @@
             pointer-events: none;
             transform: translateY(spacing.space(-0.5v));
 
-            background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%), spacing.space(100% 0.5v), 0 0;
+            background-size:
+              spacing.space(0.5v 100%),
+              spacing.space(0.5v 100%),
+              spacing.space(100% 0.5v),
+              0 0;
             background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-            background-position: 0 0, 100% 0, 0 0, 0 100%;
+            background-position:
+              0 0,
+              100% 0,
+              0 0,
+              0 100%;
 
             @include preference.forced-colors {
               border: 2px solid highlight;
             }
           }
 
-          &[aria-selected="true"],
-          &[aria-selected="true"] + tr {
+          &[aria-selected='true'],
+          &[aria-selected='true'] + tr {
             @include after('');
           }
 
-          &[aria-selected="true"] + tr[aria-selected="true"] {
+          &[aria-selected='true'] + tr[aria-selected='true'] {
             @include after {
-              background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%), 0 0, 0 0;
+              background-size:
+                spacing.space(0.5v 100%),
+                spacing.space(0.5v 100%),
+                0 0,
+                0 0;
             }
           }
 
-          &[aria-selected="true"] + tr:not([aria-selected="true"]) {
+          &[aria-selected='true'] + tr:not([aria-selected='true']) {
             @include after {
-              background-size: 0 0, 0 0, spacing.space(100% 0.5v), 0 0;
+              background-size:
+                0 0,
+                0 0,
+                spacing.space(100% 0.5v),
+                0 0;
             }
           }
 
-          &:last-of-type[aria-selected="true"] {
+          &:last-of-type[aria-selected='true'] {
             @include after {
               background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%), spacing.space(100% 0.5v), spacing.space(100% 0.5v);
             }
           }
 
-          &[aria-selected="true"] + tr:last-of-type[aria-selected="true"] {
+          &[aria-selected='true'] + tr:last-of-type[aria-selected='true'] {
             @include after {
-              background-size: spacing.space(0.5v 100%), spacing.space(0.5v 100%), 0 0, spacing.space(100% 0.5v);
+              background-size:
+                spacing.space(0.5v 100%),
+                spacing.space(0.5v 100%),
+                0 0,
+                spacing.space(100% 0.5v);
             }
           }
         }
@@ -289,8 +326,16 @@
       @include after('', block) {
         @include absolute(var(--table-offset), null, null, 0, 100%, calc(100% - var(--table-offset)));
         @include z-index(over);
-        background-position: 0 0, 0 0, 100% 100%, 0 100%;
-        background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+        background-position:
+          0 0,
+          0 0,
+          100% 100%,
+          0 100%;
+        background-size:
+          100% 1px,
+          1px 100%,
+          1px 100%,
+          100% 1px;
         background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
         pointer-events: none;
       }

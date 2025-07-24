@@ -31,6 +31,13 @@ export const HintStory = {
   }
 };
 
+export const HintGroupStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    elements: getRadiosGroupData(3, true)
+  }
+};
+
 export const DisabledStory = {
   tags: ['autodocs', '!dev'],
   args: {

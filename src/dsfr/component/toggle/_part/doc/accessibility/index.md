@@ -95,7 +95,7 @@ Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nb
 
 Par défaut, le composant Interrupteur est suffisamment contrasté en thème clair et en thème sombre.
 
-:::fr-table[Contrastes par défaut]{valign=top scroll=false}
+:::fr-table[Contrastes par défaut]{valign=top multiline=true}
 | Thème |  Bordure | Coche | Étiquette |
 |------|-----|-----|-----|
 |**Thème clair**| 14,9:1 | 14,9:1 | 18,1:1 |

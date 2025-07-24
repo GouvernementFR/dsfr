@@ -79,21 +79,25 @@ Sa structure est la suivante :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des onglets doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------|----------|
+| Core       | Oui         |          |
+| Tab        | Oui         |          |
+| Utility    | Non         | Uniquement pour l'ajout d'icône |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/tab/tab.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/tab/tab.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante avec icônes
@@ -159,12 +163,12 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/tab/tab.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/tab/tab.nomodule.min.js"></script>
 ```
@@ -199,7 +203,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### tabsGroup
 
-:::fr-table[current]{valign=top scroll=false}
+:::fr-table[current]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Retourne l'API de l'onglet ouvert. |
@@ -209,7 +213,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[hasFocus]{valign=top scroll=false}
+:::fr-table[hasFocus]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
@@ -219,27 +223,27 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[index]{valign=top scroll=false}
+:::fr-table[index]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de l'onglet courant. |
 | **Type** | property |
 | **Retour** | Number |
-| **Exemple** | `dsfr(elem).tabsGroup.index` <br/> `dsfr(elem).tabsGroup.index = 2` |
+| **Exemple** | `dsfr(elem).tabsGroup.index` <br> `dsfr(elem).tabsGroup.index = 2` |
 
 :::
 
-:::fr-table[isGrouped]{valign=top scroll=false}
+:::fr-table[isGrouped]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si les onglets du groupe sont liés entre eux ou non. |
 | **Type** | property |
 | **Retour** | Boolean |
-| **Exemple** | `dsfr(elem).tabsGroup.isGrouped` <br/> `dsfr(elem).tabsGroup.isGrouped = true` |
+| **Exemple** | `dsfr(elem).tabsGroup.isGrouped` <br> `dsfr(elem).tabsGroup.isGrouped = true` |
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement des onglets est activé ou non |
@@ -249,7 +253,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[length]{valign=top scroll=false}
+:::fr-table[length]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Retourne le nombre d'onglets dans le groupe. |
@@ -259,7 +263,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[members]{valign=top scroll=false}
+:::fr-table[members]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie un tableau d'objets correspondant aux discloses des onglets du groupe. |
@@ -269,7 +273,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -281,7 +285,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabsList
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -291,7 +295,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -303,7 +307,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabButton
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -314,7 +318,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -324,7 +328,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -336,7 +340,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tabPanel
 
-:::fr-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le panneau |
@@ -347,7 +351,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le panneau est ouvert |
@@ -357,7 +361,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -367,7 +371,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du panneau |
@@ -377,7 +381,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du panneau |
@@ -388,7 +392,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
@@ -398,7 +402,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -414,7 +418,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur les onglets, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

@@ -1,6 +1,6 @@
 id: tile
 title: Tuile
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tuile
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/tuile
 wrapper: container
 style:
   - core

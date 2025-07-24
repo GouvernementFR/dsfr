@@ -37,7 +37,7 @@
 
 * range.isStep (boolean, optional) : mode curseur à pas [default: false]
 
-* range.indicators (boolean, optionnal): Pour afficher les valeurs min et max sous le curseur [default: true]
+* range.indicators (boolean, optional): Pour afficher les valeurs min et max sous le curseur [default: true]
 
 * range.error (string, optional) : ajoute un texte d'erreur
 
@@ -58,7 +58,7 @@ groupAttributes.id = range.groupId || uniqueId('range-group');
 const groupClasses = range.classes || [];
 groupClasses.push(`${prefix}-range-group`);
 
-const label = { label: range.label, hint: range.hint, id: `${range.id}-label` };
+const label = { label: range.label, hint: range.hint, attributes: { id: `${range.id}-label` } };
 
 const decorate = (value) => `${range.prefix ?? ''}${value}${range.suffix ?? ''}`;
 
@@ -74,7 +74,11 @@ const inputAttributes = range.inputAttributes || {};
 inputAttributes.id = range.id;
 inputAttributes.name = range.name;
 inputAttributes.type = 'range';
-inputAttributes['aria-labelledby'] = label.id;
+inputAttributes['aria-labelledby'] = label.attributes.id;
+if (range.isDouble) {
+  inputAttributes['aria-label'] = getText('label.min-value', 'range');
+  inputAttributes['aria-labelledby'] = `${range.id} ${label.attributes.id} `;
+}
 if (range.min) inputAttributes.min = range.min;
 if (range.max) inputAttributes.max = range.max;
 if (range.value) inputAttributes.value = range.value;
@@ -84,7 +88,9 @@ const input2Attributes = {
   ...inputAttributes,
   value: range.value2,
   id: `${range.id}-2`,
-  name: `${range.name}-2`
+  name: `${range.name}-2`,
+  'aria-label': getText('label.max-value', 'range'),
+  'aria-labelledby': `${range.id}-2 ${label.attributes.id}`
 }
 
 const builder = new MessageBuilder(range.id);

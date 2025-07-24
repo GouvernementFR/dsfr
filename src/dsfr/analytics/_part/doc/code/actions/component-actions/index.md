@@ -1,5 +1,7 @@
 ---
 title: Actions sur les composants DSFR
+sitemap:
+  noindex: true
 ---
 
 ## Actions sur les composants DSFR

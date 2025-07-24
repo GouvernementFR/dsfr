@@ -1,7 +1,7 @@
 id: stepper
 title: Indicateur d'étapes
 description: L’indicateur d'étape permet d’indiquer à l’utilisateur où il se trouve dans un formulaire ou dans une démarche.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/indicateur-d-etapes
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/indicateur-d-etapes
 wrapper: col-8
 style:
   - core

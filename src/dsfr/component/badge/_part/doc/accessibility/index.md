@@ -57,7 +57,7 @@ En thème clair et en thème sombre, le ratio de contraste du composant Badge pa
 
 ##### Accentuations
 
-:::fr-table[Contrastes des accentuations]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes des accentuations]{valign=top multiline=true caption=false}
 | Accentuation |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**green-tilleul-verveine**| 5:1 | 8,91:1|
@@ -81,7 +81,7 @@ En thème clair et en thème sombre, le ratio de contraste du composant Badge pa
 
 ##### Badge système
 
-:::fr-table[Contrastes des badges système]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes des badges système]{valign=top multiline=true caption=false}
 | Statut |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**Succès**| 4,95:1 | 4,95:1 |

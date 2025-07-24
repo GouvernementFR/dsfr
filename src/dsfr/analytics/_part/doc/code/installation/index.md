@@ -1,5 +1,7 @@
 ---
 title: Installation
+sitemap:
+  noindex: true
 ---
 
 ## Installation

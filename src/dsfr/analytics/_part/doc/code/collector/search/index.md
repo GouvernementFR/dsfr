@@ -1,5 +1,7 @@
 ---
 title: Class Search
+sitemap:
+  noindex: true
 ---
 
 ## class Search

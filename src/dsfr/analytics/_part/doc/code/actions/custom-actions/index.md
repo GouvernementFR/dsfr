@@ -1,5 +1,7 @@
 ---
 title: Actions d’interaction hors composant
+sitemap:
+  noindex: true
 ---
 
 ### Actions d’interaction hors composant
