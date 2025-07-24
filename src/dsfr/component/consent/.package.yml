@@ -10,10 +10,10 @@ style:
   - form
   - radio
   - modal
-  - transcription
 script:
   - core
   - modal
 example:
   style:
     - content
+    - transcription

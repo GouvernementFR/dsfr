@@ -4,5 +4,4 @@ description: Le pied de page propose des éléments d’information sur le site 
 doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/pied-de-page
 style:
   - core
-  - link
   - logo

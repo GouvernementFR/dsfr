@@ -320,29 +320,34 @@ Le placeholder est composé des éléments suivants :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du gestionnaire de consentement doivent être importés. Le composant a aussi des dépendances avec le composant **modale (modal)**, **bouton (button)**, **formulaire (form)**, et **case à cocher (checkbox)**. Il sera aussi nécessaire d'importer les styles de ces composants.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Link       | Oui         |
+| Button     | Oui         |
+| Form       | Oui         |
+| Radio      | Oui         |
+| Modal      | Oui         |
+| Consent    | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
-<link href="dist/component/modal/modal.min.css" rel="stylesheet">
+<link href="dist/component/link/link.min.css" rel="stylesheet">
 <link href="dist/component/button/button.min.css" rel="stylesheet">
 <link href="dist/component/form/form.min.css" rel="stylesheet">
-<link href="dist/component/checkbox/checkbox.min.css" rel="stylesheet">
+<link href="dist/component/radio/radio.min.css" rel="stylesheet">
+<link href="dist/component/modal/modal.min.css" rel="stylesheet">
 <link href="dist/component/consent/consent.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/modal/modal.legacy.min.css" rel="stylesheet">
-<link href="dist/component/button/button.legacy.min.css" rel="stylesheet">
-<link href="dist/component/form/form.legacy.min.css" rel="stylesheet">
-<link href="dist/component/checkbox/checkbox.legacy.min.css" rel="stylesheet">
-<link href="dist/component/consent/consent.legacy.min.css" rel="stylesheet">
 ```
 
 #### Style du composant
@@ -353,7 +358,7 @@ Aucune variation de style n'est possible pour le composant Gestionnaire de conse
 
 ### JavaScript
 
-Le composant Gestionnaire de consentement utilise le JavaScript du composant [Modale](../../../../modal/_part/doc/code/index.md), et du core pour le collapse des sous finalité dans la modale de gestion des cookies.
+Le composant Gestionnaire de consentement utilise le JavaScript du composant [Modale](../../../../modal/_part/doc/code/index.md), et du core pour le collapse des sous finalités dans la modale de gestion des cookies.
 
 #### Installation du JavaScript
 
@@ -365,12 +370,12 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.min.js"></script>
 ```
@@ -387,7 +392,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur la modale de gestion des cookies, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

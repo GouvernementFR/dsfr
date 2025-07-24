@@ -78,21 +78,28 @@ Sa structure, reposant sur le modèle du composant **Navigation principale** est
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du sélecteur de langue doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Button     | Oui         |
+| Navigation | Oui         |
+| Translate  | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/button/button.min.css" rel="stylesheet">
+<link href="dist/component/navigation/navigation.min.css" rel="stylesheet">
 <link href="dist/component/translate/translate.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/translate/translate.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de sélecteur de langue sans bordure
@@ -116,21 +123,23 @@ Le sélecteur de langue peut être utilisé avec un bouton sans bordure avec l'u
 ### JavaScript
 
 Pour fonctionner le composant Sélecteur de langue nécessite l'utilisation de JavaScript.
-Cette fonctionnalité est disponible dans le core.
+Ses fonctionnalités sont disponibles dans le core et le composant [Navigation](../../../../navigation/_part/doc/code/index.md).
 
-Il est donc nécessaire d'importer les fichiers js du core à la fin de la page (avant `</body>`) :
+Il est donc nécessaire d'importer ces fichiers js à la fin de la page (avant `</body>`) :
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/navigation/navigation.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/navigation/navigation.nomodule.min.js"></script>
 ```
 
 #### Instances
@@ -159,7 +168,7 @@ dsfr(elem).collapse.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### navigation
+##### navigation
 
 :::fr-table[current]{valign=top scroll=false}
 
@@ -205,7 +214,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-###### navigationItem
+##### navigationItem
 
 :::fr-table[isEnabled]{valign=top scroll=false}
 
@@ -218,7 +227,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-###### collapseButton
+##### collapseButton
 
 :::fr-table[focus]{valign=top scroll=false}
 
@@ -254,7 +263,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-###### collapse
+##### collapse
 
 :::fr-table[conceal]{valign=top scroll=false}
 

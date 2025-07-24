@@ -3,7 +3,7 @@ title: Lettre d'information et Réseaux Sociaux
 description: Le bloc "Lettre d'information et Réseaux Sociaux" est composé d'un bloc permettant à l’utilisateur de s’inscrire à la newsletter de l’organisation et/ou d'un bloc de liens permettant d’accéder aux réseaux sociaux de l’organisation depuis le pied de page.
 doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/lettre-d-information-et-reseaux-sociaux
 style:
+  - core
   - alert
   - button
-  - core
   - input

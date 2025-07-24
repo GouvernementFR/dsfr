@@ -6,4 +6,6 @@ wrapper: col-8
 style:
   - core
   - link
-  - transcription
+example:
+  style:
+    - transcription
