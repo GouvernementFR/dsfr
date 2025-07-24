@@ -18,9 +18,12 @@ sample:
   doubleEntry: Tableau à double entrée
   lg: Tableau LG
   miscellaneous: Tableau avec filtre et navigation comportant différents types de données
-  multiline:
-    subtitle: Il est possible de réactiver le retour à la ligne des éléments inline en ajoutant la classe <code>fr-cell--multiline</code> sur l'element <code>table</code>, une ligne ou une cellule du tableau
-    title: Exemple de cellules avec retour à la ligne automatique
+  tableMultiline:
+    subtitle: Il est possible de réactiver le retour à la ligne des éléments inline en ajoutant la classe <code>fr-table--multiline</code> sur le composant <code>fr-table</code>
+    title: Exemple de tableau avec retour à la ligne automatique dans les cellules
+  cellMultiline:
+    subtitle: Il est possible de réactiver le retour à la ligne des éléments inline dans une ou plusieurs cellules en ajoutant la classe <code>fr-cell--multiline</code> sur les cellules (<code>th</code>, <code>td</code>)
+    title: Exemple de tableau avec retour à la ligne automatique dans une cellule
   noCaption: Tableau avec titre invisible
   noScroll: Tableau non scrollable
   selectable: Tableau avec lignes sélectionnables

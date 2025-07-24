@@ -1,6 +1,6 @@
 import { uniqueId } from '../../../../core/template/stories/unique-id';
 import { renderTable } from './table';
-import { tableArgs, tableArgTypes, tableProps, getSelectableTableArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs, getFixedColTableArgs } from './table-arg-types';
+import { tableArgs, tableArgTypes, tableProps, getSelectableTableArgs, getSelectableTableSelectedLineArgs, getComplexTableArgs, getComplexTableCaptionDetails, getMiscellaneousTableArgs, getFixedColTableArgs, getColSizeTableArgs } from './table-arg-types';
 
 const render = (args) => renderTable({ table: tableProps(args) });
 
@@ -34,6 +34,14 @@ export const SizeSMStory = {
   }
 };
 
+export const SizeMDStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('table'),
+    size: 'md'
+  }
+};
+
 export const SizeLGStory = {
   tags: ['autodocs', '!dev'],
   args: {
@@ -55,6 +63,23 @@ export const NoScrollStory = {
   args: {
     id: uniqueId('table'),
     noScroll: true
+  }
+};
+
+export const MultilineStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('table'),
+    multiline: true
+  }
+};
+
+export const MultilineColMinSizeStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('table'),
+    multiline: true,
+    table: getColSizeTableArgs()
   }
 };
 
@@ -86,6 +111,14 @@ export const SelectableTableStory = {
   args: {
     id: uniqueId('table'),
     table: getSelectableTableArgs()
+  }
+};
+
+export const SelectableTableSelectedLineStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: uniqueId('table'),
+    table: getSelectableTableSelectedLineArgs()
   }
 };
 
