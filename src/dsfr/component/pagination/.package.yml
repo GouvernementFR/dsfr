@@ -1,7 +1,7 @@
 id: pagination
 title: Pagination
 description: La pagination permet à l’utilisateur de naviguer entre les différentes pages d’une liste d'éléments.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/pagination
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/pagination
 wrapper: container
 style:
   - core

@@ -1,7 +1,7 @@
 id: navigation
 title: Navigation principale
 description: La navigation principale est l'élément central de la navigation au sein du site, il oriente l’utilisateur à travers les grandes sections du site et sur éventuellement plusieurs niveaux de profondeur.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/navigation-principale
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/navigation-principale
 style:
   - core
   - link

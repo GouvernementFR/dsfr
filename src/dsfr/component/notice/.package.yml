@@ -1,7 +1,7 @@
 id: notice
 title: Bandeau d'information importante
 description: Le bandeau d’information importante permet aux utilisateurs de voir ou d’accéder à une information importante et temporaire.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bandeau-d-information-importante
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/bandeau-d-information-importante
 style:
   - core
   - button

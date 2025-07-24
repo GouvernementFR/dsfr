@@ -1,7 +1,7 @@
 id: password
 title: Mot de passe
 description: La demande de mot de passe permet d’aider un utilisateur à créer ou saisir un mot de passe.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/mot-de-passe
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/mot-de-passe
 wrapper: col-8
 style:
   - core

@@ -1,7 +1,7 @@
 id: nationality
 title: Bloc fonctionnel de nationalité
 description: La demande de nationalité permet d’aider un utilisateur à saisir sa nationalité.
-doc:
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/blocs-fonctionnels/nationalite
 wrapper: container
 style:
   - core

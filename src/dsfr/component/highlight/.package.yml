@@ -1,7 +1,7 @@
 id: highlight
 title: Mises en exergue
 description: La mise en exergue permet à l’utilisateur de distinguer et repérer une information facilement.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/mise-en-exergue
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/mise-en-exergue
 wrapper: col-8
 style:
   - core
