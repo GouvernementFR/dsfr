@@ -1,9 +1,11 @@
 id: content
 title: Contenu médias
 description: Les médias désignent vos contenus photos et vidéos. Lorsqu’ils sont intégré à une page de contenu, il est recommandé de suivre les règles décrites dans la documentation.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/contenu-medias
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/contenu-medias
 wrapper: col-8
 style:
   - core
   - link
-  - transcription
+example:
+  style:
+    - transcription

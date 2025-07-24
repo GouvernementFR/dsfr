@@ -110,21 +110,25 @@ Les tags peuvent être utilisés à plusieurs dans des groupes de tags `fr-tags-
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des tags doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Tag        | Oui         |          |
+| Utility    | Non         | Uniquement pour l'ajout d'icône |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/tag/tag.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/tag/tag.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de tailles
@@ -272,12 +276,12 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/tag/tag.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/tag/tag.nomodule.min.js"></script>
 ```

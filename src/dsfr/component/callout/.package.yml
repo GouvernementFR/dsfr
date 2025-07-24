@@ -1,8 +1,10 @@
 id: callout
 title: Mise en avant
 description: La mise en avant permet à l’utilisateur de distinguer rapidement une information qui vient compléter le contenu consulté.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/mise-en-avant
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/mise-en-avant
 wrapper: col-8
 style:
   - core
-  - button
+example:
+  style:
+    - button

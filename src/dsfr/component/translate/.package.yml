@@ -1,7 +1,7 @@
 id: translate
 title: Sélecteur de langue
 description: Le sélecteur de langue permet à l’utilisateur de choisir la langue dans laquelle est affichée le contenu du site, si celui-ci est disponible en plusieurs langues.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/selecteur-de-langue
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/selecteur-de-langue
 wrapper: col-8
 style:
   - core

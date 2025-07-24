@@ -1,7 +1,7 @@
 id: button
 title: Bouton
 description: Le bouton est un élément d’interaction avec l’interface permettant à l’utilisateur d’effectuer une action.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bouton
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/bouton
 wrapper: col-8
 style:
   - core

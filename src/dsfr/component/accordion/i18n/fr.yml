@@ -1,6 +1,6 @@
 title: Accordéon
 description: L'accordéon permet aux utilisateurs d'afficher et de masquer des sections de contenu présentés dans une page.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/accordeon
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/accordeon
 subdir:
   title: Mises en situation
   imbrication: Imbrication d'accordéons
