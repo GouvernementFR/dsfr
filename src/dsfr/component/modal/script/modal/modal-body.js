@@ -30,9 +30,11 @@ class ModalBody extends api.core.Instance {
   }
 
   adjust () {
+    const iframe = window.frameElement;
+    const windowElement = iframe ? iframe.contentWindow : window;
     const offset = OFFSET * (this.isBreakpoint(api.core.Breakpoints.MD) ? 2 : 1);
-    if (this.isLegacy) this.style.maxHeight = `${window.innerHeight - offset}px`;
-    else this.style.setProperty('--modal-max-height', `${window.innerHeight - offset}px`);
+    if (this.isLegacy) this.style.maxHeight = `${windowElement.innerHeight - offset}px`;
+    else this.style.setProperty('--modal-max-height', `${windowElement.innerHeight - offset}px`);
     this.divide();
   }
 }
