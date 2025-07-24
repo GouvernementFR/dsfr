@@ -135,17 +135,17 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 <link href="dist/component/toggle/toggle.min.css" rel="stylesheet">
 ```
 
-#### Variante d’interrupteurs avec libellé à gauche
+#### Variante d’interrupteurs avec statut
 
-Il est possible d’afficher le libellé à gauche de l’interrupteur, avec l'utilisation de la classe `fr-toggle--label-left`.
+Il est conseillé d’afficher un statut sous l'interrupteur pour signifier textuellement l'activation et la désactivation du champ. Des attributs placés sur le `label` permettent d'ajouter ces textes, de cette manière ils peuvent être traduits. Utiliser l'attribut `data-fr-checked-label` pour le status "Activer" et `data-fr-unchecked-label` pour le status "Désactivé".
 
-**Exemples de variantes d’interrupteurs avec libellé à gauche**
+**Exemple de variante d’interrupteur avec statut**
 
 ```HTML
-<div class="fr-toggle fr-toggle--label-left">
-    <input type="checkbox" class="fr-toggle__input" id="toggle-label-left" aria-describedby="toggle-label-left-messages">
-    <label class="fr-toggle__label" for="toggle-label-left">Libellé de l'interrupteur</label>
-    <div class="fr-messages-group" id="toggle-label-left-messages" aria-live="polite">
+<div class="fr-toggle">
+    <input type="checkbox" class="fr-toggle__input" id="toggle-status" aria-describedby="toggle-status-messages">
+    <label class="fr-toggle__label" for="toggle-status" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
+    <div class="fr-messages-group" id="toggle-status-messages" aria-live="polite">
     </div>
 </div>
 ```
@@ -154,7 +154,7 @@ Il est possible d’afficher le libellé à gauche de l’interrupteur, avec l'u
 
 Il est possible d’afficher un séparateur horizontal sous l’interrupteur, avec l'utilisation de la classe `fr-toggle--border-bottom`.
 
-**Exemples de variantes d’interrupteurs avec séparateur**
+**Exemple de variante d’interrupteur avec séparateur**
 
 ```HTML
 <div class="fr-toggle fr-toggle--border-bottom">
