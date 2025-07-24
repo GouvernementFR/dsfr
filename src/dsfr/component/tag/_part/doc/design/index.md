@@ -10,6 +10,9 @@ keywords: tag, design system, composant, UI, UX, accessibilité, variations, ét
 cover: ../_asset/cover/cover.png
 excerpt: Ce document décrit la structure visuelle et interactive du composant Tag, ses différentes variantes, tailles, états et possibilités de personnalisation dans un design system.
 summary: Ce contenu présente en détail le design du composant Tag, utilisé pour catégoriser ou filtrer des contenus. Il couvre les éléments constitutifs du tag, ses différentes variations (cliquable, sélectionnable, supprimable), les tailles disponibles, les états interactifs (survol, cliqué) et les règles de personnalisation. Ce guide s’adresse aux designers UI souhaitant intégrer le composant dans des interfaces cohérentes et accessibles, tout en respectant les standards du système de design.
+mesh:
+  - component/badge
+  - component/card
 ---
 
 ## Tag
@@ -108,10 +111,12 @@ L’état au clic correspond au comportement constaté par l’usager une fois u
 Seule la couleur des tags cliquables peut être personnalisée, parmi les couleurs illustratives autorisées uniquement.
 
 :::fr-table[Tableau personnalisation design]{valign=top multiline=true caption=false}
+
 |  Éléments | Indice thème clair | Indice thème clair |
 |:-----|:-----|:-----|
 | **Fond** | Indice **925**<br> exemple : `$pink-tuile-925` | Indice **125**<br> exemple : `$pink-tuile-125` |
 | **Texte et icône**| Indice **sun**<br> exemple : `$pink-tuile-sun-425` | Indice **moon**<br> exemple : `$pink-tuile-moon-750` |
+
 :::
 
 La personnalisation des tags doit se faire avec parcimonie et avec un objectif précis (permettre d'en faire ressortir un type ou le sens, par exemple).
@@ -170,8 +175,3 @@ Ne pas cumuler la croix du tag supprimable (icône par défaut) avec une seconde
 :::
 
 ::::
-
-### Maillage
-
-- [Badge](../../../../badge/_part/doc/index.md)
-- [Carte](../../../../card/_part/doc/index.md)

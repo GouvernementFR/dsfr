@@ -10,6 +10,8 @@ keywords: badge, statut, état, information, design système, DSFR, accessibilit
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Badge permet de mettre en avant une information courte liée à un élément précis de l’interface, comme un statut ou un état, sans interaction de la part de l’usager.
 summary: Utilisé pour signaler un état ou un statut dans une interface, le composant Badge apporte une information rapide à lire, positionnée au plus près de l’élément concerné. Il peut apparaître dans des menus, des tuiles, des tableaux ou des pages. Les badges système suivent des règles strictes de design et d’accessibilité, tandis que les badges standards autorisent une personnalisation encadrée.
+mesh:
+  - component/tag
 ---
 
 ## Badge

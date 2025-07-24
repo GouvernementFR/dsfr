@@ -11,6 +11,10 @@ cover: ../_asset/cover/cover.png
 excerpt: La zone d’expression visuelle permet de construire des sections fortes et distinctives pour mettre en avant un message ou une action dans des pages stratégiques.
 summary: Ce composant permet de composer des sections visuelles riches pour les pages d’accueil, de campagne ou de démarrage d’un parcours. Il autorise des mises en page plus expressives que le reste du DSFR tout en respectant des règles strictes de lisibilité et de cohérence. La zone d’expression visuelle combine textes, images et arrière-plans personnalisables pour générer de l’impact sans nuire à l’accessibilité ni à la simplicité des interfaces de l’État.
 badge: beta
+mesh:
+  - core/color
+  - core/palette
+  - core/media
 ---
 
 ## Zone d'expression visuelle
@@ -43,7 +47,6 @@ Dans cette combinaison, vous pouvez associer une image et une forme de couleur �
 :::
 
 ::::
-
 
 ::::dsfr-doc-guidelines
 
@@ -127,7 +130,6 @@ Ne pas couvrir 2 bords (ou plus) de l’image avec un bloc de texte, quelque soi
 
 ::::
 
-
 ::::dsfr-doc-guidelines
 
 :::dsfr-doc-guideline[❌ À ne pas faire]{col=12 valid=false}
@@ -139,7 +141,6 @@ Ne pas sortir le bloc de texte de la zone d’expression visuel ou créer de dé
 :::
 
 ::::
-
 
 - Version sur motif
 
@@ -188,9 +189,3 @@ La zone d’expression visuelle n’est sujette à aucun changement d’état.
 ### Personnalisation
 
 Le background de la zone d’expression visuelle est personnalisable et peut utiliser l’ensemble des [couleurs de la palette du DSFR](../../../../../core/_part/doc/palette/index.md) (dans la limite du respect des prérogatives liées à l’accessibilité).
-
-### Maillage
-
-- [Couleurs - Palette](../../../../../core/_part/doc/palette/index.md)
-- [Couleurs - Utilisation dans le DSFR](../../../../../core/_part/doc/color/index.md)
-- [Médias](../../../../../core/_part/doc/media/index.md)

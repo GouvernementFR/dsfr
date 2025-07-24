@@ -10,6 +10,9 @@ keywords: mise en exergue, contenu, composant éditorial, UX, design system, acc
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Mise en exergue permet de faire ressortir une information capitale intégrée dans le contenu principal, tout en respectant les principes de lisibilité et de hiérarchisation.
 summary: Ce contenu décrit le composant Mise en exergue comme un outil d’identification rapide d’informations clés au sein d’un texte. Il précise ses usages, le distingue de la mise en avant, et détaille les bonnes pratiques de mise en forme pour assurer sa visibilité. L’alignement, la position dans la page et la nature du contenu sont essentiels à son efficacité. Ce guide est destiné aux créateurs de contenu et designers cherchant à hiérarchiser l’information de manière claire et accessible.
+mesh:
+  - component/callout
+  - component/quote
 ---
 
 ## Mise en exergue
@@ -90,9 +93,5 @@ Ne pas utiliser une couleur illustrative ou des indices autre que ceux autorisé
 |  Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Bordure `$border-default-blue-france`** | Indice **main**<br> exemple : `$green-emeraude-main-632` | Indice **main**<br> exemple : `$green-emeraude-main-632` |
+
 :::
-
-### Maillage
-
-- [Mise en avant](../../../../callout/_part/doc/index.md)
-- [Citation](../../../../quote/_part/doc/index.md)

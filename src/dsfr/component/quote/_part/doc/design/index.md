@@ -10,6 +10,9 @@ keywords: citation, contenu éditorial, extrait, source, typographie, italique, 
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Citation permet d’intégrer un extrait textuel dans une page, avec des champs de détails pour ajouter des précisions sur la source. Il doit respecter une présentation typographique soignée.
 summary: Ce document décrit les usages du composant Citation, destiné à intégrer des extraits de textes ou de discours dans un contenu éditorial. Il explique comment distinguer la citation des composants de mise en avant ou de mise en exergue, précise les règles typographiques à appliquer, comme l’usage de guillemets et de l’italique, et recommande d’éviter les citations trop longues pour préserver la lisibilité. Il fournit également des indications sur la structuration, l’usage des champs de détails, et les règles de propriété intellectuelle à respecter.
+mesh:
+  - component/callout
+  - component/highlight
 ---
 
 ## Citation
@@ -117,8 +120,3 @@ Ne pas utiliser une couleur illustrative d’un indice autre que $main.
 :::
 
 Par ailleurs, certains éléments sont optionnels - voir [la structure du composant](#citation).
-
-### Maillage
-
-- [Mise en avant](../../../../callout/_part/doc/index.md)
-- [Mise en exergue](../../../../highlight/_part/doc/index.md)

@@ -10,6 +10,8 @@ keywords: alerte, message, erreur, succès, information, attention, DSFR, access
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Alerte informe l’usager d’un événement ou d’un état du système, comme une erreur, une confirmation ou une information complémentaire, de manière non bloquante.
 summary: Ce composant permet de transmettre à l’usager un message important en lien avec une action ou un état du système, sans interrompre sa tâche. Il est utilisé dans des contextes variés, comme un formulaire ou un événement technique. Il propose plusieurs variations (succès, erreur, information, attention), deux tailles, et des règles éditoriales strictes pour garantir une communication claire, courtoise et accessible.
+mesh:
+  - component/form
 ---
 
 ## Alerte
@@ -131,7 +133,3 @@ Ne pas changer le pictogramme d’une alerte car il est directement lié au mess
 :::
 
 ::::
-
-### Maillage
-
-- [Formulaires](../../../../form/_part/doc/index.md)

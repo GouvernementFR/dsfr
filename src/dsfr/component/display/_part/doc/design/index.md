@@ -10,6 +10,10 @@ keywords: paramètres d’affichage, thème clair, thème sombre, accessibilité
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Paramètres d’affichage permet de basculer entre un thème clair ou sombre. Il s’intègre dans l’en-tête ou le pied de page et s’utilise via une modale dédiée.
 summary: Ce document décrit les usages du composant Paramètres d’affichage, qui offre à l’usager le choix entre un thème clair ou sombre pour améliorer son confort de navigation. Il précise où et comment intégrer ce composant, les comportements attendus lors de l’ouverture de la modale et la gestion de l’arrière-plan. Le changement de thème s’opère instantanément, sans validation supplémentaire. Ce guide s’adresse aux concepteurs souhaitant offrir une personnalisation simple et accessible de l’interface.
+mesh:
+  - component/header
+  - component/modal
+  - component/footer
 ---
 
 ## Paramètres d'affichage
@@ -93,9 +97,3 @@ Ne pas personnaliser les pictogrammes par défaut des boutons riches.
 :::
 
 ::::
-
-### Maillage
-
-- [En-tête](../../../../header/_part/doc/index.md)
-- [Pied de page](../../../../footer/_part/doc/index.md)
-- [Modale](../../../../modal/_part/doc/index.md)

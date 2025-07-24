@@ -10,6 +10,10 @@ keywords: case à cocher, checkbox, sélection multiple, formulaire, DSFR, desig
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Case à cocher permet à l’usager de sélectionner librement une ou plusieurs options dans un ensemble de choix. Il est utilisé seul ou en groupe, avec ou sans texte d’aide.
 summary: Ce composant permet une sélection multiple ou binaire dans les interfaces, particulièrement dans les formulaires. Il peut être utilisé seul pour un choix isolé, ou en liste pour plusieurs options. Des variantes avec texte d’aide sont proposées pour améliorer la compréhension. Il respecte les contraintes d’ergonomie, d’accessibilité et de cohérence éditoriale, sans personnalisation graphique.
+mesh:
+  - component/radio
+  - component/input
+  - component/form
 ---
 
 ## Case à cocher
@@ -144,10 +148,3 @@ Ne pas personnaliser la couleur des textes.
 :::
 
 ::::
-
-### Maillage
-
-- [Bouton radio](../../../../radio/_part/doc/index.md)
-- [Liste déroulante](../../../../select/_part/doc/index.md)
-- [Champs de saisie](../../../../input/_part/doc/index.md)
-- [Formulaire](../../../../form/_part/doc/index.md)

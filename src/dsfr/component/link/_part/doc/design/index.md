@@ -10,6 +10,10 @@ keywords: lien, navigation, ancre, téléchargement, retour, DSFR, accessibilit�
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Lien facilite la navigation de l’usager dans une même page, vers une autre page du site ou vers un site tiers, en complément de la navigation principale.
 summary: Le lien est un composant essentiel pour structurer la navigation au sein des interfaces numériques. Il se décline en différentes formes selon son usage - dans un texte, hors contenu, vers une page externe ou pour un téléchargement. Non personnalisable, il suit des règles d’usage strictes afin de préserver la lisibilité, l’accessibilité et l’uniformité graphique. Son usage s’inscrit dans une hiérarchie d’interaction bien définie, distincte de celle du bouton.
+mesh:
+  - component/breadcrumb
+  - component/sidemenu
+  - component/summary
 ---
 
 ## Lien
@@ -224,10 +228,3 @@ Ne pas supprimer le soulignement du lien.
 :::
 
 ::::
-
-### Maillage
-
-- [Fil d’Ariane](../../../../breadcrumb/_part/doc/index.md)
-- [Sommaire](../../../../summary/_part/doc/index.md)
-- [Menu latéral](../../../../sidemenu/_part/doc/index.md)
-- [Navigation principale](../../../../navigation/_part/doc/index.md)

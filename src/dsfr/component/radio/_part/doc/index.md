@@ -8,6 +8,10 @@ keywords: bouton radio, sélection, interface, formulaire, design système, DSFR
 cover: ./_asset/cover/cover.png
 excerpt: Le composant Bouton radio permet de proposer à l’usager un choix unique parmi plusieurs options. Il est recommandé pour les listes de 2 à 5 éléments maximum.
 summary: Ce composant est conçu pour faciliter le choix unique dans une interface, en particulier dans les formulaires. Il offre différentes dispositions et variations, y compris des versions enrichies avec pictogrammes. Il s’utilise en groupe, avec des libellés clairs et une hiérarchie visuelle cohérente. L’intégration respecte des règles d’ergonomie, d’accessibilité et d’uniformité éditoriale.
+mesh:
+  - component/checkbox
+  - component/input
+  - component/select
 ---
 
 ## Bouton radio
