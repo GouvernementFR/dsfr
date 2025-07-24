@@ -12,7 +12,10 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.14
 
-### [1.14.1-rc.1](https://github.com/GouvernementFR/dsfr/compare/v1.14.0...1.14.1-rc.1) - 24 Juillet 2025
+### [v1.14.1-rc.2](https://github.com/GouvernementFR/dsfr/compare/v1.14.0...v1.14.1-rc.2) - 24 Juillet 2025
+
+#### chore: upgrade nexus version
+
 
 #### chore: upgrade nexus version
 
@@ -150,6 +153,9 @@ Ajout des pictogrammes :
 
 #### 📝 docs: Mise à jour du fichier README.md [(#1240)](https://github.com/GouvernementFR/dsfr/pull/1240)
 - Correction des liens cassés et mise à jour de documentation du readme
+
+
+#### fix: multiple version node
 
 
 
