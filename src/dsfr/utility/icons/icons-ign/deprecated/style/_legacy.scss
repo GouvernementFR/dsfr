@@ -1,0 +1,10 @@
+////
+/// Icon IGN Legacy
+/// @group icon-ign
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('ign'));
+}
