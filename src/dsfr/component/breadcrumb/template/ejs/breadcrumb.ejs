@@ -31,7 +31,7 @@ if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane
             const segment = breadcrumb.segments[i];
             const markup = segment.markup || 'a';
             if (markup === 'button') segmentAttrs.type = 'button';
-            if (segment.path != undefined) path += segment.path + '/';
+            if (segment.path != undefined) path += (i !== 0 ? '/' : '') + segment.path;
             if (segment.id) segmentAttrs.id = segment.id;
             if (i === breadcrumb.segments.length - 1) {
               segmentAttrs['aria-current'] = 'page';
