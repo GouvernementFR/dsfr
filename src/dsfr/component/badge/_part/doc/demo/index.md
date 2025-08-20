@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration du badge
 shortTitle: Démonstration du Badge
-description: Démonstration - Le composant Badge est utilisé pour afficher une information de type statut ou état liée à un élément de l’interface.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Badge.
 shortDescription: Affichage d’un statut informatif
 keywords: badge, statut, état, information, design système, DSFR, accessibilité, non cliquable, interface
 cover: ../_asset/cover/cover.png

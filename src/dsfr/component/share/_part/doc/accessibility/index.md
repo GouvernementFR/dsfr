@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité du Partage
 shortTitle: Accessibilité du Partage
-description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Partage.
 shortDescription: Partager un contenu via différents canaux
 keywords: partage, réseaux sociaux, interaction, DSFR, accessibilité, design système, bouton, lien
 cover: ../_asset/cover/cover.png

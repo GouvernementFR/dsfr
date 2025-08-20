@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de la Pagination
 shortTitle: Design de la Pagination
-description: Présentation du composant Pagination permettant à l’usager de naviguer facilement entre les pages d’une liste d’éléments trop longue pour être affichée en une seule fois.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Pagination.
 shortDescription: Navigation entre plusieurs pages d’une liste
 keywords: pagination, navigation, pages, liste, interface, design système, DSFR, accessibilité
 cover: ../_asset/cover/cover.png

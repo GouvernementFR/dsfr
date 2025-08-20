@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité du contrôle segmenté
-shortTitle: Accessibilité du contrôle segmenté
-description: Le contrôle segmenté permet à l’usager de choisir une vue parmi plusieurs options d’affichage disponibles dans une interface.
+title: Accessibilité du Contrôle segmenté
+shortTitle: Accessibilité du Contrôle segmenté
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Contrôle segmenté.
 shortDescription: Sélection de vues avec un contrôle segmenté.
 keywords: contrôle segmenté, vue, affichage, interface, UX, UI, design system, libellé, navigation, accessibilité
 cover: ../_asset/cover/cover.png

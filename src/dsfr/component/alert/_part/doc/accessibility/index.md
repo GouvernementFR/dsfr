@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité de l'Alerte
 shortTitle: Accessibilité de l'Alerte
-description: Accessibilité - Le composant Alerte est utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Alerte.
 shortDescription: Relayer une information importante
 keywords: alerte, message, erreur, succès, information, attention, DSFR, accessibilité, interface
 cover: ../_asset/cover/cover.png

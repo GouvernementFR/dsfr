@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Curseur
 shortTitle: Code du Curseur
-description: Présentation du composant Curseur permettant à l’usager de sélectionner une valeur entre un minimum et un maximum de manière intuitive.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Curseur.
 shortDescription: Sélection d’une valeur sur une échelle
 keywords: curseur, range, sélection, valeur, interface, DSFR, accessibilité, filtre, composant
 cover: ../_asset/cover/cover.png

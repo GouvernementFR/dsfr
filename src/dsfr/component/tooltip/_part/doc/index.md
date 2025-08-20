@@ -2,7 +2,7 @@
 title: Infobulle
 shortTitle: Infobulle
 titleId: Tooltip
-description: L’infobulle est un composant d’aide contextuelle permettant d’afficher une information complémentaire lors du survol ou du clic sur un élément de l’interface.
+description: Présentation du composant Infobulle, aide contextuelle permettant d’afficher une information complémentaire lors du survol ou du clic sur un élément de l’interface.
 shortDescription: Afficher une aide contextuelle discrète.
 keywords: infobulle, aide contextuelle, tooltip, accessibilité, survol, interface, UX, design system, indication, contenu complémentaire
 cover: ./_asset/cover/cover.png

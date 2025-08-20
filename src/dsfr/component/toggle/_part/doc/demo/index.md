@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de l'interrupteur
+title: Démonstration de l'Interrupteur
 shortTitle: Démonstration de l'Interrupteur
-description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Interrupteur.
 shortDescription: Basculer entre deux états opposés
 keywords: interrupteur, switch, interface, interaction, accessibilité, design système, DSFR, état activé, état désactivé
 cover: ../_asset/cover/cover.png

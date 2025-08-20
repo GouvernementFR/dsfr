@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité du Bouton FranceConnect
 shortTitle: Accessibilité du Bouton FranceConnect
-description: Présentation du bouton FranceConnect permettant à l’usager de s’authentifier via un fournisseur d’identité officiel reconnu par l’État.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Bouton FranceConnect.
 shortDescription: Authentification avec FranceConnect
 keywords: FranceConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité
 cover: ../_asset/cover/cover.png

@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code de l'Alerte
 shortTitle: Code de l'Alerte
-description: Code - Le composant Alerte est utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Alerte.
 shortDescription: Relayer une information importante
 keywords: alerte, message, erreur, succès, information, attention, DSFR, accessibilité, interface
 cover: ../_asset/cover/cover.png

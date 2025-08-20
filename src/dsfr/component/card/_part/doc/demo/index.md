@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration de la Carte
 shortTitle: Démonstration de la Carte
-description: Le composant carte permet de rediriger l’usager vers une page éditoriale, en lui donnant un aperçu. Elle peut intégrer des médias, actions, tags ou boutons et se décline en différents formats.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Carte.
 shortDescription: Carte cliquable redirigeant vers une page éditoriale avec aperçu.
 keywords: carte, composant, aperçu, lien, redirection, contenu, média, badge, tag, bouton, DSFR, tuile
 cover: ../_asset/cover/cover.png

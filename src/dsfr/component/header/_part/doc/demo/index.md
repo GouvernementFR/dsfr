@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de l'en-tête
+title: Démonstration de l'En-tête
 shortTitle: Démonstration de l'En-tête
-description: Présentation du composant En-tête utilisé pour identifier le site consulté et donner accès à des fonctionnalités clés comme la recherche ou la connexion.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant En-tête.
 shortDescription: Identification du site et accès rapides
 keywords: en-tête, header, marque, recherche, navigation, DSFR, accessibilité, interface
 cover: ../_asset/cover/cover.png

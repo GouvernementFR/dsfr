@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design du curseur
 shortTitle: Design du Curseur
-description: Présentation du composant Curseur permettant à l’usager de sélectionner une valeur entre un minimum et un maximum de manière intuitive.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Curseur.
 shortDescription: Sélection d’une valeur sur une échelle
 keywords: curseur, range, sélection, valeur, interface, DSFR, accessibilité, filtre, composant
 cover: ../_asset/cover/cover.png

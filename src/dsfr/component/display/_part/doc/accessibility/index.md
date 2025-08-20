@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité des paramètres d'affichage
-shortTitle: Accessibilité des paramètres d'affichage
-description: Le composant Paramètres d’affichage permet à l’usager de modifier le thème visuel d’un site entre mode clair et mode sombre.
+title: Accessibilité des Paramètres d'affichage
+shortTitle: Accessibilité des Paramètres d'affichage
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Paramètres d'affichage.
 shortDescription: Choisir le thème clair ou sombre d’un site.
 keywords: paramètres d’affichage, thème clair, thème sombre, accessibilité, modale, interface, design system, expérience utilisateur, header, footer
 cover: ../_asset/cover/cover.png

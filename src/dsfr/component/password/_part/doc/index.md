@@ -2,7 +2,7 @@
 title: Mot de passe
 shortTitle: Mot de passe
 titleId: Password
-description: Le champ mot de passe permet à l’usager de créer ou saisir un mot de passe lors d’une connexion ou d’une création de compte, avec des règles de sécurité adaptées à chaque usage.
+description: Présentation du composant Champ mot de passe permettant à l’usager de créer ou saisir un mot de passe lors d’une connexion ou d’une création de compte, avec des règles de sécurité adaptées à chaque usage.
 shortDescription: Saisie ou création de mot de passe, avec affichage masqué et recommandations de sécurité.
 keywords: mot de passe, sécurité, connexion, création de compte, champ, saisie, formulaire, visibilité, ANSSI, DSFR
 cover: ./_asset/cover/cover.png

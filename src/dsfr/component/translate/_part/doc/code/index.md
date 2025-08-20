@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du sélecteur de langues
-shortTitle: Code du sélecteur de langues
-description: Le sélecteur de langues permet à l’usager de choisir la langue d’affichage du site dans un environnement multilingue.
+title: Code du Sélecteur de langues
+shortTitle: Code du Sélecteur de langues
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Sélecteur de langues.
 shortDescription: Choisir la langue d’affichage du site.
 keywords: sélecteur de langues, multilingue, accessibilité, langue, interface, UX, design system, en-tête, code ISO, traduction
 cover: ../_asset/cover/cover.png

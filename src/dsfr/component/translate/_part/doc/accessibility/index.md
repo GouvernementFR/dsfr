@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité du sélecteur de langues
-shortTitle: Accessibilité du sélecteur de langues
-description: Le sélecteur de langues permet à l’usager de choisir la langue d’affichage du site dans un environnement multilingue.
+title: Accessibilité du Sélecteur de langues
+shortTitle: Accessibilité du Sélecteur de langues
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Sélecteur de langues.
 shortDescription: Choisir la langue d’affichage du site.
 keywords: sélecteur de langues, multilingue, accessibilité, langue, interface, UX, design system, en-tête, code ISO, traduction
 cover: ../_asset/cover/cover.png

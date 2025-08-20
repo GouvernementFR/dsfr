@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la citation
-shortTitle: Accessibilité de la citation
-description: La citation permet d’intégrer un extrait de discours ou de texte au sein d’un contenu éditorial, en respectant des règles précises de forme.
+title: Accessibilité de la Citation
+shortTitle: Accessibilité de la Citation
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Citation.
 shortDescription: Citer un texte dans un contenu éditorial.
 keywords: citation, contenu éditorial, extrait, source, typographie, italique, UX, accessibilité, design system, mise en forme
 cover: ../_asset/cover/cover.png

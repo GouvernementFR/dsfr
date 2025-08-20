@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Sommaire
 shortTitle: Code du Sommaire
-description: Présentation du composant Sommaire permettant à l’usager de naviguer facilement entre les sections d’une page longue à l’aide de liens ancrés.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Sommaire.
 shortDescription: Navigation entre les sections d’une page
 keywords: sommaire, navigation, ancre, contenu long, DSFR, accessibilité, design système, interface
 cover: ../_asset/cover/cover.png

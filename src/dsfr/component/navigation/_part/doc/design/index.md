@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de la Navigation principale
 shortTitle: Design de la Navigation principale
-description: La navigation principale organise les grandes rubriques d’un site et permet à l’usager de s’orienter dans son arborescence.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Navigation principale.
 shortDescription: Orienter l’usager dans les sections du site.
 keywords: navigation principale, menu, rubriques, arborescence, design system, UX, interface, usager, header, mega menu
 cover: ../_asset/cover/cover.png

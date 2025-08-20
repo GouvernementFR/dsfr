@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité du Tag
 shortTitle: Accessibilité du Tag
-description: Présentation complète du composant Tag destiné à la catégorisation ou au filtrage de contenus dans une interface.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Tag.
 shortDescription: Le tag sert à classer ou filtrer les contenus.
 keywords: tag, composant, design system, catégorisation, filtre, accessibilité, UI, UX, badge, interface, contenu
 cover: ../_asset/cover/cover.png

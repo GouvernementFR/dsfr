@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration du Gestionnaire de consentement
 shortTitle: Démonstration du Gestionnaire de consentement
-description: Le gestionnaire de consentement permet de recueillir et gérer les préférences des usagers concernant le dépôt de cookies non essentiels, en conformité avec les exigences de la CNIL.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Gestionnaire de consentement.
 shortDescription: Gérer le consentement des usagers sur les cookies et données personnelles.
 keywords: consentement, cookies, données personnelles, CNIL, confidentialité, bandeau, modale, finalités, RGPD, accessibilité
 cover: ../_asset/cover/cover.png

@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design du Tag
 shortTitle: Design du Tag
-description: Détails du design du composant Tag incluant ses variations, tailles, états et options de personnalisation.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Tag.
 shortDescription: Le design du tag décliné selon ses usages.
 keywords: tag, design system, composant, UI, UX, accessibilité, variations, états, personnalisation, DSFR
 cover: ../_asset/cover/cover.png

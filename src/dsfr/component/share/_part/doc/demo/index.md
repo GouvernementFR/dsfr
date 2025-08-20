@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration du Partage
 shortTitle: Démonstration du Partage
-description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Partage.
 shortDescription: Partager un contenu via différents canaux
 keywords: partage, réseaux sociaux, interaction, DSFR, accessibilité, design système, bouton, lien
 cover: ../_asset/cover/cover.png

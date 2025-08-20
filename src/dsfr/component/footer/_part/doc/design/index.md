@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design du pied de page
 shortTitle: Design du Pied de page
-description: Présentation du composant Pied de page destiné à structurer les informations complémentaires et les liens secondaires en bas de page.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Pied de page.
 shortDescription: Informations complémentaires en bas de page
 keywords: pied de page, footer, navigation secondaire, DSFR, accessibilité, informations légales, design système
 cover: ../_asset/cover/cover.png

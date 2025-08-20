@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de la Zone d'expression visuelle
 shortTitle: Design de la Zone d’expression visuelle
-description: La zone d’expression visuelle est une section de page permettant des compositions créatives pour maximiser l’impact d’un message ou d’une action sur certaines pages clés.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Zone d'expression visuelle.
 shortDescription: Une section riche et impactante pour mettre en avant un message ou une action.
 keywords: zone d’expression, composition visuelle, design, landing page, page d’accueil, campagne, impact, interface, DSFR, accessibilité
 cover: ../_asset/cover/cover.png

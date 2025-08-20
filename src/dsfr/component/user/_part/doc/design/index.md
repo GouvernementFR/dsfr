@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de l'En-tête connectée
 shortTitle: Design de l'En-tête connectée
-description: Déclinaison de l’en-tête standard permettant à l’usager connecté d’accéder à son menu de navigation personnel.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant En-tête connectée.
 shortDescription: Variante de l’en-tête dédiée aux usagers connectés
 keywords: en-tête, menu utilisateur, connexion, compte, connecté, navigation, DSFR, bêta
 cover: ../_asset/cover/cover.png

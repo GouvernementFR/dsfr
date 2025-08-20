@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design du bandeau d'information importante
-shortTitle: Design du bandeau d'information importante
-description: Le bandeau d’information importante permet de signaler temporairement une information urgente ou prioritaire en tête de page.
+title: Design du Bandeau d'information importante
+shortTitle: Design du Bandeau d'information importante
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Bandeau d'information importante.
 shortDescription: Afficher une alerte temporaire prioritaire.
 keywords: bandeau, alerte, information importante, vigilance météo, composant éditorial, interface, UX, design system, accessibilité, urgence
 cover: ../_asset/cover/cover.png

@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration du sélecteur de langues
-shortTitle: Démonstration du sélecteur de langues
-description: Le sélecteur de langues permet à l’usager de choisir la langue d’affichage du site dans un environnement multilingue.
+title: Démonstration du Sélecteur de langues
+shortTitle: Démonstration du Sélecteur de langues
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Sélecteur de langues.
 shortDescription: Choisir la langue d’affichage du site.
 keywords: sélecteur de langues, multilingue, accessibilité, langue, interface, UX, design system, en-tête, code ISO, traduction
 cover: ../_asset/cover/cover.png

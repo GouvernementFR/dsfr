@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Bouton radio
 shortTitle: Code du Bouton radio
-description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bouton radio.
 shortDescription: Sélection d’une option unique
 keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
 cover: ../_asset/cover/cover.png

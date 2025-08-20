@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la transcription
-shortTitle: Accessibilité de la transcription
-description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
+title: Accessibilité de la Transcription
+shortTitle: Accessibilité de la Transcription
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Transcription.
 shortDescription: Affichage de texte lié à un contenu média
 keywords: transcription, composant, contenu média, accessibilité, modale, accordéon, design système, DSFR
 cover: ../_asset/cover/cover.png

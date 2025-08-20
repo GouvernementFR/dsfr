@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code de la Carte
 shortTitle: Code de la Carte
-description: Le composant carte permet de rediriger l’usager vers une page éditoriale, en lui donnant un aperçu. Elle peut intégrer des médias, actions, tags ou boutons et se décline en différents formats.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Carte.
 shortDescription: Carte cliquable redirigeant vers une page éditoriale avec aperçu.
 keywords: carte, composant, aperçu, lien, redirection, contenu, média, badge, tag, bouton, DSFR, tuile
 cover: ../_asset/cover/cover.png

@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code de l'En-tête
 shortTitle: Code de l'En-tête
-description: Présentation du composant En-tête utilisé pour identifier le site consulté et donner accès à des fonctionnalités clés comme la recherche ou la connexion.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant En-tête.
 shortDescription: Identification du site et accès rapides
 keywords: en-tête, header, marque, recherche, navigation, DSFR, accessibilité, interface
 cover: ../_asset/cover/cover.png

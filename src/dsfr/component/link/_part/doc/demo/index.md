@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration du Lien
 shortTitle: Démonstration du Lien
-description: Élément de navigation secondaire permettant à l’usager d’accéder à un autre contenu, sur la même page ou sur une autre page, interne ou externe.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Lien.
 shortDescription: Navigation secondaire vers d’autres contenus
 keywords: lien, navigation, ancre, téléchargement, retour, DSFR, accessibilité
 cover: ../_asset/cover/cover.png

@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de l'Onglet
 shortTitle: Design de l'Onglet
-description: Présentation du composant Onglets pour structurer du contenu lié dans un espace restreint avec des recommandations d’usage et d’accessibilité.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Onglet.
 shortDescription: Structuration de contenu avec des onglets
 keywords: onglets, composant, interface, navigation, accessibilité, design système, UX, DSFR
 cover: ../_asset/cover/cover.png

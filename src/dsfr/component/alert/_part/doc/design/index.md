@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de l'Alerte
 shortTitle: Design de l'Alerte
-description: Design - Le composant Alerte est utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Alerte.
 shortDescription: Relayer une information importante
 keywords: alerte, message, erreur, succès, information, attention, DSFR, accessibilité, interface
 cover: ../_asset/cover/cover.png

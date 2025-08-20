@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Bouton FranceConnect
 shortTitle: Code du Bouton FranceConnect
-description: Présentation du bouton FranceConnect permettant à l’usager de s’authentifier via un fournisseur d’identité officiel reconnu par l’État.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bouton FranceConnect.
 shortDescription: Authentification avec FranceConnect
 keywords: FranceConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité
 cover: ../_asset/cover/cover.png

@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité du champ de saisie
-shortTitle: Accessibilité du champ de saisie
-description: Le champ de saisie permet à l’usager d’entrer des données dans une interface en respectant des règles de clarté et d’accessibilité.
+title: Accessibilité du Champ de saisie
+shortTitle: Accessibilité du Champ de saisie
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Champ de saisie.
 shortDescription: Saisie de données dans une interface.
 keywords: champ de saisie, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé, texte d’aide
 cover: ../_asset/cover/cover.png

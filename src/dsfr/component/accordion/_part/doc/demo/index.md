@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration de l'Accordéon
 shortTitle: Démonstration de l'Accordéon
-description: Démonstration - Le composant Accordéon permet à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Accordéon.
 shortDescription: Masquer ou révéler du contenu textuel
 keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant
 cover: ../_asset/cover/cover.png

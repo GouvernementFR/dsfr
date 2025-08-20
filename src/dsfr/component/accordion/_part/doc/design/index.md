@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de l'Accordéon
 shortTitle: Design de l'Accordéon
-description: Design - Le composant Accordéon permet à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Accordéon.
 shortDescription: Masquer ou révéler du contenu textuel
 keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant
 cover: ../_asset/cover/cover.png

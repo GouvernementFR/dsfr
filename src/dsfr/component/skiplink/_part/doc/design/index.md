@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design des liens d'évitement
-shortTitle: Design des liens d'évitement
-description: Les liens d’évitement permettent aux usagers utilisant un clavier ou un lecteur d’écran d’accéder rapidement aux zones principales d’une page.
+title: Design des Liens d'évitement
+shortTitle: Design des Liens d'évitement
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Liens d'évitement.
 shortDescription: Accéder rapidement au contenu avec le clavier.
 keywords: lien d’évitement, accessibilité, navigation clavier, lecteur d’écran, UX, interface, design system, contenu, header, composant
 cover: ../_asset/cover/cover.png

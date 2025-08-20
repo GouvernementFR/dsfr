@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démo du formulaire
+title: Démonstration du Formulaire
 cover: ../_asset/cover/cover.png
-description: Le formulaire est un composant permettant l'agencement des éléments de saisie de données et des messages d'état.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Formulaire.
 shortDescription: Gestion de l'agencement des éléments de formulaire.
 keywords: formulaire, saisie, données, interaction, accessibilité, design système, DSFR
 excerpt: Le formulaire est un composant essentiel pour la saisie de données dans une interface, permettant d'organiser les champs de saisie et les messages d'état de manière cohérente et accessible.

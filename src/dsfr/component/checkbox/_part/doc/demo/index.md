@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration de la case à cocher
 shortTitle: Démonstration de la Case à cocher
-description: Présentation du composant Case à cocher permettant à l’usager de sélectionner une ou plusieurs options dans une liste de manière indépendante.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Case à cocher.
 shortDescription: Sélection multiple dans une liste
 keywords: case à cocher, checkbox, sélection multiple, formulaire, DSFR, design système, accessibilité, interface
 cover: ../_asset/cover/cover.png

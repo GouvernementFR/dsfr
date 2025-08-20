@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration de la Pagination
 shortTitle: Démonstration de la Pagination
-description: Présentation du composant Pagination permettant à l’usager de naviguer facilement entre les pages d’une liste d’éléments trop longue pour être affichée en une seule fois.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Pagination.
 shortDescription: Navigation entre plusieurs pages d’une liste
 keywords: pagination, navigation, pages, liste, interface, design système, DSFR, accessibilité
 cover: ../_asset/cover/cover.png

@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Menu latéral
 shortTitle: Code du Menu latéral
-description: Le menu latéral est un composant de navigation secondaire qui organise des liens verticaux pour guider l’usager entre différentes pages d’une même rubrique.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Menu latéral.
 shortDescription: Naviguer entre pages liées avec un menu latéral.
 keywords: menu latéral, navigation, composant, design system, interface, UX, accessibilité, hiérarchie, rubrique, sommaire
 cover: ./_asset/cover/cover.png

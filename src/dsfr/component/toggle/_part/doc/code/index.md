@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de l'interrupteur
+title: Code de l'Interrupteur
 shortTitle: Code de l'Interrupteur
-description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Interrupteur.
 shortDescription: Basculer entre deux états opposés
 keywords: interrupteur, switch, interface, interaction, accessibilité, design système, DSFR, état activé, état désactivé
 cover: ../_asset/cover/cover.png

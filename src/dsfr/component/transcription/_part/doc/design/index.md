@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design de la transcription
+title: Design de la Transcription
 shortTitle: Design de la Transcription
-description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Transcription.
 shortDescription: Affichage de texte lié à un contenu média
 keywords: transcription, composant, contenu média, accessibilité, modale, accordéon, design système, DSFR
 cover: ../_asset/cover/cover.png
