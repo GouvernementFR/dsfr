@@ -74,7 +74,7 @@ Une mention explicative doit se trouver au dessus du formulaire afin d’en info
 
 #### Boutons
 
-Présenter en fin de formulaire, les boutons peuvent être alignés :
+Présentés en fin de formulaire, les boutons peuvent être alignés :
 
 - à gauche par rapport aux champs pour les formulaires présentés dans des pages
 - à droite par rapport aux champs pour les formulaires présentés en différentes étape avec un indicateur d'étape.
