@@ -45,7 +45,7 @@ Le composant **Pied de page** est constitué d'un élément `<footer>` de classe
     - Un bloc marque (voir [Marque de l'état](https://www.info.gouv.fr/marque-de-letat)), un élément `<div>` de classes `fr-footer__brand` et `fr-enlarge-link`.
       - Il contient à minima le bloc-marque, il s'agit du composant [bloc-marque de l'état](../../../../logo/_part/doc/code/index.md) de classe `fr-logo`. Celui-ci doit être inséré dans un lien `<a>` pointant vers la page d'accueil et avec un attribut `title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)"`.
       - Il peut aussi contenir un logo opérateur de l'État, une image (ou SVG) de classe `fr-footer__logo`.
-        - Utiliser un attribut `style="max-width:10rem;"`, avec comme valeur la largeur max du logo en fonction de son format (10rem pour du 16:9).
+        - Utiliser un attribut `style="width:10rem;"`, avec comme valeur la largeur du logo en fonction de son format (10rem pour du 16:9). Ne pas dépasser 10rem (160px) de largeur et 5.625rem (90px) de hauteur.
         - L'attribut `alt` doit être renseigné avec le nom de l'opérateur.
         - Le lien pointant vers l'accueil est alors positionné au niveau du logo de l'opérateur, il est automatiquement étendu à toute la zone du bloc marque.
         - L'attribut `title` du lien doit être renseigné sous la forme "Retour à l’accueil du site - [texte alternatif de l’image (nom de l'opérateur ou du site serviciel)] - République Française".
@@ -299,7 +299,7 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     <br>Française
                 </p>
                 <a title="Retour à l’accueil du site - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française" href="/" class="fr-footer__brand-link">
-                    <img class="fr-footer__logo" style="max-width:10rem;" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - texte alternatif de l’image]" />
+                    <img class="fr-footer__logo" style="width:10rem;" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - texte alternatif de l’image]" />
                 </a>
             </div>
             <div class="fr-footer__content">
