@@ -101,7 +101,7 @@ Au sein d'un texte, ne pas utiliser le composant Lien. Préférer l'ajout d'un l
 
 #### Groupes de liens
 
-Les liens peuvent être regroupés pour former des ensembles de navigation. Le groupe est formé par la succession de liens enveloppés un conteneur de classe `fr-links-group`. Utiliser une liste de `<ul>` `<li>` dans le cas d'une liste de lien. Insérer les lien directement dans un conteneur `<div>` lorsque qu'une liste n'est pas nécessaire, par exemple : deux liens indépendants qui ne forment pas un ensemble logique.
+Les liens peuvent être regroupés pour former des ensembles de navigation. Le groupe est formé par la succession de liens enveloppés par un conteneur de classe `fr-links-group`. Utiliser une liste de `<ul>` `<li>` dans le cas d'une liste de liens. Insérer les liens directement dans un conteneur `<div>` lorsque qu'une liste n'est pas nécessaire, par exemple : deux liens indépendants qui ne forment pas un ensemble logique.
 
 **Exemple de groupe de liens**
 
