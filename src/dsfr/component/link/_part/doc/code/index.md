@@ -101,19 +101,19 @@ Au sein d'un texte, ne pas utiliser le composant Lien. Préférer l'ajout d'un l
 
 #### Groupes de liens
 
-Les liens peuvent être regroupés pour former des ensembles de navigation. Le groupe est formé par la succession de liens enveloppés par l'élément HTML `<div>` et la classe `fr-links-group`.
+Les liens peuvent être regroupés pour former des ensembles de navigation. Le groupe est formé par la succession de liens enveloppés par un conteneur de classe `fr-links-group`. Utiliser une liste de `<ul>` `<li>` dans le cas d'une liste de liens. Insérer les liens directement dans un conteneur `<div>` lorsque qu'une liste n'est pas nécessaire, par exemple : deux liens indépendants qui ne forment pas un ensemble logique.
 
 **Exemple de groupe de liens**
 
 ```HTML
-<div class="fr-links-group">
-    <a href="#" class="fr-link">
-        Lien 1
-    </a>
-    <a href="#" class="fr-link">
-        Lien 2
-    </a>
-</div>
+<ul class="fr-links-group">
+  <li>
+    <a href="#" class="fr-link">Lien 1</a>
+  </li>
+  <li>
+    <a href="#" class="fr-link">Lien 2</a>
+  </li>
+</ul>
 ```
 
 ---

@@ -181,7 +181,7 @@ Le groupe de bouton vient avec de nombreuses variations, telles que :
   - `fr-btns-group--inline-sm` : Aligne les boutons horizontalement uniquement à partir du breakpoint SM (576px)
   - `fr-btns-group--inline-md` : Aligne les boutons horizontalement uniquement à partir du breakpoint MD (768px)
   - `fr-btns-group--inline-lg` : Aligne les boutons horizontalement uniquement à partir du breakpoint LG (992px)
-- **Inversion du positionnement** : L'ordre des boutons peut être inversé lorsqu'ils sont alignés horizontalement. Il est donc possible d'associer une des classes au dessus avec la classe `fr-btns-group--inline-reverse`. L'ordre par défaut, et en alignement vertical, correspond à l'ordre des boutons dans le DOM.
+- **Inversion du positionnement** : L'ordre des boutons peut être inversé lorsqu'ils sont positionnés horizontalement et alignés à droite. La classe `fr-btns-group--inline-reverse` permet d'inverser cet ordre, uniquement en combinaison avec les classes d'alignement "inline" et "right". L'ordre par défaut, et en alignement vertical, correspond à l'ordre des boutons dans le DOM.
 - **Taille des boutons équivalente** : La classe `fr-btns-group--equisized`, grâce au javascript du bouton, ajuste la largeur des boutons du groupe à celle du bouton le plus large. Cela permet d'égaliser la taille des boutons.
 
 Toutes ces classes peuvent être combinées entre elles.

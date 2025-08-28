@@ -145,6 +145,7 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Form       | Oui         |
 | Modal      | Oui         |
 | Radio      | Oui         |
+| Scheme     | Oui         |
 | Display    | Oui         |
 
 :::
@@ -156,6 +157,7 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 <link href="dist/component/form/form.min.css" rel="stylesheet">
 <link href="dist/component/modal/modal.min.css" rel="stylesheet">
 <link href="dist/component/radio/radio.min.css" rel="stylesheet">
+<link href="dist/scheme/scheme.min.css" rel="stylesheet">
 <link href="dist/component/display/display.min.css" rel="stylesheet">
 ```
 

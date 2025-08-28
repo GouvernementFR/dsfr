@@ -264,10 +264,10 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 :::fr-table[place]{valign=top multiline=true}
 | | |
 |------|-----|
-| **Description** | Défini le placement de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
+| **Description** | Définit le placement horizontal de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
 | **Type** | property |
-| **Retour** | 'placement--top' \| 'placement--bottom' \| 'placement--left' \| 'placement--right' |
-| **Exemple** | `dsfr(elem).tooltip.place = 'placement--top'` |
+| **Retour** | 'place_top' \| 'place_bottom' \| 'place_left' \| 'place_right' |
+| **Exemple** | `dsfr(elem).tooltip.place = 'place_top'` |
 
 :::
 
