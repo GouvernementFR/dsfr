@@ -284,7 +284,7 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
                         <div class="fr-col-12 fr-col-lg-8 fr-col-offset-lg-4--right">
                             <div class="fr-mega-menu__leader">
                                 <h4 class="fr-h4 fr-mb-2v">Titre éditorialisé</h4>
-                                <p class="fr-hidden fr-displayed-lg">Lorem [...] elit ut.</p>
+                                <p>Lorem [...] elit ut.</p>
                                 <a class="fr-link fr-fi-arrow-right-line fr-link--icon-right fr-link--align-on-content" href="#">Voir toute la rubrique</a>
                             </div>
                         </div>
