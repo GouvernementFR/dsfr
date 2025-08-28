@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design de la tuile
-shortTitle: Design de la tuile
-description: Le composant Tuile permet de créer des points d’entrée vers des pages de contenu au sein d’interfaces organisées.
+title: Design de la Tuile
+shortTitle: Design de la Tuile
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Tuile.
 shortDescription: Rediriger l’usager vers du contenu via des tuiles.
 keywords: tuile, composant, design system, interface, navigation, contenu, accessibilité, UX, UI, carte
 cover: ../_asset/cover/cover.png

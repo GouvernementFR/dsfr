@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration du Sommaire
 shortTitle: Démonstration du Sommaire
-description: Présentation du composant Sommaire permettant à l’usager de naviguer facilement entre les sections d’une page longue à l’aide de liens ancrés.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Sommaire.
 shortDescription: Navigation entre les sections d’une page
 keywords: sommaire, navigation, ancre, contenu long, DSFR, accessibilité, design système, interface
 cover: ../_asset/cover/cover.png

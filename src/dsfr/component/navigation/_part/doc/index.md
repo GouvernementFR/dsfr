@@ -2,7 +2,7 @@
 title: Navigation principale
 shortTitle: Navigation principale
 titleId: Navigation
-description: La navigation principale organise les grandes rubriques d’un site et permet à l’usager de s’orienter dans son arborescence.
+description: Présentation du composant Navigation principale organisant les grandes rubriques d’un site et permettant à l’usager de s’orienter dans son arborescence.
 shortDescription: Orienter l’usager dans les sections du site.
 keywords: navigation principale, menu, rubriques, arborescence, design system, UX, interface, usager, header, mega menu
 cover: ./_asset/cover/cover.png

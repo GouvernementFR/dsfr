@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité de l'En-tête
 shortTitle: Accessibilité de l'En-tête
-description: Présentation du composant En-tête utilisé pour identifier le site consulté et donner accès à des fonctionnalités clés comme la recherche ou la connexion.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant En-tête.
 shortDescription: Identification du site et accès rapides
 keywords: en-tête, header, marque, recherche, navigation, DSFR, accessibilité, interface
 cover: ../_asset/cover/cover.png

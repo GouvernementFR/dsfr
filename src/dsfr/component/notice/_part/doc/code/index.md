@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du bandeau d'information importante
-shortTitle: Code du bandeau d'information importante
-description: Le bandeau d’information importante permet de signaler temporairement une information urgente ou prioritaire en tête de page.
+title: Code du Bandeau d'information importante
+shortTitle: Code du Bandeau d'information importante
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bandeau d'information importante.
 shortDescription: Afficher une alerte temporaire prioritaire.
 keywords: bandeau, alerte, information importante, vigilance météo, composant éditorial, interface, UX, design system, accessibilité, urgence
 cover: ../_asset/cover/cover.png

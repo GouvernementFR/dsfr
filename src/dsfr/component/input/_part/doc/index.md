@@ -2,7 +2,7 @@
 title: Champ de saisie
 shortTitle: Champ de saisie
 titleId: Input
-description: Le champ de saisie permet à l’usager d’entrer des données dans une interface en respectant des règles de clarté et d’accessibilité.
+description: Présentation du composant Champ de saisie permettant à l’usager d’entrer des données dans une interface en respectant des règles de clarté et d’accessibilité.
 shortDescription: Saisie de données dans une interface.
 keywords: champ de saisie, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé, texte d’aide
 cover: ./_asset/cover/cover.png

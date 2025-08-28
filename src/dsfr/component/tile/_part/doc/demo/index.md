@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de la tuile
-shortTitle: Démonstration de la tuile
-description: Le composant Tuile permet de créer des points d’entrée vers des pages de contenu au sein d’interfaces organisées.
+title: Démonstration de la Tuile
+shortTitle: Démonstration de la Tuile
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Tuile.
 shortDescription: Rediriger l’usager vers du contenu via des tuiles.
 keywords: tuile, composant, design system, interface, navigation, contenu, accessibilité, UX, UI, carte
 cover: ../_asset/cover/cover.png

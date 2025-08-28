@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité du bandeau d'information importante
-shortTitle: Accessibilité du bandeau d'information importante
-description: Le bandeau d’information importante permet de signaler temporairement une information urgente ou prioritaire en tête de page.
+title: Accessibilité du Bandeau d'information importante
+shortTitle: Accessibilité du Bandeau d'information importante
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Bandeau d'information importante.
 shortDescription: Afficher une alerte temporaire prioritaire.
 keywords: bandeau, alerte, information importante, vigilance météo, composant éditorial, interface, UX, design system, accessibilité, urgence
 cover: ../_asset/cover/cover.png

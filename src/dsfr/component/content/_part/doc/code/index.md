@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Contenu médias
 shortTitle: Code du Contenu médias
-description: Le contenu média permet d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Contenu médias.
 shortDescription: Structurer visuellement une page avec des contenus média.
 keywords: contenu média, image, vidéo, audio, design system, accessibilité, UX, UI, droits d’auteur, visuel, éditorial
 cover: ../_asset/cover/cover.png

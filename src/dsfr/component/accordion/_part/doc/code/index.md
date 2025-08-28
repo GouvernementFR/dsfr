@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code de l'Accordéon
 shortTitle: Code de l'Accordéon
-description: Présentation du composant Accordéon permettant à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Accordéon.
 shortDescription: Masquer ou révéler du contenu textuel
 keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant
 cover: ../_asset/cover/cover.png

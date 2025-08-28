@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration du Tag
 shortTitle: Démonstration du Tag
-description: Présentation complète du composant Tag destiné à la catégorisation ou au filtrage de contenus dans une interface.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Tag.
 shortDescription: Le tag sert à classer ou filtrer les contenus.
 keywords: tag, composant, design system, catégorisation, filtre, accessibilité, UI, UX, badge, interface, contenu
 cover: ../_asset/cover/cover.png

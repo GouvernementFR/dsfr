@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la liste déroulante
-shortTitle: Accessibilité de la liste déroulante
-description: La liste déroulante permet à l’usager de sélectionner une option unique parmi un ensemble de choix dans un espace limité.
+title: Accessibilité de la Liste déroulante
+shortTitle: Accessibilité de la Liste déroulante
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Liste déroulante.
 shortDescription: Sélectionner une option dans une liste.
 keywords: liste déroulante, formulaire, interface, sélection, interaction, design system, UX, UI, accessibilité, boutons radio, cases à cocher
 cover: ../_asset/cover/cover.png

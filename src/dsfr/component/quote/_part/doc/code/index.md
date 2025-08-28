@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la citation
-shortTitle: Code de la citation
-description: La citation permet d’intégrer un extrait de discours ou de texte au sein d’un contenu éditorial, en respectant des règles précises de forme.
+title: Code de la Citation
+shortTitle: Code de la Citation
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Citation.
 shortDescription: Citer un texte dans un contenu éditorial.
 keywords: citation, contenu éditorial, extrait, source, typographie, italique, UX, accessibilité, design system, mise en forme
 cover: ../_asset/cover/cover.png

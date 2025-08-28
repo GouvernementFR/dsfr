@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité de l'Accordéon
 shortTitle: Accessibilité de l'Accordéon
-description: Présentation du composant Accordéon permettant à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Accordéon.
 shortDescription: Masquer ou révéler du contenu textuel
 keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant
 cover: ../_asset/cover/cover.png

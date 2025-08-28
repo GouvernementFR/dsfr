@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la transcription
-shortTitle: Code de la transcription
-description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
+title: Code de la Transcription
+shortTitle: Code de la Transcription
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Transcription.
 shortDescription: Affichage de texte lié à un contenu média
 keywords: transcription, composant, contenu média, accessibilité, modale, accordéon, design système, DSFR
 cover: ../_asset/cover/cover.png

@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de la Barre de recherche
 shortTitle: Design de la Barre de recherche
-description: Présentation du composant Barre de recherche permettant d’accéder rapidement à un contenu via un mot clé ou une phrase.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Barre de recherche.
 shortDescription: Accès rapide à un contenu par mot clé
 keywords: recherche, barre de recherche, navigation, formulaire, interface, DSFR, accessibilité, moteur de recherche
 cover: ../_asset/cover/cover.png

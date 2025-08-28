@@ -2,7 +2,7 @@
 title: Mise en exergue
 shortTitle: Mise en exergue
 titleId: Highlight
-description: La mise en exergue est un composant éditorial destiné à distinguer une information importante au sein du contenu principal d’une page.
+description: Présentation du composant éditorial Mise en exergue destiné à distinguer une information importante au sein du contenu principal d’une page.
 shortDescription: Mettre en évidence une information essentielle.
 keywords: mise en exergue, contenu, composant éditorial, UX, design system, accessibilité, information, page, interface, valorisation
 cover: ./_asset/cover/cover.png

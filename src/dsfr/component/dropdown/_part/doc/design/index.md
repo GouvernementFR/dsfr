@@ -5,7 +5,7 @@ sitemap:
 title: Design du Menu déroulant
 badge: beta
 shortTitle: Design du Menu déroulant
-description: Le menu déroulant permet d’afficher une liste d’actions, de liens ou de contrôles dans une interface sans encombrer l’écran. Il s’utilise hors formulaire.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Menu déroulant.
 shortDescription: Afficher des actions contextuelles sans encombrer l’interface
 keywords: menu déroulant, dropdown, actions, filtre, bouton, options, accessibilité, interface, DSFR
 cover: ./_asset/cover/cover.png

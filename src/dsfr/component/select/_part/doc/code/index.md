@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la liste déroulante
-shortTitle: Code de la liste déroulante
-description: La liste déroulante permet à l’usager de sélectionner une option unique parmi un ensemble de choix dans un espace limité.
+title: Code de la Liste déroulante
+shortTitle: Code de la Liste déroulante
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Liste déroulante.
 shortDescription: Sélectionner une option dans une liste.
 keywords: liste déroulante, formulaire, interface, sélection, interaction, design system, UX, UI, accessibilité, boutons radio, cases à cocher
 cover: ../_asset/cover/cover.png

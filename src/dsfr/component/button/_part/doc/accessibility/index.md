@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité du bouton
+title: Accessibilité du Bouton
 shortTitle: Accessibilité du Bouton
-description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Bouton.
 shortDescription: Déclenchement d’une action dans l’interface
 keywords: bouton, interaction, action, DSFR, design système, accessibilité, formulaire, navigation
 cover: ../_asset/cover/cover.png

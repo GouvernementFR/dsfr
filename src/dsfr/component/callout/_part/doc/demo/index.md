@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de la mise en avant
-shortTitle: Démonstration de la mise en avant
-description: La mise en avant est un élément éditorial servant à valoriser une information complémentaire dans une page de contenu.
+title: Démonstration de la Mise en avant
+shortTitle: Démonstration de la Mise en avant
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Mise en avant.
 shortDescription: Mettre en valeur une information secondaire.
 keywords: mise en avant, contenu, composant éditorial, UX, design system, accessibilité, information, valorisation, page, interface
 cover: ../_asset/cover/cover.png

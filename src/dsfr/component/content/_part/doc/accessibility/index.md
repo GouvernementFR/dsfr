@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité du contenu médias
+title: Accessibilité du Contenu médias
 shortTitle: Accessibilité du Contenu médias
-description: Le contenu média permet d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Contenu médias.
 shortDescription: Structurer visuellement une page avec des contenus média.
 keywords: contenu média, image, vidéo, audio, design system, accessibilité, UX, UI, droits d’auteur, visuel, éditorial
 cover: ../_asset/cover/cover.png

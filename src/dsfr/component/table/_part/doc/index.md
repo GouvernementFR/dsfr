@@ -2,7 +2,7 @@
 title: Tableau
 shortTitle: Tableau
 titleId: Table
-description: Présentez des données organisées en lignes et colonnes avec le composant Tableau, pensé pour faciliter la lisibilité, la comparaison et la manipulation de contenus structurés dans vos interfaces.
+description: Présentation du composant Tableau permettant de présenter des données organisées en lignes et colonnes et facilitant la lisibilité, la comparaison et la manipulation de contenus structurés des interfaces.
 shortDescription: Présentation du composant Tableau pour organiser et comparer des données.
 keywords: tableau, table, tri, pagination, données, DSFR, accessibilité, lignes, colonnes, affichage structuré, composant, visualisation
 cover: ./_asset/cover/cover.png

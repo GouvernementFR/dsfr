@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du bouton
+title: Code du Bouton
 shortTitle: Code du Bouton
-description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bouton.
 shortDescription: Déclenchement d’une action dans l’interface
 keywords: bouton, interaction, action, DSFR, design système, accessibilité, formulaire, navigation
 cover: ../_asset/cover/cover.png

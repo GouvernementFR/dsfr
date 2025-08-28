@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Mot de passe
 shortTitle: Code du Mot de passe
-description: Le champ mot de passe permet à l’usager de créer ou saisir un mot de passe lors d’une connexion ou d’une création de compte, avec des règles de sécurité adaptées à chaque usage.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Mot de passe.
 shortDescription: Saisie ou création de mot de passe, avec affichage masqué et recommandations de sécurité.
 keywords: mot de passe, sécurité, connexion, création de compte, champ, saisie, formulaire, visibilité, ANSSI, DSFR
 cover: ../_asset/cover/cover.png

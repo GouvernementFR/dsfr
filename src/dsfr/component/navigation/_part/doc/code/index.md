@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code de la Navigation principale
 shortTitle: Code de la Navigation principale
-description: La navigation principale organise les grandes rubriques d’un site et permet à l’usager de s’orienter dans son arborescence.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Navigation principale.
 shortDescription: Orienter l’usager dans les sections du site.
 keywords: navigation principale, menu, rubriques, arborescence, design system, UX, interface, usager, header, mega menu
 cover: ../_asset/cover/cover.png

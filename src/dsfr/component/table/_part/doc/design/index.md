@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design du tableau
 shortTitle: Design du Tableau
-description: Présentez des données organisées en lignes et colonnes avec le composant Tableau, pensé pour faciliter la lisibilité, la comparaison et la manipulation de contenus structurés dans vos interfaces.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Tableau.
 shortDescription: Présentation du composant Tableau pour organiser et comparer des données.
 keywords: tableau, table, tri, pagination, données, DSFR, accessibilité, lignes, colonnes, affichage structuré, composant, visualisation
 cover: ../_asset/cover/cover.png

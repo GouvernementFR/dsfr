@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design du Contenu médias
 shortTitle: Design du Contenu médias
-description: Le contenu média permet d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Contenu médias.
 shortDescription: Structurer visuellement une page avec des contenus média.
 keywords: contenu média, image, vidéo, audio, design system, accessibilité, UX, UI, droits d’auteur, visuel, éditorial
 cover: ../_asset/cover/cover.png

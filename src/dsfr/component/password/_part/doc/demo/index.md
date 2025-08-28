@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration du Mot de passe
 shortTitle: Démonstration du Mot de passe
-description: Le champ mot de passe permet à l’usager de créer ou saisir un mot de passe lors d’une connexion ou d’une création de compte, avec des règles de sécurité adaptées à chaque usage.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Mot de passe.
 shortDescription: Saisie ou création de mot de passe, avec affichage masqué et recommandations de sécurité.
 keywords: mot de passe, sécurité, connexion, création de compte, champ, saisie, formulaire, visibilité, ANSSI, DSFR
 cover: ../_asset/cover/cover.png

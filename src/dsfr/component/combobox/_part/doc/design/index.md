@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de la Liste déroulante riche
 shortTitle: Design de la Liste déroulante riche
-description: Composant interactif permettant à l’usager de choisir une ou plusieurs options dans une liste étendue, incluant recherche, sélection multiple et options par défaut.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Liste déroulante riche.
 shortDescription: Composant de sélection multiple enrichi avec fonctions de recherche.
 keywords: bêta, liste déroulante, sélection multiple, formulaire, combobox, recherche, accessibilité, UX, options, DSFR
 cover: ../_asset/cover/cover.png

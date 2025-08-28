@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la mise en avant
-shortTitle: Accessibilité de la mise en avant
-description: La mise en avant est un élément éditorial servant à valoriser une information complémentaire dans une page de contenu.
+title: Accessibilité de la Mise en avant
+shortTitle: Accessibilité de la Mise en avant
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Mise en avant.
 shortDescription: Mettre en valeur une information secondaire.
 keywords: mise en avant, contenu, composant éditorial, UX, design system, accessibilité, information, valorisation, page, interface
 cover: ../_asset/cover/cover.png

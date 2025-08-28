@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Tag
 shortTitle: Code du Tag
-description: Présentation complète du composant Tag destiné à la catégorisation ou au filtrage de contenus dans une interface.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Tag.
 shortDescription: Le tag sert à classer ou filtrer les contenus.
 keywords: tag, composant, design system, catégorisation, filtre, accessibilité, UI, UX, badge, interface, contenu
 cover: ../_asset/cover/cover.png

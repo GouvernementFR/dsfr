@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du champ de saisie
-shortTitle: Code du champ de saisie
-description: Le champ de saisie permet à l’usager d’entrer des données dans une interface en respectant des règles de clarté et d’accessibilité.
+title: Code du Champ de saisie
+shortTitle: Code du Champ de saisie
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Champ de saisie.
 shortDescription: Saisie de données dans une interface.
 keywords: champ de saisie, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé, texte d’aide
 cover: ../_asset/cover/cover.png

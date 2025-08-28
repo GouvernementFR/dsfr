@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Démonstration du Contenu médias
 shortTitle: Démonstration du Contenu médias
-description: Le contenu média permet d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Contenu médias.
 shortDescription: Structurer visuellement une page avec des contenus média.
 keywords: contenu média, image, vidéo, audio, design system, accessibilité, UX, UI, droits d’auteur, visuel, éditorial
 cover: ../_asset/cover/cover.png

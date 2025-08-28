@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la barre de recherche
+title: Accessibilité de la Barre de recherche
 shortTitle: Accessibilité de la Barre de recherche
-description: Présentation du composant Barre de recherche permettant d’accéder rapidement à un contenu via un mot clé ou une phrase.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Barre de recherche.
 shortDescription: Accès rapide à un contenu par mot clé
 keywords: recherche, barre de recherche, navigation, formulaire, interface, DSFR, accessibilité, moteur de recherche
 cover: ../_asset/cover/cover.png

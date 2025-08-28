@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Partage
 shortTitle: Code du Partage
-description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Partage.
 shortDescription: Partager un contenu via différents canaux
 keywords: partage, réseaux sociaux, interaction, DSFR, accessibilité, design système, bouton, lien
 cover: ../_asset/cover/cover.png

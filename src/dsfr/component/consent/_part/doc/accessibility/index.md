@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité du Gestionnaire de consentement
 shortTitle: Accessibilité du Gestionnaire de consentement
-description: Le gestionnaire de consentement permet de recueillir et gérer les préférences des usagers concernant le dépôt de cookies non essentiels, en conformité avec les exigences de la CNIL.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Gestionnaire de consentement.
 shortDescription: Gérer le consentement des usagers sur les cookies et données personnelles.
 keywords: consentement, cookies, données personnelles, CNIL, confidentialité, bandeau, modale, finalités, RGPD, accessibilité
 cover: ../_asset/cover/cover.png

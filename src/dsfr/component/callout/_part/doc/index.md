@@ -2,7 +2,7 @@
 title: Mise en avant
 shortTitle: Mise en avant
 titleId: Callout
-description: La mise en avant est un élément éditorial servant à valoriser une information complémentaire dans une page de contenu.
+description: Présentation du composant Mise en avant, élément éditorial servant à valoriser une information complémentaire dans une page de contenu.
 shortDescription: Mettre en valeur une information secondaire.
 keywords: mise en avant, contenu, composant éditorial, UX, design system, accessibilité, information, valorisation, page, interface
 cover: ./_asset/cover/cover.png

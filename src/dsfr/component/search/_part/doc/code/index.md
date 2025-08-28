@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la barre de recherche
+title: Code de la Barre de recherche
 shortTitle: Code de la Barre de recherche
-description: Présentation du composant Barre de recherche permettant d’accéder rapidement à un contenu via un mot clé ou une phrase.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Barre de recherche.
 shortDescription: Accès rapide à un contenu par mot clé
 keywords: recherche, barre de recherche, navigation, formulaire, interface, DSFR, accessibilité, moteur de recherche
 cover: ../_asset/cover/cover.png

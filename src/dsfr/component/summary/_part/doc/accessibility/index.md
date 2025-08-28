@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité du Sommaire
 shortTitle: Accessibilité du Sommaire
-description: Présentation du composant Sommaire permettant à l’usager de naviguer facilement entre les sections d’une page longue à l’aide de liens ancrés.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Sommaire.
 shortDescription: Navigation entre les sections d’une page
 keywords: sommaire, navigation, ancre, contenu long, DSFR, accessibilité, design système, interface
 cover: ../_asset/cover/cover.png

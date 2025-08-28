@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de la liste déroulante
-shortTitle: Démonstration de la liste déroulante
-description: La liste déroulante permet à l’usager de sélectionner une option unique parmi un ensemble de choix dans un espace limité.
+title: Démonstration de la Liste déroulante
+shortTitle: Démonstration de la Liste déroulante
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Liste déroulante.
 shortDescription: Sélectionner une option dans une liste.
 keywords: liste déroulante, formulaire, interface, sélection, interaction, design system, UX, UI, accessibilité, boutons radio, cases à cocher
 cover: ../_asset/cover/cover.png

@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de l'infobulle
-shortTitle: Code de l'infobulle
-description: L’infobulle est un composant d’aide contextuelle permettant d’afficher une information complémentaire lors du survol ou du clic sur un élément de l’interface.
+title: Code de l'Infobulle
+shortTitle: Code de l'Infobulle
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Infobulle.
 shortDescription: Afficher une aide contextuelle discrète.
 keywords: infobulle, aide contextuelle, tooltip, accessibilité, survol, interface, UX, design system, indication, contenu complémentaire
 cover: ../_asset/cover/cover.png

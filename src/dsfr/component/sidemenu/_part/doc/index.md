@@ -2,7 +2,7 @@
 title: Menu latéral
 shortTitle: Menu latéral
 titleId: Sidemenu
-description: Le menu latéral est un composant de navigation secondaire qui organise des liens verticaux pour guider l’usager entre différentes pages d’une même rubrique.
+description: Présentation du composant Menu latéral, élément de navigation secondaire qui organise des liens verticaux pour guider l’usager entre différentes pages d’une même rubrique.
 shortDescription: Naviguer entre pages liées avec un menu latéral.
 keywords: menu latéral, navigation, composant, design system, interface, UX, accessibilité, hiérarchie, rubrique, sommaire
 cover: ./_asset/cover/cover.png

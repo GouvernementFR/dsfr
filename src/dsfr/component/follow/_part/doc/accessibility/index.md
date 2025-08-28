@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la lettre d'information et des réseaux sociaux
-shortTitle: Accessibilité de la lettre d'information et réseaux sociaux
-description: Ce composant permet de proposer l’inscription à une lettre d’information et de diriger vers les réseaux sociaux de l’entité.
+title: Accessibilité de la Lettre d'information et des réseaux sociaux
+shortTitle: Accessibilité de la Lettre d'information et réseaux sociaux
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Lettre d'information et réseaux sociaux.
 shortDescription: Inscription à une lettre d’info et accès aux réseaux sociaux.
 keywords: lettre d’information, newsletter, réseaux sociaux, footer, interface, composant, design system, RGPD, accessibilité, usager
 cover: ./_asset/cover/cover.png

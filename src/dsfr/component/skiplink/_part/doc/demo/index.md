@@ -3,8 +3,8 @@ boost: 0
 sitemap:
   noindex: true
 title: Démonstration des Liens d'évitement
-shortTitle: Démonstration des liens d'évitement
-description: Les liens d’évitement permettent aux usagers utilisant un clavier ou un lecteur d’écran d’accéder rapidement aux zones principales d’une page.
+shortTitle: Démonstration des Liens d'évitement
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Liens d'évitement.
 shortDescription: Accéder rapidement au contenu avec le clavier.
 keywords: lien d’évitement, accessibilité, navigation clavier, lecteur d’écran, UX, interface, design system, contenu, header, composant
 cover: ../_asset/cover/cover.png

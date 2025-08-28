@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de la barre de recherche
+title: Démonstration de la Barre de recherche
 shortTitle: Démonstration de la Barre de recherche
-description: Présentation du composant Barre de recherche permettant d’accéder rapidement à un contenu via un mot clé ou une phrase.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Barre de recherche.
 shortDescription: Accès rapide à un contenu par mot clé
 keywords: recherche, barre de recherche, navigation, formulaire, interface, DSFR, accessibilité, moteur de recherche
 cover: ../_asset/cover/cover.png

@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité du Bouton radio
 shortTitle: Accessibilité du Bouton radio
-description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Bouton radio.
 shortDescription: Sélection d’une option unique
 keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
 cover: ../_asset/cover/cover.png

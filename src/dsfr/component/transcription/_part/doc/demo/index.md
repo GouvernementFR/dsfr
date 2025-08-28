@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de la transcription
-shortTitle: Démonstration de la transcription
-description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
+title: Démonstration de la Transcription
+shortTitle: Démonstration de la Transcription
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Transcription.
 shortDescription: Affichage de texte lié à un contenu média
 keywords: transcription, composant, contenu média, accessibilité, modale, accordéon, design système, DSFR
 cover: ../_asset/cover/cover.png

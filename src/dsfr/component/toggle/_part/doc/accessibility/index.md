@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité de l'interrupteur
 shortTitle: Accessibilité de l'Interrupteur
-description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Interrupteur.
 shortDescription: Basculer entre deux états opposés
 keywords: interrupteur, switch, interface, interaction, accessibilité, design système, DSFR, état activé, état désactivé
 cover: ../_asset/cover/cover.png

@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la tuile
-shortTitle: Code de la tuile
-description: Le composant Tuile permet de créer des points d’entrée vers des pages de contenu au sein d’interfaces organisées.
+title: Code de la Tuile
+shortTitle: Code de la Tuile
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Tuile.
 shortDescription: Rediriger l’usager vers du contenu via des tuiles.
 keywords: tuile, composant, design system, interface, navigation, contenu, accessibilité, UX, UI, carte
 cover: ../_asset/cover/cover.png

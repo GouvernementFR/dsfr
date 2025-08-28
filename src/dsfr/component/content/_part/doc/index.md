@@ -2,7 +2,7 @@
 title: Contenu médias
 shortTitle: Contenu médias
 titleId: Content
-description: Le contenu média permet d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.
+description: Présentation du composant Contenu média permettant d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.
 shortDescription: Structurer visuellement une page avec des contenus média.
 keywords: contenu média, image, vidéo, audio, design system, accessibilité, UX, UI, droits d’auteur, visuel, éditorial
 cover: ./_asset/cover/cover.png

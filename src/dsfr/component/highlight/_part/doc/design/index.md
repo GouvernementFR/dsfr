@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design de la mise en exergue
-shortTitle: Design de la mise en exergue
-description: La mise en exergue est un composant éditorial destiné à distinguer une information importante au sein du contenu principal d’une page.
+title: Design de la Mise en exergue
+shortTitle: Design de la Mise en exergue
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Mise en exergue.
 shortDescription: Mettre en évidence une information essentielle.
 keywords: mise en exergue, contenu, composant éditorial, UX, design system, accessibilité, information, page, interface, valorisation
 cover: ../_asset/cover/cover.png

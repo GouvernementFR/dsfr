@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design du Badge
 shortTitle: Design du Badge
-description: Présentation du composant Badge utilisé pour afficher une information de type statut ou état liée à un élément de l’interface.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Badge.
 shortDescription: Affichage d’un statut informatif
 keywords: badge, statut, état, information, design système, DSFR, accessibilité, non cliquable, interface
 cover: ../_asset/cover/cover.png

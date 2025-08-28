@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design du bouton
 shortTitle: Design du Bouton
-description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Bouton.
 shortDescription: Déclenchement d’une action dans l’interface
 keywords: bouton, interaction, action, DSFR, design système, accessibilité, formulaire, navigation
 cover: ../_asset/cover/cover.png

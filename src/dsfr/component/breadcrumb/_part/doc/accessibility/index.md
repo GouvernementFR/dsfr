@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité du fil d'Ariane
-shortTitle: Accessibilité du fil d’Ariane
-description: Le fil d’Ariane est un composant de navigation secondaire permettant à l’usager de se repérer dans l’arborescence d’un site et de revenir à un niveau supérieur.
+title: Accessibilité du Fil d'Ariane
+shortTitle: Accessibilité du Fil d’Ariane
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Fil d'Ariane.
 shortDescription: Se repérer dans l’arborescence avec le fil d’Ariane.
 keywords: fil d’Ariane, navigation, arborescence, hiérarchie, composant, UX, design system, position, retour, accessibilité
 cover: ../_asset/cover/cover.png

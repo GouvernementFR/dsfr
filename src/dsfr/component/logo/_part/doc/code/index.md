@@ -2,7 +2,8 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du bloc marque
+title: Code du Bloc marque
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bloc marque.
 shortDescription: Le bloc marque est un élément de la charte graphique de l'État français. Il est utilisé pour représenter l'identité visuelle de l'État.
 cover: ../_asset/cover/cover.png
 mesh:

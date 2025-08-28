@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design de la lettre d'information et des réseaux sociaux
-shortTitle: Design de la lettre d'information et réseaux sociaux
-description: Ce composant permet de proposer l’inscription à une lettre d’information et de diriger vers les réseaux sociaux de l’entité.
+title: Design de la Lettre d'information et des réseaux sociaux
+shortTitle: Design de la Lettre d'information et réseaux sociaux
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Lettre d'information et des réseaux sociaux.
 shortDescription: Inscription à une lettre d’info et accès aux réseaux sociaux.
 keywords: lettre d’information, newsletter, réseaux sociaux, footer, interface, composant, design system, RGPD, accessibilité, usager
 cover: ./_asset/cover/cover.png

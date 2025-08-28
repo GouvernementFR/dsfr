@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la case à cocher
+title: Accessibilité de la Case à cocher
 shortTitle: Accessibilité de la Case à cocher
-description: Présentation du composant Case à cocher permettant à l’usager de sélectionner une ou plusieurs options dans une liste de manière indépendante.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Case à cocher.
 shortDescription: Sélection multiple dans une liste
 keywords: case à cocher, checkbox, sélection multiple, formulaire, DSFR, design système, accessibilité, interface
 cover: ../_asset/cover/cover.png

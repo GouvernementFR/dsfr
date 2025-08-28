@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design du champ de saisie
-shortTitle: Design du champ de saisie
-description: Le champ de saisie permet à l’usager d’entrer des données dans une interface en respectant des règles de clarté et d’accessibilité.
+title: Design du Champ de saisie
+shortTitle: Design du Champ de saisie
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Champ de saisie.
 shortDescription: Saisie de données dans une interface.
 keywords: champ de saisie, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé
 cover: ../_asset/cover/cover.png

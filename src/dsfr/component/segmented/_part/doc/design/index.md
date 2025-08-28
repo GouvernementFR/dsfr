@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design du contrôle segmenté
-shortTitle: Design du contrôle segmenté
-description: Le contrôle segmenté permet à l’usager de choisir une vue parmi plusieurs options d’affichage disponibles dans une interface.
+title: Design du Contrôle segmenté
+shortTitle: Design du Contrôle segmenté
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Contrôle segmenté.
 shortDescription: Sélection de vues avec un contrôle segmenté.
 keywords: contrôle segmenté, vue, affichage, interface, UX, UI, design system, libellé, navigation, accessibilité
 cover: ../_asset/cover/cover.png

@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design de l'interrupteur
 shortTitle: Design de l'Interrupteur
-description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Interrupteur.
 shortDescription: Basculer entre deux états opposés
 keywords: interrupteur, switch, interface, interaction, accessibilité, design système, DSFR, état activé, état désactivé
 cover: ../_asset/cover/cover.png

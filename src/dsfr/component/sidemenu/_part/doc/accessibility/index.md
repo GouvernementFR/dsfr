@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Accessibilité du Menu latéral
 shortTitle: Accessibilité du Menu latéral
-description: Le menu latéral est un composant de navigation secondaire qui organise des liens verticaux pour guider l’usager entre différentes pages d’une même rubrique.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Menu latéral.
 shortDescription: Naviguer entre pages liées avec un menu latéral.
 keywords: menu latéral, navigation, composant, design system, interface, UX, accessibilité, hiérarchie, rubrique, sommaire
 cover: ./_asset/cover/cover.png

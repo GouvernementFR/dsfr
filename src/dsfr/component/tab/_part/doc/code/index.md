@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code de l'Onglet
 shortTitle: Code de l'Onglet
-description: Présentation du composant Onglets pour structurer du contenu lié dans un espace restreint avec des recommandations d’usage et d’accessibilité.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Onglet.
 shortDescription: Structuration de contenu avec des onglets
 keywords: onglets, composant, interface, navigation, accessibilité, design système, UX, DSFR
 cover: ../_asset/cover/cover.png

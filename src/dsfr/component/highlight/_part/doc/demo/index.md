@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de la mise en exergue
-shortTitle: Démonstration de la mise en exergue
-description: La mise en exergue est un composant éditorial destiné à distinguer une information importante au sein du contenu principal d’une page.
+title: Démonstration de la Mise en exergue
+shortTitle: Démonstration de la Mise en exergue
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Mise en exergue.
 shortDescription: Mettre en évidence une information essentielle.
 keywords: mise en exergue, contenu, composant éditorial, UX, design system, accessibilité, information, page, interface, valorisation
 cover: ../_asset/cover/cover.png

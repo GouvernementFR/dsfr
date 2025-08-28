@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Code du Badge
 shortTitle: Code du Badge
-description: Présentation du composant Badge utilisé pour afficher une information de type statut ou état liée à un élément de l’interface.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Badge.
 shortDescription: Affichage d’un statut informatif
 keywords: badge, statut, état, information, design système, DSFR, accessibilité, non cliquable, interface
 cover: ../_asset/cover/cover.png

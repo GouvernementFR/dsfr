@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de la citation
-shortTitle: Démonstration de la citation
-description: La citation permet d’intégrer un extrait de discours ou de texte au sein d’un contenu éditorial, en respectant des règles précises de forme.
+title: Démonstration de la Citation
+shortTitle: Démonstration de la Citation
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Citation.
 shortDescription: Citer un texte dans un contenu éditorial.
 keywords: citation, contenu éditorial, extrait, source, typographie, italique, UX, accessibilité, design system, mise en forme
 cover: ../_asset/cover/cover.png

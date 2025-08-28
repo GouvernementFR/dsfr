@@ -2,9 +2,9 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la tuile
-shortTitle: Accessibilité de la tuile
-description: Le composant Tuile permet de créer des points d’entrée vers des pages de contenu au sein d’interfaces organisées.
+title: Accessibilité de la Tuile
+shortTitle: Accessibilité de la Tuile
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Tuile.
 shortDescription: Rediriger l’usager vers du contenu via des tuiles.
 keywords: tuile, composant, design system, interface, navigation, contenu, accessibilité, UX, UI, carte
 cover: ../_asset/cover/cover.png
