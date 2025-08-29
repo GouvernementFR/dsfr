@@ -2,14 +2,16 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la barre de recherche
+title: Code de la Barre de recherche
 shortTitle: Code de la Barre de recherche
-description: Présentation du composant Barre de recherche permettant d’accéder rapidement à un contenu via un mot clé ou une phrase.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Barre de recherche.
 shortDescription: Accès rapide à un contenu par mot clé
 keywords: recherche, barre de recherche, navigation, formulaire, interface, DSFR, accessibilité, moteur de recherche
 cover: ../_asset/cover/cover.png
 excerpt: La barre de recherche permet à l’usager d’accéder à un contenu ciblé en saisissant un mot clé ou une phrase. Elle peut être globale ou contextuelle selon l’usage.
 summary: Ce composant propose un champ de saisie avec bouton pour rechercher un contenu spécifique au sein d’un site ou d’un bloc fonctionnel. Elle s’intègre idéalement à l’en-tête pour un usage global ou dans une section précise pour des recherches contextuelles. Le composant suit des recommandations strictes en matière d’accessibilité, de largeur minimale, de rédaction des libellés et ne permet pas de personnalisation graphique.
+mesh:
+  - component/header
 ---
 
 ## Barre de recherche
@@ -55,6 +57,36 @@ Sa structure est la suivante :
 </div>
 ```
 
+---
+
+### CSS
+
+#### Installation du CSS
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Input      | Oui         |
+| Button     | Oui         |
+| Search     | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
+
+```HTML
+<link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/input/input.min.css" rel="stylesheet">
+<link href="dist/component/button/button.min.css" rel="stylesheet">
+<link href="dist/component/search/search.min.css" rel="stylesheet">
+```
+
 #### Variante de taille
 
 La barre de recherche est disponible en deux variantes de tailles pour s'adapter à différents contextes d'utilisation.
@@ -69,27 +101,6 @@ Pour appliquer une variante de taille, ajoutez une des classes suivantes à l'é
 <div class="fr-search-bar fr-search-bar--lg" role="search">
   <!-- Contenu de la barre de recherche -->
 </div>
-```
-
----
-
-### CSS
-
-#### Installation du CSS
-
-Pour fonctionner correctement, les styles CSS du core et de la barre de recherche doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
-
-```HTML
-<link href="dist/core/core.min.css" rel="stylesheet">
-<link href="dist/component/search/search.min.css" rel="stylesheet">
-```
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/search/search.legacy.min.css" rel="stylesheet">
 ```
 
 ---

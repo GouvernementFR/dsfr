@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Design de l'En-tête
 shortTitle: Design de l'En-tête
-description: Présentation du composant En-tête utilisé pour identifier le site consulté et donner accès à des fonctionnalités clés comme la recherche ou la connexion.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant En-tête.
 shortDescription: Identification du site et accès rapides
 keywords: en-tête, header, marque, recherche, navigation, DSFR, accessibilité, interface
 cover: ../_asset/cover/cover.png
 excerpt: Le composant En-tête est positionné en haut de chaque page et permet à l’usager de savoir sur quel site il se trouve, tout en facilitant l’accès aux fonctions principales comme la recherche ou la connexion.
 summary: Ce composant structure la zone supérieure de chaque page d’un site public. Il intègre les éléments d’identité visuelle de l’État, les éventuels accès rapides à des fonctions essentielles, et le moteur de recherche. Non personnalisable, l’en-tête garantit cohérence, lisibilité et conformité avec la charte de l’État, en version desktop comme mobile. Il peut être enrichi ou simplifié selon les besoins du site.
+mesh:
+  - component/navigation
+  - component/footer
 ---
 
 ## En-tête
@@ -144,8 +147,3 @@ Ne pas proposer de contour aux boutons tertiaires, hormis s’il s’agit de cel
 :::
 
 ::::
-
-### Maillage
-
-- [Navigation principale](../../../../navigation/_part/doc/index.md)
-- [Pied de page](../../../../footer/_part/doc/index.md)

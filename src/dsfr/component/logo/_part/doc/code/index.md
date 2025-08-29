@@ -2,7 +2,13 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du bloc marque
+title: Code du Bloc marque
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bloc marque.
+shortDescription: Le bloc marque est un élément de la charte graphique de l'État français. Il est utilisé pour représenter l'identité visuelle de l'État.
+cover: ../_asset/cover/cover.png
+mesh:
+  - component/header
+  - component/footer
 ---
 
 ## Bloc marque
@@ -37,20 +43,24 @@ Le composant est composé d'un élément `<p>` avec la classe `.fr-logo`. Seul l
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du composant Bloc marque (logo) doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Logo       | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/logo/logo.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```html
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/logo/logo.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de taille
@@ -86,15 +96,16 @@ Un Javascript disponible dans le **core** permet de gérer le passage **en berne
 Pour faire fonctionner la fonction de passage des blocs marque en berne, le script JavaScript du core doit être importé. L'import doit se faire en fin de page, avant la fermeture du body, et de préférence avec le fichier minifié, car plus léger.
 
 ```html
-<script type="module" src="dist/core/core.min.js"></script>
+<script type="module" src="dist/core/core.module.min.js"></script>
 ```
 
-<small>NB : Il est aussi possible d'importer le JavaScript global du DSFR `dsfr.min.js`.</small>
+<small>NB : Il est aussi possible d'importer le JavaScript global du DSFR `dsfr.module.min.js`.</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
 
 ```html
-<script type="text/javascript" nomodule src="dist/core/core.legacy.min.js"></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 ```
 
 #### Utilisation du JavaScript

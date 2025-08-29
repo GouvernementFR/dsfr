@@ -14,7 +14,7 @@
       @include font-weight(regular);
 
       @include respond-from(lg) {
-        width: 44%;
+        width: 40%;
       }
 
       @include respond-from(xl) {
@@ -29,7 +29,7 @@
       position: initial;
 
       @include respond-from(lg) {
-        width: 56%;
+        width: 60%;
         position: absolute;
         justify-content: flex-end;
       }

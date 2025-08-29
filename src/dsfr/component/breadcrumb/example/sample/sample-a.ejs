@@ -17,13 +17,6 @@
   segments.push(getData('Accueil', '../'));
   for (let i = 1; i <= 7; i++) segments.push(getSegmentData(i));
   segments.push({ label: 'Page Actuelle'});
-
-
-  const data = {
-  id: uniqueId('breadcrumb'),
-  segments: segments,
-  ...breadcrumb
-}
 %>
 
-<%- include('../../template/ejs/breadcrumb.ejs', {breadcrumb: data}); %>
+<%- include('./sample-default', { breadcrumb: { segments: segments } }); %>

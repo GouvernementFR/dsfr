@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design de l'infobulle
-shortTitle: Design de l'infobulle
-description: L’infobulle est un composant d’aide contextuelle permettant d’afficher une information complémentaire lors du survol ou du clic sur un élément de l’interface.
+title: Design de l'Infobulle
+shortTitle: Design de l'Infobulle
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Infobulle.
 shortDescription: Afficher une aide contextuelle discrète.
 keywords: infobulle, aide contextuelle, tooltip, accessibilité, survol, interface, UX, design system, indication, contenu complémentaire
 cover: ../_asset/cover/cover.png
 excerpt: L’infobulle permet de fournir une information non essentielle de manière discrète et temporaire. Elle s’affiche au survol ou au clic et reste limitée en contenu.
 summary: Ce contenu décrit les usages du composant Infobulle, conçu pour afficher une information complémentaire lorsqu’elle ne peut être intégrée directement dans la page. Il en précise les cas d’usage, les limites d’affichage sur mobile, et les bonnes pratiques d’écriture et de comportement. L’infobulle doit être concise, sans mise en forme ni interaction, et n’être utilisée que pour des précisions non essentielles. Ce guide s’adresse aux concepteurs d’interfaces souhaitant améliorer la compréhension utilisateur sans alourdir la structure de la page.
+mesh:
+  - component/modal
+  - component/display
 ---
 
 ## Infobulle
@@ -90,8 +93,3 @@ Ne pas personnaliser l’icône de l’infobulle.
 :::
 
 ::::
-
-### Maillage
-
-- [Modale](../../../../modal/_part/doc/index.md)
-- [Paramètres d’affichage](../../../../display/_part/doc/index.md)

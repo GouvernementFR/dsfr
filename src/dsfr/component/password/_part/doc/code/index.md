@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Code du Mot de passe
 shortTitle: Code du Mot de passe
-description: Le champ mot de passe permet à l’usager de créer ou saisir un mot de passe lors d’une connexion ou d’une création de compte, avec des règles de sécurité adaptées à chaque usage.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Mot de passe.
 shortDescription: Saisie ou création de mot de passe, avec affichage masqué et recommandations de sécurité.
 keywords: mot de passe, sécurité, connexion, création de compte, champ, saisie, formulaire, visibilité, ANSSI, DSFR
 cover: ../_asset/cover/cover.png
 excerpt: Le champ mot de passe permet d’accompagner l’usager lors de la création ou la saisie d’un mot de passe, avec affichage masqué, retour d’erreur et règles de sécurité.
 summary: Le composant mot de passe est conçu pour les cas d’usage de création de compte ou de connexion. Il propose une saisie masquée par défaut avec la possibilité d’afficher le contenu saisi, une gestion des erreurs en cas de non-conformité aux règles de sécurité, ainsi que des textes d’accompagnement dynamiques. Ce composant respecte les recommandations de l’ANSSI et s’intègre au sein des pages d’authentification du DSFR.
+mesh:
+  - component/alert
+  - component/input
 ---
 
 ## Mot de passe
@@ -79,19 +82,31 @@ Sa structure est la suivante :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du mot de passe doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Form       | Oui         |          |
+| Input      | Oui         |          |
+| checkbox   | Oui         |          |
+| Password   | Oui         |          |
+| Link       | Non         | Uniquement pour le lien de récupération du mot de passe |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/form/form.min.css" rel="stylesheet">
+<link href="dist/component/input/input.min.css" rel="stylesheet">
+<link href="dist/component/checkbox/checkbox.min.css" rel="stylesheet">
 <link href="dist/component/password/password.min.css" rel="stylesheet">
-```
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/password/password.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de validation
@@ -179,11 +194,11 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/password/password.module.min.js"></script>
 ```
-<small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/password/password.nomodule.min.js"></script>
 ```
@@ -217,7 +232,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### password
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du mot de passe est activé ou non |
@@ -226,7 +241,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).password.isEnabled = false` |
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -237,7 +252,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### passwordInput
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du mot de passe est activé ou non |
@@ -246,7 +261,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).passwordInput.isEnabled = false` |
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -257,7 +272,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### passwordLabel
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du libellé du mot de passe est activé ou non |
@@ -266,7 +281,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).passwordLabel.isEnabled = false` |
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -277,7 +292,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### passwordToggle
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement d'affichage du mot de passe est activé ou non |
@@ -286,7 +301,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Exemple** | `dsfr(elem).passwordToggle.isEnabled = false` |
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |

@@ -2,14 +2,18 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la transcription
-shortTitle: Code de la transcription
-description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
+title: Code de la Transcription
+shortTitle: Code de la Transcription
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Transcription.
 shortDescription: Affichage de texte lié à un contenu média
 keywords: transcription, composant, contenu média, accessibilité, modale, accordéon, design système, DSFR
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Transcription permet de proposer un texte associé à un contenu média, à afficher ou masquer dans une interface, sous forme d’accordéon ou de modale.
 summary: Ce composant facilite l’accès au texte d’une vidéo ou d’un média pour les usagers qui en ont besoin, en l’affichant sur la même page dans une zone repliable ou via une modale. Il est conçu pour garantir une lecture simultanée fluide et accessible, avec une structure claire et des règles d’intégration strictes.
+mesh:
+  - component/accordion
+  - component/content
+  - component/modal
 ---
 
 ## Transcription
@@ -93,21 +97,28 @@ Sa structure est la suivante :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et de la transcription doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Button     | Oui         |
+| Modal      | Oui         |
+| Transcription | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/button/button.min.css" rel="stylesheet">
+<link href="dist/component/modal/modal.min.css" rel="stylesheet">
 <link href="dist/component/transcription/transcription.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/transcription/transcription.legacy.min.css" rel="stylesheet">
 ```
 
 ---
@@ -116,23 +127,36 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être im
 
 #### Installation du JavaScript
 
-Pour fonctionner le composant transcription nécessite l'utilisation de JavaScript.
-Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
+Le composant Transcription nécessite l'utilisation de JavaScript pour fonctionner correctement. Son comportement de déplié le contenu utilise le fonctionnement du collapse du core, et il utilise le composant [Modal](../../../../modal/_part/doc/index.md) pour ouvrir le contenu en grand.
 
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Son import doit se faire à la fin de la page, avant la fermeture de la balise `</body>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+::fr-table[Dépendances JS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Modal      | Oui         |
+| Transcription | Oui         |
+
+:::
+
+**Exemple d'imports JavaScript**
 
 ```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/modal/modal.module.min.js"></script>
 <script type="module" src="dist/component/transcription/transcription.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/transcription/transcription.nomodule.min.js"></script>
 ```
 
@@ -167,7 +191,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### transcription
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -180,7 +204,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapseButton
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -192,7 +216,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -203,7 +227,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -216,7 +240,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### collapse
 
-:::fr-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -228,7 +252,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -240,7 +264,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -251,7 +275,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -262,7 +286,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -273,7 +297,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -284,7 +308,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -296,7 +320,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -307,7 +331,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -318,7 +342,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -331,7 +355,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### modalButton
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -343,7 +367,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -354,7 +378,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -367,7 +391,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### modal
 
-:::fr-table[conceal]{valign=top scroll=false}
+:::fr-table[conceal]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -379,7 +403,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -391,7 +415,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -402,7 +426,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -413,7 +437,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -424,7 +448,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -435,7 +459,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -447,7 +471,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -458,7 +482,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -469,7 +493,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|

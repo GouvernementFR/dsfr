@@ -4,12 +4,14 @@ sitemap:
   noindex: true
 title: Design du Contenu médias
 shortTitle: Design du Contenu médias
-description: Le contenu média permet d’intégrer images, vidéos ou sons dans une page tout en respectant des règles éditoriales claires.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Contenu médias.
 shortDescription: Structurer visuellement une page avec des contenus média.
 keywords: contenu média, image, vidéo, audio, design system, accessibilité, UX, UI, droits d’auteur, visuel, éditorial
 cover: ../_asset/cover/cover.png
 excerpt: Ce document explique comment intégrer des contenus média dans une page de manière cohérente et responsable, tout en respectant les droits et les bonnes pratiques éditoriales.
 summary: Ce guide présente le composant contenu média, destiné à l’intégration d’éléments visuels ou sonores comme des images, vidéos ou fichiers audio dans les pages d’un site. Il précise les conditions d’usage, notamment en matière de droits, et rappelle les règles éditoriales à suivre pour assurer la clarté du message, l’unité graphique et l’accessibilité. Il s’adresse aux équipes éditoriales et de conception souhaitant enrichir leurs pages sans compromettre la cohérence visuelle ni l’expérience utilisateur.
+mesh:
+  - component/transcription
 ---
 
 ## Contenu médias
@@ -88,7 +90,3 @@ Le contenu média n’est sujet à aucun changement d’état.
 Le contenu média n’est pas personnalisable.
 
 Toutefois, certains éléments sont optionnels - voir [la structure du composant](#contenu-médias).
-
-### Maillage
-
-- [Transcription](../../../../transcription/_part/doc/index.md)

@@ -47,27 +47,27 @@ Les différents styles de police sont proposés en version mobile jusqu’au poi
 
 Les titres sont utilisés pour créer une hiérarchie visuelle dans la page, et permettent de trouver facilement une information. Cette hiérarchisation est également importante pour le référencement naturel de la page.
 
-::::fr-table[Titres - heading]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[Titres - heading]{valign=top vheaders=vertical multiline=true caption=false}
 | Niveau | Usages | Aperçu HTML | Balise associée | Attributs desktop | Attributs mobile |
 |--------|--------|-------------|-----------------|------------------|------------------|
-| H1 | Titre principal de la page : il ne peut y en avoir qu’un par page. | <p class="fr-h1">Titre h1</p> | `<h1>` | Taille : 40 px<br>Line-height : 48 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 32 px<br>Line-height : 40 px<br>Margin-bottom : 24px<br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| H2 | Second niveau de titre de section/paragraphes. Leur nombre n’est pas limité. Ils permettent de hiérarchiser les sections de texte et de paragraphes | <p class="fr-h2">Titre h2</p> | `<h2>` | Taille : 32 px<br>Line-height : 40 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 28px<br>Line-height : 36 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| H3 | Troisième niveau sous-titre de section/paragraphes. Leur nombre n’est pas limité. Ils permettent de hiérarchiser les sections de texte et de paragraphes. | <p class="fr-h3">Titre h3</p> | `<h3>` | Taille : 28px<br>Line-height : 36 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 24 px<br>Line-height : 32 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| H4 | Quatrième niveau de sous-titre. Leur nombre n’est pas limité. | <p class="fr-h4">Titre h4</p> | `<h4>` | Taille : 24 px<br>Line-height : 32 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 22 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| H5 | Cinquième niveau de sous-titre. Leur nombre n’est pas limité. | <p class="fr-h5">Titre h5</p> | `<h5>` | Taille : 22 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 20 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| H6 | Sixième et plus petit niveau de sous-titre. Leur nombre n’est pas limité. | <p class="fr-h6">Titre h6</p> | `<h6>` | Taille : 20 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 18 px<br>Line-height : 24 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| H1 | Titre principal de la page : il ne peut y en avoir qu’un par page. | <p class="fr-h1">Aa</p> | `<h1>` | Taille : 40 px<br>Line-height : 48 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 32 px<br>Line-height : 40 px<br>Margin-bottom : 24px<br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| H2 | Second niveau de titre de section / paragraphes. Leur nombre n’est pas limité. Ils permettent de hiérarchiser les sections de texte et de paragraphes | <p class="fr-h2">Aa</p> | `<h2>` | Taille : 32 px<br>Line-height : 40 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 28px<br>Line-height : 36 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| H3 | Troisième niveau sous-titre de section / paragraphes. Leur nombre n’est pas limité. Ils permettent de hiérarchiser les sections de texte et de paragraphes. | <p class="fr-h3">Aa</p> | `<h3>` | Taille : 28px<br>Line-height : 36 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 24 px<br>Line-height : 32 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| H4 | Quatrième niveau de sous-titre. Leur nombre n’est pas limité. | <p class="fr-h4">Aa</p> | `<h4>` | Taille : 24 px<br>Line-height : 32 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 22 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| H5 | Cinquième niveau de sous-titre. Leur nombre n’est pas limité. | <p class="fr-h5">Aa</p> | `<h5>` | Taille : 22 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 20 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| H6 | Sixième et plus petit niveau de sous-titre. Leur nombre n’est pas limité. | <p class="fr-h6">Aa</p> | `<h6>` | Taille : 20 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 18 px<br>Line-height : 24 px<br>Margin-bottom : 24 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
 ::::
 
 Pour donner une plus grande liberté éditoriale et graphique, sans nuire à la hiérarchie de l’information et au référencement nous vous proposons plusieurs niveaux de titres alternatifs (display). Vous pourrez les utiliser pour les mises en avant, les bannières, etc.
 
-::::fr-table[Titres alternatifs - Display]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[Titres alternatifs - Display]{valign=top multiline=true vheaders=vertical caption=false}
 | Niveau | Aperçu HTML | Classe associée | Attributs desktop | Attributs mobile |
 |--------|-------------|-----------------|------------------|------------------|
-| Titre alternatif XL | <p class="fr-display--xl"> Titre alternatif XL </p> | fr-display--xl | Taille : 80 px<br>Line-height : 88 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 72 px<br>Line-height : 80 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| Titre alternatif LG | <p class="fr-display--lg"> Titre alternatif LG </p> | fr-display--lg | Taille : 72 px<br>Line-height : 80 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 64 px<br>Line-height : 72 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| Titre alternatif MD | <p class="fr-display--md"> Titre alternatif MD </p> | fr-display--md | Taille : 64 px<br>Line-height : 72 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 56 px<br>Line-height : 64 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| Titre alternatif SM | <p class="fr-display--sm"> Titre alternatif SM </p> | fr-display--sm | Taille : 56 px<br>Line-height : 64 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 48 px<br>Line-height : 56 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
-| Titre alternatif XS | <p class="fr-display--xs"> Titre alternatif XS </p> | fr-display--xs | Taille : 48 px<br>Line-height : 56 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 40 px<br>Line-height : 48 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| Titre alternatif XL | <p class="fr-display--xl"> Aa </p> | fr-display--xl | Taille : 80 px<br>Line-height : 88 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 72 px<br>Line-height : 80 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| Titre alternatif LG | <p class="fr-display--lg"> Aa </p> | fr-display--lg | Taille : 72 px<br>Line-height : 80 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 64 px<br>Line-height : 72 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| Titre alternatif MD | <p class="fr-display--md"> Aa </p> | fr-display--md | Taille : 64 px<br>Line-height : 72 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 56 px<br>Line-height : 64 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| Titre alternatif SM | <p class="fr-display--sm"> Aa </p> | fr-display--sm | Taille : 56 px<br>Line-height : 64 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 48 px<br>Line-height : 56 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
+| Titre alternatif XS | <p class="fr-display--xs"> Aa </p> | fr-display--xs | Taille : 48 px<br>Line-height : 56 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White | Taille : 40 px<br>Line-height : 48 px<br>Margin-bottom : 32 px <br><br>Couleur sur fond clair : G800<br>Couleur sur fond foncé : White |
 ::::
 
 Les titres alternatifs peuvent être associés selon votre besoin à un h1, un h2, un h3 ou un h4.
@@ -84,14 +84,14 @@ Pour les développeurs afin de personnaliser la taille de vos titres vous pouvez
 
 Les styles de texte sont là pour vous aider à concevoir vos interfaces efficacement et assurer l’homogénéité entre les différents sites.
 
-::::fr-table[Style de texte]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[Style de texte]{valign=top multiline=true vheaders=vertical caption=false}
 | Niveau | Usage | Aperçu HTML | Classe associée | Attributs desktop et mobile |
 |--------|-------|-------------|-----------------|---------------------------|
-| XL - Texte chapô | Chapô à utiliser pour les introductions ou accroches. | <p class="fr-text--lead">XL - Chapo </p> | fr-text--lead | Taille : 20 px<br>Line-height: 32 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
-| LG - Texte article | Corps de texte réservé aux usages éditoriaux (type : actualités, blog) afin d’amener un plus grand confort de lecture. | <p class="fr-text--lg"> LG - Texte article </p> | fr-text--lg | Taille : 18 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
-| MD - Texte standard | Corps de texte par défaut, à utiliser pour le texte courant et dans la majorité des cas. C’est le style de texte utilisé par défaut dans le set développé. | <p class="fr-text--text"> MD - Texte standard </p> | <p>fr-text | Taille : 16 px<br>Line-height : 24 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
-| SM - Texte détail | À utiliser en corps de texte uniquement au sein de certains composants. | <p class="fr-text--sm"> SM - Texte détail </p> | fr-text--sm | Taille : 14 px<br>Line-height : 24 px<br>Margin-bottom : 24 px<br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
-| XS - Texte mention | À utiliser pour les mentions, légendes ou autres informations mineures, qui ne doivent pas perturber la lecture de l’information. | <p class="fr-text--xs"> XS - Mention </p> | fr-text--xs | Taille : 12 px<br>Line-height : 20 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G600<br> Couleur sur fond foncé : G300 |
+| XL - Texte chapô | Chapô à utiliser pour les introductions ou accroches. | <p class="fr-text--lead">Aa </p> | fr-text--lead | Taille : 20 px<br>Line-height: 32 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
+| LG - Texte article | Corps de texte réservé aux usages éditoriaux (type : actualités, blog) afin d’amener un plus grand confort de lecture. | <p class="fr-text--lg"> Aa </p> | fr-text--lg | Taille : 18 px<br>Line-height : 28 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
+| MD - Texte standard | Corps de texte par défaut, à utiliser pour le texte courant et dans la majorité des cas. C’est le style de texte utilisé par défaut dans le set développé. | <p class="fr-text--text"> Aa </p> | <p>fr-text | Taille : 16 px<br>Line-height : 24 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
+| SM - Texte détail | À utiliser en corps de texte uniquement au sein de certains composants. | <p class="fr-text--sm"> Aa </p> | fr-text--sm | Taille : 14 px<br>Line-height : 24 px<br>Margin-bottom : 24 px<br>Couleur sur fond clair : G700<br>Couleur sur fond foncé : G200 |
+| XS - Texte mention | À utiliser pour les mentions, légendes ou autres informations mineures, qui ne doivent pas perturber la lecture de l’information. | <p class="fr-text--xs"> Aa </p> | fr-text--xs | Taille : 12 px<br>Line-height : 20 px<br>Margin-bottom : 24 px <br>Couleur sur fond clair : G600<br> Couleur sur fond foncé : G300 |
 ::::
 
 Dans le set de base pour les développeurs le style de paragraphe (`<p>`) est par défaut le corps de texte MD.
@@ -102,11 +102,11 @@ Les styles de textes LG, MD, SM, et XS sont également disponibles avec la typog
 
 Les listes vous permettent de traiter différemment une série d’information et de la faire apparaître clairement au lecteur.
 
-::::fr-table[types de listes]{valign=top scroll=false vheaders=vertical caption=false}
+::::fr-table[types de listes]{valign=top multiline=true vheaders=vertical caption=false}
 | Niveau | Usage | Aperçu HTML |
 |--------|-------|-------------|
-| Liste ordonnée | Liste d'éléments ordonnée | <ol><li>Item list<ol><li>Item list<ol><li>Item list</li><li>Item list</li><li>Item list</li></ol></li></ol><br></li></ol> |
-| Liste | Liste d'éléments non ordonnée | <ul><li>Item list<ul><li>Item list<ul><li>Item list</li><li>Item list</li><li>Item list</li></ul></li></ul><br></li></ul> |
+| Liste ordonnée | Liste d'éléments ordonnée | <ol><li>Item list<ol><li>Item list<ol><li>Item list</li><li>Item list</li><li>Item list</li></ol></li></ol></li></ol> |
+| Liste | Liste d'éléments non ordonnée | <ul><li>Item list<ul><li>Item list<ul><li>Item list</li><li>Item list</li><li>Item list</li></ul></li></ul></li></ul> |
 ::::
 
 #### Liens
@@ -129,4 +129,4 @@ Les liens contextualisés héritent du style du texte, ils sont présentés sur 
 
 #### Personnalisation
 
-- L’utilisation du `$bleu` France sur un titre n’est pas autorisée en raison de la confusion qu'il peut y avoir entre un élément cliquable (ex. Bouton ou lien) et un élément non cliquable.
+- L’utilisation du `$bleu-france` sur un titre n’est pas autorisée en raison de la confusion qu'il peut y avoir entre un élément cliquable (ex. Bouton ou lien) et un élément non cliquable.

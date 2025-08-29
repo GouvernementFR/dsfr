@@ -4,12 +4,16 @@ sitemap:
   noindex: true
 title: Design de l'interrupteur
 shortTitle: Design de l'Interrupteur
-description: Présentation du composant Interrupteur permettant de basculer entre deux états opposés sans validation supplémentaire.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Interrupteur.
 shortDescription: Basculer entre deux états opposés
 keywords: interrupteur, switch, interface, interaction, accessibilité, design système, DSFR, état activé, état désactivé
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Interrupteur permet à l’usager de choisir entre deux états opposés, comme activer ou désactiver une fonctionnalité, avec effet immédiat.
 summary: Ce composant est conçu pour gérer rapidement des actions binaires dans une interface, notamment pour paramétrer des fonctionnalités comme les notifications. Il permet un usage fluide grâce à un affichage clair, des libellés explicites et une structure accessible. Il peut être utilisé seul ou en groupe et s’adapte visuellement aux contraintes d’affichage sans nécessiter de validation supplémentaire.
+mesh:
+  - component/radio
+  - component/checkbox
+  - component/segmented
 ---
 
 ## Interrupteur
@@ -48,9 +52,17 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 ### Variations
 
-**Interrupteur avec libellé à droite**
+**Interrupteur simple**
 
 ::dsfr-doc-storybook{storyId=toggle--toggle}
+
+**Interrupteur avec description**
+
+::dsfr-doc-storybook{storyId=toggle--description}
+
+**Interrupteur avec état**
+
+::dsfr-doc-storybook{storyId=toggle--state}
 
 **Groupe d’interrupteurs**
 
@@ -58,7 +70,11 @@ Utiliser l’interrupteur en groupe pour constituer une liste d’actions de mê
 
 ::dsfr-doc-storybook{storyId=toggle-group--toggle-group}
 
-Lorsqu’il est utilisé en groupe, l’interrupteur doit toujours respecter le même format. Si le premier interrupteur affiche le label à gauche, l'état ou le séparateur optionnel, alors l’ensemble des interrupteurs du groupe devront également afficher ces éléments.
+Lorsqu’il est utilisé en groupe, l’interrupteur doit toujours respecter le même format. Si le premier interrupteur affiche l'état, une description, ou le séparateur optionnel, alors l’ensemble des interrupteurs du groupe devront également afficher ces éléments.
+
+**Groupe d’interrupteurs avec séparateurs**
+
+::dsfr-doc-storybook{storyId=toggle-group--border-group}
 
 ### Tailles
 
@@ -70,19 +86,19 @@ La largeur de l’interrupteur s’adapte à la taille de son conteneur. Si l’
 
 L'état d’erreur est signalé par un changement de couleur ainsi que l’affichage d’une ligne rouge (cf. couleurs système : le rouge est la couleur de l’état erreur) et d’un message d’erreur en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=toggle--toggle args="{ status: error }"}
+::dsfr-doc-storybook{storyId=toggle--error}
 
 **Etat de succès**
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs système : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=toggle--toggle args="{ status: valid }"}
+::dsfr-doc-storybook{storyId=toggle--valid}
 
 **État désactivé**
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le bouton.
 
-::dsfr-doc-storybook{storyId=toggle--toggle args="{ disabled: true }"}
+::dsfr-doc-storybook{storyId=toggle--disabled}
 
 Dans le cas d’un interrupteur, il permet d’afficher un choix déjà effectué et/ou ne pouvant être modifié par l’usager.
 
@@ -131,9 +147,3 @@ Ne pas supprimer ou personnaliser l’icône de l’interrupteur.
 :::
 
 ::::
-
-### Maillage
-
-- [Bouton radio](../../../../radio/_part/doc/index.md)
-- [Case à cocher](../../../../checkbox/_part/doc/index.md)
-- [Contrôle segmenté](../../../../segmented/_part/doc/index.md)

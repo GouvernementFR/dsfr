@@ -107,15 +107,15 @@ Dans la librairie Sketch, les pictogrammes sont disponibles dans la libraire «�
 - Couleur mineure [Indice -main] (Personnalisable en utilisant l’indice -main des couleurs d’illustrations)
 - Couleur décorative (Non personnalisable mais optionnelle)
 
-Pour passer les pictogrammes en thème sombre, il vous suffit d’utiliser les tokens portant le même nom dans la palette dédiée (Chemin d’accès : Dark > Decisions > Artwork).
+Pour passer les pictogrammes en thème sombre, il vous suffit d’utiliser les tokens portant le même nom dans la palette dédiée (Chemin d’accès : <span lang="en">Dark > Decisions > Artwork</span>).
 
 ##### ➡️  La librairie Figma
 
 Sur Figma, les pictogrammes sont disponibles [dans un fichier à part du Community](https://www.figma.com/community/file/1098654384051611363).
 
-Pour les utiliser, dupliquez le fichier puis publiez-le dans votre espace de travail. Vous pouvez ensuite insérer directement les pictogrammes dans vos designs. Leur personnalisation est possible via les “Selection colors” :
+Pour les utiliser, dupliquez le fichier puis publiez-le dans votre espace de travail. Vous pouvez ensuite insérer directement les pictogrammes dans vos designs. Leur personnalisation est possible via les <span lang="en">“Selection colors”</span> :
 
-- Passage en thème sombre : remplacez les tokens par leur version “dark”
+- Passage en thème sombre : remplacez les tokens par leur version <span lang="en">“dark”</span>
 - Accentuation : remplacez la couleur du calque “🎨 Mineure (indice -main)” par une couleur illustrative d’indice main (par exemple : `$purple-glycine-main-494`)
 
 > [!NOTE]
@@ -125,7 +125,7 @@ Pour les utiliser, dupliquez le fichier puis publiez-le dans votre espace de tra
 
 #### Les développeurs
 
-Les pictogrammes sont des fichiers .svg structurés de façon à permettre l’utilisation des couleurs du dsfr et du mode sombre. Ils sont notamment divisés en 3 groupes de "path" (decorative, minor, major) permettant d’insérer indépendamment chaque couleur.
+Les pictogrammes sont des fichiers .svg structurés de façon à permettre l’utilisation des couleurs du dsfr et du mode sombre. Ils sont notamment divisés en 3 groupes de <span lang="en">"path"</span> (decorative, minor, major) permettant d’insérer indépendamment chaque couleur.
 
 La librairie de SVG se trouve dans **dist/artwork/pictograms**.
 
@@ -138,36 +138,36 @@ La librairie de SVG se trouve dans **dist/artwork/pictograms**.
 
 ##### Utilisation des pictogrammes
 
-Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et d’importer à l’intérieur les 3 parties du svg. Chaque partie doit être insérée, à la manière des spritesheet, via une balise `<use>` et l’attribut href :
+Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et d’importer à l’intérieur les 3 parties du svg. Chaque partie doit être insérée, à la manière des <span>spritesheet</span>, via une balise `<use>` et l’attribut href :
 
 ```HTML
 <svg class="fr-artwork" aria-hidden="true" viewBox="0 0 80 80" width="80px" height="80px">
-  <use class="fr-artwork-decorative" xlink:href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative"></use>
-  <use class="fr-artwork-minor" xlink:href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor"></use>
-  <use class="fr-artwork-major" xlink:href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-major"></use>
+  <use class="fr-artwork-decorative" href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative"></use>
+  <use class="fr-artwork-minor" href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor"></use>
+  <use class="fr-artwork-major" href="/dist/artwork/pictograms/buildings/city-hall.svg#artwork-major"></use>
 </svg>
 ```
 
 - Le `<svg>` doit porter la classe `fr-artwork` et l’attribut `aria-hidden="true"`.
 - La taille du pictogramme est défini par les attributs `width`, `height`, et `viewBox` (viewBox = 0 0 width height).
-- chaque `<use>` doit faire correspondre sa couleur, définie par sa classe (ex: `fr-artwork-major`), et son “path” importé via l’attribut `xlink:href` avec une valeur du type :
--> chemin-relatif-vers/dist/artwork/pictograms/category/nom-picto.svg#artwork-id-de-la-couleur
-- La couleur mineure (par défaut en red-marianne) peut être modifiée par une couleur d’accentuation en ajoutant un modificateur au niveau de `fr-artwork `(ex: “`fr-artwork fr-artwork--green-emeraude`”).
+- Chaque `<use>` correspond à un calque (major, minor, ou decorative)
+  - Utiliser la classe du calque (ex: `fr-artwork-major`) pour gérer la couleur
+  - Insérer le chemin vers le pictogramme dans l'attribut `href` suffixé d'une ancre vers l'id du calque dans le svg (ex: `#artwork-major`) pour importer le calque spécifique.
+- La couleur mineure (par défaut en red-marianne) peut être modifiée par une couleur d’accentuation en ajoutant un modificateur au niveau de `fr-artwork` (ex: `fr-artwork fr-artwork--green-emeraude`).
 
-##### Ajout de pictogrammes dans la librairie
+##### Ajout de pictogrammes
 
-Les pictogrammes doivent d’abord passer l'étape de validation UI avant d'être ajoutés en code.
+Pour ajouter un pictogramme, il est nécessaire de créer un fichier SVG respectant certaines conventions. Reportez-vous à la section [détails de construction](#les-details-de-construction) pour plus de détails.
 
-Les nouveau pictogrammes sont ajoutés dans src/core/asset/artwork/ avant d'être exportés au build dans dist/artwork/.
+Il est ensuite nécessaire de retoucher le code des svg afin de les formater :
 
-Il est nécessaire de retoucher le code des svg afin de les formater :
-
-- Le svg doit posséder les attributs : `width="80px" height="80px" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"`
-- Utiliser 3 éléments `<symbol>`, avec un seul `<path>` dedans, avec les id : "artwork-decorative", "artwork-minor", et "artwork-major" pour définir les 3 layers.
-- Les path ne doivent pas contenir de remplissage de couleur “fill” ou “stroke”
+- Le `svg` doit posséder les attributs : `width="80px" height="80px" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"`
+- Utiliser 3 éléments `<symbol>`, avec si possible un seul `<path>` dedans, avec les id : "artwork-decorative", "artwork-minor", et "artwork-major" pour définir les 3 calques.
+- Les `path` ne doivent pas contenir de remplissage de couleur “fill” ou “stroke”
 - Pour rendre le svg utilisable de façon autonome, hors dsfr, il est nécessaire de :
   - Ajouter une balise `<style></style>` au début du `<svg>` pour définir les classes des 3 couleurs par défaut.
-  - Ajouter des éléments `<use>` avec les classes définies dans le `style` et un attribut `href` pointant vers les id des symboles.
+  - Ajouter des éléments `<use>` avec les classes définies dans la balise `style` et un attribut `href` pointant vers les id des symboles. Cela permet de rendre le svg indépendant du dsfr et d'avoir un aperçu dans son gestionnaire de fichiers.
+- Nous recommandons de réduire le poids du fichier SVG en optimisant les `path` et en retirant les éléments inutiles. Des outils comme [SVGO](https://svgomg.net/) peuvent être utilisés à cet effet avant la retouche du code.
 
 Ainsi le svg d’un pictogramme doit correspondre à ce gabarit :
 
@@ -205,7 +205,7 @@ Ainsi le svg d’un pictogramme doit correspondre à ce gabarit :
 
 #### La couleur de fond
 
-Dans le cas où l’on souhaiterait ajouter un élément en fond (background) sous un pictogramme. Il existe deux autres token `$artwork-background` et `$artwork-motif` permettant de créer des pictogrammes entièrement gris.
+Dans le cas où l’on souhaiterait ajouter un élément en fond (<span lang="en">background</span>) sous un pictogramme. Il existe deux autres token `$artwork-background` et `$artwork-motif` permettant de créer des pictogrammes entièrement gris.
 
 ::::fr-table[La personnalisation]{valign=top vheaders=vertical caption=false}
 
@@ -220,22 +220,35 @@ Dans le cas où l’on souhaiterait ajouter un élément en fond (background) so
 
 L’intégration des pictogrammes de fond se fait de la même manière que les pictogrammes. Il est possible de combiner les deux en un seul élément appelant, via des `<use>`, les différents calques de couleurs.
 
-Utiliser les valeurs de width, height, et viewbox du pictogramme le plus grand (généralement le fond).
-Il est possible d’ajouter la classe fr-responsive-img sur l'élément pour que le pictogramme s'adapte à la taille de son conteneur.
+Utiliser les valeurs de `width`, `height`, et `viewbox` du pictogramme le plus grand (généralement le fond).
+Il est possible d’ajouter la classe `fr-responsive-img` sur l'élément pour que le pictogramme s'adapte à la taille de son conteneur.
 
-Pour déplacer le pictogramme à l’intérieur de son fond plus grand, ajouter un groupe `<g>` avec l’attribut transform=”translate(x,y)”
-Pour centrer un pictogramme de 80x80 dans un fond de 160x200 :
+Pour déplacer le pictogramme à l’intérieur de son fond plus grand, ajouter un groupe `<g>` avec l’attribut `transform=”translate(x,y)”`. Par exemple, pour centrer un pictogramme de 80x80 dans un fond de 160x200 :
 
 - x = (largeur conteneur - largeur contenu) / 2 = (160 - 80) / 2 = 40
 - y = (hauteur conteneur - hauteur contenu) / 2 = (200 - 80) / 2 = 60
 
+**Exemple d’intégration**
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg" class="fr-responsive-img fr-artwork" aria-hidden="true" width="160" height="200" viewBox="0 0 160 200">
+  <use class="fr-artwork-motif" href="dist/artwork/background/ovoid.svg#artwork-motif"></use>
+  <use class="fr-artwork-background" href="dist/artwork/background/ovoid.svg#artwork-background"></use>
+  <g transform="translate(40, 60)">
+    <use class="fr-artwork-decorative" href="dist/artwork/pictograms/system/technical-error.svg#artwork-decorative"></use>
+    <use class="fr-artwork-minor" href="dist/artwork/pictograms/system/technical-error.svg#artwork-minor"></use>
+    <use class="fr-artwork-major" href="dist/artwork/pictograms/system/technical-error.svg#artwork-major"></use>
+  </g>
+</svg>
+```
+
 ### La contribution
 
-En tant qu’utilisateur, vous pouvez contribuer à la création de la librairie de pictogrammes illustratifs. Pour cela, rien de plus simple. Il vous suffit d’envoyer à l'équipe du Système de Design de l'État, un export de votre réalisation. Toutefois, l'équipe se réserve le droite de procéder à quelques ajustements en vue de l’intégration du pictogramme à la librairie.
+En tant qu’utilisateur, vous pouvez contribuer à la création de la librairie de pictogrammes illustratifs. Pour cela, rien de plus simple. Il vous suffit d’envoyer à l'équipe du Système de Design de l'État, un export de votre réalisation. Toutefois, l'équipe se réserve le droit de procéder à quelques ajustements en vue de l’intégration du pictogramme à la librairie.
 
 #### Les spécifications du fichier
 
-- **Nom du fichier** : il s’agit du nom de pictogramme en anglais qui désigne l’objet et/ou le message de la représentation visuelle.
+- **Nom du fichier** : il s’agit du nom de pictogramme en anglais qui désigne l’objet et/ou le message de la représentation visuelle. Le nom doit être en minuscules, sans espace ni caractère spécial, et séparé par des tirets. Par exemple : `city-hall.svg`.
 - **Taille de la zone contenant le pictogramme** : 80 x 80 pixels
 - **Format de l’export** : .svg
 
@@ -249,12 +262,12 @@ En tant qu’utilisateur, vous pouvez contribuer à la création de la librairie
 
 #### L’envoi du fichier
 
-Un formulaire est disponible pour l’envoi de vos pictogrammes illustratifs ce qui nous permet de les centraliser. Vous pouvez créer une demande selon la procédure suivante en allant sur sur Jira Service Desk.
+Un formulaire est disponible pour l’envoi de vos pictogrammes illustratifs ce qui nous permet de les centraliser. Vous pouvez créer une demande selon la procédure suivante en allant sur [Jira Service Desk](path:help/jira).
 
-**Étape 1**
-Sélectionnez le type de demande associé :  Partager une illustration.
+**Étape 1**<br>
+Sélectionnez le type de demande associé : Partager une illustration.
 
-**Étape 2**
+**Étape 2**<br>
 Remplissez les champs du formulaire disponibles :
 
 - Objet : résumé de votre demande en quelques mots
@@ -262,8 +275,11 @@ Remplissez les champs du formulaire disponibles :
 - Pièce jointe : ajout de votre fichier
 - Adresse email : suivi de l’avancement de la prise en charge de votre demande et d'interagir avec nos équipes
 
-**Étape 3**
+**Étape 3**<br>
 Après la validation du formulaire, vous recevrez un email vous confirmant que votre demande a bien été créée.
 
-**Étape 4**
-Dans les 48h ouvrées, vous recevrez un deuxième message électronique vous informant que votre demande a été prise en compte. Une fois que celle-ci a été prise en compte, le pictogramme peut être ajusté en vue de son intégration dans la librairie.
+**Étape 4**<br>
+Dans les 48h ouvrées, vous recevrez un deuxième message électronique vous informant que votre demande a été prise en compte. Une fois que celle-ci a été prise en compte, le pictogramme peut être ajusté en vue de son intégration dans la librairie Design.
+
+**Étape 5 (facultative)**<br>
+Afin d'accélérer le processus d'intégration dans la librairie Dev, vous pouvez nous fournir le SVG formaté tel que décrit précédemment. Pour cela, il vous suffit de proposer une Pull Request sur le [dépôt GitHub](https://github.com/GouvernementFR/dsfr) du Système de Design de l'État. Le SVG doit être placé dans un dossier adéquat de `src/dsfr/utility/pictograms`.

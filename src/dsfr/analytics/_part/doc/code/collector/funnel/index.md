@@ -1,5 +1,7 @@
 ---
 title: Class Funnel
+sitemap:
+  noindex: true
 ---
 
 ## class Funnel

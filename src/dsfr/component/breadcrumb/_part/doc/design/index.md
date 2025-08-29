@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Design du fil d'Ariane
 shortTitle: Design du fil d’Ariane
-description: Le fil d’Ariane est un composant de navigation secondaire permettant à l’usager de se repérer dans l’arborescence d’un site et de revenir à un niveau supérieur.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant fil d'Ariane.
 shortDescription: Se repérer dans l’arborescence avec le fil d’Ariane.
 keywords: fil d’Ariane, navigation, arborescence, hiérarchie, composant, UX, design system, position, retour, accessibilité
 cover: ../_asset/cover/cover.png
 excerpt: Le fil d’Ariane est un outil de navigation essentiel pour guider l’usager dans une structure de site complexe. Il indique la position courante et facilite les retours à des pages de niveau supérieur.
 summary: Ce document présente le fil d’Ariane comme un composant fondamental de navigation secondaire. Il explique quand l’utiliser, comment le positionner correctement dans la page, les règles de cliquabilité, les restrictions liées au fond et les principes éditoriaux à respecter. Le fil d’Ariane renforce l’orientation de l’usager en lui offrant un repère visuel clair dans l’architecture du site. Ce guide s’adresse aux designers et intégrateurs souhaitant garantir une navigation fluide et cohérente dans des environnements complexes.
+mesh:
+  - component/header
+  - component/navigation
 ---
 
 ## Fil d'Ariane
@@ -80,8 +83,3 @@ Ne pas changer la couleur du texte du fil d’Ariane.
 :::
 
 ::::
-
-### Maillage
-
-- [En-tête](../../../../header/_part/doc/index.md)
-- [Navigation principale](../../../../navigation/_part/doc/index.md)

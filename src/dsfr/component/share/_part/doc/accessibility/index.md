@@ -4,12 +4,14 @@ sitemap:
   noindex: true
 title: Accessibilité du Partage
 shortTitle: Accessibilité du Partage
-description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Partage.
 shortDescription: Partager un contenu via différents canaux
 keywords: partage, réseaux sociaux, interaction, DSFR, accessibilité, design système, bouton, lien
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Partage permet à l’usager de diffuser une page ou un contenu en quelques clics à travers plusieurs canaux comme les réseaux sociaux, l’email ou un lien copié.
 summary: Ce composant facilite la diffusion de contenus numériques en permettant aux usagers de partager une page via des boutons accessibles et adaptés à chaque canal. Il garantit une intégration cohérente avec les règles d’accessibilité, une présentation compacte et une compatibilité avec les outils de gestion du consentement pour les services tiers.
+mesh:
+  - component/button
 ---
 
 ## Partage
@@ -59,7 +61,7 @@ Voir les [règles d'accessibilité du composant Lien](../../../../link/_part/doc
 
 Le composant Partage est suffisamment contrasté en thème clair et en thème sombre.
 
-:::fr-table[Contraste des textes et des icônes]{valign=top scroll=false caption=true}
+:::fr-table[Contraste des textes et des icônes]{valign=top multiline=true caption=true}
 | Élément |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**Texte Partager**| 11,4:1| 5,7:1 |

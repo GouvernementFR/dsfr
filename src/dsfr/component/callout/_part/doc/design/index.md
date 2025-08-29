@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Design de la mise en avant
 shortTitle: Design de la mise en avant
-description: La mise en avant est un élément éditorial servant à valoriser une information complémentaire dans une page de contenu.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Mise en avant.
 shortDescription: Mettre en valeur une information secondaire.
 keywords: mise en avant, contenu, composant éditorial, UX, design system, accessibilité, information, valorisation, page, interface
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Mise en avant permet de valoriser un contenu complémentaire dans une page, en attirant l’attention de l’usager sans perturber la lecture principale.
 summary: Ce contenu décrit le composant Mise en avant utilisé pour signaler une information complémentaire au sein d’un contenu éditorial. Il précise ses cas d’usage, le distingue de la mise en exergue et des alertes, et recommande de limiter son usage à une ou deux occurrences par page. Des règles éditoriales simples sont proposées pour garantir lisibilité et efficacité. Ce guide s’adresse aux concepteurs de contenus et interfaces souhaitant structurer l’information de manière claire et hiérarchisée.
+mesh:
+  - component/quote
+  - component/highlight
 ---
 
 ## Mise en avant
@@ -80,7 +83,7 @@ Ne pas utiliser une couleur illustrative ou des indices autre que ceux autorisé
 
 ::::
 
-:::fr-table[Titre du tableau]{valign=top scroll=false caption=false}
+:::fr-table[Titre du tableau]{valign=top multiline=true caption=false}
 |  Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Bordure `$border-default-blue-france`** | Indice **main**<br> exemple : `$green-emeraude-main-632` | Indice **main**<br> exemple : `$green-emeraude-main-632` |
@@ -88,8 +91,3 @@ Ne pas utiliser une couleur illustrative ou des indices autre que ceux autorisé
 :::
 
 Par ailleurs, certains éléments sont optionnels et les icônes peuvent être changées - voir [la structure du composant](#mise-en-avant).
-
-### Maillage
-
-- [Mise en exergue](../../../../highlight/_part/doc/index.md)
-- [Citation](../../../../quote/_part/doc/index.md)

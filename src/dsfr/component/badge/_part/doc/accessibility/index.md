@@ -4,12 +4,14 @@ sitemap:
   noindex: true
 title: Accessibilité du badge
 shortTitle: Accessibilité du Badge
-description: Présentation du composant Badge utilisé pour afficher une information de type statut ou état liée à un élément de l’interface.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Badge.
 shortDescription: Affichage d’un statut informatif
 keywords: badge, statut, état, information, design système, DSFR, accessibilité, non cliquable, interface
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Badge permet de mettre en avant une information courte liée à un élément précis de l’interface, comme un statut ou un état, sans interaction de la part de l’usager.
 summary: Utilisé pour signaler un état ou un statut dans une interface, le composant Badge apporte une information rapide à lire, positionnée au plus près de l’élément concerné. Il peut apparaître dans des menus, des tuiles, des tableaux ou des pages. Les badges système suivent des règles strictes de design et d’accessibilité, tandis que les badges standards autorisent une personnalisation encadrée.
+mesh:
+  - component/tag
 ---
 
 # Badge
@@ -57,7 +59,7 @@ En thème clair et en thème sombre, le ratio de contraste du composant Badge pa
 
 ##### Accentuations
 
-:::fr-table[Contrastes des accentuations]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes des accentuations]{valign=top multiline=true caption=false}
 | Accentuation |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**green-tilleul-verveine**| 5:1 | 8,91:1|
@@ -81,7 +83,7 @@ En thème clair et en thème sombre, le ratio de contraste du composant Badge pa
 
 ##### Badge système
 
-:::fr-table[Contrastes des badges système]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes des badges système]{valign=top multiline=true caption=false}
 | Statut |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**Succès**| 4,95:1 | 4,95:1 |

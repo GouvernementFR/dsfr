@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du bouton
+title: Code du Bouton
 shortTitle: Code du Bouton
-description: Présentation du composant Bouton permettant à l’usager d’exécuter une action dans une interface numérique.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bouton.
 shortDescription: Déclenchement d’une action dans l’interface
 keywords: bouton, interaction, action, DSFR, design système, accessibilité, formulaire, navigation
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Bouton permet de déclencher une action dans la page, comme soumettre un formulaire ou naviguer vers un contenu. Il se décline en versions primaire, secondaire et tertiaire.
 summary: Le bouton est un composant central d’interaction dans les interfaces numériques. Il est utilisé pour initier une action précise selon un niveau de priorité - bouton primaire pour l’action principale, secondaire pour les actions secondaires et tertiaire pour les interactions contextuelles. Il respecte des règles d’écriture éditoriale claires, n’est pas personnalisable graphiquement et s’intègre de manière cohérente dans une interface respectueuse des standards d’accessibilité.
+mesh:
+  - component/connect
+  - core/icon
 ---
 
 ## Bouton
@@ -67,21 +70,25 @@ Un groupe est dit **hiérarchisé** s'il dispose d'un bouton primaire et de bout
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des boutons doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque    |
+|------------|-------------|-------------|
+| Core       | Oui         |             |
+| Button     | Oui         |             |
+| Utility    | Non         | Uniquement pour l'ajout d'icône |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/button/button.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/button/button.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de style
@@ -174,7 +181,7 @@ Le groupe de bouton vient avec de nombreuses variations, telles que :
   - `fr-btns-group--inline-sm` : Aligne les boutons horizontalement uniquement à partir du breakpoint SM (576px)
   - `fr-btns-group--inline-md` : Aligne les boutons horizontalement uniquement à partir du breakpoint MD (768px)
   - `fr-btns-group--inline-lg` : Aligne les boutons horizontalement uniquement à partir du breakpoint LG (992px)
-- **Inversion du positionnement** : L'ordre des boutons peut être inversé lorsqu'ils sont alignés horizontalement. Il est donc possible d'associer une des classes au dessus avec la classe `fr-btns-group--inline-reverse`. L'ordre par défaut, et en alignement vertical, correspond à l'ordre des boutons dans le DOM.
+- **Inversion du positionnement** : L'ordre des boutons peut être inversé lorsqu'ils sont positionnés horizontalement et alignés à droite. La classe `fr-btns-group--inline-reverse` permet d'inverser cet ordre, uniquement en combinaison avec les classes d'alignement "inline" et "right". L'ordre par défaut, et en alignement vertical, correspond à l'ordre des boutons dans le DOM.
 - **Taille des boutons équivalente** : La classe `fr-btns-group--equisized`, grâce au javascript du bouton, ajuste la largeur des boutons du groupe à celle du bouton le plus large. Cela permet d'égaliser la taille des boutons.
 
 Toutes ces classes peuvent être combinées entre elles.
@@ -198,12 +205,12 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/button/button.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/button/button.nomodule.min.js"></script>
 ```
@@ -214,7 +221,7 @@ Une fois le JavaScript chargé, la classe `fr-btn--equisized` fonctionne automat
 
 Sur le bouton, les éléments suivants sont instanciés :
 
-- Le groupe de boutons, via la classe : `btns-group--equisized`
+- Le groupe de boutons, via la classe : `fr-btns-group--equisized`
 - Les boutons, dans un groupe "equisized", via la classe : `fr-btn`
 
 Une fois chargé, le JS ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés.
@@ -232,7 +239,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 > [!NOTE]
 > L'activation ou la désactivation de la fonction equisize n'est pas disponible en JS, elle se fait via l'ajout ou le retrait de la classe `fr-btns-group--equisized` sur le groupe.
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -245,7 +252,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### equisized
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|

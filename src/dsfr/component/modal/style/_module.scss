@@ -66,13 +66,13 @@
 
   @include respond-from(md) {
     @include before {
-      @include size(0, 10vh);
-      flex: 1 0 10vh;
+      @include size(0, 10%);
+      flex: 1 0 10%;
     }
 
     @include after('') {
-      @include size(0, 10vh);
-      flex: 1 0 10vh;
+      @include size(0, 10%);
+      flex: 1 0 10%;
     }
   }
 
@@ -102,7 +102,7 @@
     max-height: var(--modal-max-height);
 
     @include respond-from(md) {
-      max-height: 80vh !important;
+      max-height: 80vh;
     }
   }
 

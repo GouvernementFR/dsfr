@@ -4,12 +4,14 @@ sitemap:
   noindex: true
 title: Démonstration de l'Ajout de fichier
 shortTitle: Démonstration de l'Ajout de fichier
-description: Présentation du composant Ajout de fichier permettant à l’usager de sélectionner et envoyer un ou plusieurs fichiers via une interface.
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Ajout de fichier.
 shortDescription: Sélection et envoi de fichiers
 keywords: ajout de fichier, upload, formulaire, interaction, accessibilité, design système, DSFR, sélection, fichier multiple
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Ajout de fichier permet à l’usager de transmettre un ou plusieurs fichiers à travers une interface, avec des indications claires sur les formats attendus et les erreurs éventuelles.
 summary: Ce composant facilite l’envoi de documents par l’usager, en l’intégrant aux formulaires de façon accessible et informative. Il prend en compte les contraintes liées aux fichiers (format, poids, nature), propose des variantes pour l’envoi multiple et signale les erreurs rencontrées lors de l’interaction. Son design est standardisé et non personnalisable pour garantir la cohérence visuelle dans l’ensemble du service.
+mesh:
+  - component/form
 ---
 
 ## Ajout de fichier

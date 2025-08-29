@@ -4,12 +4,14 @@ sitemap:
   noindex: true
 title: Code de l'Alerte
 shortTitle: Code de l'Alerte
-description: Présentation du composant Alerte utilisé pour relayer une information importante à l’usager de façon contextuelle sans interrompre sa navigation.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Alerte.
 shortDescription: Relayer une information importante
 keywords: alerte, message, erreur, succès, information, attention, DSFR, accessibilité, interface
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Alerte informe l’usager d’un événement ou d’un état du système, comme une erreur, une confirmation ou une information complémentaire, de manière non bloquante.
 summary: Ce composant permet de transmettre à l’usager un message important en lien avec une action ou un état du système, sans interrompre sa tâche. Il est utilisé dans des contextes variés, comme un formulaire ou un événement technique. Il propose plusieurs variations (succès, erreur, information, attention), deux tailles, et des règles éditoriales strictes pour garantir une communication claire, courtoise et accessible.
+mesh:
+  - component/form
 ---
 
 ## Alerte
@@ -103,20 +105,26 @@ Les tailles sont définies par l'ajout des classes :
 
 #### Installation du CSS
 
-Pour garantir le bon affichage de l'alerte et de ses variations, le style CSS de ce composant doit être importé. L'import doit se faire avant le contenu de la page, dans la partie `<head>`, de préférence avec le fichier minifié pour une meilleure performance.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------|----------|
+| Core       | Oui         |          |
+| Alert      | Oui         |          |
+| Button     | Non         | Uniquement pour la version refermable |
+| Utility    | Non         | Uniquement pour l'ajout d'icône custom |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/alert/alert.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/alert/alert.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de style

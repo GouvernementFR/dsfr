@@ -3,12 +3,16 @@ title: Menu déroulant
 badge: beta
 shortTitle: Menu déroulant
 titleId: Dropdown
-description: Le menu déroulant permet d’afficher une liste d’actions, de liens ou de contrôles dans une interface sans encombrer l’écran. Il s’utilise hors formulaire.
+description: Présentation du composant Menu déroulant permettant d’afficher une liste d’actions, de liens ou de contrôles dans une interface sans encombrer l’écran. Il s’utilise hors formulaire.
 shortDescription: Afficher des actions contextuelles sans encombrer l’interface
 keywords: menu déroulant, dropdown, actions, filtre, bouton, options, accessibilité, interface, DSFR
 cover: ./_asset/cover/cover.png
 excerpt: Le menu déroulant du DSFR permet de proposer des options d’action, de filtrage ou de navigation dans un espace réduit, en dehors des formulaires.
 summary: Le menu déroulant est un composant d’interface permettant de regrouper des actions, liens ou contrôles dans une zone compacte, accessible au clic. Il ne doit pas être utilisé pour la saisie de données en formulaire, où la liste déroulante est préférable. Ce composant est en version bêta et peut encore évoluer - ses cas d’usage sont nombreux, allant du filtre contextuel à l’action rapide, sans modification de libellé du bouton déclencheur. Il existe en trois tailles (SM, MD, LG) et respecte les bonnes pratiques d’accessibilité du Design Système de l’État.
+mesh:
+  - component/radio
+  - component/checkbox
+  - component/select
 ---
 
 ## Menu déroulant

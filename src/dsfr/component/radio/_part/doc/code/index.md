@@ -4,12 +4,16 @@ sitemap:
   noindex: true
 title: Code du Bouton radio
 shortTitle: Code du Bouton radio
-description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bouton radio.
 shortDescription: Sélection d’une option unique
 keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Bouton radio permet de proposer à l’usager un choix unique parmi plusieurs options. Il est recommandé pour les listes de 2 à 5 éléments maximum.
 summary: Ce composant est conçu pour faciliter le choix unique dans une interface, en particulier dans les formulaires. Il offre différentes dispositions et variations, y compris des versions enrichies avec pictogrammes. Il s’utilise en groupe, avec des libellés clairs et une hiérarchie visuelle cohérente. L’intégration respecte des règles d’ergonomie, d’accessibilité et d’uniformité éditoriale.
+mesh:
+  - component/checkbox
+  - component/input
+  - component/select
 ---
 
 ## Bouton radio
@@ -129,19 +133,24 @@ Le regroupement de radios riches se fait de la même manière que pour les radio
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du bouton radio doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Radio      | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/radio/radio.min.css" rel="stylesheet">
-```
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/radio/radio.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante de taille

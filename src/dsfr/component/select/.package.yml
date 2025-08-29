@@ -1,7 +1,7 @@
 id: select
 title: Liste déroulante
 description: La liste déroulante permet à un utilisateur de choisir un élément dans une liste donnée.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/liste-deroulante
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/liste-deroulante
 wrapper: col-8
 style:
   - core

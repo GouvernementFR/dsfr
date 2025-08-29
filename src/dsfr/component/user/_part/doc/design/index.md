@@ -4,13 +4,15 @@ sitemap:
   noindex: true
 title: Design de l'En-tête connectée
 shortTitle: Design de l'En-tête connectée
-description: Déclinaison de l’en-tête standard permettant à l’usager connecté d’accéder à son menu de navigation personnel.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant En-tête connectée.
 shortDescription: Variante de l’en-tête dédiée aux usagers connectés
 keywords: en-tête, menu utilisateur, connexion, compte, connecté, navigation, DSFR, bêta
 cover: ../_asset/cover/cover.png
 excerpt: Composant en bêta affichant, après connexion, un menu personnel dans l’en-tête avec liens, informations utilisateur et bouton de déconnexion.
 summary: L’en-tête connectée est une extension de l’en-tête classique, permettant à un usager connecté d’accéder à un menu déroulant personnalisé. Elle affiche les informations de compte, un ensemble limité de liens de navigation et un bouton de déconnexion. Ce composant est encore en version bêta et n’existe pas en code pour l’instant. Il répond à des cas d’usage d’interface connectée mais ne doit pas remplacer une navigation complète dédiée à l’espace personnel.
 badge: beta
+mesh:
+  - component/header
 ---
 
 ## En-tête connectée
@@ -78,7 +80,3 @@ L’en-tête connectée n’est pas personnalisable.
 - Ne pas personnaliser l’icône.
 - Ne pas personnaliser le libellé et le texte de description relatif à l’utilisateur.
 - Ne pas personnaliser le bouton de déconnexion.
-
-### Maillage
-
-- [En-tête](../../../../header/_part/doc/index.md)

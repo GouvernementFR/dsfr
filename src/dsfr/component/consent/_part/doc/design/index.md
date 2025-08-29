@@ -4,12 +4,16 @@ sitemap:
   noindex: true
 title: Design du Gestionnaire de consentement
 shortTitle: Design du Gestionnaire de consentement
-description: Le gestionnaire de consentement permet de recueillir et gérer les préférences des usagers concernant le dépôt de cookies non essentiels, en conformité avec les exigences de la CNIL.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Gestionnaire de consentement.
 shortDescription: Gérer le consentement des usagers sur les cookies et données personnelles.
 keywords: consentement, cookies, données personnelles, CNIL, confidentialité, bandeau, modale, finalités, RGPD, accessibilité
 cover: ../_asset/cover/cover.png
 excerpt: Le gestionnaire de consentement permet d’informer les usagers et de recueillir leur accord sur l’utilisation de cookies non essentiels via un bandeau et une modale accessible à tout moment.
 summary: Ce composant propose une interface conforme aux recommandations de la CNIL pour recueillir le consentement des usagers concernant l’utilisation de cookies non fonctionnels. Il affiche un bandeau au chargement du site, permet une gestion fine des finalités et sous-finalités via une modale dédiée, et garantit l’accessibilité permanente au réglage des préférences depuis le pied de page. Le gestionnaire de consentement n’est pas personnalisable, sauf pour les textes affichés.
+mesh:
+  - component/modal
+  - component/display
+  - component/footer
 ---
 
 ## Gestionnaire de consentement
@@ -87,9 +91,3 @@ Le gestionnaire de consentement n’est pas personnalisable.
 La place du bandeau, les styles et l’ordre des boutons ne peuvent pas être modifiés. Seul le texte est à adapté en fonction du contexte.
 
 Par ailleurs, certains éléments sont optionnels - voir [la structure du composant](#gestionnaire-de-consentement).
-
-### Maillage
-
-- [Modale](../../../../modal/_part/doc/index.md)
-- [Paramètres d’affichage](../../../../display/_part/doc/index.md)
-- [Pied de page](../../../../footer/_part/doc/index.md)

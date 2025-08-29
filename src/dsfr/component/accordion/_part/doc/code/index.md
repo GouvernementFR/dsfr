@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Code de l'Accordéon
 shortTitle: Code de l'Accordéon
-description: Présentation du composant Accordéon permettant à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Accordéon.
 shortDescription: Masquer ou révéler du contenu textuel
 keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Accordéon permet à l’usager d’ouvrir ou fermer une section de contenu dans une page, pour en faciliter la lecture et alléger la structure globale.
 summary: Utilisé pour structurer et hiérarchiser du contenu éditorial, l’accordéon masque par défaut les informations secondaires pour ne révéler que ce que l’usager souhaite consulter. Il est particulièrement utile dans les longues pages de contenu. Il permet des interactions simples, peut être utilisé seul ou en groupe, et respecte des règles strictes de lisibilité et d’accessibilité.
+mesh:
+  - component/modal
+  - component/tab
 ---
 
 ## Accordéon
@@ -83,20 +86,24 @@ Les accordéons sont disposés à la suite dans un conteneur.
 
 #### Installation du CSS
 
-Pour fonctionner correctement le style CSS de l'accordéon et du core doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------|-----|
+| Core | Oui |
+| Accordéon | Oui |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/accordion/accordion.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/accordion/accordion.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante de style
@@ -122,12 +129,12 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/accordion/accordion.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/accordion/accordion.nomodule.min.js"></script>
 ```
@@ -162,7 +169,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### accordion
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -173,7 +180,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -186,18 +193,18 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### accordionGroup
 
-:::fr-table[current]{valign=top scroll=false}
+:::fr-table[current]{valign=top multiline=true}
 
 | | |
 |------|-----|
-| **Description** | Retourne l'API du collapse ouvert. <br/>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
+| **Description** | Retourne l'API du collapse ouvert. <br>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
 | **Type** | property |
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).accordionsGroup.current` |
 
 :::
 
-:::fr-table[hasFocus]{valign=top scroll=false}
+:::fr-table[hasFocus]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -208,29 +215,29 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[index]{valign=top scroll=false}
+:::fr-table[index]{valign=top multiline=true}
 
 | | |
 |------|-----|
-| **Description** | Retourne ou modifie l'index de l'accordéon courant. <br/>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
+| **Description** | Retourne ou modifie l'index de l'accordéon courant. <br>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
 | **Type** | property |
 | **Retour** | Number |
-| **Exemple** | `dsfr(elem).accordionsGroup.index` <br/> `dsfr(elem).accordionsGroup.index = 2` |
+| **Exemple** | `dsfr(elem).accordionsGroup.index` <br> `dsfr(elem).accordionsGroup.index = 2` |
 
 :::
 
-:::fr-table[isGrouped]{valign=top scroll=false}
+:::fr-table[isGrouped]{valign=top multiline=true}
 
 | | |
 |------|-----|
-| **Description** | Défini si les accordéons du groupe sont liés en eux ou non. <br/>_Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut._|
+| **Description** | Défini si les accordéons du groupe sont liés en eux ou non. <br>_Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut._|
 | **Type** | property |
 | **Retour** | Boolean |
-| **Exemple** | `dsfr(elem).accordionsGroup.isGrouped` <br/> `dsfr(elem).accordionsGroup.isGrouped = true` |
+| **Exemple** | `dsfr(elem).accordionsGroup.isGrouped` <br> `dsfr(elem).accordionsGroup.isGrouped = true` |
 
 :::
 
-:::fr-table[length]{valign=top scroll=false}
+:::fr-table[length]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -241,7 +248,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[members]{valign=top scroll=false}
+:::fr-table[members]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -252,7 +259,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -265,7 +272,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### accordion
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -278,7 +285,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### collapseButton
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -290,7 +297,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -301,7 +308,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -314,7 +321,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ##### collapse
 
-:::fr-table[concea]{valign=top scroll=false}
+:::fr-table[concea]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -326,7 +333,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[disclose]{valign=top scroll=false}
+:::fr-table[disclose]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -338,7 +345,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isDisclosed]{valign=top scroll=false}
+:::fr-table[isDisclosed]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -349,7 +356,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -360,7 +367,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[group]{valign=top scroll=false}
+:::fr-table[group]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -371,7 +378,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[buttons]{valign=top scroll=false}
+:::fr-table[buttons]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -382,7 +389,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[focus]{valign=top scroll=false}
+:::fr-table[focus]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -394,7 +401,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -405,7 +412,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 
 | | |
 |:-----|:-----|
@@ -416,7 +423,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -433,7 +440,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur l'accordéon et le groupe d'accordéons, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

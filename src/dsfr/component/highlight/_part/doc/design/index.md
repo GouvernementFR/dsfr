@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design de la mise en exergue
-shortTitle: Design de la mise en exergue
-description: La mise en exergue est un composant éditorial destiné à distinguer une information importante au sein du contenu principal d’une page.
+title: Design de la Mise en exergue
+shortTitle: Design de la Mise en exergue
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Mise en exergue.
 shortDescription: Mettre en évidence une information essentielle.
 keywords: mise en exergue, contenu, composant éditorial, UX, design system, accessibilité, information, page, interface, valorisation
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Mise en exergue permet de faire ressortir une information capitale intégrée dans le contenu principal, tout en respectant les principes de lisibilité et de hiérarchisation.
 summary: Ce contenu décrit le composant Mise en exergue comme un outil d’identification rapide d’informations clés au sein d’un texte. Il précise ses usages, le distingue de la mise en avant, et détaille les bonnes pratiques de mise en forme pour assurer sa visibilité. L’alignement, la position dans la page et la nature du contenu sont essentiels à son efficacité. Ce guide est destiné aux créateurs de contenu et designers cherchant à hiérarchiser l’information de manière claire et accessible.
+mesh:
+  - component/callout
+  - component/quote
 ---
 
 ## Mise en exergue
@@ -86,13 +89,9 @@ Ne pas utiliser une couleur illustrative ou des indices autre que ceux autorisé
 
 ::::
 
-:::fr-table[Titre du tableau]{valign=top scroll=false caption=false}
+:::fr-table[Titre du tableau]{valign=top multiline=true caption=false}
 |  Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Bordure `$border-default-blue-france`** | Indice **main**<br> exemple : `$green-emeraude-main-632` | Indice **main**<br> exemple : `$green-emeraude-main-632` |
+
 :::
-
-### Maillage
-
-- [Mise en avant](../../../../callout/_part/doc/index.md)
-- [Citation](../../../../quote/_part/doc/index.md)

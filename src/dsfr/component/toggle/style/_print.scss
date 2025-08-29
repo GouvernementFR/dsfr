@@ -1,10 +1,6 @@
 #{ns(toggle)} {
   page-break-inside: avoid;
 
-  @include before {
-    background-color: none !important;
-  }
-
   label {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;

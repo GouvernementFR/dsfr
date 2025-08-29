@@ -4,12 +4,16 @@ sitemap:
   noindex: true
 title: Design du curseur
 shortTitle: Design du Curseur
-description: Présentation du composant Curseur permettant à l’usager de sélectionner une valeur entre un minimum et un maximum de manière intuitive.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Curseur.
 shortDescription: Sélection d’une valeur sur une échelle
 keywords: curseur, range, sélection, valeur, interface, DSFR, accessibilité, filtre, composant
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Curseur permet à l’usager de définir une valeur dans une plage donnée, souvent utilisée pour ajuster un paramètre de façon dynamique et visuelle.
 summary: Le curseur est utile lorsque la saisie d’une valeur approximative est suffisante, comme pour filtrer des contenus ou ajuster des préférences. Il propose différentes variantes - simple, double ou cranté, avec ou sans affichage des bornes. Non personnalisable, il est conçu pour un usage fluide et accessible, avec retour visuel en temps réel sur les valeurs sélectionnées.
+mesh:
+  - component/input
+  - component/select
+  - component/radio
 ---
 
 ## Curseur
@@ -125,10 +129,3 @@ Ne pas personnaliser la forme de la poignée.
 :::
 
 ::::
-
-### Maillage
-
-- [Champ de saisie](../../../../input/_part/doc/index.md)
-- [Liste déroulante](../../../../select/_part/doc/index.md)
-- [Bouton radio](../../../../radio/_part/doc/index.md)
-- [Case à cocher](../../../../checkbox/_part/doc/index.md)

@@ -19,8 +19,15 @@ export default {
 };
 
 export const DisplayStory = {
-  tags: ['autodocs'],
+  tags: ['!autodocs'],
   args: {}
+};
+
+export const DefaultStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: 'display-default'
+  }
 };
 
 export const HeaderDisplayStory = {

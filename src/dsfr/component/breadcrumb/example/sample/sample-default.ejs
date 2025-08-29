@@ -1,0 +1,10 @@
+<%
+const breadcrumb = locals.breadcrumb || {};
+
+const data = {
+  id: uniqueId('breadcrumb'),
+  ...breadcrumb
+}
+%>
+
+<%- include('../../template/ejs/breadcrumb.ejs', {breadcrumb: data}); %>

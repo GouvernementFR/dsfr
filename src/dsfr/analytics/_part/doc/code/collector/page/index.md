@@ -1,5 +1,7 @@
 ---
 title: Class Page
+sitemap:
+  noindex: true
 ---
 
 ## class Page

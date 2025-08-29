@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Accessibilité de la Navigation principale
 shortTitle: Accessibilité de la Navigation principale
-description: La navigation principale organise les grandes rubriques d’un site et permet à l’usager de s’orienter dans son arborescence.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Navigation principale.
 shortDescription: Orienter l’usager dans les sections du site.
 keywords: navigation principale, menu, rubriques, arborescence, design system, UX, interface, usager, header, mega menu
 cover: ../_asset/cover/cover.png
 excerpt: La navigation principale guide l’usager dans les sections clés d’un site et structure les niveaux d’accès à l’information. Elle se place sous l’en-tête et peut inclure des menus déroulants ou mega menus.
 summary: Ce document décrit la navigation principale comme un composant central d’un site web, servant à organiser et hiérarchiser les principales rubriques. Il présente les cas d’usage, les variantes possibles, les limites en matière de profondeur et de densité, ainsi que les bonnes pratiques éditoriales. Il donne aussi des recommandations sur l’association avec d’autres composants comme la barre de recherche ou le menu latéral, afin de renforcer l’expérience utilisateur dans la navigation globale du site.
+mesh:
+  - component/header
+  - component/footer
 ---
 
 ## Navigation principale

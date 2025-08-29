@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Code du Tag
 shortTitle: Code du Tag
-description: Présentation complète du composant Tag destiné à la catégorisation ou au filtrage de contenus dans une interface.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Tag.
 shortDescription: Le tag sert à classer ou filtrer les contenus.
 keywords: tag, composant, design system, catégorisation, filtre, accessibilité, UI, UX, badge, interface, contenu
 cover: ../_asset/cover/cover.png
 excerpt: Le tag est un composant utilisé pour classer ou filtrer des contenus à l'aide de mots clés. Il s'adapte selon le contexte d'utilisation et respecte des règles éditoriales précises.
 summary: Ce contenu présente le composant Tag dans un design system. Il explique ses usages principaux, notamment pour la catégorisation de contenus ou comme filtre interactif dans les interfaces. Des conseils pratiques et règles éditoriales y sont fournis pour garantir une intégration cohérente et accessible. Ce guide s’adresse aux designers et développeurs travaillant sur des interfaces nécessitant une organisation claire et intuitive de l’information.
+mesh:
+  - component/badge
+  - component/card
 ---
 
 ## Tag
@@ -59,7 +62,7 @@ Sa structure est la suivante :
 
 ```HTML
 <a href="#" class="fr-tag">Tag cliquable lien</a>
-<button type="button" class="fr-tag">Libellé tag cliquable bouton</a>
+<button type="button" class="fr-tag">Libellé tag cliquable bouton</button>
 ```
 
 ##### Tag activable
@@ -110,21 +113,25 @@ Les tags peuvent être utilisés à plusieurs dans des groupes de tags `fr-tags-
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des tags doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Tag        | Oui         |          |
+| Utility    | Non         | Uniquement pour l'ajout d'icône |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/tag/tag.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/tag/tag.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de tailles
@@ -272,12 +279,12 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/tag/tag.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le JS global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/tag/tag.nomodule.min.js"></script>
 ```
@@ -310,7 +317,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### toggle
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -321,7 +328,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[pressed]{valign=top scroll=false}
+:::fr-table[pressed]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -332,7 +339,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[toggle]{valign=top scroll=false}
+:::fr-table[toggle]{valign=top multiline=true}
 
 | | |
 |:------|:-----|
@@ -344,7 +351,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -357,7 +364,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tagDismissible
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -368,7 +375,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 
 | | |
 |------|-----|
@@ -385,7 +392,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur le tag, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

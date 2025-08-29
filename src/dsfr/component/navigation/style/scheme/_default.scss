@@ -5,6 +5,7 @@
 
 @use 'src/module/color';
 @use 'src/module/selector';
+@use 'src/module/disabled';
 
 @mixin _navigation-scheme-nav($legacy: false) {
   #{ns(nav)} {
@@ -21,9 +22,14 @@
     }
 
     &__btn {
-      &[aria-expanded="true"]:not(:disabled) {
+      &[aria-expanded="true"] {
         @include color.background(open blue-france, (legacy: $legacy));
         @include color.text(action-high blue-france, (legacy: $legacy));
+
+        @include disabled.selector {
+          @include color.text(disabled grey, (legacy: $legacy));
+          @include color.background(disabled grey, (legacy: $legacy));
+        }
       }
     }
 

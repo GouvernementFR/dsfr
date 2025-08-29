@@ -8,6 +8,10 @@ keywords: transcription, composant, contenu média, accessibilité, modale, acco
 cover: ./_asset/cover/cover.png
 excerpt: Le composant Transcription permet de proposer un texte associé à un contenu média, à afficher ou masquer dans une interface, sous forme d’accordéon ou de modale.
 summary: Ce composant facilite l’accès au texte d’une vidéo ou d’un média pour les usagers qui en ont besoin, en l’affichant sur la même page dans une zone repliable ou via une modale. Il est conçu pour garantir une lecture simultanée fluide et accessible, avec une structure claire et des règles d’intégration strictes.
+mesh:
+  - component/accordion
+  - component/content
+  - component/modal
 ---
 
 ## Transcription

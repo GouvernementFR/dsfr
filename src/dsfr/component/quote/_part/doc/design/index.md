@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design de la citation
-shortTitle: Design de la citation
-description: La citation permet d’intégrer un extrait de discours ou de texte au sein d’un contenu éditorial, en respectant des règles précises de forme.
+title: Design de la Citation
+shortTitle: Design de la Citation
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Citation.
 shortDescription: Citer un texte dans un contenu éditorial.
 keywords: citation, contenu éditorial, extrait, source, typographie, italique, UX, accessibilité, design system, mise en forme
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Citation permet d’intégrer un extrait textuel dans une page, avec des champs de détails pour ajouter des précisions sur la source. Il doit respecter une présentation typographique soignée.
 summary: Ce document décrit les usages du composant Citation, destiné à intégrer des extraits de textes ou de discours dans un contenu éditorial. Il explique comment distinguer la citation des composants de mise en avant ou de mise en exergue, précise les règles typographiques à appliquer, comme l’usage de guillemets et de l’italique, et recommande d’éviter les citations trop longues pour préserver la lisibilité. Il fournit également des indications sur la structuration, l’usage des champs de détails, et les règles de propriété intellectuelle à respecter.
+mesh:
+  - component/callout
+  - component/highlight
 ---
 
 ## Citation
@@ -110,15 +113,10 @@ Ne pas utiliser une couleur illustrative d’un indice autre que $main.
 
 ::::
 
-:::fr-table[Titre du tableau]{valign=top scroll=false caption=false}
+:::fr-table[Titre du tableau]{valign=top multiline=true caption=false}
 |  Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Icône `$artwork-minor-blue-france`** | Indice **main**<br> exemple : `$pink-tuile-main-556` | Indice **main**<br> exemple : `$pink-tuile-main-556` |
 :::
 
 Par ailleurs, certains éléments sont optionnels - voir [la structure du composant](#citation).
-
-### Maillage
-
-- [Mise en avant](../../../../callout/_part/doc/index.md)
-- [Mise en exergue](../../../../highlight/_part/doc/index.md)

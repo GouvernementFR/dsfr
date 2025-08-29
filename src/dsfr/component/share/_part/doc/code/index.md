@@ -4,12 +4,14 @@ sitemap:
   noindex: true
 title: Code du Partage
 shortTitle: Code du Partage
-description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Partage.
 shortDescription: Partager un contenu via différents canaux
 keywords: partage, réseaux sociaux, interaction, DSFR, accessibilité, design système, bouton, lien
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Partage permet à l’usager de diffuser une page ou un contenu en quelques clics à travers plusieurs canaux comme les réseaux sociaux, l’email ou un lien copié.
 summary: Ce composant facilite la diffusion de contenus numériques en permettant aux usagers de partager une page via des boutons accessibles et adaptés à chaque canal. Il garantit une intégration cohérente avec les règles d’accessibilité, une présentation compacte et une compatibilité avec les outils de gestion du consentement pour les services tiers.
+mesh:
+  - component/button
 ---
 
 ## Partage
@@ -92,25 +94,27 @@ Les meta données à placer dans la balise `<head>` de la page, pour gérer les 
 
 #### Installation du CSS
 
-Pour fonctionner correctement, le style CSS du composant de partage doit être importé.  L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------|----------|
+| Core       | Oui         |          |
+| Button     | Oui         |          |
+| Share      | Oui         |          |
+| Utility    | Non         | Uniquement pour l'ajout d'icône custom |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/button/button.min.css" rel="stylesheet">
 <link href="dist/component/share/share.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/share/share.legacy.min.css" rel="stylesheet">
-```
-
-```HTML
-<link href="dist/core/core.min.css" rel="stylesheet">
-<link href="dist/component/sidemenu/sidemenu.min.css" rel="stylesheet">
 ```
 
 #### Variante de boutons et liens de partage en version inactive

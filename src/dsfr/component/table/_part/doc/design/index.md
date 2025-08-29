@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 title: Design du tableau
 shortTitle: Design du Tableau
-description: Présentez des données organisées en lignes et colonnes avec le composant Tableau, pensé pour faciliter la lisibilité, la comparaison et la manipulation de contenus structurés dans vos interfaces.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Tableau.
 shortDescription: Présentation du composant Tableau pour organiser et comparer des données.
 keywords: tableau, table, tri, pagination, données, DSFR, accessibilité, lignes, colonnes, affichage structuré, composant, visualisation
 cover: ../_asset/cover/cover.png
@@ -60,17 +60,37 @@ Le tableau permet de présenter une liste structurée de données textuelles et/
 
 ::dsfr-doc-storybook{storyId=table--no-scroll}
 
-**Variantes esthétiques**
+**Tableau avec retour à la ligne automatique dans les cellules**
 
-- Bordures horizontales (par défaut)
+::dsfr-doc-storybook{storyId=table--multiline}
+
+**Tableau avec largeur de colonnes minimales**
+
+::dsfr-doc-storybook{storyId=table--multiline-col-min-size}
+
+**Tableau avec première colonne fixée**
+
+::dsfr-doc-storybook{storyId=table--fixed-column}
+
+**Tableau complexe avec cellules fusionnées**
+
+::dsfr-doc-storybook{storyId=table--complex-table}
+
+**Tableau avec filtre et différents types de données**
+
+::dsfr-doc-storybook{storyId=table--miscellaneous-table}
+
+### Variantes esthétiques
+
+**Bordures horizontales (par défaut)**
 
 ::dsfr-doc-storybook{storyId=table--default}
 
-- Bordures horizontales et verticales
+**Bordures horizontales et verticales**
 
 ::dsfr-doc-storybook{storyId=table--vertical-borders}
 
-### Tailles
+### Densité
 
 Le tableau prend automatiquement la taille de son conteneur.
 
@@ -78,31 +98,25 @@ Ce conteneur peut être scrollable horizontalement. Ceci est courant sur les éc
 
 Toutefois, prenez garde à ce que les informations clés soient visibles au premier coup d’œil même sur un écran de petite taille.
 
-Par défaut, la largeur des cellules s’adapte automatiquement à leur contenu. En revanche, leur hauteur s’ajuste en 3 tailles :
+Par défaut, la largeur des cellules s’adapte automatiquement à leur contenu. En revanche, il existe 3 niveaux de densité :
 
-- SM pour small
+**SM pour small**
 
 ::dsfr-doc-storybook{storyId=table--size-sm}
 
-- MD pour medium
+**MD pour medium**
 
-::dsfr-doc-storybook{storyId=table--default}
+::dsfr-doc-storybook{storyId=table--size-sm}
 
-- LG pour large
+**LG pour large**
 
 ::dsfr-doc-storybook{storyId=table--size-lg}
 
 Ainsi si la taille des composants intégrés dans les cellules ne change pas, cela vous permet toutefois de varier la densité d’affichage de votre tableau en fonction de son contenu.
 
-### États
+### Ligne sélectionnable
 
-**Etat par défaut**
-
-::dsfr-doc-storybook{storyId=table--selectable-table}
-
-**Ligne sélectionnée**
-
-::dsfr-doc-storybook{storyId=table--miscellaneous-table}
+::dsfr-doc-storybook{storyId=table--selectable-table-selected-line}
 
 > [!NOTE]
 > Les états désactivé, focus et cliqué sont propres aux composants intégrés au sein des cellules.

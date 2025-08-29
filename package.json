@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/dsfr",
-  "version": "1.14.0",
+  "version": "1.14.1",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
@@ -11,7 +11,7 @@
     "organisation": "@gouvfr"
   },
   "engines": {
-    "node": ">=22.14.0"
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
   },
   "packageManager": "yarn@1.22.22",
   "scripts": {

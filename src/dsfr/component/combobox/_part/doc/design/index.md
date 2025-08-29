@@ -4,13 +4,17 @@ sitemap:
   noindex: true
 title: Design de la Liste déroulante riche
 shortTitle: Design de la Liste déroulante riche
-description: Composant interactif permettant à l’usager de choisir une ou plusieurs options dans une liste étendue, incluant recherche, sélection multiple et options par défaut.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Liste déroulante riche.
 shortDescription: Composant de sélection multiple enrichi avec fonctions de recherche.
 keywords: bêta, liste déroulante, sélection multiple, formulaire, combobox, recherche, accessibilité, UX, options, DSFR
 cover: ../_asset/cover/cover.png
 excerpt: Cette liste déroulante avancée permet à l’usager de sélectionner une ou plusieurs options, tout en bénéficiant de fonctions supplémentaires comme la recherche, la sélection globale ou des groupes d’options.
 summary: La liste déroulante riche est un composant en version bêta qui facilite les interactions complexes au sein des formulaires. Conçue pour aller au-delà des listes déroulantes classiques, elle prend en charge les sélections multiples, les recherches en direct et des retours visuels en cas d’erreur ou de succès. Bien que son code ne soit pas encore disponible, ses maquettes sont proposées sur Figma.
 badge: beta
+mesh:
+  - component/radio
+  - component/checkbox
+  - component/select
 ---
 
 ## Liste déroulante riche
@@ -82,9 +86,3 @@ Cet état peut être utilisé pour empêcher l'usager d'interagir avec la liste 
 La liste déroulante riche n’est pas personnalisable.
 
 Toutefois, certains éléments sont optionnels - voir [la structure du composant](#liste-déroulante-riche).
-
-### Maillage
-
-- [Bouton radio](../../../../radio/_part/doc/index.md)
-- [Case à cocher](../../../../checkbox/_part/doc/index.md)
-- [Liste déroulante](../../../../select/_part/doc/index.md)

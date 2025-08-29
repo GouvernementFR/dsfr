@@ -4,12 +4,16 @@ sitemap:
   noindex: true
 title: Accessibilité du Bouton radio
 shortTitle: Accessibilité du Bouton radio
-description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Bouton radio.
 shortDescription: Sélection d’une option unique
 keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Bouton radio permet de proposer à l’usager un choix unique parmi plusieurs options. Il est recommandé pour les listes de 2 à 5 éléments maximum.
 summary: Ce composant est conçu pour faciliter le choix unique dans une interface, en particulier dans les formulaires. Il offre différentes dispositions et variations, y compris des versions enrichies avec pictogrammes. Il s’utilise en groupe, avec des libellés clairs et une hiérarchie visuelle cohérente. L’intégration respecte des règles d’ergonomie, d’accessibilité et d’uniformité éditoriale.
+mesh:
+  - component/checkbox
+  - component/input
+  - component/select
 ---
 
 ## Bouton radio
@@ -102,7 +106,7 @@ Les images des boutons radio riches doivent être décoratives.
 
 Par défaut, le composant Bouton radio est suffisamment contrasté en thème clair et en thème sombre.
 
-:::fr-table[Contrastes par défaut]{valign=top scroll=false}
+:::fr-table[Contrastes par défaut]{valign=top multiline=true}
 | Thème |  Bordure | Point | Étiquette |
 |------|-----|-----|-----|
 |**Thème clair**| 14,9:1 | 14,9:1 | 18,1:1 |

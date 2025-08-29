@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la lettre d'information et des réseaux sociaux
-shortTitle: Démonstration de la lettre d'information et réseaux sociaux
-description: Ce composant permet de proposer l’inscription à une lettre d’information et de diriger vers les réseaux sociaux de l’entité.
+title: Code de la Lettre d'information et des réseaux sociaux
+shortTitle: Code de la Lettre d'information et réseaux sociaux
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Lettre d'information et des réseaux sociaux.
 shortDescription: Inscription à une lettre d’info et accès aux réseaux sociaux.
 keywords: lettre d’information, newsletter, réseaux sociaux, footer, interface, composant, design system, RGPD, accessibilité, usager
 cover: ./_asset/cover/cover.png
 excerpt: Ce document présente le composant Lettre d’information et réseaux sociaux, destiné à favoriser l’abonnement et la consultation des comptes sociaux, avec recommandations d’intégration et règles éditoriales.
 summary: Ce contenu décrit le composant Lettre d’information et réseaux sociaux, conçu pour permettre aux usagers de s’abonner à une ou plusieurs lettres d’information et de consulter les réseaux sociaux de l’entité. Il précise les recommandations d’intégration, notamment sa position dans la page, et les consignes éditoriales telles que l’adaptation du message selon le contexte ou les mentions relatives à l’utilisation des données personnelles. Ce guide s’adresse aux équipes chargées de la conception éditoriale et technique des sites web publics.
+mesh:
+  - component/button
+  - component/input
 ---
 
 ## Lettre d'information et Réseaux Sociaux
@@ -152,30 +155,35 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et du composant Lettre d'information et Réseaux Sociaux doivent être importés. En fonction de l'utilisation du composant il faudra importer le CSS du composant **bouton (button)**, du **champ de saisie (input)**, de l'**alerte (alert)**, et des messages de **formulaire (form)**.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Button     | Oui         |          |
+| Follow     | Oui         |          |
+| Form       | Non         | Uniquement pour la variation avec champ de saisie |
+| Input      | Non         | Uniquement pour la variation avec champ de saisie |
+| Alert      | Non         | Uniquement pour ajouter une alerte de confirmation |
+| Utility    | Non         | Uniquement pour l'ajout d'icône custom |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/button/button.min.css" rel="stylesheet">
-<link href="dist/component/form/form.min.css" rel="stylesheet">
-<link href="dist/component/input/input.min.css" rel="stylesheet">
-<link href="dist/component/alert/alert.min.css" rel="stylesheet">
 <link href="dist/component/follow/follow.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/follow/follow.legacy.min.css" rel="stylesheet">
 ```
 
 #### Icônes des réseaux sociaux
 
-Les variantes d'icônes de réseaux sociaux sont intégrées dans le composant. Les classes suivantes sont disponibles :
+Les variantes de boutons avec icônes de réseaux sociaux sont intégrées dans le composant. Les classes suivantes sont disponibles :
 
 - `fr-btn--bluesky` : Bluesky.
 - `fr-btn-dailymotion` : Dailymotion.

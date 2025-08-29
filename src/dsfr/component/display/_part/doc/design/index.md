@@ -2,14 +2,18 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design des paramètres d'affichage
-shortTitle: Design des paramètres d'affichage
-description: Le composant Paramètres d’affichage permet à l’usager de modifier le thème visuel d’un site entre mode clair et mode sombre.
+title: Design des Paramètres d'affichage
+shortTitle: Design des Paramètres d'affichage
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Paramètres d'affichage.
 shortDescription: Choisir le thème clair ou sombre d’un site.
 keywords: paramètres d’affichage, thème clair, thème sombre, accessibilité, modale, interface, design system, expérience utilisateur, header, footer
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Paramètres d’affichage permet de basculer entre un thème clair ou sombre. Il s’intègre dans l’en-tête ou le pied de page et s’utilise via une modale dédiée.
 summary: Ce document décrit les usages du composant Paramètres d’affichage, qui offre à l’usager le choix entre un thème clair ou sombre pour améliorer son confort de navigation. Il précise où et comment intégrer ce composant, les comportements attendus lors de l’ouverture de la modale et la gestion de l’arrière-plan. Le changement de thème s’opère instantanément, sans validation supplémentaire. Ce guide s’adresse aux concepteurs souhaitant offrir une personnalisation simple et accessible de l’interface.
+mesh:
+  - component/header
+  - component/modal
+  - component/footer
 ---
 
 ## Paramètres d'affichage
@@ -52,9 +56,7 @@ Les paramètres d’affichage représentent un parcours simple permettant à l�
 
 Lorsque le bouton “paramètres d’affichage” est mis en avant dans l’en-tête de la page, il prend la forme d’un lien d’accès rapide.
 
-::dsfr-doc-storybook{storyId=display--header-display width=375}
-
-En version mobile, comme dans la version mobile du [header](../../../../header/_part/doc/index.md), l’accès rapide au bouton “paramètres d’affichage” se trouve dans le menu.
+En version mobile, l’accès rapide au bouton “paramètres d’affichage” se trouve dans le menu.
 
 **Paramètres d’affichage intégrés dans le pied de page**
 
@@ -95,9 +97,3 @@ Ne pas personnaliser les pictogrammes par défaut des boutons riches.
 :::
 
 ::::
-
-### Maillage
-
-- [En-tête](../../../../header/_part/doc/index.md)
-- [Pied de page](../../../../footer/_part/doc/index.md)
-- [Modale](../../../../modal/_part/doc/index.md)

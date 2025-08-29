@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Design de l'Accordéon
 shortTitle: Design de l'Accordéon
-description: Présentation du composant Accordéon permettant à l’usager d’afficher ou de masquer une section de contenu pour alléger une page dense.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Accordéon.
 shortDescription: Masquer ou révéler du contenu textuel
 keywords: accordéon, contenu, interaction, affichage, design système, DSFR, accessibilité, composant
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Accordéon permet à l’usager d’ouvrir ou fermer une section de contenu dans une page, pour en faciliter la lecture et alléger la structure globale.
 summary: Utilisé pour structurer et hiérarchiser du contenu éditorial, l’accordéon masque par défaut les informations secondaires pour ne révéler que ce que l’usager souhaite consulter. Il est particulièrement utile dans les longues pages de contenu. Il permet des interactions simples, peut être utilisé seul ou en groupe, et respecte des règles strictes de lisibilité et d’accessibilité.
+mesh:
+  - component/modal
+  - component/tab
 ---
 
 ## Accordéon
@@ -111,8 +114,3 @@ Ne pas augmenter la taille de typographie de l’en-tête des accordéons.
 :::
 
 ::::
-
-### Maillage
-
-- [Onglet](../../../../tab/_part/doc/design/index.md)
-- [Modale](../../../../modal/_part/doc/design/index.md)

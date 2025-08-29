@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de l'infobulle
-shortTitle: Code de l'infobulle
-description: L’infobulle est un composant d’aide contextuelle permettant d’afficher une information complémentaire lors du survol ou du clic sur un élément de l’interface.
+title: Code de l'Infobulle
+shortTitle: Code de l'Infobulle
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Infobulle.
 shortDescription: Afficher une aide contextuelle discrète.
 keywords: infobulle, aide contextuelle, tooltip, accessibilité, survol, interface, UX, design system, indication, contenu complémentaire
 cover: ../_asset/cover/cover.png
 excerpt: L’infobulle permet de fournir une information non essentielle de manière discrète et temporaire. Elle s’affiche au survol ou au clic et reste limitée en contenu.
 summary: Ce contenu décrit les usages du composant Infobulle, conçu pour afficher une information complémentaire lorsqu’elle ne peut être intégrée directement dans la page. Il en précise les cas d’usage, les limites d’affichage sur mobile, et les bonnes pratiques d’écriture et de comportement. L’infobulle doit être concise, sans mise en forme ni interaction, et n’être utilisée que pour des précisions non essentielles. Ce guide s’adresse aux concepteurs d’interfaces souhaitant améliorer la compréhension utilisateur sans alourdir la structure de la page.
+mesh:
+  - component/modal
+  - component/display
 ---
 
 ## Infobulle
@@ -89,20 +92,26 @@ L’infobulle au clic se compose des éléments suivants :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, le style CSS de l'infobulle et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| tooltip    | Oui         |          |
+| Button     | Non         | Pour la version avec ouverture au clic |
+| Link       | Non         | Pour la version avec ouverture au survol |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/tooltip/tooltip.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent également être ajoutés :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/tooltip/tooltip.legacy.min.css" rel="stylesheet">
 ```
 
 ---
@@ -122,12 +131,12 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 <script type="module" src="dist/component/tooltip/tooltip.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/tooltip/tooltip.nomodule.min.js"></script>
 ```
@@ -160,7 +169,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 ###### tooltip
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente |
@@ -170,7 +179,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -180,7 +189,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -190,7 +199,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de l'infobulle est activé ou non |
@@ -200,7 +209,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isShown]{valign=top scroll=false}
+:::fr-table[isShown]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si l'infobulle est affichée ou non |
@@ -210,7 +219,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[show]{valign=top scroll=false}
+:::fr-table[show]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Affiche l'infobulle |
@@ -221,7 +230,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[hide]{valign=top scroll=false}
+:::fr-table[hide]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Cache l'infobulle |
@@ -232,7 +241,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[mode]{valign=top scroll=false}
+:::fr-table[mode]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini le mode de placement de l'infobulle |
@@ -242,7 +251,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[align]{valign=top scroll=false}
+:::fr-table[align]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini l'alignement vertical de l'infobulle en `mode='placement_manual'` |
@@ -252,19 +261,19 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[place]{valign=top scroll=false}
+:::fr-table[place]{valign=top multiline=true}
 | | |
 |------|-----|
-| **Description** | Défini le placement de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
+| **Description** | Définit le placement horizontal de l'infobulle par rapport au déclencheur en `mode='placement_manual'` |
 | **Type** | property |
-| **Retour** | 'placement--top' \| 'placement--bottom' \| 'placement--left' \| 'placement--right' |
-| **Exemple** | `dsfr(elem).tooltip.place = 'placement--top'` |
+| **Retour** | 'place_top' \| 'place_bottom' \| 'place_left' \| 'place_right' |
+| **Exemple** | `dsfr(elem).tooltip.place = 'place_top'` |
 
 :::
 
 ###### tooltipReferent
 
-:::fr-table[parent]{valign=top scroll=false}
+:::fr-table[parent]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente |
@@ -274,7 +283,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[children]{valign=top scroll=false}
+:::fr-table[children]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -284,7 +293,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[node]{valign=top scroll=false}
+:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -294,7 +303,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
 :::
 
-:::fr-table[isEnabled]{valign=top scroll=false}
+:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du déclencheur est activé ou non |
@@ -310,7 +319,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur l’infobulle, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|

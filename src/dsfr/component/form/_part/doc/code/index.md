@@ -2,13 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code des formulaires
+title: Code du Formulaire
 cover: ../_asset/cover/cover.png
-description: Le formulaire est un composant permettant l'agencement des éléments de saisie de données et des messages d'état.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Formulaire.
 shortDescription: Gestion de l'agencement des éléments de formulaire.
 keywords: formulaire, saisie, données, interaction, accessibilité, design système, DSFR
 excerpt: Le formulaire est un composant essentiel pour la saisie de données dans une interface, permettant d'organiser les champs de saisie et les messages d'état de manière cohérente et accessible.
 summary: Le formulaire est un composant d'interface qui organise les éléments de saisie de données et les messages d'état. Il est conçu pour faciliter l'interaction de l'usager avec l'interface, en respectant les principes d'accessibilité et de design du DSFR. Il permet de structurer les informations à saisir, d'afficher des messages d'erreur ou de succès, et de guider l'usager dans son parcours de saisie. Ce guide s'adresse aux concepteurs et développeurs souhaitant implémenter des formulaires conformes aux standards du DSFR et aux bonnes pratiques d'accessibilité.
+mesh:
+  - component/radio
+  - component/input
+  - component/select
 ---
 
 ## Formulaires
@@ -122,21 +126,24 @@ La structure d'un ensemble de champs de formulaire, dans un `<form>` est la suiv
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des formulaires doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Form       | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/form/form.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```html
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/form/form.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de fieldset-element

@@ -1,5 +1,7 @@
 ---
 title: Actions
+sitemap:
+  noindex: true
 ---
 
 ## Actions

@@ -4,12 +4,16 @@ sitemap:
   noindex: true
 title: Code du Lien
 shortTitle: Code du Lien
-description: Élément de navigation secondaire permettant à l’usager d’accéder à un autre contenu, sur la même page ou sur une autre page, interne ou externe.
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Lien.
 shortDescription: Navigation secondaire vers d’autres contenus
 keywords: lien, navigation, ancre, téléchargement, retour, DSFR, accessibilité
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Lien facilite la navigation de l’usager dans une même page, vers une autre page du site ou vers un site tiers, en complément de la navigation principale.
 summary: Le lien est un composant essentiel pour structurer la navigation au sein des interfaces numériques. Il se décline en différentes formes selon son usage - dans un texte, hors contenu, vers une page externe ou pour un téléchargement. Non personnalisable, il suit des règles d’usage strictes afin de préserver la lisibilité, l’accessibilité et l’uniformité graphique. Son usage s’inscrit dans une hiérarchie d’interaction bien définie, distincte de celle du bouton.
+mesh:
+  - component/breadcrumb
+  - component/sidemenu
+  - component/summary
 ---
 
 ## Lien
@@ -97,19 +101,19 @@ Au sein d'un texte, ne pas utiliser le composant Lien. Préférer l'ajout d'un l
 
 #### Groupes de liens
 
-Les liens peuvent être regroupés pour former des ensembles de navigation. Le groupe est formé par la succession de liens enveloppés par l'élément HTML `<div>` et la classe `fr-links-group`.
+Les liens peuvent être regroupés pour former des ensembles de navigation. Le groupe est formé par la succession de liens enveloppés par un conteneur de classe `fr-links-group`. Utiliser une liste de `<ul>` `<li>` dans le cas d'une liste de liens. Insérer les liens directement dans un conteneur `<div>` lorsque qu'une liste n'est pas nécessaire, par exemple : deux liens indépendants qui ne forment pas un ensemble logique.
 
 **Exemple de groupe de liens**
 
 ```HTML
-<div class="fr-links-group">
-    <a href="#" class="fr-link">
-        Lien 1
-    </a>
-    <a href="#" class="fr-link">
-        Lien 2
-    </a>
-</div>
+<ul class="fr-links-group">
+  <li>
+    <a href="#" class="fr-link">Lien 1</a>
+  </li>
+  <li>
+    <a href="#" class="fr-link">Lien 2</a>
+  </li>
+</ul>
 ```
 
 ---
@@ -118,21 +122,25 @@ Les liens peuvent être regroupés pour former des ensembles de navigation. Le g
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des liens doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque    |
+|------------|-------------|-------------|
+| Core       | Oui         |             |
+| Link       | Oui         |             |
+| Utility    | Non         | Uniquement pour l'ajout d'icône |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/link/link.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/link/link.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de taille
@@ -257,12 +265,12 @@ Il est donc nécessaire d'importer les fichiers js du core à la fin de la page 
 <script type="module" src="dist/core/core.module.min.js"></script>
 ```
 
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.js`</small>
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
 ```HTML
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 ```
 

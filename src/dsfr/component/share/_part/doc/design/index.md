@@ -4,12 +4,14 @@ sitemap:
   noindex: true
 title: Design du Partage
 shortTitle: Design du Partage
-description: Présentation du composant Partage permettant à l’usager de diffuser un contenu via les réseaux sociaux, un email ou un lien direct.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Partage.
 shortDescription: Partager un contenu via différents canaux
 keywords: partage, réseaux sociaux, interaction, DSFR, accessibilité, design système, bouton, lien
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Partage permet à l’usager de diffuser une page ou un contenu en quelques clics à travers plusieurs canaux comme les réseaux sociaux, l’email ou un lien copié.
 summary: Ce composant facilite la diffusion de contenus numériques en permettant aux usagers de partager une page via des boutons accessibles et adaptés à chaque canal. Il garantit une intégration cohérente avec les règles d’accessibilité, une présentation compacte et une compatibilité avec les outils de gestion du consentement pour les services tiers.
+mesh:
+  - component/button
 ---
 
 
@@ -81,7 +83,3 @@ Ne pas personnaliser les icônes des réseaux sociaux.
 :::
 
 ::::
-
-### Maillage
-
-- [Bouton](../../../../button/_part/doc/index.md)

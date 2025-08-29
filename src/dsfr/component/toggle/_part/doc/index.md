@@ -8,6 +8,10 @@ keywords: interrupteur, switch, interface, interaction, accessibilité, design s
 cover: ./_asset/cover/cover.png
 excerpt: Le composant Interrupteur permet à l’usager de choisir entre deux états opposés, comme activer ou désactiver une fonctionnalité, avec effet immédiat.
 summary: Ce composant est conçu pour gérer rapidement des actions binaires dans une interface, notamment pour paramétrer des fonctionnalités comme les notifications. Il permet un usage fluide grâce à un affichage clair, des libellés explicites et une structure accessible. Il peut être utilisé seul ou en groupe et s’adapte visuellement aux contraintes d’affichage sans nécessiter de validation supplémentaire.
+mesh:
+  - component/radio
+  - component/checkbox
+  - component/segmented
 ---
 
 ## Interrupteur
@@ -28,12 +32,11 @@ L’interrupteur est un élément d’interaction avec l’interface qui permet 
 
 ### Quand utiliser ce composant ?
 
-Privilégier l’usage des interrupteurs pour paramétrer des fonctionnalités transverses (exemple : activation / désactivation des notifications), d’autant que le changement d'état de l’interrupteur a un effet immédiat et ne nécessite pas de validation.
+Privilégier l’usage des interrupteurs pour paramétrer des fonctionnalités transverses (exemple : activation / désactivation des notifications). Le changement d'état de l’interrupteur doit avoir un effet immédiat et ne nécessite pas de validation.
 
 ### Comment utiliser ce composant ?
 
-- **Veiller à ce que l’interrupteur et son libellé soient visuellement proches** afin d’en simplifier la compréhension et l’accessibilité (notamment pour les usagers naviguant avec une loupe d’écran).
-- **Prioriser la composition interrupteur à gauche et libellé à droite** qui est la plus commune et la plus intelligible.
+- **Prioriser la composition interrupteur avec statut Activé/désactivé** qui est la plus accessible et la plus intelligible.
 - **Utiliser l’interrupteur en groupe** pour constituer une liste d’actions de même nature.
 
 ::::dsfr-doc-guidelines
@@ -56,7 +59,7 @@ Ne pas regrouper des interrupteurs qui n’ont rien à voir.
 
 ::::
 
-- **Respecter un format unique pour tous les interrupteurs d’un même groupe** (bouton à gauche et libellé à droite, ajout d’une description,statut etc.) ****
+- **Respecter un format unique pour tous les interrupteurs d’un même groupe** (ajout d’une description, d'un statut etc.) ****
 
 ::::dsfr-doc-guidelines
 

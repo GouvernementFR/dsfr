@@ -2,13 +2,17 @@
 title: Zone d'expression visuelle
 shortTitle: Zone d’expression visuelle
 titleId: Composition
-description: La zone d’expression visuelle est une section de page permettant des compositions créatives pour maximiser l’impact d’un message ou d’une action sur certaines pages clés.
+description: Présentation du composant Zone d’expression visuelle, section de page permettant des compositions créatives pour maximiser l’impact d’un message ou d’une action sur certaines pages clés.
 shortDescription: Une section riche et impactante pour mettre en avant un message ou une action.
 keywords: zone d’expression, composition visuelle, design, landing page, page d’accueil, campagne, impact, interface, DSFR, accessibilité
 cover: ./_asset/cover/cover.png
 excerpt: La zone d’expression visuelle permet de construire des sections fortes et distinctives pour mettre en avant un message ou une action dans des pages stratégiques.
 summary: Ce composant permet de composer des sections visuelles riches pour les pages d’accueil, de campagne ou de démarrage d’un parcours. Il autorise des mises en page plus expressives que le reste du DSFR tout en respectant des règles strictes de lisibilité et de cohérence. La zone d’expression visuelle combine textes, images et arrière-plans personnalisables pour générer de l’impact sans nuire à l’accessibilité ni à la simplicité des interfaces de l’État.
 badge: beta
+mesh:
+  - core/color
+  - core/palette
+  - core/media
 ---
 
 ## Zone d'expression visuelle

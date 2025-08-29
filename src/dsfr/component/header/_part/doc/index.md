@@ -8,6 +8,9 @@ keywords: en-tête, header, marque, recherche, navigation, DSFR, accessibilité,
 cover: ./_asset/cover/cover.png
 excerpt: Le composant En-tête est positionné en haut de chaque page et permet à l’usager de savoir sur quel site il se trouve, tout en facilitant l’accès aux fonctions principales comme la recherche ou la connexion.
 summary: Ce composant structure la zone supérieure de chaque page d’un site public. Il intègre les éléments d’identité visuelle de l’État, les éventuels accès rapides à des fonctions essentielles, et le moteur de recherche. Non personnalisable, l’en-tête garantit cohérence, lisibilité et conformité avec la charte de l’État, en version desktop comme mobile. Il peut être enrichi ou simplifié selon les besoins du site.
+mesh:
+  - component/navigation
+  - component/footer
 ---
 
 ## En-tête

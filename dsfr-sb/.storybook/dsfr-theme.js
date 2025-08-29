@@ -58,6 +58,7 @@ const dark = {
   appBorderColor: '#353535',
   appBorderRadius: 0,
 
+
   // Text colors
   textColor: '#cecece',
   textInverseColor: '#666',
@@ -84,6 +85,11 @@ export const getPreferredColorScheme = () => {
   if (!window || !window.matchMedia) return lightVars
 
   if (!PREFER_COLOR_SCHEME) return lightVars;
+
+  const theme = document.documentElement.getAttribute('data-fr-theme');
+  if (theme) {
+    return theme === 'dark' ? darkVars : lightVars;
+  }
 
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? darkVars : lightVars;
 };

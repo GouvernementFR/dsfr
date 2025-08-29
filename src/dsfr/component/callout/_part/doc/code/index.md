@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la mise en avant
-shortTitle: Code de la mise en avant
-description: La mise en avant est un élément éditorial servant à valoriser une information complémentaire dans une page de contenu.
+title: Code de la Mise en avant
+shortTitle: Code de la Mise en avant
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Mise en avant.
 shortDescription: Mettre en valeur une information secondaire.
 keywords: mise en avant, contenu, composant éditorial, UX, design system, accessibilité, information, valorisation, page, interface
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Mise en avant permet de valoriser un contenu complémentaire dans une page, en attirant l’attention de l’usager sans perturber la lecture principale.
 summary: Ce contenu décrit le composant Mise en avant utilisé pour signaler une information complémentaire au sein d’un contenu éditorial. Il précise ses cas d’usage, le distingue de la mise en exergue et des alertes, et recommande de limiter son usage à une ou deux occurrences par page. Des règles éditoriales simples sont proposées pour garantir lisibilité et efficacité. Ce guide s’adresse aux concepteurs de contenus et interfaces souhaitant structurer l’information de manière claire et hiérarchisée.
+mesh:
+  - component/quote
+  - component/highlight
 ---
 
 ## Mise en avant
@@ -57,20 +60,26 @@ Le composant **Mise en avant** permet de mettre en évidence des informations im
 
 #### Installation du CSS
 
-Pour fonctionner correctement, le style CSS de la mise en avant et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Callout    | Oui         |          |
+| Button     | Non         | Uniquement si ajout d'un bouton à l'intérieur |
+| Utility    | Non         | Uniquement pour l'ajout d'icône |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/callout/callout.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent également être ajoutés :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/callout/callout.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de style

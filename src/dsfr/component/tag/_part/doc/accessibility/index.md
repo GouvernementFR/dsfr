@@ -4,12 +4,15 @@ sitemap:
   noindex: true
 title: Accessibilité du Tag
 shortTitle: Accessibilité du Tag
-description: Présentation complète du composant Tag destiné à la catégorisation ou au filtrage de contenus dans une interface.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Tag.
 shortDescription: Le tag sert à classer ou filtrer les contenus.
 keywords: tag, composant, design system, catégorisation, filtre, accessibilité, UI, UX, badge, interface, contenu
 cover: ../_asset/cover/cover.png
 excerpt: Le tag est un composant utilisé pour classer ou filtrer des contenus à l'aide de mots clés. Il s'adapte selon le contexte d'utilisation et respecte des règles éditoriales précises.
 summary: Ce contenu présente le composant Tag dans un design system. Il explique ses usages principaux, notamment pour la catégorisation de contenus ou comme filtre interactif dans les interfaces. Des conseils pratiques et règles éditoriales y sont fournis pour garantir une intégration cohérente et accessible. Ce guide s’adresse aux designers et développeurs travaillant sur des interfaces nécessitant une organisation claire et intuitive de l’information.
+mesh:
+  - component/badge
+  - component/card
 ---
 
 ## Tag
@@ -60,7 +63,7 @@ Voir les [règles d’accessibilité du composant Bouton](../../../../button/_pa
 
 Le composant Tag est suffisamment contrasté en thème clair. Il l’est également en thème sombre dans sa version par défaut.
 
-:::fr-table[Contrastes de couleurs]{valign=top scroll=false caption=false}
+:::fr-table[Contrastes de couleurs]{valign=top multiline=true caption=false}
 | Élément|  Thème clair | Thème sombre |
 |------|-----|-----|
 |**Tag par défaut**| 15,6:1 | 15,52:1 |

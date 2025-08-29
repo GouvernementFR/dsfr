@@ -4,12 +4,16 @@ sitemap:
   noindex: true
 title: Design du Bouton radio
 shortTitle: Design du Bouton radio
-description: Présentation du composant Bouton radio permettant à l’usager de sélectionner une option unique parmi un ensemble limité de choix.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Bouton radio.
 shortDescription: Sélection d’une option unique
 keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Bouton radio permet de proposer à l’usager un choix unique parmi plusieurs options. Il est recommandé pour les listes de 2 à 5 éléments maximum.
 summary: Ce composant est conçu pour faciliter le choix unique dans une interface, en particulier dans les formulaires. Il offre différentes dispositions et variations, y compris des versions enrichies avec pictogrammes. Il s’utilise en groupe, avec des libellés clairs et une hiérarchie visuelle cohérente. L’intégration respecte des règles d’ergonomie, d’accessibilité et d’uniformité éditoriale.
+mesh:
+  - component/checkbox
+  - component/input
+  - component/select
 ---
 
 ## Bouton radio
@@ -82,6 +86,10 @@ Celui-ci est personnalisable.
 
 ::dsfr-doc-storybook{storyId=radios-group--radios-rich-inline-group}
 
+- Sans pictogramme
+
+::dsfr-doc-storybook{storyId=radios-group--radios-rich-no-image-inline-group}
+
 **Liste verticale**
 
 - Avec description
@@ -91,6 +99,10 @@ Celui-ci est personnalisable.
 - Sans description
 
 ::dsfr-doc-storybook{storyId=radios-group--radios-rich-group}
+
+- Sans pictogramme
+
+::dsfr-doc-storybook{storyId=radios-group--radios-rich-no-image-group}
 
 ### Tailles
 
@@ -165,10 +177,3 @@ Ne pas personnaliser la couleur des textes.
 :::
 
 ::::
-
-### Maillage
-
-- [Case à cocher](../../../../checkbox/_part/doc/index.md)
-- [Liste déroulante](../../../../select/_part/doc/index.md)
-- [Champs de saisie](../../../../input/_part/doc/index.md)
-- [Formulaires](../../../../form/_part/doc/index.md)

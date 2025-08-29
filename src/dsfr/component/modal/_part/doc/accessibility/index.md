@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité de la modale
+title: Accessibilité de la Modale
 shortTitle: Accessibilité de la Modale
-description: Présentation du composant Modale permettant de focaliser l’attention de l’usager sur une tâche ou une information sans quitter la page.
+description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Modale.
 shortDescription: Affichage focalisé d’un contenu secondaire
 keywords: modale, fenêtre, focus, interaction, DSFR, accessibilité, interface, contenu secondaire
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Modale permet d’afficher un contenu ou une interaction dans une fenêtre superposée à la page, bloquant le fond et recentrant l’attention de l’usager.
-summary: La modale s’utilise pour présenter un contenu complémentaire ou une action simple sans sortir de la page en cours. Elle est conçue pour isoler une information importante tout en permettant de revenir au contexte initial en un clic. Non personnalisable, elle existe en plusieurs tailles, avec ou sans zone d’action, et respecte les standards d’accessibilité en figant l’arrière-plan lors de son affichage.
+summary: La modale s’utilise pour présenter un contenu complémentaire ou une action simple sans sortir de la page en cours. Elle est conçue pour isoler une information importante tout en permettant de revenir au contexte initial en un clic. Non personnalisable, elle existe en plusieurs tailles, avec ou sans zone d’action, et respecte les standards d’accessibilité en figeant l’arrière-plan lors de son affichage.
+mesh:
+  - component/button
+  - component/display
 ---
 
 ## Modale

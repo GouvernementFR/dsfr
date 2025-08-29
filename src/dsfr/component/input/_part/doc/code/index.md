@@ -2,14 +2,18 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du champ de saisie
-shortTitle: Code du champ de saisie
-description: Le champ de saisie permet à l’usager d’entrer des données dans une interface en respectant des règles de clarté et d’accessibilité.
+title: Code du Champ de saisie
+shortTitle: Code du Champ de saisie
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Champ de saisie.
 shortDescription: Saisie de données dans une interface.
 keywords: champ de saisie, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé, texte d’aide
 cover: ../_asset/cover/cover.png
 excerpt: Ce document présente l’usage du champ de saisie pour permettre à l’usager d’entrer des informations, en précisant les cas d’usage appropriés et les bonnes pratiques d’interface.
 summary: Ce contenu décrit le champ de saisie comme un composant d’interface permettant à l’usager de saisir du contenu ou des données. Il indique quand l’utiliser, avec quelles alternatives dans le cas de choix fermés, et fournit des recommandations précises sur son usage, la disposition des éléments, les messages de retour, l’accessibilité et les libellés. Il s’adresse aux concepteurs et développeurs souhaitant garantir une saisie claire, efficace et cohérente dans leurs interfaces.
+mesh:
+  - component/radio
+  - component/checkbox
+  - component/toggle
 ---
 
 ## Champ de saisie
@@ -123,24 +127,29 @@ Les champs de saisie peuvent être enrichis avec des attributs HTML pour amélio
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du **core**, du **formulaire**, et du composant **champ de saisie** doivent être importés. Une dépendance au composant **bouton** est aussi nécessaire pour les champs de saisie avec bouton.
 
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Form       | Oui         |          |
+| Input      | Oui         |          |
+| Button     | Non         | Uniquement pour les variations avec bouton associé au champ |
+| Utility    | Non         | Uniquement pour l'ajout d'icône dans le champ de saisie |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/form/form.min.css" rel="stylesheet">
 <link href="dist/component/input/input.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```html
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/form/form.legacy.min.css" rel="stylesheet">
-<link href="dist/component/input/input.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de types

@@ -2,13 +2,15 @@
 title: En-tête connectée
 shortTitle: En-tête connectée
 titleId: User
-description: Déclinaison de l’en-tête standard permettant à l’usager connecté d’accéder à son menu de navigation personnel.
-shortDescription: Variante de l’en-tête dédiée aux usagers connectés
+description: Présentation du composant En-tête connectée, déclinaison de l’En-tête standard permettant à l’usager connecté d’accéder à son menu de navigation personnel.
+shortDescription: Variante de l’En-tête dédiée aux usagers connectés
 keywords: en-tête, menu utilisateur, connexion, compte, connecté, navigation, DSFR, bêta
 cover: ./_asset/cover/cover.png
 excerpt: Composant en bêta affichant, après connexion, un menu personnel dans l’en-tête avec liens, informations utilisateur et bouton de déconnexion.
 summary: L’en-tête connectée est une extension de l’en-tête classique, permettant à un usager connecté d’accéder à un menu déroulant personnalisé. Elle affiche les informations de compte, un ensemble limité de liens de navigation et un bouton de déconnexion. Ce composant est encore en version bêta et n’existe pas en code pour l’instant. Il répond à des cas d’usage d’interface connectée mais ne doit pas remplacer une navigation complète dédiée à l’espace personnel.
 badge: beta
+mesh:
+  - component/header
 ---
 
 ## En-tête connectée

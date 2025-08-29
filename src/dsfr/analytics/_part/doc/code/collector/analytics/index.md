@@ -1,5 +1,7 @@
 ---
 title: Class Analytics
+sitemap:
+  noindex: true
 ---
 
 ## class Analytics

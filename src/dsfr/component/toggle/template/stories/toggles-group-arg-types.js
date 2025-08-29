@@ -16,9 +16,6 @@ const toggleGroupArgTypes = {
     ...formArgTypes.legend,
     description: 'Légende de l’ensemble des interrupteurs'
   },
-  left: {
-    ...toggleArgTypes.left
-  },
   border: {
     ...toggleArgTypes.border
   },
@@ -52,7 +49,6 @@ const getTogglesData = (id = uniqueId('toggle'), count = 3) => {
 
 const toggleGroupArgs = {
   legend: 'Légende pour l\'ensemble des éléments',
-  left: false,
   border: false,
   state: false,
   status: 'default',
@@ -80,7 +76,6 @@ const toggleGroupProps = (args) => {
   };
 
   for (const element of toggleGroup.elements[0].data.toggles) {
-    element.left = args.left;
     element.border = args.border;
     element.state = args.state;
   }

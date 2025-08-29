@@ -2,14 +2,18 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration de la transcription
-shortTitle: Démonstration de la transcription
-description: Présentation du composant Transcription destiné à afficher un texte associé à un contenu média dans une interface.
+title: Démonstration de la Transcription
+shortTitle: Démonstration de la Transcription
+description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs du composant Transcription.
 shortDescription: Affichage de texte lié à un contenu média
 keywords: transcription, composant, contenu média, accessibilité, modale, accordéon, design système, DSFR
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Transcription permet de proposer un texte associé à un contenu média, à afficher ou masquer dans une interface, sous forme d’accordéon ou de modale.
 summary: Ce composant facilite l’accès au texte d’une vidéo ou d’un média pour les usagers qui en ont besoin, en l’affichant sur la même page dans une zone repliable ou via une modale. Il est conçu pour garantir une lecture simultanée fluide et accessible, avec une structure claire et des règles d’intégration strictes.
+mesh:
+  - component/accordion
+  - component/content
+  - component/modal
 ---
 
 ## Transcription

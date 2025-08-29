@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du bandeau d'information importante
-shortTitle: Code du bandeau d'information importante
-description: Le bandeau d’information importante permet de signaler temporairement une information urgente ou prioritaire en tête de page.
+title: Code du Bandeau d'information importante
+shortTitle: Code du Bandeau d'information importante
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bandeau d'information importante.
 shortDescription: Afficher une alerte temporaire prioritaire.
 keywords: bandeau, alerte, information importante, vigilance météo, composant éditorial, interface, UX, design system, accessibilité, urgence
 cover: ../_asset/cover/cover.png
 excerpt: Le bandeau d’information importante sert à attirer l’attention sur une information temporaire prioritaire comme une alerte météo. Il s’affiche sous la navigation principale sur l’ensemble des pages.
 summary: Ce document présente les bonnes pratiques d’usage du bandeau d’information importante. Il décrit son rôle dans la diffusion d’informations urgentes ou prioritaires, précise les cas d’usage recommandés, notamment pour les alertes météo, et définit les règles de positionnement et de rédaction. Il insiste sur la nécessité de limiter son usage à des cas exceptionnels pour préserver son efficacité. Ce guide s’adresse aux équipes éditoriales et techniques souhaitant alerter efficacement les usagers dans un cadre cohérent et accessible.
+mesh:
+  - component/header
+  - component/navigation
 ---
 
 ## Bandeau d'information importante
@@ -67,20 +70,25 @@ Sa structure comprend les éléments suivants :
 
 #### Installation du CSS
 
-Pour garantir le bon affichage du bandeau et de ses variations, le style CSS de ce composant doit être importé. L'import doit se faire avant le contenu de la page, dans la partie `<head>`, de préférence avec le fichier minifié pour une meilleure performance.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top multiline=true}
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| notice     | Oui         |          |
+| Button     | Non         | Uniquement sur la variation refermable |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/notice/notice.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/notice/notice.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante avec bouton de fermeture

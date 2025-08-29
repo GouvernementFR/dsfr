@@ -1,5 +1,7 @@
 ---
 title: Configuration
+sitemap:
+  noindex: true
 ---
 
 ## Configuration

@@ -7,6 +7,7 @@ keywords: modèles, exemples, gabarits, pages types, blocs fonctionnels, composa
 excerpt: Explorez les modèles de pages et blocs fonctionnels du Design Système de l’État pour construire rapidement des interfaces respectueuses des standards publics.
 summary: La section « Modèles » du Design Système de l’État fournit des gabarits prêts à l’emploi, couvrant les besoins fréquents des sites publics - pages de compte, formulaires, messages d’erreur ou de confirmation. Elle propose également des blocs fonctionnels (adresse, nom, téléphone, etc.) facilitant la création de formulaires standardisés et accessibles. Ces ressources sont conçues pour garantir l’homogénéité des services numériques publics tout en réduisant les temps de développement.
 sort: order
+order: 4
 list:
   horizontal: true
   noCover: true

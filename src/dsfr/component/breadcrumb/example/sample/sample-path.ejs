@@ -1,0 +1,22 @@
+<%
+  const breadcrumb = locals.breadcrumb || {};
+  const getData = (label, path) => {
+    return {
+      id: uniqueId('breadcrumb-link'),
+      path: path,
+      label: label,
+      markup: breadcrumb.markup
+    };
+  }
+
+  const getSegmentData = (id) => {
+    return getData(`Segment ${id}: lorem ipsum`, `segment-${id}`);
+  }
+
+  const segments = [];
+  segments.push(getData('Accueil', '/example'));
+  for (let i = 1; i <= 7; i++) segments.push(getSegmentData(i));
+  segments.push({ label: 'Page Actuelle'});
+%>
+
+<%- include('./sample-default', { breadcrumb: { segments: segments } }); %>

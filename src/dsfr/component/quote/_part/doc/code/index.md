@@ -2,14 +2,17 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code de la citation
-shortTitle: Code de la citation
-description: La citation permet d’intégrer un extrait de discours ou de texte au sein d’un contenu éditorial, en respectant des règles précises de forme.
+title: Code de la Citation
+shortTitle: Code de la Citation
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Citation.
 shortDescription: Citer un texte dans un contenu éditorial.
 keywords: citation, contenu éditorial, extrait, source, typographie, italique, UX, accessibilité, design system, mise en forme
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Citation permet d’intégrer un extrait textuel dans une page, avec des champs de détails pour ajouter des précisions sur la source. Il doit respecter une présentation typographique soignée.
 summary: Ce document décrit les usages du composant Citation, destiné à intégrer des extraits de textes ou de discours dans un contenu éditorial. Il explique comment distinguer la citation des composants de mise en avant ou de mise en exergue, précise les règles typographiques à appliquer, comme l’usage de guillemets et de l’italique, et recommande d’éviter les citations trop longues pour préserver la lisibilité. Il fournit également des indications sur la structuration, l’usage des champs de détails, et les règles de propriété intellectuelle à respecter.
+mesh:
+  - component/callout
+  - component/highlight
 ---
 
 ## Citation
@@ -76,20 +79,24 @@ Sa structure est la suivante :
 
 #### Installation du CSS
 
-Pour fonctionner correctement, le style CSS de la citation et du core doit être importé dans la page. Les fichiers doivent être inclus dans le `<head>` avant le contenu de la page.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Quote      | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```HTML
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/quote/quote.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent également être ajoutés :
-
-```HTML
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/quote/quote.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variante de taille

@@ -66,7 +66,7 @@ const getMega = (active = false, leader = false) => {
     close: 'Fermer le menu',
     ...(leader && {leader: {
       title: 'Titre éditorialisé',
-      text: lorem(),
+      text: lorem(false, 40),
       link: {
         id: uniqueId('link'),
         label: 'Voir toute la rubrique',

@@ -2,12 +2,15 @@
 title: Lettre d'information et réseaux sociaux
 shortTitle: Lettre d'information et réseaux sociaux
 titleId: Follow
-description: Ce composant permet de proposer l’inscription à une lettre d’information et de diriger vers les réseaux sociaux de l’entité.
+description: Présentation du composant Lettre d'information et réseaux sociaux permettant de proposer l’inscription à une lettre d’information et de diriger vers les réseaux sociaux de l’entité.
 shortDescription: Inscription à une lettre d’info et accès aux réseaux sociaux.
 keywords: lettre d’information, newsletter, réseaux sociaux, footer, interface, composant, design system, RGPD, accessibilité, usager
 cover: ./_asset/cover/cover.png
 excerpt: Ce document présente le composant Lettre d’information et réseaux sociaux, destiné à favoriser l’abonnement et la consultation des comptes sociaux, avec recommandations d’intégration et règles éditoriales.
 summary: Ce contenu décrit le composant Lettre d’information et réseaux sociaux, conçu pour permettre aux usagers de s’abonner à une ou plusieurs lettres d’information et de consulter les réseaux sociaux de l’entité. Il précise les recommandations d’intégration, notamment sa position dans la page, et les consignes éditoriales telles que l’adaptation du message selon le contexte ou les mentions relatives à l’utilisation des données personnelles. Ce guide s’adresse aux équipes chargées de la conception éditoriale et technique des sites web publics.
+mesh:
+  - component/button
+  - component/input
 ---
 
 ## Lettre d'information et Réseaux Sociaux

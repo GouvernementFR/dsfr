@@ -2,14 +2,18 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code des paramètres d'affichage
-shortTitle: Code des paramètres d'affichage
-description: Le composant Paramètres d’affichage permet à l’usager de modifier le thème visuel d’un site entre mode clair et mode sombre.
+title: Code des Paramètres d'affichage
+shortTitle: Code des Paramètres d'affichage
+description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Paramètres d'affichage.
 shortDescription: Choisir le thème clair ou sombre d’un site.
 keywords: paramètres d’affichage, thème clair, thème sombre, accessibilité, modale, interface, design system, expérience utilisateur, header, footer
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Paramètres d’affichage permet de basculer entre un thème clair ou sombre. Il s’intègre dans l’en-tête ou le pied de page et s’utilise via une modale dédiée.
 summary: Ce document décrit les usages du composant Paramètres d’affichage, qui offre à l’usager le choix entre un thème clair ou sombre pour améliorer son confort de navigation. Il précise où et comment intégrer ce composant, les comportements attendus lors de l’ouverture de la modale et la gestion de l’arrière-plan. Le changement de thème s’opère instantanément, sans validation supplémentaire. Ce guide s’adresse aux concepteurs souhaitant offrir une personnalisation simple et accessible de l’interface.
+mesh:
+  - component/header
+  - component/modal
+  - component/footer
 ---
 
 ## Paramètres d'affichage
@@ -129,21 +133,32 @@ Voici un exemple de code pour utiliser le composant **Paramètre d'affichage** 
 
 #### Installation du CSS
 
-Pour fonctionner correctement, les styles CSS du core et des paramètres d'affichage doivent être importés.
-L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec le fichier minifié, car plus léger.
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+
+:::fr-table[Dépendances CSS]{valign=top scroll=false}
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Form       | Oui         |
+| Modal      | Oui         |
+| Radio      | Oui         |
+| Scheme     | Oui         |
+| Display    | Oui         |
+
+:::
+
+**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/form/form.min.css" rel="stylesheet">
+<link href="dist/component/modal/modal.min.css" rel="stylesheet">
+<link href="dist/component/radio/radio.min.css" rel="stylesheet">
+<link href="dist/scheme/scheme.min.css" rel="stylesheet">
 <link href="dist/component/display/display.min.css" rel="stylesheet">
-```
-
-<small>NB : Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```html
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/display/display.legacy.min.css" rel="stylesheet">
 ```
 
 #### Variantes de bouton d'ouverture
@@ -160,24 +175,19 @@ Ce composant est aussi dépendant du **core** et de la **modale**.
 
 #### Installation du JavaScript
 
-Pour fonctionner correctement, les scripts JavaScript du paramètre d'affichage, du core, et de la modale doivent être importés.
+Pour fonctionner correctement, les scripts JavaScript du paramètre d'affichage, du core, de scheme, et de la modale doivent être importés.
 L'import doit se faire avant la fermeture du body, et de préférence avec le fichier minifié, car plus léger.
 
 ```html
-<script type="module" src="dist/core/core.min.js"></script>
-<script type="module" src="dist/component/modal/modal.min.js"></script>
-<script type="module" src="dist/component/display/display.min.js"></script>
+<script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/scheme/scheme.module.min.js"></script>
+<script type="module" src="dist/component/modal/modal.module.min.js"></script>
+<script type="module" src="dist/component/display/display.module.min.js"></script>
 ```
 
-<small>NB : Il est aussi possible d'importer le JavaScript global du DSFR `dsfr.min.js`.</small>
+<small>NB : Il est aussi possible d'importer le JavaScript global du DSFR `dsfr.module.min.js`.</small>
 
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/core/core.legacy.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/modal/modal.legacy.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/display/display.legacy.min.js"></script>
-```
+La gestion du thème ne fonctionne pas sur Internet Explorer 11 qui ne supporte pas les variables CSS.
 
 #### Instances
 
@@ -224,7 +234,7 @@ Le Système de Design fournit des événements personnalisés pour les actions u
 
 Sur la modale du paramètre d'affichage, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top scroll=false caption=false}
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
