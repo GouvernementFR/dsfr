@@ -1,7 +1,7 @@
 <%
 const table = locals.table || {};
 
-const dataLorem = JSON.parse(include('../data/data-lorem.json.ejs', { table: table }));
+const dataLorem = JSON.parse(include('../data/data-lorem.json.ejs', { table: table.table }));
 
 const thead = dataLorem.thead;
 const tbodies = dataLorem.tbodies;
