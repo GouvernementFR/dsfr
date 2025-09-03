@@ -82,7 +82,8 @@ const rangeArgTypes = {
     control: 'number',
     description: 'valeur initiale du curseur',
     type: {
-      value: 'integer'
+      value: 'integer',
+      required: true
     }
   },
   step: {
@@ -127,9 +128,36 @@ const rangeArgTypes = {
       eq: true
     },
     control: 'number',
-    description: '2eme valeur initiale pour le curseur double',
+    description: 'Deuxième valeur initiale pour le curseur double',
     type: {
-      value: 'integer'
+      value: 'integer',
+      required: true
+    },
+    table: { category: 'variant' }
+  },
+  minValueLabel: {
+    if: {
+      arg: 'isDouble',
+      eq: true
+    },
+    control: 'text',
+    description: 'Label pour le 1er curseur en mode double (attribut aria-label)',
+    type: {
+      value: 'string',
+      required: true
+    },
+    table: { category: 'variant' }
+  },
+  maxValueLabel: {
+    if: {
+      arg: 'isDouble',
+      eq: true
+    },
+    control: 'text',
+    description: 'Label pour le 2eme curseur en mode double (attribut aria-label)',
+    type: {
+      value: 'string',
+      required: true
     },
     table: { category: 'variant' }
   },
@@ -169,6 +197,8 @@ const rangeArgs = {
   disabled: false,
   size: 'md',
   isDouble: false,
+  minValueLabel: 'Valeur minimale',
+  maxValueLabel: 'Valeur maximale',
   value2: 70,
   isStep: false,
   indicators: true,
@@ -190,6 +220,8 @@ const rangeProps = (args) => {
     prefix: args.prefix || rangeArgs.prefix,
     suffix: args.suffix || rangeArgs.suffix,
     isDouble: args.isDouble || false,
+    minValueLabel: args.isDouble ? args.minValueLabel || rangeArgs.minValueLabel : undefined,
+    maxValueLabel: args.isDouble ? args.maxValueLabel || rangeArgs.maxValueLabel : undefined,
     isStep: args.isStep || false,
     indicators: args.indicators || false,
     disabled: args.disabled || rangeArgs.disabled,

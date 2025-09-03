@@ -6,6 +6,8 @@ let data = {
   ...range,
   isStep: true,
   isDouble: true,
+  minValueLabel: getText('label.min-value', 'range'),
+  maxValueLabel: getText('label.max-value', 'range'),
   step: isNaN(range.step) ? ((range.max - range.min) / 10) | 0 : range.step,
   value: isNaN(range.value) ? (range.max - range.min) * 0.25 + range.min : range.value,
   value2: isNaN(range.value2) ? (range.max - range.min) * 0.75 + range.min : range.value2
