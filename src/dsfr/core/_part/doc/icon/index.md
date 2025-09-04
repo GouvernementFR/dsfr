@@ -67,7 +67,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 ### Arrows
 
-#### Icônes créées par l'équipe DSFR
+#### Arrows - Icônes créées par l'équipe DSFR
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-arrow-left-s-first-line" aria-hidden="true"></span>
@@ -88,7 +88,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 :::
 
-#### Icônes proposées par RemixIcon
+#### Arrows - Icônes proposées par RemixIcon
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-arrow-left-s-fill" aria-hidden="true"></span>
@@ -1747,7 +1747,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 ### Editor
 
-#### Icônes créées par l'équipe DSFR
+#### Editor - Icônes créées par l'équipe DSFR
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-bold" aria-hidden="true"></span>
@@ -1770,7 +1770,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 :::
 
-#### Icônes proposées par RemixIcon
+#### Editor - Icônes proposées par RemixIcon
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-code-view" aria-hidden="true"></span>
@@ -2518,7 +2518,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 ### System
 
-#### Icônes créées par l'équipe DSFR
+#### System - Icônes créées par l'équipe DSFR
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-error-fill" aria-hidden="true"></span>
@@ -2552,7 +2552,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 :::
 
-#### Icônes proposées par RemixIcon
+#### System - Icônes proposées par RemixIcon
 
 <div class="dsfr-doc-preview">
   <span aria-hidden="true" class="fr-icon-add-line"></span>
