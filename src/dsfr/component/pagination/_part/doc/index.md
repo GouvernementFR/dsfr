@@ -48,4 +48,4 @@ Privilégier la pagination au rechargement automatique ou à un bouton “Voir p
 
 ### Règles éditoriales
 
-La pagination n’est régit par aucune règle éditoriale spécifique.
+La pagination n’est régie par aucune règle éditoriale spécifique.
