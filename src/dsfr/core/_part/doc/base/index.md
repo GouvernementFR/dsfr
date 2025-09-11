@@ -30,11 +30,12 @@ L’image de marque de l’État et la représentation que s’en fait le citoye
 
 ### En application
 
-1. Que vous utilisiez ou non les composants de la librairie, le respect des [fondamentaux](../index.md) du DSFR est obligatoire : ils sont le seul moyen d’assurer la cohérence des interfaces de l’État ;
-2. Vous avez l’obligation d’utiliser les [composants](../../../../component/_part/doc/index.md) du DSFR s’ils existent dans la librairie, en respectant scrupuleusement leurs règles d’utilisation ;
-3. Vous pouvez créer vos propres composants seulement s’ils n’existent pas dans la librairie
-4. Si vous pensez qu’un composant n’existe pas, pensez à interroger la communauté. Il y a de fortes chances qu’il ait déjà été créé par une autre équipe.
-5. Si vous créez un composant et si vous pensez qu’il pourrait être utile à d’autres équipes, pensez à nous le partager pour qu’il soit réintégré à la librairie.
+1. L’application du DSFR doit toujours être complète. Le détournement de composants, l’ajout de sur-couches graphiques quelconques ou la simple recherche de ressemblance avec le Système de Design ne sont pas autorisés.
+2. Que vous utilisiez ou non les composants de la librairie, le respect des [fondamentaux](../index.md) du DSFR est obligatoire : ils sont le seul moyen d’assurer la cohérence des interfaces de l’État ;
+3. Vous avez l’obligation d’utiliser les [composants](../../../../component/_part/doc/index.md) du DSFR s’ils existent dans la librairie, en respectant scrupuleusement leurs règles d’utilisation ;
+4. Vous pouvez créer vos propres composants seulement s’ils n’existent pas dans la librairie
+5. Si vous pensez qu’un composant n’existe pas, pensez à interroger la communauté. Il y a de fortes chances qu’il ait déjà été créé par une autre équipe.
+6. Si vous créez un composant et si vous pensez qu’il pourrait être utile à d’autres équipes, pensez à nous le partager pour qu’il soit réintégré à la librairie.
 
 ## Le détail des fondamentaux
 
