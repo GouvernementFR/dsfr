@@ -46,8 +46,10 @@
   height: 180px;
 }
 
-.fr-transcription:has(.fr-modal[open="true"]) {
-  margin-bottom: 24rem;
+.fr-transcription:has(.fr-modal[open="true"]),
+#transcription--transcription button[data-fr-opened='true'],
+#display--display button[data-fr-opened='true'] {
+  margin-bottom: 30rem;
 }
 
 #display--header-display .storybook-root:has(.fr-modal[open="true"]),
