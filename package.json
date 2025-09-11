@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/dsfr",
-  "version": "1.14.1",
+  "version": "1.14.2-rc.1",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
