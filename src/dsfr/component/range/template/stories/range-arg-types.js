@@ -154,7 +154,7 @@ const rangeArgTypes = {
       eq: true
     },
     control: 'text',
-    description: 'Label pour le 2eme curseur en mode double (attribut aria-label)',
+    description: 'Label pour le Deuxième curseur en mode double (attribut aria-label)',
     type: {
       value: 'string',
       required: true
