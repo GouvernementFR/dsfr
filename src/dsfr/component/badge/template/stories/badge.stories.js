@@ -102,7 +102,7 @@ export const EllipsisStory = {
   render: () => renders([
     {
       ellipsis: true,
-      label: 'Label très long qui sera tronqué lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus'
+      label: 'Libellé très long qui sera tronqué lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus'
     }
   ])
 };

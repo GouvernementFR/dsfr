@@ -112,7 +112,7 @@ Seule la couleur des tags cliquables peut être personnalisée, parmi les couleu
 
 :::fr-table[Tableau personnalisation design]{valign=top multiline=true caption=false}
 
-|  Éléments | Indice thème clair | Indice thème clair |
+|  Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Fond** | Indice **925**<br> exemple : `$pink-tuile-925` | Indice **125**<br> exemple : `$pink-tuile-125` |
 | **Texte et icône**| Indice **sun**<br> exemple : `$pink-tuile-sun-425` | Indice **moon**<br> exemple : `$pink-tuile-moon-750` |

@@ -46,7 +46,7 @@ L’ancienne nomenclature des classes en `fr-fi` (remplacée par `fr-icon`) est 
 
 **Ajout d'icônes personnalisées**
 
-Pour ajouter une icône qui ne serait pas présente dans le DSFR, il est possible de créer un fichier SVG ou de l’importer depuis la librairie Remixicon. Il faudra ensuite créer un fichier CSS pour associé une classe à cette icône, en suivant la nomenclature `fr-icon-[nom-de-l'icône]`. Par exemple, pour une icône nommée `custom-icon`, le fichier CSS contiendra :
+Pour ajouter une icône qui ne serait pas présente dans le DSFR, il est possible de créer un fichier SVG ou de le télécharger depuis la librairie Remixicon. Il faudra ensuite créer un fichier CSS pour associé une classe à cette icône, en suivant la nomenclature `fr-icon-[nom-de-l'icône]`. Par exemple, pour une icône nommée `custom-icon`, le fichier CSS contiendra :
 
 ```CSS
 .fr-icon-custom-icon::before,
@@ -56,7 +56,19 @@ Pour ajouter une icône qui ne serait pas présente dans le DSFR, il est possibl
 }
 ```
 
-Ne pas modifier directement les fichiers CSS du DSFR, mais plutôt créer un fichier CSS personnalisé pour vos icônes. De cette manière, vous pourrez monter de version du DSFR sans perdre vos modifications.
+[Facultatif] Pour fonctionner sur Internet Explorer 11, il faudra également ajouter, de préférence dans un autre fichier CSS, la règle suivante :
+
+```CSS
+@media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
+  .fr-icon-custom-icon::before,
+  .fr-icon-custom-icon::after {
+    background-image: url("../icons/custom-icon.svg");
+  }
+}
+```
+
+>[!NOTE]
+>Ne pas modifier directement les fichiers CSS du DSFR, mais plutôt créer un fichier CSS personnalisé pour vos icônes. De cette manière, vous pourrez monter de version du DSFR sans perdre vos modifications.
 
 ## Sélection d’icônes
 
@@ -67,7 +79,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 ### Arrows
 
-#### Icônes créées par l'équipe DSFR
+#### Arrows - Icônes créées par l'équipe DSFR
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-arrow-left-s-first-line" aria-hidden="true"></span>
@@ -88,7 +100,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 :::
 
-#### Icônes proposées par RemixIcon
+#### Arrows - Icônes proposées par RemixIcon
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-arrow-left-s-fill" aria-hidden="true"></span>
@@ -1747,7 +1759,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 ### Editor
 
-#### Icônes créées par l'équipe DSFR
+#### Editor - Icônes créées par l'équipe DSFR
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-bold" aria-hidden="true"></span>
@@ -1770,7 +1782,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 :::
 
-#### Icônes proposées par RemixIcon
+#### Editor - Icônes proposées par RemixIcon
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-code-view" aria-hidden="true"></span>
@@ -2518,7 +2530,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 ### System
 
-#### Icônes créées par l'équipe DSFR
+#### System - Icônes créées par l'équipe DSFR
 
 <div class="dsfr-doc-preview">
   <span class="fr-icon-error-fill" aria-hidden="true"></span>
@@ -2552,7 +2564,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
 
 :::
 
-#### Icônes proposées par RemixIcon
+#### System - Icônes proposées par RemixIcon
 
 <div class="dsfr-doc-preview">
   <span aria-hidden="true" class="fr-icon-add-line"></span>

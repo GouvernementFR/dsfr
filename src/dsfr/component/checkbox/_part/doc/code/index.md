@@ -97,7 +97,6 @@ Pour **regrouper plusieurs checkboxes liées**, utilisez un élément `<fieldset
             <label class="fr-label" for="checkboxes-3">
                 Libellé case à cocher
             </label>
-            </div>
         </div>
     </div>
     <div class="fr-messages-group" id="checkboxes-messages" aria-live="polite">

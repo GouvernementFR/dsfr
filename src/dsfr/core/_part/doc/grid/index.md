@@ -15,11 +15,11 @@ order: 6
 :::fr-table[Caractéristiques de la grille]{valign=top multiline=true}
 | Mise en page | Valeurs en px | Résolution maquette en px | Token | Largeur max. du contenu | Tailles des gouttières (optionnelles) |
 | --- | --- | --- | --- | --- | --- |
-| XS | de 0 à 575 | 320 |  | / | 16 px |
-| SM | de 576 à 767 | 576 | `$bp-sm` | / | 16 px |
+| XS | de 0 à 575 | 320 |  | / | 16px |
+| SM | de 576 à 767 | 576 | `$bp-sm` | / | 16px |
 | MD | de 768 à 991 | 768 | `$bp-md` | / | 16px |
 | LG | de 992 à 1247 | 992 | `$bp-lg` | / | 24px |
-| XL | ≥ 1248 | 1440 | `$bp-xl` | 1200 | 24 px |
+| XL | ≥ 1248 | 1440 | `$bp-xl` | 1200 | 24px |
 :::
 
 ## Points de rupture
