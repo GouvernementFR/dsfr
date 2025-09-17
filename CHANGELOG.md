@@ -12,7 +12,52 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.14
 
-### [1.14.1](https://github.com/GouvernementFR/dsfr/compare/v1.14.0...1.14.1) - 29 Août 2025
+### [1.14.2](https://github.com/GouvernementFR/dsfr/compare/v1.14.1...1.14.2) - 17 Septembre 2025
+
+#### 🐛 fix(tab): ajoute un fond blanc au panel des onglets [(#1302)](https://github.com/GouvernementFR/dsfr/pull/1302)
+- Corrige le fond transparent du tab panel
+- Corrige la hauteur du panel (4px en trop)
+
+
+#### 📝 docs(assets): met a jour les visuels suite maj du footer [(#1303)](https://github.com/GouvernementFR/dsfr/pull/1303)
+Met à jour les visuels sur les pages :
+- page d’erreurs,
+- page de connexion
+- page de creation de compte
+- composant paramètre d’affichage
+- composant Lettre d’information et Réseaux Sociaux
+
+
+#### ⬆️ chore: storybook dependencies [(#1298)](https://github.com/GouvernementFR/dsfr/pull/1298)
+
+
+#### 📝 docs: corrections mineures de documentation [(#1297)](https://github.com/GouvernementFR/dsfr/pull/1297)
+- Fautes d'orthographe
+- Ajout de précision sur l'ajout icônes
+
+
+#### 🐛 fix(range): build storybook & ajout input label value [(#1286)](https://github.com/GouvernementFR/dsfr/pull/1286)
+- Correction de la page storybook du curseur
+- Ajout de la possibilité de modifier les intitulés des aria-label des inputs sur le curseur double
+
+
+#### 🐛 fix(display, transcription): corrige affichage dans storybook [(#1290)](https://github.com/GouvernementFR/dsfr/pull/1290)
+- corrige l'affichage des modales ouvertes dans storybook
+
+
+#### 📝 docs(button, modal): uniformisation du formatage des groupes de boutons [(#1292)](https://github.com/GouvernementFR/dsfr/pull/1292)
+- Les groupes de boutons sont maintenant présentés dans les exemples de code avec des ul/li plutôt que des div
+
+
+#### 🐛 fix(footer): met a jour le lien du footer service-public.gouv.fr [(#1295)](https://github.com/GouvernementFR/dsfr/pull/1295)
+- Remplace le lien "service-public.fr" par "service-public.gouv.fr" dans le composant footer et les exemples utilisant le pied de page
+
+
+
+### [v1.14.1](https://github.com/GouvernementFR/dsfr/compare/v1.14.0...v1.14.1) - 29 Août 2025
+
+#### 🐛 fix(build): correction du build des exemples [(#1279)](https://github.com/GouvernementFR/dsfr/pull/1279)
+
 
 #### ⬆️ chore(Node): change la version minimale de Node.js [(#1252)](https://github.com/GouvernementFR/dsfr/pull/1252)
 - Pour permettre plus de souplesse, les versions de Node acceptées pour build le DSFR sont maintenant "^20.19.0 || ^22.12.0 || >=24.0.0"
