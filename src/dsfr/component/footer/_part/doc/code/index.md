@@ -52,7 +52,7 @@ Le composant **Pied de page** est constitué d'un élément `<footer>` de classe
     - Un bloc de contenu, un élément `<div>` de classe `fr-footer__content` contenant :
       - Une description du site, optionnelle, un élément `<p>` de classe `fr-footer__content-desc`. La description doit être concise et informative, ne pas dépasser 3 lignes.
       - Une liste de liens, **obligatoire et non modifiable**, `<ul>` de classe `fr-footer__content-list`, avec des `<li>` de classe `fr-footer__content-item`, et des liens `<a>` de classe `fr-footer__content-link`.
-        - Les liens doivent être ordonnés dans cet ordre : info.gouv.fr, service-public.fr, legifrance.gouv.fr, data.gouv.fr
+        - Les liens doivent être ordonnés dans cet ordre : info.gouv.fr, service-public.gouv.fr, legifrance.gouv.fr, data.gouv.fr
         - Les liens doivent pointer vers les sites respectifs en s'ouvrant dans une nouvelle fenêtre.
   - Le bloc logos partenaires, optionnel, une `<div>`de classe `fr-footer__partners`. Ce bloc contient :
     - Un titre `<h2>`, ou autre niveau d'entête, de classe `fr-footer__partners-title`.
@@ -88,7 +88,7 @@ Le composant **Pied de page** est constitué d'un élément `<footer>` de classe
                         <a title="info.gouv.fr - nouvelle fenêtre" href="https://info.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">info.gouv.fr</a>
                     </li>
                     <li class="fr-footer__content-item">
-                        <a title="service-public.fr - nouvelle fenêtre" href="https://service-public.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">service-public.fr</a>
+                        <a title="service-public.gouv.fr - nouvelle fenêtre" href="https://service-public.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">service-public.gouv.fr</a>
                     </li>
                     <li class="fr-footer__content-item">
                         <a title="legifrance.gouv.fr - nouvelle fenêtre" href="https://legifrance.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">legifrance.gouv.fr</a>
@@ -309,7 +309,7 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                         <a title="info.gouv.fr - nouvelle fenêtre" href="https://info.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">info.gouv.fr</a>
                     </li>
                     <li class="fr-footer__content-item">
-                        <a title="service-public.fr - nouvelle fenêtre" href="https://service-public.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">service-public.fr</a>
+                        <a title="service-public.gouv.fr - nouvelle fenêtre" href="https://service-public.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">service-public.gouv.fr</a>
                     </li>
                     <li class="fr-footer__content-item">
                         <a title="legifrance.gouv.fr - nouvelle fenêtre" href="https://legifrance.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">legifrance.gouv.fr</a>

@@ -48,20 +48,24 @@ Le composant **Bouton** est un élément interactif permettant de déclencher de
 
 #### Groupes de boutons
 
-Les boutons peuvent être regroupés pour former des ensembles d'actions. Le groupe est formé par la succession de boutons enveloppés par l'élément HTML `<div>` et la classe `fr-btns-group`.
+Les boutons peuvent être regroupés pour former des ensembles d'actions. Le groupe est formé par la succession de boutons structurés sous forme de liste par l'élément HTML `<ul>` et la classe `fr-btns-group`.
 Un groupe est dit **hiérarchisé** s'il dispose d'un bouton primaire et de boutons secondaires. Sauf cas exceptionnel, n'utiliser qu'un seul bouton primaire dans un groupe. Un groupe **non hiérarchisé** est lui constitué uniquement de boutons secondaires, tertiaires, et/ou tertiaires sans contours.
 
 **Exemple de groupe de boutons**
 
 ```HTML
-<div class="fr-btns-group">
+<ul class="fr-btns-group">
+  <li>
     <button class="fr-btn" type="button">
         Bouton 1
     </button>
+  </li>
+  <li>
     <button class="fr-btn fr-btn--secondary" type="button">
         Bouton 2
     </button>
-</div>
+  </li>
+</ul>
 ```
 
 ---

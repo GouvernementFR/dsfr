@@ -240,7 +240,7 @@ const footerArgs = {
   contentDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.',
   contentLinks: [
     { label: 'info.gouv.fr', href: 'https://info.gouv.fr', blank: true, attributes: { title: 'info.gouv.fr - nouvelle fenêtre' } },
-    { label: 'service-public.fr', href: 'https://service-public.fr', blank: true, attributes: { title: 'service-public.fr - nouvelle fenêtre' } },
+    { label: 'service-public.gouv.fr', href: 'https://service-public.gouv.fr', blank: true, attributes: { title: 'service-public.gouv.fr - nouvelle fenêtre' } },
     { label: 'legifrance.gouv.fr', href: 'https://legifrance.gouv.fr', blank: true, attributes: { title: 'legifrance.gouv.fr - nouvelle fenêtre' } },
     { label: 'data.gouv.fr', href: 'https://data.gouv.fr', blank: true, attributes: { title: 'data.gouv.fr - nouvelle fenêtre' } }
   ],

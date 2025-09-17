@@ -138,7 +138,7 @@ La librairie de SVG se trouve dans **dist/artwork/pictograms**.
 
 ##### Utilisation des pictogrammes
 
-Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et d’importer à l’intérieur les 3 parties du svg. Chaque partie doit être insérée, à la manière des <span>spritesheet</span>, via une balise `<use>` et l’attribut href :
+Pour intégrer ces pictogrammes, il convient d’utiliser une balise `<svg>` et d’importer à l’intérieur les 3 parties du svg. Chaque partie doit être insérée, à la manière des <span lang="en">spritesheet</span>, via une balise `<use>` et l’attribut href :
 
 ```HTML
 <svg class="fr-artwork" aria-hidden="true" viewBox="0 0 80 80" width="80px" height="80px">

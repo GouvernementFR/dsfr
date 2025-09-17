@@ -109,7 +109,7 @@ Ne pas changer l’icône et la couleur d’un badge système.
 La couleur des badges standard peut être personnalisée, parmi les couleurs illustratives autorisées uniquement.
 
 :::fr-table[Tableau personnalisation design]{valign=top multiline=true caption=false}
-| Éléments | Indice thème claire | Indice thème sombre |
+| Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Fond** | Indice **950**<br>_exemple : `$pink-tuile-950`_ | Indice **100**<br>_exemple : `$pink-tuile-100`_ |
 | **Texte** | Indice **sun**<br>_exemple : `$pink-tuile-sun-425`_ | Indice **moon**<br>_exemple : `$pink-tuile-moon-750`_ |
