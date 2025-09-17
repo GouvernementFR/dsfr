@@ -41,6 +41,7 @@
   @include before('', block) {
     @include size(100%, 100%);
     @include margin-top(-1px);
+    pointer-events: none;
     order: 2;
 
     @include preference.forced-colors {
@@ -73,7 +74,6 @@
     @include relative;
     overflow: visible;
     font-weight: font-weight(bold);
-    @include z-index(over);
     @include margin(0 1v);
     @include height(100%);
     white-space: nowrap;
