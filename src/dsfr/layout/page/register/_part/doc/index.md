@@ -185,7 +185,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 1 - Identifiant
 
-![](./_asset/creation-compte-etape-identifiant.jpg)
+![](./_asset/creation-compte-etape-identifiant.png)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-login’}
 ```html
@@ -320,7 +320,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 2 - Identité
 
-![](./_asset/creation-compte-etape-identite.jpg)
+![](./_asset/creation-compte-etape-identite.png)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-identify’}
 ```html
@@ -463,7 +463,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
 
 ### Étape 3 - Coordonnées
 
-![](./_asset/creation-compte-etape-coordonnees.jpg)
+![](./_asset/creation-compte-etape-coordonnees.png)
 
 :::fr-accordion[### Extrait de code]{id=‘accordion-contact-details’}
 ```html
