@@ -88,7 +88,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
   <span class="fr-icon-arrow-right-s-line-double" aria-hidden="true"></span>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='icons-system-dsfr-accordion'}
+:::fr-accordion[### Extrait de code]{id='icons-arrows-dsfr-accordion'}
 
 ```HTML
 <span class="fr-icon-arrow-left-s-first-line" aria-hidden="true"></span>
@@ -188,7 +188,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
   <span class="fr-icon-skip-up-line" aria-hidden="true"></span>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='icons-building-accordion'}
+:::fr-accordion[### Extrait de code]{id='icons-arrows-remixicon-accordion'}
 
 ```HTML
 <span class="fr-icon-arrow-left-s-fill" aria-hidden="true"></span>
@@ -1768,7 +1768,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
   <span class="fr-icon-quote-line" aria-hidden="true"></span>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='icons-dsfr-accordion'}
+:::fr-accordion[### Extrait de code]{id='icons-editor-dsfr-accordion'}
 
 ```HTML
 <span class="fr-icon-bold" aria-hidden="true"></span>
@@ -1822,7 +1822,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
   <span class="fr-icon-sort-desc" aria-hidden="true"></span>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='icons-remixicon-accordion'}
+:::fr-accordion[### Extrait de code]{id='icons-editor-remixicon-accordion'}
 
 ```HTML
 <span class="fr-icon-code-view" aria-hidden="true"></span>
@@ -2072,7 +2072,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
   <span class="fr-icon-tiktok-line" aria-hidden="true"></span>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='logos-dsfr-accordion'}
+:::fr-accordion[### Extrait de code]{id='icons-logos-dsfr-accordion'}
 
 ```HTML
 <span class="fr-icon-dailymotion-fill" aria-hidden="true"></span>
@@ -2139,7 +2139,7 @@ Les icônes classées dans dsfr sont soit des icônes créées spécialement, so
   <span class="fr-icon-bluesky-line" aria-hidden="true"></span>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='logos-remixicon-accordion'}
+:::fr-accordion[### Extrait de code]{id='icons-logos-remixicon-accordion'}
 
 ```HTML
 <span class="fr-icon-chrome-fill" aria-hidden="true"></span>
