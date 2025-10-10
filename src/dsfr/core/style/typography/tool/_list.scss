@@ -80,6 +80,12 @@
     #{$ol} {
       @include padding-left(0);
       @include margin-y(0);
+
+      & > li {
+        @include before {
+          content: "\200B"; /* zero-width space to fix screen reader */
+        }
+      }
     }
   }
 }
