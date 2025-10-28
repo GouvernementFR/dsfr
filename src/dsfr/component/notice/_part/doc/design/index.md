@@ -19,8 +19,6 @@ mesh:
 
 Le bandeau d’information importante est un élément éditorial permettant d’attirer l’attention des usagers sur une information importante et temporaire.
 
-Le bandeau d’information importante est un élément éditorial permettant d’attirer l’attention des usagers sur une information importante et temporaire.
-
 :::dsfr-doc-tab-navigation
 
 - [Présentation](../index.md)
