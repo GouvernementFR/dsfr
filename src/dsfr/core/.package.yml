@@ -25,15 +25,15 @@ description: |
   La grille proposée par le design system vous permet de structurer vos pages et vos contenus simplement.
 doc:
   - title: Typographie
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-de-l-identite-de-l-etat/typographie/
+    url: https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/typographie
   - title: Icônes
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones
+    url: https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/icone
   - title: Icônes de favoris - Favicon
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icone-de-favoris
+    url: https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/icone-de-favori
   - title: Médias fondamentaux
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/medias
+    url: https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/medias
   - title: Grille
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/grille-et-points-de-rupture
+    url: https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/grille-et-points-de-rupture
 wrapper: container
 script:
   - legacy
