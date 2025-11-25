@@ -34,7 +34,7 @@ Le composant **Lien** est conçu pour être accessible et respecter les critère
 
 ### Interactions clavier
 
-Lorsque le focus est positionné sur le Lien :
+> Lorsque le focus est positionné sur le Lien :
 
 - `Entrée` :
   - actionne le lien,
