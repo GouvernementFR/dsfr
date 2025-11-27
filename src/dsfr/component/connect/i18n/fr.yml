@@ -14,5 +14,7 @@ plus:
   href: https://franceconnect.gouv.fr/france-connect-plus
 agent:
   brand: AgentConnect
-
-
+pro:
+  brand: ProConnect
+  link: Qu’est-ce que ProConnect ?
+  href: https://www.proconnect.gouv.fr/
