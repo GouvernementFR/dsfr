@@ -38,13 +38,13 @@ Retrouver le fonctionnement en détail ici : [https://docs.partenaires.franceco
 
 ![Anatomie du bouton FranceConnect](../_asset/anatomy/anatomy-1.png)
 
-::dsfr-doc-pin[Le logo FranceConnect]{required=true}
+::dsfr-doc-pin[Le logo]{required=true}
 
-::dsfr-doc-pin[Un libellé “S’identifier avec FranceConnect”]{required=true}
+::dsfr-doc-pin[Un libellé “S’identifier avec [nom du service]]{required=true}
 
 ::dsfr-doc-pin[Une icône plus]
 
-::dsfr-doc-pin[Un lien “Qu’est-ce que FranceConnect ?”]{required=true add='qui redirige vers l’URL franceconnect.gouv.fr'}
+::dsfr-doc-pin[Un lien “Qu’est-ce que [nom du service] ?”]{required=true add='qui redirige vers l’URL dédiée'}
 
 :::
 
@@ -55,6 +55,12 @@ Retrouver le fonctionnement en détail ici : [https://docs.partenaires.franceco
 Si le service utilise FranceConnect+ (pour les démarches nécessitant une sécurité renforcée), il faut utiliser la variante du bouton FranceConnect+.
 
 La structure est sensiblement la même que celle du bouton FranceConnect, à l’exception du lien “Qu’est-ce que FranceConnect+ ?” qui pointe vers l’URL [https://franceconnect.gouv.fr/france-connect-plus](https://franceconnect.gouv.fr/france-connect-plus).
+
+**ProConnect**
+
+Si le service utilise ProConnect (pour en faciliter l’accès aux agents publics), il faut utiliser la variante du bouton ProConnect.
+
+La structure est sensiblement la même que celle du bouton FranceConnect, à l’exception du logo et du lien “Qu’est-ce que ProConnect ?” qui pointe vers l’URL [https://proconnect.gouv.fr/](https://proconnect.gouv.fr/).
 
 ### Tailles
 
