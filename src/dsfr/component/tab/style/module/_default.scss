@@ -34,7 +34,9 @@
 
   // retire le padding du container en mobile
   &--viewport-width {
-    @include margin-x(calc(50% - 50vw));
+    $gutter: map-deep-get($grid-settings, breakpoints, first, gutter);
+
+    @include margin-x(-$gutter * 2);
     @include margin-x(0, md);
   }
 
