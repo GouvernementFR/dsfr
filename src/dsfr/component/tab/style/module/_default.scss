@@ -41,7 +41,7 @@
   }
 
   @include before('', block) {
-    @include size(100%, 100%);
+    @include size(99.9%, 100%); // 99.9% permet à Firefox de dessiner correctement la bordure droite dans toutes les tailles
     @include margin-top(-1px);
     pointer-events: none;
     order: 2;
