@@ -34,12 +34,14 @@
 
   // retire le padding du container en mobile
   &--viewport-width {
-    @include margin-x(calc(50% - 50vw));
+    $gutter: map-deep-get($grid-settings, breakpoints, first, gutter);
+
+    @include margin-x(-$gutter * 2);
     @include margin-x(0, md);
   }
 
   @include before('', block) {
-    @include size(100%, 100%);
+    @include size(99.9%, 100%); // 99.9% permet à Firefox de dessiner correctement la bordure droite dans toutes les tailles
     @include margin-top(-1px);
     pointer-events: none;
     order: 2;
