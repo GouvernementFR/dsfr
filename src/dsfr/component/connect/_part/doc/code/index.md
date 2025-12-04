@@ -18,7 +18,7 @@ mesh:
 
 ## Bouton FranceConnect
 
-Le bouton FranceConnect est un élément d’interaction avec l’interface proposant à l’usager d’utiliser ses identifiants de connexion à l’un des fournisseurs d’identités ([impots.gouv.fr](http://impots.gouv.fr/), [ameli.fr](http://ameli.fr/), [l’Identité Numérique La Poste](https://lidentitenumerique.laposte.fr/), etc.) pour se connecter à un autre site.
+Le bouton FranceConnect est un élément d’interaction avec l’interface proposant à l’usager d’utiliser ses identifiants de connexion à l’un des fournisseurs d’identités ([impots.gouv.fr](http://impots.gouv.fr/), [ameli.fr](http://ameli.fr/), [l’Identité Numérique La Poste](https://lidentitenumerique.laposte.fr/), [France Identité](https://france-identite.gouv.fr/), etc.) pour se connecter à un autre site.
 
 Le fournisseur de service récupère auprès de FranceConnect un identifiant unique et une identité vérifiée par l’INSEE. Il est primordial dans l’usage du service FranceConnect et garantit sa reconnaissance et la confiance en la marque.
 
@@ -79,6 +79,20 @@ Pour plus de clarté, le bouton est peut être accompagné de la phrase :
 </div>
 ```
 
+**Structure HTML du bouton ProConnect**
+
+```HTML
+<div class="fr-connect-group">
+    <button class="fr-connect fr-connect--pro" type="button">
+        <span class="fr-connect__login">S’identifier avec</span>
+        <span class="fr-connect__brand">ProConnect</span>
+    </button>
+    <p>
+        <a href="https://proconnect.gouv.fr/" target="_blank" rel="noopener" title="Qu’est-ce que ProConnect ? - nouvelle fenêtre">Qu’est-ce que ProConnect ?</a>
+    </p>
+</div>
+```
+
 ---
 
 ### CSS
@@ -123,13 +137,17 @@ Le composant Bouton FranceConnect est stylisé par les classes CSS suivantes :
 - `.fr-connect-group p` : Conteneur du lien d'information.
 - `.fr-connect-group a` : Lien d'information.
 
-Une classe supplémentaire `.fr-connect--plus` peut être ajoutée au bouton FranceConnect pour proposer une connexion via FranceConnect+.
+Une classe supplémentaire peut être ajoutée au bouton pour proposer une connexion via un autre service :
+- `.fr-connect--plus` : FranceConnect+.
+- `.fr-connect--pro` : ProConnect.
 
 ---
 
 ### JavaScript
 
-La documentation technique pour la mise en place de FranceConnect en tant que fournisseur de service peut être consulter sur le [site de FranceConnect](https://partenaires.franceconnect.gouv.fr/fcp/fournisseur-service)
+La documentation technique pour la mise en place du service souhaité peut être consultée sur leur site dédié :
+- [FranceConnect](https://partenaires.franceconnect.gouv.fr/fcp/fournisseur-service)
+- [ProConnect](https://partenaires.proconnect.gouv.fr/)
 
 ---
 
