@@ -1,5 +1,5 @@
 ////
-/// Table Module - footer
+/// Table Module - header
 /// @group Table
 ////
 
@@ -26,7 +26,7 @@
         order: 3;
         flex: 0;
         @include padding-left(2v);
-      }
+        @include margin-left(auto);
     }
 
     #{ns(btns-group)} {
