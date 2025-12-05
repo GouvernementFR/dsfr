@@ -7,10 +7,17 @@
 
 #{ns(btn--sort)} {
   @include nest-btn(sm, only, arrow-up-down-line, null, false);
-  @include animate.rotate('&[aria-sort='descending']');
-
+  
   &[aria-sort='ascending'],
-  &[aria-sort='descending'] {
+  &[aria-sort='descending'],
+  &-asc,
+  &-desc {
     @include nest-btn(sm, only, arrow-up-line, null, false);
+    @include animate.rotate('&', 0);
+  }
+
+  &[aria-sort='descending'],
+  &-desc {
+    @include animate.rotate('&');
   }
 }
