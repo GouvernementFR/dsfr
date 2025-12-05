@@ -13,11 +13,23 @@ const log = (color, msg, cr) => {
 };
 
 log.info = (msg, cr) => {
-  _log(cr, [36, msg]);
+  _log(cr, [36, ` ${msg} `]);
 };
 
 log.error = (msg, cr) => {
-  _log(cr, [31, msg]);
+  _log(cr, [31, ` ${msg} `]);
+};
+
+log.success = (msg, cr) => {
+  _log(cr, [32, ` ${msg} `]);
+};
+
+log.warning = (msg, cr) => {
+  _log(cr, [33, ` ${msg} `]);
+};
+
+log.step = (msg, cr) => {
+  _log(cr, [35, ` → ${msg} `]);
 };
 
 log.file = (filename, filesize, cr) => {
@@ -25,7 +37,7 @@ log.file = (filename, filesize, cr) => {
 };
 
 log.section = (msg, cr) => {
-  _log(cr, [34, `# ${msg.toUpperCase()} #`]);
+  _log(cr, [34, ` # ${msg.toUpperCase()} # `]);
 };
 
 module.exports = log;

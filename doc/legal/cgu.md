@@ -2,8 +2,6 @@
 
 Le Service d’Information du Gouvernement (« SIG ») vous remercie de bien vouloir lire attentivement l’intégralité des présentes Conditions Générales d’Utilisation (« CGU ») avant d’utiliser la plateforme du Système de Design de l'État (« Plateforme »). Tout accès, toute utilisation et/ou toute Contribution à la Plateforme est subordonné au respect des présentes CGU. Tout Utilisateur de la Plateforme reconnaît souscrire sans réserve aux présentes CGU et s’engage à les respecter.
 
-
-
 ### PRÉAMBULE
 
 Le SIG est le pilote de la transformation numérique de la communication de l’État . À ce titre, le SIG a pour mission de placer toutes les actions du Gouvernement sous la marque de l’État afin de garantir l’homogénéité et la reconnaissance de l’ensemble des initiatives ministérielles ou interministérielles.
@@ -13,51 +11,47 @@ Dans la continuité de la mise en œuvre de la marque de l’État, le SIG a str
 
 Les présentes Conditions Générales définissent les conditions selon lesquelles l’Utilisateur de l’État ou les Autres Utilisateurs peuvent naviguer sur la Plateforme accessible sur l’URL https://www.systeme-de-design.gouv.fr, accéder et exploiter les Ressources et Contribuer à leur amélioration ou leur enrichissement.
 
-
-
 ### ARTICLE 1 - DÉFINITIONS
 
 Les termes débutant avec une majuscule dans les présentes CGU, qu’ils soient utilisés au singulier ou au pluriel auront la signification qui leur est attribuée ci-après :
 
-* **Communauté** : désigne la communauté en ligne des Utilisateurs et des membres de l’équipe du Système de Design de l'État.
+- **Communauté** : désigne la communauté en ligne des Utilisateurs et des membres de l’équipe du Système de Design de l'État.
 
-* **Composants** : désigne les librairies d’éléments destinés aux designers et aux développeurs intégrant des Éléments Graphiques (Fondamentaux Techniques et les Éléments d’Identité), des Éléments d’Interface, des Paquets de codes sources.
+- **Composants** : désigne les librairies d’éléments destinés aux designers et aux développeurs intégrant des Éléments Graphiques (Fondamentaux Techniques et les Éléments d’Identité), des Éléments d’Interface, des Paquets de codes sources.
 
-* **Contribution** : désigne tout élément fourni par l’Utilisateur dans le cadre de l’utilisation de la Plateforme, qu’il s’agisse de la modification d’un Composant ou du développement d’un nouveau Composant.
+- **Contribution** : désigne tout élément fourni par l’Utilisateur dans le cadre de l’utilisation de la Plateforme, qu’il s’agisse de la modification d’un Composant ou du développement d’un nouveau Composant.
 
-* **Système de Design de l'État (DSFR)** : désigne l’ensemble de Composants réutilisables, guidé par des standards et une gouvernance, devant être assemblés pour construire les sites internet et applications mobiles des Entités Autorisées et objet des présentes Conditions Générales.
+- **Système de Design de l'État (DSFR)** : désigne l’ensemble de Composants réutilisables, guidé par des standards et une gouvernance, devant être assemblés pour construire les sites internet et applications mobiles des Entités Autorisées et objet des présentes Conditions Générales.
 
-* **Documentation** : désigne les principes d’utilisation des Composants auxquels les Utilisateurs doivent se conformer.
+- **Documentation** : désigne les principes d’utilisation des Composants auxquels les Utilisateurs doivent se conformer.
 
-* **Eléments Graphiques** : désigne les Fondamentaux Techniques et les Éléments d’Identité.
+- **Eléments Graphiques** : désigne les Fondamentaux Techniques et les Éléments d’Identité.
 
-* **Eléments d’Interface** : désigne les éléments des Composants liés à l’interface (boutons, liens, champs de saisie, case à cocher, cards, …).
+- **Eléments d’Interface** : désigne les éléments des Composants liés à l’interface (boutons, liens, champs de saisie, case à cocher, cards, …).
 
-* **Entités Autorisées** : désigne les services de l’État devant utiliser le DSFR, à savoir les administrations centrales, leurs directions, les délégations interministérielles, les préfectures, les ambassades, l’ensemble des services déconcentrés ainsi que les Opérateurs de l’État.
+- **Entités Autorisées** : désigne les services de l’État devant utiliser le DSFR, à savoir les administrations centrales, leurs directions, les délégations interministérielles, les préfectures, les ambassades, l’ensemble des services déconcentrés ainsi que les Opérateurs de l’État.
 
-* **Eléments d’Identité** : désigne les éléments des Composants qui identifient les Entités Autorisées (dénomination, logos, autres Éléments graphiques comme les couleurs, typographies, iconographies, etc.) définis dans la « Marque État ».
+- **Eléments d’Identité** : désigne les éléments des Composants qui identifient les Entités Autorisées (dénomination, logos, autres Éléments graphiques comme les couleurs, typographies, iconographies, etc.) définis dans la « Marque État ».
 
-* **Fondamentaux Techniques** : désigne les éléments basiques pour construire une page, un site Internet ou une application mobile (grille, espacement, points de rupture, etc).
+- **Fondamentaux Techniques** : désigne les éléments basiques pour construire une page, un site Internet ou une application mobile (grille, espacement, points de rupture, etc).
 
-* **Marque de l’Etat** : telle que définie par la circulaire du Premier Ministre en date du 17 février 2020, laquelle précise la stratégie de marque de l’Etat.
+- **Marque de l’Etat** : telle que définie par la circulaire du Premier Ministre en date du 17 février 2020, laquelle précise la stratégie de marque de l’Etat.
 
-* **Opérateurs de l’État** : désigne les entités définies chaque année dans l’annexe « Opérateurs de l'État » du projet de loi de finances de l’année en cours.
+- **Opérateurs de l’État** : désigne les entités définies chaque année dans l’annexe « Opérateurs de l'État » du projet de loi de finances de l’année en cours.
 
-* **Paquets de codes sources** : désigne les fichiers de codes sources accessibles sur la plateforme de Git (Github).
+- **Paquets de codes sources** : désigne les fichiers de codes sources accessibles sur la plateforme de Git (Github).
 
-* **Plateforme** : désigne le site Internet du Système de Design de l'État, permettant aux Utilisateurs de naviguer, utiliser et contribuer au Système de Design de l'État.
+- **Plateforme** : désigne le site Internet du Système de Design de l'État, permettant aux Utilisateurs de naviguer, utiliser et contribuer au Système de Design de l'État.
 
-* **Ressources** : désigne les Composants, la Documentation, le support et les outils mis à disposition de l’Utilisateur sur ou au travers de la Plateforme.
+- **Ressources** : désigne les Composants, la Documentation, le support et les outils mis à disposition de l’Utilisateur sur ou au travers de la Plateforme.
 
-* **Services** : désigne les services fournis par le SIG via la Plateforme.
+- **Services** : désigne les services fournis par le SIG via la Plateforme.
 
-* **Autre Utilisateur** : désigne toute personne autre qu’un Utilisateur de l’État.
+- **Autre Utilisateur** : désigne toute personne autre qu’un Utilisateur de l’État.
 
-* **Utilisateur de l’État** : désigne toute personne travaillant chez ou pour une Entité Autorisée. Les agences de communication ou autre prestataire technique travaillant pour le compte d’une Entité Autorisée ont les mêmes droits et obligations relatifs aux Ressources que les Entités Autorisées elles-mêmes. En revanche, dès lors qu’ils ne travaillent plus pour les Entités Autorisées, ces prestataires externes n’ont sur les Ressources que les seuls droits dévolus aux Autres Utilisateurs.
+- **Utilisateur de l’État** : désigne toute personne travaillant chez ou pour une Entité Autorisée. Les agences de communication ou autre prestataire technique travaillant pour le compte d’une Entité Autorisée ont les mêmes droits et obligations relatifs aux Ressources que les Entités Autorisées elles-mêmes. En revanche, dès lors qu’ils ne travaillent plus pour les Entités Autorisées, ces prestataires externes n’ont sur les Ressources que les seuls droits dévolus aux Autres Utilisateurs.
 
-* **Utilisateur** : désigne ensemble les Utilisateurs de l’État et les Autres Utilisateurs.
-
-
+- **Utilisateur** : désigne ensemble les Utilisateurs de l’État et les Autres Utilisateurs.
 
 ### ARTICLE 2 – MODALITÉS D’ACCÈS À LA PLATEFORME ET D’UTILISATION DES RESSOURCES
 
@@ -105,7 +99,6 @@ Tous les Autres Utilisateurs sont autorisés à utiliser le code source selon le
 
 Il est expressément rappelé aux Autres Utilisateurs que toute utilisation des Composants en dehors des limites visées aux présentes ou dans le but de les détourner et de s’approprier d’une manière ou d’une autre la Marque de l’État est punissable de sanctions civiles et/ou pénales.
 
-
 ### ARTICLE 3 - CONDITIONS SPÉCIFIQUES AUX CONTRIBUTIONS
 
 Dans l’hypothèse où un Utilisateur souhaiterait, dans le respect des limitations visées à l’article 2 ci-dessus, modifier un Composant ou apporter un nouveau Composant au DSFR, il devra proposer au SIG sa Contribution, qui ne pourra être intégrée au catalogue des Composants du DSFR qu’une fois validée par le SIG.
@@ -129,11 +122,10 @@ Pour les Contributions relatives aux Codes Sources, le fichier contributing.md s
 Il est précisé que la validation de la Contribution relative au Code Source s’effectue comme suit :
 
 Le Code Source développé ou modifié est soumis à l’équipe de développement du DSFR pour analyse. Pour les modifications structurantes et le développement de nouveaux Composants, le processus de création devra suivre le fonctionnement de l’équipe du Système de Design de l’État :
-* Une phase de découverte UX qui a pour objectifs de cadrer le périmètre de développement
-* Une phase de design UI (échanges et partages possibles avec l’équipe DSFR dès cette phase)
-* Une phase de développement
 
-
+- Une phase de découverte UX qui a pour objectifs de cadrer le périmètre de développement
+- Une phase de design UI (échanges et partages possibles avec l’équipe DSFR dès cette phase)
+- Une phase de développement
 
 ### ARTICLE 4 – GARANTIES
 
@@ -143,8 +135,6 @@ Le Code Source développé ou modifié est soumis à l’équipe de développeme
 
 La Plateforme répond aux exigences des référentiels RGAA dans sa version 4, niveau AA, RGS et RGI.
 Cette Plateforme est en constante évolution et enrichissement et le SIG ne saurait dès lors garantir la pérennité de certains des Composants dès lors qu’ils ne sont plus validés par le SIG.
-
-
 
 ### ARTICLE 5 – PROCÉDURE D’AGRÉMENT
 
@@ -160,12 +150,9 @@ Le respect de cette procédure est indispensable même si le projet est envisag�
 
 Il est rappelé que tous les sites et applications mobiles développés par ou pour les Entités Autorisées et les Opérateurs de l’État doivent en outre respecter : (i) la charte graphique, (ii) la charte des grands principes rédactionnels, et (iii) la charte des réseaux sociaux disponibles au lien : https://www.gouvernement.fr/marque-Etat ainsi que le Référentiel Général de Sécurité (RGS), le Référentiel Général d’Amélioration de l’Accessibilité (RGAA), le Référentiel Général d’Interopérabilité (RGI) dans leur version à jour, accessibles via le lien suivant : https://www.numerique.gouv.fr/publications/
 
-
-
 ### ARTICLE 6 - DONNÉES À CARACTÈRE PERSONNEL
 
 Les données personnelles collectées par le SIG au travers de la Plateforme sont exploitées conformément aux dispositions de la Politique Données Personnelles présente sur le Plateforme.
-
 
 ### ARTICLE 7 – DISPOSITIONS DIVERSES
 
