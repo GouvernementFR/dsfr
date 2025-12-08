@@ -290,7 +290,7 @@ Le système mémorise l'élément qui avait le focus au moment de l'ouverture de
 
 **Comportement :**
 
-Quand plusieurs boutons peuvent ouvrir la même modale, l'API du DSFR système détecte quel bouton a déclenché l'ouverture.
+Quand plusieurs boutons peuvent ouvrir la même modale, l'API du DSFR détecte quel bouton a déclenché l'ouverture.
 À la fermeture, le focus retourne au bouton spécifique qui a ouvert la modale, même avec plusieurs déclencheurs.
 Si aucun déclencheur n'est identifié, retour à un élément focusable par défaut.
 
