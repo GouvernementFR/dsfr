@@ -281,7 +281,7 @@ Le système mémorise l'élément qui avait le focus au moment de l'ouverture de
 **Exemple de modale avec plusieurs boutons d'ouverture**
 
 ```HTML
- <button onclick="window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" type="button" class="fr-btn">Ouvrir la modale (bouton 1)</button>
+<button onclick="window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" type="button" class="fr-btn">Ouvrir la modale (bouton 1)</button>
 <button onclick="window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" type="button" class="fr-btn">Ouvrir la modale (bouton 2)</button>
 <dialog id="modal-multi-button" class="fr-modal" aria-labelledby="modal-multi-button-title">
     <!-- Contenu de la modale -->
