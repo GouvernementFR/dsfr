@@ -71,7 +71,7 @@ const postinstall = async () => {
     log.success('Installation terminée avec succès !');
     log.info('Documentation : https://www.systeme-de-design.gouv.fr/');
   } catch (error) {
-    log.error('✗ Erreur lors de l’l’installation: ' + error.message);
+    log.error('✗ Erreur lors de l’installation: ' + error.message);
     process.exit(1);
   }
 };
