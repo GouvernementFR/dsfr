@@ -246,6 +246,54 @@ Sur la modale, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
+#### Variante de modale sans bouton d'ouverture
+
+**Exemple de modale sans bouton d'ouverture lié**
+
+```HTML
+<button onClick="window.dsfr(this.nextElementSibling).modal.disclose()" type="button" class="fr-btn">Bouton simple</button>
+<dialog id="modal-without-button" class="fr-modal" aria-labelledby="modal-without-button-title">
+    <!-- Contenu de la modale -->
+</dialog>
+```
+
+Lorsqu'une modale n'a pas de bouton dédié à son ouverture (par exemple, ouverte programmatiquement), la gestion du retour de focus suit cette logique :
+
+```js
+// Exemple d'ouverture programmatique sans bouton via l'API du DSFR
+const modal = document.querySelector('#modal-without-button');
+window.dsfr(modal).modal.disclose();
+
+// Au moment de la fermeture
+modal.addEventListener('dsfr.conceal', (e) => {
+    // Le focus retourne à l'élément qui avait le focus avant l'ouverture
+    // Si aucun élément précédent, retour au body ou à un élément focusable par défaut
+    console.log(e);
+});
+```
+
+**Comportement :**
+
+Le système mémorise l'élément qui avait le focus au moment de l'ouverture de la modale. À la fermeture, il restaure le focus sur cet élément.
+
+#### Variante de modale avec plusieurs boutons d'ouverture
+
+**Exemple de modale avec plusieurs boutons d'ouverture**
+
+```HTML
+ <button onclick="window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" type="button" class="fr-btn">Ouvrir la modale (bouton 1)</button>
+<button onclick="window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" type="button" class="fr-btn">Ouvrir la modale (bouton 2)</button>
+<dialog id="modal-multi-button" class="fr-modal" aria-labelledby="modal-multi-button-title">
+    <!-- Contenu de la modale -->
+</dialog>
+```
+
+**Comportement :**
+
+Quand plusieurs boutons peuvent ouvrir la même modale, l'API du DSFR système détecte quel bouton a déclenché l'ouverture.
+À la fermeture, le focus retourne au bouton spécifique qui a ouvert la modale, même avec plusieurs déclencheurs.
+Si aucun déclencheur n'est identifié, retour à un élément focusable par défaut.
+
 #### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
