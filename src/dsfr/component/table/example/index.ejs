@@ -72,7 +72,7 @@ const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
-  sample(getText('sample.default', 'table'), './sample/table-search', {table: {header: {search: true, segmented: true}, footer: {pagination: true}, table: {id: 'table-search', caption: getText('data.caption.default', 'table')}}}, true);
+  sample(getText('sample.search', 'table'), './sample/table-search', {table: {header: {search: true, segmented: true}, footer: {pagination: true}, table: {id: 'table-search', caption: getText('data.caption.default', 'table')}}}, true);
 %>
 
 <%-

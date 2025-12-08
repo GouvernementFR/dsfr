@@ -7,7 +7,7 @@
 
 #{ns(btn--sort)} {
   @include nest-btn(sm, only, arrow-up-down-line, null, false);
-  
+
   &[aria-sort='ascending'],
   &[aria-sort='descending'],
   &-asc,

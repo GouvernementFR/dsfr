@@ -10,6 +10,11 @@
     @include media-query.respond-from(md) {
       @include display-flex(row, center, space-between);
 
+      #{ns(search-bar)} {
+        order: 1;
+        @include padding-right(2v);
+      }
+
       #{ns(table__detail)} {
         order: 1;
         flex: 1;
@@ -27,10 +32,6 @@
         flex: 0;
         @include padding-left(2v);
         @include margin-left(auto);
-      }
-
-      #{ns(search-bar)} {
-        @include padding-right(2v);
       }
     }
 
