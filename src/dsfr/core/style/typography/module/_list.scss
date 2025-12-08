@@ -31,6 +31,8 @@ ul {
         color: graytext;
       }
     }
+
+    @include before("\200B"); /* fix screen reader when list-style-type none */
   }
 }
 
@@ -45,6 +47,8 @@ ol {
       font-size: var(--xl-size);
       font-weight: bold;
     }
+
+    @include before("\200B"); /* fix screen reader when list-style-type none */
   }
 }
 
