@@ -1,5 +1,7 @@
 <% eval(include('../../../../core/index.ejs'));
 
+const footer = locals.footer || {};
+
 const selectData = {
   id: uniqueId('table-footer-select'),
   label: getText('data.navigation.select.label', 'table'),
@@ -11,9 +13,6 @@ const selectData = {
     {value:'20', label:getText('data.navigation.select.options.option3', 'table')},
   ]
 }
-const select = include('../../../select/template/ejs/select-group.ejs', {select: selectData});
-
-
 const getData = (label, displayedLg = false, hasLgLabel = false, title = null) => {
   return {
     id: uniqueId('table-footer-pagination'),
@@ -45,7 +44,6 @@ const paginationData = {
   last: getNavData('Dernière page'),
   pages : pages
 }
-const pagination = include('../../../pagination/template/ejs/pagination', {pagination: paginationData});
 
 const buttonsGroupData = {
   inline: 'md',
@@ -64,16 +62,21 @@ const buttonsGroupData = {
     }
   ]
 };
-const buttons = include('../../../button/template/ejs/buttons-group', {buttonsGroup: buttonsGroupData});
 %>
 
 <div class="<%= prefix %>-table__footer--start">
   <p class="<%= prefix %>-table__detail"><%- getText('data.navigation.detail', 'table') %></p>
-  <%- select %>
+  <% if (footer.select !== undefined) { %>
+    <%- include('../../../select/template/ejs/select-group.ejs', {select: selectData}) %>
+  <% } %>
 </div>
+<% if (footer.pagination !== undefined) { %>
 <div class="<%= prefix %>-table__footer--middle">
-  <%- pagination %>
+  <%- include('../../../pagination/template/ejs/pagination', {pagination: paginationData}) %>
 </div>
+<% } %>
+<% if (footer.select !== undefined) { %>
 <div class="<%= prefix %>-table__footer--end">
-  <%- buttons %>
+  <%- include('../../../button/template/ejs/buttons-group', {buttonsGroup: buttonsGroupData}) %>
 </div>
+<% } %>

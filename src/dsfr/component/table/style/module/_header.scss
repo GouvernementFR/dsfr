@@ -27,10 +27,9 @@
         flex: 0;
         @include padding-left(2v);
         @include margin-left(auto);
-    }
+      }
 
-    #{ns(btns-group)} {
-      @include media-query.respond-from(md) {
+      #{ns(search-bar)} {
         @include padding-right(2v);
       }
     }
@@ -40,6 +39,10 @@
     }
 
     #{ns(segmented)} {
+      @include margin-bottom(4v);
+    }
+
+    #{ns(search-bar)} {
       @include margin-bottom(4v);
     }
   }

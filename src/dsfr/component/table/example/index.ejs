@@ -72,5 +72,9 @@ const complexData = JSON.parse(include('./data/data-complex.json.ejs'));
 %>
 
 <%-
-  sample(getText('sample.miscellaneous', 'table'), './sample/table-miscellaneous', {table: {header: true, footer: true, table: {id: 'table-miscellaneous', caption: getText('data.caption.large', 'table')}}}, true);
+  sample(getText('sample.default', 'table'), './sample/table-search', {table: {header: {search: true, segmented: true}, footer: {pagination: true}, table: {id: 'table-search', caption: getText('data.caption.default', 'table')}}}, true);
+%>
+
+<%-
+  sample(getText('sample.miscellaneous', 'table'), './sample/table-miscellaneous', {table: {header: {details: true, buttons: true, segmented: true}, footer: {select: true, pagination: true, buttons: true}, table: {id: 'table-miscellaneous', caption: getText('data.caption.large', 'table')}}}, true);
 %>

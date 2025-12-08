@@ -1,12 +1,14 @@
 <%
 const table = locals.table || {};
+const header = table.header || {};
+const footer = table.footer || {};
 
 if (table.header) {
-  table.header = include('../header/header.ejs');
+  table.header = include('../header/header.ejs', {header});
 }
 
 if (table.footer) {
-  table.footer = include('../footer/footer.ejs');
+  table.footer = include('../footer/footer.ejs', {footer});
 }
 %>
 
