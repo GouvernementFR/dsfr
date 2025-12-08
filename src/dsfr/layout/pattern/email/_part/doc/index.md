@@ -33,7 +33,7 @@ Ce bloc utilise un champ de saisie classique et s’adapte en fonction du contex
 </div>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='accordion-email'}
+:::fr-accordion[Extrait de code]{id='accordion-email'}
 
 ```html
 <div class="fr-input-group">

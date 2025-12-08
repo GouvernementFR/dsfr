@@ -47,7 +47,7 @@ Ce bloc se compose de :
 </fieldset>
 </div>
 
-:::fr-accordion[### Extrait de code]{id=‘accordion-siret’}
+:::fr-accordion[Extrait de code]{id=‘accordion-siret’}
 
 ```html
 <fieldset class="fr-fieldset" aria-label="SIRET de l'entreprise" id="siret-1632-fieldset" aria-labelledby="siret-1632-fieldset-messages">
@@ -181,7 +181,7 @@ Ce bloc se compose de :
 </fieldset>
 </div>
 
-:::fr-accordion[### Extrait de code]{id=‘accordion-office’}
+:::fr-accordion[Extrait de code]{id=‘accordion-office’}
 ```html
 <fieldset class="fr-fieldset" id="address-1649-fieldset" aria-labelledby="address-1649-fieldset-messages">
     <div class="fr-fieldset__element">
@@ -313,7 +313,7 @@ Ce bloc se compose de :
 </fieldset>
 </div>
 
-:::fr-accordion[### Extrait de code]{id=‘accordion-society’}
+:::fr-accordion[Extrait de code]{id=‘accordion-society’}
 
 ```html
 <fieldset class="fr-fieldset" aria-label="Type de société" id="company-structure-1652-fieldset" aria-labelledby="company-structure-1652-fieldset-messages">
@@ -402,7 +402,7 @@ Ce bloc se compose de :
 </fieldset>
 </div>
 
-:::fr-accordion[### Extrait de code]{id=‘accordion-society’}
+:::fr-accordion[Extrait de code]{id=‘accordion-society’}
 ```html
 <fieldset class="fr-fieldset" aria-label="Représentant moral de l'entreprise" id="representative-1661-fieldset" aria-labelledby="representative-1661-fieldset-messages">
     <div class="fr-fieldset__element">
