@@ -135,7 +135,7 @@
         align-items: center;
         justify-content: space-between;
 
-        #{ns(btn--sort)} {
+        #{class-start-with(ns('btn--sort', ''))} {
           @include margin-left(4v);
         }
       }
