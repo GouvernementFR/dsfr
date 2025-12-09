@@ -50,4 +50,4 @@ let dataTable = {
 
 <%- sample('Modale sans bouton lié', './sample/modal-default', { modal: { ...dataText, label: 'Modale simple'}, buttons: [ { attributes: { onclick: 'window.dsfr(this.nextElementSibling).modal.disclose()' }, label: 'Ouverture programmatique' }] }, true );%>
 
-<%- sample('Modale avec plusieurs boutons non liés', './sample/modal-default', {modal: { ...dataText, id: 'modal-multi-button', label: 'Modale simple'}, buttons: [ { attributes: { onclick: "window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" }, label: 'Ouvrir la modale (bouton 1)' }, { attributes: { onclick: "window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" }, label: 'Ouvrir la modale (bouton 2)' } ]}, true );%>
+<%- sample('Modale avec plusieurs boutons liés', './sample/modal-default', {modal: { ...dataText, id: 'modal-multi-button', label: 'Modale simple'}, buttons: [ { label: 'Ouvrir la modale (bouton 1)', attributes: { 'aria-controls': 'modal-multi-button', 'data-fr-opened': false } }, { label: 'Ouvrir la modale (bouton 2)', attributes: { 'aria-controls': 'modal-multi-button', 'data-fr-opened': false } } ]}, true );%>
