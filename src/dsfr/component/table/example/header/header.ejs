@@ -1,5 +1,7 @@
 <% eval(include('../../../../core/index.ejs'));
 
+const header = locals.header || {};
+
 const buttonsGroupData = {
   inline: 'md',
   align:'right',
@@ -21,17 +23,18 @@ const buttonsGroupData = {
     }
   ]
 };
-const buttons = include('../../../button/template/ejs/buttons-group', {buttonsGroup: buttonsGroupData});
+
+const segmentedDataId = uniqueId('table-header-segmented');
 
 const segmentedData = {
-  id: uniqueId('table-header-segmented'),
+  id: segmentedDataId,
   noLegend: true,
   legend: getText('data.actionBar.segmented.legend', 'table'),
   elements: [
     {
       id: uniqueId('table-header-segmented-table'),
       label: getText('data.actionBar.segmented.table', 'table'),
-      name: 'table-header-segmented-table',
+      name: segmentedDataId + '-table',
       value: 1,
       icon: 'table-line',
       checked: true
@@ -39,16 +42,24 @@ const segmentedData = {
     {
       id: uniqueId('table-header-segmented-list'),
       label: getText('data.actionBar.segmented.list', 'table'),
-      name: 'table-header-segmented-table',
+      name: segmentedDataId + '-table',
       value: 2,
       icon: 'list-unordered',
       checked: false
     }
   ]
 };
-const segmented = include('../../../segmented/template/ejs/segmented', {segmented: segmentedData});
 %>
 
-<%- segmented %>
+<% if (header.segmented !== undefined) { %>
+<%- include('../../../segmented/template/ejs/segmented', {segmented: segmentedData}); %>
+<% } %>
+<% if (header.search !== undefined) { %>
+<%- include('../../../search/template/ejs/search.ejs', { search: { id: uniqueId('search'), input: {placeholder: 'Rechercher', label:'Rechercher'}, button: {id: uniqueId('table-search-btn'), label: 'Rechercher', title: 'Rechercher dans le tableau'} } }); %>
+<% } %>
+<% if (header.details !== undefined) { %>
 <p class="<%= prefix %>-table__detail"><%- getText('data.actionBar.detail', 'table') %></p>
-<%- buttons %>
+<% } %>
+<% if (header.buttons !== undefined) { %>
+<%- include('../../../button/template/ejs/buttons-group', {buttonsGroup: buttonsGroupData}); %>
+<% } %>
