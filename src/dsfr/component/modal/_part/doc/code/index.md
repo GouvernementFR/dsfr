@@ -251,48 +251,40 @@ Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur 
 **Exemple de modale sans bouton d'ouverture lié**
 
 ```HTML
-<button onClick="window.dsfr(this.nextElementSibling).modal.disclose()" type="button" class="fr-btn">Bouton simple</button>
 <dialog id="modal-without-button" class="fr-modal" aria-labelledby="modal-without-button-title">
     <!-- Contenu de la modale -->
 </dialog>
+
+<script>
+    // Exemple d'ouverture programmatique sans bouton via l'API du DSFR
+    const modal = document.querySelector('#modal-without-button');
+    window.dsfr(modal).modal.disclose();
+</script>
 ```
 
-Lorsqu'une modale n'a pas de bouton dédié à son ouverture (par exemple, ouverte programmatiquement), la gestion du retour de focus suit cette logique :
+L'API du DSFR mémorise l'élément qui avait le focus au moment de l'ouverture de la modale. À la fermeture, elle restaure le focus sur cet élément. Si aucun élément ne possédait le focus c'est le lien autour du logo dans l'en-tête qui prend le focus (premier élément de la page après les liens d'évitements).
+
+Vous pouvez modifier ce comportement pour choisir la destination du focus via l'événement dsfr.conceal de la modale :
 
 ```js
-// Exemple d'ouverture programmatique sans bouton via l'API du DSFR
-const modal = document.querySelector('#modal-without-button');
-window.dsfr(modal).modal.disclose();
-
-// Au moment de la fermeture
 modal.addEventListener('dsfr.conceal', (e) => {
-    // Le focus retourne à l'élément qui avait le focus avant l'ouverture
-    // Si aucun élément précédent, retour au body ou à un élément focusable par défaut
-    console.log(e);
+    monElement.focus();
 });
 ```
 
-**Comportement :**
+#### Variante de modale avec plusieurs boutons d'ouverture liés
 
-Le système mémorise l'élément qui avait le focus au moment de l'ouverture de la modale. À la fermeture, il restaure le focus sur cet élément.
-
-#### Variante de modale avec plusieurs boutons d'ouverture
-
-**Exemple de modale avec plusieurs boutons d'ouverture**
+**Exemple de modale avec plusieurs boutons d'ouverture liés**
 
 ```HTML
-<button onclick="window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" type="button" class="fr-btn">Ouvrir la modale (bouton 1)</button>
-<button onclick="window.dsfr(document.getElementById('modal-multi-button')).modal.disclose()" type="button" class="fr-btn">Ouvrir la modale (bouton 2)</button>
+<button aria-controls="modal-multi-button" data-fr-opened="false" type="button" class="fr-btn">Ouvrir la modale (bouton 1)</button>
+<button aria-controls="modal-multi-button" data-fr-opened="false" type="button" class="fr-btn">Ouvrir la modale (bouton 2)</button>
 <dialog id="modal-multi-button" class="fr-modal" aria-labelledby="modal-multi-button-title">
     <!-- Contenu de la modale -->
 </dialog>
 ```
 
-**Comportement :**
-
-Quand plusieurs boutons peuvent ouvrir la même modale, l'API du DSFR détecte quel bouton a déclenché l'ouverture.
-À la fermeture, le focus retourne au bouton spécifique qui a ouvert la modale, même avec plusieurs déclencheurs.
-Si aucun déclencheur n'est identifié, retour à un élément focusable par défaut.
+Quand plusieurs boutons peuvent ouvrir la même modale, l'API du DSFR détecte quel bouton a déclenché l'ouverture. À la fermeture, elle restaure le focus sur cet élément. Si aucun élément ne possédait le focus c'est le lien autour du logo dans l'en-tête qui prend le focus (premier élément de la page après les liens d'évitements).
 
 #### API
 
