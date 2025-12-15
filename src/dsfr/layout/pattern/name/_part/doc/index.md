@@ -45,7 +45,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
   </fieldset>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='accordion-name-surname'}
+:::fr-accordion[Extrait de code]{id='accordion-name-surname'}
 ```html
 <fieldset class="fr-fieldset" aria-label="Demande de nom et prénom" aria-describedby="name-1-fieldset-messages">
     <div class="fr-fieldset__element">
@@ -126,7 +126,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
   </fieldset>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='accordion-request-name-surname'}
+:::fr-accordion[Extrait de code]{id='accordion-request-name-surname'}
 ```html
 <fieldset class="fr-fieldset" aria-label="Demande de nom et prénom" id="name-1510-fieldset" aria-labelledby="name-1510-fieldset-messages">
     <div class="fr-fieldset__element">

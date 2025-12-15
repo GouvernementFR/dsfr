@@ -42,7 +42,7 @@ L’ordre et la structure des modalités de connexion sont à respecter comme pr
     - La connexion avec identifiants en second
 - 2\) L’accès à la connexion
 
-:::fr-accordion[### Extrait de code]{id=‘accordion-connexion’}
+:::fr-accordion[Extrait de code]{id=‘accordion-connexion’}
 ```html
 <main class="fr-pt-md-14v" role="main" id="content">
     <div class="fr-container fr-container--fluid fr-mb-md-14v">

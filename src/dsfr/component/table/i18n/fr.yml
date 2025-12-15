@@ -29,6 +29,7 @@ sample:
   selectable: Tableau avec lignes sélectionnables
   fixedAtMd: Tableau avec première colonne fixée à partir du breakpoint MD (existe en SM, MD et LG)
   sm: Tableau SM
+  search: Tableau avec recherche
   utilityClasses:
     subtitle: Par défaut le contenu des cellules est centré verticalement et aligné à gauche mais peut être modifié à l'aide des classe utilitaires <code>fr-cell--top, fr-cell--bottom</code> pour l'alignement vertical et <code>fr-cell--center, fr-cell--right</code> pour l'alignement horizontal
     title: Exemple des classes utilitaires d'alignement

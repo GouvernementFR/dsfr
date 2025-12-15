@@ -15,8 +15,7 @@
     const attributes = {};
     attributes[`data-${prefix}-opened`] = modalButton.opened === true;
     attributes['aria-controls'] = modalButton.id;
-    attributes.id = modalButton.id;
-
+    attributes.id = 'button-' + modalButton.id;
 %>
 
 <%- include('../../../button/template/ejs/button', {button: {label: modalButton.label, attributes: attributes}}) %>

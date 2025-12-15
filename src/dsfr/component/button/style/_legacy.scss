@@ -81,7 +81,9 @@
     @include icon-legacy(arrow-up-down-line, sm);
 
     &[aria-sort='ascending'],
-    &[aria-sort='descending'] {
+    &[aria-sort='descending'],
+    &-asc,
+    &-desc {
       @include icon-legacy(arrow-up-line, sm);
     }
   }
