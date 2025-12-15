@@ -12,7 +12,66 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.14
 
-### [1.14.2](https://github.com/GouvernementFR/dsfr/compare/v1.14.1...1.14.2) - 17 Septembre 2025
+### [1.14.3](https://github.com/GouvernementFR/dsfr/compare/v1.14.2...1.14.3) - 15 Décembre 2025
+
+#### ⬆️ chore(dependencies): mise à jour des dépendances npm [(#1350)](https://github.com/GouvernementFR/dsfr/pull/1350)
+
+
+#### 📝 docs(badge): titre page accessibilite en h2 [(#1334)](https://github.com/GouvernementFR/dsfr/pull/1334)
+
+
+#### ✨ feat(modal): documentation bouton non lié [DSFR-109] [(#1348)](https://github.com/GouvernementFR/dsfr/pull/1348)
+- Ajout de documentation sur la gestion des modales sans bouton associé et avec plusieurs boutons associés
+- Ajout d'un exemple de modale avec plusieurs boutons d'ouverture
+
+
+#### ✨ feat(table): header du tableau et bouton aria-sort [(#1347)](https://github.com/GouvernementFR/dsfr/pull/1347)
+- Alignement du contrôle segmenté à droite dans le header
+- Permet une utilisation correcte de aria-sort, ajouts des classe fr-btn--sort-asc et fr-btn--sort-desc
+- Ajout d'un exemple avec barre de recherche dans le header du tableau
+
+
+#### 🐛 fix(quote): espaces insécables avant et après les guillemets [(#1345)](https://github.com/GouvernementFR/dsfr/pull/1345)
+- Utilisation de l'espace insécable avant et après les guillemets pour éviter le retour à la ligne d'un guillemet seul
+
+
+#### 🐛 fix(navigation): fermeture au click sur un sous-élement html d'un nav_link [(#1344)](https://github.com/GouvernementFR/dsfr/pull/1344)
+- Corrige le clic sur un élément à l'intérieur d'un nav__link
+
+
+#### 📝 docs: mise à jour des assets [(#1343)](https://github.com/GouvernementFR/dsfr/pull/1343)
+- Corrections mineures sur les images de la documentation
+
+
+#### 📝 docs: mise à jour de la liste des moyens de connexion de FranceConnect [(#1336)](https://github.com/GouvernementFR/dsfr/pull/1336)
+
+
+#### 📝 docs(link): ajout du mot clé haut de page [(#1332)](https://github.com/GouvernementFR/dsfr/pull/1332)
+- Ajout du mot clé "haut de page" sur les pages de documentation du lien pour améliorer la recherche de ce terme
+
+
+#### 📝 fix(readme): met a jour les liens vers la doc de chaque composants [(#1331)](https://github.com/GouvernementFR/dsfr/pull/1331)
+- Correction des liens vers la documentation dans les fichiers package.yml de chaque package
+
+
+#### 🐛 fix(consent): corrige label nomdusite.fr [DSFR-140] [(#1323)](https://github.com/GouvernementFR/dsfr/pull/1323)
+- Remplace le label nomdusite.fr par nomdusite.gouv.fr dans le gestion de consentement
+
+
+#### 📝 docs(notice): supprime un doublon de paragraphe [(#1305)](https://github.com/GouvernementFR/dsfr/pull/1305)
+- Retire un texte en double
+
+
+#### 🐛 fix(stepper): Storybook min/max value steps & ajout markup titre [(#1313)](https://github.com/GouvernementFR/dsfr/pull/1313)
+- les propriétés stepCount et currentStep sont maintenant limitées entre 2 et 8
+- ajout des valeurs 'h6' et 'p' sur la propriété markup
+
+
+#### 📝 docs(icon): corrige les IDs des accordéons & retrait niveau de titre des extraits de code [(#1311)](https://github.com/GouvernementFR/dsfr/pull/1311)
+
+
+
+### [v1.14.2](https://github.com/GouvernementFR/dsfr/compare/v1.14.1...v1.14.2) - 17 Septembre 2025
 
 #### 🐛 fix(tab): ajoute un fond blanc au panel des onglets [(#1302)](https://github.com/GouvernementFR/dsfr/pull/1302)
 - Corrige le fond transparent du tab panel
