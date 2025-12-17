@@ -24,7 +24,7 @@ const build = async (settings) => {
     await checkLicense();
   } catch (e) {
     log.error('Conditions générales d\'utilisation non acceptées. Build annulé.');
-    return;
+    throw e;
   }
 
   if (settings.clean) clean();

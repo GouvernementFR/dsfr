@@ -27,7 +27,7 @@ const getConsentPath = () => {
   }
 };
 
-const hasAlreadyConsented = async () => {
+const hasAlreadyConsented = () => {
   return new Promise((resolve) => {
     const consentPath = getConsentPath();
 
@@ -53,12 +53,11 @@ const hasAlreadyConsented = async () => {
         return;
       }
 
-      // Parcourir tous les consentements pour trouver une correspondance
-      for (let i = 0; i < consentData.length; i++) {
-        if (consentData[i] && consentData[i].cguVersion === cguVersion) {
-          resolve(true);
-          return;
-        }
+      // Vérifie si au moins un consentement correspond à la version actuelle des CGU
+      const hasMatchingConsent = consentData.some((entry) => entry && entry.cguVersion === cguVersion);
+      if (hasMatchingConsent) {
+        resolve(true);
+        return;
       }
 
       // Si aucune version correspondante n'est trouvée
@@ -70,7 +69,7 @@ const hasAlreadyConsented = async () => {
   });
 };
 
-const storeConsent = async () => {
+const storeConsent = () => {
   return new Promise((resolve, reject) => {
     const consentPath = getConsentPath();
 
