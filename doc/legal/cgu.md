@@ -1,5 +1,5 @@
 ---
-cguVersion: '1.3.0'
+cguVersion: '1.0.0'
 ---
 
 ## CONDITIONS GÉNÉRALES D’UTILISATION DU SYSTÈME DE DESIGN DE L’ÉTAT

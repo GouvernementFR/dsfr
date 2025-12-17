@@ -20,14 +20,13 @@ const { checkLicense } = require('../../scripts/postinstall');
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
 
-  checkLicense().then(async () => {
-    buildAll(settings);
-  }).catch(() => {
+  try {
+    await checkLicense();
+  } catch (e) {
     log.error('Conditions générales d\'utilisation non acceptées. Build annulé.');
-  });
-};
+    return;
+  }
 
-const buildAll = async (settings) => {
   if (settings.clean) clean();
   if (settings.clean || settings.config || !fs.existsSync('.config/config.json')) {
     await generateConfig();
