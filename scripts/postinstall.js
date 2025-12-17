@@ -3,6 +3,115 @@ const { existsSync } = require('fs');
 const path = require('path');
 const fs = require('fs');
 const log = require('../tool/utilities/log');
+const os = require('os');
+
+const getActualCguVersion = () => {
+  try {
+    const cguContent = fs.readFileSync(path.resolve(__dirname, '../doc/legal/cgu.md'), 'utf8');
+    const match = cguContent.match(/^---\s*[\s\S]*?cguVersion:\s*["']?([\d.]+)["']?/m);
+    if (match) {
+      return match[1];
+    }
+  } catch (e) {
+    log.error('Erreur lors de la lecture de la version CGU, fichier cgu.md introuvable ou illisible.');
+    return null;
+  }
+};
+
+const hasAlreadyContented = async () => {
+  return new Promise((resolve) => {
+    let consentPath;
+    if (process.platform === 'win32') {
+      consentPath = path.join(process.env.APPDATA || '', 'dsfr', 'consent.json');
+    } else {
+      consentPath = path.join(os.homedir(), '.config', 'dsfr', 'consent.json');
+    }
+
+    if (!fs.existsSync(consentPath)) resolve(false);
+
+    try {
+      const content = fs.readFileSync(consentPath, 'utf8');
+      const consentData = JSON.parse(content);
+
+      if (!Array.isArray(consentData) || consentData.length === 0) {
+        log.error('Format de données de consentement invalide');
+        resolve(false);
+        return;
+      }
+
+      // Récupère la version CGU actuelle
+      const cguVersion = getActualCguVersion();
+      if (!cguVersion) resolve(false);
+
+      // Parcourir tous les consentements pour trouver une correspondance
+      for (let i = 0; i < consentData.length; i++) {
+        if (consentData[i] && consentData[i].cguVersion === cguVersion) {
+          resolve(true);
+          return;
+        }
+      }
+
+      // Si aucune version correspondante n'est trouvée
+      log.info('Une mise à jour des conditions générales d\'utilisation requiert un nouveau consentement.');
+      resolve(false);
+    } catch (e) {
+      resolve(false);
+    }
+  });
+};
+
+const storeConsent = async () => {
+  return new Promise((resolve, reject) => {
+    let consentPath;
+    if (process.platform === 'win32') {
+      consentPath = path.join(process.env.APPDATA || '', 'dsfr', 'consent.json');
+    } else {
+      consentPath = path.join(os.homedir(), '.config', 'dsfr', 'consent.json');
+    }
+
+    const consentDir = path.dirname(consentPath);
+    if (!fs.existsSync(consentDir)) {
+      fs.mkdirSync(consentDir, { recursive: true });
+    }
+
+    let consentData = [];
+    if (fs.existsSync(consentPath)) {
+      try {
+        const content = fs.readFileSync(consentPath, 'utf8');
+        consentData = JSON.parse(content);
+        if (!Array.isArray(consentData)) {
+          consentData = [];
+        }
+      } catch (e) {
+        consentData = [];
+      }
+    }
+
+    const cguVersion = getActualCguVersion();
+    if (!cguVersion) {
+      reject(new Error('Impossible de récupérer la version CGU actuelle.'));
+      return;
+    }
+
+    consentData.push({
+      acceptedAt: new Date().toISOString(),
+      cguVersion: cguVersion
+    });
+
+    try {
+      fs.writeFileSync(consentPath, JSON.stringify(consentData, null, 2), 'utf8');
+      resolve();
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+const start = (rl) => {
+  return new Promise(resolve => {
+    rl.question('\n📖 Appuyez sur Entrée pour lire les conditions générales d\'utilisation...', () => resolve());
+  });
+};
 
 const pause = (rl) => {
   return new Promise(resolve => {
@@ -13,6 +122,8 @@ const pause = (rl) => {
 const showLongText = async (cguContent, rl) => {
   const lines = cguContent.split('\n');
   const chunkSize = 20; // nombre de lignes par "page"
+
+  await start(rl);
 
   for (let i = 0; i < lines.length; i += chunkSize) {
     const chunk = lines.slice(i, i + chunkSize);
@@ -26,7 +137,12 @@ const showLongText = async (cguContent, rl) => {
 
 const checkLicense = async () => {
   if (process.env.DSFR_ACCEPT_LICENSE === '1') {
-    log.info('Licence DSFR acceptée via la variable d\'environnement.');
+    log.info('Conditions générales d\'utilisation du DSFR acceptées via la variable d\'environnement.');
+    return true;
+  }
+
+  if (await hasAlreadyContented()) {
+    log.info('Conditions générales d\'utilisation du DSFR déjà acceptées (voir doc/legal/cgu.md).');
     return true;
   }
 
@@ -44,6 +160,7 @@ const checkLicense = async () => {
   });
 
   try {
+    log.section('📋 ACCEPTATION DES CONDITIONS GÉNÉRALES D\'UTILISATION DU SYSTÈME DE DESIGN DE L\'ÉTAT REQUISE');
     log.warning('Pour installer le DSFR, vous devez accepter les conditions générales d\'utilisation :');
     log.step('https://www.systeme-de-design.gouv.fr/version-courante/fr/a-propos/conditions-generales-d-utilisation');
 
@@ -68,6 +185,7 @@ const checkLicense = async () => {
     }
 
     log.success('Merci. Vous avez accepté les conditions générales d\'utilisation du DSFR.');
+    await storeConsent();
     return true;
   } catch (error) {
     rl.close();
@@ -76,8 +194,6 @@ const checkLicense = async () => {
 };
 
 const postinstall = async () => {
-  log.section('📋 ACCEPTATION DES CONDITIONS GÉNÉRALES D\'UTILISATION DU SYSTÈME DE DESIGN DE L\'ÉTAT REQUISE');
-
   try {
     await checkLicense();
     log.step('Vérification de l\'installation...');
@@ -99,4 +215,4 @@ if (require.main === module) {
   postinstall();
 }
 
-module.exports = { postinstall };
+module.exports = { postinstall, checkLicense };
