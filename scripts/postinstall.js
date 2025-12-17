@@ -1,5 +1,4 @@
 const readline = require('readline');
-const { existsSync } = require('fs');
 const path = require('path');
 const fs = require('fs');
 const log = require('../tool/utilities/log');
@@ -8,10 +7,11 @@ const os = require('os');
 const getActualCguVersion = () => {
   try {
     const cguContent = fs.readFileSync(path.resolve(__dirname, '../doc/legal/cgu.md'), 'utf8');
-    const match = cguContent.match(/^---\s*[\s\S]*?cguVersion:\s*["']?([\d.]+)["']?/m);
-    if (match) {
-      return match[1];
-    }
+    const frontMatterMatch = cguContent.match(/^---\s*\n([\s\S]*?)\n---/m);
+    if (!frontMatterMatch) return null;
+    const versionMatch = frontMatterMatch[1].match(/^\s*cguVersion:\s*["']?([\d.]+)["']?/m);
+    if (versionMatch) return versionMatch[1];
+    return null;
   } catch (e) {
     log.error('Erreur lors de la lecture de la version CGU, fichier cgu.md introuvable ou illisible.');
     return null;
@@ -76,7 +76,13 @@ const storeConsent = async () => {
 
     const consentDir = path.dirname(consentPath);
     if (!fs.existsSync(consentDir)) {
-      fs.mkdirSync(consentDir, { recursive: true });
+      try {
+        fs.mkdirSync(consentDir, { recursive: true });
+      } catch (e) {
+        log.error(`Erreur lors du stockage du consentement "${consentDir}".`);
+        reject(e);
+        return;
+      }
     }
 
     let consentData = [];
@@ -105,7 +111,7 @@ const storeConsent = async () => {
     });
 
     try {
-      fs.writeFileSync(consentPath, JSON.stringify(consentData, null, 2), 'utf8');
+      fs.writeFileSync(consentPath, JSON.stringify(consentData, null, 2), { encoding: 'utf8', mode: 0o600 });
       resolve();
     } catch (e) {
       reject(e);
@@ -171,7 +177,7 @@ const checkLicense = async () => {
     log.step('https://www.systeme-de-design.gouv.fr/version-courante/fr/a-propos/conditions-generales-d-utilisation');
 
     const cguPath = path.join(__dirname, '..', 'doc', 'legal', 'cgu.md');
-    if (existsSync(cguPath)) {
+    if (fs.existsSync(cguPath)) {
       const cguContent = fs.readFileSync(cguPath, 'utf8');
       await showLongText(cguContent, rl);
     } else {
@@ -183,14 +189,14 @@ const checkLicense = async () => {
       rl.question('', resolve);
     });
 
-    rl.close();
-
     if (answer.toLowerCase() !== 'o') {
       throw new Error('Vous avez refusé les conditions générales d\'utilisation du DSFR');
     }
 
     log.success('Merci. Vous avez accepté les conditions générales d\'utilisation du DSFR.');
     await storeConsent();
+
+    rl.close();
     return true;
   } catch (error) {
     rl.close();
@@ -204,7 +210,7 @@ const postinstall = async () => {
     log.step('Vérification de l\'installation...');
 
     const packageJsonPath = path.join(__dirname, '..', 'package.json');
-    if (existsSync(packageJsonPath)) {
+    if (fs.existsSync(packageJsonPath)) {
       log.step('✓ Package DSFR installé avec succès');
     }
 
