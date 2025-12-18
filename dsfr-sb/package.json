@@ -37,7 +37,7 @@
     "react-dom": "^18.3.1",
     "react-syntax-highlighter": "^15.5.0",
     "remark-gfm": "^4.0.0",
-    "storybook": "^8.4.6",
+    "storybook": "^8.6.15",
     "yaml": "^2.5.0"
   },
   "dependencies": {
