@@ -159,12 +159,13 @@ La checkbox est disponible en plusieurs variantes d'états :
 - La checkbox avec **erreur** : définie par la classe `fr-checkbox-group--error`.
 - La checkbox avec **succès** : définie par la classe `fr-checkbox-group--valid`.
 - La checkbox **désactivée** : définie par l'attribut `disabled` sur l'élément `<input>`.
+- La checkbox **indéterminée** : définie par la propriété du DOM `indeterminate` fixée à `true` sur l'élément `<input>` via du code JavaScript.
 
 Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis sur le groupe (le fieldset), et non sur chaque checkbox.
 
 - Groupe en **erreur** : définie par la classe `fr-fieldset--error`.
 - Groupe en **succès** : définie par la classe `fr-fieldset--valid`.
-- Groupe **désactivée** : définie par l'attribut `disabled`.
+- Groupe **désactivée** : définie par l'attribut `disabled` sur l'élément `<fieldset>`.
 
 **Exemples de variantes d'états**
 
