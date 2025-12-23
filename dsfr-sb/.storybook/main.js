@@ -25,7 +25,12 @@ const config = {
     options: {},
   },
 
-  staticDirs: ["./static", { from: "../../dist", to: "dist" }, { from: "../../tool/example/img", to: "img" }],
+  staticDirs: [
+    "./static", 
+    { from: "../../dist", to: "dist" }, 
+    { from: "../../tool/example/img", to: "img" },
+    { from: "../../src/dsfr/component/checkbox/example/js", to: "js/checkbox"},
+  ],
 
   docs: {}
 };
