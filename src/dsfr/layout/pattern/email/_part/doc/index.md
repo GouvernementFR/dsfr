@@ -27,7 +27,7 @@ Ce bloc utilise un champ de saisie classique et s’adapte en fonction du contex
 <div class="fr-input-group">
     <label class="fr-label" for="email-1">
         Adresse électronique
-        <span class="fr-hint-text">Format attendu : nom@domaine.fr</span>
+        <span class="fr-hint-text">Format attendu : nom@example.net</span>
     </label>
     <input class="fr-input" name="email" autocomplete="on" id="email-1" type="email">
 </div>
@@ -39,7 +39,7 @@ Ce bloc utilise un champ de saisie classique et s’adapte en fonction du contex
 <div class="fr-input-group">
     <label class="fr-label" for="email-1">
         Adresse électronique
-        <span class="fr-hint-text">Format attendu : nom@domaine.fr</span>
+        <span class="fr-hint-text">Format attendu : nom@example.net</span>
     </label>
     <input class="fr-input" name="email" autocomplete="on" id="email-1" type="email">
 </div>
@@ -60,7 +60,7 @@ Le bloc de demande d’adresse électronique aide à la saisie de l’adresse é
 ### Textes du label et de la description
 
 - Utiliser les textes du label et de la description pour :
-    - présenter le format attendu “Exemple : nom@domaine.fr “
+    - présenter le format attendu “Exemple : nom@example.net“
     - préciser, quand c’est nécessaire, pourquoi il nécessaire de récupérer l’adresse électronique et à quoi elle sera utilisée afin de mettre en confiance l’utilisateur et pour qu’il puisse choisir la bonne adresse électronique.
 
 ### Erreur
@@ -79,6 +79,10 @@ Le bloc de demande d’adresse électronique aide à la saisie de l’adresse é
 - Terme à utiliser “adresse électronique”
     - Pour aider l’utilisateur à bien comprendre l’information demandée, il est important de nommer correctement l’information demandée et garder de la consistance en utilisant le même terme.
     - Le terme courriel désigne le message électronique et non l’adresse.
+
+### Aide à la saisie
+
+Privilégier l'utilisation d’un nom de domaine “neutre“ (cf. : [rfc2606](https://datatracker.ietf.org/doc/html/rfc2606)) ou réservé afin de ne pas “usurper“ l’identité et la propriété d’un nom de domaine déjà enregistré par un tier.
 
 ## Accessibilité
 
