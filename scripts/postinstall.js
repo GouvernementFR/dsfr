@@ -132,7 +132,7 @@ const pause = (rl) => {
 
 const showLongText = async (cguContent, rl) => {
   const lines = cguContent.split('\n');
-  const chunkSize = 20; // nombre de lignes par "page"
+  const chunkSize = 15; // nombre de lignes par "page"
 
   await start(rl);
 
@@ -182,14 +182,20 @@ const checkLicense = async () => {
     } else {
       log.warning('Fichier cgu.md non trouvé, voir le lien ci-dessus pour les conditions.');
     }
+    while (true) {
+      const answer = await new Promise((resolve) => {
+        log.warning('\n📋 Acceptez-vous les conditions générales d\'utilisation du DSFR ? (o/n) : ');
+        rl.question('', resolve);
+      });
 
-    const answer = await new Promise((resolve) => {
-      log.warning('\n📋 Acceptez-vous les conditions générales d\'utilisation du DSFR ? (o/n) : ');
-      rl.question('', resolve);
-    });
-
-    if (answer.toLowerCase() !== 'o') {
-      throw new Error('Vous avez refusé les conditions générales d\'utilisation du DSFR');
+      const normalized = (answer || '').toString().trim().toLowerCase();
+      if (normalized === 'o') {
+        break;
+      }
+      if (normalized === 'n') {
+        throw new Error('Vous avez refusé les conditions générales d\'utilisation du DSFR');
+      }
+      log.info('Réponse non reconnue, veuillez répondre "o" pour accepter ou "n" pour refuser.');
     }
 
     log.success('Merci. Vous avez accepté les conditions générales d\'utilisation du DSFR.');
