@@ -1,3 +1,7 @@
+---
+cguVersion: '1.0.0'
+---
+
 ## CONDITIONS GÉNÉRALES D’UTILISATION DU SYSTÈME DE DESIGN DE L’ÉTAT
 
 Le Service d’Information du Gouvernement (« SIG ») vous remercie de bien vouloir lire attentivement l’intégralité des présentes Conditions Générales d’Utilisation (« CGU ») avant d’utiliser la plateforme du Système de Design de l'État (« Plateforme »). Tout accès, toute utilisation et/ou toute Contribution à la Plateforme est subordonné au respect des présentes CGU. Tout Utilisateur de la Plateforme reconnaît souscrire sans réserve aux présentes CGU et s’engage à les respecter.
