@@ -68,6 +68,12 @@
       @include size(calc(100% + 8v), 1px);
     }
 
+    &:last-child,
+    &:empty,
+    &:not(:has(*)) {
+      @include after(normal, null);
+    }
+
     #{ns(btn)} {
       @include preference.forced-colors {
         border: none;
