@@ -81,12 +81,14 @@
     }
 
     #{ns(translate)} {
-      @include margin-x(-2v);
-      @include margin-x(0, lg);
       @include margin-bottom(-4v, lg);
+      
+      &__language {
+        @include padding-left(10v);
+      }
 
-      &__btn {
-        @include padding-x(2v);
+      #{ns(menu)}__list {
+        @include margin-x(-4v);
       }
     }
 
@@ -94,19 +96,22 @@
       &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
         @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
           @include display-flex(column);
+          @include margin-x(0);
 
           #{ns(btn)} {
             @include has-icon {
               @include min-size(null, 12v);
-              @include padding-x(0);
+              @include padding-x(4v);
+              @include width(100%);
             }
 
             @include has-not-icon {
               @include min-size(null, 12v);
-              @include padding-x(0);
+              @include padding-x(4v);
+              @include width(100%);
             }
-
-            @include margin-bottom(0);
+            
+            @include margin(0);
           }
         }
       }
