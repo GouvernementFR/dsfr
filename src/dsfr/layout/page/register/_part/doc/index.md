@@ -77,7 +77,7 @@ La page de création de compte est composée des éléments suivants :
                                             <div class="fr-input-group">
                                                 <label class="fr-label" for="username-1793">
                                                     Identifiant
-                                                    <span class="fr-hint-text">Format attendu : nom@example.net</span>
+                                                    <span class="fr-hint-text">Format attendu : nom@example.com</span>
                                                 </label>
                                                 <input class="fr-input" aria-describedby="username-1793-messages" name="username" id="username-1793" type="text">
                                                 <div class="fr-messages-group" id="username-1793-messages" aria-live="assertive">
@@ -245,7 +245,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
                                             <div class="fr-input-group" id="input-group-9360">
                                                 <label class="fr-label" for="username-9351">
                                                     Identifiant
-                                                    <span class="fr-hint-text">Format attendu : nom@example.net</span>
+                                                    <span class="fr-hint-text">Format attendu : nom@example.com</span>
                                                 </label>
                                                 <input class="fr-input" autocapitalize="off" autocorrect="off" aria-describedby="username-9351-messages" name="username" id="username-9351" type="text">
                                                 <div class="fr-messages-group" id="username-9351-messages" aria-live="polite">

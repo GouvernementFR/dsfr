@@ -63,10 +63,10 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
                         <form action="">
                             <div class="fr-input-group">
                                 <label class="fr-label" for="newsletter-email">
-                                    Votre adresse électronique (ex. : nom@example.net)
+                                    Votre adresse électronique (ex. : nom@example.com)
                                 </label>
                                 <div class="fr-input-wrap fr-input-wrap--addon">
-                                    <input class="fr-input" title="Votre adresse électronique (ex. : nom@example.net)" autocomplete="email" aria-describedby="newsletter-email-hint-text newsletter-email-messages" placeholder="Votre adresse électronique (ex. : nom@example.net)" id="newsletter-email" type="email">
+                                    <input class="fr-input" title="Votre adresse électronique (ex. : nom@example.com)" autocomplete="email" aria-describedby="newsletter-email-hint-text newsletter-email-messages" placeholder="Votre adresse électronique (ex. : nom@example.com)" id="newsletter-email" type="email">
                                     <button title="S‘abonner à notre lettre d’information" type="button" class="fr-btn">S'abonner</button>
                                 </div>
                                 <div class="fr-messages-group" id="newsletter-email-messages" aria-live="polite">

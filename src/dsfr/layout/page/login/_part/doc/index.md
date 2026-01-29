@@ -83,7 +83,7 @@ L’ordre et la structure des modalités de connexion sont à respecter comme pr
                                                     <div class="fr-input-group">
                                                         <label class="fr-label" for="username-1757">
                                                             Identifiant
-                                                            <span class="fr-hint-text">Format attendu : nom@example.net</span>
+                                                            <span class="fr-hint-text">Format attendu : nom@example.com</span>
                                                         </label>
                                                         <input class="fr-input" autocomplete="username" aria-required="true" aria-describedby="username-1757-messages" name="username" id="username-1757" type="text">
                                                         <div class="fr-messages-group" id="username-1757-messages" aria-live="assertive">

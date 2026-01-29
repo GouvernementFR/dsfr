@@ -17,7 +17,7 @@ login:
   desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   username:
     default: Identifiant
-    hint: "Format attendu : nom@example.net"
+    hint: "Format attendu : nom@example.com"
   password: Mot de passe
   optin: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
   button: Valider
