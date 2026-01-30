@@ -45,7 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "@gouvfr/dsfr-nexus": "^1.0.78",
+    "@gouvfr/dsfr-nexus": "^1.0.80",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
     "browser-sync": ">=2.27.10",
