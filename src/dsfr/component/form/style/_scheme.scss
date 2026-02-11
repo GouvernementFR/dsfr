@@ -91,9 +91,9 @@
 
     input {
       @include disabled.selector {
-        + label,
-        + label #{ns(hint-text)},
-        + label + #{ns(hint-text)} {
+        ~ label,
+        ~ label #{ns(hint-text)},
+        ~ #{ns(hint-text)} {
           @include disabled.colors((legacy: $legacy, text: true));
         }
       }
