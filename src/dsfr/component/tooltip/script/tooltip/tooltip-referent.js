@@ -28,7 +28,6 @@ class TooltipReferent extends api.core.PlacementReferent {
       this.listen('mouseout', mouseout);
       this.placement.listen('mouseout', mouseout);
     }
-    document.addEventListener('click', (e) => this._clickOut(e.target));
     this.addEmission(api.core.RootEmission.KEYDOWN, this._keydown.bind(this));
     this.listen('click', this._click.bind(this));
     this.addEmission(api.core.RootEmission.CLICK, this._clickOut.bind(this));
