@@ -24,6 +24,7 @@ class Tooltip extends api.core.Placement {
     super.init();
     this.register(`[aria-describedby="${this.id}"]`, TooltipReferent);
     this.listen('transitionend', this.transitionEnd.bind(this));
+    this.setAttribute('tabindex', '-1');
   }
 
   transitionEnd () {
@@ -71,7 +72,6 @@ class Tooltip extends api.core.Placement {
     if (x < -limit) x = -limit;
     if (x > limit) x = limit;
     this.setProperty('--arrow-x', `${x.toFixed(2)}px`);
-    this.setAttribute('tabindex', '-1');
   }
 }
 
