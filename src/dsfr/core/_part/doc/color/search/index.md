@@ -24,4 +24,4 @@ Les couleurs du Système de Design de l'État sont issues de la [Marque de l’�
 
 :::
 
-::dsfr-doc-filter{id="colors" label="Rechercher une couleur" title="Rechercher" select="context" selectLabel="Filtrer par contexte" selectOptions="[{label: 'Tous', value: ''}, {label: 'Fonds', value: 'background'}, {label: 'Textes', value: 'text'}, {label: 'Bordures', value: 'border'}, {label: 'Pictogrammes', value: 'artwork'}]"}
+::dsfr-doc-filter{id="colors" label="Rechercher une couleur" title="Rechercher" select="context" selectLabel="Filtrer par contexte" selectOptions="[{label: 'Tous', value: ''}, {label: 'Fonds', value: 'background'}, {label: 'Textes', value: 'text'}, {label: 'Bordures', value: 'border'}, {label: 'Artwork', value: 'artwork'}]"}
