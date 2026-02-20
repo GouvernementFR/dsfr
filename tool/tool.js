@@ -219,6 +219,8 @@ const archiveHandler = async (argv) => {
   copyFile('./changelog.yml', '.archive/changelog.yml');
   copyDir('./src', '.archive/src');
   copyDir('./storybook', '.archive/storybook');
+  copyDir('./.config', '.archive/.config');
+  copyDir('./dist', '.archive/dist');
 };
 
 /**

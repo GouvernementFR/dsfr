@@ -1,18 +1,18 @@
 ---
-id: medias
-title: Médias
-shortTitle: Médias
+id: media
+title: Média
+segment: medias
+shortTitle: Média
 description: Guide d’intégration des images et vidéos dans le respect des règles de responsive design et d’accessibilité.
 shortDescription: Intégration des images et vidéos dans le DSFR.
 keywords: médias, image, vidéo, responsive, accessibilité, iframe, alt, ratio, DSFR, RGAA
 cover: ../_asset/media/cover/cover.png
 excerpt: Utilisez les classes appropriées pour intégrer des images et vidéos dans vos pages, avec les bonnes pratiques d’accessibilité.
 summary: Découvrez comment intégrer correctement des médias (images et vidéos) dans le respect des standards du DSFR et des exigences RGAA - ratios, alternatives textuelles, vidéos responsives.
-order: 7
+order: 6
 ---
 
-
-# Médias
+# Média
 
 Les médias sont des images ou des vidéos présents au sein des pages du site. Ils sont utilisés pour donner une information visuelle ou dans un but purement décoratif.
 

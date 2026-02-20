@@ -7,12 +7,19 @@ keywords: pictogramme, DSFR, icônes, svg, artwork, contribution, design systèm
 cover: ../_asset/pictogram/cover/cover.png
 excerpt: Les pictogrammes du DSFR sont des représentations visuelles explicites et normalisées qui facilitent la compréhension, la navigation et la cohérence graphique dans les services publics numériques.
 summary: Cette page présente les principes de conception et d’utilisation des pictogrammes dans le Système de Design de l'État. Elle décrit leur construction selon une grille précise, leur style filaire, les règles d’usage des couleurs et les méthodes d’intégration pour designers et développeurs. Elle détaille également le processus de contribution à la librairie officielle, les formats attendus et les spécifications techniques à respecter pour proposer un pictogramme compatible.
-order: 11
+order: 9
 ---
 
 ## Pictogramme
 
-### La représentation visuelle
+Un pictogramme est une représentation visuelle simple et explicite. On l'utilise pour aider l'usager à se repérer et à comprendre l’action ou le message auquel il est associé.
+
+:::dsfr-doc-tab-navigation
+
+- Documentation
+- [Recherche](./search/index.md)
+
+:::
 
 Porteur d’une signification, sa nature représentative même insinue qu’il “donne accès à…”. Un pictogramme est une représentation visuelle bénéficiant d’une reconnaissance immédiate dont il rend explicite un objet ou un message.
 
@@ -64,23 +71,23 @@ Aussi, l’utilisation de radius est restreint. Néanmoins la fin des lignes et 
 
 Sur les trois couleurs présentes dans les pictogrammes, seule une demeure personnalisable avec la palette de couleurs d’illustration :
 
-- **Couleur dominante** : couleur primaire marquant l’identité de l'État. Elle véhicule l’image de marque et attire l’attention de l’utilisateur sur un élément particulier. Occupant environ 60% de la surface du pictogramme, la personnalisation de cette couleur n’est pas autorisée.
-Token de décision : `$artwork-major-blue-france`
+- **Couleur dominante (major)** : couleur primaire marquant l’identité de l'État. Elle véhicule l’image de marque et attire l’attention de l’utilisateur sur un élément particulier. Occupant environ 60% de la surface du pictogramme, la personnalisation de cette couleur n’est pas autorisée.<br>
+Token de décision : `$artwork-major-blue-france`<br>
 Thème clair : `$blue-france-113` / Thème sombre : `$blue-france-625`
-- **Couleur subsidiaire** : couleur primaire marquant l’identité de l'État. À l’image du `$blue-france-113`, elle véhicule l’image de marque et attire l’attention de l’utilisateur sur un élément particulier. Toutefois, en raison de sa ressemblance à une des couleurs systèmes (`$error-main-525`), son utilisation notamment dans les composants doit demeurer discrète. Occupant quand à elle 30% de la surface, la personnalisation de cette couleur est autorisée en conservant l’indice -main utilisé.
-Token de décision : `$artwork-minor-red-marianne`
+- **Couleur subsidiaire (minor)** : couleur primaire marquant l’identité de l'État. À l’image du `$blue-france-113`, elle véhicule l’image de marque et attire l’attention de l’utilisateur sur un élément particulier. Toutefois, en raison de sa ressemblance à une des couleurs systèmes (`$error-main-525`), son utilisation notamment dans les composants doit demeurer discrète. Occupant quand à elle 30% de la surface, la personnalisation de cette couleur est autorisée en conservant l’indice -main utilisé.<br>
+Token de décision : `$artwork-minor-red-marianne`<br>
 Thème clair et sombre : `$red-marianne-main-472`
-- **Couleur décorative** : couleur primaire marquant l’identité de l'État. À l’image du `$blue-france-113`, elle véhicule l’image de marque. Occupant quand à elle 10% de la surface, cette couleur est optionnelle et non personnalisable.
-Token de décision : `$artwork-decorative-blue-france`
+- **Couleur décorative** : couleur primaire marquant l’identité de l'État. À l’image du `$blue-france-113`, elle véhicule l’image de marque. Occupant quand à elle 10% de la surface, cette couleur est optionnelle et non personnalisable.<br>
+Token de décision : `$artwork-decorative-blue-france`<br>
 Thème clair : `$blue-france-950` / Thème sombre : `$blue-france-100`
 
 ::::fr-table[La personnalisation]{valign=top vheaders=vertical caption=false}
 
 | Description de l’usage | Token | Valeur(s) autorisée(s) |
 |-----------------------|-------|-----------------------|
-| Couleur dominante (60%) | `$artwork-major-blue-france` | Non personnalisable |
+| Couleur dominante (60%) | `$artwork-major-blue-france` | 🚫 Non personnalisable |
 | Couleur subsidiaire (30%) | `$artwork-minor-red-marianne` | `$[couleur]-main` (thèmes clair / sombre).<br>Exemples : `$green-emeraude-main-632 `<br>`$brown-caramel-main-648` |
-| Couleur décorative (10%) | `$artwork-decorative-blue-france` | Non personnalisable,<br>Optionnelle |
+| Couleur décorative (10%) | `$artwork-decorative-blue-france` | 🚫 Non personnalisable,<br>Optionnelle |
 
 ::::
 
@@ -89,9 +96,10 @@ Thème clair : `$blue-france-950` / Thème sombre : `$blue-france-100`
 Les pictogrammes s’utilisent :
 
 - dans les composants “Tuiles” et “Paramètre d’affichage”,
-- dans un environnement illustratif (ex. Modèles de pages d’erreurs, Carte…).
 
 ![](../_asset/pictogram/usage-theme-clair-tuiles.jpg)
+
+- dans un environnement illustratif (ex. Modèles de pages d’erreurs, Carte…).
 
 ![](../_asset/pictogram/usage-page-erreur-theme-sombre.jpg)
 
@@ -209,14 +217,12 @@ Dans le cas où l’on souhaiterait ajouter un élément en fond (<span lang="en
 
 ::::fr-table[La personnalisation]{valign=top vheaders=vertical caption=false}
 
-| Description de l’usage | Token | Valeur(s) autorisée(s) |
-|-----------------------|-------|-----------------------|
-| Couleur de fond (80%) | `$artwork-background` | Non personnalisable,<br> `$grey-975` `$grey-75` |
-| Couleur de motif (20%) | `$artwork-motif` | Non personnalisable,<br>Optionnelle,<br> `$grey-925` `$grey-125` |
+| Description de l’usage | Token | Classe | Valeur(s) autorisée(s) |
+|-----------------------|-------|-----------------------|-----------------------|
+| Couleur de fond (80%) | `$artwork-background-grey` | `.fr-artwork-background` | 🚫 Non personnalisable,<br> `$grey-975` `$grey-75` |
+| Couleur de motif (20%) | `$artwork-motif-grey` | `.fr-artwork-motif` | 🚫 Non personnalisable,<br>Optionnelle,<br> `$grey-925` `$grey-125` |
 
 ::::
-
-#### Utilisation des pictogrammes de fond
 
 L’intégration des pictogrammes de fond se fait de la même manière que les pictogrammes. Il est possible de combiner les deux en un seul élément appelant, via des `<use>`, les différents calques de couleurs.
 
