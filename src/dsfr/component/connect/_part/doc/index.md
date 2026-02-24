@@ -46,7 +46,7 @@ Utiliser le bouton FranceConnect ou ProConnect pour proposer une connexion ou un
 
 ### Comment utiliser ce composant ?
 
-- **Proposer l’un des boutons de connexion en premier mode d’authentification.** Il est positionner au-dessus des autres moyens de connexion proposés.
+- **Proposer l’un des boutons de connexion en premier mode d’authentification.** Il est positionné au-dessus des autres moyens de connexion proposés.
 - **Accompagner le bouton du lien « Qu’est-ce que [nom du service] ? »**, positionné en-dessous, redirigeant vers l’URL [www.franceconnect.gouv.fr](http://www.franceconnect.gouv.fr) ou [www.proconnect.gouv.fr](https://www.proconnect.gouv.fr/) (cf. rubrique “Design”).
 - **Dissocier visuellement vos moyens de connexion natifs** du bouton de connexion. Une séparation visible doit être mise en place.
 - **Présenter les bouton de connexion comme une alternative** à un autre mode d’identification. La notion de "ou" doit figurer clairement (FranceConnect/ProConnect ou un autre mode d’identification).
