@@ -7,7 +7,7 @@ shortTitle: Accessibilité des Boutons FranceConnect et ProConnect
 description: Description des exigences, recommandations et bonnes pratiques d’accessibilité des composants Bouton FranceConnect et ProConnect.
 shortDescription: Authentification avec FranceConnect et/ou ProConnect
 keywords: FranceConnect, ProConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité
-cover: ./_asset/cover/cover.png
+cover: ../_asset/cover/cover.png
 excerpt: Les boutons FranceConnect et ProConnect permettent de proposer une méthode de connexion sécurisée en utilisant l’identité numérique d’un fournisseur agréé. Ils s’intègrent dans les interfaces comme premier choix d’authentification.
 summary: Ces composants permettent à l’usager de se connecter à un service public en ligne via FranceConnect et/ou ProConnect, solutions officielles d’identification. Ils garantissent la fiabilité de l’identité transmise et s’intègrent comme option d’authentification prioritaire. Ces boutons suivent des règles d’intégration strictes pour assurer leur clarté, éviter toute confusion avec d’autres services et maintenir la confiance dans la marque FranceConnect et/ou ProConnect.
 mesh:
