@@ -106,7 +106,7 @@ L'état désactivé indique que l’utilisateur ne peut pas interagir avec la ca
 
 L'état indéterminé peut être utilisé pour indiquer à l’utilisateur qu'un groupe de checkboxes avec une action commune est partiellement sélectionné. Typiquement, cet état pourra être utilisé lorsqu'un tableau proposera une case à cocher générale dans son en-tête et que l'ensemble des lignes ne seront pas sélectionnées.
 
-::dsfr-doc-storybook{storyId=checkboxe-indeterminate}
+::dsfr-doc-storybook{storyId=checkbox-indeterminate}
 
 ### Personnalisation
 
