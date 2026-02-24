@@ -2,8 +2,8 @@
 boost: 0
 sitemap:
   noindex: true
-title: Démonstration du Bouton FranceConnect
-shortTitle: Démonstration du Bouton FranceConnect
+title: Démonstration des Boutons FranceConnect et ProConnect
+shortTitle: Démonstration des Boutons FranceConnect et ProConnect
 description: Illustration du fonctionnement à travers différents cas d’usage et exemples interactifs des composants Bouton FranceConnect et ProConnect.
 shortDescription: Authentification avec FranceConnect et/ou ProConnect
 keywords: FranceConnect, ProConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité

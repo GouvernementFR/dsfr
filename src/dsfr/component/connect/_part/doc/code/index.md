@@ -2,8 +2,8 @@
 boost: 0
 sitemap:
   noindex: true
-title: Code du Bouton FranceConnect
-shortTitle: Code du Bouton FranceConnect
+title: Code des Boutons FranceConnect et ProConnect
+shortTitle: Code des Boutons FranceConnect et ProConnect
 description: Mise à disposition des extraits de code, de l’API et de la documentation technique des composants Bouton FranceConnect et ProConnect.
 shortDescription: Authentification avec FranceConnect et/ou ProConnect
 keywords: FranceConnect, ProConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité

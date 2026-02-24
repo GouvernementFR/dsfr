@@ -2,8 +2,8 @@
 boost: 0
 sitemap:
   noindex: true
-title: Accessibilité du Bouton FranceConnect
-shortTitle: Accessibilité du Bouton FranceConnect
+title: Accessibilité des Boutons FranceConnect et ProConnect
+shortTitle: Accessibilité des Boutons FranceConnect et ProConnect
 description: Description des exigences, recommandations et bonnes pratiques d’accessibilité des composants Bouton FranceConnect et ProConnect.
 shortDescription: Authentification avec FranceConnect et/ou ProConnect
 keywords: FranceConnect, ProConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité

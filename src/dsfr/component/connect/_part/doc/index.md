@@ -1,6 +1,6 @@
 ---
-title: Bouton FranceConnect
-shortTitle: Bouton FranceConnect
+title: Boutons FranceConnect et ProConnect
+shortTitle: Boutons FranceConnect et ProConnect
 titleId: Connect
 description: Présentation des Boutons FranceConnect et ProConnect permettant à l’usager de s’authentifier via un fournisseur d’identité officiel reconnu par l’État.
 shortDescription: Authentification avec FranceConnect et/ou ProConnect

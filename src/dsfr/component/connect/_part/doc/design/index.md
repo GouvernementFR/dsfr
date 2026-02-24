@@ -2,8 +2,8 @@
 boost: 0
 sitemap:
   noindex: true
-title: Design du Bouton FranceConnect
-shortTitle: Design du Bouton FranceConnect
+title: Design des Boutons FranceConnect et ProConnect
+shortTitle: Design des Boutons FranceConnect et ProConnect
 description: Présentation des choix graphiques, des principes visuels et des variantes disponibles des composants Bouton FranceConnect et ProConnect.
 shortDescription: Authentification avec FranceConnect et/ou ProConnect
 keywords: FranceConnect, ProConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité
