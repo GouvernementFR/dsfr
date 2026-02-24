@@ -4,25 +4,25 @@ sitemap:
   noindex: true
 title: Design du Bouton FranceConnect
 shortTitle: Design du Bouton FranceConnect
-description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Bouton FranceConnect.
-shortDescription: Authentification avec FranceConnect
-keywords: FranceConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité
-cover: ../_asset/cover/cover.png
-excerpt: Le bouton FranceConnect permet de proposer une méthode de connexion sécurisée en utilisant l’identité numérique d’un fournisseur agréé. Il s’intègre dans les interfaces comme premier choix d’authentification.
-summary: Ce composant permet à l’usager de se connecter à un service public en ligne via FranceConnect, solution officielle d’identification. Il garantit la fiabilité de l’identité transmise et s’intègre comme option d’authentification prioritaire. Le bouton suit des règles d’intégration strictes pour assurer sa clarté, éviter toute confusion avec d’autres services et maintenir la confiance dans la marque FranceConnect.
+description: Présentation des choix graphiques, des principes visuels et des variantes disponibles des composants Bouton FranceConnect et ProConnect.
+shortDescription: Authentification avec FranceConnect et/ou ProConnect
+keywords: FranceConnect, ProConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité
+cover: ./_asset/cover/cover.png
+excerpt: Les boutons FranceConnect et ProConnect permettent de proposer une méthode de connexion sécurisée en utilisant l’identité numérique d’un fournisseur agréé. Ils s’intègrent dans les interfaces comme premier choix d’authentification.
+summary: Ces composants permettent à l’usager de se connecter à un service public en ligne via FranceConnect et/ou ProConnect, solutions officielles d’identification. Ils garantissent la fiabilité de l’identité transmise et s’intègrent comme option d’authentification prioritaire. Ces boutons suivent des règles d’intégration strictes pour assurer leur clarté, éviter toute confusion avec d’autres services et maintenir la confiance dans la marque FranceConnect et/ou ProConnect.
 mesh:
   - component/button
   - layout/page/register
   - layout/page/login
 ---
 
-## Bouton FranceConnect
+## Boutons FranceConnect et ProConnect
 
-Le bouton FranceConnect est un élément d’interaction avec l’interface proposant à l’usager d’utiliser ses identifiants de connexion à l’un des fournisseurs d’identités ([impots.gouv.fr](http://impots.gouv.fr/), [ameli.fr](http://ameli.fr/), [l’Identité Numérique La Poste](https://lidentitenumerique.laposte.fr/), etc.) pour se connecter à un autre site.
+Les boutons FranceConnect et ProConnect sont des éléments d’interaction avec l’interface proposant à l’usager de se connecter à un service via un compte appelé  fournisseur d’identité (type [impots.gouv.fr](http://impots.gouv.fr/), [ameli.fr](http://ameli.fr/), [l’Identité Numérique La Poste](https://lidentitenumerique.laposte.fr/), [France Identité](https://france-identite.gouv.fr/), etc.).
 
-Le fournisseur de service récupère auprès de FranceConnect un identifiant unique et une identité vérifiée par l’INSEE. Il est primordial dans l’usage du service FranceConnect et garantit sa reconnaissance et la confiance en la marque.
+Le service sur lequel l’usager se connecte récupère auprès de FranceConnect et/ou ProConnect un identifiant technique unique ainsi que des données d’identité vérifiées par l’INSEE qui permettent de garantir l’authentification de l’usager.
 
-Retrouver le fonctionnement en détail ici : [https://docs.partenaires.franceconnect.gouv.fr/](https://docs.partenaires.franceconnect.gouv.fr/)
+Retrouver le détail de leurs fonctionnements et conditions d’éligibilité ici : [https://franceconnect.gouv.fr](https://franceconnect.gouv.fr/partenaires) et [https://www.proconnect.gouv.fr/](https://www.proconnect.gouv.fr/)
 
 :::dsfr-doc-tab-navigation
 
@@ -38,13 +38,13 @@ Retrouver le fonctionnement en détail ici : [https://docs.partenaires.franceco
 
 ![Anatomie du bouton FranceConnect](../_asset/anatomy/anatomy-1.png)
 
-::dsfr-doc-pin[Le logo FranceConnect]{required=true}
+::dsfr-doc-pin[Le logo]{required=true}
 
-::dsfr-doc-pin[Un libellé “S’identifier avec FranceConnect”]{required=true}
+::dsfr-doc-pin[Un libellé “S’identifier avec [nom du service]”]{required=true}
 
-::dsfr-doc-pin[Une icône plus]
+::dsfr-doc-pin[Une icône plus - En option, uniquement pour le variant FranceConnect.]
 
-::dsfr-doc-pin[Un lien “Qu’est-ce que FranceConnect ?”]{required=true add='qui redirige vers l’URL franceconnect.gouv.fr'}
+::dsfr-doc-pin[Un lien “Qu’est-ce que [nom du service] ?”]{required=true add='qui redirige vers l’URL dédiée'}
 
 :::
 
@@ -56,15 +56,21 @@ Si le service utilise FranceConnect+ (pour les démarches nécessitant une sécu
 
 La structure est sensiblement la même que celle du bouton FranceConnect, à l’exception du lien “Qu’est-ce que FranceConnect+ ?” qui pointe vers l’URL [https://franceconnect.gouv.fr/france-connect-plus](https://franceconnect.gouv.fr/france-connect-plus).
 
+**ProConnect**
+
+Si le service utilise ProConnect (pour en faciliter l’accès aux agents publics), il faut utiliser la variante du bouton ProConnect.
+
+La structure est sensiblement la même que celle du bouton FranceConnect, à l’exception du logo et du lien “Qu’est-ce que ProConnect ?” qui pointe vers l’URL [https://proconnect.gouv.fr](https://proconnect.gouv.fr).
+
 ### Tailles
 
-La taille du bouton FranceConnect n’est pas personnalisable. Elle s’ajuste à son contenu.
+La taille des boutons de connexion n’est pas personnalisable. Elle s’ajuste à son contenu.
 
 ### États
 
 **Etat désactivé**
 
-L’état désactivé indique que l'usager ne peut pas interagir avec le bouton FranceConnect.
+L’état désactivé indique que l'usager ne peut pas interagir avec le bouton de connexion.
 
 ::dsfr-doc-storybook{storyId="connect--default" args="{ disabled: true }"}
 
@@ -73,11 +79,11 @@ L’état désactivé indique que l'usager ne peut pas interagir avec le bouton 
 
 **État au survol**
 
-L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole le bouton FranceConnect avec sa souris.
+L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole le bouton de connexion avec sa souris.
 
 ### Personnalisation
 
-Le bouton FranceConnect n’est pas personnalisable.
+Les boutons de connexion ne sont pas personnalisables.
 
 ::::dsfr-doc-guidelines
 
