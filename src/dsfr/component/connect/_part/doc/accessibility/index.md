@@ -34,7 +34,7 @@ Retrouver le détail de leurs fonctionnements et conditions d’éligibilité ic
 
 :::
 
-Les composants **Bouton FranceConnect et ProConnect** sont conçus pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
+Les composants **Bouton FranceConnect et ProConnect** sont conçus pour être accessibles et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
 ## Interactions clavier
 
