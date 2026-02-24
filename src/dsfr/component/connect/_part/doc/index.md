@@ -41,8 +41,8 @@ Retrouver le détail de leurs fonctionnements et conditions d’éligibilité ic
 Utiliser le bouton FranceConnect ou ProConnect pour proposer une connexion ou une création de compte simplifiée à l’usager.
 
 > [!WARNING]
-> Le service FranceConnect est uniquement utilisable par des administrations etu fournisseurs de logiciel agissant pour le compte d’une administration ou d’un organisme  privé, qui justi d’une obligation légale de  vérifier l’identité des utilisateurs de vos propres services en ligne.
-> ProConnect adresse également les professionnels du privé.
+> Le service FranceConnect est uniquement utilisable par des administrations et des fournisseurs de logiciels agissant pour le compte d’une administration ou d’un organisme privé, qui justifient d’une obligation légale de vérifier l’identité des utilisateurs de leurs propres services en ligne.
+> ProConnect s’adresse également aux professionnels du secteur privé.
 
 ### Comment utiliser ce composant ?
 
