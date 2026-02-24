@@ -49,7 +49,7 @@ Utiliser le bouton FranceConnect ou ProConnect pour proposer une connexion ou un
 - **Proposer l’un des boutons de connexion en premier mode d’authentification.** Il est positionné au-dessus des autres moyens de connexion proposés.
 - **Accompagner le bouton du lien « Qu’est-ce que [nom du service] ? »**, positionné en-dessous, redirigeant vers l’URL [www.franceconnect.gouv.fr](http://www.franceconnect.gouv.fr) ou [www.proconnect.gouv.fr](https://www.proconnect.gouv.fr/) (cf. rubrique “Design”).
 - **Dissocier visuellement vos moyens de connexion natifs** du bouton de connexion. Une séparation visible doit être mise en place.
-- **Présenter les bouton de connexion comme une alternative** à un autre mode d’identification. La notion de "ou" doit figurer clairement (FranceConnect/ProConnect ou un autre mode d’identification).
+- **Présenter les boutons de connexion comme une alternative** à un autre mode d’identification. La notion de "ou" doit figurer clairement (FranceConnect/ProConnect ou un autre mode d’identification).
 - **Éviter toute confusion sur la nature du service proposé** en évitant de le positionner près de liens, d’icônes ou de services d'identification liés à des réseaux sociaux ou autres services similaires. FranceConnect et ProConnect ne sont pas des réseaux sociaux et ne doivent pas être présentés ou susceptibles d’être perçus comme tels par l’usager.
 - **Ouvrir la page de choix du fournisseur d’identité dans l’onglet actif de l’usager**. Elle ne doit pas être proposée dans une modale ou une pop-up au-dessus du site.
 
