@@ -184,10 +184,10 @@ const deployHandler = async (argv) => {
   });
   await buildRouting();
   deployFavicons();
-  deployFiles();
   deployRobots();
   deployStorybook();
   deployDocs();
+  deployFiles();
 };
 
 /**

@@ -15,38 +15,40 @@ const stepperArgTypes = {
       required: true
     }
   },
-  currentStep: {
-    control: 'number',
-    description: 'Numéro de l\'étape courrante',
-    type: {
-      value: 'integer',
+  stepCount: {
+    description: 'Nombre d\'étapes',
+    control: {
+      type: 'number',
       min: 2,
-      max: 8,
+      max: 8
+    },
+    type: {
       required: true
     }
   },
-  stepCount: {
-    control: 'number',
-    description: 'Nombre d\'étapes',
-    type: {
-      value: 'integer',
+  currentStep: {
+    description: 'Numéro de l\'étape courante',
+    control: {
+      type: 'number',
       min: 2,
-      max: 8,
+      max: 8
+    },
+    type: {
       required: true
     }
   },
   markup: {
     control: { type: 'select' },
-    description: 'Type de balise HTML',
-    options: ['h2', 'h3', 'h4', 'h5']
+    description: 'Type de balise HTML du titre',
+    options: ['h2', 'h3', 'h4', 'h5', 'h6', 'p']
   }
 };
 
 const stepperArgs = {
   title: 'Titre de l’étape en cours',
   nextStep: 'Titre de l’étape suivante',
-  currentStep: 1,
   stepCount: 3,
+  currentStep: 1,
   markup: 'h2'
 };
 

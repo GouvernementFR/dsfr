@@ -1,5 +1,5 @@
 ////
-/// Table Module - footer
+/// Table Module - header
 /// @group Table
 ////
 
@@ -9,6 +9,11 @@
   &__header {
     @include media-query.respond-from(md) {
       @include display-flex(row, center, space-between);
+
+      #{ns(search-bar)} {
+        order: 1;
+        @include padding-right(2v);
+      }
 
       #{ns(table__detail)} {
         order: 1;
@@ -26,12 +31,7 @@
         order: 3;
         flex: 0;
         @include padding-left(2v);
-      }
-    }
-
-    #{ns(btns-group)} {
-      @include media-query.respond-from(md) {
-        @include padding-right(2v);
+        @include margin-left(auto);
       }
     }
 
@@ -40,6 +40,10 @@
     }
 
     #{ns(segmented)} {
+      @include margin-bottom(4v);
+    }
+
+    #{ns(search-bar)} {
       @include margin-bottom(4v);
     }
   }

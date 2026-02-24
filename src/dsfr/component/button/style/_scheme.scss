@@ -21,6 +21,8 @@
     // Grey outline variant
     &--tertiary,
     &--sort,
+    &--sort-asc,
+    &--sort-desc,
     &--account {
       @include btn-kind-scheme(3, $legacy);
     }

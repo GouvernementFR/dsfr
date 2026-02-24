@@ -1,7 +1,7 @@
 id: input
 title: Champ de saisie
 description: Les champs permettent à un utilisateur d'entrer du contenu et données.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/blocs-fonctionnels/adresse-electronique
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles/blocs-fonctionnels/adresse-electronique
 wrapper: col-8
 style:
   - core

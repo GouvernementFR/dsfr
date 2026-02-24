@@ -33,13 +33,19 @@ const thead = [
       content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: `${table.id}-thead-sort-asc-desc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})}</div>`
     },
     {
-      content: getButton({id: `${table.id}-thead-sort-descending`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sort': 'descending'}})
+      attributes: {
+        'aria-sort': 'descending'
+      },
+      content: getButton({id: `${table.id}-thead-sort-descending`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort-desc`], attributes: {}})
     },
     {
       content: `${getTextCell()} ${getButton({label: getText('data.cell.text', 'table'), classes: [`${prefix}-ml-2v`, `${prefix}-btn--tooltip`], tooltip: {id: `${table.id}-thead-tooltip`, content: lorem()}})}`
     },
     {
-      content: getButton({id: `${table.id}-thead-sort-ascending`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`], attributes: {'aria-sort': 'ascending'}})
+      attributes: {
+        'aria-sort': 'ascending'
+      },
+      content: getButton({id: `${table.id}-thead-sort-ascending`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort-asc`], attributes: {}})
     },
     {
       content: getBadge({id: `${table.id}-thead-badge`, type: 'info', label: getText('data.cell.label', 'table')})

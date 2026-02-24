@@ -41,7 +41,7 @@ if (size) sizeClasses = [prefix+'-text--'+size];
 
 <figure <%- includeAttrs(quoteAttrs) %> <%- includeClasses(quoteClasses) %>>
   <blockquote <%- includeAttrs(blockAttrs) %>>
-    <p <%- includeClasses(sizeClasses) %>>« <%= text %> »</p>
+    <p <%- includeClasses(sizeClasses) %>>«&nbsp;<%= text %>&nbsp;»</p>
   </blockquote>
   <figcaption>
     <% if (author) { %>

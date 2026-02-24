@@ -62,6 +62,18 @@ const tableHeaderSegmented = `
   </fieldset>
 `;
 
+const tableHeaderSearch = `
+  <div class="fr-search-bar">
+    <label class="fr-label" for="table-search-input">
+        Rechercher
+    </label>
+    <input class="fr-input" aria-describedby="table-search-input-messages" placeholder="Rechercher" id="table-search-input" type="search">
+    <div class="fr-messages-group" id="table-search-input-messages" aria-live="polite">
+    </div>
+    <button title="Rechercher dans les lignes du tableau" type="button" class="fr-btn">Rechercher</button>
+  </div>
+`;
+
 const tableFooterSelect = `
   <div class='fr-table__footer--start'>
       <p class='fr-table__detail'>215 lignes</p>
@@ -228,6 +240,14 @@ const tableArgTypes = {
     if: { arg: 'hasHeader', eq: true },
     control: 'boolean',
     description: 'Affiche un contrôle segmenté dans l\'en-tête du tableau',
+    table: {
+      category: 'header'
+    }
+  },
+  hasHeaderSearch: {
+    if: { arg: 'hasHeader', eq: true },
+    control: 'boolean',
+    description: 'Affiche une barre de recherche dans l\'en-tête du tableau',
     table: {
       category: 'header'
     }
@@ -447,16 +467,22 @@ const getMiscellaneousTableArgs = () => {
           content: '<div class="fr-cell__title">Titre par défaut</div><div class="fr-cell__desc">Texte par défaut</div>'
         },
         {
-          content: '<div class="fr-cell--sort"><span class="fr-cell__title">Titre par défaut</span> <button type="button" id="table-miscellaneous-thead-sort-asc-desc"  class="fr-btn--sort fr-btn fr-btn--sm">Trier</button></div>'
+          content: '<div class="fr-cell--sort"><span class="fr-cell__title">Titre par défaut</span> <button type="button" id="table-miscellaneous-thead-sort-asc-desc" class="fr-btn--sort fr-btn fr-btn--sm">Trier</button></div>'
         },
         {
-          content: '<button aria-sort="descending" type="button" id="table-miscellaneous-thead-sort-descending"  class="fr-btn--sort fr-btn fr-btn--sm">Trier</button>'
+          attributes: {
+            'aria-sort': 'descending'
+          },
+          content: '<button type="button" id="table-miscellaneous-thead-sort-descending" class="fr-btn--sort-desc fr-btn fr-btn--sm">Trier</button>'
         },
         {
-          content: '<span class="fr-cell__desc">Texte par défaut</span> <button aria-describedby="table-miscellaneous-thead-tooltip" type="button" id="table-default-button-3"  class="fr-ml-2v fr-btn--tooltip fr-btn fr-btn--sm">Texte par défaut</button><span class="fr-tooltip fr-placement" id="table-miscellaneous-thead-tooltip" role="tooltip">Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et. Diam maecenas sed enim ut. Accumsan lacus vel facilisis volutpat est. Ut aliquam purus sit amet luctus. Lorem ipsum dolor sit amet consectetur adipiscing elit ut.</span>'
+          content: '<span class="fr-cell__desc">Texte par défaut</span> <button aria-describedby="table-miscellaneous-thead-tooltip" type="button" id="table-default-button-3" class="fr-ml-2v fr-btn--tooltip fr-btn fr-btn--sm">Texte par défaut</button><span class="fr-tooltip fr-placement" id="table-miscellaneous-thead-tooltip" role="tooltip">Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et. Diam maecenas sed enim ut. Accumsan lacus vel facilisis volutpat est. Ut aliquam purus sit amet luctus. Lorem ipsum dolor sit amet consectetur adipiscing elit ut.</span>'
         },
         {
-          content: '<button aria-sort="ascending" type="button" id="table-miscellaneous-thead-sort-ascending"  class="fr-btn--sort fr-btn fr-btn--sm">Trier</button>'
+          attributes: {
+            'aria-sort': 'ascending'
+          },
+          content: '<button type="button" id="table-miscellaneous-thead-sort-ascending" class="fr-btn--sort-asc fr-btn fr-btn--sm">Trier</button>'
         },
         {
           content: '<p id="table-miscellaneous-thead-badge"  class="fr-badge fr-badge--info">Libellé par défaut</p>'
@@ -592,6 +618,7 @@ const tableArgs = {
   multiline: false,
   hasHeader: false,
   hasHeaderSegmented: true,
+  hasHeaderSearch: false,
   hasHeaderDetails: true,
   hasHeaderButtons: true,
   hasFooter: false,
@@ -639,6 +666,10 @@ const tableProps = (args) => {
 
     if (args.hasHeaderSegmented === true) {
       tableHeader += tableHeaderSegmented;
+    };
+
+    if (args.hasHeaderSearch === true) {
+      tableHeader += tableHeaderSearch;
     };
 
     if (args.hasHeaderDetails === true) {

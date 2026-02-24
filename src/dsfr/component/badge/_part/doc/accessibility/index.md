@@ -14,7 +14,7 @@ mesh:
   - component/tag
 ---
 
-# Badge
+## Badge
 
 Le badge est un élément d’indication permettant de valoriser une information liée à un élément précis du site.
 

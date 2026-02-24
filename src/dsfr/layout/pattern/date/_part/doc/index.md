@@ -60,7 +60,7 @@ Le bloc fonctionnel est composé de :
 </fieldset>
 </div>
 
-:::fr-accordion[### Extrait de code]{id='accordion-date'}
+:::fr-accordion[Extrait de code]{id='accordion-date'}
 
 ```html
 <fieldset class="fr-fieldset" id="date-default-1578-fieldset" role="group" aria-labelledby="date-default-1578-fieldset-legend date-default-1578-fieldset-messages">

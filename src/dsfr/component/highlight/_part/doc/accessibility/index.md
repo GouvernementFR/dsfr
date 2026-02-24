@@ -15,7 +15,7 @@ mesh:
   - component/quote
 ---
 
-# Mise en exergue
+## Mise en exergue
 
 La mise en exergue est un élément éditorial permettant de mettre en forme du contenu dans une page.
 

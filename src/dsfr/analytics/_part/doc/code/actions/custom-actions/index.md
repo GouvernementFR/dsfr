@@ -4,7 +4,7 @@ sitemap:
   noindex: true
 ---
 
-### Actions d’interaction hors composant
+## Actions d’interaction hors composant
 
 Il est possible de remonter à Eulérian des actions effectuées sur des éléments HTML hors composants du DSFR.
 
@@ -12,7 +12,7 @@ Pour ajouter un écouteur d'événement il suffit d’ajouter un attribut `data-
 balise
 HTML concernée.
 
-#### Exemples d’ajout d’une action
+### Exemples d’ajout d’une action
 
 ```html
 <p>Envoyez un événement lors du clic sur
@@ -26,13 +26,13 @@ HTML concernée.
 </p>
 ```
 
-#### ActionType
+### ActionType
 
 Les différents types d’action sont définis dans : `src/dsfr/analytics/script/analytics/action/type.js`
 
 Il existe les types d'actions suivants :
 
-##### click
+#### click
 
 `data-fr-analytics-click`
 
@@ -49,7 +49,7 @@ De manière automatique, le type de l'action approprié sera sélectionné :
 
 * * *
 
-##### internal
+#### internal
 
 `data-fr-analytics-internal`
 
@@ -60,7 +60,7 @@ Clique vers un lien interne, une ancre.
 
 * * *
 
-##### external
+#### external
 
 `data-fr-analytics-external`
 
@@ -71,7 +71,7 @@ Clique vers un lien externe.
 
 * * *
 
-##### download
+#### download
 
 `data-fr-analytics-download`
 
@@ -82,7 +82,7 @@ Clique sur un lien téléchargeable.
 
 * * *
 
-##### double-click
+#### double-click
 
 `data-fr-analytics-dblclick`
 
@@ -92,7 +92,7 @@ Interaction générique du double-clic.
 
 * * *
 
-##### change
+#### change
 
 `data-fr-analytics-change`
 

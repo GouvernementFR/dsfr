@@ -1,7 +1,7 @@
 id: icons-design
 title: Icônes Design
 description: Les icônes fonctionnelles sont des symboles visuels qui accompagnent l’utilisateur dans ses actions et qui aident à sa compréhension de l’interface.
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/icone
 wrapper: col-8
 style:
   - core

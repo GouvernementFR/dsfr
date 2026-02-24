@@ -12,6 +12,7 @@ script:
   - checkbox
 example:
   style:
+    - search
     - alert
     - badge
     - input

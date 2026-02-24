@@ -187,8 +187,7 @@ class Disclosure extends Instance {
   }
 
   focus () {
-    if (this._primaryButtons.length > 0) this._primaryButtons[0].focus();
-    else this.focusBack();
+    this.focusBack();
   }
 
   get primaryButtons () {
