@@ -96,10 +96,12 @@
 
   @include body {
     --modal-max-height: calc(100vh - 2rem);
+    --modal-scroll-padding-bottom: #{space(-4v)};
     pointer-events: all;
     overflow-y: auto;
     flex: 1 1 auto;
     max-height: var(--modal-max-height);
+    scroll-padding-bottom: calc(var(--modal-scroll-padding-bottom) + #{space(4v)});
 
     @include respond-from(md) {
       max-height: 80vh;
