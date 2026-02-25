@@ -7,7 +7,7 @@ keywords: CSS, classes utilitaires, affichage, masquage, fr-hidden, fr-sr-only, 
 cover: ../_asset/display/cover/cover.png
 excerpt: Liste des classes CSS pour masquer ou afficher des éléments à l’écran ou pour les lecteurs d’écran selon les points de rupture.
 summary: Cette page décrit les classes CSS utilitaires fournies par le Design Système de l’État pour gérer l’affichage conditionnel des éléments. Elle couvre les usages de `fr-sr-only` pour les lecteurs d’écran, `fr-hidden` pour le masquage complet, et leurs variantes responsives en fonction des breakpoints. Elle explique également comment combiner `fr-hidden` avec `fr-unhidden-[breakpoint]` pour un contrôle fin de la visibilité selon les tailles d’écran. Ces classes facilitent la mise en page accessible et adaptative.
-order: 10
+order: 11
 ---
 
 ## Classes CSS d'affichage
@@ -44,7 +44,7 @@ Cette classe cache complètement l'élément, à la fois visuellement et aussi p
 </div>
 ```
 
-## fr-hidden-[breakpoint]
+### fr-hidden-[breakpoint]
 
 Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au `display: none`) à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
 
@@ -54,7 +54,7 @@ Cette classe cache complètement l'élément, à la fois visuellement et aussi p
 </div>
 ```
 
-## fr-unhidden-[breakpoint]
+### fr-unhidden-[breakpoint]
 
 Cette classe, associée à la classe `fr-hidden` permet de ré-afficher l'élément caché à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
 
