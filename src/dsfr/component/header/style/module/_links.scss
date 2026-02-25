@@ -69,7 +69,10 @@
     }
 
     &:last-child,
-    &:empty,
+    &:empty {
+      @include after(normal, null);
+    }
+
     &:not(:has(*)) {
       @include after(normal, null);
     }
