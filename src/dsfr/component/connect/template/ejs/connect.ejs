@@ -44,6 +44,10 @@ switch(connect.variant) {
   case 'agent':
     connectClasses.push(prefix + '-connect--agent');
   break;
+
+  case 'pro':
+    connectClasses.push(prefix + '-connect--pro');
+  break;
 }
 
 const linkAttributes = connect.link.attributes || {};

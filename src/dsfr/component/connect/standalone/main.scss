@@ -16,6 +16,7 @@
 
 @import '../style/module/default';
 @import '../style/module/plus';
+@import '../style/module/pro';
 @import '../style/scheme/default';
 
 @include _connect-scheme-default(false, true);
