@@ -30,11 +30,11 @@ L'installation du Système de Design de l'État (ci-après, le DSFR) peut se fa
 
 ### Fichiers statiques
 
-Il est possible de télécharger l'ensemble du DSFR au format zip ci-dessous. Le zip contient un ensemble de fichiers HTML, CSS et JavaScript, ainsi que les différentes polices web utilisées (Marianne et Spectral), et un ensemble d'icônes et de pictogrammes.
+Il est possible de télécharger le DSFR déjà compilé jusqu'à la version 1.14.3, au format zip. Le zip contient un ensemble de fichiers HTML, CSS et JavaScript, ainsi que les différentes polices web utilisées (Marianne et Spectral), et un ensemble d'icônes et de pictogrammes.
 
 [Télécharger le DSFR au format zip sur Github](https://github.com/GouvernementFR/dsfr/releases)
 
-Vous trouverez sur la page Release sur Github, toutes les sources des versions précédentes et la dernière en date.
+A partir de la version 1.15.0, il est nécessaire de télécharger les sources du DSFR et de les compiler soi-même, en suivant les instructions de la section "Installation via NPM" ci-dessous.
 
 ### NPM
 
@@ -52,7 +52,25 @@ Il est également possible d'installer le package avec [Yarn](https://yarnpkg.c
 yarn add @gouvfr/dsfr
 ```
 
+A partir de la version 1.15.0, l'installation du package @gouvfr/dsfr nécessite l'acceptation des conditions d'utilisation du DSFR, qui sont présentées lors de l'installation. En cas de refus, le package ne sera pas installé.
+
 Une fois terminé le dsfr sera alors installé dans le dossier `node_modules/@gouvfr/dsfr/`.
+
+### Github
+
+Il est également possible de cloner le projet directement depuis Github, et de l'installer localement. Pour cela, il suffit de cloner le projet avec la commande suivante :
+
+```html
+git clone https://github.com/GouvernementFR/dsfr.git
+```
+
+Puis de se rendre dans le dossier du projet, installer les dépendances, et compiler le projet avec les commandes suivantes :
+
+```html
+cd dsfr
+yarn install
+yarn build
+```
 
 ## Pages d'exemples
 
@@ -68,12 +86,12 @@ Une fois le serveur lancé, les exemples sont disponibles à l'adresse http://lo
 
 ## Structure du DSFR
 
-> [!NOTE]
-> La structure que nous mettons à disposition sur github ou npm est la suivante :
->
-> - **dist** : contient les fichiers css et js à importer en fonction des packages utilisés
-> - **src** : contient les sources sass et js des différents composants
-> - **example** : contient des snippets html d'exemple des composants et modèles de pages que vous pouvez consulter en local
+La structure du projet est la suivante :
+
+- **dist** : contient les fichiers css et js compilés à importer dans votre projet
+- **src** : contient les sources sass et js des différents composants
+- **example** : contient des snippets html d'exemple des composants et modèles de pages que vous pouvez consulter en local
+- **standalone** : contient des éléments utilisables de manière autonome, sans utilisation du DSFR
 
 ## Configuration de votre projet
 
