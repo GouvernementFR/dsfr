@@ -119,7 +119,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   focus () {
     if (this.current) {
-      this.current.focus();
+      this.current.buttons[0].focus();
     }
   }
 
