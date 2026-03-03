@@ -55,10 +55,16 @@ exemple d’actionName : `(click)_titre_niveau_2_›_titre_niveau_3_›_label_de
 
 Par défaut, l'envoi des actions est désactivé. Le paramètre de configuration `isActionEnabled` permet de l'activer. (voir [isActionEnabled dans Analytics](../collector/analytics/index.md#isActionEnabled)).
 Il est possible de d'activer l'envoi sporadiquement sur un élément particulier en utilisant l'attribut `data-fr-analytics-action`, qui permet également de donner une valeur spécifique au title de l'[ActionName](#ActionName).
-À l'inverse, il est possible de désactiver l'envoi d'actions sur un élément particulier en utilisant l'attribut `data-fr-analytics-action="false"` lorsque l'envoi d'actions est activé au global.
 
 > [!NOTE]
 > Dans le cas spécifique où la présence de nombreux éléments dans le DOM pourrait générer de la latence et qu'une optimisation des instances de tracking est nécessaire, il est possible de passer la valeur `reduce` à la propriété `isActionEnabled` pour que seules les instances ayant l'attribut `data-fr-analytics-action` soient générées par l'API.
+
+#### Désactiver les actions
+
+À l'inverse, il est possible de désactiver l'envoi d'actions lorsque le paramètre de configuration `isActionEnabled` est activé, en utilisant l'attribut `data-fr-analytics-action` sur un élément qui est automatiquement traqué par l'API analytics (par exemple, un bouton avec la classe `.fr-btn`).
+
+- L'attribut `data-fr-analytics-action="false"` permet de désactiver l'envoi d'actions sur l'élément, tout en laissant l'instance de tracking associée à cet élément initialisée. L'élément est traqué, mais aucune action n'est envoyée à Eulérian lors de l'interaction. Ce qui peut permettre de l'activer plus tard, de manière conditionnelle.
+- L'attribut `data-fr-analytics-action="reduce"` permet de désactiver l'envoi d'actions sur un élément particulier, en empêchant l'initialisation de l'instance de tracking associée à cet élément. L'élément n'est pas traqué, et aucune action n'est envoyée à Eulérian lors de l'interaction. Cette option est à privilégier lorsque l'élément n'est pas pertinent à tracker, ou que la présence de nombreux éléments dans le DOM pourrait générer de la latence et qu'une optimisation des instances de tracking est nécessaire.
 
 #### Taux d'interaction
 
