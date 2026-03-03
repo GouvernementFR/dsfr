@@ -81,6 +81,19 @@
     @include text-style(md);
     text-align: left;
 
+    @include selector.current {
+      position: relative;
+      @include before('', block) {
+        @include absolute(50%, null, null, 0, 2px, 6v);
+        @include margin-top(-3v);
+
+        @include preference.forced-colors {
+          background-color: highlight;
+          @include width(1v);
+        }
+      }
+    }
+
     @include respond-from(lg) {
       min-height: spacing.space(14v);
       @include padding(4v);
@@ -88,15 +101,13 @@
       font-weight: normal;
 
       @include selector.current {
-        @include relative;
-
         @include before('') {
           @include absolute(auto, null, 0, 0, 100%, 2px);
           @include margin-top(0);
 
           @include preference.forced-colors {
-            background-color: highlight;
             @include height(1v);
+            @include width(100%);
           }
         }
       }
