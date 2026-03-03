@@ -9,23 +9,23 @@
 @mixin _radio-scheme-sm($legacy: false) {
   #{ns-group(radio)}--sm {
     input[type="radio"] {
-      + label {
+      ~ label {
         @include color.background-image((border action-high blue-france), (legacy:$legacy), radio-background-image(false, sm));
       }
 
       @include disabled.selector() {
-        + label {
+        ~ label {
           @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false, sm));
         }
       }
 
       &:checked {
-        + label {
+        ~ label {
           @include color.background-image((border active blue-france) (active blue-france), (legacy:$legacy), radio-background-image(true, sm));
         }
 
         @include disabled.selector {
-          + label {
+          ~ label {
             @include color.background-image((disabled grey) (disabled grey), (legacy:$legacy), radio-background-image(true, sm));
           }
         }
@@ -37,11 +37,11 @@
     &--error {
       #{ns-group(radio)}--sm {
         input[type="radio"] {
-          & + label {
+          & ~ label {
             @include color.background-image((border plain error), (legacy:$legacy), radio-background-image(false, sm));
           }
 
-          &:checked + label {
+          &:checked ~ label {
             @include color.background-image((border plain error) (active blue-france), (legacy:$legacy), radio-background-image(true, sm));
           }
         }
@@ -51,11 +51,11 @@
     &--valid {
       #{ns-group(radio)}--sm {
         input[type="radio"] {
-          & + label {
+          & ~ label {
             @include color.background-image((border plain success), (legacy:$legacy), radio-background-image(false, sm));
           }
 
-          &:checked + label {
+          &:checked ~ label {
             @include color.background-image((border plain success) (active blue-france), (legacy:$legacy), radio-background-image(true, sm));
           }
         }
@@ -65,11 +65,11 @@
     &--info {
       #{ns-group(radio)}--sm {
         input[type="radio"] {
-          & + label {
+          & ~ label {
             @include color.background-image((border plain info), (legacy:$legacy), radio-background-image(false, sm));
           }
 
-          &:checked + label {
+          &:checked ~ label {
             @include color.background-image((border plain info) (active blue-france), (legacy:$legacy), radio-background-image(true, sm));
           }
         }
@@ -79,11 +79,11 @@
     #{ns-group(radio)}--sm {
       input[type="radio"] {
         @include disabled.selector {
-          & + label {
+          & ~ label {
             @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false, sm));
           }
 
-          &:checked + label {
+          &:checked ~ label {
             @include color.background-image((disabled grey) (disabled grey), (legacy:$legacy), radio-background-image(true, sm));
           }
         }

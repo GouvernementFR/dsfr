@@ -10,14 +10,14 @@
 @mixin _checkbox-scheme($legacy: false) {
   #{selector.ns(checkbox-group)} {
     input[type="checkbox"] {
-      + label {
+      ~ label {
         @include before {
           @include color.background-image(border action-high blue-france, (), checkbox-background-image());
         }
       }
 
       &:checked {
-        + label {
+        ~ label {
           @include before {
             @include color.background(active blue-france);
             @include color.background-image(border active blue-france, (), checkbox-background-image());
@@ -27,7 +27,7 @@
       }
 
       @include disabled.selector {
-        & + label {
+        & ~ label {
           @include before {
             @include disabled.colors();
             @include color.background-image(disabled grey, (), checkbox-background-image());
@@ -35,7 +35,7 @@
         }
 
         &:checked {
-          & + label {
+          & ~ label {
             @include before {
               @include disabled.colors((background: true));
               @include color.data-uri-svg(text disabled grey, (), $checkbox-svg, false);
@@ -48,7 +48,7 @@
     &--error {
       input[type="checkbox"],
       input[type="checkbox"]:checked {
-        & + label {
+        & ~ label {
           @include color.text(default error, (legacy:$legacy));
 
           @include before {
@@ -65,7 +65,7 @@
     &--valid {
       input[type="checkbox"],
       input[type="checkbox"]:checked {
-        & + label {
+        & ~ label {
           @include color.text(default success, (legacy:$legacy));
 
           @include before {
@@ -84,7 +84,7 @@
     &--error {
       #{selector.ns(checkbox-group)} {
         input[type="checkbox"] {
-          + label {
+          ~ label {
             @include before {
               @include color.background-image(border plain error, (), checkbox-background-image());
             }
@@ -96,7 +96,7 @@
     &--valid {
       #{selector.ns(checkbox-group)} {
         input[type="checkbox"] {
-          + label {
+          ~ label {
             @include before {
               @include color.background-image(border plain success, (), checkbox-background-image());
             }
