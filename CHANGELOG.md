@@ -12,7 +12,7 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.14
 
-### [1.14.4](https://github.com/GouvernementFR/dsfr/compare/v1.14.3...1.14.4) - 3 Mars 2026
+### [v1.14.4](https://github.com/GouvernementFR/dsfr/compare/v1.14.3...v1.14.4) - 3 Mars 2026
 
 #### 🐛 fix: github action security [(#1397)](https://github.com/GouvernementFR/dsfr/pull/1397)
 - Corrige une faille de sécurité potentielle sur les github actions
