@@ -8,12 +8,12 @@ data.newsletter = {
   form: {
     input: {
       id: uniqueId("newsletter-email"),
-      placeholder: "Votre adresse électronique (ex. : nom@domaine.fr)",
-      label: "Votre adresse électronique (ex. : nom@domaine.fr)",
+      placeholder: "Votre adresse électronique (ex. : nom@example.com)",
+      label: "Votre adresse électronique (ex. : nom@example.com)",
       type: "email",
-      error: newsletter.error === true ? 'Le format de l’adresse electronique saisie n’est pas valide. Le format attendu est : nom@domaine.fr' : undefined,
+      error: newsletter.error === true ? 'Le format de l’adresse electronique saisie n’est pas valide. Le format attendu est : nom@example.com' : undefined,
       attributes:{
-        title: 'Votre adresse électronique (ex. : nom@domaine.fr)',
+        title: 'Votre adresse électronique (ex. : nom@example.com)',
         autocomplete: 'email'
       },
       button: {
