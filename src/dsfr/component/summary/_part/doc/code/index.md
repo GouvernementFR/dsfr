@@ -39,7 +39,7 @@ Sa structure est la suivante :
 
 - Le conteneur du sommaire est une balise `<div>` avec la classe `fr-summary` et le rôle `navigation`.
   - Le sommaire dispose d'un attribut `aria-labelledby` défini sur l'ID du titre du sommaire.
-- Le titre du sommaire, obligatoire, est défini par la classe `fr-summary__title`.
+- Le titre du sommaire, obligatoire, est défini par la classe `fr-summary__title`. Son niveau de titre est personnalisable ou peut être un `<p>`.
 - Les éléments de la liste d'ancre, obligatoire, sont contenus dans une balise `<ol>`.
   - Chaque élément de la liste `<li>` contient un lien `<a>` défini par la classe `fr-summary__link`.
 
