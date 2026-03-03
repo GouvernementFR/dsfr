@@ -30,7 +30,7 @@ L'installation du Système de Design de l'État (ci-après, le DSFR) peut se fa
 
 ### Fichiers statiques
 
-Il est possible de télécharger le DSFR déjà compilé jusqu'à la version 1.14.3, au format zip. Le zip contient un ensemble de fichiers HTML, CSS et JavaScript, ainsi que les différentes polices web utilisées (Marianne et Spectral), et un ensemble d'icônes et de pictogrammes.
+Il est possible de télécharger le DSFR déjà compilé jusqu'à la version 1.14, au format zip. Le zip contient un ensemble de fichiers HTML, CSS et JavaScript, ainsi que les différentes polices web utilisées (Marianne et Spectral), et un ensemble d'icônes et de pictogrammes.
 
 [Télécharger le DSFR au format zip sur Github](https://github.com/GouvernementFR/dsfr/releases)
 
