@@ -42,6 +42,13 @@ jobs:
           BRANCH: ${{ github.ref_name }}
           TAG: ${{ github.event.inputs.tag }}
         run: |
+          # validate tag if provided
+          if [ -n "$TAG" ]; then
+            if ! echo "$TAG" | grep -qE '^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9._-]+)?$'; then
+              echo "Invalid TAG format: $TAG"
+              exit 1
+            fi
+          fi
           echo "TYPE=$TYPE" >> $GITHUB_ENV
           echo "BRANCH=$BRANCH" >> $GITHUB_ENV
           echo "TAG=$TAG" >> $GITHUB_ENV
