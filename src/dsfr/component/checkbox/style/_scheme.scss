@@ -16,12 +16,20 @@
         }
       }
 
-      &:checked {
+      &:checked,
+      &:indeterminate {
         + label {
           @include before {
             @include color.background(active blue-france);
             @include color.background-image(border active blue-france, (), checkbox-background-image());
             @include color.data-uri-svg(text inverted blue-france, (), $checkbox-svg, false);
+          }
+        }
+      }
+      &:indeterminate {
+        + label {
+          @include before {
+            @include color.data-uri-svg(text inverted blue-france, (), $checkbox-indeterminate-svg, false);
           }
         }
       }
@@ -34,11 +42,19 @@
           }
         }
 
-        &:checked {
+        &:checked,
+        &:indeterminate {
           & + label {
             @include before {
               @include disabled.colors((background: true));
               @include color.data-uri-svg(text disabled grey, (), $checkbox-svg, false);
+            }
+          }
+        }
+        &:indeterminate {
+          & + label {
+            @include before {
+              @include color.data-uri-svg(text disabled grey, (), $checkbox-indeterminate-svg, false);
             }
           }
         }
@@ -47,7 +63,8 @@
 
     &--error {
       input[type="checkbox"],
-      input[type="checkbox"]:checked {
+      input[type="checkbox"]:checked,
+      input[type="checkbox"]:indeterminate {
         & + label {
           @include color.text(default error, (legacy:$legacy));
 
@@ -64,7 +81,8 @@
 
     &--valid {
       input[type="checkbox"],
-      input[type="checkbox"]:checked {
+      input[type="checkbox"]:checked,
+      input[type="checkbox"]:indeterminate {
         & + label {
           @include color.text(default success, (legacy:$legacy));
 
