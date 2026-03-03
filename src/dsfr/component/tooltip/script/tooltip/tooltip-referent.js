@@ -19,7 +19,7 @@ class TooltipReferent extends api.core.PlacementReferent {
   init () {
     super.init();
     this.listen('focusin', this.focusIn.bind(this));
-    this.listen('focusout', this.focusOut.bind(this));
+    this.listen('focusout', (e) => this.focusOut(e));
     if (!this.matches(TooltipSelector.BUTTON)) {
       const mouseover = this.mouseover.bind(this);
       this.listen('mouseover', mouseover);
@@ -38,7 +38,8 @@ class TooltipReferent extends api.core.PlacementReferent {
   }
 
   _clickOut (target) {
-    if (!this.node.contains(target)) this.blur();
+    if (this.node.contains(target) || this.placement.node.contains(target)) return;
+    this.focusOut();
   }
 
   _keydown (keyCode) {
@@ -67,7 +68,9 @@ class TooltipReferent extends api.core.PlacementReferent {
     this.state |= TooltipReferentState.FOCUS;
   }
 
-  focusOut () {
+  focusOut (event = null) {
+    const relatedTarget = event ? event.relatedTarget : null;
+    if (relatedTarget && (this.node.contains(relatedTarget) || this.placement.node.contains(relatedTarget))) return;
     this.state &= ~TooltipReferentState.FOCUS;
   }
 
