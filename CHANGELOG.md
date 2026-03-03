@@ -12,7 +12,18 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.14
 
-### [1.14.3](https://github.com/GouvernementFR/dsfr/compare/v1.14.2...1.14.3) - 15 Décembre 2025
+### [v1.14.4](https://github.com/GouvernementFR/dsfr/compare/v1.14.3...v1.14.4) - 3 Mars 2026
+
+#### 🐛 fix: github action security [(#1397)](https://github.com/GouvernementFR/dsfr/pull/1397)
+- Corrige une faille de sécurité potentielle sur les github actions
+
+
+#### ♻️ refactor: nom des fichiers data.yml [(#1398)](https://github.com/GouvernementFR/dsfr/pull/1398)
+- change le nom des fichiers data.yml à la racine de chaque composant en index.yml
+
+
+
+### [v1.14.3](https://github.com/GouvernementFR/dsfr/compare/v1.14.2...v1.14.3) - 15 Décembre 2025
 
 #### ⬆️ chore(dependencies): mise à jour des dépendances npm [(#1350)](https://github.com/GouvernementFR/dsfr/pull/1350)
 
