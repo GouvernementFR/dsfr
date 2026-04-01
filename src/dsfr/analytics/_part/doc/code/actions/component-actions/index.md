@@ -97,5 +97,10 @@ Vous trouverez pour chaque composant une colonne :
 
 * * *
 
+> [!TIP]
+> Il est possible de retirer des actions à remonter, en utilisant l'attribut `data-fr-analytics-action` sur un élément instancié d’un composant.
+> - Avec `data-fr-analytics-action="false"`, l'action est initialisée mais non activée. L'élément est traqué, mais aucune action n'est envoyée à Eulérian lors de l'interaction.
+> - Avec `data-fr-analytics-action="reduce"`, l'action n'est pas initialisée. L'élément n'est pas traqué, et aucune action n'est envoyée à Eulérian lors de l'interaction.
+
 > [!NOTE]
 > Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires `data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions d’interaction hors composant](../custom-actions/index.md)).

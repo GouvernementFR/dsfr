@@ -1,5 +1,5 @@
 import api from '../../../../api.js';
 
 export const ButtonSelector = {
-  BUTTON: `${api.internals.ns.selector('btn')}:not(${api.internals.ns.selector('btn--close')})`
+  BUTTON: `${api.internals.ns.selector('btn')}:not(${api.internals.ns.selector('btn--close')}):not(${api.internals.ns.attr.selector('analytics-action', 'reduce')})`
 };
