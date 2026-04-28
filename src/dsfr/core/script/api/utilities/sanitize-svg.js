@@ -3,7 +3,7 @@
  * Only standard SVG presentational and structural elements are permitted.
  */
 const ALLOWED_TAGS = new Set([
-  'svg', 'g', 'defs', 'symbol', 'use', 'title', 'desc',
+  'svg', 'g', 'defs', 'symbol', 'use', 'title', 'desc', 'style',
   'path', 'rect', 'circle', 'ellipse', 'line', 'polyline', 'polygon',
   'text', 'tspan', 'textpath', 'image', 'clippath', 'mask',
   'lineargradient', 'radialgradient', 'stop', 'pattern', 'marker',
@@ -19,6 +19,9 @@ const URL_ATTRIBUTES = new Set([
 ]);
 
 const DANGEROUS_PROTOCOL = /^\s*(?:javascript|data|vbscript)\s*:/i;
+const DANGEROUS_CSS = /@import|expression\s*\(|url\s*\(\s*['"]?\s*(?:javascript|data|vbscript):|behavior\s*:|-moz-binding/i;
+
+const CSS_ESCAPE_REGEXP = /^-?\d|^-$|[^a-zA-Z0-9_-]/g;
 
 /**
  * Recursively sanitize an SVG element in-place:
@@ -45,11 +48,45 @@ function sanitizeElement (element) {
         }
         if (URL_ATTRIBUTES.has(name) && DANGEROUS_PROTOCOL.test(attr.value)) {
           child.removeAttribute(attr.name);
+          continue;
+        }
+        if (URL_ATTRIBUTES.has(name) && !isAllowedUrlAttributeValue(attr.value)) {
+          child.removeAttribute(attr.name);
+          continue;
+        }
+        if (name === 'style') {
+          const sanitizedStyle = sanitizeCssContent(attr.value);
+          if (sanitizedStyle) child.setAttribute(attr.name, sanitizedStyle);
+          else child.removeAttribute(attr.name);
         }
       }
+
+      if (tag === 'style') {
+        const sanitizedStyleContent = sanitizeCssContent(child.textContent);
+        if (!sanitizedStyleContent) {
+          element.removeChild(child);
+          continue;
+        }
+        child.textContent = sanitizedStyleContent;
+      }
+
       sanitizeElement(child);
     }
   }
+}
+
+/**
+ * Remove CSS payloads commonly used for script execution.
+ * Returns an empty string when the CSS contains dangerous patterns.
+ *
+ * @param {string} css
+ * @returns {string}
+ */
+function sanitizeCssContent (css) {
+  const content = String(css || '').trim();
+  if (!content) return '';
+  if (DANGEROUS_CSS.test(content)) return '';
+  return content;
 }
 
 /**
@@ -69,6 +106,10 @@ function sanitizeSvg (svg) {
     }
     if (URL_ATTRIBUTES.has(name) && DANGEROUS_PROTOCOL.test(attr.value)) {
       svg.removeAttribute(attr.name);
+      continue;
+    }
+    if (URL_ATTRIBUTES.has(name) && !isAllowedUrlAttributeValue(attr.value)) {
+      svg.removeAttribute(attr.name);
     }
   }
   sanitizeElement(svg);
@@ -76,8 +117,22 @@ function sanitizeSvg (svg) {
 }
 
 /**
+ * Validate URL-valued attributes for inline SVG usage.
+ * Allows same-document fragments (#id) and same-origin URLs only.
+ *
+ * @param {string} value
+ * @returns {boolean}
+ */
+function isAllowedUrlAttributeValue (value) {
+  const url = String(value || '').trim();
+  if (!url) return true;
+  if (url.charAt(0) === '#') return true;
+  return isSameOrigin(url);
+}
+
+/**
  * Check whether a URL is same-origin as the current page.
- * Relative URLs are always considered same-origin.
+ * Non-empty relative URLs are considered same-origin.
  *
  * @param {string} url
  * @returns {boolean}
@@ -85,11 +140,36 @@ function sanitizeSvg (svg) {
 function isSameOrigin (url) {
   if (!url) return false;
   try {
-    const parsed = new URL(url, window.location.href);
-    return parsed.origin === window.location.origin;
-  } catch {
+    const link = document.createElement('a');
+    link.href = url;
+
+    const protocol = (link.protocol || window.location.protocol).toLowerCase();
+    if (protocol !== 'http:' && protocol !== 'https:') return false;
+
+    const hostname = link.hostname || window.location.hostname;
+    const port = link.port || (protocol === 'https:' ? '443' : '80');
+    const currentPort = window.location.port || (window.location.protocol === 'https:' ? '443' : '80');
+
+    return protocol === window.location.protocol && hostname === window.location.hostname && port === currentPort;
+  } catch (e) {
     return false;
   }
 }
 
-export { sanitizeSvg, isSameOrigin };
+/**
+ * Escape a CSS identifier safely.
+ * Uses native CSS.escape when available, with an IE11-compatible fallback.
+ *
+ * @param {string} value
+ * @returns {string}
+ */
+function escapeCssIdentifier (value) {
+  const input = String(value || '');
+  if (window.CSS && typeof window.CSS.escape === 'function') {
+    return window.CSS.escape(input);
+  }
+
+  return input.replace(CSS_ESCAPE_REGEXP, character => `\\${character}`);
+}
+
+export { sanitizeSvg, isSameOrigin, escapeCssIdentifier };
