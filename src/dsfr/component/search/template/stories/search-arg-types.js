@@ -78,7 +78,8 @@ const searchProps = (args) => {
     },
     button: {
       label: args.buttonLabel || searchArgs.buttonLabel,
-      title: args.buttonTitle || searchArgs.buttonTitle
+      title: args.buttonTitle || searchArgs.buttonTitle,
+      type: 'submit'
     }
   };
 
