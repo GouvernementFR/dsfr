@@ -4,7 +4,7 @@ shortTitle: Bouton FranceConnect
 titleId: Connect
 description: Présentation du Bouton FranceConnect permettant à l’usager de s’authentifier via un fournisseur d’identité officiel reconnu par l’État.
 shortDescription: Authentification avec FranceConnect
-keywords: FranceConnect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité
+keywords: FranceConnect, connect, authentification, identité numérique, connexion, bouton, DSFR, sécurité, accessibilité
 cover: ./_asset/cover/cover.png
 excerpt: Le bouton FranceConnect permet de proposer une méthode de connexion sécurisée en utilisant l’identité numérique d’un fournisseur agréé. Il s’intègre dans les interfaces comme premier choix d’authentification.
 summary: Ce composant permet à l’usager de se connecter à un service public en ligne via FranceConnect, solution officielle d’identification. Il garantit la fiabilité de l’identité transmise et s’intègre comme option d’authentification prioritaire. Le bouton suit des règles d’intégration strictes pour assurer sa clarté, éviter toute confusion avec d’autres services et maintenir la confiance dans la marque FranceConnect.
