@@ -47,7 +47,7 @@ Ce bloc se compose de :
                 </label>
             </div>
         </div>
-        <div class="fr-messages-group" assert-live="assertive" id="sex-1427-fieldset-messages">
+        <div class="fr-messages-group" aria-live="polite" id="sex-1427-fieldset-messages">
         </div>
     </fieldset>
 </div>
@@ -74,7 +74,7 @@ Ce bloc se compose de :
             </label>
         </div>
     </div>
-    <div class="fr-messages-group" assert-live="assertive" id="sex-1427-fieldset-messages">
+    <div class="fr-messages-group" aria-live="polite" id="sex-1427-fieldset-messages">
     </div>
 </fieldset>
 ```
@@ -107,7 +107,7 @@ Ce bloc se compose de :
                 </select>
             </div>
         </div>
-        <div class="fr-messages-group" assert-live="assertive" id="civility-family-1432-fieldset-messages">
+        <div class="fr-messages-group" aria-live="polite" id="civility-family-1432-fieldset-messages">
         </div>
     </fieldset>
 </div>
@@ -132,7 +132,7 @@ Ce bloc se compose de :
             </select>
         </div>
     </div>
-    <div class="fr-messages-group" assert-live="assertive" id="civility-family-1432-fieldset-messages">
+    <div class="fr-messages-group" aria-live="polite" id="civility-family-1432-fieldset-messages">
     </div>
 </fieldset>
 ```
@@ -168,7 +168,7 @@ Si le nombre de titre d’appel est réduit, utiliser **des boutons radios** :
                 </label>
             </div>
         </div>
-        <div class="fr-messages-group" aria-live="assertive" id="civility-honorific-1-messages">
+        <div class="fr-messages-group" aria-live="polite" id="civility-honorific-1-messages">
         </div>
     </fieldset>
 </div>
@@ -200,7 +200,7 @@ Si le nombre de titre d’appel est réduit, utiliser **des boutons radios** :
             </label>
         </div>
     </div>
-    <div class="fr-messages-group" aria-live="assertive" id="civility-honorific-1-messages">
+    <div class="fr-messages-group" aria-live="polite" id="civility-honorific-1-messages">
     </div>
 </fieldset>
 ```
@@ -227,7 +227,7 @@ Si le nombre de titre d’appel est supérieur à 4-5, utiliser **un select** 
                 </select>
             </div>
         </div>
-        <div class="fr-messages-group" aria-live="assertive" id="civility-honorific-2-messages">
+        <div class="fr-messages-group" aria-live="polite" id="civility-honorific-2-messages">
         </div>
     </fieldset>
 </div>
@@ -252,7 +252,7 @@ Si le nombre de titre d’appel est supérieur à 4-5, utiliser **un select** 
             </select>
         </div>
     </div>
-    <div class="fr-messages-group" aria-live="assertive" id="civility-honorific-2-messages">
+    <div class="fr-messages-group" aria-live="polite" id="civility-honorific-2-messages">
     </div>
 </fieldset>
 ```

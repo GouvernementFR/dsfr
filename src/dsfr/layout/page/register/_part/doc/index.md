@@ -77,10 +77,10 @@ La page de création de compte est composée des éléments suivants :
                                             <div class="fr-input-group">
                                                 <label class="fr-label" for="username-1793">
                                                     Identifiant
-                                                    <span class="fr-hint-text">Format attendu : nom@domaine.fr</span>
+                                                    <span class="fr-hint-text">Format attendu : nom@example.com</span>
                                                 </label>
                                                 <input class="fr-input" aria-describedby="username-1793-messages" name="username" id="username-1793" type="text">
-                                                <div class="fr-messages-group" id="username-1793-messages" aria-live="assertive">
+                                                <div class="fr-messages-group" id="username-1793-messages" aria-live="polite">
                                                 </div>
                                             </div>
                                         </div>
@@ -92,14 +92,14 @@ La page de création de compte est composée des éléments suivants :
                                                 <div class="fr-input-wrap">
                                                     <input class="fr-password__input fr-input fr-password__input fr-input" aria-describedby="password-1794-input-messages" aria-required="true" name="password" autocomplete="new-password" id="password-1794-input" type="password">
                                                 </div>
-                                                <div class="fr-messages-group" id="password-1794-input-messages" aria-live="assertive">
+                                                <div class="fr-messages-group" id="password-1794-input-messages" aria-live="polite">
                                                 </div>
                                                 <div class="fr-password__checkbox fr-checkbox-group fr-checkbox-group--sm">
                                                     <input aria-label="Afficher le mot de passe" id="password-1794-show" type="checkbox" aria-describedby="password-1794-show-messages">
                                                     <label class="fr-password__checkbox fr-label" for="password-1794-show">
                                                         Afficher
                                                     </label>
-                                                    <div class="fr-messages-group" id="password-1794-show-messages" aria-live="assertive">
+                                                    <div class="fr-messages-group" id="password-1794-show-messages" aria-live="polite">
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,7 +110,7 @@ La page de création de compte est composée des éléments suivants :
                                                 <label class="fr-label" for="checkbox-cnil-1795">
                                                     Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
                                                 </label>
-                                                <div class="fr-messages-group" id="checkbox-cnil-1795-messages" aria-live="assertive">
+                                                <div class="fr-messages-group" id="checkbox-cnil-1795-messages" aria-live="polite">
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +120,7 @@ La page de création de compte est composée des éléments suivants :
                                                 <label class="fr-label" for="checkbox-cnil-1796">
                                                     Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
                                                 </label>
-                                                <div class="fr-messages-group" id="checkbox-cnil-1796-messages" aria-live="assertive">
+                                                <div class="fr-messages-group" id="checkbox-cnil-1796-messages" aria-live="polite">
                                                 </div>
                                             </div>
                                         </div>
@@ -133,7 +133,7 @@ La page de création de compte est composée des éléments suivants :
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="fr-messages-group" id="login-1797-fieldset-messages" aria-live="assertive">
+                                        <div class="fr-messages-group" id="login-1797-fieldset-messages" aria-live="polite">
                                         </div>
                                     </fieldset>
                                 </form>
@@ -245,7 +245,7 @@ Si vous souhaitez demander des informations supplémentaires sur l’utilisateur
                                             <div class="fr-input-group" id="input-group-9360">
                                                 <label class="fr-label" for="username-9351">
                                                     Identifiant
-                                                    <span class="fr-hint-text">Format attendu : nom@domaine.fr</span>
+                                                    <span class="fr-hint-text">Format attendu : nom@example.com</span>
                                                 </label>
                                                 <input class="fr-input" autocapitalize="off" autocorrect="off" aria-describedby="username-9351-messages" name="username" id="username-9351" type="text">
                                                 <div class="fr-messages-group" id="username-9351-messages" aria-live="polite">
