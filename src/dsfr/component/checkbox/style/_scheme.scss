@@ -26,6 +26,7 @@
           }
         }
       }
+
       &:indeterminate {
         + label {
           @include before {
@@ -51,6 +52,7 @@
             }
           }
         }
+
         &:indeterminate {
           & + label {
             @include before {

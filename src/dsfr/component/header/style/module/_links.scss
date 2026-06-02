@@ -85,7 +85,7 @@
 
     #{ns(translate)} {
       @include margin-bottom(-4v, lg);
-      
+
       &__language {
         @include padding-left(10v);
       }
@@ -113,7 +113,7 @@
               @include padding-x(4v);
               @include width(100%);
             }
-            
+
             @include margin(0);
           }
         }
