@@ -7,7 +7,7 @@
 $V: units.$V;
 $W: units.$W;
 
-@function _space-join($value) {
+@function _join($value) {
   @if meta.type-of($value) != list {
     @return $value;
   }
@@ -107,12 +107,12 @@ $W: units.$W;
       $end: string.unquote('');
 
       @if $c > 1 {
-        $start: _space-join(space(string.slice($value, 1, $c - 1)));
+        $start: _join(space(string.slice($value, 1, $c - 1)));
       }
 
       $l: string.length($value);
       @if $b < $l {
-        $end: _space-join(space(string.slice($value, $b + 1, $l)));
+        $end: _join(space(string.slice($value, $b + 1, $l)));
       }
 
       @return unquote('#{$start}(#{$middle})#{$end}');
