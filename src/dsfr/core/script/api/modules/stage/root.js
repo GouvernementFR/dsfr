@@ -13,7 +13,7 @@ class Root extends Element {
   listen () {
     // TODO v2 => listener au niveau des éléments qui redistribuent aux instances.
     document.documentElement.addEventListener('click', this.click.bind(this), { capture: true });
-    document.documentElement.addEventListener(window.PointerEvent ? 'pointerdown' : 'touchstart', this.interaction.bind(this), { capture: true }); // IOS
+    document.documentElement.addEventListener(window.PointerEvent ? 'pointerdown' : 'touchstart', this.interaction.bind(this), { capture: true, passive: true }); // IOS
     document.documentElement.addEventListener('keydown', this.keydown.bind(this), { capture: true });
     document.documentElement.addEventListener('keyup', this.keyup.bind(this), { capture: true });
   }
