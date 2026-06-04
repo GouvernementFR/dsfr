@@ -31,6 +31,7 @@ class TooltipReferent extends api.core.PlacementReferent {
     this.addEmission(api.core.RootEmission.KEYDOWN, this._keydown.bind(this));
     this.listen('click', this._click.bind(this));
     this.addEmission(api.core.RootEmission.CLICK, this._clickOut.bind(this));
+    this.addEmission(api.core.RootEmission.INTERACTION, this._clickOut.bind(this)); // IOS
   }
 
   _click () {
@@ -47,7 +48,16 @@ class TooltipReferent extends api.core.PlacementReferent {
       case api.core.KeyCodes.ESCAPE:
         this.close();
         break;
+
+      case api.core.KeyCodes.TAB:
+        this.request(this._tab.bind(this));
+        break;
     }
+  }
+
+  _tab () {
+    if (this.node.contains(document.activeElement) || this.placement.node.contains(document.activeElement)) return;
+    this.focusOut();
   }
 
   close () {
