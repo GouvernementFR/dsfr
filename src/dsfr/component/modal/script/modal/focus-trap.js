@@ -23,6 +23,12 @@ const ordereds = [
 
 const ORDEREDS = ordereds.join();
 
+const initialFocusables = [
+  '[tabindex="-1"]'
+].concat(ordereds, unordereds);
+
+const INITIAL_FOCUSABLES = initialFocusables.join();
+
 const IS_STUNNING = false;
 
 const isFocusable = (element, container) => {
@@ -79,7 +85,8 @@ class FocusTrap {
     if (!this.isTrapping) return;
     this.isTrapping = false;
     const focusables = this.focusables;
-    if (focusables.length && focusables.indexOf(this.window.document.activeElement) === -1) focusables[0].focus();
+    const initialFocusable = this.getInitialFocusable(focusables);
+    if (initialFocusable && focusables.indexOf(this.window.document.activeElement) === -1 && this.window.document.activeElement !== initialFocusable) initialFocusable.focus();
     this.element.setAttribute('aria-modal', true);
     this.window.addEventListener('keydown', this.handling);
     this.window.document.body.addEventListener('focus', this.focusing, true);
@@ -104,11 +111,19 @@ class FocusTrap {
   maintainFocus (event) {
     if (!this.element.contains(event.target)) {
       const focusables = this.focusables;
-      if (focusables.length === 0) return;
-      const first = focusables[0];
+      const first = this.getInitialFocusable(focusables);
+      if (!first) return;
       event.preventDefault();
       first.focus();
     }
+  }
+
+  getInitialFocusable (focusables) {
+    const first = api.internals.dom.querySelectorAllArray(this.element, INITIAL_FOCUSABLES)
+      .filter((element) => isFocusable(element, this.element))[0];
+
+    if (first && first.getAttribute('tabindex') === '-1') return first;
+    return focusables[0];
   }
 
   handle (e) {
@@ -171,7 +186,7 @@ class FocusTrap {
 
     const noDuplicates = unordereds.filter((element) => ordereds.indexOf(element) === -1);
     const concateneds = ordereds.concat(noDuplicates);
-    return concateneds.filter((element) => element.tabIndex !== '-1' && isFocusable(element, this.element));
+    return concateneds.filter((element) => element.tabIndex !== -1 && isFocusable(element, this.element));
   }
 
   untrap () {
