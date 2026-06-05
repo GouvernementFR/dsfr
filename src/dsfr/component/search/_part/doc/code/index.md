@@ -38,7 +38,7 @@ Sa structure est la suivante :
 - Le conteneur de la barre de recherche doit être un élément HTML `<div>` avec le rôle `search` défini par la classe `fr-search-bar`.
 - Le champ de recherche est un élément HTML `<input>` de type `search` défini par la classe `fr-input`.
 - Le champ de recherche doit être associée à un libellé `<label>` avec la classe `fr-label`.
-- Le bouton de recherche est un élément HTML `<button>` défini par la classe `fr-btn` et dispose d'un attribut `title` indiquant son action. Son type doit être défini à `submit` si la barre de recherche est utilisée au sein d’un formulaire, ou à `button` si elle est utilisée de manière autonome.
+- Le bouton de recherche est un élément HTML `<button>` défini par la classe `fr-btn` et dispose d'un attribut `title` indiquant son action. Son type doit être défini à `submit` pour soumettre le formulaire au click ou avec la touche "entrée".
 - Un message d'erreur ou de succès peut être associé au champ de recherche en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
   - Son attribut`id` doit être associé à l'attribut `aria-describedby` du champ de recherche.
   - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
