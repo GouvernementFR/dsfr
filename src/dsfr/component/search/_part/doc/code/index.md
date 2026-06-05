@@ -33,6 +33,8 @@ La barre de recherche est un système de navigation permettant à l'usager d’a
 #### Structure du composant
 
 Le composant **Barre de recherche** est un système de navigation qui permet à l'utilisateur d’accéder rapidement à un contenu en lançant une recherche sur un mot clé ou une expression.
+Le composant doit être utilisé dans un formulaire `<form>`, pour permettre un fonctionnement sans JS.
+
 Sa structure est la suivante :
 
 - Le conteneur de la barre de recherche doit être un élément HTML `<div>` avec le rôle `search` défini par la classe `fr-search-bar`.
