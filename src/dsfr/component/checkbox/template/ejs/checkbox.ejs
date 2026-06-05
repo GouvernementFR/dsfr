@@ -17,6 +17,8 @@
 
 * checkbox.checked (boolean, optional) : si true, la checkbox est cochée
 
+* checkbox.indeterminate (boolean, optional) : si true, l'état de la checkbox est indéterminé
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
@@ -28,6 +30,7 @@ if (checkbox.disabled === true) attributes.disabled = "";
 if (checkbox.name) attributes.name = checkbox.name;
 attributes.id = checkbox.id;
 attributes.type = "checkbox";
+if (checkbox.indeterminate === true) attributes.id += "-indeterminate";
 const describedby = [];
 const label = {
   label: checkbox.label,

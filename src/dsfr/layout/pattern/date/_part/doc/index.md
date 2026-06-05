@@ -55,7 +55,7 @@ Le bloc fonctionnel est composé de :
             <input class="fr-input" name="year" id="date-default-1578-bday-year" type="text">
         </div>
     </div>
-    <div class="fr-messages-group" id="date-default-1578-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="date-default-1578-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 </div>
@@ -95,7 +95,7 @@ Le bloc fonctionnel est composé de :
             <input class="fr-input" name="year" id="date-default-1578-bday-year" type="text">
         </div>
     </div>
-    <div class="fr-messages-group" id="date-default-1578-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="date-default-1578-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 ```

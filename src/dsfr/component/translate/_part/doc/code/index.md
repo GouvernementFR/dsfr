@@ -109,13 +109,13 @@ Le sélecteur de langue peut être utilisé avec un bouton sans bordure avec l'u
 **Exemples de sélecteur de langue sans bordure**
 
 ```HTML
-<nav role="navigation" class="fr-translate fr-nav"">
+<div class="fr-translate fr-nav">
     <div class="fr-nav__item">
         <button aria-controls="translate" aria-expanded="false" type="button" class="fr-translate__btn fr-btn fr-btn--tertiary-no-outline">FR<span class="fr-hidden-lg">&nbsp;- Français</span>
         </button>
         <!-- Liste des langues -->
     </div>
-</nav>
+</div>
 ```
 
 ---

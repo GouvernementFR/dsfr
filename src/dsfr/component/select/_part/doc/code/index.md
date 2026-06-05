@@ -55,7 +55,7 @@ Sa structure est la suivante :
         <span class="fr-hint-text">Texte de description additionnel</span>
     </label>
     <select class="fr-select" aria-describedby="select-hint-messages" id="select-hint" name="select-hint">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -112,7 +112,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-error-messages" id="select-error" name="select-error">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -135,7 +135,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-valid-messages" id="select-valid" name="select-valid">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -158,7 +158,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-disabled-messages" disabled id="select-disabled" name="select-disabled">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -186,7 +186,7 @@ Si vous disposez d’une longue liste d’options, les groupes d’options assoc
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-group-messages" id="select-group" name="select-group">
-        <option value="" selected disabled hidden>Selectionnez une option</option>
+        <option value="" selected disabled>Selectionnez une option</option>
         <optgroup label="Groupe 1">
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>

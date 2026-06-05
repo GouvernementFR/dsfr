@@ -11,7 +11,7 @@ import yaml from 'yaml';
 const linkArgTypes = {
   linkLabel: {
     control: 'text',
-    description: 'Libellé du lien "Qu\'est-ce que FranceConnect ?"',
+    description: 'Libellé du lien en dessous du bouton',
     type: {
       value: 'string'
     },
@@ -19,7 +19,7 @@ const linkArgTypes = {
   },
   linkHref: {
     control: 'text',
-    description: 'URL du lien "Qu\'est-ce que FranceConnect ?"',
+    description: 'URL du lien en dessous du bouton',
     type: {
       value: 'string'
     },
@@ -30,7 +30,7 @@ const linkArgTypes = {
 const connectArgTypes = {
   id: {
     control: 'text',
-    description: 'Attribut id du bouton franceConnect',
+    description: 'Attribut id du bouton',
     type: {
       value: 'string'
     },
@@ -42,11 +42,12 @@ const connectArgTypes = {
       labels: {
         default: 'FranceConnect',
         // agent: 'AgentConnect',
-        plus: 'FranceConnect+'
+        plus: 'FranceConnect+',
+        pro: 'ProConnect'
       }
     },
-    description: 'Variation de bouton franceConnect',
-    options: ['default', 'plus']
+    description: 'Variation de bouton',
+    options: ['default', 'plus', 'pro']
   },
   lang: {
     control: {
@@ -93,6 +94,13 @@ const connectPlusArgs = {
   id: 'france-connect-plus'
 };
 
+const connectProArgs = {
+  type: 'pro',
+  linkLabel: 'Qu\'est-ce que ProConnect ?',
+  linkHref: 'https://www.proconnect.gouv.fr',
+  id: 'pro-connect'
+};
+
 const getLang = (lang) => {
   switch (lang) {
     case 'es':
@@ -125,24 +133,30 @@ const connectProps = (args) => {
     variant: args.variant || connectArgs.variant,
     login: getLang(args.lang).default.login,
     markup: args.markup || connectArgs.markup,
-    disabled: args.disabled || connectArgs.disabled
+    disabled: args.disabled || connectArgs.disabled,
+    brand: 'FranceConnect',
+    link: {
+      label: getLang(args.lang).default.link,
+      href: args.linkHref || connectArgs.linkHref,
+      newWindow: getGlobalLang(args.lang).blank
+    }
   };
 
   switch (connect.variant) {
     // case 'agent':
     //   connect.brand = 'AgentConnect';
     //   break;
-    default:
-      connect.brand = 'FranceConnect';
+    case 'pro':
+      connect.brand = 'ProConnect';
+
+      connect.link.label = getLang(args.lang).pro.link;
+      connect.link.href = connectProArgs.linkHref;
+      break;
+    case 'plus':
+      connect.link.label = getLang(args.lang).plus.link;
+      connect.link.href = connectPlusArgs.linkHref;
+      break;
   }
-
-  const link = {
-    label: connect.variant === 'plus' ? getLang(args.lang).plus.link : getLang(args.lang).default.link,
-    href: connect.variant === 'plus' ? connectPlusArgs.linkHref : args.linkHref || connectArgs.linkHref,
-    newWindow: getGlobalLang(args.lang).blank
-  };
-
-  connect.link = link;
 
   return connect;
 };

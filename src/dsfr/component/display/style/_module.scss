@@ -1,0 +1,10 @@
+////
+/// Display Module
+/// @group display
+////
+
+#{ns(display)} {
+  #{ns(fieldset__element)}:last-child {
+    @include margin-bottom(0);
+  }
+}

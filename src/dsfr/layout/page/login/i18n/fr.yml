@@ -12,7 +12,7 @@ login:
   password: Mot de passe
   username:
     default: Identifiant
-    hint: "Format attendu : nom@domaine.fr"
+    hint: "Format attendu : nom@example.com"
   remember: Se souvenir de moi
   error: Identifiant/mot de passe incorrect
   button: Se connecter
@@ -27,7 +27,7 @@ recover:
   desc: Description — Veuillez saisir l’adresse électronique associée à votre compte. Nous vous enverrons plus d’informations sur pour réinitialiser votre mot de passe
   username:
     default: Identifiant
-    hint: "Format attendu : nom@domaine.fr"
+    hint: "Format attendu : nom@example.com"
   button: Valider
   confirmation:
     alert:
