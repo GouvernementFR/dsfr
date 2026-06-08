@@ -59,7 +59,7 @@ Pour ajouter une icône qui ne serait pas présente dans le DSFR, il est possibl
 [Facultatif] Pour fonctionner sur Internet Explorer 11, il faudra également ajouter, de préférence dans un autre fichier CSS, la règle suivante :
 
 ```CSS
-@media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
+@supports (-ms-ime-align: auto) {
   .fr-icon-custom-icon::before,
   .fr-icon-custom-icon::after {
     background-image: url("../icons/custom-icon.svg");
