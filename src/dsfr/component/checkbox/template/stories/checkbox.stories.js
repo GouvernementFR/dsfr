@@ -23,6 +23,23 @@ export const DefaultStory = {
   }
 };
 
+export const IndeterminateStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: 'checkbox-indeterminate'
+  },
+  decorators: [
+    (Story) => {
+      const script = document.createElement('script');
+      script.src = '/js/checkbox/init-indeterminate.js';
+      script.type = 'module';
+      document.head.appendChild(script);
+
+      return Story();
+    }
+  ]
+};
+
 export const SizeSmStory = {
   tags: ['autodocs', '!dev'],
   args: {

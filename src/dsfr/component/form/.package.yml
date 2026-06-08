@@ -1,7 +1,7 @@
 id: form
 title: Formulaire
 description: Ce package permet de mettre en forme les différents champs d'un formulaire, notamment en ce qui concerne les espacements et texte d'aide et d'erreur.
-doc:
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/formulaire
 wrapper: col-8
 style:
   - core

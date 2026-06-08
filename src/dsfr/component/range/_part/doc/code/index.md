@@ -56,13 +56,13 @@ Sa structure est la suivante :
 
 ```HTML
 <div class="fr-range-group">
-    <label id="range-label" class="fr-label">
+    <label for="range-1" class="fr-label">
         Libellé
         <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
     </label>
     <div class="fr-range">
-        <span class="fr-range__output">50</span>
-        <input name="range" type="range" aria-labelledby="range-label" max="100" value="50" aria-describedby="range-messages">
+        <span class="fr-range__output" aria-hidden="true">50</span>
+        <input id="range-1" name="range" type="range" max="100" value="50" aria-describedby="range-messages">
         <span class="fr-range__min" aria-hidden="true">0</span>
         <span class="fr-range__max" aria-hidden="true">100</span>
     </div>
@@ -162,13 +162,13 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 
 ```HTML
 <div class="fr-range-group fr-range-group--error">
-    <label id="range-error-label" class="fr-label">
+    <label for="range-error" class="fr-label">
         Libellé
         <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
     </label>
     <div class="fr-range">
-        <span class="fr-range__output">50</span>
-        <input id="range-error" name="range-error" type="range" aria-labelledby="range-error-label" max="100" value="50" aria-describedby="range-error-messages">
+        <span class="fr-range__output" aria-hidden="true">50</span>
+        <input id="range-error" name="range-error" type="range" max="100" value="50" aria-describedby="range-error-messages">
         <span class="fr-range__min" aria-hidden="true">0</span>
         <span class="fr-range__max" aria-hidden="true">100</span>
     </div>
@@ -186,18 +186,18 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 
 ```HTML
 <div class="fr-range-group fr-range-group--succes">
-    <label id="range-error-label" class="fr-label">
+    <label for="range-succes" class="fr-label">
         Libellé
         <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
     </label>
     <div class="fr-range">
-        <span class="fr-range__output">50</span>
-        <input name="range-error" type="range" aria-labelledby="range-error-label" max="100" value="50" aria-describedby="range-error-messages">
+        <span class="fr-range__output" aria-hidden="true">50</span>
+        <input id="range-succes" name="range-succes" type="range" max="100" value="50" aria-describedby="range-success-messages">
         <span class="fr-range__min" aria-hidden="true">0</span>
         <span class="fr-range__max" aria-hidden="true">100</span>
     </div>
-    <div class="fr-messages-group" id="range-error-messages" aria-live="polite">
-        <p class="fr-message fr-message--valid" id="select-valid-message-valid">Texte de validation</p>
+    <div class="fr-messages-group" id="range-success-messages" aria-live="polite">
+        <p class="fr-message fr-message--valid" id="range-success-message-success">Texte de validation</p>
     </div>
 </div>
 ```
@@ -210,13 +210,13 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 
 ```HTML
 <div class="fr-range-group fr-range-group--disabled">
-    <label id="range-disabled-label" class="fr-label">
+    <label for="range-disabled" class="fr-label">
         Libellé
         <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
     </label>
-    <div class="fr-range fr-range--double">
-        <span class="fr-range__output">20</span>
-        <input name="range-disabled" type="range" aria-labelledby="range-disabled-label" max="100" value="20" disabled aria-describedby="range-disabled-messages">
+    <div class="fr-range">
+        <span class="fr-range__output" aria-hidden="true">20</span>
+        <input id="range-disabled" name="range-disabled" type="range" max="100" value="20" disabled aria-describedby="range-disabled-messages">
         <span class="fr-range__min" aria-hidden="true">0</span>
         <span class="fr-range__max" aria-hidden="true">100</span>
     </div>
@@ -240,9 +240,9 @@ Le curseur double permet de disposer de deux poignées de selection pour les val
         <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
     </label>
     <div class="fr-range fr-range--double">
-        <span class="fr-range__output">25</span>
-        <input name="range-double" type="range" aria-labelledby="range-double-label" max="100" value="25" aria-describedby="range-double-messages">
-        <input name="range-double-2" type="range" aria-labelledby="range-double-label" max="100" value="75" aria-describedby="range-double-messages">
+        <span class="fr-range__output" aria-hidden="true">25 - 75</span>
+        <input id="range-double" name="range-double" type="range" aria-label="Valeur minimale" aria-labelledby="range-double range-double-label" max="100" value="25" aria-describedby="range-double-messages">
+        <input id="range-double-2" name="range-double-2" type="range" aria-label="Valeur maximale" aria-labelledby="range-double-2 range-double-label" max="100" value="75" aria-describedby="range-double-messages">
         <span class="fr-range__min" aria-hidden="true">0</span>
         <span class="fr-range__max" aria-hidden="true">100</span>
     </div>

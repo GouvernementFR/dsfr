@@ -2,6 +2,7 @@ import api from './api.js';
 import { Scheme } from './script/scheme/scheme.js';
 import { SchemeValue } from './script/scheme/scheme-value.js';
 import { SchemeSelector } from './script/scheme/scheme-selector.js';
+import { SchemeAttribute } from './script/scheme/scheme-attribute.js';
 import { SchemeEmission } from './script/scheme/scheme-emission.js';
 import { SchemeTheme } from './script/scheme/scheme-theme.js';
 import { SchemeEvent } from './script/scheme/scheme-event';
@@ -10,6 +11,7 @@ api.scheme = {
   Scheme: Scheme,
   SchemeValue: SchemeValue,
   SchemeSelector: SchemeSelector,
+  SchemeAttribute: SchemeAttribute,
   SchemeEmission: SchemeEmission,
   SchemeTheme: SchemeTheme,
   SchemeEvent: SchemeEvent
