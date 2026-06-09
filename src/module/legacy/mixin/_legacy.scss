@@ -1,32 +1,16 @@
 /// Styles spécifiques pour les plateformes antérieures
 ///
-/// @example scss -
-///   legacy.is(ie11) {
-///     .foo {
-///     }
+/// legacy.is(ie11) {
+///   .foo {
 ///   }
+/// }
 @mixin is($target) {
   @if $target == ie11 {
-    @supports (-ms-ime-align: auto) {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       @content;
     }
   }
   @else {
     @content;
-  }
-}
-
-/// Styles spécifiques pour les plateformes modernes, excluant les plateformes antérieures
-///
-/// @example scss -
-///   legacy.is-not(ie11) {
-///     .foo {
-///     }
-///   }
-@mixin is-not($target) {
-  @if $target == ie11 {
-    @supports not (-ms-high-contrast: none) {
-      @content;
-    }
   }
 }
