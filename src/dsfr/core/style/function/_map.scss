@@ -17,5 +17,9 @@
 }
 
 @function to-map($value) {
-  @return if(type-of($value) != map, (1: $value), $value);
+  @if (type-of($value) != map) {
+    @return (1: $value);
+  }
+
+  @return $value;
 }

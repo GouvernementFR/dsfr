@@ -25,7 +25,7 @@
   const items = colors.items;
   const families = colors.families;
   const decisions = colors.decisions;
-  const usages = decisions[context];
+  const usages = decisions[context]?.decisions;
 %>
 
 <% for (const usage of usages) { %>
