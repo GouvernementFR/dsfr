@@ -34,10 +34,8 @@
 }
 
 @mixin ellipsis() {
-  #{ns(ellipsis)} {
-    display: inline;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  display: inline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
