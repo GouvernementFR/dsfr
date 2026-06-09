@@ -37,10 +37,12 @@
 
 ul#{ns(grid-row)},
 ol#{ns(grid-row)} {
-  @include disable-list-style();
+  list-style-type: none;
+  @include padding(0);
+  @include margin(0);
 
-  ul:not(#{ns(raw-list)}),
-  ol:not(#{ns(raw-list)}) {
-    @include enable-list-style();
+  & > li {
+    @include padding-bottom(0);
+    @include marker(none);
   }
 }
