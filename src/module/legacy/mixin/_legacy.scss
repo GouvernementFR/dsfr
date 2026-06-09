@@ -6,7 +6,7 @@
 /// }
 @mixin is($target) {
   @if $target == ie11 {
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
       @content;
     }
   }
