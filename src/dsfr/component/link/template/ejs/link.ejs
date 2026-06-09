@@ -13,6 +13,8 @@
 
 * link.disabled (boolean, optional) : si valeur true, link désactivé
 
+* link.inText (boolean, optional) : si valeur true, n'ajoute pas la classe fr-link
+
 * link.size (string, optional) : taille du lien
   valeurs :
   * sm
@@ -47,7 +49,7 @@ const linkAttrs = link.attributes || {};
 let label = link.label || 'lorem ipsum';
 const disabled = link.disabled === true;
 linkAttrs.id = link.id || uniqueId('link');
-linkClasses.push(prefix + '-link');
+if (!link.inText) linkClasses.push(prefix + '-link');
 const markup = link.markup || 'a';
 
 switch (markup) {
