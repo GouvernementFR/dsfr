@@ -7,6 +7,12 @@
   @include display-flex(null, null, null, wrap);
   @include margin(0);
   @include padding(0);
+  @include disable-list-style();
+
+  ul,
+  ol {
+    @include enable-list-style();
+  }
 
   // Vertical alignment
   &--top {
