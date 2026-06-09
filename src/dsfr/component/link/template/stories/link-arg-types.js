@@ -1,4 +1,3 @@
-
 const iconArgTypes = {
   hasIcon: {
     if: { arg: 'download', eq: false },
