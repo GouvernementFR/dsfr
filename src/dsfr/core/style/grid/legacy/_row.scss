@@ -8,6 +8,5 @@
 @include legacy.is(ie11) {
   #{ns(grid-row)} {
     @include disable-list-style-legacy(true);
-    @include enable-list-style-legacy();
   }
 }
