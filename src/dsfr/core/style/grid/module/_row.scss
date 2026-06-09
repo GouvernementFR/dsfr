@@ -7,12 +7,6 @@
   @include display-flex(null, null, null, wrap);
   @include margin(0);
   @include padding(0);
-  @include disable-list-style();
-
-  ul,
-  ol {
-    @include enable-list-style();
-  }
 
   // Vertical alignment
   &--top {
@@ -38,5 +32,15 @@
 
   &--center {
     justify-content: center;
+  }
+}
+
+ul#{ns(grid-row)},
+ol#{ns(grid-row)} {
+  @include disable-list-style();
+
+  ul:not(#{ns(raw-list)}),
+  ol:not(#{ns(raw-list)}) {
+    @include enable-list-style();
   }
 }
