@@ -10,11 +10,11 @@ summary: Cette page décrit les classes CSS utilitaires fournies par le Design S
 order: 11
 ---
 
-## Classes CSS d'affichage
+# Classes CSS d'affichage
 
 Le Design Système de l’État (DSFR) propose des classes utilitaires CSS pour contrôler l'affichage des éléments dans vos pages web. Ces classes permettent de masquer ou d'afficher des éléments en fonction des besoins, que ce soit pour les utilisateurs finaux ou pour les technologies d'assistance comme les lecteurs d'écran.
 
-### fr-sr-only
+## fr-sr-only
 
 Cette classe cache visuellement l'élément mais il reste présent pour les lecteurs d'écran.
 
@@ -24,7 +24,7 @@ Cette classe cache visuellement l'élément mais il reste présent pour les lect
 </div>
 ```
 
-### fr-sr-only-[breakpoint]
+## fr-sr-only-[breakpoint]
 
 Cette classe cache visuellement l'élément, uniquement à partir du breakpoint souhaité (sm, md, lg, xl), mais il reste présent pour les lecteurs d'écran. Exemple en LG :
 
@@ -34,7 +34,7 @@ Cette classe cache visuellement l'élément, uniquement à partir du breakpoint 
 </div>
 ```
 
-### fr-hidden
+## fr-hidden
 
 Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au `display: none`).
 
@@ -44,7 +44,7 @@ Cette classe cache complètement l'élément, à la fois visuellement et aussi p
 </div>
 ```
 
-### fr-hidden-[breakpoint]
+## fr-hidden-[breakpoint]
 
 Cette classe cache complètement l'élément, à la fois visuellement et aussi pour les lecteurs d'écran (équivalent au `display: none`) à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
 
@@ -54,7 +54,7 @@ Cette classe cache complètement l'élément, à la fois visuellement et aussi p
 </div>
 ```
 
-### fr-unhidden-[breakpoint]
+## fr-unhidden-[breakpoint]
 
 Cette classe, associée à la classe `fr-hidden` permet de ré-afficher l'élément caché à partir du breakpoint souhaité (sm, md, lg, xl). Exemple en LG :
 

@@ -79,7 +79,7 @@ Pour ajouter une icône qui ne serait pas présente dans le DSFR, il est possibl
 
 ## Tailles
 
-Les icônes sont disponibles en quatre tailles. Il est possible de modifier la taille des icônes à l'aide de modifiers spécifiques
+Les icônes sont disponibles en quatre tailles. Il est possible de modifier la taille des icônes à l'aide de modificateurs spécifiques
 
 :::fr-table[Tailles]{valign=top multiline=true}
 
@@ -128,16 +128,16 @@ Exemples d’implémentations :
 </button>
 ```
 
-Lorsqu'il est impossible d'avoir un libellé visible, il faut à minima proposer un libellé aux technologies d’assistance via un attribut `title` et un texte caché (par exemple avec la classe `sr-only`).
+Lorsqu'il est impossible d'avoir un libellé visible, il faut à minima proposer un libellé aux technologies d’assistance via un attribut `title` et un texte caché (par exemple avec la classe `fr-sr-only`).
 
 <a href="#" title="Imprimer">
   <span aria-hidden="true" class="fr-icon-printer-line"></span>
-  <span class="sr-only">Imprimer</span>
+  <span class="fr-sr-only">Imprimer</span>
 </a>
 
 ```html
 <a href="#" title="Imprimer">
   <span aria-hidden="true" class="fr-icon-printer-line"></span>
-  <span class="sr-only">Imprimer</span>
+  <span class="fr-sr-only">Imprimer</span>
 </a>
 ```

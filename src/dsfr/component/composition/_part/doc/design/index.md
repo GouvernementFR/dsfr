@@ -188,4 +188,4 @@ La zone d’expression visuelle n’est sujette à aucun changement d’état.
 
 ### Personnalisation
 
-Le background de la zone d’expression visuelle est personnalisable et peut utiliser l’ensemble des [couleurs de la palette du DSFR](../../../../../core/_part/doc/palette/index.md) (dans la limite du respect des prérogatives liées à l’accessibilité).
+Le background de la zone d’expression visuelle est personnalisable et peut utiliser l’ensemble des [couleurs de la palette du DSFR](../../../../../core/_part/doc/color/index.md) (dans la limite du respect des prérogatives liées à l’accessibilité).

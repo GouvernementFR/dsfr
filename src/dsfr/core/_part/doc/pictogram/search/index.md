@@ -7,7 +7,7 @@ shortTitle: Rechercher un pictogramme
 description: Cette page présente l’ensemble des pictogrammes proposés dans le Design Système de l’État
 shortDescription: Liste des pictogrammes proposés dans le Design Système de l’État
 keywords: pictogrammes, pictogram, design système, DSFR, fr-artwork, iconographie, SVG, contribution
-cover: ../_asset/pictogram/cover/cover.png
+cover: ../../_asset/pictogram/cover/cover.png
 excerpt: Liste des pictogrammes proposés dans le Design Système de l’État
 summary: Cette page liste les pictogrammes présents dans le DSFR classés par catégories.
 ---
