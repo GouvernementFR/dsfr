@@ -6,15 +6,23 @@
 @mixin build-ellipsis() {
   $display-ellipsis-vars: map-get($display-vars, ellipsis);
   $buildBreakpoints: map-get($display-ellipsis-vars, breakpoints);
-  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
 
   @if ($display-ellipsis-vars != false and map-get($display-ellipsis-vars, active) != false) {
     #{ns(ellipsis)} {
       @include ellipsis();
     }
 
-    @if ($breakpointsList != false) {
-      @each $bp, $limit in $breakpointsList {
+    @if ($buildBreakpoints == all) {
+      @each $bp, $limit in $breakpoints {
+        @include respond-from($bp) {
+          #{ns(ellipsis)}-#{$bp} {
+            @include ellipsis();
+          }
+        }
+      }
+    }
+    @else if ($buildBreakpoints != false and $buildBreakpoints != null) {
+      @each $bp, $limit in $buildBreakpoints {
         @include respond-from($bp) {
           #{ns(ellipsis)}-#{$bp} {
             @include ellipsis();
@@ -26,10 +34,8 @@
 }
 
 @mixin ellipsis() {
-  #{ns(ellipsis)} {
-    display: inline;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  display: inline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

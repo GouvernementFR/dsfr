@@ -22,13 +22,13 @@
       opacity: 1;
 
       @include disabled.selector {
-        + label {
+        ~ label {
           color: graytext;
         }
       }
     }
 
-    + label {
+    ~ label {
       // @include relative;
       @include display-flex(column, flex-start, flex-start);
       @include padding-left(8v);

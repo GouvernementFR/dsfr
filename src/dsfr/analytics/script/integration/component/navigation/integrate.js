@@ -7,9 +7,9 @@ import { joinSelector } from '../../join-selector';
 
 const integrateNavigation = (selector = '') => {
   if (api.navigation) {
-    api.internals.register(joinSelector(api.navigation.NavigationSelector.NAVIGATION, selector), NavigationActionee);
+    api.internals.register(joinSelector(NavigationSelector.NAVIGATION, selector), NavigationActionee);
     api.internals.register(joinSelector(NavigationSelector.LINK, selector), NavigationLinkActionee);
-    api.internals.register(joinSelector(api.navigation.NavigationSelector.COLLAPSE, selector), NavigationSectionActionee);
+    api.internals.register(joinSelector(NavigationSelector.COLLAPSE, selector), NavigationSectionActionee);
   }
 };
 

@@ -1,32 +1,16 @@
 /// Styles spécifiques pour les plateformes antérieures
 ///
-/// @example scss -
+/// legacy.is(ie11) {
 ///   .foo {
-///     @include ie-hack() {
-///     }
 ///   }
+/// }
 @mixin is($target) {
-  @if $target == ie10 or $target == ie11 {
-    @media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+  @if $target == ie11 {
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
       @content;
     }
   }
   @else {
     @content;
-  }
-}
-
-/// Styles spécifiques pour les plateformes modernes, excluant les plateformes antérieures
-///
-/// @example scss -
-///   .foo {
-///     @include ie-hack() {
-///     }
-///   }
-@mixin is-not($target) {
-  @if $target == ie10 or $target == ie11 {
-    @supports not (-ms-high-contrast: none) {
-      @content;
-    }
   }
 }

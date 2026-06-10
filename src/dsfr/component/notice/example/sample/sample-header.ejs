@@ -13,7 +13,7 @@ const skiplinks = [
 
 <%- include('../../../../component/skiplink/template/ejs/skiplinks', { skiplink: {items: skiplinks} }, true); %>
 
-<%- include('../../../../component/header/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, navigation: true }}, true); %>
+<%- include('../../../../component/header/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, navigation: true, menu: { modalId: 'header-navigation' }}}, true); %>
 
 <div id="content">
   <%- include('../../template/ejs/notice.ejs', {notice: {type: 'info', title: 'Information importante'}}); %>

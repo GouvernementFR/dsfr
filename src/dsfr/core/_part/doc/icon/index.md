@@ -3,7 +3,7 @@ title: Icône
 shortTitle: Icônes
 description: Cette page présente l’ensemble des icônes fonctionnelles proposées dans le Design Système de l’État ainsi que les modalités d’utilisation pour les designers et les développeurs
 shortDescription: Présentation des icônes fonctionnelles et de leur intégration
-keywords: icônes, design système, DSFR, Remix Icons, fr-icon, accessibilité, iconographie, CSS, développement, sketch, figma
+keywords: icônes, icon, design système, DSFR, Remix Icons, fr-icon, accessibilité, iconographie, CSS, développement, sketch, figma
 cover: ../_asset/icon/cover/cover.png
 excerpt: Les icônes fonctionnelles permettent d’accompagner les actions de l’utilisateur dans l’interface et sont disponibles dans des librairies pour le design et le développement
 summary: Cette page détaille l’utilisation des icônes fonctionnelles dans les projets utilisant le DSFR avec une sélection issue de Remix Icons. Elle précise où retrouver les icônes dans les outils de design (Sketch et Figma) et comment les intégrer en développement via les classes CSS. Elle documente également la nouvelle organisation par catégories et les bonnes pratiques d’import pour optimiser les performances.
@@ -66,7 +66,7 @@ Pour ajouter une icône qui ne serait pas présente dans le DSFR, il est possibl
 [Facultatif] Pour fonctionner sur Internet Explorer 11, il faudra également ajouter, de préférence dans un autre fichier CSS, la règle suivante :
 
 ```CSS
-@media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
   .fr-icon-custom-icon::before,
   .fr-icon-custom-icon::after {
     background-image: url("../icons/custom-icon.svg");

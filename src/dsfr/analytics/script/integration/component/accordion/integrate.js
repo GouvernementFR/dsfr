@@ -1,10 +1,11 @@
 import api from '../../../../api';
 import { AccordionActionee } from './accordion-actionee';
 import { joinSelector } from '../../join-selector';
+import { AccordionSelector } from './accordion-selector';
 
 const integrateAccordion = (selector = '') => {
   if (api.accordion) {
-    api.internals.register(joinSelector(api.accordion.AccordionSelector.COLLAPSE, selector), AccordionActionee);
+    api.internals.register(joinSelector(AccordionSelector.COLLAPSE, selector), AccordionActionee);
   }
 };
 

@@ -55,18 +55,18 @@ $action-elements: (
   choices: (
     selector: 'input[type="checkbox"], input[type="radio"]',
     focus: (
-      selector: ' + label::before'
+      selector: ' ~ label::before'
     ),
     cursor: (
       pointer: (
-        selector: '&, & + label'
+        selector: '&, & ~ label'
       ),
       not-allowed: (
-        selector: '&:disabled, &:disabled + label'
+        selector: '&:disabled, &:disabled ~ label'
       )
     ),
     disabled: (
-      selector: '&:disabled, &:disabled + label',
+      selector: '&:disabled, &:disabled ~ label',
     )
   ),
   input-upload: (
