@@ -52,7 +52,7 @@ Il est également possible d'installer le package avec [Yarn](https://yarnpkg.c
 yarn add @gouvfr/dsfr
 ```
 
-A partir de la version 1.15.0, l'installation du package @gouvfr/dsfr nécessite l'acceptation des conditions d'utilisation du DSFR, qui sont présentées lors de l'installation. En cas de refus, le package ne sera pas installé.
+À partir de la version 1.15.0, l'installation du package @gouvfr/dsfr nécessite l'acceptation des conditions d'utilisation du DSFR, qui sont présentées lors de l'installation. En cas de refus, le package ne sera pas installé.
 
 Une fois terminé le dsfr sera alors installé dans le dossier `node_modules/@gouvfr/dsfr/`.
 
