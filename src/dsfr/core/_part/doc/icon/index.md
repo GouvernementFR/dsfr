@@ -87,7 +87,7 @@ Les icônes sont disponibles en quatre tailles. Il est possible de modifier la t
 | --- | --- | --- | --- | --- |
 | XS | `$xs` | `.fr-icon--xs` | 12x12px - 0.75rem | À utiliser avec la typographie Extra Small (XS) |
 | SM | `$sm` | `.fr-icon--sm` | 16x16px - 1rem | À utiliser avec la typographie Small (SM) |
-| MD | `$md`| `.fr-icon` | 24x24px - 1.5rem | À utiliser avec la typographie Medium (MD)Taille par défaut, aucun modifiers |
+| MD | `$md`| `.fr-icon` | 24x24px - 1.5rem | À utiliser avec la typographie Medium (MD).<br>Taille par défaut, aucun modifiers |
 | LG | `$lg` | `.fr-icon--lg` | 32x32px - 2rem | À utiliser avec la typographie Large (LG) |
 
 :::
