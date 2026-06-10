@@ -86,9 +86,9 @@ Chaque token fait référence à deux couleurs de la palette d’options : une p
 | Titre portant l’identité de l’État | `$text-title-blue-france` | `$blue-france-sun-113` | `$blue-france-625` |
 | Corps de texte | `$text-default-grey` | `$grey-200` | `$grey-850` |
 | Texte de mentions ou de détail | `$text-mention-grey` | `$grey-425` | `$grey-625` |
-| Texte de libelléExemple : éléments de formulaire | `$text-label-grey` | `$grey-50` | `$grey-1000` |
+| Texte de libellé<br> Exemple : éléments de formulaire | `$text-label-grey` | `$grey-50` | `$grey-1000` |
 | Texte cliquable important et portant l’identité de l’État<br> Exemple : bouton secondaire | `$text-action-high-blue-france` | `$blue-france-sun-113` | `$blue-france-625` |
-| Texte cliquable importantExemple : accordéon, élément de navigation | `$text-action-high-grey` | `$grey-50` | `$grey-1000` |
+| Texte cliquable important<br> Exemple : accordéon, élément de navigation | `$text-action-high-grey` | `$grey-50` | `$grey-1000` |
 | Texte ou icône contrastant en nuances de gris<br> Exemple : alerte | `$text-inverted-grey` | `$grey-1000` | `$grey-50` |
 | Texte ou icône contrastant portant l’identité de l’État<br> Exemples : bouton primaire, pagination, tag | `$text-inverted-blue-france` | `$blue-france-975` | `$blue-france-113` |
 | Texte actif portant l’identité de l’État<br> Exemples : élément de navigation, interrupteur | `$text-active-blue-france` | `$blue-france-sun-113` | `$blue-france-625` |
