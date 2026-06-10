@@ -60,7 +60,7 @@ Une fois terminé le dsfr sera alors installé dans le dossier `node_modules/@go
 
 Il est également possible de cloner le projet directement depuis Github, et de l'installer localement. Pour cela, il suffit de cloner le projet avec la commande suivante :
 
-```html
+```bash
 git clone https://github.com/GouvernementFR/dsfr.git
 ```
 
