@@ -66,7 +66,7 @@ git clone https://github.com/GouvernementFR/dsfr.git
 
 Puis de se rendre dans le dossier du projet, installer les dépendances, et compiler le projet avec les commandes suivantes :
 
-```html
+```bash
 cd dsfr
 yarn install
 yarn build
