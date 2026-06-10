@@ -7,7 +7,7 @@ shortTitle: Rechercher une icône
 description: Cette page présente l’ensemble des icônes proposées dans le Design Système de l’État
 shortDescription: Liste des icônes proposées dans le Design Système de l’État
 keywords: icônes, icon, Remix Icons, fr-icon, iconographie
-cover: ../_asset/icon/cover/cover.png
+cover: ../../_asset/icon/cover/cover.png
 excerpt: Liste des icônes proposées dans le Design Système de l’État
 summary: Cette page liste les icônes présentes dans le DSFR classées par catégories.
 ---

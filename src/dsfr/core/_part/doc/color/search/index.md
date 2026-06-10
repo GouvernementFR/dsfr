@@ -7,7 +7,7 @@ shortTitle: Rechercher une couleur
 description: Cette page présente l’ensemble des tokens de couleurs proposées dans le Design Système de l’État
 shortDescription: Liste des couleurs proposées dans le Design Système de l’État
 keywords: couleurs, colors, accent, design tokens, thème clair, thème sombre, DSFR, accessibilité, palette, personnalisation, accentuation, contextes d’usage
-cover: ../_asset/color/cover/cover.png
+cover: ../../_asset/color/cover/cover.png
 excerpt: Liste des couleurs proposées dans le Design Système de l’État
 summary: Cette page liste les couleurs présentes dans le DSFR classées par contextes et usages.
 ---
