@@ -20,6 +20,7 @@ export const CheckboxesGroupStory = {
 export const DefaultGroupStory = {
   tags: ['autodocs', '!dev'],
   args: {
+    checkboxes: getCheckboxesData()
   }
 };
 
