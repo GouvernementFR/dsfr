@@ -28,7 +28,7 @@ Le Service d’information du Gouvernement (« SIG ») vous remercie de bien vou
 - Opérateurs de l’État : désigne les entités définies chaque année dans l’annexe « Opérateurs de l'État » du projet de loi de finances de l’année en cours.
 - Paquets de codes sources : désigne les fichiers de codes sources accessibles soit par le Site de Documentation, soit par des outils tiers (Github, NPM, Figma, Sketch, Penpot).
 - Site de Documentation : désigne le site Internet du Système de Design de l'État, permettant aux Utilisateurs de naviguer, utiliser et contribuer au Système de Design de l'État, accessible sur systeme-de-design.gouv.fr.
-- Ressources : désigne les Composants, la Documentation, les Services, les Paquets de code source et les Extensions mis à disposition de l’Utilisateur et constituant ensemble le DFSR.
+- Ressources : désigne les Composants, la Documentation, les Services, les Paquets de code source et les Extensions mis à disposition de l’Utilisateur et constituant ensemble le DSFR.
 - Services : désigne les services fournis par le SIG via le Site de Documentation.
 - Services de l’État : désigne les services de l’État devant utiliser le DSFR, à savoir les administrations centrales, leurs directions, les délégations interministérielles, les préfectures, les ambassades, l’ensemble des services déconcentrés.
 - Utilisateur : désigne toute personne morale ou physique ayant utilisé les Ressources.
