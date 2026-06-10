@@ -34,7 +34,7 @@ Il est possible de télécharger le DSFR déjà compilé jusqu'à la version 1.1
 
 [Télécharger le DSFR au format zip sur Github](https://github.com/GouvernementFR/dsfr/releases)
 
-A partir de la version 1.15.0, il est nécessaire de télécharger les sources du DSFR et de les compiler soi-même, en suivant les instructions de la section "Installation via NPM" ci-dessous.
+À partir de la version 1.15.0, il est nécessaire de télécharger les sources du DSFR et de les compiler soi-même, en suivant les instructions de la section "Installation via NPM" ci-dessous.
 
 ### NPM
 
