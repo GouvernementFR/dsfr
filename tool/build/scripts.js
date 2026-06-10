@@ -6,7 +6,6 @@ const sourcemaps = require('rollup-plugin-sourcemaps');
 const virtual = require('@rollup/plugin-virtual');
 const banner2 = require('rollup-plugin-banner2');
 const path = require('path');
-// const prettier = require('rollup-plugin-prettier');
 const fs = require('fs');
 const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
@@ -50,12 +49,6 @@ const process = async (pck, data, dir, filename, minify, legacy, map, standalone
   }
 
   if (minify) input.plugins.push(terser());
-  /*
-  else {
-    input.plugins.push(prettier());
-  }
-  */
-
   try {
     const bundle = await rollup.rollup(input);
     if (pck.inject) {
