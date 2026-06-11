@@ -28,6 +28,8 @@ description:
 
       L'outil est développé, maintenu et géré par le [Service d'Information du Gouvernement (SIG)](https://www.info.gouv.fr/organisation/service-d-information-du-gouvernement-sig).
 
+      Son utilisation par les administrations est soumise à une demande d'agrément et requiert un domaine en `.gouv.fr`.
+
   contacts:
     - name: Maxime Beaugrand
       email: maxime.beaugrand@pm.gouv.fr
