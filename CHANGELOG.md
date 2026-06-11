@@ -10,6 +10,193 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 > ## DSFR v1
 
+## v1.15
+
+### [v1.15.0](https://github.com/GouvernementFR/dsfr/compare/v1.14.4...v1.15.0) - 11 Juin 2026
+
+#### ⬆️ chore(dependencies): mise à jour des dépendances npm [(#1396)](https://github.com/GouvernementFR/dsfr/pull/1396)
+
+
+#### 🐛 fix: correction du format du fichier publiccode.yml [(#1457)](https://github.com/GouvernementFR/dsfr/pull/1457)
+
+
+#### ✨ feat(cgu): mise à jour des CGU [(#1372)](https://github.com/GouvernementFR/dsfr/pull/1372)
+- Réécriture des modalités d'utilisation - CGU.md
+- Ajoute la nécessité de les accepter pour voir la documentation ou installer le dsfr
+
+
+#### 📝 docs: ajout de pages de recherche d'icones, couleurs, et pictogrammes [(#1384)](https://github.com/GouvernementFR/dsfr/pull/1384)
+- Ajout des pages de recherche d'icônes, de pictogrammes et de couleur
+- Corrections de la documentation des pictogrammes
+
+
+#### 🐛 fix(checkbox, radio): changement de selecteur des input+label [(#1380)](https://github.com/GouvernementFR/dsfr/pull/1380)
+- Rend le sélecteur du label qui suit les inputs de type radio/checkbox moins sensible à la structure du DOM.
+  - Utilisation d'un "~" plutot que "+".
+  - Impacte les composants radio, checkbox, password, segmented, form
+
+
+#### ✨ feat(analytics): ajout de l'attribut action reduce [(#1386)](https://github.com/GouvernementFR/dsfr/pull/1386)
+- Ajout de l'attribut `data-fr-analytics-action="reduce"` qui permet de désactiver l'envoi d'actions sur un élément particulier, en empêchant l'initialisation de l'instance de tracking associée à cet élément.
+- Mise à jour de la documentation analytics
+
+
+#### 🐛 fix(tooltip): correction des ouvertures/fermeture du tooltip [(#1447)](https://github.com/GouvernementFR/dsfr/pull/1447)
+- Corrige la fermeture sur IOS et la fermeture au tab
+- Une information contextuelle ne reste plus ouverte après un clic
+- Cliquer une seconde fois sur une infobulle la referme maintenant
+
+
+#### 🐛 fix(modal): décale d'une scrollbar uniquement la modale ouverte [(#1429)](https://github.com/GouvernementFR/dsfr/pull/1429)
+- Toutes les modales étaient impactées par le décalage créé pour pallier l'agrandissement de la fenêtre lié au retrait de la scrollbar lors de l'ouverture d'une modal. Cela créait, entre autres, un décalage de la navigation principale à l'ouverture d'une modale
+
+
+#### 🐛 fix: correction de la fonction sass space() [(#1444)](https://github.com/GouvernementFR/dsfr/pull/1444)
+- Corrige les espaces dans le css généré par la fonction sass space(), qui générait des valeurs incorrectes comme `calc(10%- 2rem)` 
+- L'erreur était invisible car stylelint le corrige au build
+
+
+#### 🐛 fix(tab): déplace le focus au press sur les flèches directionnelles [(#1389)](https://github.com/GouvernementFR/dsfr/pull/1389)
+- Lorsque que l'on change d'onglet au clavier, via les touches directionnelles, le focus se positionne sur le bouton actif
+
+
+#### 🐛 fix(modal): scroll au focus d'un élément caché sous le footer [(#1387)](https://github.com/GouvernementFR/dsfr/pull/1387)
+- Lorsque le focus est placé sur un élément caché sous le footer sticky de la modal, on scroll pour qu'il soit visible
+- Ajout de la propriété scroll-padding-bottom
+
+
+#### 🐛 fix(pa11y): corrections des tests automatiques Pa11y [(#1449)](https://github.com/GouvernementFR/dsfr/pull/1449)
+
+
+#### ✨ feat(grid): permet d'utiliser la grille sous forme de liste ul/li [(#1452)](https://github.com/GouvernementFR/dsfr/pull/1452)
+- Retire les puces lorsque l'on utilise une grille avec la balise ul
+
+
+#### ✨ feat(link): ajoute la variation lien au fil du texte [(#1455)](https://github.com/GouvernementFR/dsfr/pull/1455)
+- Ajoute un paramètre inText permettant de retirer le style du lien
+
+
+#### 🐛 fix: corrections du build et des dépendances [(#1453)](https://github.com/GouvernementFR/dsfr/pull/1453)
+- Corrige les templates de colors généré
+- Remplace les if ternaires dépréciés en scss
+- Corrige les dépendances et peerDependances
+
+
+#### 🐛 fix(legacy): changement de la media query de détection de IE [(#1451)](https://github.com/GouvernementFR/dsfr/pull/1451)
+- Retire le support du Windows High Contrast mode sur IE
+- Change la media-query de détection de IE ce qui permet d'éviter le crash des linter/compilateur
+
+
+#### 🐛 fix(summary): niveau de titre du sommaire [(#1390)](https://github.com/GouvernementFR/dsfr/pull/1390)
+- Le titre du sommaire peut être une balise `<p>`
+
+
+#### 📝 docs(footer): niveau de titre des catégories du menu [(#1454)](https://github.com/GouvernementFR/dsfr/pull/1454)
+
+
+#### 🐛 fix(footer): niveau de titre des catégories du menu en h2 [(#1393)](https://github.com/GouvernementFR/dsfr/pull/1393)
+- Par défaut, le titre des catégories du menu du footer sont maintenant en h2
+
+
+#### 📝 docs(*): améliore la recherche des noms anglais des composants [(#1430)](https://github.com/GouvernementFR/dsfr/pull/1430)
+- Ajout de mots-clés en anglais
+
+
+#### 📝 docs(translate): corrige le snippet de code du sélecteur de langue [(#1431)](https://github.com/GouvernementFR/dsfr/pull/1431)
+- Retrait de la balise et du role "nav"
+
+
+#### 🐛 fix(display): désactive le composant quand l'attribut HTML `data-fr-scheme` est absent [(#1434)](https://github.com/GouvernementFR/dsfr/pull/1434)
+- Corrige la marge basse dans la modale
+- Désactive le composant quand l'attribut data-fr-scheme est absent
+
+
+#### 🐛 fix(search): change l'attribut type du bouton à submit [(#1432)](https://github.com/GouvernementFR/dsfr/pull/1432)
+- Passe le type du bouton de la recherche à "submit" dans les exemples, la doc, et storybook puisque la barre de recherche doit être intégrée au sein d'un formulaire
+
+
+#### 📝 docs(select): retrait du 'hidden' sur les exemples de code [DSFR-63] [(#1424)](https://github.com/GouvernementFR/dsfr/pull/1424)
+- Correction déjà appliquée dans le code, répercutée dans la doc
+
+
+#### 📝 docs(*): corrige les liens vers la documentation des composants [(#1440)](https://github.com/GouvernementFR/dsfr/pull/1440)
+
+
+#### 🐛 fix(core): correction de sécurité sur le js des pictogrammes [(#1422)](https://github.com/GouvernementFR/dsfr/pull/1422)
+- Sur IE11 et sur la fonction dépréciée `inject-svg`, une couche sécurité permet d'éviter les injections.
+
+
+#### 🐛 fix(sidemenu): correction des éléments désactivés [(#1419)](https://github.com/GouvernementFR/dsfr/pull/1419)
+
+
+#### ✨ feat(range): utilisation de la liaison for/id sur le curseur simple [(#1407)](https://github.com/GouvernementFR/dsfr/pull/1407)
+- Corrige le contrôle Storybook "size"
+- Utilise la liaison for/id comme préconisé dans la partie accessibilité
+- Corrige les exemples du curseur double
+- Cache la valeur par défaut du curseur aux APIs d'accessibilité
+
+
+#### 🐛 fix(tooltip): empeche fermeture au click sur tooltip [(#1382)](https://github.com/GouvernementFR/dsfr/pull/1382)
+- Sur les tooltips ouverts au clic sur le btn, cliquer sur le tooltip ne ferme plus celui-ci. Ce qui permet de sélectionner et copier coller son contenu.
+
+
+#### 🐛 fix: generation des settings de couleur et lint [(#1443)](https://github.com/GouvernementFR/dsfr/pull/1443)
+
+
+#### ✨ feat: retrait des utilitaires de couleurs red-marianne [(#1385)](https://github.com/GouvernementFR/dsfr/pull/1385)
+- Retrait des utilitaires de couleurs de text, border, et background en red-marianne
+
+
+#### 🐛 fix(icons): rajoute icônes supprimées en 1.14 [(#1383)](https://github.com/GouvernementFR/dsfr/pull/1383)
+Remet en place les icônes :
+- fr--arrow-right-up-circle-fill.svg‎
+- fr--arrow-right-down-circle-fill.svg
+
+
+#### 🐛 fix(header, navigation): améliore l'affichage des éléments de l'en-tête et de la navigation en mobile [(#1367)](https://github.com/GouvernementFR/dsfr/pull/1367)
+- Uniformise les marges des raccourcis dans une liste
+- Affiche un raccourci de la même façon avec ou sans liste
+- Cache le séparateur des raccourcis quand il n'y a pas de navigation
+- Identifie comme "actif" les N1 dépliants dans la navigation
+- Aligne pas tous les éléments uniformément dans l'en-tête
+
+
+#### 📝 docs(password): lien vers les recommandation sur les mots de passe de l'ANSSI [(#1366)](https://github.com/GouvernementFR/dsfr/pull/1366)
+- L'ancien document n'est plus disponible.
+
+
+#### ✨ feat(input): améliore l'aide à la saisie des champs email et tél [(#1364)](https://github.com/GouvernementFR/dsfr/pull/1364)
+- Utilisation du texte d'aide "email@example.com" au lieu de "email@domain.com"
+- Utilisation de l'exemple de téléphone "(+33) 5 36 49 68 27" au lieu de "(+33) 1 22 33 44 55"
+
+
+#### 📝 docs(header): typo doc design header [(#1363)](https://github.com/GouvernementFR/dsfr/pull/1363)
+
+
+#### ✨ feat(checkbox): ajoute l'état indéterminé [(#1361)](https://github.com/GouvernementFR/dsfr/pull/1361)
+- Ajoute la case à cocher en état indéterminé
+
+
+#### ✨ feat(connect) : ajout du bouton proConnect [(#1388)](https://github.com/GouvernementFR/dsfr/pull/1388)
+- Ajout de la variante `fr-connect--pro` et mise à jour de la documentation
+
+
+#### 🐛 fix(sidemenu): corrige l'affichage mobile lors d'une utilisation sans accordéon [(#1403)](https://github.com/GouvernementFR/dsfr/pull/1403)
+Sans accordéon, le composant est rendu avec deux erreurs :
+- Les éléments de premier niveau sont séparés par deux bordures
+- Quand il n'y a qu'un sous-élément, une bordure est dessinée entre celui-ci et le premier niveau.
+
+
+#### 🐛 fix(tab): corrige la marge du variant viewport-width [(#1341)](https://github.com/GouvernementFR/dsfr/pull/1341)
+- Retire le calcul de marge en vw, erroné sur firefox qui compte la scrollbar dans le viewport
+
+
+#### 📝 docs(pattern, page): correction valeur aria-live des messages de formulaire [(#1438)](https://github.com/GouvernementFR/dsfr/pull/1438)
+- Remplace la valeur aria-live `assertive` par `polite`
+
+
+
+
 ## v1.14
 
 ### [v1.14.4](https://github.com/GouvernementFR/dsfr/compare/v1.14.3...v1.14.4) - 3 Mars 2026
