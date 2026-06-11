@@ -3,6 +3,24 @@
 /// @group core
 ////
 
+@mixin _build-utility-breakpoints($name, $modifier, $breakpoints-list) {
+  @each $bp in $breakpoints-list {
+    $mod: '-#{$bp}';
+    @if ($bp == xs or $bp == first) {
+      $bp: first;
+      $mod: '';
+    }
+    @if $modifier {
+      $mod: #{$mod + '-' + $modifier};
+    }
+    @include respond-from($bp) {
+      #{ns($name)}#{$mod} {
+        @content;
+      }
+    }
+  }
+}
+
 @mixin build-utility($category, $name, $modifier: null) {
   // Récupération des variables depuis src/dsfr/variables.scss
   $utilityVars: map-get($variables, $category);
@@ -11,25 +29,22 @@
     $utilityVars: to-map(map-get($utilityVars, $name));
     $breakpointsVars: map-get($utilityVars, 'breakpoints');
 
-    // breakpoints: all = xs, sm, md, lg, xl
-    $breakpointsList: if($breakpointsVars == all, map-keys($breakpoints), $breakpointsVars);
-    @if ($breakpointsList == null) { $breakpointsList: first; } // default: first
-
     // si l'utilitaire n'est pas désactivé
     @if (map-get($utilityVars, 1) != false and map-get($utilityVars, active) != false) {
-      @each $bp in $breakpointsList {
-        $mod: '-#{$bp}';
-        @if ($bp == xs or $bp == first) {
-          $bp: first;
-          $mod: '';
+      // breakpoints: all = xs, sm, md, lg, xl
+      @if ($breakpointsVars == all) {
+        @include _build-utility-breakpoints($name, $modifier, map-keys($breakpoints)) {
+          @content;
         }
-        @if $modifier {
-          $mod: #{$mod + '-' + $modifier};
+      }
+      @else if ($breakpointsVars == null) {
+        @include _build-utility-breakpoints($name, $modifier, first) {
+          @content;
         }
-        @include respond-from($bp) {
-          #{ns($name)}#{$mod} {
-            @content;
-          }
+      }
+      @else {
+        @include _build-utility-breakpoints($name, $modifier, $breakpointsVars) {
+          @content;
         }
       }
     }

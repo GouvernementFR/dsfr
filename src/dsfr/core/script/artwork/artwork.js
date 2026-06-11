@@ -1,4 +1,5 @@
 import { Instance } from '../api/modules/register/instance.js';
+import { sanitizeSvg, isSameOrigin } from '../api/utilities/sanitize-svg';
 
 class Artwork extends Instance {
   static get instanceClassName () {
@@ -24,15 +25,31 @@ class Artwork extends Instance {
     this.svgUrl = splitUrl[0];
     this.svgName = splitUrl[1];
 
+    if (!isSameOrigin(this.svgUrl)) return;
+
     const xhr = new XMLHttpRequest();
     xhr.onload = () => {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xhr.responseText, 'text/html');
       this.realSvgContent = xmlDoc.getElementById(this.svgName);
       if (this.realSvgContent) {
+        sanitizeSvg(this.realSvgContent);
         if (this.realSvgContent.tagName === 'symbol') {
-          this.use = xmlDoc.querySelector('use[href="#' + this.svgName + '"]');
-          if (this.use) this.node.parentNode.insertBefore(this.use, this.node);
+          const expectedHref = `#${this.svgName}`;
+          const uses = xmlDoc.getElementsByTagName('use');
+          this.use = null;
+          for (let i = 0; i < uses.length; i++) {
+            const use = uses[i];
+            const href = use.getAttribute('href') || use.getAttribute('xlink:href');
+            if (href === expectedHref) {
+              this.use = use;
+              break;
+            }
+          }
+          if (this.use) {
+            sanitizeSvg(this.use);
+            this.node.parentNode.insertBefore(this.use, this.node);
+          }
         } else {
           // deprecated svg structure
           this.realSvgContent.classList.add(this.node.classList);

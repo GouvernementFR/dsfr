@@ -5,6 +5,7 @@
 
 @use 'src/module/selector';
 @use 'src/module/preference';
+@use 'src/module/disabled';
 
 /**
  * Styles du bouton et du lien d'accès direct du sidemnu
@@ -41,6 +42,14 @@
     @include selector.current {
       pointer-events: none;
       cursor: default;
+    }
+
+    @include disabled.selector((can-be-link: true)) {
+      &:not([aria-current]) {
+        @include preference.forced-colors {
+          color: graytext;
+        }
+      }
     }
   }
 }

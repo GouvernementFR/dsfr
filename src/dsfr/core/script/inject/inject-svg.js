@@ -1,5 +1,6 @@
 import { Instance } from '../api/modules/register/instance.js';
 import { setAttributes } from '../api/utilities/attribute';
+import { sanitizeSvg, isSameOrigin } from '../api/utilities/sanitize-svg';
 
 class InjectSvg extends Instance {
   static get instanceClassName () {
@@ -30,14 +31,17 @@ class InjectSvg extends Instance {
       this.imgClass = this.img.getAttribute('class');
       this.imgURL = this.img.getAttribute('src');
 
+      if (!isSameOrigin(this.imgURL)) return;
+
       fetch(this.imgURL)
         .then(data => data.text())
         .then(response => {
           const parser = new DOMParser();
           const xmlDoc = parser.parseFromString(response, 'text/html');
-          this.svg = xmlDoc.querySelector('svg');
+          const rawSvg = xmlDoc.querySelector('svg');
 
-          if (this.svg) {
+          if (rawSvg) {
+            this.svg = sanitizeSvg(rawSvg);
             this.replace();
           }
         });

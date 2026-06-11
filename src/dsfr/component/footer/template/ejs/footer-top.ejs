@@ -20,13 +20,13 @@
   for (category of top.categories) {
 %>
 <div class="<%= prefix%>-col-12 <%= prefix%>-col-sm-3 <%= prefix%>-col-md-2">
-  <h3 class="<%= prefix %>-footer__top-cat">
+  <h2 class="<%= prefix %>-footer__top-cat">
     <% if (category.link) { %>
       <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...category.link, markup: 'a', label: category.label}}); %>
     <% } else { %>
       <%- category.label %>
     <% } %>
-  </h3>
+  </h2>
   <ul class="<%= prefix %>-footer__top-list">
   <%
     for (link of category.links) {

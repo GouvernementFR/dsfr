@@ -1,0 +1,12 @@
+////
+/// Core Legacy : Grid row
+/// @group core
+////
+
+@use 'src/module/legacy';
+
+@include legacy.is(ie11) {
+  #{ns(grid-row)} {
+    @include disable-list-style-legacy(true);
+  }
+}
