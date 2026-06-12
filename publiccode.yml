@@ -30,6 +30,10 @@ description:
 
       Son utilisation par les administrations est soumise à une demande d'agrément et requiert un domaine en `.gouv.fr`.
 
+legal:
+  license: etalab-2.0
+maintenance:
+  type: community
   contacts:
     - name: Maxime Beaugrand
       email: maxime.beaugrand@pm.gouv.fr
