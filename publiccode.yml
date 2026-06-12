@@ -33,7 +33,7 @@ description:
 legal:
   license: etalab-2.0
 maintenance:
-  type: community
+  type: internal
   contacts:
     - name: Maxime Beaugrand
       email: maxime.beaugrand@pm.gouv.fr
