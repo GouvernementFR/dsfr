@@ -157,14 +157,6 @@ const checkLicense = async () => {
     return true;
   }
 
-  if (!process.stdin.isTTY) {
-    log.error(
-      'Erreur: vous devez accepter les conditions générales d\'utilisation du DSFR.\n' +
-      'définissez DSFR_ACCEPT_LICENSE=1 dans votre environnement pour continuer.'
-    );
-    throw new Error('Licence non acceptée en environnement non interactif');
-  }
-
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
