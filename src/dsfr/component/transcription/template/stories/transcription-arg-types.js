@@ -26,11 +26,18 @@ const transcriptionArgTypes = {
       value: 'string'
     }
   },
+  modalTitle: {
+    control: 'text',
+    description: 'Titre de la modale de transcription (s\'affiche uniquement si la transcription est ouverte en plein écran)',
+    type: {
+      value: 'string'
+    }
+  },
   isExpanded: {
     control: 'boolean',
     description: 'Transcription ouverte par défaut',
     type: {
-      value: 'string'
+      value: 'boolean'
     }
   }
 };
@@ -39,7 +46,8 @@ const transcriptionArgs = {
   fullscreen: 'Agrandir',
   fullscreenArialLabel: 'Agrandir la transcription',
   isExpanded: false,
-  id: 'transcription-id'
+  id: 'transcription-id',
+  modalTitle: 'Titre de la transcription'
 };
 
 const transcriptionProps = (args) => {
@@ -48,6 +56,7 @@ const transcriptionProps = (args) => {
     isExpanded: args.isExpanded || transcriptionArgs.isExpanded,
     fullscreen: args.fullscreen || transcriptionArgs.fullscreen,
     fullscreenArialLabel: args.fullscreenArialLabel || transcriptionArgs.fullscreenArialLabel,
+    title: args.modalTitle || transcriptionArgs.modalTitle,
     content: content
   };
 
