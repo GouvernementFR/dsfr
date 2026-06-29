@@ -17,6 +17,7 @@ const getProjectRootFromNodeModules = () => {
   while (dir !== path.dirname(dir)) {
     if (path.basename(dir) === 'node_modules') {
       projectRoot = path.dirname(dir);
+      break;
     }
 
     dir = path.dirname(dir);
