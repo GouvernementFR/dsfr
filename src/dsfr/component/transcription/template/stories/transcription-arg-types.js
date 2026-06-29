@@ -19,7 +19,7 @@ const transcriptionArgTypes = {
       value: 'string'
     }
   },
-  fullscreenArialLabel: {
+  fullscreenAriaLabel: {
     control: 'text',
     description: 'Texte alternatif du bouton plein écran',
     type: {
@@ -44,7 +44,7 @@ const transcriptionArgTypes = {
 
 const transcriptionArgs = {
   fullscreen: 'Agrandir',
-  fullscreenArialLabel: 'Agrandir la transcription',
+  fullscreenAriaLabel: 'Agrandir la transcription',
   isExpanded: false,
   id: 'transcription-id',
   modalTitle: 'Titre de la transcription'
@@ -55,7 +55,7 @@ const transcriptionProps = (args) => {
     id: args.id || transcriptionArgs.id,
     isExpanded: args.isExpanded || transcriptionArgs.isExpanded,
     fullscreen: args.fullscreen || transcriptionArgs.fullscreen,
-    fullscreenArialLabel: args.fullscreenArialLabel || transcriptionArgs.fullscreenArialLabel,
+    fullscreenAriaLabel: args.fullscreenAriaLabel || transcriptionArgs.fullscreenAriaLabel,
     title: args.modalTitle || transcriptionArgs.modalTitle,
     content: content
   };
