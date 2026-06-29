@@ -15,6 +15,7 @@ const { I18n } = require('../classes/i18n/i18n');
 const { Config } = require('../classes/config/config');
 const fs = require('fs');
 const { execSync } = require('child_process');
+const { checkLicense } = require('../../scripts/preinstall');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);

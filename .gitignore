@@ -4,6 +4,7 @@ node_modules
 /example
 /standalone
 /storybook
+.dsfr.yml
 .archive
 .config
 .dsfr

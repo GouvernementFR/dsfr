@@ -24,7 +24,8 @@
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
     "pictogram-converter": "node tool/tool.js pictogram-converter",
-    "upgrade-nexus": "yarn upgrade @gouvfr/dsfr-nexus"
+    "upgrade-nexus": "yarn upgrade @gouvfr/dsfr-nexus",
+    "preinstall": "node scripts/preinstall.js"
   },
   "files": [
     "/dist",
