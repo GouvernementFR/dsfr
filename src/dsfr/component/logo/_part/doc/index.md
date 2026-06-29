@@ -4,6 +4,7 @@ shortTitle: Bloc marque
 titleId: Logo
 description: Présentation du composant Bloc marque, élément de la charte graphique de l'État français utilisé pour représenter l'identité visuelle de l'État.
 shortDescription: Élément de la charte graphique de l'État français utilisé pour représenter l'identité visuelle de l'État.
+keywords: Bloc marque, logo
 cover: ./_asset/cover/cover.png
 mesh:
   - component/header

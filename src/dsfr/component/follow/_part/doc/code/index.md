@@ -6,7 +6,7 @@ title: Code de la Lettre d'information et des réseaux sociaux
 shortTitle: Code de la Lettre d'information et réseaux sociaux
 description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Lettre d'information et des réseaux sociaux.
 shortDescription: Inscription à une lettre d’info et accès aux réseaux sociaux.
-keywords: lettre d’information, newsletter, réseaux sociaux, footer, interface, composant, design system, RGPD, accessibilité, usager
+keywords: lettre d’information, follow, newsletter, réseaux sociaux, footer, interface, composant, design system, RGPD, accessibilité, usager
 cover: ./_asset/cover/cover.png
 excerpt: Ce document présente le composant Lettre d’information et réseaux sociaux, destiné à favoriser l’abonnement et la consultation des comptes sociaux, avec recommandations d’intégration et règles éditoriales.
 summary: Ce contenu décrit le composant Lettre d’information et réseaux sociaux, conçu pour permettre aux usagers de s’abonner à une ou plusieurs lettres d’information et de consulter les réseaux sociaux de l’entité. Il précise les recommandations d’intégration, notamment sa position dans la page, et les consignes éditoriales telles que l’adaptation du message selon le contexte ou les mentions relatives à l’utilisation des données personnelles. Ce guide s’adresse aux équipes chargées de la conception éditoriale et technique des sites web publics.
@@ -63,10 +63,10 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
                         <form action="">
                             <div class="fr-input-group">
                                 <label class="fr-label" for="newsletter-email">
-                                    Votre adresse électronique (ex. : nom@domaine.fr)
+                                    Votre adresse électronique (ex. : nom@example.com)
                                 </label>
                                 <div class="fr-input-wrap fr-input-wrap--addon">
-                                    <input class="fr-input" title="Votre adresse électronique (ex. : nom@domaine.fr)" autocomplete="email" aria-describedby="newsletter-email-hint-text newsletter-email-messages" placeholder="Votre adresse électronique (ex. : nom@domaine.fr)" id="newsletter-email" type="email">
+                                    <input class="fr-input" title="Votre adresse électronique (ex. : nom@example.com)" autocomplete="email" aria-describedby="newsletter-email-hint-text newsletter-email-messages" placeholder="Votre adresse électronique (ex. : nom@example.com)" id="newsletter-email" type="email">
                                     <button title="S‘abonner à notre lettre d’information" type="button" class="fr-btn">S'abonner</button>
                                 </div>
                                 <div class="fr-messages-group" id="newsletter-email-messages" aria-live="polite">

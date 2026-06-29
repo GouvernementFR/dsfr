@@ -19,6 +19,14 @@ const { checkLicense } = require('../../scripts/preinstall');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
+
+  try {
+    await checkLicense();
+  } catch (e) {
+    log.error('Conditions générales d\'utilisation non acceptées. Build annulé.');
+    throw e;
+  }
+
   if (settings.clean) clean();
   if (settings.clean || settings.config || !fs.existsSync('.config/config.json')) {
     await generateConfig();

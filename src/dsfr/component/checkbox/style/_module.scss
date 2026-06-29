@@ -21,13 +21,13 @@
       opacity: 1;
 
       @include disabled.selector {
-        + label {
+        ~ label {
           color: graytext;
         }
       }
     }
 
-    + label {
+    ~ label {
       --data-uri-svg: none;
       @include relative;
       @include display-flex(row, center, flex-start, wrap);
@@ -63,7 +63,7 @@
       top: #{space(1v)};
       @include size(4v, 4v);
 
-      + label {
+      ~ label {
         @include margin-left(6v);
 
         @include before {

@@ -23,7 +23,8 @@ if (table.selectable) {
   thead.forEach((row) => {
     row.unshift({
       attributes: {
-        role: 'columnheader'
+        role: 'columnheader',
+        scope: 'col'
       },
       classes: [`${prefix}-cell--fixed${fixedBp}`],
       content: getSrOnlyCell(getText('data.cell.action.select', 'table'))
@@ -45,7 +46,8 @@ if (table.doubleEntry) {
   thead.forEach((row) => {
     row.unshift({
       attributes: {
-        role: 'columnheader'
+        role: 'columnheader',
+        scope: 'col'
       },
       classes: [`${prefix}-cell--fixed${fixedBp}`],
       content: getSrOnlyCell(getText('data.cell.doubleEntry', 'table'))

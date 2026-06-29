@@ -6,8 +6,8 @@
 #{ns(radio-group)} {
   page-break-inside: avoid;
 
-  input[type=radio]:checked + label,
-  input[type=radio] + label {
+  input[type=radio]:checked ~ label,
+  input[type=radio] ~ label {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

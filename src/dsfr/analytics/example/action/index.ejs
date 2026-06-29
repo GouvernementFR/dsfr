@@ -1,14 +1,23 @@
 <div class="<%= prefix %>-container" >
   <div>
     <h4>action activée</h4>
+    <p>Avec l'attribut data-<%= prefix %>-analytics-action="libellé envoyé à l'analytics", l'action est initialisée et activée. Le libellé envoyé à l'analytics correspond à la valeur de l'attribut.</p>
     <div class="<%= prefix %>-mb-6v">
       <button type="button" class="<%= prefix %>-btn" data-<%= prefix %>-analytics-action="libellé envoyé à l'analytics" id="action-true" >libellé du bouton</button>
     </div>
   </div>
   <div>
     <h4>action prévenue</h4>
+    <p>Avec l'attribut data-<%= prefix %>-analytics-action="false", l'action est initialisée mais non activée.</p>
     <div class="<%= prefix %>-mb-6v">
       <button type="button" class="<%= prefix %>-btn" data-<%= prefix %>-analytics-action="false" id="action-false" >libellé du bouton</button>
+    </div>
+  </div>
+  <div>
+    <h4>action retirée</h4>
+    <p>Avec l'attribut data-<%= prefix %>-analytics-action="reduce", l'action n'est pas initialisée. Et ne peut pas être activée.</p>
+    <div class="<%= prefix %>-mb-6v">
+      <button type="button" class="<%= prefix %>-btn" data-<%= prefix %>-analytics-action="reduce" id="action-reduce" >libellé du bouton</button>
     </div>
   </div>
 </div>

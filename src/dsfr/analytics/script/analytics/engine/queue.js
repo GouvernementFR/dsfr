@@ -1,4 +1,3 @@
-
 import PushType from '../facade/push-type.js';
 import push from '../facade/push.js';
 import renderer from './renderer';

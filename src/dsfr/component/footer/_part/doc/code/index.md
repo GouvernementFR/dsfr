@@ -38,7 +38,7 @@ Le composant **Pied de page** est constitué d'un élément `<footer>` de classe
   - Ce bloc doit contenir un élément `<div>` de classe `fr-container` qui permet de centrer le contenu ainsi qu'une [grille](../../../../../core/_part/doc/index.md) pour structurer les liens en colonnes.
   - Utiliser la grille avec espacement entre les colonnes `fr-grid-row--gutters`. Ajouter autant de colonnes que nécessaire pour structurer les liens.
   - Dans chaque colonne ajouter :
-    - Une catégorie de liens, optionnelle, avec un titre `<h3>`, ou autre niveau d'entête, de classe `fr-footer__top-cat`. Le libellé de la catégorie peut être un lien `<a>`.
+    - Une catégorie de liens, optionnelle, avec un titre `<h2>`, ou autre niveau d'entête, de classe `fr-footer__top-cat`. Le libellé de la catégorie peut être un lien `<a>`.
     - Une liste de liens, `<ul>` de classe `fr-footer__top-list`, avec des liens `<a>` de classe `fr-footer__top-link`.
 - Puis les blocs suivant, contenu dans un élément `<div>` de classe `fr-container` pour centrer le contenu.
   - Le corps du pied de page, un élément `<div>` de classe `fr-footer__body` contenant :
@@ -139,9 +139,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
         <div class="fr-container">
             <div class="fr-grid-row fr-grid-row--start fr-grid-row--gutters">
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -164,9 +164,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -189,9 +189,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -214,9 +214,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -239,9 +239,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -264,9 +264,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>

@@ -9,8 +9,8 @@ const summaryArgTypes = {
   },
   markup: {
     control: { type: 'select' },
-    description: 'Type de balise HTML',
-    options: ['h2', 'h3', 'h4', 'h5']
+    description: 'Type de balise HTML du titre',
+    options: ['h2', 'h3', 'h4', 'h5', 'p']
   },
   list: []
 };

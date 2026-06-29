@@ -1,7 +1,7 @@
 id: colors
 title: Utilitaires de couleur
 description:
-doc:
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/fondamentaux/couleur
 wrapper: col-8
 style:
   - core
