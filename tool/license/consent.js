@@ -1,7 +1,7 @@
 const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
 const { getCguVersion } = require('./version');
-const { log } = require('../utilities/log');
+const log = require('../utilities/log');
 
 const CONSENT_FILE_NAME = '.dsfr.yml';
 const ACCEPT_LICENSE_KEY = 'accept-license';
