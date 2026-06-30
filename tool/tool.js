@@ -12,6 +12,7 @@ const { generateNewPictogram } = require('./generate/pictogram');
 const log = require('./utilities/log');
 const { upgradeNexus } = require('./utilities/upgrade');
 const { copyFile, copyDir } = require('./utilities/file');
+const { acceptLicense } = require('./license/consent');
 
 /**
  * Build
@@ -162,6 +163,7 @@ const deployBuilder = (yargs) => {
 
 const deployHandler = async (argv) => {
   log.section('DEPLOY');
+  acceptLicense();
   await upgradeNexus();
   await build({
     styles: true,
