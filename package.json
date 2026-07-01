@@ -1,7 +1,7 @@
 {
   "name": "@gouvfr/dsfr",
-  "version": "1.15.0",
-  "description": "Système de Design de l'Etat - DSFR",
+  "version": "1.15.0-rc.3",
+  "description": "Système de Design de l'État - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "@gouvfr/dsfr-nexus": "^1.0.80",
+    "@gouvfr/dsfr-nexus": "^1.1.8",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.1.0",
     "browser-sync": ">=2.27.10",

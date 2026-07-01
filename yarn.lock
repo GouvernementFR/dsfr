@@ -659,7 +659,7 @@
   dependencies:
     "@gouvfr/dsfr-forge" "=1.1.0"
 
-"@gouvfr/dsfr-nexus@^1.0.80":
+"@gouvfr/dsfr-nexus@^1.1.8":
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.1.8.tgz#bd1d6d65d151ce4981b12fc20aff2d501cfc31ce"
   integrity sha512-zIMkAE21nkbCaPEGcAUWJK9GJq8f6dI+umfJgWcvVcKp9I8ik4zjpZBiwbYzD2rXpyZZ55mQHXydkEnvK0j/Lg==
