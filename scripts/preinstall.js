@@ -4,7 +4,14 @@ const log = require('../tool/utilities/log');
 
 const CONSENT_FILE_NAME = '.dsfr.yml';
 const ACCEPT_LICENSE_KEY = 'accept-license';
-const CREATE_DSFR_COMMAND = 'yarn create @gouvfr/dsfr';
+const ACCEPT_LICENSE_ENV = 'DSFR_ACCEPT_LICENSE';
+const CREATE_DSFR_PACKAGE = '@gouvfr/dsfr';
+const CREATE_DSFR_COMMANDS = {
+  npm: `npm create ${CREATE_DSFR_PACKAGE}`,
+  pnpm: `pnpm create ${CREATE_DSFR_PACKAGE}`,
+  yarn: `yarn create ${CREATE_DSFR_PACKAGE}`,
+  bun: `bun create ${CREATE_DSFR_PACKAGE}`
+};
 
 const getPackageRoot = () => path.join(__dirname, '..');
 
@@ -69,11 +76,31 @@ const getAcceptedLicenseVersion = (consentContent) => {
   return acceptLicenseLine.match(acceptLicenseRegExp)[1];
 };
 
+const isLicenseAcceptedFromEnv = () => process.env[ACCEPT_LICENSE_ENV] === '1';
+
+const getPackageManager = () => {
+  const userAgent = process.env.npm_config_user_agent || '';
+  const userAgentMatch = userAgent.match(/^([^/\s]+)\//);
+
+  if (userAgentMatch && CREATE_DSFR_COMMANDS[userAgentMatch[1]]) {
+    return userAgentMatch[1];
+  }
+
+  const execPath = process.env.npm_execpath || '';
+  const packageManager = Object.keys(CREATE_DSFR_COMMANDS).find(name => execPath.includes(name));
+
+  return packageManager || 'yarn';
+};
+
+const getCreateDsfrCommand = () => CREATE_DSFR_COMMANDS[getPackageManager()];
+
 const getProjectInitializationError = (message) => {
-  return new Error(`${message} Le DSFR n'est pas installé dans ce projet. Lancez \`${CREATE_DSFR_COMMAND}\` pour l'initialiser.`);
+  return new Error(`${message} Le DSFR n'est pas installé dans ce projet. Lancez \`${getCreateDsfrCommand()}\` pour l'initialiser.`);
 };
 
 const checkLicense = () => {
+  if (isLicenseAcceptedFromEnv()) return true;
+
   const cguVersion = getActualCguVersion();
 
   if (!cguVersion) {
@@ -93,7 +120,7 @@ const checkLicense = () => {
   }
 
   if (acceptedVersion !== cguVersion) {
-    throw getProjectInitializationError(`[UPDATE-${acceptedVersion}->${cguVersion}]`);
+    throw new Error(`[UPDATE-${acceptedVersion}->${cguVersion}] La version des modalités d'utilisation acceptée (${acceptedVersion}) ne correspond pas à la dernière version des modalités d'utilisation (${cguVersion}). Lancez \`${getCreateDsfrCommand()}\` pour accepter les modalités d'utilisation à jour.`);
   }
   return true;
 };
