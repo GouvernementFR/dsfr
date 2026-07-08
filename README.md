@@ -54,6 +54,9 @@ La commande create vous demandera d'accepter les modalités d'utilisation du DSF
 
 Une fois acceptées, la dépendance est ajoutée au `package.json` et une installation des dépendances sera effectuée. Le DSFR sera alors installé dans le dossier `node_modules/@gouvfr/dsfr/`, ou à l'endroit spécifié par votre gestionnaire de packages.
 
+>[!NOTE]
+>Dans un contexte d'**intégration continue** (CI), il est possible d'utiliser la variable d'environnement `DSFR_ACCEPT_LICENSE` pour accepter les modalités d'utilisation sans interaction. La valeur de cette variable doit être `1` pour accepter les conditions d'utilisation. Par exemple, avec npm : `DSFR_ACCEPT_LICENSE=1 npm install @gouvfr/dsfr`.
+
 ### Installation via Github
 
 Il est également possible de récupérer le projet DSFR directement depuis Github, et de l'installer localement. Pour cela, il suffit de cloner le projet avec la commande suivante :
