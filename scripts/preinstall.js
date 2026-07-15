@@ -87,7 +87,9 @@ const getPackageManager = () => {
   }
 
   const execPath = process.env.npm_execpath || '';
-  const packageManager = Object.keys(CREATE_DSFR_COMMANDS).find(name => execPath.includes(name));
+  const packageManager = Object.keys(CREATE_DSFR_COMMANDS)
+    .sort((a, b) => b.length - a.length)
+    .find(name => execPath.includes(name));
 
   return packageManager || 'yarn';
 };
