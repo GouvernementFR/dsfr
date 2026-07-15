@@ -52,7 +52,7 @@ Le composant **Modale** s’appuie sur le motif de conception ARIA <span lang="e
 - La modale a un titre de niveau `h2` à `h6`, en fonction de son positionnement dans le DOM, ou sous forme de balise `<p>`.
 - Le focus est placé sur le premier élément focalisable de la modale lors de son ouverture. Et replacé sur le bouton d’ouverture de la modale ou à un endroit approprié si le bouton disparaît lors de sa fermeture.
 - Le focus est capturé à l’intérieur de la modale tant qu’elle n’est pas fermée.
-- Lorsque la modale est ouverte, l’arrière-plan est figé et non focalisable. L’attribut `data-fr-scrolling="false"` est utilisé à cet effet sur le conteneur principal de la page.
+- Lorsque la modale est ouverte, le défilement de la page est bloqué. L’attribut `data-fr-scrolling="false"` est appliqué sur l’élément `<html>`.
 
 > [!TIP]
 > Le role="dialog" n’est plus nécessaire sur l’élément HTML `<dialog>`.
