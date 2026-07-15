@@ -45,8 +45,8 @@ Le composant **Modale** est conçu pour être accessible et respecter les critè
 
 Le composant **Modale** s’appuie sur le motif de conception ARIA <span lang="en">Dialog</span> de l’<a href="https://www.w3.org/WAI/ARIA/apg/about/introduction/" lang="en">Authoring Practices Guide</a> (APG).
 
-- L’élément qui déclenche l’ouverture de la fenêtre modale doit être un `button`.
-- La modale utilise l’élément HTML `<dialog>` ou l’attribut `role="dialog"`.
+- L’élément qui déclenche l’ouverture de la fenêtre modale doit être un `button`. Il est possible d'ouvrir la modale programmatiquement au moyen d'un script, mais il faudra s'assurer que le focus est replacé sur un endroit approprié après la fermeture de la modale.
+- La modale utilise l’élément HTML `<dialog>` ou l’attribut `role="dialog"`. Si aucun de ces deux éléments n’est utilisé, le JavaScript du DSFR ajoute automatiquement l’attribut `role="dialog"` à l’ouverture de la modale et le retire à la fermeture.
 - Elle dispose d’un attribut `aria-modal="true"` uniquement lorsqu’elle est affichée (le JavaScript du DSFR l’ajoute à l’ouverture et le retire à la fermeture).
 - La modale doit avoir un **nom accessible**. Elle est nommée avec un attribut `aria-labelledby` défini sur l’ID du titre de la fenêtre modale.
 - La modale a un titre de niveau `h2` à `h6`, en fonction de son positionnement dans le DOM, ou sous forme de balise `<p>`.
