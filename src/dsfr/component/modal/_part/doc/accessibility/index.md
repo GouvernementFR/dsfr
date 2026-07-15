@@ -46,15 +46,16 @@ Le composant **Modale** est conçu pour être accessible et respecter les critè
 Le composant **Modale** s’appuie sur le motif de conception ARIA <span lang="en">Dialog</span> de l’<a href="https://www.w3.org/WAI/ARIA/apg/about/introduction/" lang="en">Authoring Practices Guide</a> (APG).
 
 - L’élément qui déclenche l’ouverture de la fenêtre modale doit être un `button`.
-- La modale utilise l’élément HTML `<dialog>`.
-- Elle dispose d’un attribut `aria-modal="true"` pour indiquer aux lecteurs d'écran que l’élément est une modale lorsqu'il est affiché.
+- La modale utilise l’élément HTML `<dialog>` ou un role `dialog`.
+- Elle dispose d’un attribut `aria-modal="true"` lorsqu'elle est affichée pour indiquer aux lecteurs d'écran que l’élément est une modale.
 - La modale doit avoir un **nom accessible**. Elle est nommée avec un attribut `aria-labelledby` défini sur l’ID du titre de la fenêtre modale.
 - La modale a un titre de niveau `h2` à `h6`, en fonction de son positionnement dans le DOM, ou sous forme de balise `<p>`.
+- Le focus est placé sur le premier élément focalisable de la modale lors de son ouverture. Et replacé sur le bouton d’ouverture de la modale ou à un endroit approprié si le bouton disparaît lors de sa fermeture.
+- Le focus est capturé à l’intérieur de la modale tant qu’elle n’est pas fermée.
+- Lorsque la modale est ouverte, l’arrière-plan est figé et non focalisable. L’attribut `data-fr-scrolling="false"` est utilisé à cet effet sur le conteneur principal de la page.
 
 > [!TIP]
 > Le role="dialog" n’est plus nécessaire sur l’élément HTML `<dialog>`.
->
->Pour que le focus soit bien capturé à l’intérieur de la modale, utiliser la méthode `showModal()` avec l’élément `<dialog>`.
 
 ### Restitution par les lecteurs d’écran
 
