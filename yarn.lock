@@ -447,9 +447,9 @@
     chalk "^4.0.0"
 
 "@emnapi/runtime@^1.7.0":
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.11.1.tgz#58f1f3d5d81a9b12f793ab688c96371901027c24"
-  integrity sha512-vgj7R3y3Wgx24IQaGPA/R6YFXLHVMOZ0uVEyIQPaWs+rd1AzfEMXlAC22FYwO1XkKR6NPsq7mUandH8oIRdZFw==
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.11.2.tgz#eb22f04d76febfdf4f87fdaff54c8a53f6bf0dbd"
+  integrity sha512-kyOl3X0DuTiT1h2ft8r2fYO8JYtU9a9Xis/zBSiGArNaagCOWx90N1k2wxp18czFDH+OgcWGb5ZP/XMt3dcyPA==
   dependencies:
     tslib "^2.4.0"
 
@@ -645,6 +645,17 @@
     prettier "^3.3.3"
     yaml "^2.8.2"
 
+"@gouvfr/dsfr-forge@=1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-forge/-/dsfr-forge-1.1.1.tgz#49535d2956a13e32c40edabeede292ffc30455ff"
+  integrity sha512-GPR8Rd/mufdnCzm7wddDy0oflUTVVXYpZIMg21WuAZbhe65uu0JnLsCWoO50ITrGZv2AL4BHBdvwWdAwTyRZvA==
+  dependencies:
+    "@gouvfr/dsfr-kit" "=1.1.0"
+    "@prettier/plugin-php" "^0.24.0"
+    "@zackad/prettier-plugin-twig" "^0.16.0"
+    prettier "^3.3.3"
+    yaml "^2.8.2"
+
 "@gouvfr/dsfr-kit@=1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-kit/-/dsfr-kit-1.1.0.tgz#ebab7404d5b0cd82445c170b2b0c313a507420fb"
@@ -652,23 +663,23 @@
   dependencies:
     yaml "^2.8.2"
 
-"@gouvfr/dsfr-lore@=1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.1.8.tgz#1aa8e085c378fad5abb57a51006f0d18407f0717"
-  integrity sha512-QA1Pf1OmkvP9jomInjNLdmKAhtFNx+D3i7FKOHNKdhlGxkK2kuDeY1psgS9UrvW1uunt4u0MTdgQcsPgMZ7iUw==
+"@gouvfr/dsfr-lore@=1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.2.2.tgz#237c0d874c73d98f0168d354551810c16eb3d880"
+  integrity sha512-absNio5HnZHAjzWNAcqwrYqgjvfLx3lphC2iVoS8xUXu1UllZU5mT925c415/uLk1wB+BuHrNE7DIBzQ52jJyA==
   dependencies:
-    "@gouvfr/dsfr-forge" "=1.1.0"
+    "@gouvfr/dsfr-forge" "=1.1.1"
 
-"@gouvfr/dsfr-nexus@^1.0.80":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.1.8.tgz#bd1d6d65d151ce4981b12fc20aff2d501cfc31ce"
-  integrity sha512-zIMkAE21nkbCaPEGcAUWJK9GJq8f6dI+umfJgWcvVcKp9I8ik4zjpZBiwbYzD2rXpyZZ55mQHXydkEnvK0j/Lg==
+"@gouvfr/dsfr-nexus@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.2.2.tgz#a792232a7b74067b78fe5c0eeb77b754dfe945b2"
+  integrity sha512-gBfMH/Y8D9F1dvsh2Kx9HyF9Hy03AW3s8p8QUaMcRRB5jpotqtwCll+9ed5APAET6df9Nh11Vg6TNTjedbVrlA==
   dependencies:
     "@gouvfr/dsfr-alchemist" "=1.1.0"
-    "@gouvfr/dsfr-forge" "=1.1.0"
+    "@gouvfr/dsfr-forge" "=1.1.1"
     "@gouvfr/dsfr-kit" "=1.1.0"
-    "@gouvfr/dsfr-lore" "=1.1.8"
-    "@gouvfr/dsfr-roller" "=1.1.8"
+    "@gouvfr/dsfr-lore" "=1.2.2"
+    "@gouvfr/dsfr-roller" "=1.2.2"
     browser-sync "^3.0.3"
     mdast-util-directive "^3.0.0"
     mdast-util-from-markdown "^2.0.1"
@@ -683,19 +694,19 @@
     yaml "^2.4.1"
     yargs "^17.7.2"
 
-"@gouvfr/dsfr-publisher@npm:@gouvfr/dsfr@1.15.0-rc.2":
-  version "1.15.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.15.0-rc.2.tgz#c0746f37eaa554494f1e242d8fbe3125164b945c"
-  integrity sha512-9wnizdERlzU+izHYcYULvcTc8nrUnhEbyAL1+hg8Cs8HQnZMO67Wcq8pUXCuGDA0GkBR8OuyUulju4Rfr7l9Bw==
+"@gouvfr/dsfr-publisher@npm:@gouvfr/dsfr@1.15.0-rc.3":
+  version "1.15.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.15.0-rc.3.tgz#4413b59684bff1a4665dd3c9f8aa4538c7c2d627"
+  integrity sha512-ZaH3JMT2+6es6jomb3JPvMGhW3vQJX6ZcW168S3juLiyhAAPq1c0jrPoEd1civSkRCqjn2XiU1smhJo3nRIu2w==
 
-"@gouvfr/dsfr-roller@=1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.1.8.tgz#0ad575c9b60451510628dbdb676a16390b69e7a1"
-  integrity sha512-2gd9FYqIuDbzZlVpxWeZlRWoZeg4BhSnW39KotmSLEx/h2JCGKBbMzm0TaHvlXDyDCFQU1+dY823fJQrEK1qFg==
+"@gouvfr/dsfr-roller@=1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.2.2.tgz#0ba2e0a794eceb14af82f41d78374e901896f801"
+  integrity sha512-89xLu7Wx5lPgryIpCEXDef+UkBO+JlCVPdd8DP4DUM16o33YttEi8NeqKv/saf4XnZkRqPdtDxbjeJSXE5S4Hg==
   dependencies:
-    "@gouvfr/dsfr-forge" "=1.1.0"
+    "@gouvfr/dsfr-forge" "=1.1.1"
     "@gouvfr/dsfr-kit" "=1.1.0"
-    "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.15.0-rc.2"
+    "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.15.0-rc.3"
     deepmerge "^4.3.1"
     ejs "^3.1.10"
     yaml "^2.4.1"
@@ -1429,9 +1440,9 @@
   integrity sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==
 
 "@types/node@*", "@types/node@>=10.0.0":
-  version "26.0.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.0.1.tgz#4a60e2c7a6d68bd261e265f8983bfe1601263ce3"
-  integrity sha512-fc3KiUoBt6kie0N9bIW3E47vZsuaMf0PM2AaUpLCLT0s/LvX1nxAim6Fc049cNxODPpGm6qRAuUOB86SkRuPQw==
+  version "26.1.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.1.1.tgz#bad758d601e97d6cf457d204ee76a35fce7bd119"
+  integrity sha512-nxAkRSVkN1Y0JC1W8ky/fTfkGsMmcrRsbx+3XoZE+rMOX71kLYTV7fLXpqud1GpbpP5TuffXFqfX7fH2GgZREw==
   dependencies:
     undici-types "~8.3.0"
 
@@ -1997,17 +2008,17 @@ boolbase@^1.0.0:
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
 
 brace-expansion@^1.1.7:
-  version "1.1.15"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.15.tgz#a6d90d54067236e5f42570a3b7378d594d9b7738"
-  integrity sha512-EwOCDEex4quD37XhqM3omwtMoJjr//isUZz1JopUNWms+4Z2ViyM/k1YIRePpoVNnQhENnxtFjLaxNHrT7xIUg==
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.16.tgz#723d3a30c0558c225abc9fc479a73e14e26c3c2f"
+  integrity sha512-IDw48K2/2kRkg9LdJxurvq3lV3aBgq0REY89duEqFRthjlPdXHKMj7EnQOXVckxzgisinf3nHfrcE2FufFLXMw==
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
 brace-expansion@^2.0.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-2.1.1.tgz#c68b1c4111c76aae3a6fba55d496cee10c39dad8"
-  integrity sha512-WR1cURNjuvBLMZBMbqM0UoE+WAfdUcEV1ccD8PVBVOI+Z3ND4+SZbN8RsfT2bMuG1qwz5RFvPukSZm5fF2D5eA==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-2.1.2.tgz#0bba2271feb7d458b0d31ad13625aaa4754431e2"
+  integrity sha512-w5JZcKgdhDOgOwm8H+KgbosopHMuGcl6qbulwjtz3SM7I7P3yW1eAjzMPLrIE+NQ9vjgANKHWeMHnrT0OXW1oA==
   dependencies:
     balanced-match "^1.0.0"
 
@@ -6925,9 +6936,9 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.2, picomatch@^2.2.3, picomatc
   integrity "sha1-WpQpFeJrNy3A8OZ1MUmhbmscVgE= sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA=="
 
 picomatch@^4.0.3:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-4.0.4.tgz#fd6f5e00a143086e074dffe4c924b8fb293b0589"
-  integrity sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-4.0.5.tgz#51ea57a17d86f605f81039595fbc40ed06a55fab"
+  integrity sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==
 
 pify@^4.0.1:
   version "4.0.1"
@@ -7274,9 +7285,9 @@ prelude-ls@^1.2.1:
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
 prettier@^3.0.0, prettier@^3.3.3:
-  version "3.9.4"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.9.4.tgz#a9c477cf1614376bd1f6bbc593d8c0d414bcec87"
-  integrity sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg==
+  version "3.9.5"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.9.5.tgz#4fec97736e33b9d0b620b48914fe93b530e835ad"
+  integrity sha512-/FVl766LpUfB5vXgCYOYa0MeV/441Ia99AeICQIQFTY/Nw0roZwULcXpku5i1/m5kt/baz+s4Zogspd839HSMg==
 
 pretty-format@^27.5.1:
   version "27.5.1"
@@ -8086,9 +8097,9 @@ socket.io-client@^4.4.1:
     socket.io-parser "~4.2.4"
 
 socket.io-parser@~4.2.4:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/socket.io-parser/-/socket.io-parser-4.2.6.tgz#19156bf179af3931abd05260cfb1491822578a6f"
-  integrity sha512-asJqbVBDsBCJx0pTqw3WfesSY0iRX+2xzWEWzrpcH7L6fLzrhyF8WPI8UaeM4YCuDfpwA/cgsdugMsmtz8EJeg==
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/socket.io-parser/-/socket.io-parser-4.2.7.tgz#679e51fe24d1c81df90fc5f7efe4a5f432fe99c0"
+  integrity sha512-IH/iSeO9T6gz1KkFleGDWkG9N3dl4jXVYUtMhIqH10Md0ttMer8nUNWiP1DKuNrybD2xBrixLJdCC9J6ECoYkg==
   dependencies:
     "@socket.io/component-emitter" "~3.1.0"
     debug "~4.4.1"
@@ -9270,9 +9281,9 @@ ws@^7.2.3, ws@^7.4.6:
   integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
 
 ws@~8.21.0:
-  version "8.21.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.21.0.tgz#012e413fc07429945121b0c153158c4343086951"
-  integrity sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==
+  version "8.21.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.21.1.tgz#045650cd4b1207809e7547146223c3814a9af586"
+  integrity sha512-+0NTnW77fFN/DjQi6k/Sq/Yvk4Sgajw7urW8V+asjXnRgDs9gyGkdb7EzgfhA4goXsRIZKE28fzIXBHEzhuiWw==
 
 xdg-basedir@^4.0.0:
   version "4.0.0"
