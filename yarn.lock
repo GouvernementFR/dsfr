@@ -670,23 +670,23 @@
   dependencies:
     yaml "^2.8.2"
 
-"@gouvfr/dsfr-lore@=1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.2.3.tgz#0b48b601b6bcb788d71cb941e7aaf5021a8fecc4"
-  integrity sha512-Lkd1rKmb0rbSlk3VLHTK/xmUeIKGFwW+MhlhVPGEhAYqU5bsvvYBIADCPv0w9Lpl1bBoex0dIJD0cr1FPAocdA==
+"@gouvfr/dsfr-lore@=1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.2.4.tgz#f7f8b2b084b7908b38c6d37a38391a36cf86f492"
+  integrity sha512-qW0fP47F0nWBO0E1/iB/oYvlTu03ntuAA5zaLTBTInMD7+ewuTG5X9M2cvCl/Nzvu9QbYjmWBASY4vlByVxyWQ==
   dependencies:
     "@gouvfr/dsfr-forge" "=1.1.1"
 
-"@gouvfr/dsfr-nexus@^1.2.2":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.2.3.tgz#0a5a138e90f9dd0d24b92c9647de1cd48a5113b1"
-  integrity sha512-cvHVIRyDEWq6GEFrcO+hNd1dCwk2hzeRwzDbi/8cYhp0PV5I0N8fQkEC/6ZGRLyh9CueSlcXI90fod6pmZcriQ==
+"@gouvfr/dsfr-nexus@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.2.4.tgz#5461385122f14d50997a0820e6b7bc4e1c0dd0cd"
+  integrity sha512-3uhnn+5w3aBMXk9iuPbyCWbkvJH3UpHxSfK9cqS8ABWVanpvLXXgreVkQrRQEy9D82qj1OQOPtcCUvQ2E3duaw==
   dependencies:
     "@gouvfr/dsfr-alchemist" "=1.1.0"
     "@gouvfr/dsfr-forge" "=1.1.1"
     "@gouvfr/dsfr-kit" "=1.1.1"
-    "@gouvfr/dsfr-lore" "=1.2.3"
-    "@gouvfr/dsfr-roller" "=1.2.3"
+    "@gouvfr/dsfr-lore" "=1.2.4"
+    "@gouvfr/dsfr-roller" "=1.2.4"
     browser-sync "^3.0.3"
     mdast-util-directive "^3.0.0"
     mdast-util-from-markdown "^2.0.1"
@@ -706,10 +706,10 @@
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr/-/dsfr-1.15.0-rc.3.tgz#4413b59684bff1a4665dd3c9f8aa4538c7c2d627"
   integrity sha512-ZaH3JMT2+6es6jomb3JPvMGhW3vQJX6ZcW168S3juLiyhAAPq1c0jrPoEd1civSkRCqjn2XiU1smhJo3nRIu2w==
 
-"@gouvfr/dsfr-roller@=1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.2.3.tgz#570b69b5af060882a065f7de146b96bd343c6c45"
-  integrity sha512-49Jy2otjXkNjYEpPeCaZO0klQu+X4UDxTQIc7aFDAZC/a71+N5tzbpt+9MumBvQDfvk1rP17L3nbC/6WycKLLg==
+"@gouvfr/dsfr-roller@=1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.2.4.tgz#d6b002c834fb9feacff6cf1bd9c10caedfff86dd"
+  integrity sha512-P39rBT88AnUvKISQyd6sZARpYgMW8lwzL7aeEHs77SAQ2iHXcjPqtUO/8JBbf3ZNKPgkIkc28oyhwxgHBxOQNA==
   dependencies:
     "@gouvfr/dsfr-forge" "=1.1.1"
     "@gouvfr/dsfr-kit" "=1.1.1"
