@@ -67,7 +67,7 @@ Sa structure est la suivante :
 
 ```HTML
 <button data-fr-opened="false" aria-controls="modal" type="button" class="fr-btn">Modale simple</button>
-<dialog id="modal" class="fr-modal" aria-labelledby="modal-title" aria-modal="true">
+<dialog id="modal" class="fr-modal" aria-labelledby="modal-title">
     <div class="fr-container fr-container--fluid fr-container-md">
         <div class="fr-grid-row fr-grid-row--center">
             <div class="fr-col-12 fr-col-md-8 fr-col-lg-6">
@@ -193,7 +193,7 @@ La **zone d’action** de la modale peut être placée en haut de la modale sur 
 **Exemple de modale avec zone d'action ancré en haut en mobile**
 
 ```HTML
-<dialog id="modal-action-top" class="fr-modal fr-modal--top" aria-labelledby="modal-action-top-title" aria-modal="true">
+<dialog id="modal-action-top" class="fr-modal fr-modal--top" aria-labelledby="modal-action-top-title">
     <!-- Contenu de la modale -->
 </dialog>
 ```
@@ -205,7 +205,7 @@ Par défaut la modale se referme au clic sur le fond de la page, il est possible
 **Exemple de modale simple non refermable au clic sur le fond**
 
 ```HTML
-<dialog id="modal-backdrop" class="fr-modal" aria-labelledby="modal-backdrop-title" aria-modal="true" data-fr-concealing-backdrop="false">
+<dialog id="modal-backdrop" class="fr-modal" aria-labelledby="modal-backdrop-title" data-fr-concealing-backdrop="false">
     <!-- Contenu de la modale -->
 </dialog>
 ```
