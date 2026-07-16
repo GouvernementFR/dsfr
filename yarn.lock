@@ -677,7 +677,7 @@
   dependencies:
     "@gouvfr/dsfr-forge" "=1.1.1"
 
-"@gouvfr/dsfr-nexus@^1.2.4":
+"@gouvfr/dsfr-nexus@^1.2.5":
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.2.5.tgz#dd7c2c2a13f5a4632d5bc808819297e70a0738f0"
   integrity sha512-ZYMP0FI/LTl/JP4ZXsVKrNryc3hfDK93ApfdIiu9WXKqR55LOAW6hNfImCg6TA9fqAkxxrsRuSO5X8X5M3TswA==
