@@ -1,3 +1,1344 @@
+- id: v1.15.0
+  date: 2026-07-17
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.0
+  commits:
+    - id: "1480"
+      type: docs
+      scopes:
+        - modal
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: correction des extraits de code
+      pull: https://github.com/GouvernementFR/dsfr/pull/1480
+    - id: "1476"
+      type: fix
+      scopes: []
+      description: >-
+        - Ajout de la variable d'environnement DSFR_ACCEPT_LICENSE=1 pour
+        considérer la licence comme acceptée sans lecture de .dsfr.yml (pour les
+        CI)
+
+        - Amélioration des messages d'erreurs
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: amélioration du script preinstall & variable d'environnement
+      pull: https://github.com/GouvernementFR/dsfr/pull/1476
+    - id: "1479"
+      type: docs
+      scopes:
+        - modal
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: correction doc accessibilité de la modale
+      pull: https://github.com/GouvernementFR/dsfr/pull/1479
+    - id: "1467"
+      type: fix
+      scopes:
+        - grid
+      description: |-
+        * Corrige l'utilisation de ul et ol avec des gouttières
+        * Corrige la numérotation pour les listes ordonnées
+        * Retire la partie legacy inutile
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: permet d'utiliser la grille sous forme de liste
+      pull: https://github.com/GouvernementFR/dsfr/pull/1467
+    - id: "1465"
+      type: fix
+      scopes:
+        - transcription
+      description: >-
+        - Ajoute la possibilité de paramétrer le titre de la modal de
+        transcription dans le storybook
+
+        - Correction de la documentation transcription
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: corrige la démo et ajoute le titre de la modale
+      pull: https://github.com/GouvernementFR/dsfr/pull/1465
+    - id: "1471"
+      type: feat
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: modifie la manière d'installer le dsfr
+      pull: https://github.com/GouvernementFR/dsfr/pull/1471
+    - id: "1468"
+      type: fix
+      scopes:
+        - skiplinks
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: retrait des skiplinks en version print
+      pull: https://github.com/GouvernementFR/dsfr/pull/1468
+    - id: "1463"
+      type: fix
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: correction du script d'acceptation des cgu à l'installation
+      pull: https://github.com/GouvernementFR/dsfr/pull/1463
+    - id: "1460"
+      type: fix
+      scopes:
+        - publiccode
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: corrige le format et ajout licence
+      pull: https://github.com/GouvernementFR/dsfr/pull/1460
+    - id: "1396"
+      type: chore
+      scopes:
+        - dependencies
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.15.0
+      title: mise à jour des dépendances npm
+      pull: https://github.com/GouvernementFR/dsfr/pull/1396
+    - id: "1457"
+      type: fix
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: correction du format du fichier publiccode.yml
+      pull: https://github.com/GouvernementFR/dsfr/pull/1457
+    - id: "1372"
+      type: feat
+      scopes:
+        - cgu
+      description: >-
+        - Réécriture des modalités d'utilisation - CGU.md
+
+        - Ajoute la nécessité de les accepter pour voir la documentation ou
+        installer le dsfr
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: mise à jour des CGU
+      pull: https://github.com/GouvernementFR/dsfr/pull/1372
+    - id: "1384"
+      type: docs
+      scopes: []
+      description: |-
+        - Ajout des pages de recherche d'icônes, de pictogrammes et de couleur
+        - Corrections de la documentation des pictogrammes
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: ajout de pages de recherche d'icones, couleurs, et pictogrammes
+      pull: https://github.com/GouvernementFR/dsfr/pull/1384
+    - id: "1380"
+      type: fix
+      scopes:
+        - checkbox
+        - radio
+      description: >-
+        - Rend le sélecteur du label qui suit les inputs de type radio/checkbox
+        moins sensible à la structure du DOM.
+          - Utilisation d'un "~" plutot que "+".
+          - Impacte les composants radio, checkbox, password, segmented, form
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: changement de selecteur des input+label
+      pull: https://github.com/GouvernementFR/dsfr/pull/1380
+    - id: "1386"
+      type: feat
+      scopes:
+        - analytics
+      description: >-
+        - Ajout de l'attribut `data-fr-analytics-action="reduce"` qui permet de
+        désactiver l'envoi d'actions sur un élément particulier, en empêchant
+        l'initialisation de l'instance de tracking associée à cet élément.
+
+        - Mise à jour de la documentation analytics
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: ajout de l'attribut action reduce
+      pull: https://github.com/GouvernementFR/dsfr/pull/1386
+    - id: "1447"
+      type: fix
+      scopes:
+        - tooltip
+      description: |-
+        - Corrige la fermeture sur IOS et la fermeture au tab
+        - Une information contextuelle ne reste plus ouverte après un clic
+        - Cliquer une seconde fois sur une infobulle la referme maintenant
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: correction des ouvertures/fermeture du tooltip
+      pull: https://github.com/GouvernementFR/dsfr/pull/1447
+    - id: "1429"
+      type: fix
+      scopes:
+        - modal
+      description: "- Toutes les modales étaient impactées par le décalage créé pour
+        pallier l'agrandissement de la fenêtre lié au retrait de la scrollbar
+        lors de l'ouverture d'une modal. Cela créait, entre autres, un décalage
+        de la navigation principale à l'ouverture d'une modale"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: décale d'une scrollbar uniquement la modale ouverte
+      pull: https://github.com/GouvernementFR/dsfr/pull/1429
+    - id: "1444"
+      type: fix
+      scopes: []
+      description: >-
+        - Corrige les espaces dans le css généré par la fonction sass space(),
+        qui générait des valeurs incorrectes comme `calc(10%- 2rem)` 
+
+        - L'erreur était invisible car stylelint le corrige au build
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: correction de la fonction sass space()
+      pull: https://github.com/GouvernementFR/dsfr/pull/1444
+    - id: "1389"
+      type: fix
+      scopes:
+        - tab
+      description: "- Lorsque que l'on change d'onglet au clavier, via les touches
+        directionnelles, le focus se positionne sur le bouton actif"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: déplace le focus au press sur les flèches directionnelles
+      pull: https://github.com/GouvernementFR/dsfr/pull/1389
+    - id: "1387"
+      type: fix
+      scopes:
+        - modal
+      description: >-
+        - Lorsque le focus est placé sur un élément caché sous le footer sticky
+        de la modal, on scroll pour qu'il soit visible
+
+        - Ajout de la propriété scroll-padding-bottom
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: scroll au focus d'un élément caché sous le footer
+      pull: https://github.com/GouvernementFR/dsfr/pull/1387
+    - id: "1449"
+      type: fix
+      scopes:
+        - pa11y
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: corrections des tests automatiques Pa11y
+      pull: https://github.com/GouvernementFR/dsfr/pull/1449
+    - id: "1452"
+      type: feat
+      scopes:
+        - grid
+      description: "- Retire les puces lorsque l'on utilise une grille avec la balise ul"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: permet d'utiliser la grille sous forme de liste ul/li
+      pull: https://github.com/GouvernementFR/dsfr/pull/1452
+    - id: "1455"
+      type: feat
+      scopes:
+        - link
+      description: "- Ajoute un paramètre inText permettant de retirer le style du lien"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: ajoute la variation lien au fil du texte
+      pull: https://github.com/GouvernementFR/dsfr/pull/1455
+    - id: "1453"
+      type: fix
+      scopes: []
+      description: |-
+        - Corrige les templates de colors généré
+        - Remplace les if ternaires dépréciés en scss
+        - Corrige les dépendances et peerDependances
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: corrections du build et des dépendances
+      pull: https://github.com/GouvernementFR/dsfr/pull/1453
+    - id: "1451"
+      type: fix
+      scopes:
+        - legacy
+      description: >-
+        - Retire le support du Windows High Contrast mode sur IE
+
+        - Change la media-query de détection de IE ce qui permet d'éviter le
+        crash des linter/compilateur
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: changement de la media query de détection de IE
+      pull: https://github.com/GouvernementFR/dsfr/pull/1451
+    - id: "1390"
+      type: fix
+      scopes:
+        - summary
+      description: "- Le titre du sommaire peut être une balise `<p>`"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: niveau de titre du sommaire
+      pull: https://github.com/GouvernementFR/dsfr/pull/1390
+    - id: "1454"
+      type: docs
+      scopes:
+        - footer
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: niveau de titre des catégories du menu
+      pull: https://github.com/GouvernementFR/dsfr/pull/1454
+    - id: "1393"
+      type: fix
+      scopes:
+        - footer
+      description: "- Par défaut, le titre des catégories du menu du footer sont
+        maintenant en h2"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: niveau de titre des catégories du menu en h2
+      pull: https://github.com/GouvernementFR/dsfr/pull/1393
+    - id: "1430"
+      type: docs
+      scopes:
+        - "*"
+      description: "- Ajout de mots-clés en anglais"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: améliore la recherche des noms anglais des composants
+      pull: https://github.com/GouvernementFR/dsfr/pull/1430
+    - id: "1431"
+      type: docs
+      scopes:
+        - translate
+      description: '- Retrait de la balise et du role "nav"'
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: corrige le snippet de code du sélecteur de langue
+      pull: https://github.com/GouvernementFR/dsfr/pull/1431
+    - id: "1434"
+      type: fix
+      scopes:
+        - display
+      description: |-
+        - Corrige la marge basse dans la modale
+        - Désactive le composant quand l'attribut data-fr-scheme est absent
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: désactive le composant quand l'attribut HTML `data-fr-scheme` est absent
+      pull: https://github.com/GouvernementFR/dsfr/pull/1434
+    - id: "1432"
+      type: fix
+      scopes:
+        - search
+      description: "- Passe le type du bouton de la recherche à \"submit\" dans les
+        exemples, la doc, et storybook puisque la barre de recherche doit être
+        intégrée au sein d'un formulaire"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: change l'attribut type du bouton à submit
+      pull: https://github.com/GouvernementFR/dsfr/pull/1432
+    - id: "1424"
+      type: docs
+      scopes:
+        - select
+      description: "- Correction déjà appliquée dans le code, répercutée dans la doc"
+      isBreaking: false
+      tickets:
+        - DSFR-63
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: retrait du 'hidden' sur les exemples de code
+      pull: https://github.com/GouvernementFR/dsfr/pull/1424
+    - id: "1440"
+      type: docs
+      scopes:
+        - "*"
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: corrige les liens vers la documentation des composants
+      pull: https://github.com/GouvernementFR/dsfr/pull/1440
+    - id: "1422"
+      type: fix
+      scopes:
+        - core
+      description: "- Sur IE11 et sur la fonction dépréciée `inject-svg`, une couche
+        sécurité permet d'éviter les injections."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: correction de sécurité sur le js des pictogrammes
+      pull: https://github.com/GouvernementFR/dsfr/pull/1422
+    - id: "1419"
+      type: fix
+      scopes:
+        - sidemenu
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: correction des éléments désactivés
+      pull: https://github.com/GouvernementFR/dsfr/pull/1419
+    - id: "1407"
+      type: feat
+      scopes:
+        - range
+      description: |-
+        - Corrige le contrôle Storybook "size"
+        - Utilise la liaison for/id comme préconisé dans la partie accessibilité
+        - Corrige les exemples du curseur double
+        - Cache la valeur par défaut du curseur aux APIs d'accessibilité
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: utilisation de la liaison for/id sur le curseur simple
+      pull: https://github.com/GouvernementFR/dsfr/pull/1407
+    - id: "1382"
+      type: fix
+      scopes:
+        - tooltip
+      description: "- Sur les tooltips ouverts au clic sur le btn, cliquer sur le
+        tooltip ne ferme plus celui-ci. Ce qui permet de sélectionner et copier
+        coller son contenu."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: empeche fermeture au click sur tooltip
+      pull: https://github.com/GouvernementFR/dsfr/pull/1382
+    - id: "1443"
+      type: fix
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: generation des settings de couleur et lint
+      pull: https://github.com/GouvernementFR/dsfr/pull/1443
+    - id: "1385"
+      type: feat
+      scopes: []
+      description: "- Retrait des utilitaires de couleurs de text, border, et
+        background en red-marianne"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: retrait des utilitaires de couleurs red-marianne
+      pull: https://github.com/GouvernementFR/dsfr/pull/1385
+    - id: "1383"
+      type: fix
+      scopes:
+        - icons
+      description: |-
+        Remet en place les icônes :
+        - fr--arrow-right-up-circle-fill.svg‎
+        - fr--arrow-right-down-circle-fill.svg
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: rajoute icônes supprimées en 1.14
+      pull: https://github.com/GouvernementFR/dsfr/pull/1383
+    - id: "1367"
+      type: fix
+      scopes:
+        - header
+        - navigation
+      description: |-
+        - Uniformise les marges des raccourcis dans une liste
+        - Affiche un raccourci de la même façon avec ou sans liste
+        - Cache le séparateur des raccourcis quand il n'y a pas de navigation
+        - Identifie comme "actif" les N1 dépliants dans la navigation
+        - Aligne pas tous les éléments uniformément dans l'en-tête
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: améliore l'affichage des éléments de l'en-tête et de la navigation en
+        mobile
+      pull: https://github.com/GouvernementFR/dsfr/pull/1367
+    - id: "1366"
+      type: docs
+      scopes:
+        - password
+      description: "- L'ancien document n'est plus disponible."
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: lien vers les recommandation sur les mots de passe de l'ANSSI
+      pull: https://github.com/GouvernementFR/dsfr/pull/1366
+    - id: "1364"
+      type: feat
+      scopes:
+        - input
+      description: >-
+        - Utilisation du texte d'aide "email@example.com" au lieu de
+        "email@domain.com"
+
+        - Utilisation de l'exemple de téléphone "(+33) 5 36 49 68 27" au lieu de
+        "(+33) 1 22 33 44 55"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: améliore l'aide à la saisie des champs email et tél
+      pull: https://github.com/GouvernementFR/dsfr/pull/1364
+    - id: "1363"
+      type: docs
+      scopes:
+        - header
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: typo doc design header
+      pull: https://github.com/GouvernementFR/dsfr/pull/1363
+    - id: "1361"
+      type: feat
+      scopes:
+        - checkbox
+      description: "- Ajoute la case à cocher en état indéterminé"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: ajoute l'état indéterminé
+      pull: https://github.com/GouvernementFR/dsfr/pull/1361
+    - id: "1388"
+      type: feat
+      scopes:
+        - connect
+      description: "- Ajout de la variante `fr-connect--pro` et mise à jour de la
+        documentation"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.0
+      title: ajout du bouton proConnect
+      pull: https://github.com/GouvernementFR/dsfr/pull/1388
+    - id: "1403"
+      type: fix
+      scopes:
+        - sidemenu
+      description: >-
+        Sans accordéon, le composant est rendu avec deux erreurs :
+
+        - Les éléments de premier niveau sont séparés par deux bordures
+
+        - Quand il n'y a qu'un sous-élément, une bordure est dessinée entre
+        celui-ci et le premier niveau.
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: corrige l'affichage mobile lors d'une utilisation sans accordéon
+      pull: https://github.com/GouvernementFR/dsfr/pull/1403
+    - id: "1341"
+      type: fix
+      scopes:
+        - tab
+      description: "- Retire le calcul de marge en vw, erroné sur firefox qui compte
+        la scrollbar dans le viewport"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.0
+      title: corrige la marge du variant viewport-width
+      pull: https://github.com/GouvernementFR/dsfr/pull/1341
+    - id: "1438"
+      type: docs
+      scopes:
+        - pattern
+        - page
+      description: "- Remplace la valeur aria-live `assertive` par `polite`"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.0
+      title: correction valeur aria-live des messages de formulaire
+      pull: https://github.com/GouvernementFR/dsfr/pull/1438
+- id: v1.14.4
+  date: 2026-03-03
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.14.4
+  commits:
+    - id: "1397"
+      type: fix
+      scopes: []
+      description: "- Corrige une faille de sécurité potentielle sur les github actions"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.4
+      title: github action security
+      pull: https://github.com/GouvernementFR/dsfr/pull/1397
+    - id: "1398"
+      type: refactor
+      scopes: []
+      description: "- change le nom des fichiers data.yml à la racine de chaque
+        composant en index.yml"
+      isBreaking: false
+      gitmojis:
+        - ♻️
+      tag: v1.14.4
+      title: nom des fichiers data.yml
+      pull: https://github.com/GouvernementFR/dsfr/pull/1398
+- id: v1.14.3
+  date: 2025-12-15
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.14.3
+  commits:
+    - id: "1350"
+      type: chore
+      scopes:
+        - dependencies
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.14.3
+      title: mise à jour des dépendances npm
+      pull: https://github.com/GouvernementFR/dsfr/pull/1350
+    - id: "1334"
+      type: docs
+      scopes:
+        - badge
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.3
+      title: titre page accessibilite en h2
+      pull: https://github.com/GouvernementFR/dsfr/pull/1334
+    - id: "1348"
+      type: feat
+      scopes:
+        - modal
+      description: >-
+        - Ajout de documentation sur la gestion des modales sans bouton associé
+        et avec plusieurs boutons associés
+
+        - Ajout d'un exemple de modale avec plusieurs boutons d'ouverture
+      isBreaking: false
+      tickets:
+        - DSFR-109
+      gitmojis:
+        - ✨
+      tag: v1.14.3
+      title: documentation bouton non lié
+      pull: https://github.com/GouvernementFR/dsfr/pull/1348
+    - id: "1347"
+      type: feat
+      scopes:
+        - table
+      description: >
+        - Alignement du contrôle segmenté à droite dans le header
+
+        - Permet une utilisation correcte de aria-sort, ajouts des classe
+        fr-btn--sort-asc et fr-btn--sort-desc
+
+        - Ajout d'un exemple avec barre de recherche dans le header du tableau
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.14.3
+      title: header du tableau et bouton aria-sort
+      pull: https://github.com/GouvernementFR/dsfr/pull/1347
+    - id: "1345"
+      type: fix
+      scopes:
+        - quote
+      description: "- Utilisation de l'espace insécable avant et après les guillemets
+        pour éviter le retour à la ligne d'un guillemet seul"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.3
+      title: espaces insécables avant et après les guillemets
+      pull: https://github.com/GouvernementFR/dsfr/pull/1345
+    - id: "1344"
+      type: fix
+      scopes:
+        - navigation
+      description: |
+        - Corrige le clic sur un élément à l'intérieur d'un nav__link 
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.3
+      title: fermeture au click sur un sous-élement html d'un nav_link
+      pull: https://github.com/GouvernementFR/dsfr/pull/1344
+    - id: "1343"
+      type: docs
+      scopes: []
+      description: "- Corrections mineures sur les images de la documentation"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.3
+      title: mise à jour des assets
+      pull: https://github.com/GouvernementFR/dsfr/pull/1343
+    - id: "1336"
+      type: docs
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.3
+      title: mise à jour de la liste des moyens de connexion de FranceConnect
+      pull: https://github.com/GouvernementFR/dsfr/pull/1336
+    - id: "1332"
+      type: docs
+      scopes:
+        - link
+      description: '- Ajout du mot clé "haut de page" sur les pages de documentation
+        du lien pour améliorer la recherche de ce terme'
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.3
+      title: ajout du mot clé haut de page
+      pull: https://github.com/GouvernementFR/dsfr/pull/1332
+    - id: "1331"
+      type: fix
+      scopes:
+        - readme
+      description: "- Correction des liens vers la documentation dans les fichiers
+        package.yml de chaque package"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.3
+      title: met a jour les liens vers la doc de chaque composants
+      pull: https://github.com/GouvernementFR/dsfr/pull/1331
+    - id: "1323"
+      type: fix
+      scopes:
+        - consent
+      description: >+
+        - Remplace le label nomdusite.fr par nomdusite.gouv.fr dans le gestion
+        de consentement
+
+      isBreaking: false
+      tickets:
+        - DSFR-140
+      gitmojis:
+        - 🐛
+      tag: v1.14.3
+      title: corrige label nomdusite.fr
+      pull: https://github.com/GouvernementFR/dsfr/pull/1323
+    - id: "1305"
+      type: docs
+      scopes:
+        - notice
+      description: "- Retire un texte en double"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.3
+      title: supprime un doublon de paragraphe
+      pull: https://github.com/GouvernementFR/dsfr/pull/1305
+    - id: "1313"
+      type: fix
+      scopes:
+        - stepper
+      description: >-
+        - les propriétés stepCount et currentStep sont maintenant limitées entre
+        2 et 8
+
+        - ajout des valeurs 'h6' et 'p' sur la propriété markup
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.3
+      title: Storybook min/max value steps & ajout markup titre
+      pull: https://github.com/GouvernementFR/dsfr/pull/1313
+    - id: "1311"
+      type: docs
+      scopes:
+        - icon
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.3
+      title: corrige les IDs des accordéons & retrait niveau de titre des extraits de
+        code
+      pull: https://github.com/GouvernementFR/dsfr/pull/1311
+- id: v1.14.2
+  date: 2025-09-17
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.14.2
+  commits:
+    - id: "1302"
+      type: fix
+      scopes:
+        - tab
+      description: |-
+        - Corrige le fond transparent du tab panel
+        - Corrige la hauteur du panel (4px en trop)
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.2
+      title: ajoute un fond blanc au panel des onglets
+      pull: https://github.com/GouvernementFR/dsfr/pull/1302
+    - id: "1303"
+      type: docs
+      scopes:
+        - assets
+      description: |-
+        Met à jour les visuels sur les pages :
+        - page d’erreurs,
+        - page de connexion
+        - page de creation de compte
+        - composant paramètre d’affichage
+        - composant Lettre d’information et Réseaux Sociaux
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.2
+      title: met a jour les visuels suite maj du footer
+      pull: https://github.com/GouvernementFR/dsfr/pull/1303
+    - id: "1298"
+      type: chore
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.14.2
+      title: storybook dependencies
+      pull: https://github.com/GouvernementFR/dsfr/pull/1298
+    - id: "1297"
+      type: docs
+      scopes: []
+      description: |-
+        - Fautes d'orthographe
+        - Ajout de précision sur l'ajout icônes
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.2
+      title: corrections mineures de documentation
+      pull: https://github.com/GouvernementFR/dsfr/pull/1297
+    - id: "1286"
+      type: fix
+      scopes:
+        - range
+      description: >-
+        - Correction de la page storybook du curseur
+
+        - Ajout de la possibilité de modifier les intitulés des aria-label des
+        inputs sur le curseur double
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.2
+      title: build storybook & ajout input label value
+      pull: https://github.com/GouvernementFR/dsfr/pull/1286
+    - id: "1290"
+      type: fix
+      scopes:
+        - display
+        - transcription
+      description: "- corrige l'affichage des modales ouvertes dans storybook"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.2
+      title: corrige affichage dans storybook
+      pull: https://github.com/GouvernementFR/dsfr/pull/1290
+    - id: "1292"
+      type: docs
+      scopes:
+        - button
+        - modal
+      description: "- Les groupes de boutons sont maintenant présentés dans les
+        exemples de code avec des ul/li plutôt que des div"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.2
+      title: uniformisation du formatage des groupes de boutons
+      pull: https://github.com/GouvernementFR/dsfr/pull/1292
+    - id: "1295"
+      type: fix
+      scopes:
+        - footer
+      description: '- Remplace le lien "service-public.fr" par
+        "service-public.gouv.fr" dans le composant footer et les exemples
+        utilisant le pied de page'
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.2
+      title: met a jour le lien du footer service-public.gouv.fr
+      pull: https://github.com/GouvernementFR/dsfr/pull/1295
+- id: v1.14.1
+  date: 2025-08-29
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.14.1
+  commits:
+    - id: "1279"
+      type: fix
+      scopes:
+        - build
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: correction du build des exemples
+      pull: https://github.com/GouvernementFR/dsfr/pull/1279
+    - id: "1252"
+      type: chore
+      scopes:
+        - Node
+      description: '- Pour permettre plus de souplesse, les versions de Node acceptées
+        pour build le DSFR sont maintenant "^20.19.0 || ^22.12.0 || >=24.0.0"'
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.14.1
+      title: change la version minimale de Node.js
+      pull: https://github.com/GouvernementFR/dsfr/pull/1252
+    - id: "1254"
+      type: chore
+      scopes:
+        - dependencies
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.14.1
+      title: mise à jour des dépendances npm
+      pull: https://github.com/GouvernementFR/dsfr/pull/1254
+    - id: "1277"
+      type: docs
+      scopes: []
+      description: "- Corrections documentations button, link, footer, display, tooltip"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.1
+      title: corrections mineures de documentations
+      pull: https://github.com/GouvernementFR/dsfr/pull/1277
+    - id: "1276"
+      type: fix
+      scopes: []
+      description: "- Retrait des classes hidden mobile sur le texte dans le leader
+        des exemples de mega-menu "
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: mega menu leader toujours visible
+      pull: https://github.com/GouvernementFR/dsfr/pull/1276
+    - id: "1274"
+      type: fix
+      scopes:
+        - toggle
+      description: "- Retire une propriété CSS non conforme et inutile dans print.scss"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: retrait css inutile
+      pull: https://github.com/GouvernementFR/dsfr/pull/1274
+    - id: "1267"
+      type: fix
+      scopes:
+        - seo
+      description: "- mise à jour des méta-descriptions dans les pages de
+        documentation des composants."
+      isBreaking: false
+      tickets:
+        - DSFR-124
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: maj des meta-descriptions
+      pull: https://github.com/GouvernementFR/dsfr/pull/1267
+    - id: "1266"
+      type: fix
+      scopes:
+        - breadcrumb
+      description: "- Retrait du dernier \"/\" en fin d'url des liens du fil d'arianne"
+      isBreaking: false
+      tickets:
+        - DSFR-124
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: retire trailing slash
+      pull: https://github.com/GouvernementFR/dsfr/pull/1266
+    - id: "1210"
+      type: feat
+      scopes:
+        - artworks
+      description: |-
+        Ajout des pictogrammes :
+        - building
+           - base.svg
+           - companie.svg
+        - digital
+           - smartphone.svg
+        - document
+           - archive.svg
+           - binders.svg
+           - conclusion.svg
+           - document-search.svg
+           - driving-license-new.svg
+           - international-driving-license-new.svg
+           - international-driving-license.svg
+           - national-identity-card-passport.svg
+           - presse-card.svg
+           - sign-document.svg
+        - health
+           - doctor
+           - medical-research
+        - institutions
+           - army-tank
+           - astronaut
+           - navy-anchor
+           - navy-bachi
+        - leasure
+           - art
+           - audio
+           - catalog
+           - pictures
+           - podcast
+           - video
+           - video-games
+        - system
+           - language
+           - flow-settings
+           - flow-list
+      isBreaking: false
+      gitmojis: []
+      tag: v1.14.1
+      title: ajout de pictogrammes
+      pull: https://github.com/GouvernementFR/dsfr/pull/1210
+    - id: "1214"
+      type: fix
+      scopes:
+        - navigation
+      description: " - Correction de la bordure de la navigation mobile lorsqu'elle ne
+        contient qu'un seul élément "
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: correction bordure navigation mobile avec 1 seul item
+      pull: https://github.com/GouvernementFR/dsfr/pull/1214
+    - id: "1220"
+      type: docs
+      scopes: []
+      description: "- Dans la documentation, le maillage des composants est maintenant
+        proposé sous forme de cartes plutôt que des liens"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.1
+      title: Maillage des composants sous forme de carte
+      pull: https://github.com/GouvernementFR/dsfr/pull/1220
+    - id: "1221"
+      type: fix
+      scopes:
+        - modal
+      description: "- Lorsque la page est insérée dans une iframe plus petite que le
+        viewport les marges en haut et en bas de la modale prennent 10% de la
+        page et non 10% de l'iframe"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: marges de la modale en pourcentage
+      pull: https://github.com/GouvernementFR/dsfr/pull/1221
+    - id: "1225"
+      type: fix
+      scopes:
+        - toggle
+      description: >-
+        - La variation interrupteur avec libellé à droite est problématique en
+        termes d'accessibilité, notamment en navigation avec loupe d'écran. Nous
+        avons décidé de la retirer. Celle-ci reste fonctionnelle mais ne doit
+        plus être utilisée.
+
+        - Correction et amélioration de la documentation de l'interrupteur.
+      isBreaking: false
+      tickets:
+        - DSFR-111
+      gitmojis:
+        - ✨
+      tag: v1.14.1
+      title: retrait de l'interrupteur avec libellé à gauche
+      pull: https://github.com/GouvernementFR/dsfr/pull/1225
+    - id: "1211"
+      type: docs
+      scopes: []
+      description: |-
+        - Ajout de stories sur checkbox et radio
+        - Corrections mineures sur la documentation
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.1
+      title: correctifs édito & ajout de stories
+      pull: https://github.com/GouvernementFR/dsfr/pull/1211
+    - id: "1228"
+      type: fix
+      scopes:
+        - storybook
+      description: "- Applique le thème de la page dans les iframes Storybook du site
+        de doc"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: Gestion du thème dsfr sur les iframes storybook
+      pull: https://github.com/GouvernementFR/dsfr/pull/1228
+    - id: "1229"
+      type: fix
+      scopes:
+        - translate
+      description: "- Le composant sélecteur de langue ne doit plus utiliser une
+        balise `<nav>` avec l'attribut `role=navigation`, mais une simple
+        `<div>` pour alléger la lecture sur les lecteurs d'écrans."
+      isBreaking: false
+      tickets:
+        - DSFR-108
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: modification du markup nav en div
+      pull: https://github.com/GouvernementFR/dsfr/pull/1229
+    - id: "1232"
+      type: fix
+      scopes:
+        - range
+      description: >-
+        - Ajout d'attributs aria-label "Valeur minimale" et "Valeur maximale"
+        sur les input du curseur double, pour décrire leur usage
+
+        - Correction de l'id dans l'exemple du curseur simple
+      isBreaking: false
+      tickets:
+        - DSFR-110
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: ajout attribut aria-label curseur double
+      pull: https://github.com/GouvernementFR/dsfr/pull/1232
+    - id: "1237"
+      type: docs
+      scopes:
+        - name
+      description: "- Correction de l'exemple du modèle de nom et prénom avec ajout de
+        prénom"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.1
+      title: correction du modele nom et prenom
+      pull: https://github.com/GouvernementFR/dsfr/pull/1237
+    - id: "1238"
+      type: fix
+      scopes:
+        - consent
+      description: '- Corrige les radio boutons "tout accepter / tout refuser" qui
+        passent à la ligne sur le formulaire de consentement dans certaines
+        résolutions.'
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: corrige alignement radio boutons dans modale gestionnaire de consentement
+      pull: https://github.com/GouvernementFR/dsfr/pull/1238
+    - id: "1239"
+      type: docs
+      scopes: []
+      description: >-
+        - Ajout des dépendances CSS dans la partie code de chaque composant
+
+        - Ajout de documentation sur les parties Javascript de l'en-tête, des
+        cases à cocher, du tableau, et du contrôle segmenté
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.1
+      title: Correction des parties Installation du CSS et du JS
+      pull: https://github.com/GouvernementFR/dsfr/pull/1239
+    - id: "1242"
+      type: feat
+      scopes:
+        - icons
+      description: |-
+        - ajout d'un dossier `icons-arrows`
+
+        - déplacement des icones de flèche de `icons-system` vers `icons-arrows`
+
+        - ajout de nombreuses icones
+      isBreaking: false
+      tickets:
+        - DSFR-114
+      gitmojis:
+        - ✨
+      tag: v1.14.1
+      title: Ajout de nombreuses icônes, iso figma
+      pull: https://github.com/GouvernementFR/dsfr/pull/1242
+    - id: "1243"
+      type: feat
+      scopes:
+        - analytics
+      description: '- Retrait du "patch" JS pour les analytics, spécifique aux
+        anciennes versions du DSFR'
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.14.1
+      title: retrait du patch pour les versions inférieures à 1.9
+      pull: https://github.com/GouvernementFR/dsfr/pull/1243
+    - id: "1246"
+      type: docs
+      scopes:
+        - core
+      description: >-
+        - Mise à jour des documentations des fondamentaux :
+          - grille
+          - icone
+          - médias
+          - pictogramme
+          - typographie
+        - Correction du lien vers la documentation de FranceConnect
+
+        - Ajout d'infos sur l'attribut `accept` dans la documentation de l'ajout
+        de fichier 
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.1
+      title: Mise à jour de la doc des fondamentaux, de connect, et upload
+      pull: https://github.com/GouvernementFR/dsfr/pull/1246
+    - id: "1212"
+      type: fix
+      scopes:
+        - "*"
+      description: "- Corrige le lien vers la documentation dans les fichiers
+        package.yml de chaque composant"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.14.1
+      title: correction des liens vers la documentation des composants
+      pull: https://github.com/GouvernementFR/dsfr/pull/1212
+    - id: "1213"
+      type: fix
+      scopes:
+        - tooltip
+      description: "- Corrige le retour du focus lorsque l'on ferme le tooltip via la
+        touche échap. Problème constaté notamment au sein d'une modale."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: placmeent du focus a la fermeture clavier
+      pull: https://github.com/GouvernementFR/dsfr/pull/1213
+    - id: "1222"
+      type: fix
+      scopes: []
+      description: "- Correction du titre sur l'exemple de lien externe"
+      isBreaking: false
+      tickets:
+        - DSFR-112
+      gitmojis:
+        - 🐛
+      tag: v1.14.1
+      title: correction exemple lien externe
+      pull: https://github.com/GouvernementFR/dsfr/pull/1222
+    - id: "1240"
+      type: docs
+      scopes: []
+      description: "- Correction des liens cassés et mise à jour de documentation du readme"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.14.1
+      title: Mise à jour du fichier README.md
+      pull: https://github.com/GouvernementFR/dsfr/pull/1240
 - id: v1.14.0
   date: 2025-06-25
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.14.0
@@ -45,18 +1386,18 @@
       scopes:
         - storybook
       description: |-
-        Ajout de stories sur :
+        Ajout de stories sur : 
         - Alerte
-        - Bouton radio
-        - Case à cocher
-        - Champ de saisie
-        - En-tête
-        - Lien
-        - Menu latéral
+        - Bouton radio 
+        - Case à cocher 
+        - Champ de saisie 
+        - En-tête 
+        - Lien 
+        - Menu latéral 
         - Pagination :
         - Paramètre d'affichage
         - Pied de page
-        - Tuile
+        - Tuile 
       isBreaking: false
       gitmojis:
         - ✨

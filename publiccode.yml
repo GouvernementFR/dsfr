@@ -3,7 +3,7 @@ name: dsfr
 url: https://github.com/GouvernementFR/dsfr
 landingURL: https://www.systeme-de-design.gouv.fr/
 softwareVersion: "1.15.0"
-releaseDate: '2026-06-17'
+releaseDate: '2026-07-17'
 platforms:
   - web
 logo: https://github.com/GouvernementFR.png
