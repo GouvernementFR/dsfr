@@ -175,7 +175,7 @@ _String_ (EA: pagegroup)
 
 ##### segment
 
-_String_ (EA: segment-site)
+_String_ (EA: site-segment)
 
 `window.dsfr.analytics.page.segment`
 
