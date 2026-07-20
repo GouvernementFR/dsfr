@@ -2,7 +2,7 @@
   "name": "@gouvfr/dsfr-sb",
   "version": "1.0.0",
   "description": "Storybook du Système de Design de l'Etat - DSFR",
-  "license": "MIT",
+  "license": "etalab-2.0",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
   "engines": {
     "node": ">=22.14.0"

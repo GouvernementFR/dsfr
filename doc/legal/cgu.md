@@ -137,7 +137,7 @@ Le Service d’information du Gouvernement (« SIG ») vous remercie de bien vou
 
 #### Non renonciation
 
-- [54] Le fait pour l'une des Parties de ne pas se prévaloir d'un manquement par l'autre Partie à l'une quelconque des obligations visées dans les présentes CGU ne saurait être interprété pour l'avenir comme une renonciation à l'obligation en cause.
+- [54] Le fait pour l'une des Parties de ne pas se prévaloir d'un manquement par l'autre Partie à l'une quelconque des obligations visées dans les présentes modalités d’utilisation ne saurait être interprété pour l'avenir comme une renonciation à l'obligation en cause.
 
 #### Juridiction compétente
 
