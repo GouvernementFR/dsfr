@@ -14,7 +14,7 @@ Son utilisation par les administrations est soumise à une demande d'agrément (
 
 #### ⚠️ Utilisation interdite en dehors des sites Internet de l'État
 
->Le code du DSFR est sous licence Etalab 2.0, mais son utilisation est encadrée par des [Modalités d'Utilisation](doc/legal/cgu.md). En raison de son rôle de marqueur d'identité visuelle de l'État, le DSFR ne doit pas être utilisé par des entités extérieures à l'administration, et limite sa réplicabilité en dehors d'un nom de domaine en .gouv.fr. En cas d’usage à des fins trompeuses ou frauduleuses, l'État se réserve le droit d’entreprendre les actions nécessaires pour y mettre un terme.
+>Le code du DSFR est sous licence Etalab 2.0 (à l’exception d’éléments soumis à des conditions spécifiques, comme les fontes Marianne), mais son utilisation est encadrée par des [Modalités d'Utilisation](doc/legal/cgu.md). En raison de son rôle de marqueur d'identité visuelle de l'État, le DSFR ne doit pas être utilisé par des entités extérieures à l'administration, et limite sa réplicabilité en dehors d'un nom de domaine en .gouv.fr. En cas d’usage à des fins trompeuses ou frauduleuses, l'État se réserve le droit d’entreprendre les actions nécessaires pour y mettre un terme.
 
 Voir les [Modalités d'Utilisation](doc/legal/cgu.md).
 
