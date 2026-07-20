@@ -4,7 +4,7 @@
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "etalab-2.0",
   "config": {
     "prefix": "fr",
     "namespace": "dsfr",
