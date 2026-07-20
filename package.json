@@ -95,5 +95,8 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "@gouvfr/dsfr-nexus": "^1.2.9"
   }
 }
