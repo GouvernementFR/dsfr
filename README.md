@@ -20,7 +20,7 @@ Voir les [Modalités d'Utilisation](doc/legal/cgu.md).
 
 #### ⚠️ Prohibited Use Outside Government Websites
 
->The DSFR code is licensed under the Etalab 2.0 licence, but its use is restricted by specific terms of use. Given its role as a marker of the French State's visual identity, the DSFR must not be used by entities outside the public administration. It cannot be used outside a .gouv.fr domain name.
+>The DSFR code is licensed under the Etalab 2.0 licence (excluding assets subject to specific conditions, such as the Marianne fonts), but its use is restricted by specific terms of use. Given its role as a marker of the French State's visual identity, the DSFR must not be used by entities outside the public administration. It cannot be used outside a .gouv.fr domain name.
 
 [See terms](doc/legal/cgu.md)
 
