@@ -170,7 +170,7 @@ const deployHandler = async (argv) => {
     scripts: true,
     examples: true,
     storybook: true,
-    docs: true,
+    // docs: true,
     clean: true,
     minify: true,
     legacy: true,
@@ -188,7 +188,7 @@ const deployHandler = async (argv) => {
   deployFavicons();
   deployRobots();
   deployStorybook();
-  deployDocs();
+  // deployDocs();
   deployFiles();
 };
 
