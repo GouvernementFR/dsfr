@@ -3,7 +3,7 @@ node_modules
 /dist
 /example
 /standalone
-/storybook
+/dsfr-doc/storybook
 .dsfr.yml
 .archive
 .config

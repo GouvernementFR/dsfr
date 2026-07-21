@@ -10,7 +10,7 @@
   "packageManager": "yarn@1.22.22",
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build -o ../storybook"
+    "build-storybook": "storybook build -o ../dsfr-doc/storybook"
   },
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",

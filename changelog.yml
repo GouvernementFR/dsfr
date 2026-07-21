@@ -1,20 +1,32 @@
-- id: v1.15.0
+- id: v1.15.1
   date: 2026-07-20
-  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.0
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.1
   commits:
-    - &a1
-      id: "1483"
+    - id: "1486"
+      type: feat
+      scopes: []
+      description: – Incrémentation de la version de cgu.md
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.1
+      title: mise à jour des modalités d'utilisation
+      pull: https://github.com/GouvernementFR/dsfr/pull/1486
+    - id: "1483"
       type: feat
       scopes: []
       description: "- Passage en licence etalab-2.0"
       isBreaking: false
       gitmojis:
         - ✨
-      tag: v1.15.0
+      tag: v1.15.1
       title: mise à jour de la licence
       pull: https://github.com/GouvernementFR/dsfr/pull/1483
-    - &a2
-      id: "1482"
+- id: v1.15.0
+  date: 2026-07-17
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.0
+  commits:
+    - id: "1482"
       type: docs
       scopes:
         - analytics
@@ -25,8 +37,7 @@
       tag: v1.15.0
       title: correction terme site-segment
       pull: https://github.com/GouvernementFR/dsfr/pull/1482
-    - &a3
-      id: "1480"
+    - id: "1480"
       type: docs
       scopes:
         - modal
@@ -37,8 +48,7 @@
       tag: v1.15.0
       title: correction des extraits de code
       pull: https://github.com/GouvernementFR/dsfr/pull/1480
-    - &a4
-      id: "1476"
+    - id: "1476"
       type: fix
       scopes: []
       description: >-
@@ -53,8 +63,7 @@
       tag: v1.15.0
       title: amélioration du script preinstall & variable d'environnement
       pull: https://github.com/GouvernementFR/dsfr/pull/1476
-    - &a5
-      id: "1479"
+    - id: "1479"
       type: docs
       scopes:
         - modal
@@ -65,8 +74,7 @@
       tag: v1.15.0
       title: correction doc accessibilité de la modale
       pull: https://github.com/GouvernementFR/dsfr/pull/1479
-    - &a6
-      id: "1467"
+    - id: "1467"
       type: fix
       scopes:
         - grid
@@ -80,8 +88,7 @@
       tag: v1.15.0
       title: permet d'utiliser la grille sous forme de liste
       pull: https://github.com/GouvernementFR/dsfr/pull/1467
-    - &a7
-      id: "1465"
+    - id: "1465"
       type: fix
       scopes:
         - transcription
@@ -96,8 +103,7 @@
       tag: v1.15.0
       title: corrige la démo et ajoute le titre de la modale
       pull: https://github.com/GouvernementFR/dsfr/pull/1465
-    - &a8
-      id: "1471"
+    - id: "1471"
       type: feat
       scopes: []
       description: ""
@@ -107,8 +113,7 @@
       tag: v1.15.0
       title: modifie la manière d'installer le dsfr
       pull: https://github.com/GouvernementFR/dsfr/pull/1471
-    - &a9
-      id: "1468"
+    - id: "1468"
       type: fix
       scopes:
         - skiplinks
@@ -119,8 +124,7 @@
       tag: v1.15.0
       title: retrait des skiplinks en version print
       pull: https://github.com/GouvernementFR/dsfr/pull/1468
-    - &a10
-      id: "1463"
+    - id: "1463"
       type: fix
       scopes: []
       description: ""
@@ -130,8 +134,7 @@
       tag: v1.15.0
       title: correction du script d'acceptation des cgu à l'installation
       pull: https://github.com/GouvernementFR/dsfr/pull/1463
-    - &a11
-      id: "1460"
+    - id: "1460"
       type: fix
       scopes:
         - publiccode
@@ -142,8 +145,7 @@
       tag: v1.15.0
       title: corrige le format et ajout licence
       pull: https://github.com/GouvernementFR/dsfr/pull/1460
-    - &a12
-      id: "1396"
+    - id: "1396"
       type: chore
       scopes:
         - dependencies
@@ -154,8 +156,7 @@
       tag: v1.15.0
       title: mise à jour des dépendances npm
       pull: https://github.com/GouvernementFR/dsfr/pull/1396
-    - &a13
-      id: "1457"
+    - id: "1457"
       type: fix
       scopes: []
       description: ""
@@ -165,8 +166,7 @@
       tag: v1.15.0
       title: correction du format du fichier publiccode.yml
       pull: https://github.com/GouvernementFR/dsfr/pull/1457
-    - &a14
-      id: "1372"
+    - id: "1372"
       type: feat
       scopes:
         - cgu
@@ -181,8 +181,7 @@
       tag: v1.15.0
       title: mise à jour des CGU
       pull: https://github.com/GouvernementFR/dsfr/pull/1372
-    - &a15
-      id: "1384"
+    - id: "1384"
       type: docs
       scopes: []
       description: |-
@@ -194,8 +193,7 @@
       tag: v1.15.0
       title: ajout de pages de recherche d'icones, couleurs, et pictogrammes
       pull: https://github.com/GouvernementFR/dsfr/pull/1384
-    - &a16
-      id: "1380"
+    - id: "1380"
       type: fix
       scopes:
         - checkbox
@@ -211,8 +209,7 @@
       tag: v1.15.0
       title: changement de selecteur des input+label
       pull: https://github.com/GouvernementFR/dsfr/pull/1380
-    - &a17
-      id: "1386"
+    - id: "1386"
       type: feat
       scopes:
         - analytics
@@ -228,8 +225,7 @@
       tag: v1.15.0
       title: ajout de l'attribut action reduce
       pull: https://github.com/GouvernementFR/dsfr/pull/1386
-    - &a18
-      id: "1447"
+    - id: "1447"
       type: fix
       scopes:
         - tooltip
@@ -243,8 +239,7 @@
       tag: v1.15.0
       title: correction des ouvertures/fermeture du tooltip
       pull: https://github.com/GouvernementFR/dsfr/pull/1447
-    - &a19
-      id: "1429"
+    - id: "1429"
       type: fix
       scopes:
         - modal
@@ -258,8 +253,7 @@
       tag: v1.15.0
       title: décale d'une scrollbar uniquement la modale ouverte
       pull: https://github.com/GouvernementFR/dsfr/pull/1429
-    - &a20
-      id: "1444"
+    - id: "1444"
       type: fix
       scopes: []
       description: >-
@@ -273,8 +267,7 @@
       tag: v1.15.0
       title: correction de la fonction sass space()
       pull: https://github.com/GouvernementFR/dsfr/pull/1444
-    - &a21
-      id: "1389"
+    - id: "1389"
       type: fix
       scopes:
         - tab
@@ -286,8 +279,7 @@
       tag: v1.15.0
       title: déplace le focus au press sur les flèches directionnelles
       pull: https://github.com/GouvernementFR/dsfr/pull/1389
-    - &a22
-      id: "1387"
+    - id: "1387"
       type: fix
       scopes:
         - modal
@@ -302,8 +294,7 @@
       tag: v1.15.0
       title: scroll au focus d'un élément caché sous le footer
       pull: https://github.com/GouvernementFR/dsfr/pull/1387
-    - &a23
-      id: "1449"
+    - id: "1449"
       type: fix
       scopes:
         - pa11y
@@ -314,8 +305,7 @@
       tag: v1.15.0
       title: corrections des tests automatiques Pa11y
       pull: https://github.com/GouvernementFR/dsfr/pull/1449
-    - &a24
-      id: "1452"
+    - id: "1452"
       type: feat
       scopes:
         - grid
@@ -326,8 +316,7 @@
       tag: v1.15.0
       title: permet d'utiliser la grille sous forme de liste ul/li
       pull: https://github.com/GouvernementFR/dsfr/pull/1452
-    - &a25
-      id: "1455"
+    - id: "1455"
       type: feat
       scopes:
         - link
@@ -338,8 +327,7 @@
       tag: v1.15.0
       title: ajoute la variation lien au fil du texte
       pull: https://github.com/GouvernementFR/dsfr/pull/1455
-    - &a26
-      id: "1453"
+    - id: "1453"
       type: fix
       scopes: []
       description: |-
@@ -352,8 +340,7 @@
       tag: v1.15.0
       title: corrections du build et des dépendances
       pull: https://github.com/GouvernementFR/dsfr/pull/1453
-    - &a27
-      id: "1451"
+    - id: "1451"
       type: fix
       scopes:
         - legacy
@@ -368,8 +355,7 @@
       tag: v1.15.0
       title: changement de la media query de détection de IE
       pull: https://github.com/GouvernementFR/dsfr/pull/1451
-    - &a28
-      id: "1390"
+    - id: "1390"
       type: fix
       scopes:
         - summary
@@ -380,8 +366,7 @@
       tag: v1.15.0
       title: niveau de titre du sommaire
       pull: https://github.com/GouvernementFR/dsfr/pull/1390
-    - &a29
-      id: "1454"
+    - id: "1454"
       type: docs
       scopes:
         - footer
@@ -392,8 +377,7 @@
       tag: v1.15.0
       title: niveau de titre des catégories du menu
       pull: https://github.com/GouvernementFR/dsfr/pull/1454
-    - &a30
-      id: "1393"
+    - id: "1393"
       type: fix
       scopes:
         - footer
@@ -405,8 +389,7 @@
       tag: v1.15.0
       title: niveau de titre des catégories du menu en h2
       pull: https://github.com/GouvernementFR/dsfr/pull/1393
-    - &a31
-      id: "1430"
+    - id: "1430"
       type: docs
       scopes:
         - "*"
@@ -417,8 +400,7 @@
       tag: v1.15.0
       title: améliore la recherche des noms anglais des composants
       pull: https://github.com/GouvernementFR/dsfr/pull/1430
-    - &a32
-      id: "1431"
+    - id: "1431"
       type: docs
       scopes:
         - translate
@@ -429,8 +411,7 @@
       tag: v1.15.0
       title: corrige le snippet de code du sélecteur de langue
       pull: https://github.com/GouvernementFR/dsfr/pull/1431
-    - &a33
-      id: "1434"
+    - id: "1434"
       type: fix
       scopes:
         - display
@@ -443,8 +424,7 @@
       tag: v1.15.0
       title: désactive le composant quand l'attribut HTML `data-fr-scheme` est absent
       pull: https://github.com/GouvernementFR/dsfr/pull/1434
-    - &a34
-      id: "1432"
+    - id: "1432"
       type: fix
       scopes:
         - search
@@ -457,8 +437,7 @@
       tag: v1.15.0
       title: change l'attribut type du bouton à submit
       pull: https://github.com/GouvernementFR/dsfr/pull/1432
-    - &a35
-      id: "1424"
+    - id: "1424"
       type: docs
       scopes:
         - select
@@ -471,8 +450,7 @@
       tag: v1.15.0
       title: retrait du 'hidden' sur les exemples de code
       pull: https://github.com/GouvernementFR/dsfr/pull/1424
-    - &a36
-      id: "1440"
+    - id: "1440"
       type: docs
       scopes:
         - "*"
@@ -483,8 +461,7 @@
       tag: v1.15.0
       title: corrige les liens vers la documentation des composants
       pull: https://github.com/GouvernementFR/dsfr/pull/1440
-    - &a37
-      id: "1422"
+    - id: "1422"
       type: fix
       scopes:
         - core
@@ -496,8 +473,7 @@
       tag: v1.15.0
       title: correction de sécurité sur le js des pictogrammes
       pull: https://github.com/GouvernementFR/dsfr/pull/1422
-    - &a38
-      id: "1419"
+    - id: "1419"
       type: fix
       scopes:
         - sidemenu
@@ -508,8 +484,7 @@
       tag: v1.15.0
       title: correction des éléments désactivés
       pull: https://github.com/GouvernementFR/dsfr/pull/1419
-    - &a39
-      id: "1407"
+    - id: "1407"
       type: feat
       scopes:
         - range
@@ -524,8 +499,7 @@
       tag: v1.15.0
       title: utilisation de la liaison for/id sur le curseur simple
       pull: https://github.com/GouvernementFR/dsfr/pull/1407
-    - &a40
-      id: "1382"
+    - id: "1382"
       type: fix
       scopes:
         - tooltip
@@ -538,8 +512,7 @@
       tag: v1.15.0
       title: empeche fermeture au click sur tooltip
       pull: https://github.com/GouvernementFR/dsfr/pull/1382
-    - &a41
-      id: "1443"
+    - id: "1443"
       type: fix
       scopes: []
       description: ""
@@ -549,8 +522,7 @@
       tag: v1.15.0
       title: generation des settings de couleur et lint
       pull: https://github.com/GouvernementFR/dsfr/pull/1443
-    - &a42
-      id: "1385"
+    - id: "1385"
       type: feat
       scopes: []
       description: "- Retrait des utilitaires de couleurs de text, border, et
@@ -561,8 +533,7 @@
       tag: v1.15.0
       title: retrait des utilitaires de couleurs red-marianne
       pull: https://github.com/GouvernementFR/dsfr/pull/1385
-    - &a43
-      id: "1383"
+    - id: "1383"
       type: fix
       scopes:
         - icons
@@ -576,8 +547,7 @@
       tag: v1.15.0
       title: rajoute icônes supprimées en 1.14
       pull: https://github.com/GouvernementFR/dsfr/pull/1383
-    - &a44
-      id: "1367"
+    - id: "1367"
       type: fix
       scopes:
         - header
@@ -595,8 +565,7 @@
       title: améliore l'affichage des éléments de l'en-tête et de la navigation en
         mobile
       pull: https://github.com/GouvernementFR/dsfr/pull/1367
-    - &a45
-      id: "1366"
+    - id: "1366"
       type: docs
       scopes:
         - password
@@ -607,8 +576,7 @@
       tag: v1.15.0
       title: lien vers les recommandation sur les mots de passe de l'ANSSI
       pull: https://github.com/GouvernementFR/dsfr/pull/1366
-    - &a46
-      id: "1364"
+    - id: "1364"
       type: feat
       scopes:
         - input
@@ -624,8 +592,7 @@
       tag: v1.15.0
       title: améliore l'aide à la saisie des champs email et tél
       pull: https://github.com/GouvernementFR/dsfr/pull/1364
-    - &a47
-      id: "1363"
+    - id: "1363"
       type: docs
       scopes:
         - header
@@ -636,8 +603,7 @@
       tag: v1.15.0
       title: typo doc design header
       pull: https://github.com/GouvernementFR/dsfr/pull/1363
-    - &a48
-      id: "1361"
+    - id: "1361"
       type: feat
       scopes:
         - checkbox
@@ -648,8 +614,7 @@
       tag: v1.15.0
       title: ajoute l'état indéterminé
       pull: https://github.com/GouvernementFR/dsfr/pull/1361
-    - &a49
-      id: "1388"
+    - id: "1388"
       type: feat
       scopes:
         - connect
@@ -661,8 +626,7 @@
       tag: v1.15.0
       title: ajout du bouton proConnect
       pull: https://github.com/GouvernementFR/dsfr/pull/1388
-    - &a50
-      id: "1403"
+    - id: "1403"
       type: fix
       scopes:
         - sidemenu
@@ -679,8 +643,7 @@
       tag: v1.15.0
       title: corrige l'affichage mobile lors d'une utilisation sans accordéon
       pull: https://github.com/GouvernementFR/dsfr/pull/1403
-    - &a51
-      id: "1341"
+    - id: "1341"
       type: fix
       scopes:
         - tab
@@ -692,8 +655,7 @@
       tag: v1.15.0
       title: corrige la marge du variant viewport-width
       pull: https://github.com/GouvernementFR/dsfr/pull/1341
-    - &a52
-      id: "1438"
+    - id: "1438"
       type: docs
       scopes:
         - pattern
@@ -705,62 +667,6 @@
       tag: v1.15.0
       title: correction valeur aria-live des messages de formulaire
       pull: https://github.com/GouvernementFR/dsfr/pull/1438
-- id: v1.15.0
-  date: 2026-07-17
-  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.0
-  commits:
-    - *a1
-    - *a2
-    - *a3
-    - *a4
-    - *a5
-    - *a6
-    - *a7
-    - *a8
-    - *a9
-    - *a10
-    - *a11
-    - *a12
-    - *a13
-    - *a14
-    - *a15
-    - *a16
-    - *a17
-    - *a18
-    - *a19
-    - *a20
-    - *a21
-    - *a22
-    - *a23
-    - *a24
-    - *a25
-    - *a26
-    - *a27
-    - *a28
-    - *a29
-    - *a30
-    - *a31
-    - *a32
-    - *a33
-    - *a34
-    - *a35
-    - *a36
-    - *a37
-    - *a38
-    - *a39
-    - *a40
-    - *a41
-    - *a42
-    - *a43
-    - *a44
-    - *a45
-    - *a46
-    - *a47
-    - *a48
-    - *a49
-    - *a50
-    - *a51
-    - *a52
 - id: v1.14.4
   date: 2026-03-03
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.14.4
