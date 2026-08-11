@@ -24,7 +24,7 @@
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
     "pictogram-converter": "node tool/tool.js pictogram-converter",
-    "upgrade-nexus": "yarn upgrade @gouvfr/dsfr-nexus",
+    "upgrade-nexus": "cd dsfr-doc && yarn upgrade-nexus",
     "preinstall": "node scripts/preinstall.js"
   },
   "files": [
@@ -95,8 +95,5 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "dependencies": {
-    "@gouvfr/dsfr-nexus": "^1.2.9"
   }
 }

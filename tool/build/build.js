@@ -96,7 +96,8 @@ const build = async (settings) => {
 
   if (settings.docs) {
     log.section('docs', true);
-    await execSync('yarn dsfr configure && yarn dsfr interpret && yarn dsfr publish', {
+    execSync('yarn install && yarn dsfr configure && yarn dsfr interpret && yarn dsfr publish', {
+      cwd: 'dsfr-doc',
       stdio: 'inherit'
     });
   }

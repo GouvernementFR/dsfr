@@ -75,11 +75,11 @@ const deployFavicons = () => {
 };
 
 const deployStorybook = () => {
-  copyDir(root('storybook'), root('public/storybook'));
+  copyDir(root('dsfr-doc/storybook'), root('public/storybook'));
 };
 
 const deployDocs = () => {
-  copyDir(root('.doc'), root('public'));
+  copyDir(root('dsfr-doc/.doc'), root('public'));
 };
 
 const deployFiles = () => {

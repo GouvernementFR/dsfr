@@ -170,7 +170,7 @@ const deployHandler = async (argv) => {
     scripts: true,
     examples: true,
     storybook: true,
-    // docs: true,
+    docs: true,
     clean: true,
     minify: true,
     legacy: true,
@@ -188,7 +188,7 @@ const deployHandler = async (argv) => {
   deployFavicons();
   deployRobots();
   deployStorybook();
-  // deployDocs();
+  deployDocs();
   deployFiles();
 };
 
@@ -220,7 +220,7 @@ const archiveHandler = async (argv) => {
   copyFile('./package.json', '.archive/package.json');
   copyFile('./changelog.yml', '.archive/changelog.yml');
   copyDir('./src', '.archive/src');
-  copyDir('./storybook', '.archive/storybook');
+  copyDir('./dsfr-doc/storybook', '.archive/storybook');
   copyDir('./.config', '.archive/.config');
   copyDir('./dist', '.archive/dist');
 };
