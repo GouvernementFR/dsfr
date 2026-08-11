@@ -1,3 +1,17 @@
+- id: v1.15.2
+  date: 2026-08-11
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.2
+  commits:
+    - id: "1487"
+      type: refactor
+      scopes: []
+      description: "- Déplace la dépendance à dsfr-nexus dans un sous projet dsfr-doc"
+      isBreaking: false
+      gitmojis:
+        - ♻️
+      tag: v1.15.2
+      title: génération de la doc depuis dsfr-doc
+      pull: https://github.com/GouvernementFR/dsfr/pull/1487
 - id: v1.15.1
   date: 2026-07-20
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.1

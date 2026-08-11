@@ -9,6 +9,16 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.15
 
+### [v1.15.2](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.2) - 11 août 2026
+
+#### [#1487](https://github.com/GouvernementFR/dsfr/pull/1487) : ♻️ génération de la doc depuis dsfr-doc
+`refactor `
+
+- Déplace la dépendance à dsfr-nexus dans un sous projet dsfr-doc
+
+---
+
+
 ### [v1.15.1](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.1) - 20 juillet 2026
 
 #### [#1486](https://github.com/GouvernementFR/dsfr/pull/1486) : ✨ mise à jour des modalités d'utilisation
