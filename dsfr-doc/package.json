@@ -12,6 +12,6 @@
     "upgrade-nexus": "yarn upgrade @gouvfr/dsfr-nexus"
   },
   "devDependencies": {
-    "@gouvfr/dsfr-nexus": "^1.2.12"
+    "@gouvfr/dsfr-nexus": "^1.2.13"
   }
 }

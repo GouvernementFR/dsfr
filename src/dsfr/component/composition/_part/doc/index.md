@@ -11,7 +11,6 @@ summary: Ce composant permet de composer des sections visuelles riches pour les 
 badge: beta
 mesh:
   - core/color
-  - core/palette
   - core/media
 ---
 
