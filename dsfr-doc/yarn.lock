@@ -202,17 +202,6 @@
     prettier "^3.3.3"
     yaml "^2.8.2"
 
-"@gouvfr/dsfr-forge@=1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-forge/-/dsfr-forge-1.1.1.tgz#49535d2956a13e32c40edabeede292ffc30455ff"
-  integrity sha512-GPR8Rd/mufdnCzm7wddDy0oflUTVVXYpZIMg21WuAZbhe65uu0JnLsCWoO50ITrGZv2AL4BHBdvwWdAwTyRZvA==
-  dependencies:
-    "@gouvfr/dsfr-kit" "=1.1.0"
-    "@prettier/plugin-php" "^0.24.0"
-    "@zackad/prettier-plugin-twig" "^0.16.0"
-    prettier "^3.3.3"
-    yaml "^2.8.2"
-
 "@gouvfr/dsfr-forge@=1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-forge/-/dsfr-forge-1.1.2.tgz#18bfe037cc0b3f60ee9f4aaed7c85de3b0fa937d"
@@ -224,13 +213,6 @@
     prettier "^3.3.3"
     yaml "^2.8.2"
 
-"@gouvfr/dsfr-kit@=1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-kit/-/dsfr-kit-1.1.0.tgz#ebab7404d5b0cd82445c170b2b0c313a507420fb"
-  integrity sha512-g4BuZWa1Y/2wCrniqjY2SIkLGKthUEHVhE3J2gjfPlRlQl4Mem8prHLxieNibLOnAsUwqrQ82+387vPH5VIZ5A==
-  dependencies:
-    yaml "^2.8.2"
-
 "@gouvfr/dsfr-kit@=1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-kit/-/dsfr-kit-1.1.1.tgz#b77627a224e0627f140483fdc00af5baf4fdfc75"
@@ -238,54 +220,23 @@
   dependencies:
     yaml "^2.8.2"
 
-"@gouvfr/dsfr-lore@=1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.2.13.tgz#a1f2191f0f0d830b955cd0e5ba820fa529559392"
-  integrity sha512-nxOQP1r6GO1FdbOqXXn4x9pncMrUHmL5T/kwNUUWSxhFBF1jsmSeUuac8uQ1c3BQjo3Ujvkh1jQ7mPAJlyGnyw==
-  dependencies:
-    "@gouvfr/dsfr-forge" "=1.1.1"
-
-"@gouvfr/dsfr-lore@=1.2.14":
-  version "1.2.14"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.2.14.tgz#3f3000ef928f179c1cc33a5e802ba33313aa2d91"
-  integrity sha512-VdvFYeDAPhAlOENFgpN/8NXfnyCvwdnP9CM5DYI6ZvwbBS6IKTRStv08u9wfmgL912wGzPyf/Z4LPFgCvGgmcQ==
+"@gouvfr/dsfr-lore@=1.2.15":
+  version "1.2.15"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-lore/-/dsfr-lore-1.2.15.tgz#3f3b894218ad8eea6af4f67c79083f876c1975b5"
+  integrity sha512-QAMu/UJGMDnvTmkp5ZqYamsWkkQ+EDOHNck+Ou4D/rSgWnZlWbDUD1R8/oy0hHCf1+jcmmazvfo69KhcIdSgjg==
   dependencies:
     "@gouvfr/dsfr-forge" "=1.1.2"
 
-"@gouvfr/dsfr-nexus@^1.2.13":
-  version "1.2.14"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.2.14.tgz#b2e7093741107fcd29db37e19c768025eb2781ac"
-  integrity sha512-06NMJ0f0MoslmmGKdhcpTLJMiLiBSl4puZ1nTsRupB1dt4dfmqzbWn5xXeH2CPEoAelUjv6F/wKTCdmuqZ295Q==
+"@gouvfr/dsfr-nexus@^1.2.15", "@gouvfr/dsfr-nexus@^1.2.9":
+  version "1.2.15"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.2.15.tgz#ac56ab95a72fbdfc19ca0de6dce58a99e426155a"
+  integrity sha512-575U7j/u+Z9o0u6rxgjTKja8NKnjWgYRPBXpVb7U9TsBB0+AiEhSQVvr+Pj7nmuL6PKL0Wdiz9lNqJ1wGsCQrQ==
   dependencies:
     "@gouvfr/dsfr-alchemist" "=1.1.0"
     "@gouvfr/dsfr-forge" "=1.1.2"
     "@gouvfr/dsfr-kit" "=1.1.1"
-    "@gouvfr/dsfr-lore" "=1.2.14"
-    "@gouvfr/dsfr-roller" "=1.2.14"
-    browser-sync "^3.0.3"
-    mdast-util-directive "^3.0.0"
-    mdast-util-from-markdown "^2.0.1"
-    mdast-util-frontmatter "^2.0.1"
-    mdast-util-gfm "^3.0.0"
-    micromark-extension-directive "^3.0.1"
-    micromark-extension-frontmatter "^2.0.0"
-    micromark-extension-gfm "^3.0.0"
-    minisearch "^7.1.1"
-    semver "^7.6.3"
-    sharp "^0.34.1"
-    yaml "^2.4.1"
-    yargs "^17.7.2"
-
-"@gouvfr/dsfr-nexus@^1.2.9":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-nexus/-/dsfr-nexus-1.2.13.tgz#8ebf4881003a7c86791b8d150fcdef36e386a05a"
-  integrity sha512-oLHlxJROL1sK02uqaQxecfICU6OTbJEEGPgpFBeiGkb/N7dZjyRIhX3RaC4zCC86LLDXkz7Ufq5U0mkdCN3XFw==
-  dependencies:
-    "@gouvfr/dsfr-alchemist" "=1.1.0"
-    "@gouvfr/dsfr-forge" "=1.1.1"
-    "@gouvfr/dsfr-kit" "=1.1.1"
-    "@gouvfr/dsfr-lore" "=1.2.13"
-    "@gouvfr/dsfr-roller" "=1.2.13"
+    "@gouvfr/dsfr-lore" "=1.2.15"
+    "@gouvfr/dsfr-roller" "=1.2.15"
     browser-sync "^3.0.3"
     mdast-util-directive "^3.0.0"
     mdast-util-from-markdown "^2.0.1"
@@ -307,22 +258,10 @@
   dependencies:
     "@gouvfr/dsfr-nexus" "^1.2.9"
 
-"@gouvfr/dsfr-roller@=1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.2.13.tgz#d91064521714c153f8ceb4a77b147998a14b60c0"
-  integrity sha512-nutpP6WszPs+9hfrl8hTNyPiq4z1HEApjNFMrjq5Ir9W3+0tWPi+fsmCxQYiLQ+V39XeRN14xwAhFgSl1aA8sw==
-  dependencies:
-    "@gouvfr/dsfr-forge" "=1.1.1"
-    "@gouvfr/dsfr-kit" "=1.1.1"
-    "@gouvfr/dsfr-publisher" "npm:@gouvfr/dsfr@1.15.2"
-    deepmerge "^4.3.1"
-    ejs "^3.1.10"
-    yaml "^2.4.1"
-
-"@gouvfr/dsfr-roller@=1.2.14":
-  version "1.2.14"
-  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.2.14.tgz#dc6ca79038204f21fc5feebd03b0f65b605c58ff"
-  integrity sha512-vKNkhKivzFtAKqr1SQYOrp8TLGQUCuGCpinILNIAxfMmfnMmYtBxiK8//QutGbPYDbv1OrCHIaX5Ixb9gXTZ2g==
+"@gouvfr/dsfr-roller@=1.2.15":
+  version "1.2.15"
+  resolved "https://registry.yarnpkg.com/@gouvfr/dsfr-roller/-/dsfr-roller-1.2.15.tgz#057d0765d69d5604e57b3a7220493b2178ccecd0"
+  integrity sha512-oakq4IdviN20QCqHHbp6LXxpxt+lZCBZddLcNHHTs9IqN8K9ke9snzWs5etAWJc1M4tLw2jRwLDcV+pOXSv3AQ==
   dependencies:
     "@gouvfr/dsfr-forge" "=1.1.2"
     "@gouvfr/dsfr-kit" "=1.1.1"
