@@ -7,10 +7,10 @@ const ACCEPT_LICENSE_KEY = 'accept-license';
 const ACCEPT_LICENSE_ENV = 'DSFR_ACCEPT_LICENSE';
 const CREATE_DSFR_PACKAGE = '@gouvfr/dsfr';
 const CREATE_DSFR_COMMANDS = {
-  npm: `npm create ${CREATE_DSFR_PACKAGE}`,
-  pnpm: `pnpm create ${CREATE_DSFR_PACKAGE}`,
+  npm: `npm create ${CREATE_DSFR_PACKAGE}@latest`,
+  pnpm: `pnpm create ${CREATE_DSFR_PACKAGE}@latest`,
   yarn: `yarn create ${CREATE_DSFR_PACKAGE}`,
-  bun: `bun create ${CREATE_DSFR_PACKAGE}`
+  bun: `bun create ${CREATE_DSFR_PACKAGE}@latest`
 };
 
 const getPackageRoot = () => path.join(__dirname, '..');
