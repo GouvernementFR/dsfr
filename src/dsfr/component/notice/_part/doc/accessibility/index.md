@@ -41,6 +41,7 @@ Aucune interaction au clavier spécifique au composant.
 - Les **bandeaux refermables** doivent inclure un bouton clairement identifiable pour fermer le bandeau.
 - Le bouton de fermeture doit avoir un label explicite via un texte caché et un attribut `title`.
 - À la fermeture, repositionner le focus à un endroit pertinent pour l’utilisateur.
+- Si le bandeau d’information importante est ajouté dynamiquement après le chargement de la page, utiliser un attribut role sur le composant en fonction du niveau d'alerte, comme sur le [composant alerte](../../../../alert/_part/doc/index.md)
 
 ### Contrastes de couleurs
 
