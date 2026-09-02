@@ -61,7 +61,7 @@ Aiguiller l’usager sur les différentes étapes composant la démarche en prop
 
 ![](./_asset/edit/dont-1.png)
 
-Ne pas répéter des titres d’étapes ou indiquer le numéro de l’étape dans le titre, celui-ci étant déjà indiquer dans un champ spécifique.
+Ne pas répéter des titres d’étapes ou indiquer le numéro de l’étape dans le titre, celui-ci étant déjà indiqué dans un champ spécifique.
 
 :::
 
