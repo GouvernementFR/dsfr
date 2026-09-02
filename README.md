@@ -65,7 +65,7 @@ Il est également possible de récupérer le projet DSFR directement depuis Gith
 git clone https://github.com/GouvernementFR/dsfr.git
 ```
 
-Puis de se rendre dans le dossier du projet, consentir aux modalités d'utilisation, installer les dépendances et compiler le projet avec les commandes suivantes ::
+Puis de se rendre dans le dossier du projet, consentir aux modalités d'utilisation, installer les dépendances et compiler le projet avec les commandes suivantes :
 
 ```bash
 cd dsfr
