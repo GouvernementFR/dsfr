@@ -41,7 +41,7 @@ Sa structure est la suivante :
 - Le champ de recherche est un élément HTML `<input>` de type `search` défini par la classe `fr-input`.
 - Le champ de recherche doit être associée à un libellé `<label>` avec la classe `fr-label`.
 - Le bouton de recherche est un élément HTML `<button>` défini par la classe `fr-btn` et dispose d'un attribut `title` indiquant son action. Son type doit être défini à `submit` pour soumettre le formulaire au click ou avec la touche "entrée".
-- Un message d'erreur ou de succès peut être associé au champ de recherche en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message `fr-message`.
+- Un message d'erreur ou de succès peut être associé au champ de recherche en utilisant un élément HTML `<div>` avec la classe `fr-messages-group` dans lequel on peut ajouter un message : un élément `<p>` avec la classe `fr-message`, et un <span lang="en">modifier</span> `fr-message--error` ou `fr-message--valid`.
   - Son attribut`id` doit être associé à l'attribut `aria-describedby` du champ de recherche.
   - Ce bloc peut être placé vide et être rempli dynamiquement, auquel cas il doit être annoncé à l'utilisateur en utilisant l'attribut `aria-live="polite"`.
 
@@ -101,6 +101,19 @@ Pour appliquer une variante de taille, ajoutez une des classes suivantes à l'é
 
 ```HTML
 <div class="fr-search-bar fr-search-bar--lg" role="search">
+  <!-- Contenu de la barre de recherche -->
+</div>
+```
+
+#### Variante avec libellé
+
+Par défaut, le libellé du champ de recherche est positionné hors écran. Pour rendre le libellé visible, ajoutez la classe `fr-search-bar--labelled` à l'élément `<div class="fr-search-bar">`.
+Ne pas utiliser cette variante dans le cas d'une recherche globale dans la page (dans le header), car le libellé est déjà présent dans le bouton de recherche.
+
+**Exemple de variante avec libellé**
+
+```HTML
+<div class="fr-search-bar fr-search-bar--labelled" role="search">
   <!-- Contenu de la barre de recherche -->
 </div>
 ```

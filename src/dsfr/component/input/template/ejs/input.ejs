@@ -70,9 +70,11 @@ const builder = new MessageBuilder(input.id, input.includeEmptyMessagesGroup);
 
 if (input.valid) {
   builder.addValid(input.valid);
+  if (!input.hasGroup) classes.push(`${prefix}-input--valid`);
 }
 if (input.error) {
   builder.addError(input.error);
+  if (!input.hasGroup) classes.push(`${prefix}-input--error`);
 }
 
 if (input.messages) {
