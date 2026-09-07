@@ -82,10 +82,6 @@ const noticeArgTypes = {
     description: 'Niveau de titre du bandeau (default: h2)',
     options: ['h2', 'h3', 'h4', 'h5', 'h6', 'p']
   },
-  notice: {
-    control: 'boolean',
-    description: 'Si true, ajoute un role notice (si insertion à la volée du bandeau)'
-  },
   dismissible: {
     control: 'boolean',
     description: 'Ajoute un bouton de fermeture',
@@ -141,7 +137,6 @@ const noticeArgs = {
   icon: '',
   type: 'info',
   markup: 'h2',
-  notice: false,
   dismissible: false,
   buttonLabel: 'Masquer le message',
   hasLink: false,
@@ -158,8 +153,7 @@ const noticeProps = (args) => {
     dismissible: args.dismissible || noticeArgs.dismissible,
     icon: args.hasIcon ? args.icon : false,
     type: args.type || noticeArgs.type,
-    markup: args.markup || noticeArgs.markup,
-    notice: args.notice || noticeArgs.notice
+    markup: args.markup || noticeArgs.markup
   };
 
   if (args.hasDescription) notice.desc = args.desc || undefined;
