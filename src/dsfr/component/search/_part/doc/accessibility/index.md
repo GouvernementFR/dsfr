@@ -40,7 +40,7 @@ L’ensemble des règles d’accessibilité du [champs de saisie](../../../../in
 
 - Le conteneur de la barre de recherche possède un `role="search"`.
 - Le champ de recherche est de type `search`.
-- Le champ de recherche a une étiquette positionnée hors écran. Le bouton de recherche adjacent permet de comprendre la nature et fonction du champ.
+- Le champ de recherche a une étiquette positionnée, par défaut, hors écran. Le bouton de recherche adjacent permet de comprendre la nature et fonction du champ.
 - Le bouton de recherche a un intitulé et un attribut title explicite.
 
 ### Contrastes de couleurs

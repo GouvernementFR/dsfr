@@ -32,3 +32,23 @@ export const SizeLgStory = {
     inputId: 'search-input-lg'
   }
 };
+
+export const LabelledStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    labelled: true,
+    id: 'search-labelled',
+    inputId: 'search-input-labelled',
+    inputLabel: 'Rechercher un xxx'
+  }
+};
+
+export const ErrorStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: 'search-error',
+    inputId: 'search-input-error',
+    status: 'error',
+    errorMessage: 'Message d\'erreur'
+  }
+};

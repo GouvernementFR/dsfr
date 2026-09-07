@@ -15,7 +15,7 @@ const skiplinks = [
 
 <%- include('../../../../component/header/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, navigation: true, menu: { modalId: 'header-navigation' }}}, true); %>
 
-<div id="content">
+<main id="content">
   <%- include('../../template/ejs/notice.ejs', {notice: {type: 'info', title: 'Information importante'}}); %>
 
   <% const breadcrumb = {
@@ -35,4 +35,4 @@ const skiplinks = [
   <div class="<%= prefix %>-container" >
     <h2>lorem, ipsum dolor sit amet  </h2>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore similique commodi sit eligendi, esse ab sapiente necessitatibus, consequatur delectus nobis doloribus rem libero, expedita blanditiis veritatis? Nobis doloribus possimus reprehenderit.</p></div>
-</div>
+</main>

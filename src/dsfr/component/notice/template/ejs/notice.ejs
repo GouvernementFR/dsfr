@@ -36,7 +36,7 @@ const link = notice.link || false;
 const type = notice.type || false;
 const classes = notice.classes || [];
 const attributes = notice.attributes || {};
-const markup = notice.markup || 'p';
+const markup = notice.markup || 'h2';
 classes.push(prefix + '-notice');
 const titleClasses = [`${prefix}-notice__title`];
 if (type) classes.push(prefix + '-notice--' + type);
@@ -48,17 +48,17 @@ else if (notice.icon) titleClasses.push(prefix + '-icon-' + notice.icon);
 <div <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
   <div class="<%= prefix %>-container">
     <div class="<%= prefix %>-notice__body">
-      <<%= markup %>>
+      <div>
         <% if (title) { %>
-          <span <%- includeClasses(titleClasses) %>><%- title %></span>
+          <<%= markup %> <%- includeClasses(titleClasses) %>><%- title %></<%= markup %>>
         <% } %>
         <% if (desc) { %>
-          <span class="<%= prefix %>-notice__desc"><%- desc %></span>
+          <p class="<%= prefix %>-notice__desc"><%- desc %></p>
         <% } %>
         <% if (link) { %>
           <%- include('../../../../core/template/ejs/action/action.ejs', {action: {...notice.link, classes: [`${prefix}-notice__link`], markup: 'a'}}) %>
         <% } %>
-      </<%= markup %>>
+        </div>
       <% if (notice.dismissible) { %>
         <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...notice.button}}) %>
       <% } %>

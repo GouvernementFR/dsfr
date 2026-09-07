@@ -42,7 +42,7 @@ La structure HTML d'un champ de saisie de base est la suivante :
   - Un intitulé, obligatoire, dans un élément `<label>` de classe `fr-label` et lié au champ via un attribut `for` pour décrire le champ de saisie
   - Une description additionnelle, optionnelle, dans un élément `<span>` de classe `fr-hint-text` à placer dans le `<label>`. Cette description peut être utilisée pour donner des indications sur le format attendu.
   - Un champ `<input>` de classe `fr-input` pour saisir les données. Pour une plus grande zone de saisie, il est possible d'utiliser un élément `<textarea>`.
-  - Un message d'erreur/information/avertissement/succès, optionnel, dans un bloc `fr-messages-group`, lié au `aria-describedby` du champ de saisie
+  - Un message d'erreur/information/avertissement/succès, optionnel, dans un bloc `fr-messages-group`, lié au `aria-describedby` du champ de saisie. Ce message doit être un élément `<p>` avec la classe `fr-message`, et un <span lang="en">modifier</span> `fr-message--error`, `fr-message--info`, `fr-message--warning` ou `fr-message--valid` selon le type de message.
 
 **Exemple de structure simple**
 
@@ -98,6 +98,15 @@ Un champ de saisie peut être associé à un bouton pour déclencher une action.
     </div>
 </div>
 ```
+
+#### Statut du champ de saisie
+
+Les champs de saisie peuvent avoir différents états pour indiquer à l'utilisateur la validité de sa saisie ou pour fournir des informations contextuelles. Les principaux états sont :
+
+- **Erreur** : Indique que la saisie est incorrecte. La classe `fr-input-group--error` doit être ajoutée au conteneur du champ de saisie. Le message d'erreur doit être placé dans un élément `<p>` avec la classe `fr-message fr-message--error` à l'intérieur du bloc `fr-messages-group`.
+- **Succès** : Indique que la saisie est correcte. La classe `fr-input-group--valid` doit être ajoutée au conteneur du champ de saisie. Le message de succès doit être placé dans un élément `<p>` avec la classe `fr-message fr-message--valid` à l'intérieur du bloc `fr-messages-group`.
+
+Des messages d'information ou d'avertissement peuvent également être utilisés de la même manière, pour fournir des indications supplémentaires à l'utilisateur, via les classes `fr-message--info` ou `fr-message--warning`. Mais ceux-ci n'ont pas d'impact sur le statut du champ et du libellé associé.
 
 #### Groupes de champs de saisie
 

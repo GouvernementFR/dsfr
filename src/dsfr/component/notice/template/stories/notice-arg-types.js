@@ -71,17 +71,16 @@ const noticeArgTypes = {
     control: {
       type: 'select',
       labels: {
-        p: 'p',
-        h1: 'h1',
         h2: 'h2',
         h3: 'h3',
         h4: 'h4',
         h5: 'h5',
-        h6: 'h6'
+        h6: 'h6',
+        p: 'p'
       }
     },
-    description: 'Type de bandeau',
-    options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+    description: 'Niveau de titre du bandeau (default: h2)',
+    options: ['h2', 'h3', 'h4', 'h5', 'h6', 'p']
   },
   dismissible: {
     control: 'boolean',
@@ -137,7 +136,7 @@ const noticeArgs = {
   hasIcon: true,
   icon: '',
   type: 'info',
-  markup: 'p',
+  markup: 'h2',
   dismissible: false,
   buttonLabel: 'Masquer le message',
   hasLink: false,
