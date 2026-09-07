@@ -70,7 +70,7 @@ La liaison explicite `for`/`id` permet&nbsp;:
 
 #### Étiquette visible et accolée
 
-L’étiquette est visible et doit être accolée à la case à cocher.
+L’étiquette est visible et doit être accolée à l’interrupteur.
 
 #### État désactivé
 
