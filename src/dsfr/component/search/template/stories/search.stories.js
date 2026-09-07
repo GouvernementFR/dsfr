@@ -39,9 +39,7 @@ export const LabelledStory = {
     labelled: true,
     id: 'search-labelled',
     inputId: 'search-input-labelled',
-    input: {
-      label: 'Rechercher un xxx'
-    }
+    inputLabel: 'Rechercher un xxx'
   }
 };
 
