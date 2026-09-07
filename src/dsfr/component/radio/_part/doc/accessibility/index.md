@@ -60,7 +60,7 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 >[!CAUTION]
 >Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` du bouton radio.
 >
->L’attribut `for` du label doit correspondre à l'attribut `id` de la case à cocher. La valeur de l’attribut `id` doit être unique dans la page.
+>L’attribut `for` du label doit correspondre à l'attribut `id` du bouton radio. La valeur de l’attribut `id` doit être unique dans la page.
 
 La liaison explicite `for`/`id` permet :
 - d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal),
