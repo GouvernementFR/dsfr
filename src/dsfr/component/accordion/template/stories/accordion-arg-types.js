@@ -31,8 +31,7 @@ const accordionArgTypes = {
         h4: 'h4',
         h5: 'h5',
         h6: 'h6',
-        span: 'p'
-      }
+        p: 'p'
     },
     description: 'Niveau de titre du bouton (default: h3)',
     options: ['h2', 'h3', 'h4', 'h5', 'h6', 'p']
