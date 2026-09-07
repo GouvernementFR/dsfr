@@ -98,7 +98,7 @@ L'état d’erreur est signalé par un changement de couleur ainsi que l’affic
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs système : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=input--valid}
+::dsfr-doc-storybook{storyId=input--success}
 
 **État désactivé**
 
