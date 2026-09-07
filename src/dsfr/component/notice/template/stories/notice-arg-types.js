@@ -71,21 +71,20 @@ const noticeArgTypes = {
     control: {
       type: 'select',
       labels: {
-        p: 'p',
-        h1: 'h1',
         h2: 'h2',
         h3: 'h3',
         h4: 'h4',
         h5: 'h5',
-        h6: 'h6'
+        h6: 'h6',
+        p: 'p'
       }
     },
-    description: 'Type de bandeau',
-    options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+    description: 'Niveau de titre du bandeau (default: h2)',
+    options: ['h2', 'h3', 'h4', 'h5', 'h6', 'p']
   },
   notice: {
     control: 'boolean',
-    description: ' Si true, ajoute un role notice (si insertion à la volée du bandeau)'
+    description: 'Si true, ajoute un role notice (si insertion à la volée du bandeau)'
   },
   dismissible: {
     control: 'boolean',
@@ -141,7 +140,7 @@ const noticeArgs = {
   hasIcon: true,
   icon: '',
   type: 'info',
-  markup: 'p',
+  markup: 'h2',
   notice: false,
   dismissible: false,
   buttonLabel: 'Masquer le message',

@@ -37,7 +37,7 @@ Le composant **Accordéon** est composé de deux parties : son titre qui contien
 Sa structure est la suivante :
 
 - Le conteneur de l'accordéon est une balise `<section>` avec la classe `fr-accordion`.
-- Son titre est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hiérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
+- Son titre est contenu dans un niveau d'entête `<hx>` (ou éventuellement `<p>`), variable en fonction de sa hiérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
 - Un `<button>` est placé dans cette balise `<hx>`, et son libellé constitue le titre.
   - Le bouton doit être de type "button".
   - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le collapse est ouvert ou fermé
