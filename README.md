@@ -36,6 +36,14 @@ Une fois en place, vous pouvez installer le package `@gouvfr/dsfr` via la comm
 yarn create @gouvfr/dsfr
 ```
 
+Avec npm, il faut forcer l'utilisation de la dernière version de create-dsfr :
+
+```bash
+npm create @gouvfr/dsfr@latest
+```
+
+*Installation d'une version spécifique du DSFR*
+
 Par défaut la version du DSFR installée sera la dernière version stable (latest). Il est possible d'installer une version spécifique du DSFR en ajoutant le numéro de version en paramètre, par exemple :
 
 ```bash
@@ -45,7 +53,7 @@ yarn create @gouvfr/dsfr --dsfr-version=1.15.0
 Avec npm, la commande équivalente est :
 
 ```bash
-npm create @gouvfr/dsfr -- --dsfr-version=1.15.0
+npm create @gouvfr/dsfr@latest -- --dsfr-version=1.15.0
 ```
 
 **Acceptation des modalités d'utilisation**
