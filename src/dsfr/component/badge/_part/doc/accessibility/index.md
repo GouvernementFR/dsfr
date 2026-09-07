@@ -22,7 +22,7 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
-- [Anatomie](../design/index.md)
+- [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
 
@@ -39,7 +39,7 @@ Le composant Badge n’est pas interactif. Il n’y a donc pas d'interaction au 
 #### Structuration
 
 - Par défaut, utiliser un élément `<p>` lorsque le badge est utilisé seul.
-- Si le badge est utilisé à l’intérieur d’un élément qui possède une sémantique (`<p>`, `li`…), utiliser un élément `<span>`.
+- Si le badge est utilisé à l’intérieur d’un élément qui possède une sémantique (`<p>`, `<li>`…), utiliser un élément `<span>`.
 - En cas d’utilisation de plusieurs badges à la suite, les structurer dans une liste.
 
 #### Badge système avec icône
