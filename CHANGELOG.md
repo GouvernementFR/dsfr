@@ -9,12 +9,93 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.15
 
-### [v1.15.2](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.2) - 11 août 2026
+### [v1.15.3](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.3) - 8 septembre 2026
+
+#### [#1524](https://github.com/GouvernementFR/dsfr/pull/1524) : ⬆️ mise à jour des dépendances npm
+`chore (dependencies)`
+
+
+
+---
+
+#### [#1512](https://github.com/GouvernementFR/dsfr/pull/1512) : 📝 corrections mineures de la documentation
+`docs `
+
+- corrections diverses sur le site de documentation
+
+- réduction du poids des images
+
+---
+
+#### [#1498](https://github.com/GouvernementFR/dsfr/pull/1498) : 🐛 utilisation de span dans groupe de badge
+`fix (badge)`
+
+- utilise l'élément html span pour les groupes
+
+---
+
+#### [#1507](https://github.com/GouvernementFR/dsfr/pull/1507) : 📝 bug du storybook checkbox intederminée
+`docs (checkbox)`
+
+- Corrige l'iframe dans le site de doc et l'url vers le js de la checkbox indéterminée.
+
+---
+
+#### [#1504](https://github.com/GouvernementFR/dsfr/pull/1504) : 🐛 retire l'utilisation d'un role aria invalide
+`fix (notice)`
+
+- un attribut role (status, alert) ne doit être ajouté que dans le cas d'un affichage dynamique
+
+---
+
+#### [#1513](https://github.com/GouvernementFR/dsfr/pull/1513) : ✨ nouvelle version de la fonte Marianne
+`feat `
+
+- mets à jour les fichier des fontes, la nouvelle version apporte l'espace insécable
+
+---
+
+#### [#1516](https://github.com/GouvernementFR/dsfr/pull/1516) : ✨ ajout d'une variante recherche avec libellé
+`feat (search)`
+
+- ajout de fr-search-bar--labelled pour afficher le libellé
+
+- ajout de la gestion des messages d'erreur/succès
+
+- amélioration de la documentation des statuts des champs de saisie
+
+---
+
+#### [#1520](https://github.com/GouvernementFR/dsfr/pull/1520) : 🐛 correction de la propriété storybook pictogramName
+`fix (tile, radio)`
+
+- Passage de la propriété pictogramName d'une string à un select listant tous les pictogrammes
+
+---
+
+#### [#1521](https://github.com/GouvernementFR/dsfr/pull/1521) : ✨ ajout d'un niveau de titre au bandeau
+`feat (notice)`
+
+
+
+---
+
+
+### [v1.15.2](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.2) - 12 août 2026
+
+#### [#1497](https://github.com/GouvernementFR/dsfr/pull/1497) : 📝 correction des liens cassés vers l'ancienne page des couleurs
+`docs (posts)`
+
+
+
+---
 
 #### [#1487](https://github.com/GouvernementFR/dsfr/pull/1487) : ♻️ génération de la doc depuis dsfr-doc
 `refactor `
 
 - Déplace la dépendance à dsfr-nexus dans un sous projet dsfr-doc
+
+
 
 ---
 

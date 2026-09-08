@@ -1,11 +1,134 @@
+- id: v1.15.3
+  date: 2026-09-08
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.3
+  commits:
+    - id: "1524"
+      type: chore
+      scopes:
+        - dependencies
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.15.3
+      title: mise à jour des dépendances npm
+      pull: https://github.com/GouvernementFR/dsfr/pull/1524
+    - id: "1512"
+      type: docs
+      scopes: []
+      description: |-
+        - corrections diverses sur le site de documentation
+        - réduction du poids des images
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.3
+      title: corrections mineures de la documentation
+      pull: https://github.com/GouvernementFR/dsfr/pull/1512
+    - id: "1498"
+      type: fix
+      scopes:
+        - badge
+      description: "- utilise l'élément html span pour les groupes"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.3
+      title: utilisation de span dans groupe de badge
+      pull: https://github.com/GouvernementFR/dsfr/pull/1498
+    - id: "1507"
+      type: docs
+      scopes:
+        - checkbox
+      description: "- Corrige l'iframe dans le site de doc et l'url vers le js de la
+        checkbox indéterminée."
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.3
+      title: bug du storybook checkbox intederminée
+      pull: https://github.com/GouvernementFR/dsfr/pull/1507
+    - id: "1504"
+      type: fix
+      scopes:
+        - notice
+      description: "- un attribut role (status, alert) ne doit être ajouté que dans le
+        cas d'un affichage dynamique"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.3
+      title: retire l'utilisation d'un role aria invalide
+      pull: https://github.com/GouvernementFR/dsfr/pull/1504
+    - id: "1513"
+      type: feat
+      scopes: []
+      description: "- mets à jour les fichier des fontes, la nouvelle version apporte
+        l'espace insécable"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.3
+      title: nouvelle version de la fonte Marianne
+      pull: https://github.com/GouvernementFR/dsfr/pull/1513
+    - id: "1516"
+      type: feat
+      scopes:
+        - search
+      description: |-
+        - ajout de fr-search-bar--labelled pour afficher le libellé
+        - ajout de la gestion des messages d'erreur/succès
+        - amélioration de la documentation des statuts des champs de saisie
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.3
+      title: ajout d'une variante recherche avec libellé
+      pull: https://github.com/GouvernementFR/dsfr/pull/1516
+    - id: "1520"
+      type: fix
+      scopes:
+        - tile
+        - radio
+      description: "- Passage de la propriété pictogramName d'une string à un select
+        listant tous les pictogrammes"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.3
+      title: correction de la propriété storybook pictogramName
+      pull: https://github.com/GouvernementFR/dsfr/pull/1520
+    - id: "1521"
+      type: feat
+      scopes:
+        - notice
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.3
+      title: ajout d'un niveau de titre au bandeau
+      pull: https://github.com/GouvernementFR/dsfr/pull/1521
 - id: v1.15.2
-  date: 2026-08-11
+  date: 2026-08-12
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.2
   commits:
+    - id: "1497"
+      type: docs
+      scopes:
+        - posts
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.2
+      title: correction des liens cassés vers l'ancienne page des couleurs
+      pull: https://github.com/GouvernementFR/dsfr/pull/1497
     - id: "1487"
       type: refactor
       scopes: []
-      description: "- Déplace la dépendance à dsfr-nexus dans un sous projet dsfr-doc"
+      description: |
+        - Déplace la dépendance à dsfr-nexus dans un sous projet dsfr-doc
       isBreaking: false
       gitmojis:
         - ♻️
