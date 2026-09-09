@@ -31,7 +31,7 @@ export const IndeterminateStory = {
   decorators: [
     (Story) => {
       const script = document.createElement('script');
-      script.src = '/js/checkbox/init-indeterminate.js';
+      script.src = './js/checkbox/init-indeterminate.js';
       script.type = 'module';
       document.head.appendChild(script);
 

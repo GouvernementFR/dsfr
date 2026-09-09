@@ -3,3 +3,7 @@
 <%- sample('Barre de recherche MD (par défaut)', './sample/search-default.ejs', {}, true); %>
 
 <%- sample('Barre de recherche LG', './sample/search-lg.ejs', {}, true); %>
+
+<%- sample('Barre de recherche avec libellé', './sample/search-default.ejs', {search: {labelled: true, input: { label: 'Rechercher un xxx'}}}, true); %>
+
+<%- sample('Barre de recherche avec message d\'erreur', './sample/search-default.ejs', {search: {input: { error: errorData('Message d\'erreur')}}}, true); %>

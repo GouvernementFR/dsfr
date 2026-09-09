@@ -1,7 +1,12 @@
+import pictograms from '../../../../../../.config/pictogram.json';
+
+const pictogramNames = pictograms.map(pictogram => pictogram.name);
+
 const pictogramArgTypes = {
   pictogramName: {
-    control: 'text',
+    control: { type: 'select' },
     description: 'Nom du pictogramme de la tuile',
+    options: pictogramNames,
     type: {
       value: 'string'
     },
