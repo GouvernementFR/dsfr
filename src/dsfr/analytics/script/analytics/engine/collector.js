@@ -57,7 +57,7 @@ class Collector {
 
     this._user = new User(config.user);
     this._site = new Site(config.site);
-    this._page = new Page(config.page);
+    this._page = this._provider ? this._provider.page(this._config.context) : new Page(this._config.page);
     this._search = new Search(config.search);
     this._funnel = new Funnel(config.funnel);
 
