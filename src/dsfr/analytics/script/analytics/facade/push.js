@@ -2,7 +2,7 @@ import api from '../../../api.js';
 
 const push = (type, layer) => {
   if (typeof window.EA_push !== 'function') {
-    api.inspector.warn('Analytics datalayer not sent, Eulerian API isn\'t yet avalaible');
+    api.inspector.warn('Analytics datalayer not sent, Eulerian API isn\'t yet available');
     return;
   }
 
