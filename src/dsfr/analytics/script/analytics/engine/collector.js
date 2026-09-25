@@ -59,7 +59,7 @@ class Collector {
     this._site = this._provider ? this._provider.site(this._config.context) : new Site(config.site);
     this._page = this._provider ? this._provider.page(this._config.context) : new Page(this._config.page);
     this._search = new Search(config.search);
-    this._funnel = new Funnel(config.funnel);
+    this._funnel = this._provider ? this._provider.funnel(this._config.context) : new Funnel(config.funnel);
 
     this._delay = -1;
     queue.setCollector(this);
