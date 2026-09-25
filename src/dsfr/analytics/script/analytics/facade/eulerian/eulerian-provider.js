@@ -3,6 +3,7 @@ import { Collector } from '../../engine/collector';
 import { Init } from '../init';
 import opt from '../opt';
 import EulerianPage from './eulerian-page';
+import EulerianSite from './eulerian-site';
 import push from '../push';
 import { TarteAuCitronIntegration } from '../../cmp/tarte-au-citron-integration';
 
@@ -35,6 +36,10 @@ class EulerianProvider extends Init {
 
   page (context) {
     return new EulerianPage(context && context.page);
+  }
+
+  site (context) {
+    return new EulerianSite(context && context.site);
   }
 
   push (type, layer) {
