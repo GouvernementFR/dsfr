@@ -6,6 +6,7 @@ import EulerianPage from './eulerian-page';
 import EulerianSite from './eulerian-site';
 import EulerianUser from './eulerian-user';
 import EulerianFunnel from './eulerian-funnel';
+import EulerianSearch from './eulerian-search';
 import push from '../push';
 import { TarteAuCitronIntegration } from '../../cmp/tarte-au-citron-integration';
 
@@ -50,6 +51,10 @@ class EulerianProvider extends Init {
 
   funnel (context) {
     return new EulerianFunnel(context && context.funnel);
+  }
+
+  search (context) {
+    return new EulerianSearch(context && context.search);
   }
 
   push (type, layer) {
