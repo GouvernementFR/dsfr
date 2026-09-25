@@ -9,9 +9,19 @@
       id: 'tarteaucitron'
     },
     providers: {
-      eulerian: {
+      /*eulerian: {
         domain: 'gva.et-gv.fr',
-      }, 
+      },*/
+      matomo: {
+        setTrackerUrl: 'https://mon-instance.matomo.ministere.gouv.fr/',
+        setSiteId: 'monIdSiteMatomo',
+        dimensions: [
+          { $ref: '#/context/page/labels', id: 1 },
+          { $ref: '#/context/page/template', id: 3 },
+          { $ref: '#/context/funnel/id', id: 5 },
+          { value: 'hardcoded value', id: 6 },
+        ],
+      },
     },
     context:{
       page: {
