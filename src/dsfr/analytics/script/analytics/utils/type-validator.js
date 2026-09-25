@@ -109,4 +109,18 @@ const validateDate = (value, name, allowNull = true) => {
   return null;
 };
 
-export { validateString, validateNumber, validateBoolean, validateLang, validateGeography, validateDate };
+const validateArray = (value, name, allowNull = true) => {
+  switch (true) {
+    case Array.isArray(value):
+      return value;
+
+    case value === undefined && allowNull:
+    case value === null && allowNull:
+      return [];
+  }
+
+  api.inspector.warn(`unexpected value '${value}' set at analytics.${name}. Expecting an Array`);
+  return null;
+};
+
+export { validateString, validateNumber, validateBoolean, validateLang, validateGeography, validateDate, validateArray };
