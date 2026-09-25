@@ -1,0 +1,3 @@
+const PluginManager = {};
+
+export { PluginManager };

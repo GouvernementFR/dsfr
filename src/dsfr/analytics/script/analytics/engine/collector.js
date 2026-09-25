@@ -14,21 +14,23 @@ import { ActioneeEmission } from '../../integration/core/actionee-emission';
 import { ActionEnable } from './action-enable';
 
 class Collector {
-  constructor (config) {
-    switch (config.collection) {
+  constructor (config, provider) {
+    this._config = config;
+    this._provider = provider;
+    switch (this._config.collection) {
       case Collection.MANUAL:
       case Collection.LOAD:
       case Collection.FULL:
       case Collection.HASH:
-        this._collection = config.collection;
+        this._collection = this._config.collection;
         break;
 
       default:
         /* deprecated start */
-        if (config.mode) {
-          switch (config.mode) {
+        if (this._config.mode) {
+          switch (this._config.mode) {
             case 'manual':
-              this._collection = config.collection;
+              this._collection = this._config.collection;
               break;
           }
         }
@@ -36,7 +38,7 @@ class Collector {
 
         switch (true) {
           /* deprecated */
-          case config.mode === 'manual':
+          case this._config.mode === 'manual':
             this._collection = Collection.MANUAL;
             break;
 
@@ -51,7 +53,7 @@ class Collector {
         }
     }
 
-    this.isActionEnabled = config.isActionEnabled;
+    this.isActionEnabled = this._config.isActionEnabled;
 
     this._user = new User(config.user);
     this._site = new Site(config.site);
