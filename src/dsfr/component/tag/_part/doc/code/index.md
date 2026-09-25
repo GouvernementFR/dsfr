@@ -98,13 +98,13 @@ Les tags peuvent être utilisés à plusieurs dans des groupes de tags `fr-tags-
 ```HTML
 <ul class="fr-tags-group">
     <li>
-        <p class="fr-tag">Libellé tag 1</p>
+        <span class="fr-tag">Libellé tag 1</span>
     </li>
     <li>
-        <p class="fr-tag">Libellé tag 2</p>
+        <span class="fr-tag">Libellé tag 2</span>
     </li>
     <li>
-        <p class="fr-tag">Libellé tag 3</p>
+        <span class="fr-tag">Libellé tag 3</span>
     </li>
 </ul>
 ```
@@ -202,13 +202,13 @@ Le groupe de tag est disponible en deux variantes de tailles :
 ```HTML
 <ul class="fr-tags-group fr-tags-group--sm">
     <li>
-        <p class="fr-tag">Libellé tag non cliquable SM 1</p>
+        <span class="fr-tag">Libellé tag non cliquable SM 1</span>
     </li>
     <li>
-        <p class="fr-tag">Libellé tag non cliquable SM 2</p>
+        <span class="fr-tag">Libellé tag non cliquable SM 2</span>
     </li>
     <li>
-        <p class="fr-tag">Libellé tag non cliquable SM 3</p>
+        <span class="fr-tag">Libellé tag non cliquable SM 3</span>
     </li>
 </ul>
 ```

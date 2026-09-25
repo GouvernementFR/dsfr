@@ -28,6 +28,7 @@ const getTagsData = (count = 3) => {
   for (let i = 1; i <= count; i++) {
     tags.push({
       label: `${tagArgs.label} ${i}`,
+      markup: 'span',
       accent: 'défaut',
       size: 'md',
       href: '[URL - à modifier]',
@@ -60,6 +61,9 @@ const tagsGroupProps = (args) => {
 
   for (const tag of tagsGroup.tags) {
     tag.type = args.type;
+    if (args.type === 'default') {
+      tag.markup = 'span';
+    }
   }
 
   for (let i = 0; i < tagsGroup.tags.length; i++) {
