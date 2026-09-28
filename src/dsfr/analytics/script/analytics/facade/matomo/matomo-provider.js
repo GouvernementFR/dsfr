@@ -1,4 +1,5 @@
 import api from '../../../../api';
+import MatomoOpt from './matomo-opt';
 import MatomoPage from './matomo-page';
 import { Site } from '../../collector/provider/site';
 import { User } from '../../collector/provider/user';
@@ -25,6 +26,11 @@ class MatomoProvider {
     });
   }
 
+  get opt () {
+    if (!this._opt) this._opt = new MatomoOpt(this);
+    return this._opt;
+  }
+
   configure () {
     actions.setActionClass(MatomoAction);
     actions.setIdRequired(false);
@@ -35,7 +41,9 @@ class MatomoProvider {
   init () {
     this._paq = window[PUSH] = window[PUSH] || [];
 
-    this.load();
+    if (this.opt.isDisabled) {
+      api.inspector.warn('User opted out, Matomo is disabled');
+    } else this.load();
   }
 
   integrateTarteAuCitron () {
@@ -48,6 +56,7 @@ class MatomoProvider {
   }
 
   load () {
+    if (this._script) return;
     const url = this._trackerUrl;
     this._paq.push(['setTrackerUrl', `${url}matomo.php`]);
     this._paq.push(['setSiteId', this._siteId]);
@@ -86,6 +95,7 @@ class MatomoProvider {
   }
 
   push (type, layer) {
+    if (this.opt.isDisabled) return;
     push(type, layer, this.hasConsent);
   }
 
