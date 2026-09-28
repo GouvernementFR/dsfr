@@ -2,6 +2,15 @@ import api from '../../../../api';
 
 const tracked = { uid: false, dimensions: [] };
 
+const clear = () => {
+  if (typeof window._paq !== 'object') return;
+  const _paq = window._paq;
+  _paq.push(['resetUserId']);
+  tracked.dimensions.forEach(id => _paq.push(['deleteCustomDimension', Number(id)]));
+  tracked.uid = false;
+  tracked.dimensions = [];
+};
+
 const revoke = (ids) => {
   if (typeof window._paq !== 'object') return;
   const _paq = window._paq;
@@ -82,5 +91,5 @@ const push = (type, layer, hasConsent) => {
   }
 };
 
-export { revoke };
+export { clear, revoke };
 export default push;
