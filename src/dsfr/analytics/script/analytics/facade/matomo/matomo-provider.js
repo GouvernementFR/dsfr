@@ -5,6 +5,8 @@ import { User } from '../../collector/provider/user';
 import { Funnel } from '../../collector/provider/funnel';
 import MatomoSearch from './matomo-search';
 import MatomoCollector from './matomo-collector';
+import MatomoAction from './matomo-action';
+import actions from '../../action/actions';
 import push from './matomo-push';
 import TarteAuCitronIntegration from './matomo-tarte-au-citron';
 
@@ -24,6 +26,8 @@ class MatomoProvider {
   }
 
   configure () {
+    actions.setActionClass(MatomoAction);
+    actions.setIdRequired(false);
     this.init();
     return this._promise;
   }

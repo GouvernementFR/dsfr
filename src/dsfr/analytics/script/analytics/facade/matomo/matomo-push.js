@@ -74,6 +74,11 @@ const push = (type, layer, hasConsent) => {
     }
 
     api.inspector.info('analytics', type, sent);
+  } else {
+    layer.category = layer.category || 'not_dsfr_component';
+    _paq.push(['trackEvent', layer.category, layer.action, layer.name, layer.value]);
+
+    api.inspector.info('analytics', type, layer);
   }
 };
 
