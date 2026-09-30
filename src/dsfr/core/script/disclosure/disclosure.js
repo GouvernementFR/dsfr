@@ -16,6 +16,7 @@ class Disclosure extends Instance {
     this._isRetrievingPrimaries = false;
     this._hasRetrieved = false;
     this._primaryButtons = [];
+    this._focusIndex = -1;
   }
 
   static get instanceClassName () {
@@ -121,7 +122,6 @@ class Disclosure extends Instance {
 
   disclose (withhold) {
     if (this.isDisclosed === true || !this.isEnabled || !this._isActive) return false;
-    this.retainFocus();
     this._isPristine = false;
     this.isDisclosed = true;
     if (!withhold && this.group) this.group.current = this;
@@ -187,7 +187,9 @@ class Disclosure extends Instance {
   }
 
   focus () {
-    this.focusBack();
+    const button = this.primaryButtons.find(button => !button.isDisabled);
+    if (button) button.focus();
+    else this.focusBack();
   }
 
   get primaryButtons () {

@@ -14,11 +14,6 @@ class TabButton extends api.core.DisclosureButton {
     return 'TabButton';
   }
 
-  handleClick (e) {
-    super.handleClick(e);
-    this.focus();
-  }
-
   apply (value) {
     super.apply(value);
     if (this.isPrimary) {
