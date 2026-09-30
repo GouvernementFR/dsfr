@@ -42,8 +42,8 @@ const fieldsetElementsData = (type, id) => {
       id: `${id}-${i}`,
       label: `Element ${i}`,
       name: type,
-      value: (type === 'radio' || type === 'checkbox') ? i : '',
-      ...((type === 'radio' || type === 'checkbox')) && { checked: (type === 'radio' || type === 'checkbox') && i === 2 },
+      value: (type === 'radio' || type === 'checkbox' || type === 'toggle') ? i : '',
+      ...((type === 'radio' || type === 'checkbox' || type === 'toggle')) && { checked: (type === 'radio' || type === 'checkbox' || type === 'toggle') && i === 2 },
       disabled: false,
       error: undefined,
       valid: undefined
@@ -57,7 +57,7 @@ const elementsArgTypes = {
   elementsType: {
     control: { type: 'select' },
     description: 'Type d\'élements de formulaire',
-    options: ['input', 'radio', 'checkbox'],
+    options: ['input', 'radio', 'checkbox', 'toggle'],
     type: {
       value: 'string',
       required: true
@@ -67,7 +67,7 @@ const elementsArgTypes = {
   checkboxesData: {
     if: { arg: 'elementsType', eq: 'checkbox' },
     control: { type: 'object' },
-    description: 'Paramètres des checkboxes',
+    description: 'Paramètres des cases à cocher',
     type: {
       value: 'array'
     },
@@ -76,7 +76,16 @@ const elementsArgTypes = {
   radiosData: {
     if: { arg: 'elementsType', eq: 'radio' },
     control: { type: 'object' },
-    description: 'Paramètres des radios',
+    description: 'Paramètres des boutons radios',
+    type: {
+      value: 'array'
+    },
+    table: { category: 'elements' }
+  },
+  togglesData: {
+    if: { arg: 'elementsType', eq: 'toggle' },
+    control: { type: 'object' },
+    description: 'Paramètres des interrupteurs',
     type: {
       value: 'array'
     },
@@ -149,6 +158,7 @@ const formArgs = {
   checkboxesData: fieldsetElementsData('checkbox', 'checkbox-default'),
   radiosData: fieldsetElementsData('radio', 'radio-default'),
   inputsData: fieldsetElementsData('input', 'input-default'),
+  togglesData: fieldsetElementsData('toggle', 'toggle-default'),
   inline: false,
   disabled: false,
   status: 'default',
@@ -165,7 +175,7 @@ const formProps = (args) => {
       sr: args.hideLegend || formArgs.hideLegend
     },
     hint: args.hint !== '' ? args.hint : undefined,
-    choice: args.elementsType === 'radio' || args.elementsType === 'checkbox',
+    choice: args.elementsType === 'radio' || args.elementsType === 'checkbox' || args.elementsType === 'toggle',
     inline: args.inline || formArgs.inline,
     disabled: args.disabled || formArgs.disabled,
     status: args.status || formArgs.status,
@@ -184,6 +194,9 @@ const formProps = (args) => {
       break;
     case 'checkbox':
       dataElements = args.checkboxesData || formArgs.checkboxesData;
+      break;
+    case 'toggle':
+      dataElements = args.togglesData || formArgs.togglesData;
       break;
   }
 
