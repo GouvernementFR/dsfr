@@ -13,11 +13,18 @@ class TabsList extends api.core.Instance {
 
   init () {
     this.listen('scroll', this.scroll.bind(this));
-    this.listenKey(api.core.KeyCodes.RIGHT, this.ascend.bind(this, TabEmission.PRESS_KEY, TabKeys.RIGHT), true, true);
-    this.listenKey(api.core.KeyCodes.LEFT, this.ascend.bind(this, TabEmission.PRESS_KEY, TabKeys.LEFT), true, true);
-    this.listenKey(api.core.KeyCodes.HOME, this.ascend.bind(this, TabEmission.PRESS_KEY, TabKeys.HOME), true, true);
-    this.listenKey(api.core.KeyCodes.END, this.ascend.bind(this, TabEmission.PRESS_KEY, TabKeys.END), true, true);
+    this.listenKey(api.core.KeyCodes.RIGHT, this.pressKey.bind(this, TabKeys.RIGHT));
+    this.listenKey(api.core.KeyCodes.LEFT, this.pressKey.bind(this, TabKeys.LEFT));
+    this.listenKey(api.core.KeyCodes.HOME, this.pressKey.bind(this, TabKeys.HOME));
+    this.listenKey(api.core.KeyCodes.END, this.pressKey.bind(this, TabKeys.END));
     this.isResizing = true;
+  }
+
+  pressKey (key, e) {
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    this.ascend(TabEmission.PRESS_KEY, key);
+    e.preventDefault();
+    e.stopPropagation();
   }
 
   focalize (btn) {
