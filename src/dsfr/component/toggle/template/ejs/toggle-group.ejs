@@ -1,30 +1,19 @@
 <%#
 # paramètres toggle group
 
-* toggle.hint (string, optional): texte additionel
-
-// TODO: templatisation
+* toggle.toggles (array, required): liste des paramètres des interrupteurs
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-
 <%
-  let toggle = locals.toggle || {};
-  const toggles = toggle.toggles || [];
-  if (!toggles.length) {
-    const id = uniqueId('toggle');
-    for (let i = 0; i < 5; i++) {
-      toggles.push({ ...toggle, id: id + i });
-    }
-  }
+const toggle = locals.toggle || {};
+const toggles = toggle.toggles || [];
 %>
 
 <ul class="<%= prefix %>-toggle__list">
-  <%
-    for (let i = 0; i < toggles.length; i++) {
-  %>
+  <% for (const item of toggles) { %>
     <li>
-        <%- include('./toggle.ejs', {toggle: toggles[i]} ); %>
+      <%- include('./toggle', { toggle: item }); %>
     </li>
   <% } %>
 </ul>

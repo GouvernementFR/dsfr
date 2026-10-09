@@ -8,13 +8,11 @@ let data = {
   hint: toggle.hint === true ? 'Texte de description additionnel' : toggle.hint,
 }
 
-const elements = [];
-elements.push({
-  type: 'toggle',
-  data: {
-    ...data
-  }
-});
+const items = toggle.toggles || Array.from({ length: 5 }, () => ({
+  ...data,
+  id: uniqueId('toggle')
+}));
+const elements = [{ type: 'toggle', data: { toggles: items } }];
 
 const fieldset = {
   elements: elements,

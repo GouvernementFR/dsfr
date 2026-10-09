@@ -196,8 +196,11 @@ const formProps = (args) => {
       dataElements = args.checkboxesData || formArgs.checkboxesData;
       break;
     case 'toggle':
-      dataElements = args.togglesData || formArgs.togglesData;
-      break;
+      form.elements.push({
+        type: 'toggle',
+        data: { toggles: args.togglesData || formArgs.togglesData }
+      });
+      return form;
   }
 
   for (const data of dataElements) {
