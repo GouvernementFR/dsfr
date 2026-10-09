@@ -49,7 +49,7 @@ class Collapse extends Disclosure {
       const activeElement = document.activeElement;
       const shouldFocus = this.node.contains(activeElement);
       const hasNoFocus = !activeElement || activeElement === document.body || activeElement === document.documentElement;
-      if (!super.conceal(withhold, true) || preventFocus === true) return;
+      if (!super.conceal(withhold, true) || preventFocus !== false) return;
       if (shouldFocus) this.focus();
       else if (hasNoFocus) this.focusBack();
     });
