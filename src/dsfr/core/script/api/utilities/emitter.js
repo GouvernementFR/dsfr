@@ -14,7 +14,7 @@ class Emitter {
     if (!closure) delete this.emissions[type];
     else {
       const index = this.emissions[type].indexOf(closure);
-      if (index > -1) this.emissions[type].splice(index);
+      if (index > -1) this.emissions[type].splice(index, 1);
     }
   }
 
