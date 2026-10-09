@@ -51,10 +51,10 @@ Lorsque plusieurs badges sont utilisés ensemble, ils doivent être regroupés d
 ```HTML
 <ul class="fr-badges-group">
   <li>
-      <p class="fr-badge">Badge 1</p>
+      <span class="fr-badge">Badge 1</span>
   </li>
   <li>
-      <p class="fr-badge">Badge 2</p>
+      <span class="fr-badge">Badge 2</span>
   </li>
 </ul>
 ```

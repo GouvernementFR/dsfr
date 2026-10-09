@@ -20,7 +20,6 @@ const badgesGroupArgs = {
       accent: 'green-tilleul-verveine',
       type: undefined,
       status: undefined,
-      hasIcon: false,
       hasNoIcon: false,
       ellipsis: false
     },
@@ -29,7 +28,6 @@ const badgesGroupArgs = {
       accent: 'orange-terre-battue',
       type: undefined,
       status: undefined,
-      hasIcon: false,
       hasNoIcon: false,
       ellipsis: false
     },
@@ -38,7 +36,6 @@ const badgesGroupArgs = {
       accent: 'blue-ecume',
       type: undefined,
       status: undefined,
-      hasIcon: false,
       hasNoIcon: false,
       ellipsis: false
     }
