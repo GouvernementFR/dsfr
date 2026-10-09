@@ -106,10 +106,10 @@ Cette variante reprend la même structure que la carte standard à l'exception d
             <div class="fr-card__start">
                 <ul class="fr-badges-group">
                     <li>
-                        <p class="fr-badge fr-badge--purple-glycine">Libellé badge</p>
+                        <span class="fr-badge fr-badge--purple-glycine">Libellé badge</span>
                     </li>
                     <li>
-                        <p class="fr-badge fr-badge--green-menthe">Libellé badge</p>
+                        <span class="fr-badge fr-badge--green-menthe">Libellé badge</span>
                     </li>
                 </ul>
                 <p class="fr-card__detail fr-icon-info-line">détail (optionnel)</p>
