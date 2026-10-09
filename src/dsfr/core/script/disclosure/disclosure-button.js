@@ -42,7 +42,11 @@ class DisclosureButton extends Instance {
   }
 
   handleClick (e) {
-    if (this.registration.creator) this.registration.creator.toggle(this.canDisclose);
+    const disclosure = this.registration.creator;
+    if (!disclosure) return;
+    this.focus();
+    if (!disclosure.node.contains(this.node)) disclosure.retainFocus();
+    disclosure.toggle(this.canDisclose);
   }
 
   mutate (attributeNames) {
