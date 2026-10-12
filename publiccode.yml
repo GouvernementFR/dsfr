@@ -2,8 +2,8 @@ publiccodeYmlVersion: '0'
 name: dsfr
 url: https://github.com/GouvernementFR/dsfr
 landingURL: https://www.systeme-de-design.gouv.fr/
-softwareVersion: "1.15.3"
-releaseDate: '2026-09-09'
+softwareVersion: "1.15.4"
+releaseDate: '2026-10-12'
 platforms:
   - web
 logo: https://github.com/GouvernementFR.png

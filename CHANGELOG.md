@@ -9,7 +9,108 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.15
 
-### [v1.15.3](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.3) - 8 septembre 2026
+### [v1.15.4](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.4) - 12 octobre 2026
+
+#### [#1554](https://github.com/GouvernementFR/dsfr/pull/1554) : ⬆️ mise à jour des dépendances npm
+`chore (dependencies)`
+
+
+
+---
+
+#### [#1544](https://github.com/GouvernementFR/dsfr/pull/1544) : ✨ ajout des interrupteurs au storybook de form
+`feat (form)`
+
+- Dans la démo du formulaire, la propriété ElementType permet maintenant de choisir toggle
+
+---
+
+#### [#1536](https://github.com/GouvernementFR/dsfr/pull/1536) : 🐛 corrige la suppression d'émissions
+`fix (core)`
+
+- la fonction remove de la classe Emitter ne supprime maintenant que l'émission en paramètre
+
+---
+
+#### [#1535](https://github.com/GouvernementFR/dsfr/pull/1535) : 🐛 crash de l'analytics si tous les composants ne sont pas importés
+`fix (analytics)`
+
+- regression 1.15.0
+
+---
+
+#### [#1543](https://github.com/GouvernementFR/dsfr/pull/1543) : 🐛 corrige le retour du focus
+`fix (disclosure)`
+
+- Corrige la gestion du focus à la fermeture des disclosures, notamment lorsqu’un accordéon est ouvert au chargement. Sa fermeture pouvait renvoyer le focus au logo et provoquer une erreur si le JavaScript du header n’était pas chargé.
+
+---
+
+#### [#1545](https://github.com/GouvernementFR/dsfr/pull/1545) : 🐛 corrige l'évenement natif alt + fleche
+`fix (tab)`
+
+- Le composant d’onglets capturait les évènements de clavier même lorsque des modificateurs sont utilisés, rendant inutilisables les comportements par défaut des navigateurs tels que la navigation dans l’historique (alt+fleche).
+
+---
+
+#### [#1548](https://github.com/GouvernementFR/dsfr/pull/1548) : 📝 correction anatomie du sidemenu
+`docs `
+
+
+
+---
+
+#### [#1529](https://github.com/GouvernementFR/dsfr/pull/1529) : 🐛 fermeture du menu mobile au clic sur un élément imbriqué dans un lien
+`fix (header)`
+
+- Aligne handleClick de HeaderModal sur le correctif appliqué à la navigation (#1344) : on remonte au lien ou au bouton avec closest() au lieu de tester e.target directement.
+
+---
+
+#### [#1537](https://github.com/GouvernementFR/dsfr/pull/1537) : 📝 correction des groupe de badges
+`docs (badge, card)`
+
+- correction des snippets de code
+
+---
+
+#### [#1538](https://github.com/GouvernementFR/dsfr/pull/1538) : 🐛 aligne correctement la checkbox en multi-lignes
+`fix (table)`
+
+- problème d'alignement de la case à cocher dans la colonne de sélection de ligne lorsque le tableau est en mode multi-lignes.
+
+---
+
+#### [#1539](https://github.com/GouvernementFR/dsfr/pull/1539) : 🐛 utilisation de span dans groupe de tags
+`fix (tag)`
+
+
+
+---
+
+#### [#1551](https://github.com/GouvernementFR/dsfr/pull/1551) : 🐛 retrait de l'événement unload
+`fix (analytics)`
+
+– L'événement unload a été retiré de l'implémentation des navigateurs récents. Les écouteurs sont à présent retirés uniquement au pageHide et visibilitychange
+
+---
+
+#### [#1549](https://github.com/GouvernementFR/dsfr/pull/1549) : 📝 corrige les markups spécifiques à storybook
+`docs (table)`
+
+- corrige l'exemple de tableau avec pagination
+
+---
+
+#### [#1550](https://github.com/GouvernementFR/dsfr/pull/1550) : 📝 retire les icônes sur les badges accentués
+`docs (badge)`
+
+- seuls les badges systèmes peuvent avoir une icone
+
+---
+
+
+### [v1.15.3](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.3) - 9 septembre 2026
 
 #### [#1524](https://github.com/GouvernementFR/dsfr/pull/1524) : ⬆️ mise à jour des dépendances npm
 `chore (dependencies)`
