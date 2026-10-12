@@ -4,7 +4,7 @@ shortTitle: Indicateur d’étapes
 titleId: Stepper
 description: Présentation du composant Indicateur d’étapes destiné à guider l’usager au sein d’un parcours en plusieurs étapes comme un formulaire ou une démarche en ligne.
 shortDescription: Suivi d’un parcours en plusieurs étapes
-keywords: indicateur d’étapes, formulaire, démarche, progression, design système, DSFR, navigation, accessibilité
+keywords: indicateur d’étapes, stepper, formulaire, démarche, progression, design système, DSFR, navigation, accessibilité
 cover: ./_asset/cover/cover.png
 excerpt: L’indicateur d’étapes permet à l’usager de se repérer dans un processus linéaire, en affichant la position actuelle dans le parcours ainsi que les étapes restantes.
 summary: Ce composant s’intègre dans les parcours à étapes pour aider l’usager à visualiser son avancée. Il affiche une barre de progression, un titre explicite pour chaque étape et un repère numérique. Il ne permet pas de navigation directe entre les étapes mais accompagne visuellement l’usager du début à la fin du formulaire. Sa structure est fixe, sans personnalisation, pour garantir une expérience uniforme et accessible.
@@ -61,7 +61,7 @@ Aiguiller l’usager sur les différentes étapes composant la démarche en prop
 
 ![](./_asset/edit/dont-1.png)
 
-Ne pas répéter des titres d’étapes ou indiquer le numéro de l’étape dans le titre, celui-ci étant déjà indiquer dans un champ spécifique.
+Ne pas répéter des titres d’étapes ou indiquer le numéro de l’étape dans le titre, celui-ci étant déjà indiqué dans un champ spécifique.
 
 :::
 

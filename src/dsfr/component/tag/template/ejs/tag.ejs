@@ -33,6 +33,8 @@
 
 * tag.accent (string, optional) : couleur d'accentuation
 
+* markup (string, optional) : balise html du markup (default: p)
+
 * tag.classes (array, optional) : Classes suplémentaires sur le bouton
 
 * tag.attributes (object, optional) : Attributs suplémentaires sur le tag
@@ -80,7 +82,7 @@ switch(tag.type) {
     tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
   break;
   default:
-    tag.markup = 'p';
+    tag.markup = tag.markup || 'p';
   break;
 }
 

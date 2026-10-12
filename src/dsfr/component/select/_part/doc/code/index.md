@@ -6,7 +6,7 @@ title: Code de la Liste déroulante
 shortTitle: Code de la Liste déroulante
 description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Liste déroulante.
 shortDescription: Sélectionner une option dans une liste.
-keywords: liste déroulante, formulaire, interface, sélection, interaction, design system, UX, UI, accessibilité, boutons radio, cases à cocher
+keywords: liste déroulante, select, formulaire, interface, sélection, interaction, design system, UX, UI, accessibilité, boutons radio, cases à cocher
 cover: ../_asset/cover/cover.png
 excerpt: La liste déroulante est un composant d’interface utile pour choisir un seul élément parmi plusieurs dans un espace restreint. Elle est recommandée entre 6 et 15 options.
 summary: Ce contenu décrit l’usage du composant liste déroulante, conçu pour permettre à l’usager de sélectionner une seule option dans une liste lorsque l’espace est contraint. Il explique dans quels cas l’utiliser ou non, en comparaison avec les boutons radio ou les cases à cocher, selon le nombre de choix proposés. Des recommandations sont également données pour bien contextualiser son usage dans une interface et suivre les règles éditoriales adaptées. Ce guide s’adresse aux concepteurs d’interfaces soucieux de l’ergonomie et de la compréhension utilisateur.
@@ -55,7 +55,7 @@ Sa structure est la suivante :
         <span class="fr-hint-text">Texte de description additionnel</span>
     </label>
     <select class="fr-select" aria-describedby="select-hint-messages" id="select-hint" name="select-hint">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -112,7 +112,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-error-messages" id="select-error" name="select-error">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -135,7 +135,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-valid-messages" id="select-valid" name="select-valid">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -158,7 +158,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-disabled-messages" disabled id="select-disabled" name="select-disabled">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -186,7 +186,7 @@ Si vous disposez d’une longue liste d’options, les groupes d’options assoc
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-group-messages" id="select-group" name="select-group">
-        <option value="" selected disabled hidden>Selectionnez une option</option>
+        <option value="" selected disabled>Selectionnez une option</option>
         <optgroup label="Groupe 1">
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>

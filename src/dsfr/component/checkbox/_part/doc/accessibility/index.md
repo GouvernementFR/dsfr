@@ -120,8 +120,14 @@ Par défaut, les lecteurs d’écran restituent le **nom, la description, l’é
 L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
 
 - VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
-- NVDA et JAWS&nbsp;: «&nbsp;bouton non disponible&nbsp;»
-- Narrateur et Talkback &nbsp;: «&nbsp;bouton désactivé&nbsp;»
+- NVDA et JAWS&nbsp;: «&nbsp;case à cocher non disponible&nbsp;»
+- Narrateur et Talkback &nbsp;: «&nbsp;case à cocher désactivée&nbsp;»
+
+La proriété du DOM `indeterminate` est aussi restituée différemment selon les lecteurs d’écran&nbsp;:
+
+- VoiceOver macOS et iOS&nbsp;: «&nbsp;mixé, case à chocé&nbsp;»
+- NVDA et JAWS&nbsp;: «&nbsp;case à cocher semi-coché&nbsp;»
+- Narrateur et Talkback &nbsp;: «&nbsp;case à cocher indéterminée&nbsp;»
 
 ---
 

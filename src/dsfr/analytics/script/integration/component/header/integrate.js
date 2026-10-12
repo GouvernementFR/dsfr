@@ -8,8 +8,8 @@ import { joinSelector } from '../../join-selector';
 
 const integrateHeader = (selector = '') => {
   if (api.header) {
-    api.internals.register(joinSelector(api.header.HeaderSelector.HEADER, selector), HeaderActionee);
-    api.internals.register(joinSelector(api.header.HeaderSelector.MODALS, selector), HeaderModalActionee);
+    api.internals.register(joinSelector(HeaderSelector.HEADER, selector), HeaderActionee);
+    api.internals.register(joinSelector(HeaderSelector.MODALS, selector), HeaderModalActionee);
     api.internals.register(joinSelector(HeaderSelector.TOOLS_BUTTON, selector), HeaderToolsButtonActionee);
     api.internals.register(joinSelector(HeaderSelector.MENU_BUTTON, selector), HeaderMenuButtonActionee);
   }

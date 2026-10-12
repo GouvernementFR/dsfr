@@ -1,4 +1,3 @@
-
 const iconArgTypes = {
   hasIcon: {
     if: { arg: 'download', eq: false },
@@ -52,9 +51,13 @@ const linkArgTypes = {
     control: 'boolean',
     description: 'Le lien est désactivé'
   },
+  inText: {
+    control: 'boolean',
+    description: 'Si true, le lien est intégré dans un texte et la classe `fr-link` n’est pas ajoutée'
+  },
   blank: {
     control: 'boolean',
-    description: 'Si true, target prend la valeur _blank, sinon _self'
+    description: 'Si true, target prend la valeur `_blank`, sinon `_self`'
   },
   title: {
     if: { arg: 'blank', eq: true },
@@ -104,6 +107,7 @@ const linkArgs = {
   label: 'libellé du lien',
   size: 'md',
   disabled: false,
+  inText: false,
   download: false,
   detail: '',
   hreflang: '',
@@ -123,6 +127,7 @@ const linkProps = (args) => {
     size: args.size || linkArgs.size,
     id: args.id || undefined,
     disabled: args.disabled,
+    inText: args.inText,
     href: args.href || linkArgs.href,
     download: args.download || linkArgs.download,
     detail: args.detail || linkArgs.detail,

@@ -34,7 +34,7 @@
 
   // retire le padding du container en mobile
   &--viewport-width {
-    @include margin-x(calc(50% - 50vw));
+    @include margin-x(-4v);
     @include margin-x(0, md);
   }
 

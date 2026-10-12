@@ -40,7 +40,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
               <input class="fr-input" spellcheck="false" autocomplete="given-name" name="given-name" id="input-firstname-1" type="text">
           </div>
       </div>
-      <div class="fr-messages-group" aria-live="assertive" id="name-1-fieldset-messages">
+      <div class="fr-messages-group" aria-live="polite" id="name-1-fieldset-messages">
       </div>
   </fieldset>
 </div>
@@ -64,7 +64,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
             <input class="fr-input" spellcheck="false" autocomplete="given-name" name="given-name" id="input-firstname-1" type="text">
         </div>
     </div>
-    <div class="fr-messages-group" aria-live="assertive" id="name-1-fieldset-messages">
+    <div class="fr-messages-group" aria-live="polite" id="name-1-fieldset-messages">
     </div>
 </fieldset>
 ```
@@ -86,7 +86,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
                 Nom
             </label>
             <input class="fr-input" spellcheck="false" autocomplete="family-name" aria-describedby="input-family-name-1512-messages" name="family-name" id="input-family-name-1512" type="text">
-            <div class="fr-messages-group" id="input-family-name-1512-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-family-name-1512-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -98,7 +98,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
                         Prénom
                     </label>
                     <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1516-messages" name="given-name" id="input-firstname-1516" type="text">
-                    <div class="fr-messages-group" id="input-firstname-1516-messages" aria-live="assertive">
+                    <div class="fr-messages-group" id="input-firstname-1516-messages" aria-live="polite">
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
                     Ajouter un prénom
                 </button>
             </div>
-            <div class="fr-messages-group" id="firstname-fieldset-1517-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="firstname-fieldset-1517-messages" aria-live="polite">
             </div>
         </fieldset>
     </div>
@@ -117,11 +117,11 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
             <label class="fr-label" for="checkbox-name-1518">
                 Je n'ai pas de prénom
             </label>
-            <div class="fr-messages-group" id="checkbox-name-1518-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="checkbox-name-1518-messages" aria-live="polite">
             </div>
         </div>
     </div>
-    <div class="fr-messages-group" id="name-1510-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="name-1510-fieldset-messages" aria-live="polite">
     </div>
   </fieldset>
 </div>
@@ -135,7 +135,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
                 Nom
             </label>
             <input class="fr-input" spellcheck="false" autocomplete="family-name" aria-describedby="input-family-name-1512-messages" name="family-name" id="input-family-name-1512" type="text">
-            <div class="fr-messages-group" id="input-family-name-1512-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-family-name-1512-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -147,7 +147,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
                         Prénom
                     </label>
                     <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1516-messages" name="given-name" id="input-firstname-1516" type="text">
-                    <div class="fr-messages-group" id="input-firstname-1516-messages" aria-live="assertive">
+                    <div class="fr-messages-group" id="input-firstname-1516-messages" aria-live="polite">
                     </div>
                 </div>
             </div>
@@ -169,7 +169,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
                     Ajouter un prénom
                 </button>
             </div>
-            <div class="fr-messages-group" id="firstname-fieldset-1517-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="firstname-fieldset-1517-messages" aria-live="polite">
             </div>
         </fieldset>
     </div>
@@ -182,11 +182,11 @@ else fieldset.removeAttribute('disabled');
             <label class="fr-label" for="checkbox-name-1518">
                 Je n'ai pas de prénom
             </label>
-            <div class="fr-messages-group" id="checkbox-name-1518-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="checkbox-name-1518-messages" aria-live="polite">
             </div>
         </div>
     </div>
-    <div class="fr-messages-group" id="name-1510-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="name-1510-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 ```

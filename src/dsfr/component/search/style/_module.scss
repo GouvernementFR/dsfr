@@ -6,9 +6,9 @@
 @use 'src/module/spacing';
 
 #{ns(search-bar)} {
-  @include display-flex(row);
+  @include display-flex(row, null, null, wrap);
 
-  #{ns(label)} {
+  &:not(#{ns(search-bar)}--labelled) #{ns(label)} {
     @include sr-only();
   }
 
@@ -16,6 +16,7 @@
     @include margin(0);
     border-radius: spacing.space(1v) 0 0;
     @include max-height(10v);
+    flex: 1;
 
     &::placeholder {
       font-style: italic;
@@ -29,8 +30,26 @@
     }
   }
 
+  &--labelled {
+    #{ns(label)} {
+      @include margin-bottom(spacing.space(2v));
+      flex-basis: 100%;
+    }
+  }
+
+  #{ns(messages-group)} {
+    flex-basis: 100%;
+    order: 4;
+
+    #{ns(message)} {
+      &:first-child {
+        @include margin-top(spacing.space(4v));
+      }
+    }
+  }
+
   @include nest-btn(md, only, search-line) {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     border-radius: 0 spacing.space(1v) 0 0;
   }
 

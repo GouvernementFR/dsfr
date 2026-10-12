@@ -6,7 +6,7 @@ title: Code de la Carte
 shortTitle: Code de la Carte
 description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Carte.
 shortDescription: Carte cliquable redirigeant vers une page éditoriale avec aperçu.
-keywords: carte, composant, aperçu, lien, redirection, contenu, média, badge, tag, bouton, DSFR, tuile
+keywords: carte, card, composant, aperçu, lien, redirection, contenu, média, badge, tag, bouton, DSFR, tuile
 cover: ../_asset/cover/cover.png
 excerpt: Le composant carte permet d’accéder à un contenu éditorial à partir d’un aperçu visuel structuré, sous forme verticale ou horizontale.
 summary: Le composant carte est un point d’entrée vers une page éditoriale ou un contenu spécifique. Il permet d’afficher un aperçu clair à travers une structure visuelle contenant un titre, une description, des éléments comme badges ou tags, une image ou vidéo, et des actions. Il existe en formats vertical et horizontal, en plusieurs tailles, et peut inclure des variations esthétiques comme le fond gris ou l’absence de bordure. Des règles UX précises guident son usage pour garantir la cohérence, l’accessibilité et la bonne hiérarchisation de l’information.
@@ -106,10 +106,10 @@ Cette variante reprend la même structure que la carte standard à l'exception d
             <div class="fr-card__start">
                 <ul class="fr-badges-group">
                     <li>
-                        <p class="fr-badge fr-badge--purple-glycine">Libellé badge</p>
+                        <span class="fr-badge fr-badge--purple-glycine">Libellé badge</span>
                     </li>
                     <li>
-                        <p class="fr-badge fr-badge--green-menthe">Libellé badge</p>
+                        <span class="fr-badge fr-badge--green-menthe">Libellé badge</span>
                     </li>
                 </ul>
                 <p class="fr-card__detail fr-icon-info-line">détail (optionnel)</p>

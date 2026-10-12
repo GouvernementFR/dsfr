@@ -5,7 +5,7 @@
 
 $segmented-element-settings:(
   selector: 'segmented',
-  append: 'input + label',
+  append: 'input ~ label',
   sizes: (
     sm: (
       font-size: 3.5v,

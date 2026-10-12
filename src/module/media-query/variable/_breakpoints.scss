@@ -3,6 +3,7 @@
 /// @group media-query
 ////
 
+// L'ajout de breakpoints est entendable dans certaines situations, mais il interdit de modifier les valeurs existantes.
 $values: (
   xs: 0 35.98em,
   sm: 36em 47.98em,

@@ -6,7 +6,7 @@ title: Code de l'Indicateur d'étapes
 shortTitle: Code de l'Indicateur d’étapes
 description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Indicateur d’étapes.
 shortDescription: Suivi d’un parcours en plusieurs étapes
-keywords: indicateur d’étapes, formulaire, démarche, progression, design système, DSFR, navigation, accessibilité
+keywords: indicateur d’étapes, stepper, formulaire, démarche, progression, design système, DSFR, navigation, accessibilité
 cover: ../_asset/cover/cover.png
 excerpt: L’indicateur d’étapes permet à l’usager de se repérer dans un processus linéaire, en affichant la position actuelle dans le parcours ainsi que les étapes restantes.
 summary: Ce composant s’intègre dans les parcours à étapes pour aider l’usager à visualiser son avancée. Il affiche une barre de progression, un titre explicite pour chaque étape et un repère numérique. Il ne permet pas de navigation directe entre les étapes mais accompagne visuellement l’usager du début à la fin du formulaire. Sa structure est fixe, sans personnalisation, pour garantir une expérience uniforme et accessible.

@@ -6,7 +6,7 @@ title: Code du Champ de saisie
 shortTitle: Code du Champ de saisie
 description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Champ de saisie.
 shortDescription: Saisie de données dans une interface.
-keywords: champ de saisie, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé, texte d’aide
+keywords: champ de saisie, input, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé, texte d’aide
 cover: ../_asset/cover/cover.png
 excerpt: Ce document présente l’usage du champ de saisie pour permettre à l’usager d’entrer des informations, en précisant les cas d’usage appropriés et les bonnes pratiques d’interface.
 summary: Ce contenu décrit le champ de saisie comme un composant d’interface permettant à l’usager de saisir du contenu ou des données. Il indique quand l’utiliser, avec quelles alternatives dans le cas de choix fermés, et fournit des recommandations précises sur son usage, la disposition des éléments, les messages de retour, l’accessibilité et les libellés. Il s’adresse aux concepteurs et développeurs souhaitant garantir une saisie claire, efficace et cohérente dans leurs interfaces.
@@ -42,7 +42,7 @@ La structure HTML d'un champ de saisie de base est la suivante :
   - Un intitulé, obligatoire, dans un élément `<label>` de classe `fr-label` et lié au champ via un attribut `for` pour décrire le champ de saisie
   - Une description additionnelle, optionnelle, dans un élément `<span>` de classe `fr-hint-text` à placer dans le `<label>`. Cette description peut être utilisée pour donner des indications sur le format attendu.
   - Un champ `<input>` de classe `fr-input` pour saisir les données. Pour une plus grande zone de saisie, il est possible d'utiliser un élément `<textarea>`.
-  - Un message d'erreur/information/avertissement/succès, optionnel, dans un bloc `fr-messages-group`, lié au `aria-describedby` du champ de saisie
+  - Un message d'erreur/information/avertissement/succès, optionnel, dans un bloc `fr-messages-group`, lié au `aria-describedby` du champ de saisie. Ce message doit être un élément `<p>` avec la classe `fr-message`, et un <span lang="en">modifier</span> `fr-message--error`, `fr-message--info`, `fr-message--warning` ou `fr-message--valid` selon le type de message.
 
 **Exemple de structure simple**
 
@@ -98,6 +98,15 @@ Un champ de saisie peut être associé à un bouton pour déclencher une action.
     </div>
 </div>
 ```
+
+#### Statut du champ de saisie
+
+Les champs de saisie peuvent avoir différents états pour indiquer à l'utilisateur la validité de sa saisie ou pour fournir des informations contextuelles. Les principaux états sont :
+
+- **Erreur** : Indique que la saisie est incorrecte. La classe `fr-input-group--error` doit être ajoutée au conteneur du champ de saisie. Le message d'erreur doit être placé dans un élément `<p>` avec la classe `fr-message fr-message--error` à l'intérieur du bloc `fr-messages-group`.
+- **Succès** : Indique que la saisie est correcte. La classe `fr-input-group--valid` doit être ajoutée au conteneur du champ de saisie. Le message de succès doit être placé dans un élément `<p>` avec la classe `fr-message fr-message--valid` à l'intérieur du bloc `fr-messages-group`.
+
+Des messages d'information ou d'avertissement peuvent également être utilisés de la même manière, pour fournir des indications supplémentaires à l'utilisateur, via les classes `fr-message--info` ou `fr-message--warning`. Mais ceux-ci n'ont pas d'impact sur le statut du champ et du libellé associé.
 
 #### Groupes de champs de saisie
 

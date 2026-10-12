@@ -33,7 +33,7 @@ Ce bloc se compose de :
                 Numéro de SIRET
             </label>
             <input class="fr-input" aria-describedby="siret-1-messages" name="siret" type="text" id="siret-1-input">
-            <div class="fr-messages-group" id="siret-1-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="siret-1-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@ Ce bloc se compose de :
             Annuaire des entreprises
         </a>
     </div>
-    <div class="fr-messages-group" id="siret-1632-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="siret-1632-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 </div>
@@ -57,7 +57,7 @@ Ce bloc se compose de :
                 Numéro de SIRET
             </label>
             <input class="fr-input" aria-describedby="siret-1-messages" name="siret" type="text" id="siret-1-input">
-            <div class="fr-messages-group" id="siret-1-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="siret-1-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@ Ce bloc se compose de :
             Annuaire des entreprises
         </a>
     </div>
-    <div class="fr-messages-group" id="siret-1632-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="siret-1632-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 ```
@@ -93,7 +93,7 @@ Ce bloc se compose de :
                 Dénomination
             </label>
             <input class="fr-input" aria-describedby="address-item-1642-messages" name="name" id="address-item-1642" type="text">
-            <div class="fr-messages-group" id="address-item-1642-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1642-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@ Ce bloc se compose de :
                 <span class="fr-hint-text">Numéro et voie</span>
             </label>
             <input class="fr-input" aria-describedby="address-item-1643-messages" name="address-line1" id="address-item-1643" type="text">
-            <div class="fr-messages-group" id="address-item-1643-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1643-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -115,7 +115,7 @@ Ce bloc se compose de :
                 <span class="fr-hint-text">Bâtiment, immeuble, escalier et numéro d’appartement</span>
             </label>
             <input class="fr-input" aria-describedby="address-item-1644-messages" name="address-line2" id="address-item-1644" type="text">
-            <div class="fr-messages-group" id="address-item-1644-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1644-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -125,7 +125,7 @@ Ce bloc se compose de :
                 Lieu-dit, commune déléguée ou boîte postale
             </label>
             <input class="fr-input" aria-describedby="address-item-1645-messages" name="address-level3" id="address-item-1645" type="text">
-            <div class="fr-messages-group" id="address-item-1645-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1645-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -135,7 +135,7 @@ Ce bloc se compose de :
                 Code postal
             </label>
             <input class="fr-input" aria-describedby="address-item-1646-messages" name="postal-code" id="address-item-1646" type="text">
-            <div class="fr-messages-group" id="address-item-1646-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1646-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -145,7 +145,7 @@ Ce bloc se compose de :
                 Ville ou commune
             </label>
             <input class="fr-input" aria-describedby="address-item-1647-messages" name="address-level2" id="address-item-1647" type="text">
-            <div class="fr-messages-group" id="address-item-1647-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1647-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -155,7 +155,7 @@ Ce bloc se compose de :
                 Cedex
             </label>
             <input class="fr-input" aria-describedby="address-item-1648-messages" name="business-postal-code" id="address-item-1648" type="text">
-            <div class="fr-messages-group" id="address-item-1648-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1648-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -172,11 +172,11 @@ Ce bloc se compose de :
                 <option value="ES">Espagne</option>
                 <option value="GB">Royaume-Uni</option>
             </select>
-            <div class="fr-messages-group" id="country-select-1-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="country-select-1-messages" aria-live="polite">
             </div>
         </div>
     </div>
-    <div class="fr-messages-group" id="address-1649-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="address-1649-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 </div>
@@ -190,7 +190,7 @@ Ce bloc se compose de :
                 Dénomination
             </label>
             <input class="fr-input" aria-describedby="address-item-1642-messages" name="name" id="address-item-1642" type="text">
-            <div class="fr-messages-group" id="address-item-1642-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1642-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -201,7 +201,7 @@ Ce bloc se compose de :
                 <span class="fr-hint-text">Numéro et voie</span>
             </label>
             <input class="fr-input" aria-describedby="address-item-1643-messages" name="address-line1" id="address-item-1643" type="text">
-            <div class="fr-messages-group" id="address-item-1643-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1643-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -212,7 +212,7 @@ Ce bloc se compose de :
                 <span class="fr-hint-text">Bâtiment, immeuble, escalier et numéro d’appartement</span>
             </label>
             <input class="fr-input" aria-describedby="address-item-1644-messages" name="address-line2" id="address-item-1644" type="text">
-            <div class="fr-messages-group" id="address-item-1644-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1644-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -222,7 +222,7 @@ Ce bloc se compose de :
                 Lieu-dit, commune déléguée ou boîte postale
             </label>
             <input class="fr-input" aria-describedby="address-item-1645-messages" name="address-level3" id="address-item-1645" type="text">
-            <div class="fr-messages-group" id="address-item-1645-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1645-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -232,7 +232,7 @@ Ce bloc se compose de :
                 Code postal
             </label>
             <input class="fr-input" aria-describedby="address-item-1646-messages" name="postal-code" id="address-item-1646" type="text">
-            <div class="fr-messages-group" id="address-item-1646-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1646-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -242,7 +242,7 @@ Ce bloc se compose de :
                 Ville ou commune
             </label>
             <input class="fr-input" aria-describedby="address-item-1647-messages" name="address-level2" id="address-item-1647" type="text">
-            <div class="fr-messages-group" id="address-item-1647-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1647-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -252,7 +252,7 @@ Ce bloc se compose de :
                 Cedex
             </label>
             <input class="fr-input" aria-describedby="address-item-1648-messages" name="business-postal-code" id="address-item-1648" type="text">
-            <div class="fr-messages-group" id="address-item-1648-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="address-item-1648-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -269,11 +269,11 @@ Ce bloc se compose de :
                 <option value="ES">Espagne</option>
                 <option value="GB">Royaume-Uni</option>
             </select>
-            <div class="fr-messages-group" id="country-select-1-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="country-select-1-messages" aria-live="polite">
             </div>
         </div>
     </div>
-    <div class="fr-messages-group" id="address-1649-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="address-1649-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 ```
@@ -304,11 +304,11 @@ Ce bloc se compose de :
                 <option value="SCS">Société en commandite simple (SCS)</option>
                 <option value="SCA">Société en commandite par actions (SCA)</option>
             </select>
-            <div class="fr-messages-group" id="company-structure-select-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="company-structure-select-messages" aria-live="polite">
             </div>
         </div>
     </div>
-    <div class="fr-messages-group" id="company-structure-1652-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="company-structure-1652-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 </div>
@@ -334,11 +334,11 @@ Ce bloc se compose de :
                 <option value="SCS">Société en commandite simple (SCS)</option>
                 <option value="SCA">Société en commandite par actions (SCA)</option>
             </select>
-            <div class="fr-messages-group" id="company-structure-select-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="company-structure-select-messages" aria-live="polite">
             </div>
         </div>
     </div>
-    <div class="fr-messages-group" id="company-structure-1652-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="company-structure-1652-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 ```
@@ -363,7 +363,7 @@ Ce bloc se compose de :
                 Nom d'usage
             </label>
             <input class="fr-input" spellcheck="false" aria-describedby="input-usual-name-1664-messages" name="usual-name" id="input-usual-name-1664" type="text">
-            <div class="fr-messages-group" id="input-usual-name-1664-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-usual-name-1664-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -373,7 +373,7 @@ Ce bloc se compose de :
                 Nom de naissance
             </label>
             <input class="fr-input" spellcheck="false" aria-describedby="input-birth-name-1665-messages" name="birth-name" id="input-birth-name-1665" type="text">
-            <div class="fr-messages-group" id="input-birth-name-1665-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-birth-name-1665-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -383,7 +383,7 @@ Ce bloc se compose de :
                 Prénom
             </label>
             <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1667-messages" name="given-name" id="input-firstname-1667" type="text">
-            <div class="fr-messages-group" id="input-firstname-1667-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-firstname-1667-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -393,11 +393,11 @@ Ce bloc se compose de :
                 Fonction(s) dans la société
             </label>
             <input class="fr-input" aria-describedby="input-position-1-messages" name="position" type="text">
-            <div class="fr-messages-group" id="input-position-1-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-position-1-messages" aria-live="polite">
             </div>
         </div>
     </div>
-    <div class="fr-messages-group" id="representative-1661-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="representative-1661-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 </div>
@@ -411,7 +411,7 @@ Ce bloc se compose de :
                 Nom d'usage
             </label>
             <input class="fr-input" spellcheck="false" aria-describedby="input-usual-name-1664-messages" name="usual-name" id="input-usual-name-1664" type="text">
-            <div class="fr-messages-group" id="input-usual-name-1664-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-usual-name-1664-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -421,7 +421,7 @@ Ce bloc se compose de :
                 Nom de naissance
             </label>
             <input class="fr-input" spellcheck="false" aria-describedby="input-birth-name-1665-messages" name="birth-name" id="input-birth-name-1665" type="text">
-            <div class="fr-messages-group" id="input-birth-name-1665-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-birth-name-1665-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -431,7 +431,7 @@ Ce bloc se compose de :
                 Prénom
             </label>
             <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1667-messages" name="given-name" id="input-firstname-1667" type="text">
-            <div class="fr-messages-group" id="input-firstname-1667-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-firstname-1667-messages" aria-live="polite">
             </div>
         </div>
     </div>
@@ -441,11 +441,11 @@ Ce bloc se compose de :
                 Fonction(s) dans la société
             </label>
             <input class="fr-input" aria-describedby="input-position-1-messages" name="position" type="text">
-            <div class="fr-messages-group" id="input-position-1-messages" aria-live="assertive">
+            <div class="fr-messages-group" id="input-position-1-messages" aria-live="polite">
             </div>
         </div>
     </div>
-    <div class="fr-messages-group" id="representative-1661-fieldset-messages" aria-live="assertive">
+    <div class="fr-messages-group" id="representative-1661-fieldset-messages" aria-live="polite">
     </div>
 </fieldset>
 ```

@@ -6,7 +6,7 @@ title: Accessibilité du Champ de saisie
 shortTitle: Accessibilité du Champ de saisie
 description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Champ de saisie.
 shortDescription: Saisie de données dans une interface.
-keywords: champ de saisie, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé, texte d’aide
+keywords: champ de saisie, input, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé, texte d’aide
 cover: ../_asset/cover/cover.png
 excerpt: Ce document présente l’usage du champ de saisie pour permettre à l’usager d’entrer des informations, en précisant les cas d’usage appropriés et les bonnes pratiques d’interface.
 summary: Ce contenu décrit le champ de saisie comme un composant d’interface permettant à l’usager de saisir du contenu ou des données. Il indique quand l’utiliser, avec quelles alternatives dans le cas de choix fermés, et fournit des recommandations précises sur son usage, la disposition des éléments, les messages de retour, l’accessibilité et les libellés. Il s’adresse aux concepteurs et développeurs souhaitant garantir une saisie claire, efficace et cohérente dans leurs interfaces.
@@ -52,9 +52,9 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 **Privilégier l’élément `<label>`** pour nommer le composant.
 
 >[!CAUTION]
->Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` de la case à cocher.
+>Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` du champ de saisie.
 >
->L’attribut `for` du label doit correspondre à l'attribut `id` de la case à cocher. La valeur de l’attribut `id` doit être unique dans la page.
+>L’attribut `for` du label doit correspondre à l'attribut `id` du champ de saisie. La valeur de l’attribut `id` doit être unique dans la page.
 
 La liaison explicite `for`/`id` permet&nbsp;:
 - d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal),

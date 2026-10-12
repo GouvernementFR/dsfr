@@ -1,0 +1,17 @@
+{
+  "name": "@gouvfr/dsfr-doc",
+  "version": "1.0.0",
+  "description": "Documentation du Système de Design de l'Etat - DSFR",
+  "license": "etalab-2.0",
+  "author": "Service d'Information du Gouvernement <maxime.beaugrand@pm.gouv.fr>",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "packageManager": "yarn@1.22.22",
+  "scripts": {
+    "upgrade-nexus": "yarn upgrade @gouvfr/dsfr-nexus"
+  },
+  "devDependencies": {
+    "@gouvfr/dsfr-nexus": "^1.2.15"
+  }
+}

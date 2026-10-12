@@ -19,7 +19,7 @@
     top: calc(50% - #{space(2v)});
 
     @include disabled.selector {
-      + label {
+      ~ label {
         @include preference.forced-colors {
           outline: 1px solid;
 
@@ -36,7 +36,7 @@
       }
     }
 
-    + label {
+    ~ label {
       @include padding-left(11v);
       @include margin-left(0);
       align-self: stretch;
@@ -69,13 +69,13 @@
       @include enable-tint;
 
       &:hover {
-        + #{ns(radio-rich__pictogram)} {
+        ~ #{ns(radio-rich__pictogram)} {
           background-color: var(--hover);
         }
       }
 
       &:active {
-        + #{ns(radio-rich__pictogram)} {
+        ~ #{ns(radio-rich__pictogram)} {
           background-color: var(--active);
         }
       }

@@ -45,7 +45,14 @@ class Collapse extends Disclosure {
 
   conceal (withhold, preventFocus) {
     if (this.isDisclosed === false) return false;
-    this.collapsing(() => super.conceal(withhold, preventFocus));
+    this.collapsing(() => {
+      const activeElement = document.activeElement;
+      const shouldFocus = this.node.contains(activeElement);
+      const hasNoFocus = !activeElement || activeElement === document.body || activeElement === document.documentElement;
+      if (!super.conceal(withhold, true) || preventFocus !== false) return;
+      if (shouldFocus) this.focus();
+      else if (hasNoFocus) this.focusBack();
+    });
   }
 
   collapsing (request) {

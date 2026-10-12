@@ -1,3 +1,7 @@
+import pictograms from '../../../../../../.config/pictogram.json';
+
+const pictogramNames = pictograms.map(pictogram => pictogram.name);
+
 const pictogramArgTypes = {
   hasPictogram: {
     if: { arg: 'rich', eq: true },
@@ -10,8 +14,9 @@ const pictogramArgTypes = {
   },
   pictogramName: {
     if: { arg: 'hasPictogram', eq: true },
-    control: 'text',
+    control: { type: 'select' },
     description: 'Nom du pictogramme du radio',
+    options: pictogramNames,
     type: {
       value: 'string'
     },

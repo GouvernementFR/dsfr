@@ -220,6 +220,7 @@ const rangeProps = (args) => {
     prefix: args.prefix || rangeArgs.prefix,
     suffix: args.suffix || rangeArgs.suffix,
     isDouble: args.isDouble || false,
+    size: args.size || rangeArgs.size,
     minValueLabel: args.isDouble ? args.minValueLabel || rangeArgs.minValueLabel : undefined,
     maxValueLabel: args.isDouble ? args.maxValueLabel || rangeArgs.maxValueLabel : undefined,
     isStep: args.isStep || false,

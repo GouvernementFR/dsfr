@@ -1,11 +1,11 @@
 <%
-let search = locals.search || {};
+let search = locals.search || {};
 
 let data = {
   id: uniqueId('search'),
   ...search,
   input: {placeholder: 'Rechercher', label:'Rechercher', ...search.input},
-  button: {id: uniqueId('search-btn'), label: 'Rechercher', title: 'Rechercher', ...search.button},
+  button: {id: uniqueId('search-btn'), label: 'Rechercher', type: 'submit', title: 'Rechercher', ...search.button},
 }
 %>
 

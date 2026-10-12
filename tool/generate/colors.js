@@ -25,10 +25,16 @@ const generateColors = async () => {
   const settingDecisions = colorsObj.color.decisions;
 
   for (const context in settingDecisions) {
-    for (const usage of settingDecisions[context]) {
+    const contextSetting = settingDecisions[context];
+    const contextDecisions = Array.isArray(contextSetting) ? contextSetting : (contextSetting.decisions || []);
+    const excludedFamilies = Array.isArray(contextSetting && contextSetting.exclude) ? contextSetting.exclude : [];
+
+    for (const usage of contextDecisions) {
       const data = decisionsObj[context][usage];
 
       for (const family in data) {
+        if (excludedFamilies.includes(family)) continue;
+
         const hover = data[family].includes('hover');
         if (!families.includes(family)) families.push(family);
 
@@ -89,6 +95,9 @@ const convertSassStringToJs = (sassString) => {
 
     return `: [${resultArray.join(', ')}]`; // Retourner les valeurs sous forme de tableau
   });
+
+  // Supprimer les virgules finales dans les objets/tableaux (JSON ne les supporte pas).
+  cleanString = cleanString.replace(/,\s*([}\]])/g, '$1');
 
   // Convertir la chaîne modifiée en objet JavaScript
   try {

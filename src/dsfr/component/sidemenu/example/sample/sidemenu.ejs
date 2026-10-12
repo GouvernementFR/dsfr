@@ -1,14 +1,15 @@
 <%
 let sidemenu = locals.sidemenu || {};
 const defaultModels = [ 'MALMMLMMLM', 'LMMLLLL', 'LLLLLL' ];
-const models1 = locals.models || defaultModels;
-const models2 = ['MALMMLMMLM', 'LMALLL', 'LLLL'];
+const models1 = locals.models1 || defaultModels;
+const models2 = locals.models2 || ['MALMMLMMLM', 'LMALLL', 'LLLL'];
 
-function link(level, active) {
+function link(level, active, disabled) {
   return {
     id: uniqueId('sidemenu-item'),
     type: 'link',
     active: active === true,
+    disabled: disabled === true,
     label: 'Accès direct' + (level > 1 ? ' niveau ' + level: '')
   }
 }
@@ -20,28 +21,45 @@ function items(level, active) {
   items.href = sidemenu.href || '#';
   for (let i = 0; i < model.length; i++) switch(model.charAt(i)) {
     case 'L': // 'L' pour Link
-      items.push(link(level + 1, active && i === 1));
+      items.push(link(level + 1, active && i === 1, false));
+      break;
+    
+    case 'l': // 'L barré' pour Link disabled
+      items.push(link(level + 1, active && i === 1, true));
       break;
 
     case 'M': // 'M' pour Menu
-      items.push(menu(level + 1, false, true));
+      items.push(menu(level + 1, false, false, true));
+      break;
+    
+    case 'm': // 'M tréma' pour Menu désactivé
+      items.push(menu(level + 1, false, true, true));
       break;
 
     case 'A': // 'A' pour Active
-      items.push(menu(level + 1, true, true));
+      items.push(menu(level + 1, true, false, true));
       break;
 
-    case 'O': // 'O' pour Open
-      items.push(menu(level + 1, false, false));
+    case 'Á': // 'A accent aigu' pour Active mais sans accordéon
+      items.push(menu(level + 1, true, false, false));
+      break;
+
+    case 'O': // 'O' pour Menu sans accordéon
+      items.push(menu(level + 1, false, false, false));
+      break;
+    
+    case 'o': // 'O tréma' pour Menu sans accordéon désactivé
+      items.push(menu(level + 1, false, true, false));
       break;
   }
   return items;
 }
 
-function menu(level, active, isCollapsible) {
+function menu(level, active, disabled, isCollapsible) {
   return {
     type: 'menu',
     active: active === true,
+    disabled: disabled === true,
     isExpanded: active === true,
     label: active === true ? 'Entrée menu active' : 'Niveau ' + level,
     collapseId: uniqueId('sidemenu'),

@@ -25,7 +25,8 @@
   const items = colors.items;
   const families = colors.families;
   const decisions = colors.decisions;
-  const usages = decisions[context];
+  const contextSetting = decisions[context];
+  const usages = Array.isArray(contextSetting) ? contextSetting : (contextSetting?.decisions || []);
 %>
 
 <% for (const usage of usages) { %>

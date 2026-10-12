@@ -6,7 +6,7 @@ title: Accessibilité du Bouton radio
 shortTitle: Accessibilité du Bouton radio
 description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Bouton radio.
 shortDescription: Sélection d’une option unique
-keywords: bouton radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
+keywords: bouton radio, radio, sélection, interface, formulaire, design système, DSFR, accessibilité, choix unique
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Bouton radio permet de proposer à l’usager un choix unique parmi plusieurs options. Il est recommandé pour les listes de 2 à 5 éléments maximum.
 summary: Ce composant est conçu pour faciliter le choix unique dans une interface, en particulier dans les formulaires. Il offre différentes dispositions et variations, y compris des versions enrichies avec pictogrammes. Il s’utilise en groupe, avec des libellés clairs et une hiérarchie visuelle cohérente. L’intégration respecte des règles d’ergonomie, d’accessibilité et d’uniformité éditoriale.
@@ -60,7 +60,7 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 >[!CAUTION]
 >Le RGAA exige une **liaison explicite** entre l’attribut `for` de l’élément `<label>` et l'attribut `id` du bouton radio.
 >
->L’attribut `for` du label doit correspondre à l'attribut `id` de la case à cocher. La valeur de l’attribut `id` doit être unique dans la page.
+>L’attribut `for` du label doit correspondre à l'attribut `id` du bouton radio. La valeur de l’attribut `id` doit être unique dans la page.
 
 La liaison explicite `for`/`id` permet :
 - d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal),

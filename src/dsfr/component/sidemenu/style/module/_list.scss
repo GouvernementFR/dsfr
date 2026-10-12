@@ -8,8 +8,8 @@
     font-weight: font-weight('bold');
 
     #{ns(sidemenu__list)} {
-      @include margin(0 4v 4v);
-      @include margin(0 4v 4v, md);
+      @include padding(0 4v 4v);
+      @include padding(0 4v 4v, md);
       font-weight: font-weight();
 
       #{ns(sidemenu__link)},
@@ -38,6 +38,10 @@
       @include respond-from(md) {
         content: none;
       }
+    }
+
+    &:first-child:last-child {
+      @include before(none);
     }
 
     & & & {

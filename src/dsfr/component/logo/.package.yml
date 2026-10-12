@@ -1,7 +1,7 @@
 id: logo
 title: Bloc marque
 description: Bloc marque de l'état
-doc:
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/bloc-marque
 wrapper: col-8
 style:
   - core

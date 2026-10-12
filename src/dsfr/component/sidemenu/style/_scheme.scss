@@ -7,6 +7,7 @@
 @use 'src/module/elevation';
 @use 'src/module/media-query';
 @use 'src/module/selector';
+@use 'src/module/disabled';
 
 @mixin _sidemenu-scheme($legacy: false) {
   #{ns(sidemenu)} {
@@ -74,6 +75,10 @@
         @include before {
           @include color.background(border active blue-france, (legacy:$legacy));
         }
+      }
+
+      @include selector.not-current {
+        @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true,));
       }
     }
 

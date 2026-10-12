@@ -63,7 +63,7 @@ const buildStyle = async (pck, data, dest, minify, map) => {
     outFile: `${dest}.css`,
     style: 'expanded',
     loadPaths: [`${root('.')}`],
-    silenceDeprecations: ['global-builtin', 'import', 'mixed-decls']
+    silenceDeprecations: ['global-builtin', 'import']
   };
 
   if (map) {

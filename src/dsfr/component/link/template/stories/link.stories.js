@@ -12,7 +12,7 @@ const renders = (argsArray) => argsArray.map(args => render(args)).join('\n\n');
 export default {
   id: 'link',
   title: 'DSFR/Component/Link',
-  render: render,
+  render,
   argTypes: linkArgTypes,
   args: linkArgs
 };
@@ -25,7 +25,8 @@ export const TextLinkStory = {
   tags: ['autodocs', '!dev'],
   render: () => renderTextWithLink({
     label: 'lien interne',
-    href: '#'
+    href: '#',
+    inText: true
   })
 };
 

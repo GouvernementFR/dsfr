@@ -5,6 +5,7 @@ sitemap:
 title: Accessibilité du Bloc marque
 description: Description des exigences, recommandations et bonnes pratiques d’accessibilité du composant Bloc marque.
 shortDescription: Le bloc marque est un élément de la charte graphique de l'État français. Il est utilisé pour représenter l'identité visuelle de l'État.
+keywords: Accessibilité du Bloc marque, logo
 cover: ../_asset/cover/cover.png
 mesh:
   - component/header

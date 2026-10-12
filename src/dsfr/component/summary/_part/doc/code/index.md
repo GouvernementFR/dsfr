@@ -6,7 +6,7 @@ title: Code du Sommaire
 shortTitle: Code du Sommaire
 description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Sommaire.
 shortDescription: Navigation entre les sections d’une page
-keywords: sommaire, navigation, ancre, contenu long, DSFR, accessibilité, design système, interface
+keywords: sommaire, summary, navigation, ancre, contenu long, DSFR, accessibilité, design système, interface
 cover: ../_asset/cover/cover.png
 excerpt: Le composant Sommaire affiche des liens ancrés vers les différentes sections d’une page, facilitant la lecture et l’accès rapide à l’information pour l’usager.
 summary: Ce composant permet d’améliorer l’expérience utilisateur dans les pages à forte densité de contenu. Il affiche en haut de page une liste d’ancres reprenant fidèlement les titres des sections éditoriales, dans un bloc distinct visuellement. Le sommaire n’est pas sticky, ne se personnalise pas, et garantit une navigation fluide et cohérente au sein d’un même contenu.
@@ -39,7 +39,7 @@ Sa structure est la suivante :
 
 - Le conteneur du sommaire est une balise `<div>` avec la classe `fr-summary` et le rôle `navigation`.
   - Le sommaire dispose d'un attribut `aria-labelledby` défini sur l'ID du titre du sommaire.
-- Le titre du sommaire, obligatoire, est défini par la classe `fr-summary__title`.
+- Le titre du sommaire, obligatoire, est défini par la classe `fr-summary__title`. Son niveau de titre est personnalisable ou peut être un `<p>`.
 - Les éléments de la liste d'ancre, obligatoire, sont contenus dans une balise `<ol>`.
   - Chaque élément de la liste `<li>` contient un lien `<a>` défini par la classe `fr-summary__link`.
 

@@ -83,10 +83,10 @@ L’ordre et la structure des modalités de connexion sont à respecter comme pr
                                                     <div class="fr-input-group">
                                                         <label class="fr-label" for="username-1757">
                                                             Identifiant
-                                                            <span class="fr-hint-text">Format attendu : nom@domaine.fr</span>
+                                                            <span class="fr-hint-text">Format attendu : nom@example.com</span>
                                                         </label>
                                                         <input class="fr-input" autocomplete="username" aria-required="true" aria-describedby="username-1757-messages" name="username" id="username-1757" type="text">
-                                                        <div class="fr-messages-group" id="username-1757-messages" aria-live="assertive">
+                                                        <div class="fr-messages-group" id="username-1757-messages" aria-live="polite">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -98,14 +98,14 @@ L’ordre et la structure des modalités de connexion sont à respecter comme pr
                                                         <div class="fr-input-wrap">
                                                             <input class="fr-password__input fr-input" aria-describedby="password-1758-input-messages" aria-required="true" name="password" autocomplete="current-password" id="password-1758-input" type="password">
                                                         </div>
-                                                        <div class="fr-messages-group" id="password-1758-input-messages" aria-live="assertive">
+                                                        <div class="fr-messages-group" id="password-1758-input-messages" aria-live="polite">
                                                         </div>
                                                         <div class="fr-password__checkbox fr-checkbox-group fr-checkbox-group--sm">
                                                             <input aria-label="Afficher le mot de passe" id="password-1758-show" type="checkbox" aria-describedby="password-1758-show-messages">
                                                             <label class="fr-password__checkbox fr-label" for="password-1758-show">
                                                                 Afficher
                                                             </label>
-                                                            <div class="fr-messages-group" id="password-1758-show-messages" aria-live="assertive">
+                                                            <div class="fr-messages-group" id="password-1758-show-messages" aria-live="polite">
                                                             </div>
                                                         </div>
                                                         <p>
@@ -113,7 +113,7 @@ L’ordre et la structure des modalités de connexion sont à respecter comme pr
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="fr-messages-group" id="credentials-messages" aria-live="assertive">
+                                                <div class="fr-messages-group" id="credentials-messages" aria-live="polite">
                                                 </div>
                                             </fieldset>
                                         </div>
@@ -123,7 +123,7 @@ L’ordre et la structure des modalités de connexion sont à respecter comme pr
                                                 <label class="fr-label" for="remember-1759">
                                                     Se souvenir de moi
                                                 </label>
-                                                <div class="fr-messages-group" id="remember-1759-messages" aria-live="assertive">
+                                                <div class="fr-messages-group" id="remember-1759-messages" aria-live="polite">
                                                 </div>
                                             </div>
                                         </div>
@@ -136,7 +136,7 @@ L’ordre et la structure des modalités de connexion sont à respecter comme pr
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="fr-messages-group" id="login-1760-fieldset-messages" aria-live="assertive">
+                                        <div class="fr-messages-group" id="login-1760-fieldset-messages" aria-live="polite">
                                         </div>
                                     </fieldset>
                                 </form>

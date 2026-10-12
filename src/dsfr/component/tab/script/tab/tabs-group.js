@@ -118,9 +118,10 @@ class TabsGroup extends api.core.DisclosuresGroup {
   };
 
   focus () {
-    if (this.current) {
-      this.current.focus();
-    }
+    if (!this.current) return;
+
+    const button = this.current.primaryButtons.find(button => button.list === this.list);
+    if (button) button.focus();
   }
 
   apply () {

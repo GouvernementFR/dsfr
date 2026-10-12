@@ -70,7 +70,7 @@ Il permet l’affichage de la barre de recherche dans un “overlay” dédié.
 
 - Le pictogramme “burger” pour accéder au menu principal - si accès rapides et/ou navigation principale présents ([voir en détail la navigation mobile](../../../../navigation/_part/doc/index.md)).
 
-Il permet l’affichage du menu principal dans “overlay’ dédié.
+Il permet l’affichage du menu principal dans un “overlay“ dédié.
 
 ### Tailles
 

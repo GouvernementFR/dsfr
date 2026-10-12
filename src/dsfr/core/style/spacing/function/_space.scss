@@ -9,6 +9,19 @@
 @use 'sass:list';
 @use 'src/module/string' as str;
 
+@function _join($value) {
+  @if meta.type-of($value) != list {
+    @return $value;
+  }
+
+  $separator: ' ';
+  @if list.separator($value) == comma {
+    $separator: ', ';
+  }
+
+  @return str.join($value, $separator);
+}
+
 /// Return space value from type map and convert to rem.
 ///
 /// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem
@@ -96,12 +109,12 @@
       $end: unquote('');
 
       @if $c > 1 {
-        $start: space(string.slice($value, 1, $c - 1));
+        $start: _join(space(string.slice($value, 1, $c - 1)));
       }
 
       $l: str-length($value);
       @if $b < $l {
-        $end: space(string.slice($value, $b + 1, $l));
+        $end: _join(space(string.slice($value, $b + 1, $l)));
       }
 
       @return unquote('#{$start}(#{$middle})#{$end}');

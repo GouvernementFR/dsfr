@@ -24,13 +24,13 @@
       display: inline-flex;
     }
 
-    input + label {
+    input ~ label {
       @include icon-size-legacy(sm, before) {
         vertical-align: -2px;
       }
     }
 
-    input:focus + label {
+    input:focus ~ label {
       @include before {
         outline: none;
       }

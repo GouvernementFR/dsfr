@@ -18,48 +18,78 @@ const thead = [
   [
     {
       attributes: {
-        role: 'columnheader'
+        role: 'columnheader',
+        scope: 'col'
       },
       classes: [`${prefix}-cell--fixed`],
       content: getSrOnlyCell(getText('data.cell.action.select', 'table'))
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: getTitleCell()
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: getTitleCell('div') + getTextCell('div')
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: `<div class="${prefix}-cell--sort">${getTitleCell()} ${getButton({id: `${table.id}-thead-sort-asc-desc`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort`]})}</div>`
     },
     {
       attributes: {
-        'aria-sort': 'descending'
+        'aria-sort': 'descending',
+        scope: 'col'
       },
       content: getButton({id: `${table.id}-thead-sort-descending`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort-desc`], attributes: {}})
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: `${getTextCell()} ${getButton({label: getText('data.cell.text', 'table'), classes: [`${prefix}-ml-2v`, `${prefix}-btn--tooltip`], tooltip: {id: `${table.id}-thead-tooltip`, content: lorem()}})}`
     },
     {
       attributes: {
-        'aria-sort': 'ascending'
+        'aria-sort': 'ascending',
+        scope: 'col'
       },
       content: getButton({id: `${table.id}-thead-sort-ascending`, label: `${getText('data.cell.action.sort', 'table')}`, classes: [`${prefix}-btn--sort-asc`], attributes: {}})
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: getBadge({id: `${table.id}-thead-badge`, type: 'info', label: getText('data.cell.label', 'table')})
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: getTextCell()
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: getTitleCell()
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: getTitleCell() + getTextCell('span', `${prefix}-cell__desc ${prefix}-ml-2v`)
     },
     {
+      attributes: {
+        scope: 'col'
+      },
       content: getIcon({name: 'arrow-right-s-line', size: 'sm', classes: [`${prefix}-mr-2v`]}) + getText('data.cell.text', 'table')
     }
   ]

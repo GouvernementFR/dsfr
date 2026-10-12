@@ -7,7 +7,7 @@
 /// }
 
 @mixin forced-colors($active: active) {
-  @media (-ms-high-contrast: $active), (forced-colors: $active) {
+  @media (forced-colors: $active) {
     @content;
   }
 }

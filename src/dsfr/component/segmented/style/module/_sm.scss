@@ -12,7 +12,7 @@
   }
 
   input {
-    + label {
+    ~ label {
       @include nest-segmented-element(sm, left);
     }
   }

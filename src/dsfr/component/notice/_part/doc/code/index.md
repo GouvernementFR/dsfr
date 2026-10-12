@@ -6,7 +6,7 @@ title: Code du Bandeau d'information importante
 shortTitle: Code du Bandeau d'information importante
 description: Mise à disposition des extraits de code, de l’API et de la documentation technique du composant Bandeau d'information importante.
 shortDescription: Afficher une alerte temporaire prioritaire.
-keywords: bandeau, alerte, information importante, vigilance météo, composant éditorial, interface, UX, design system, accessibilité, urgence
+keywords: bandeau, notice, alerte, information importante, vigilance météo, composant éditorial, interface, UX, design system, accessibilité, urgence
 cover: ../_asset/cover/cover.png
 excerpt: Le bandeau d’information importante sert à attirer l’attention sur une information temporaire prioritaire comme une alerte météo. Il s’affiche sous la navigation principale sur l’ensemble des pages.
 summary: Ce document présente les bonnes pratiques d’usage du bandeau d’information importante. Il décrit son rôle dans la diffusion d’informations urgentes ou prioritaires, précise les cas d’usage recommandés, notamment pour les alertes météo, et définit les règles de positionnement et de rédaction. Il insiste sur la nécessité de limiter son usage à des cas exceptionnels pour préserver son efficacité. Ce guide s’adresse aux équipes éditoriales et techniques souhaitant alerter efficacement les usagers dans un cadre cohérent et accessible.
@@ -40,9 +40,9 @@ Sa structure comprend les éléments suivants :
 - Un conteneur principal est un élément HTML `<div>` défini par les classe `fr-notice` et `fr-notice--info`, représentant le bandeau lui-même.
 - Un conteneur est un élément HTML `<div>` défini par la classe `fr-container`.
 - Le corps du bandeau est un élément HTML `<div>` défini par la classe `fr-notice__body`.
-- Un paragraphe `<p>` qui contient le texte du message dont :
-  - Le titre du bandeau d’information importante, obligatoire, dans un élément HTML `<span>` défini par la classe `fr-notice__title`.
-  - Le texte du bandeau, optionnel, dans un élément HTML `<span>` défini par la classe `fr-notice__desc`.
+- Une balise `<div>` qui contient le texte du message dont :
+  - Le titre du bandeau d’information importante, obligatoire, défini par la classe `fr-notice__title` et un niveau de titre ajustable (h2, h3, h4, h5, h6 ou p).
+  - Le texte du bandeau, optionnel, dans un élément HTML `<p>` défini par la classe `fr-notice__desc`.
   - Un lien, optionnel, dans un élément HTML `<a>` défini par la classe `fr-notice__link`.
 - Un bouton de fermeture, optionnel, dans un élément HTML `<button>` de type `button` et défini par les classes `fr-btn--close` et `fr-btn` pour permettre à l'utilisateur de fermer le bandeau.
   - Il doit être lié à une fonction JavaScript pour supprimer le bandeau du DOM lorsque celui-ci est cliqué.
@@ -53,11 +53,11 @@ Sa structure comprend les éléments suivants :
 <div class="fr-notice fr-notice--info">
     <div class="fr-container">
         <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Titre du bandeau assez long</span>
-                <span class="fr-notice__desc">Texte de description plutot long lorem ipsum sit consectetur adipiscing elit. Sed</span>
+            <div>
+                <h2 class="fr-notice__title">Titre du bandeau reprenant le type d'information importante</h2>
+                <p class="fr-notice__desc">Texte de description</p>
                 <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
+            </div>
             <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
         </div>
     </div>

@@ -28,7 +28,9 @@
             <% } %>
           </ul>
         <% } else { %>
-          <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[0]}); %>
+          <div class="<%= prefix %>-btns-group">
+            <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[0]}); %>
+          </div>
         <% } %>
       <% } %>
       <% if (tools.translate !== undefined) { %>

@@ -6,7 +6,7 @@ title: Design du Champ de saisie
 shortTitle: Design du Champ de saisie
 description: Présentation des choix graphiques, des principes visuels et des variantes disponibles du composant Champ de saisie.
 shortDescription: Saisie de données dans une interface.
-keywords: champ de saisie, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé
+keywords: champ de saisie, input, formulaire, saisie, interface, accessibilité, design system, UX, UI, libellé
 cover: ../_asset/cover/cover.png
 excerpt: Ce document présente l’usage du champ de saisie pour permettre à l’usager d’entrer des informations, en précisant les cas d’usage appropriés et les bonnes pratiques d’interface.
 summary: Ce contenu décrit le champ de saisie comme un composant d’interface permettant à l’usager de saisir du contenu ou des données. Il indique quand l’utiliser, avec quelles alternatives dans le cas de choix fermés, et fournit des recommandations précises sur son usage, la disposition des éléments, les messages de retour, l’accessibilité et les libellés. Il s’adresse aux concepteurs et développeurs souhaitant garantir une saisie claire, efficace et cohérente dans leurs interfaces.
@@ -98,7 +98,7 @@ L'état d’erreur est signalé par un changement de couleur ainsi que l’affic
 
 L'état de succès est signalé par un changement de couleur ainsi que l’affichage d’une ligne verte (cf. couleurs système : le vert est la couleur de l’état succès) et d’un message de succès en-dessous du composant.
 
-::dsfr-doc-storybook{storyId=input--valid}
+::dsfr-doc-storybook{storyId=input--success}
 
 **État désactivé**
 

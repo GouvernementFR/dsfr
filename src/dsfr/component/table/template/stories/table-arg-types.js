@@ -82,7 +82,7 @@ const tableFooterSelect = `
               Nombre de lignes par page
           </label>
           <select class='fr-select' aria-describedby='table-footer-select-7847-messages' id='table-footer-select-7847' name='table-footer-select-7847'>
-              <option value='' selected disabled hidden>Nombre de lignes par page</option>
+              <option value='' selected disabled>Nombre de lignes par page</option>
               <option value='4'>4 lignes par page</option>
               <option value='10'>10 lignes par page</option>
               <option value='20'>20 lignes par page</option>
@@ -103,8 +103,8 @@ const tableFooterPagination = `
                   </a>
               </li>
               <li>
-                  <a class='fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label' id='table-footer-pagination-7852' title='Précédente' aria-disabled='true' role='link'>
-                      Précédente
+                  <a class='fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label' id='table-footer-pagination-7852' title='Page précédente' aria-disabled='true' role='link'>
+                      Page précédente
                   </a>
               </li>
               <li>
@@ -123,8 +123,8 @@ const tableFooterPagination = `
                   </a>
               </li>
               <li>
-                  <a class='fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label' id='table-footer-pagination-7853' href='#' title='Suivante'>
-                      Suivante
+                  <a class='fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label' id='table-footer-pagination-7853' href='#' title='Page suivante'>
+                      Page suivante
                   </a>
               </li>
               <li>

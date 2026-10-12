@@ -1,0 +1,19 @@
+////
+/// Connect Module : pro
+/// @group connect
+////
+
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+#{ns(connect)} {
+  &--pro {
+    @include padding-left(4.4375em); // marge intérieure du bouton (0.75em) + largeur de l'icône (3.4375em) + marge entre l'icône et le texte (0.25em)
+
+    @include before('', block) {
+      background-image: url(svg-encode($pc-logo-svg, true));
+      background-size: 3.4375em 3em;
+      width: 3.4375em;
+    }
+  }
+}

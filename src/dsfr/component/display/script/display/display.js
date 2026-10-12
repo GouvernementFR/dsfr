@@ -9,13 +9,13 @@ class Display extends api.core.Instance {
   init () {
     this.radios = this.querySelectorAll(DisplaySelector.RADIO_BUTTONS);
 
-    if (api.scheme) {
+    if (api.scheme && document.documentElement.hasAttribute(api.scheme.SchemeAttribute.SCHEME)) {
       this.changing = this.change.bind(this);
       for (const radio of this.radios) radio.addEventListener('change', this.changing);
       this.addDescent(api.scheme.SchemeEmission.SCHEME, this.apply.bind(this));
       this.ascend(api.scheme.SchemeEmission.ASK);
     } else {
-      this.querySelector(DisplaySelector.FIELDSET).setAttribute('disabled', '');
+      this.disableChoices();
     }
   }
 
@@ -53,6 +53,10 @@ class Display extends api.core.Instance {
 
   dispose () {
     for (const radio of this.radios) radio.removeEventListener('change', this.changing);
+  }
+
+  disableChoices () {
+    this.querySelector(DisplaySelector.FIELDSET).setAttribute('disabled', '');
   }
 }
 

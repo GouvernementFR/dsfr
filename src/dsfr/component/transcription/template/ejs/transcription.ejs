@@ -30,7 +30,7 @@ const title = locals.getText('collapse.title', 'transcription');
 if (transcription.id) attributes.id = transcription.id;
 
 let modal = {
-  tag: 'div',
+  markup: 'div',
   title: transcription.title,
   body: transcription.content,
   id: transcription.modalId || uniqueId('modal-transcription'),

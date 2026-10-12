@@ -15,7 +15,7 @@
 
 * range.hint (string, optional) : texte de description sous le label
 
-* range.size (string, optional) : taille du curseur (valeur : 'sm')
+* range.size (string, optional) : taille du curseur (valeurs possibles : 'md' | 'sm')
 
 * range.inputAttributes (array, optional) : attributs de l'input
 
@@ -59,6 +59,7 @@ const groupClasses = range.classes || [];
 groupClasses.push(`${prefix}-range-group`);
 
 const label = { label: range.label, hint: range.hint, attributes: { id: `${range.id}-label` } };
+if (!range.isDouble) label.for = range.id;
 
 const decorate = (value) => `${range.prefix ?? ''}${value}${range.suffix ?? ''}`;
 
@@ -66,7 +67,7 @@ const rangeAttributes = {};
 if (range.prefix) rangeAttributes[`data-${prefix}-prefix`] = range.prefix;
 if (range.suffix) rangeAttributes[`data-${prefix}-suffix`] = range.suffix;
 const rangeClasses = [`${prefix}-range`];
-if (range.size) rangeClasses.push(`${prefix}-range--${range.size}`);
+if (range.size && range.size !== "md") rangeClasses.push(`${prefix}-range--${range.size}`);
 if (range.isDouble) rangeClasses.push(`${prefix}-range--double`);
 if (range.isStep) rangeClasses.push(`${prefix}-range--step`);
 
@@ -74,7 +75,6 @@ const inputAttributes = range.inputAttributes || {};
 inputAttributes.id = range.id;
 inputAttributes.name = range.name;
 inputAttributes.type = 'range';
-inputAttributes['aria-labelledby'] = label.attributes.id;
 if (range.isDouble) {
   inputAttributes['aria-label'] = range.minValueLabel;
   inputAttributes['aria-labelledby'] = `${range.id} ${label.attributes.id}`;
@@ -117,7 +117,7 @@ if (builder.describedby.length > 0) {
   <%- include('../../../form/template/ejs/label', { label : label }); %>
 
   <div <%- includeClasses(rangeClasses); %> <%- includeAttrs(rangeAttributes); %>>
-    <span class="<%= prefix %>-range__output"><%= decorate(range.value) %></span>
+    <span class="<%= prefix %>-range__output" aria-hidden="true"><%= decorate(range.value) %></span>
 
     <input <%- includeAttrs(inputAttributes); %> >
 

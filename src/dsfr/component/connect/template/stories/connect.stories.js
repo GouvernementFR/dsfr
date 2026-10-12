@@ -21,10 +21,18 @@ export const DefaultStory = {
   args: {}
 };
 
-export const ConnectPlusStory = {
+export const FranceConnectPlusStory = {
   tags: ['autodocs', '!dev'],
   args: {
     id: 'france-connect-plus',
     variant: 'plus'
+  }
+};
+
+export const ProConnectStory = {
+  tags: ['autodocs', '!dev'],
+  args: {
+    id: 'pro-connect',
+    variant: 'pro'
   }
 };

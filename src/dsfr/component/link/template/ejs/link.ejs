@@ -13,6 +13,8 @@
 
 * link.disabled (boolean, optional) : si valeur true, link désactivé
 
+* link.inText (boolean, optional) : si valeur true, n'ajoute pas la classe fr-link
+
 * link.size (string, optional) : taille du lien
   valeurs :
   * sm
@@ -47,7 +49,7 @@ const linkAttrs = link.attributes || {};
 let label = link.label || 'lorem ipsum';
 const disabled = link.disabled === true;
 linkAttrs.id = link.id || uniqueId('link');
-linkClasses.push(prefix + '-link');
+if (!link.inText) linkClasses.push(prefix + '-link');
 const markup = link.markup || 'a';
 
 switch (markup) {
@@ -62,37 +64,39 @@ switch (markup) {
     break;
 }
 
-switch (link.size) {
-  case 'sm':
-    linkClasses.push(prefix + '-link--sm');
-    break;
-
-  case 'lg':
-    linkClasses.push(prefix + '-link--lg');
-    break;
-}
-
-if (link.download) {
-  linkAttrs.download = link.download;
-  linkClasses.push(prefix + '-link--download');
-}
-
-if (link.icon !== undefined) linkClasses.push(`${prefix}-icon-${link.icon}`);
-
-if (link.iconPlace !== undefined) {
-  switch (link.iconPlace) {
-    case 'left':
-      linkClasses.push(`${prefix}-link--icon-left`);
+if (!link.inText) {
+  switch (link.size) {
+    case 'sm':
+      linkClasses.push(prefix + '-link--sm');
       break;
 
-    case 'right':
-      linkClasses.push(`${prefix}-link--icon-right`);
+    case 'lg':
+      linkClasses.push(prefix + '-link--lg');
       break;
   }
-}
 
-if (link.detail) {
-  label += ` <span class="${prefix}-link__detail">${link.detail}</span>`;
+  if (link.download) {
+    linkAttrs.download = link.download;
+    linkClasses.push(prefix + '-link--download');
+  }
+
+  if (link.icon !== undefined) linkClasses.push(`${prefix}-icon-${link.icon}`);
+
+  if (link.iconPlace !== undefined) {
+    switch (link.iconPlace) {
+      case 'left':
+        linkClasses.push(`${prefix}-link--icon-left`);
+        break;
+
+      case 'right':
+        linkClasses.push(`${prefix}-link--icon-right`);
+        break;
+    }
+  }
+
+  if (link.detail) {
+    label += ` <span class="${prefix}-link__detail">${link.detail}</span>`;
+  }
 }
 
 %>

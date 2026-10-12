@@ -47,9 +47,9 @@ Voir les interactions au clavier pour le [composant Accordéon](../../../../acco
   - Le bouton d'ouverture de la modale dispose d'un attribut `aria-label` dont la valeur "Agrandir la transcription" explicite l'action d'ouverture de la modale.
   - Le bouton d'ouverture de la modale a l'attribut `aria-controls` défini sur l'ID de la modale.
   - Si la modale est visible, le bouton a l'attribut `data-fr-opened` défini sur true. Si la modale n'est pas visible, `data-fr-opened` est défini sur false.
-- La modale de transcription est un élément HTML "dialog" et dispose d'un attribut `aria-modal="true"` pour indiquer aux lecteurs d'écran que l'élément est une modale lorsqu'il est affiché.
+- La modale de transcription est un élément HTML "div" avec la classe `fr-modal`.
   - La modale dispose d'un attribut `aria-labelledby` défini sur l'ID du titre de la modale.
-- La modale de transcription contient un titre de niveau `H1`.
+  - La modale de transcription doit contenir un titre de niveau `Hx` en fonction de la structure de la page. Il peut être caché visuellement mais doit être présent dans le DOM pour les lecteurs d'écran.
 - La modale de transcription contient un bouton de fermeture de type="button".
   - Le bouton de fermeture de la modale dispose d'un attribut `aria-controls` défini sur l'ID de la modale.
 

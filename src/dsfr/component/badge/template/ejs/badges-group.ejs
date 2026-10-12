@@ -25,6 +25,10 @@ const groupMarkup = badgesGroup.groupMarkup || 'ul';
 groupClasses.push(prefix + '-badges-group');
 const isList = groupMarkup === 'ul';
 
+badges.forEach((badge) => {
+  badge.markup = 'span';
+});
+
 switch(badgesGroup.size) {
   case 'sm':
     groupClasses.push(prefix + '-badges-group--sm');
@@ -37,7 +41,7 @@ switch(badgesGroup.size) {
   <% if (isList) { %>
     <li>
   <% } %>
-    <%- include('./badge.ejs', { badge:badges[i] }); %>
+    <%- include('./badge.ejs', { badge: badges[i] }); %>
   <% if (isList) { %>
     </li>
   <% } %>

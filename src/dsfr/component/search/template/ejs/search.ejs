@@ -23,6 +23,7 @@
 <%
 let search = locals.search || {button:{}, input:{}}
 let searchClasses = [...search.classes || [], prefix + '-search-bar'];
+if (search.labelled) searchClasses.push(prefix + '-search-bar--labelled');
 let attributes = search.attributes || {};
 attributes.id = search.id;
 attributes.role = "search";

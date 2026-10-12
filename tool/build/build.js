@@ -15,9 +15,18 @@ const { I18n } = require('../classes/i18n/i18n');
 const { Config } = require('../classes/config/config');
 const fs = require('fs');
 const { execSync } = require('child_process');
+const { checkLicense } = require('../../scripts/preinstall');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
+
+  try {
+    await checkLicense();
+  } catch (e) {
+    log.error('Conditions générales d\'utilisation non acceptées. Build annulé.');
+    throw e;
+  }
+
   if (settings.clean) clean();
   if (settings.clean || settings.config || !fs.existsSync('.config/config.json')) {
     await generateConfig();
@@ -87,7 +96,10 @@ const build = async (settings) => {
 
   if (settings.docs) {
     log.section('docs', true);
-    await execSync('yarn dsfr configure && yarn dsfr interpret && yarn dsfr publish');
+    execSync('yarn install && yarn dsfr configure && yarn dsfr interpret && yarn dsfr publish', {
+      cwd: 'dsfr-doc',
+      stdio: 'inherit'
+    });
   }
 
   if (settings.markdowns) {
