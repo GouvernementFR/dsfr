@@ -51,7 +51,8 @@ class HeaderModal extends api.core.Instance {
   }
 
   handleClick (e) {
-    if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) {
+    const linkOrButton = e.target.closest('a, button');
+    if (linkOrButton && linkOrButton !== this.node && !linkOrButton.matches('[aria-controls]') && !linkOrButton.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) {
       const modal = this.element.getInstance('Modal');
       modal.conceal();
     }

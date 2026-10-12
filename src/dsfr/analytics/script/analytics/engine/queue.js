@@ -82,18 +82,14 @@ class Queue {
     if (this._isListening) return;
     this._isListening = true;
     document.addEventListener('visibilitychange', this._handlingVisibilityChange);
-    document.addEventListener('unload', this._handlingEnd);
-    document.addEventListener('beforeunload', this._handlingEnd);
-    document.addEventListener('pagehide', this._handlingEnd);
+    window.addEventListener('pagehide', this._handlingEnd);
   }
 
   _unlisten () {
     if (!this._isListening) return;
     this._isListening = false;
     document.removeEventListener('visibilitychange', this._handlingVisibilityChange);
-    document.removeEventListener('unload', this._handlingEnd);
-    document.removeEventListener('beforeunload', this._handlingEnd);
-    document.removeEventListener('pagehide', this._handlingEnd);
+    window.removeEventListener('pagehide', this._handlingEnd);
   }
 
   _handleVisibilityChange (e) {

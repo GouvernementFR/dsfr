@@ -1,28 +1,10 @@
 const iconArgTypes = {
-  hasIcon: {
-    if: { arg: 'type', neq: 'status' },
-    control: 'boolean',
-    description: 'Le badge a une icône',
-    table: {
-      category: 'type',
-      subcategory: 'icon'
-    }
-  },
   hasNoIcon: {
     if: { arg: 'type', eq: 'status' },
     control: 'boolean',
     description: 'Retrait de l\'icône de statut',
     table: {
       category: 'type'
-    }
-  },
-  icon: {
-    if: { arg: 'type', neq: 'status' },
-    control: 'text',
-    description: 'Nom de l\'icône dans le badge',
-    table: {
-      category: 'type',
-      subcategory: 'icon'
     }
   }
 };
@@ -122,9 +104,7 @@ const badgeArgs = {
   accent: 'green-tilleul-verveine',
   status: 'success',
   size: 'md',
-  hasIcon: false,
   hasNoIcon: false,
-  icon: 'checkbox-line',
   ellipsis: false
 };
 
@@ -142,10 +122,6 @@ const badgeProps = (args) => {
     case 'accent':
       if (args.accent !== 'default') badge.accent = args.accent || badgeArgs.accent;
       break;
-  }
-
-  if (args.hasIcon) {
-    badge.icon = args.icon;
   }
 
   if (args.hasNoIcon) {

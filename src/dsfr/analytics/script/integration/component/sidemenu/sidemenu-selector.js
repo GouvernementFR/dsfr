@@ -1,4 +1,5 @@
 import api from '../../../../api';
+import { joinSelector } from '../../join-selector';
 
 export const SidemenuSelector = {
   SIDEMENU: `${api.internals.ns.selector('sidemenu')}:not(${api.internals.ns.attr.selector('analytics-action', 'reduce')})`,
@@ -6,5 +7,7 @@ export const SidemenuSelector = {
   LINK: `${api.internals.ns.selector('sidemenu__link')}:not(${api.internals.ns.attr.selector('analytics-action', 'reduce')})`,
   BUTTON: api.internals.ns.selector('sidemenu__btn'),
   TITLE: api.internals.ns.selector('sidemenu__title'),
-  COLLAPSE: `${api.sidemenu.SidemenuSelector.COLLAPSE}:not(${api.internals.ns.attr.selector('analytics-action', 'reduce')})`
+  get COLLAPSE () {
+    return joinSelector(api.sidemenu.SidemenuSelector.COLLAPSE, `:not(${api.internals.ns.attr.selector('analytics-action', 'reduce')})`);
+  }
 };

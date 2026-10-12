@@ -67,6 +67,8 @@ class Modal extends api.core.Disclosure {
   }
 
   disclose (withhold) {
+    if (this.isDisclosed === true || !this.isEnabled || !this.isActive) return false;
+    this.retainFocus();
     if (!super.disclose(withhold)) return false;
     if (this.body) {
       this.body.isResizing = true;
@@ -91,6 +93,10 @@ class Modal extends api.core.Disclosure {
       this.stripDialog();
     }
     return true;
+  }
+
+  focus () {
+    this.focusBack();
   }
 
   get isDialog () {
