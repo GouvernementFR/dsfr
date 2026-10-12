@@ -1,5 +1,176 @@
+- id: v1.15.4
+  date: 2026-10-12
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.4
+  commits:
+    - id: "1554"
+      type: chore
+      scopes:
+        - dependencies
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.15.4
+      title: mise à jour des dépendances npm
+      pull: https://github.com/GouvernementFR/dsfr/pull/1554
+    - id: "1544"
+      type: feat
+      scopes:
+        - form
+      description: "- Dans la démo du formulaire, la propriété ElementType permet
+        maintenant de choisir toggle"
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.15.4
+      title: ajout des interrupteurs au storybook de form
+      pull: https://github.com/GouvernementFR/dsfr/pull/1544
+    - id: "1536"
+      type: fix
+      scopes:
+        - core
+      description: "- la fonction remove de la classe Emitter ne supprime maintenant
+        que l'émission en paramètre"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.4
+      title: corrige la suppression d'émissions
+      pull: https://github.com/GouvernementFR/dsfr/pull/1536
+    - id: "1535"
+      type: fix
+      scopes:
+        - analytics
+      description: "- regression 1.15.0"
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.4
+      title: crash de l'analytics si tous les composants ne sont pas importés
+      pull: https://github.com/GouvernementFR/dsfr/pull/1535
+    - id: "1543"
+      type: fix
+      scopes:
+        - disclosure
+      description: "- Corrige la gestion du focus à la fermeture des disclosures,
+        notamment lorsqu’un accordéon est ouvert au chargement. Sa fermeture
+        pouvait renvoyer le focus au logo et provoquer une erreur si le
+        JavaScript du header n’était pas chargé."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.4
+      title: corrige le retour du focus
+      pull: https://github.com/GouvernementFR/dsfr/pull/1543
+    - id: "1545"
+      type: fix
+      scopes:
+        - tab
+      description: "- Le composant d’onglets capturait les évènements de clavier même
+        lorsque des modificateurs sont utilisés, rendant inutilisables les
+        comportements par défaut des navigateurs tels que la navigation dans
+        l’historique (alt+fleche)."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.4
+      title: corrige l'évenement natif alt + fleche
+      pull: https://github.com/GouvernementFR/dsfr/pull/1545
+    - id: "1548"
+      type: docs
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.4
+      title: correction anatomie du sidemenu
+      pull: https://github.com/GouvernementFR/dsfr/pull/1548
+    - id: "1529"
+      type: fix
+      scopes:
+        - header
+      description: "- Aligne handleClick de HeaderModal sur le correctif appliqué à la
+        navigation (#1344) : on remonte au lien ou au bouton avec closest() au
+        lieu de tester e.target directement."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.4
+      title: fermeture du menu mobile au clic sur un élément imbriqué dans un lien
+      pull: https://github.com/GouvernementFR/dsfr/pull/1529
+    - id: "1537"
+      type: docs
+      scopes:
+        - badge
+        - card
+      description: "- correction des snippets de code"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.4
+      title: correction des groupe de badges
+      pull: https://github.com/GouvernementFR/dsfr/pull/1537
+    - id: "1538"
+      type: fix
+      scopes:
+        - table
+      description: "- problème d'alignement de la case à cocher dans la colonne de
+        sélection de ligne lorsque le tableau est en mode multi-lignes."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.4
+      title: aligne correctement la checkbox en multi-lignes
+      pull: https://github.com/GouvernementFR/dsfr/pull/1538
+    - id: "1539"
+      type: fix
+      scopes:
+        - tag
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.4
+      title: utilisation de span dans groupe de tags
+      pull: https://github.com/GouvernementFR/dsfr/pull/1539
+    - id: "1551"
+      type: fix
+      scopes:
+        - analytics
+      description: – L'événement unload a été retiré de l'implémentation des
+        navigateurs récents. Les écouteurs sont à présent retirés uniquement au
+        pageHide et visibilitychange
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.15.4
+      title: retrait de l'événement unload
+      pull: https://github.com/GouvernementFR/dsfr/pull/1551
+    - id: "1549"
+      type: docs
+      scopes:
+        - table
+      description: "- corrige l'exemple de tableau avec pagination"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.4
+      title: corrige les markups spécifiques à storybook
+      pull: https://github.com/GouvernementFR/dsfr/pull/1549
+    - id: "1550"
+      type: docs
+      scopes:
+        - badge
+      description: "- seuls les badges systèmes peuvent avoir une icone"
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.15.4
+      title: retire les icônes sur les badges accentués
+      pull: https://github.com/GouvernementFR/dsfr/pull/1550
 - id: v1.15.3
-  date: 2026-09-08
+  date: 2026-09-09
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.3
   commits:
     - id: "1524"
