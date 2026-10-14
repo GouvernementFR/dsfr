@@ -49,10 +49,15 @@
   &__content {
     @include display-flex(column, center);
     @include height(100%);
+
+    & > * {
+      @include max-width(100%);
+    }
   }
 
   &__body {
     @include height(100%);
+    @include min-width(0);
     order: 2;
     flex: 1 1 auto;
   }
