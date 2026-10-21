@@ -1,0 +1,23 @@
+////
+/// Spinner Setting
+/// @group spinner
+////
+
+$spinner-settings: (
+  duration: 1s,
+  reduced-duration: 3s,
+  sizes: (
+    sm: (
+      size: 4v,
+      border-width: 0.5v
+    ),
+    md: (
+      size: 8v,
+      border-width: 1v
+    ),
+    lg: (
+      size: 12v,
+      border-width: 1.5v
+    )
+  )
+);
