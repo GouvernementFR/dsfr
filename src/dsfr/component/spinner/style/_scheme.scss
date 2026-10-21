@@ -1,0 +1,21 @@
+////
+/// Spinner Scheme
+/// @group spinner
+////
+
+@use 'src/module/color';
+
+@mixin _spinner-scheme($legacy: false) {
+  #{ns(spinner)} {
+    @include before {
+      @include color.element(border-color, border, default grey, (legacy: $legacy));
+      @include color.element(border-top-color, border, action-high blue-france, (legacy: $legacy));
+    }
+
+    @include color.accentuate {
+      @include before {
+        @include color.element(border-top-color, border, plain accent, (legacy: $legacy));
+      }
+    }
+  }
+}

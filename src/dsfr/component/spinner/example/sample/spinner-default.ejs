@@ -1,0 +1,6 @@
+<%
+let spinner = locals.spinner || {}
+spinner.id ??= uniqueId('spinner');
+%>
+
+<%- include('../../template/ejs/spinner', { spinner }); %>

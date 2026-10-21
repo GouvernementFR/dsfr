@@ -1,0 +1,44 @@
+<%#
+# paramètres spinner
+
+* spinner (object, required) : Objet contenant les paramètres
+
+** label (string, optional) [default: 'Chargement en cours'] : texte restitué par les technologies d'assistance
+
+** labelVisible (boolean, optional) [default: false] : si true, le libellé est affiché à côté de l'indicateur
+
+** size (string, optional) : taille de l'indicateur (sm/lg), md par défaut
+
+** accent (string, optional) : couleur d'accentuation
+
+** id (string, optional) : id de l'élément
+
+** classes (array, optional) : classes supplémentaires sur l'élément
+
+** attrs (object, optional) : attributs supplémentaires sur l'élément
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let spinner = locals.spinner || {};
+const classes = spinner.classes || [];
+const attrs = spinner.attrs || {};
+const label = spinner.label || 'Chargement en cours';
+classes.push(prefix + '-spinner');
+attrs.role = 'status';
+if (spinner.id) attrs.id = spinner.id;
+
+switch (spinner.size) {
+  case 'sm':
+  case 'lg':
+    classes.push(prefix + '-spinner--' + spinner.size);
+    break;
+}
+
+if (spinner.accent !== undefined) classes.push(prefix + '-spinner--' + spinner.accent);
+
+const labelClasses = spinner.labelVisible ? [] : [prefix + '-sr-only'];
+%>
+
+<div <%- includeAttrs(attrs) %> <%- includeClasses(classes) %>><span <%- includeClasses(labelClasses) %>><%= label %></span></div>
