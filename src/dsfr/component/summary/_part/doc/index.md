@@ -63,7 +63,7 @@ Ne pas intégrer le sommaire au sein du contenu éditorial lui-même.
 ::::
 
 - **Positionner le titre du sommaire au-dessus de la liste d’ancres**.
-- **Reprendre les titres de section de la page (H1 et H2) sous forme d’ancre** vers le contenu correspondant. Au clic sur un lien, l’utilisateur est redirigé dans la page, au niveau de la section cherchée.
+- **Reprendre les titres de section de la page (ex: h2 et h3) sous forme d’ancre** vers le contenu correspondant. Au clic sur un lien, l’utilisateur est redirigé dans la page, au niveau de la section cherchée.
 - **Conserver le fond de couleur du sommaire,** destiné à le séparer visuellement du contenu.
 
 ::::dsfr-doc-guidelines
