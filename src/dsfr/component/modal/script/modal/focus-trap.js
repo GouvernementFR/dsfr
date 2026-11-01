@@ -34,7 +34,7 @@ const isFocusable = (element, container) => {
   if (container === undefined) container = element;
 
   while (container.contains(element)) {
-    if (style.display === 'none') return false;
+    if (windowElement.getComputedStyle(element).display === 'none') return false;
     element = element.parentElement;
   }
 
