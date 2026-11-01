@@ -1,8 +1,11 @@
 class RangeConstraints {
   constructor (node) {
-    this._min = isNaN(node.min) ? 0 : node.min;
-    this._max = isNaN(node.max) ? 100 : node.max;
-    this._step = isNaN(node.step) ? 1 : node.step;
+    const min = parseFloat(node.min);
+    const max = parseFloat(node.max);
+    const step = parseFloat(node.step);
+    this._min = isNaN(min) ? 0 : min;
+    this._max = isNaN(max) ? 100 : max;
+    this._step = isNaN(step) ? 1 : step;
     this._rangeWidth = this._max - this._min;
   }
 
