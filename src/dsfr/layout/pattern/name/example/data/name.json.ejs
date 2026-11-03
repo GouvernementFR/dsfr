@@ -77,7 +77,7 @@ const firstname = {
   type: 'input',
   data: {
     id: firstnameId,
-    label: getText('label.given', 'name'),
+    label: name.button ? `${getText('label.given', 'name')} 1` : getText('label.given', 'name'),
     name: 'given-name',
     spellcheck: false,
     autocomplete: 'given-name'
@@ -94,6 +94,8 @@ const button = {
     iconPlace: 'left',
     attributes: {
       onclick: `addFirstname(this, '${firstnameId}')`,
+      'data-firstname-label': getText('label.given', 'name'),
+      'data-remove-firstname-label': getText('label.remove-firstname', 'name'),
       type: 'button'
     }
   }
@@ -111,12 +113,12 @@ const buildFieldset = () => {
     data: {
       id: fieldsetId,
       legend: {
-        label: getText('label.given', 'name'),
+        label: getText('label.firstnames-legend', 'name'),
         sr: true
       },
       elements: firstnameElements,
       disabled: name.disabled,
-      classes: [`${prefix}-mb-n4v`]
+      classes: [`${prefix}-mb-0`]
     }
   };
 

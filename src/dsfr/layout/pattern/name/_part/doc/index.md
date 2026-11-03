@@ -91,11 +91,14 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
         </div>
     </div>
     <div class="fr-fieldset__element">
-        <fieldset class="fr-fieldset" id="firstname-fieldset-1517" aria-labelledby="firstname-fieldset-1517-messages">
+        <fieldset class="fr-fieldset fr-mb-0" id="firstname-fieldset-1517" aria-labelledby="firstnames-fieldset-legend firstname-fieldset-1517-messages">
+            <legend class="fr-sr-only" id="firstnames-fieldset-legend">
+                Prénoms dans l’ordre déterminé ci-dessous
+            </legend>
             <div class="fr-fieldset__element">
                 <div class="fr-input-group">
                     <label class="fr-label" for="input-firstname-1516">
-                        Prénom
+                        Prénom 1
                     </label>
                     <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1516-messages" name="given-name" id="input-firstname-1516" type="text">
                     <div class="fr-messages-group" id="input-firstname-1516-messages" aria-live="polite">
@@ -103,7 +106,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
                 </div>
             </div>
             <div class="fr-fieldset__element">
-                <button class="fr-btn fr-btn--sm fr-btn--secondary" onclick="addFirstname(this, 'input-firstname-1516')" type="button">
+                <button class="fr-btn fr-btn--sm fr-btn--secondary" onclick="addFirstname(this, 'input-firstname-1516')" data-firstname-label="Prénom" data-remove-firstname-label="Supprimer le prénom" type="button">
                     Ajouter un prénom
                 </button>
             </div>
@@ -140,11 +143,14 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
         </div>
     </div>
     <div class="fr-fieldset__element">
-        <fieldset class="fr-fieldset" id="firstname-fieldset-1517" aria-labelledby="firstname-fieldset-1517-messages">
+        <fieldset class="fr-fieldset fr-mb-0" id="firstname-fieldset-1517" aria-labelledby="firstnames-fieldset-legend firstname-fieldset-1517-messages">
+            <legend class="fr-sr-only" id="firstnames-fieldset-legend">
+                Prénoms dans l’ordre déterminé ci-dessous
+            </legend>
             <div class="fr-fieldset__element">
                 <div class="fr-input-group">
                     <label class="fr-label" for="input-firstname-1516">
-                        Prénom
+                        Prénom 1
                     </label>
                     <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1516-messages" name="given-name" id="input-firstname-1516" type="text">
                     <div class="fr-messages-group" id="input-firstname-1516-messages" aria-live="polite">
@@ -152,20 +158,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
                 </div>
             </div>
             <div class="fr-fieldset__element">
-                <button class="fr-btn fr-btn--sm fr-btn--secondary" onclick="if (this.firstnamesCount === undefined) this.firstnamesCount = 1;
-                else this.firstnamesCount++;
-                const getFieldsetElement = (node) => {
-                  const parent = node.parentNode;
-                  if (parent.className.indexOf('fr-fieldset__element') > -1) return parent;
-                  return getFieldsetElement(parent);
-                };
-                const firstname = getFieldsetElement(document.getElementById('input-firstname-1516'));
-                const reference = getFieldsetElement(this);
-                const copy = firstname.cloneNode(true);
-                copy.innerHTML = copy.innerHTML.replace(/input-firstname-1516/g, `input-firstname-1516-added-${this.firstnamesCount}`).replace('name=\"firstname\"', `name=\"firstname-${this.firstnamesCount}\"`);
-                const container = reference.parentNode;
-                container.insertBefore(copy, reference);
-                " type="button">
+                <button class="fr-btn fr-btn--sm fr-btn--secondary" onclick="addFirstname(this, 'input-firstname-1516')" data-firstname-label="Prénom" data-remove-firstname-label="Supprimer le prénom" type="button">
                     Ajouter un prénom
                 </button>
             </div>
@@ -175,10 +168,7 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
     </div>
     <div class="fr-fieldset__element">
         <div class="fr-checkbox-group fr-checkbox-group--sm">
-            <input onclick="const fieldset = document.getElementById('firstname-fieldset-1517');
-if (this.checked) fieldset.setAttribute('disabled', '');
-else fieldset.removeAttribute('disabled');
-" name="firstname-disabled" id="checkbox-name-1518" type="checkbox" aria-describedby="checkbox-name-1518-messages">
+            <input onclick="toggleDisabled(this, 'firstname-fieldset-1517')" name="firstname-disabled" id="checkbox-name-1518" type="checkbox" aria-describedby="checkbox-name-1518-messages">
             <label class="fr-label" for="checkbox-name-1518">
                 Je n'ai pas de prénom
             </label>

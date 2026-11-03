@@ -8,6 +8,7 @@ hint:
 label:
   add-firstname: Ajouter un prénom
   remove-firstname: Supprimer le prénom
+  firstnames-legend: Prénoms dans l’ordre déterminé ci-dessous
   country: Pays
   family: Nom
   given: Prénom
