@@ -97,6 +97,7 @@ Ajouter une mention visible pour tout le monde au début du formulaire et utilis
 - Utiliser des groupes de cases à cocher pour des options liées, en les regroupant dans un élément `<fieldset>` avec une légende `<legend>`.
   - La **légende** doit être explicite et décrire le groupe d'options. Elle ne doit pas être en gras puisqu’elle n’est pas considérée ici comme le titre d’un regroupement de champs mais comme le libellé de l'ensemble d'options.
   - Si le **fieldset contient des messages** d’erreur, d'informations ou de succès, il doit être associé à un attribut `aria-labelledby` pour lier la légende et les messages. Les id des éléments doivent être séparés par un espace. Il faudra également ajouter l’attribut `role="group"` à l’élément `<fieldset>` pour améliorer le rendu des technologies d’assistance.
+- Il est aussi possible, mais facultatif, d'ajouter une liste afin de les rendre plus lisibles et accessibles avec `<ul class="fr-raw-list" role="list"><li>...</ul>`. Les lecteurs d’écran pourront ainsi annoncer le nombre d’éléments de la liste.
 
 #### Contrastes de couleurs
 

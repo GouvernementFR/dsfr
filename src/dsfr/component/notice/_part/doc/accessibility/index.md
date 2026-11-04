@@ -37,13 +37,17 @@ Aucune interaction au clavier spécifique au composant.
 
 ### Règles d’accessibilité
 
-- Ne pas sauter ce composant avec les liens d'évitement, le bandeau doit être lu quand l’utilisateur choisit d’aller directement au contenu.
+- Pour le lien «&nbsp;Bandeau d’information&nbsp;», cibler un identifiant unique du bandeau et ajouter `tabindex="-1"` sur la cible si elle n’est pas focalisable. Vérifier que l’activation du lien déplace effectivement le focus sur cette cible.
+- Le rôle `region` permet de retrouver le bandeau avec la navigation par régions des lecteurs d’écran. Il ne déclenche pas d’annonce automatique de son contenu.
 - Les **bandeaux refermables** doivent inclure un bouton clairement identifiable pour fermer le bandeau.
 - Le bouton de fermeture doit avoir un label explicite via un texte caché et un attribut `title`.
 - À la fermeture, repositionner le focus à un endroit pertinent pour l’utilisateur.
 - Si le bandeau d’information importante est ajouté dynamiquement après le chargement de la page, utiliser un attribut role sur le composant en fonction du niveau d'alerte, comme sur le [composant alerte](../../../../alert/_part/doc/index.md)
 - Le niveau de titre dépend du contexte de la page et ne sera pas toujours un `<h2>`.
 - **Expliciter la nature du message** porté par le composant (information, avertissement, alerte etc.) dans le titre du bandeau d'information importante. L’icône et la couleur ne garantissent pas à elles seules la bonne compréhension du message pour la totalité des usagers.
+- Si le bandeau précède un contenu répété, comme un menu latéral, privilégier son placement en dehors du `<main>`, dans une région nommée, et ajouter un lien d’accès rapide «&nbsp;Bandeau d’information&nbsp;».
+  - Identifier la région du bandeau avec un élément `<section>` nommé ou un conteneur portant `role="region"`.
+  - Donner un nom accessible à la région avec `aria-labelledby` référençant l’identifiant du titre du bandeau ou, à défaut, avec `aria-label`, par exemple `<section aria-label="Information">`.
 
 ### Contrastes de couleurs
 
@@ -70,3 +74,5 @@ Aucun test de restitution n’est nécessaire pour le composant Bandeau d’info
 #### Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [WAI-ARIA Authoring Practices — Région nommée](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/region.html)
+- [WCAG — Lien d’accès direct au contenu principal (technique G1)](https://www.w3.org/WAI/WCAG22/Techniques/general/G1)
