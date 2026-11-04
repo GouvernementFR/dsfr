@@ -45,6 +45,8 @@ Reprendre les éléments d'accessibilité liés au composant [champ de saisie](.
   - un type `password`.
   - un attribut `autocomplete="new-password"` pour la création ou `autocomplete="current-password"` pour la connexion.
 - La **case à cocher** pour révéler ou masquer le mot de passe a un intitulé explicite donné par l’attribut `aria-label` qui reprend l'intitulé visible.
+- Le groupe de messages d’erreur/indications associés au champ de mot de passe doivent être accessibles et correctement liés au champ via l’attribut `aria-describedby`.
+  - Ces messages peuvent être placés dans une liste (`<ul>` / `<li>`) pour faciliter la lecture par les technologies d’assistance.
 
 #### Contrastes de couleurs
 
