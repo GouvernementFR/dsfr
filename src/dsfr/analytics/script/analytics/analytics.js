@@ -177,7 +177,7 @@ class Analytics {
   }
 
   reset (clear = false) {
-    this._collector.reset();
+    this._collector.reset(clear);
   }
 
   collect () {
