@@ -1,16 +1,18 @@
 ---
-title: Documentation technique de la mesure d’audience
-sitemap:
-  noindex: true
+title: Documentation technique de l’API Analytics
 shortTitle: Documentation technique
-description: Intégration et configuration de l’outil de mesure d’audience du DSFR basé sur Eulerian.
-shortDescription: Guide d’intégration technique de l’outil analytics DSFR.
-keywords: analytics, mesure d’audience, DSFR, Eulerian, configuration, tracking
-excerpt: Découvrez comment intégrer et configurer l’outil de mesure d’audience fourni avec le DSFR.
-summary: Cette documentation détaille l’intégration technique de la solution de mesure d’audience embarquée dans le Système de Design de l’État basée sur Eulerian.
+description: La documentation technique de l’API Analytics s’adresse aux développeurs qui souhaitent intégrer et configurer le suivi analytique sur les sites publics.
+shortDescription: Documentation technique pour l’intégration et la configuration du suivi analytique sur les sites publics.
+keywords: mesure d’audience, documentation technique, analytics, Eulerian, Matomo, statistiques, API DSFR, trafic, navigation, performance, usagers, SIG
+excerpt: Documentation technique pour l’intégration et la configuration du suivi analytique sur les sites publics.
+summary: Documentation technique pour l’intégration et la configuration du suivi analytique sur les sites publics.
+sort: order
 order: 2
+list:
+  noCover: true
+  horizontal: true
 ---
 
-## Documentation technique
+## Documentation technique de l’API Analytics
 
-Le système de design apporte avec lui un outil de collecte de données analytics basé sur la solution Eulérian. Ce package, bien que fourni par le DSFR, peut être utilisé indépendamment de celui-ci via une [version standalone](installation/index.md#Version-standalone).
+La documentation technique détaille l’ensemble des propriétés de l’API Analytics v2 et sa configuration. Elle s’adresse aux développeurs souhaitant intégrer et configurer le suivi analytique sur les sites utilisant le DSFR.
