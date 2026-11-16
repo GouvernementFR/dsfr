@@ -23,14 +23,14 @@ export const VerticalStory = {
   args: {
     buttons: [
       {
-        label: 'libellé du bouton 1',
+        label: 'Libellé du bouton 1',
         kind: 1,
         disabled: false,
         id: '',
         title: ''
       },
       {
-        label: 'libellé du bouton 2',
+        label: 'Libellé du bouton 2',
         kind: 2,
         disabled: false,
         id: '',
@@ -46,14 +46,14 @@ export const HorizontalStory = {
     inline: true,
     buttons: [
       {
-        label: 'libellé du bouton 1',
+        label: 'Libellé du bouton 1',
         kind: 1,
         disabled: false,
         id: '',
         title: ''
       },
       {
-        label: 'libellé du bouton 2',
+        label: 'Libellé du bouton 2',
         kind: 2,
         disabled: false,
         id: '',
@@ -71,21 +71,21 @@ export const SizesStory = {
       inline: true,
       buttons: [
         {
-          label: 'libellé du bouton sm 1',
+          label: 'Libellé du bouton sm 1',
           kind: 1,
           disabled: false,
           id: '',
           title: ''
         },
         {
-          label: 'libellé du bouton sm 2',
+          label: 'Libellé du bouton sm 2',
           kind: 2,
           disabled: false,
           id: '',
           title: ''
         },
         {
-          label: 'libellé du bouton sm 3',
+          label: 'Libellé du bouton sm 3',
           kind: 2,
           disabled: false,
           id: '',
@@ -98,21 +98,21 @@ export const SizesStory = {
       inline: true,
       buttons: [
         {
-          label: 'libellé du bouton md 1',
+          label: 'Libellé du bouton md 1',
           kind: 1,
           disabled: false,
           id: '',
           title: ''
         },
         {
-          label: 'libellé du bouton md 2',
+          label: 'Libellé du bouton md 2',
           kind: 2,
           disabled: false,
           id: '',
           title: ''
         },
         {
-          label: 'libellé du bouton md 3',
+          label: 'Libellé du bouton md 3',
           kind: 2,
           disabled: false,
           id: '',
@@ -125,21 +125,21 @@ export const SizesStory = {
       inline: true,
       buttons: [
         {
-          label: 'libellé du bouton lg 1',
+          label: 'Libellé du bouton lg 1',
           kind: 1,
           disabled: false,
           id: '',
           title: ''
         },
         {
-          label: 'libellé du bouton lg 2',
+          label: 'Libellé du bouton lg 2',
           kind: 2,
           disabled: false,
           id: '',
           title: ''
         },
         {
-          label: 'libellé du bouton lg 3',
+          label: 'Libellé du bouton lg 3',
           kind: 2,
           disabled: false,
           id: '',
@@ -156,21 +156,21 @@ export const PrimaryStory = {
     inline: true,
     buttons: [
       {
-        label: 'libellé du bouton 1',
+        label: 'Libellé du bouton 1',
         kind: 1,
         disabled: false,
         id: '',
         title: ''
       },
       {
-        label: 'libellé du bouton 2',
+        label: 'Libellé du bouton 2',
         kind: 2,
         disabled: false,
         id: '',
         title: ''
       },
       {
-        label: 'libellé du bouton 3',
+        label: 'Libellé du bouton 3',
         kind: 2,
         disabled: false,
         id: '',
@@ -186,21 +186,21 @@ export const SecondaryStory = {
     inline: true,
     buttons: [
       {
-        label: 'libellé du bouton 1',
+        label: 'Libellé du bouton 1',
         kind: 2,
         disabled: false,
         id: '',
         title: ''
       },
       {
-        label: 'libellé du bouton 2',
+        label: 'Libellé du bouton 2',
         kind: 2,
         disabled: false,
         id: '',
         title: ''
       },
       {
-        label: 'libellé du bouton 3',
+        label: 'Libellé du bouton 3',
         kind: 2,
         disabled: false,
         id: '',
@@ -216,21 +216,21 @@ export const TertiaryStory = {
     inline: true,
     buttons: [
       {
-        label: 'libellé du bouton 1',
+        label: 'Libellé du bouton 1',
         kind: 4,
         disabled: false,
         id: '',
         title: ''
       },
       {
-        label: 'libellé du bouton 2',
+        label: 'Libellé du bouton 2',
         kind: 4,
         disabled: false,
         id: '',
         title: ''
       },
       {
-        label: 'libellé du bouton 3',
+        label: 'Libellé du bouton 3',
         kind: 3,
         disabled: false,
         id: '',
