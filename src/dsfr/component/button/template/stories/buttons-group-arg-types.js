@@ -61,7 +61,7 @@ const buttonsGroupArgs = {
   reverse: false,
   buttons: [
     {
-      label: 'libellé du bouton 1',
+      label: 'Libellé du bouton 1',
       kind: 1,
       icon: 'checkbox-circle-line',
       disabled: false,
@@ -69,7 +69,7 @@ const buttonsGroupArgs = {
       title: ''
     },
     {
-      label: 'libellé du bouton 2',
+      label: 'Libellé du bouton 2',
       kind: 2,
       icon: 'checkbox-circle-line',
       disabled: false,
@@ -77,7 +77,7 @@ const buttonsGroupArgs = {
       title: ''
     },
     {
-      label: 'libellé du bouton 3',
+      label: 'Libellé du bouton 3',
       kind: 2,
       icon: 'checkbox-circle-line',
       disabled: false,
