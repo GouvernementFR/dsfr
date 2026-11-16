@@ -332,7 +332,7 @@ const headerArgTypes = {
 const getItemArgs = (id, type = 'link', isActive = false) => {
   const item = {};
 
-  item.id = type === 'link' ? `navigation-item-${id}` : `navigation-${id}`;
+  item.id = `navigation-item-${id}`;
   item.type = type;
   item.active = isActive;
   item.collapsable = type === 'menu' || type === 'mega-menu';
