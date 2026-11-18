@@ -1,3 +1,15 @@
+#{ns-group(messages)} {
+  @include disable-list-style;
+
+  li {
+    @include margin-bottom(1v);
+
+    &:last-child {
+      @include margin-bottom(0);
+    }
+  }
+}
+
 #{ns(message)} {
   --comma: ", ";
   --content: var(--comma);
