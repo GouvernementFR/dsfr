@@ -1,6 +1,6 @@
 import normalize from '../../utils/normalize';
 import { validateNumber, validateString } from '../../utils/type-validator';
-import Method from './mehod';
+import Method from './method';
 
 class Search {
   constructor (config) {

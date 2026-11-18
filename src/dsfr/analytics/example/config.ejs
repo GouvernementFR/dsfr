@@ -3,6 +3,67 @@
   // production: true,
   // mode: 'manual',
   analytics: {
+    isActionEnabled: true,
+    collection: 'load',
+    cmp: {
+      id: 'tarteaucitron'
+    },
+    providers: {
+      /*eulerian: {
+        domain: 'gva.et-gv.fr',
+      },*/
+      matomo: {
+        setTrackerUrl: 'https://mon-instance.matomo.ministere.gouv.fr/',
+        setSiteId: 'monIdSiteMatomo',
+        dimensions: [
+          { $ref: '#/context/page/labels', id: 1 },
+          { $ref: '#/context/page/template', id: 3 },
+          { $ref: '#/context/funnel/id', id: 5 },
+          { value: 'hardcoded value', id: 6 },
+        ],
+      },
+    },
+    context:{
+      page: {
+        labels: 'MonLabel2',
+        template: 'nom template',
+        date: '2021-11-08',
+        subtemplate: 'sous template',
+        theme: 'Mon thème générique',
+        subtheme: 'page sous theme',
+        related: 'page liées',
+      },
+      site: {
+        entity: 'Ministère des armées',
+      },
+      user:{
+        uid:'sss',
+      },
+      funnel: {
+        id: '35',
+        type: 'Market',
+        name: 'Tunnel',
+        step: '1', // step name
+        current: 2, // step number
+        total: 7, // total number of steps
+        objective: 'conversion', // form objective
+        error: 'email' // form's error type
+      },
+      /*search: {
+        results: 486,
+        keyword: 'télécharger le cerfa 1234',
+        category: 'categorie',
+      }*/
+    }
+  }
+};
+
+
+/*v1{
+  // verbose: true,
+  // production: true,
+  // mode: 'manual',
+  analytics: {
     domain: 'gva.et-gv.fr',
     // collection: 'manual', // method of collection [manual, load, full, hash]
     isActionEnabled: true, // enable action tracking
@@ -31,13 +92,11 @@
       // filters: ['actualités', 'Dossier de presse'] // array of filters that were applied on the page (strings)
     },
     user: {
-      /*
-      connect: {
-        uid: 'XXX', // user id - required when connected
-        email: 'email@example.com', // encoded user email - required when connected
-        isNew: true, // user just registered
-      },
-      */
+      // connect: {
+      //   uid: 'XXX', // user id - required when connected
+      //   email: 'email@example.com', // encoded user email - required when connected
+      //   isNew: true, // user just registered
+      // },
       // profile: 'visitor', // user profile
       // language: '',
       // type: 'pro',
@@ -52,26 +111,24 @@
       // department: 'FR-75', // department of the website (ISO 3166-2:FR)
       version: '1.0.0', // version of the website
     },
-    /*
-    search: {
-      engine: 'principal',
-      results: 486,
-      terms: 'télécharger le cerfa 1234',
-      category: 'categorie',
-      theme: 'theme',
-      type: 'type',
-      method: ''
-    },
-    funnel: {
-      id: 'id',
-      type: 'type',
-      name: 'name',
-      step: 'step', // step name
-      current: 2, // step number
-      total: 7, // total number of steps
-      objective: 'objective', // form objective
-      error: 'email' // form's error type
-    }
-    */
+    // search: {
+    //   engine: 'principal',
+    //   results: 486,
+    //   terms: 'télécharger le cerfa 1234',
+    //   category: 'categorie',
+    //   theme: 'theme',
+    //   type: 'type',
+    //   method: ''
+    // },
+    // funnel: {
+    //   id: 'id',
+    //   type: 'type',
+    //   name: 'name',
+    //   step: 'step', // step name
+    //   current: 2, // step number
+    //   total: 7, // total number of steps
+    //   objective: 'objective', // form objective
+    //   error: 'email' // form's error type
+    // }
   }
-};
+};*/

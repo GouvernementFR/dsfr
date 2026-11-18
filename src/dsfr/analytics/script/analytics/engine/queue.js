@@ -14,7 +14,12 @@ class Queue {
     this._handlingEnd = this._handleEnd.bind(this);
     this._isStarted = false;
     this._isListening = false;
+    this._provider = null;
     this.reset();
+  }
+
+  setProvider (provider) {
+    this._provider = provider;
   }
 
   setCollector (collector) {
@@ -114,31 +119,60 @@ class Queue {
 
   send (ending = false) {
     if (!this._isRequested) return;
-    const actionLayers = [];
-    if (!ending) actionLayers.push(...this._startingActions.map(queued => queued.start()).filter(layer => layer.length > 0));
-    actionLayers.push(...this._endingActions.map(queued => queued.end()).filter(layer => layer.length > 0));
 
-    const length = ((actionLayers.length / SLICE) + 1) | 0;
+    const isValidLayer = layer => layer && (Array.isArray(layer) ? layer.length > 0 : true);
+
+    const actionLayers = [];
+    if (!ending) actionLayers.push(...this._startingActions.map(queued => queued.start()).filter(isValidLayer));
+    actionLayers.push(...this._endingActions.map(queued => queued.end()).filter(isValidLayer));
+
+    const objectLayers = actionLayers.filter(layer => !Array.isArray(layer));
+    const arrayLayers = actionLayers.filter(layer => Array.isArray(layer));
+
+    const pushObjectLayers = () => objectLayers.forEach(layer => {
+      if (this._provider) this._provider.push(PushType.ACTION, layer);
+      else push(PushType.ACTION, layer);
+    });
+
     const slices = [];
-    for (let i = 0; i < length; i++) {
-      const slice = actionLayers.slice(i * SLICE, (i + 1) * SLICE);
-      slices.push(slice.flat());
+    if (arrayLayers.length > 0) {
+      const length = ((arrayLayers.length / SLICE) + 1) | 0;
+      for (let i = 0; i < length; i++) {
+        const slice = arrayLayers.slice(i * SLICE, (i + 1) * SLICE);
+        slices.push(slice.flat());
+      }
     }
 
     if (this._type === PushType.COLLECTOR && this._collector.isCollecting) {
       const layer = this._collector.layer;
+
+      if (!Array.isArray(layer)) {
+        if (this._provider) this._provider.push(PushType.COLLECTOR, layer);
+        pushObjectLayers();
+        this.reset(ending);
+        return;
+      }
+
       if (slices.length > 0) {
         const slice = slices.splice(0, 1)[0];
         if (slice.length > 0) layer.push.apply(layer, slice);
       }
       layer.flat();
-      if (layer.length > 0) push(PushType.COLLECTOR, layer);
+      if (layer.length > 0) {
+        if (this._provider) this._provider.push(PushType.COLLECTOR, layer);
+        else push(PushType.COLLECTOR, layer);
+      }
     }
+
+    pushObjectLayers();
 
     if (slices.length > 0) {
       for (let i = 0; i < slices.length; i++) {
         const slice = slices[i];
-        if (slice.length > 0) push(PushType.ACTION, slice);
+        if (slice.length > 0) {
+          if (this._provider) this._provider.push(PushType.ACTION, slice);
+          else push(PushType.ACTION, slice);
+        }
       }
     }
 
