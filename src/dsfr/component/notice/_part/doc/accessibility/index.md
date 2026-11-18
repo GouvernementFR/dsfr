@@ -37,8 +37,6 @@ Aucune interaction au clavier spécifique au composant.
 
 ### Règles d’accessibilité
 
-- Pour le lien «&nbsp;Bandeau d’information&nbsp;», cibler un identifiant unique du bandeau et ajouter `tabindex="-1"` sur la cible si elle n’est pas focalisable. Vérifier que l’activation du lien déplace effectivement le focus sur cette cible.
-- Le rôle `region` permet de retrouver le bandeau avec la navigation par régions des lecteurs d’écran. Il ne déclenche pas d’annonce automatique de son contenu.
 - Les **bandeaux refermables** doivent inclure un bouton clairement identifiable pour fermer le bandeau.
 - Le bouton de fermeture doit avoir un label explicite via un texte caché et un attribut `title`.
 - À la fermeture, repositionner le focus à un endroit pertinent pour l’utilisateur.
