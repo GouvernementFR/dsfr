@@ -91,8 +91,8 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
         </div>
     </div>
     <div class="fr-fieldset__element">
-        <fieldset class="fr-fieldset fr-mb-0" id="firstname-fieldset-1517" aria-labelledby="firstnames-fieldset-legend firstname-fieldset-1517-messages">
-            <legend class="fr-sr-only" id="firstnames-fieldset-legend">
+        <fieldset class="fr-fieldset fr-mb-0" id="firstname-fieldset-1517" aria-labelledby="firstnames-fieldset-1517-legend firstname-fieldset-1517-messages">
+            <legend class="fr-sr-only" id="firstnames-fieldset-1517-legend">
                 Prénoms dans l’ordre déterminé ci-dessous
             </legend>
             <div class="fr-fieldset__element">
@@ -143,8 +143,8 @@ Le bloc fonctionnel de demande de nom et prénom défaut est composé de :
         </div>
     </div>
     <div class="fr-fieldset__element">
-        <fieldset class="fr-fieldset fr-mb-0" id="firstname-fieldset-1517" aria-labelledby="firstnames-fieldset-legend firstname-fieldset-1517-messages">
-            <legend class="fr-sr-only" id="firstnames-fieldset-legend">
+        <fieldset class="fr-fieldset fr-mb-0" id="firstname-fieldset-1517" aria-labelledby="firstnames-fieldset-1517-legend firstname-fieldset-1517-messages">
+            <legend class="fr-sr-only" id="firstnames-fieldset-1517-legend">
                 Prénoms dans l’ordre déterminé ci-dessous
             </legend>
             <div class="fr-fieldset__element">
