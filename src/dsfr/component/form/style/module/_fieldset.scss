@@ -9,7 +9,7 @@
   @include display-flex(row, last baseline, null, wrap);
   border: 0;
 
-  & > ul {
+  &__elements {
     @include disable-list-style;
     align-items: inherit;
     display: inherit;
