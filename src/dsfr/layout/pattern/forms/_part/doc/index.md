@@ -68,7 +68,8 @@ De ce fait, entre deux champs du même groupe (“Identifiant” et “Mot de pa
 
 #### Champ obligatoire
 
-Etant donnée qu’il faut limiter le nombre d’information à demander aux utilisateurs, les informations optionnelles doivent être limitées au maximum. Ainsi, les champs sont obligatoires par défaut, et les champs optionnels apparaissent avec une information “(optionnel)” dans le label.
+Le RGPD limite le nombre d'informations demandées à l’usager à celles strictement nécessaires à la fourniture/fonctionnement du service auquel il souscrit. Les informations non nécessaires et marquées comme optionnelles dans les formulaires doivent donc être limitées au maximum.
+Les champs doivent donc être obligatoires par défaut, et les champs optionnels identifiés par un label « (optionnel) ».
 
 Une mention explicative doit se trouver au dessus du formulaire afin d’en informer l’utilisateur : “Sauf mention contraire “(optionnel)” dans le label, tous les champs sont obligatoires“
 
