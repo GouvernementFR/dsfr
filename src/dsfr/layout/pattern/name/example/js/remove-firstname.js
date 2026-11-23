@@ -1,4 +1,7 @@
 window.removeFirstname = (copy) => {
-  copy.nextSibling.querySelector('input,button').focus();
+  const container = copy.parentNode;
+  const nextControl = copy.nextElementSibling.querySelector('input,button');
   copy.remove();
+  updateFirstnames(container);
+  nextControl.focus();
 };
