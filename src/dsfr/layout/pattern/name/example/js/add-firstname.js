@@ -21,10 +21,10 @@ window.addFirstname = (button, id) => {
   input.autocomplete = `section-name${button.firstnamesCount} additional-name`;
 
   const wrapper = document.createElement('div');
-  wrapper.classList = '<%= prefix %>-input-wrap <%= prefix %>-input-wrap--action';
+  wrapper.className = '<%= prefix %>-input-wrap <%= prefix %>-input-wrap--action';
 
   const removeButton = document.createElement('button');
-  removeButton.classList = '<%= prefix %>-btn <%= prefix %>-btn--secondary <%= prefix %>-icon-delete-line';
+  removeButton.className = '<%= prefix %>-btn <%= prefix %>-btn--secondary <%= prefix %>-icon-delete-line';
   removeButton.type = 'button';
 
   removeButton.setAttribute('onclick', 'removeFirstname(this.copy)');
