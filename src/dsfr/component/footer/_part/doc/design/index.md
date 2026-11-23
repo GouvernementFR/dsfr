@@ -48,7 +48,7 @@ Le pied de page est un élément de navigation secondaire mis à disposition de 
 
 ::dsfr-doc-pin[Un séparateur entre les blocs]{required=true}
 
-::dsfr-doc-pin[Une liste de liens liés aux obligations légales]{required=true add="à définir en fonction du site mais incluant a minima “Accessibilité : non/partiellement/totalement conforme”, “Mentions légales” et “Données personnelles et gestions des cookies”"}
+::dsfr-doc-pin[Une liste de liens liés aux obligations légales]{required=true add='"à définir en fonction du site mais incluant a minima “Accessibilité : non/partiellement/totalement conforme”, “Mentions légales” et “Données personnelles“ et “gestions des cookies”"'}
 
 ::dsfr-doc-pin[Une mention de la licence]{required=true add="“Sauf mention contraire, tous les contenus de ce site sont sous licence etalab-2.0”"}
 
