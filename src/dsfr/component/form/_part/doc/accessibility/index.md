@@ -60,6 +60,8 @@ Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nb
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
 - avec une <span lang="en">live region</span>&nbsp;: `role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
 
+Dans le cas ou plusieurs messages sont présents, il est possible de les regrouper dans une liste afin de les rendre plus lisibles et accessibles. Les puces étant retirées visuellement, il est nécessaire d'ajouter un `role="list"` sur le `<ul>` afin de garantir que les lecteurs d’écran puissent identifier correctement la structure de la liste.
+
 #### Champs obligatoires
 
 Ajouter une mention visible pour tout le monde au début du formulaire et utiliser l’attribut `required` pour indiquer que le champ est obligatoire.

@@ -124,7 +124,7 @@ const buttonArgTypes = {
 };
 
 const buttonArgs = {
-  label: 'libellé du bouton',
+  label: 'Libellé du bouton',
   kind: 1,
   size: 'md',
   disabled: false,

@@ -9,6 +9,13 @@
   @include display-flex(row, last baseline, null, wrap);
   border: 0;
 
+  &__elements {
+    @include disable-list-style;
+    align-items: inherit;
+    display: inherit;
+    flex-flow: inherit;
+  }
+
   &__legend {
     @include padding-bottom(4v);
     @include padding-x(3v);
