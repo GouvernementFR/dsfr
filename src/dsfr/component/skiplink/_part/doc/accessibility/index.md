@@ -48,6 +48,7 @@ Aucune interaction au clavier spécifique au composant.
 - S’il y a plusieurs liens&nbsp;:
   - les liens doivent être structurés avec une liste `<ul><li>`,
   - le lien d’accès «&nbsp;Contenu&nbsp;» est le premier de la liste.
+- Ajouter `tabindex="-1"` sur la cible si elle n’est pas focalisable.
 
 #### Présentation
 

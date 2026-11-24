@@ -27,7 +27,7 @@ class ActionElement {
     let id = '';
     let type = '';
     if (this._id) id = `_[${this._id}]`;
-    else api.inspector.warn(`Analytics API requires an id to be set on tracked element. Missing on ${this._node.outerHTML}`);
+    else if (actions.isIdRequired) api.inspector.warn(`Analytics API requires an id to be set on tracked element. Missing on ${this._node.outerHTML}`);
     if (this._type) type = `(${this._type.id})_`;
     this._name = `${type}${this._title || this._hierarchy.title}${id}`;
 
