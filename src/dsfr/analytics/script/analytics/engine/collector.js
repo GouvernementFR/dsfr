@@ -14,21 +14,23 @@ import { ActioneeEmission } from '../../integration/core/actionee-emission';
 import { ActionEnable } from './action-enable';
 
 class Collector {
-  constructor (config) {
-    switch (config.collection) {
+  constructor (config, provider) {
+    this._config = config;
+    this._provider = provider;
+    switch (this._config.collection) {
       case Collection.MANUAL:
       case Collection.LOAD:
       case Collection.FULL:
       case Collection.HASH:
-        this._collection = config.collection;
+        this._collection = this._config.collection;
         break;
 
       default:
         /* deprecated start */
-        if (config.mode) {
-          switch (config.mode) {
+        if (this._config.mode) {
+          switch (this._config.mode) {
             case 'manual':
-              this._collection = config.collection;
+              this._collection = this._config.collection;
               break;
           }
         }
@@ -36,7 +38,7 @@ class Collector {
 
         switch (true) {
           /* deprecated */
-          case config.mode === 'manual':
+          case this._config.mode === 'manual':
             this._collection = Collection.MANUAL;
             break;
 
@@ -51,13 +53,13 @@ class Collector {
         }
     }
 
-    this.isActionEnabled = config.isActionEnabled;
+    this.isActionEnabled = this._config.isActionEnabled;
 
-    this._user = new User(config.user);
-    this._site = new Site(config.site);
-    this._page = new Page(config.page);
-    this._search = new Search(config.search);
-    this._funnel = new Funnel(config.funnel);
+    this._user = this._provider ? this._provider.user(this._config.context) : new User(config.user);
+    this._site = this._provider ? this._provider.site(this._config.context) : new Site(config.site);
+    this._page = this._provider ? this._provider.page(this._config.context) : new Page(this._config.page);
+    this._search = this._provider ? this._provider.search(this._config.context) : new Search(config.search);
+    this._funnel = this._provider ? this._provider.funnel(this._config.context) : new Funnel(config.funnel);
 
     this._delay = -1;
     queue.setCollector(this);
