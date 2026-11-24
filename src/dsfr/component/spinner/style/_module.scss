@@ -1,0 +1,68 @@
+////
+/// Spinner Module
+/// @group spinner
+////
+
+@use 'sass:map';
+@use 'src/module/spacing';
+@use 'src/module/preference';
+
+$_sizes: map.get($spinner-settings, sizes);
+
+@mixin _spinner-size($size) {
+  $setting: map.get($_sizes, $size);
+  width: spacing.space(map.get($setting, size));
+  height: spacing.space(map.get($setting, size));
+  border-width: spacing.space(map.get($setting, border-width));
+}
+
+@keyframes #{ns(spinner-rotate, '')} {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#{ns(spinner)} {
+  display: inline-flex;
+  align-items: center;
+  gap: spacing.space(2v);
+  vertical-align: middle;
+
+  // The ring is drawn on a pseudo-element so an optional visible label can sit next to it
+  @include before('') {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    @include _spinner-size(md);
+    border-style: solid;
+    border-radius: 50%;
+    animation: #{ns(spinner-rotate, '')} map.get($spinner-settings, duration) linear infinite;
+  }
+
+  &--sm {
+    @include before {
+      @include _spinner-size(sm);
+    }
+  }
+
+  &--lg {
+    @include before {
+      @include _spinner-size(lg);
+    }
+  }
+
+  // Slow down instead of stopping: a static ring would no longer convey "in progress"
+  @include preference.reduce-motion {
+    @include before {
+      animation-duration: map.get($spinner-settings, reduced-duration);
+    }
+  }
+
+  // Without this, both border colors become CanvasText and the rotation is invisible
+  @include preference.forced-colors {
+    @include before {
+      forced-color-adjust: none;
+      border-color: canvas;
+      border-top-color: canvastext;
+    }
+  }
+}

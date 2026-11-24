@@ -1,0 +1,12 @@
+<% const sample = getSample(include); %>
+
+<p>Le libellé est masqué visuellement avec la classe fr-sr-only mais reste restitué par les lecteurs d'écran grâce au rôle status.</p>
+<%- sample('Indicateur de chargement', './sample/spinner-default', {}, true); %>
+
+<%- sample('Indicateur de chargement taille SM', './sample/spinner-default', {spinner: {size: 'sm'}}, true); %>
+
+<%- sample('Indicateur de chargement taille LG', './sample/spinner-default', {spinner: {size: 'lg'}}, true); %>
+
+<%- sample('Indicateur de chargement avec libellé visible', './sample/spinner-default', {spinner: {labelVisible: true}}, true); %>
+
+<%- sample('Indicateur de chargement - personnalisé green-menthe', './sample/spinner-default', {spinner: {accent: 'green-menthe'}}, true); %>

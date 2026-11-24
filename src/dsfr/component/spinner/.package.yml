@@ -1,0 +1,7 @@
+id: spinner
+title: Indicateur de chargement
+description: L’indicateur de chargement (spinner) permet de signaler à l’usager qu’un contenu ou une action est en cours de traitement.
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants
+wrapper: col-8
+style:
+  - core
