@@ -34,6 +34,6 @@ window.addFirstname = (button, id) => {
   wrapper.appendChild(removeButton);
   copy.getElementsByTagName('label')[0].after(wrapper);
   reference.parentNode.insertBefore(copy, reference);
-  updateFirstnames(reference.parentNode);
+  window.updateFirstnames(reference.parentNode);
   document.getElementById(`${id}-added-${button.firstnamesCount}`).focus();
 };
