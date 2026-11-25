@@ -1,4 +1,4 @@
-const updateFirstnames = (container) => {
+window.updateFirstnames = (container) => {
   const inputs = container.querySelectorAll('input[name="given-name"], input[name^="additional-name-"]');
   const button = container.querySelector('button[onclick*="addFirstname("]');
   const firstnameLabel = button.getAttribute('data-firstname-label') || 'Prénom';

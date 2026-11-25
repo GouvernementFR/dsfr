@@ -7,6 +7,114 @@ Ce projet respecte [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Pour plus d’informations : [Voir la documentation](https://www.systeme-de-design.gouv.fr/)
 
 
+## v1.16
+
+### [v1.16.0](https://github.com/GouvernementFR/dsfr/releases/tag/v1.16.0) - 25 novembre 2026
+
+#### [#1584](https://github.com/GouvernementFR/dsfr/pull/1584) : ⬆️ mise à jour des dépendances
+`chore `
+
+
+
+---
+
+#### [#1581](https://github.com/GouvernementFR/dsfr/pull/1581) : ✨ ajout du support Matomo
+`feat (analytics)`
+
+Analytics v2
+
+- abstractisation du code analytics
+
+- ajout du support de Matomo
+
+- refonte totale de la documentation
+
+---
+
+#### [#1557](https://github.com/GouvernementFR/dsfr/pull/1557) : 📝 change la version de nexus & fix les liens des covers
+`docs `
+
+
+
+---
+
+#### [#1573](https://github.com/GouvernementFR/dsfr/pull/1573) : ✨ pattern nom prénom ordonné
+`feat (name)`
+
+- les prénoms sont maintenant numérotés
+
+- ajout d'une légende cachée sur le groupe de prénoms
+
+- ajout des autocomplete section-name
+
+---
+
+#### [#1575](https://github.com/GouvernementFR/dsfr/pull/1575) : 📝 ajout de documentations d'accessibilité & ajout liste fieldset
+`docs `
+
+- Ajout de la classe `fr-fieldset__elements` à utiliser pour grouper les élements dans un `<ul>`
+
+- Amélioration de la documentation des checkboxes, password, et formulaire sur l'utilisation de liste
+
+- Amélioration de la documentation sur le bandeau d'information importante et son lien au skiplinks
+
+---
+
+#### [#1580](https://github.com/GouvernementFR/dsfr/pull/1580) : 🐛 ids dupliqués dans le storybook
+`fix (header, navigation)`
+
+
+
+---
+
+#### [#1579](https://github.com/GouvernementFR/dsfr/pull/1579) : 🐛 libellé du bouton avec une majuscule
+`fix (button)`
+
+
+
+---
+
+#### [#1574](https://github.com/GouvernementFR/dsfr/pull/1574) : 🐛 remplace gène par gêne
+`fix (404)`
+
+- Petite correction d'orthographe qui suit le texte présent dans l'exemple visuel de la page de documentation.
+
+---
+
+#### [#1570](https://github.com/GouvernementFR/dsfr/pull/1570) : 🐛 exclut du piège de focus les éléments dans un parent masqué
+`fix (modal)`
+
+si le display d'un élément focusable change le focus trap ne le mettait pas à jour.
+
+---
+
+#### [#1569](https://github.com/GouvernementFR/dsfr/pull/1569) : 🐛 valeurs par défaut quand min, max ou step sont absents
+`fix (range)`
+
+Sans attribut `max`, la largeur de la plage valait 0, la position de la bulle et la barre de progression devenaient `Infinity`, et le texte de `fr-range__max` était vidé, alors que le navigateur traite le champ comme `max="100"`.
+
+
+
+Les valeurs sont maintenant lues avec `parseFloat` avant de retomber sur les valeurs par défaut.
+
+---
+
+#### [#1567](https://github.com/GouvernementFR/dsfr/pull/1567) : 📝 correction documentation sommaire h2/h3
+`docs `
+
+
+
+---
+
+#### [#1559](https://github.com/GouvernementFR/dsfr/pull/1559) : 🐛 Corrige le débordement des mots longs
+`fix (tile, card)`
+
+- Les titres et descriptions contenant un mot long (ex. nom de fichier) reviennent maintenant à la ligne au lieu de dépasser des tuiles et cartes horizontales.
+
+---
+
+
+
 ## v1.15
 
 ### [v1.15.4](https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.4) - 12 octobre 2026

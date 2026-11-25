@@ -1,3 +1,164 @@
+- id: v1.16.0
+  date: 2026-11-25
+  url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.16.0
+  commits:
+    - id: "1584"
+      type: chore
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - ⬆️
+      tag: v1.16.0
+      title: mise à jour des dépendances
+      pull: https://github.com/GouvernementFR/dsfr/pull/1584
+    - id: "1581"
+      type: feat
+      scopes:
+        - analytics
+      description: |-
+        Analytics v2
+        - abstractisation du code analytics
+        - ajout du support de Matomo
+        - refonte totale de la documentation
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.16.0
+      title: ajout du support Matomo
+      pull: https://github.com/GouvernementFR/dsfr/pull/1581
+    - id: "1557"
+      type: docs
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.16.0
+      title: change la version de nexus & fix les liens des covers
+      pull: https://github.com/GouvernementFR/dsfr/pull/1557
+    - id: "1573"
+      type: feat
+      scopes:
+        - name
+      description: |-
+        - les prénoms sont maintenant numérotés
+        - ajout d'une légende cachée sur le groupe de prénoms
+        - ajout des autocomplete section-name
+      isBreaking: false
+      gitmojis:
+        - ✨
+      tag: v1.16.0
+      title: pattern nom prénom ordonné
+      pull: https://github.com/GouvernementFR/dsfr/pull/1573
+    - id: "1575"
+      type: docs
+      scopes: []
+      description: >-
+        - Ajout de la classe `fr-fieldset__elements` à utiliser pour grouper les
+        élements dans un `<ul>`
+
+        - Amélioration de la documentation des checkboxes, password, et
+        formulaire sur l'utilisation de liste
+
+        - Amélioration de la documentation sur le bandeau d'information
+        importante et son lien au skiplinks
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.16.0
+      title: ajout de documentations d'accessibilité & ajout liste fieldset
+      pull: https://github.com/GouvernementFR/dsfr/pull/1575
+    - id: "1580"
+      type: fix
+      scopes:
+        - header
+        - navigation
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.16.0
+      title: ids dupliqués dans le storybook
+      pull: https://github.com/GouvernementFR/dsfr/pull/1580
+    - id: "1579"
+      type: fix
+      scopes:
+        - button
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.16.0
+      title: libellé du bouton avec une majuscule
+      pull: https://github.com/GouvernementFR/dsfr/pull/1579
+    - id: "1574"
+      type: fix
+      scopes:
+        - "404"
+      description: "- Petite correction d'orthographe qui suit le texte présent dans
+        l'exemple visuel de la page de documentation."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.16.0
+      title: remplace gène par gêne
+      pull: https://github.com/GouvernementFR/dsfr/pull/1574
+    - id: "1570"
+      type: fix
+      scopes:
+        - modal
+      description: si le display d'un élément focusable change le focus trap ne le
+        mettait pas à jour.
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.16.0
+      title: exclut du piège de focus les éléments dans un parent masqué
+      pull: https://github.com/GouvernementFR/dsfr/pull/1570
+    - id: "1569"
+      type: fix
+      scopes:
+        - range
+      description: >-
+        Sans attribut `max`, la largeur de la plage valait 0, la position de la
+        bulle et la barre de progression devenaient `Infinity`, et le texte de
+        `fr-range__max` était vidé, alors que le navigateur traite le champ
+        comme `max="100"`.
+
+
+        Les valeurs sont maintenant lues avec `parseFloat` avant de retomber sur
+        les valeurs par défaut.
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.16.0
+      title: valeurs par défaut quand min, max ou step sont absents
+      pull: https://github.com/GouvernementFR/dsfr/pull/1569
+    - id: "1567"
+      type: docs
+      scopes: []
+      description: ""
+      isBreaking: false
+      gitmojis:
+        - 📝
+      tag: v1.16.0
+      title: correction documentation sommaire h2/h3
+      pull: https://github.com/GouvernementFR/dsfr/pull/1567
+    - id: "1559"
+      type: fix
+      scopes:
+        - tile
+        - card
+      description: "- Les titres et descriptions contenant un mot long (ex. nom de
+        fichier) reviennent maintenant à la ligne au lieu de dépasser des tuiles
+        et cartes horizontales."
+      isBreaking: false
+      gitmojis:
+        - 🐛
+      tag: v1.16.0
+      title: Corrige le débordement des mots longs
+      pull: https://github.com/GouvernementFR/dsfr/pull/1559
 - id: v1.15.4
   date: 2026-10-12
   url: https://github.com/GouvernementFR/dsfr/releases/tag/v1.15.4
